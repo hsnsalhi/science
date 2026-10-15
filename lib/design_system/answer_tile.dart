@@ -96,41 +96,51 @@ class AnswerTile extends StatelessWidget {
                 context.tapFeedback();
                 onTap!.call();
               },
-        child: AnimatedContainer(
+        // La bonne réponse se détache légèrement : la couleur seule se
+        // confond avec le reste du panneau de retour qui s'ouvre au même
+        // instant.
+        child: AnimatedScale(
+          scale: state == AnswerTileState.correct ? 1.03 : 1,
           duration: context.motionDuration(AppDurations.fast),
-          curve: Curves.easeOut,
-          // 60 dp minimum : confortable au pouce, y compris pour un enfant.
-          constraints: const BoxConstraints(minHeight: 60),
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.lg,
-            vertical: AppSpacing.md,
-          ),
-          decoration: BoxDecoration(
-            color: background,
-            borderRadius: BorderRadius.circular(AppRadii.md),
-            border: Border.all(color: border, width: emphasised ? 2 : 1.5),
-          ),
-          child: Row(
-            children: <Widget>[
-              _Marker(
-                letter: leadingLetter,
-                state: state,
-                multiSelect: multiSelect,
-              ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Text(
-                  label,
-                  style: context.text.bodyLarge?.copyWith(
-                    fontWeight: emphasised ? FontWeight.w700 : FontWeight.w400,
+          curve: Curves.easeOutBack,
+          child: AnimatedContainer(
+            duration: context.motionDuration(AppDurations.fast),
+            curve: Curves.easeOut,
+            // 60 dp minimum : confortable au pouce, y compris pour un enfant.
+            constraints: const BoxConstraints(minHeight: 60),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.md,
+            ),
+            decoration: BoxDecoration(
+              color: background,
+              borderRadius: BorderRadius.circular(AppRadii.md),
+              border: Border.all(color: border, width: emphasised ? 2 : 1.5),
+            ),
+            child: Row(
+              children: <Widget>[
+                _Marker(
+                  letter: leadingLetter,
+                  state: state,
+                  multiSelect: multiSelect,
+                ),
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Text(
+                    label,
+                    style: context.text.bodyLarge?.copyWith(
+                      fontWeight: emphasised
+                          ? FontWeight.w700
+                          : FontWeight.w400,
+                    ),
                   ),
                 ),
-              ),
-              if (trailing != null) ...<Widget>[
-                const SizedBox(width: AppSpacing.sm),
-                Icon(trailing, color: icon, size: 24),
+                if (trailing != null) ...<Widget>[
+                  const SizedBox(width: AppSpacing.sm),
+                  Icon(trailing, color: icon, size: 24),
+                ],
               ],
-            ],
+            ),
           ),
         ),
       ),

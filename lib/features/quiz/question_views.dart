@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/app_typography.dart';
+import '../../design_system/animations.dart';
 import '../../design_system/answer_tile.dart';
 import '../../design_system/figures/figure_registry.dart';
 import '../../domain/models/question.dart';
@@ -179,18 +180,26 @@ class _ChoiceView extends StatelessWidget {
               ],
             ),
           ),
+        // Les réponses se posent l'une après l'autre. La clé porte
+        // l'identifiant de la question : sans elle, l'état d'animation
+        // survivrait au changement de question et seule la première
+        // volée serait jouée.
         for (int position = 0; position < order.length; position++)
-          Padding(
-            padding: const EdgeInsets.only(bottom: AppSpacing.md),
-            child: AnswerTile(
-              label: options[order[position]].text,
-              leadingLetter: optionLetter(position),
-              multiSelect: multi,
-              state: _stateFor(
-                correct: options[order[position]].isCorrect,
-                isSelected: selected.contains(order[position]),
+          SlideFadeIn(
+            key: ValueKey<String>('${question.id}-$position'),
+            delay: Duration(milliseconds: 60 * position),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: AppSpacing.md),
+              child: AnswerTile(
+                label: options[order[position]].text,
+                leadingLetter: optionLetter(position),
+                multiSelect: multi,
+                state: _stateFor(
+                  correct: options[order[position]].isCorrect,
+                  isSelected: selected.contains(order[position]),
+                ),
+                onTap: locked ? null : () => toggle(order[position]),
               ),
-              onTap: locked ? null : () => toggle(order[position]),
             ),
           ),
       ],
