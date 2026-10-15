@@ -150,10 +150,10 @@ void main() {
   ) async {
     await boot(tester, onboarded: true);
 
-    await tester.tap(find.text('Mathématiques'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Le théorème de Pythagore'));
-    await tester.pumpAndSettle();
+    await tapText(tester, 'Mathématiques');
+    // Le chapitre passe sous la ligne de flottaison dès que le catalogue
+    // s'étoffe : on l'amène à l'écran avant de le toucher.
+    await tapText(tester, 'Le théorème de Pythagore');
 
     expect(find.byType(LessonPath), findsOneWidget);
     expect(find.text('Le triangle rectangle'), findsWidgets);
@@ -167,10 +167,10 @@ void main() {
 
     // On ouvre Pythagore par le catalogue : ce test porte sur la correction
     // d'un exercice précis, pas sur le chapitre que l'accueil propose.
-    await tester.tap(find.text('Mathématiques'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Le théorème de Pythagore'));
-    await tester.pumpAndSettle();
+    await tapText(tester, 'Mathématiques');
+    // Le chapitre passe sous la ligne de flottaison dès que le catalogue
+    // s'étoffe : on l'amène à l'écran avant de le toucher.
+    await tapText(tester, 'Le théorème de Pythagore');
     await tapText(tester, 'Commencer');
 
     // On fait défiler les cartes jusqu'aux exercices.

@@ -279,6 +279,23 @@ void main() {
     },
   );
 
+  verifieChapitreRedige(
+    'maths-college-la-proportionnalite',
+    const <String, double>{
+      'reconnaitre/q3': 2.5, // 10 € pour 4 kg
+      'calculer/q1': 8.4, // 6 € pour 5 cahiers, puis 7 cahiers
+      'calculer/q2': 27.5, // 7,50 € pour 3 kg, puis 11 kg
+      'calculer/q6': 750, // 450 g pour 6 personnes, puis 10
+      'pourcentages/q1': 9, // 20 % de 45
+      'pourcentages/q2': 56, // 80 € remisés de 30 %
+      'pourcentages/q3': 48, // 12 sur 25
+      'pourcentages/q6': 276, // 240 € augmentés de 15 %
+      'problemes/q1': 80, // 240 km en 3 h
+      'problemes/q2': 18, // 24 km/h pendant 0,75 h
+      'problemes/q3': 8, // 4 cm au 1/200, en mètres
+    },
+  );
+
   group('Chapitre complet : le théorème de Pythagore', () {
     late Chapter pythagore;
 

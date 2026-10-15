@@ -1,0 +1,562 @@
+{
+  "chapter": "maths-college-la-proportionnalite",
+  "lessons": [
+    {
+      "id": "reconnaitre",
+      "title": "Reconnaître la proportionnalité",
+      "subtitle": "Savoir avant tout dans quelles situations la règle s'applique.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux grandeurs qui avancent ensemble",
+          "body": "Trois croissants coûtent 2,40 €, six croissants coûtent 4,80 €. En doublant la quantité, on double le prix. Quand les deux grandeurs se multiplient toujours par le même nombre en même temps, on dit qu'elles sont proportionnelles."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le coefficient de proportionnalité",
+          "formula": "deuxième grandeur = première grandeur × k",
+          "body": "Le nombre k est le même pour toute la situation. Pour les croissants, k = 0,80 : c'est le prix d'un croissant."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un tableau de proportionnalité",
+          "body": "Des pommes à 2,50 € le kilo :\n\n2 kg → 5 €\n5 kg → 12,50 €\n8 kg → 20 €\n\nChaque prix s'obtient en multipliant la masse par 2,50. Le coefficient ne change jamais de colonne en colonne : c'est la signature de la proportionnalité."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Ce qui n'est pas proportionnel",
+          "body": "Un taxi facture 3 € de prise en charge, puis 2 € par kilomètre. Pour 5 km on paie 13 €, pour 10 km on paie 23 € et non 26 €. Doubler la distance ne double pas le prix : les frais fixes cassent la proportionnalité."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de croire qu'il suffit que les deux grandeurs augmentent ensemble. La taille augmente avec l'âge, et pourtant personne ne mesure le double à vingt ans qu'à dix ans. Le vrai test : le quotient d'une grandeur par l'autre doit rester constant, et à zéro doit correspondre zéro."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Trois façons de vérifier",
+          "bullets": [
+            "On passe d'une grandeur à l'autre en multipliant toujours par le même nombre.",
+            "Le quotient d'une grandeur par l'autre est constant.",
+            "À une valeur nulle correspond une valeur nulle.",
+            "Des frais fixes suffisent à faire disparaître la proportionnalité."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Laquelle de ces situations est une situation de proportionnalité ?",
+          "hint": "Demande-toi dans chaque cas si doubler l'une double vraiment l'autre.",
+          "explanation": "Le prix de l'essence est proportionnel au volume : deux fois plus de litres, deux fois plus à payer, et zéro litre coûte zéro euro. La taille ne double pas avec l'âge, le taxi facture une prise en charge fixe, et la population d'une ville ne suit aucun coefficient.",
+          "options": [
+            {
+              "text": "Le prix payé à la pompe en fonction du nombre de litres",
+              "correct": true
+            },
+            {
+              "text": "La taille d'un enfant en fonction de son âge"
+            },
+            {
+              "text": "Le prix d'un taxi : 3 € de prise en charge, puis 2 € par kilomètre"
+            },
+            {
+              "text": "Le nombre d'habitants d'une ville en fonction de l'année"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Dans une situation de proportionnalité, si une grandeur est multipliée par 3, l'autre est multipliée par 3.",
+          "answer": true,
+          "explanation": "Vrai, et c'est même la définition. Trois fois plus de marchandise, trois fois plus à payer. Attention à ne pas confondre avec « on ajoute 3 » : la proportionnalité multiplie, elle n'ajoute pas.",
+          "hint": "Pense à trois fois plus de croissants."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un tableau de proportionnalité, 4 kg de farine coûtent 10 €. Combien coûte 1 kg ?",
+          "answer": 2.5,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "Le prix d'un kilo est justement le coefficient de proportionnalité.",
+          "explanation": "10 ÷ 4 = 2,50 €. Ce prix au kilo est le coefficient de proportionnalité de la situation : il permet ensuite de calculer n'importe quelle autre masse, 7 kg comme 0,5 kg."
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quelles affirmations caractérisent une situation de proportionnalité ?",
+          "explanation": "Un quotient constant et la correspondance zéro vers zéro sont deux façons de dire la même chose : il existe un coefficient unique. Que les deux grandeurs augmentent ensemble ne prouve rien, et ajouter toujours le même nombre décrit une situation différente, où une part fixe s'ajoute.",
+          "hint": "Deux de ces affirmations sont vraies ; deux décrivent des situations qui ne le sont pas.",
+          "options": [
+            {
+              "text": "Le quotient d'une grandeur par l'autre est constant",
+              "correct": true
+            },
+            {
+              "text": "À la valeur zéro correspond la valeur zéro",
+              "correct": true
+            },
+            {
+              "text": "Les deux grandeurs augmentent en même temps"
+            },
+            {
+              "text": "On passe de l'une à l'autre en ajoutant toujours le même nombre"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "texteATrous",
+          "prompt": "Complète la définition.",
+          "template": "Dans un tableau de proportionnalité, on passe d'une ligne à l'autre en multipliant toujours par le même nombre, appelé le ___ de proportionnalité.",
+          "blanks": [
+            {
+              "accepted": [
+                "coefficient"
+              ]
+            }
+          ],
+          "explanation": "Le coefficient de proportionnalité résume toute la situation : une fois connu, il suffit à compléter n'importe quelle colonne du tableau. Pour un prix, il s'agit du prix d'une seule unité.",
+          "hint": "Le mot commence par un c et se termine par « ent »."
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Des pommes coûtent 2,50 € le kilo. Associe chaque masse à son prix.",
+          "explanation": "Chaque prix s'obtient en multipliant la masse par 2,50 : 2 × 2,50 = 5 ; 5 × 2,50 = 12,50 ; 8 × 2,50 = 20 ; 10 × 2,50 = 25. Un seul coefficient suffit à remplir tout le tableau, sans refaire de raisonnement à chaque ligne.",
+          "hint": "Multiplie chaque masse par le prix d'un kilo.",
+          "pairs": [
+            {
+              "left": "2 kg",
+              "right": "5 €"
+            },
+            {
+              "left": "5 kg",
+              "right": "12,50 €"
+            },
+            {
+              "left": "8 kg",
+              "right": "20 €"
+            },
+            {
+              "left": "10 kg",
+              "right": "25 €"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calculer",
+      "title": "Compléter un tableau",
+      "subtitle": "Deux méthodes sûres pour trouver la valeur manquante.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Passer par l'unité",
+          "body": "C'est la méthode la plus sûre, parce qu'elle se raconte avec des mots.\n\n5 cahiers coûtent 6 €.\nUn cahier coûte 6 ÷ 5 = 1,20 €.\nSept cahiers coûtent 1,20 × 7 = 8,40 €."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Utiliser le coefficient",
+          "body": "Le prix d'une unité est justement le coefficient de proportionnalité. Une fois calculé, il sert pour toutes les questions suivantes : inutile de recommencer le raisonnement pour 7 cahiers, puis pour 12."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Le produit en croix",
+          "formula": "a/b = c/d   donne   a × d = b × c",
+          "body": "Quand trois nombres d'un tableau sont connus, le quatrième se calcule directement : c'est la quatrième proportionnelle."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Avec le produit en croix",
+          "body": "3 kg de pommes coûtent 7,50 €. Combien coûtent 11 kg ?\n\nx = 7,50 × 11 ÷ 3\nx = 82,50 ÷ 3\nx = 27,50 €\n\nVérification : 27,50 ÷ 11 = 2,50 €, bien le prix d'un kilo."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est d'ajouter au lieu de multiplier : « 3 kg coûtent 7,50 €, donc 4 kg coûtent 8,50 € » en ajoutant 1 des deux côtés. Le contrôle imparable est de calculer le prix d'un kilo dans les deux colonnes : s'il change, le raisonnement est faux."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Deux chemins, un seul résultat",
+          "bullets": [
+            "Retour à l'unité : diviser, puis multiplier. Lent mais imparable.",
+            "Produit en croix : multiplier les deux nombres opposés, diviser par le troisième.",
+            "Toujours vérifier en recalculant le coefficient sur le résultat trouvé."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Cinq cahiers identiques coûtent 6 €. Combien coûtent sept cahiers ?",
+          "answer": 8.4,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "Calcule d'abord le prix d'un seul cahier.",
+          "explanation": "Un cahier coûte 6 ÷ 5 = 1,20 €, donc sept cahiers coûtent 1,20 × 7 = 8,40 €. Contrôle rapide : sept cahiers coûtent forcément plus que cinq, mais moins que dix, c'est-à-dire moins de 12 €."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "3 kg de pommes coûtent 7,50 €. Combien coûtent 11 kg de ces pommes ?",
+          "answer": 27.5,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "7,50 × 11 ÷ 3, ou bien le prix d'un kilo multiplié par 11.",
+          "explanation": "Le kilo coûte 7,50 ÷ 3 = 2,50 €, donc 11 kg coûtent 2,50 × 11 = 27,50 €. Le produit en croix donne la même chose : 7,50 × 11 ÷ 3 = 82,50 ÷ 3 = 27,50 €."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans un tableau de proportionnalité, 3 correspond à 7,50 et 11 correspond à x. Quelle égalité permet de trouver x ?",
+          "hint": "Les deux nombres à multiplier sont ceux qui se font face en diagonale.",
+          "explanation": "Le produit en croix donne 3 × x = 7,50 × 11, donc x = 7,50 × 11 ÷ 3 = 27,50. Multiplier par 3 et diviser par 11 ferait l'inverse et donnerait un résultat plus petit que 7,50, ce qui est impossible puisque 11 est plus grand que 3.",
+          "options": [
+            {
+              "text": "x = 7,50 × 11 ÷ 3",
+              "correct": true
+            },
+            {
+              "text": "x = 7,50 × 3 ÷ 11"
+            },
+            {
+              "text": "x = 7,50 + 8"
+            },
+            {
+              "text": "x = 11 ÷ 7,50 × 3"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes de la méthode du retour à l'unité.",
+          "items": [
+            "Vérifier que la situation est bien proportionnelle",
+            "Diviser pour obtenir la valeur d'une seule unité",
+            "Multiplier cette valeur par la quantité demandée",
+            "Donner le résultat avec son unité"
+          ],
+          "explanation": "La première étape est celle qu'on saute le plus souvent, et c'est la plus importante : appliquer la proportionnalité à une situation qui ne l'est pas donne un résultat faux, quelle que soit la qualité des calculs qui suivent.",
+          "hint": "Une étape doit venir avant tout calcul."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Si 4 kg de farine coûtent 10 €, alors 5 kg coûtent 11 €.",
+          "answer": false,
+          "explanation": "Faux : ce raisonnement ajoute 1 € pour 1 kg de plus, alors que le kilo coûte 10 ÷ 4 = 2,50 €. Cinq kilos coûtent donc 2,50 × 5 = 12,50 €. C'est le piège de l'addition, à repérer en comparant le prix du kilo d'une colonne à l'autre.",
+          "hint": "Calcule le prix d'un kilo, puis celui de cinq kilos."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Une recette prévue pour 6 personnes demande 450 g de farine. Quelle masse de farine faut-il pour 10 personnes ?",
+          "answer": 750,
+          "tolerance": 0.5,
+          "unit": "g",
+          "hint": "Combien de farine pour une seule personne ?",
+          "explanation": "450 ÷ 6 = 75 g par personne, donc 75 × 10 = 750 g pour dix personnes. Autre chemin : passer de 6 à 10 personnes revient à multiplier par 10/6, et 450 × 10 ÷ 6 = 750 g."
+        }
+      ]
+    },
+    {
+      "id": "pourcentages",
+      "title": "Les pourcentages",
+      "subtitle": "Appliquer, calculer et enchaîner des pourcentages.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Prendre un pourcentage",
+          "body": "Un pourcentage est une proportion sur cent. Prendre t % d'un nombre, c'est le multiplier par t puis diviser par 100.\n\n20 % de 45 € = 45 × 20 ÷ 100 = 9 €"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Une réduction",
+          "body": "Après une remise de 30 %, il reste 70 % du prix. On multiplie donc directement par 0,70.\n\n80 € soldés à −30 % : 80 × 0,70 = 56 €\n\nUne seule multiplication remplace « calculer la remise, puis la soustraire »."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Une augmentation",
+          "body": "Après une hausse de 15 %, on obtient 115 % du prix de départ, soit une multiplication par 1,15.\n\n40 € augmentés de 15 % : 40 × 1,15 = 46 €"
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Exprimer une part en pourcentage",
+          "body": "Dans un groupe de 25 personnes, 12 portent des lunettes.\n\n12 ÷ 25 = 0,48\n0,48 × 100 = 48\n\nCela représente 48 % du groupe."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de croire qu'une baisse de 20 % suivie d'une hausse de 20 % ramène au prix de départ. Un article à 100 € tombe à 80 €, puis remonte de 20 % de 80 €, soit 16 € : il finit à 96 €. Un pourcentage s'applique toujours au nombre qui le précède, pas au prix d'origine."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Les trois gestes",
+          "formula": "t % de N = N × t ÷ 100",
+          "bullets": [
+            "Appliquer un pourcentage : multiplier par t, diviser par 100.",
+            "Baisser de t % : multiplier par (100 − t) ÷ 100.",
+            "Augmenter de t % : multiplier par (100 + t) ÷ 100.",
+            "Exprimer une part : diviser, puis multiplier par 100."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 20 % de 45 € ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "20 %, c'est un cinquième.",
+          "explanation": "45 × 20 ÷ 100 = 900 ÷ 100 = 9 €. Plus rapide de tête : 20 % c'est un cinquième, et 45 ÷ 5 = 9."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un article coûte 80 € et bénéficie d'une remise de 30 %. Quel est son prix après remise ?",
+          "answer": 56,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "Après une remise de 30 %, quel pourcentage du prix reste-t-il à payer ?",
+          "explanation": "Il reste 70 % du prix, donc 80 × 0,70 = 56 €. En deux temps : la remise vaut 80 × 0,30 = 24 €, et 80 − 24 = 56 €. Les deux chemins mènent au même prix."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un groupe de 25 personnes, 12 portent des lunettes. Quel pourcentage du groupe cela représente-t-il ?",
+          "answer": 48,
+          "tolerance": 0.1,
+          "unit": "%",
+          "hint": "Commence par diviser 12 par 25.",
+          "explanation": "12 ÷ 25 = 0,48, soit 48 %. Repère de bon sens : 12 sur 25, c'est un peu moins de la moitié, donc un peu moins de 50 %."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Augmenter un prix de 15 % revient à le multiplier par quel nombre ?",
+          "hint": "Après l'augmentation, on obtient 115 % du prix de départ.",
+          "explanation": "Le prix de départ compte pour 100 %, auquel s'ajoutent 15 % : on obtient 115 %, c'est-à-dire une multiplication par 1,15. Multiplier par 0,15 ne donnerait que la hausse elle-même, pas le nouveau prix.",
+          "options": [
+            {
+              "text": "1,15",
+              "correct": true
+            },
+            {
+              "text": "0,15"
+            },
+            {
+              "text": "1,5"
+            },
+            {
+              "text": "0,85"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un prix qui baisse de 20 %, puis augmente de 20 %, retrouve sa valeur de départ.",
+          "answer": false,
+          "explanation": "Faux. Un article à 100 € passe à 80 €, puis la hausse de 20 % porte sur 80 € et ne vaut que 16 € : il finit à 96 €. La baisse et la hausse ne s'appliquent pas au même nombre, elles ne peuvent donc pas se compenser.",
+          "hint": "Essaie avec un prix de départ de 100 €, c'est le plus facile à suivre."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un vélo coûtait 240 €. Son prix augmente de 15 %. Combien coûte-t-il désormais ?",
+          "answer": 276,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "Multiplie par 1,15, ou calcule la hausse puis ajoute-la.",
+          "explanation": "240 × 1,15 = 276 €. En deux temps : la hausse vaut 240 × 0,15 = 36 €, et 240 + 36 = 276 €. Le prix augmente, donc le résultat doit dépasser 240 € — un résultat plus petit signalerait une multiplication par 0,15."
+        }
+      ]
+    },
+    {
+      "id": "problemes",
+      "title": "Vitesses, échelles et problèmes",
+      "subtitle": "Reconnaître la proportionnalité là où elle ne dit pas son nom.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une même idée sous plusieurs noms",
+          "body": "Vitesse, échelle, débit, prix au kilo : derrière ces mots se cache toujours un coefficient de proportionnalité. Reconnaître la situation dispense d'apprendre une formule par domaine."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La vitesse moyenne",
+          "formula": "vitesse = distance ÷ durée",
+          "body": "C'est la distance parcourue en une unité de temps, donc le coefficient qui relie la durée à la distance. 240 km en 3 h donnent 80 km/h."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Lire une échelle",
+          "body": "Une échelle de 1/200 signifie qu'une longueur du plan vaut 200 fois plus en réalité.\n\n4 cm sur le plan\n4 × 200 = 800 cm en réalité\n800 cm = 8 m"
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Trouver une durée",
+          "body": "Une voiture parcourt 150 km à 75 km/h.\n\nEn une heure, elle fait 75 km.\n150 ÷ 75 = 2\n\nLe trajet dure 2 heures."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est d'oublier les conversions. 90 minutes ne valent pas 1,30 heure mais 1,5 heure, car 90 ÷ 60 = 1,5. De même, une échelle mélange souvent centimètres et mètres. Avant tout calcul, vérifie que les deux grandeurs sont dans la même unité."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "La méthode des problèmes",
+          "bullets": [
+            "Repérer les deux grandeurs et vérifier qu'elles sont proportionnelles.",
+            "Convertir dans une unité commune avant de calculer.",
+            "Chercher la valeur pour une unité : un kilo, une heure, un centimètre de plan.",
+            "Vérifier l'ordre de grandeur du résultat avant de le donner."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un train parcourt 240 km en 3 heures. Quelle est sa vitesse moyenne, en kilomètres par heure ?",
+          "answer": 80,
+          "tolerance": 0.01,
+          "unit": "km/h",
+          "hint": "Quelle distance parcourt-il en une seule heure ?",
+          "explanation": "240 ÷ 3 = 80 km/h. Cette vitesse est le coefficient de proportionnalité entre la durée et la distance : en 2 h le train fait 160 km, en 5 h il en fait 400."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un cycliste roule à 24 km/h pendant 45 minutes. Quelle distance parcourt-il, en kilomètres ?",
+          "answer": 18,
+          "tolerance": 0.01,
+          "unit": "km",
+          "hint": "Commence par convertir 45 minutes en heures : c'est trois quarts d'heure.",
+          "explanation": "45 minutes valent 45 ÷ 60 = 0,75 heure, donc la distance vaut 24 × 0,75 = 18 km. Garder 45 dans le calcul aurait donné 1 080, un nombre de kilomètres impossible pour un cycliste."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Sur un plan à l'échelle 1/200, un mur mesure 4 cm. Quelle est sa longueur réelle, en mètres ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "unit": "m",
+          "hint": "Calcule d'abord la longueur réelle en centimètres, puis convertis.",
+          "explanation": "4 × 200 = 800 cm, et 800 cm = 8 m. L'oubli de la conversion finale est l'erreur la plus fréquente : un mur de 800 m dans un appartement doit mettre la puce à l'oreille."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Une voiture roule à 75 km/h et doit parcourir 150 km. Combien de temps dure le trajet ?",
+          "hint": "Combien de fois 75 km tiennent-ils dans 150 km ?",
+          "explanation": "150 ÷ 75 = 2, le trajet dure 2 heures. La distance est le double de ce que la voiture parcourt en une heure, donc la durée est le double d'une heure.",
+          "options": [
+            {
+              "text": "2 h",
+              "correct": true
+            },
+            {
+              "text": "1 h 30"
+            },
+            {
+              "text": "2 h 30"
+            },
+            {
+              "text": "75 min"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "texteATrous",
+          "prompt": "Complète la conversion de 90 minutes en heures.",
+          "template": "90 minutes = 90 ÷ ___ heure, soit ___ heure.",
+          "blanks": [
+            {
+              "accepted": [
+                "60"
+              ]
+            },
+            {
+              "accepted": [
+                "1,5",
+                "1.5"
+              ]
+            }
+          ],
+          "explanation": "Une heure compte 60 minutes, donc on divise par 60 : 90 ÷ 60 = 1,5 heure, c'est-à-dire une heure et demie. Écrire 1,30 serait confondre l'écriture des durées avec celle des nombres décimaux.",
+          "hint": "Combien de minutes compte une heure ?"
+        },
+        {
+          "id": "q6",
+          "kind": "choixMultiple",
+          "prompt": "Quelles situations relèvent de la proportionnalité ?",
+          "hint": "Dans chaque cas, demande-toi si doubler la première grandeur double la seconde.",
+          "explanation": "À vitesse constante, deux fois plus de temps donne deux fois plus de distance ; sur un plan, deux fois plus de centimètres donnent deux fois plus de mètres ; deux fois plus d'articles identiques coûtent deux fois plus cher. En revanche, doubler le côté d'un carré multiplie son aire par 4, et l'âge diminue quand l'année de naissance augmente.",
+          "options": [
+            {
+              "text": "La distance parcourue à vitesse constante, selon la durée",
+              "correct": true
+            },
+            {
+              "text": "Les longueurs réelles, selon les longueurs mesurées sur un plan",
+              "correct": true
+            },
+            {
+              "text": "Le prix total, selon le nombre d'articles identiques achetés",
+              "correct": true
+            },
+            {
+              "text": "L'aire d'un carré, selon la longueur de son côté"
+            },
+            {
+              "text": "L'âge d'une personne, selon son année de naissance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
