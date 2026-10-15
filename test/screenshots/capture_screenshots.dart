@@ -211,6 +211,9 @@ void main() {
 
       testWidgets('leçon et figure manipulable', (WidgetTester tester) async {
         await boot(tester, logical, ratio, withHistory: false);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Le théorème de Pythagore');
         await tapText(tester, 'Commencer');
         // La deuxième carte porte la figure interactive.
         await tapText(tester, 'Suivant');
@@ -219,6 +222,11 @@ void main() {
 
       testWidgets('exercice corrigé', (WidgetTester tester) async {
         await boot(tester, logical, ratio, withHistory: false);
+        // Plusieurs chapitres sont jouables : « Commencer » ne désigne
+        // plus celui-ci de façon certaine, on y va par la matière.
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Le théorème de Pythagore');
         await tapText(tester, 'Commencer');
         for (int i = 0; i < 12; i++) {
           if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
@@ -230,6 +238,21 @@ void main() {
         await tapText(tester, 'L\'hypoténuse');
         await tapText(tester, 'Valider');
         await shoot(tester, '$device-4-exercice');
+      });
+
+      // La figure du Système solaire a sa propre capture : c'est la seule
+      // qui porte une échelle, et une erreur de placement y serait
+      // invisible dans un test de géométrie.
+      testWidgets('astronomie : figure du Système solaire', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Le Système solaire');
+        await tapText(tester, 'Commencer');
+        await tapText(tester, 'Suivant');
+        await shoot(tester, '$device-6-astronomie');
       });
 
       testWidgets('profil', (WidgetTester tester) async {

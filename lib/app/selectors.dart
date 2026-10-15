@@ -104,6 +104,23 @@ final Provider<NextStep?> nextStepProvider = Provider<NextStep?>((Ref ref) {
   );
   if (chapters.isEmpty) return null;
 
+  // Un chapitre entamé passe avant tout le reste : « Reprendre » doit
+  // ramener là où l'élève s'est arrêté. Tant qu'un seul chapitre était
+  // jouable la question ne se posait pas ; avec plusieurs matières
+  // pourvues, parcourir le catalogue dans l'ordre renverrait vers une
+  // autre matière à chaque session.
+  for (final Chapter chapter in chapters) {
+    final bool entame = chapter.lessons.any(
+      (Lesson l) => progress.recordFor(chapter.id, l.id).isCompleted,
+    );
+    if (!entame) continue;
+    for (final Lesson lesson in chapter.lessons) {
+      if (!progress.recordFor(chapter.id, lesson.id).isCompleted) {
+        return NextStep(chapter: chapter, lesson: lesson, isReview: false);
+      }
+    }
+  }
+
   for (final Chapter chapter in chapters) {
     for (final Lesson lesson in chapter.lessons) {
       if (!progress.recordFor(chapter.id, lesson.id).isCompleted) {

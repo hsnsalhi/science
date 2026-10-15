@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'right_triangle_figure.dart';
+import 'solar_system_figure.dart';
 import 'triangle_test_figure.dart';
 
 /// Fabrique une figure à partir de son identifiant de contenu.
@@ -29,6 +30,9 @@ abstract final class FigureRegistry {
     // Réciproque : un triangle est-il rectangle ?
     'triangle-reciproque': (BuildContext context, Color accent) =>
         TriangleTestFigure(accent: accent),
+    // Les huit planètes à l'échelle de leurs distances au Soleil.
+    'systeme-solaire': (BuildContext context, Color accent) =>
+        SolarSystemFigure(accent: accent),
   };
 
   /// Identifiants connus.

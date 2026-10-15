@@ -1,0 +1,363 @@
+{
+  "chapter": "astronomie-college-le-systeme-solaire",
+  "lessons": [
+    {
+      "id": "huit-planetes",
+      "title": "Huit planètes",
+      "subtitle": "Qui tourne autour de qui, et dans quel ordre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une étoile, et le reste",
+          "body": "Le Soleil est une étoile : une boule de gaz qui produit sa propre lumière. Tout le reste du Système solaire ne fait que tourner autour, sans briller."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Les huit planètes",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Quatre petites, quatre géantes",
+          "body": "Les quatre premières sont rocheuses : on pourrait s'y poser. Les quatre suivantes sont des géantes, sans surface solide."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour retenir l'ordre : Mercure, Vénus, Terre, Mars, Jupiter, Saturne, Uranus, Neptune. « Me Voilà Tout Mouillé, Je Suis Un Nageur. »"
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Trois choses à retenir",
+          "bullets": [
+            "Le Soleil est une étoile, pas une planète : il produit sa lumière.",
+            "Quatre planètes rocheuses, puis quatre géantes.",
+            "Pluton n'est plus une planète depuis 2006 : c'est une planète naine."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la planète la plus proche du Soleil ?",
+          "hint": "C'est aussi la plus petite des huit.",
+          "explanation": "Mercure tourne à 58 millions de kilomètres du Soleil, soit près de trois fois plus près que la Terre.",
+          "figureId": "systeme-solaire",
+          "options": [
+            { "text": "Mercure", "correct": true },
+            { "text": "Vénus" },
+            { "text": "La Terre" },
+            { "text": "Mars" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Le Soleil est une planète.",
+          "answer": false,
+          "explanation": "Le Soleil est une étoile : il produit sa propre lumière par des réactions nucléaires. Une planète, elle, ne fait que réfléchir celle qu'elle reçoit."
+        },
+        {
+          "id": "q3",
+          "kind": "choixMultiple",
+          "prompt": "Lesquelles de ces planètes sont des géantes, sans surface solide ?",
+          "hint": "Ce sont les quatre dernières de la liste.",
+          "explanation": "Jupiter, Saturne, Uranus et Neptune sont les quatre géantes. Jupiter et Saturne sont gazeuses, Uranus et Neptune sont dites glacées. Aucune n'offre de sol sur lequel se poser.",
+          "options": [
+            { "text": "Jupiter", "correct": true },
+            { "text": "Neptune", "correct": true },
+            { "text": "Mars" },
+            { "text": "Vénus" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces planètes de la plus proche à la plus éloignée du Soleil.",
+          "hint": "Mercure d'abord, Neptune en dernier.",
+          "explanation": "Mercure, Vénus, la Terre et Mars sont les quatre rocheuses. Viennent ensuite Jupiter, Saturne, Uranus et Neptune.",
+          "items": [
+            "Mercure",
+            "Vénus",
+            "La Terre",
+            "Mars",
+            "Jupiter",
+            "Neptune"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "les-distances",
+      "title": "Les distances",
+      "subtitle": "Surtout du vide, et pas réparti également.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Des nombres qui ne parlent plus",
+          "body": "La Terre est à 150 millions de kilomètres du Soleil. Neptune, à 4 495 millions. Ces nombres sont trop grands pour qu'on les ressente."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Glisse le long de l'axe",
+          "body": "Les quatre planètes rocheuses tiennent dans les premiers cinq pour cent. Tout le reste est à Jupiter et au-delà.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Une unité à notre taille",
+          "formula": "1 unité astronomique = 150 millions de km",
+          "body": "c'est la distance Terre-Soleil. Neptune est alors à 30 unités astronomiques, ce qui se retient autrement mieux."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Compter en temps de lumière",
+          "body": "La lumière parcourt 300 000 km par seconde.\n\nSoleil → Terre : 8 minutes.\nSoleil → Neptune : un peu plus de 4 heures.\n\nRegarder le Soleil, c'est le voir tel qu'il était il y a 8 minutes."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Les ordres de grandeur",
+          "bullets": [
+            "Terre-Soleil : 150 millions de km, soit 1 unité astronomique.",
+            "La lumière met 8 minutes à nous parvenir du Soleil.",
+            "Neptune est 30 fois plus loin que la Terre."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "À combien de millions de kilomètres du Soleil se trouve la Terre ?",
+          "answer": 150,
+          "tolerance": 0.5,
+          "unit": "millions de km",
+          "hint": "C'est la définition de l'unité astronomique.",
+          "explanation": "150 millions de kilomètres. Cette distance sert d'unité de mesure dans tout le Système solaire : on l'appelle l'unité astronomique."
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Complète ces ordres de grandeur.",
+          "template": "La lumière du Soleil met ___ minutes à atteindre la Terre, en parcourant ___ 000 km par seconde.",
+          "blanks": [
+            { "accepted": ["8", "huit"] },
+            { "accepted": ["300"] }
+          ],
+          "hint": "Huit minutes, et trois cent mille kilomètres par seconde.",
+          "explanation": "La lumière va à 300 000 km/s et parcourt 150 millions de km en environ 500 secondes, soit un peu plus de 8 minutes."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Les huit planètes sont réparties à peu près régulièrement entre le Soleil et Neptune.",
+          "answer": false,
+          "explanation": "Pas du tout. Les quatre rocheuses tiennent dans les premiers pour cent de la distance ; entre Mars et Jupiter, le vide est plus grand qu'entre le Soleil et Mars.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Combien d'unités astronomiques séparent le Soleil de Neptune ?",
+          "hint": "4 495 millions de km, divisés par 150 millions.",
+          "explanation": "4 495 ÷ 150 ≈ 30. Neptune est donc trente fois plus loin du Soleil que nous.",
+          "options": [
+            { "text": "Environ 30", "correct": true },
+            { "text": "Environ 3" },
+            { "text": "Environ 300" },
+            { "text": "Environ 4 500" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tourner-sans-tomber",
+      "title": "Tourner sans tomber",
+      "subtitle": "Ce qui retient les planètes, et ce qui les empêche de s'écraser.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une seule force",
+          "body": "Le Soleil attire chaque planète. Cette attraction s'appelle la gravitation, et elle agit entre deux corps quelconques qui ont une masse."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Pourquoi elles ne tombent pas",
+          "body": "Elles tombent, en réalité. Mais elles avancent aussi sur le côté, assez vite pour rater le Soleil à chaque fois. Le résultat est une orbite."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Plus loin, plus lent",
+          "body": "Plus une planète est éloignée, plus son tour est long — et pour deux raisons : le chemin est plus grand, et elle va moins vite.\n\nTerre : 365 jours.\nJupiter : 12 ans.\nNeptune : 165 ans."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ne pas confondre : la rotation, c'est la planète qui tourne sur elle-même et fait le jour et la nuit. La révolution, c'est son tour complet autour du Soleil, qui fait l'année."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Gravitation et orbites",
+          "bullets": [
+            "La gravitation attire deux corps qui ont une masse.",
+            "Une orbite, c'est une chute qui ne touche jamais le sol.",
+            "Rotation = le jour. Révolution = l'année."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui retient les planètes autour du Soleil ?",
+          "hint": "Elle agit entre deux corps qui ont une masse.",
+          "explanation": "La gravitation. C'est la même force qui fait tomber une pomme et qui maintient Neptune sur son orbite, à quatre milliards et demi de kilomètres.",
+          "options": [
+            { "text": "La gravitation", "correct": true },
+            { "text": "Le magnétisme" },
+            { "text": "La pression de l'air" },
+            { "text": "La lumière du Soleil" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque mot à ce qu'il décrit.",
+          "explanation": "La rotation fait le jour, la révolution fait l'année, l'orbite est le chemin suivi, et la gravitation est la force qui retient.",
+          "pairs": [
+            { "left": "Rotation", "right": "La planète tourne sur elle-même : le jour" },
+            { "left": "Révolution", "right": "Le tour complet autour du Soleil : l'année" },
+            { "left": "Orbite", "right": "Le chemin suivi autour du Soleil" },
+            { "left": "Gravitation", "right": "La force qui attire deux corps massifs" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Plus une planète est éloignée du Soleil, plus son année est longue.",
+          "answer": true,
+          "explanation": "Oui. Neptune met 165 ans à faire un tour, contre 365 jours pour la Terre : son chemin est plus long, et elle le parcourt plus lentement."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de jours dure une révolution de la Terre autour du Soleil ?",
+          "answer": 365,
+          "tolerance": 1,
+          "unit": "jours",
+          "hint": "C'est la durée d'une année.",
+          "explanation": "365 jours, et un quart — c'est ce quart qu'on rattrape tous les quatre ans avec le 29 février."
+        }
+      ]
+    },
+    {
+      "id": "defi-systeme-solaire",
+      "title": "Défi : le Système solaire",
+      "subtitle": "Tout le chapitre, sans filet.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions qui mélangent les trois leçons. Prends le temps de relire l'énoncé avant de répondre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Pluton n'est-elle plus comptée parmi les planètes ?",
+          "hint": "La décision date de 2006.",
+          "explanation": "En 2006, les astronomes ont précisé la définition d'une planète : elle doit avoir fait le vide sur son orbite. Pluton partage la sienne avec de nombreux autres corps : elle est devenue une planète naine.",
+          "options": [
+            { "text": "Elle n'a pas fait le vide autour de son orbite", "correct": true },
+            { "text": "Elle a été détruite" },
+            { "text": "Elle ne tourne pas autour du Soleil" },
+            { "text": "Elle est trop froide" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Complète cette comparaison.",
+          "template": "La Terre est à ___ millions de km du Soleil, Mars à ___ millions. Mars est donc plus ___ du Soleil que nous.",
+          "blanks": [
+            { "accepted": ["150"] },
+            { "accepted": ["228"] },
+            { "accepted": ["loin", "éloignée", "eloignee", "éloigné", "eloigne"] }
+          ],
+          "hint": "Regarde l'axe : Mars vient juste après la Terre.",
+          "explanation": "150 et 228 millions de kilomètres. Mars est la planète suivante en s'éloignant du Soleil."
+        },
+        {
+          "id": "q3",
+          "kind": "choixMultiple",
+          "prompt": "Quelles affirmations sont exactes ?",
+          "explanation": "Le Soleil est bien une étoile et contient l'essentiel de la masse du Système solaire. En revanche les planètes ne produisent pas de lumière, et elles ne sont pas réparties régulièrement.",
+          "options": [
+            { "text": "Le Soleil est une étoile", "correct": true },
+            { "text": "Le Soleil contient presque toute la masse du Système solaire", "correct": true },
+            { "text": "Les planètes produisent leur propre lumière" },
+            { "text": "Les planètes sont également espacées" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes la lumière du Soleil met-elle pour atteindre la Terre ?",
+          "answer": 8,
+          "tolerance": 0.5,
+          "unit": "minutes",
+          "hint": "150 millions de km, à 300 000 km par seconde.",
+          "explanation": "150 000 000 ÷ 300 000 = 500 secondes, soit un peu plus de 8 minutes."
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets ces étapes dans l'ordre pour expliquer pourquoi une planète reste en orbite.",
+          "explanation": "Le Soleil attire la planète, qui tombe donc vers lui. Mais elle avance aussi de côté, et manque le Soleil à chaque fois : elle tourne.",
+          "items": [
+            "Le Soleil attire la planète par gravitation",
+            "La planète tombe vers le Soleil",
+            "Mais elle avance aussi sur le côté",
+            "Elle manque le Soleil et le contourne",
+            "Le mouvement se répète : c'est une orbite"
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "La rotation de la Terre sur elle-même est ce qui fait l'année.",
+          "answer": false,
+          "explanation": "Non : la rotation fait le jour et la nuit, en 24 heures. C'est la révolution autour du Soleil, en 365 jours, qui fait l'année."
+        }
+      ]
+    }
+  ]
+}

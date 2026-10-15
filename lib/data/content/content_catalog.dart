@@ -14,9 +14,32 @@ import '../../domain/models/subject.dart';
 /// en avion ou dans une salle de classe sans réseau.
 class ContentCatalog {
   ContentCatalog({required this.subjects, required List<Chapter> chapters})
-    : _chapters = List<Chapter>.unmodifiable(
-        chapters..sort((Chapter a, Chapter b) => a.order.compareTo(b.order)),
+    : _chapters = List<Chapter>.unmodifiable(_ranger(subjects, chapters));
+
+  /// Range les chapitres par matière, puis par niveau, puis par rang.
+  ///
+  /// Le rang d'un chapitre n'a de sens qu'au sein d'une matière et d'un
+  /// niveau : c'est sa place dans la progression de l'année. Trier
+  /// l'ensemble du catalogue sur ce seul rang mêlait les matières — avec
+  /// une seule matière pourvue de contenu cela ne se voyait pas, mais dès
+  /// la deuxième « Reprendre » envoyait vers le chapitre de plus petit
+  /// rang, quelle que soit la matière.
+  static List<Chapter> _ranger(List<Subject> subjects, List<Chapter> chapters) {
+    final Map<String, int> rangMatiere = <String, int>{
+      for (int i = 0; i < subjects.length; i++) subjects[i].id: i,
+    };
+    final List<Chapter> ranges = List<Chapter>.of(chapters);
+    ranges.sort((Chapter a, Chapter b) {
+      final int matiere = (rangMatiere[a.subjectId] ?? 1 << 20).compareTo(
+        rangMatiere[b.subjectId] ?? 1 << 20,
       );
+      if (matiere != 0) return matiere;
+      final int niveau = a.level.index.compareTo(b.level.index);
+      if (niveau != 0) return niveau;
+      return a.order.compareTo(b.order);
+    });
+    return ranges;
+  }
 
   /// Catalogue vide, utile en test et comme valeur de repli.
   static final ContentCatalog empty = ContentCatalog(

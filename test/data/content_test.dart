@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
+import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
 import 'package:eureka/domain/models/lesson.dart';
@@ -277,6 +278,69 @@ void main() {
         }
       }
       expect(checked, expected.length);
+    });
+  });
+
+  // Le Système solaire : les valeurs numériques du chapitre sont des
+  // mesures, pas des choix pédagogiques. Une coquille y passerait
+  // inaperçue à la relecture, d'où ce contrôle contre la table de la
+  // figure, qui sert aussi à la dessiner.
+  group('Chapitre complet : le Système solaire', () {
+    late Chapter systeme;
+
+    setUpAll(() {
+      systeme = catalog.chapterById(
+        'astronomie-college-le-systeme-solaire',
+      )!;
+    });
+
+    test('est jouable de bout en bout', () {
+      expect(systeme.isPlayable, isTrue);
+      expect(systeme.lessons.length, greaterThanOrEqualTo(3));
+    });
+
+    test('les huit planètes sont rangées par distance croissante', () {
+      expect(planetes.length, 8);
+      for (int i = 1; i < planetes.length; i++) {
+        expect(
+          planetes[i].distance,
+          greaterThan(planetes[i - 1].distance),
+          reason: '${planetes[i].nom} n\'est pas après ${planetes[i - 1].nom}',
+        );
+      }
+      expect(planetes[2].nom, 'Terre');
+    });
+
+    test('les réponses numériques collent aux mesures', () {
+      final Map<String, double> attendu = <String, double>{};
+      for (final Lesson lesson in systeme.lessons) {
+        for (final Question question in lesson.questions) {
+          if (question is NumericQuestion) {
+            attendu[question.prompt] = question.expected;
+          }
+        }
+      }
+      final double terre = planetes[2].distance;
+      expect(
+        attendu.entries
+            .firstWhere((MapEntry<String, double> e) =>
+                e.key.contains('millions de kilomètres du Soleil'))
+            .value,
+        terre,
+      );
+      // 150 millions de km à 300 000 km/s : un peu plus de 8 minutes.
+      final double minutes = terre * 1e6 / 299792.458 / 60;
+      expect(minutes, closeTo(8, 0.5));
+    });
+
+    test('s\'appuie sur la figure du Système solaire', () {
+      final Set<String> figures = <String>{};
+      for (final Lesson lesson in systeme.lessons) {
+        for (final LessonCard card in lesson.cards) {
+          if (card.figureId != null) figures.add(card.figureId!);
+        }
+      }
+      expect(figures, contains('systeme-solaire'));
     });
   });
 }
