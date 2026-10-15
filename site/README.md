@@ -32,6 +32,27 @@ rsync -av --delete site/ utilisateur@techlyb.com:/var/www/techlyb.com/eureka/
 Apple vérifie que ces URL répondent. Elles doivent être en ligne **avant** de
 soumettre la fiche.
 
+## Captures d'écran
+
+Les images de `assets/screens/` sont produites par l'application elle-même,
+pas dessinées :
+
+```bash
+flutter test test/screenshots/capture_screenshots.dart --update-goldens
+python3 tool/export_screenshots.py
+```
+
+Le premier ordre rend les écrans aux dimensions exactes exigées par App Store
+Connect — 1320 × 2868 pour l'iPhone 6,9 pouces, 2064 × 2752 pour l'iPad
+13 pouces — dans `test/screenshots/goldens/`. **Ces fichiers sont
+téléversables tels quels dans la fiche App Store.** Le second les réduit pour
+le site et compose l'image de partage.
+
+Le fichier de capture ne se termine pas par `_test.dart` : un `flutter test`
+ordinaire l'ignore. C'est voulu, une comparaison de pixels dépendant de la
+plateforme de rendu, elle échouerait sur le runner macOS et bloquerait la
+publication pour une différence d'anticrénelage.
+
 ## À compléter avant mise en ligne
 
 Trois points sont signalés en jaune dans les pages, et doivent être renseignés :

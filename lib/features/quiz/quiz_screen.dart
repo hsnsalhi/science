@@ -55,8 +55,10 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
   LessonOutcome? _outcome;
   int _shakeTrigger = 0;
 
-  QuizSession _ensureSession(Lesson lesson) =>
-      _session ??= QuizSession.start(lesson.questions);
+  QuizSession _ensureSession(Lesson lesson) => _session ??= QuizSession.start(
+    lesson.questions,
+    random: ref.read(quizRandomProvider)(),
+  );
 
   void _onAnswer(Answer? answer) {
     setState(() => _session = _session!.withDraft(answer));
@@ -93,7 +95,10 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
 
   void _restart(Lesson lesson) {
     setState(() {
-      _session = QuizSession.start(lesson.questions);
+      _session = QuizSession.start(
+        lesson.questions,
+        random: ref.read(quizRandomProvider)(),
+      );
       _outcome = null;
       _shakeTrigger = 0;
     });

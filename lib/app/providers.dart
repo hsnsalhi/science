@@ -2,6 +2,7 @@
 library;
 
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,6 +23,15 @@ import '../domain/services/streak_engine.dart';
 /// testables : un test remplace l'horloge et fait défiler les jours.
 final Provider<DateTime Function()> clockProvider =
     Provider<DateTime Function()>((Ref ref) => DateTime.now);
+
+/// Source d'aléa des quiz : mélange des propositions et des étapes.
+///
+/// Passer par un fournisseur plutôt que d'appeler `Random()` directement
+/// permet de figer l'ordre des réponses — indispensable pour produire des
+/// captures d'écran reproductibles, et pratique pour rejouer exactement un
+/// quiz pendant une mise au point.
+final Provider<Random Function()> quizRandomProvider =
+    Provider<Random Function()>((Ref ref) => Random.new);
 
 /// Magasin local. **Remplacé au démarrage** par `main.dart`.
 final Provider<KeyValueStore> keyValueStoreProvider = Provider<KeyValueStore>(
