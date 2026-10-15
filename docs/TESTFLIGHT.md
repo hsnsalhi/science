@@ -29,7 +29,7 @@ Rien de ce qui suit ne fonctionne avant que le compte soit actif.
 **+** → App IDs → App → description « Eureka », Bundle ID **explicite** :
 
 ```
-com.eureka.eureka
+com.techlyb.eureka
 ```
 
 C'est l'identifiant déjà configuré dans le projet. Pour en utiliser un autre,
@@ -41,6 +41,22 @@ l'application n'utilise ni notifications, ni iCloud, ni rien d'autre.
 **Fiche App Store Connect.** <https://appstoreconnect.apple.com> → Mes apps →
 **+** → Nouvelle app : plateforme iOS, nom `Eurêka`, langue Français,
 Bundle ID celui ci-dessus, SKU `eureka-001`.
+
+> Le nom doit être **unique dans le monde entier**. Si « Eurêka » est déjà
+> pris, choisir un repli (« Eurêka Sciences »…) et le signaler : il faut
+> l'aligner dans l'application et sur le site.
+
+**Les deux URL obligatoires.** App Store Connect exige une politique de
+confidentialité et une adresse d'assistance, et vérifie qu'elles répondent.
+Les pages sont dans `site/` et se déposent sous `techlyb.com/eureka/` (voir
+`site/README.md`) :
+
+| Champ | URL |
+|---|---|
+| Privacy Policy URL | `https://techlyb.com/eureka/confidentialite.html` |
+| Support URL | `https://techlyb.com/eureka/support.html` |
+
+Mettre le site en ligne **avant** de remplir la fiche.
 
 > Sans cette fiche, l'envoi échoue avec une erreur peu explicite. C'est l'oubli
 > le plus fréquent.
@@ -95,7 +111,7 @@ Le dossier `ios-signing/` est exclu du dépôt par `.gitignore`, comme tous les
 ## Étape 3 — Le profil d'approvisionnement
 
 <https://developer.apple.com/account/resources/profiles> → **+** →
-**App Store Connect** (sous Distribution) → App ID `com.eureka.eureka` →
+**App Store Connect** (sous Distribution) → App ID `com.techlyb.eureka` →
 sélectionner le certificat créé à l'étape 2 → nommer le profil, par exemple
 `Eureka App Store` → télécharger le `.mobileprovision`.
 

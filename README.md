@@ -70,6 +70,14 @@ flutter analyze          # analyse statique stricte
 
 Flutter 3.47 ou plus récent (Dart 3.13+).
 
+## Site public
+
+`site/` contient les quatre pages statiques publiées sous
+`techlyb.com/eureka/` : présentation, assistance, et la politique de
+confidentialité en français et en anglais — Apple exige ces deux dernières
+URL pour toute mise en ligne. Déploiement et champs à compléter :
+[site/README.md](site/README.md).
+
 ## Structure
 
 ```
@@ -80,6 +88,7 @@ lib/
   domain/        modèles et règles métier — Dart pur, sans Flutter
   data/          chargement du contenu, stockage local, dépôts
   features/      un dossier par écran
+site/          les pages publiques (confidentialité, assistance)
 assets/
   content/       le contenu pédagogique, en JSON
   fonts/         Nunito et Baloo 2 (variables, embarquées)

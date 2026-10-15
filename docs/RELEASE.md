@@ -12,7 +12,7 @@
 - [x] Icône de l'application — générée par `python3 tool/generate_icons.py`
       (iOS et Android, y compris l'icône adaptative Android).
 - [ ] Écran de lancement (celui de Flutter est encore en place).
-- [ ] Vérifier l'identifiant d'application : `com.eureka.eureka`
+- [ ] Vérifier l'identifiant d'application : `com.techlyb.eureka`
       (`android/app/build.gradle.kts` et la cible Xcode).
 - [ ] Relire les textes des réglages : ils décrivent les promesses du produit
       et seront lus par les parents.

@@ -1,4 +1,4 @@
-package com.eureka.eureka
+package com.techlyb.eureka
 
 import io.flutter.embedding.android.FlutterActivity
 
