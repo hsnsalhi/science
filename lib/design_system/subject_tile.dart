@@ -186,6 +186,15 @@ class ChapterCard extends StatelessWidget {
                     runSpacing: AppSpacing.sm,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: <Widget>[
+                      // Les classes d'abord : un élève cherche son année
+                      // avant de lire le reste de la carte.
+                      if (chapter.grades.isNotEmpty)
+                        AppChip(
+                          label: chapter.grades.join(' · '),
+                          icon: Icons.school_rounded,
+                          color: palette.base,
+                          dense: true,
+                        ),
                       if (playable) ...<Widget>[
                         StarRow(filled: stars, size: 17, animate: false),
                         AppChip(

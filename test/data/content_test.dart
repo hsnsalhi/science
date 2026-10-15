@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
@@ -6,6 +8,7 @@ import 'package:eureka/domain/models/education_level.dart';
 import 'package:eureka/domain/models/lesson.dart';
 import 'package:eureka/domain/models/question.dart';
 import 'package:eureka/domain/models/subject.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Vérifie le contenu réellement embarqué dans l'application.
@@ -57,6 +60,39 @@ void main() {
 
   test('au moins un chapitre est entièrement jouable', () {
     expect(catalog.chapters.where((Chapter c) => c.isPlayable), isNotEmpty);
+  });
+
+  test('chaque chapitre annonce les classes concernées', () {
+    for (final Chapter chapter in catalog.chapters) {
+      expect(
+        chapter.grades,
+        isNotEmpty,
+        reason: '${chapter.id} ne dit pas à quelles classes il s\'adresse',
+      );
+    }
+  });
+
+  // Le catalogue suit les programmes officiels : un chapitre qui renvoie à
+  // une source absente est un chapitre dont plus personne ne sait d'où il
+  // sort. Le contrôle se fait sur le JSON brut, la source n'étant qu'une
+  // information de provenance que le modèle n'a pas à porter.
+  test('chaque chapitre renvoie à un texte officiel déclaré', () async {
+    final Map<String, Object?> raw =
+        jsonDecode(
+              await rootBundle.loadString('assets/content/catalog.json'),
+            )
+            as Map<String, Object?>;
+    final Set<String> sources =
+        (raw['sources']! as Map<String, Object?>).keys.toSet();
+    expect(sources, isNotEmpty);
+    for (final Object? entry in raw['chapters']! as List<Object?>) {
+      final Map<String, Object?> chapter = entry! as Map<String, Object?>;
+      expect(
+        sources,
+        contains(chapter['source']),
+        reason: '${chapter['id']} cite une source inconnue',
+      );
+    }
   });
 
   group('Chapitres jouables', () {

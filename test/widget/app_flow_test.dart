@@ -140,7 +140,16 @@ void main() {
 
     await tester.tap(find.text('Mathématiques'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Le théorème de Pythagore'));
+    // Le catalogue suit l'ordre du programme officiel : Pythagore arrive en
+    // milieu de quatrième et n'est pas visible sans défiler.
+    final Finder pythagore = find.text('Le théorème de Pythagore');
+    await tester.scrollUntilVisible(
+      pythagore,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(pythagore);
     await tester.pumpAndSettle();
 
     expect(find.byType(LessonPath), findsOneWidget);

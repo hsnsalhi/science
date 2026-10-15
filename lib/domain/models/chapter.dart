@@ -43,6 +43,7 @@ class Chapter {
     required this.lessons,
     this.contentPath,
     this.objectives = const <String>[],
+    this.grades = const <String>[],
   });
 
   final String id;
@@ -57,6 +58,10 @@ class Chapter {
   final int order;
 
   final ChapterStatus status;
+
+  /// Classes concernées par le chapitre, dans l'ordre du programme
+  /// (« 5e », « 4e »…). Vide si le programme ne l'attache à aucune année.
+  final List<String> grades;
 
   /// Objectifs pédagogiques, affichés avant de commencer.
   final List<String> objectives;
@@ -95,6 +100,7 @@ class Chapter {
     summary: summary,
     order: order,
     status: status,
+    grades: grades,
     objectives: objectives,
     contentPath: contentPath,
     lessons: loaded,
@@ -124,6 +130,7 @@ class Chapter {
       summary: json.str('summary', context: ctx),
       order: json.integerOr('order', 0),
       status: status,
+      grades: json.strings('grades', context: ctx),
       objectives: json.strings('objectives', context: ctx),
       contentPath: contentPath,
       lessons: const <Lesson>[],

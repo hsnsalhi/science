@@ -82,7 +82,10 @@ class SubjectScreen extends ConsumerWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: AppSpacing.md),
                 child: SlideFadeIn(
-                  delay: Duration(milliseconds: 45 * i),
+                  // Le catalogue d'une matière peut compter une
+                  // quinzaine de chapitres : au-delà des premiers,
+                  // l'escalier d'apparition ferait attendre.
+                  delay: Duration(milliseconds: 45 * (i < 8 ? i : 8)),
                   child: Builder(
                     builder: (BuildContext context) {
                       final Chapter chapter = chapters[i];

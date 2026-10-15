@@ -1,5 +1,108 @@
 {
-  "version": 1,
+  "version": 2,
+  "programme": {
+    "pays": "France",
+    "annee": "2026-2027",
+    "note": "Chaque chapitre renvoie au texte officiel qui le fixe, par la clé « source ». Les programmes sont ceux en vigueur à la rentrée 2026."
+  },
+  "sources": {
+    "c2-maths": {
+      "label": "Programme de mathématiques du cycle 2",
+      "bo": "BO n° 41 du 31 octobre 2024",
+      "niveaux": "CP, CE1, CE2",
+      "note": "En vigueur depuis la rentrée 2025."
+    },
+    "c3-maths": {
+      "label": "Programme de mathématiques du cycle 3",
+      "bo": "BO n° 16 du 17 avril 2025",
+      "niveaux": "CM1, CM2, 6e",
+      "note": "CM1 et 6e depuis 2025, CM2 depuis 2026 : appliqué à tout le cycle."
+    },
+    "c4-maths": {
+      "label": "Programme de mathématiques du cycle 4",
+      "bo": "BO n° 10 du 5 mars 2026 (arrêté du 18 février 2026)",
+      "niveaux": "5e, 4e, 3e",
+      "note": "5e à la rentrée 2026, 4e en 2027, 3e en 2028 ; d'ici là la 4e et la 3e suivent le programme du BO n° 31 du 30 juillet 2020."
+    },
+    "c23-sciences": {
+      "label": "Programmes de sciences et technologie des cycles 2 et 3",
+      "bo": "BO n° 24 du 11 juin 2026 (arrêté du 5 juin 2026)",
+      "niveaux": "CP à 6e",
+      "note": "CP et CM1 à la rentrée 2026, les autres niveaux en 2027."
+    },
+    "c4-2020": {
+      "label": "Programmes du cycle 4 : physique-chimie, SVT, technologie",
+      "bo": "BO n° 31 du 30 juillet 2020",
+      "niveaux": "5e, 4e, 3e",
+      "note": "Toujours en vigueur : la refonte de ces disciplines est en consultation, aucun arrêté n'est paru."
+    },
+    "2de-maths": {
+      "label": "Programme de mathématiques de seconde générale et technologique",
+      "bo": "BO n° 14 du 2 avril 2026 (arrêté du 26 février 2026)",
+      "niveaux": "2de",
+      "note": "En vigueur depuis la rentrée 2026."
+    },
+    "1re-maths": {
+      "label": "Spécialité mathématiques, classe de première",
+      "bo": "BO n° 14 du 2 avril 2026 (arrêté du 26 février 2026)",
+      "niveaux": "1re",
+      "note": "En vigueur depuis la rentrée 2026."
+    },
+    "tle-maths": {
+      "label": "Spécialité mathématiques, classe de terminale",
+      "bo": "BO spécial n° 8 du 25 juillet 2019",
+      "niveaux": "Tle",
+      "note": "Le programme du BO n° 14 du 2 avril 2026 le remplacera à la rentrée 2027."
+    },
+    "2de-pc": {
+      "label": "Programme de physique-chimie de seconde",
+      "bo": "BO spécial n° 1 du 22 janvier 2019",
+      "niveaux": "2de",
+      "note": "Trois thèmes : constitution et transformations de la matière, mouvement et interactions, ondes et signaux."
+    },
+    "spe-pc": {
+      "label": "Spécialité physique-chimie, première et terminale",
+      "bo": "BO spécial n° 1 du 22 janvier 2019 et BO spécial n° 8 du 25 juillet 2019",
+      "niveaux": "1re, Tle",
+      "note": "Quatre thèmes, repris de la seconde et prolongés."
+    },
+    "2de-svt": {
+      "label": "Programme de sciences de la vie et de la Terre de seconde",
+      "bo": "BO spécial n° 1 du 22 janvier 2019",
+      "niveaux": "2de",
+      "note": "Trois thématiques : la Terre la vie et l'organisation du vivant, les enjeux contemporains de la planète, corps humain et santé."
+    },
+    "spe-svt": {
+      "label": "Spécialité sciences de la vie et de la Terre, première et terminale",
+      "bo": "BO spécial n° 1 du 22 janvier 2019 et BO spécial n° 8 du 25 juillet 2019",
+      "niveaux": "1re, Tle",
+      "note": "Les trois mêmes thématiques qu'en seconde, approfondies."
+    },
+    "snt": {
+      "label": "Sciences numériques et technologie, seconde",
+      "bo": "BO spécial n° 1 du 22 janvier 2019",
+      "niveaux": "2de",
+      "note": "Sept thématiques, de l'internet à la photographie numérique."
+    },
+    "nsi": {
+      "label": "Spécialité numérique et sciences informatiques, première et terminale",
+      "bo": "BO spécial n° 1 du 22 janvier 2019 et BO spécial n° 8 du 25 juillet 2019",
+      "niveaux": "1re, Tle",
+      "note": "Histoire de l'informatique, structures de données, bases de données, architectures, langages, algorithmique."
+    },
+    "ens-sci": {
+      "label": "Enseignement scientifique, première et terminale",
+      "bo": "BO du 22 juin 2023 (première) et BO spécial n° 8 du 25 juillet 2019 (terminale)",
+      "niveaux": "1re, Tle",
+      "note": "Tronc commun de la voie générale."
+    },
+    "licence": {
+      "label": "Licences scientifiques",
+      "bo": "Aucun programme national",
+      "niveaux": "L1, L2, L3",
+      "note": "Le contenu d'une licence est fixé par chaque université dans le cadre de l'arrêté licence du 30 juillet 2018. Les chapitres reprennent le socle commun aux maquettes françaises de la mention."
+    }
+  },
   "subjects": [
     {
       "id": "maths",
@@ -56,85 +159,652 @@
   ],
   "chapters": [
     {
-      "id": "maths-primaire-les-nombres-jusqu-a-1-000",
+      "id": "maths-primaire-les-nombres-jusqu-a-100",
       "subject": "maths",
       "level": "primaire",
-      "title": "Les nombres jusqu'à 1 000",
-      "summary": "Lire, écrire, comparer et ranger les nombres du quotidien.",
+      "grades": [
+        "CP"
+      ],
+      "title": "Les nombres jusqu'à 100",
+      "summary": "Lire, écrire, comparer et ranger les premiers nombres.",
       "order": 1,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c2-maths"
     },
     {
       "id": "maths-primaire-additionner-et-soustraire",
       "subject": "maths",
       "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1"
+      ],
       "title": "Additionner et soustraire",
-      "summary": "Poser ses opérations sans se tromper de retenue.",
+      "summary": "Le sens des deux opérations, en calcul mental puis posé.",
       "order": 2,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c2-maths"
     },
     {
-      "id": "maths-primaire-les-tables-de-multiplication",
+      "id": "maths-primaire-les-nombres-jusqu-a-10-000",
       "subject": "maths",
       "level": "primaire",
-      "title": "Les tables de multiplication",
-      "summary": "Mémoriser ses tables par le jeu plutôt que par cœur.",
+      "grades": [
+        "CE1",
+        "CE2"
+      ],
+      "title": "Les nombres jusqu'à 10 000",
+      "summary": "Les milliers, la numération de position et les comparaisons.",
       "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c2-maths"
     },
     {
-      "id": "maths-primaire-les-formes-geometriques",
+      "id": "maths-primaire-multiplier-et-les-tables",
       "subject": "maths",
       "level": "primaire",
-      "title": "Les formes géométriques",
-      "summary": "Reconnaître carrés, triangles, cercles et leurs propriétés.",
+      "grades": [
+        "CE1",
+        "CE2"
+      ],
+      "title": "Multiplier et les tables",
+      "summary": "Mémoriser les tables et comprendre ce que multiplier veut dire.",
       "order": 4,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c2-maths"
     },
     {
-      "id": "maths-primaire-mesurer-des-longueurs",
+      "id": "maths-primaire-diviser-et-partager",
       "subject": "maths",
       "level": "primaire",
-      "title": "Mesurer des longueurs",
-      "summary": "Du centimètre au kilomètre, choisir la bonne unité.",
+      "grades": [
+        "CE2",
+        "CM1"
+      ],
+      "title": "Diviser et partager",
+      "summary": "La division posée, et les problèmes de partage et de groupement.",
       "order": 5,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c3-maths"
     },
     {
-      "id": "maths-college-les-fractions",
+      "id": "maths-primaire-les-fractions",
       "subject": "maths",
-      "level": "college",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
       "title": "Les fractions",
-      "summary": "Comparer, additionner et simplifier des fractions sans paniquer.",
-      "order": 1,
-      "status": "bientot"
+      "summary": "Partager l'unité, comparer, additionner des fractions simples.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c3-maths"
     },
     {
-      "id": "maths-college-les-nombres-relatifs",
+      "id": "maths-primaire-les-nombres-decimaux",
       "subject": "maths",
-      "level": "college",
-      "title": "Les nombres relatifs",
-      "summary": "Additionner et multiplier des nombres négatifs.",
-      "order": 2,
-      "status": "bientot"
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Les nombres décimaux",
+      "summary": "Dixièmes, centièmes : écrire, comparer et calculer avec la virgule.",
+      "order": 7,
+      "status": "bientot",
+      "source": "c3-maths"
     },
     {
-      "id": "maths-college-la-proportionnalite",
+      "id": "maths-primaire-longueurs-masses-et-contenances",
       "subject": "maths",
-      "level": "college",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Longueurs, masses et contenances",
+      "summary": "Estimer, mesurer, convertir les grandeurs du quotidien.",
+      "order": 8,
+      "status": "bientot",
+      "source": "c2-maths"
+    },
+    {
+      "id": "maths-primaire-le-temps-et-les-durees",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CE1",
+        "CE2",
+        "CM1"
+      ],
+      "title": "Le temps et les durées",
+      "summary": "Lire l'heure, calculer une durée, se repérer dans la journée.",
+      "order": 9,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "maths-primaire-perimetres-aires-et-angles",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Périmètres, aires et angles",
+      "summary": "Mesurer le tour d'une figure, sa surface, et comparer des angles.",
+      "order": 10,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "maths-primaire-figures-planes-et-solides",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Figures planes et solides",
+      "summary": "Reconnaître, décrire et construire les formes de base.",
+      "order": 11,
+      "status": "bientot",
+      "source": "c2-maths"
+    },
+    {
+      "id": "maths-primaire-geometrie-droites-cercles-polygones",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Droites, cercles et polygones",
+      "summary": "Tracer à la règle et au compas, et justifier ses constructions.",
+      "order": 12,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "maths-primaire-se-reperer-et-se-deplacer",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CE1",
+        "CE2",
+        "CM1"
+      ],
+      "title": "Se repérer et se déplacer",
+      "summary": "Lire un plan, coder un déplacement, utiliser un quadrillage.",
+      "order": 13,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "maths-primaire-tableaux-graphiques-et-hasard",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Tableaux, graphiques et hasard",
+      "summary": "Lire des données, les représenter, et faire ses premières probabilités.",
+      "order": 14,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "maths-primaire-la-proportionnalite",
+      "subject": "maths",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
       "title": "La proportionnalité",
-      "summary": "Reconnaître une situation proportionnelle et appliquer un pourcentage.",
+      "summary": "Recettes, échelles, prix : reconnaître et utiliser les proportions.",
+      "order": 15,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "physique-chimie-primaire-masses-volumes-et-temperatures",
+      "subject": "physique-chimie",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Masses, volumes et températures",
+      "summary": "Peser, mesurer un volume, lire un thermomètre.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "physique-chimie-primaire-les-etats-de-la-matiere",
+      "subject": "physique-chimie",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Les états de la matière",
+      "summary": "Solide, liquide, gaz : observer et provoquer les changements d'état.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "physique-chimie-primaire-les-circuits-electriques",
+      "subject": "physique-chimie",
+      "level": "primaire",
+      "grades": [
+        "CE1"
+      ],
+      "title": "Les circuits électriques",
+      "summary": "Allumer une ampoule, comprendre un circuit, travailler en sécurité.",
       "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "physique-chimie-primaire-melanges-et-solutions",
+      "subject": "physique-chimie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Mélanges et solutions",
+      "summary": "Ce qui se dissout, ce qui se sépare, et comment trier.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "physique-chimie-primaire-decrire-un-mouvement",
+      "subject": "physique-chimie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Décrire un mouvement",
+      "summary": "Trajectoire et vitesse : dire comment un objet se déplace.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "physique-chimie-primaire-lumiere-et-son",
+      "subject": "physique-chimie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Lumière et son",
+      "summary": "Les signaux qui nous renseignent : ombre, propagation, perception.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "informatique-primaire-les-objets-techniques",
+      "subject": "informatique",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Les objets techniques autour de nous",
+      "summary": "À quoi sert un objet, de quoi est-il fait, comment est-il né.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "informatique-primaire-comment-ca-marche",
+      "subject": "informatique",
+      "level": "primaire",
+      "grades": [
+        "CM1"
+      ],
+      "title": "Comment ça marche ?",
+      "summary": "Décrire le fonctionnement et les pièces d'un objet technique.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "informatique-primaire-concevoir-un-objet",
+      "subject": "informatique",
+      "level": "primaire",
+      "grades": [
+        "CM2"
+      ],
+      "title": "Concevoir et réaliser un objet",
+      "summary": "Du besoin au prototype : la démarche de conception.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "informatique-primaire-programmer-des-deplacements",
+      "subject": "informatique",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Programmer des déplacements",
+      "summary": "Faire avancer un robot ou un lutin avec une suite d'instructions.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "informatique-primaire-boucles-et-conditions",
+      "subject": "informatique",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Boucles et conditions",
+      "summary": "Répéter, choisir : les deux briques qui changent tout.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "informatique-primaire-programmer-un-objet-technique",
+      "subject": "informatique",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Programmer un objet technique",
+      "summary": "Donner des consignes à un objet pour qu'il agisse tout seul.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-unite-et-diversite-du-vivant",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE2",
+        "CM1"
+      ],
+      "title": "L'unité et la diversité du vivant",
+      "summary": "Trier et classer les êtres vivants, découvrir ce qu'ils ont en commun.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-se-nourrir-et-percevoir",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CE1"
+      ],
+      "title": "Se nourrir et percevoir",
+      "summary": "La nutrition des êtres vivants, les sens et la perception animale.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-naitre-grandir-se-reproduire",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CE2",
+        "CM1"
+      ],
+      "title": "Naître, grandir, se reproduire",
+      "summary": "Les cycles de vie des animaux et des plantes.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-les-ecosystemes",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Les écosystèmes",
+      "summary": "Qui mange qui, et comment un milieu tient en équilibre.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-la-terre-une-planete-active",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "La Terre, une planète active",
+      "summary": "Volcans, séismes, saisons : une planète qui ne tient pas en place.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-proteger-son-environnement",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Protéger son environnement",
+      "summary": "Observer son milieu proche et agir pour le préserver.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-alimentation-et-sante",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CE1",
+        "CE2",
+        "CM2"
+      ],
+      "title": "Alimentation et santé",
+      "summary": "Bien manger, bouger, dormir : les besoins du corps.",
+      "order": 7,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "svt-primaire-le-cerveau-et-la-puberte",
+      "subject": "svt",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Le cerveau et la puberté",
+      "summary": "Quelques grandes fonctions du cerveau, et les transformations du corps.",
+      "order": 8,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "maths-college-nombres-entiers-et-decimaux",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "6e"
+      ],
+      "title": "Nombres entiers et décimaux",
+      "summary": "Reprendre la numération, poser les quatre opérations sans trembler.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c3-maths"
+    },
+    {
+      "id": "maths-college-fractions-et-proportions",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "6e",
+        "5e"
+      ],
+      "title": "Fractions et proportions",
+      "summary": "Comparer, additionner, soustraire des fractions de dénominateurs quelconques.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-priorites-et-nombres-relatifs",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Priorités et nombres relatifs",
+      "summary": "L'ordre des opérations, l'opposé, la valeur absolue, et le calcul signé.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-puissances-et-racine-carree",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Puissances et racine carrée",
+      "summary": "Écrire des nombres très grands ou très petits, et extraire une racine.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-calcul-litteral",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Le calcul littéral",
+      "summary": "Développer, factoriser, réduire : apprivoiser la lettre.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-equations-et-problemes",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Équations et problèmes",
+      "summary": "Traduire un énoncé en équation, puis la résoudre.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-multiples-diviseurs-et-arithmetique",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Multiples, diviseurs et arithmétique",
+      "summary": "Critères de divisibilité, multiples communs, et fractions irréductibles.",
+      "order": 7,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-reperage-et-perspective",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Repérage et perspective",
+      "summary": "Se repérer dans un plan, représenter l'espace en perspective cavalière.",
+      "order": 8,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-angles-et-triangles",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "Angles et triangles",
+      "summary": "Angles alternes-internes, somme des angles, hauteurs et médianes.",
+      "order": 9,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-parallelogrammes-et-aires",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Parallélogrammes et aires",
+      "summary": "Propriétés caractéristiques, rectangle, losange, carré, et calculs d'aires.",
+      "order": 10,
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
       "id": "maths-college-le-theoreme-de-pythagore",
       "subject": "maths",
       "level": "college",
+      "grades": [
+        "4e"
+      ],
       "title": "Le théorème de Pythagore",
       "summary": "Calculer un côté d'un triangle rectangle, et reconnaître un angle droit.",
-      "order": 4,
+      "order": 11,
       "status": "disponible",
+      "source": "c4-maths",
       "content": "chapters/maths-college-pythagore.json",
       "objectives": [
         "Nommer l'hypoténuse et les côtés de l'angle droit",
@@ -144,688 +814,1399 @@
       ]
     },
     {
-      "id": "maths-college-les-equations-du-premier-degre",
-      "subject": "maths",
-      "level": "college",
-      "title": "Les équations du premier degré",
-      "summary": "Trouver l'inconnue en gardant l'équilibre de l'égalité.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
       "id": "maths-college-le-theoreme-de-thales",
       "subject": "maths",
       "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
       "title": "Le théorème de Thalès",
-      "summary": "Calculer des longueurs dans une configuration de droites parallèles.",
-      "order": 6,
-      "status": "bientot"
+      "summary": "Longueurs dans une configuration de droites parallèles, et agrandissements.",
+      "order": 12,
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
-      "id": "maths-college-statistiques-et-moyennes",
+      "id": "maths-college-la-trigonometrie",
       "subject": "maths",
       "level": "college",
-      "title": "Statistiques et moyennes",
-      "summary": "Lire un tableau, calculer une moyenne, une médiane, une étendue.",
+      "grades": [
+        "3e"
+      ],
+      "title": "La trigonométrie",
+      "summary": "Sinus, cosinus, tangente : retrouver un angle ou une longueur.",
+      "order": 13,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-transformations-et-vecteurs",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Transformations et vecteurs",
+      "summary": "Demi-tour, translations, et première approche des vecteurs.",
+      "order": 14,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-statistiques-et-probabilites",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Statistiques et probabilités",
+      "summary": "Effectifs, fréquences, moyenne, et probabilité d'un évènement.",
+      "order": 15,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "maths-college-proportionnalite-et-fonctions",
+      "subject": "maths",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Proportionnalité et fonctions",
+      "summary": "Pourcentages, vitesses, échelles, puis la notion de fonction.",
+      "order": 16,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "physique-chimie-college-etats-et-constitution-de-la-matiere",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "États et constitution de la matière",
+      "summary": "Masse, volume, masse volumique, et ce qui change lors d'un changement d'état.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-melanges-corps-purs-et-solutions",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Mélanges, corps purs et solutions",
+      "summary": "Dissolution, miscibilité, techniques de séparation.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-atomes-molecules-et-reactions",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Atomes, molécules et réactions chimiques",
+      "summary": "Décrire la matière à l'échelle microscopique et équilibrer une réaction.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-mouvements-et-vitesse",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Mouvements et vitesse",
+      "summary": "Décrire un mouvement, calculer une vitesse, changer de référentiel.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-forces-et-interactions",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Forces et interactions",
+      "summary": "Modéliser une action par une force, et le poids d'un corps.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-energie-transferts-et-conversions",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Énergie : transferts et conversions",
+      "summary": "Formes d'énergie, conservation, puissance et consommation.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-electricite-circuits-et-lois",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Électricité : circuits et lois",
+      "summary": "Tension, intensité, loi d'Ohm, sécurité électrique.",
       "order": 7,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "maths-lycee-les-fonctions-affines",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "Les fonctions affines",
-      "summary": "Lire un coefficient directeur et tracer une droite.",
+      "id": "physique-chimie-college-lumiere-et-signaux",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Lumière et signaux",
+      "summary": "Propagation de la lumière, vision, son, et transmission d'information.",
+      "order": 8,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "physique-chimie-college-gravitation-et-systeme-solaire",
+      "subject": "physique-chimie",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Gravitation et Système solaire",
+      "summary": "L'attraction universelle, les planètes, le poids sur d'autres astres.",
+      "order": 9,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "informatique-college-algorithmes-et-instructions",
+      "subject": "informatique",
+      "level": "college",
+      "grades": [
+        "6e",
+        "5e"
+      ],
+      "title": "Algorithmes et instructions",
+      "summary": "Séquencer des instructions, repérer entrées et sorties d'un programme.",
       "order": 1,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
-      "id": "maths-lycee-le-second-degre",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "Le second degré",
-      "summary": "Discriminant, racines et signe d'un trinôme.",
+      "id": "informatique-college-boucles-et-conditions",
+      "subject": "informatique",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Boucles et conditions",
+      "summary": "Répéter, tester : écrire des programmes qui décident.",
       "order": 2,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
-      "id": "maths-lycee-les-suites-numeriques",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "Les suites numériques",
-      "summary": "Suites arithmétiques, géométriques et limites.",
+      "id": "informatique-college-variables-et-expressions",
+      "subject": "informatique",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Variables et expressions",
+      "summary": "Stocker une valeur, traduire une formule en expression informatique.",
       "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
-      "id": "maths-lycee-la-derivation",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "La dérivation",
-      "summary": "Nombre dérivé, tangente et variations d'une fonction.",
+      "id": "informatique-college-programmer-par-blocs",
+      "subject": "informatique",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Programmer par blocs",
+      "summary": "Construire un projet complet dans un langage visuel.",
       "order": 4,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
-      "id": "maths-lycee-trigonometrie",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "Trigonométrie",
-      "summary": "Cercle trigonométrique, sinus, cosinus et équations.",
+      "id": "informatique-college-le-tableur",
+      "subject": "informatique",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Le tableur",
+      "summary": "Formules, recopie, graphiques : calculer sur des données.",
       "order": 5,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-maths"
     },
     {
-      "id": "maths-lycee-probabilites-conditionnelles",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "Probabilités conditionnelles",
-      "summary": "Arbres pondérés, indépendance et formule des probabilités totales.",
+      "id": "informatique-college-objets-connectes-et-capteurs",
+      "subject": "informatique",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Objets connectés et capteurs",
+      "summary": "Acquérir une mesure, la traiter, commander un actionneur.",
       "order": 6,
-      "status": "bientot"
-    },
-    {
-      "id": "maths-lycee-vecteurs-et-geometrie-reperee",
-      "subject": "maths",
-      "level": "lycee",
-      "title": "Vecteurs et géométrie repérée",
-      "summary": "Coordonnées, colinéarité et équations de droites.",
-      "order": 7,
-      "status": "bientot"
-    },
-    {
-      "id": "maths-universite-limites-et-continuite",
-      "subject": "maths",
-      "level": "universite",
-      "title": "Limites et continuité",
-      "summary": "Définition par epsilon, théorèmes de comparaison et prolongements.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "maths-universite-calcul-integral",
-      "subject": "maths",
-      "level": "universite",
-      "title": "Calcul intégral",
-      "summary": "Primitives, intégration par parties et changement de variable.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "maths-universite-algebre-lineaire",
-      "subject": "maths",
-      "level": "universite",
-      "title": "Algèbre linéaire",
-      "summary": "Espaces vectoriels, matrices, déterminants et diagonalisation.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "maths-universite-series-numeriques",
-      "subject": "maths",
-      "level": "universite",
-      "title": "Séries numériques",
-      "summary": "Convergence, critères de comparaison et séries entières.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "maths-universite-probabilites-et-variables-aleatoires",
-      "subject": "maths",
-      "level": "universite",
-      "title": "Probabilités et variables aléatoires",
-      "summary": "Lois usuelles, espérance, variance et théorème central limite.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-primaire-les-etats-de-la-matiere",
-      "subject": "physique-chimie",
-      "level": "primaire",
-      "title": "Les états de la matière",
-      "summary": "Solide, liquide, gaz : observer les changements d'état.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-primaire-la-lumiere-et-les-ombres",
-      "subject": "physique-chimie",
-      "level": "primaire",
-      "title": "La lumière et les ombres",
-      "summary": "Sources de lumière, propagation et formation des ombres.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-primaire-les-aimants",
-      "subject": "physique-chimie",
-      "level": "primaire",
-      "title": "Les aimants",
-      "summary": "Attirer, repousser, et découvrir les pôles.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-primaire-melanges-et-solutions",
-      "subject": "physique-chimie",
-      "level": "primaire",
-      "title": "Mélanges et solutions",
-      "summary": "Ce qui se dissout, ce qui se sépare, et comment filtrer.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-college-les-circuits-electriques",
-      "subject": "physique-chimie",
-      "level": "college",
-      "title": "Les circuits électriques",
-      "summary": "Série, dérivation, interrupteurs et sens du courant.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-college-masse-volume-et-masse-volumique",
-      "subject": "physique-chimie",
-      "level": "college",
-      "title": "Masse, volume et masse volumique",
-      "summary": "Mesurer, calculer, et prévoir si un objet flotte.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-college-atomes-et-molecules",
-      "subject": "physique-chimie",
-      "level": "college",
-      "title": "Atomes et molécules",
-      "summary": "De quoi la matière est faite, et comment on l'écrit.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-college-vitesse-et-mouvement",
-      "subject": "physique-chimie",
-      "level": "college",
-      "title": "Vitesse et mouvement",
-      "summary": "Calculer une vitesse moyenne et lire un graphique de position.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-college-les-transformations-chimiques",
-      "subject": "physique-chimie",
-      "level": "college",
-      "title": "Les transformations chimiques",
-      "summary": "Réactifs, produits et conservation de la masse.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-college-la-lumiere-et-les-couleurs",
-      "subject": "physique-chimie",
-      "level": "college",
-      "title": "La lumière et les couleurs",
-      "summary": "Décomposition de la lumière blanche et synthèse des couleurs.",
-      "order": 6,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-lycee-les-lois-de-newton",
-      "subject": "physique-chimie",
-      "level": "lycee",
-      "title": "Les lois de Newton",
-      "summary": "Principe d'inertie, deuxième loi et actions réciproques.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-lycee-energie-mecanique",
-      "subject": "physique-chimie",
-      "level": "lycee",
-      "title": "Énergie mécanique",
-      "summary": "Énergie cinétique, potentielle et conservation.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-lycee-ondes-et-signaux",
-      "subject": "physique-chimie",
-      "level": "lycee",
-      "title": "Ondes et signaux",
-      "summary": "Période, fréquence, longueur d'onde et effet Doppler.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-lycee-reactions-acido-basiques",
-      "subject": "physique-chimie",
-      "level": "lycee",
-      "title": "Réactions acido-basiques",
-      "summary": "pH, couples acide-base et titrages.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-lycee-optique-geometrique",
-      "subject": "physique-chimie",
-      "level": "lycee",
-      "title": "Optique géométrique",
-      "summary": "Lentilles minces, images et relations de conjugaison.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-lycee-chimie-organique",
-      "subject": "physique-chimie",
-      "level": "lycee",
-      "title": "Chimie organique",
-      "summary": "Groupes caractéristiques, nomenclature et mécanismes simples.",
-      "order": 6,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-universite-thermodynamique",
-      "subject": "physique-chimie",
-      "level": "universite",
-      "title": "Thermodynamique",
-      "summary": "Premier et second principes, entropie et machines thermiques.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-universite-electromagnetisme",
-      "subject": "physique-chimie",
-      "level": "universite",
-      "title": "Électromagnétisme",
-      "summary": "Équations de Maxwell et propagation des ondes.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-universite-mecanique-quantique-introduction",
-      "subject": "physique-chimie",
-      "level": "universite",
-      "title": "Mécanique quantique — introduction",
-      "summary": "Dualité onde-corpuscule, équation de Schrödinger, puits de potentiel.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "physique-chimie-universite-cinetique-chimique",
-      "subject": "physique-chimie",
-      "level": "universite",
-      "title": "Cinétique chimique",
-      "summary": "Ordres de réaction, lois de vitesse et catalyse.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-primaire-les-algorithmes-du-quotidien",
-      "subject": "informatique",
-      "level": "primaire",
-      "title": "Les algorithmes du quotidien",
-      "summary": "Une recette, un trajet : des suites d'instructions partout.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-primaire-se-reperer-sur-un-quadrillage",
-      "subject": "informatique",
-      "level": "primaire",
-      "title": "Se repérer sur un quadrillage",
-      "summary": "Déplacements, coordonnées et programmation d'un robot.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-primaire-qu-est-ce-qu-un-ordinateur",
-      "subject": "informatique",
-      "level": "primaire",
-      "title": "Qu'est-ce qu'un ordinateur ?",
-      "summary": "Écran, mémoire, processeur : à quoi sert chaque partie.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-primaire-internet-en-securite",
-      "subject": "informatique",
-      "level": "primaire",
-      "title": "Internet en sécurité",
-      "summary": "Mot de passe, vie privée et esprit critique.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-college-variables-et-boucles",
-      "subject": "informatique",
-      "level": "college",
-      "title": "Variables et boucles",
-      "summary": "Stocker une valeur et répéter des instructions.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-college-les-conditions",
-      "subject": "informatique",
-      "level": "college",
-      "title": "Les conditions",
-      "summary": "Faire un choix dans un programme avec si, sinon.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-college-le-binaire",
-      "subject": "informatique",
-      "level": "college",
-      "title": "Le binaire",
-      "summary": "Compter en base 2 et comprendre les octets.",
-      "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
       "id": "informatique-college-reseaux-et-internet",
       "subject": "informatique",
       "level": "college",
-      "title": "Réseaux et Internet",
-      "summary": "Adresses IP, protocoles et trajet d'un message.",
-      "order": 4,
-      "status": "bientot"
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Réseaux et internet",
+      "summary": "Comment circulent les données, et ce qu'elles laissent derrière elles.",
+      "order": 7,
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-college-premiers-pas-en-python",
-      "subject": "informatique",
+      "id": "svt-college-la-planete-terre-et-les-risques",
+      "subject": "svt",
       "level": "college",
-      "title": "Premiers pas en Python",
-      "summary": "Écrire, exécuter et corriger un petit programme.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "informatique-lycee-fonctions-et-modularite",
-      "subject": "informatique",
-      "level": "lycee",
-      "title": "Fonctions et modularité",
-      "summary": "Découper un programme en fonctions réutilisables.",
+      "grades": [
+        "4e"
+      ],
+      "title": "La planète Terre et les risques",
+      "summary": "Séismes, volcans, tectonique des plaques, et prévention.",
       "order": 1,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-lycee-listes-et-dictionnaires",
-      "subject": "informatique",
-      "level": "lycee",
-      "title": "Listes et dictionnaires",
-      "summary": "Choisir la bonne structure de données.",
+      "id": "svt-college-meteo-climat-et-changement-climatique",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "5e",
+        "3e"
+      ],
+      "title": "Météo, climat et changement climatique",
+      "summary": "Distinguer météo et climat, comprendre le réchauffement en cours.",
       "order": 2,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-lycee-algorithmes-de-tri",
-      "subject": "informatique",
-      "level": "lycee",
-      "title": "Algorithmes de tri",
-      "summary": "Tri par insertion, tri fusion et comparaison des coûts.",
+      "id": "svt-college-l-eau-et-les-ressources",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "L'eau et les ressources",
+      "summary": "Cycle de l'eau, érosion, exploitation et gestion des ressources.",
       "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-lycee-bases-de-donnees-relationnelles",
-      "subject": "informatique",
-      "level": "lycee",
-      "title": "Bases de données relationnelles",
-      "summary": "Modèle, clés et requêtes SQL.",
+      "id": "svt-college-la-cellule-et-l-organisation-du-vivant",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "5e",
+        "3e"
+      ],
+      "title": "La cellule et l'organisation du vivant",
+      "summary": "L'unité cellulaire, du micro-organisme à l'organisme pluricellulaire.",
       "order": 4,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-lycee-architecture-et-systemes",
-      "subject": "informatique",
-      "level": "lycee",
-      "title": "Architecture et systèmes",
-      "summary": "Processeur, mémoire, processus et systèmes d'exploitation.",
+      "id": "svt-college-nutrition-et-besoins-des-etres-vivants",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Nutrition et besoins des êtres vivants",
+      "summary": "Comment les plantes et les animaux se procurent matière et énergie.",
       "order": 5,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-lycee-recursivite",
-      "subject": "informatique",
-      "level": "lycee",
-      "title": "Récursivité",
-      "summary": "Écrire une fonction qui s'appelle elle-même, sans tourner en rond.",
+      "id": "svt-college-reproduction-et-peuplement-des-milieux",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "4e"
+      ],
+      "title": "Reproduction et peuplement des milieux",
+      "summary": "Reproduction sexuée et asexuée, et occupation des milieux.",
       "order": 6,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "c4-2020"
     },
     {
-      "id": "informatique-universite-complexite-algorithmique",
-      "subject": "informatique",
-      "level": "universite",
-      "title": "Complexité algorithmique",
-      "summary": "Notation grand-O, bornes et analyse amortie.",
+      "id": "svt-college-genetique-et-heredite",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Génétique et hérédité",
+      "summary": "Chromosomes, ADN, gènes : comment se transmettent les caractères.",
+      "order": 7,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "svt-college-evolution-et-biodiversite",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Évolution et biodiversité",
+      "summary": "Parenté entre espèces, sélection naturelle, histoire du vivant.",
+      "order": 8,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "svt-college-digestion-respiration-circulation",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "Digestion, respiration, circulation",
+      "summary": "Comment le corps approvisionne ses organes.",
+      "order": 9,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "svt-college-systeme-nerveux-et-hormones",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "4e"
+      ],
+      "title": "Système nerveux et hormones",
+      "summary": "Commande du mouvement, communication interne, puberté.",
+      "order": 10,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "svt-college-immunite-et-sante",
+      "subject": "svt",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Immunité et santé",
+      "summary": "Micro-organismes, défenses de l'organisme, vaccination.",
+      "order": 11,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "maths-lycee-logique-et-ensembles",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Logique et raisonnement",
+      "summary": "Implication, équivalence, contre-exemple : parler juste en mathématiques.",
       "order": 1,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-maths"
     },
     {
-      "id": "informatique-universite-theorie-des-graphes",
-      "subject": "informatique",
-      "level": "universite",
-      "title": "Théorie des graphes",
-      "summary": "Parcours, plus courts chemins et arbres couvrants.",
+      "id": "maths-lycee-calcul-numerique-et-algebrique",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Calcul numérique et algébrique",
+      "summary": "Puissances, racines, identités remarquables, équations et inéquations.",
       "order": 2,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-maths"
     },
     {
-      "id": "informatique-universite-programmation-orientee-objet",
-      "subject": "informatique",
-      "level": "universite",
-      "title": "Programmation orientée objet",
-      "summary": "Encapsulation, héritage, polymorphisme et conception.",
+      "id": "maths-lycee-fonctions-de-reference",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Les fonctions de référence",
+      "summary": "Affine, carré, inverse : lire, tracer, comparer.",
       "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-maths"
     },
     {
-      "id": "informatique-universite-apprentissage-automatique",
-      "subject": "informatique",
-      "level": "universite",
-      "title": "Apprentissage automatique",
-      "summary": "Régression, classification, sur-apprentissage et validation.",
+      "id": "maths-lycee-geometrie-reperee",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Géométrie repérée",
+      "summary": "Coordonnées, vecteurs, équations de droites.",
       "order": 4,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-maths"
     },
     {
-      "id": "informatique-universite-calculabilite",
-      "subject": "informatique",
-      "level": "universite",
-      "title": "Calculabilité",
-      "summary": "Machines de Turing, décidabilité et problème de l'arrêt.",
+      "id": "maths-lycee-statistiques-et-probabilites-2de",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Statistiques et probabilités",
+      "summary": "Indicateurs, échantillonnage, modèle d'équiprobabilité.",
       "order": 5,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-maths"
     },
     {
-      "id": "svt-primaire-le-corps-humain",
-      "subject": "svt",
-      "level": "primaire",
-      "title": "Le corps humain",
-      "summary": "Squelette, muscles et organes : à quoi sert quoi.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-primaire-les-cinq-sens",
-      "subject": "svt",
-      "level": "primaire",
-      "title": "Les cinq sens",
-      "summary": "Voir, entendre, sentir, goûter, toucher.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-primaire-les-plantes",
-      "subject": "svt",
-      "level": "primaire",
-      "title": "Les plantes",
-      "summary": "Graine, racine, tige, feuille : comment une plante grandit.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-primaire-les-animaux-et-leurs-milieux",
-      "subject": "svt",
-      "level": "primaire",
-      "title": "Les animaux et leurs milieux",
-      "summary": "Régimes alimentaires, habitats et chaînes alimentaires.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-primaire-bien-manger-bien-dormir",
-      "subject": "svt",
-      "level": "primaire",
-      "title": "Bien manger, bien dormir",
-      "summary": "Équilibre alimentaire et rythme de vie.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-college-la-cellule",
-      "subject": "svt",
-      "level": "college",
-      "title": "La cellule",
-      "summary": "L'unité de base du vivant, au microscope.",
-      "order": 1,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-college-la-digestion",
-      "subject": "svt",
-      "level": "college",
-      "title": "La digestion",
-      "summary": "Le trajet des aliments et l'absorption des nutriments.",
-      "order": 2,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-college-la-respiration-et-la-circulation",
-      "subject": "svt",
-      "level": "college",
-      "title": "La respiration et la circulation",
-      "summary": "Du poumon au muscle, le voyage du dioxygène.",
-      "order": 3,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-college-seismes-et-volcans",
-      "subject": "svt",
-      "level": "college",
-      "title": "Séismes et volcans",
-      "summary": "Pourquoi la Terre tremble et crache du feu.",
-      "order": 4,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-college-la-reproduction",
-      "subject": "svt",
-      "level": "college",
-      "title": "La reproduction",
-      "summary": "De la fécondation au développement.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-college-la-biodiversite",
-      "subject": "svt",
-      "level": "college",
-      "title": "La biodiversité",
-      "summary": "Classer le vivant et comprendre les équilibres.",
+      "id": "maths-lycee-suites-numeriques",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "Les suites numériques",
+      "summary": "Arithmétiques, géométriques, et modèles discrets.",
       "order": 6,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "1re-maths"
     },
     {
-      "id": "svt-lycee-adn-et-genetique",
-      "subject": "svt",
+      "id": "maths-lycee-second-degre",
+      "subject": "maths",
       "level": "lycee",
-      "title": "ADN et génétique",
-      "summary": "Gènes, allèles, mutations et transmission.",
+      "grades": [
+        "1re"
+      ],
+      "title": "Le second degré",
+      "summary": "Discriminant, racines, signe du trinôme.",
+      "order": 7,
+      "status": "bientot",
+      "source": "1re-maths"
+    },
+    {
+      "id": "maths-lycee-derivation",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "La dérivation",
+      "summary": "Nombre dérivé, tangente, variations d'une fonction.",
+      "order": 8,
+      "status": "bientot",
+      "source": "1re-maths"
+    },
+    {
+      "id": "maths-lycee-exponentielle-et-logarithme",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Exponentielle et logarithme",
+      "summary": "Les deux fonctions qui décrivent croissance et décroissance.",
+      "order": 9,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "maths-lycee-trigonometrie-et-fonctions-circulaires",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Trigonométrie et fonctions circulaires",
+      "summary": "Cercle trigonométrique, sinus et cosinus comme fonctions.",
+      "order": 10,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "maths-lycee-limites-et-continuite",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Limites et continuité",
+      "summary": "Comportement d'une fonction aux bornes, théorème des valeurs intermédiaires.",
+      "order": 11,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "maths-lycee-primitives-et-integration",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Primitives et intégration",
+      "summary": "Calculer une aire, remonter d'une dérivée à la fonction.",
+      "order": 12,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "maths-lycee-geometrie-dans-l-espace",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Géométrie dans l'espace",
+      "summary": "Vecteurs, produit scalaire, droites et plans.",
+      "order": 13,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "maths-lycee-probabilites-conditionnelles-et-lois",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Probabilités conditionnelles et lois",
+      "summary": "Arbre pondéré, indépendance, loi binomiale, concentration.",
+      "order": 14,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "maths-lycee-algorithmique-et-programmation-maths",
+      "subject": "maths",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Algorithmique et programmation",
+      "summary": "Listes, boucles, fonctions : programmer pour conjecturer.",
+      "order": 15,
+      "status": "bientot",
+      "source": "2de-maths"
+    },
+    {
+      "id": "physique-chimie-lycee-constitution-de-la-matiere",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re"
+      ],
+      "title": "La constitution de la matière",
+      "summary": "Entités chimiques, mole, solutions, et structure des molécules.",
       "order": 1,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-pc"
     },
     {
-      "id": "svt-lycee-l-evolution",
-      "subject": "svt",
+      "id": "physique-chimie-lycee-transformations-chimiques",
+      "subject": "physique-chimie",
       "level": "lycee",
-      "title": "L'évolution",
-      "summary": "Sélection naturelle, dérive génétique et spéciation.",
+      "grades": [
+        "2de",
+        "1re"
+      ],
+      "title": "Les transformations chimiques",
+      "summary": "Réactifs, produits, bilan de matière, réaction totale ou non.",
       "order": 2,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "2de-pc"
     },
     {
-      "id": "svt-lycee-le-systeme-immunitaire",
+      "id": "physique-chimie-lycee-acides-bases-et-titrages",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Acides, bases et titrages",
+      "summary": "pH, couples acide-base, dosage par titrage.",
+      "order": 3,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-cinetique-et-equilibres",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Cinétique et équilibres chimiques",
+      "summary": "Vitesse d'une réaction, état d'équilibre, évolution spontanée.",
+      "order": 4,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-mouvement-et-interactions",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Mouvement et interactions",
+      "summary": "Vecteurs vitesse et accélération, principe d'inertie, lois de Newton.",
+      "order": 5,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-champs-et-gravitation",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Champs et gravitation",
+      "summary": "Interaction gravitationnelle, champ électrique, mouvement des satellites.",
+      "order": 6,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-energie-travail-et-puissance",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Énergie, travail et puissance",
+      "summary": "Travail d'une force, énergies cinétique et potentielle, rendements.",
+      "order": 7,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-ondes-et-signaux",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Ondes et signaux",
+      "summary": "Son, lumière, lentilles, et propagation d'un signal.",
+      "order": 8,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-thermodynamique-et-transferts",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Transferts thermiques",
+      "summary": "Bilan d'énergie, loi de refroidissement, isolation.",
+      "order": 9,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "physique-chimie-lycee-mesure-et-incertitudes",
+      "subject": "physique-chimie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Mesure et incertitudes",
+      "summary": "Chiffres significatifs, dispersion, incertitude-type.",
+      "order": 10,
+      "status": "bientot",
+      "source": "2de-pc"
+    },
+    {
+      "id": "informatique-lycee-internet-et-le-web",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Internet et le Web",
+      "summary": "Protocoles, routage, client-serveur, HTML et moteurs de recherche.",
+      "order": 1,
+      "status": "bientot",
+      "source": "snt"
+    },
+    {
+      "id": "informatique-lycee-reseaux-sociaux-et-donnees-personnelles",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Réseaux sociaux et données personnelles",
+      "summary": "Graphes de relations, modèles économiques, traces et cyberviolence.",
+      "order": 2,
+      "status": "bientot",
+      "source": "snt"
+    },
+    {
+      "id": "informatique-lycee-donnees-structurees-et-traitement",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re"
+      ],
+      "title": "Données structurées et traitement",
+      "summary": "Tables, formats ouverts, tri, filtrage, données massives.",
+      "order": 3,
+      "status": "bientot",
+      "source": "snt"
+    },
+    {
+      "id": "informatique-lycee-localisation-photo-et-objets-connectes",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Localisation, photo numérique et objets connectés",
+      "summary": "GPS, cartographie, image numérique, informatique embarquée.",
+      "order": 4,
+      "status": "bientot",
+      "source": "snt"
+    },
+    {
+      "id": "informatique-lycee-representation-des-donnees",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "La représentation des données",
+      "summary": "Binaire, entiers, flottants, texte, booléens.",
+      "order": 5,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "informatique-lycee-langages-et-programmation",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Langages et programmation",
+      "summary": "Types, fonctions, spécification, mise au point d'un programme.",
+      "order": 6,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "informatique-lycee-structures-de-donnees",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Les structures de données",
+      "summary": "Listes, piles, files, dictionnaires, arbres et graphes.",
+      "order": 7,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "informatique-lycee-algorithmique-tri-et-recherche",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Algorithmique : tri, recherche, parcours",
+      "summary": "Coût d'un algorithme, dichotomie, tris, parcours de graphes.",
+      "order": 8,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "informatique-lycee-bases-de-donnees-et-sql",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Bases de données et SQL",
+      "summary": "Modèle relationnel, requêtes, cohérence des données.",
+      "order": 9,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "informatique-lycee-architectures-systemes-et-reseaux",
+      "subject": "informatique",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Architectures, systèmes et réseaux",
+      "summary": "Processeur, système d'exploitation, protocoles de routage.",
+      "order": 10,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "svt-lycee-organisation-fonctionnelle-du-vivant",
       "subject": "svt",
       "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "L'organisation fonctionnelle du vivant",
+      "summary": "De la cellule spécialisée à l'organisme, et le métabolisme.",
+      "order": 1,
+      "status": "bientot",
+      "source": "2de-svt"
+    },
+    {
+      "id": "svt-lycee-adn-genes-et-expression",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re"
+      ],
+      "title": "ADN, gènes et expression génétique",
+      "summary": "Du gène à la protéine, mutations et variabilité.",
+      "order": 2,
+      "status": "bientot",
+      "source": "spe-svt"
+    },
+    {
+      "id": "svt-lycee-geosciences-et-dynamique-des-paysages",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Géosciences et dynamique des paysages",
+      "summary": "Érosion, sédimentation, et ressources du sous-sol.",
+      "order": 3,
+      "status": "bientot",
+      "source": "2de-svt"
+    },
+    {
+      "id": "svt-lycee-la-terre-dans-l-univers-et-la-tectonique",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "La Terre dans l'Univers et la tectonique",
+      "summary": "Structure du globe, dynamique de la lithosphère, histoire de la Terre.",
+      "order": 4,
+      "status": "bientot",
+      "source": "spe-svt"
+    },
+    {
+      "id": "svt-lycee-ecosystemes-et-services-rendus",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "Tle"
+      ],
+      "title": "Écosystèmes et services rendus",
+      "summary": "Fonctionnement, dynamique et exploitation des écosystèmes.",
+      "order": 5,
+      "status": "bientot",
+      "source": "spe-svt"
+    },
+    {
+      "id": "svt-lycee-climat-et-enjeux-planetaires",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Climat et enjeux planétaires",
+      "summary": "Bilan radiatif, perturbations anthropiques, trajectoires futures.",
+      "order": 6,
+      "status": "bientot",
+      "source": "ens-sci"
+    },
+    {
+      "id": "svt-lycee-evolution-et-histoire-du-vivant",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Évolution et histoire du vivant",
+      "summary": "Dérive génétique, sélection, spéciation, biodiversité dans le temps.",
+      "order": 7,
+      "status": "bientot",
+      "source": "spe-svt"
+    },
+    {
+      "id": "svt-lycee-corps-humain-systeme-immunitaire",
+      "subject": "svt",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
       "title": "Le système immunitaire",
-      "summary": "Défenses innées, adaptatives et vaccination.",
-      "order": 3,
-      "status": "bientot"
+      "summary": "Immunité innée et adaptative, vaccination, immunothérapies.",
+      "order": 8,
+      "status": "bientot",
+      "source": "spe-svt"
     },
     {
-      "id": "svt-lycee-la-tectonique-des-plaques",
+      "id": "svt-lycee-neurones-et-comportement",
       "subject": "svt",
       "level": "lycee",
-      "title": "La tectonique des plaques",
-      "summary": "Dorsales, subduction et histoire d'une théorie.",
-      "order": 4,
-      "status": "bientot"
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Neurones et comportement",
+      "summary": "Communication nerveuse, plasticité cérébrale, cerveau et santé.",
+      "order": 9,
+      "status": "bientot",
+      "source": "spe-svt"
     },
     {
-      "id": "svt-lycee-le-climat",
-      "subject": "svt",
-      "level": "lycee",
-      "title": "Le climat",
-      "summary": "Effet de serre, cycles du carbone et enregistrements du passé.",
-      "order": 5,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-lycee-le-neurone-et-le-cerveau",
-      "subject": "svt",
-      "level": "lycee",
-      "title": "Le neurone et le cerveau",
-      "summary": "Message nerveux, synapses et plasticité.",
-      "order": 6,
-      "status": "bientot"
-    },
-    {
-      "id": "svt-universite-biologie-moleculaire",
-      "subject": "svt",
+      "id": "maths-universite-analyse-reelle",
+      "subject": "maths",
       "level": "universite",
-      "title": "Biologie moléculaire",
-      "summary": "Réplication, transcription, traduction et régulation.",
+      "grades": [
+        "L1"
+      ],
+      "title": "Analyse réelle",
+      "summary": "Suites, limites, continuité, dérivabilité : les fondations rigoureuses.",
       "order": 1,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "licence"
     },
     {
-      "id": "svt-universite-neurosciences",
-      "subject": "svt",
+      "id": "maths-universite-algebre-lineaire",
+      "subject": "maths",
       "level": "universite",
-      "title": "Neurosciences",
-      "summary": "Potentiel d'action, circuits neuronaux et cognition.",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Algèbre linéaire",
+      "summary": "Espaces vectoriels, matrices, déterminants, diagonalisation.",
       "order": 2,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "licence"
     },
     {
-      "id": "svt-universite-ecologie-des-populations",
-      "subject": "svt",
+      "id": "maths-universite-integration-et-series",
+      "subject": "maths",
       "level": "universite",
-      "title": "Écologie des populations",
-      "summary": "Modèles de croissance, interactions et dynamique.",
+      "grades": [
+        "L2"
+      ],
+      "title": "Intégration et séries",
+      "summary": "Intégrale de Riemann, séries numériques et séries entières.",
       "order": 3,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "licence"
     },
     {
-      "id": "svt-universite-genomique",
+      "id": "maths-universite-probabilites-et-statistique",
+      "subject": "maths",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Probabilités et statistique",
+      "summary": "Variables aléatoires, lois usuelles, estimation et tests.",
+      "order": 4,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "maths-universite-structures-algebriques",
+      "subject": "maths",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Structures algébriques",
+      "summary": "Groupes, anneaux, corps, arithmétique et polynômes.",
+      "order": 5,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "maths-universite-topologie-et-calcul-differentiel",
+      "subject": "maths",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Topologie et calcul différentiel",
+      "summary": "Espaces métriques, compacité, fonctions de plusieurs variables.",
+      "order": 6,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-mecanique-du-point-et-du-solide",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L1"
+      ],
+      "title": "Mécanique du point et du solide",
+      "summary": "Cinématique, lois de Newton, énergie, moment cinétique.",
+      "order": 1,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-electromagnetisme",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Électromagnétisme",
+      "summary": "Électrostatique, magnétostatique, équations de Maxwell.",
+      "order": 2,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-thermodynamique",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Thermodynamique",
+      "summary": "Premier et deuxième principes, machines thermiques, potentiels.",
+      "order": 3,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-ondes-et-optique",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Ondes et optique",
+      "summary": "Équation d'onde, interférences, diffraction, polarisation.",
+      "order": 4,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-chimie-generale-et-atomistique",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L1"
+      ],
+      "title": "Chimie générale et atomistique",
+      "summary": "Structure électronique, liaison chimique, équilibres en solution.",
+      "order": 5,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-chimie-organique",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Chimie organique",
+      "summary": "Fonctions, stéréochimie, mécanismes réactionnels.",
+      "order": 6,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "physique-chimie-universite-physique-quantique",
+      "subject": "physique-chimie",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Physique quantique",
+      "summary": "Dualité, équation de Schrödinger, puits et barrières.",
+      "order": 7,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-programmation-imperative-et-objet",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L1"
+      ],
+      "title": "Programmation impérative et objet",
+      "summary": "Des bases du langage à la conception orientée objet.",
+      "order": 1,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-algorithmique-et-complexite",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Algorithmique et complexité",
+      "summary": "Structures de données avancées, analyse de complexité, graphes.",
+      "order": 2,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-architecture-et-systemes",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Architecture et systèmes d'exploitation",
+      "summary": "Du circuit logique au processus, à la mémoire et aux fichiers.",
+      "order": 3,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-bases-de-donnees",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Bases de données",
+      "summary": "Modèle relationnel, algèbre relationnelle, SQL, normalisation.",
+      "order": 4,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-reseaux-et-securite",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Réseaux et sécurité",
+      "summary": "Modèle en couches, TCP/IP, cryptographie, authentification.",
+      "order": 5,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-theorie-des-langages-et-compilation",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Théorie des langages et compilation",
+      "summary": "Automates, grammaires, décidabilité, analyse syntaxique.",
+      "order": 6,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "informatique-universite-intelligence-artificielle-et-donnees",
+      "subject": "informatique",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Intelligence artificielle et données",
+      "summary": "Apprentissage supervisé, modèles, évaluation, limites.",
+      "order": 7,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "svt-universite-biologie-cellulaire",
       "subject": "svt",
       "level": "universite",
-      "title": "Génomique",
-      "summary": "Séquençage, annotation et analyse comparative.",
+      "grades": [
+        "L1"
+      ],
+      "title": "Biologie cellulaire",
+      "summary": "Membranes, organites, cycle cellulaire, trafic intracellulaire.",
+      "order": 1,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "svt-universite-biochimie-et-metabolisme",
+      "subject": "svt",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Biochimie et métabolisme",
+      "summary": "Protéines, enzymes, voies métaboliques et bioénergétique.",
+      "order": 2,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "svt-universite-genetique-et-biologie-moleculaire",
+      "subject": "svt",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Génétique et biologie moléculaire",
+      "summary": "Réplication, transcription, traduction, régulation, génie génétique.",
+      "order": 3,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "svt-universite-physiologie-animale-et-vegetale",
+      "subject": "svt",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Physiologie animale et végétale",
+      "summary": "Grandes fonctions, homéostasie, nutrition et développement.",
       "order": 4,
-      "status": "bientot"
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "svt-universite-ecologie-et-evolution",
+      "subject": "svt",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Écologie et évolution",
+      "summary": "Populations, communautés, génétique des populations, phylogénie.",
+      "order": 5,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "svt-universite-geosciences",
+      "subject": "svt",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L3"
+      ],
+      "title": "Géosciences",
+      "summary": "Minéralogie, pétrologie, géodynamique interne et externe.",
+      "order": 6,
+      "status": "bientot",
+      "source": "licence"
     }
   ]
 }
