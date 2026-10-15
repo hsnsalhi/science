@@ -52,6 +52,9 @@ ANDROID_DENSITIES = {
     "xxxhdpi": (192, 432),
 }
 
+#: Taille logique du logo de l'écran de lancement, en points.
+LAUNCH_POINTS = 160
+
 #: Part du calque adaptatif réellement visible : le masque du système rogne
 #: jusqu'aux 66 dp centraux d'un calque de 108 dp.
 ADAPTIVE_SAFE = 66 / 108
@@ -132,6 +135,42 @@ def write_android(master: Image.Image, scene: render3d.Scene) -> int:
     return written + 1
 
 
+def write_launch_screen(scene: render3d.Scene) -> int:
+    """Écrit le logo de l'écran de lancement iOS, en 1x, 2x et 3x.
+
+    Le sujet est détouré : c'est le storyboard qui pose le fond, avec la
+    couleur échantillonnée dans l'icône pour que les deux soient raccord et
+    qu'aucune bascule de couleur ne se voie au démarrage.
+    """
+    folder = ROOT / "ios/Runner/Assets.xcassets/LaunchImage.imageset"
+    subject = Image.fromarray(
+        render3d.render(scene, LAUNCH_POINTS * 3, supersample=2,
+                        with_background=False),
+        mode="RGBA",
+    )
+    for scale in (1, 2, 3):
+        size = LAUNCH_POINTS * scale
+        suffix = "" if scale == 1 else f"@{scale}x"
+        subject.resize((size, size), Image.LANCZOS).save(
+            folder / f"LaunchImage{suffix}.png", "PNG"
+        )
+
+    # Le storyboard déclare la taille logique de l'image : si elle ne
+    # correspond pas au fichier, iOS l'étire.
+    storyboard = ROOT / "ios/Runner/Base.lproj/LaunchScreen.storyboard"
+    text = storyboard.read_text()
+    import re
+
+    text = re.sub(
+        r'<image name="LaunchImage" width="\d+" height="\d+"/>',
+        f'<image name="LaunchImage" width="{LAUNCH_POINTS}" '
+        f'height="{LAUNCH_POINTS}"/>',
+        text,
+    )
+    storyboard.write_text(text)
+    return 3
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--concept", default=DEFAULT_CONCEPT)
@@ -156,12 +195,13 @@ def main(argv: list[str] | None = None) -> int:
     master = Image.fromarray(render3d.render(scene, MASTER_SIZE, supersample=3))
 
     ios_count = write_ios(master)
+    launch_count = write_launch_screen(scene)
     android_count = write_android(master, scene)
 
     preview = ROOT / "docs/app-icon.png"
     master.resize((512, 512), Image.LANCZOS).save(preview, "PNG")
 
-    print(f"iOS     : {ios_count} icônes")
+    print(f"iOS     : {ios_count} icônes, {launch_count} images de lancement")
     print(f"Android : {android_count} fichiers")
     print(f"Aperçu  : {preview.relative_to(ROOT)}")
     return 0
