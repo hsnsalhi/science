@@ -1,0 +1,559 @@
+{
+  "chapter": "maths-college-les-nombres-relatifs",
+  "lessons": [
+    {
+      "id": "reperer",
+      "title": "Des nombres au-dessous de zéro",
+      "subtitle": "Situer, comparer, et reconnaître l'opposé d'un nombre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Quand zéro n'est plus le plus petit",
+          "body": "Une température peut descendre sous zéro, un compte peut être à découvert, un sous-sol est au-dessous du rez-de-chaussée. Pour décrire ces situations il faut des nombres plus petits que zéro : les nombres négatifs. Avec les positifs, ils forment les nombres relatifs."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Déplace-toi sur la droite graduée",
+          "body": "Fais glisser le curseur. Le point marque le nombre choisi, le cercle vide marque son opposé, et le trait coloré mesure la distance qui sépare le nombre de zéro. Regarde ce qui se passe au moment où tu franchis le zéro.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Deux informations dans un seul nombre",
+          "body": "Un nombre relatif dit deux choses à la fois : de quel côté de zéro il se trouve, c'est son signe, et à quelle distance, c'est sa distance à zéro. −7 est à 7 unités de zéro, du côté négatif. +7 est à la même distance, de l'autre côté."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Comparer, c'est regarder la position",
+          "body": "Sur la droite graduée, le plus petit est toujours le plus à gauche.\n\n−7 est à gauche de −3, donc −7 < −3.\n\nUn thermomètre dit la même chose : −7 °C est plus froid que −3 °C, même si 7 est plus grand que 3."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de comparer deux négatifs comme s'ils étaient positifs, et de conclure que −7 > −3 parce que 7 > 3. Chez les négatifs, c'est l'inverse : plus la distance à zéro est grande, plus le nombre est petit. En cas de doute, place les deux nombres sur une droite graduée, ou pense à des températures."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Les mots du chapitre",
+          "bullets": [
+            "Nombre relatif : un signe (+ ou −) et une distance à zéro.",
+            "Opposés : même distance à zéro, signes contraires (−7 et +7).",
+            "Comparer : le plus petit est le plus à gauche sur la droite graduée.",
+            "Zéro n'est ni positif ni négatif, et il est son propre opposé."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel est le plus grand de ces deux nombres : −7 ou −3 ?",
+          "figureId": "droite-graduee",
+          "hint": "Place les deux nombres sur la droite graduée : lequel est le plus à droite ?",
+          "explanation": "−3 est plus proche de zéro, donc plus à droite sur la droite graduée : c'est le plus grand. Avec des températures, cela saute aux yeux — il fait moins froid à −3 °C qu'à −7 °C.",
+          "options": [
+            {
+              "text": "−3",
+              "correct": true
+            },
+            {
+              "text": "−7"
+            },
+            {
+              "text": "Ils sont égaux"
+            },
+            {
+              "text": "On ne peut pas comparer deux nombres négatifs"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "L'opposé de −9 est 9.",
+          "answer": true,
+          "explanation": "Vrai. Deux nombres opposés sont à la même distance de zéro, de part et d'autre : −9 et +9 sont tous deux à 9 unités. Autre façon de le dire : leur somme vaut zéro, car −9 + 9 = 0.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces nombres du plus petit au plus grand.",
+          "items": [
+            "−8",
+            "−5",
+            "−0,5",
+            "0",
+            "3"
+          ],
+          "explanation": "On suit la droite graduée de la gauche vers la droite. Les négatifs viennent d'abord, et entre eux le plus éloigné de zéro est le plus petit : −8 précède −5, qui précède −0,5. Zéro sépare ensuite les deux familles.",
+          "hint": "Commence par séparer les négatifs des positifs."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Il fait −6 °C au lever du jour et 4 °C l'après-midi. De combien de degrés la température a-t-elle augmenté ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "°C",
+          "hint": "Compte les graduations parcourues : d'abord jusqu'à zéro, puis au-delà.",
+          "explanation": "De −6 à 0, la température gagne 6 degrés ; de 0 à 4, elle en gagne encore 4. Au total 6 + 4 = 10 degrés. L'écart entre deux nombres relatifs est une distance : il est toujours positif."
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque nombre à son opposé.",
+          "explanation": "Prendre l'opposé revient à changer le signe sans toucher à la distance à zéro. C'est une symétrie autour de zéro : appliquée deux fois, elle ramène au nombre de départ.",
+          "pairs": [
+            {
+              "left": "−12",
+              "right": "+12"
+            },
+            {
+              "left": "+5",
+              "right": "−5"
+            },
+            {
+              "left": "−20",
+              "right": "+20"
+            },
+            {
+              "left": "+3,5",
+              "right": "−3,5"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "texteATrous",
+          "prompt": "Décris la position du nombre −4.",
+          "template": "Sur la droite graduée, −4 se trouve à ___ unités de zéro, du côté des nombres ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "4"
+              ]
+            },
+            {
+              "accepted": [
+                "négatifs",
+                "negatifs",
+                "négatif",
+                "negatif"
+              ]
+            }
+          ],
+          "explanation": "La distance à zéro de −4 vaut 4 : c'est le nombre lu sans son signe. Le signe, lui, indique le côté : à gauche de zéro, du côté des nombres négatifs.",
+          "hint": "Le premier trou ne demande pas de signe, le second ne demande pas de nombre."
+        }
+      ]
+    },
+    {
+      "id": "additionner",
+      "title": "Additionner et soustraire",
+      "subtitle": "Une seule règle à comprendre, et la soustraction disparaît.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Deux nombres de même signe",
+          "body": "On ajoute les distances à zéro et on garde le signe commun.\n\n(−5) + (−3) = −8\n\nDeux dettes font une dette plus grande : perdre 5 € puis 3 €, c'est perdre 8 €."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Deux nombres de signes contraires",
+          "body": "Les deux se compensent. On retranche la plus petite distance à zéro de la plus grande, et on garde le signe du nombre le plus éloigné de zéro.\n\n(−8) + 3 = −5\n9 + (−4) = 5"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un compte en banque",
+          "body": "Le compte affiche −30 € : il est à découvert de 30 €. Un versement de 50 € arrive.\n\n(−30) + 50 = 20\n\n30 € servent à combler le découvert, il reste 20 € sur le compte."
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "Soustraire, c'est ajouter l'opposé",
+          "formula": "a − b = a + (−b)",
+          "body": "Cette seule phrase fait disparaître toutes les soustractions : 5 − 8 = 5 + (−8) = −3, et (−4) − (−6) = (−4) + 6 = 2."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique vient du double signe : devant (−6), le « moins » de la soustraction et le « moins » du nombre s'annulent, et on ajoute 6. Retiens la phrase plutôt que le symbole : enlever une dette, c'est gagner de l'argent."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Trois réflexes",
+          "formula": "a − b = a + (−b)",
+          "bullets": [
+            "Même signe : on additionne les distances, on garde le signe.",
+            "Signes contraires : on les retranche, le plus éloigné de zéro l'emporte.",
+            "Toute soustraction se réécrit en addition de l'opposé."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut (−5) + (−3) ?",
+          "answer": -8,
+          "tolerance": 0.01,
+          "hint": "Les deux nombres sont du même côté de zéro.",
+          "explanation": "Les deux nombres sont négatifs : on ajoute leurs distances à zéro, 5 + 3 = 8, et on garde le signe moins. Le résultat est −8. Ajouter deux nombres négatifs ne peut qu'éloigner de zéro, du côté négatif."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut (−8) + 3 ?",
+          "answer": -5,
+          "tolerance": 0.01,
+          "hint": "Les deux nombres se compensent : lequel est le plus éloigné de zéro ?",
+          "explanation": "Les signes sont contraires, donc on retranche les distances : 8 − 3 = 5. Le plus éloigné de zéro est −8, le résultat prend donc son signe : −5. Sur la droite graduée, on part de −8 et on avance de 3 vers la droite.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Combien vaut (−4) − (−6) ?",
+          "hint": "Remplace la soustraction par l'addition de l'opposé de −6.",
+          "explanation": "(−4) − (−6) = (−4) + 6 = 2. Les deux signes moins qui se suivent reviennent à ajouter 6. Le piège est de répondre −10, ce qui reviendrait à additionner les deux nombres au lieu de soustraire.",
+          "options": [
+            {
+              "text": "2",
+              "correct": true
+            },
+            {
+              "text": "−10"
+            },
+            {
+              "text": "−2"
+            },
+            {
+              "text": "10"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Explique comment transformer la soustraction (−4) − (−6).",
+          "template": "Soustraire −6 revient à ajouter son ___, c'est-à-dire à ajouter ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "opposé",
+                "oppose",
+                "contraire"
+              ]
+            },
+            {
+              "accepted": [
+                "6",
+                "+6"
+              ]
+            }
+          ],
+          "explanation": "L'opposé de −6 est +6 : la soustraction devient (−4) + 6, soit 2. Cette transformation marche à tous les coups, et c'est elle qui permet de n'avoir plus qu'une seule opération à maîtriser.",
+          "hint": "Le mot cherché désigne le nombre situé de l'autre côté de zéro, à la même distance."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La somme de deux nombres négatifs est toujours négative.",
+          "answer": true,
+          "explanation": "Vrai. Partir d'un point situé à gauche de zéro et se déplacer encore vers la gauche ne peut pas ramener à droite de zéro. Attention : cela ne vaut que pour l'addition — le produit de deux nombres négatifs, lui, est positif."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un ascenseur se trouve au niveau −3 du parking. Il monte de 7 étages. À quel niveau arrive-t-il ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Il faut d'abord 3 étages pour atteindre le rez-de-chaussée, le niveau 0.",
+          "explanation": "(−3) + 7 = 4. Les 3 premiers étages servent à remonter jusqu'au niveau 0, les 4 suivants mènent au niveau 4. Monter, c'est ajouter ; descendre, c'est ajouter un nombre négatif."
+        }
+      ]
+    },
+    {
+      "id": "enchainer",
+      "title": "Enchaîner les calculs",
+      "subtitle": "Supprimer les parenthèses sans se tromper de signe.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Supprimer les parenthèses",
+          "body": "Deux signes identiques donnent un plus, deux signes différents donnent un moins.\n\n+ (−5) devient − 5\n− (−5) devient + 5\n− (+5) devient − 5\n+ (+5) devient + 5"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Regrouper avant de calculer",
+          "body": "Une fois les parenthèses supprimées, l'ordre n'a plus d'importance : on peut rassembler les positifs d'un côté et les négatifs de l'autre.\n\n7 − 9 + 4 − 3 = (7 + 4) − (9 + 3) = 11 − 12 = −1"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un calcul complet",
+          "body": "(−6) + 9 − (−4) − 11\n\nOn supprime les parenthèses :\n−6 + 9 + 4 − 11\n\nOn regroupe :\n(9 + 4) − (6 + 11) = 13 − 17 = −4"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'erreur classique est de changer le signe du mauvais nombre : dans 5 − (−8), c'est le 8 qui change de signe, pas le 5. Un contrôle qui ne trompe pas : on retire un nombre négatif, donc le résultat doit être plus grand que 5. Si tu trouves −3, c'est raté."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "La marche à suivre",
+          "bullets": [
+            "Supprimer toutes les parenthèses en appliquant la règle des signes.",
+            "Regrouper les positifs, puis les négatifs.",
+            "Soustraire la seconde somme de la première.",
+            "Vérifier l'ordre de grandeur plutôt que de recompter en détail."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 7 − 9 + 4 − 3.",
+          "answer": -1,
+          "tolerance": 0.01,
+          "hint": "Regroupe d'abord les nombres ajoutés, puis les nombres retranchés.",
+          "explanation": "On ajoute 7 et 4, ce qui fait 11 ; on retranche 9 et 3, ce qui fait 12. Il reste 11 − 12 = −1. Le résultat est négatif parce qu'on a retranché un peu plus qu'on n'a ajouté."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule (−6) + 9 − (−4) − 11.",
+          "answer": -4,
+          "tolerance": 0.01,
+          "hint": "Commence par réécrire − (−4) en + 4.",
+          "explanation": "Sans parenthèses, le calcul s'écrit −6 + 9 + 4 − 11. Les termes ajoutés donnent 9 + 4 = 13, les termes retranchés 6 + 11 = 17, et 13 − 17 = −4."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle est l'écriture simplifiée de 5 − (−8) ?",
+          "hint": "Deux signes moins qui se suivent se transforment en un plus.",
+          "explanation": "5 − (−8) = 5 + 8 = 13. Retirer une dette de 8 € revient à gagner 8 € : le résultat dépasse forcément 5.",
+          "options": [
+            {
+              "text": "5 + 8",
+              "correct": true
+            },
+            {
+              "text": "5 − 8"
+            },
+            {
+              "text": "−5 + 8"
+            },
+            {
+              "text": "−5 − 8"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque calcul à son résultat.",
+          "explanation": "3 + (−8) = 3 − 8 = −5 ; 3 − (−8) = 3 + 8 = 11 ; −3 + 8 = 5 ; −3 − 8 = −11. Les quatre résultats sont différents : le signe placé devant le 8 change tout, et celui placé devant le 3 aussi.",
+          "hint": "Supprime d'abord les parenthèses de chaque calcul.",
+          "pairs": [
+            {
+              "left": "3 + (−8)",
+              "right": "−5"
+            },
+            {
+              "left": "3 − (−8)",
+              "right": "11"
+            },
+            {
+              "left": "−3 + 8",
+              "right": "5"
+            },
+            {
+              "left": "−3 − 8",
+              "right": "−11"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Soustraire un nombre négatif revient à ajouter un nombre positif.",
+          "answer": true,
+          "explanation": "Vrai, c'est exactement la règle a − b = a + (−b) appliquée à un b négatif. Par exemple 2 − (−5) = 2 + 5 = 7. C'est aussi pour cela qu'une soustraction peut faire grandir un résultat.",
+          "hint": "Teste sur 2 − (−5) avant de répondre."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un compte affiche −45 €. Un virement de 120 € arrive, puis un retrait de 30 € est effectué. Quel est le solde final, en euros ?",
+          "answer": 45,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "Écris le calcul en une seule ligne avant de le faire.",
+          "explanation": "−45 + 120 − 30 = 75 − 30 = 45 €. Les 45 premiers euros du virement comblent le découvert ; il reste 75 €, dont 30 € sont retirés. Le compte redevient positif parce que le virement dépasse le découvert."
+        }
+      ]
+    },
+    {
+      "id": "multiplier",
+      "title": "Multiplier et diviser",
+      "subtitle": "La règle des signes, et pourquoi moins par moins fait plus.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une règle qui tient en une ligne",
+          "body": "Pour multiplier ou diviser deux nombres relatifs, on calcule d'abord avec les distances à zéro, puis on décide du signe : même signe donne un résultat positif, signes contraires donnent un résultat négatif."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La règle des signes",
+          "formula": "(−) × (−) = (+)     (+) × (−) = (−)",
+          "body": "La même règle vaut pour la division : (−72) ÷ 9 = −8, et (−72) ÷ (−9) = 8."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pourquoi moins par moins fait plus",
+          "body": "Observe la suite des produits par −4 :\n\n3 × (−4) = −12\n2 × (−4) = −8\n1 × (−4) = −4\n0 × (−4) = 0\n\nÀ chaque pas, le résultat augmente de 4. En continuant, (−1) × (−4) = 4. La règle n'est pas une convention arbitraire : c'est la seule qui prolonge la suite sans la casser."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Avec plusieurs facteurs",
+          "body": "On compte les facteurs négatifs. S'ils sont en nombre pair, ils s'annulent deux par deux et le produit est positif. S'ils sont en nombre impair, il en reste un et le produit est négatif.\n\n(−2) × (−3) × (−4) : trois facteurs négatifs, donc un résultat négatif, −24."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est d'appliquer la règle des signes à l'addition : (−5) + (−3) ne fait pas +8, mais −8. « Moins par moins fait plus » ne concerne que la multiplication et la division. Avant d'utiliser la règle, vérifie quelle opération est écrite."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Ce qu'il faut garder",
+          "bullets": [
+            "Même signe : produit ou quotient positif.",
+            "Signes contraires : produit ou quotient négatif.",
+            "Plusieurs facteurs : on compte les négatifs, pair donne +, impair donne −.",
+            "La règle des signes ne s'applique jamais à une addition."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule (−6) × (−7).",
+          "answer": 42,
+          "tolerance": 0.01,
+          "hint": "Calcule 6 × 7, puis décide du signe.",
+          "explanation": "6 × 7 = 42, et les deux facteurs ont le même signe, donc le résultat est positif : 42. C'est le cas qui surprend le plus, et pourtant c'est le seul qui prolonge la table de multiplication sans la contredire."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule (−5) × 4 × (−2) × (−1).",
+          "answer": -40,
+          "tolerance": 0.01,
+          "hint": "Compte les facteurs négatifs avant de te lancer dans le calcul.",
+          "explanation": "Les distances à zéro donnent 5 × 4 × 2 × 1 = 40. Il y a trois facteurs négatifs, un nombre impair, donc le résultat est négatif : −40."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Sans calculer sa valeur, que peut-on dire du produit (−2) × (−3) × (−4) ?",
+          "hint": "Les facteurs négatifs s'annulent deux par deux.",
+          "explanation": "Il y a trois facteurs négatifs. Deux d'entre eux s'annulent et donnent un produit positif, mais le troisième reste : le résultat est négatif. Il vaut d'ailleurs −24.",
+          "options": [
+            {
+              "text": "Il est négatif, car il compte trois facteurs négatifs",
+              "correct": true
+            },
+            {
+              "text": "Il est positif, car moins par moins fait plus"
+            },
+            {
+              "text": "Il est positif, car il compte trois facteurs"
+            },
+            {
+              "text": "On ne peut rien dire sans effectuer le calcul"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "(−5) + (−3) = +8, puisque moins par moins fait plus.",
+          "answer": false,
+          "explanation": "Faux. La règle des signes ne vaut que pour la multiplication et la division. Ici il s'agit d'une addition : deux nombres négatifs s'ajoutent et donnent −8. Ajouter deux dettes ne crée pas de richesse.",
+          "hint": "Regarde bien quelle opération est écrite entre les deux nombres."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule (−72) ÷ 9.",
+          "answer": -8,
+          "tolerance": 0.01,
+          "hint": "72 ÷ 9 = 8 ; il ne reste qu'à décider du signe.",
+          "explanation": "72 ÷ 9 = 8, et les deux nombres sont de signes contraires, donc le quotient est négatif : −8. Vérification : (−8) × 9 = −72, on retombe bien sur le point de départ."
+        },
+        {
+          "id": "q6",
+          "kind": "choixMultiple",
+          "prompt": "Quels calculs donnent un résultat positif ?",
+          "hint": "Pour chacun, compte le nombre de facteurs négatifs.",
+          "explanation": "(−3) × (−5) = 15 et (−8) ÷ (−4) = 2 : deux signes identiques, résultat positif. 4 × (−3) × (−2) = 24 : deux facteurs négatifs, donc positif aussi. En revanche (−2) × 7 = −14 et (−1) × (−1) × (−1) = −1, qui compte trois facteurs négatifs.",
+          "options": [
+            {
+              "text": "(−3) × (−5)",
+              "correct": true
+            },
+            {
+              "text": "(−8) ÷ (−4)",
+              "correct": true
+            },
+            {
+              "text": "4 × (−3) × (−2)",
+              "correct": true
+            },
+            {
+              "text": "(−2) × 7"
+            },
+            {
+              "text": "(−1) × (−1) × (−1)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

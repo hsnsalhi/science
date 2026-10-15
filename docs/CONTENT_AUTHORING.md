@@ -138,6 +138,7 @@ Une figure se cite par une clé, jamais par un nom de fichier :
 | `triangle-sides` | Triangle rectangle manipulable, nomme les côtés |
 | `pythagore-carres` | Carrés construits sur les côtés (preuve visuelle) |
 | `triangle-reciproque` | Teste si un triangle est rectangle |
+| `droite-graduee` | Droite graduée des relatifs : position, opposé, distance à zéro |
 
 Ajouter une figure demande cette fois du code : écrire le widget dans
 `lib/design_system/figures/`, puis l'inscrire dans `FigureRegistry`. Le reste

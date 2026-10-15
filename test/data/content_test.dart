@@ -263,6 +263,22 @@ void main() {
     'multiplier/q5': 90, // 240 pages moins les 5/8 déjà lues
   });
 
+  verifieChapitreRedige(
+    'maths-college-les-nombres-relatifs',
+    const <String, double>{
+      'reperer/q4': 10, // de −6 °C à 4 °C
+      'additionner/q1': -8, // (−5) + (−3)
+      'additionner/q2': -5, // (−8) + 3
+      'additionner/q6': 4, // niveau −3, sept étages plus haut
+      'enchainer/q1': -1, // 7 − 9 + 4 − 3
+      'enchainer/q2': -4, // (−6) + 9 − (−4) − 11
+      'enchainer/q6': 45, // −45 + 120 − 30
+      'multiplier/q1': 42, // (−6) × (−7)
+      'multiplier/q2': -40, // trois facteurs négatifs
+      'multiplier/q5': -8, // (−72) ÷ 9
+    },
+  );
+
   group('Chapitre complet : le théorème de Pythagore', () {
     late Chapter pythagore;
 
