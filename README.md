@@ -54,7 +54,10 @@ l'envoie sur **TestFlight depuis un runner macOS** : posséder un Mac n'est pas
 nécessaire, seul le compte Apple Developer l'est.
 
 Mise en place (une heure, une seule fois) puis un clic par build :
-[docs/TESTFLIGHT.md](docs/TESTFLIGHT.md).
+[docs/TESTFLIGHT.md](docs/TESTFLIGHT.md). L'outil
+`tool/ios_signing.py` crée le certificat de distribution depuis Linux,
+**vérifie la cohérence certificat / profil / clé d'API avant le premier
+build**, et produit les valeurs des secrets GitHub.
 
 ## Démarrer
 

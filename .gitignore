@@ -57,3 +57,13 @@ key.properties
 # Signature générée en intégration continue, jamais versionnée.
 ios/Flutter/Signing.xcconfig
 ios/ExportOptions.plist
+
+# Secrets de signature iOS — ne doivent JAMAIS être versionnés.
+ios-signing/
+*.p12
+*.mobileprovision
+*.cer
+*.csr
+dist.key
+dist.pem
+AuthKey_*.p8

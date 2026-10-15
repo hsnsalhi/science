@@ -48,54 +48,60 @@ Bundle ID celui ci-dessus, SKU `eureka-001`.
 ## Étape 2 — Le certificat de distribution (depuis Linux)
 
 Apple demande d'habitude de générer la demande de certificat depuis le
-Trousseau macOS. `openssl` fait exactement la même chose.
+Trousseau macOS. Le script `tool/ios_signing.py` fait la même chose avec
+`openssl`, et vérifiera ensuite la cohérence de l'ensemble.
 
 ```bash
-# 1. Une clé privée et une demande de signature (CSR).
+python3 tool/ios_signing.py csr --email TON_EMAIL
+```
+
+Deux fichiers apparaissent dans `ios-signing/` (dossier non versionné) :
+`dist.key`, la **clé privée à conserver précieusement**, et `dist.csr`, la
+demande à déposer chez Apple.
+
+Puis : <https://developer.apple.com/account/resources/certificates> → **+** →
+**Apple Distribution** → téléverser `ios-signing/dist.csr` → télécharger
+`distribution.cer`.
+
+```bash
+python3 tool/ios_signing.py p12 --cer ~/Téléchargements/distribution.cer
+# → demande un mot de passe : c'est le futur IOS_DIST_CERT_PASSWORD.
+```
+
+> Le script chiffre le `.p12` en mode `-legacy`. Ce n'est pas un détail :
+> sans cela, OpenSSL 3 utilise un algorithme que le trousseau macOS refuse
+> d'importer, et le build échoue quinze minutes plus tard sur un message qui
+> ne mentionne jamais le chiffrement.
+
+<details>
+<summary>Les mêmes étapes à la main, si tu préfères</summary>
+
+```bash
 openssl genrsa -out dist.key 2048
 openssl req -new -key dist.key -out dist.csr \
   -subj "/emailAddress=TON_EMAIL/CN=Eureka Distribution/C=FR"
-```
-
-2. <https://developer.apple.com/account/resources/certificates> → **+** →
-   **Apple Distribution** → téléverser `dist.csr` → télécharger
-   `distribution.cer`.
-
-```bash
-# 3. Assembler certificat + clé privée dans un .p12.
+# … dépôt du CSR chez Apple, téléchargement de distribution.cer …
 openssl x509 -in distribution.cer -inform DER -out dist.pem -outform PEM
-openssl pkcs12 -export -legacy \
-  -inkey dist.key -in dist.pem \
+openssl pkcs12 -export -legacy -inkey dist.key -in dist.pem \
   -name "Apple Distribution" -out dist.p12
-# → choisir un mot de passe, et le retenir : c'est IOS_DIST_CERT_PASSWORD.
 ```
 
-> `-legacy` n'est pas décoratif. Sans lui, OpenSSL 3 chiffre le `.p12` avec un
-> algorithme que le trousseau macOS refuse d'importer, et le build échoue à la
-> signature avec un message trompeur.
+</details>
 
-```bash
-# 4. Encoder pour GitHub.
-base64 -w0 dist.p12 > dist.p12.b64        # Linux
-# base64 -i dist.p12 | tr -d '\n' > dist.p12.b64   # macOS
-```
-
-**Garde `dist.key` et `dist.p12` en lieu sûr, hors du dépôt.** Les perdre
-oblige à révoquer le certificat et à tout recommencer.
+**Perdre `dist.key` oblige à révoquer le certificat et à tout recommencer.**
+Le dossier `ios-signing/` est exclu du dépôt par `.gitignore`, comme tous les
+`*.p12`, `*.mobileprovision` et `AuthKey_*.p8`.
 
 ## Étape 3 — Le profil d'approvisionnement
 
 <https://developer.apple.com/account/resources/profiles> → **+** →
 **App Store Connect** (sous Distribution) → App ID `com.eureka.eureka` →
 sélectionner le certificat créé à l'étape 2 → nommer le profil, par exemple
-`Eureka App Store` → télécharger `Eureka_App_Store.mobileprovision`.
+`Eureka App Store` → télécharger le `.mobileprovision`.
 
-```bash
-base64 -w0 Eureka_App_Store.mobileprovision > profile.b64
-```
-
-> À refaire si tu ajoutes un certificat ou changes de Bundle ID. Un profil
-> expire au bout d'un an.
+> L'ordre compte : le profil doit être créé **après** le certificat, et le
+> désigner explicitement. Un profil créé avant ne contient pas le bon
+> certificat — c'est l'erreur la plus fréquente, et le script la détecte.
 
 ## Étape 4 — La clé d'API App Store Connect
 
@@ -111,26 +117,53 @@ Relever :
 - **Issuer ID** — l'UUID en haut de la page.
 - Le fichier **`AuthKey_XXXXXXXXXX.p8`**, téléchargeable **une seule fois**.
 
+## Étape 4 bis — Tout vérifier avant de lancer quoi que ce soit
+
 ```bash
-base64 -w0 AuthKey_XXXXXXXXXX.p8 > asc_key.b64
+python3 tool/ios_signing.py check \
+  --profile ~/Téléchargements/Eureka_App_Store.mobileprovision \
+  --asc-key ~/Téléchargements/AuthKey_XXXXXXXXXX.p8
 ```
 
+Le script contrôle en deux secondes ce qui, sinon, ne se révèle qu'au bout
+d'un build complet :
+
+- le `.p12` contient bien la clé privée, et pas seulement le certificat ;
+- le certificat est un certificat de **distribution**, et n'a pas expiré ;
+- le profil vise bien le Bundle ID déclaré dans le projet Xcode ;
+- le profil est de type **App Store**, et non développement ou ad-hoc ;
+- **le profil contient bien le certificat du `.p12`** ;
+- la clé `.p8` est au bon format, et son Key ID est relevé.
+
+Chaque problème est affiché avec sa cause et sa correction. Ne passe à la
+suite qu'une fois ce contrôle entièrement vert.
+
 ## Étape 5 — Les sept secrets GitHub
+
+```bash
+python3 tool/ios_signing.py secrets \
+  --profile ~/Téléchargements/Eureka_App_Store.mobileprovision \
+  --asc-key ~/Téléchargements/AuthKey_XXXXXXXXXX.p8 \
+  --write-to ios-signing/secrets
+```
+
+La commande produit cinq des sept valeurs, chacune dans un fichier portant le
+nom exact du secret. Les deux dernières se saisissent à la main.
 
 Dépôt → **Settings** → **Secrets and variables** → **Actions** →
 **New repository secret**, sept fois :
 
-| Secret | Contenu |
+| Secret | D'où il vient |
 |---|---|
-| `IOS_DIST_CERT_P12_BASE64` | contenu de `dist.p12.b64` |
-| `IOS_DIST_CERT_PASSWORD` | le mot de passe choisi à l'étape 2 |
-| `IOS_PROVISIONING_PROFILE_BASE64` | contenu de `profile.b64` |
-| `IOS_TEAM_ID` | le Team ID de l'étape 0 |
-| `ASC_KEY_ID` | le Key ID de l'étape 4 |
-| `ASC_ISSUER_ID` | l'Issuer ID de l'étape 4 |
-| `ASC_PRIVATE_KEY_BASE64` | contenu de `asc_key.b64` |
+| `IOS_DIST_CERT_P12_BASE64` | produit par `secrets` |
+| `IOS_DIST_CERT_PASSWORD` | **à saisir** : le mot de passe du `.p12` (étape 2) |
+| `IOS_PROVISIONING_PROFILE_BASE64` | produit par `secrets` |
+| `IOS_TEAM_ID` | produit par `secrets` (lu dans le profil) |
+| `ASC_KEY_ID` | produit par `secrets` (lu dans le nom du fichier `.p8`) |
+| `ASC_ISSUER_ID` | **à saisir** : l'UUID de l'étape 4 |
+| `ASC_PRIVATE_KEY_BASE64` | produit par `secrets` |
 
-Coller le **contenu** des fichiers, pas leur chemin. Une seule ligne, sans
+Coller le **contenu** des fichiers, pas leur chemin : une seule ligne, sans
 retour à la ligne final.
 
 ## Étape 6 — Lancer le build
@@ -182,6 +215,10 @@ modifier `version:` dans `pubspec.yaml`.
 | `The bundle version must be higher than the previously uploaded version` | Un numéro de build a déjà été utilisé. Relancer : `github.run_number` aura augmenté. |
 | `Invalid Pre-Release Train` | La version de `pubspec.yaml` est inférieure ou égale à une version déjà publiée. L'incrémenter. |
 | Build rejeté pour cause de SDK trop ancien | Passer `runs-on: macos-15` à `macos-latest` dans le workflow. |
+
+Les trois premières lignes de ce tableau sont détectées **avant** tout build
+par `python3 tool/ios_signing.py check` (étape 4 bis) : en cas de doute,
+relancer cette commande coûte deux secondes.
 
 Les journaux complets sont dans l'onglet Actions ; l'étape « Versions de
 l'environnement » donne les versions exactes de Flutter, Xcode et CocoaPods

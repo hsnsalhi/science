@@ -105,12 +105,23 @@ jobs:
           # 2. Le certificat de distribution et sa clé privée.
           echo "$IOS_DIST_CERT_P12_BASE64" | base64 --decode > "$RUNNER_TEMP/dist.p12"
           security import "$RUNNER_TEMP/dist.p12" -k "$KEYCHAIN" \
-            -P "$IOS_DIST_CERT_PASSWORD" -A -t cert -f pkcs12
+            -P "$IOS_DIST_CERT_PASSWORD" -A -f pkcs12
+          # Contrôle immédiat : un .p12 sans clé privée échouerait bien plus
+          # loin, à la signature, avec un message peu parlant.
+          if ! security find-identity -v -p codesigning "$KEYCHAIN" | grep -q "Apple Distribution"; then
+            echo "::error::Aucune identité « Apple Distribution » utilisable dans le .p12."
+            echo "Le fichier ne contient probablement pas la clé privée."
+            echo "Voir docs/TESTFLIGHT.md, étape 2, ou lancer : python3 tool/ios_signing.py check"
+            security find-identity -v "$KEYCHAIN" || true
+            exit 1
+          fi
           # Sans cette ligne, codesign réclame une autorisation interactive
           # que personne ne peut donner sur un runner.
           security set-key-partition-list -S apple-tool:,apple:,codesign: \
             -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
-          security list-keychains -d user -s "$KEYCHAIN" login.keychain
+          # shellcheck disable=SC2046 — la liste doit être redécoupée en mots.
+          security list-keychains -d user -s "$KEYCHAIN" \
+            $(security list-keychains -d user | sed 's/[\" ]//g')
 
           # 3. Le profil d'approvisionnement, installé là où Xcode le cherche.
           PROFILE_DIR="$HOME/Library/MobileDevice/Provisioning Profiles"
