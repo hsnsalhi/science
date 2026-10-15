@@ -99,7 +99,11 @@ jobs:
           LATEST="$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"
           sudo xcode-select -s "$LATEST"
           echo "Xcode retenu : $LATEST"
-          MAJOR="$(xcodebuild -version | head -1 | sed 's/[^0-9]*\([0-9]*\).*/\1/')"
+          # xcodebuild écrit sa version puis continue : fermer le tube avec
+          # « head » lui vaut un SIGPIPE, qu'il transforme en exception et en
+          # code 134. On capture la sortie entière avant de la découper.
+          VERSION="$(xcodebuild -version)"
+          MAJOR="$(printf '%s\n' "$VERSION" | sed -n '1s/[^0-9]*\([0-9][0-9]*\).*/\1/p')"
           if [ "$MAJOR" -lt 26 ]; then
             echo "::error::Xcode $MAJOR installé, Apple exige Xcode 26 ou plus."
             echo "Versions présentes : $(ls -d /Applications/Xcode*.app | tr '\n' ' ')"
