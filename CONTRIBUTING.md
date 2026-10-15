@@ -5,7 +5,7 @@ programmation.
 
 ## Écrire du contenu
 
-C'est le besoin principal : 84 chapitres sont annoncés, un seul est écrit.
+C'est le besoin principal : 85 chapitres sont annoncés, sept sont écrits.
 Le guide complet est dans [docs/CONTENT_AUTHORING.md](docs/CONTENT_AUTHORING.md).
 En résumé : on ajoute une entrée dans `assets/content/catalog.json`, on écrit
 un fichier JSON de leçons, et on lance

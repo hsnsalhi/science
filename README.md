@@ -20,14 +20,16 @@ pour quatre niveaux : primaire, collège, lycée, université.
 | Moteur de quiz : **7 types d'exercices**, correction expliquée | ✅ |
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
 | Catalogue des **85 chapitres** annoncés sur 4 matières × 4 niveaux | ✅ |
-| Contenu rédigé de bout en bout | **1 chapitre** (Pythagore, 4 leçons, 19 questions) |
-| 75 tests (domaine, contenu, parcours d'interface) | ✅ |
+| Contenu rédigé de bout en bout | **7 chapitres** (28 leçons, 163 questions) |
+| 110 tests (domaine, contenu, figures, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 
-Le chapitre **« Le théorème de Pythagore »** (maths, collège) est le modèle de
-référence : il est entièrement jouable et exerce les sept types d'exercices.
-Les 84 autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
+Les **sept chapitres de mathématiques du collège** sont écrits de bout en
+bout : fractions, nombres relatifs, proportionnalité, équations du premier
+degré, Pythagore, Thalès, statistiques. Chacun enchaîne quatre leçons — deux
+cours, un entraînement, un défi — et exerce les sept types d'exercices. Les
+78 autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
 afin que l'élève voie tout de suite l'étendue du programme. Écrire un nouveau
 chapitre ne demande pas de toucher au code Dart : voir
 [docs/CONTENT_AUTHORING.md](docs/CONTENT_AUTHORING.md).

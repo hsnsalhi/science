@@ -346,11 +346,28 @@
         },
         {
           "id": "q5",
-          "kind": "vraiFaux",
-          "prompt": "Pour trouver la médiane, il suffit de prendre la valeur située au milieu de la liste telle qu'elle est donnée.",
-          "answer": false,
-          "explanation": "Faux : tant que la série n'est pas rangée, la valeur du milieu de la liste n'a aucune raison d'être la médiane. Dans 12 ; 7 ; 15 ; 7 ; 20, le milieu de la liste est 15, alors que la médiane vaut 12.",
-          "hint": "Essaie sur la série 12 ; 7 ; 15 ; 7 ; 20."
+          "kind": "appariement",
+          "prompt": "Associe chaque série à sa médiane.",
+          "hint": "Attention : l'une des séries n'est pas donnée dans l'ordre croissant.",
+          "explanation": "2 ; 5 ; 9 compte trois valeurs, la médiane est celle du milieu : 5. Pour 4 ; 6 ; 8 ; 10, l'effectif est pair, donc la médiane vaut (6 + 8) ÷ 2 = 7. Dans 1 ; 3 ; 3 ; 7 ; 20, c'est la troisième valeur, 3, même si elle est répétée. Enfin 10 ; 2 ; 6 doit d'abord être rangée en 2 ; 6 ; 10, ce qui donne 6 et non 2.",
+          "pairs": [
+            {
+              "left": "2 ; 5 ; 9",
+              "right": "5"
+            },
+            {
+              "left": "4 ; 6 ; 8 ; 10",
+              "right": "7"
+            },
+            {
+              "left": "1 ; 3 ; 3 ; 7 ; 20",
+              "right": "3"
+            },
+            {
+              "left": "10 ; 2 ; 6",
+              "right": "6"
+            }
+          ]
         },
         {
           "id": "q6",
