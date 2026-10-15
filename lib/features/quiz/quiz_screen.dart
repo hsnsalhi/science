@@ -66,6 +66,9 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
   }
 
   void _validate() {
+    // Le clavier n'a plus rien à saisir une fois la réponse envoyée, et il
+    // masquerait la moitié du retour.
+    FocusScope.of(context).unfocus();
     final QuizSession next = _session!.validate();
     if (next.verdict == QuizVerdict.correct) {
       context.successFeedback();
@@ -202,6 +205,10 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
       body: Shake(
         trigger: _shakeTrigger,
         child: SingleChildScrollView(
+          // Un glissement vers le bas referme le clavier : deuxième sortie,
+          // utile parce que le pavé numérique d'iOS n'a pas de touche de
+          // retour.
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           padding: const EdgeInsets.fromLTRB(
             AppSpacing.lg,
             AppSpacing.lg,

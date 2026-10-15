@@ -149,6 +149,13 @@ class _BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
+    // Le Scaffold ne remonte pas sa barre basse quand le clavier s'ouvre :
+    // il redimensionne le corps et laisse la barre collée au bas de
+    // l'écran, donc sous le clavier. Sur une question à saisie numérique,
+    // le bouton « Valider » devenait inatteignable — et le pavé numérique
+    // d'iOS n'ayant pas de touche de retour, l'écran n'offrait plus
+    // aucune sortie. On la remonte donc nous-mêmes.
+    final double clavier = MediaQuery.viewInsetsOf(context).bottom;
     return Container(
       decoration: BoxDecoration(
         color: context.colors.surface,
@@ -156,12 +163,15 @@ class _BottomBar extends StatelessWidget {
       ),
       child: SafeArea(
         top: false,
+        // Clavier ouvert, l'encoche basse est déjà couverte : la compter
+        // en plus ajouterait un vide sous la barre.
+        bottom: clavier == 0,
         child: Padding(
           padding: EdgeInsets.fromLTRB(
             inset,
             AppSpacing.md,
             inset,
-            AppSpacing.md,
+            AppSpacing.md + clavier,
           ),
           // heightFactor: 1 est indispensable. Sans lui, le Center occupe
           // toute la hauteur que le Scaffold lui propose pour la barre basse,
