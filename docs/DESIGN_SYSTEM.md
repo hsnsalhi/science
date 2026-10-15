@@ -99,7 +99,42 @@ figures sont nettes à toutes les densités d'écran, la mascotte peut prendre l
 couleur de la matière en cours, et le projet n'hérite pas d'une dépendance à
 maintenir pour quatre secondes d'animation.
 
-## 6. Mise en page adaptative
+## 6. L'icône de l'application
+
+L'icône est **calculée en 3D**, pas dessinée : `tool/render3d.py` est un
+petit moteur de lancer de rayon sur surfaces implicites (sphères, tores),
+avec éclairage de studio, ombres portées douces, occlusion ambiante et
+réflexion spéculaire. `tool/icon_concepts.py` décrit les scènes,
+`tool/generate_icons.py` produit tous les fichiers.
+
+```bash
+python3 tool/generate_icons.py --list              # concepts disponibles
+python3 tool/generate_icons.py --concept orbite    # en changer
+```
+
+Pourquoi un moteur plutôt qu'une image : l'occlusion entre les anneaux et le
+noyau est réelle — une orbite passe devant, l'autre derrière, et chacune
+porte son ombre. Un dégradé plat ne peut qu'imiter cela, et cela se voit.
+Changer d'angle, de couleur ou de concept ne coûte ensuite qu'une ligne, et
+toutes les tailles restent rigoureusement cohérentes.
+
+Trois contraintes ont décidé du dessin :
+
+| Contrainte | Conséquence |
+|---|---|
+| Lisible à **20 px** (Réglages, Spotlight) | Deux masses seulement — un noyau, deux anneaux. Les traits fins et le troisième anneau ont été écartés après comparaison à taille réelle. |
+| Contraste fort avec le fond | Fond indigo soutenu plutôt que pastel : un sujet clair sur fond pâle devient une tache grise une fois réduit. |
+| Marge généreuse | Le sujet occupe environ 72 % du cadre ; le masque du système rogne les bords. |
+
+Toutes les tailles dérivent d'un **même rendu de 1024 px** réduit au filtre
+de Lanczos, avec un léger renforcement en dessous de 72 px. Rendre chaque
+taille séparément produirait des icônes subtilement différentes, ce qui se
+remarque quand le système les affiche côte à côte.
+
+Sur Android, l'icône adaptative reçoit ses deux calques : le sujet détouré
+en avant, le dégradé en arrière — et non un aplat de couleur.
+
+## 7. Mise en page adaptative
 
 `lib/core/layout/breakpoints.dart`
 
@@ -119,7 +154,7 @@ Les grilles de tuiles utilisent `TileGrid` plutôt qu'une `GridView` à
 à l'avance, ce qui devient faux dès qu'un intitulé passe sur deux lignes ou
 qu'un utilisateur agrandit la police.
 
-## 7. Accessibilité
+## 8. Accessibilité
 
 - Cibles tactiles d'au moins 44 dp ; options de quiz à 60 dp.
 - Tout élément interactif porte un `Semantics` explicite ; les barres et
