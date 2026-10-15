@@ -46,7 +46,8 @@ jobs:
           python3 tool/ios_signing.py check-asc \
             --asc-key "$KEY_FILE" \
             --issuer "$ASC_ISSUER_ID" \
-            --key-id "$ASC_KEY_ID"
+            --key-id "$ASC_KEY_ID" \
+            --builds com.techlyb.eureka
           status=$?
 
           rm -f "$KEY_FILE"

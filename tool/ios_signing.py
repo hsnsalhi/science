@@ -753,7 +753,76 @@ def cmd_check_asc(args: argparse.Namespace) -> int:
 
     if getattr(args, "probe_upload", False):
         _probe_privileges(token, apps)
+    if getattr(args, "builds", None):
+        _list_builds(token, apps, args.builds)
     return 0
+
+
+def _asc_get(token: str, path: str):
+    """Appelle l'API en lecture et renvoie la charge utile, ou None."""
+    import json
+    import urllib.error
+    import urllib.request
+
+    request = urllib.request.Request(
+        f"https://api.appstoreconnect.apple.com{path}",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return json.load(response)
+    except urllib.error.HTTPError as error:
+        print(f"{BAD} HTTP {error.code} sur {path}")
+        return None
+    except urllib.error.URLError as error:
+        print(f"{BAD} Appel impossible : {error.reason}")
+        return None
+
+
+def _list_builds(token: str, apps: list, bundle_id: str) -> None:
+    """Affiche l'état des derniers builds d'une application.
+
+    Un build téléversé n'est pas un build installable : Apple le traite
+    pendant quelques minutes, et tant que « processingState » vaut
+    PROCESSING il n'apparaît chez aucun testeur. C'est la seule façon de
+    distinguer « Apple travaille encore » de « Apple a rejeté ».
+    """
+    app = next(
+        (a for a in apps if a.get("attributes", {}).get("bundleId") == bundle_id),
+        None,
+    )
+    print()
+    if app is None:
+        print(f"{BAD} Aucune application pour {bundle_id}.")
+        return
+    name = app.get("attributes", {}).get("name")
+    print(f"Builds de « {name} » ({bundle_id}) :")
+    payload = _asc_get(
+        token,
+        f"/v1/builds?filter[app]={app['id']}&limit=5"
+        "&sort=-uploadedDate&fields[builds]="
+        "version,processingState,uploadedDate,expired",
+    )
+    if payload is None:
+        return
+    builds = payload.get("data", [])
+    if not builds:
+        print(f"  {BAD} Aucun build : rien n'est arrivé chez Apple.")
+        return
+    for build in builds:
+        at = build.get("attributes", {})
+        state = at.get("processingState")
+        mark = OK if state == "VALID" else BAD
+        expired = " (expiré)" if at.get("expired") else ""
+        print(
+            f"  {mark} build {at.get('version')} — {state}"
+            f" — déposé le {at.get('uploadedDate')}{expired}"
+        )
+    print()
+    print("  PROCESSING : Apple travaille encore, patienter.")
+    print("  VALID      : installable ; s'il reste invisible, c'est côté")
+    print("               TestFlight (groupe ou conformité export).")
+    print("  INVALID    : Apple a rejeté le build, le courriel le détaille.")
 
 
 def _asc_status(token: str, path: str) -> int:
@@ -975,6 +1044,10 @@ def main(argv: list[str] | None = None) -> int:
     asc.add_argument(
         "--probe-upload", action="store_true",
         help="situer le rôle de la clé quand le téléversement est refusé",
+    )
+    asc.add_argument(
+        "--builds", metavar="BUNDLE_ID",
+        help="afficher l'état des derniers builds de cette application",
     )
     asc.set_defaults(func=cmd_check_asc)
 
