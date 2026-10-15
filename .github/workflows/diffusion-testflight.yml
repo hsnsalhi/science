@@ -1,0 +1,52 @@
+# Un build « VALID » chez Apple n'est pas un build installable : il faut
+# encore qu'il soit rattaché à un groupe de test. Ce workflow dit à quel
+# groupe va le dernier build, et peut l'ajouter à ceux qui ne l'ont pas.
+#
+# Il ne construit rien et ne consomme aucun numéro de build : une minute
+# sur un runner Linux.
+name: Diffusion TestFlight
+
+on:
+  workflow_dispatch:
+    inputs:
+      assign:
+        description: >-
+          Rattacher le build aux groupes internes qui ne le reçoivent pas
+        type: boolean
+        default: false
+
+jobs:
+  diffusion:
+    name: Examiner la diffusion
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Interroger App Store Connect
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
+          ASSIGN: ${{ inputs.assign }}
+        run: |
+          set -uo pipefail
+
+          KEY_FILE="$RUNNER_TEMP/AuthKey_${ASC_KEY_ID}.p8"
+          echo "$ASC_PRIVATE_KEY_BASE64" | base64 --decode > "$KEY_FILE"
+          chmod 600 "$KEY_FILE"
+
+          FLAGS=""
+          [ "$ASSIGN" = "true" ] && FLAGS="--assign"
+
+          python3 tool/ios_signing.py testflight \
+            --asc-key "$KEY_FILE" \
+            --issuer "$ASC_ISSUER_ID" \
+            --key-id "$ASC_KEY_ID" \
+            $FLAGS
+          status=$?
+
+          rm -f "$KEY_FILE"
+          exit $status

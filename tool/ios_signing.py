@@ -883,6 +883,129 @@ def _probe_privileges(token: str, apps: list) -> None:
         print("  Access → Integrations, et remplacer les trois secrets.")
 
 
+def _asc_post(token: str, path: str, body: dict) -> int:
+    """Envoie une écriture à l'API et renvoie le code HTTP."""
+    import json
+    import urllib.error
+    import urllib.request
+
+    request = urllib.request.Request(
+        f"https://api.appstoreconnect.apple.com{path}",
+        data=json.dumps(body).encode(),
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return response.status
+    except urllib.error.HTTPError as error:
+        detail = error.read().decode(errors="replace")
+        print(f"{BAD} HTTP {error.code}")
+        try:
+            for item in json.loads(detail).get("errors", []):
+                print(f"    {item.get('title')} — {item.get('detail')}")
+        except ValueError:
+            print(f"    {detail[:300]}")
+        return error.code
+    except urllib.error.URLError as error:
+        print(f"{BAD} Appel impossible : {error.reason}")
+        return 0
+
+
+def cmd_testflight(args: argparse.Namespace) -> int:
+    """Dit pourquoi un build valide n'apparaît pas chez un testeur.
+
+    Un build « VALID » est traité par Apple, pas distribué pour autant :
+    il faut encore qu'il soit rattaché à un groupe de test. Un groupe
+    interne créé sans distribution automatique ne reçoit rien tant qu'on
+    ne lui ajoute pas chaque build à la main.
+    """
+    key_path: Path = args.asc_key
+    if not key_path.exists():
+        raise Failure(f"Clé introuvable : {key_path}")
+    match = re.fullmatch(r"AuthKey_([A-Z0-9]{10})\.p8", key_path.name)
+    key_id = args.key_id or (match.group(1) if match else None)
+    if not key_id:
+        raise Failure("Key ID indéterminable ; le passer avec --key-id.")
+    token = asc_token(key_path, key_id, args.issuer)
+
+    apps = (_asc_get(token, "/v1/apps?limit=20") or {}).get("data", [])
+    app = next(
+        (a for a in apps
+         if a.get("attributes", {}).get("bundleId") == args.bundle_id),
+        None,
+    )
+    if app is None:
+        raise Failure(f"Aucune application pour {args.bundle_id}.")
+    app_id = app["id"]
+    print(f"Application : {app['attributes'].get('name')} ({args.bundle_id})")
+
+    builds = (_asc_get(
+        token,
+        f"/v1/builds?filter[app]={app_id}&limit=1&sort=-uploadedDate"
+        "&fields[builds]=version,processingState",
+    ) or {}).get("data", [])
+    if not builds:
+        raise Failure("Aucun build chez Apple.")
+    build = builds[0]
+    version = build["attributes"].get("version")
+    state = build["attributes"].get("processingState")
+    print(f"Dernier build : {version} — {state}")
+    if state != "VALID":
+        print(f"{BAD} Build non traité : rien à distribuer pour l'instant.")
+        return 0
+
+    groups = (_asc_get(
+        token, f"/v1/apps/{app_id}/betaGroups?limit=20"
+    ) or {}).get("data", [])
+    print(f"\nGroupes de test ({len(groups)}) :")
+    internes = []
+    for group in groups:
+        at = group.get("attributes", {})
+        kind = "interne" if at.get("isInternalGroup") else "externe"
+        auto = "distribution automatique" if at.get(
+            "hasAccessToAllBuilds") else "ajout manuel des builds"
+        print(f"  • {at.get('name')} — {kind}, {auto}")
+        if at.get("isInternalGroup"):
+            internes.append((group["id"], at.get("name"),
+                             bool(at.get("hasAccessToAllBuilds"))))
+
+    attached = (_asc_get(
+        token, f"/v1/builds/{build['id']}/betaGroups?limit=20"
+    ) or {}).get("data", [])
+    noms = [g.get("attributes", {}).get("name") for g in attached]
+    print(f"\nGroupes recevant le build {version} : "
+          f"{', '.join(n for n in noms if n) or 'aucun'}")
+
+    manquants = [(gid, nom) for gid, nom, auto in internes
+                 if not auto and gid not in {g['id'] for g in attached}]
+    if not manquants:
+        print(f"\n{OK} Le build est distribué à tous les groupes internes.")
+        print("  S'il reste invisible, actualiser TestFlight sur le "
+              "téléphone — l'onglet « Apps », puis tirer vers le bas.")
+        return 0
+
+    print(f"\n{BAD} Groupes internes qui ne reçoivent pas ce build :")
+    for _, nom in manquants:
+        print(f"    • {nom}")
+    if not args.assign:
+        print("\n  Relancer avec --assign pour l'y ajouter.")
+        return 0
+
+    for gid, nom in manquants:
+        status = _asc_post(
+            token, f"/v1/betaGroups/{gid}/relationships/builds",
+            {"data": [{"type": "builds", "id": build["id"]}]},
+        )
+        mark = OK if status in (201, 204) else BAD
+        print(f"  {mark} « {nom} » : ajout du build {version} "
+              f"(HTTP {status or '—'})")
+    return 0
+
+
 def cmd_push_secrets(args: argparse.Namespace) -> int:
     """Dépose dans GitHub les secrets déjà écrits par l'assistant.
 
@@ -1050,6 +1173,20 @@ def main(argv: list[str] | None = None) -> int:
         help="afficher l'état des derniers builds de cette application",
     )
     asc.set_defaults(func=cmd_check_asc)
+
+    tf = sub.add_parser(
+        "testflight",
+        help="dire pourquoi un build valide n'apparaît pas chez un testeur",
+    )
+    tf.add_argument("--asc-key", type=Path, required=True)
+    tf.add_argument("--issuer", required=True)
+    tf.add_argument("--key-id")
+    tf.add_argument("--bundle-id", default="com.techlyb.eureka")
+    tf.add_argument(
+        "--assign", action="store_true",
+        help="rattacher le build aux groupes internes qui ne l'ont pas",
+    )
+    tf.set_defaults(func=cmd_testflight)
 
     push = sub.add_parser(
         "push-secrets",
