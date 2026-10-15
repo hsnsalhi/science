@@ -291,6 +291,7 @@ modifier `version:` dans `pubspec.yaml`.
 | `No signing certificate "iOS Distribution" found` | Le `.p12` ne contient pas la clé privée, ou a été créé sans `-legacy`. Refaire l'étape 2 depuis `dist.key`. |
 | `Provisioning profile ... doesn't include signing certificate` | Le profil a été créé avant le certificat. Régénérer le profil (étape 3) en cochant le bon certificat. |
 | `No suitable application records were found` | La fiche App Store Connect n'existe pas, ou son Bundle ID diffère. Étape 1. |
+| `Cannot verify client's JWT headers` (code 3004) | Apple ne reconnaît pas le couple Key ID / Issuer ID. Lancer le workflow **Vérifier les identifiants Apple** : il pose la question à Apple en une minute, sans construire ni consommer de numéro de build. |
 | `The bundle version must be higher than the previously uploaded version` | Un numéro de build a déjà été utilisé. Relancer : `github.run_number` aura augmenté. |
 | `Invalid Pre-Release Train` | La version de `pubspec.yaml` est inférieure ou égale à une version déjà publiée. L'incrémenter. |
 | Build rejeté pour cause de SDK trop ancien | Passer `runs-on: macos-15` à `macos-latest` dans le workflow. |

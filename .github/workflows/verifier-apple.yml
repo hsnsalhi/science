@@ -1,0 +1,73 @@
+# Teste les identifiants App Store Connect, sans rien construire.
+#
+# Un échec d'authentification ne se manifeste sinon qu'à la toute fin du
+# workflow TestFlight, après cinq minutes de compilation et au prix d'un
+# numéro de build définitivement consommé. Ce workflow-ci pose la même
+# question à Apple en une minute, et ne consomme rien.
+name: Vérifier les identifiants Apple
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    name: Interroger App Store Connect
+    runs-on: macos-15
+    timeout-minutes: 10
+
+    steps:
+      - name: Interroger l'API avec la clé
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
+        run: |
+          set -uo pipefail
+
+          for name in ASC_KEY_ID ASC_ISSUER_ID ASC_PRIVATE_KEY_BASE64; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::Secret manquant : $name"
+              exit 1
+            fi
+          done
+
+          echo "Key ID    : ${#ASC_KEY_ID} caractères"
+          echo "Issuer ID : ${#ASC_ISSUER_ID} caractères"
+
+          # altool cherche la clé dans ~/private_keys, sous un nom qui doit
+          # reprendre exactement l'identifiant passé en --apiKey.
+          mkdir -p "$HOME/private_keys"
+          KEY_FILE="$HOME/private_keys/AuthKey_${ASC_KEY_ID}.p8"
+          echo "$ASC_PRIVATE_KEY_BASE64" | base64 --decode > "$KEY_FILE"
+          chmod 600 "$KEY_FILE"
+          echo "Clé écrite: $(wc -c < "$KEY_FILE") octets"
+          if ! head -1 "$KEY_FILE" | grep -q 'BEGIN PRIVATE KEY'; then
+            echo "::error::La clé décodée n'est pas une clé PKCS#8."
+            exit 1
+          fi
+
+          echo
+          echo "── Réponse d'Apple ──"
+          if xcrun altool --list-providers \
+               --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"; then
+            echo
+            echo "✅ Les identifiants sont acceptés."
+            echo "Le workflow TestFlight peut être relancé."
+          else
+            echo
+            echo "::error::Apple refuse ces identifiants."
+            echo "Si le message est « Cannot verify client's JWT headers »"
+            echo "(code 3004), Apple ne reconnaît pas le couple Key ID /"
+            echo "Issuer ID. Causes, par ordre de fréquence :"
+            echo "  1. l'Issuer ID n'est pas celui affiché sur l'onglet"
+            echo "     Team Keys de appstoreconnect.apple.com/access/"
+            echo "     integrations/api ;"
+            echo "  2. la clé a été révoquée ou appartient à une autre"
+            echo "     équipe ;"
+            echo "  3. le .p8 déposé n'est pas celui du Key ID indiqué."
+            exit 1
+          fi
+
+      - name: Effacer la clé
+        if: always()
+        run: rm -rf "$HOME/private_keys" || true
