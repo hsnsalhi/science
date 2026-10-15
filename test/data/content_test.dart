@@ -329,6 +329,26 @@ void main() {
     },
   );
 
+  verifieChapitreRedige(
+    'maths-college-statistiques-et-moyennes',
+    const <String, double>{
+      'lire/q1': 20, // 3 + 7 + 6 + 4
+      'lire/q3': 35, // 7 sur 20
+      'lire/q6': 10, // effectifs des notes 14 et 16
+      'moyenne/q1': 13, // (12 + 15 + 9 + 16) ÷ 4
+      'moyenne/q2': 12.8, // 256 ÷ 20
+      'moyenne/q3': 11, // 66 ÷ 6, avec coefficients
+      'moyenne/q6': 44, // 11 × 4
+      'mediane/q1': 9, // quatrième de sept valeurs
+      'mediane/q2': 8.5, // (7 + 10) ÷ 2
+      'mediane/q3': 17, // 20 − 3
+      'mediane/q6': 12, // série rangée 7 ; 7 ; 12 ; 15 ; 20
+      'interpreter/q1': 3320, // 16 600 ÷ 5
+      'interpreter/q2': 1700, // troisième des cinq salaires
+      'interpreter/q5': 16, // 18 − 2
+    },
+  );
+
   group('Chapitre complet : le théorème de Pythagore', () {
     late Chapter pythagore;
 

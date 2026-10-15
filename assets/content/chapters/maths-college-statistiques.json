@@ -1,0 +1,505 @@
+{
+  "chapter": "maths-college-statistiques-et-moyennes",
+  "lessons": [
+    {
+      "id": "lire",
+      "title": "Lire un tableau de données",
+      "subtitle": "Effectif, effectif total, fréquence : les trois mots de départ.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une série de données",
+          "body": "Quand on relève une information sur un groupe — les notes d'un contrôle, la taille des élèves, le temps de trajet de chacun — on obtient une série de données. La statistique consiste à résumer cette liste par quelques nombres parlants."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "L'effectif",
+          "body": "L'effectif d'une valeur, c'est le nombre de fois où elle apparaît dans la série. L'effectif total, c'est le nombre de données en tout — autrement dit la somme de tous les effectifs."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un tableau d'effectifs",
+          "body": "Les notes d'un groupe :\n\nNote 8 → 3 élèves\nNote 12 → 7 élèves\nNote 14 → 6 élèves\nNote 16 → 4 élèves\n\nEffectif total : 3 + 7 + 6 + 4 = 20 élèves."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "La fréquence",
+          "body": "La fréquence d'une valeur est la part qu'elle occupe dans le total. On divise son effectif par l'effectif total, puis on multiplie par 100 pour l'exprimer en pourcentage.\n\n7 ÷ 20 = 0,35, soit 35 % du groupe."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de confondre la valeur et son effectif. À la question « quelle est la note la plus fréquente ? », la réponse est 12, pas 7 : 7 est le nombre d'élèves qui l'ont obtenue. Prends l'habitude de lire chaque ligne en phrase entière : « sept élèves ont eu douze »."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Le vocabulaire",
+          "bullets": [
+            "Valeur : la donnée observée, ici une note.",
+            "Effectif : le nombre de fois où cette valeur apparaît.",
+            "Effectif total : la somme de tous les effectifs.",
+            "Fréquence : effectif ÷ effectif total, souvent donnée en pourcentage."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un tableau donne : note 8 pour 3 élèves, note 12 pour 7 élèves, note 14 pour 6 élèves, note 16 pour 4 élèves. Quel est l'effectif total ?",
+          "answer": 20,
+          "tolerance": 0.01,
+          "unit": "élèves",
+          "hint": "L'effectif total est la somme de tous les effectifs.",
+          "explanation": "3 + 7 + 6 + 4 = 20 élèves. Ce nombre servira de dénominateur pour toutes les fréquences, et de diviseur pour la moyenne : il vaut la peine de le calculer une fois pour toutes, avant le reste."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans ce même tableau, quelle est la note la plus fréquente ?",
+          "hint": "On cherche une note, pas un nombre d'élèves.",
+          "explanation": "C'est la note 12, obtenue par 7 élèves, soit plus que n'importe quelle autre. La réponse 7 confondrait la valeur avec son effectif : 7 n'est pas une note du tableau, c'est un nombre d'élèves.",
+          "options": [
+            {
+              "text": "12",
+              "correct": true
+            },
+            {
+              "text": "7"
+            },
+            {
+              "text": "16"
+            },
+            {
+              "text": "14"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Toujours dans ce tableau de 20 élèves, quelle est la fréquence de la note 12, exprimée en pourcentage ?",
+          "answer": 35,
+          "tolerance": 0.1,
+          "unit": "%",
+          "hint": "Divise l'effectif de la note 12 par l'effectif total.",
+          "explanation": "7 ÷ 20 = 0,35, soit 35 %. Un peu plus du tiers du groupe a obtenu cette note. Contrôle de bon sens : 7 sur 20, c'est un peu plus du tiers, donc un peu plus de 33 %."
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Complète le vocabulaire des statistiques.",
+          "template": "Le nombre de fois qu'une valeur apparaît s'appelle son ___ , et la part qu'elle occupe dans le total s'appelle sa ___ .",
+          "blanks": [
+            {
+              "accepted": [
+                "effectif"
+              ]
+            },
+            {
+              "accepted": [
+                "fréquence",
+                "frequence"
+              ]
+            }
+          ],
+          "explanation": "L'effectif est un nombre d'individus, la fréquence est une proportion. L'un se compte, l'autre se divise : c'est pourquoi une fréquence peut s'écrire en pourcentage alors qu'un effectif ne le peut pas.",
+          "hint": "Le second mot se retrouve dans « un évènement fréquent »."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La somme de toutes les fréquences d'une série vaut 100 %.",
+          "answer": true,
+          "explanation": "Vrai. Chaque donnée est comptée dans exactement une valeur, donc en additionnant toutes les parts on retrouve le groupe entier. C'est une vérification utile : si tes fréquences donnent 97 % ou 104 %, une erreur s'est glissée quelque part.",
+          "hint": "Que représentent toutes les valeurs réunies ?"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Dans ce tableau, combien d'élèves ont obtenu au moins 14 ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "élèves",
+          "hint": "« Au moins 14 » comprend aussi la note 14 elle-même.",
+          "explanation": "Les notes concernées sont 14 et 16, soit 6 + 4 = 10 élèves — la moitié du groupe. L'expression « au moins » inclut la valeur citée ; « plus de 14 » aurait exclu le 14 et donné 4 élèves."
+        }
+      ]
+    },
+    {
+      "id": "moyenne",
+      "title": "Calculer une moyenne",
+      "subtitle": "Partager équitablement, avec ou sans effectifs.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La moyenne",
+          "formula": "moyenne = somme des valeurs ÷ nombre de valeurs",
+          "body": "La moyenne répond à la question : si tout le monde avait la même valeur, laquelle serait-ce ? C'est un partage équitable du total."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Quatre notes",
+          "body": "12, 15, 9 et 16.\n\nSomme : 12 + 15 + 9 + 16 = 52\nNombre de valeurs : 4\n\nMoyenne : 52 ÷ 4 = 13"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Quand une valeur revient souvent",
+          "body": "Inutile de la réécrire : on la multiplie par son effectif.\n\n(8 × 3) + (12 × 7) + (14 × 6) + (16 × 4)\n= 24 + 84 + 84 + 64 = 256\n\n256 ÷ 20 = 12,8 de moyenne."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Avec des coefficients",
+          "body": "Un coefficient se traite exactement comme un effectif.\n\n12 coefficient 2, 15 coefficient 1, 9 coefficient 3 :\n(12 × 2) + (15 × 1) + (9 × 3) = 24 + 15 + 27 = 66\n\nOn divise par la somme des coefficients : 66 ÷ 6 = 11."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de diviser par le nombre de lignes du tableau au lieu de l'effectif total : 256 ÷ 4 donnerait 64, une note impossible. Le diviseur est toujours le nombre de données réellement comptées — effectif total, ou somme des coefficients."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Une seule règle, deux habillages",
+          "formula": "moyenne = (Σ valeur × effectif) ÷ effectif total",
+          "bullets": [
+            "Sans effectifs : somme des valeurs divisée par leur nombre.",
+            "Avec effectifs ou coefficients : chaque valeur pèse son effectif.",
+            "Le diviseur n'est jamais le nombre de valeurs différentes.",
+            "La moyenne est toujours comprise entre la plus petite et la plus grande valeur."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la moyenne des quatre notes 12, 15, 9 et 16 ?",
+          "answer": 13,
+          "tolerance": 0.01,
+          "hint": "Additionne les quatre notes, puis divise par 4.",
+          "explanation": "12 + 15 + 9 + 16 = 52, et 52 ÷ 4 = 13. Contrôle : 13 est bien compris entre la plus petite note, 9, et la plus grande, 16 — une moyenne en dehors de cet intervalle serait forcément fausse."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Reprenons le tableau : note 8 pour 3 élèves, 12 pour 7 élèves, 14 pour 6 élèves, 16 pour 4 élèves. Quelle est la moyenne du groupe ?",
+          "answer": 12.8,
+          "tolerance": 0.05,
+          "hint": "Multiplie chaque note par son effectif avant d'additionner.",
+          "explanation": "(8 × 3) + (12 × 7) + (14 × 6) + (16 × 4) = 24 + 84 + 84 + 64 = 256, puis 256 ÷ 20 = 12,8. La moyenne est proche de 12 et 14, les deux notes les plus répandues : c'est cohérent."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un élève obtient 12 (coefficient 2), 15 (coefficient 1) et 9 (coefficient 3). Quelle est sa moyenne ?",
+          "answer": 11,
+          "tolerance": 0.01,
+          "hint": "Le diviseur est la somme des coefficients, pas le nombre de notes.",
+          "explanation": "(12 × 2) + (15 × 1) + (9 × 3) = 24 + 15 + 27 = 66, et la somme des coefficients vaut 2 + 1 + 3 = 6, donc 66 ÷ 6 = 11. Le 9, qui pèse le plus lourd, tire la moyenne vers le bas : sans coefficients, elle aurait valu 12."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pour calculer la moyenne d'une série donnée par un tableau d'effectifs, par quoi divise-t-on la somme des produits valeur × effectif ?",
+          "hint": "Combien de données ont réellement été comptées ?",
+          "explanation": "On divise par l'effectif total, c'est-à-dire le nombre de données de la série. Diviser par le nombre de valeurs différentes reviendrait à traiter une note obtenue par sept élèves comme une note obtenue par un seul.",
+          "options": [
+            {
+              "text": "Par l'effectif total",
+              "correct": true
+            },
+            {
+              "text": "Par le nombre de valeurs différentes"
+            },
+            {
+              "text": "Par la plus grande valeur de la série"
+            },
+            {
+              "text": "Par le nombre de colonnes du tableau"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La moyenne d'une série est toujours l'une des valeurs de cette série.",
+          "answer": false,
+          "explanation": "Faux. La moyenne du groupe précédent vaut 12,8, alors qu'aucun élève n'a obtenu cette note. Une moyenne est un nombre calculé, pas une donnée observée — d'où les moyennes de familles « à 2,2 enfants », qui ne décrivent aucune famille réelle.",
+          "hint": "Pense à la moyenne 12,8 : un élève a-t-il eu cette note ?"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un élève a exactement 11 de moyenne sur quatre notes. Quelle est la somme de ses quatre notes ?",
+          "answer": 44,
+          "tolerance": 0.01,
+          "hint": "La moyenne est la somme divisée par 4 : fais le chemin inverse.",
+          "explanation": "Si somme ÷ 4 = 11, alors somme = 11 × 4 = 44. Remonter de la moyenne vers la somme est le geste qui permet de répondre à « quelle note faut-il obtenir pour atteindre telle moyenne ? »."
+        }
+      ]
+    },
+    {
+      "id": "mediane",
+      "title": "Médiane et étendue",
+      "subtitle": "Deux autres façons de résumer une série.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Ranger avant tout",
+          "body": "La médiane ne se calcule pas, elle se lit — mais seulement sur une série rangée dans l'ordre croissant. Tant que les valeurs sont en désordre, la valeur du milieu de la liste ne veut rien dire."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Quand l'effectif est impair",
+          "body": "La médiane est la valeur située au milieu.\n\n3 ; 5 ; 8 ; 9 ; 12 ; 14 ; 20\n\nSept valeurs : la quatrième est au milieu, avec trois valeurs avant et trois après. La médiane vaut 9."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Quand l'effectif est pair",
+          "body": "Aucune valeur n'est au milieu : on prend la moyenne des deux valeurs centrales.\n\n4 ; 7 ; 10 ; 15\n\nLes deux valeurs centrales sont 7 et 10, donc la médiane vaut (7 + 10) ÷ 2 = 8,5."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "L'étendue",
+          "body": "L'étendue mesure l'écart entre les deux extrêmes.\n\nétendue = valeur la plus grande − valeur la plus petite\n\nPour la série 3 ; 5 ; 8 ; 9 ; 12 ; 14 ; 20 : 20 − 3 = 17. Elle dit si la série est resserrée ou dispersée."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est d'oublier de ranger la série. Dans 12 ; 7 ; 15 ; 7 ; 20, la valeur du milieu de la liste est 15, mais la médiane vaut 12 : une fois rangée, la série devient 7 ; 7 ; 12 ; 15 ; 20. Range toujours avant de pointer le milieu."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Trois résumés, trois rôles",
+          "bullets": [
+            "Moyenne : le partage équitable du total.",
+            "Médiane : la valeur qui coupe la série rangée en deux moitiés.",
+            "Étendue : l'écart entre la plus grande et la plus petite valeur.",
+            "Médiane et étendue exigent une série rangée ; la moyenne non."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la médiane de la série 3 ; 5 ; 8 ; 9 ; 12 ; 14 ; 20 ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "hint": "La série est déjà rangée, et compte un nombre impair de valeurs.",
+          "explanation": "Sept valeurs : la médiane est la quatrième, c'est-à-dire 9. Trois valeurs lui sont inférieures (3, 5, 8) et trois lui sont supérieures (12, 14, 20) : la série est bien coupée en deux moitiés égales."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la médiane de la série 4 ; 7 ; 10 ; 15 ?",
+          "answer": 8.5,
+          "tolerance": 0.01,
+          "hint": "L'effectif est pair : aucune valeur n'est exactement au milieu.",
+          "explanation": "Les deux valeurs centrales sont 7 et 10, donc la médiane vaut (7 + 10) ÷ 2 = 8,5. Comme pour la moyenne, la médiane n'est pas forcément une valeur de la série."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est l'étendue de la série 3 ; 5 ; 8 ; 9 ; 12 ; 14 ; 20 ?",
+          "answer": 17,
+          "tolerance": 0.01,
+          "hint": "Une soustraction entre les deux extrêmes suffit.",
+          "explanation": "20 − 3 = 17. L'étendue ne dit rien de ce qui se passe entre les deux extrêmes : deux séries très différentes peuvent avoir la même étendue, c'est pourquoi on la donne en complément de la moyenne ou de la médiane, jamais seule."
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes du calcul d'une médiane.",
+          "items": [
+            "Ranger les valeurs dans l'ordre croissant",
+            "Compter le nombre de valeurs de la série",
+            "Repérer la valeur centrale, ou les deux valeurs centrales",
+            "Conclure, en faisant la moyenne des deux si l'effectif est pair"
+          ],
+          "explanation": "Le rangement passe avant tout le reste : c'est lui qui donne un sens au mot « milieu ». Compter ensuite les valeurs permet de savoir si l'on cherche une valeur centrale ou deux.",
+          "hint": "Une étape doit absolument venir en premier."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Pour trouver la médiane, il suffit de prendre la valeur située au milieu de la liste telle qu'elle est donnée.",
+          "answer": false,
+          "explanation": "Faux : tant que la série n'est pas rangée, la valeur du milieu de la liste n'a aucune raison d'être la médiane. Dans 12 ; 7 ; 15 ; 7 ; 20, le milieu de la liste est 15, alors que la médiane vaut 12.",
+          "hint": "Essaie sur la série 12 ; 7 ; 15 ; 7 ; 20."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la médiane de la série 12 ; 7 ; 15 ; 7 ; 20 ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "hint": "Commence par ranger les cinq valeurs dans l'ordre croissant.",
+          "explanation": "Rangée, la série devient 7 ; 7 ; 12 ; 15 ; 20. La troisième valeur, 12, est la médiane. Une valeur répétée se recopie autant de fois qu'elle apparaît : il y a bien deux 7 dans la série rangée."
+        }
+      ]
+    },
+    {
+      "id": "interpreter",
+      "title": "Choisir le bon indicateur",
+      "subtitle": "Comprendre ce que chaque résumé cache et ce qu'il révèle.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux résumés, deux histoires",
+          "body": "Moyenne et médiane répondent à deux questions différentes. La moyenne partage le total équitablement ; la médiane désigne la situation du milieu. Sur certaines séries, elles donnent des nombres très éloignés — et c'est précisément là qu'elles deviennent intéressantes."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "L'effet d'une valeur extrême",
+          "body": "Cinq salaires, en euros : 1 500 ; 1 600 ; 1 700 ; 1 800 ; 10 000.\n\nMoyenne : 16 600 ÷ 5 = 3 320 €\nMédiane : 1 700 €\n\nQuatre personnes sur cinq gagnent moins que la moyenne. La médiane décrit bien mieux ce groupe."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Laquelle choisir ?",
+          "body": "La moyenne convient quand on veut répartir un total : des frais à partager, une production à cumuler. La médiane convient quand on veut décrire un individu typique, surtout si quelques valeurs extrêmes tirent la série."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "L'étendue complète le portrait",
+          "body": "Deux groupes peuvent avoir 10 de moyenne : le premier avec des notes entre 9 et 11, le second entre 2 et 18. Même moyenne, étendues de 2 et de 16 : ce ne sont pas du tout les mêmes classes."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de conclure à partir de la seule moyenne. « La moyenne est de 3 320 € » laisse croire à un groupe aisé, alors que quatre personnes sur cinq gagnent moins de 1 800 €. Demande toujours deux choses avant de commenter une moyenne : la médiane, et l'étendue."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Lire une série sans se faire avoir",
+          "bullets": [
+            "La moyenne est sensible aux valeurs extrêmes, la médiane beaucoup moins.",
+            "La médiane coupe la série rangée en deux moitiés de même effectif.",
+            "L'étendue mesure la dispersion, pas la position.",
+            "Un seul indicateur ne décrit jamais complètement une série."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Cinq salaires, en euros : 1 500 ; 1 600 ; 1 700 ; 1 800 ; 10 000. Quelle est la moyenne de ces salaires ?",
+          "answer": 3320,
+          "tolerance": 1,
+          "unit": "€",
+          "hint": "Additionne les cinq salaires, puis divise par 5.",
+          "explanation": "1 500 + 1 600 + 1 700 + 1 800 + 10 000 = 16 600, et 16 600 ÷ 5 = 3 320 €. Le salaire le plus élevé représente à lui seul plus de la moitié du total : c'est lui qui tire la moyenne vers le haut."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour cette même série de cinq salaires, quelle est la médiane ?",
+          "answer": 1700,
+          "tolerance": 1,
+          "unit": "€",
+          "hint": "La série est déjà rangée, et compte cinq valeurs.",
+          "explanation": "La troisième valeur de la série rangée est 1 700 €. L'écart avec la moyenne, 3 320 €, est énorme : il signale à lui seul la présence d'une valeur extrême dans la série."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pour décrire le salaire d'une personne typique de ce groupe, quel indicateur est le plus honnête ?",
+          "hint": "Combien de personnes gagnent moins que la moyenne ?",
+          "explanation": "La médiane, 1 700 €, car elle n'est pas déformée par le salaire de 10 000 €. Annoncer la moyenne de 3 320 € laisserait croire qu'une personne sur deux gagne environ cette somme, alors que quatre sur cinq gagnent moins de 1 800 €.",
+          "options": [
+            {
+              "text": "La médiane, car elle résiste aux valeurs extrêmes",
+              "correct": true
+            },
+            {
+              "text": "La moyenne, car elle utilise toutes les valeurs"
+            },
+            {
+              "text": "L'étendue, car elle couvre tous les salaires"
+            },
+            {
+              "text": "Le salaire le plus élevé, car c'est le plus marquant"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quelles affirmations sont vraies ?",
+          "explanation": "La médiane partage la série rangée en deux moitiés de même effectif, la moyenne se déplace dès qu'une valeur extrême apparaît, et l'étendue mesure la dispersion. En revanche médiane et moyenne ne coïncident que sur des séries bien équilibrées, et l'étendue est une différence, jamais une somme.",
+          "hint": "Trois propositions sont exactes.",
+          "options": [
+            {
+              "text": "La médiane partage la série rangée en deux moitiés de même effectif",
+              "correct": true
+            },
+            {
+              "text": "La moyenne est sensible aux valeurs extrêmes",
+              "correct": true
+            },
+            {
+              "text": "L'étendue mesure la dispersion d'une série",
+              "correct": true
+            },
+            {
+              "text": "La médiane est toujours égale à la moyenne"
+            },
+            {
+              "text": "L'étendue est la somme de la plus petite et de la plus grande valeur"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Deux groupes ont 10 de moyenne. Dans le premier, les notes vont de 9 à 11 ; dans le second, de 2 à 18. Quelle est l'étendue du second groupe ?",
+          "answer": 16,
+          "tolerance": 0.01,
+          "hint": "L'étendue est la différence entre les deux extrêmes.",
+          "explanation": "18 − 2 = 16, contre seulement 11 − 9 = 2 pour le premier groupe. Même moyenne, dispersions sans commune mesure : le premier groupe est homogène, le second rassemble des situations très différentes. C'est exactement ce que la moyenne seule ne dit pas."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Ajouter une valeur très grande à une série modifie nettement sa moyenne, mais peut ne presque pas déplacer sa médiane.",
+          "answer": true,
+          "explanation": "Vrai, et c'est tout l'intérêt de la médiane. La moyenne additionne les valeurs, donc une valeur énorme pèse énormément ; la médiane ne retient que des positions, et une valeur supplémentaire ne décale le milieu que d'un rang. C'est ce qui s'est produit avec le salaire de 10 000 €.",
+          "hint": "Repense aux cinq salaires : qu'arriverait-il à chacun des deux indicateurs sans le salaire de 10 000 € ?"
+        }
+      ]
+    }
+  ]
+}
