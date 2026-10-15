@@ -14,6 +14,11 @@ on:
           Rattacher le build aux groupes internes qui ne le reçoivent pas
         type: boolean
         default: false
+      resend_invite:
+        description: >-
+          Renvoyer son invitation à un testeur qui n'a jamais accepté
+        type: boolean
+        default: false
 
 jobs:
   diffusion:
@@ -31,6 +36,7 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
           ASSIGN: ${{ inputs.assign }}
+          RESEND: ${{ inputs.resend_invite }}
         run: |
           set -uo pipefail
 
@@ -39,7 +45,8 @@ jobs:
           chmod 600 "$KEY_FILE"
 
           FLAGS=""
-          [ "$ASSIGN" = "true" ] && FLAGS="--assign"
+          [ "$ASSIGN" = "true" ] && FLAGS="$FLAGS --assign"
+          [ "$RESEND" = "true" ] && FLAGS="$FLAGS --resend-invite"
 
           python3 tool/ios_signing.py testflight \
             --asc-key "$KEY_FILE" \

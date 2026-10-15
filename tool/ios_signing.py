@@ -915,7 +915,8 @@ def _asc_post(token: str, path: str, body: dict) -> int:
         return 0
 
 
-def _print_testers(token: str, internes: list) -> None:
+def _print_testers(token: str, internes: list, app_id: str = "",
+                   resend: bool = False) -> None:
     """Affiche les testeurs de chaque groupe interne et leur état.
 
     Un testeur « invité » mais qui n'a pas accepté ne voit rien : c'est la
@@ -936,8 +937,28 @@ def _print_testers(token: str, internes: list) -> None:
         for tester in testeurs:
             at = tester.get("attributes", {})
             etat = at.get("state") or "état non communiqué"
-            mark = OK if etat in ("INSTALLED", "ACCEPTED") else BAD
+            accepte = etat in ("INSTALLED", "ACCEPTED")
+            mark = OK if accepte else BAD
             print(f"  {mark} {at.get('email')} — {etat}")
+            if accepte or not resend or not app_id:
+                continue
+            # Invité mais jamais accepté : l'application reste invisible
+            # dans TestFlight tant que le lien du courriel n'est pas suivi.
+            # Renvoyer l'invitation coûte un courriel et refait un lien
+            # valide, ce qui est plus sûr que de chercher l'ancien.
+            status = _asc_post(
+                token, "/v1/betaTesterInvitations",
+                {"data": {
+                    "type": "betaTesterInvitations",
+                    "relationships": {
+                        "app": {"data": {"type": "apps", "id": app_id}},
+                        "betaTester": {"data": {
+                            "type": "betaTesters", "id": tester["id"]}},
+                    },
+                }},
+            )
+            mark = OK if status in (200, 201, 204) else BAD
+            print(f"    {mark} invitation renvoyée (HTTP {status or '—'})")
 
 
 def cmd_testflight(args: argparse.Namespace) -> int:
@@ -1014,7 +1035,7 @@ def cmd_testflight(args: argparse.Namespace) -> int:
         print(f"\nGroupes recevant le build {version} : "
               f"{', '.join(n for n in noms if n) or 'aucun'}")
 
-    _print_testers(token, internes)
+    _print_testers(token, internes, app_id, args.resend_invite)
 
     manquants = [(gid, nom) for gid, nom, auto in internes
                  if not auto and gid not in {g['id'] for g in attached}]
@@ -1225,6 +1246,10 @@ def main(argv: list[str] | None = None) -> int:
     tf.add_argument("--issuer", required=True)
     tf.add_argument("--key-id")
     tf.add_argument("--bundle-id", default="com.techlyb.eureka")
+    tf.add_argument(
+        "--resend-invite", action="store_true",
+        help="renvoyer son invitation à un testeur qui n'a jamais accepté",
+    )
     tf.add_argument(
         "--assign", action="store_true",
         help="rattacher le build aux groupes internes qui ne l'ont pas",
