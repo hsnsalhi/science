@@ -14,6 +14,27 @@ pour chaque build suivant.
 
 ---
 
+## La version courte : une seule commande
+
+```bash
+brew install gh && gh auth login      # une fois, pour que les secrets se posent tout seuls
+git clone https://github.com/hsnsalhi/science && cd science
+python3 tool/ios_signing.py go
+```
+
+L'assistant déroule tout : il crée la clé et la demande de certificat,
+**attend** que tu déposes chaque fichier téléchargé, assemble le `.p12`,
+contrôle la cohérence de l'ensemble, puis **dépose les sept secrets dans
+GitHub à ta place**. Il s'arrête trois fois, le temps de trois passages sur
+le portail Apple — la seule chose qu'aucun outil ne peut faire à ta place.
+
+Relançable autant de fois que nécessaire : il reprend là où il en était.
+
+Le reste de cette page détaille chaque étape, pour comprendre ce que
+l'assistant fait ou reprendre la main en cas de souci.
+
+---
+
 ## Étape 0 — Compte Apple Developer
 
 1. S'inscrire sur <https://developer.apple.com/programs/enroll/> (99 $/an).

@@ -27,6 +27,7 @@ import plistlib
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -89,6 +90,8 @@ def cmd_csr(args: argparse.Namespace) -> int:
 
     print(f"Clé privée      : {key}  (à garder, et à ne jamais versionner)")
     print(f"Demande (CSR)   : {csr}")
+    if getattr(args, "quiet", False):
+        return 0
     print()
     print("Suite :")
     print("  1. https://developer.apple.com/account/resources/certificates → +")
@@ -446,6 +449,191 @@ def cmd_secrets(args: argparse.Namespace) -> int:
     return 0
 
 
+
+# --------------------------------------------------------------------- go
+
+
+DOWNLOADS = Path.home() / "Downloads"
+TELECHARGEMENTS = Path.home() / "Téléchargements"
+
+
+def _watch_for(patterns: list[str], since: float) -> Path:
+    """Attend qu'un fichier correspondant apparaisse dans les téléchargements.
+
+    Plutôt que de demander un chemin — que personne n'a envie de taper —, on
+    surveille les dossiers de téléchargement et on prend le fichier le plus
+    récent. Entrée relance l'inspection, au cas où le fichier soit ailleurs.
+    """
+    folders = [d for d in (DOWNLOADS, TELECHARGEMENTS, Path.cwd()) if d.is_dir()]
+    print(f"  (j'attends — surveillance de {', '.join(str(d) for d in folders)})")
+    while True:
+        found: list[Path] = []
+        for folder in folders:
+            for pattern in patterns:
+                found += [
+                    f for f in folder.glob(pattern)
+                    if f.stat().st_mtime >= since
+                ]
+        if found:
+            newest = max(found, key=lambda f: f.stat().st_mtime)
+            print(f"{OK} trouvé : {newest}")
+            return newest
+        try:
+            answer = input(
+                "  Entrée quand c'est téléchargé, ou colle le chemin : "
+            ).strip().strip("'\"")
+        except EOFError:
+            raise Failure("Interrompu.")
+        if answer:
+            candidate = Path(answer).expanduser()
+            if candidate.exists():
+                return candidate
+            print(f"{BAD} introuvable : {candidate}")
+
+
+def _step(number: int, title: str) -> None:
+    print()
+    print(f"\033[1m── {number}. {title}\033[0m")
+
+
+def _gh_available(repo: str) -> bool:
+    """`gh` installé et authentifié : on pourra poser les secrets nous-mêmes."""
+    try:
+        subprocess.run(["gh", "auth", "status"], capture_output=True, check=True)
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        return False
+    return True
+
+
+def _gh_set_secret(repo: str, name: str, value: str) -> bool:
+    """Écrit un secret via `gh`, la valeur passant par l'entrée standard.
+
+    Jamais en argument de ligne de commande : les arguments sont visibles
+    dans la liste des processus de la machine.
+    """
+    try:
+        subprocess.run(
+            ["gh", "secret", "set", name, "--repo", repo],
+            input=value.encode(),
+            capture_output=True,
+            check=True,
+        )
+        return True
+    except (FileNotFoundError, subprocess.CalledProcessError) as error:
+        detail = getattr(error, "stderr", b"").decode(errors="replace").strip()
+        print(f"{BAD} {name} : {detail or error}")
+        return False
+
+
+def cmd_go(args: argparse.Namespace) -> int:
+    """Déroule toute la préparation, en attendant l'utilisateur à chaque porte."""
+    folder: Path = args.out
+    repo: str = args.repo
+
+    print("\033[1mPréparation de la publication iOS d'Eurêka\033[0m")
+    print("Trois passages sur le portail Apple, le reste est automatique.")
+    print(f"Dépôt visé : {repo}")
+
+    # ------------------------------------------------------------ 1. CSR
+    _step(1, "Clé privée et demande de certificat")
+    key = folder / "dist.key"
+    if key.exists():
+        print(f"{OK} déjà faite : {folder / 'dist.csr'}")
+    else:
+        cmd_csr(argparse.Namespace(
+            out=folder, email=args.email, name="Eureka Distribution",
+            country="FR", force=False, quiet=True,
+        ))
+
+    # ---------------------------------------------------- 2. Certificat
+    _step(2, "Certificat de distribution")
+    p12 = folder / "dist.p12"
+    if p12.exists():
+        print(f"{OK} déjà assemblé : {p12}")
+    else:
+        print("  Ouvre : https://developer.apple.com/account/resources/certificates/add")
+        print("  • Type : « Apple Distribution »  (PAS « iOS Distribution »)")
+        print(f"  • Téléverse : {folder / 'dist.csr'}")
+        print("  • Puis Download.")
+        cer = _watch_for(["*.cer"], time.time() - 300)
+        cmd_p12(argparse.Namespace(out=folder, cer=cer))
+
+    # ------------------------------------------------------- 3. Profil
+    _step(3, "Profil d'approvisionnement")
+    print("  Ouvre : https://developer.apple.com/account/resources/profiles/add")
+    print("  • Type : « App Store Connect », sous Distribution")
+    print(f"  • App ID : {project_bundle_id()}")
+    print("  • Certificat : celui qui vient d'être créé")
+    print("  • Nomme-le, puis Download.")
+    profile = _watch_for(["*.mobileprovision"], time.time() - 300)
+
+    # ------------------------------------------------------ 4. Clé d'API
+    _step(4, "Clé d'API App Store Connect")
+    print("  Ouvre : https://appstoreconnect.apple.com/access/integrations/api")
+    print("  • Onglet « Team Keys » → + → rôle « App Manager »")
+    print("  • Télécharge le .p8 — il n'est téléchargeable qu'une seule fois.")
+    asc_key = _watch_for(["AuthKey_*.p8"], time.time() - 600)
+    issuer = input("  Colle l'Issuer ID (l'UUID en haut de la page) : ").strip()
+    if not issuer:
+        raise Failure("L'Issuer ID est indispensable au téléversement.")
+
+    # --------------------------------------------------- 5. Vérification
+    _step(5, "Contrôle de cohérence")
+    password = password_from(f"  Mot de passe de {p12.name} : ")
+    os.environ["P12_PASSWORD"] = password
+    status = cmd_check(argparse.Namespace(
+        out=folder, p12=p12, profile=profile, asc_key=asc_key,
+    ))
+    if status != 0:
+        print()
+        print("Corrige les points ci-dessus, puis relance la même commande :")
+        print("  python3 tool/ios_signing.py go")
+        return status
+
+    # -------------------------------------------------------- 6. Secrets
+    _step(6, "Dépôt des secrets")
+    key_id_match = re.fullmatch(r"AuthKey_([A-Z0-9]{10})\.p8", asc_key.name)
+    values: dict[str, str] = {
+        "IOS_DIST_CERT_P12_BASE64": base64.b64encode(p12.read_bytes()).decode(),
+        "IOS_DIST_CERT_PASSWORD": password,
+        "IOS_PROVISIONING_PROFILE_BASE64":
+            base64.b64encode(profile.read_bytes()).decode(),
+        "IOS_TEAM_ID": (read_profile(profile).get("TeamIdentifier") or [""])[0],
+        "ASC_KEY_ID": key_id_match.group(1) if key_id_match else
+            input("  Key ID (dix caractères) : ").strip(),
+        "ASC_ISSUER_ID": issuer,
+        "ASC_PRIVATE_KEY_BASE64":
+            base64.b64encode(asc_key.read_bytes()).decode(),
+    }
+
+    if _gh_available(repo):
+        print(f"  `gh` est authentifié : je dépose les secrets dans {repo}.")
+        failures = [n for n, v in values.items() if not _gh_set_secret(repo, n, v)]
+        if failures:
+            raise Failure(f"Secrets non déposés : {', '.join(failures)}")
+        for name in values:
+            print(f"{OK} {name}")
+        print()
+        print("Tout est en place. Dernière étape, dans le navigateur :")
+        print(f"  https://github.com/{repo}/actions/workflows/testflight.yml")
+        print("  → Run workflow")
+        return 0
+
+    out_dir = folder / "secrets"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for name, value in values.items():
+        target = out_dir / f"{name}.txt"
+        target.write_text(value)
+        target.chmod(0o600)
+    print(f"{WARN} `gh` n'est pas installé ou pas connecté.")
+    print("  Pour tout déposer automatiquement :")
+    print("      brew install gh && gh auth login")
+    print("      python3 tool/ios_signing.py go")
+    print()
+    print(f"  Sinon, les sept valeurs sont dans {out_dir} — à coller dans")
+    print(f"  https://github.com/{repo}/settings/secrets/actions")
+    return 0
+
 # -------------------------------------------------------------------- main
 
 
@@ -486,6 +674,13 @@ def main(argv: list[str] | None = None) -> int:
         help="écrire chaque secret dans un fichier de ce dossier",
     )
     secrets.set_defaults(func=cmd_secrets)
+
+    go = sub.add_parser(
+        "go", help="tout préparer de bout en bout (commande conseillée)"
+    )
+    go.add_argument("--email", default="contact@techlyb.com")
+    go.add_argument("--repo", default="hsnsalhi/science")
+    go.set_defaults(func=cmd_go)
 
     args = parser.parse_args(argv)
     try:
