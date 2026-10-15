@@ -1,0 +1,534 @@
+{
+  "chapter": "maths-college-les-equations-du-premier-degre",
+  "lessons": [
+    {
+      "id": "comprendre",
+      "title": "Qu'est-ce qu'une équation ?",
+      "subtitle": "Comprendre ce qu'on cherche avant d'apprendre à le trouver.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une égalité à compléter",
+          "body": "3x + 5 = 20 est une équation : une égalité dans laquelle un nombre est caché derrière une lettre. Cette lettre s'appelle l'inconnue. Résoudre l'équation, c'est trouver la valeur qui rend l'égalité vraie."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Tester une valeur",
+          "body": "Essayons x = 4 dans 3x + 5 = 20 :\n3 × 4 + 5 = 17, et 17 ≠ 20. Ce n'est pas la solution.\n\nEssayons x = 5 :\n3 × 5 + 5 = 20. L'égalité est vraie : 5 est la solution."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une balance en équilibre",
+          "body": "Imagine une balance : le membre de gauche sur un plateau, celui de droite sur l'autre, et les deux plateaux à la même hauteur. Tant qu'on fait la même chose des deux côtés, l'équilibre est conservé. C'est toute la méthode de résolution."
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "Les deux gestes autorisés",
+          "formula": "a = b  donne  a + c = b + c  et  a × c = b × c",
+          "body": "On peut ajouter ou retrancher un même nombre aux deux membres, et les multiplier ou les diviser par un même nombre non nul. Rien d'autre."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de ne modifier qu'un seul membre : retirer 5 à gauche et laisser 20 à droite. La balance penche aussitôt, et la solution trouvée est fausse. Écris chaque opération sur les deux membres, l'une au-dessous de l'autre, pour la rendre visible."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Le vocabulaire",
+          "bullets": [
+            "Inconnue : la lettre dont on cherche la valeur.",
+            "Membre : ce qui se trouve à gauche, puis à droite du signe égal.",
+            "Solution : une valeur qui rend l'égalité vraie.",
+            "Tout geste se fait sur les deux membres à la fois."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans l'équation 3x + 5 = 20, que cherche-t-on exactement ?",
+          "hint": "Que doit-il se passer entre les deux membres ?",
+          "explanation": "On cherche la valeur de x pour laquelle le membre de gauche et celui de droite donnent le même nombre. Ici c'est 5, car 3 × 5 + 5 vaut bien 20. Tant qu'on n'a pas remplacé x, l'égalité n'est ni vraie ni fausse : elle est en attente.",
+          "options": [
+            {
+              "text": "La valeur de x qui rend les deux membres égaux",
+              "correct": true
+            },
+            {
+              "text": "La plus grande valeur possible de x"
+            },
+            {
+              "text": "La valeur de l'expression 3x + 5"
+            },
+            {
+              "text": "Le résultat de 3 × 5 + 20"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "x = 5 est solution de l'équation 3x + 5 = 20.",
+          "answer": true,
+          "explanation": "Vrai : en remplaçant x par 5, le membre de gauche vaut 3 × 5 + 5 = 20, exactement le membre de droite. Tester une valeur ne permet pas de trouver la solution, mais c'est le moyen le plus sûr de vérifier celle qu'on a trouvée.",
+          "hint": "Remplace x par 5 et calcule le membre de gauche."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle valeur de x vérifie l'égalité x + 7 = 12 ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "Quel nombre faut-il ajouter à 7 pour obtenir 12 ?",
+          "explanation": "En retranchant 7 aux deux membres, il reste x = 12 − 7 = 5. Vérification : 5 + 7 = 12, l'égalité est vraie."
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quelles opérations conservent l'égalité d'une équation ?",
+          "explanation": "Ajouter un même nombre aux deux membres, ou les multiplier par un même nombre non nul, laisse la balance en équilibre. Diviser par zéro n'a aucun sens, et n'agir que sur un seul membre rompt l'égalité : c'est ainsi qu'on fabrique une fausse solution.",
+          "hint": "Deux propositions agissent sur les deux membres à la fois.",
+          "options": [
+            {
+              "text": "Ajouter le même nombre aux deux membres",
+              "correct": true
+            },
+            {
+              "text": "Multiplier les deux membres par 3",
+              "correct": true
+            },
+            {
+              "text": "Diviser les deux membres par 0"
+            },
+            {
+              "text": "Ajouter 4 au membre de gauche seulement"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "texteATrous",
+          "prompt": "Complète le vocabulaire de l'équation 5x − 2 = 13.",
+          "template": "La lettre x s'appelle l'___ , et toute valeur qui rend l'égalité vraie s'appelle une ___ .",
+          "blanks": [
+            {
+              "accepted": [
+                "inconnue"
+              ]
+            },
+            {
+              "accepted": [
+                "solution",
+                "racine"
+              ]
+            }
+          ],
+          "explanation": "L'inconnue est la lettre, la solution est le nombre qu'elle cache. Confondre les deux conduit à écrire « l'inconnue est 3 » au lieu de « la solution est 3 », ce qui brouille la rédaction.",
+          "hint": "Le premier mot désigne la lettre, le second le nombre trouvé."
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Associe chaque équation à sa solution.",
+          "explanation": "x + 4 = 9 donne x = 5 ; 2x = 14 donne x = 7 ; x − 3 = 0 donne x = 3 ; 5x = 20 donne x = 4. Dans chaque cas, remplacer la lettre par la valeur trouvée redonne une égalité vraie — c'est la vérification à faire systématiquement.",
+          "hint": "Teste mentalement chaque solution dans chaque équation.",
+          "pairs": [
+            {
+              "left": "x + 4 = 9",
+              "right": "x = 5"
+            },
+            {
+              "left": "2x = 14",
+              "right": "x = 7"
+            },
+            {
+              "left": "x − 3 = 0",
+              "right": "x = 3"
+            },
+            {
+              "left": "5x = 20",
+              "right": "x = 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resoudre",
+      "title": "Résoudre pas à pas",
+      "subtitle": "Isoler l'inconnue en deux gestes, toujours les mêmes.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Isoler le terme en x",
+          "body": "On commence par faire disparaître ce qui est ajouté ou retranché.\n\n3x + 5 = 20\n3x + 5 − 5 = 20 − 5\n3x = 15"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Faire apparaître x seul",
+          "body": "Il ne reste qu'à défaire la multiplication, en divisant les deux membres par le coefficient.\n\n3x = 15\n3x ÷ 3 = 15 ÷ 3\nx = 5"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un exemple complet",
+          "body": "7x − 4 = 24\n\nOn ajoute 4 aux deux membres :\n7x = 28\n\nOn divise les deux membres par 7 :\nx = 4"
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Vérifier, toujours",
+          "body": "On remplace x par la valeur trouvée dans l'équation de départ.\n\n7 × 4 − 4 = 28 − 4 = 24\n\nC'est bien le membre de droite : la solution est juste. Cette vérification coûte dix secondes et rattrape toutes les erreurs de signe."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de diviser trop tôt. Dans 3x + 5 = 20, diviser par 3 oblige à diviser aussi le 5 et le 20, ce qui complique tout. On divise seulement quand le terme en x est enfin seul de son côté : additions et soustractions d'abord, division ensuite."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "La méthode en trois temps",
+          "formula": "ax + b = c   →   ax = c − b   →   x = (c − b) ÷ a",
+          "bullets": [
+            "Retrancher ou ajouter pour isoler le terme en x.",
+            "Diviser par le coefficient de x.",
+            "Vérifier dans l'équation de départ."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation 3x + 5 = 20.",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "Commence par retrancher 5 aux deux membres.",
+          "explanation": "3x + 5 = 20 donne 3x = 15, puis x = 15 ÷ 3 = 5. Vérification : 3 × 5 + 5 = 20, l'égalité est vraie."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation 7x − 4 = 24.",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Un nombre est retranché : il faut l'ajouter aux deux membres.",
+          "explanation": "En ajoutant 4 aux deux membres : 7x = 28, donc x = 28 ÷ 7 = 4. Vérification : 7 × 4 − 4 = 24."
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes de la résolution de 3x + 5 = 20.",
+          "items": [
+            "Retrancher 5 aux deux membres",
+            "Obtenir 3x = 15",
+            "Diviser les deux membres par 3",
+            "Conclure que x = 5",
+            "Vérifier en remplaçant x par 5 dans l'équation de départ"
+          ],
+          "explanation": "L'ordre n'est pas une question de goût : tant que le 5 est là, diviser par 3 oblige à diviser trois nombres au lieu d'un. La vérification finale fait partie de la méthode, ce n'est pas une politesse.",
+          "hint": "On ne divise qu'une fois le terme en x isolé."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pour résoudre 4x = 36, que faut-il faire ?",
+          "hint": "Quelle opération défait une multiplication ?",
+          "explanation": "On divise les deux membres par 4, ce qui donne x = 9. Soustraire 4 serait défaire une addition, alors que x est multiplié par 4, pas augmenté de 4.",
+          "options": [
+            {
+              "text": "Diviser les deux membres par 4",
+              "correct": true
+            },
+            {
+              "text": "Soustraire 4 aux deux membres"
+            },
+            {
+              "text": "Multiplier les deux membres par 4"
+            },
+            {
+              "text": "Ajouter 4 aux deux membres"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation 2x + 9 = 1.",
+          "answer": -4,
+          "tolerance": 0.01,
+          "hint": "Le membre de droite est plus petit que 9 : la solution sera négative.",
+          "explanation": "En retranchant 9 aux deux membres : 2x = 1 − 9 = −8, donc x = −8 ÷ 2 = −4. Vérification : 2 × (−4) + 9 = −8 + 9 = 1. Une solution négative n'a rien d'anormal."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Pour résoudre 5x = 30, il faut retrancher 5 aux deux membres.",
+          "answer": false,
+          "explanation": "Faux. 5x signifie 5 × x : c'est une multiplication, qui se défait par une division. On divise donc par 5, ce qui donne x = 6. Retrancher 5 donnerait 5x − 5 = 25, une équation plus compliquée que celle de départ.",
+          "hint": "Que signifie exactement l'écriture 5x ?"
+        }
+      ]
+    },
+    {
+      "id": "entrainer",
+      "title": "Des équations moins sages",
+      "subtitle": "Inconnue des deux côtés, parenthèses et coefficients négatifs.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'inconnue des deux côtés",
+          "body": "On rassemble les termes en x d'un même côté, en retranchant le plus petit aux deux membres.\n\n5x + 3 = 2x + 18\n5x − 2x + 3 = 18\n3x + 3 = 18\n3x = 15, donc x = 5"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Avec des parenthèses",
+          "body": "Deux chemins, au choix.\n\n3(x − 2) = 15\nEn divisant d'abord par 3 : x − 2 = 5, donc x = 7.\nEn développant : 3x − 6 = 15, puis 3x = 21 et x = 7.\n\nLe même résultat, bien sûr."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un coefficient négatif",
+          "body": "−3x + 7 = 1\n\nOn retranche 7 aux deux membres :\n−3x = −6\n\nOn divise par −3, et la règle des signes donne :\nx = 2"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'erreur classique avec les parenthèses est d'oublier la moitié du travail : 3(x − 2) ne vaut pas 3x − 2, mais 3x − 6. Le facteur multiplie tout ce qui est dans la parenthèse, chaque terme sans exception."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "L'ordre des gestes",
+          "bullets": [
+            "Développer les parenthèses, ou diviser par le facteur commun.",
+            "Rassembler les termes en x d'un côté, les nombres de l'autre.",
+            "Diviser par le coefficient, même s'il est négatif.",
+            "Vérifier dans l'équation de départ, pas dans une ligne intermédiaire."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation 5x + 3 = 2x + 18.",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "Retranche 2x aux deux membres pour n'avoir des x que d'un côté.",
+          "explanation": "En retranchant 2x : 3x + 3 = 18, puis 3x = 15 et x = 5. Vérification : à gauche 5 × 5 + 3 = 28, à droite 2 × 5 + 18 = 28. Les deux membres coïncident."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation 3(x − 2) = 15.",
+          "answer": 7,
+          "tolerance": 0.01,
+          "hint": "Le plus rapide est de diviser les deux membres par 3 avant de développer.",
+          "explanation": "En divisant par 3 : x − 2 = 5, donc x = 7. En développant, on obtient 3x − 6 = 15, puis 3x = 21 et x = 7. Vérification : 3 × (7 − 2) = 3 × 5 = 15."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation −3x + 7 = 1.",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "Après avoir retranché 7, les deux membres seront négatifs.",
+          "explanation": "En retranchant 7 : −3x = −6. En divisant par −3, deux nombres de même signe donnent un quotient positif : x = 2. Vérification : −3 × 2 + 7 = −6 + 7 = 1."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la forme développée de 2(x + 4) ?",
+          "hint": "Le 2 multiplie chacun des deux termes de la parenthèse.",
+          "explanation": "2(x + 4) = 2 × x + 2 × 4 = 2x + 8. La réponse 2x + 4 est l'erreur la plus répandue : elle oublie de multiplier le second terme. Un contrôle rapide avec x = 1 : la parenthèse donne 2 × 5 = 10, et 2x + 8 donne bien 10.",
+          "options": [
+            {
+              "text": "2x + 8",
+              "correct": true
+            },
+            {
+              "text": "2x + 4"
+            },
+            {
+              "text": "x + 8"
+            },
+            {
+              "text": "2x + 6"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "L'équation 4x + 1 = 4x + 5 possède une solution.",
+          "answer": false,
+          "explanation": "Faux. En retranchant 4x aux deux membres, il reste 1 = 5, ce qui est impossible quelle que soit la valeur de x. Cette équation n'a aucune solution : un même nombre ne peut pas valoir à la fois son augmentation de 1 et son augmentation de 5.",
+          "hint": "Retranche 4x aux deux membres et regarde ce qu'il reste."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Résous l'équation 6x − 5 = 3x + 7.",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Rassemble les x à gauche et les nombres à droite.",
+          "explanation": "En retranchant 3x : 3x − 5 = 7. En ajoutant 5 : 3x = 12, donc x = 4. Vérification : à gauche 6 × 4 − 5 = 19, à droite 3 × 4 + 7 = 19."
+        }
+      ]
+    },
+    {
+      "id": "mise-en-equation",
+      "title": "Mettre un problème en équation",
+      "subtitle": "Traduire un énoncé en calcul, puis revenir à la question posée.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Nommer l'inconnue",
+          "body": "Tout commence par une phrase écrite noir sur blanc : « Soit x la largeur du rectangle, en centimètres. » Sans elle, les lignes suivantes ne veulent rien dire, et une copie sans cette phrase perd des points avant même le premier calcul."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Traduire l'énoncé",
+          "body": "Chaque information du texte devient un morceau d'expression.\n\n« la longueur dépasse la largeur de 7 cm » → x + 7\n« le périmètre vaut 46 cm » → 2 × (x + x + 7) = 46"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Le rectangle en entier",
+          "body": "2 × (x + x + 7) = 46\n4x + 14 = 46\n4x = 32\nx = 8\n\nLa largeur vaut 8 cm, la longueur 8 + 7 = 15 cm. Vérification dans l'énoncé : 2 × (8 + 15) = 46 cm."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Revenir à la question",
+          "body": "La valeur de x n'est pas toujours la réponse attendue. Ici, si la question porte sur la longueur, il reste une addition à faire. Relis la question après avoir résolu l'équation, et réponds par une phrase, avec l'unité."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique n'est pas une erreur de calcul : c'est de s'arrêter à x. On trouve x = 8, on écrit « 8 » et on perd tout le bénéfice du raisonnement parce que la question demandait la longueur, 15 cm. Souligne la question avant de commencer."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Les quatre temps",
+          "bullets": [
+            "Nommer l'inconnue, avec son unité.",
+            "Traduire chaque phrase de l'énoncé en expression.",
+            "Résoudre l'équation obtenue.",
+            "Répondre à la question posée, et vérifier dans l'énoncé."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un nombre augmenté de 12 donne 47. Quel est ce nombre ?",
+          "answer": 35,
+          "tolerance": 0.01,
+          "hint": "Appelle x ce nombre et traduis la phrase par une égalité.",
+          "explanation": "Soit x ce nombre : x + 12 = 47, donc x = 47 − 12 = 35. Vérification dans l'énoncé : 35 augmenté de 12 donne bien 47."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le périmètre d'un rectangle vaut 46 cm et sa longueur dépasse sa largeur de 7 cm. Quelle est sa largeur ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Si la largeur vaut x, la longueur vaut x + 7, et le périmètre 2 × (x + x + 7).",
+          "explanation": "2 × (x + x + 7) = 46 donne 4x + 14 = 46, puis 4x = 32 et x = 8. La largeur mesure 8 cm. Le choix de nommer la largeur, et non la longueur, évite de manipuler une soustraction."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Même rectangle : quelle est sa longueur ?",
+          "answer": 15,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "La largeur vaut 8 cm, et la longueur la dépasse de 7 cm.",
+          "explanation": "La longueur vaut 8 + 7 = 15 cm. C'est le piège du chapitre : la solution de l'équation donnait la largeur, et il restait une addition pour répondre. Vérification : 2 × (8 + 15) = 46 cm, le périmètre annoncé."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Léa a trois fois plus de billes que Tom, et ensemble ils en ont 48. Si x désigne le nombre de billes de Tom, quelle équation traduit la situation ?",
+          "hint": "Combien Léa en a-t-elle, exprimé avec x ? Et que vaut leur total ?",
+          "explanation": "Tom a x billes, Léa en a trois fois plus, soit 3x. Leur total s'écrit donc x + 3x = 48. L'équation 3x = 48 traduirait « Léa en a 48 », ce que l'énoncé ne dit pas.",
+          "options": [
+            {
+              "text": "x + 3x = 48",
+              "correct": true
+            },
+            {
+              "text": "3x = 48"
+            },
+            {
+              "text": "x + 3 = 48"
+            },
+            {
+              "text": "3(x + 48) = x"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de billes Léa possède-t-elle ?",
+          "answer": 36,
+          "tolerance": 0.01,
+          "unit": "billes",
+          "hint": "Résous d'abord x + 3x = 48 pour connaître le nombre de billes de Tom.",
+          "explanation": "x + 3x = 48 donne 4x = 48, donc x = 12 : Tom a 12 billes. Léa en a trois fois plus, soit 36. Vérification : 12 + 36 = 48, et 36 est bien le triple de 12. Encore une fois, la réponse attendue n'était pas x."
+        },
+        {
+          "id": "q6",
+          "kind": "texteATrous",
+          "prompt": "Complète la mise en équation du rectangle, en appelant x sa largeur.",
+          "template": "La longueur vaut x + ___ , et le périmètre s'écrit 2 × (x + x + 7) = ___ .",
+          "blanks": [
+            {
+              "accepted": [
+                "7"
+              ]
+            },
+            {
+              "accepted": [
+                "46"
+              ]
+            }
+          ],
+          "explanation": "« Dépasse de 7 cm » se traduit par une addition, d'où la longueur x + 7, et le périmètre donné par l'énoncé fournit le membre de droite, 46. Toute la difficulté d'un problème tient dans cette traduction : une fois l'équation écrite, la résolution est mécanique.",
+          "hint": "Les deux nombres manquants figurent tels quels dans l'énoncé."
+        }
+      ]
+    }
+  ]
+}

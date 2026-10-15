@@ -296,6 +296,24 @@ void main() {
     },
   );
 
+  verifieChapitreRedige(
+    'maths-college-les-equations-du-premier-degre',
+    const <String, double>{
+      'comprendre/q3': 5, // x + 7 = 12
+      'resoudre/q1': 5, // 3x + 5 = 20
+      'resoudre/q2': 4, // 7x − 4 = 24
+      'resoudre/q5': -4, // 2x + 9 = 1
+      'entrainer/q1': 5, // 5x + 3 = 2x + 18
+      'entrainer/q2': 7, // 3(x − 2) = 15
+      'entrainer/q3': 2, // −3x + 7 = 1
+      'entrainer/q6': 4, // 6x − 5 = 3x + 7
+      'mise-en-equation/q1': 35, // x + 12 = 47
+      'mise-en-equation/q2': 8, // largeur, périmètre 46 et écart 7
+      'mise-en-equation/q3': 15, // longueur du même rectangle
+      'mise-en-equation/q5': 36, // Léa, triple de Tom, total 48
+    },
+  );
+
   group('Chapitre complet : le théorème de Pythagore', () {
     late Chapter pythagore;
 
