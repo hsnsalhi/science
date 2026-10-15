@@ -639,6 +639,120 @@ def cmd_go(args: argparse.Namespace) -> int:
     return 0
 
 
+def _b64url(data: bytes) -> str:
+    return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
+
+
+def _der_to_raw(der: bytes) -> bytes:
+    """Convertit une signature ECDSA du format DER au format brut R||S.
+
+    `openssl dgst -sign` produit une SEQUENCE DER de deux entiers, alors
+    qu'un JWT ES256 attend les deux coordonnées concaténées, sur 32 octets
+    chacune. Sans cette conversion, Apple rejette le jeton.
+    """
+    if not der or der[0] != 0x30:
+        raise Failure("Signature inattendue : séquence DER absente.")
+    index = 2
+    if der[1] & 0x80:  # longueur sur plusieurs octets
+        index = 2 + (der[1] & 0x7F)
+
+    numbers: list[int] = []
+    for _ in range(2):
+        if der[index] != 0x02:
+            raise Failure("Signature inattendue : entier DER absent.")
+        length = der[index + 1]
+        start = index + 2
+        numbers.append(int.from_bytes(der[start:start + length], "big"))
+        index = start + length
+    return b"".join(n.to_bytes(32, "big") for n in numbers)
+
+
+def asc_token(key_path: Path, key_id: str, issuer_id: str) -> str:
+    """Fabrique un jeton JWT ES256 pour l'API App Store Connect."""
+    import json
+    import time
+
+    header = {"alg": "ES256", "kid": key_id, "typ": "JWT"}
+    now = int(time.time())
+    payload = {
+        "iss": issuer_id,
+        "iat": now,
+        # Apple refuse toute validité supérieure à vingt minutes.
+        "exp": now + 600,
+        "aud": "appstoreconnect-v1",
+    }
+    signing_input = ".".join(
+        _b64url(json.dumps(part, separators=(",", ":")).encode())
+        for part in (header, payload)
+    )
+    der = run(
+        ["openssl", "dgst", "-sha256", "-sign", str(key_path), "-binary"],
+        stdin=signing_input.encode(),
+    )
+    return f"{signing_input}.{_b64url(_der_to_raw(der))}"
+
+
+def cmd_check_asc(args: argparse.Namespace) -> int:
+    """Interroge l'API App Store Connect pour valider les identifiants.
+
+    `altool --list-providers` n'accepte pas l'authentification par clé
+    d'API : le seul test fiable est d'appeler l'API directement. Aucune
+    dépendance au-delà d'openssl et de la bibliothèque standard.
+    """
+    import json
+    import urllib.error
+    import urllib.request
+
+    key_path: Path = args.asc_key
+    if not key_path.exists():
+        raise Failure(f"Clé introuvable : {key_path}")
+    match = re.fullmatch(r"AuthKey_([A-Z0-9]{10})\.p8", key_path.name)
+    key_id = args.key_id or (match.group(1) if match else None)
+    if not key_id:
+        raise Failure(
+            "Impossible de déduire le Key ID du nom de fichier ; "
+            "le passer avec --key-id."
+        )
+
+    print(f"Key ID    : {key_id}")
+    print(f"Issuer ID : {args.issuer}")
+    print()
+
+    token = asc_token(key_path, key_id, args.issuer)
+    request = urllib.request.Request(
+        "https://api.appstoreconnect.apple.com/v1/apps?limit=10",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            payload = json.load(response)
+    except urllib.error.HTTPError as error:
+        body = error.read().decode(errors="replace")
+        print(f"{BAD} Apple refuse ces identifiants (HTTP {error.code}).")
+        try:
+            for item in json.loads(body).get("errors", []):
+                print(f"    {item.get('title')} — {item.get('detail')}")
+        except ValueError:
+            print(f"    {body[:400]}")
+        print()
+        print("  Causes, par ordre de fréquence :")
+        print("   1. l'Issuer ID n'est pas celui de l'onglet « Team Keys »")
+        print("      de appstoreconnect.apple.com/access/integrations/api ;")
+        print("   2. la clé a été révoquée, ou appartient à une autre équipe ;")
+        print("   3. le .p8 fourni n'est pas celui de ce Key ID.")
+        return 1
+    except urllib.error.URLError as error:
+        raise Failure(f"Appel impossible : {error.reason}")
+
+    apps = payload.get("data", [])
+    print(f"{OK} Apple accepte ces identifiants.")
+    print(f"{OK} {len(apps)} application(s) visible(s) :")
+    for app in apps:
+        attributes = app.get("attributes", {})
+        print(f"    • {attributes.get('name')} — {attributes.get('bundleId')}")
+    return 0
+
+
 def cmd_push_secrets(args: argparse.Namespace) -> int:
     """Dépose dans GitHub les secrets déjà écrits par l'assistant.
 
@@ -789,6 +903,15 @@ def main(argv: list[str] | None = None) -> int:
     go.add_argument("--email", default="contact@techlyb.com")
     go.add_argument("--repo", default="hsnsalhi/science")
     go.set_defaults(func=cmd_go)
+
+    asc = sub.add_parser(
+        "check-asc",
+        help="vérifier les identifiants App Store Connect auprès d'Apple",
+    )
+    asc.add_argument("--asc-key", type=Path, required=True)
+    asc.add_argument("--issuer", required=True)
+    asc.add_argument("--key-id")
+    asc.set_defaults(func=cmd_check_asc)
 
     push = sub.add_parser(
         "push-secrets",
