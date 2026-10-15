@@ -1,0 +1,573 @@
+{
+  "chapter": "maths-college-le-theoreme-de-thales",
+  "lessons": [
+    {
+      "id": "configuration",
+      "title": "Reconnaître la configuration",
+      "subtitle": "Savoir quand le théorème s'applique, et nommer les bons points.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un agrandissement qui ne dit pas son nom",
+          "body": "Deux droites qui se coupent en un point A, et deux droites parallèles qui les traversent : voilà toute la configuration. Le petit triangle obtenu est une réduction du grand, et c'est de là que vient l'égalité des rapports."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Fais coulisser la parallèle",
+          "body": "Déplace la droite (MN) le long des côtés du triangle. Observe les trois rapports affichés : ils changent tous ensemble, et restent toujours égaux entre eux. C'est exactement ce qu'affirme le théorème.",
+          "figureId": "thales-configuration"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "La configuration en triangle",
+          "body": "M est un point de [AB], N un point de [AC], et (MN) est parallèle à (BC). Le sommet A est commun aux deux triangles : c'est le point de départ de tous les quotients. AM et AB se correspondent, AN et AC aussi, MN et BC également."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "La configuration en papillon",
+          "body": "Même théorème, autre dessin : si A se trouve entre les deux parallèles, les deux triangles sont de part et d'autre de A et forment un nœud papillon. Les points se correspondent de la même façon, et les quotients s'écrivent à l'identique."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de mélanger les points en écrivant les quotients. La règle est simple : chaque quotient part du sommet A, et ses deux longueurs sont portées par la même droite — ou bien ce sont les deux parallèles. AM/AC n'a aucun sens, car AM et AC ne sont pas sur la même droite."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Avant tout calcul",
+          "bullets": [
+            "Deux droites sécantes en A, et deux droites parallèles.",
+            "Les points homologues : M avec B, N avec C.",
+            "Chaque quotient part de A et reste sur une même droite.",
+            "Sans parallélisme, pas de théorème de Thalès."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle condition est indispensable pour appliquer le théorème de Thalès ?",
+          "figureId": "thales-configuration",
+          "hint": "Retire mentalement cette condition : la figure a-t-elle encore un sens ?",
+          "explanation": "Tout repose sur le parallélisme de (MN) et (BC) : sans lui, le petit triangle n'est plus une réduction du grand et les quotients n'ont aucune raison d'être égaux. Le triangle, lui, peut avoir n'importe quelle forme — rectangle ou non.",
+          "options": [
+            {
+              "text": "Les droites (MN) et (BC) doivent être parallèles",
+              "correct": true
+            },
+            {
+              "text": "Le triangle ABC doit être rectangle"
+            },
+            {
+              "text": "Les trois côtés du triangle doivent être connus"
+            },
+            {
+              "text": "A doit être le milieu du segment [BC]"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Dans la configuration de Thalès, les triangles AMN et ABC ont les mêmes angles.",
+          "answer": true,
+          "explanation": "Vrai. Le petit triangle est une réduction du grand : il change de taille, pas de forme. Les angles sont donc identiques, et c'est précisément ce qui fait que les longueurs se correspondent toutes dans le même rapport.",
+          "figureId": "thales-configuration",
+          "hint": "Fais coulisser la parallèle sur la figure : la forme du petit triangle change-t-elle ?"
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque longueur du petit triangle à celle qui lui correspond dans le grand.",
+          "explanation": "M correspond à B et N correspond à C : les longueurs se répondent deux à deux, AM avec AB, AN avec AC, MN avec BC. Repérer ces couples avant d'écrire quoi que ce soit évite la moitié des erreurs du chapitre.",
+          "pairs": [
+            {
+              "left": "AM",
+              "right": "AB"
+            },
+            {
+              "left": "AN",
+              "right": "AC"
+            },
+            {
+              "left": "MN",
+              "right": "BC"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Complète les conditions d'application du théorème.",
+          "template": "Les droites (MN) et (BC) doivent être ___ , et les points A, M, B doivent être ___ .",
+          "blanks": [
+            {
+              "accepted": [
+                "parallèles",
+                "paralleles",
+                "parallèle",
+                "parallele"
+              ]
+            },
+            {
+              "accepted": [
+                "alignés",
+                "alignes",
+                "aligné",
+                "aligne"
+              ]
+            }
+          ],
+          "explanation": "Les deux conditions comptent autant l'une que l'autre. Si M n'est pas sur la droite (AB), il ne correspond plus à B et aucun quotient n'a de sens, même avec des droites parallèles.",
+          "hint": "La première condition concerne deux droites, la seconde trois points."
+        },
+        {
+          "id": "q5",
+          "kind": "choixMultiple",
+          "prompt": "Dans le triangle ABC, avec M sur [AB], N sur [AC] et (MN) parallèle à (BC), quelles égalités sont vraies ?",
+          "explanation": "Le théorème donne AM/AB = AN/AC = MN/BC : les trois quotients partent de A et comparent une longueur du petit triangle à son homologue du grand. En revanche AM/MB = AN/AC mélange deux découpages différents, et AB/AM = BC/AN associe AN à BC, alors que l'homologue de BC est MN.",
+          "hint": "Chaque quotient correct compare une longueur du petit triangle à son homologue.",
+          "options": [
+            {
+              "text": "AM/AB = AN/AC",
+              "correct": true
+            },
+            {
+              "text": "AM/AB = MN/BC",
+              "correct": true
+            },
+            {
+              "text": "AM/MB = AN/AC"
+            },
+            {
+              "text": "AB/AM = BC/AN"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Dans la configuration dite « en papillon », où se trouve le point A ?",
+          "hint": "C'est ce qui distingue le papillon du triangle.",
+          "explanation": "Dans le papillon, A est situé entre les deux droites parallèles : les deux triangles se font face de part et d'autre de A. Dans la configuration en triangle, A est au contraire à l'extérieur, du même côté que les deux parallèles. Le théorème, lui, s'écrit exactement de la même façon.",
+          "options": [
+            {
+              "text": "Entre les deux droites parallèles",
+              "correct": true
+            },
+            {
+              "text": "Sur l'une des deux droites parallèles"
+            },
+            {
+              "text": "Au milieu du segment [BC]"
+            },
+            {
+              "text": "À l'extérieur du triangle, mais sur la droite (BC)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calculer",
+      "title": "Calculer une longueur",
+      "subtitle": "Écrire les quotients, n'en garder que deux, conclure.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Le théorème de Thalès",
+          "formula": "AM/AB = AN/AC = MN/BC",
+          "body": "Trois quotients égaux, à condition que (MN) soit parallèle à (BC)."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ne garder que deux quotients",
+          "body": "L'égalité à trois membres est là pour choisir. On conserve celui qui contient l'inconnue, et un autre dont les deux longueurs sont connues. Les autres ne servent à rien pour cette question-là."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un calcul complet",
+          "body": "AM = 3 cm, AB = 9 cm, AN = 4 cm. Quelle est la longueur AC ?\n\nAM/AB = AN/AC\n3/9 = 4/AC\n3 × AC = 9 × 4\nAC = 36 ÷ 3 = 12 cm"
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Le produit en croix",
+          "body": "Une égalité de deux quotients se transforme toujours de la même façon : on multiplie les termes en diagonale.\n\na/b = c/d donne a × d = b × c\n\nIl ne reste ensuite qu'une division pour isoler l'inconnue."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est d'inverser un quotient et d'écrire AM/AB = AC/AN. Le contrôle est immédiat : le petit triangle est une réduction, donc AM est plus petit que AB et AN plus petit que AC. Si le résultat trouvé fait du petit triangle le plus grand des deux, c'est qu'un quotient est à l'envers."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "La marche à suivre",
+          "bullets": [
+            "Vérifier le parallélisme avant d'écrire la moindre ligne.",
+            "Écrire l'égalité des trois quotients, dans l'ordre du sommet A.",
+            "Choisir les deux quotients utiles, puis faire le produit en croix.",
+            "Vérifier que le résultat respecte les tailles : petit reste petit."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un triangle ABC avec (MN) parallèle à (BC) : AM = 3 cm, AB = 9 cm et AN = 4 cm. Combien mesure AC ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "figureId": "thales-configuration",
+          "hint": "Écris AM/AB = AN/AC, puis fais le produit en croix.",
+          "explanation": "3/9 = 4/AC donne 3 × AC = 9 × 4 = 36, donc AC = 12 cm. Contrôle : AM vaut le tiers de AB, et AN = 4 vaut bien le tiers de 12."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Toujours avec (MN) parallèle à (BC) : AM = 4 cm, AB = 10 cm et BC = 15 cm. Combien mesure MN ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Le quotient utile est celui qui relie MN à BC.",
+          "explanation": "AM/AB = MN/BC donne 4/10 = MN/15, donc MN = 15 × 4 ÷ 10 = 6 cm. Le petit triangle mesure les 4 dixièmes du grand, et 6 est bien plus petit que 15."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans le triangle ABC avec (MN) parallèle à (BC), quelle égalité est correcte ?",
+          "hint": "Les deux longueurs d'un même quotient appartiennent à une même droite, ou aux deux parallèles.",
+          "explanation": "AM/AB = MN/BC compare le petit triangle au grand, dans le bon ordre : au numérateur les longueurs du petit, au dénominateur celles du grand. Les autres propositions mélangent une longueur du petit avec une longueur du grand au même étage, ce qui n'a aucune raison d'être vrai.",
+          "options": [
+            {
+              "text": "AM/AB = MN/BC",
+              "correct": true
+            },
+            {
+              "text": "AM/BC = AB/MN"
+            },
+            {
+              "text": "AM/AN = AB/MN"
+            },
+            {
+              "text": "MN/AM = AB/BC"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Avec (MN) parallèle à (BC) : AM = 2,5 cm, AB = 7,5 cm et AC = 9 cm. Combien mesure AN ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Quel est le rapport AM/AB ? Applique-le à AC.",
+          "explanation": "AM/AB = 2,5/7,5 = 1/3. Donc AN vaut le tiers de AC : 9 ÷ 3 = 3 cm. Avec le produit en croix : AN = 9 × 2,5 ÷ 7,5 = 22,5 ÷ 7,5 = 3 cm."
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes d'un calcul de longueur avec le théorème de Thalès.",
+          "items": [
+            "Vérifier que les deux droites sont bien parallèles",
+            "Écrire l'égalité des trois quotients",
+            "Ne garder que les deux quotients utiles",
+            "Appliquer le produit en croix",
+            "Donner le résultat avec son unité"
+          ],
+          "explanation": "La vérification du parallélisme passe en premier parce qu'elle conditionne tout le reste : appliquer Thalès sans parallèles produit un résultat faux, même avec des calculs impeccables. Choisir les quotients avant de calculer évite de traîner une longueur inconnue inutile.",
+          "hint": "Une étape doit précéder toute écriture de quotient."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Dans la configuration de Thalès, si AM est plus petit que AB, alors MN est plus petit que BC.",
+          "answer": true,
+          "explanation": "Vrai. Toutes les longueurs du petit triangle se déduisent de celles du grand en multipliant par un même rapport, inférieur à 1 dans ce cas. Si une longueur rétrécit, toutes rétrécissent dans la même proportion — c'est le propre d'une réduction.",
+          "figureId": "thales-configuration"
+        }
+      ]
+    },
+    {
+      "id": "entrainer",
+      "title": "Passer par le rapport",
+      "subtitle": "Un seul coefficient, et toutes les longueurs se déduisent.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Calculer le rapport une fois pour toutes",
+          "body": "Dès que deux longueurs homologues sont connues, on obtient le rapport de réduction.\n\nAM = 4 et AB = 10 donnent un rapport de 4 ÷ 10 = 0,4.\n\nToute longueur du petit triangle vaut alors 0,4 fois son homologue du grand."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Du grand vers le petit : on multiplie",
+          "body": "Avec un rapport de 0,4 et BC = 12 cm :\n\nMN = 12 × 0,4 = 4,8 cm\n\nLe résultat est plus petit que 12, comme attendu."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Du petit vers le grand : on divise",
+          "body": "Avec le même rapport de 0,4 et AN = 3 cm :\n\nAC = 3 ÷ 0,4 = 7,5 cm\n\nOn remonte du petit triangle vers le grand, donc le résultat doit augmenter."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'erreur classique est de multiplier quand il fallait diviser. Le remède tient en une question posée avant le calcul : « est-ce que je cherche une longueur du petit triangle ou du grand ? » Si c'est le grand, le résultat doit être plus grand que celui dont on part. Un résultat qui va dans le mauvais sens signale l'inversion."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Le réflexe du rapport",
+          "formula": "petit = grand × k     grand = petit ÷ k",
+          "bullets": [
+            "Un seul rapport k gouverne toutes les longueurs de la figure.",
+            "Vers le petit triangle : multiplier. Vers le grand : diviser.",
+            "Les périmètres suivent le même rapport k, mais pas les aires."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Le rapport AM/AB vaut 0,4 et BC mesure 12 cm. Combien mesure MN ?",
+          "answer": 4.8,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "MN appartient au petit triangle : faut-il multiplier ou diviser ?",
+          "explanation": "MN = 12 × 0,4 = 4,8 cm. MN appartient au petit triangle, le résultat doit donc être plus petit que BC — ce qui est le cas."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le rapport AM/AB vaut 0,4 et AN mesure 3 cm. Combien mesure AC ?",
+          "answer": 7.5,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "AC appartient au grand triangle : le résultat doit dépasser 3 cm.",
+          "explanation": "AC = 3 ÷ 0,4 = 7,5 cm. On remonte du petit triangle vers le grand, donc on divise. Vérification : 7,5 × 0,4 = 3, on retombe bien sur AN."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Avec (MN) parallèle à (BC) : AM = 6 cm, AB = 15 cm et MN = 8 cm. Combien mesure BC ?",
+          "answer": 20,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Calcule d'abord le rapport AM/AB, puis remonte vers le grand triangle.",
+          "explanation": "Le rapport vaut 6 ÷ 15 = 0,4. Comme BC appartient au grand triangle, on divise : BC = 8 ÷ 0,4 = 20 cm. Contrôle : 20 × 0,4 = 8, bien la longueur MN de départ."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "On sait que AM = 4 cm, AB = 12 cm et BC = 9 cm. Quel calcul donne MN ?",
+          "hint": "MN est une longueur du petit triangle, donc plus petite que 9 cm.",
+          "explanation": "MN = 9 × 4 ÷ 12, c'est-à-dire BC multiplié par le rapport 4/12. Le calcul 9 × 12 ÷ 4 donnerait 27, une longueur du petit triangle trois fois plus grande que son homologue du grand : impossible.",
+          "options": [
+            {
+              "text": "MN = 9 × 4 ÷ 12",
+              "correct": true
+            },
+            {
+              "text": "MN = 9 × 12 ÷ 4"
+            },
+            {
+              "text": "MN = 12 × 4 ÷ 9"
+            },
+            {
+              "text": "MN = 9 + 4 − 12"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Reprends la question précédente : combien mesure MN, en centimètres ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Le rapport AM/AB vaut 4/12, c'est-à-dire un tiers.",
+          "explanation": "Le rapport vaut 4 ÷ 12 = 1/3, donc MN = 9 ÷ 3 = 3 cm. Avec le produit en croix : 9 × 4 ÷ 12 = 36 ÷ 12 = 3 cm."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Si toutes les longueurs du petit triangle sont deux fois plus courtes, son périmètre est deux fois plus court.",
+          "answer": true,
+          "explanation": "Vrai : le périmètre est une somme de longueurs, et diviser chaque terme par 2 divise la somme par 2. Attention toutefois, l'aire ne suit pas la même règle : elle est divisée par 4, car elle dépend de deux dimensions à la fois.",
+          "hint": "Le périmètre est une somme de longueurs."
+        }
+      ]
+    },
+    {
+      "id": "reciproque",
+      "title": "La réciproque et des problèmes",
+      "subtitle": "Démontrer un parallélisme, et mesurer l'inaccessible.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Lire le théorème à l'envers",
+          "body": "Jusqu'ici, le parallélisme était donné et servait à calculer des longueurs. La réciproque fait le chemin inverse : elle part des longueurs pour démontrer que deux droites sont parallèles."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La réciproque",
+          "formula": "si AM/AB = AN/AC  alors  (MN) // (BC)",
+          "body": "À condition que les points A, M, B d'une part, A, N, C d'autre part, soient alignés dans le même ordre."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Démontrer un parallélisme",
+          "body": "AM = 3 cm, AB = 7,5 cm, AN = 4 cm, AC = 10 cm.\n\nAM/AB = 3 ÷ 7,5 = 0,4\nAN/AC = 4 ÷ 10 = 0,4\n\nLes deux quotients sont égaux : d'après la réciproque, (MN) et (BC) sont parallèles."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "La hauteur d'un arbre",
+          "body": "Un piquet de 1 m projette une ombre de 1,5 m. Au même instant, un arbre projette une ombre de 12 m.\n\nLes rayons du soleil sont parallèles : c'est une configuration de Thalès.\n\nhauteur = 12 × 1 ÷ 1,5 = 8 m"
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de conclure trop vite, sans comparer les deux quotients jusqu'au bout. 2/6 et 3/8 se ressemblent, pourtant le premier vaut environ 0,33 et le second 0,375 : les droites ne sont pas parallèles. Calcule les deux valeurs décimales, ou fais le produit en croix, avant de conclure."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Deux usages, une seule égalité",
+          "bullets": [
+            "Théorème : les droites sont parallèles → je calcule une longueur.",
+            "Réciproque : les quotients sont égaux → je démontre le parallélisme.",
+            "Les deux exigent que les points soient alignés dans le même ordre.",
+            "Les rayons du soleil, parallèles, transforment une ombre en calcul."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Si AM/AB = AN/AC, les points étant alignés dans le même ordre, alors (MN) et (BC) sont parallèles.",
+          "answer": true,
+          "explanation": "Vrai, c'est l'énoncé de la réciproque. L'égalité des deux quotients suffit à garantir le parallélisme : c'est elle qui permet de démontrer qu'une droite est parallèle à une autre sans jamais mesurer d'angle.",
+          "figureId": "thales-configuration"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "AM = 3 cm, AB = 7,5 cm, AN = 4 cm et AC = 10 cm, les points étant alignés dans le même ordre. Que peut-on conclure ?",
+          "hint": "Calcule la valeur décimale de chacun des deux quotients.",
+          "explanation": "3 ÷ 7,5 = 0,4 et 4 ÷ 10 = 0,4. Les deux quotients sont égaux, donc d'après la réciproque du théorème de Thalès, (MN) et (BC) sont parallèles. Rien ici ne permet en revanche de dire quoi que ce soit des angles du triangle.",
+          "options": [
+            {
+              "text": "Les droites (MN) et (BC) sont parallèles",
+              "correct": true
+            },
+            {
+              "text": "Les droites (MN) et (BC) ne sont pas parallèles"
+            },
+            {
+              "text": "Le triangle ABC est rectangle"
+            },
+            {
+              "text": "On ne peut rien conclure sans connaître MN et BC"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un piquet de 1 m projette une ombre de 1,5 m. Au même instant, un arbre projette une ombre de 12 m. Quelle est la hauteur de l'arbre ?",
+          "answer": 8,
+          "tolerance": 0.05,
+          "unit": "m",
+          "hint": "Le piquet et l'arbre sont tous deux verticaux, et les rayons du soleil sont parallèles.",
+          "explanation": "Les deux ombres forment deux triangles de même forme : hauteur ÷ ombre est le même rapport pour le piquet et pour l'arbre. Donc hauteur = 12 × 1 ÷ 1,5 = 8 m. L'arbre fait huit fois la taille du piquet, comme son ombre fait huit fois celle du piquet."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "AM = 2 cm, AB = 6 cm, AN = 3 cm et AC = 8 cm. Les droites (MN) et (BC) sont-elles parallèles ?",
+          "hint": "Compare 2 ÷ 6 et 3 ÷ 8, ou fais le produit en croix : 2 × 8 et 6 × 3.",
+          "explanation": "2 ÷ 6 ≈ 0,33 tandis que 3 ÷ 8 = 0,375 : les deux quotients diffèrent, donc les droites ne sont pas parallèles. Le produit en croix le dit aussi : 2 × 8 = 16 et 6 × 3 = 18, deux nombres différents. Que les deux rapports soient proches ne suffit jamais.",
+          "options": [
+            {
+              "text": "Non, car les deux quotients ne sont pas égaux",
+              "correct": true
+            },
+            {
+              "text": "Oui, car 2 est plus petit que 6 et 3 plus petit que 8"
+            },
+            {
+              "text": "Oui, car les deux quotients valent 0,5"
+            },
+            {
+              "text": "On ne peut pas conclure sans mesurer MN et BC"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un triangle ABC avec (MN) parallèle à (BC) : AM = 5 cm, MB = 3 cm et MN = 6 cm. Combien mesure BC ?",
+          "answer": 9.6,
+          "tolerance": 0.05,
+          "unit": "cm",
+          "hint": "Attention : l'énoncé donne MB, pas AB. Commence par calculer AB.",
+          "explanation": "AB = AM + MB = 5 + 3 = 8 cm, donc le rapport vaut 5 ÷ 8 = 0,625. BC appartient au grand triangle, on divise : BC = 6 ÷ 0,625 = 9,6 cm. Utiliser 5/3 au lieu de 5/8 est l'erreur que cet énoncé cherche à provoquer.",
+          "figureId": "thales-configuration"
+        },
+        {
+          "id": "q6",
+          "kind": "texteATrous",
+          "prompt": "Complète ce début de résolution, où M appartient au segment [AB].",
+          "template": "Si AM = 4 cm et MB = 6 cm, alors AB = ___ cm, et le rapport AM/AB vaut ___ .",
+          "blanks": [
+            {
+              "accepted": [
+                "10"
+              ]
+            },
+            {
+              "accepted": [
+                "0,4",
+                "0.4",
+                "2/5"
+              ]
+            }
+          ],
+          "explanation": "AB est le segment entier : AB = AM + MB = 4 + 6 = 10 cm, et non 6. Le rapport vaut donc 4 ÷ 10 = 0,4. Les énoncés donnent très souvent MB plutôt que AB, précisément parce que cette addition est oubliée une fois sur deux.",
+          "hint": "M se trouve entre A et B : que vaut la longueur totale ?"
+        }
+      ]
+    }
+  ]
+}

@@ -314,6 +314,21 @@ void main() {
     },
   );
 
+  verifieChapitreRedige(
+    'maths-college-le-theoreme-de-thales',
+    const <String, double>{
+      'calculer/q1': 12, // 3/9 = 4/AC
+      'calculer/q2': 6, // 4/10 = MN/15
+      'calculer/q4': 3, // 2,5/7,5 appliqué à 9
+      'entrainer/q1': 4.8, // 12 × 0,4
+      'entrainer/q2': 7.5, // 3 ÷ 0,4
+      'entrainer/q3': 20, // 8 ÷ (6/15)
+      'entrainer/q5': 3, // 9 × 4 ÷ 12
+      'reciproque/q3': 8, // arbre : 12 × 1 ÷ 1,5
+      'reciproque/q5': 9.6, // 6 ÷ (5/8), avec AB = 5 + 3
+    },
+  );
+
   group('Chapitre complet : le théorème de Pythagore', () {
     late Chapter pythagore;
 

@@ -7,6 +7,7 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'number_line_figure.dart';
 import 'right_triangle_figure.dart';
+import 'thales_figure.dart';
 import 'triangle_test_figure.dart';
 
 /// Fabrique une figure à partir de son identifiant de contenu.
@@ -30,6 +31,9 @@ abstract final class FigureRegistry {
     // Droite graduée des relatifs : position, opposé, distance à zéro.
     'droite-graduee': (BuildContext context, Color accent) =>
         NumberLineFigure(accent: accent),
+    // Configuration de Thalès : la parallèle coulisse, les rapports tiennent.
+    'thales-configuration': (BuildContext context, Color accent) =>
+        ThalesFigure(accent: accent),
     // Réciproque : un triangle est-il rectangle ?
     'triangle-reciproque': (BuildContext context, Color accent) =>
         TriangleTestFigure(accent: accent),
