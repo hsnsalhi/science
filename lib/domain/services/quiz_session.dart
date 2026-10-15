@@ -181,6 +181,23 @@ class QuizSession {
     return base + (isPerfect ? XpEngine.perfectBonus : 0);
   }
 
+  /// Réussites d'affilée du premier coup, en remontant depuis la question
+  /// courante.
+  ///
+  /// Sert au compteur de série affiché pendant le quiz : enchaîner trois
+  /// bonnes réponses doit se voir, sinon la troisième ne vaut pas plus que
+  /// la première. Une erreur, même rattrapée au second essai, remet le
+  /// compteur à zéro — c'est ce qui fait la valeur de la série.
+  int get combo {
+    int serie = 0;
+    for (int i = index; i >= 0 && i < questions.length; i--) {
+      final QuestionAttempt? attempt = attempts[questions[i].id];
+      if (attempt == null || !attempt.solvedFirstTry) break;
+      serie++;
+    }
+    return serie;
+  }
+
   /// `true` si toutes les questions ont été réussies du premier coup.
   bool get isPerfect => total > 0 && solvedFirstTry == total;
 

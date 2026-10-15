@@ -11,6 +11,7 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../data/content/content_catalog.dart';
 import '../../design_system/animations.dart';
+import '../../design_system/chips.dart';
 import '../../design_system/app_button.dart';
 import '../../design_system/app_scaffold.dart';
 import '../../design_system/progress_indicators.dart';
@@ -161,6 +162,18 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
         ],
       ),
       actions: <Widget>[
+        // Les XP se cumulent sous les yeux : sans ce compteur, le gain de
+        // chaque question disparaît avec le panneau de retour.
+        if (session.xpEarned > 0)
+          Padding(
+            padding: const EdgeInsets.only(right: AppSpacing.sm),
+            child: AppChip(
+              label: '${session.xpEarned} XP',
+              icon: Icons.bolt_rounded,
+              color: palette.base,
+              dense: true,
+            ),
+          ),
         AppIconButton(
           icon: Icons.close_rounded,
           tooltip: 'Quitter les exercices',
@@ -174,6 +187,8 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                 verdict: session.verdict!,
                 question: question,
                 accent: palette.base,
+                xpEarned: session.currentAttempt.xpEarned,
+                combo: session.combo,
                 onContinue: () => _advance(chapter, lesson),
               )
             : _ValidateBar(

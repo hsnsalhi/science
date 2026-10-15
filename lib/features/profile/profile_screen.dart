@@ -138,6 +138,7 @@ class ProfileScreen extends ConsumerWidget {
                 ),
               ),
             ),
+          const _FreePromise(),
         ],
       ),
     );
@@ -369,3 +370,26 @@ class _SubjectProgressRow extends StatelessWidget {
 
 /// Étoiles de maîtrise maximales d'un chapitre, exposé pour les tests.
 const int maxChapterStars = MasteryEngine.maxStars;
+
+class _FreePromise extends StatelessWidget {
+  const _FreePromise();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: AppSpacing.lg),
+      child: AppNotice(
+        color: context.tokens.success,
+        icon: Icons.volunteer_activism_rounded,
+        title: 'Gratuit, sans publicité, sans compte',
+        child: Text(
+          'Eurêka fonctionne entièrement hors-ligne. Rien de ce que tu fais '
+          'ici ne quitte ton appareil.',
+          style: context.text.bodySmall?.copyWith(
+            color: context.tokens.inkMuted,
+          ),
+        ),
+      ),
+    );
+  }
+}

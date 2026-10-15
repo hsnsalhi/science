@@ -152,7 +152,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         onPageChanged: (int index) => setState(() => _index = index),
         itemCount: lesson.cards.length,
         itemBuilder: (BuildContext context, int index) {
-          return SingleChildScrollView(
+          return Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: AppSpacing.lg,
               vertical: AppSpacing.lg,
@@ -237,7 +237,11 @@ class LessonCardView extends StatelessWidget {
     final String? label = CardVisuals.label(card.kind);
     final IconData? icon = CardVisuals.icon(card.kind);
 
-    final List<Widget> children = <Widget>[
+    // L'en-tête reste en haut ; le reste occupe la hauteur disponible.
+    // Une carte tient un écran : laisser le contenu s'empiler en haut
+    // d'une page à moitié vide la fait paraître bavarde et creuse à la
+    // fois.
+    final List<Widget> head = <Widget>[
       if (label != null)
         Padding(
           padding: const EdgeInsets.only(bottom: AppSpacing.md),
@@ -259,6 +263,9 @@ class LessonCardView extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: AppSpacing.md),
           child: Text(card.title!, style: context.text.headlineMedium),
         ),
+    ];
+
+    final List<Widget> prose = <Widget>[
       if (card.body != null)
         Padding(
           padding: const EdgeInsets.only(bottom: AppSpacing.lg),
@@ -268,14 +275,6 @@ class LessonCardView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: AppSpacing.lg),
           child: FormulaBlock(formula: card.formula!, accent: accent),
-        ),
-      if (card.figureId != null)
-        Padding(
-          padding: const EdgeInsets.only(bottom: AppSpacing.lg),
-          child: AppCard(
-            padding: const EdgeInsets.all(AppSpacing.md),
-            child: FigureRegistry.build(context, card.figureId!, accent),
-          ),
         ),
       for (final String bullet in card.bullets)
         Padding(
@@ -300,7 +299,45 @@ class LessonCardView extends StatelessWidget {
 
     final Widget content = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: children,
+      children: <Widget>[
+        ...head,
+        // Quand la carte porte une figure, c'est elle qu'on regarde :
+        // elle prend toute la place restante, et le texte passe au-dessus
+        // en une ligne. L'inverse — un paragraphe suivi d'une vignette —
+        // donne une page de cours, pas un écran qu'on manipule.
+        if (card.figureId != null) ...<Widget>[
+          if (prose.isNotEmpty)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: prose,
+            ),
+          // La carte épouse la figure plutôt que de s'étirer : le tracé
+          // est limité par la largeur, l'étirer en hauteur n'ajoutait que
+          // du blanc à l'intérieur. Le vide restant va à la page, qui le
+          // répartit au-dessus et au-dessous.
+          Expanded(
+            child: Center(
+              child: AppCard(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                child: FigureRegistry.build(context, card.figureId!, accent),
+              ),
+            ),
+          ),
+        ] else
+          // Sans figure, le texte se centre : court, il est au milieu de
+          // l'écran plutôt que collé en haut ; long, il défile.
+          Expanded(
+            child: Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: prose,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
 
     return PopIn(
@@ -308,13 +345,19 @@ class LessonCardView extends StatelessWidget {
       child: switch (card.kind) {
         // Les encadrés gardent une surface teintée : ils se repèrent d'un
         // coup d'œil quand on refeuillette la leçon.
-        LessonCardKind.astuce => AppNotice(
-          color: tokens.info,
-          icon: Icons.tips_and_updates_rounded,
-          title: 'Astuce',
-          child: Text(card.body ?? '', style: context.text.bodyMedium),
+        LessonCardKind.astuce => Center(
+          child: AppNotice(
+            color: tokens.info,
+            icon: Icons.tips_and_updates_rounded,
+            title: 'Astuce',
+            child: Text(card.body ?? '', style: context.text.bodyMedium),
+          ),
         ),
-        LessonCardKind.aRetenir => _Remember(card: card, accent: accent),
+        LessonCardKind.aRetenir => Center(
+          child: SingleChildScrollView(
+            child: _Remember(card: card, accent: accent),
+          ),
+        ),
         _ => content,
       },
     );

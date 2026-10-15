@@ -101,7 +101,12 @@ class _RightTriangleFigureState extends State<RightTriangleFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
+    // La figure épouse son contenu : dans une carte de leçon, la
+    // hauteur offerte dépasse ce que le tracé peut occuper, et une
+    // colonne qui la prend toute pousse ses légendes loin sous le
+    // dessin.
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Semantics(
           label:

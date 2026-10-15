@@ -7,7 +7,9 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../design_system/animations.dart';
 import '../../design_system/app_button.dart';
+import '../../design_system/chips.dart';
 import '../../design_system/mascot.dart';
+import '../../design_system/reward_burst.dart';
 import '../../domain/models/question.dart';
 import '../../domain/services/quiz_session.dart';
 
@@ -23,6 +25,8 @@ class FeedbackPanel extends StatelessWidget {
     required this.question,
     required this.accent,
     required this.onContinue,
+    this.xpEarned = 0,
+    this.combo = 0,
     super.key,
   });
 
@@ -30,6 +34,12 @@ class FeedbackPanel extends StatelessWidget {
   final Question question;
   final Color accent;
   final VoidCallback onContinue;
+
+  /// XP gagnés sur cette question, affichés comme récompense immédiate.
+  final int xpEarned;
+
+  /// Bonnes réponses d'affilée du premier coup, série en cours comprise.
+  final int combo;
 
   @override
   Widget build(BuildContext context) {
@@ -63,15 +73,55 @@ class FeedbackPanel extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Mascot(mood: mood, size: 52, color: color),
+              // L'éclat part de la mascotte : c'est le point que l'œil
+              // regarde au moment où le panneau s'ouvre.
+              RewardBurst(
+                trigger: correct ? question.id : null,
+                color: color,
+                child: Mascot(mood: mood, size: 52, color: color),
+              ),
               const SizedBox(width: AppSpacing.md),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      title,
-                      style: context.text.titleLarge?.copyWith(color: color),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          title,
+                          style: context.text.titleLarge?.copyWith(
+                            color: color,
+                          ),
+                        ),
+                        if (correct && xpEarned > 0) ...<Widget>[
+                          const SizedBox(width: AppSpacing.sm),
+                          PopIn(
+                            delay: const Duration(milliseconds: 120),
+                            from: 0.4,
+                            child: AppChip(
+                              label: '+$xpEarned XP',
+                              icon: Icons.bolt_rounded,
+                              color: color,
+                              dense: true,
+                            ),
+                          ),
+                        ],
+                        // La série ne s'annonce qu'à partir de deux : à un,
+                        // elle n'a encore rien d'une série.
+                        if (correct && combo >= 2) ...<Widget>[
+                          const SizedBox(width: AppSpacing.xs),
+                          PopIn(
+                            delay: const Duration(milliseconds: 220),
+                            from: 0.4,
+                            child: AppChip(
+                              label: '×$combo',
+                              icon: Icons.local_fire_department_rounded,
+                              color: tokens.warning,
+                              dense: true,
+                            ),
+                          ),
+                        ],
+                      ],
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(

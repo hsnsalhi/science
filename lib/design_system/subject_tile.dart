@@ -59,16 +59,16 @@ class SubjectTile extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Container(
-                    width: 44,
-                    height: 44,
+                    width: 56,
+                    height: 56,
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.22),
-                      borderRadius: BorderRadius.circular(AppRadii.sm),
+                      borderRadius: BorderRadius.circular(AppRadii.md),
                     ),
                     child: Icon(
                       SubjectVisuals.icon(iconKey),
                       color: Colors.white,
-                      size: 24,
+                      size: 32,
                     ),
                   ),
                   const Spacer(),
@@ -89,16 +89,12 @@ class SubjectTile extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                tagline,
-                style: context.text.bodySmall?.copyWith(
-                  color: Colors.white.withValues(alpha: 0.85),
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: AppSpacing.md),
+              // L'accroche n'est pas reprise ici : dans une tuile de cette
+              // largeur elle tenait sur deux lignes et finissait coupée
+              // (« créer comme u… »). Un texte tronqué n'apprend rien et
+              // encombre ; il reste en tête de l'écran de la matière, où
+              // il a la place d'être lu.
+              const SizedBox(height: AppSpacing.sm),
               Text(
                 chapterCount == 0
                     ? 'Bientôt disponible'

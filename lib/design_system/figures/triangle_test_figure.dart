@@ -57,7 +57,12 @@ class _TriangleTestFigureState extends State<TriangleTestFigure> {
     final double square = _c * _c;
     final Color verdictColor = _isRight ? tokens.success : tokens.inkMuted;
 
+    // La figure épouse son contenu : dans une carte de leçon, la
+    // hauteur offerte dépasse ce que le tracé peut occuper, et une
+    // colonne qui la prend toute pousse ses légendes loin sous le
+    // dessin.
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Semantics(
           label:

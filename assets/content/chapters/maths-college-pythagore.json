@@ -13,25 +13,24 @@
           "id": "c1",
           "kind": "texte",
           "title": "Un triangle pas comme les autres",
-          "body": "Un triangle rectangle est un triangle qui possède un angle droit, c'est-à-dire un angle de 90°. C'est le seul triangle pour lequel le théorème de Pythagore fonctionne — d'où l'importance de savoir le repérer du premier coup d'œil."
+          "body": "Un triangle rectangle a un angle droit : 90°. C'est le seul triangle où le théorème de Pythagore fonctionne."
         },
         {
           "id": "c2",
           "kind": "figure",
           "title": "Manipule le triangle",
-          "body": "Fais glisser ton doigt sur la figure pour changer la longueur des côtés. Touche-la pour faire apparaître le nom de chaque côté.",
           "figureId": "triangle-sides"
         },
         {
           "id": "c3",
           "kind": "texte",
           "title": "L'hypoténuse",
-          "body": "Le côté situé en face de l'angle droit porte un nom spécial : l'hypoténuse. Les deux autres s'appellent simplement les côtés de l'angle droit, parce que ce sont eux qui le forment."
+          "body": "Le côté en face de l'angle droit porte un nom : l'hypoténuse. Les deux autres forment l'angle droit."
         },
         {
           "id": "c4",
           "kind": "astuce",
-          "body": "Peu importe comment le triangle est tourné sur la feuille : l'hypoténuse est toujours le côté qui ne touche pas l'angle droit. Et comme c'est aussi le plus long des trois, un rapide coup d'œil suffit à la reconnaître."
+          "body": "Peu importe l'orientation : l'hypoténuse est le côté qui ne touche pas l'angle droit — et c'est toujours le plus long."
         },
         {
           "id": "c5",
@@ -132,7 +131,7 @@
           "id": "c1",
           "kind": "texte",
           "title": "Une relation entre les trois côtés",
-          "body": "Il y a 2 500 ans, on a remarqué que les trois côtés d'un triangle rectangle ne sont pas indépendants : si tu connais deux longueurs, la troisième est déjà déterminée. Le théorème de Pythagore donne exactement cette relation."
+          "body": "Dans un triangle rectangle, deux longueurs suffisent : la troisième est déjà jouée."
         },
         {
           "id": "c2",
@@ -145,19 +144,19 @@
           "id": "c3",
           "kind": "figure",
           "title": "Pourquoi ça marche",
-          "body": "Construis un carré sur chaque côté. L'aire du grand carré (sur l'hypoténuse) est toujours égale à la somme des aires des deux petits. Change les côtés : l'égalité tient, quelles que soient les valeurs.",
+          "body": "Un carré sur chaque côté. Le grand vaut toujours les deux petits réunis.",
           "figureId": "pythagore-carres"
         },
         {
           "id": "c4",
           "kind": "exemple",
           "title": "Avec des nombres",
-          "body": "Prenons un triangle rectangle dont les côtés de l'angle droit mesurent 3 cm et 4 cm.\n\n3² + 4² = 9 + 16 = 25\n\nL'hypoténuse au carré vaut donc 25, et comme 5 × 5 = 25, l'hypoténuse mesure 5 cm."
+          "body": "Côtés de l'angle droit : 3 cm et 4 cm.\n\n3² + 4² = 9 + 16 = 25\n\n25 = 5 × 5, donc l'hypoténuse mesure 5 cm."
         },
         {
           "id": "c5",
           "kind": "astuce",
-          "body": "L'erreur la plus fréquente est d'écrire l'égalité dans le mauvais sens. Repère d'abord l'angle droit, puis l'hypoténuse : c'est elle, et elle seule, qui est toute seule d'un côté du signe égal."
+          "body": "Repère l'angle droit, puis l'hypoténuse : c'est elle, et elle seule, d'un côté du signe égal."
         },
         {
           "id": "c6",
@@ -275,7 +274,7 @@
         {
           "id": "c3",
           "kind": "astuce",
-          "body": "Vérifie toujours ton résultat avec le bon sens : un côté de l'angle droit doit être plus petit que l'hypoténuse. Si tu trouves plus grand, c'est que tu as additionné au lieu de soustraire."
+          "body": "Un côté de l'angle droit est toujours plus petit que l'hypoténuse. Tu trouves plus grand ? Tu as additionné au lieu de soustraire."
         }
       ],
       "questions": [
@@ -353,7 +352,7 @@
           "id": "c1",
           "kind": "texte",
           "title": "Lire le théorème à l'envers",
-          "body": "Jusqu'ici, on partait d'un triangle rectangle pour calculer une longueur. La réciproque fait l'inverse : elle part des trois longueurs pour prouver que le triangle est rectangle."
+          "body": "On partait du triangle pour trouver une longueur. La réciproque part des longueurs pour prouver l'angle droit."
         },
         {
           "id": "c2",
@@ -366,13 +365,13 @@
           "id": "c3",
           "kind": "figure",
           "title": "Teste par toi-même",
-          "body": "Les deux premiers côtés valent 6 et 8. Fais varier le troisième : l'angle ne devient droit qu'au moment précis où 6² + 8² = c², c'est-à-dire pour c = 10.",
+          "body": "Deux côtés valent 6 et 8. Fais varier le troisième : l'angle devient droit à c = 10, pile quand 6² + 8² = c².",
           "figureId": "triangle-reciproque"
         },
         {
           "id": "c4",
           "kind": "astuce",
-          "body": "En pratique : calcule séparément le carré du plus grand côté, puis la somme des carrés des deux autres. Égaux ? Le triangle est rectangle. Différents ? Il ne l'est pas. C'est tout."
+          "body": "Carré du plus grand côté d'un côté, somme des carrés des deux autres de l'autre. Égaux ? Le triangle est rectangle."
         },
         {
           "id": "c5",
