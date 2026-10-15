@@ -156,6 +156,12 @@ suite qu'une fois ce contrôle entièrement vert.
 
 ## Étape 5 — Les sept secrets GitHub
 
+> **Déjà une autre application iOS sur ce compte Apple ?** Six des sept
+> secrets sont communs à toutes les applications d'une même équipe, et le
+> certificat de distribution **doit** être partagé plutôt que dupliqué.
+> Voir [SECRETS.md](SECRETS.md) : il ne reste alors que le profil
+> d'approvisionnement à créer.
+
 ```bash
 python3 tool/ios_signing.py secrets \
   --profile ~/Téléchargements/Eureka_App_Store.mobileprovision \

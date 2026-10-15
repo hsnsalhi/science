@@ -53,6 +53,9 @@ Le dépôt contient un workflow GitHub Actions qui construit l'IPA signé et
 l'envoie sur **TestFlight depuis un runner macOS** : posséder un Mac n'est pas
 nécessaire, seul le compte Apple Developer l'est.
 
+Plusieurs applications sur le même compte Apple ? Six des sept secrets se
+partagent — voir [docs/SECRETS.md](docs/SECRETS.md).
+
 Mise en place (une heure, une seule fois) puis un clic par build :
 [docs/TESTFLIGHT.md](docs/TESTFLIGHT.md). L'outil
 `tool/ios_signing.py` crée le certificat de distribution depuis Linux,
