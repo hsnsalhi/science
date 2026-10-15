@@ -626,12 +626,66 @@ def cmd_go(args: argparse.Namespace) -> int:
         target.write_text(value)
         target.chmod(0o600)
     print(f"{WARN} `gh` n'est pas installé ou pas connecté.")
-    print("  Pour tout déposer automatiquement :")
-    print("      brew install gh && gh auth login")
-    print("      python3 tool/ios_signing.py go")
     print()
-    print(f"  Sinon, les sept valeurs sont dans {out_dir} — à coller dans")
+    print(f"  Les sept valeurs sont prêtes dans {out_dir},")
+    print("  un fichier par secret, nommé exactement comme lui. À coller dans")
     print(f"  https://github.com/{repo}/settings/secrets/actions")
+    print()
+    print("  Pour éviter ces sept copier-coller la prochaine fois, installe")
+    print("  `gh` — sans Homebrew et sans administrateur :")
+    print("      python3 tool/ios_signing.py install-gh")
+    print("      gh auth login")
+    print("      python3 tool/ios_signing.py go")
+    return 0
+
+
+def cmd_install_gh(args: argparse.Namespace) -> int:
+    """Installe la ligne de commande GitHub dans ~/bin, sans administrateur.
+
+    Homebrew n'est pas toujours là, et l'installer pour un seul binaire est
+    disproportionné. On récupère l'archive officielle et on la dépose dans
+    le répertoire personnel.
+    """
+    import json
+    import platform
+    import urllib.request
+    import zipfile
+
+    system = platform.system()
+    if system != "Darwin":
+        raise Failure(f"Prévu pour macOS ; système détecté : {system}.")
+    arch = "arm64" if platform.machine() == "arm64" else "amd64"
+
+    with urllib.request.urlopen(
+        "https://api.github.com/repos/cli/cli/releases/latest"
+    ) as response:
+        version = json.load(response)["tag_name"].lstrip("v")
+
+    name = f"gh_{version}_macOS_{arch}"
+    url = f"https://github.com/cli/cli/releases/download/v{version}/{name}.zip"
+    print(f"Téléchargement de gh {version} ({arch})…")
+
+    archive = Path.home() / ".cache" / "gh.zip"
+    archive.parent.mkdir(parents=True, exist_ok=True)
+    urllib.request.urlretrieve(url, archive)
+
+    target_dir = Path.home() / "bin"
+    target_dir.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(archive) as bundle:
+        with bundle.open(f"{name}/bin/gh") as source:
+            binary = target_dir / "gh"
+            binary.write_bytes(source.read())
+    binary.chmod(0o755)
+    archive.unlink(missing_ok=True)
+
+    print(f"{OK} {binary}")
+    if str(target_dir) not in os.environ.get("PATH", ""):
+        print()
+        print("  Ajoute ~/bin au PATH, une fois pour toutes :")
+        print('      echo \'export PATH="$HOME/bin:$PATH"\' >> ~/.zshrc')
+        print("      source ~/.zshrc")
+    print()
+    print("  Puis : gh auth login")
     return 0
 
 # -------------------------------------------------------------------- main
@@ -681,6 +735,11 @@ def main(argv: list[str] | None = None) -> int:
     go.add_argument("--email", default="contact@techlyb.com")
     go.add_argument("--repo", default="hsnsalhi/science")
     go.set_defaults(func=cmd_go)
+
+    install = sub.add_parser(
+        "install-gh", help="installer la ligne de commande GitHub sans Homebrew"
+    )
+    install.set_defaults(func=cmd_install_gh)
 
     args = parser.parse_args(argv)
     try:
