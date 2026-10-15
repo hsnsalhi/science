@@ -58,7 +58,29 @@ jobs:
             echo "Voir docs/TESTFLIGHT.md pour savoir comment les obtenir."
             exit 1
           fi
-          echo "Tous les secrets sont présents."
+
+          # Contrôle de forme des identifiants App Store Connect. Mal copiés,
+          # ils ne se manifestent qu'au téléversement, après plusieurs minutes
+          # de build, par un « Cannot verify client's JWT headers » qui ne
+          # nomme pas le champ fautif.
+          if ! printf '%s' "$ASC_ISSUER_ID" | grep -Eq \
+              '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'; then
+            echo "::error::ASC_ISSUER_ID n'est pas un UUID (longueur ${#ASC_ISSUER_ID})."
+            echo "Attendu : la valeur « Issuer ID » en haut de"
+            echo "https://appstoreconnect.apple.com/access/integrations/api"
+            exit 1
+          fi
+          if ! printf '%s' "$ASC_KEY_ID" | grep -Eq '^[A-Z0-9]{10}$'; then
+            echo "::error::ASC_KEY_ID doit faire dix caractères (longueur ${#ASC_KEY_ID})."
+            exit 1
+          fi
+          if ! printf '%s' "$ASC_PRIVATE_KEY_BASE64" | base64 --decode \
+               | head -1 | grep -q 'BEGIN PRIVATE KEY'; then
+            echo "::error::ASC_PRIVATE_KEY_BASE64 ne contient pas une clé PKCS#8."
+            exit 1
+          fi
+
+          echo "Tous les secrets sont présents et bien formés."
 
       - name: Installer Flutter
         uses: subosito/flutter-action@v2
