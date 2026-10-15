@@ -9,7 +9,9 @@ import 'package:eureka/data/repositories/progress_repository.dart';
 import 'package:eureka/data/repositories/settings_repository.dart';
 import 'package:eureka/design_system/lesson_path.dart';
 import 'package:eureka/domain/models/app_settings.dart';
+import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
+import 'package:eureka/domain/models/lesson.dart';
 import 'package:eureka/domain/models/progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -124,13 +126,23 @@ void main() {
   ) async {
     await boot(tester, onboarded: true);
 
+    // L'accueil met en avant le premier chapitre jouable du niveau. Le test
+    // se cale sur le catalogue plutôt que sur un chapitre nommé : rédiger un
+    // nouveau chapitre ne doit pas faire tomber un test de navigation.
+    final Chapter premier = catalog
+        .playableChapters(EducationLevel.college)
+        .first;
+    final Lesson lecon = premier.lessons.first;
+    final String? premiereCarte = lecon.cards.first.title;
+    expect(premiereCarte, isNotNull);
+
     expect(find.text('Reprendre'), findsOneWidget);
-    expect(find.text('Le triangle rectangle'), findsOneWidget);
+    expect(find.text(lecon.title), findsOneWidget);
 
     await tester.tap(find.text('Commencer'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Un triangle pas comme les autres'), findsOneWidget);
+    expect(find.text(premiereCarte!), findsOneWidget);
   });
 
   testWidgets('le parcours du chapitre affiche toutes ses leçons', (
@@ -153,8 +165,13 @@ void main() {
       'avancer', (WidgetTester tester) async {
     await boot(tester, onboarded: true);
 
-    await tester.tap(find.text('Commencer'));
+    // On ouvre Pythagore par le catalogue : ce test porte sur la correction
+    // d'un exercice précis, pas sur le chapitre que l'accueil propose.
+    await tester.tap(find.text('Mathématiques'));
     await tester.pumpAndSettle();
+    await tester.tap(find.text('Le théorème de Pythagore'));
+    await tester.pumpAndSettle();
+    await tapText(tester, 'Commencer');
 
     // On fait défiler les cartes jusqu'aux exercices.
     for (int i = 0; i < 12; i++) {

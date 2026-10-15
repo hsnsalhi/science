@@ -1,0 +1,592 @@
+{
+  "chapter": "maths-college-les-fractions",
+  "lessons": [
+    {
+      "id": "ecrire",
+      "title": "Lire et écrire une fraction",
+      "subtitle": "Comprendre ce que racontent les deux nombres d'une fraction.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Partager en parts égales",
+          "body": "Une fraction sert à dire combien on prend d'un tout qu'on a découpé en parts égales. Les deux mots comptent : égales, sinon le partage n'a pas de sens, et tout, parce qu'une fraction se rapporte toujours à quelque chose."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les deux étages",
+          "formula": "numérateur / dénominateur",
+          "body": "Le dénominateur, en bas, dit en combien de parts le tout est découpé. Le numérateur, en haut, dit combien de ces parts on prend. Dans 3/4, on découpe en 4 et on prend 3."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une fraction est aussi une division",
+          "body": "La barre de fraction est un signe de division qui n'a pas été effectué. Écrire 3/4, c'est écrire 3 ÷ 4, et en posant la division on retrouve 0,75. Une fraction est donc un nombre, au même titre que 7 ou 0,5."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Les trois quarts d'une tablette",
+          "body": "Une tablette de chocolat a 12 carrés. Tu en manges les 3/4.\n\nUn quart, c'est 12 ÷ 4 = 3 carrés.\nTrois quarts, c'est 3 × 3 = 9 carrés.\n\nIl reste donc 3 carrés, c'est-à-dire 1/4 de la tablette."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de croire que plus le dénominateur est grand, plus la fraction est grande. C'est l'inverse : 1/8 est plus petit que 1/3, parce qu'en partageant le même gâteau en 8 au lieu de 3, chaque part devient plus petite. Un grand dénominateur annonce de petites parts."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "L'essentiel",
+          "bullets": [
+            "Dénominateur (en bas) : le nombre de parts égales du tout.",
+            "Numérateur (en haut) : le nombre de parts prises.",
+            "a/b veut aussi dire a ÷ b : une fraction est un nombre.",
+            "À numérateur égal, plus le dénominateur est grand, plus la fraction est petite."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans la fraction 5/8, que représente le nombre 8 ?",
+          "hint": "C'est le nombre du bas : il parle du découpage, pas de ce qu'on prend.",
+          "explanation": "Le 8 est le dénominateur : il dit que le tout a été partagé en 8 parts égales. Le 5, lui, dit combien de ces parts on garde.",
+          "options": [
+            {
+              "text": "Le nombre de parts égales dans le tout",
+              "correct": true
+            },
+            {
+              "text": "Le nombre de parts que l'on prend"
+            },
+            {
+              "text": "Le résultat de la division"
+            },
+            {
+              "text": "Le nombre de fractions à additionner"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Nomme les deux étages de la fraction 7/10.",
+          "template": "Dans 7/10, le nombre 7 est le ___ et le nombre 10 est le ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "numérateur",
+                "numerateur"
+              ]
+            },
+            {
+              "accepted": [
+                "dénominateur",
+                "denominateur"
+              ]
+            }
+          ],
+          "explanation": "Le numérateur est toujours en haut, le dénominateur en bas. Un moyen de ne plus les confondre : dénominateur et dessous commencent tous les deux par un d.",
+          "hint": "L'un des deux mots commence par la même lettre que « dessous »."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "1/8 est plus grand que 1/3.",
+          "answer": false,
+          "explanation": "Faux. Partager un gâteau en 8 donne des parts plus petites que de le partager en 3. En décimal : 1/8 = 0,125 alors que 1/3 ≈ 0,33.",
+          "hint": "Imagine le même gâteau partagé entre 8 personnes, puis entre 3."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans une classe de 30 élèves, les 2/5 déjeunent à la maison. Combien d'élèves cela fait-il ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "unit": "élèves",
+          "hint": "Cherche d'abord combien font 1/5 de 30.",
+          "explanation": "Un cinquième de 30 vaut 30 ÷ 5 = 6 élèves. Deux cinquièmes en valent donc le double : 6 × 2 = 12 élèves. Les 18 autres déjeunent à la cantine."
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque fraction à son écriture décimale.",
+          "explanation": "Chaque égalité s'obtient en effectuant la division : 1 ÷ 2 = 0,5 ; 1 ÷ 4 = 0,25 ; 3 ÷ 4 = 0,75 ; 1 ÷ 5 = 0,2. Ces quatre valeurs reviennent si souvent qu'il vaut la peine de les connaître par cœur.",
+          "pairs": [
+            {
+              "left": "1/2",
+              "right": "0,5"
+            },
+            {
+              "left": "1/4",
+              "right": "0,25"
+            },
+            {
+              "left": "3/4",
+              "right": "0,75"
+            },
+            {
+              "left": "1/5",
+              "right": "0,2"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est l'écriture décimale de la fraction 7/4 ?",
+          "answer": 1.75,
+          "tolerance": 0.01,
+          "hint": "La barre de fraction est une division : effectue 7 ÷ 4.",
+          "explanation": "7 ÷ 4 = 1,75. On peut le voir autrement : 7/4 = 4/4 + 3/4 = 1 + 0,75. Comme le numérateur dépasse le dénominateur, le résultat dépasse 1."
+        }
+      ]
+    },
+    {
+      "id": "simplifier",
+      "title": "Simplifier et comparer",
+      "subtitle": "Reconnaître deux écritures du même nombre, et savoir laquelle est la plus grande.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un même nombre, plusieurs écritures",
+          "body": "Une moitié de pizza, c'est 1/2, mais c'est aussi 2/4 si la pizza est coupée en quatre, ou 4/8 si elle est coupée en huit. La quantité de pizza n'a pas changé : seul le découpage change."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La règle d'or",
+          "formula": "a/b = (a × k)/(b × k)",
+          "body": "Multiplier — ou diviser — le numérateur et le dénominateur par un même nombre non nul ne change pas la fraction. C'est la seule opération autorisée pour changer d'écriture."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Simplifier",
+          "body": "Simplifier, c'est diviser les deux étages par un même nombre, jusqu'à ne plus pouvoir.\n\n18/24 : les deux sont divisibles par 6.\n18 ÷ 6 = 3 et 24 ÷ 6 = 4.\n\nDonc 18/24 = 3/4, et 3/4 ne se simplifie plus."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Comparer",
+          "body": "À dénominateur égal, la plus grande fraction est celle qui a le plus grand numérateur. Sinon, on commence par donner le même dénominateur aux deux.\n\n3/4 et 5/6 : on les écrit sur 12.\n3/4 = 9/12 et 5/6 = 10/12.\n\nComme 10 > 9, c'est 5/6 la plus grande."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de soustraire le même nombre en haut et en bas en croyant simplifier. 3/4 ne devient pas 2/3 : 3/4 = 0,75 alors que 2/3 ≈ 0,67. On ne simplifie qu'en divisant, jamais en soustrayant."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Deux réflexes",
+          "formula": "a/b = (a ÷ k)/(b ÷ k)",
+          "bullets": [
+            "Simplifier : diviser les deux étages par un même nombre.",
+            "Comparer : écrire les deux fractions avec le même dénominateur.",
+            "Soustraire en haut et en bas ne simplifie rien du tout."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle fraction est égale à 2/3 ?",
+          "hint": "Cherche celle qu'on obtient en multipliant 2 et 3 par un même nombre.",
+          "explanation": "En multipliant les deux étages par 3, on obtient (2 × 3)/(3 × 3) = 6/9. Les autres propositions ne respectent pas ce même facteur : 2/6, par exemple, revient à multiplier seulement le dénominateur, ce qui divise la fraction par deux.",
+          "options": [
+            {
+              "text": "6/9",
+              "correct": true
+            },
+            {
+              "text": "4/9"
+            },
+            {
+              "text": "2/6"
+            },
+            {
+              "text": "5/6"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Simplifie la fraction 18/24 au maximum.",
+          "template": "18/24 = ___/___",
+          "blanks": [
+            {
+              "accepted": [
+                "3"
+              ]
+            },
+            {
+              "accepted": [
+                "4"
+              ]
+            }
+          ],
+          "explanation": "18 et 24 sont tous les deux divisibles par 6 : 18 ÷ 6 = 3 et 24 ÷ 6 = 4. On obtient 3/4, qui ne se simplifie plus puisque 3 et 4 n'ont aucun diviseur commun autre que 1.",
+          "hint": "Quel est le plus grand nombre qui divise à la fois 18 et 24 ?"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Entre 3/4 et 5/6, laquelle est la plus grande ?",
+          "hint": "Écris les deux fractions avec 12 pour dénominateur.",
+          "explanation": "3/4 = 9/12 et 5/6 = 10/12. À dénominateur égal, on compare les numérateurs : 10 > 9, donc 5/6 est la plus grande. L'écart est mince, un dixième de douzième seulement.",
+          "options": [
+            {
+              "text": "5/6",
+              "correct": true
+            },
+            {
+              "text": "3/4"
+            },
+            {
+              "text": "Elles sont égales"
+            },
+            {
+              "text": "On ne peut pas comparer deux fractions de dénominateurs différents"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour simplifier une fraction, on peut soustraire un même nombre au numérateur et au dénominateur.",
+          "answer": false,
+          "explanation": "Faux, et c'est le piège le plus fréquent. 6/8 vaut 0,75 ; en retirant 2 partout on obtiendrait 4/6 ≈ 0,67, un autre nombre. Seule la division par un même nombre conserve la valeur : 6/8 = 3/4.",
+          "hint": "Teste sur 6/8 en retirant 2 en haut et en bas, puis compare les valeurs décimales."
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces fractions de la plus petite à la plus grande.",
+          "items": [
+            "1/5",
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "explanation": "En décimal : 1/5 = 0,2 ; 1/3 ≈ 0,33 ; 1/2 = 0,5 ; 2/3 ≈ 0,67. Les trois premières ont le même numérateur : il suffisait de ranger leurs dénominateurs du plus grand au plus petit.",
+          "hint": "Les trois premières ont toutes 1 pour numérateur."
+        },
+        {
+          "id": "q6",
+          "kind": "choixMultiple",
+          "prompt": "Quelles fractions sont égales à 1/2 ?",
+          "explanation": "5/10 et 7/14 valent bien 0,5 : dans les deux cas le dénominateur est le double du numérateur. En revanche 3/5 = 0,6 et 4/6 ≈ 0,67 dépassent la moitié. Le test rapide : une fraction vaut 1/2 si son dénominateur est exactement le double de son numérateur.",
+          "hint": "Compare le dénominateur au double du numérateur.",
+          "options": [
+            {
+              "text": "5/10",
+              "correct": true
+            },
+            {
+              "text": "7/14",
+              "correct": true
+            },
+            {
+              "text": "3/5"
+            },
+            {
+              "text": "4/6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "additionner",
+      "title": "Additionner et soustraire",
+      "subtitle": "Mettre au même dénominateur, puis ne plus toucher qu'aux numérateurs.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Quand les dénominateurs sont les mêmes",
+          "body": "Les parts ont la même taille : il suffit de compter combien on en a en tout.\n\n2/7 + 3/7 = 5/7\n\nLe dénominateur ne bouge pas : la taille des parts n'a aucune raison de changer."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Quand ils sont différents",
+          "body": "On ne peut pas additionner des parts de tailles différentes. On réécrit donc les deux fractions avec un même dénominateur.\n\n1/2 + 1/3 : on choisit 6.\n1/2 = 3/6 et 1/3 = 2/6.\n3/6 + 2/6 = 5/6"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Une soustraction complète",
+          "body": "Calculons 3/4 − 1/6. Un dénominateur commun à 4 et 6 est 12.\n\n3/4 = 9/12\n1/6 = 2/12\n9/12 − 2/12 = 7/12\n\n7/12 ne se simplifie pas : le résultat est final."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'erreur classique est d'additionner les dénominateurs entre eux : 1/2 + 1/3 = 2/5. Le bon sens suffit à la repérer — on ajoute quelque chose à une moitié, le résultat doit dépasser 1/2, or 2/5 est plus petit que 1/2. Le dénominateur ne s'additionne jamais."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "La méthode en une ligne",
+          "formula": "a/c + b/c = (a + b)/c",
+          "bullets": [
+            "Même dénominateur : on additionne les numérateurs, c'est tout.",
+            "Dénominateurs différents : on les rend égaux d'abord.",
+            "On termine toujours en simplifiant le résultat si c'est possible."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "texteATrous",
+          "prompt": "Complète cette addition de fractions de même dénominateur.",
+          "template": "2/9 + 5/9 = ___/9",
+          "blanks": [
+            {
+              "accepted": [
+                "7"
+              ]
+            }
+          ],
+          "explanation": "Les neuvièmes ont tous la même taille : 2 neuvièmes plus 5 neuvièmes font 7 neuvièmes. Le dénominateur reste 9, car on n'a pas changé le découpage.",
+          "hint": "Compte simplement les parts : 2 parts + 5 parts."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Combien vaut 1/2 + 1/3 ?",
+          "hint": "Écris les deux fractions en sixièmes.",
+          "explanation": "1/2 = 3/6 et 1/3 = 2/6, donc la somme vaut 5/6. La réponse 2/5 est celle qu'on obtient en additionnant les dénominateurs, ce qui est faux : 2/5 est même plus petit que 1/2.",
+          "options": [
+            {
+              "text": "5/6",
+              "correct": true
+            },
+            {
+              "text": "2/5"
+            },
+            {
+              "text": "2/6"
+            },
+            {
+              "text": "1/5"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Pour additionner deux fractions, on additionne les numérateurs entre eux et les dénominateurs entre eux.",
+          "answer": false,
+          "explanation": "Faux. Cette règle existe pour la multiplication, pas pour l'addition. Additionner les dénominateurs reviendrait à dire que 1/2 + 1/2 = 2/4, c'est-à-dire qu'une moitié plus une moitié font une demie — alors que cela fait un entier.",
+          "hint": "Teste la règle sur 1/2 + 1/2, dont tu connais déjà le résultat."
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Complète chaque étape de la soustraction 3/4 − 1/6.",
+          "template": "3/4 − 1/6 = ___/12 − ___/12 = ___/12",
+          "blanks": [
+            {
+              "accepted": [
+                "9"
+              ]
+            },
+            {
+              "accepted": [
+                "2"
+              ]
+            },
+            {
+              "accepted": [
+                "7"
+              ]
+            }
+          ],
+          "explanation": "On passe en douzièmes : 3/4 = 9/12 (on multiplie par 3) et 1/6 = 2/12 (on multiplie par 2). Il ne reste qu'à soustraire les numérateurs : 9 − 2 = 7, donc 7/12.",
+          "hint": "Par combien faut-il multiplier 4 pour obtenir 12 ? Et 6 ?"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une bouteille contient 3/4 de litre de jus. Tu y ajoutes 1/2 litre. Combien de litres contient-elle alors ?",
+          "answer": 1.25,
+          "tolerance": 0.01,
+          "unit": "L",
+          "hint": "3/4 vaut 0,75 et 1/2 vaut 0,5.",
+          "explanation": "En quarts : 3/4 + 2/4 = 5/4 de litre, soit 1,25 L. En décimal on retrouve la même chose : 0,75 + 0,5 = 1,25. La bouteille déborderait d'un récipient d'un litre."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Donne le résultat de 5/6 − 1/3 en écriture décimale.",
+          "answer": 0.5,
+          "tolerance": 0.01,
+          "hint": "Commence par écrire 1/3 en sixièmes.",
+          "explanation": "1/3 = 2/6, donc 5/6 − 2/6 = 3/6, qui se simplifie en 1/2, soit 0,5. Penser à simplifier à la fin évite de garder une écriture inutilement compliquée."
+        }
+      ]
+    },
+    {
+      "id": "multiplier",
+      "title": "Multiplier et résoudre",
+      "subtitle": "Prendre une fraction d'une quantité, et s'attaquer à de vrais problèmes.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Plus simple que l'addition",
+          "body": "Pour multiplier deux fractions, aucun dénominateur commun n'est nécessaire : on multiplie les numérateurs entre eux et les dénominateurs entre eux. C'est l'opération la plus facile du chapitre — et pourtant celle qu'on apprend en dernier."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La règle",
+          "formula": "a/b × c/d = (a × c)/(b × d)",
+          "body": "On simplifie ensuite le résultat si c'est possible."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Une fraction d'une fraction",
+          "body": "Il reste les 3/4 d'un gâteau, et tu en manges les 2/3. Quelle part du gâteau entier as-tu mangée ?\n\n2/3 × 3/4 = (2 × 3)/(3 × 4) = 6/12 = 1/2\n\nTu en as mangé la moitié. Le mot « de » se traduit par une multiplication."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Une fraction d'une quantité",
+          "body": "Prendre les 3/5 de 45 €, c'est multiplier 45 par 3/5. En pratique, on procède en deux temps :\n\n45 ÷ 5 = 9 (un cinquième)\n9 × 3 = 27 (trois cinquièmes)\n\nDiviser d'abord évite de manipuler de grands nombres."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur classique est de croire qu'une multiplication agrandit toujours. Avec les fractions, c'est faux : 1/2 × 1/3 = 1/6, plus petit que les deux facteurs. Multiplier par une fraction inférieure à 1, c'est prendre une partie — donc réduire."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Ce qu'il faut garder",
+          "bullets": [
+            "On multiplie en ligne : numérateurs ensemble, dénominateurs ensemble.",
+            "« Les 2/3 de » signifie « × 2/3 ».",
+            "Multiplier par une fraction plus petite que 1 diminue le résultat.",
+            "Pour une fraction d'une quantité : diviser d'abord, multiplier ensuite."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Combien vaut 2/3 × 3/4 ?",
+          "hint": "Multiplie en ligne, puis simplifie le résultat.",
+          "explanation": "(2 × 3)/(3 × 4) = 6/12, qui se simplifie en 1/2 puisque 6 et 12 sont divisibles par 6. Autrement dit, les deux tiers des trois quarts font exactement une moitié.",
+          "options": [
+            {
+              "text": "1/2",
+              "correct": true
+            },
+            {
+              "text": "5/7"
+            },
+            {
+              "text": "6/7"
+            },
+            {
+              "text": "8/9"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un sac contient 45 billes, dont les 3/5 sont rouges. Combien de billes rouges contient-il ?",
+          "answer": 27,
+          "tolerance": 0.01,
+          "unit": "billes",
+          "hint": "Divise d'abord 45 par 5 pour obtenir un cinquième.",
+          "explanation": "45 ÷ 5 = 9 billes pour un cinquième, puis 9 × 3 = 27 billes pour trois cinquièmes. Les 18 billes restantes, soit les 2/5, sont d'une autre couleur — et 27 + 18 = 45, ce qui confirme le calcul."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Multiplier un nombre positif par 3/4 donne toujours un résultat plus grand que ce nombre.",
+          "answer": false,
+          "explanation": "Faux. 3/4 est plus petit que 1, donc multiplier par 3/4 revient à prendre les trois quarts : le résultat diminue. Par exemple 20 × 3/4 = 15. Un produit n'augmente que si on multiplie par un nombre supérieur à 1.",
+          "hint": "Essaie avec 20 : les trois quarts de 20 valent-ils plus ou moins que 20 ?"
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes du calcul des 3/5 de 45 €.",
+          "items": [
+            "Diviser 45 par 5, le dénominateur",
+            "Obtenir 9 €, qui représentent un cinquième",
+            "Multiplier 9 par 3, le numérateur",
+            "Conclure : les 3/5 de 45 € valent 27 €"
+          ],
+          "explanation": "Diviser avant de multiplier garde les nombres petits et calculables de tête. L'ordre inverse (45 × 3 = 135, puis 135 ÷ 5 = 27) donne le même résultat, mais oblige à manipuler 135 au passage.",
+          "hint": "On commence par le dénominateur, qui dit en combien de parts partager."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un livre compte 240 pages. Tu en as lu les 5/8. Combien de pages te reste-t-il à lire ?",
+          "answer": 90,
+          "tolerance": 0.01,
+          "unit": "pages",
+          "hint": "Calcule d'abord les pages lues — ou, plus rapide, remarque qu'il reste les 3/8.",
+          "explanation": "240 ÷ 8 = 30 pages par huitième. Tu as lu 5 × 30 = 150 pages, il reste donc 240 − 150 = 90 pages. Plus court : il reste les 3/8 du livre, soit 3 × 30 = 90 pages."
+        },
+        {
+          "id": "q6",
+          "kind": "choixMultiple",
+          "prompt": "Quels calculs donnent 1/2 ?",
+          "hint": "Ramène chaque calcul à une écriture décimale si tu hésites.",
+          "explanation": "1/4 + 1/4 = 2/4 = 1/2. 2/3 × 3/4 = 6/12 = 1/2. 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2. En revanche 1/2 × 1/2 = 1/4, et 3/4 − 1/8 = 6/8 − 1/8 = 5/8, qui dépasse la moitié.",
+          "options": [
+            {
+              "text": "1/4 + 1/4",
+              "correct": true
+            },
+            {
+              "text": "2/3 × 3/4",
+              "correct": true
+            },
+            {
+              "text": "1/3 + 1/6",
+              "correct": true
+            },
+            {
+              "text": "1/2 × 1/2"
+            },
+            {
+              "text": "3/4 − 1/8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

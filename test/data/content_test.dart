@@ -151,6 +151,118 @@ void main() {
     expect(cited, isNotEmpty, reason: 'aucune figure interactive utilisée');
   });
 
+  /// Garde-fou d'un chapitre entièrement rédigé.
+  ///
+  /// Chaque réponse numérique est recalculée à la main dans
+  /// [reponsesVerifiees] : si quelqu'un retouche un énoncé sans refaire le
+  /// calcul, la suite tombe au lieu de laisser une réponse fausse atteindre
+  /// un élève. Une question numérique ajoutée sans être vérifiée fait
+  /// également échouer le test — on ne peut pas l'oublier.
+  void verifieChapitreRedige(
+    String chapterId,
+    Map<String, double> reponsesVerifiees,
+  ) {
+    group('Chapitre rédigé : $chapterId', () {
+      late Chapter chapitre;
+
+      setUpAll(() {
+        chapitre = catalog.chapterById(chapterId)!;
+      });
+
+      test('propose quatre leçons fournies', () {
+        expect(chapitre.isPlayable, isTrue);
+        expect(chapitre.objectives, isNotEmpty);
+        expect(chapitre.lessons.length, greaterThanOrEqualTo(4));
+        for (final Lesson lesson in chapitre.lessons) {
+          expect(
+            lesson.cards.length,
+            greaterThanOrEqualTo(4),
+            reason: '$chapterId/${lesson.id} : moins de quatre cartes',
+          );
+          expect(
+            lesson.questions.length,
+            greaterThanOrEqualTo(4),
+            reason: '$chapterId/${lesson.id} : moins de quatre questions',
+          );
+        }
+      });
+
+      test('enchaîne cours, entraînement et défi', () {
+        final Set<LessonKind> kinds = chapitre.lessons
+            .map((Lesson l) => l.kind)
+            .toSet();
+        expect(
+          kinds,
+          containsAll(<LessonKind>[
+            LessonKind.cours,
+            LessonKind.entrainement,
+            LessonKind.defi,
+          ]),
+        );
+      });
+
+      test('nomme une erreur classique dans chaque leçon', () {
+        for (final Lesson lesson in chapitre.lessons) {
+          expect(
+            lesson.cards.any((LessonCard c) => c.kind == LessonCardKind.astuce),
+            isTrue,
+            reason: '$chapterId/${lesson.id} : aucune carte « astuce »',
+          );
+        }
+      });
+
+      test('varie les types d\'exercice', () {
+        final Set<QuestionKind> kinds = <QuestionKind>{
+          for (final Lesson lesson in chapitre.lessons)
+            for (final Question question in lesson.questions) question.kind,
+        };
+        expect(
+          kinds.length,
+          greaterThanOrEqualTo(5),
+          reason: '$chapterId : seulement ${kinds.length} types d\'exercice',
+        );
+      });
+
+      test('les réponses numériques ont été recalculées', () {
+        int checked = 0;
+        for (final Lesson lesson in chapitre.lessons) {
+          for (final Question question in lesson.questions) {
+            if (question is! NumericQuestion) continue;
+            final String key = '${lesson.id}/${question.id}';
+            final double? value = reponsesVerifiees[key];
+            expect(
+              value,
+              isNotNull,
+              reason: 'réponse numérique non vérifiée : $chapterId/$key',
+            );
+            expect(
+              question.expected,
+              closeTo(value!, question.tolerance),
+              reason: '$chapterId/$key',
+            );
+            checked++;
+          }
+        }
+        expect(
+          checked,
+          reponsesVerifiees.length,
+          reason:
+              '$chapterId : une réponse vérifiée ne correspond à '
+              'aucune question',
+        );
+      });
+    });
+  }
+
+  verifieChapitreRedige('maths-college-les-fractions', const <String, double>{
+    'ecrire/q4': 12, // les 2/5 de 30 élèves
+    'ecrire/q6': 1.75, // 7 ÷ 4
+    'additionner/q5': 1.25, // 3/4 L versés avec 1/2 L
+    'additionner/q6': 0.5, // 5/6 − 2/6 = 3/6
+    'multiplier/q2': 27, // les 3/5 de 45 billes
+    'multiplier/q5': 90, // 240 pages moins les 5/8 déjà lues
+  });
+
   group('Chapitre complet : le théorème de Pythagore', () {
     late Chapter pythagore;
 
