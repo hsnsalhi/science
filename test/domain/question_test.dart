@@ -241,4 +241,58 @@ void main() {
       );
     });
   });
+
+  // Un trou qui n'attend qu'un nombre doit ouvrir le pavé numérique et
+  // refuser les lettres. Le même exercice peut mêler les deux : « 15² =
+  // ___ » et « le triangle est donc ___ » n'appellent pas le même clavier,
+  // donc la distinction se fait trou par trou, pas question par question.
+  group('Texte à trous : nature de chaque trou', () {
+    FillBlanksQuestion build(List<List<String>> accepted) {
+      return FillBlanksQuestion(
+        id: 'q',
+        prompt: 'Énoncé',
+        explanation: 'Explication',
+        template: List<String>.filled(accepted.length, '___').join(' = '),
+        accepted: accepted,
+      );
+    }
+
+    test('un trou aux réponses numériques est numérique', () {
+      final FillBlanksQuestion question = build(<List<String>>[
+        <String>['225'],
+        <String>['12,5'],
+        <String>['-3'],
+      ]);
+      expect(question.isNumericBlank(0), isTrue);
+      expect(question.isNumericBlank(1), isTrue);
+      expect(question.isNumericBlank(2), isTrue);
+    });
+
+    test('un trou attendant un mot ne l\'est pas', () {
+      final FillBlanksQuestion question = build(<List<String>>[
+        <String>['rectangle'],
+        <String>['hypoténuse', 'hypotenuse'],
+      ]);
+      expect(question.isNumericBlank(0), isFalse);
+      expect(question.isNumericBlank(1), isFalse);
+    });
+
+    test('une seule réponse non numérique suffit à ouvrir le clavier', () {
+      final FillBlanksQuestion question = build(<List<String>>[
+        <String>['225', 'deux cent vingt-cinq'],
+      ]);
+      expect(question.isNumericBlank(0), isFalse);
+    });
+
+    test('les deux natures cohabitent dans un même exercice', () {
+      final FillBlanksQuestion question = build(<List<String>>[
+        <String>['225'],
+        <String>['225'],
+        <String>['rectangle'],
+      ]);
+      expect(question.isNumericBlank(0), isTrue);
+      expect(question.isNumericBlank(1), isTrue);
+      expect(question.isNumericBlank(2), isFalse);
+    });
+  });
 }

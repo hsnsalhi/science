@@ -489,6 +489,22 @@ final class FillBlanksQuestion extends Question {
   /// Morceaux de texte entre les trous (`blankCount + 1` éléments).
   List<String> get segments => template.split(blankMarker);
 
+  /// `true` si le trou d'indice [index] n'admet que des nombres.
+  ///
+  /// Se déduit des réponses acceptées plutôt que d'un champ à renseigner :
+  /// un trou dont toutes les réponses sont des nombres ne peut pas en
+  /// attendre autre chose. Cela évite d'avoir à annoter chaque trou du
+  /// contenu, et reste juste quand un même exercice mêle un calcul et une
+  /// conclusion en toutes lettres — « 15² = ___ » et « le triangle est
+  /// donc ___ » n'appellent pas le même clavier.
+  bool isNumericBlank(int index) {
+    final List<String> reponses = accepted[index];
+    return reponses.isNotEmpty &&
+        reponses.every(
+          (String a) => NumericQuestion.parseInput(a) != null,
+        );
+  }
+
   @override
   QuestionKind get kind => QuestionKind.texteATrous;
 

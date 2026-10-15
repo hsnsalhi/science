@@ -422,6 +422,20 @@ class _BlanksViewState extends State<_BlanksView> {
                 enabled: !widget.locked,
                 textAlign: TextAlign.center,
                 style: style.copyWith(color: widget.accent),
+                // Un trou qui attend un nombre ouvre le pavé numérique et
+                // refuse les lettres : sans cela, le clavier alphabétique
+                // s'ouvrait sur « 15² = ___ » et laissait écrire n'importe
+                // quoi.
+                keyboardType: widget.question.isNumericBlank(i)
+                    ? const TextInputType.numberWithOptions(decimal: true)
+                    : TextInputType.text,
+                inputFormatters: widget.question.isNumericBlank(i)
+                    ? <TextInputFormatter>[
+                        FilteringTextInputFormatter.allow(
+                          RegExp(r'[0-9.,\-]'),
+                        ),
+                      ]
+                    : null,
                 decoration: InputDecoration(
                   isDense: true,
                   contentPadding: const EdgeInsets.symmetric(
