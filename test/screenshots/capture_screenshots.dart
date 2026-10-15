@@ -240,6 +240,31 @@ void main() {
         await shoot(tester, '$device-4-exercice');
       });
 
+      // L'appariement se joue au glisser-déposer : sa capture montre la
+      // réserve d'étiquettes et les définitions qui les accueillent.
+      testWidgets('appariement à glisser', (WidgetTester tester) async {
+        await boot(tester, logical, ratio, withHistory: false);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Le théorème de Pythagore');
+        await tapText(tester, 'Commencer');
+        for (int i = 0; i < 12; i++) {
+          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
+            await tapText(tester, 'Passer aux exercices');
+            break;
+          }
+          await tapText(tester, 'Suivant');
+        }
+        // Deux questions avant l'appariement.
+        await tapText(tester, 'L\'hypoténuse');
+        await tapText(tester, 'Valider');
+        await tapText(tester, 'Continuer');
+        await tapText(tester, 'Faux');
+        await tapText(tester, 'Valider');
+        await tapText(tester, 'Continuer');
+        await shoot(tester, '$device-7-appariement');
+      });
+
       // La figure du Système solaire a sa propre capture : c'est la seule
       // qui porte une échelle, et une erreur de placement y serait
       // invisible dans un test de géométrie.

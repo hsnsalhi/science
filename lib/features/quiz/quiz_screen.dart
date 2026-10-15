@@ -1,6 +1,8 @@
 /// Déroulé d'un quiz, du premier énoncé à la célébration.
 library;
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,6 +21,7 @@ import '../../domain/models/chapter.dart';
 import '../../domain/models/lesson.dart';
 import '../../domain/models/progress.dart';
 import '../../domain/models/question.dart';
+import '../../domain/services/xp_engine.dart';
 import '../../domain/services/quiz_session.dart';
 import 'feedback_panel.dart';
 import 'question_views.dart';
@@ -52,9 +55,48 @@ class QuizScreen extends ConsumerStatefulWidget {
 }
 
 class _QuizScreenState extends ConsumerState<QuizScreen> {
+  /// Temps accordé par question dans un défi chronométré.
+  static const Duration _fenetre = Duration(seconds: 30);
+
   QuizSession? _session;
   LessonOutcome? _outcome;
   int _shakeTrigger = 0;
+
+  /// Début de la question en cours, quand le chronomètre tourne.
+  DateTime? _depart;
+  Timer? _battement;
+
+  @override
+  void dispose() {
+    _battement?.cancel();
+    super.dispose();
+  }
+
+  /// Temps restant, ou `null` si la question n'est pas chronométrée.
+  Duration? get _restant {
+    final DateTime? depart = _depart;
+    if (depart == null) return null;
+    final Duration ecoule = ref.read(clockProvider)().difference(depart);
+    final Duration reste = _fenetre - ecoule;
+    return reste.isNegative ? Duration.zero : reste;
+  }
+
+  void _lancerChrono() {
+    _battement?.cancel();
+    _depart = ref.read(clockProvider)();
+    // Un battement de cinq par seconde suffit à une barre qui se vide ;
+    // rafraîchir à chaque image coûterait sans rien montrer de plus.
+    _battement = Timer.periodic(const Duration(milliseconds: 200), (Timer t) {
+      if (!mounted) return;
+      if ((_restant ?? Duration.zero) <= Duration.zero) t.cancel();
+      setState(() {});
+    });
+  }
+
+  void _arreterChrono() {
+    _battement?.cancel();
+    _battement = null;
+  }
 
   QuizSession _ensureSession(Lesson lesson) => _session ??= QuizSession.start(
     lesson.questions,
@@ -69,7 +111,12 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
     // Le clavier n'a plus rien à saisir une fois la réponse envoyée, et il
     // masquerait la moitié du retour.
     FocusScope.of(context).unfocus();
-    final QuizSession next = _session!.validate();
+    // Hors défi chronométré, le bonus de rapidité est toujours accordé :
+    // couper le chronomètre ne doit pas coûter d'XP.
+    final Duration? reste = _restant;
+    final bool rapide = reste == null || reste > Duration.zero;
+    _arreterChrono();
+    final QuizSession next = _session!.validate(rapide: rapide);
     if (next.verdict == QuizVerdict.correct) {
       context.successFeedback();
     } else {
@@ -81,6 +128,9 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
 
   void _advance(Chapter chapter, Lesson lesson) {
     final QuizSession next = _session!.advance();
+    if (next.phase == QuizPhase.answering && _depart != null) {
+      _lancerChrono();
+    }
     if (next.phase == QuizPhase.finished && _outcome == null) {
       final bool firstTime = !ref
           .read(progressProvider)
@@ -148,6 +198,17 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
 
     final Question question = session.current!;
     final bool locked = session.phase == QuizPhase.feedback;
+
+    // Le chronomètre ne concerne que les défis, et seulement si l'élève
+    // l'a laissé actif. Lancé ici plutôt qu'à l'initialisation parce que
+    // la leçon n'est connue qu'une fois le catalogue lu.
+    final bool chronometre =
+        lesson.kind == LessonKind.defi &&
+        ref.watch(settingsProvider).timedChallenges;
+    if (chronometre && _depart == null && !locked) {
+      _lancerChrono();
+    }
+    final Duration? reste = chronometre ? _restant : null;
 
     return AppScaffold(
       scrollable: false,
@@ -218,6 +279,10 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              if (reste != null) ...<Widget>[
+                _Chrono(reste: reste, fenetre: _fenetre, accent: palette.base),
+                const SizedBox(height: AppSpacing.lg),
+              ],
               Text(question.prompt, style: context.text.headlineSmall),
               const SizedBox(height: AppSpacing.lg),
               if (question.figureId != null) ...<Widget>[
@@ -365,6 +430,75 @@ class _HintBox extends StatelessWidget {
             Expanded(child: Text(hint, style: context.text.bodyMedium)),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Compte à rebours d'une question de défi.
+///
+/// Il n'enlève rien : arrivé à zéro, la question se joue normalement,
+/// seul le bonus de rapidité est perdu. La barre le dit en toutes lettres
+/// plutôt que de laisser croire à une sanction.
+class _Chrono extends StatelessWidget {
+  const _Chrono({
+    required this.reste,
+    required this.fenetre,
+    required this.accent,
+  });
+
+  final Duration reste;
+  final Duration fenetre;
+  final Color accent;
+
+  @override
+  Widget build(BuildContext context) {
+    final AppTokens tokens = context.tokens;
+    final bool ecoule = reste <= Duration.zero;
+    final bool presse = !ecoule && reste.inSeconds < 10;
+    final Color couleur = ecoule
+        ? tokens.inkSubtle
+        : (presse ? tokens.warning : accent);
+    final double part = (reste.inMilliseconds / fenetre.inMilliseconds).clamp(
+      0.0,
+      1.0,
+    );
+
+    return Semantics(
+      liveRegion: presse,
+      label: ecoule
+          ? 'Temps écoulé, la question reste ouverte.'
+          : '${reste.inSeconds} secondes pour le bonus.',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Icon(
+                ecoule ? Icons.timer_off_rounded : Icons.timer_rounded,
+                size: 16,
+                color: couleur,
+              ),
+              const SizedBox(width: AppSpacing.xs),
+              Text(
+                ecoule
+                    ? 'Temps écoulé — la question reste ouverte'
+                    : '${reste.inSeconds} s pour +${XpEngine.speedBonus} XP',
+                style: context.text.labelMedium?.copyWith(color: couleur),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: part,
+              minHeight: 6,
+              backgroundColor: tokens.border,
+              valueColor: AlwaysStoppedAnimation<Color>(couleur),
+            ),
+          ),
+        ],
       ),
     );
   }

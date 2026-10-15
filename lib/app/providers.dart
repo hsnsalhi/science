@@ -180,6 +180,9 @@ class SettingsController extends Notifier<AppSettings> {
 
   void setHaptics(bool value) => _update(state.copyWith(haptics: value));
 
+  void setTimedChallenges(bool value) =>
+      _update(state.copyWith(timedChallenges: value));
+
   void setTextScale(double value) => _update(
     state.copyWith(
       textScale: value.clamp(

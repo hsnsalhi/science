@@ -4,11 +4,13 @@ library;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/app_typography.dart';
 import '../../design_system/animations.dart';
 import '../../design_system/answer_tile.dart';
+import '../../design_system/chips.dart';
 import '../../design_system/figures/figure_registry.dart';
 import '../../domain/models/question.dart';
 import '../../domain/services/quiz_session.dart';
@@ -591,36 +593,49 @@ class _MatchingViewState extends State<_MatchingView> {
   /// Associations composées : indice de gauche vers indice de droite.
   final Map<int, int> _pairing = <int, int>{};
 
+  /// Étiquette choisie du doigt, pour qui préfère toucher que glisser.
   int? _selectedLeft;
 
   late final List<int> _rightOrder =
       widget.session.matchOrder[widget.question.id] ??
       List<int>.generate(widget.question.pairs.length, (int i) => i);
 
-  void _tapLeft(int index) {
+  /// Associe l'étiquette [left] à la définition [right].
+  void _lier(int left, int right) {
     if (widget.locked) return;
+    context.tapFeedback();
     setState(() {
-      if (_pairing.containsKey(index)) {
-        // Toucher une paire déjà formée la défait : c'est le geste attendu.
-        _pairing.remove(index);
-        _selectedLeft = null;
-      } else {
-        _selectedLeft = _selectedLeft == index ? null : index;
-      }
-    });
-    _emit();
-  }
-
-  void _tapRight(int right) {
-    if (widget.locked) return;
-    final int? left = _selectedLeft;
-    if (left == null) return;
-    setState(() {
+      // Une définition ne reçoit qu'une étiquette : celle qui s'y trouvait
+      // retourne dans la réserve.
       _pairing.removeWhere((_, int value) => value == right);
       _pairing[left] = right;
       _selectedLeft = null;
     });
     _emit();
+  }
+
+  void _reprendre(int left) {
+    if (widget.locked) return;
+    setState(() {
+      _pairing.remove(left);
+      _selectedLeft = null;
+    });
+    _emit();
+  }
+
+  void _toucherEtiquette(int left) {
+    if (widget.locked) return;
+    if (_pairing.containsKey(left)) {
+      _reprendre(left);
+      return;
+    }
+    setState(() => _selectedLeft = _selectedLeft == left ? null : left);
+  }
+
+  void _toucherDefinition(int right) {
+    final int? left = _selectedLeft;
+    if (left == null) return;
+    _lier(left, right);
   }
 
   void _emit() {
@@ -634,129 +649,257 @@ class _MatchingViewState extends State<_MatchingView> {
   @override
   Widget build(BuildContext context) {
     final List<MatchPair> pairs = widget.question.pairs;
+    final List<int> libres = <int>[
+      for (int i = 0; i < pairs.length; i++)
+        if (!_pairing.containsKey(i)) i,
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Touche un élément de gauche, puis son correspondant à droite.',
+          libres.isEmpty
+              ? 'Touche une étiquette posée pour la reprendre.'
+              : 'Fais glisser chaque étiquette sur sa définition.',
           style: context.text.labelSmall?.copyWith(
             color: context.tokens.inkMuted,
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        // La réserve d'étiquettes. Elle se vide à mesure qu'on les place :
+        // ce qu'il reste à faire se voit d'un coup d'œil, ce qu'une
+        // colonne figée avec des numéros ne montrait pas.
+        Wrap(
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.sm,
           children: <Widget>[
-            Expanded(
-              child: Column(
-                children: <Widget>[
-                  for (int i = 0; i < pairs.length; i++)
-                    _MatchCell(
-                      label: pairs[i].left,
-                      badge: _pairing.containsKey(i)
-                          ? '${_slotOf(_pairing[i]!) + 1}'
-                          : null,
-                      selected: _selectedLeft == i,
-                      correct: widget.locked ? _pairing[i] == i : null,
-                      accent: widget.accent,
-                      onTap: () => _tapLeft(i),
-                    ),
-                ],
+            for (final int i in libres)
+              _Etiquette(
+                label: pairs[i].left,
+                accent: widget.accent,
+                selectionnee: _selectedLeft == i,
+                locked: widget.locked,
+                onTap: () => _toucherEtiquette(i),
+                index: i,
               ),
-            ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Column(
-                children: <Widget>[
-                  for (int slot = 0; slot < _rightOrder.length; slot++)
-                    _MatchCell(
-                      label: pairs[_rightOrder[slot]].right,
-                      badge: '${slot + 1}',
-                      selected: _pairing.containsValue(_rightOrder[slot]),
-                      correct: null,
-                      accent: widget.accent,
-                      onTap: () => _tapRight(_rightOrder[slot]),
-                    ),
-                ],
+            if (libres.isEmpty)
+              Text(
+                'Toutes les étiquettes sont placées.',
+                style: context.text.bodySmall?.copyWith(
+                  color: context.tokens.inkMuted,
+                ),
               ),
-            ),
           ],
         ),
+        const SizedBox(height: AppSpacing.lg),
+        for (int slot = 0; slot < _rightOrder.length; slot++)
+          _Definition(
+            texte: pairs[_rightOrder[slot]].right,
+            right: _rightOrder[slot],
+            posee: _pairing.entries
+                .where((MapEntry<int, int> e) => e.value == _rightOrder[slot])
+                .map((MapEntry<int, int> e) => e.key)
+                .firstOrNull,
+            etiquetteDe: (int left) => pairs[left].left,
+            accent: widget.accent,
+            locked: widget.locked,
+            attendUnDepot: _selectedLeft != null,
+            onAccepte: (int left) => _lier(left, _rightOrder[slot]),
+            onTap: () => _toucherDefinition(_rightOrder[slot]),
+            onReprendre: _reprendre,
+          ),
       ],
     );
   }
-
-  /// Position affichée de l'élément de droite [right].
-  int _slotOf(int right) => _rightOrder.indexOf(right);
 }
 
-class _MatchCell extends StatelessWidget {
-  const _MatchCell({
+/// Étiquette à poser sur une définition.
+class _Etiquette extends StatelessWidget {
+  const _Etiquette({
     required this.label,
-    required this.badge,
-    required this.selected,
-    required this.correct,
     required this.accent,
+    required this.selectionnee,
+    required this.locked,
     required this.onTap,
+    required this.index,
   });
 
   final String label;
-  final String? badge;
-  final bool selected;
-
-  /// `null` tant que la question n'est pas corrigée.
-  final bool? correct;
-
   final Color accent;
+  final bool selectionnee;
+  final bool locked;
   final VoidCallback onTap;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
+    final Widget corps = _corps(context, flottante: false);
+    if (locked) return corps;
+    return Draggable<int>(
+      data: index,
+      feedback: Material(
+        color: Colors.transparent,
+        child: _corps(context, flottante: true),
+      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: corps),
+      child: GestureDetector(onTap: onTap, child: corps),
+    );
+  }
+
+  Widget _corps(BuildContext context, {required bool flottante}) {
     final AppTokens tokens = context.tokens;
-    final Color border = switch (correct) {
-      true => tokens.success,
-      false => tokens.error,
-      null => selected ? accent : tokens.border,
-    };
-    return Padding(
-      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          constraints: const BoxConstraints(minHeight: 56),
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.md,
-            vertical: AppSpacing.md,
-          ),
-          decoration: BoxDecoration(
-            color: selected
-                ? accent.withValues(alpha: context.isDark ? 0.18 : 0.08)
-                : context.colors.surface,
-            borderRadius: BorderRadius.circular(AppRadii.sm),
-            border: Border.all(color: border, width: selected ? 2 : 1.5),
-          ),
-          child: Row(
-            children: <Widget>[
-              Expanded(child: Text(label, style: context.text.bodyMedium)),
-              if (badge != null)
-                Container(
-                  margin: const EdgeInsets.only(left: AppSpacing.sm),
-                  width: 22,
-                  height: 22,
-                  alignment: Alignment.center,
+    final bool mise = selectionnee || flottante;
+    return Container(
+      constraints: const BoxConstraints(minHeight: 48),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.md,
+        vertical: AppSpacing.sm,
+      ),
+      decoration: BoxDecoration(
+        color: mise
+            ? accent.withValues(alpha: context.isDark ? 0.24 : 0.12)
+            : context.colors.surface,
+        borderRadius: BorderRadius.circular(AppRadii.sm),
+        border: Border.all(
+          color: mise ? accent : tokens.border,
+          width: mise ? 2 : 1.5,
+        ),
+        boxShadow: flottante
+            ? <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.18),
+                  blurRadius: 14,
+                  offset: const Offset(0, 6),
+                ),
+              ]
+            : null,
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Icon(Icons.drag_indicator_rounded, size: 18, color: tokens.inkSubtle),
+          const SizedBox(width: AppSpacing.xs),
+          Flexible(child: Text(label, style: context.text.bodyMedium)),
+        ],
+      ),
+    );
+  }
+}
+
+/// Définition qui accueille une étiquette.
+class _Definition extends StatelessWidget {
+  const _Definition({
+    required this.texte,
+    required this.right,
+    required this.posee,
+    required this.etiquetteDe,
+    required this.accent,
+    required this.locked,
+    required this.attendUnDepot,
+    required this.onAccepte,
+    required this.onTap,
+    required this.onReprendre,
+  });
+
+  final String texte;
+  final int right;
+
+  /// Indice de l'étiquette posée ici, s'il y en a une.
+  final int? posee;
+
+  final String Function(int left) etiquetteDe;
+  final Color accent;
+  final bool locked;
+
+  /// Une étiquette est sélectionnée au doigt : la cible s'annonce.
+  final bool attendUnDepot;
+
+  final void Function(int left) onAccepte;
+  final VoidCallback onTap;
+  final void Function(int left) onReprendre;
+
+  @override
+  Widget build(BuildContext context) {
+    return DragTarget<int>(
+      onAcceptWithDetails: (DragTargetDetails<int> d) => onAccepte(d.data),
+      builder:
+          (
+            BuildContext context,
+            List<int?> candidats,
+            List<dynamic> rejetes,
+          ) {
+            final AppTokens tokens = context.tokens;
+            final bool survol = candidats.isNotEmpty;
+            final bool juste = locked && posee == right;
+            final Color bordure = locked
+                ? (juste ? tokens.success : tokens.error)
+                : (survol || attendUnDepot ? accent : tokens.border);
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+              child: GestureDetector(
+                onTap: onTap,
+                child: AnimatedContainer(
+                  duration: context.motionDuration(AppDurations.fast),
+                  constraints: const BoxConstraints(minHeight: 64),
+                  padding: const EdgeInsets.all(AppSpacing.md),
                   decoration: BoxDecoration(
-                    color: accent.withValues(alpha: 0.16),
-                    shape: BoxShape.circle,
+                    color: survol
+                        ? accent.withValues(alpha: context.isDark ? 0.2 : 0.09)
+                        : context.colors.surface,
+                    borderRadius: BorderRadius.circular(AppRadii.sm),
+                    border: Border.all(
+                      color: bordure,
+                      width: survol || locked ? 2 : 1.5,
+                    ),
                   ),
-                  child: Text(
-                    badge!,
-                    style: context.text.labelSmall?.copyWith(color: accent),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(texte, style: context.text.bodyMedium),
+                      const SizedBox(height: AppSpacing.sm),
+                      // Emplacement vide, visible. Une carte ordinaire ne
+                      // dit pas qu'on peut y déposer quelque chose, et la
+                      // consigne au-dessus ne désigne pas laquelle.
+                      if (posee == null)
+                        Container(
+                          height: 34,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: accent.withValues(
+                              alpha: survol ? 0.18 : 0.06,
+                            ),
+                            borderRadius: BorderRadius.circular(AppRadii.sm),
+                          ),
+                          child: Text(
+                            survol ? 'Lâche ici' : 'Dépose une étiquette',
+                            style: context.text.labelSmall?.copyWith(
+                              color: survol ? accent : tokens.inkSubtle,
+                            ),
+                          ),
+                        ),
+                      if (posee != null) ...<Widget>[
+                        GestureDetector(
+                          onTap: locked ? null : () => onReprendre(posee!),
+                          child: AppChip(
+                            label: etiquetteDe(posee!),
+                            icon: locked
+                                ? (juste
+                                      ? Icons.check_rounded
+                                      : Icons.close_rounded)
+                                : Icons.close_rounded,
+                            color: locked
+                                ? (juste ? tokens.success : tokens.error)
+                                : accent,
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
-            ],
-          ),
-        ),
-      ),
+              ),
+            );
+          },
     );
   }
 }

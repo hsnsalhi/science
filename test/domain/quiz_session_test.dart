@@ -178,4 +178,42 @@ void main() {
       expect(s.displayOrder['q0'], <int>[0, 1]);
     });
   });
+
+  // Le chronomètre des défis n'enlève jamais d'XP : il en ajoute quand la
+  // réponse tombe à temps. Récompenser la vitesse d'une réponse rattrapée
+  // au second essai encouragerait à deviner, d'où la condition sur le
+  // premier coup.
+  group('Bonus de rapidité', () {
+    test('une bonne réponse rapide du premier coup vaut le bonus', () {
+      final QuizSession s = start(
+        1,
+      ).withDraft(right).validate(rapide: true);
+      expect(
+        s.currentAttempt.xpEarned,
+        XpEngine.xpFirstTry + XpEngine.speedBonus,
+      );
+    });
+
+    test('sans rapidité, le barème ordinaire s\'applique', () {
+      final QuizSession s = start(1).withDraft(right).validate();
+      expect(s.currentAttempt.xpEarned, XpEngine.xpFirstTry);
+    });
+
+    test('une réponse rattrapée ne gagne pas le bonus, même rapide', () {
+      final QuizSession s = start(1)
+          .withDraft(wrong)
+          .validate(rapide: true)
+          .advance()
+          .withDraft(right)
+          .validate(rapide: true);
+      expect(s.currentAttempt.xpEarned, XpEngine.xpAfterRetry);
+    });
+
+    test('une mauvaise réponse ne rapporte rien, rapide ou non', () {
+      final QuizSession s = start(1)
+          .withDraft(wrong)
+          .validate(rapide: true);
+      expect(s.currentAttempt.xpEarned, 0);
+    });
+  });
 }

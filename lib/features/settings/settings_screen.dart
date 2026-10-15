@@ -100,6 +100,17 @@ class SettingsScreen extends ConsumerWidget {
                   onChanged: controller.setHaptics,
                 ),
                 const Divider(),
+                SwitchListTile.adaptive(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Défis chronométrés'),
+                  subtitle: const Text(
+                    'Un compte à rebours sur les défis, pour un bonus. '
+                    'Désactivé, le bonus reste acquis.',
+                  ),
+                  value: settings.timedChallenges,
+                  onChanged: controller.setTimedChallenges,
+                ),
+                const Divider(),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
                   child: Column(

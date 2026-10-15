@@ -20,9 +20,18 @@ abstract final class XpEngine {
   /// Bonus pour une leçon terminée sans aucune faute.
   static const int perfectBonus = 15;
 
+  /// Bonus de rapidité, dans les leçons « défi » chronométrées.
+  ///
+  /// Il ne s'ajoute qu'à une bonne réponse du premier coup : récompenser la
+  /// vitesse d'une réponse rattrapée au second essai encouragerait à
+  /// deviner. Laisser filer le temps ne coûte rien — le chronomètre
+  /// n'enlève jamais d'XP, il en ajoute.
+  static const int speedBonus = 5;
+
   /// XP d'une question selon le nombre d'essais utilisés.
-  static int xpForAnswer({required bool firstTry}) =>
-      firstTry ? xpFirstTry : xpAfterRetry;
+  static int xpForAnswer({required bool firstTry, bool rapide = false}) =>
+      (firstTry ? xpFirstTry : xpAfterRetry) +
+      (firstTry && rapide ? speedBonus : 0);
 
   /// Avancement vers le rang suivant, de 0 à 1.
   ///

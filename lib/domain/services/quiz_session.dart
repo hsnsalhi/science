@@ -218,7 +218,11 @@ class QuizSession {
   QuizSession revealHint() => _copyWith(hintRevealed: true);
 
   /// Valide la réponse en cours et passe au retour.
-  QuizSession validate() {
+  /// Valide la réponse en cours.
+  ///
+  /// [rapide] indique que le chronomètre du défi n'était pas écoulé : la
+  /// bonne réponse du premier coup vaut alors un bonus.
+  QuizSession validate({bool rapide = false}) {
     final Question? question = current;
     if (question == null || !canValidate) return this;
 
@@ -238,7 +242,9 @@ class QuizSession {
       tries: tries,
       solved: correct,
       solvedFirstTry: firstTry,
-      xpEarned: correct ? XpEngine.xpForAnswer(firstTry: firstTry) : 0,
+      xpEarned: correct
+          ? XpEngine.xpForAnswer(firstTry: firstTry, rapide: rapide)
+          : 0,
     );
 
     return _copyWith(

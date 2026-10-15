@@ -12,6 +12,7 @@ import '../../design_system/mascot.dart';
 import '../../design_system/reward_burst.dart';
 import '../../domain/models/question.dart';
 import '../../domain/services/quiz_session.dart';
+import '../../domain/services/xp_engine.dart';
 
 /// Panneau de retour : verdict, explication, suite.
 ///
@@ -106,6 +107,23 @@ class FeedbackPanel extends StatelessWidget {
                             ),
                           ),
                         ],
+                        // Le bonus de rapidité est annoncé à part : fondu
+                        // dans le total, il passerait pour un barème qui
+                        // change tout seul.
+                        if (correct && xpEarned > XpEngine.xpFirstTry)
+                          ...<Widget>[
+                            const SizedBox(width: AppSpacing.xs),
+                            PopIn(
+                              delay: const Duration(milliseconds: 180),
+                              from: 0.4,
+                              child: AppChip(
+                                label: 'rapide',
+                                icon: Icons.timer_rounded,
+                                color: accent,
+                                dense: true,
+                              ),
+                            ),
+                          ],
                         // La série ne s'annonce qu'à partir de deux : à un,
                         // elle n'a encore rien d'une série.
                         if (correct && combo >= 2) ...<Widget>[
