@@ -915,6 +915,31 @@ def _asc_post(token: str, path: str, body: dict) -> int:
         return 0
 
 
+def _print_testers(token: str, internes: list) -> None:
+    """Affiche les testeurs de chaque groupe interne et leur état.
+
+    Un testeur « invité » mais qui n'a pas accepté ne voit rien : c'est la
+    cause la plus fréquente d'une application absente de TestFlight alors
+    que tout est vert côté Apple.
+    """
+    for gid, nom, _ in internes:
+        payload = _asc_get(
+            token,
+            f"/v1/betaGroups/{gid}/betaTesters?limit=20"
+            "&fields[betaTesters]=email,firstName,lastName,inviteType,state",
+        )
+        if payload is None:
+            print(f"  Testeurs de « {nom} » : lecture refusée.")
+            continue
+        testeurs = payload.get("data", [])
+        print(f"\nTesteurs de « {nom} » ({len(testeurs)}) :")
+        for tester in testeurs:
+            at = tester.get("attributes", {})
+            etat = at.get("state") or "état non communiqué"
+            mark = OK if etat in ("INSTALLED", "ACCEPTED") else BAD
+            print(f"  {mark} {at.get('email')} — {etat}")
+
+
 def cmd_testflight(args: argparse.Namespace) -> int:
     """Dit pourquoi un build valide n'apparaît pas chez un testeur.
 
@@ -973,19 +998,37 @@ def cmd_testflight(args: argparse.Namespace) -> int:
             internes.append((group["id"], at.get("name"),
                              bool(at.get("hasAccessToAllBuilds"))))
 
-    attached = (_asc_get(
+    # Un refus de lecture n'est pas une absence : sans cette distinction,
+    # une clé aux droits trop courts ferait conclure que le build n'est
+    # rattaché à rien, et déclencherait un rattachement inutile.
+    payload = _asc_get(
         token, f"/v1/builds/{build['id']}/betaGroups?limit=20"
-    ) or {}).get("data", [])
-    noms = [g.get("attributes", {}).get("name") for g in attached]
-    print(f"\nGroupes recevant le build {version} : "
-          f"{', '.join(n for n in noms if n) or 'aucun'}")
+    )
+    if payload is None:
+        print("\n  Rattachement du build : lecture refusée par Apple.")
+        attached, lisible = [], False
+    else:
+        attached = payload.get("data", [])
+        lisible = True
+        noms = [g.get("attributes", {}).get("name") for g in attached]
+        print(f"\nGroupes recevant le build {version} : "
+              f"{', '.join(n for n in noms if n) or 'aucun'}")
+
+    _print_testers(token, internes)
 
     manquants = [(gid, nom) for gid, nom, auto in internes
                  if not auto and gid not in {g['id'] for g in attached}]
+    if not lisible:
+        print(f"\n  Les groupes en distribution automatique reçoivent le "
+              f"build sans intervention ; les autres, non — et le refus "
+              f"ci-dessus empêche de savoir lesquels l'ont déjà.")
     if not manquants:
-        print(f"\n{OK} Le build est distribué à tous les groupes internes.")
-        print("  S'il reste invisible, actualiser TestFlight sur le "
-              "téléphone — l'onglet « Apps », puis tirer vers le bas.")
+        if lisible:
+            print(f"\n{OK} Tous les groupes internes reçoivent ce build.")
+        print("  S'il reste invisible : actualiser TestFlight sur le "
+              "téléphone (onglet « Apps », tirer vers le bas), et vérifier "
+              "que l'identifiant Apple du téléphone est bien celui du "
+              "testeur ci-dessus.")
         return 0
 
     print(f"\n{BAD} Groupes internes qui ne reçoivent pas ce build :")
