@@ -61,7 +61,43 @@ Mettre le site en ligne **avant** de remplir la fiche.
 > Sans cette fiche, l'envoi échoue avec une erreur peu explicite. C'est l'oubli
 > le plus fréquent.
 
-## Étape 2 — Le certificat de distribution (depuis Linux)
+## Étape 2 — Le certificat de distribution
+
+Deux chemins. Le premier est plus court et évite la limite d'Apple sur le
+nombre de certificats ; le second ne demande aucun Mac.
+
+### Variante A — exporter un certificat existant (recommandé si un Mac est à portée)
+
+Si une autre application du même compte a déjà été signée avec Xcode, le
+certificat de distribution **est déjà dans le trousseau**. Le réutiliser est
+la bonne pratique, pas un raccourci : Apple limite les certificats de
+distribution à deux par compte, et en révoquer un casse les builds de toutes
+les applications qui s'en servaient.
+
+1. Ouvrir **Trousseaux d'accès** → trousseau **Connexion** → catégorie
+   **Mes certificats**.
+2. Repérer **« Apple Distribution: … (K69HUXQMGL) »**. Déplier le triangle :
+   une clé privée doit apparaître dessous. **Sans elle, le certificat est
+   inutilisable** — c'est le point à vérifier avant tout.
+3. Clic droit sur la ligne du certificat → **Exporter** → format
+   **Échange d'informations personnelles (.p12)** → choisir un mot de passe.
+   Ce mot de passe est le futur `IOS_DIST_CERT_PASSWORD`.
+4. Contrôler le fichier obtenu :
+
+```bash
+python3 tool/ios_signing.py check --p12 ~/Bureau/Certificates.p12
+```
+
+Puis passer directement à l'étape 3.
+
+> Aucune compilation n'est nécessaire : c'est une exportation, pas un build.
+
+### Variante B — en créer un depuis zéro (sans Mac)
+
+À n'utiliser que si aucun certificat de distribution n'existe encore, ou
+qu'aucun Mac n'est accessible. **Vérifier d'abord l'onglet Certificates du
+portail** : s'il contient déjà deux certificats de distribution, Apple
+refusera le troisième, et il faudra exporter l'un des deux (variante A).
 
 Apple demande d'habitude de générer la demande de certificat depuis le
 Trousseau macOS. Le script `tool/ios_signing.py` fait la même chose avec
