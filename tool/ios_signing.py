@@ -750,7 +750,68 @@ def cmd_check_asc(args: argparse.Namespace) -> int:
     for app in apps:
         attributes = app.get("attributes", {})
         print(f"    • {attributes.get('name')} — {attributes.get('bundleId')}")
+
+    if getattr(args, "probe_upload", False):
+        _probe_privileges(token, apps)
     return 0
+
+
+def _asc_status(token: str, path: str) -> int:
+    """Renvoie le code HTTP d'un appel en lecture sur l'API."""
+    import urllib.error
+    import urllib.request
+
+    request = urllib.request.Request(
+        f"https://api.appstoreconnect.apple.com{path}",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return response.status
+    except urllib.error.HTTPError as error:
+        return error.code
+    except urllib.error.URLError:
+        return 0
+
+
+def _probe_privileges(token: str, apps: list) -> None:
+    """Situe le rôle de la clé quand le téléversement a été refusé.
+
+    Lire la liste des applications ne demande aucun privilège particulier :
+    une clé « Developer » y parvient aussi. Téléverser un build en demande.
+    Trois appels en lecture, choisis pour leurs seuils d'accès différents,
+    suffisent à encadrer le rôle sans rien écrire.
+    """
+    print()
+    checks = [
+        ("/v1/users?limit=1", "Comptes de l'équipe", "Admin"),
+        ("/v1/builds?limit=1", "Builds existants", "App Manager ou Developer"),
+    ]
+    if apps:
+        app_id = apps[0].get("id")
+        checks.append(
+            (f"/v1/apps/{app_id}/betaGroups?limit=1",
+             "Groupes TestFlight", "App Manager"),
+        )
+
+    results = {}
+    for path, label, needed in checks:
+        status = _asc_status(token, path)
+        results[label] = status
+        mark = OK if status == 200 else BAD
+        print(f"  {mark} {label:22} HTTP {status or '—'}  (demande : {needed})")
+
+    print()
+    if results.get("Comptes de l'équipe") == 200:
+        print("  La clé a le rôle Admin : le rôle n'explique pas le refus.")
+    elif results.get("Groupes TestFlight") == 200:
+        print("  La clé atteint TestFlight : le rôle n'explique pas le refus.")
+    else:
+        print("  La clé ne voit ni les comptes ni les groupes TestFlight :")
+        print("  elle a probablement le rôle « Developer », qui autorise la")
+        print("  lecture mais pas le dépôt d'un build. Créer une clé « App")
+        print("  Manager » ou « Admin » dans App Store Connect → Users and")
+        print("  Access → Integrations, et remplacer les trois secrets.")
 
 
 def cmd_push_secrets(args: argparse.Namespace) -> int:
@@ -911,6 +972,10 @@ def main(argv: list[str] | None = None) -> int:
     asc.add_argument("--asc-key", type=Path, required=True)
     asc.add_argument("--issuer", required=True)
     asc.add_argument("--key-id")
+    asc.add_argument(
+        "--probe-upload", action="store_true",
+        help="situer le rôle de la clé quand le téléversement est refusé",
+    )
     asc.set_defaults(func=cmd_check_asc)
 
     push = sub.add_parser(

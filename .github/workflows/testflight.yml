@@ -205,14 +205,17 @@ jobs:
           retention-days: 14
           if-no-files-found: error
 
-      # altool ne trouve la clé privée que dans quelques répertoires très
-      # précis, et son message d'échec — « Cannot verify client's JWT
-      # headers » — laisse croire à des identifiants invalides alors qu'il
-      # n'a simplement pas pu signer le jeton. La clé est donc déposée dans
-      # tous les emplacements qu'il inspecte, et API_PRIVATE_KEYS_DIR le lui
-      # dit explicitement. Si altool échoue malgré tout, iTMSTransporter —
-      # l'outil qu'Apple recommande désormais pour le téléversement — prend
-      # le relais.
+      # Le workflow « Vérifier Apple » prouve, depuis un runner et avec ces
+      # mêmes secrets, qu'Apple accepte la clé : un jeton signé à la main
+      # obtient la liste des applications de l'équipe. L'échec vient donc
+      # d'altool, pas des identifiants.
+      #
+      # On passe par iTMSTransporter, l'outil de téléversement d'Apple :
+      # c'est lui qu'altool appelle en interne, mais il signe son propre
+      # jeton et ne bute pas sur la même étape. « xcrun iTMSTransporter »
+      # ne le résout pas — xcrun ne connaît pas cet outil et renvoie une
+      # erreur Launch Services (-10814) ; il faut son chemin réel dans
+      # Xcode. altool reste en second recours, au cas où.
       - name: Envoyer sur TestFlight
         env:
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
@@ -231,9 +234,37 @@ jobs:
           export API_PRIVATE_KEYS_DIR="$HOME/private_keys"
           echo "Clé déposée : $(wc -c < "$HOME/private_keys/$KEY_NAME") octets"
 
-          IPA="$(ls build/ios/ipa/*.ipa | head -1)"
+          IPA="$(cd build/ios/ipa && ls *.ipa | head -1)"
+          IPA="$PWD/build/ios/ipa/$IPA"
           echo "Archive : $IPA"
 
+          # Emplacement réel de l'outil, Xcode ne l'expose pas via xcrun.
+          DEV="$(xcode-select -p)"
+          TRANSPORTER=""
+          for candidate in \
+            "$DEV/../SharedFrameworks/ContentDeliveryServices.framework/itms/bin/iTMSTransporter" \
+            "$DEV/../SharedFrameworks/ContentDeliveryServices.framework/Frameworks/AppStoreService.framework/Support/iTMSTransporter"; do
+            [ -x "$candidate" ] && TRANSPORTER="$candidate" && break
+          done
+          if [ -z "$TRANSPORTER" ]; then
+            TRANSPORTER="$(find /Applications/Xcode*.app -name iTMSTransporter -type f -perm -u+x 2>/dev/null | head -1)"
+          fi
+
+          if [ -n "$TRANSPORTER" ]; then
+            echo "── Tentative avec iTMSTransporter ──"
+            echo "Outil : $TRANSPORTER"
+            if "$TRANSPORTER" -m upload -assetFile "$IPA" \
+                 -apiKey "$ASC_KEY_ID" -apiIssuer "$ASC_ISSUER_ID" \
+                 -v informational; then
+              echo "Téléversé par iTMSTransporter."
+              exit 0
+            fi
+            echo "::warning::iTMSTransporter a échoué, passage à altool."
+          else
+            echo "::warning::iTMSTransporter introuvable dans Xcode."
+          fi
+
+          echo
           echo "── Tentative avec altool ──"
           if xcrun altool --upload-app --type ios --file "$IPA" \
                --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"; then
@@ -241,12 +272,18 @@ jobs:
             exit 0
           fi
 
+          # Les deux outils refusent : reste l'hypothèse du rôle de la clé.
+          # Lire les applications ne demande aucun privilège, téléverser un
+          # build en demande. On interroge donc un point d'accès réservé aux
+          # rôles élevés pour nommer la cause dans le journal.
           echo
-          echo "::warning::altool a échoué, passage à iTMSTransporter."
-          echo "── Tentative avec iTMSTransporter ──"
-          xcrun iTMSTransporter -m upload -assetFile "$IPA" \
-            -apiKey "$ASC_KEY_ID" -apiIssuer "$ASC_ISSUER_ID" \
-            -v informational
+          echo "── Diagnostic : privilèges de la clé ──"
+          python3 tool/ios_signing.py check-asc --probe-upload \
+            --asc-key "$HOME/private_keys/$KEY_NAME" \
+            --key-id "$ASC_KEY_ID" --issuer "$ASC_ISSUER_ID" || true
+
+          echo "::error::Les deux outils de téléversement ont été refusés."
+          exit 1
 
       - name: Résumé
         if: success()
