@@ -22,6 +22,8 @@ pour quatre niveaux : primaire, collège, lycée, université.
 | Catalogue des **85 chapitres** annoncés sur 4 matières × 4 niveaux | ✅ |
 | Contenu rédigé de bout en bout | **1 chapitre** (Pythagore, 4 leçons, 19 questions) |
 | 75 tests (domaine, contenu, parcours d'interface) | ✅ |
+| Icône d'application, générée en code (`tool/generate_icons.py`) | ✅ |
+| Pipeline de publication TestFlight sans Mac | ✅ |
 
 Le chapitre **« Le théorème de Pythagore »** (maths, collège) est le modèle de
 référence : il est entièrement jouable et exerce les sept types d'exercices.
@@ -44,6 +46,15 @@ chapitre ne demande pas de toucher au code Dart : voir
 4. **Une seule application, tous les niveaux.** Un élève de CE1 et un étudiant
    de licence ouvrent la même application ; c'est le niveau choisi qui change
    ce qui est mis en avant, jamais ce qui est accessible.
+
+## Tester sur un vrai téléphone
+
+Le dépôt contient un workflow GitHub Actions qui construit l'IPA signé et
+l'envoie sur **TestFlight depuis un runner macOS** : posséder un Mac n'est pas
+nécessaire, seul le compte Apple Developer l'est.
+
+Mise en place (une heure, une seule fois) puis un clic par build :
+[docs/TESTFLIGHT.md](docs/TESTFLIGHT.md).
 
 ## Démarrer
 

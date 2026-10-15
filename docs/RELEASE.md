@@ -9,7 +9,9 @@
 ## Avant toute publication
 
 - [ ] Choisir une licence (voir `docs/ROADMAP.md`).
-- [ ] Produire l'icône de l'application et l'écran de lancement.
+- [x] Icône de l'application — générée par `python3 tool/generate_icons.py`
+      (iOS et Android, y compris l'icône adaptative Android).
+- [ ] Écran de lancement (celui de Flutter est encore en place).
 - [ ] Vérifier l'identifiant d'application : `com.eureka.eureka`
       (`android/app/build.gradle.kts` et la cible Xcode).
 - [ ] Relire les textes des réglages : ils décrivent les promesses du produit
@@ -38,7 +40,11 @@ Déclarations attendues par Play :
 
 ## iOS
 
-Nécessite macOS et Xcode.
+Pour un envoi **TestFlight sans Mac**, suivre
+[TESTFLIGHT.md](TESTFLIGHT.md) : le workflow
+`.github/workflows/testflight.yml` fait tout depuis un runner macOS GitHub.
+
+La procédure manuelle ci-dessous nécessite macOS et Xcode.
 
 ```bash
 flutter build ipa --release
@@ -52,6 +58,9 @@ flutter build ipa --release
 Déclarations attendues par App Store Connect :
 
 - **App Privacy** : « Data Not Collected ».
+- **Export compliance** : déjà déclarée dans `Info.plist`
+  (`ITSAppUsesNonExemptEncryption` = `false`), la question ne sera pas posée à
+  chaque envoi.
 - **Age Rating** : 4+ (aucun contenu sensible, aucune publicité, aucun accès
   réseau).
 - **Kids Category** : éligible, l'application ne contenant ni publicité, ni

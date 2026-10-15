@@ -1,0 +1,219 @@
+# Construit Eurêka pour iOS et l'envoie sur TestFlight.
+#
+# Ce dépôt n'a pas besoin d'un Mac : le travail tourne sur un runner macOS
+# fourni par GitHub. Le déclenchement est **manuel** (onglet Actions →
+# TestFlight → Run workflow), volontairement : chaque exécution consomme un
+# numéro de build côté App Store Connect, qui ne peut jamais être réutilisé.
+#
+# Secrets attendus dans Settings → Secrets and variables → Actions.
+# La procédure pour les obtenir est dans docs/TESTFLIGHT.md.
+name: TestFlight
+
+on:
+  workflow_dispatch:
+    inputs:
+      notes:
+        description: Notes affichées aux testeurs TestFlight
+        required: false
+        default: Build de test.
+
+# Deux envois simultanés se disputeraient le même numéro de build.
+concurrency:
+  group: testflight
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Construire et envoyer
+    # Image épinglée pour que le build soit reproductible. Flutter 3.47 exige
+    # Xcode 15 ou plus ; macos-15 fournit Xcode 16. Si Apple venait à exiger un
+    # SDK plus récent au téléversement, passer à une image plus récente
+    # (macos-latest) suffit.
+    runs-on: macos-15
+    timeout-minutes: 60
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Vérifier que tous les secrets sont présents
+        env:
+          IOS_DIST_CERT_P12_BASE64: ${{ secrets.IOS_DIST_CERT_P12_BASE64 }}
+          IOS_DIST_CERT_PASSWORD: ${{ secrets.IOS_DIST_CERT_PASSWORD }}
+          IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
+        run: |
+          set -euo pipefail
+          missing=()
+          for name in IOS_DIST_CERT_P12_BASE64 IOS_DIST_CERT_PASSWORD \
+                      IOS_PROVISIONING_PROFILE_BASE64 IOS_TEAM_ID \
+                      ASC_KEY_ID ASC_ISSUER_ID ASC_PRIVATE_KEY_BASE64; do
+            if [ -z "${!name:-}" ]; then missing+=("$name"); fi
+          done
+          if [ ${#missing[@]} -ne 0 ]; then
+            echo "::error::Secrets manquants : ${missing[*]}"
+            echo "Voir docs/TESTFLIGHT.md pour savoir comment les obtenir."
+            exit 1
+          fi
+          echo "Tous les secrets sont présents."
+
+      - name: Installer Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.7
+          channel: stable
+          cache: true
+
+      - name: Versions de l'environnement
+        run: |
+          flutter --version
+          xcodebuild -version
+          pod --version
+
+      - name: Récupérer les dépendances
+        run: flutter pub get
+
+      # Un build cassé envoyé sur TestFlight fait perdre un numéro de build
+      # et le temps des testeurs : on vérifie avant de signer quoi que ce soit.
+      - name: Analyse statique
+        run: flutter analyze
+
+      - name: Tests
+        run: flutter test
+
+      - name: Préparer la signature
+        id: signing
+        env:
+          IOS_DIST_CERT_P12_BASE64: ${{ secrets.IOS_DIST_CERT_P12_BASE64 }}
+          IOS_DIST_CERT_PASSWORD: ${{ secrets.IOS_DIST_CERT_PASSWORD }}
+          IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          set -euo pipefail
+
+          # 1. Un trousseau temporaire, propre à cette exécution.
+          KEYCHAIN="$RUNNER_TEMP/eureka.keychain-db"
+          KEYCHAIN_PASSWORD="$(uuidgen)"
+          echo "KEYCHAIN=$KEYCHAIN" >> "$GITHUB_ENV"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 3600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+
+          # 2. Le certificat de distribution et sa clé privée.
+          echo "$IOS_DIST_CERT_P12_BASE64" | base64 --decode > "$RUNNER_TEMP/dist.p12"
+          security import "$RUNNER_TEMP/dist.p12" -k "$KEYCHAIN" \
+            -P "$IOS_DIST_CERT_PASSWORD" -A -t cert -f pkcs12
+          # Sans cette ligne, codesign réclame une autorisation interactive
+          # que personne ne peut donner sur un runner.
+          security set-key-partition-list -S apple-tool:,apple:,codesign: \
+            -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" login.keychain
+
+          # 3. Le profil d'approvisionnement, installé là où Xcode le cherche.
+          PROFILE_DIR="$HOME/Library/MobileDevice/Provisioning Profiles"
+          mkdir -p "$PROFILE_DIR"
+          echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$RUNNER_TEMP/profile.mobileprovision"
+          security cms -D -i "$RUNNER_TEMP/profile.mobileprovision" > "$RUNNER_TEMP/profile.plist"
+          PROFILE_UUID="$(plutil -extract UUID raw "$RUNNER_TEMP/profile.plist")"
+          PROFILE_NAME="$(plutil -extract Name raw "$RUNNER_TEMP/profile.plist")"
+          BUNDLE_ID="$(plutil -extract Entitlements.application-identifier raw "$RUNNER_TEMP/profile.plist" | cut -d. -f2-)"
+          cp "$RUNNER_TEMP/profile.mobileprovision" "$PROFILE_DIR/$PROFILE_UUID.mobileprovision"
+          echo "Profil « $PROFILE_NAME » pour $BUNDLE_ID"
+          echo "bundle_id=$BUNDLE_ID" >> "$GITHUB_OUTPUT"
+
+          # 4. Les réglages de signature, lus par Release.xcconfig.
+          cat > ios/Flutter/Signing.xcconfig <<EOF
+          CODE_SIGN_STYLE = Manual
+          DEVELOPMENT_TEAM = $IOS_TEAM_ID
+          PROVISIONING_PROFILE_SPECIFIER = $PROFILE_NAME
+          CODE_SIGN_IDENTITY = Apple Distribution
+          CODE_SIGN_IDENTITY[sdk=iphoneos*] = Apple Distribution
+          EOF
+
+          # 5. Les options d'export de l'archive.
+          cat > ios/ExportOptions.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>teamID</key><string>$IOS_TEAM_ID</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>provisioningProfiles</key>
+            <dict>
+              <key>$BUNDLE_ID</key><string>$PROFILE_NAME</string>
+            </dict>
+            <key>uploadSymbols</key><true/>
+            <key>stripSwiftSymbols</key><true/>
+            <key>destination</key><string>export</string>
+          </dict>
+          </plist>
+          EOF
+
+      # Le numéro de build doit croître à chaque envoi et ne jamais se répéter :
+      # `github.run_number` s'incrémente tout seul et ne revient jamais en arrière.
+      - name: Construire l'IPA
+        run: |
+          set -euo pipefail
+          flutter build ipa \
+            --release \
+            --build-number="${{ github.run_number }}" \
+            --export-options-plist=ios/ExportOptions.plist
+          ls -lh build/ios/ipa/
+
+      - name: Conserver l'IPA comme artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eureka-ipa-build-${{ github.run_number }}
+          path: build/ios/ipa/*.ipa
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: Envoyer sur TestFlight
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_BASE64: ${{ secrets.ASC_PRIVATE_KEY_BASE64 }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/private_keys"
+          echo "$ASC_PRIVATE_KEY_BASE64" | base64 --decode \
+            > "$HOME/private_keys/AuthKey_${ASC_KEY_ID}.p8"
+          IPA="$(ls build/ios/ipa/*.ipa | head -1)"
+          echo "Validation de $IPA"
+          xcrun altool --validate-app --type ios --file "$IPA" \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+          echo "Envoi de $IPA"
+          xcrun altool --upload-app --type ios --file "$IPA" \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+
+      - name: Résumé
+        if: success()
+        env:
+          NOTES: ${{ github.event.inputs.notes }}
+        run: |
+          {
+            echo "### Build envoyé sur TestFlight"
+            echo ""
+            echo "- Version : \`$(grep '^version:' pubspec.yaml | cut -d' ' -f2)\`"
+            echo "- Numéro de build : \`${{ github.run_number }}\`"
+            echo "- Notes : $NOTES"
+            echo ""
+            echo "Le traitement par Apple prend 5 à 20 minutes. Le build"
+            echo "apparaît ensuite dans App Store Connect → TestFlight,"
+            echo "puis dans l'application TestFlight sur le téléphone."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Les secrets déchiffrés ne doivent pas survivre à l'exécution, même en
+      # cas d'échec d'une étape précédente.
+      - name: Nettoyer les secrets
+        if: always()
+        run: |
+          security delete-keychain "${KEYCHAIN:-}" 2>/dev/null || true
+          rm -f "$RUNNER_TEMP/dist.p12" "$RUNNER_TEMP/profile.mobileprovision" \
+                "$RUNNER_TEMP/profile.plist" || true
+          rm -rf "$HOME/private_keys" || true
+          rm -f ios/Flutter/Signing.xcconfig ios/ExportOptions.plist || true
