@@ -1,0 +1,480 @@
+{
+  "chapter": "maths-college-le-theoreme-de-pythagore",
+  "lessons": [
+    {
+      "id": "vocabulaire",
+      "title": "Le triangle rectangle",
+      "subtitle": "Savoir nommer chaque côté avant de calculer quoi que ce soit.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un triangle pas comme les autres",
+          "body": "Un triangle rectangle est un triangle qui possède un angle droit, c'est-à-dire un angle de 90°. C'est le seul triangle pour lequel le théorème de Pythagore fonctionne — d'où l'importance de savoir le repérer du premier coup d'œil."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Manipule le triangle",
+          "body": "Fais glisser ton doigt sur la figure pour changer la longueur des côtés. Touche-la pour faire apparaître le nom de chaque côté.",
+          "figureId": "triangle-sides"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "L'hypoténuse",
+          "body": "Le côté situé en face de l'angle droit porte un nom spécial : l'hypoténuse. Les deux autres s'appellent simplement les côtés de l'angle droit, parce que ce sont eux qui le forment."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Peu importe comment le triangle est tourné sur la feuille : l'hypoténuse est toujours le côté qui ne touche pas l'angle droit. Et comme c'est aussi le plus long des trois, un rapide coup d'œil suffit à la reconnaître."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Trois mots à retenir",
+          "bullets": [
+            "Angle droit : un angle de 90°, marqué par un petit carré.",
+            "Hypoténuse : le côté opposé à l'angle droit, toujours le plus long.",
+            "Côtés de l'angle droit : les deux côtés qui forment l'angle droit."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans un triangle rectangle, comment appelle-t-on le côté le plus long ?",
+          "hint": "C'est celui qui fait face à l'angle droit.",
+          "explanation": "L'hypoténuse est le côté opposé à l'angle droit. Dans un triangle rectangle, c'est toujours le plus long des trois côtés.",
+          "figureId": "triangle-sides",
+          "options": [
+            {
+              "text": "L'hypoténuse",
+              "correct": true
+            },
+            {
+              "text": "La base"
+            },
+            {
+              "text": "La hauteur"
+            },
+            {
+              "text": "La médiane"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Dans un triangle rectangle, l'hypoténuse peut être plus courte qu'un côté de l'angle droit.",
+          "answer": false,
+          "explanation": "C'est impossible. L'hypoténuse est toujours le plus long côté : son carré est égal à la somme des carrés des deux autres, donc il est forcément plus grand que chacun d'eux."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque mot à sa définition.",
+          "explanation": "Ces trois mots reviennent dans tous les énoncés du chapitre : les confondre, c'est se tromper d'égalité.",
+          "pairs": [
+            {
+              "left": "Angle droit",
+              "right": "Un angle qui mesure 90°"
+            },
+            {
+              "left": "Hypoténuse",
+              "right": "Le côté opposé à l'angle droit"
+            },
+            {
+              "left": "Côtés de l'angle droit",
+              "right": "Les deux côtés qui forment l'angle droit"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quelles affirmations sont vraies pour tout triangle rectangle ?",
+          "hint": "La somme des angles d'un triangle vaut toujours 180°.",
+          "explanation": "Un triangle rectangle a exactement un angle droit : s'il en avait deux, la somme de ses angles dépasserait déjà 180°. Les deux autres angles sont donc aigus, et l'hypoténuse est le plus grand côté.",
+          "options": [
+            {
+              "text": "Il possède exactement un angle droit",
+              "correct": true
+            },
+            {
+              "text": "L'hypoténuse est son plus grand côté",
+              "correct": true
+            },
+            {
+              "text": "Il possède deux angles droits"
+            },
+            {
+              "text": "Ses trois côtés ont la même longueur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theoreme",
+      "title": "Le théorème",
+      "subtitle": "Comprendre l'égalité des aires, pas seulement la formule.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une relation entre les trois côtés",
+          "body": "Il y a 2 500 ans, on a remarqué que les trois côtés d'un triangle rectangle ne sont pas indépendants : si tu connais deux longueurs, la troisième est déjà déterminée. Le théorème de Pythagore donne exactement cette relation."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "L'énoncé",
+          "formula": "a² + b² = c²",
+          "body": "où c est la longueur de l'hypoténuse, a et b celles des deux côtés de l'angle droit."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Pourquoi ça marche",
+          "body": "Construis un carré sur chaque côté. L'aire du grand carré (sur l'hypoténuse) est toujours égale à la somme des aires des deux petits. Change les côtés : l'égalité tient, quelles que soient les valeurs.",
+          "figureId": "pythagore-carres"
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Avec des nombres",
+          "body": "Prenons un triangle rectangle dont les côtés de l'angle droit mesurent 3 cm et 4 cm.\n\n3² + 4² = 9 + 16 = 25\n\nL'hypoténuse au carré vaut donc 25, et comme 5 × 5 = 25, l'hypoténuse mesure 5 cm."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "L'erreur la plus fréquente est d'écrire l'égalité dans le mauvais sens. Repère d'abord l'angle droit, puis l'hypoténuse : c'est elle, et elle seule, qui est toute seule d'un côté du signe égal."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Le théorème de Pythagore",
+          "formula": "hypoténuse² = côté² + côté²",
+          "bullets": [
+            "Il ne s'applique qu'aux triangles rectangles.",
+            "L'hypoténuse est toujours seule de son côté de l'égalité.",
+            "On passe du carré à la longueur en prenant la racine carrée."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Le triangle ABC est rectangle en A. Quelle égalité est correcte ?",
+          "hint": "Le sommet de l'angle droit est A : quel côté ne le touche pas ?",
+          "explanation": "Le triangle est rectangle en A, donc l'hypoténuse est [BC], le côté opposé à A. L'égalité s'écrit BC² = AB² + AC².",
+          "options": [
+            {
+              "text": "BC² = AB² + AC²",
+              "correct": true
+            },
+            {
+              "text": "AB² = BC² + AC²"
+            },
+            {
+              "text": "AC² = AB² + BC²"
+            },
+            {
+              "text": "AB² + BC² + AC² = 0"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Complète l'énoncé du théorème.",
+          "template": "Dans un triangle rectangle, le carré de l'___ est égal à la somme des ___ des deux autres côtés.",
+          "blanks": [
+            {
+              "accepted": [
+                "hypoténuse",
+                "hypotenuse"
+              ]
+            },
+            {
+              "accepted": [
+                "carrés",
+                "carres",
+                "carré",
+                "carre"
+              ]
+            }
+          ],
+          "explanation": "« Le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés » : c'est la formulation classique du théorème.",
+          "hint": "Le premier mot désigne le plus long côté."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle rectangle a des côtés de l'angle droit de 3 cm et 4 cm. Combien mesure son hypoténuse ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Calcule d'abord 3² + 4², puis cherche le nombre dont c'est le carré.",
+          "explanation": "3² + 4² = 9 + 16 = 25, et 5² = 25. L'hypoténuse mesure donc 5 cm. Ce triangle 3-4-5 est le plus célèbre des triangles rectangles."
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes du calcul d'une hypoténuse.",
+          "items": [
+            "Repérer l'angle droit et nommer l'hypoténuse",
+            "Écrire l'égalité de Pythagore",
+            "Remplacer par les longueurs connues",
+            "Calculer la somme des carrés",
+            "Prendre la racine carrée du résultat"
+          ],
+          "explanation": "Cet ordre est celui qu'on attend dans une copie. Repérer l'angle droit avant d'écrire l'égalité évite l'erreur la plus courante : placer la mauvaise longueur en hypoténuse.",
+          "hint": "On ne peut pas écrire l'égalité avant de savoir quel côté est l'hypoténuse."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Le théorème de Pythagore s'applique à n'importe quel triangle.",
+          "answer": false,
+          "explanation": "Non : il n'est valable que pour les triangles rectangles. Pour les autres, il existe une version généralisée, la loi des cosinus, que tu verras au lycée."
+        }
+      ]
+    },
+    {
+      "id": "calculer",
+      "title": "Calculer une longueur",
+      "subtitle": "Trouver l'hypoténuse, mais aussi un côté de l'angle droit.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Identifier ce qu'on cherche",
+          "body": "Deux cas seulement. Si l'inconnue est l'hypoténuse, on additionne. Si l'inconnue est un côté de l'angle droit, on soustrait."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Chercher un côté de l'angle droit",
+          "body": "Si l'hypoténuse mesure 13 et qu'un côté mesure 5 :\n\n13² = 5² + x²\n169 = 25 + x²\nx² = 169 − 25 = 144\nx = 12",
+          "formula": "x² = hypoténuse² − côté²"
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Vérifie toujours ton résultat avec le bon sens : un côté de l'angle droit doit être plus petit que l'hypoténuse. Si tu trouves plus grand, c'est que tu as additionné au lieu de soustraire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Les côtés de l'angle droit mesurent 6 cm et 8 cm. Quelle est la longueur de l'hypoténuse ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "explanation": "6² + 8² = 36 + 64 = 100, donc l'hypoténuse mesure √100 = 10 cm."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "L'hypoténuse mesure 13 cm et un côté de l'angle droit mesure 5 cm. Combien mesure l'autre côté ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "L'inconnue n'est pas l'hypoténuse : il faut soustraire.",
+          "explanation": "x² = 13² − 5² = 169 − 25 = 144, donc x = 12 cm. Et 12 est bien plus petit que 13 : le résultat est cohérent."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "On connaît l'hypoténuse et un côté de l'angle droit. Pour trouver le troisième côté, il faut :",
+          "explanation": "Quand l'inconnue est un côté de l'angle droit, on isole son carré : on soustrait le carré du côté connu au carré de l'hypoténuse.",
+          "options": [
+            {
+              "text": "Soustraire les carrés, puis prendre la racine carrée",
+              "correct": true
+            },
+            {
+              "text": "Additionner les carrés, puis prendre la racine carrée"
+            },
+            {
+              "text": "Soustraire les longueurs directement"
+            },
+            {
+              "text": "Diviser l'hypoténuse par deux"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un écran rectangulaire mesure 80 cm de large et 60 cm de haut. Quelle est la longueur de sa diagonale ?",
+          "answer": 100,
+          "tolerance": 0.5,
+          "unit": "cm",
+          "hint": "La diagonale coupe le rectangle en deux triangles rectangles.",
+          "explanation": "La diagonale est l'hypoténuse d'un triangle rectangle de côtés 80 et 60 : 80² + 60² = 6 400 + 3 600 = 10 000, donc la diagonale mesure 100 cm."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Les deux côtés de l'angle droit mesurent 1 cm chacun. Combien mesure l'hypoténuse, arrondie au centième ?",
+          "answer": 1.41,
+          "tolerance": 0.02,
+          "unit": "cm",
+          "hint": "1² + 1² = 2. Cherche la racine carrée de 2.",
+          "explanation": "1² + 1² = 2, donc l'hypoténuse vaut √2 ≈ 1,41 cm. Ce nombre ne s'écrit avec aucune fraction exacte : c'est un nombre irrationnel."
+        }
+      ]
+    },
+    {
+      "id": "reciproque",
+      "title": "La réciproque et des problèmes",
+      "subtitle": "Démontrer qu'un angle est droit, et résoudre des situations réelles.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Lire le théorème à l'envers",
+          "body": "Jusqu'ici, on partait d'un triangle rectangle pour calculer une longueur. La réciproque fait l'inverse : elle part des trois longueurs pour prouver que le triangle est rectangle."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La réciproque",
+          "formula": "si a² + b² = c²  alors le triangle est rectangle",
+          "body": "à condition que c soit le plus grand des trois côtés."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Teste par toi-même",
+          "body": "Les deux premiers côtés valent 6 et 8. Fais varier le troisième : l'angle ne devient droit qu'au moment précis où 6² + 8² = c², c'est-à-dire pour c = 10.",
+          "figureId": "triangle-reciproque"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "En pratique : calcule séparément le carré du plus grand côté, puis la somme des carrés des deux autres. Égaux ? Le triangle est rectangle. Différents ? Il ne l'est pas. C'est tout."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Deux usages, une seule formule",
+          "bullets": [
+            "Théorème : le triangle est rectangle → je calcule une longueur.",
+            "Réciproque : je connais les trois longueurs → je prouve l'angle droit.",
+            "Toujours comparer le carré du PLUS GRAND côté à la somme des deux autres."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Un triangle de côtés 6 cm, 8 cm et 10 cm est rectangle.",
+          "answer": true,
+          "figureId": "triangle-reciproque",
+          "explanation": "6² + 8² = 36 + 64 = 100 et 10² = 100. Les deux sont égaux, donc d'après la réciproque le triangle est rectangle, et l'angle droit est opposé au côté de 10 cm."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Un triangle a pour côtés 5 cm, 6 cm et 8 cm. Que peut-on en conclure ?",
+          "hint": "Compare 8² à 5² + 6².",
+          "explanation": "5² + 6² = 25 + 36 = 61, alors que 8² = 64. Les deux valeurs diffèrent, donc le triangle n'est pas rectangle — même si on s'en approche.",
+          "options": [
+            {
+              "text": "Il n'est pas rectangle",
+              "correct": true
+            },
+            {
+              "text": "Il est rectangle, l'angle droit étant opposé au côté de 8 cm"
+            },
+            {
+              "text": "Il est rectangle, l'angle droit étant opposé au côté de 5 cm"
+            },
+            {
+              "text": "On ne peut rien conclure sans connaître les angles"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une échelle de 6,5 m est posée contre un mur vertical. Son pied est à 2,5 m du mur. À quelle hauteur touche-t-elle le mur ?",
+          "answer": 6,
+          "tolerance": 0.05,
+          "unit": "m",
+          "hint": "L'échelle est l'hypoténuse : c'est le plus long des trois.",
+          "explanation": "h² = 6,5² − 2,5² = 42,25 − 6,25 = 36, donc h = 6 m. L'échelle, le mur et le sol forment un triangle rectangle dont l'échelle est l'hypoténuse."
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Complète le raisonnement pour un triangle de côtés 9, 12 et 15.",
+          "template": "9² + 12² = 81 + 144 = ___ , et 15² = ___ . Le triangle est donc ___ .",
+          "blanks": [
+            {
+              "accepted": [
+                "225"
+              ]
+            },
+            {
+              "accepted": [
+                "225"
+              ]
+            },
+            {
+              "accepted": [
+                "rectangle"
+              ]
+            }
+          ],
+          "explanation": "Les deux calculs donnent 225 : l'égalité de la réciproque est vérifiée, le triangle est bien rectangle. C'est le triangle 3-4-5 agrandi trois fois.",
+          "hint": "81 + 144, puis 15 × 15."
+        },
+        {
+          "id": "q5",
+          "kind": "choixMultiple",
+          "prompt": "Parmi ces triplets de longueurs, lesquels donnent un triangle rectangle ?",
+          "explanation": "3-4-5 (9 + 16 = 25) et 5-12-13 (25 + 144 = 169) vérifient l'égalité. Pour 4-5-6 : 16 + 25 = 41 ≠ 36. Pour 2-3-4 : 4 + 9 = 13 ≠ 16.",
+          "hint": "Pour chacun, compare le carré du plus grand au carré des deux autres.",
+          "options": [
+            {
+              "text": "3 ; 4 ; 5",
+              "correct": true
+            },
+            {
+              "text": "5 ; 12 ; 13",
+              "correct": true
+            },
+            {
+              "text": "4 ; 5 ; 6"
+            },
+            {
+              "text": "2 ; 3 ; 4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

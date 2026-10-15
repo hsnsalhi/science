@@ -1,0 +1,45 @@
+name: eureka
+description: "Eurêka — apprendre les sciences en s'amusant, gratuitement."
+publish_to: 'none'
+
+# version: <nom lisible>+<code de build>
+# Android : versionName+versionCode — iOS : CFBundleShortVersionString+CFBundleVersion
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Injection de dépendances + état réactif, testable sans widget.
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^3.4.3
+  # Routage déclaratif par URL : liens profonds et restauration d'état gratuits.
+  go_router: ^18.1.0
+  # Seule persistance utilisée, derrière l'abstraction KeyValueStore.
+  shared_preferences: ^2.5.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/content/catalog.json
+    - assets/content/chapters/
+
+  # Polices variables : un seul fichier couvre toutes les graisses.
+  # La graisse est appliquée via FontVariation dans app_typography.dart.
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito.ttf
+    - family: Baloo2
+      fonts:
+        - asset: assets/fonts/Baloo2.ttf
