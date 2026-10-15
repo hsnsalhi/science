@@ -631,11 +631,65 @@ def cmd_go(args: argparse.Namespace) -> int:
     print("  un fichier par secret, nommé exactement comme lui. À coller dans")
     print(f"  https://github.com/{repo}/settings/secrets/actions")
     print()
-    print("  Pour éviter ces sept copier-coller la prochaine fois, installe")
-    print("  `gh` — sans Homebrew et sans administrateur :")
+    print("  Pour éviter ces sept copier-coller, installe `gh` — sans")
+    print("  Homebrew et sans administrateur — puis reprends ici même :")
     print("      python3 tool/ios_signing.py install-gh")
     print("      gh auth login")
-    print("      python3 tool/ios_signing.py go")
+    print("      python3 tool/ios_signing.py push-secrets")
+    return 0
+
+
+def cmd_push_secrets(args: argparse.Namespace) -> int:
+    """Dépose dans GitHub les secrets déjà écrits par l'assistant.
+
+    Sert à reprendre après coup, quand `gh` n'était pas installé au moment
+    où l'assistant est arrivé au bout : tout est déjà calculé, il ne reste
+    qu'à l'envoyer. Aucun fichier Apple n'est redemandé.
+    """
+    folder: Path = args.out / "secrets"
+    repo: str = args.repo
+    if not folder.is_dir():
+        raise Failure(
+            f"{folder} n'existe pas. Lance d'abord : "
+            "python3 tool/ios_signing.py go"
+        )
+
+    files = sorted(folder.glob("*.txt"))
+    if not files:
+        raise Failure(f"Aucun secret trouvé dans {folder}.")
+
+    if not _gh_available(repo):
+        raise Failure(
+            "`gh` n'est pas installé ou pas connecté :\n"
+            "    python3 tool/ios_signing.py install-gh\n"
+            "    gh auth login"
+        )
+
+    print(f"Dépôt des {len(files)} secrets dans {repo}…")
+    failures: list[str] = []
+    for path in files:
+        name = path.stem
+        if _gh_set_secret(repo, name, path.read_text()):
+            print(f"{OK} {name}")
+        else:
+            failures.append(name)
+    if failures:
+        raise Failure(f"Non déposés : {', '.join(failures)}")
+
+    if args.keep:
+        print(f"\n{WARN} Les valeurs restent en clair dans {folder}.")
+    else:
+        for path in files:
+            path.unlink()
+        folder.rmdir()
+        # Une fois chez GitHub, les garder en clair sur le disque n'apporte
+        # rien et ne fait qu'élargir la surface d'exposition.
+        print(f"\n{OK} copies locales effacées ({folder})")
+
+    print()
+    print("Tout est en place. Dernière étape, dans le navigateur :")
+    print(f"  https://github.com/{repo}/actions/workflows/testflight.yml")
+    print("  → Run workflow")
     return 0
 
 
@@ -735,6 +789,17 @@ def main(argv: list[str] | None = None) -> int:
     go.add_argument("--email", default="contact@techlyb.com")
     go.add_argument("--repo", default="hsnsalhi/science")
     go.set_defaults(func=cmd_go)
+
+    push = sub.add_parser(
+        "push-secrets",
+        help="déposer dans GitHub les secrets déjà préparés par « go »",
+    )
+    push.add_argument("--repo", default="hsnsalhi/science")
+    push.add_argument(
+        "--keep", action="store_true",
+        help="conserver les copies locales après le dépôt",
+    )
+    push.set_defaults(func=cmd_push_secrets)
 
     install = sub.add_parser(
         "install-gh", help="installer la ligne de commande GitHub sans Homebrew"
