@@ -8,6 +8,7 @@ import 'package:eureka/domain/models/education_level.dart';
 import 'package:eureka/domain/models/lesson.dart';
 import 'package:eureka/domain/models/question.dart';
 import 'package:eureka/domain/models/subject.dart';
+import 'package:eureka/core/theme/app_colors.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -30,13 +31,33 @@ void main() {
     expect(catalog.chapters, isNotEmpty);
   });
 
-  test('les quatre matières annoncées sont présentes', () {
+  test('les matières annoncées sont présentes', () {
     expect(catalog.subjects.map((Subject s) => s.id).toSet(), <String>{
       'maths',
       'physique-chimie',
       'informatique',
       'svt',
+      'technologie',
+      'astronomie',
+      'logique',
+      'histoire-sciences',
     });
+  });
+
+  // Une matière sans palette prend la couleur de repli : toutes se
+  // ressembleraient sur l'accueil, et l'accent d'un chapitre perdrait son
+  // sens. Le test attrape l'oubli au moment d'ajouter une matière.
+  test('chaque matière a sa propre palette', () {
+    final Set<Color> bases = <Color>{};
+    for (final Subject subject in catalog.subjects) {
+      final Color base = SubjectPalettes.of(subject.id).base;
+      expect(
+        base,
+        isNot(SubjectPalettes.fallback.base),
+        reason: '${subject.id} n\'a pas de palette déclarée',
+      );
+      expect(bases.add(base), isTrue, reason: '${subject.id} : couleur déjà prise');
+    }
   });
 
   test('chaque matière couvre les quatre niveaux', () {

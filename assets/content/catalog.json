@@ -101,6 +101,24 @@
       "bo": "Aucun programme national",
       "niveaux": "L1, L2, L3",
       "note": "Le contenu d'une licence est fixé par chaque université dans le cadre de l'arrêté licence du 30 juillet 2018. Les chapitres reprennent le socle commun aux maquettes françaises de la mention."
+    },
+    "si-lycee": {
+      "label": "Spécialité sciences de l'ingénieur",
+      "bo": "BO spécial n° 1 du 22 janvier 2019",
+      "niveaux": "2de (enseignement optionnel), 1re, Tle",
+      "note": "Prolonge la technologie du collège vers l'analyse des systèmes pluritechnologiques."
+    },
+    "raisonnement": {
+      "label": "Logique et raisonnement",
+      "bo": "Aucune discipline dédiée",
+      "niveaux": "Tous",
+      "note": "Les programmes de mathématiques en font un objectif majeur à chaque cycle — « développer et renforcer des compétences d'analyse, de raisonnement, de logique, d'argumentation » — sans lui consacrer d'horaire propre. Les chapitres suivent cette progression, pas un texte unique."
+    },
+    "histoire": {
+      "label": "Histoire des sciences",
+      "bo": "Rubriques des programmes disciplinaires",
+      "niveaux": "Tous",
+      "note": "Pas de programme autonome : les programmes de mathématiques du lycée ouvrent chaque chapitre sur une rubrique « Histoire des mathématiques », la NSI de terminale sur « Histoire de l'informatique », et le cycle 4 prévoit des prolongements historiques et culturels."
     }
   },
   "subjects": [
@@ -149,6 +167,58 @@
       "tagline": "Le vivant, la Terre, et nous",
       "description": "Du fonctionnement d'une cellule à celui d'une planète, en passant par notre propre corps.",
       "icon": "eco",
+      "levels": [
+        "primaire",
+        "college",
+        "lycee",
+        "universite"
+      ]
+    },
+    {
+      "id": "technologie",
+      "name": "Technologie",
+      "tagline": "Comprendre et fabriquer les objets",
+      "description": "Du besoin au prototype : matériaux, mécanismes, énergie et conception. Une discipline à part entière, pas un appendice de l'informatique.",
+      "icon": "build",
+      "levels": [
+        "primaire",
+        "college",
+        "lycee",
+        "universite"
+      ]
+    },
+    {
+      "id": "astronomie",
+      "name": "Astronomie",
+      "tagline": "Lever les yeux et comprendre",
+      "description": "Saisons, phases de la Lune, gravitation, étoiles : l'objet d'étude le plus vaste, et le plus visible.",
+      "icon": "rocket",
+      "levels": [
+        "primaire",
+        "college",
+        "lycee",
+        "universite"
+      ]
+    },
+    {
+      "id": "logique",
+      "name": "Logique et énigmes",
+      "tagline": "Raisonner juste, et y prendre goût",
+      "description": "Déduction, implication, contre-exemple : la charpente commune à toutes les sciences, entraînée pour elle-même.",
+      "icon": "extension",
+      "levels": [
+        "primaire",
+        "college",
+        "lycee",
+        "universite"
+      ]
+    },
+    {
+      "id": "histoire-sciences",
+      "name": "Histoire des sciences",
+      "tagline": "Comment on a trouvé",
+      "description": "Les idées avant qu'elles ne deviennent évidentes : tâtonnements, disputes et renversements.",
+      "icon": "history",
       "levels": [
         "primaire",
         "college",
@@ -524,20 +594,6 @@
       "order": 5,
       "status": "bientot",
       "source": "c3-maths"
-    },
-    {
-      "id": "informatique-primaire-programmer-un-objet-technique",
-      "subject": "informatique",
-      "level": "primaire",
-      "grades": [
-        "CM1",
-        "CM2"
-      ],
-      "title": "Programmer un objet technique",
-      "summary": "Donner des consignes à un objet pour qu'il agisse tout seul.",
-      "order": 6,
-      "status": "bientot",
-      "source": "c23-sciences"
     },
     {
       "id": "svt-primaire-unite-et-diversite-du-vivant",
@@ -1084,21 +1140,6 @@
       "source": "c4-maths"
     },
     {
-      "id": "informatique-college-objets-connectes-et-capteurs",
-      "subject": "informatique",
-      "level": "college",
-      "grades": [
-        "5e",
-        "4e",
-        "3e"
-      ],
-      "title": "Objets connectés et capteurs",
-      "summary": "Acquérir une mesure, la traiter, commander un actionneur.",
-      "order": 6,
-      "status": "bientot",
-      "source": "c4-2020"
-    },
-    {
       "id": "informatique-college-reseaux-et-internet",
       "subject": "informatique",
       "level": "college",
@@ -1108,7 +1149,7 @@
       ],
       "title": "Réseaux et internet",
       "summary": "Comment circulent les données, et ce qu'elles laissent derrière elles.",
-      "order": 7,
+      "order": 6,
       "status": "bientot",
       "source": "c4-2020"
     },
@@ -2207,6 +2248,1155 @@
       "order": 6,
       "status": "bientot",
       "source": "licence"
+    },
+    {
+      "id": "technologie-primaire-a-quoi-sert-cet-objet",
+      "subject": "technologie",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "À quoi sert cet objet ?",
+      "summary": "Reconnaître le besoin auquel un objet répond, et sa fonction.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "technologie-primaire-de-quoi-est-il-fait",
+      "subject": "technologie",
+      "level": "primaire",
+      "grades": [
+        "CE1",
+        "CE2"
+      ],
+      "title": "De quoi est-il fait ?",
+      "summary": "Bois, métal, plastique : reconnaître les matériaux et leurs qualités.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "technologie-primaire-comment-ca-bouge",
+      "subject": "technologie",
+      "level": "primaire",
+      "grades": [
+        "CM1"
+      ],
+      "title": "Comment ça tient, comment ça bouge ?",
+      "summary": "Leviers, roues, engrenages : les mécanismes les plus simples.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "technologie-primaire-imaginer-et-fabriquer",
+      "subject": "technologie",
+      "level": "primaire",
+      "grades": [
+        "CM2"
+      ],
+      "title": "Imaginer et fabriquer",
+      "summary": "Du besoin au prototype : dessiner, essayer, corriger.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "technologie-primaire-programmer-un-objet-technique",
+      "subject": "technologie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Programmer un objet technique",
+      "summary": "Donner des consignes à un objet pour qu'il agisse tout seul.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "technologie-college-besoin-fonction-cahier-des-charges",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "Besoin, fonction, cahier des charges",
+      "summary": "Transformer une envie floue en contraintes qu'on peut vérifier.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-materiaux-choisir-et-justifier",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "Matériaux : choisir et justifier",
+      "summary": "Résistance, masse, coût, impact : aucun matériau n'est parfait.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-energie-dans-un-objet",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "4e"
+      ],
+      "title": "L'énergie dans un objet technique",
+      "summary": "D'où elle vient, par où elle passe, où elle se perd.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-mecanismes-et-mouvement",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "4e"
+      ],
+      "title": "Transmettre et transformer le mouvement",
+      "summary": "Engrenages, poulies, bielles : changer la vitesse ou la direction.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-capteurs-et-actionneurs",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Capteurs et actionneurs",
+      "summary": "La chaîne d'information : mesurer, décider, agir.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-objets-connectes-et-reseaux",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Objets connectés et réseaux",
+      "summary": "Ce qu'un objet communique, à qui, et ce que ça implique.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-ecoconception-et-cycle-de-vie",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Écoconception et cycle de vie",
+      "summary": "Fabriquer, utiliser, jeter : peser le coût complet d'un objet.",
+      "order": 7,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-conduire-un-projet",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Conduire un projet",
+      "summary": "Du croquis au prototype, en équipe et dans les délais.",
+      "order": 8,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-college-modeliser-en-3d",
+      "subject": "technologie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Modéliser en 3D et simuler",
+      "summary": "Dessiner un objet sur écran, et l'éprouver avant de le construire.",
+      "order": 9,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "technologie-lycee-analyser-un-systeme",
+      "subject": "technologie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re"
+      ],
+      "title": "Analyser un système pluritechnologique",
+      "summary": "Décomposer un système réel en fonctions et en flux.",
+      "order": 1,
+      "status": "bientot",
+      "source": "si-lycee"
+    },
+    {
+      "id": "technologie-lycee-statique-et-resistance",
+      "subject": "technologie",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "Statique et résistance des matériaux",
+      "summary": "Forces, moments, déformations : ce qui tient et ce qui casse.",
+      "order": 2,
+      "status": "bientot",
+      "source": "si-lycee"
+    },
+    {
+      "id": "technologie-lycee-chaines-d-energie",
+      "subject": "technologie",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Chaînes d'énergie et rendements",
+      "summary": "Suivre l'énergie d'un bout à l'autre, et compter les pertes.",
+      "order": 3,
+      "status": "bientot",
+      "source": "si-lycee"
+    },
+    {
+      "id": "technologie-lycee-electronique-et-signal",
+      "subject": "technologie",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Électronique et traitement du signal",
+      "summary": "Acquérir une grandeur physique, la filtrer, la numériser.",
+      "order": 4,
+      "status": "bientot",
+      "source": "si-lycee"
+    },
+    {
+      "id": "technologie-lycee-automatique-et-asservissement",
+      "subject": "technologie",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Automatique et asservissement",
+      "summary": "Boucle fermée, correction, stabilité : faire obéir un système.",
+      "order": 5,
+      "status": "bientot",
+      "source": "si-lycee"
+    },
+    {
+      "id": "technologie-lycee-conception-et-prototypage",
+      "subject": "technologie",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re",
+        "Tle"
+      ],
+      "title": "Conception assistée et prototypage",
+      "summary": "Modéliser, simuler, imprimer, mesurer l'écart au modèle.",
+      "order": 6,
+      "status": "bientot",
+      "source": "si-lycee"
+    },
+    {
+      "id": "technologie-universite-mecanique-des-structures",
+      "subject": "technologie",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Mécanique des structures",
+      "summary": "Poutres, treillis, contraintes : dimensionner pour de vrai.",
+      "order": 1,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "technologie-universite-electronique-et-electrotechnique",
+      "subject": "technologie",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Électronique et électrotechnique",
+      "summary": "Composants, circuits, machines et conversion de puissance.",
+      "order": 2,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "technologie-universite-automatique",
+      "subject": "technologie",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Automatique et systèmes asservis",
+      "summary": "Modèles d'état, correcteurs, stabilité et performance.",
+      "order": 3,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "technologie-universite-materiaux-et-procedes",
+      "subject": "technologie",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Matériaux et procédés",
+      "summary": "Structure, propriétés, mise en forme, défaillance.",
+      "order": 4,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "technologie-universite-robotique",
+      "subject": "technologie",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Robotique",
+      "summary": "Cinématique, capteurs, planification et commande.",
+      "order": 5,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "astronomie-primaire-jour-nuit-et-saisons",
+      "subject": "astronomie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Le jour, la nuit et les saisons",
+      "summary": "Pourquoi le Soleil se couche, et pourquoi l'hiver existe.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "astronomie-primaire-la-lune-et-ses-phases",
+      "subject": "astronomie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "La Lune et ses phases",
+      "summary": "Toujours la même face, et pourtant jamais la même forme.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "astronomie-primaire-le-soleil-et-les-planetes",
+      "subject": "astronomie",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Le Soleil et les planètes",
+      "summary": "Qui tourne autour de qui, et à quelle distance.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "astronomie-primaire-se-reperer-avec-le-ciel",
+      "subject": "astronomie",
+      "level": "primaire",
+      "grades": [
+        "CE2",
+        "CM1",
+        "CM2"
+      ],
+      "title": "Se repérer avec le ciel",
+      "summary": "L'étoile Polaire, les constellations, et l'ombre d'un bâton.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c23-sciences"
+    },
+    {
+      "id": "astronomie-college-le-systeme-solaire",
+      "subject": "astronomie",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "Le Système solaire",
+      "summary": "Huit planètes, des échelles vertigineuses, et beaucoup de vide.",
+      "order": 1,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "astronomie-college-les-saisons-et-l-inclinaison",
+      "subject": "astronomie",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "Les saisons et l'inclinaison de l'axe",
+      "summary": "Ce n'est pas la distance au Soleil qui fait l'été.",
+      "order": 2,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "astronomie-college-eclipses-et-marees",
+      "subject": "astronomie",
+      "level": "college",
+      "grades": [
+        "4e"
+      ],
+      "title": "Éclipses et marées",
+      "summary": "Trois astres alignés, et la mer qui monte deux fois par jour.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "astronomie-college-gravitation",
+      "subject": "astronomie",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "La gravitation",
+      "summary": "Pourquoi la Lune ne tombe pas, et pourquoi nous, si.",
+      "order": 4,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "astronomie-college-etoiles-galaxies-annees-lumiere",
+      "subject": "astronomie",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Étoiles, galaxies, années-lumière",
+      "summary": "Regarder loin, c'est regarder le passé.",
+      "order": 5,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "astronomie-college-l-exploration-spatiale",
+      "subject": "astronomie",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "L'exploration spatiale",
+      "summary": "Fusées, sondes, télescopes : comment on va voir sur place.",
+      "order": 6,
+      "status": "bientot",
+      "source": "c4-2020"
+    },
+    {
+      "id": "astronomie-lycee-la-terre-dans-l-univers",
+      "subject": "astronomie",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "La Terre dans l'Univers",
+      "summary": "Une planète ordinaire autour d'une étoile ordinaire.",
+      "order": 1,
+      "status": "bientot",
+      "source": "2de-svt"
+    },
+    {
+      "id": "astronomie-lycee-naissance-des-elements",
+      "subject": "astronomie",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "La naissance des éléments chimiques",
+      "summary": "Tout ce qui nous compose a été cuit dans une étoile.",
+      "order": 2,
+      "status": "bientot",
+      "source": "ens-sci"
+    },
+    {
+      "id": "astronomie-lycee-rayonnement-solaire-et-bilan-radiatif",
+      "subject": "astronomie",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "Rayonnement solaire et bilan radiatif",
+      "summary": "Ce que la Terre reçoit, ce qu'elle renvoie, ce qu'elle garde.",
+      "order": 3,
+      "status": "bientot",
+      "source": "ens-sci"
+    },
+    {
+      "id": "astronomie-lycee-lois-de-kepler",
+      "subject": "astronomie",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Les lois de Kepler",
+      "summary": "Des ellipses, des aires balayées, et une loi des périodes.",
+      "order": 4,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "astronomie-lycee-satellites-et-vitesses-cosmiques",
+      "subject": "astronomie",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Satellites et vitesses cosmiques",
+      "summary": "Se mettre en orbite, c'est tomber sans jamais toucher le sol.",
+      "order": 5,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "astronomie-lycee-spectres-et-composition-des-etoiles",
+      "subject": "astronomie",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Spectres et composition des étoiles",
+      "summary": "Lire la chimie d'une étoile dans sa lumière.",
+      "order": 6,
+      "status": "bientot",
+      "source": "spe-pc"
+    },
+    {
+      "id": "astronomie-universite-mecanique-celeste",
+      "subject": "astronomie",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Mécanique céleste",
+      "summary": "Problème à deux corps, perturbations, stabilité des orbites.",
+      "order": 1,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "astronomie-universite-astrophysique-stellaire",
+      "subject": "astronomie",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Astrophysique stellaire",
+      "summary": "Structure interne, nucléosynthèse, diagramme de Hertzsprung-Russell.",
+      "order": 2,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "astronomie-universite-cosmologie",
+      "subject": "astronomie",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Cosmologie",
+      "summary": "Expansion, fond diffus, contenu de l'Univers.",
+      "order": 3,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "astronomie-universite-instruments-et-observation",
+      "subject": "astronomie",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Instruments et observation",
+      "summary": "Optique, détecteurs, photométrie, traitement des données.",
+      "order": 4,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "logique-primaire-suites-et-regularites",
+      "subject": "logique",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2"
+      ],
+      "title": "Suites et régularités",
+      "summary": "Trouver ce qui vient après, et dire pourquoi.",
+      "order": 1,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-primaire-enigmes-de-deduction",
+      "subject": "logique",
+      "level": "primaire",
+      "grades": [
+        "CE2",
+        "CM1",
+        "CM2"
+      ],
+      "title": "Énigmes de déduction",
+      "summary": "Qui a quel animal ? Croiser les indices pour conclure.",
+      "order": 2,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-primaire-vrai-faux-peut-etre",
+      "subject": "logique",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Vrai, faux, peut-être",
+      "summary": "Tout ce qui n'est pas prouvé n'est pas faux pour autant.",
+      "order": 3,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-primaire-pesees-et-partages",
+      "subject": "logique",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Pesées et partages",
+      "summary": "Trouver la pièce fausse en trois pesées. Classique, et redoutable.",
+      "order": 4,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-college-et-ou-non",
+      "subject": "logique",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "Et, ou, non",
+      "summary": "Trois petits mots qui changent tout le sens d'une phrase.",
+      "order": 1,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-college-si-alors",
+      "subject": "logique",
+      "level": "college",
+      "grades": [
+        "4e"
+      ],
+      "title": "Si… alors : l'implication",
+      "summary": "La faute la plus fréquente : confondre une implication et sa réciproque.",
+      "order": 2,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-college-contre-exemple",
+      "subject": "logique",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Le contre-exemple",
+      "summary": "Un seul cas suffit à faire tomber une affirmation générale.",
+      "order": 3,
+      "status": "bientot",
+      "source": "c4-maths"
+    },
+    {
+      "id": "logique-college-enigmes-de-logique-pure",
+      "subject": "logique",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Énigmes de logique pure",
+      "summary": "Menteurs, chapeaux, traversées : s'entraîner sans calcul.",
+      "order": 4,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-college-raisonnement-par-l-absurde",
+      "subject": "logique",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Le raisonnement par l'absurde",
+      "summary": "Supposer le contraire, et le voir s'effondrer.",
+      "order": 5,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-college-denombrer-sans-se-tromper",
+      "subject": "logique",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Dénombrer sans se tromper",
+      "summary": "Compter les possibilités sans en oublier ni en compter deux fois.",
+      "order": 6,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-lycee-quantificateurs",
+      "subject": "logique",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Pour tout, il existe",
+      "summary": "Deux quantificateurs, et l'ordre dans lequel on les écrit.",
+      "order": 1,
+      "status": "bientot",
+      "source": "2de-maths"
+    },
+    {
+      "id": "logique-lycee-ensembles-et-operations",
+      "subject": "logique",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Ensembles et opérations",
+      "summary": "Appartenance, inclusion, union, intersection, complémentaire.",
+      "order": 2,
+      "status": "bientot",
+      "source": "2de-maths"
+    },
+    {
+      "id": "logique-lycee-types-de-demonstration",
+      "subject": "logique",
+      "level": "lycee",
+      "grades": [
+        "2de",
+        "1re"
+      ],
+      "title": "Direct, contraposée, absurde",
+      "summary": "Trois façons de prouver la même implication.",
+      "order": 3,
+      "status": "bientot",
+      "source": "2de-maths"
+    },
+    {
+      "id": "logique-lycee-recurrence",
+      "subject": "logique",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Le raisonnement par récurrence",
+      "summary": "Prouver une infinité d'énoncés d'un seul coup.",
+      "order": 4,
+      "status": "bientot",
+      "source": "tle-maths"
+    },
+    {
+      "id": "logique-lycee-paradoxes-et-pieges",
+      "subject": "logique",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Paradoxes et pièges du raisonnement",
+      "summary": "Monty Hall, Simpson, faux positifs : l'intuition se trompe.",
+      "order": 5,
+      "status": "bientot",
+      "source": "raisonnement"
+    },
+    {
+      "id": "logique-universite-logique-propositionnelle",
+      "subject": "logique",
+      "level": "universite",
+      "grades": [
+        "L1"
+      ],
+      "title": "Logique propositionnelle",
+      "summary": "Connecteurs, tables de vérité, formes normales.",
+      "order": 1,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "logique-universite-logique-du-premier-ordre",
+      "subject": "logique",
+      "level": "universite",
+      "grades": [
+        "L2"
+      ],
+      "title": "Logique du premier ordre",
+      "summary": "Prédicats, modèles, déduction naturelle.",
+      "order": 2,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "logique-universite-theorie-des-ensembles",
+      "subject": "logique",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2"
+      ],
+      "title": "Théorie des ensembles",
+      "summary": "Axiomes, cardinaux, dénombrabilité, diagonale de Cantor.",
+      "order": 3,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "logique-universite-calculabilite",
+      "subject": "logique",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Calculabilité et décidabilité",
+      "summary": "Machines de Turing, arrêt, problèmes indécidables.",
+      "order": 4,
+      "status": "bientot",
+      "source": "licence"
+    },
+    {
+      "id": "histoire-sciences-primaire-compter-avant-les-chiffres",
+      "subject": "histoire-sciences",
+      "level": "primaire",
+      "grades": [
+        "CE2",
+        "CM1",
+        "CM2"
+      ],
+      "title": "Compter avant les chiffres",
+      "summary": "Entailles, cailloux, nœuds : compter sans écrire.",
+      "order": 1,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-primaire-mesurer-le-monde",
+      "subject": "histoire-sciences",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Mesurer le monde",
+      "summary": "Du pied du roi au mètre : pourquoi on s'est mis d'accord.",
+      "order": 2,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-primaire-les-grandes-inventions",
+      "subject": "histoire-sciences",
+      "level": "primaire",
+      "grades": [
+        "CM1",
+        "CM2"
+      ],
+      "title": "Les grandes inventions",
+      "summary": "La roue, l'écriture, l'imprimerie : ce qui a tout changé.",
+      "order": 3,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-primaire-des-savants-et-des-savantes",
+      "subject": "histoire-sciences",
+      "level": "primaire",
+      "grades": [
+        "CP",
+        "CE1",
+        "CE2",
+        "CM1",
+        "CM2"
+      ],
+      "title": "Des savants et des savantes",
+      "summary": "Ceux et celles qui ont cherché, et parfois qu'on a oubliés.",
+      "order": 4,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-college-naissance-de-la-geometrie",
+      "subject": "histoire-sciences",
+      "level": "college",
+      "grades": [
+        "5e"
+      ],
+      "title": "La naissance de la géométrie",
+      "summary": "Arpenter des champs, puis démontrer : le saut grec.",
+      "order": 1,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-college-les-nombres-qui-ont-fait-peur",
+      "subject": "histoire-sciences",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "Les nombres qui ont fait peur",
+      "summary": "Zéro, négatifs, irrationnels : trois scandales mathématiques.",
+      "order": 2,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-college-de-la-terre-plate-au-systeme-solaire",
+      "subject": "histoire-sciences",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e"
+      ],
+      "title": "De la Terre plate au Système solaire",
+      "summary": "Vingt siècles pour déplacer le centre du monde.",
+      "order": 3,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-college-l-atome-2500-ans-d-hypotheses",
+      "subject": "histoire-sciences",
+      "level": "college",
+      "grades": [
+        "4e",
+        "3e"
+      ],
+      "title": "L'atome, 2 500 ans d'hypothèses",
+      "summary": "De Démocrite au microscope à effet tunnel.",
+      "order": 4,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-college-pasteur-darwin-et-le-vivant",
+      "subject": "histoire-sciences",
+      "level": "college",
+      "grades": [
+        "3e"
+      ],
+      "title": "Pasteur, Darwin et le vivant",
+      "summary": "Deux idées qui ont retourné la biologie en un siècle.",
+      "order": 5,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-college-comment-une-idee-devient-science",
+      "subject": "histoire-sciences",
+      "level": "college",
+      "grades": [
+        "5e",
+        "4e",
+        "3e"
+      ],
+      "title": "Comment une idée devient une science",
+      "summary": "Hypothèse, expérience, contestation, consensus.",
+      "order": 6,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-lycee-la-revolution-algebrique-arabe",
+      "subject": "histoire-sciences",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "La révolution algébrique arabe",
+      "summary": "Al-Khwarizmi, l'algèbre et les chiffres qu'on appelle arabes.",
+      "order": 1,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-lycee-descartes-la-geometrie-devient-calcul",
+      "subject": "histoire-sciences",
+      "level": "lycee",
+      "grades": [
+        "2de"
+      ],
+      "title": "Descartes : la géométrie devient calcul",
+      "summary": "Un repère, et les figures deviennent des équations.",
+      "order": 2,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-lycee-naissance-de-l-analyse",
+      "subject": "histoire-sciences",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "Newton, Leibniz et la naissance de l'analyse",
+      "summary": "L'infiniment petit, et la querelle qui va avec.",
+      "order": 3,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-lycee-lavoisier-et-la-chimie-moderne",
+      "subject": "histoire-sciences",
+      "level": "lycee",
+      "grades": [
+        "1re"
+      ],
+      "title": "Lavoisier et la chimie moderne",
+      "summary": "Peser pour comprendre : rien ne se perd.",
+      "order": 4,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-lycee-einstein-et-la-relativite",
+      "subject": "histoire-sciences",
+      "level": "lycee",
+      "grades": [
+        "Tle"
+      ],
+      "title": "Einstein et la relativité",
+      "summary": "Le temps cesse d'être le même pour tout le monde.",
+      "order": 5,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-lycee-turing-et-l-informatique",
+      "subject": "histoire-sciences",
+      "level": "lycee",
+      "grades": [
+        "1re",
+        "Tle"
+      ],
+      "title": "Turing et la naissance de l'informatique",
+      "summary": "Une machine imaginaire qui a défini ce qu'est calculer.",
+      "order": 6,
+      "status": "bientot",
+      "source": "nsi"
+    },
+    {
+      "id": "histoire-sciences-universite-qu-est-ce-qu-une-preuve",
+      "subject": "histoire-sciences",
+      "level": "universite",
+      "grades": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "title": "Qu'est-ce qu'une preuve ?",
+      "summary": "Ce qui compte comme démonstration, et qui en décide.",
+      "order": 1,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-universite-revolutions-scientifiques",
+      "subject": "histoire-sciences",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Crises et révolutions scientifiques",
+      "summary": "Kuhn, les paradigmes, et les théories qu'on abandonne.",
+      "order": 2,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-universite-histoire-des-mathematiques-modernes",
+      "subject": "histoire-sciences",
+      "level": "universite",
+      "grades": [
+        "L3"
+      ],
+      "title": "Histoire des mathématiques modernes",
+      "summary": "Cantor, Hilbert, Gödel : les fondations remises en cause.",
+      "order": 3,
+      "status": "bientot",
+      "source": "histoire"
+    },
+    {
+      "id": "histoire-sciences-universite-sciences-et-controverses",
+      "subject": "histoire-sciences",
+      "level": "universite",
+      "grades": [
+        "L2",
+        "L3"
+      ],
+      "title": "Sciences, société et controverses",
+      "summary": "Comment un désaccord scientifique devient un débat public.",
+      "order": 4,
+      "status": "bientot",
+      "source": "histoire"
     }
   ]
 }

@@ -122,6 +122,34 @@ abstract final class SubjectPalettes {
     tintDark: Color(0xFF112D1C),
   );
 
+  static const SubjectPalette technologie = SubjectPalette(
+    base: Color(0xFF2F6FB5),
+    gradientEnd: Color(0xFF63A4E8),
+    tintLight: Color(0xFFE6F0FA),
+    tintDark: Color(0xFF12243A),
+  );
+
+  static const SubjectPalette astronomie = SubjectPalette(
+    base: Color(0xFF9333EA),
+    gradientEnd: Color(0xFFC084FC),
+    tintLight: Color(0xFFF4E9FD),
+    tintDark: Color(0xFF28123C),
+  );
+
+  static const SubjectPalette logique = SubjectPalette(
+    base: Color(0xFFD6336C),
+    gradientEnd: Color(0xFFF472A6),
+    tintLight: Color(0xFFFCE8EF),
+    tintDark: Color(0xFF3A1020),
+  );
+
+  static const SubjectPalette histoireSciences = SubjectPalette(
+    base: Color(0xFF8A6A4F),
+    gradientEnd: Color(0xFFBFA183),
+    tintLight: Color(0xFFF5EEE7),
+    tintDark: Color(0xFF2B2119),
+  );
+
   /// Palette de repli, pour une matière ajoutée au catalogue sans palette.
   static const SubjectPalette fallback = SubjectPalette(
     base: AppColors.brand,
@@ -135,6 +163,10 @@ abstract final class SubjectPalettes {
     'physique-chimie': physiqueChimie,
     'informatique': informatique,
     'svt': svt,
+    'technologie': technologie,
+    'astronomie': astronomie,
+    'logique': logique,
+    'histoire-sciences': histoireSciences,
   };
 
   /// Palette d'une matière, ou [fallback] si l'identifiant est inconnu.

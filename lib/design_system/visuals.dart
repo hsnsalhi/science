@@ -25,6 +25,10 @@ abstract final class SubjectVisuals {
     'biotech': Icons.biotech_rounded,
     'public': Icons.public_rounded,
     'psychology': Icons.psychology_rounded,
+    'build': Icons.build_rounded,
+    'rocket': Icons.rocket_launch_rounded,
+    'extension': Icons.extension_rounded,
+    'history': Icons.history_edu_rounded,
   };
 
   /// Icône d'une clé de contenu, avec un repli neutre.
