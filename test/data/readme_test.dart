@@ -16,6 +16,8 @@ import 'package:flutter_test/flutter_test.dart';
 /// exacts : écrire un chapitre oblige donc à toucher au README, ce qui est
 /// le but.
 void main() {
+  group('Documentation d’écriture', docEcriture);
+
   late String readme;
   late int chapitres;
   late int figures;
@@ -133,5 +135,72 @@ void main() {
         .where((Map<String, Object?> c) => c['status'] == 'disponible')
         .length;
     expect(disponibles, chapitres);
+  });
+}
+
+/// La documentation d'écriture énumère des valeurs permises ; elles doivent
+/// rester celles du contenu réel.
+///
+/// Elle s'était arrêtée à quatre matières alors que le catalogue en compte
+/// huit, et à trois figures alors qu'il y en a cinquante-cinq. Une doc qui
+/// ment sur les valeurs permises est pire qu'une doc absente : elle fait
+/// écrire du contenu qui sera refusé, sans dire pourquoi.
+void docEcriture() {
+  late String doc;
+  late Set<String> matieresDuCatalogue;
+  late Set<String> niveauxDuCatalogue;
+
+  setUpAll(() {
+    doc = File('docs/CONTENT_AUTHORING.md').readAsStringSync();
+    final Map<String, dynamic> catalogue = jsonDecode(
+      File('assets/content/catalog.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
+    final List<dynamic> chapitres = catalogue['chapters'] as List<dynamic>;
+    matieresDuCatalogue = chapitres
+        .map((dynamic c) => (c as Map<String, dynamic>)['subject'] as String)
+        .toSet();
+    niveauxDuCatalogue = chapitres
+        .map((dynamic c) => (c as Map<String, dynamic>)['level'] as String)
+        .toSet();
+  });
+
+  /// Les valeurs entre accents graves sur la ligne d'un champ du tableau.
+  Set<String> valeursCitees(String champ) {
+    final String ligne = doc
+        .split('\n')
+        .firstWhere((String l) => l.startsWith('| `$champ`'),
+            orElse: () => '');
+    expect(ligne, isNotEmpty, reason: 'la ligne du champ $champ a disparu');
+    return RegExp(r'`([a-z-]+)`')
+        .allMatches(ligne)
+        .map((RegExpMatch m) => m.group(1)!)
+        .where((String v) => v != champ)
+        .toSet();
+  }
+
+  test('la doc énumère exactement les matières du catalogue', () {
+    expect(valeursCitees('subject'), matieresDuCatalogue);
+  });
+
+  test('la doc énumère exactement les niveaux du catalogue', () {
+    expect(valeursCitees('level'), niveauxDuCatalogue);
+  });
+
+  test('la doc renvoie au registre plutôt que de lister les figures', () {
+    // Énumérer cinquante-cinq clés à la main les ferait vieillir. La doc
+    // doit donc pointer le fichier qui fait foi.
+    expect(doc, contains('figure_registry.dart'));
+  });
+
+  test('le compte de figures annoncé par la doc est exact', () {
+    final int reelles = RegExp(r"^\s+'[a-z0-9-]+':", multiLine: true)
+        .allMatches(
+            File('lib/design_system/figures/figure_registry.dart')
+                .readAsStringSync())
+        .length;
+    final RegExpMatch? annonce =
+        RegExp(r'il y en a (\d+)\s*\n?\s*aujourd').firstMatch(doc);
+    expect(annonce, isNotNull, reason: 'le compte de figures a disparu');
+    expect(int.parse(annonce!.group(1)!), reelles);
   });
 }

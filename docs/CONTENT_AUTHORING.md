@@ -32,7 +32,7 @@ Dans `assets/content/catalog.json`, section `chapters` :
 | Champ | Rôle |
 |---|---|
 | `id` | Identifiant unique, **jamais modifié** ensuite : la progression des élèves y est attachée. Convention : `matière-niveau-titre`. |
-| `subject` | `maths`, `physique-chimie`, `informatique` ou `svt`. |
+| `subject` | `maths`, `physique-chimie`, `informatique`, `svt`, `technologie`, `astronomie`, `logique` ou `histoire-sciences`. |
 | `level` | `primaire`, `college`, `lycee` ou `universite`. |
 | `order` | Place dans la progression de la matière pour ce niveau. |
 | `status` | `bientot` (annoncé) ou `disponible` (jouable). |
@@ -169,15 +169,20 @@ singulier/pluriel).
 
 Une figure se cite par une clé, jamais par un nom de fichier :
 
-| `figureId` | Figure |
-|---|---|
-| `triangle-sides` | Triangle rectangle manipulable, nomme les côtés |
-| `pythagore-carres` | Carrés construits sur les côtés (preuve visuelle) |
-| `triangle-reciproque` | Teste si un triangle est rectangle |
+La liste complète fait foi dans
+`lib/design_system/figures/figure_registry.dart` — il y en a 55
+aujourd'hui, et la recopier ici la rendrait fausse dès la figure suivante.
+Pour la relire en une commande :
+
+```bash
+grep -oE "^\s+'[a-z0-9-]+':" lib/design_system/figures/figure_registry.dart
+```
 
 Ajouter une figure demande cette fois du code : écrire le widget dans
 `lib/design_system/figures/`, puis l'inscrire dans `FigureRegistry`. Le reste
-du contenu n'a pas à changer.
+du contenu n'a pas à changer. Une `figureId` inconnue fait échouer
+`test/data/content_test.dart`, qui compare le contenu au registre réel :
+aucune faute de frappe n'atteint un élève.
 
 ### La règle : ce qui existe doit y ressembler
 
