@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
+import 'package:eureka/design_system/figures/array_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
@@ -1722,6 +1723,122 @@ void main() {
         DerivativeFigure.f(a),
         closeTo(reponseNum('defi-derivation', 'q5'), 1e-4),
       );
+    });
+  });
+
+  group('Chapitre complet : multiplier et les tables', () {
+    late Chapter tables;
+
+    setUpAll(() {
+      tables = catalog.chapterById('maths-primaire-multiplier-et-les-tables')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (tables.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    /// Lit un calcul écrit « 4 × 6 ».
+    (int, int) lire(String calcul) {
+      final List<String> morceaux = calcul.split('×');
+      return (int.parse(morceaux[0].trim()), int.parse(morceaux[1].trim()));
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(tables.isPlayable, isTrue);
+      expect(tables.lessons.length, 4);
+    });
+
+    test('tous les produits annoncés sont recalculés', () {
+      final Map<String, (int, int)> calculs = <String, (int, int)>{
+        'des-paquets-egaux/q1': (3, 5),
+        'des-paquets-egaux/q2': (4, 7),
+        'l-ordre-ne-change-rien/q1': (3, 8),
+        'l-ordre-ne-change-rien/q2': (6, 7),
+        'les-tables/q1': (8, 5),
+        'les-tables/q2': (9, 6),
+        'les-tables/q3': (7, 6),
+        'defi-multiplication/q1': (6, 8),
+        'defi-multiplication/q2': (4, 9),
+        'defi-multiplication/q3': (7, 7),
+        'defi-multiplication/q5': (9, 5),
+      };
+      calculs.forEach((String chemin, (int, int) facteurs) {
+        final List<String> parts = chemin.split('/');
+        expect(
+          ArrayFigure.produit(facteurs.$1, facteurs.$2),
+          reponseNum(parts[0], parts[1]),
+          reason: '$chemin : ${facteurs.$1} × ${facteurs.$2}',
+        );
+      });
+    });
+
+    test('les tris de calculs tombent sur les bonnes catégories', () {
+      // Chaque catégorie porte son résultat dans son nom : on multiplie
+      // et on compare, plutôt que de faire confiance au rangement.
+      for (final String question in <String>[
+        'l-ordre-ne-change-rien/q3',
+        'defi-multiplication/q4',
+      ]) {
+        final List<String> parts = question.split('/');
+        final ClassifyQuestion q =
+            tables.lessonById(parts[0])!.questions.firstWhere(
+                  (Question x) => x.id == parts[1],
+                )
+                as ClassifyQuestion;
+        for (final ClassifyItem item in q.items) {
+          final (int, int) facteurs = lire(item.text);
+          final int attendu = int.parse(
+            q.categories[item.category].replaceAll('Fait ', ''),
+          );
+          expect(
+            ArrayFigure.produit(facteurs.$1, facteurs.$2),
+            attendu,
+            reason: '${item.text} est rangé dans « ${q.categories[item.category]} »',
+          );
+        }
+      }
+    });
+
+    test('la table de 5 du tri est bien la table de 5', () {
+      final ClassifyQuestion q =
+          tables.lessonById('les-tables')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int valeur = int.parse(item.text);
+        final bool dansLaTable = <int>[
+          for (int i = 1; i <= 10; i++) ArrayFigure.produit(i, 5),
+        ].contains(valeur);
+        expect(
+          item.category == 0,
+          dansLaTable,
+          reason: '${item.text} est mal rangé',
+        );
+      }
+    });
+
+    test('l’addition répétée affichée compte le bon nombre de paquets', () {
+      // La figure écrit « 6 + 6 + 6 + 6 » sous le rectangle : la somme
+      // doit valoir le produit, et le nombre de termes le nombre de
+      // lignes. C'est la définition que le chapitre donne en premier.
+      for (final (int lignes, int colonnes) in <(int, int)>[
+        (3, 5),
+        (4, 7),
+        (1, 9),
+        (10, 10),
+      ]) {
+        final List<String> termes =
+            ArrayFigure.addition(lignes, colonnes).split(' + ');
+        expect(termes.length, lignes);
+        final int somme = termes
+            .map(int.parse)
+            .reduce((int a, int b) => a + b);
+        expect(somme, ArrayFigure.produit(lignes, colonnes));
+      }
     });
   });
 }

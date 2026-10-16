@@ -663,6 +663,21 @@ void main() {
         await shoot(tester, '$device-26-derivee');
       });
 
+      // Le rectangle de jetons, avec son bouton « Tourner » : c'est la
+      // commutativité qui se démontre en comptant deux fois le même tas.
+      testWidgets('primaire : la multiplication', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'Multiplier et les tables');
+        await tapText(tester, 'Des paquets égaux');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-27-multiplication');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'array_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'derivative_figure.dart';
@@ -68,6 +69,9 @@ abstract final class FigureRegistry {
     // Une sécante qu'on resserre jusqu'à la tangente.
     'secante-tangente': (BuildContext context, Color accent) =>
         DerivativeFigure(accent: accent),
+    // Des jetons en rectangle : une multiplication qu'on peut compter.
+    'jetons-multiplication': (BuildContext context, Color accent) =>
+        ArrayFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

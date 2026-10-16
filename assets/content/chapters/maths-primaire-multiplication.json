@@ -1,0 +1,332 @@
+{
+  "chapter": "maths-primaire-multiplier-et-les-tables",
+  "lessons": [
+    {
+      "id": "des-paquets-egaux",
+      "title": "Des paquets égaux",
+      "subtitle": "Multiplier, c'est compter plus vite.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Quatre paquets de six",
+          "body": "Tu as 4 paquets de 6 billes. Pour savoir combien tu en as, tu peux faire 6 + 6 + 6 + 6.\n\nOn écrit plus court : 4 × 6. Cela se lit « quatre fois six »."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compte les jetons",
+          "body": "Change le nombre de lignes et de colonnes, puis compte.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Les paquets doivent être égaux",
+          "body": "La multiplication ne marche que si tous les paquets ont le même nombre.\n\nSi un paquet a 6 billes et un autre 5, il faut additionner, pas multiplier."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un rectangle de jetons est une multiplication : le nombre de lignes fois le nombre de colonnes."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "4 × 6, c'est 6 + 6 + 6 + 6.",
+            "Les paquets doivent être égaux.",
+            "Un rectangle de jetons montre la multiplication."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 3 × 5 ?",
+          "answer": 15,
+          "tolerance": 0.01,
+          "hint": "5 + 5 + 5.",
+          "explanation": "15. Trois paquets de cinq, c'est 5 + 5 + 5 ; le rectangle a trois lignes de cinq jetons.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle a 4 lignes de 7 jetons. Combien y a-t-il de jetons ?",
+          "answer": 28,
+          "tolerance": 0.01,
+          "unit": "jetons",
+          "hint": "4 × 7.",
+          "explanation": "28 jetons. Quatre lignes de sept, c'est 7 + 7 + 7 + 7.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle addition donne le même résultat que 5 × 3 ?",
+          "hint": "Cinq fois le nombre 3.",
+          "explanation": "3 + 3 + 3 + 3 + 3. Il y a cinq paquets, et chaque paquet contient trois.",
+          "options": [
+            { "text": "3 + 3 + 3 + 3 + 3", "correct": true },
+            { "text": "5 + 3" },
+            { "text": "5 + 5 + 5 + 5 + 5" },
+            { "text": "3 + 3 + 3" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "On peut écrire 2 × 4 pour un paquet de 2 billes et un paquet de 4 billes.",
+          "answer": false,
+          "explanation": "Non : les paquets ne sont pas égaux. Il faut additionner : 2 + 4 = 6."
+        }
+      ]
+    },
+    {
+      "id": "l-ordre-ne-change-rien",
+      "title": "L'ordre ne change rien",
+      "subtitle": "4 × 6 et 6 × 4 donnent la même chose.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Tourne le rectangle",
+          "body": "Un rectangle de 4 lignes de 6 jetons devient, si on le tourne, un rectangle de 6 lignes de 4 jetons.\n\nAucun jeton n'a été ajouté ni enlevé : il y en a toujours 24."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Essaie le bouton Tourner",
+          "body": "Le rectangle change de forme, le nombre de jetons non.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Cela divise par deux le travail d'apprentissage : si tu sais 7 × 3, tu sais déjà 3 × 7."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "a × b donne toujours la même chose que b × a.",
+            "C'est le même rectangle, simplement tourné.",
+            "Apprendre une table, c'est en apprendre deux."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Tu sais que 8 × 3 = 24. Combien font 3 × 8 ?",
+          "answer": 24,
+          "tolerance": 0.01,
+          "hint": "L'ordre ne change rien.",
+          "explanation": "24. C'est le même rectangle de jetons, simplement tourné.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 6 × 7 ?",
+          "answer": 42,
+          "tolerance": 0.01,
+          "hint": "6 × 7, c'est aussi 7 × 6.",
+          "explanation": "42. Six lignes de sept jetons, ou sept lignes de six : c'est pareil.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces calculs selon leur résultat.",
+          "hint": "L'ordre des deux nombres ne change rien.",
+          "explanation": "2 × 6 et 6 × 2 font 12. 3 × 5 et 5 × 3 font 15. Dans chaque paire, c'est le même rectangle tourné.",
+          "categories": ["Fait 12", "Fait 15"],
+          "items": [
+            { "text": "2 × 6", "category": 0 },
+            { "text": "6 × 2", "category": 0 },
+            { "text": "3 × 5", "category": 1 },
+            { "text": "5 × 3", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "9 × 4 et 4 × 9 donnent des résultats différents.",
+          "answer": false,
+          "explanation": "Non, les deux font 36. C'est le même nombre de jetons, rangés autrement."
+        }
+      ]
+    },
+    {
+      "id": "les-tables",
+      "title": "Apprivoiser les tables",
+      "subtitle": "Des trucs pour aller plus vite.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La table de 2",
+          "body": "Multiplier par 2, c'est doubler. 7 × 2, c'est 7 + 7 = 14."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La table de 10, puis celle de 5",
+          "body": "Multiplier par 10, c'est ajouter un zéro : 6 × 10 = 60.\n\nPour multiplier par 5, multiplie par 10 puis prends la moitié : 6 × 5, c'est la moitié de 60, soit 30."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "La table de 9",
+          "body": "Dans la table de 9, les deux chiffres du résultat s'additionnent toujours pour faire 9.\n\n9 × 3 = 27, et 2 + 7 = 9. 9 × 7 = 63, et 6 + 3 = 9. Cela permet de vérifier tout seul."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Quand un calcul résiste, décompose-le : 7 × 6, c'est 7 × 5 (soit 35) plus 7, donc 42."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 8 × 5 ?",
+          "answer": 40,
+          "tolerance": 0.01,
+          "hint": "8 × 10 = 80, puis prends la moitié.",
+          "explanation": "40. Huit fois dix font 80, et multiplier par cinq donne toujours la moitié de ce que donne dix.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 9 × 6 ?",
+          "answer": 54,
+          "tolerance": 0.01,
+          "hint": "Les deux chiffres doivent faire 9 une fois additionnés.",
+          "explanation": "54. Pour vérifier, additionne les deux chiffres du résultat : 5 + 4 = 9, comme dans toute la table de 9.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 7 × 6 ?",
+          "answer": 42,
+          "tolerance": 0.01,
+          "hint": "7 × 5 = 35, puis ajoute encore 7.",
+          "explanation": "42 : 35 + 7. Décomposer évite d'avoir à tout retenir d'un bloc.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces résultats selon qu'ils sont dans la table de 5 ou non.",
+          "hint": "Les résultats de la table de 5 finissent par 0 ou par 5.",
+          "explanation": "35 et 40 sont dans la table de 5 : ce sont 7 × 5 et 8 × 5. 27 et 36 n'y sont pas.",
+          "categories": ["Dans la table de 5", "Pas dans la table de 5"],
+          "items": [
+            { "text": "35", "category": 0 },
+            { "text": "40", "category": 0 },
+            { "text": "27", "category": 1 },
+            { "text": "36", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-multiplication",
+      "title": "Défi : les multiplications",
+      "subtitle": "Six calculs à enchaîner.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Si un calcul résiste, pense au rectangle de jetons."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 6 × 8 ?",
+          "answer": 48,
+          "tolerance": 0.01,
+          "hint": "6 × 8, c'est aussi le double de 6 × 4.",
+          "explanation": "48. Six fois quatre font 24, et six fois huit, c'est deux fois plus : il suffit de doubler.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans une boîte, il y a 4 rangées de 9 œufs. Combien d'œufs en tout ?",
+          "answer": 36,
+          "tolerance": 0.01,
+          "unit": "œufs",
+          "hint": "4 × 9.",
+          "explanation": "36 œufs. Et pour vérifier avec la table de 9 : 3 + 6 = 9.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 7 × 7 ?",
+          "answer": 49,
+          "tolerance": 0.01,
+          "hint": "7 × 7, c'est 7 × 5 plus 7 × 2.",
+          "explanation": "49. Sept fois cinq font 35, et il reste deux paquets de sept à ajouter : 35 + 14.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces calculs selon leur résultat.",
+          "explanation": "4 × 6 et 8 × 3 font 24. 5 × 6 et 3 × 10 font 30.",
+          "categories": ["Fait 24", "Fait 30"],
+          "items": [
+            { "text": "4 × 6", "category": 0 },
+            { "text": "8 × 3", "category": 0 },
+            { "text": "5 × 6", "category": 1 },
+            { "text": "3 × 10", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un sachet contient 5 bonbons. Combien de bonbons dans 9 sachets ?",
+          "answer": 45,
+          "tolerance": 0.01,
+          "unit": "bonbons",
+          "hint": "9 × 10 = 90, puis la moitié.",
+          "explanation": "45 bonbons. Neuf sachets de dix feraient 90 ; avec cinq bonbons par sachet, c'est la moitié.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un rectangle de 3 lignes de 8 jetons contient autant de jetons qu'un rectangle de 8 lignes de 3 jetons.",
+          "answer": true,
+          "explanation": "Oui, 24 dans les deux cas. C'est le même rectangle, tourné d'un quart de tour."
+        }
+      ]
+    }
+  ]
+}
