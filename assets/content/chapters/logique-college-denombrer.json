@@ -1,0 +1,410 @@
+{
+  "chapter": "logique-college-denombrer-sans-se-tromper",
+  "lessons": [
+    {
+      "id": "principe-multiplicatif",
+      "title": "Le principe multiplicatif",
+      "subtitle": "Des choix successifs se multiplient.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La règle de base",
+          "formula": "nombre total = n₁ × n₂ × n₃ × …",
+          "body": "Si une décision se prend en plusieurs choix successifs et indépendants, on multiplie le nombre de possibilités de chaque choix. Deux chemises et trois pantalons donnent six tenues, pas cinq."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Multiplier ou additionner",
+          "body": "On multiplie quand les choix s'enchaînent : « un plat ET un dessert ».\n\nOn additionne quand ils s'excluent : « un plat OU un dessert ».\n\nTrois plats et quatre desserts donnent douze menus complets, et sept options si l'on ne prend qu'une seule chose.\n\nLe mot qui relie les choix dit l'opération. « Et » multiplie, « ou » additionne."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un code et une plaque",
+          "body": "Un code à quatre chiffres : dix possibilités par position, donc 10 × 10 × 10 × 10 = 10 000 codes. Pas 40, et pas 10⁴ ⁄ 4.\n\nUne plaque de la forme deux lettres, trois chiffres, deux lettres : 26 × 26 × 10 × 10 × 10 × 26 × 26, soit près de 457 millions. Le vrai système français en offre moins, parce que certaines lettres sont écartées pour éviter les confusions.\n\nLe calcul brut donne donc une borne supérieure, et c'est déjà très utile."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "L'ordre compte-t-il, et peut-on répéter",
+          "body": "Ce sont les deux questions à se poser avant tout calcul, et elles déterminent la formule.\n\nUn code à quatre chiffres : l'ordre compte, et on peut répéter. 10⁴.\n\nUn podium parmi huit coureurs : l'ordre compte, on ne peut pas répéter. 8 × 7 × 6.\n\nUne main de trois cartes : l'ordre ne compte pas, on ne peut pas répéter. C'est le cas qui demande une division, et le seul."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Deux chemises et trois pantalons. Combien de tenues différentes ?",
+          "explanation": "2 × 3 = 6 tenues. Les choix s'enchaînent, donc ils se multiplient.",
+          "answer": 6
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de codes à 4 chiffres ?",
+          "explanation": "10 × 10 × 10 × 10 = 10 000, de 0000 à 9999.",
+          "answer": 10000
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Trois plats et quatre desserts. Combien de menus plat ET dessert ?",
+          "explanation": "3 × 4 = 12 menus complets.",
+          "answer": 12
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Avec le même choix, combien d'options si l'on ne prend qu'une seule chose ?",
+          "explanation": "3 + 4 = 7. Les choix s'excluent, donc ils s'additionnent.",
+          "answer": 7
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un podium parmi 8 coureurs. Combien de podiums possibles ?",
+          "hint": "8 pour la première place, puis 7, puis 6.",
+          "explanation": "8 × 7 × 6 = 336 podiums. L'ordre compte, et on ne peut pas répéter un coureur.",
+          "answer": 336
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quelles deux questions se poser avant de dénombrer ?",
+          "explanation": "L'ordre compte-t-il, et peut-on répéter ? Les réponses déterminent entièrement la formule.",
+          "options": [
+            {
+              "text": "l'ordre compte-t-il, et peut-on répéter",
+              "correct": true
+            },
+            {
+              "text": "y a-t-il beaucoup de cas, et sont-ils grands"
+            },
+            {
+              "text": "faut-il une calculatrice, et quelle précision"
+            },
+            {
+              "text": "les objets sont-ils identiques, et de quelle couleur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combinaisons",
+      "title": "Quand l'ordre ne compte pas",
+      "subtitle": "Diviser par les ordres équivalents.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le même ensemble, plusieurs ordres",
+          "body": "Pour choisir trois élèves parmi dix pour un groupe, l'ordre ne compte pas : les choisir Alice, Bruno, Chloé ou Chloé, Alice, Bruno donne le même groupe.\n\nSi l'on compte 10 × 9 × 8 = 720, on a compté chaque groupe plusieurs fois : exactement autant de fois qu'il y a de façons d'ordonner trois personnes, soit 3 × 2 × 1 = 6.\n\nIl faut donc diviser : 720 ÷ 6 = 120 groupes différents."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La combinaison",
+          "formula": "nombre de groupes = (n × (n−1) × … ) ÷ (k × (k−1) × … )",
+          "body": "On prend k facteurs décroissants au numérateur et les k premiers entiers au dénominateur. Pour 3 parmi 10 : (10 × 9 × 8) ÷ (3 × 2 × 1) = 120."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "La symétrie qui fait gagner du temps",
+          "body": "Choisir 3 élèves parmi 10 pour partir revient à en choisir 7 pour rester. Les deux comptes sont donc égaux : 120 dans les deux cas.\n\nD'où une règle de calcul : pour 8 parmi 10, on calcule plutôt 2 parmi 10, soit (10 × 9) ÷ 2 = 45. Deux multiplications au lieu de huit.\n\nOn choisit toujours le plus petit des deux nombres."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Les poignées de main",
+          "body": "Dans un groupe de n personnes qui se serrent toutes la main une fois, le nombre de poignées est le nombre de paires : n × (n−1) ÷ 2.\n\nPour 10 personnes : 10 × 9 ÷ 2 = 45.\n\nLa division par deux est la part essentielle du raisonnement : chaque poignée est comptée deux fois si l'on compte « chacun serre la main de neuf autres »."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de groupes de 3 élèves parmi 10 ?",
+          "explanation": "(10 × 9 × 8) ÷ (3 × 2 × 1) = 720 ÷ 6 = 120 groupes.",
+          "answer": 120
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "De combien de façons peut-on ordonner 3 personnes ?",
+          "explanation": "3 × 2 × 1 = 6. C'est par ce nombre qu'il faut diviser quand l'ordre ne compte pas.",
+          "answer": 6
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de groupes de 7 élèves parmi 10 ?",
+          "hint": "Choisir 7 qui partent revient à choisir 3 qui restent.",
+          "explanation": "120, le même nombre que pour 3 parmi 10 : choisir qui part revient à choisir qui reste.",
+          "answer": 120
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de groupes de 2 parmi 10 ?",
+          "explanation": "(10 × 9) ÷ 2 = 45 paires. On divise par 2 parce que l'ordre des deux élèves ne compte pas.",
+          "answer": 45
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Dix personnes se serrent toutes la main une fois. Combien de poignées de main ?",
+          "explanation": "10 × 9 ÷ 2 = 45. La division par deux est essentielle : sans elle, chaque poignée est comptée deux fois.",
+          "answer": 45
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Et pour 20 personnes ?",
+          "explanation": "20 × 19 ÷ 2 = 190. Doubler le nombre de personnes multiplie les poignées par un peu plus de quatre.",
+          "answer": 190
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pour calculer 8 parmi 10, que vaut-il mieux faire ?",
+          "explanation": "Calculer 2 parmi 10, qui donne le même résultat avec deux multiplications au lieu de huit.",
+          "options": [
+            {
+              "text": "calculer 2 parmi 10, c'est le même nombre",
+              "correct": true
+            },
+            {
+              "text": "calculer 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1"
+            },
+            {
+              "text": "diviser 10 par 8"
+            },
+            {
+              "text": "additionner 8 et 10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiroirs",
+      "title": "Le principe des tiroirs",
+      "subtitle": "Conclure sans rien calculer.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "aRetenir",
+          "title": "L'énoncé",
+          "body": "Si l'on range n objets dans moins de n tiroirs, au moins un tiroir contient au moins deux objets.\n\nC'est évident, et c'est un outil de démonstration redoutable, parce qu'il conclut sans rien construire : il affirme qu'une chose existe sans dire laquelle.\n\nTreize personnes dans une pièce : deux au moins sont nées le même mois. Il n'y a que douze mois, donc douze tiroirs."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Deux conclusions surprenantes",
+          "body": "Dans Paris, au moins deux personnes ont exactement le même nombre de cheveux. Un humain en a au plus environ 150 000, et Paris compte deux millions d'habitants : il y a treize fois plus de personnes que de nombres possibles.\n\nParmi cinq points quelconques dans un carré de côté 2, deux au moins sont à moins de 1,5 de distance. On découpe le carré en quatre carrés de côté 1 : avec cinq points et quatre cases, deux points partagent une case, et la diagonale d'une case vaut environ 1,41.\n\nAucune des deux conclusions ne nomme les personnes ni les points, et les deux sont certaines."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "La version renforcée",
+          "body": "Si l'on range n objets dans t tiroirs, un tiroir contient au moins n ÷ t objets, arrondi au-dessus.\n\nTrente élèves et douze mois : un mois contient au moins 30 ÷ 12 = 2,5, donc au moins 3 élèves.\n\nCette version donne bien plus que « au moins deux », et elle se calcule aussi vite."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de personnes faut-il au minimum pour que deux soient nées le même mois ?",
+          "explanation": "13 : avec douze mois et douze personnes, chacune pourrait avoir son mois. La treizième force la coïncidence.",
+          "answer": 13
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de personnes pour que deux soient nées le même jour de l'année, hors années bissextiles ?",
+          "explanation": "366 : avec 365 jours et 365 personnes, la coïncidence n'est pas garantie. La 366e l'impose.",
+          "answer": 366
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Trente élèves et douze mois. Combien d'élèves au moins dans le même mois ?",
+          "hint": "30 divisé par 12, arrondi au-dessus.",
+          "explanation": "30 ÷ 12 = 2,5, arrondi au-dessus : au moins 3 élèves nés le même mois.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Cent élèves et douze mois. Combien au moins dans le même mois ?",
+          "explanation": "100 ÷ 12 ≈ 8,33, arrondi au-dessus : au moins 9 élèves.",
+          "answer": 9
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que permet de conclure le principe des tiroirs, exactement ?",
+          "explanation": "Qu'une coïncidence existe, sans dire laquelle. C'est ce qui en fait un outil de démonstration si économique.",
+          "options": [
+            {
+              "text": "qu'une coïncidence existe, sans dire laquelle",
+              "correct": true
+            },
+            {
+              "text": "quelles personnes précisément coïncident"
+            },
+            {
+              "text": "la probabilité de la coïncidence"
+            },
+            {
+              "text": "le nombre exact de coïncidences"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux Parisiens ont-ils le même nombre de cheveux ?",
+          "explanation": "Parce qu'il y a au plus 150 000 valeurs possibles et deux millions d'habitants : treize fois plus de personnes que de tiroirs.",
+          "options": [
+            {
+              "text": "il y a bien plus d'habitants que de nombres possibles",
+              "correct": true
+            },
+            {
+              "text": "parce que les Parisiens se ressemblent"
+            },
+            {
+              "text": "par hasard statistique"
+            },
+            {
+              "text": "c'est une approximation, pas une certitude"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-anniversaires",
+      "title": "Défi : le paradoxe des anniversaires",
+      "subtitle": "Vingt-trois suffisent.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 12,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux questions qu'on confond",
+          "body": "Combien de personnes faut-il pour être certain que deux partagent un anniversaire ? 366, par le principe des tiroirs.\n\nCombien pour que ce soit plus probable qu'improbable ? Vingt-trois.\n\nL'écart entre les deux réponses est énorme, et il surprend tout le monde. Il vient de ce que l'on compte des paires, et non des personnes."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le calcul, par le contraire",
+          "body": "On calcule la probabilité que tous les anniversaires soient différents, ce qui est bien plus facile.\n\nLa deuxième personne doit éviter 1 jour sur 365 : 364 ÷ 365.\n\nLa troisième doit en éviter 2 : 363 ÷ 365.\n\nOn multiplie tous ces facteurs. À 23 personnes, le produit tombe à 0,493 — donc la probabilité d'une coïncidence vaut 1 − 0,493 = 0,507, soit un peu plus d'une chance sur deux."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi si peu de monde suffit",
+          "body": "Avec 23 personnes, il y a 23 × 22 ÷ 2 = 253 paires. Chacune a une chance sur 365 de coïncider.\n\nOn n'a pas 23 occasions de coïncidence, on en a 253. C'est là que l'intuition se trompe : elle compte les personnes, et ce sont les paires qui comptent.\n\nLe même piège gouverne les collisions en informatique, où il décide de la longueur des identifiants. Doubler la longueur d'un identifiant ne double pas la sécurité contre les collisions : il faut raisonner sur les paires."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de paires dans un groupe de 23 personnes ?",
+          "explanation": "23 × 22 ÷ 2 = 253 paires, et non 23 occasions de coïncidence.",
+          "answer": 253
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de personnes pour que deux partagent un anniversaire à coup sûr, hors 29 février ?",
+          "explanation": "366, par le principe des tiroirs : 365 jours, donc 365 tiroirs.",
+          "answer": 366
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de personnes pour que ce soit plus probable qu'improbable ?",
+          "explanation": "23. Le produit des probabilités de non-coïncidence y tombe à 0,493, donc la coïncidence vaut 0,507.",
+          "answer": 23
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de paires dans un groupe de 30 personnes ?",
+          "explanation": "30 × 29 ÷ 2 = 435 paires.",
+          "answer": 435
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien le nombre de paires est-il multiplié quand le groupe double, de 23 à 46 ? Arrondis au dixième.",
+          "hint": "Calcule les paires dans les deux cas.",
+          "explanation": "46 × 45 ÷ 2 = 1 035, et 1 035 ÷ 253 ≈ 4,1 : doubler le groupe quadruple les paires.",
+          "answer": 4.1,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'intuition se trompe-t-elle ?",
+          "explanation": "Parce qu'elle compte les personnes, alors que ce sont les paires qui offrent des occasions de coïncidence — et elles croissent comme le carré.",
+          "options": [
+            {
+              "text": "elle compte les personnes, pas les paires",
+              "correct": true
+            },
+            {
+              "text": "elle oublie le 29 février"
+            },
+            {
+              "text": "les anniversaires ne sont pas uniformes"
+            },
+            {
+              "text": "le calcul est trop difficile"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Où retrouve-t-on ce raisonnement en informatique ?",
+          "explanation": "Dans le choix de la longueur des identifiants : le risque de collision se calcule sur les paires, pas sur le nombre d'éléments.",
+          "options": [
+            {
+              "text": "dans le dimensionnement des identifiants contre les collisions",
+              "correct": true
+            },
+            {
+              "text": "dans le calcul de la vitesse des processeurs"
+            },
+            {
+              "text": "dans la compression des images"
+            },
+            {
+              "text": "nulle part, c'est un pur jeu"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

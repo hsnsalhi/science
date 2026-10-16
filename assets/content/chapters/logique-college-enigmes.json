@@ -1,0 +1,471 @@
+{
+  "chapter": "logique-college-enigmes-de-logique-pure",
+  "lessons": [
+    {
+      "id": "chapeaux",
+      "title": "Les trois chapeaux",
+      "subtitle": "Déduire de ce que les autres ne savent pas.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'énoncé",
+          "body": "Trois personnes sont en file, chacune voyant les chapeaux de celles devant elle, pas le sien ni ceux derrière.\n\nOn leur a dit qu'il y a trois chapeaux blancs et deux noirs, et qu'on en a posé un sur chaque tête au hasard.\n\nOn interroge celle de derrière, qui voit les deux autres : elle ne sait pas. Puis celle du milieu, qui voit la première : elle ne sait pas non plus.\n\nLa première, qui ne voit rien, annonce alors la couleur de son chapeau. Comment ?"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le raisonnement, étape par étape",
+          "body": "Celle de derrière ne sait pas. Si elle avait vu deux noirs devant elle, elle aurait su : il n'y en a que deux, donc le sien serait blanc. Elle n'a donc pas vu deux noirs.\n\nCelle du milieu entend cela, et sait donc qu'au moins un des deux chapeaux devant la troisième est blanc — le sien ou celui de la première.\n\nOr elle ne sait pas. Si elle avait vu un noir devant elle, le sien serait forcément blanc, et elle aurait su. Elle n'a donc pas vu de noir.\n\nLa première en conclut que son chapeau est blanc."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Un « je ne sais pas » est une information",
+          "body": "C'est le cœur de l'énigme, et de beaucoup d'autres. Chaque ignorance avouée élimine des cas, et le suivant en profite.\n\nSi la première avait parlé d'emblée, elle n'aurait rien pu dire. Elle sait grâce aux deux silences qui l'ont précédée.\n\nOn retrouve ce mécanisme partout où plusieurs personnes raisonnent sur ce que les autres savent : dans les enchères, dans les négociations, et dans certains protocoles informatiques."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "La méthode générale",
+          "body": "On liste toutes les configurations possibles.\n\nChaque déclaration — y compris « je ne sais pas » — élimine celles qui l'auraient rendue impossible.\n\nOn s'arrête quand il ne reste qu'une configuration, ou quand une couleur est la même dans toutes celles qui restent.\n\nC'est long à la main et parfaitement mécanique. C'est pourquoi un ordinateur résout ces énigmes sans comprendre un mot de l'histoire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que déduit-on du fait que celle de derrière ne sait pas ?",
+          "explanation": "Qu'elle n'a pas vu deux chapeaux noirs devant elle : sinon le sien serait forcément blanc, et elle aurait su.",
+          "options": [
+            {
+              "text": "qu'elle n'a pas vu deux noirs devant elle",
+              "correct": true
+            },
+            {
+              "text": "qu'elle a vu deux blancs"
+            },
+            {
+              "text": "que son chapeau est noir"
+            },
+            {
+              "text": "rien du tout"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que déduit-on ensuite du fait que celle du milieu ne sait pas ?",
+          "explanation": "Qu'elle n'a pas vu de noir devant elle : sachant déjà qu'il n'y a pas deux noirs devant la troisième, un noir devant elle lui aurait donné la réponse.",
+          "options": [
+            {
+              "text": "qu'elle n'a pas vu de noir devant elle",
+              "correct": true
+            },
+            {
+              "text": "que son chapeau est noir"
+            },
+            {
+              "text": "qu'elle n'a rien vu"
+            },
+            {
+              "text": "que la première est en noir"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "De quelle couleur est le chapeau de la première ?",
+          "explanation": "Blanc. Les deux « je ne sais pas » ont éliminé toutes les configurations où il serait noir.",
+          "options": [
+            {
+              "text": "blanc",
+              "correct": true
+            },
+            {
+              "text": "noir"
+            },
+            {
+              "text": "impossible à déterminer"
+            },
+            {
+              "text": "cela dépend du tirage"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "La première aurait-elle pu répondre avant les deux autres ?",
+          "explanation": "Non. Elle ne voit rien : c'est exclusivement des deux silences qu'elle tire sa conclusion.",
+          "options": [
+            {
+              "text": "non, elle ne sait que grâce aux deux silences",
+              "correct": true
+            },
+            {
+              "text": "oui, elle voyait déjà tout"
+            },
+            {
+              "text": "oui, en devinant"
+            },
+            {
+              "text": "oui, puisqu'il y a plus de blancs"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode générale dans l'ordre.",
+          "explanation": "On liste, on élimine à chaque déclaration, et on s'arrête quand la réponse est la même dans tout ce qui reste.",
+          "items": [
+            "lister toutes les configurations possibles",
+            "éliminer celles qu'une déclaration rend impossibles",
+            "recommencer à chaque nouvelle déclaration",
+            "conclure quand il ne reste qu'une réponse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "traversees",
+      "title": "Les traversées",
+      "subtitle": "Explorer un espace d'états.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le loup, la chèvre et le chou",
+          "body": "Un passeur doit emmener un loup, une chèvre et un chou sur l'autre rive. Sa barque ne porte que lui et une seule chose.\n\nLaissés seuls, le loup mange la chèvre, et la chèvre mange le chou. Le passeur présent, rien n'arrive.\n\nL'énigme a mille ans et elle se résout en sept traversées. La clé est celle qui bloque tout le monde : il faut ramener quelque chose en arrière."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La solution",
+          "body": "Emmener la chèvre. Revenir seul.\n\nEmmener le chou. Et revenir avec la chèvre — c'est le coup que personne ne trouve.\n\nLaisser la chèvre, emmener le loup. Revenir seul.\n\nEmmener la chèvre. Sept traversées en tout, et la chèvre en a fait trois."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi reculer est nécessaire",
+          "body": "On croit qu'une bonne solution avance toujours. Ici, c'est faux : sans le retour de la chèvre, le problème n'a aucune issue.\n\nC'est le cas dans énormément de problèmes réels, et c'est ce que les humains acceptent le plus mal. On cherche le chemin monotone, on ne le trouve pas, et on conclut que le problème est impossible.\n\nUn ordinateur, lui, essaie aussi les retours en arrière, parce qu'on lui a dit de tout essayer."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "La méthode de l'espace d'états",
+          "body": "Un état décrit tout ce qui compte : ici, de quel côté se trouvent le passeur et les trois choses. Il y a seize états concevables.\n\nCertains sont interdits — ceux où le loup et la chèvre sont seuls ensemble, par exemple.\n\nUne traversée est un passage d'un état à un autre. Résoudre l'énigme, c'est trouver un chemin de l'état de départ à l'état d'arrivée en ne passant que par des états permis.\n\nC'est exactement ainsi qu'un ordinateur résout un Rubik's Cube ou planifie un itinéraire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de traversées faut-il au minimum ?",
+          "explanation": "Sept, en comptant les retours à vide et le retour avec la chèvre.",
+          "answer": 7
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que faut-il emmener en premier ?",
+          "hint": "Celui qui est en conflit avec les deux autres.",
+          "explanation": "La chèvre, parce qu'elle est en conflit avec le loup et avec le chou. Le loup et le chou, eux, se supportent très bien.",
+          "options": [
+            {
+              "text": "la chèvre",
+              "correct": true
+            },
+            {
+              "text": "le loup"
+            },
+            {
+              "text": "le chou"
+            },
+            {
+              "text": "peu importe"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quel est le coup que personne ne trouve ?",
+          "explanation": "Ramener la chèvre en arrière après avoir déposé le chou. Sans ce retour, le problème n'a aucune solution.",
+          "options": [
+            {
+              "text": "ramener la chèvre en arrière",
+              "correct": true
+            },
+            {
+              "text": "emmener deux choses à la fois"
+            },
+            {
+              "text": "laisser le loup avec le chou"
+            },
+            {
+              "text": "faire deux voyages de suite"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de traversées la chèvre fait-elle en tout ?",
+          "explanation": "Trois : à l'aller, au retour, puis à l'aller à nouveau.",
+          "answer": 3
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Quatre éléments de chaque côté possible : combien d'états concevables au total ?",
+          "hint": "Chacun des quatre est d'un côté ou de l'autre.",
+          "explanation": "2 × 2 × 2 × 2 = 16 états concevables, dont une partie est interdite.",
+          "answer": 16
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les humains échouent-ils souvent sur cette énigme ?",
+          "explanation": "Parce qu'ils cherchent un chemin qui avance toujours, et refusent le retour en arrière. Beaucoup de problèmes réels l'exigent pourtant.",
+          "options": [
+            {
+              "text": "ils refusent le retour en arrière",
+              "correct": true
+            },
+            {
+              "text": "l'énoncé est ambigu"
+            },
+            {
+              "text": "il y a trop d'états à explorer"
+            },
+            {
+              "text": "la barque est trop petite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "douze-pieces",
+      "title": "Les douze pièces",
+      "subtitle": "Sans savoir si elle est lourde ou légère.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le problème, dans sa version dure",
+          "body": "Douze pièces d'apparence identique. L'une a une masse différente des autres — et on ne sait pas si elle est plus lourde ou plus légère.\n\nTrois pesées à la balance à deux plateaux. Il faut trouver la pièce ET dire si elle est lourde ou légère.\n\nCe problème a une solution, et elle est à la limite exacte de ce qui est possible. Le compter avant de chercher évite de perdre des heures."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le décompte qui dit que c'est juste faisable",
+          "body": "Il y a 24 réponses possibles : douze pièces, chacune pouvant être lourde ou légère.\n\nTrois pesées distinguent au plus 3 × 3 × 3 = 27 cas.\n\nComme 27 est supérieur à 24, c'est possible — de justesse. Avec treize pièces il y aurait 26 réponses, encore sous 27 ; avec quatorze, 28 réponses et plus aucun espoir.\n\nCe calcul ne donne pas la méthode. Il dit si la chercher a un sens, ce qui est déjà considérable."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La première pesée : quatre contre quatre",
+          "body": "On pèse quatre pièces contre quatre, et on en laisse quatre de côté.\n\nÉquilibre : la pièce est parmi les quatre écartées, et il reste 8 réponses pour 2 pesées, qui en distinguent 9. Faisable.\n\nDéséquilibre : la pièce est parmi les huit pesées, et on sait de quel côté elle penche. Il reste 16 réponses pour 2 pesées… ce qui dépasse 9.\n\nMais non : si le plateau gauche descend, chacune des quatre pièces de gauche peut être lourde, ou chacune des quatre de droite légère. Huit réponses, pas seize. Et 8 est inférieur à 9."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Douze pièces, chacune pouvant être lourde ou légère. Combien de réponses possibles ?",
+          "explanation": "12 × 2 = 24 réponses : quelle pièce, et dans quel sens.",
+          "answer": 24
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cas trois pesées distinguent-elles au plus ?",
+          "explanation": "3 × 3 × 3 = 27, puisque chaque pesée a trois résultats possibles.",
+          "answer": 27
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Le problème est-il soluble en trois pesées ?",
+          "explanation": "Oui, de justesse : 24 réponses à distinguer pour 27 cas disponibles.",
+          "options": [
+            {
+              "text": "oui, 24 réponses pour 27 cas disponibles",
+              "correct": true
+            },
+            {
+              "text": "non, il en faudrait quatre"
+            },
+            {
+              "text": "oui, avec de la chance"
+            },
+            {
+              "text": "impossible à savoir d'avance"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le nombre maximal de pièces traitables en 3 pesées, dans cette version ?",
+          "hint": "Deux réponses par pièce, et 27 cas disponibles.",
+          "explanation": "27 ÷ 2 = 13,5, donc 13 pièces au maximum. Avec 14, il y aurait 28 réponses pour 27 cas : impossible.",
+          "answer": 13
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de pièces sur chaque plateau à la première pesée ?",
+          "explanation": "Quatre contre quatre, en laissant quatre de côté. C'est le partage qui équilibre l'information des trois résultats.",
+          "answer": 4
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Si les plateaux s'équilibrent, combien de réponses restent possibles ?",
+          "explanation": "Les quatre pièces écartées, chacune lourde ou légère : 4 × 2 = 8 réponses, pour 9 cas distinguables en deux pesées.",
+          "answer": 8
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Si le plateau gauche descend, combien de réponses restent possibles ?",
+          "hint": "Les quatre de gauche lourdes, ou les quatre de droite légères.",
+          "explanation": "8 également : quatre peuvent être lourdes, quatre peuvent être légères. Les autres combinaisons sont exclues par le sens du déséquilibre.",
+          "answer": 8
+        }
+      ]
+    },
+    {
+      "id": "defi-enigmes",
+      "title": "Défi : compter avant de chercher",
+      "subtitle": "Savoir si une solution existe.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "aRetenir",
+          "title": "Le principe du dénombrement d'information",
+          "body": "Avant de chercher une méthode, on compte. Combien de réponses faut-il distinguer ? Combien de cas l'outil permet-il de distinguer ?\n\nSi l'outil offre moins de cas que de réponses, aucune méthode n'existe. Ce n'est pas qu'on ne l'a pas trouvée : elle ne peut pas exister, et c'est démontré.\n\nSi l'outil en offre plus, une méthode existe peut-être — et le calcul ne la donne pas. Mais savoir qu'elle peut exister change la décision de chercher."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Trois applications du même calcul",
+          "body": "Deviner un nombre entre 1 et 100 par questions à réponse oui ou non : 100 réponses, 2 cas par question, donc au moins 7 questions puisque 2⁶ = 64 et 2⁷ = 128.\n\nTrouver une pièce lourde parmi 9 : 9 réponses, 3 cas par pesée, donc 2 pesées suffisent.\n\nTrouver une pièce de masse inconnue parmi 12 : 24 réponses, 27 cas en 3 pesées. Ça passe de justesse.\n\nLe même raisonnement, trois problèmes, et il se fait au brouillon en une minute."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de questions oui/non pour deviner un nombre entre 1 et 100 ?",
+          "hint": "Deux élevé à quelle puissance dépasse 100 ?",
+          "explanation": "2⁶ = 64 ne suffit pas, 2⁷ = 128 dépasse 100 : sept questions.",
+          "answer": 7
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et pour un nombre entre 1 et 1 000 ?",
+          "explanation": "2⁹ = 512 ne suffit pas, 2¹⁰ = 1 024 dépasse : dix questions.",
+          "answer": 10
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une pièce plus lourde parmi 9, à la balance. Combien de pesées ?",
+          "explanation": "9 réponses et 3 cas par pesée : 3 × 3 = 9, donc deux pesées suffisent exactement.",
+          "answer": 2
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une pièce de masse inconnue parmi 20. Combien de pesées faut-il au minimum ?",
+          "hint": "40 réponses à distinguer.",
+          "explanation": "20 × 2 = 40 réponses. Trois pesées n'en distinguent que 27, quatre en distinguent 81 : il faut quatre pesées.",
+          "answer": 4
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Le calcul dit que l'outil offre moins de cas que de réponses. Que conclure ?",
+          "explanation": "Qu'aucune méthode n'existe, et c'est démontré. Ce n'est pas un échec de recherche : c'est une impossibilité.",
+          "options": [
+            {
+              "text": "aucune méthode n'existe, c'est démontré",
+              "correct": true
+            },
+            {
+              "text": "il faut chercher plus longtemps"
+            },
+            {
+              "text": "il faut un outil plus précis"
+            },
+            {
+              "text": "le calcul est forcément faux"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Le calcul dit que l'outil offre plus de cas que de réponses. Que conclure ?",
+          "explanation": "Qu'une méthode peut exister — et le calcul ne la donne pas. Il dit seulement que la chercher a un sens.",
+          "options": [
+            {
+              "text": "une méthode peut exister, sans qu'on la connaisse",
+              "correct": true
+            },
+            {
+              "text": "la méthode est automatiquement trouvée"
+            },
+            {
+              "text": "il y a plusieurs méthodes"
+            },
+            {
+              "text": "le problème est trivial"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la balance distingue-t-elle trois cas et la question oui/non seulement deux ?",
+          "explanation": "Parce qu'une balance peut pencher à gauche, à droite, ou s'équilibrer. C'est ce troisième résultat qui la rend plus puissante qu'une question binaire.",
+          "options": [
+            {
+              "text": "la balance peut aussi s'équilibrer",
+              "correct": true
+            },
+            {
+              "text": "la balance est plus précise"
+            },
+            {
+              "text": "les questions sont mal posées"
+            },
+            {
+              "text": "c'est une convention"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

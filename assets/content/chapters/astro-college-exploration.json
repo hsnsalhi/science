@@ -1,0 +1,492 @@
+{
+  "chapter": "astronomie-college-l-exploration-spatiale",
+  "lessons": [
+    {
+      "id": "sortir",
+      "title": "Sortir de la Terre",
+      "subtitle": "Deux vitesses à atteindre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Le canon de Newton",
+          "figureId": "canon-newton",
+          "body": "Augmente la vitesse du boulet. Trop lent, il retombe. Assez vite, il manque la Terre indéfiniment : il est en orbite. Encore plus vite, il s'échappe."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les deux seuils",
+          "body": "La vitesse orbitale, environ 7,9 km/s au ras du sol : la vitesse minimale pour tourner autour sans retomber. Soit 28 000 km/h.\n\nLa vitesse de libération, environ 11,2 km/s : celle qu'il faut pour ne jamais revenir.\n\nLe rapport entre les deux vaut exactement la racine carrée de deux, soit 1,414. Ce n'est pas une coïncidence : c'est une conséquence directe des formules de l'énergie, et ça vaut sur n'importe quel astre."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pourquoi les fusées ont des étages",
+          "body": "Pour aller vite, il faut beaucoup d'ergols. Mais plus on en emporte, plus la fusée est lourde, donc plus il en faut : le problème se mord la queue.\n\nLa solution est de larguer ce qui est devenu inutile. Un réservoir vide est une masse morte qu'on accélère pour rien.\n\nUne fusée à trois étages n'est donc pas un luxe d'ingénieur : sans étages, la quantité d'ergols nécessaire devient physiquement impossible à embarquer."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "L'essentiel du carburant sert à aller vite, pas haut",
+          "body": "Monter à 400 km coûte peu. C'est atteindre 28 000 km/h qui coûte presque tout.\n\nUne fusée qui monterait verticalement à 400 km sans vitesse horizontale retomberait aussitôt. C'est pourquoi elles s'inclinent très tôt après le décollage, ce qui surprend quand on regarde un lancement.\n\nL'orbite est une affaire de vitesse. L'altitude n'est qu'un moyen d'échapper au frottement de l'air."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "La vitesse de libération vaut 11,2 km/s. Combien de kilomètres par heure ? Arrondis au millier.",
+          "explanation": "11,2 × 3 600 = 40 320 km/h, soit environ 40 000.",
+          "answer": 40000,
+          "tolerance": 500,
+          "unit": "km/h"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La vitesse orbitale vaut 7,9 km/s. Combien de kilomètres par heure ? Arrondis au millier.",
+          "explanation": "7,9 × 3 600 = 28 440 km/h, soit environ 28 000.",
+          "answer": 28000,
+          "tolerance": 500,
+          "unit": "km/h"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le rapport entre les deux vitesses ? Arrondis au centième.",
+          "explanation": "11,2 ÷ 7,9 ≈ 1,42, soit la racine carrée de deux. Ce rapport est le même sur tous les astres.",
+          "answer": 1.42,
+          "tolerance": 0.02
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les fusées ont-elles plusieurs étages ?",
+          "explanation": "Pour larguer les réservoirs vides, qui ne sont plus que de la masse morte. Sans étages, la quantité d'ergols nécessaire serait impossible à embarquer.",
+          "options": [
+            {
+              "text": "pour larguer la masse morte des réservoirs vides",
+              "correct": true
+            },
+            {
+              "text": "pour aller plus haut"
+            },
+            {
+              "text": "pour transporter plus d'astronautes"
+            },
+            {
+              "text": "pour la sécurité au décollage"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui coûte le plus d'énergie pour mettre en orbite ?",
+          "explanation": "Atteindre la vitesse. Monter à 400 km coûte peu ; les 28 000 km/h coûtent presque tout.",
+          "options": [
+            {
+              "text": "atteindre la vitesse horizontale",
+              "correct": true
+            },
+            {
+              "text": "monter à l'altitude voulue"
+            },
+            {
+              "text": "traverser l'atmosphère"
+            },
+            {
+              "text": "les deux à égalité"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une fusée s'incline-t-elle si tôt après le décollage ?",
+          "explanation": "Parce qu'une orbite demande de la vitesse horizontale. Monter tout droit ne mettrait rien en orbite : l'engin retomberait.",
+          "options": [
+            {
+              "text": "parce qu'une orbite demande de la vitesse horizontale",
+              "correct": true
+            },
+            {
+              "text": "pour éviter les nuages"
+            },
+            {
+              "text": "pour retomber sur l'océan en cas d'échec"
+            },
+            {
+              "text": "pour suivre la rotation du vent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voyager",
+      "title": "Voyager dans le Système solaire",
+      "subtitle": "Attendre la bonne fenêtre, et emprunter de l'énergie.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Les orbites",
+          "figureId": "orbites",
+          "body": "On ne vise pas une planète : on vise l'endroit où elle sera. Et on ne va pas tout droit — on suit une orbite qui recoupe la sienne."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Les fenêtres de lancement",
+          "body": "La trajectoire la moins coûteuse vers Mars prend environ sept mois, et elle n'est possible que lorsque les deux planètes sont bien placées.\n\nCette configuration revient tous les vingt-six mois. Rater une fenêtre, c'est attendre deux ans et deux mois.\n\nC'est pour cela que les lancements vers Mars arrivent par salves : plusieurs missions de pays différents partent à quelques semaines d'intervalle, puis plus rien pendant deux ans."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "L'assistance gravitationnelle",
+          "body": "Une sonde qui passe près d'une planète en mouvement peut en repartir plus vite qu'elle n'est arrivée, sans brûler un gramme d'ergol.\n\nElle n'a rien créé : elle a pris une infime fraction de la vitesse orbitale de la planète, qui en a perdu autant. La planète étant des milliards de milliards de fois plus massive, l'effet sur elle est indétectable.\n\nVoyager 2 a enchaîné Jupiter, Saturne, Uranus et Neptune par cette méthode. Sans elle, le voyage aurait demandé des siècles."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Freiner coûte autant qu'accélérer",
+          "body": "Se mettre en orbite autour de Mars demande de ralentir, et ralentir dans le vide demande des ergols, exactement comme accélérer.\n\nD'où l'astuce de l'aérofreinage : on effleure la haute atmosphère de la planète, et le frottement fait le travail gratuitement, sur plusieurs dizaines de passages.\n\nC'est lent, c'est risqué, et cela économise des tonnes d'ergols — donc des dizaines de millions d'euros."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Les fenêtres vers Mars reviennent tous les 26 mois. Combien d'années et combien de mois ?",
+          "hint": "Donne le nombre de mois restant après les années entières.",
+          "explanation": "26 mois font 2 ans et 2 mois : 26 = 2 × 12 + 2.",
+          "answer": 2
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fenêtres vers Mars en 10 ans ? Arrondis à l'entier inférieur.",
+          "explanation": "120 mois ÷ 26 = 4,6, soit 4 fenêtres complètes en dix ans.",
+          "answer": 4
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un voyage vers Mars dure 7 mois. Combien de jours environ, à 30 jours par mois ?",
+          "explanation": "7 × 30 = 210 jours, soit un peu moins de sept mois de vol vers Mars.",
+          "answer": 210,
+          "unit": "jours"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "D'où vient la vitesse gagnée par une assistance gravitationnelle ?",
+          "explanation": "De la vitesse orbitale de la planète, qui en perd exactement autant. L'effet sur elle est indétectable, car elle est incomparablement plus massive.",
+          "options": [
+            {
+              "text": "de la vitesse orbitale de la planète",
+              "correct": true
+            },
+            {
+              "text": "de la gravité, qui crée de l'énergie"
+            },
+            {
+              "text": "du vent solaire"
+            },
+            {
+              "text": "des ergols économisés"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi se mettre en orbite autour de Mars coûte-t-il des ergols ?",
+          "explanation": "Parce qu'il faut ralentir, et que ralentir dans le vide demande une poussée exactement comme accélérer.",
+          "options": [
+            {
+              "text": "il faut ralentir, ce qui demande une poussée",
+              "correct": true
+            },
+            {
+              "text": "il faut remonter vers la planète"
+            },
+            {
+              "text": "la gravité martienne repousse la sonde"
+            },
+            {
+              "text": "cela ne coûte rien"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce que l'aérofreinage ?",
+          "explanation": "Effleurer la haute atmosphère de la planète pour que le frottement ralentisse la sonde, sur des dizaines de passages. Lent, risqué, et gratuit en ergols.",
+          "options": [
+            {
+              "text": "ralentir par frottement dans la haute atmosphère",
+              "correct": true
+            },
+            {
+              "text": "ouvrir un parachute dans le vide"
+            },
+            {
+              "text": "utiliser des rétrofusées"
+            },
+            {
+              "text": "tourner la sonde face au Soleil"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observer",
+      "title": "Observer depuis l'espace",
+      "subtitle": "Pourquoi sortir de l'atmosphère.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trois défauts de l'atmosphère",
+          "body": "Elle remue. Les turbulences brouillent les images, et c'est ce qui fait scintiller les étoiles — une étoile qui scintille beaucoup annonce une mauvaise nuit d'observation.\n\nElle absorbe. L'ultraviolet, les rayons X et la plus grande partie de l'infrarouge n'atteignent pas le sol. Des pans entiers de l'univers y sont invisibles.\n\nElle brille. La lumière des villes, diffusée par l'air, noie les objets faibles — et de jour, le ciel bleu interdit toute observation."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Ce que l'espace coûte en échange",
+          "body": "Un télescope spatial coûte dix à cent fois plus cher qu'un télescope au sol de même diamètre.\n\nIl ne se répare presque pas, il ne s'agrandit pas, et sa durée de vie est limitée par ses réserves.\n\nOn n'envoie donc dans l'espace que ce qui ne peut pas se faire autrement : l'observation dans les longueurs d'onde absorbées, et la précision que les turbulences interdisent. Pour le reste, les grands télescopes au sol restent plus rentables — d'autant que l'optique adaptative corrige aujourd'hui une partie des turbulences."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi les grands télescopes sont en altitude",
+          "body": "Le Chili, Hawaï, les Canaries : des sommets au-dessus de 2 000 m, dans des régions sèches.\n\nMoins d'air au-dessus, donc moins de turbulences et moins d'absorption. Peu de vapeur d'eau, qui est la principale absorbante dans l'infrarouge. Et loin des villes.\n\nC'est de l'espace à bon marché : on ne sort pas de l'atmosphère, on se place là où il y en a le moins."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixMultiple",
+          "prompt": "Quels défauts de l'atmosphère gênent l'observation ?",
+          "explanation": "Elle remue, elle absorbe certaines longueurs d'onde, et elle diffuse la lumière parasite.",
+          "options": [
+            {
+              "text": "les turbulences brouillent les images",
+              "correct": true
+            },
+            {
+              "text": "elle absorbe l'ultraviolet et les rayons X",
+              "correct": true
+            },
+            {
+              "text": "elle diffuse la lumière des villes",
+              "correct": true
+            },
+            {
+              "text": "elle refroidit les miroirs"
+            },
+            {
+              "text": "elle dévie les étoiles de leur orbite"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les étoiles scintillent-elles ?",
+          "explanation": "À cause des turbulences atmosphériques. Un fort scintillement annonce une mauvaise nuit d'observation.",
+          "options": [
+            {
+              "text": "à cause des turbulences de l'atmosphère",
+              "correct": true
+            },
+            {
+              "text": "parce que leur éclat varie"
+            },
+            {
+              "text": "parce qu'elles tournent"
+            },
+            {
+              "text": "à cause du vent solaire"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi place-t-on les grands télescopes en altitude et en région sèche ?",
+          "explanation": "Moins d'air au-dessus donc moins de turbulences et d'absorption, et peu de vapeur d'eau, principale absorbante dans l'infrarouge.",
+          "options": [
+            {
+              "text": "moins d'air et moins de vapeur d'eau au-dessus",
+              "correct": true
+            },
+            {
+              "text": "pour être plus près des étoiles"
+            },
+            {
+              "text": "parce qu'il fait plus froid"
+            },
+            {
+              "text": "pour éviter les séismes"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quand faut-il un télescope spatial plutôt qu'au sol ?",
+          "explanation": "Quand on observe dans des longueurs d'onde que l'atmosphère absorbe, ou qu'on exige une précision que les turbulences interdisent.",
+          "options": [
+            {
+              "text": "pour les longueurs d'onde absorbées par l'atmosphère",
+              "correct": true
+            },
+            {
+              "text": "toujours, c'est mieux"
+            },
+            {
+              "text": "quand le budget le permet"
+            },
+            {
+              "text": "pour observer de jour seulement"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quel est le principal inconvénient d'un télescope spatial ?",
+          "explanation": "Son coût et le fait qu'il ne se répare presque pas, ni ne s'agrandit. C'est pourquoi on n'y envoie que ce qui ne peut pas se faire au sol.",
+          "options": [
+            {
+              "text": "son coût, et l'impossibilité de le réparer",
+              "correct": true
+            },
+            {
+              "text": "il voit moins bien"
+            },
+            {
+              "text": "il ne peut pas viser les planètes"
+            },
+            {
+              "text": "il tombe en panne de carburant en un an"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-exploration",
+      "title": "Défi : Voyager 1, quarante-neuf ans de route",
+      "subtitle": "Calculer un voyage interstellaire.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La sonde la plus lointaine",
+          "body": "Lancée en 1977, Voyager 1 s'éloigne à environ 17 kilomètres par seconde. C'est l'objet humain le plus rapide et le plus lointain.\n\nElle a dépassé Jupiter en 1979, Saturne en 1980, et quitté l'influence du vent solaire en 2012.\n\nMalgré cette vitesse, elle ne va nulle part en particulier. À 17 km/s, atteindre l'étoile la plus proche prendrait des dizaines de milliers d'années — et elle ne se dirige pas vers elle."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "L'ordre de grandeur qui remet tout en place",
+          "body": "Le Système solaire est immense comparé aux distances que nous savons franchir. L'espace interstellaire l'est démesurément plus.\n\nEntre les planètes, on compte en mois et en années. Entre les étoiles, il faudrait compter en dizaines de milliers d'années avec nos moyens actuels.\n\nCe n'est pas une question de technologie à perfectionner : c'est un saut de quatre ordres de grandeur, et aucune amélioration graduelle ne le franchit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Voyager 1 file à 17 km/s. Combien de kilomètres par jour ? Arrondis au million.",
+          "hint": "86 400 secondes dans un jour.",
+          "explanation": "17 × 86 400 = 1 468 800 km, soit environ 1,5 million de kilomètres par jour.",
+          "answer": 1000000,
+          "tolerance": 600000,
+          "unit": "km"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de kilomètres en un an ? Donne la réponse en milliards, arrondie au centième.",
+          "explanation": "17 × 31 500 000 ≈ 536 millions de kilomètres, soit 0,54 milliard par an.",
+          "answer": 0.54,
+          "tolerance": 0.03
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une année-lumière fait 9 500 milliards de km. Combien d'années à Voyager 1 pour en parcourir une ? Arrondis à la centaine.",
+          "hint": "9 500 milliards divisés par 0,54 milliard par an.",
+          "explanation": "9 500 ÷ 0,54 ≈ 17 600 ans pour une seule année-lumière.",
+          "answer": 17600,
+          "tolerance": 600,
+          "unit": "ans"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'années pour les 4,2 années-lumière de Proxima ? Arrondis au millier.",
+          "explanation": "17 600 × 4,2 ≈ 74 000 ans. Et encore faudrait-il viser dans cette direction, ce que Voyager ne fait pas.",
+          "answer": 74000,
+          "tolerance": 3000,
+          "unit": "ans"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Lancée en 1977, depuis combien d'années Voyager 1 voyage-t-elle en 2026 ?",
+          "explanation": "2026 − 1977 = 49 ans.",
+          "answer": 49,
+          "unit": "ans"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle fraction d'année-lumière a-t-elle parcourue en 49 ans ? Donne le pourcentage, arrondi au dixième.",
+          "explanation": "49 ÷ 17 600 ≈ 0,0028, soit environ 0,3 % d'une seule année-lumière en un demi-siècle.",
+          "answer": 0.3,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Que montre ce calcul sur le voyage interstellaire ?",
+          "explanation": "Que l'écart entre nos moyens et ces distances est de plusieurs ordres de grandeur. Aucune amélioration graduelle ne le franchit.",
+          "options": [
+            {
+              "text": "l'écart est de plusieurs ordres de grandeur",
+              "correct": true
+            },
+            {
+              "text": "il suffira d'une fusée deux fois plus rapide"
+            },
+            {
+              "text": "Voyager y arrivera bientôt"
+            },
+            {
+              "text": "les distances sont mal mesurées"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
