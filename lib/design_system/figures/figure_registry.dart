@@ -7,6 +7,7 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
+import 'derivative_figure.dart';
 import 'eratosthene_figure.dart';
 import 'fraction_bar_figure.dart';
 import 'gears_figure.dart';
@@ -64,6 +65,9 @@ abstract final class FigureRegistry {
     // Un thermomètre, une boîte, et les particules qui se rangent.
     'etats-matiere': (BuildContext context, Color accent) =>
         StatesFigure(accent: accent),
+    // Une sécante qu'on resserre jusqu'à la tangente.
+    'secante-tangente': (BuildContext context, Color accent) =>
+        DerivativeFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

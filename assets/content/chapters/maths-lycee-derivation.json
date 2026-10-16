@@ -1,0 +1,338 @@
+{
+  "chapter": "maths-lycee-derivation",
+  "lessons": [
+    {
+      "id": "taux-d-accroissement",
+      "title": "Le taux d'accroissement",
+      "subtitle": "Une pente que tout le monde sait calculer.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Pente d'une sécante",
+          "formula": "τ = (f(a + h) − f(a)) / h",
+          "body": "l'écart des ordonnées divisé par l'écart des abscisses."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Resserre l'écart",
+          "body": "Déplace A sur la courbe, puis rapproche B de A et regarde la pente.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Ce que cette pente mesure",
+          "body": "Elle dit de combien f monte, en moyenne, quand x avance de 1 entre a et a + h.\n\nC'est une moyenne sur tout l'intervalle : elle ne dit rien de ce qui se passe au point a lui-même."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Un calcul complet",
+          "body": "Pour f(x) = x², entre 1 et 1,5 :\n\nτ = (1,5² − 1²) / 0,5 = (2,25 − 1) / 0,5 = 2,5.\n\nAucune notion nouvelle n'est intervenue : ce n'est qu'une division."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Le taux d'accroissement est la pente d'une sécante.",
+            "C'est une variation moyenne sur un intervalle.",
+            "Son calcul ne demande que deux valeurs de f."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x², quel est le taux d'accroissement entre 1 et 1,5 ?",
+          "answer": 2.5,
+          "tolerance": 0.01,
+          "hint": "(2,25 − 1) ÷ 0,5.",
+          "explanation": "2,5. L'ordonnée gagne 1,25 pendant que l'abscisse gagne 0,5 : la sécante monte de 2,5 par unité.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x², quel est le taux d'accroissement entre 2 et 3 ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "(9 − 4) ÷ 1.",
+          "explanation": "5. Entre 2 et 3, la courbe monte de 5 unités pour une unité d'abscisse.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Le taux d'accroissement entre a et a + h donne la pente exacte de la courbe au point a.",
+          "answer": false,
+          "explanation": "Non : c'est une moyenne sur l'intervalle. La pente au point a s'obtient en faisant tendre h vers 0."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pour f(x) = x², que vaut le taux d'accroissement entre a et a + h ?",
+          "hint": "Développe (a + h)² − a².",
+          "explanation": "2a + h. En effet (a + h)² − a² = 2ah + h², et la division par h donne 2a + h. Tout le reste du chapitre tient dans cette ligne.",
+          "figureId": "secante-tangente",
+          "options": [
+            { "text": "2a + h", "correct": true },
+            { "text": "2a" },
+            { "text": "a² + h" },
+            { "text": "2ah" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nombre-derive-et-tangente",
+      "title": "Nombre dérivé et tangente",
+      "subtitle": "Ce qui reste quand l'écart s'annule.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Le nombre dérivé",
+          "formula": "f'(a) = lim (h→0) (f(a + h) − f(a)) / h",
+          "body": "quand cette limite existe, f est dérivable en a."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Pourquoi une limite",
+          "body": "Pour h = 0, le quotient n'a aucun sens : on diviserait par zéro.\n\nOn ne pose donc jamais h = 0 ; on regarde vers quoi le quotient se dirige quand h s'approche de 0. Pour f(x) = x², ce quotient vaut 2a + h et se dirige vers 2a."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Vois la limite",
+          "body": "Mets a = 1, puis fais glisser h vers la gauche : la pente affichée se stabilise sur 2.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "Équation de la tangente",
+          "formula": "y = f'(a)(x − a) + f(a)",
+          "body": "la droite passe par le point de la courbe et a la bonne pente."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "f'(a) est la limite du taux d'accroissement.",
+            "C'est le coefficient directeur de la tangente en a.",
+            "Pour f(x) = x², f'(a) = 2a."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x², que vaut f'(3) ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "hint": "f'(a) = 2a.",
+          "explanation": "6. Le taux d'accroissement vaut 2a + h = 6 + h, et il tend vers 6 quand h tend vers 0.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x², quel est le coefficient directeur de la tangente au point d'abscisse −2 ?",
+          "answer": -4,
+          "tolerance": 0.01,
+          "hint": "f'(a) = 2a, même pour a négatif.",
+          "explanation": "−4. La tangente descend : c'est cohérent, la parabole décroît avant son sommet.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète l'équation de la tangente à la courbe de f(x) = x² au point d'abscisse 2.",
+          "template": "y = ___ x − ___",
+          "blanks": [
+            { "accepted": ["4"] },
+            { "accepted": ["4"] }
+          ],
+          "hint": "f'(2) = 4 et f(2) = 4.",
+          "explanation": "y = 4x − 4. En développant 4(x − 2) + 4, on obtient 4x − 8 + 4, soit 4x − 4."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour calculer f'(a), on remplace h par 0 dans le taux d'accroissement.",
+          "answer": false,
+          "explanation": "Non, cela donnerait 0/0. On calcule la limite quand h tend vers 0, ce qui suppose d'abord de simplifier le quotient."
+        }
+      ]
+    },
+    {
+      "id": "fonction-derivee",
+      "title": "La fonction dérivée",
+      "subtitle": "Des formules, puis les variations.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Les dérivées usuelles",
+          "formula": "(xⁿ)' = n·xⁿ⁻¹,   (k)' = 0,   (k·u)' = k·u',   (u + v)' = u' + v'",
+          "body": "de quoi dériver tout polynôme."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Un exemple",
+          "body": "f(x) = 3x² − 5x + 2\n\nf'(x) = 3 × 2x − 5 × 1 + 0 = 6x − 5\n\nf'(1) = 1."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le signe de f' donne les variations",
+          "body": "Si f' est positive sur un intervalle, f y est croissante.\n\nSi f' est négative, f y est décroissante.\n\nLà où f' s'annule en changeant de signe, f admet un extremum."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une dérivée qui s'annule ne suffit pas à donner un extremum : pour f(x) = x³, f'(0) = 0 alors que f ne cesse de croître. C'est le changement de signe qui compte, pas l'annulation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = 3x² − 5x + 2, que vaut f'(1) ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "f'(x) = 6x − 5.",
+          "explanation": "f'(1) = 6 − 5 = 1. La courbe monte doucement au point d'abscisse 1."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x³, que vaut f'(2) ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "hint": "(xⁿ)' = n·xⁿ⁻¹.",
+          "explanation": "f'(x) = 3x², donc f'(2) = 3 × 4 = 12."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x² − 4x, en quelle valeur de x la dérivée s'annule-t-elle ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "f'(x) = 2x − 4.",
+          "explanation": "En x = 2. La dérivée passe du négatif au positif : la fonction y atteint son minimum."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Pour f(x) = x² − 4x, range ces intervalles selon le sens de variation.",
+          "hint": "Étudie le signe de 2x − 4.",
+          "explanation": "Avant 2, la dérivée 2x − 4 est négative et la fonction décroît. Après 2, elle est positive et la fonction croît.",
+          "categories": ["f décroît", "f croît"],
+          "items": [
+            { "text": "x = 0", "category": 0 },
+            { "text": "x = 1", "category": 0 },
+            { "text": "x = 3", "category": 1 },
+            { "text": "x = 5", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-derivation",
+      "title": "Défi : la dérivation",
+      "subtitle": "Six questions, de la sécante aux variations.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chacune, demande-toi si l'on parle d'une moyenne ou d'une pente ponctuelle."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x², quel est le taux d'accroissement entre 1 et 1,1 ?",
+          "answer": 2.1,
+          "tolerance": 0.01,
+          "hint": "Il vaut 2a + h.",
+          "explanation": "2,1 : le taux vaut 2a + h = 2 + 0,1. Plus h est petit, plus on approche de f'(1) = 2.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = 4x + 7, que vaut f'(10) ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Quelle est la pente d'une droite ?",
+          "explanation": "4. La dérivée d'une fonction affine est constante et vaut son coefficient directeur, quel que soit le point."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque fonction à sa dérivée.",
+          "explanation": "La dérivée de x² est 2x, celle de x³ est 3x², celle d'une constante est nulle, et celle de 5x vaut 5.",
+          "pairs": [
+            { "left": "x²", "right": "2x" },
+            { "left": "x³", "right": "3x²" },
+            { "left": "7", "right": "0" },
+            { "left": "5x", "right": "5" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Si f'(c) = 0, alors f admet forcément un extremum en c.",
+          "answer": false,
+          "explanation": "Non. Pour f(x) = x³, f'(0) = 0 et pourtant la fonction croît de part et d'autre. Il faut que la dérivée change de signe."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Pour f(x) = x², quelle est l'ordonnée du point de la courbe où la tangente a pour coefficient directeur 6 ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "hint": "D'abord trouver a tel que 2a = 6.",
+          "explanation": "9. La pente 6 est atteinte en a = 3, et f(3) = 9. La tangente touche donc la courbe au point (3 ; 9).",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Sur un intervalle où f' est négative, que fait f ?",
+          "hint": "Une pente négative descend.",
+          "explanation": "Elle décroît. Le signe de la dérivée donne le sens de variation, point par point.",
+          "options": [
+            { "text": "Elle décroît", "correct": true },
+            { "text": "Elle croît" },
+            { "text": "Elle est constante" },
+            { "text": "Elle est négative" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -641,6 +641,28 @@ void main() {
         await shoot(tester, '$device-25-etats');
       });
 
+      // La sécante de la dérivation : l'écart est resserré pour que le
+      // triangle des accroissements soit encore lisible, et la pente
+      // déjà proche du nombre dérivé.
+      testWidgets('lycée : sécante et tangente', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'La dérivation');
+        await tapText(tester, "Le taux d'accroissement");
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        final Rect ecart = tester.getRect(find.byType(Slider).last);
+        await tester.tapAt(
+          Offset(ecart.left + ecart.width * 0.62, ecart.center.dy),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-26-derivee');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

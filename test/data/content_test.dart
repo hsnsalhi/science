@@ -6,6 +6,7 @@ import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
+import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
@@ -1568,6 +1569,159 @@ void main() {
           reason: '${item.text} ne change pas d’état',
         );
       }
+    });
+  });
+
+  group('Chapitre complet : la dérivation', () {
+    late Chapter derivation;
+
+    setUpAll(() {
+      derivation = catalog.chapterById('maths-lycee-derivation')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (derivation.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    /// Dérivée approchée, par différence centrée.
+    ///
+    /// Les énoncés qui sortent du carré — 3x² − 5x + 2, x³, 4x + 7 — ne
+    /// sont pas portés par la figure : on les vérifie numériquement
+    /// plutôt que de recopier une règle de dérivation à côté.
+    double deriveeApprochee(double Function(double) f, double a) {
+      const double h = 1e-6;
+      return (f(a + h) - f(a - h)) / (2 * h);
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(derivation.isPlayable, isTrue);
+      expect(derivation.lessons.length, 4);
+    });
+
+    test('les taux d’accroissement annoncés sont recalculés', () {
+      expect(
+        DerivativeFigure.penteSecante(1, 0.5),
+        closeTo(reponseNum('taux-d-accroissement', 'q1'), 1e-9),
+      );
+      expect(
+        DerivativeFigure.penteSecante(2, 1),
+        closeTo(reponseNum('taux-d-accroissement', 'q2'), 1e-9),
+      );
+      expect(
+        DerivativeFigure.penteSecante(1, 0.1),
+        closeTo(reponseNum('defi-derivation', 'q1'), 1e-9),
+      );
+    });
+
+    test('le taux vaut bien 2a + h, comme l’affirme le cours', () {
+      for (final double a in <double>[-2, -0.5, 0, 1, 3]) {
+        for (final double h in <double>[1, 0.25, 0.01]) {
+          expect(
+            DerivativeFigure.penteSecante(a, h),
+            closeTo(2 * a + h, 1e-9),
+            reason: 'a = $a, h = $h',
+          );
+        }
+      }
+    });
+
+    test('la sécante tend vers la tangente quand l’écart se referme', () {
+      // L'écart entre la pente affichée et le nombre dérivé doit décroître
+      // jusqu'à devenir négligeable : c'est ce que la leçon demande de
+      // constater au curseur.
+      double ecartPrecedent = double.infinity;
+      for (final double h in <double>[1, 0.5, 0.1, 0.01, 0.001]) {
+        final double ecart =
+            (DerivativeFigure.penteSecante(1, h) - DerivativeFigure.derivee(1))
+                .abs();
+        expect(ecart, lessThan(ecartPrecedent));
+        ecartPrecedent = ecart;
+      }
+      expect(ecartPrecedent, lessThan(0.002));
+    });
+
+    test('les nombres dérivés annoncés sont les bons', () {
+      expect(
+        DerivativeFigure.derivee(3),
+        reponseNum('nombre-derive-et-tangente', 'q1'),
+      );
+      expect(
+        DerivativeFigure.derivee(-2),
+        reponseNum('nombre-derive-et-tangente', 'q2'),
+      );
+      // Hors du carré : vérification numérique.
+      expect(
+        deriveeApprochee((double x) => 3 * x * x - 5 * x + 2, 1),
+        closeTo(reponseNum('fonction-derivee', 'q1'), 1e-4),
+      );
+      expect(
+        deriveeApprochee((double x) => x * x * x, 2),
+        closeTo(reponseNum('fonction-derivee', 'q2'), 1e-4),
+      );
+      expect(
+        deriveeApprochee((double x) => 4 * x + 7, 10),
+        closeTo(reponseNum('defi-derivation', 'q2'), 1e-4),
+      );
+    });
+
+    test('l’équation de la tangente en 2 est juste', () {
+      final FillBlanksQuestion q =
+          derivation.lessonById('nombre-derive-et-tangente')!.questions
+                  .firstWhere((Question x) => x.id == 'q3')
+              as FillBlanksQuestion;
+      final double pente = double.parse(q.accepted[0].first);
+      final double ordonnee = -double.parse(q.accepted[1].first);
+      expect(pente, DerivativeFigure.derivee(2));
+      // La droite doit toucher la courbe au point d'abscisse 2.
+      expect(pente * 2 + ordonnee, DerivativeFigure.f(2));
+    });
+
+    test('la dérivée s’annule là où le chapitre le dit', () {
+      final double x = reponseNum('fonction-derivee', 'q3');
+      double f(double t) => t * t - 4 * t;
+      expect(deriveeApprochee(f, x).abs(), lessThan(1e-6));
+      // Et elle change de signe : c'est ce qui fait l'extremum.
+      expect(deriveeApprochee(f, x - 1), lessThan(0));
+      expect(deriveeApprochee(f, x + 1), greaterThan(0));
+    });
+
+    test('le tri des variations suit le signe de la dérivée', () {
+      final ClassifyQuestion q =
+          derivation.lessonById('fonction-derivee')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final double x = double.parse(item.text.replaceAll('x = ', ''));
+        final double pente =
+            deriveeApprochee((double t) => t * t - 4 * t, x);
+        expect(
+          item.category == 0,
+          pente < 0,
+          reason: '${item.text} : la dérivée vaut $pente',
+        );
+      }
+    });
+
+    test('le point de tangente de pente 6 est bien sur la courbe', () {
+      // Le défi demande l'ordonnée ; on retrouve d'abord l'abscisse par
+      // la dérivée, puis on redescend sur la courbe.
+      const double penteVoulue = 6;
+      double a = 0;
+      for (double essai = -5; essai <= 5; essai += 0.0001) {
+        if ((DerivativeFigure.derivee(essai) - penteVoulue).abs() < 1e-9) {
+          a = essai;
+          break;
+        }
+      }
+      expect(a, closeTo(3, 1e-6));
+      expect(
+        DerivativeFigure.f(a),
+        closeTo(reponseNum('defi-derivation', 'q5'), 1e-4),
+      );
     });
   });
 }
