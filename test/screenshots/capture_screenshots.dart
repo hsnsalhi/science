@@ -1001,6 +1001,25 @@ void main() {
         await shoot(tester, '$device-45-matrice');
       });
 
+      // La sélection après trente générations : la grille de cent
+      // individus doit montrer la proportion à l'œil, sans lire le
+      // pourcentage.
+      testWidgets('lycée : la sélection naturelle', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'SVT');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Évolution et histoire du vivant');
+        await tapText(tester, 'La sélection en chiffres');
+        for (int i = 0; i < 3; i++) {
+          await tester.tap(find.text('Dix générations'));
+          await tester.pumpAndSettle();
+        }
+        await shoot(tester, '$device-46-selection');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

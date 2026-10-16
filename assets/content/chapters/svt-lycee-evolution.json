@@ -1,0 +1,341 @@
+{
+  "chapter": "svt-lycee-evolution-et-histoire-du-vivant",
+  "lessons": [
+    {
+      "id": "les-trois-conditions",
+      "title": "Les trois conditions",
+      "subtitle": "Ce qu'il faut pour que la sélection agisse.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Variation",
+          "body": "Les individus d'une même population diffèrent. Taille, couleur, résistance à un parasite : aucune population n'est uniforme.\n\nSans variation, il n'y a rien à trier."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Hérédité",
+          "body": "Une partie de ces différences se transmet aux descendants.\n\nUn caractère acquis au cours de la vie — un muscle développé par l'exercice — ne se transmet pas. Seul ce qui passe par les gènes compte ici."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Reproduction différentielle",
+          "body": "Certains individus laissent plus de descendants que d'autres, et cela en raison de ces différences héritables.\n\nAlors, mécaniquement, la proportion du variant avantagé augmente d'une génération à l'autre. Rien d'autre n'est nécessaire."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "La sélection ne crée rien : elle trie ce que la mutation a produit au hasard. Les deux mécanismes sont distincts, et confondre les deux est l'erreur la plus répandue."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces conditions : sont-elles nécessaires à la sélection naturelle ?",
+          "hint": "Trois conditions, pas davantage.",
+          "explanation": "Variation, hérédité et reproduction différentielle suffisent. Ni intention ni besoin n'entrent dans le mécanisme.",
+          "categories": ["Nécessaire", "Pas nécessaire"],
+          "items": [
+            { "text": "les individus diffèrent entre eux", "category": 0 },
+            { "text": "ces différences se transmettent", "category": 0 },
+            { "text": "les individus cherchent à s'améliorer", "category": 1 },
+            { "text": "l'environnement a un but", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Un muscle développé par l'exercice se transmet aux descendants.",
+          "answer": false,
+          "explanation": "Non : un caractère acquis ne modifie pas les gènes transmis. C'est précisément ce qui sépare Darwin de Lamarck."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "D'où vient la variation sur laquelle la sélection agit ?",
+          "hint": "Un mécanisme sans direction.",
+          "explanation": "Des mutations, qui surviennent au hasard. La sélection trie ensuite, mais ne commande pas l'apparition des variants.",
+          "options": [
+            { "text": "De mutations survenues au hasard", "correct": true },
+            { "text": "Des besoins de l'organisme" },
+            { "text": "De l'effort des individus" },
+            { "text": "D'une anticipation du milieu" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La sélection naturelle crée de nouveaux variants.",
+          "answer": false,
+          "explanation": "Non : elle trie. Ce sont les mutations qui produisent les variants, et elles le font sans rapport avec leur utilité."
+        }
+      ]
+    },
+    {
+      "id": "la-selection-en-chiffres",
+      "title": "La sélection en chiffres",
+      "subtitle": "Combien de générations, vraiment ?",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Fais avancer les générations",
+          "body": "Un variant présent chez 1 % de la population, avec un avantage réglable. Avance et regarde.",
+          "figureId": "selection"
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La règle des cotes",
+          "formula": "cote suivante = cote actuelle × (1 + avantage)",
+          "body": "la cote étant le rapport entre le nombre de variants et celui des autres."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Une croissance régulière, mais pas de la fréquence",
+          "body": "Ce n'est pas la fréquence qui est multipliée par un facteur constant — elle ne pourrait pas dépasser 100 %.\n\nC'est la cote. Elle croît sans limite, et la fréquence s'en déduit. D'où la courbe en S : lente au début, rapide au milieu, lente à la fin."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Ce que les chiffres donnent",
+          "body": "Un avantage de 10 % : 97 générations pour passer de 1 % à 99 %.\n\nUn avantage de 1 % : 924 générations. Dix fois moins d'avantage, dix fois plus de temps — et pourtant le résultat est le même."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avec un avantage de 10 %, combien de générations pour passer de 1 % à 99 % ?",
+          "answer": 97,
+          "tolerance": 2,
+          "unit": "générations",
+          "hint": "Règle le curseur sur +10 % et lis la figure.",
+          "explanation": "97 générations. Pour une bactérie qui se divise toutes les vingt minutes, c'est une seule journée.",
+          "figureId": "selection"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et avec un avantage de 50 % ?",
+          "answer": 23,
+          "tolerance": 2,
+          "unit": "générations",
+          "hint": "Beaucoup moins de cent.",
+          "explanation": "23 générations. Un avantage énorme à l'échelle biologique, et le balayage est quasi immédiat.",
+          "figureId": "selection"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il si l'avantage est nul ?",
+          "hint": "Que vaut le facteur multiplicatif ?",
+          "explanation": "La proportion ne bouge pas : la cote est multipliée par 1 à chaque génération. Dans une population réelle et finie, la dérive la ferait tout de même varier.",
+          "figureId": "selection",
+          "options": [
+            { "text": "La proportion ne bouge pas", "correct": true },
+            { "text": "Le variant disparaît en quelques générations" },
+            { "text": "Le variant se répand lentement" },
+            { "text": "La proportion oscille" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la courbe de fréquence a-t-elle une forme de S ?",
+          "hint": "Qu'est-ce qui croît régulièrement ?",
+          "explanation": "Parce que c'est la cote qui croît d'un facteur constant, pas la fréquence : celle-ci ne peut pas dépasser 100 % et s'aplatit donc aux deux bouts.",
+          "figureId": "selection",
+          "options": [
+            { "text": "La cote croît régulièrement, pas la fréquence", "correct": true },
+            { "text": "L'avantage diminue avec le temps" },
+            { "text": "Les mutations s'accumulent" },
+            { "text": "La population diminue" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preuves-et-autres-forces",
+      "title": "Les preuves, et les autres forces",
+      "subtitle": "La dérive, et un code universel.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La dérive génétique",
+          "body": "Dans une population petite, le hasard de la reproduction fait varier les fréquences, même sans aucun avantage.\n\nPlus la population est petite, plus la dérive pèse. Dans une grande population, la sélection domine."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Un indice tiré du code",
+          "body": "Le code génétique est le même chez la bactérie, la levure et nous. Change une base : la traduction suit les mêmes règles partout.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pourquoi l'universalité est un argument",
+          "body": "Rien n'imposait ce code-là plutôt qu'un autre : d'autres attributions de codons fonctionneraient aussi bien.\n\nQue tous les êtres vivants partagent le même s'explique le plus simplement par un héritage commun. Une invention indépendante aurait donné des codes différents."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Les autres faisceaux",
+          "body": "Les fossiles donnent des formes intermédiaires et un calendrier.\n\nL'anatomie comparée montre des structures héritées détournées de leur usage — la main, l'aile de chauve-souris et la nageoire de baleine ont les mêmes os.\n\nLa génétique compare les séquences : plus deux espèces divergent, plus leurs génomes diffèrent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans quelle population la dérive génétique pèse-t-elle le plus ?",
+          "hint": "Le hasard compte-t-il plus sur dix tirages ou sur un million ?",
+          "explanation": "Dans une petite population : le hasard des naissances y fait varier les fréquences bien plus qu'une sélection faible.",
+          "options": [
+            { "text": "Dans une petite population", "correct": true },
+            { "text": "Dans une grande population" },
+            { "text": "La taille ne change rien" },
+            { "text": "Seulement chez les bactéries" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'universalité du code génétique est-elle un argument pour l'ascendance commune ?",
+          "hint": "Ce code était-il le seul possible ?",
+          "explanation": "Parce que d'autres codes fonctionneraient aussi bien : le partage s'explique par un héritage, non par une nécessité.",
+          "figureId": "code-genetique",
+          "options": [
+            { "text": "D'autres codes fonctionneraient aussi bien", "correct": true },
+            { "text": "Parce que ce code est le plus efficace" },
+            { "text": "Parce qu'il est le seul mathématiquement possible" },
+            { "text": "Parce qu'il contient 64 codons" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces observations selon ce qu'elles apportent.",
+          "hint": "Qu'est-ce qui date, qu'est-ce qui apparente ?",
+          "explanation": "Les fossiles donnent des formes intermédiaires et un calendrier. L'anatomie et les séquences établissent des parentés.",
+          "categories": ["Donne un calendrier", "Établit une parenté"],
+          "items": [
+            { "text": "la datation d'une couche fossilifère", "category": 0 },
+            { "text": "l'âge d'un fossile intermédiaire", "category": 0 },
+            { "text": "les mêmes os dans la main et l'aile", "category": 1 },
+            { "text": "la ressemblance de deux génomes", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La sélection naturelle est la seule force qui fasse évoluer les populations.",
+          "answer": false,
+          "explanation": "Non : la dérive, les migrations et les mutations y contribuent aussi. La sélection est la seule qui aille dans une direction."
+        }
+      ]
+    },
+    {
+      "id": "defi-evolution",
+      "title": "Défi : évolution",
+      "subtitle": "Six questions, de la mutation au fossile.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Devant chaque énoncé, demande-toi si l'on parle de ce qui produit la variation, ou de ce qui la trie."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avec un avantage de 5 %, combien de générations pour passer de 1 % à 99 % ?",
+          "answer": 189,
+          "tolerance": 5,
+          "unit": "générations",
+          "hint": "Entre 97 et 924.",
+          "explanation": "189 générations. Deux fois moins d'avantage qu'à 10 %, donc environ deux fois plus de temps.",
+          "figureId": "selection"
+        },
+        {
+          "id": "q2",
+          "kind": "estimation",
+          "prompt": "Avec un avantage de 1 %, combien de générations faut-il ?",
+          "answer": 924,
+          "min": 100,
+          "max": 3000,
+          "unit": "générations",
+          "explanation": "Environ 924. Un avantage de 1 % paraît négligeable, et il balaie pourtant la population : il lui faut seulement dix fois plus de temps qu'à 10 %.",
+          "figureId": "selection"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Une bactérie résiste à un antibiotique. D'où vient cette résistance ?",
+          "hint": "L'antibiotique a-t-il provoqué la mutation ?",
+          "explanation": "D'une mutation préexistante, que l'antibiotique a ensuite sélectionnée. Il trie, il ne provoque pas la mutation.",
+          "figureId": "selection",
+          "options": [
+            { "text": "D'une mutation préexistante, ensuite sélectionnée", "correct": true },
+            { "text": "L'antibiotique a provoqué la mutation" },
+            { "text": "La bactérie s'est adaptée volontairement" },
+            { "text": "La résistance s'acquiert au cours de la vie" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque mécanisme à sa description.",
+          "explanation": "Quatre mécanismes à ne pas confondre : seul l'un d'eux va dans une direction.",
+          "pairs": [
+            { "left": "la mutation", "right": "produit de la variation au hasard" },
+            { "left": "la sélection", "right": "trie selon la descendance laissée" },
+            { "left": "la dérive", "right": "fait varier par hasard, surtout si la population est petite" },
+            { "left": "la migration", "right": "apporte des variants d'ailleurs" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un avantage de 1 % est trop faible pour avoir un effet.",
+          "answer": false,
+          "explanation": "Faux : il balaie la population en moins de mille générations. Ce qui change avec l'avantage, c'est le temps, pas l'issue.",
+          "figureId": "selection"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que montrent les mêmes os dans la main humaine et l'aile de chauve-souris ?",
+          "hint": "Les usages diffèrent, pas le plan.",
+          "explanation": "Un héritage commun détourné : le plan d'organisation est le même, l'usage a divergé.",
+          "options": [
+            { "text": "Un héritage commun détourné vers d'autres usages", "correct": true },
+            { "text": "Que les deux espèces ont le même mode de vie" },
+            { "text": "Une coïncidence sans portée" },
+            { "text": "Que la chauve-souris descend de l'homme" }
+          ]
+        }
+      ]
+    }
+  ]
+}

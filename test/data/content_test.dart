@@ -30,6 +30,7 @@ import 'package:eureka/design_system/figures/pattern_figure.dart';
 import 'package:eureka/design_system/figures/projectile_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
 import 'package:eureka/design_system/figures/sequence_figure.dart';
+import 'package:eureka/design_system/figures/selection_figure.dart';
 import 'package:eureka/design_system/figures/sensor_chain_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/design_system/figures/triangle_angles_figure.dart';
@@ -5854,6 +5855,130 @@ void main() {
         final bool unique = MatrixFigure.inversible(m[0], m[1], m[2], m[3]);
         expect(item.category == 0, unique, reason: item.text);
       }
+    });
+  });
+
+
+  group('Chapitre complet : évolution et histoire du vivant', () {
+    late Chapter evolution;
+
+    setUpAll(() {
+      evolution = catalog.chapterById(
+        'svt-lycee-evolution-et-histoire-du-vivant',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = evolution.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    int generations(double avantage) => SelectionFigure.generationsPour(
+      SelectionFigure.frequenceInitiale,
+      0.99,
+      avantage,
+    );
+
+    test('est jouable de bout en bout', () {
+      expect(evolution.isPlayable, isTrue);
+      expect(evolution.lessons.length, 4);
+    });
+
+    test('les durées annoncées sont celles du modèle', () {
+      expect(
+        generations(0.1),
+        closeTo(reponseNum('la-selection-en-chiffres', 'q1'), 2),
+      );
+      expect(
+        generations(0.5),
+        closeTo(reponseNum('la-selection-en-chiffres', 'q2'), 2),
+      );
+      expect(generations(0.05), closeTo(reponseNum('defi-evolution', 'q1'), 5));
+      expect(generations(0.01), closeTo(reponseNum('defi-evolution', 'q2'), 20));
+    });
+
+    test('la cote est bien multipliée par (1 + avantage)', () {
+      // C'est la règle énoncée par la carte « formule », et toute la
+      // forme en S en découle. On la vérifie génération par génération.
+      for (final double avantage in <double>[0.01, 0.05, 0.1, 0.25, 0.5]) {
+        double p = SelectionFigure.frequenceInitiale;
+        for (int i = 0; i < 40; i++) {
+          final double cote = p / (1 - p);
+          final double suivante = SelectionFigure.prochaine(p, avantage);
+          final double attendue = cote * (1 + avantage);
+          // Tolérance relative : la cote dépasse le millier au bout de
+          // trente générations, et une marge absolue n'y veut plus rien
+          // dire.
+          expect(
+            suivante / (1 - suivante),
+            closeTo(attendue, attendue.abs() * 1e-9 + 1e-12),
+            reason: 'avantage $avantage, génération $i',
+          );
+          p = suivante;
+        }
+      }
+    });
+
+    test('un avantage nul laisse la fréquence immobile', () {
+      for (int generation = 0; generation <= 500; generation += 50) {
+        expect(
+          SelectionFigure.apres(
+            SelectionFigure.frequenceInitiale,
+            0,
+            generation,
+          ),
+          closeTo(SelectionFigure.frequenceInitiale, 1e-12),
+        );
+      }
+      // Et la cible n'est jamais atteinte : la figure rend alors son
+      // plafond, ce qui est un résultat et non une erreur.
+      expect(
+        SelectionFigure.generationsPour(0.01, 0.99, 0, max: 300),
+        300,
+      );
+    });
+
+    test('la fréquence croît, et tend vers 1 sans l’atteindre', () {
+      double precedent = SelectionFigure.frequenceInitiale;
+      for (int generation = 1; generation <= 400; generation++) {
+        final double p = SelectionFigure.apres(
+          SelectionFigure.frequenceInitiale,
+          0.1,
+          generation,
+        );
+        expect(p, greaterThan(precedent), reason: 'génération $generation');
+        expect(p, lessThan(1));
+        precedent = p;
+      }
+      expect(precedent, greaterThan(0.999));
+    });
+
+    test('dix fois moins d’avantage demande environ dix fois plus de temps', () {
+      // L'affirmation de la dernière carte de la deuxième leçon.
+      final int rapide = generations(0.1);
+      final int lent = generations(0.01);
+      expect(lent / rapide, closeTo(10, 1.5));
+    });
+
+    test('la courbe est bien plus lente aux deux bouts qu’au milieu', () {
+      // La forme en S : le gain de fréquence par génération est maximal
+      // au voisinage de 50 %, et faible près de 0 et de 100 %.
+      double gain(double p) => SelectionFigure.prochaine(p, 0.1) - p;
+      expect(gain(0.5), greaterThan(gain(0.02)));
+      expect(gain(0.5), greaterThan(gain(0.98)));
+      double meilleur = 0;
+      double ouMeilleur = 0;
+      for (double p = 0.01; p < 1; p += 0.01) {
+        if (gain(p) > meilleur) {
+          meilleur = gain(p);
+          ouMeilleur = p;
+        }
+      }
+      expect(ouMeilleur, closeTo(0.5, 0.05));
     });
   });
 

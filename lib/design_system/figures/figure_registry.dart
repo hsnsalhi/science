@@ -32,6 +32,7 @@ import 'reference_functions_figure.dart';
 import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
 import 'seasons_figure.dart';
+import 'selection_figure.dart';
 import 'sensor_chain_figure.dart';
 import 'sequence_figure.dart';
 import 'solar_system_figure.dart';
@@ -82,6 +83,9 @@ abstract final class FigureRegistry {
     // Une matrice 2 × 2, et le carré unité qu'elle transforme.
     'matrice': (BuildContext context, Color accent) =>
         MatrixFigure(accent: accent),
+    // Un variant avantagé qui se répand, génération après génération.
+    'selection': (BuildContext context, Color accent) =>
+        SelectionFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),
