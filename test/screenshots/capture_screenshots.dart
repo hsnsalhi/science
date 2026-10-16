@@ -587,6 +587,22 @@ void main() {
         await shoot(tester, '$device-22-fractions');
       });
 
+      // Le second degré, au lycée : la parabole avec ses deux racines
+      // marquées et son sommet. Trois curseurs, et le discriminant qui
+      // suit.
+      testWidgets('lycée : la parabole', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Le second degré');
+        await tapText(tester, 'La parabole');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-23-parabole');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

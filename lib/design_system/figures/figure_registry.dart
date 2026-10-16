@@ -12,6 +12,7 @@ import 'gears_figure.dart';
 import 'loop_robot_figure.dart';
 import 'moon_phases_figure.dart';
 import 'orbits_figure.dart';
+import 'parabola_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
@@ -45,6 +46,9 @@ abstract final class FigureRegistry {
     // La Lune autour de la Terre, et ce qu'on en voit d'ici.
     'phases-lune': (BuildContext context, Color accent) =>
         MoonPhasesFigure(accent: accent),
+    // Une parabole dont on règle a, b et c.
+    'parabole': (BuildContext context, Color accent) =>
+        ParabolaFigure(accent: accent),
     // Mars vue depuis la Terre : la boucle qui a fait tomber le
     // géocentrisme.
     'retrogradation': (BuildContext context, Color accent) =>

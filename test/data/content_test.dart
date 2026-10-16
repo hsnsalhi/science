@@ -12,6 +12,7 @@ import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
+import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
@@ -1194,6 +1195,179 @@ void main() {
         ),
         0,
       );
+    });
+  });
+
+  group('Chapitre complet : le second degré', () {
+    late Chapter degre;
+
+    setUpAll(() {
+      degre = catalog.chapterById('maths-lycee-second-degre')!;
+    });
+
+    /// Lit un trinôme écrit « 2x² + 3x − 2 » et en rend les coefficients.
+    ///
+    /// On préfère relire l'énoncé que recopier des coefficients à côté :
+    /// une transcription à la main serait un second endroit où se
+    /// tromper, et c'est précisément ce que ces tests évitent.
+    ({double a, double b, double c}) lire(String ecriture) {
+      final String net = ecriture
+          .replaceAll('−', '-')
+          .replaceAll('–', '-')
+          .replaceAll(' ', '');
+      double a = 0;
+      double b = 0;
+      double c = 0;
+      final RegExp termes = RegExp(r'[+-]?[^+-]+');
+      for (final RegExpMatch m in termes.allMatches(net)) {
+        String terme = m.group(0)!;
+        final bool negatif = terme.startsWith('-');
+        if (terme.startsWith('+') || terme.startsWith('-')) {
+          terme = terme.substring(1);
+        }
+        final double signe = negatif ? -1 : 1;
+        if (terme.endsWith('x²')) {
+          final String n = terme.substring(0, terme.length - 2);
+          a = signe * (n.isEmpty ? 1 : double.parse(n));
+        } else if (terme.endsWith('x')) {
+          final String n = terme.substring(0, terme.length - 1);
+          b = signe * (n.isEmpty ? 1 : double.parse(n));
+        } else {
+          c = signe * double.parse(terme);
+        }
+      }
+      return (a: a, b: b, c: c);
+    }
+
+    double reponseNum(String lessonId, String questionId) =>
+        (degre.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    ClassifyQuestion tri(String lessonId, String questionId) =>
+        degre.lessonById(lessonId)!.questions.firstWhere(
+              (Question q) => q.id == questionId,
+            )
+            as ClassifyQuestion;
+
+    test('est jouable de bout en bout', () {
+      expect(degre.isPlayable, isTrue);
+      expect(degre.lessons.length, 4);
+    });
+
+    test('la lecture des trinômes est fiable', () {
+      // Le lecteur sert à tous les tests qui suivent : s'il se trompe,
+      // ils se tromperaient tous ensemble et d'accord entre eux.
+      expect(lire('x² − 5x + 6'), (a: 1.0, b: -5.0, c: 6.0));
+      expect(lire('2x² + 3x − 2'), (a: 2.0, b: 3.0, c: -2.0));
+      expect(lire('−x² + 4'), (a: -1.0, b: 0.0, c: 4.0));
+      expect(lire('x² + x + 1'), (a: 1.0, b: 1.0, c: 1.0));
+    });
+
+    test('les discriminants annoncés sont recalculés', () {
+      double delta(String ecriture) {
+        final ({double a, double b, double c}) t = lire(ecriture);
+        return ParabolaFigure.discriminant(t.a, t.b, t.c);
+      }
+
+      expect(delta('x² − 5x + 6'), reponseNum('le-discriminant', 'q1'));
+      expect(delta('x² + x + 1'), reponseNum('le-discriminant', 'q2'));
+      expect(delta('x² − 4x + 4'), reponseNum('defi-second-degre', 'q1'));
+    });
+
+    test('le tri par nombre de racines suit le discriminant', () {
+      for (final ClassifyItem item in tri('le-discriminant', 'q3').items) {
+        final ({double a, double b, double c}) t = lire(item.text);
+        final int combien = ParabolaFigure.racines(t.a, t.b, t.c).length;
+        expect(
+          item.category == 0,
+          combien == 2,
+          reason: '${item.text} a $combien racine(s)',
+        );
+      }
+    });
+
+    test('le tri par sens d’ouverture suit le signe de a', () {
+      for (final ClassifyItem item in tri('defi-second-degre', 'q3').items) {
+        expect(
+          item.category == 0,
+          lire(item.text).a > 0,
+          reason: '${item.text} est mal rangé',
+        );
+      }
+    });
+
+    test('les racines annoncées sont celles du calcul', () {
+      List<double> racinesDe(String ecriture) {
+        final ({double a, double b, double c}) t = lire(ecriture);
+        return ParabolaFigure.racines(t.a, t.b, t.c);
+      }
+
+      expect(
+        racinesDe('x² − 5x + 6').first,
+        reponseNum('resoudre-et-factoriser', 'q1'),
+      );
+      expect(
+        racinesDe('2x² − 3x − 2').first,
+        reponseNum('resoudre-et-factoriser', 'q2'),
+      );
+      expect(racinesDe('−x² + 4').last, reponseNum('defi-second-degre', 'q4'));
+      // Racine double : une seule valeur, et c'est l'abscisse du sommet.
+      final List<double> doubles = racinesDe('x² − 4x + 4');
+      expect(doubles.length, 1);
+      expect(doubles.single, reponseNum('defi-second-degre', 'q2'));
+      expect(
+        doubles.single,
+        ParabolaFigure.sommet(1, -4, 4).x,
+        reason: 'quand Δ = 0, la racine est le sommet',
+      );
+    });
+
+    test('le sommet annoncé est le bon', () {
+      final ({double x, double y}) s = ParabolaFigure.sommet(1, -6, 5);
+      expect(s.x, reponseNum('la-parabole', 'q1'));
+      expect(s.y, reponseNum('la-parabole', 'q2'));
+    });
+
+    test('la forme factorisée redonne le trinôme', () {
+      // (x − 2)(x − 3) doit rendre x² − 5x + 6 : on développe plutôt que
+      // de relire.
+      final FillBlanksQuestion q =
+          degre.lessonById('resoudre-et-factoriser')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as FillBlanksQuestion;
+      final List<double> annoncees = q.accepted
+          .map((List<String> reponses) => double.parse(reponses.first))
+          .toList();
+      expect(annoncees.length, 2);
+      final double x1 = annoncees[0];
+      final double x2 = annoncees[1];
+      // Développement de (x − x₁)(x − x₂).
+      expect(-(x1 + x2), -5, reason: 'le coefficient de x ne tombe pas juste');
+      expect(x1 * x2, 6, reason: 'le terme constant ne tombe pas juste');
+      expect(ParabolaFigure.racines(1, -5, 6), <double>[x1, x2]);
+    });
+
+    test('les discriminants appariés sont les bons', () {
+      final MatchingQuestion q =
+          degre.lessonById('defi-second-degre')!.questions.firstWhere(
+                (Question x) => x.id == 'q6',
+              )
+              as MatchingQuestion;
+      for (final MatchPair paire in q.pairs) {
+        final ({double a, double b, double c}) t = lire(paire.left);
+        final double annonce = double.parse(
+          paire.right.replaceAll('Δ = ', '').replaceAll('−', '-'),
+        );
+        expect(
+          ParabolaFigure.discriminant(t.a, t.b, t.c),
+          annonce,
+          reason: '${paire.left} n’a pas ce discriminant',
+        );
+      }
     });
   });
 }
