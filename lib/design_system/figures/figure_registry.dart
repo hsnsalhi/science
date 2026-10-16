@@ -12,6 +12,7 @@ import 'circuit_figure.dart';
 import 'classification_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
+import 'decimals_figure.dart';
 import 'derivative_figure.dart';
 import 'dna_figure.dart';
 import 'energy_chain_figure.dart';
@@ -98,6 +99,9 @@ abstract final class FigureRegistry {
     // Un gaz qui envahit la boîte, et la probabilité du retour.
     'entropie': (BuildContext context, Color accent) =>
         EntropyFigure(accent: accent),
+    // Unités, dixièmes, centièmes, et la retenue qui passe.
+    'decimaux': (BuildContext context, Color accent) =>
+        DecimalsFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

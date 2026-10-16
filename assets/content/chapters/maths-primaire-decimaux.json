@@ -1,0 +1,319 @@
+{
+  "chapter": "maths-primaire-les-nombres-decimaux",
+  "lessons": [
+    {
+      "id": "apres-la-virgule",
+      "title": "Après la virgule",
+      "subtitle": "Des parts d'unité.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi on a besoin d'autre chose",
+          "body": "Avec les entiers, on sait compter des objets. Mais une longueur fait rarement un nombre rond de mètres.\n\nIl faut pouvoir écrire ce qui est entre 1 et 2. C'est le rôle des chiffres après la virgule."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "On continue le même tableau",
+          "body": "À gauche de la virgule : les unités, les dizaines, les centaines. Chaque colonne vaut dix fois la suivante.\n\nÀ droite, on continue à diviser par dix : les dixièmes, puis les centièmes. Rien de nouveau, seulement la suite du tableau."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Règle les colonnes",
+          "body": "Touche les flèches pour changer chaque chiffre, et regarde la barre.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Un dixième, c'est une unité partagée en 10.",
+            "Un centième, c'est un dixième partagé en 10.",
+            "Dix dixièmes font une unité."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de dixièmes faut-il pour faire une unité ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "dixièmes",
+          "hint": "C'est le même dix que partout ailleurs.",
+          "explanation": "10. C'est ce qui fait passer la retenue à la colonne des unités.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de centièmes font une unité ?",
+          "answer": 100,
+          "tolerance": 0.01,
+          "unit": "centièmes",
+          "hint": "Dix dixièmes, et chaque dixième vaut dix centièmes.",
+          "explanation": "100 : dix dixièmes, et chacun vaut dix centièmes.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète : dans 3,47, quel chiffre occupe chaque colonne ?",
+          "template": "Le chiffre des unités est ___, celui des dixièmes est ___, celui des centièmes est ___.",
+          "blanks": [
+            { "accepted": ["3"] },
+            { "accepted": ["4"] },
+            { "accepted": ["7"] }
+          ],
+          "hint": "Dans l'ordre, de gauche à droite.",
+          "explanation": "3 unités, 4 dixièmes, 7 centièmes. Chaque chiffre a sa colonne, exactement comme pour les entiers."
+        }
+      ]
+    },
+    {
+      "id": "comparer-des-decimaux",
+      "title": "Comparer des décimaux",
+      "subtitle": "Le piège des chiffres après la virgule.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une erreur très répandue",
+          "body": "Beaucoup d'élèves disent que 0,25 est plus grand que 0,9, parce que 25 est plus grand que 9.\n\nCe n'est pas une étourderie. C'est une lecture : ils lisent ce qui suit la virgule comme un nombre entier."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Regarde les deux barres",
+          "body": "Règle 0,9 puis 0,25 : la barre ne ment pas.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Comment comparer",
+          "body": "On compare d'abord les unités. Si elles sont égales, on compare les dixièmes. Puis les centièmes.\n\n0,9 a 9 dixièmes, 0,25 n'en a que 2. Donc 0,9 est le plus grand, et on n'a même pas besoin de regarder les centièmes."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "On peut aussi compléter par des zéros : 0,9 s'écrit 0,90. Comparer 90 centièmes à 25 centièmes devient facile."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel est le plus grand : 0,9 ou 0,25 ?",
+          "hint": "Compare les dixièmes.",
+          "explanation": "0,9. Il a 9 dixièmes contre 2, et les dixièmes se comparent avant les centièmes.",
+          "figureId": "decimaux",
+          "options": [
+            { "text": "0,9", "correct": true },
+            { "text": "0,25" },
+            { "text": "Ils sont égaux" },
+            { "text": "On ne peut pas comparer" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "0,3 et 0,30 sont le même nombre.",
+          "answer": true,
+          "explanation": "Oui : 3 dixièmes et 0 centième, c'est 30 centièmes. Ajouter un zéro à droite ne change rien.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces nombres par rapport à 0,5.",
+          "hint": "Compare les dixièmes à 5.",
+          "explanation": "0,7 et 0,62 ont plus de 5 dixièmes. 0,45 et 0,09 en ont moins.",
+          "categories": ["Plus grand que 0,5", "Plus petit que 0,5"],
+          "items": [
+            { "text": "0,7", "category": 0 },
+            { "text": "0,62", "category": 0 },
+            { "text": "0,45", "category": 1 },
+            { "text": "0,09", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces nombres du plus petit au plus grand.",
+          "explanation": "On compare colonne par colonne : 0,08 puis 0,2 puis 0,25 puis 0,9.",
+          "items": [
+            "0,08",
+            "0,2",
+            "0,25",
+            "0,9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-retenue-qui-passe",
+      "title": "La retenue qui passe",
+      "subtitle": "Dix dixièmes, et l'unité suivante.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Ajoute un dixième à 0,9",
+          "body": "Règle 0,9, puis monte encore d'un dixième. Regarde ce que fait la colonne des unités.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce qui se passe",
+          "body": "Neuf dixièmes plus un dixième font dix dixièmes.\n\nMais on n'écrit jamais 10 dans une colonne. Dix dixièmes font une unité : le 1 passe à gauche, et la colonne des dixièmes revient à 0."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "C'est la même règle que pour les entiers",
+          "body": "Neuf unités plus une unité font une dizaine, et la colonne des unités revient à 0.\n\nLa virgule ne change rien à cette mécanique. Elle indique seulement où sont les unités."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour additionner des décimaux à la main, on aligne les virgules. C'est exactement ce qui garantit qu'on additionne les dixièmes avec les dixièmes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 0,9 + 0,1 ?",
+          "answer": 1,
+          "tolerance": 0.001,
+          "hint": "Dix dixièmes.",
+          "explanation": "1. Dix dixièmes font une unité, et la colonne des dixièmes revient à 0.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 0,99 + 0,01 ?",
+          "answer": 1,
+          "tolerance": 0.001,
+          "hint": "Deux retenues à la suite.",
+          "explanation": "1. Le centième fait passer les dixièmes à 10, qui font passer l'unité : deux retenues d'affilée.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 2,4 + 0,3 ?",
+          "answer": 2.7,
+          "tolerance": 0.001,
+          "hint": "4 dixièmes et 3 dixièmes.",
+          "explanation": "2,7. Sept dixièmes, c'est moins de dix : il n'y a pas de retenue.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour additionner 2,4 et 0,35, on peut écrire 2,4 comme 2,40.",
+          "answer": true,
+          "explanation": "Oui : ajouter un zéro à droite ne change pas le nombre, et cela aligne les colonnes."
+        }
+      ]
+    },
+    {
+      "id": "defi-decimaux",
+      "title": "Défi : les décimaux",
+      "subtitle": "Six questions, colonne par colonne.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Devant deux décimaux, compare toujours les unités d'abord, puis les dixièmes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 0,6 + 0,7 ?",
+          "answer": 1.3,
+          "tolerance": 0.001,
+          "hint": "Treize dixièmes.",
+          "explanation": "1,3. Treize dixièmes, c'est une unité et trois dixièmes.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quel est le plus grand : 1,07 ou 1,7 ?",
+          "hint": "Compare les dixièmes.",
+          "explanation": "1,7 : il a 7 dixièmes contre 0. Le nombre de chiffres après la virgule ne décide de rien.",
+          "figureId": "decimaux",
+          "options": [
+            { "text": "1,7", "correct": true },
+            { "text": "1,07" },
+            { "text": "Ils sont égaux" },
+            { "text": "1,07, car il a plus de chiffres" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de centièmes valent 0,4 ?",
+          "answer": 40,
+          "tolerance": 0.01,
+          "unit": "centièmes",
+          "hint": "Chaque dixième vaut dix centièmes.",
+          "explanation": "40 : quatre dixièmes, soit quarante centièmes. On peut donc écrire 0,40.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un nombre avec plus de chiffres après la virgule est toujours plus grand.",
+          "answer": false,
+          "explanation": "Non : 1,07 a deux chiffres et vaut moins que 1,7 qui n'en a qu'un. C'est la valeur de chaque colonne qui compte."
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque nombre à son écriture en centièmes.",
+          "explanation": "Pour convertir en centièmes, on complète par un zéro si besoin : chaque dixième vaut dix centièmes.",
+          "pairs": [
+            { "left": "0,3", "right": "30 centièmes" },
+            { "left": "0,03", "right": "3 centièmes" },
+            { "left": "1,5", "right": "150 centièmes" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 1,95 + 0,05 ?",
+          "answer": 2,
+          "tolerance": 0.001,
+          "hint": "Les centièmes débordent.",
+          "explanation": "2. Cinq centièmes plus quatre-vingt-quinze centièmes font cent centièmes, donc une unité entière.",
+          "figureId": "decimaux"
+        }
+      ]
+    }
+  ]
+}

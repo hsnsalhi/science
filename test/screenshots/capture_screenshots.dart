@@ -1070,6 +1070,23 @@ void main() {
         await shoot(tester, '$device-49-entropie');
       });
 
+      // Les décimaux : neuf dixièmes, et la barre qui le montre. C'est
+      // l'écran qui défait « 0,25 est plus grand que 0,9 ».
+      testWidgets('primaire : les décimaux', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'Les nombres décimaux');
+        await tapText(tester, 'Après la virgule');
+        for (int i = 0; i < 2; i++) {
+          await tester.tap(find.text('Suivant').first);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+        }
+        await shoot(tester, '$device-50-decimaux');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

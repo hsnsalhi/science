@@ -11,6 +11,7 @@ import 'package:eureka/design_system/figures/circuit_figure.dart';
 import 'package:eureka/design_system/figures/classification_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
+import 'package:eureka/design_system/figures/decimals_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/dna_figure.dart';
 import 'package:eureka/design_system/figures/energy_chain_figure.dart';
@@ -6650,6 +6651,159 @@ void main() {
       expect(cites.toSet(), hasLength(cites.length));
       expect(q.pairs.map((MatchPair p) => p.right).toSet(),
           hasLength(q.pairs.length));
+    });
+  });
+
+
+  group('Chapitre complet : les nombres décimaux', () {
+    late Chapter decimaux;
+
+    setUpAll(() {
+      decimaux = catalog.chapterById('maths-primaire-les-nombres-decimaux')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = decimaux.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Lit « 0,25 » et rend les trois chiffres de la figure.
+    List<int> chiffres(String ecriture) {
+      final List<String> parts = ecriture.split(',');
+      final String decimales = parts.length > 1 ? parts[1].padRight(2, '0') : '00';
+      return <int>[
+        int.parse(parts[0]),
+        int.parse(decimales[0]),
+        int.parse(decimales[1]),
+      ];
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(decimaux.isPlayable, isTrue);
+      expect(decimaux.lessons.length, 4);
+    });
+
+    test('les retenues annoncées se jouent sur la figure', () {
+      // 0,9 + 0,1 : la retenue passe à l'unité.
+      final List<int> neufDixiemes = chiffres('0,9');
+      final List<int> apres = DecimalsFigure.ajouter(neufDixiemes, 1, 1);
+      expect(apres, <int>[1, 0, 0]);
+      expect(
+        DecimalsFigure.valeur(apres),
+        closeTo(reponseNum('la-retenue-qui-passe', 'q1'), 1e-9),
+      );
+      // 0,99 + 0,01 : deux retenues d'affilée.
+      expect(
+        DecimalsFigure.valeur(
+          DecimalsFigure.ajouter(chiffres('0,99'), 2, 1),
+        ),
+        closeTo(reponseNum('la-retenue-qui-passe', 'q2'), 1e-9),
+      );
+      // 2,4 + 0,3 : aucune retenue.
+      expect(
+        DecimalsFigure.valeur(
+          DecimalsFigure.ajouter(chiffres('2,4'), 1, 3),
+        ),
+        closeTo(reponseNum('la-retenue-qui-passe', 'q3'), 1e-9),
+      );
+      // 0,6 + 0,7 et 1,95 + 0,05.
+      expect(
+        DecimalsFigure.valeur(
+          DecimalsFigure.ajouter(chiffres('0,6'), 1, 7),
+        ),
+        closeTo(reponseNum('defi-decimaux', 'q1'), 1e-9),
+      );
+      expect(
+        DecimalsFigure.valeur(
+          DecimalsFigure.ajouter(chiffres('1,95'), 2, 5),
+        ),
+        closeTo(reponseNum('defi-decimaux', 'q6'), 1e-9),
+      );
+    });
+
+    test('la retenue suit la même règle que pour les entiers', () {
+      // Monter d'un cran la colonne des dixièmes neuf fois de suite doit
+      // faire exactement une unité, quel que soit le point de départ.
+      for (int unites = 0; unites <= 8; unites++) {
+        List<int> courant = <int>[unites, 0, 0];
+        for (int i = 0; i < 10; i++) {
+          courant = DecimalsFigure.ajouter(courant, 1, 1);
+        }
+        expect(courant, <int>[unites + 1, 0, 0], reason: 'départ $unites');
+      }
+      // Et cent centièmes font aussi une unité.
+      List<int> courant = <int>[0, 0, 0];
+      for (int i = 0; i < 100; i++) {
+        courant = DecimalsFigure.ajouter(courant, 2, 1);
+      }
+      expect(courant, <int>[1, 0, 0]);
+    });
+
+    test('0,3 et 0,30 valent bien la même chose', () {
+      expect(
+        DecimalsFigure.valeur(chiffres('0,3')),
+        DecimalsFigure.valeur(chiffres('0,30')),
+      );
+      // Et quarante centièmes font bien 0,4 : la question du défi.
+      expect(
+        DecimalsFigure.valeur(chiffres('0,4')) * 100,
+        closeTo(reponseNum('defi-decimaux', 'q3'), 1e-9),
+      );
+    });
+
+    test('le tri autour de 0,5 est exact', () {
+      final ClassifyQuestion q =
+          decimaux.lessonById('comparer-des-decimaux')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final double valeur = DecimalsFigure.valeur(chiffres(item.text));
+        expect(item.category == 0, valeur > 0.5, reason: item.text);
+      }
+    });
+
+    test('la remise en ordre est croissante', () {
+      final OrderingQuestion q =
+          decimaux.lessonById('comparer-des-decimaux')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as OrderingQuestion;
+      final List<double> valeurs = q.items
+          .map((String e) => DecimalsFigure.valeur(chiffres(e)))
+          .toList();
+      for (int i = 1; i < valeurs.length; i++) {
+        expect(valeurs[i], greaterThan(valeurs[i - 1]), reason: q.items[i]);
+      }
+    });
+
+    test('le piège de la comparaison est bien un piège', () {
+      // 0,25 contient un nombre plus grand après la virgule, et vaut
+      // pourtant moins : c'est l'erreur que le chapitre vise, et elle
+      // doit exister dans les nombres cités.
+      expect(
+        DecimalsFigure.valeur(chiffres('0,25')),
+        lessThan(DecimalsFigure.valeur(chiffres('0,9'))),
+      );
+      expect(
+        DecimalsFigure.valeur(chiffres('1,07')),
+        lessThan(DecimalsFigure.valeur(chiffres('1,7'))),
+      );
+    });
+
+    test('la figure ne sort jamais de ses bornes', () {
+      List<int> courant = <int>[5, 5, 5];
+      for (int i = 0; i < 200; i++) {
+        courant = DecimalsFigure.ajouter(courant, i % 3, i.isEven ? 1 : -1);
+        for (final int chiffre in courant) {
+          expect(chiffre, inInclusiveRange(0, 9));
+        }
+        expect(DecimalsFigure.valeur(courant), inInclusiveRange(0, 9.99));
+      }
     });
   });
 
