@@ -26,6 +26,7 @@ import 'parabola_figure.dart';
 import 'pattern_figure.dart';
 import 'projectile_figure.dart';
 import 'pythagore_proof_figure.dart';
+import 'reference_functions_figure.dart';
 import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
 import 'seasons_figure.dart';
@@ -70,6 +71,9 @@ abstract final class FigureRegistry {
     // Une machine de Turing qui ajoute 1, pas à pas.
     'machine-turing': (BuildContext context, Color accent) =>
         TuringFigure(accent: accent),
+    // Les cinq fonctions de référence, sur un même repère.
+    'fonctions-reference': (BuildContext context, Color accent) =>
+        ReferenceFunctionsFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

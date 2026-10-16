@@ -952,6 +952,25 @@ void main() {
         await shoot(tester, '$device-42-turing');
       });
 
+      // Les cinq fonctions de référence sur un même repère, l'inverse
+      // choisie : ses deux branches ne doivent jamais être reliées.
+      testWidgets('lycée : les fonctions de référence', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Les fonctions de référence');
+        await tapText(tester, 'Lire une courbe');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('1/x'));
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-43-fonctions');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

@@ -1,0 +1,332 @@
+{
+  "chapter": "maths-lycee-fonctions-de-reference",
+  "lessons": [
+    {
+      "id": "lire-une-courbe",
+      "title": "Lire une courbe",
+      "subtitle": "Deux coordonnées, une information.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qu'une courbe dit",
+          "body": "Un point de la courbe porte deux nombres : l'abscisse x, et l'image f(x).\n\nLire une courbe, c'est passer de l'un à l'autre. De x vers f(x) : on monte jusqu'à la courbe. De f(x) vers x : on part de l'axe vertical."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Promène le point",
+          "body": "Choisis une fonction, puis déplace le curseur et lis les deux coordonnées.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le domaine de définition",
+          "body": "Certaines fonctions ne sont pas définies partout.\n\nLa racine carrée refuse les nombres négatifs. L'inverse refuse zéro. Sur la figure, la courbe s'interrompt exactement là."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une courbe qui s'arrête n'est pas un défaut de dessin. C'est le domaine de définition qui se voit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction carré, que vaut f(3) ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "hint": "3 multiplié par lui-même.",
+          "explanation": "9. La fonction carré associe à chaque nombre son carré, négatifs compris.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction inverse, que vaut f(0,5) ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "1 divisé par 0,5.",
+          "explanation": "2. Plus x est petit et positif, plus son inverse est grand : c'est ce qui fait décoller la branche de droite.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces nombres selon que la fonction racine carrée y est définie.",
+          "hint": "Un carré n'est jamais négatif.",
+          "explanation": "La racine carrée n'est définie que sur les nombres positifs ou nuls : aucun carré ne vaut un nombre négatif.",
+          "categories": ["Racine définie", "Racine non définie"],
+          "items": [
+            { "text": "0", "category": 0 },
+            { "text": "4", "category": 0 },
+            { "text": "−1", "category": 1 },
+            { "text": "−9", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "En quelle valeur la fonction inverse n'est-elle pas définie ?",
+          "hint": "On ne divise jamais par ce nombre.",
+          "explanation": "En 0 : la division par zéro n'a pas de sens. La courbe se sépare en deux branches qui ne se rejoignent jamais.",
+          "figureId": "fonctions-reference",
+          "options": [
+            { "text": "En 0", "correct": true },
+            { "text": "En 1" },
+            { "text": "En −1" },
+            { "text": "Elle est définie partout" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paire-ou-impaire",
+      "title": "Paire ou impaire",
+      "subtitle": "Ce que la symétrie annonce.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Deux symétries",
+          "formula": "paire : f(−x) = f(x)     impaire : f(−x) = −f(x)",
+          "body": "la première se voit par rapport à l'axe vertical, la seconde par rapport à l'origine."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compare x et son opposé",
+          "body": "Place le curseur sur 2, note l'image, puis sur −2. Recommence avec une autre fonction.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Les cinq cas",
+          "body": "Le carré et la valeur absolue sont paires : les deux moitiés de la courbe se reflètent.\n\nLe cube et l'inverse sont impaires : la courbe se retourne autour de l'origine.\n\nLa racine carrée n'est ni l'une ni l'autre — son domaine n'est même pas symétrique."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour qu'une fonction soit paire ou impaire, il faut déjà qu'elle soit définie en x et en −x. Le domaine passe avant le calcul."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces fonctions selon leur symétrie.",
+          "hint": "Compare f(2) et f(−2).",
+          "explanation": "Le carré et la valeur absolue donnent la même image en x et en −x. Le cube et l'inverse donnent des images opposées.",
+          "categories": ["Paire", "Impaire"],
+          "items": [
+            { "text": "le carré", "category": 0 },
+            { "text": "la valeur absolue", "category": 0 },
+            { "text": "le cube", "category": 1 },
+            { "text": "l'inverse", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction cube, que vaut f(−2) ?",
+          "answer": -8,
+          "tolerance": 0.01,
+          "hint": "Trois facteurs négatifs.",
+          "explanation": "−8. Le cube garde le signe de x : c'est ce qui en fait une fonction impaire.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la fonction racine carrée n'est-elle ni paire ni impaire ?",
+          "hint": "Pense à son domaine.",
+          "explanation": "Parce qu'elle n'est pas définie sur les négatifs : comparer f(x) et f(−x) n'a tout simplement pas de sens.",
+          "figureId": "fonctions-reference",
+          "options": [
+            { "text": "Son domaine ne contient pas les négatifs", "correct": true },
+            { "text": "Parce qu'elle croît trop lentement" },
+            { "text": "Parce qu'elle vaut 0 en 0" },
+            { "text": "Parce qu'elle n'est pas définie en 1" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une fonction peut être à la fois paire et impaire.",
+          "answer": true,
+          "explanation": "Oui, mais une seule le peut : celle qui vaut 0 partout. Pour toutes les autres, les deux conditions se contredisent."
+        }
+      ]
+    },
+    {
+      "id": "comparer-les-croissances",
+      "title": "Comparer les croissances",
+      "subtitle": "Sur le même repère, tout se voit.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "À droite de 1",
+          "body": "Pour x supérieur à 1, le cube dépasse le carré, qui dépasse x lui-même, qui dépasse la racine.\n\nPlus l'exposant est grand, plus la montée est raide."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Entre 0 et 1, tout s'inverse",
+          "body": "Pour x entre 0 et 1, l'ordre se renverse : la racine est au-dessus de x, qui est au-dessus du carré, lui-même au-dessus du cube.\n\nÉlever un nombre plus petit que 1 à une puissance le rapetisse."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Vérifie en 0,25 et en 3",
+          "body": "Note l'image du carré et celle de la racine en 0,25, puis les mêmes en 3.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Le point de bascule est x = 1, où les quatre valent 1. C'est le seul endroit où toutes ces courbes se croisent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction carré, que vaut f(0,5) ?",
+          "answer": 0.25,
+          "tolerance": 0.001,
+          "hint": "0,5 multiplié par 0,5.",
+          "explanation": "0,25, soit moins que 0,5. Élever au carré un nombre plus petit que 1 le diminue.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Entre 0 et 1, laquelle de ces courbes est la plus haute ?",
+          "hint": "L'ordre est inversé sur cet intervalle.",
+          "explanation": "La racine carrée. Sur cet intervalle, l'ordre habituel est renversé : la racine dépasse x, qui dépasse le carré.",
+          "figureId": "fonctions-reference",
+          "options": [
+            { "text": "La racine carrée", "correct": true },
+            { "text": "Le carré" },
+            { "text": "Le cube" },
+            { "text": "Elles sont confondues" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "En quelle abscisse positive le carré, le cube et la racine prennent-ils la même valeur ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "Un nombre qui reste lui-même quand on l'élève à n'importe quelle puissance.",
+          "explanation": "En 1 : toutes valent 1. C'est le point où l'ordre des courbes bascule.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces images de la plus petite à la plus grande, pour x = 3.",
+          "explanation": "En 3 : la racine vaut environ 1,73, puis 3, puis 9, puis 27. Plus l'exposant monte, plus l'écart se creuse.",
+          "items": [
+            "la racine de 3",
+            "3",
+            "le carré de 3",
+            "le cube de 3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-fonctions-reference",
+      "title": "Défi : les cinq courbes",
+      "subtitle": "Six questions, domaines et symétries.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Avant de calculer, demande-toi toujours : la fonction est-elle définie là ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction valeur absolue, que vaut f(−3) ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "La distance à zéro.",
+          "explanation": "3 : la valeur absolue mesure la distance à zéro, et une distance n'est jamais négative.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction inverse, que vaut f(−4) ?",
+          "answer": -0.25,
+          "tolerance": 0.001,
+          "hint": "1 divisé par −4.",
+          "explanation": "−0,25. L'inverse garde le signe de x : la branche de gauche reste sous l'axe.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque fonction à sa particularité.",
+          "explanation": "Chacune a une singularité propre : un domaine restreint, une valeur interdite, une symétrie, un angle.",
+          "pairs": [
+            { "left": "la racine carrée", "right": "non définie sur les négatifs" },
+            { "left": "l'inverse", "right": "non définie en 0" },
+            { "left": "le cube", "right": "impaire et croissante partout" },
+            { "left": "la valeur absolue", "right": "un angle en 0" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La fonction carré est croissante sur tous les nombres.",
+          "answer": false,
+          "explanation": "Non : elle décroît sur les négatifs et croît sur les positifs. Le minimum est en 0."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La fonction cube, elle, est croissante sur tous les nombres.",
+          "answer": true,
+          "explanation": "Oui, sans exception. C'est ce qui la distingue du carré, et ce que la courbe montre d'un coup d'œil.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il pour la fonction inverse quand x devient très grand ?",
+          "hint": "Regarde la branche de droite s'aplatir.",
+          "explanation": "Son image se rapproche de 0 sans jamais l'atteindre. La courbe longe l'axe sans le toucher.",
+          "figureId": "fonctions-reference",
+          "options": [
+            { "text": "Son image se rapproche de 0 sans l'atteindre", "correct": true },
+            { "text": "Son image devient négative" },
+            { "text": "Son image atteint 0" },
+            { "text": "Son image devient très grande" }
+          ]
+        }
+      ]
+    }
+  ]
+}

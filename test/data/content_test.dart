@@ -14,6 +14,7 @@ import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/dna_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
+import 'package:eureka/design_system/figures/reference_functions_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
 import 'package:eureka/design_system/figures/food_web_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
@@ -5237,6 +5238,193 @@ void main() {
 
       expect(niveaux(1024), reponseNum('pourquoi-n-log-n', 'q1'));
       expect(niveaux(1024), 10);
+    });
+  });
+
+
+  group('Chapitre complet : les fonctions de référence', () {
+    late Chapter fonctions;
+
+    setUpAll(() {
+      fonctions = catalog.chapterById('maths-lycee-fonctions-de-reference')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = fonctions.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Les abscisses que le curseur de la figure peut atteindre.
+    List<double> abscisses() => <double>[
+      for (
+        double x = -ReferenceFunctionsFigure.portee;
+        x <= ReferenceFunctionsFigure.portee + 1e-9;
+        x += ReferenceFunctionsFigure.pas
+      )
+        (x * 100).roundToDouble() / 100,
+    ];
+
+    test('est jouable de bout en bout', () {
+      expect(fonctions.isPlayable, isTrue);
+      expect(fonctions.lessons.length, 4);
+    });
+
+    test('les images annoncées sont celles de la figure', () {
+      expect(FonctionReference.carre.image(3), reponseNum('lire-une-courbe', 'q1'));
+      expect(
+        FonctionReference.inverse.image(0.5),
+        reponseNum('lire-une-courbe', 'q2'),
+      );
+      expect(
+        FonctionReference.cube.image(-2),
+        reponseNum('paire-ou-impaire', 'q2'),
+      );
+      expect(
+        FonctionReference.carre.image(0.5),
+        closeTo(reponseNum('comparer-les-croissances', 'q1'), 1e-9),
+      );
+      expect(
+        FonctionReference.absolue.image(-3),
+        reponseNum('defi-fonctions-reference', 'q1'),
+      );
+      expect(
+        FonctionReference.inverse.image(-4),
+        closeTo(reponseNum('defi-fonctions-reference', 'q2'), 1e-9),
+      );
+    });
+
+    test('les domaines de définition sont ceux qu’annonce le cours', () {
+      for (final double x in abscisses()) {
+        expect(
+          ReferenceFunctionsFigure.definieEn(FonctionReference.racine, x),
+          x >= 0,
+          reason: 'racine en $x',
+        );
+        expect(
+          ReferenceFunctionsFigure.definieEn(FonctionReference.inverse, x),
+          x != 0,
+          reason: 'inverse en $x',
+        );
+        for (final FonctionReference f in <FonctionReference>[
+          FonctionReference.carre,
+          FonctionReference.cube,
+          FonctionReference.absolue,
+        ]) {
+          expect(
+            ReferenceFunctionsFigure.definieEn(f, x),
+            isTrue,
+            reason: '${f.nom} en $x',
+          );
+        }
+      }
+    });
+
+    test('le tri des parités se recalcule sur la figure', () {
+      const Map<String, FonctionReference> parNom = <String, FonctionReference>{
+        'le carré': FonctionReference.carre,
+        'la valeur absolue': FonctionReference.absolue,
+        'le cube': FonctionReference.cube,
+        'l\'inverse': FonctionReference.inverse,
+      };
+      final ClassifyQuestion q =
+          fonctions.lessonById('paire-ou-impaire')!.questions.firstWhere(
+                (Question x) => x.id == 'q1',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final FonctionReference f = parNom[item.text]!;
+        bool paire = true;
+        bool impaire = true;
+        for (final double x in abscisses()) {
+          final double? a = f.image(x);
+          final double? b = f.image(-x);
+          if (a == null || b == null) continue;
+          if ((a - b).abs() > 1e-9) paire = false;
+          if ((a + b).abs() > 1e-9) impaire = false;
+        }
+        expect(item.category == 0, paire, reason: '${item.text} : paire');
+        expect(item.category == 1, impaire, reason: '${item.text} : impaire');
+      }
+    });
+
+    test('la racine carrée n’est ni paire ni impaire, faute de domaine', () {
+      // L'argument du cours tient au domaine, pas au calcul : il existe
+      // des x où la fonction est définie et son opposé non.
+      final List<double> asymetriques = <double>[
+        for (final double x in abscisses())
+          if (ReferenceFunctionsFigure.definieEn(FonctionReference.racine, x) &&
+              !ReferenceFunctionsFigure.definieEn(
+                FonctionReference.racine,
+                -x,
+              ))
+            x,
+      ];
+      expect(asymetriques, isNotEmpty);
+    });
+
+    test('les croissances s’inversent bien de part et d’autre de 1', () {
+      for (final double x in <double>[0.25, 0.5, 0.75]) {
+        expect(
+          FonctionReference.racine.image(x)!,
+          greaterThan(x),
+          reason: 'racine en $x',
+        );
+        expect(FonctionReference.carre.image(x)!, lessThan(x));
+        expect(
+          FonctionReference.cube.image(x)!,
+          lessThan(FonctionReference.carre.image(x)!),
+        );
+      }
+      for (final double x in <double>[1.5, 2, 3, 4]) {
+        expect(FonctionReference.racine.image(x)!, lessThan(x));
+        expect(FonctionReference.carre.image(x)!, greaterThan(x));
+        expect(
+          FonctionReference.cube.image(x)!,
+          greaterThan(FonctionReference.carre.image(x)!),
+        );
+      }
+      // Le point de bascule annoncé : toutes valent 1 en 1.
+      final double bascule = reponseNum('comparer-les-croissances', 'q3');
+      for (final FonctionReference f in <FonctionReference>[
+        FonctionReference.carre,
+        FonctionReference.cube,
+        FonctionReference.racine,
+        FonctionReference.inverse,
+        FonctionReference.absolue,
+      ]) {
+        expect(f.image(bascule), closeTo(1, 1e-9), reason: f.nom);
+      }
+    });
+
+    test('le cube croît partout, le carré non', () {
+      double? precedentCube;
+      double? precedentCarre;
+      bool carreToujoursCroissant = true;
+      for (final double x in abscisses()) {
+        final double cube = FonctionReference.cube.image(x)!;
+        final double carre = FonctionReference.carre.image(x)!;
+        if (precedentCube != null) expect(cube, greaterThan(precedentCube));
+        if (precedentCarre != null && carre < precedentCarre) {
+          carreToujoursCroissant = false;
+        }
+        precedentCube = cube;
+        precedentCarre = carre;
+      }
+      expect(carreToujoursCroissant, isFalse);
+    });
+
+    test('l’inverse tend vers zéro sans l’atteindre', () {
+      double precedent = double.infinity;
+      for (final double x in <double>[1, 2, 5, 10, 100, 1000]) {
+        final double y = FonctionReference.inverse.image(x)!;
+        expect(y, greaterThan(0));
+        expect(y, lessThan(precedent));
+        precedent = y;
+      }
     });
   });
 
