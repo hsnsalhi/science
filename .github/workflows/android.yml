@@ -52,7 +52,7 @@ jobs:
 
     steps:
       - name: Récupérer le dépôt
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Les secrets de signature ne sont nécessaires que pour un envoi sur
       # Google Play. Sans eux, la compilation produit tout de même un APK
@@ -91,7 +91,7 @@ jobs:
           fi
 
       - name: Installer Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -184,7 +184,17 @@ jobs:
       # Un APK signé avec la clé de débogage s'installe sur un téléphone mais
       # ne peut pas être publié. Le dire ici évite de découvrir le problème
       # devant le formulaire de Google Play.
+      #
+      # L'étape lit le certificat dans l'APK et **confronte** le résultat à
+      # ce que l'étape « capacités » avait annoncé. La première version se
+      # contentait de chercher « Subject » — le vocabulaire de keytool, pas
+      # celui d'apksigner, qui écrit « certificate DN ». Elle ne trouvait
+      # donc jamais rien, et son « sinon » concluait à une clé de
+      # publication : elle a rassuré à tort sur le premier build, qui était
+      # bien signé en débogage. Un contrôle qui ne sait pas doit le dire.
       - name: Vérifier la signature de l'APK
+        env:
+          SIGNATURE_ATTENDUE: ${{ steps.capacites.outputs.signature }}
         run: |
           set -uo pipefail
           APK=build/app/outputs/flutter-apk/app-release.apk
@@ -198,17 +208,35 @@ jobs:
             echo "::warning::apksigner introuvable : signature non vérifiée."
             exit 0
           fi
-          SIGNATAIRE="$("$APKSIGNER" verify --print-certs "$APK" \
-            | grep -m1 'Subject' || true)"
-          echo "Signataire : ${SIGNATAIRE:-inconnu}"
-          if printf '%s' "$SIGNATAIRE" | grep -q 'CN=Android Debug'; then
+
+          DN="$("$APKSIGNER" verify --print-certs "$APK" \
+            | grep -m1 'certificate DN' || true)"
+          if [ -z "$DN" ]; then
+            echo "::warning::apksigner n'a rendu aucun certificat : signature indéterminée."
+            "$APKSIGNER" verify --print-certs "$APK" || true
+            exit 0
+          fi
+          echo "$DN"
+
+          if printf '%s' "$DN" | grep -q 'CN=Android Debug'; then
             echo "::warning::APK signé avec la clé de débogage : installable à la main, refusé par Google Play."
+            constate=non
           else
             echo "APK signé avec une clé de publication."
+            constate=oui
+          fi
+
+          # Le désaccord est le cas qui compte : des secrets présents et un
+          # paquet tout de même signé en débogage signifierait que la
+          # configuration Gradle n'a pas vu « key.properties ».
+          if [ "$constate" != "$SIGNATURE_ATTENDUE" ]; then
+            echo "::error::Les secrets de signature disent « $SIGNATURE_ATTENDUE » et l'APK dit « $constate »."
+            echo "Avec des secrets présents, cela veut dire que android/key.properties n'a pas été lu."
+            exit 1
           fi
 
       - name: Conserver les paquets comme artefacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: eureka-android-build-${{ github.run_number }}
           path: |

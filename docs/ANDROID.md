@@ -24,9 +24,11 @@ Trois niveaux, à franchir dans l'ordre et seulement si le besoin se présente :
 
 1. Onglet **Actions** du dépôt → **Android** → **Run workflow**.
 2. Laisser `destination` sur `apk-seulement`, écrire une note si tu veux.
-3. Attendre cinq à huit minutes.
+3. Attendre six à huit minutes — la première exécution réelle a pris
+   6 min 30 s en tout, dont 4 min 20 s pour la compilation elle-même.
 4. En bas de la page d'exécution, section **Artifacts**, télécharger
-   `eureka-android-build-<n>`.
+   `eureka-android-build-<n>` (une trentaine de mégaoctets ; conservé
+   quatorze jours).
 5. Dézipper, transférer `app-release.apk` sur le téléphone, l'ouvrir.
 
 Android demandera d'autoriser l'installation depuis cette source : c'est
