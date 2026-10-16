@@ -1,0 +1,328 @@
+{
+  "chapter": "astronomie-universite-cosmologie",
+  "lessons": [
+    {
+      "id": "l-expansion",
+      "title": "L'expansion",
+      "subtitle": "Et pourquoi il n'y a pas de centre.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce que Hubble a mesuré",
+          "body": "En 1929, Edwin Hubble relève les distances et les vitesses radiales d'une vingtaine de galaxies, à partir des travaux de Henrietta Leavitt sur les céphéides et des spectres de Vesto Slipher.\n\nLe résultat est net : plus une galaxie est loin, plus elle s'éloigne vite, et la proportion est constante."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La loi de Hubble-Lemaître",
+          "formula": "v = H × d",
+          "body": "la vitesse d'éloignement est proportionnelle à la distance."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Change d'observateur",
+          "body": "Choisis une galaxie, lis les vitesses. Puis choisis-en une autre.",
+          "figureId": "expansion"
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "L'absence de centre",
+          "body": "Depuis n'importe quelle galaxie, toutes les autres s'éloignent, et d'autant plus vite qu'elles sont loin.\n\nAucun point n'est privilégié. Les galaxies ne se déplacent pas dans l'espace : leurs coordonnées sont fixes, et c'est l'échelle des distances qui grandit. La proportionnalité en découle, elle n'est pas une coïncidence."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Depuis quelle galaxie observe-t-on toutes les autres s'éloigner ?",
+          "hint": "Essaie plusieurs observateurs sur la figure.",
+          "explanation": "Depuis n'importe laquelle. C'est exactement ce qui interdit de désigner un centre à l'expansion.",
+          "figureId": "expansion",
+          "options": [
+            { "text": "Depuis n'importe laquelle", "correct": true },
+            { "text": "Depuis la nôtre seulement" },
+            { "text": "Depuis celle du centre" },
+            { "text": "Depuis celles du bord" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une galaxie deux fois plus lointaine s'éloigne combien de fois plus vite ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "fois",
+          "hint": "La loi est une proportionnalité.",
+          "explanation": "2 fois. C'est la signature d'une expansion uniforme, et non d'une explosion depuis un point.",
+          "figureId": "expansion"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Les galaxies se déplacent dans l'espace, comme des débris d'explosion.",
+          "answer": false,
+          "explanation": "Non : leurs coordonnées restent fixes, et c'est l'échelle qui grandit. L'image de l'explosion suggère un centre, qui n'existe pas."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui rend la vitesse proportionnelle à la distance ?",
+          "hint": "Que fait exactement l'expansion ?",
+          "explanation": "L'uniformité de l'expansion : toutes les distances sont multipliées par le même facteur, donc les écarts croissent proportionnellement à leur taille.",
+          "figureId": "expansion",
+          "options": [
+            { "text": "Toutes les distances sont multipliées par le même facteur", "correct": true },
+            { "text": "Les galaxies lointaines sont plus massives" },
+            { "text": "La gravitation diminue avec la distance" },
+            { "text": "La lumière met plus de temps à nous parvenir" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l-age-et-le-fond",
+      "title": "L'âge et le fond diffus",
+      "subtitle": "Remonter le film.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Un âge, par un calcul grossier",
+          "body": "Si l'expansion s'était faite à vitesse constante, le temps écoulé depuis que tout était concentré vaudrait l'inverse de la constante de Hubble.\n\nCe temps de Hubble donne environ 14 milliards d'années. L'expansion n'a pas été constante, mais le hasard des corrections fait que l'ordre de grandeur tient."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le fond diffus cosmologique",
+          "body": "En remontant, l'Univers était plus dense et plus chaud. Avant 380 000 ans, il était ionisé et opaque à la lumière.\n\nAu moment où les électrons se sont liés aux noyaux, il est devenu transparent, et la lumière alors libérée voyage encore. C'est le fond diffus, découvert par hasard en 1965."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pourquoi il est si froid",
+          "body": "Ce rayonnement avait la température d'un plasma, environ 3 000 kelvins.\n\nL'expansion a étiré ses longueurs d'onde d'un facteur voisin de mille cent depuis. Il nous arrive à 2,7 kelvins, dans le domaine des micro-ondes, et il est d'une uniformité remarquable."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ses minuscules irrégularités, un cent-millième de la température moyenne, sont les germes des galaxies actuelles. L'image la plus ancienne qu'on puisse obtenir est aussi le plan de ce qui a suivi."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la température du fond diffus cosmologique, en kelvins ?",
+          "answer": 2.7,
+          "tolerance": 0.2,
+          "unit": "K",
+          "hint": "Très froid, tout près du zéro absolu.",
+          "explanation": "2,7 K. Le rayonnement est parti à environ 3 000 K ; l'expansion a divisé sa température par un peu plus de mille."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de temps après le début l'Univers est-il devenu transparent, en milliers d'années ?",
+          "answer": 380,
+          "tolerance": 20,
+          "unit": "milliers d'années",
+          "hint": "Moins d'un million.",
+          "explanation": "380 000 ans. Avant cela, les électrons libres diffusaient la lumière et l'Univers était opaque."
+        },
+        {
+          "id": "q3",
+          "kind": "estimation",
+          "prompt": "Quel est l'âge de l'Univers, en milliards d'années ?",
+          "answer": 13.8,
+          "min": 1,
+          "max": 30,
+          "unit": "milliards d'années",
+          "explanation": "13,8 milliards d'années. Le temps de Hubble, calcul le plus grossier possible, donne déjà le bon ordre de grandeur."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'Univers était-il opaque avant 380 000 ans ?",
+          "hint": "Qu'est-ce qui diffuse la lumière ?",
+          "explanation": "Parce que la matière était ionisée : les électrons libres diffusaient sans cesse les photons, qui ne pouvaient pas se propager.",
+          "options": [
+            { "text": "La matière était ionisée et diffusait la lumière", "correct": true },
+            { "text": "Il n'y avait pas encore de lumière" },
+            { "text": "Les galaxies bloquaient le passage" },
+            { "text": "La poussière absorbait tout" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-contenu-de-l-univers",
+      "title": "Le contenu de l'Univers",
+      "subtitle": "Ce qu'on voit, et le reste.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La matière noire",
+          "body": "Les étoiles des galaxies spirales tournent bien plus vite que la masse visible ne le permettrait : loin du centre, leur vitesse ne décroît pas.\n\nLa même anomalie apparaît dans les amas, et dans les effets de lentille gravitationnelle. Quelque chose de massif et de non lumineux est présent."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "L'énergie noire",
+          "body": "En 1998, deux équipes mesurent les supernovas lointaines et trouvent l'expansion plus rapide aujourd'hui qu'il y a cinq milliards d'années.\n\nElle accélère, alors que la gravitation devrait la freiner. On nomme énergie noire ce qui produit cet effet, sans savoir ce que c'est."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le bilan",
+          "body": "Environ 5 % de matière ordinaire, 27 % de matière noire, 68 % d'énergie noire.\n\nAutrement dit, tout ce que l'astronomie observait avant le vingtième siècle représente un vingtième du contenu, et les deux autres termes portent des noms qui disent surtout notre ignorance."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "« Noire » ne veut pas dire mystérieuse par nature. Cela veut dire : nous en mesurons les effets gravitationnels avec précision, et nous ignorons sa composition."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle part du contenu de l'Univers la matière ordinaire représente-t-elle, en pour-cent ?",
+          "answer": 5,
+          "tolerance": 1,
+          "unit": "%",
+          "hint": "Un vingtième.",
+          "explanation": "Environ 5 %. Tout ce que nous voyons — étoiles, gaz, planètes, nous — tient dans cette fraction."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et l'énergie noire, en pour-cent ?",
+          "answer": 68,
+          "tolerance": 2,
+          "unit": "%",
+          "hint": "Plus des deux tiers.",
+          "explanation": "Environ 68 %. C'est le terme dominant, et le plus mal compris."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle observation a révélé la matière noire dans les galaxies ?",
+          "hint": "Une vitesse qui ne décroît pas.",
+          "explanation": "Les courbes de rotation : loin du centre, les étoiles tournent trop vite pour la masse visible.",
+          "options": [
+            { "text": "Les courbes de rotation des galaxies", "correct": true },
+            { "text": "La couleur des étoiles" },
+            { "text": "Le fond diffus cosmologique" },
+            { "text": "Les supernovas lointaines" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces observations selon ce qu'elles ont révélé.",
+          "hint": "Rotation et lentilles d'un côté, supernovas de l'autre.",
+          "explanation": "Les courbes de rotation et les lentilles pèsent la masse manquante. Les supernovas lointaines ont montré l'accélération de l'expansion.",
+          "categories": ["Matière noire", "Énergie noire"],
+          "items": [
+            { "text": "les courbes de rotation des spirales", "category": 0 },
+            { "text": "les lentilles gravitationnelles des amas", "category": 0 },
+            { "text": "les supernovas lointaines de 1998", "category": 1 },
+            { "text": "l'accélération de l'expansion", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-cosmologie",
+      "title": "Défi : cosmologie",
+      "subtitle": "Six questions, de Hubble à l'énergie noire.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Distingue bien ce qui est mesuré de ce qui est nommé faute de mieux."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Sur la figure, une galaxie à 3 unités s'éloigne à 0,21. À quelle vitesse s'éloigne celle qui est à 6 unités ?",
+          "answer": 0.42,
+          "tolerance": 0.01,
+          "hint": "Deux fois plus loin.",
+          "explanation": "0,42 : la vitesse est proportionnelle à la distance, donc elle double quand la distance double.",
+          "figureId": "expansion"
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Le fond diffus vient d'une direction particulière du ciel.",
+          "answer": false,
+          "explanation": "Non : il arrive de toutes les directions, et avec une uniformité remarquable. C'est ce qui en fait un rayonnement cosmologique et non la lumière d'un objet."
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces événements du plus ancien au plus récent.",
+          "explanation": "L'Univers chaud et opaque, puis la transparence à 380 000 ans, puis les premières étoiles, puis notre Galaxie.",
+          "items": [
+            "l'Univers est opaque et ionisé",
+            "il devient transparent",
+            "les premières étoiles s'allument",
+            "la Voie lactée se forme"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que signifie « noire » dans « matière noire » ?",
+          "hint": "Ce n'est pas une qualité intrinsèque.",
+          "explanation": "Qu'elle n'émet ni n'absorbe de lumière : on ne la détecte que par ses effets gravitationnels.",
+          "options": [
+            { "text": "Qu'elle n'émet ni n'absorbe de lumière", "correct": true },
+            { "text": "Qu'elle est de couleur noire" },
+            { "text": "Qu'elle absorbe toute la lumière" },
+            { "text": "Qu'elle est inconnaissable par principe" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "L'expansion de l'Univers ralentit sous l'effet de la gravitation.",
+          "answer": false,
+          "explanation": "Non : elle accélère depuis environ cinq milliards d'années. C'est précisément ce que les supernovas de 1998 ont établi."
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Associe chaque observation à ce qu'elle établit.",
+          "explanation": "Quatre observations, quatre conclusions, chacune indépendante des autres — c'est leur convergence qui fait la solidité du modèle.",
+          "pairs": [
+            { "left": "la loi de Hubble", "right": "l'Univers est en expansion" },
+            { "left": "le fond diffus", "right": "il a été chaud et dense" },
+            { "left": "les courbes de rotation", "right": "il contient de la masse invisible" },
+            { "left": "les supernovas lointaines", "right": "l'expansion accélère" }
+          ]
+        }
+      ]
+    }
+  ]
+}

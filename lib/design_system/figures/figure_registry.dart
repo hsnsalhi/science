@@ -15,6 +15,7 @@ import 'derivative_figure.dart';
 import 'dna_figure.dart';
 import 'energy_chain_figure.dart';
 import 'eratosthene_figure.dart';
+import 'expansion_figure.dart';
 import 'fraction_bar_figure.dart';
 import 'food_web_figure.dart';
 import 'gears_figure.dart';
@@ -86,6 +87,9 @@ abstract final class FigureRegistry {
     // Un variant avantagé qui se répand, génération après génération.
     'selection': (BuildContext context, Color accent) =>
         SelectionFigure(accent: accent),
+    // Une rangée de galaxies qui s'écartent, sans centre.
+    'expansion': (BuildContext context, Color accent) =>
+        ExpansionFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

@@ -14,6 +14,7 @@ import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/dna_figure.dart';
 import 'package:eureka/design_system/figures/energy_chain_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
+import 'package:eureka/design_system/figures/expansion_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/reference_functions_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
@@ -6112,6 +6113,129 @@ void main() {
         EnergyChainFigure.rendementGlobal(<double>[40]),
         closeTo(reponseNum('puissance-et-rendement', 'q3'), 0.5),
       );
+    });
+  });
+
+
+  group('Chapitre complet : cosmologie', () {
+    late Chapter cosmo;
+
+    setUpAll(() {
+      cosmo = catalog.chapterById('astronomie-universite-cosmologie')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = cosmo.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(cosmo.isPlayable, isTrue);
+      expect(cosmo.lessons.length, 4);
+    });
+
+    test('la loi de Hubble tient depuis chaque galaxie', () {
+      // Le cœur du chapitre : changer d'observateur ne change rien. Pour
+      // chaque observateur et chaque facteur d'échelle, le rapport de la
+      // vitesse à la distance doit valoir le même taux.
+      for (double facteur = 0.5; facteur <= 2.5; facteur += 0.25) {
+        for (
+          int observateur = 0;
+          observateur < ExpansionFigure.galaxies;
+          observateur++
+        ) {
+          for (int cible = 0; cible < ExpansionFigure.galaxies; cible++) {
+            if (cible == observateur) continue;
+            final double d = ExpansionFigure.distance(
+              observateur,
+              cible,
+              facteur,
+            );
+            final double v = ExpansionFigure.vitesse(
+              observateur,
+              cible,
+              facteur,
+            );
+            expect(
+              v / d,
+              closeTo(ExpansionFigure.taux, 1e-12),
+              reason: 'observateur $observateur, cible $cible',
+            );
+          }
+        }
+      }
+    });
+
+    test('aucun observateur n’est privilégié', () {
+      // Les listes de vitesses vues des différentes galaxies ne sont pas
+      // identiques — les voisins ne sont pas les mêmes — mais la relation
+      // vitesse-distance l'est. C'est cela, l'absence de centre : aucune
+      // galaxie ne voit une loi différente des autres.
+      const double facteur = 1.5;
+      final Set<double> taux = <double>{};
+      for (
+        int observateur = 0;
+        observateur < ExpansionFigure.galaxies;
+        observateur++
+      ) {
+        for (int cible = 0; cible < ExpansionFigure.galaxies; cible++) {
+          if (cible == observateur) continue;
+          taux.add(
+            (ExpansionFigure.vitesse(observateur, cible, facteur) /
+                    ExpansionFigure.distance(observateur, cible, facteur) *
+                    1e9)
+                .roundToDouble(),
+          );
+        }
+      }
+      expect(taux, hasLength(1));
+    });
+
+    test('doubler la distance double la vitesse', () {
+      expect(
+        ExpansionFigure.vitesse(0, 6, 1) /
+            ExpansionFigure.vitesse(0, 3, 1),
+        closeTo(reponseNum('l-expansion', 'q2'), 1e-9),
+      );
+      // Le couple de valeurs cité dans le défi.
+      expect(ExpansionFigure.vitesse(0, 3, 1), closeTo(0.21, 0.005));
+      expect(
+        ExpansionFigure.vitesse(0, 6, 1),
+        closeTo(reponseNum('defi-cosmologie', 'q1'), 0.01),
+      );
+    });
+
+    test('l’échelle grandit sans déplacer les galaxies', () {
+      // Les coordonnées sont fixes : le rapport de deux distances ne
+      // dépend jamais du facteur d'échelle. C'est ce qui distingue une
+      // expansion d'une explosion.
+      for (double facteur = 0.5; facteur <= 2.5; facteur += 0.25) {
+        expect(
+          ExpansionFigure.distance(2, 6, facteur) /
+              ExpansionFigure.distance(2, 4, facteur),
+          closeTo(2, 1e-12),
+          reason: 'facteur $facteur',
+        );
+      }
+    });
+
+    test('le bilan du contenu de l’Univers fait bien cent pour cent', () {
+      final double ordinaire = reponseNum('le-contenu-de-l-univers', 'q1');
+      final double sombre = reponseNum('le-contenu-de-l-univers', 'q2');
+      // La part restante est celle de la matière noire, annoncée à 27 %.
+      expect(100 - ordinaire - sombre, closeTo(27, 3));
+    });
+
+    test('l’étirement du fond diffus est cohérent', () {
+      // Parti à 3 000 K, reçu à 2,7 K : le facteur annoncé par la leçon
+      // doit se retrouver dans les deux nombres. Le premier jet disait
+      // « mille » ; le rapport vaut 1 111, et c'est ce test qui l'a dit.
+      final double recu = reponseNum('l-age-et-le-fond', 'q1');
+      expect(3000 / recu, closeTo(1100, 150));
     });
   });
 

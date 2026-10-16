@@ -1020,6 +1020,23 @@ void main() {
         await shoot(tester, '$device-46-selection');
       });
 
+      // L'expansion vue d'une galaxie du bord : les vitesses croissent
+      // avec la distance, exactement comme depuis le centre apparent.
+      testWidgets('université : l\'expansion', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Université');
+        await tapText(tester, 'Cosmologie');
+        await tapText(tester, 'L\'expansion');
+        for (int i = 0; i < 2; i++) {
+          await tester.tap(find.text('Suivant').first);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+        }
+        await shoot(tester, '$device-47-expansion');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
