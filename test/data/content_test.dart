@@ -24,6 +24,7 @@ import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/projectile_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
+import 'package:eureka/design_system/figures/sequence_figure.dart';
 import 'package:eureka/design_system/figures/sensor_chain_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/design_system/figures/triangle_angles_figure.dart';
@@ -3588,6 +3589,146 @@ void main() {
       final int bits = reponseNum('defi-representation', 'q2').round();
       expect((1 << bits) - 1, greaterThanOrEqualTo(100));
       expect((1 << (bits - 1)) - 1, lessThan(100));
+    });
+  });
+
+  group('Chapitre complet : les suites numériques', () {
+    late Chapter suites;
+
+    setUpAll(() {
+      suites = catalog.chapterById('maths-lycee-suites-numeriques')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = suites.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Lit « 2, 5, 8, 11 ».
+    List<double> lireTermes(String texte) =>
+        texte.split(',').map((String s) => double.parse(s.trim())).toList();
+
+    test('est jouable de bout en bout', () {
+      expect(suites.isPlayable, isTrue);
+      expect(suites.lessons.length, 4);
+    });
+
+    test('les termes annoncés sont ceux de la figure', () {
+      double arithmetique(int n, double u0, double r) => SequenceFigure.terme(
+        n,
+        premier: u0,
+        raison: r,
+        geometrique: false,
+      );
+      double geometrique(int n, double u0, double q) => SequenceFigure.terme(
+        n,
+        premier: u0,
+        raison: q,
+        geometrique: true,
+      );
+
+      expect(arithmetique(4, 2, 3), reponseNum('definir-une-suite', 'q2'));
+      expect(arithmetique(9, 2, 3), reponseNum('suites-arithmetiques', 'q1'));
+      expect(arithmetique(10, 5, 4), reponseNum('suites-arithmetiques', 'q3'));
+      expect(arithmetique(12, 7, 5), reponseNum('defi-suites', 'q1'));
+      expect(geometrique(10, 1, 2), reponseNum('suites-geometriques', 'q1'));
+      expect(geometrique(9, 2, 3), reponseNum('suites-geometriques', 'q2'));
+      expect(geometrique(4, 64, 0.5), reponseNum('defi-suites', 'q5'));
+    });
+
+    test('les deux définitions donnent le même terme', () {
+      // Le chapitre affirme que u(n) = 3n + 2 et la récurrence u₀ = 2,
+      // u(n+1) = u(n) + 3 décrivent la même suite.
+      for (int n = 0; n <= 12; n++) {
+        expect(
+          3 * n + 2,
+          SequenceFigure.terme(n, premier: 2, raison: 3, geometrique: false),
+          reason: 'rang $n',
+        );
+      }
+      expect(
+        reponseNum('definir-une-suite', 'q1'),
+        reponseNum('definir-une-suite', 'q2'),
+      );
+    });
+
+    test('les sommes annoncées sont recalculées', () {
+      expect(
+        SequenceFigure.somme(10, premier: 2, raison: 3, geometrique: false),
+        reponseNum('suites-arithmetiques', 'q2'),
+      );
+      expect(
+        SequenceFigure.somme(10, premier: 2, raison: 3, geometrique: true),
+        reponseNum('defi-suites', 'q2'),
+      );
+      // La formule de la moyenne des extrêmes doit redonner la somme.
+      final double premier =
+          SequenceFigure.terme(0, premier: 2, raison: 3, geometrique: false);
+      final double dernier =
+          SequenceFigure.terme(9, premier: 2, raison: 3, geometrique: false);
+      expect(
+        10 * (premier + dernier) / 2,
+        reponseNum('suites-arithmetiques', 'q2'),
+      );
+    });
+
+    test('le tri arithmétique / géométrique est exact', () {
+      final ClassifyQuestion q =
+          suites.lessonById('suites-geometriques')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<double> termes = lireTermes(item.text);
+        final double difference = termes[1] - termes[0];
+        final double quotient = termes[1] / termes[0];
+        final bool arithmetique = <int>[1, 2, 3].every(
+          (int i) => (termes[i] - termes[i - 1] - difference).abs() < 1e-9,
+        );
+        final bool geometrique = <int>[1, 2, 3].every(
+          (int i) => (termes[i] / termes[i - 1] - quotient).abs() < 1e-9,
+        );
+        expect(
+          item.category == 0,
+          arithmetique,
+          reason: '${item.text} : arithmétique = $arithmetique',
+        );
+        expect(
+          item.category == 1,
+          geometrique,
+          reason: '${item.text} : géométrique = $geometrique',
+        );
+      }
+    });
+
+    test('la géométrique finit toujours par dépasser l’arithmétique', () {
+      // L'affirmation du défi : aucune raison additive ne rattrape une
+      // raison multiplicative supérieure à 1.
+      for (final double r in <double>[10, 100, 1000]) {
+        bool depassee = false;
+        for (int n = 0; n <= 60; n++) {
+          final double arith =
+              SequenceFigure.terme(n, premier: 1, raison: r, geometrique: false);
+          final double geo =
+              SequenceFigure.terme(n, premier: 1, raison: 2, geometrique: true);
+          if (geo > arith) {
+            depassee = true;
+            break;
+          }
+        }
+        expect(depassee, isTrue, reason: 'raison additive $r');
+      }
+    });
+
+    test('l’épaisseur de la feuille pliée est bien celle annoncée', () {
+      // 0,1 mm doublée vingt fois, exprimée en mètres.
+      final double epaisseur =
+          0.0001 * SequenceFigure.terme(20, premier: 1, raison: 2, geometrique: true);
+      expect(epaisseur, closeTo(reponseNum('defi-suites', 'q3'), 1));
     });
   });
 }

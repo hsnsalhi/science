@@ -861,6 +861,24 @@ void main() {
         await shoot(tester, '$device-37-binaire');
       });
 
+      // La suite géométrique, aux mêmes réglages que l'arithmétique :
+      // c'est la comparaison à réglages constants qui montre que la
+      // différence tient au seul mode de croissance.
+      testWidgets('lycée : une suite géométrique', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Les suites numériques');
+        await tapText(tester, 'Les suites géométriques');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Voir une suite géométrique'));
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-38-suite');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

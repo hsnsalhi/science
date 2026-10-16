@@ -1,0 +1,358 @@
+{
+  "chapter": "maths-lycee-suites-numeriques",
+  "lessons": [
+    {
+      "id": "definir-une-suite",
+      "title": "Définir une suite",
+      "subtitle": "Deux façons de dire la même chose.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une liste numérotée",
+          "body": "Une suite associe un nombre à chaque rang : u₀, u₁, u₂, et ainsi de suite.\n\nLe rang est un entier, et u(n) se lit « u indice n ». Ce n'est pas un produit : c'est le terme de rang n."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Définition explicite",
+          "body": "u(n) = 3n + 2 donne chaque terme directement à partir de son rang.\n\nPour obtenir u(100), on remplace n par 100 : aucun calcul intermédiaire."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Définition par récurrence",
+          "body": "u₀ = 2 et u(n+1) = u(n) + 3 donne chaque terme à partir du précédent.\n\nPour obtenir u(100), il faut passer par les cent premiers. En revanche, la relation dit immédiatement comment la suite progresse."
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Les dix premiers termes",
+          "body": "Règle le premier terme et la raison, puis bascule d'un type de suite à l'autre.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Une suite associe un nombre à chaque rang entier.",
+            "Explicite : u(n) en fonction de n, calcul direct.",
+            "Par récurrence : u(n+1) en fonction de u(n)."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u(n) = 3n + 2, que vaut u(4) ?",
+          "answer": 14,
+          "tolerance": 0.01,
+          "hint": "Remplace n par 4.",
+          "explanation": "14 : 3 × 4 + 2. La définition explicite donne le terme sans passer par les précédents.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u₀ = 2 et u(n+1) = u(n) + 3, que vaut u(4) ?",
+          "answer": 14,
+          "tolerance": 0.01,
+          "hint": "2, 5, 8, 11…",
+          "explanation": "14 : on ajoute 3 quatre fois à partir de 2. C'est la même suite que la précédente, définie autrement.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces définitions.",
+          "hint": "Le terme dépend-il du rang, ou du terme précédent ?",
+          "explanation": "u(n) = 2n − 1 et u(n) = n² sont explicites : le rang suffit. Les deux autres font intervenir le terme précédent : elles sont récurrentes.",
+          "categories": ["Explicite", "Par récurrence"],
+          "items": [
+            { "text": "u(n) = 2n − 1", "category": 0 },
+            { "text": "u(n) = n²", "category": 0 },
+            { "text": "u(n+1) = u(n) + 5", "category": 1 },
+            { "text": "u(n+1) = 2 × u(n)", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une définition par récurrence suffit à calculer un terme, sans autre information.",
+          "answer": false,
+          "explanation": "Non : il faut aussi le premier terme. La relation dit comment passer d'un terme au suivant, pas par où commencer."
+        }
+      ]
+    },
+    {
+      "id": "suites-arithmetiques",
+      "title": "Les suites arithmétiques",
+      "subtitle": "On ajoute toujours la même chose.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Définition et terme général",
+          "formula": "u(n+1) = u(n) + r   et   u(n) = u₀ + n × r",
+          "body": "r est la raison, constante d'un terme au suivant."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Des marches régulières",
+          "body": "En mode arithmétique, les bâtons montent d'une hauteur constante.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Reconnaître une suite arithmétique",
+          "body": "On calcule la différence entre deux termes consécutifs, en plusieurs endroits.\n\nSi elle est toujours la même, la suite est arithmétique et cette valeur est la raison. Une seule différence ne prouve rien."
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "Somme des premiers termes",
+          "formula": "S = nombre de termes × (premier + dernier) ÷ 2",
+          "body": "la moyenne des extrêmes, multipliée par le nombre de termes."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Raison : la différence constante entre deux termes.",
+            "u(n) = u₀ + n × r.",
+            "La somme vaut la moyenne des extrêmes fois le nombre de termes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u₀ = 2 et une raison de 3, que vaut u(9) ?",
+          "answer": 29,
+          "tolerance": 0.01,
+          "hint": "2 + 9 × 3.",
+          "explanation": "29. On ajoute neuf fois la raison au premier terme.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u₀ = 2 et une raison de 3, que vaut la somme des dix premiers termes ?",
+          "answer": 155,
+          "tolerance": 0.01,
+          "hint": "10 × (2 + 29) ÷ 2.",
+          "explanation": "155 : dix termes, dont la moyenne des extrêmes vaut 15,5.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u₀ = 5 et une raison de 4, que vaut u(10) ?",
+          "answer": 45,
+          "tolerance": 0.01,
+          "hint": "5 + 10 × 4.",
+          "explanation": "45. Le rang multiplie la raison, pas le premier terme.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Les premiers termes d'une suite sont 7, 11, 15, 19. Quelle est sa raison ?",
+          "hint": "Calcule plusieurs différences.",
+          "explanation": "4 : la différence est la même entre chaque paire de termes consécutifs, ce qui confirme qu'elle est arithmétique.",
+          "figureId": "suite",
+          "options": [
+            { "text": "4", "correct": true },
+            { "text": "7" },
+            { "text": "11" },
+            { "text": "Elle n'est pas arithmétique" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suites-geometriques",
+      "title": "Les suites géométriques",
+      "subtitle": "On multiplie toujours par la même chose.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Définition et terme général",
+          "formula": "u(n+1) = q × u(n)   et   u(n) = u₀ × qⁿ",
+          "body": "q est la raison, multiplicative cette fois."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compare les deux croissances",
+          "body": "Garde les mêmes réglages et bascule : la différence d'allure ne tient qu'au mode de croissance.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une croissance d'un autre ordre",
+          "body": "Avec u₀ = 2 et une raison de 3, la suite arithmétique atteint 29 au rang 9 ; la géométrique atteint 39 366.\n\nCe n'est pas une différence de degré mais de nature : aucune suite arithmétique ne rattrape une suite géométrique de raison supérieure à 1."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Quand la raison est entre 0 et 1",
+          "body": "La suite décroît alors vers zéro sans jamais l'atteindre : 1 ; 0,5 ; 0,25 ; 0,125…\n\nC'est le modèle de la décroissance radioactive, de l'amortissement d'un son, du refroidissement d'un café."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Pour reconnaître une suite géométrique, on divise chaque terme par le précédent. Si le quotient est constant, c'est la raison."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u₀ = 1 et une raison de 2, que vaut u(10) ?",
+          "answer": 1024,
+          "tolerance": 0.01,
+          "hint": "2 puissance 10.",
+          "explanation": "1 024. Doubler dix fois multiplie par 1 024, pas par 20 : c'est tout l'écart entre les deux croissances.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour u₀ = 2 et une raison de 3, que vaut u(9) ?",
+          "answer": 39366,
+          "tolerance": 1,
+          "hint": "2 × 3 puissance 9.",
+          "explanation": "39 366 : 2 × 19 683. La suite arithmétique de mêmes réglages n'atteignait que 29.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Les premiers termes d'une suite sont 3, 12, 48, 192. Quelle est sa raison ?",
+          "hint": "Divise chaque terme par le précédent.",
+          "explanation": "4 : 12 ÷ 3 = 4, 48 ÷ 12 = 4, 192 ÷ 48 = 4. Le quotient est constant, la suite est géométrique.",
+          "figureId": "suite",
+          "options": [
+            { "text": "4", "correct": true },
+            { "text": "9" },
+            { "text": "3" },
+            { "text": "Elle n'est pas géométrique" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces suites selon leur nature.",
+          "hint": "Différence constante, ou quotient constant ?",
+          "explanation": "2, 5, 8, 11 et 10, 7, 4, 1 ont une différence constante : elles sont arithmétiques. 3, 6, 12, 24 et 81, 27, 9, 3 ont un quotient constant : elles sont géométriques.",
+          "categories": ["Arithmétique", "Géométrique"],
+          "items": [
+            { "text": "2, 5, 8, 11", "category": 0 },
+            { "text": "10, 7, 4, 1", "category": 0 },
+            { "text": "3, 6, 12, 24", "category": 1 },
+            { "text": "81, 27, 9, 3", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-suites",
+      "title": "Défi : les suites",
+      "subtitle": "Six questions, rang après rang.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Demande-toi chaque fois si l'on ajoute ou si l'on multiplie."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Suite arithmétique, u₀ = 7 et raison 5. Que vaut u(12) ?",
+          "answer": 67,
+          "tolerance": 0.01,
+          "hint": "7 + 12 × 5.",
+          "explanation": "67. Douze pas de cinq à partir de sept.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Suite géométrique, u₀ = 2 et raison 3. Que vaut la somme des dix premiers termes ?",
+          "answer": 59048,
+          "tolerance": 1,
+          "hint": "Elle dépasse largement le dernier terme.",
+          "explanation": "59 048. La somme vaut à peu près une fois et demie le dernier terme : dans une suite géométrique, les derniers termes écrasent tous les autres.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q3",
+          "kind": "estimation",
+          "prompt": "Une feuille de 0,1 mm d'épaisseur est pliée en deux 20 fois. Quelle épaisseur, en mètres, atteint-elle ?",
+          "min": 1,
+          "max": 1000,
+          "answer": 104.9,
+          "tolerance": 40,
+          "unit": "mètres",
+          "logarithmic": true,
+          "explanation": "Environ 105 m : 0,1 mm multiplié par 2²⁰, soit 1 048 576. Une croissance géométrique dépasse toujours l'intuition, qui attend quelques centimètres."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une suite arithmétique de grande raison finit par dépasser une suite géométrique de raison 2.",
+          "answer": false,
+          "explanation": "Non. Quelle que soit la raison additive, la croissance géométrique l'emporte à partir d'un certain rang — et souvent très vite.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Suite géométrique de raison 0,5, premier terme 64. Que vaut u(4) ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "On divise par deux quatre fois.",
+          "explanation": "4 : 64, 32, 16, 8, 4. Une raison comprise entre 0 et 1 fait décroître la suite vers zéro.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Comment reconnaît-on une suite géométrique à partir de ses termes ?",
+          "hint": "Différence, ou quotient ?",
+          "explanation": "En divisant chaque terme par le précédent : si le quotient est constant, c'est une suite géométrique, et ce quotient est la raison.",
+          "options": [
+            { "text": "Le quotient de deux termes consécutifs est constant", "correct": true },
+            { "text": "La différence de deux termes consécutifs est constante" },
+            { "text": "Les termes sont tous positifs" },
+            { "text": "Les termes augmentent" }
+          ]
+        }
+      ]
+    }
+  ]
+}
