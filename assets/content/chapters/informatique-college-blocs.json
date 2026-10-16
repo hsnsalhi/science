@@ -1,0 +1,359 @@
+{
+  "chapter": "informatique-college-programmer-par-blocs",
+  "lessons": [
+    {
+      "id": "evenements",
+      "title": "Les événements",
+      "subtitle": "Un programme qui attend.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Plusieurs scripts à la fois",
+          "body": "Dans un langage à blocs, un projet n'a pas un programme unique qui se déroule du haut vers le bas. Il a plusieurs scripts, chacun accroché à un événement : le drapeau cliqué, une touche pressée, un personnage touché.\n\nPlusieurs scripts peuvent donc tourner en même temps, et c'est voulu : le vaisseau se déplace pendant que les astéroïdes tombent et que le score se met à jour.\n\nC'est une façon de programmer très différente de la liste d'instructions, et plus proche de la réalité d'une application."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les quatre événements qu'on utilise vraiment",
+          "body": "Le drapeau vert cliqué : tout ce qui doit démarrer avec le projet.\n\nUne touche pressée : les commandes du joueur.\n\nCe personnage cliqué : les boutons et les objets interactifs.\n\nUn message reçu : c'est celui qu'on sous-estime. Un script envoie un message, et tous les scripts qui l'attendent démarrent ensemble. C'est ainsi qu'on coordonne plusieurs personnages sans qu'aucun ne connaisse les autres."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Le bug numéro un : l'état de départ",
+          "body": "Tu déplaces ton personnage pendant les essais, puis tu cliques sur le drapeau. Il repart de là où tu l'avais laissé, pas de son point de départ.\n\nLe projet marche chez toi et pas chez les autres, ou marche une fois sur deux. Ce n'est pas un hasard : la position, la taille, la direction, le score et les costumes gardent la valeur de la dernière exécution.\n\nTout script de démarrage doit donc remettre explicitement chaque chose dans son état initial. C'est fastidieux, et ce n'est pas facultatif."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Ce qui survit entre deux exécutions",
+          "body": "La position et la direction du personnage. Sa taille, sa couleur, son costume. Les variables. Les clones déjà créés, parfois.\n\nAutrement dit : presque tout. Le drapeau vert ne réinitialise rien par lui-même — il lance seulement les scripts qui l'écoutent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Plusieurs scripts peuvent-ils s'exécuter en même temps ?",
+          "explanation": "Oui, et c'est le principe : chacun est accroché à un événement, et plusieurs peuvent tourner simultanément.",
+          "options": [
+            { "text": "oui, chacun accroché à son événement", "correct": true },
+            { "text": "non, un seul à la fois" },
+            { "text": "oui, mais seulement deux" },
+            { "text": "seulement s'ils sont sur le même personnage" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un projet repart-il parfois d'un état bizarre ?",
+          "explanation": "Parce que la position, la taille, la direction et les variables gardent la valeur de la dernière exécution. Le drapeau vert ne réinitialise rien.",
+          "options": [
+            { "text": "l'état précédent a survécu, le drapeau ne réinitialise rien", "correct": true },
+            { "text": "le logiciel a un bug" },
+            { "text": "les scripts sont dans le mauvais ordre" },
+            { "text": "il manque une boucle" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Comment faire démarrer plusieurs personnages en même temps ?",
+          "explanation": "En envoyant un message : tous les scripts qui l'attendent démarrent ensemble, sans qu'aucun personnage ait besoin de connaître les autres.",
+          "options": [
+            { "text": "envoyer un message qu'ils attendent tous", "correct": true },
+            { "text": "les mettre dans le même script" },
+            { "text": "cliquer sur chacun" },
+            { "text": "c'est impossible" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Qu'un script de démarrage doit-il réinitialiser ?",
+          "explanation": "La position, la direction, la taille, le costume et les variables : tout ce qui a survécu à l'exécution précédente.",
+          "options": [
+            { "text": "la position du personnage", "correct": true },
+            { "text": "sa direction", "correct": true },
+            { "text": "sa taille", "correct": true },
+            { "text": "les variables du projet", "correct": true },
+            { "text": "la version du logiciel" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repere",
+      "title": "Le repère de la scène",
+      "subtitle": "Des coordonnées, comme en maths.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une scène de 480 sur 360",
+          "body": "La scène mesure 480 pas de large et 360 de haut, et son centre est le point (0 ; 0).\n\nDonc x va de −240 à +240, et y de −180 à +180. Le coin en haut à droite est (240 ; 180), celui en bas à gauche (−240 ; −180).\n\nC'est exactement le repère du cours de mathématiques, avec un y qui monte. Un personnage placé en (100 ; 50) est à droite et en haut du centre."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Deux façons de bouger",
+          "body": "« Aller à x : 100 y : 50 » place le personnage à cet endroit précis, d'où qu'il vienne.\n\n« Ajouter 10 à x » le décale de 10 vers la droite depuis sa position actuelle.\n\n« Avancer de 10 pas » le déplace de 10 dans la direction où il pointe, qui n'est pas forcément la droite.\n\nLes trois sont utiles, et les confondre produit des mouvements incompréhensibles."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "La direction n'est pas l'angle du cours",
+          "body": "Dans ces langages, la direction 0 pointe vers le haut, et les angles tournent dans le sens des aiguilles d'une montre. La direction 90 pointe donc vers la droite.\n\nEn mathématiques, l'angle 0 pointe vers la droite et tourne dans l'autre sens.\n\nC'est une convention différente, pas une erreur, et il faut la connaître : demander « tourner de 90 degrés » ne donne pas le même résultat selon l'outil."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Le rebond sur les bords",
+          "body": "Un personnage qui sort de la scène y reste accroché par un bord : les coordonnées sont bornées.\n\nPour un rebond propre, on teste si x dépasse 240 ou descend sous −240, et on inverse le sens du déplacement. C'est la même idée qu'un signe qu'on change.\n\nLe bloc « rebondir si le bord est atteint » le fait tout seul, mais comprendre le test permet de rebondir sur autre chose que le bord."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la plus grande valeur de x sur la scène ?",
+          "explanation": "240, la moitié de la largeur de 480, puisque le centre est en zéro.",
+          "answer": 240
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la plus petite valeur de y ?",
+          "explanation": "−180, la moitié de la hauteur de 360, en négatif.",
+          "answer": -180
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un personnage est en x = 200. On lui ajoute 10 à x quatre fois de suite. Quel x, si rien ne le borne ?",
+          "explanation": "200 + 40 = 240. Il arrive exactement au bord droit.",
+          "answer": 240
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle direction fait pointer un personnage vers la droite ?",
+          "explanation": "90. La direction 0 pointe vers le haut et les angles tournent dans le sens des aiguilles d'une montre.",
+          "answer": 90
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle direction fait pointer vers le bas ?",
+          "explanation": "180 : un demi-tour depuis le haut. Et −90, ou 270, pointe vers la gauche.",
+          "options": [
+            { "text": "180", "correct": true },
+            { "text": "0" },
+            { "text": "90" },
+            { "text": "270" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la différence entre « ajouter 10 à x » et « avancer de 10 pas » ?",
+          "explanation": "Le premier déplace toujours vers la droite ; le second déplace dans la direction où le personnage pointe, qui peut être n'importe laquelle.",
+          "options": [
+            { "text": "le second suit la direction du personnage", "correct": true },
+            { "text": "aucune, c'est la même chose" },
+            { "text": "le premier est plus rapide" },
+            { "text": "le second ne marche qu'horizontalement" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de pas de large fait la scène ?",
+          "explanation": "480 pas, de −240 à +240.",
+          "answer": 480
+        }
+      ]
+    },
+    {
+      "id": "projet",
+      "title": "Construire un projet",
+      "subtitle": "Du jeu qui marche au jeu qui tient.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'ordre dans lequel on construit",
+          "body": "D'abord le déplacement du joueur, et rien d'autre. On le teste.\n\nEnsuite un obstacle qui bouge. On teste.\n\nEnsuite la détection du contact et ce qu'elle déclenche. On teste.\n\nEnsuite le score. Enfin l'écran de fin.\n\nConstruire tout d'un bloc puis chercher pourquoi rien ne marche est la façon la plus lente d'y arriver. Ajouter une chose, la tester, recommencer est la plus rapide — contre-intuitivement."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Les clones",
+          "body": "Pour vingt astéroïdes, on ne dessine pas vingt personnages : on en fait un, et on le clone.\n\nChaque clone exécute son propre script « quand je commence comme un clone », avec ses propres variables locales. Vingt clones, vingt trajectoires indépendantes, un seul script à écrire et à corriger.\n\nIl faut penser à supprimer le clone quand il sort de l'écran : des milliers de clones oubliés finissent par tout ralentir."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Variables globales et locales",
+          "body": "Une variable « pour tous les personnages » est partagée : le score en est l'exemple typique.\n\nUne variable « pour ce personnage seulement » existe en un exemplaire par clone : la vitesse propre de chaque astéroïde en est l'exemple.\n\nSe tromper donne un bug caractéristique : tous les astéroïdes vont à la même vitesse, celle du dernier créé, parce qu'ils partagent une variable qui aurait dû être locale."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Dans quel ordre construire le projet ?",
+          "explanation": "Une chose à la fois, testée avant la suivante : déplacement, obstacle, contact, score, fin.",
+          "items": [
+            "le déplacement du joueur",
+            "un obstacle qui bouge",
+            "la détection du contact",
+            "le score",
+            "l'écran de fin"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Il faut 20 astéroïdes identiques. Combien de personnages faut-il dessiner ?",
+          "explanation": "Un seul, cloné vingt fois. Un seul script à écrire, et un seul à corriger.",
+          "answer": 1
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Tous les astéroïdes vont à la même vitesse alors qu'on voulait des vitesses différentes. Quelle est la cause ?",
+          "explanation": "La variable de vitesse a été déclarée pour tous les personnages au lieu de pour ce personnage seulement : les clones la partagent.",
+          "options": [
+            { "text": "la vitesse est une variable globale au lieu de locale", "correct": true },
+            { "text": "les clones ne peuvent pas avoir de vitesses différentes" },
+            { "text": "il manque une boucle" },
+            { "text": "les astéroïdes sont trop nombreux" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi supprimer un clone sorti de l'écran ?",
+          "explanation": "Parce que les clones oubliés s'accumulent et finissent par tout ralentir, même invisibles.",
+          "options": [
+            { "text": "les clones oubliés s'accumulent et ralentissent tout", "correct": true },
+            { "text": "ils reviennent par l'autre bord" },
+            { "text": "ils effacent le score" },
+            { "text": "ce n'est pas nécessaire" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Cette variable doit-elle être globale ou locale au clone ?",
+          "explanation": "Ce qui est commun au projet est global ; ce qui est propre à chaque clone est local.",
+          "categories": ["globale", "locale au clone"],
+          "items": [
+            { "text": "le score du joueur", "category": 0 },
+            { "text": "le niveau en cours", "category": 0 },
+            { "text": "la vitesse d'un astéroïde", "category": 1 },
+            { "text": "les points de vie d'un ennemi", "category": 1 }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi tester après chaque ajout plutôt qu'à la fin ?",
+          "explanation": "Parce qu'un bug trouvé juste après son ajout est localisé : on sait quelle chose l'a causé. Trouvé à la fin, il peut venir de n'importe où.",
+          "options": [
+            { "text": "le bug est localisé dans ce qu'on vient d'ajouter", "correct": true },
+            { "text": "pour aller plus vite à écrire" },
+            { "text": "parce que le logiciel l'exige" },
+            { "text": "pour sauvegarder plus souvent" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-blocs",
+      "title": "Défi : le parcours du personnage",
+      "subtitle": "Calculer où il arrive.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une suite de blocs",
+          "body": "Le personnage part de (0 ; 0), direction 90, c'est-à-dire vers la droite.\n\nAller à x : 0 y : 0\n\nRépéter 4 fois : avancer de 60 pas, tourner de 90 degrés vers la droite\n\nOù se trouve-t-il à la fin, et dans quelle direction pointe-t-il ?\n\nLa réponse surprend ceux qui ne déroulent pas : il est revenu exactement à son point de départ, et il pointe à nouveau vers la droite."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le déroulé, tour par tour",
+          "body": "Tour 1 : avance de 60 vers la droite, arrive en (60 ; 0). Tourne, direction 180, vers le bas.\n\nTour 2 : avance de 60 vers le bas, arrive en (60 ; −60). Tourne, direction 270, vers la gauche.\n\nTour 3 : arrive en (0 ; −60). Tourne, direction 0, vers le haut.\n\nTour 4 : arrive en (0 ; 0). Tourne, direction 90.\n\nIl a dessiné un carré de 60 de côté et refermé la boucle."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Après le premier tour, quel est le x du personnage ?",
+          "explanation": "60. Il part de 0 et avance de 60 vers la droite.",
+          "answer": 60
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Après le deuxième tour, quel est le y ?",
+          "explanation": "−60. Après la première rotation il pointe vers le bas, donc il descend de 60.",
+          "answer": -60
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Après les 4 tours, quel est le x ?",
+          "explanation": "0 : le carré est refermé et il est revenu à son point de départ.",
+          "answer": 0
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans quelle direction pointe-t-il après les 4 tours ?",
+          "explanation": "90, vers la droite : quatre rotations de 90 degrés font un tour complet.",
+          "answer": 90
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "On change pour « répéter 3 fois : avancer de 60, tourner de 120 degrés ». Quelle est la direction finale ?",
+          "explanation": "3 × 120 = 360, donc un tour complet : il pointe à nouveau vers 90. La figure est un triangle équilatéral, refermé.",
+          "answer": 90
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Pour un pentagone régulier, de combien de degrés faut-il tourner à chaque sommet ?",
+          "hint": "Le total des rotations doit faire un tour.",
+          "explanation": "360 ÷ 5 = 72 degrés. La règle vaut pour tout polygone régulier : 360 divisé par le nombre de côtés.",
+          "answer": 72,
+          "unit": "°"
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le périmètre du carré dessiné, avec 60 pas par côté ?",
+          "explanation": "4 × 60 = 240 pas, soit exactement la moitié de la largeur de la scène.",
+          "answer": 240
+        }
+      ]
+    }
+  ]
+}

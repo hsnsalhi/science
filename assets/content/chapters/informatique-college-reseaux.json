@@ -1,0 +1,525 @@
+{
+  "chapter": "informatique-college-reseaux-et-internet",
+  "lessons": [
+    {
+      "id": "paquets",
+      "title": "Des paquets, pas un tuyau",
+      "subtitle": "Pourquoi internet résiste.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le message est découpé",
+          "body": "Quand tu envoies une photo, elle n'est pas transmise d'un bloc. Elle est découpée en milliers de paquets, chacun portant l'adresse de destination et son numéro d'ordre.\n\nChaque paquet voyage indépendamment, et deux paquets de la même photo peuvent emprunter des chemins différents. Ils arrivent dans le désordre, et la machine réceptrice les remet en ordre grâce à leurs numéros.\n\nCe n'est pas une complication gratuite : c'est ce qui rend le réseau robuste."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Pourquoi le découpage protège",
+          "body": "Si un câble est coupé, les paquets suivants passent par un autre chemin. Aucun routeur ne connaît la route entière : chacun ne sait que vers quel voisin faire avancer un paquet.\n\nSi un paquet est perdu, il est redemandé — un seul paquet, pas la photo entière.\n\nInternet a été conçu pour continuer de fonctionner avec des morceaux détruits, et c'est exactement ce que fait ce découpage."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le trajet d'une requête",
+          "body": "Ton appareil envoie le paquet à la box.\n\nLa box le passe au réseau du fournisseur d'accès.\n\nCelui-ci le fait avancer de routeur en routeur, chacun choisissant le voisin qui le rapproche de la destination.\n\nLe paquet atteint le serveur, qui répond par ses propres paquets.\n\nUne vingtaine de sauts suffisent généralement à traverser la planète, et cela prend moins d'un dixième de seconde."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "La limite n'est pas la vitesse de la lumière seule",
+          "body": "Dans une fibre, la lumière avance à environ 200 000 km/s — un tiers de moins que dans le vide, à cause du verre. Franchir 6 000 km y prend donc environ 30 millisecondes.\n\nL'aller-retour en fait 60. Le reste du délai qu'on observe vient des routeurs, de la mise en file d'attente et du traitement aux extrémités.\n\nAucun progrès technique ne descendra sous le temps de trajet physique : c'est pourquoi les grands sites installent des serveurs près des utilisateurs plutôt que d'accélérer les câbles."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Deux paquets d'une même photo prennent-ils le même chemin ?",
+          "explanation": "Pas forcément. Chaque paquet est routé indépendamment, et c'est ce qui permet au réseau de contourner une panne.",
+          "options": [
+            {
+              "text": "pas forcément, chacun est routé indépendamment",
+              "correct": true
+            },
+            {
+              "text": "oui, toujours le même"
+            },
+            {
+              "text": "oui, sinon ils arriveraient dans le désordre"
+            },
+            {
+              "text": "seulement s'ils partent en même temps"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Comment la machine réceptrice remet-elle les paquets en ordre ?",
+          "explanation": "Grâce au numéro d'ordre que chaque paquet porte. L'ordre d'arrivée n'a pas d'importance.",
+          "options": [
+            {
+              "text": "grâce au numéro d'ordre de chaque paquet",
+              "correct": true
+            },
+            {
+              "text": "par l'heure d'arrivée"
+            },
+            {
+              "text": "par la taille des paquets"
+            },
+            {
+              "text": "ils arrivent toujours dans l'ordre"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Un paquet est perdu. Que redemande-t-on ?",
+          "explanation": "Ce paquet seulement. C'est l'un des gros avantages du découpage : une perte coûte un paquet, pas le fichier.",
+          "options": [
+            {
+              "text": "ce paquet seulement",
+              "correct": true
+            },
+            {
+              "text": "le fichier entier"
+            },
+            {
+              "text": "tous les paquets suivants"
+            },
+            {
+              "text": "rien, la perte est acceptée"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Un routeur connaît-il la route complète d'un paquet ?",
+          "explanation": "Non. Il ne sait que vers quel voisin faire avancer le paquet. Aucune machine ne détient la route entière, et c'est voulu.",
+          "options": [
+            {
+              "text": "non, seulement le voisin suivant",
+              "correct": true
+            },
+            {
+              "text": "oui, du départ à l'arrivée"
+            },
+            {
+              "text": "oui, mais seulement le premier routeur"
+            },
+            {
+              "text": "oui, grâce au DNS"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "La lumière met 30 ms pour 6 000 km dans une fibre. Combien de millisecondes pour l'aller-retour ?",
+          "explanation": "30 × 2 = 60 ms. C'est un plancher physique : aucune technologie ne passera en dessous, puisque c'est la vitesse de la lumière dans le verre qui l'impose.",
+          "answer": 60,
+          "unit": "ms"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les grands sites installent-ils des serveurs près des utilisateurs ?",
+          "explanation": "Parce que le temps de trajet physique est un plancher qu'aucune technologie ne franchit. Raccourcir la distance est la seule façon de réduire le délai.",
+          "options": [
+            {
+              "text": "parce que la distance impose un délai incontournable",
+              "correct": true
+            },
+            {
+              "text": "pour économiser de l'électricité"
+            },
+            {
+              "text": "pour respecter la loi"
+            },
+            {
+              "text": "parce que les câbles sont trop lents"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adresses",
+      "title": "Les adresses et les noms",
+      "subtitle": "Deux choses différentes.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une adresse IP",
+          "body": "Chaque machine connectée porte une adresse numérique. Dans l'ancienne version, encore majoritaire, elle s'écrit en quatre nombres de 0 à 255 : 192.168.1.14 par exemple.\n\nQuatre nombres de 256 valeurs donnent 256 × 256 × 256 × 256 adresses possibles, soit un peu plus de quatre milliards. C'est beaucoup, et ce n'est plus assez : il y a plus d'objets connectés que cela.\n\nD'où une nouvelle version, bien plus longue, qui en offre un nombre que personne n'épuisera."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le rôle du DNS",
+          "body": "Personne ne retient des nombres. On tape un nom de domaine.\n\nL'appareil demande donc à un serveur DNS : « quelle est l'adresse de ce nom ? »\n\nLe serveur répond par l'adresse numérique.\n\nSeulement alors, la connexion s'établit vers cette adresse.\n\nLe DNS est donc un annuaire, et rien de plus. Il ne transporte aucune page : il traduit des noms en adresses."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Client et serveur",
+          "body": "Le client demande, le serveur répond. Ton téléphone est un client ; la machine qui héberge le site est un serveur.\n\nCe ne sont pas des types de machines mais des rôles dans un échange : un même ordinateur peut être client d'un service et serveur d'un autre, en même temps."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le s de https",
+          "body": "En http, tout circule en clair : n'importe qui sur le trajet peut lire ce que tu envoies, mot de passe compris.\n\nEn https, le contenu est chiffré entre ton appareil et le serveur. Un intermédiaire voit qu'il y a un échange, avec quel site, et sa taille — mais pas son contenu.\n\nLe chiffrement ne cache donc pas tout. Il protège le contenu, pas le fait que tu aies visité ce site."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une adresse IP de l'ancienne version s'écrit en combien de nombres ?",
+          "explanation": "Quatre, chacun de 0 à 255.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de valeurs différentes chaque nombre peut-il prendre ?",
+          "hint": "De 0 à 255 inclus.",
+          "explanation": "256 valeurs, de 0 à 255 : il ne faut pas oublier le zéro.",
+          "answer": 256
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de milliards d'adresses cela fait-il en tout ? Arrondis à l'entier.",
+          "hint": "256 multiplié par lui-même quatre fois.",
+          "explanation": "256 × 256 × 256 × 256 = 4 294 967 296, soit environ 4 milliards — moins qu'il n'y a d'objets connectés aujourd'hui.",
+          "answer": 4,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le DNS ?",
+          "explanation": "À traduire un nom de domaine en adresse numérique. C'est un annuaire : il ne transporte aucune page.",
+          "options": [
+            {
+              "text": "traduire un nom en adresse numérique",
+              "correct": true
+            },
+            {
+              "text": "transporter les pages web"
+            },
+            {
+              "text": "chiffrer les échanges"
+            },
+            {
+              "text": "attribuer les adresses IP"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que voit un intermédiaire lors d'une connexion https ?",
+          "explanation": "Qu'un échange a lieu, avec quel site et de quelle taille — mais pas son contenu. Le chiffrement protège le contenu, pas le fait de la visite.",
+          "options": [
+            {
+              "text": "le site visité et la taille, pas le contenu",
+              "correct": true
+            },
+            {
+              "text": "absolument rien"
+            },
+            {
+              "text": "tout, y compris les mots de passe"
+            },
+            {
+              "text": "seulement le contenu, pas le site"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre ce qui se passe quand tu tapes une adresse.",
+          "explanation": "On demande l'adresse au DNS, on l'obtient, on se connecte à cette adresse, et le serveur répond.",
+          "items": [
+            "demander l'adresse au DNS",
+            "recevoir l'adresse numérique",
+            "se connecter à cette adresse",
+            "le serveur envoie la page"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "debits",
+      "title": "Débits et durées",
+      "subtitle": "Le piège de l'octet et du bit.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "avertissement",
+          "title": "Un octet vaut huit bits",
+          "body": "Les fichiers se mesurent en octets : mégaoctets, gigaoctets. Les débits se mesurent en bits par seconde : mégabits par seconde.\n\nUn facteur huit sépare les deux, et il est la source de presque tous les malentendus sur le temps de téléchargement.\n\nLa notation est cruelle : Mo pour mégaoctet, Mb ou Mbit pour mégabit. Une majuscule de différence, et un facteur huit."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le calcul juste",
+          "formula": "durée = taille en bits ÷ débit en bits par seconde",
+          "body": "Pour une taille en mégaoctets et un débit en mégabits par seconde : on multiplie d'abord la taille par 8, puis on divise. Omettre ce 8 donne une durée huit fois trop courte, et la déception qui va avec."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le débit annoncé est un maximum",
+          "body": "Une offre à 100 mégabits par seconde ne garantit pas 100. C'est le débit théorique maximal, atteint rarement.\n\nIl se partage entre les appareils de la maison, il dépend de la qualité du signal, et le serveur distant peut lui-même être lent.\n\nLe maillon le plus faible de toute la chaîne fixe le débit réel. Changer d'offre n'y change rien si le goulot est ailleurs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de bits dans un octet ?",
+          "explanation": "8. C'est le facteur qui sépare les tailles de fichiers des débits.",
+          "answer": 8
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un fichier de 100 mégaoctets. Combien de mégabits ?",
+          "explanation": "100 × 8 = 800 mégabits.",
+          "answer": 800
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Ces 800 mégabits à 10 mégabits par seconde : combien de secondes ?",
+          "explanation": "800 ÷ 10 = 80 secondes. Sans le facteur 8, on aurait annoncé 10 secondes.",
+          "answer": 80,
+          "unit": "s"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un fichier de 1 gigaoctet, soit 1 000 mégaoctets, à 10 mégabits par seconde. Combien de secondes ?",
+          "hint": "D'abord en mégabits.",
+          "explanation": "1 000 × 8 = 8 000 mégabits, divisés par 10 : 800 secondes, soit 13 minutes et 20 secondes.",
+          "answer": 800,
+          "unit": "s"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Le même gigaoctet à 100 mégabits par seconde : combien de secondes ?",
+          "explanation": "8 000 ÷ 100 = 80 secondes. Dix fois le débit, dix fois moins de temps.",
+          "answer": 80,
+          "unit": "s"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "À 100 mégabits par seconde, combien de mégaoctets par seconde ?",
+          "explanation": "100 ÷ 8 = 12,5 mégaoctets par seconde. C'est le chiffre que montre la barre de téléchargement.",
+          "answer": 12.5,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "L'offre annonce 100 Mbit/s et le téléchargement plafonne à 30. Quelle explication ?",
+          "explanation": "Le débit annoncé est un maximum théorique, et le maillon le plus faible de la chaîne décide : partage entre appareils, qualité du signal, ou serveur distant lent.",
+          "options": [
+            {
+              "text": "le maillon le plus faible de la chaîne fixe le débit réel",
+              "correct": true
+            },
+            {
+              "text": "l'offre est un mensonge pur et simple"
+            },
+            {
+              "text": "le fichier est trop gros"
+            },
+            {
+              "text": "il faut changer de câble, toujours"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-traces",
+      "title": "Défi : ce que ça laisse derrière",
+      "subtitle": "Qui sait quoi, exactement.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois observateurs, trois vues",
+          "body": "Tu consultes un site en https depuis chez toi. Trois acteurs voient trois choses différentes, et les confondre conduit à des conclusions fausses dans les deux sens.\n\nTon fournisseur d'accès voit quel site tu consultes, à quelle heure, et combien de données circulent. Il ne voit pas quelle page tu lis ni ce que tu écris.\n\nLe site voit ton adresse IP, donc approximativement ta région, ton type d'appareil et de navigateur, et tout ce que tu fais sur ses pages.\n\nUn voisin qui écoute le wifi chiffré ne voit presque rien d'utilisable."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le mode privé ne rend pas anonyme",
+          "body": "Le mode privé du navigateur efface l'historique local et les cookies à la fermeture. C'est tout ce qu'il fait.\n\nLe fournisseur d'accès, le site visité, l'employeur sur son propre réseau et l'administrateur du wifi voient exactement la même chose qu'en mode normal.\n\nIl protège de quelqu'un qui ouvrirait ton navigateur après toi. Il ne protège de personne d'autre, et beaucoup de gens croient le contraire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "En https, qui voit quoi ?",
+          "explanation": "Le fournisseur voit le site, l'heure et le volume ; le site voit l'IP, l'appareil et les actions sur ses pages ; le contenu lui-même est chiffré en transit.",
+          "categories": [
+            "vu par le fournisseur d'accès",
+            "vu par le site visité"
+          ],
+          "items": [
+            {
+              "text": "le nom du site consulté",
+              "category": 0
+            },
+            {
+              "text": "l'heure de la connexion",
+              "category": 0
+            },
+            {
+              "text": "le volume de données échangé",
+              "category": 0
+            },
+            {
+              "text": "ton adresse IP",
+              "category": 1
+            },
+            {
+              "text": "les pages que tu ouvres chez lui",
+              "category": 1
+            },
+            {
+              "text": "ton type de navigateur",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que fait réellement le mode privé du navigateur ?",
+          "explanation": "Il efface l'historique local et les cookies à la fermeture. Rien d'autre : le fournisseur et le site voient la même chose qu'en mode normal.",
+          "options": [
+            {
+              "text": "il efface l'historique local et les cookies",
+              "correct": true
+            },
+            {
+              "text": "il rend anonyme sur le réseau"
+            },
+            {
+              "text": "il cache le site au fournisseur d'accès"
+            },
+            {
+              "text": "il chiffre la connexion"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "En https, ton fournisseur d'accès voit-il quelle page précise tu lis ?",
+          "explanation": "Non. Il voit le site, l'heure et le volume. Le détail du chemin est chiffré.",
+          "options": [
+            {
+              "text": "non, seulement le site et le volume",
+              "correct": true
+            },
+            {
+              "text": "oui, page par page"
+            },
+            {
+              "text": "oui, et aussi le contenu"
+            },
+            {
+              "text": "non, il ne voit rien du tout"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "En http simple, qu'un intermédiaire peut-il lire ?",
+          "explanation": "Tout, mot de passe compris : rien n'est chiffré. C'est pourquoi les sites qui demandent une identification sont tous passés en https.",
+          "options": [
+            {
+              "text": "tout, y compris les mots de passe",
+              "correct": true
+            },
+            {
+              "text": "seulement le nom du site"
+            },
+            {
+              "text": "seulement la taille des pages"
+            },
+            {
+              "text": "rien, http chiffre aussi"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un site envoie 30 cookies de 200 octets chacun. Combien d'octets en tout ?",
+          "explanation": "30 × 200 = 6 000 octets, soit 6 kilooctets rien qu'en identifiants.",
+          "answer": 6000
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que révèle une adresse IP sur toi ?",
+          "explanation": "Approximativement ta région et ton fournisseur d'accès. Pas ton nom ni ton adresse exacte, même si on le croit souvent.",
+          "options": [
+            {
+              "text": "approximativement ta région et ton fournisseur",
+              "correct": true
+            },
+            {
+              "text": "ton nom et ton adresse postale"
+            },
+            {
+              "text": "rien du tout"
+            },
+            {
+              "text": "ta position à quelques mètres"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Le chiffrement https cache le fait que tu as visité un site.",
+          "explanation": "Faux. Il chiffre le contenu, mais le site contacté reste visible pour les intermédiaires. Protéger le contenu et masquer la visite sont deux choses différentes.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

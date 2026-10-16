@@ -1,0 +1,361 @@
+{
+  "chapter": "informatique-college-variables-et-expressions",
+  "lessons": [
+    {
+      "id": "boite-nommee",
+      "title": "Une boîte avec un nom",
+      "subtitle": "Et le signe égal qui ne veut pas dire égal.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qu'est une variable",
+          "body": "Une variable est un emplacement de mémoire auquel on a donné un nom. On y met une valeur, on la relit, on la remplace.\n\nUne seule valeur à la fois : écrire dedans efface ce qui y était. Il n'y a pas d'historique, et c'est une différence importante avec un cahier.\n\nLe nom compte. `score` dit ce qu'il contient ; `a` ne dit rien et se paie trois semaines plus tard, quand on relit son propre programme sans le comprendre."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "x = x + 1",
+          "body": "En mathématiques, cette égalité est fausse : aucun nombre n'est égal à lui-même plus un.\n\nEn informatique, ce n'est pas une égalité mais une instruction, et elle se lit de droite à gauche : « prends la valeur actuelle de x, ajoute 1, et remets le résultat dans x ».\n\nSi x valait 7, il vaut maintenant 8. Confondre les deux lectures du signe égal est le malentendu le plus coûteux du début de la programmation."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Lire une affectation",
+          "body": "On calcule d'abord entièrement la partie droite, avec les valeurs actuelles.\n\nOn range ensuite le résultat dans la variable de gauche.\n\nLa variable de gauche n'intervient dans le calcul que par sa valeur d'avant.\n\nDonc après `total = total + prix`, la variable total contient l'ancien total augmenté du prix. L'ancien total n'existe plus nulle part."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "L'échange a besoin d'une troisième boîte",
+          "body": "Pour échanger les contenus de x et y, écrire `x = y` puis `y = x` ne marche pas : la première instruction a déjà écrasé l'ancien x, et les deux variables finissent avec la même valeur.\n\nIl faut une variable temporaire : `t = x`, puis `x = y`, puis `y = t`.\n\nTrois instructions pour un échange qui paraît en demander deux. C'est le premier endroit où la mémoire impose sa logique."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "x vaut 7. Après l'instruction x = x + 1, combien vaut x ?",
+          "explanation": "8. On calcule 7 + 1, puis on range le résultat dans x : l'ancienne valeur est écrasée.",
+          "answer": 8
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "x vaut 5 et y vaut 3. Après x = y puis y = x, combien vaut x ?",
+          "explanation": "3. La première instruction a mis 3 dans x, écrasant le 5 ; la seconde relit ce 3. Les deux variables valent 3 et le 5 est perdu.",
+          "answer": 3
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette même situation, combien vaut y ?",
+          "explanation": "3 également. L'échange a échoué : il faut une variable temporaire.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les trois instructions qui échangent correctement x et y.",
+          "explanation": "On sauvegarde x dans t, on écrase x par y, puis on met la sauvegarde dans y.",
+          "items": ["t = x", "x = y", "y = t"]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "total vaut 20, prix vaut 8. Après total = total + prix, combien vaut total ?",
+          "explanation": "28. On calcule 20 + 8 avec les valeurs actuelles, puis on range dans total.",
+          "answer": 28
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Comment faut-il lire x = x + 1 ?",
+          "explanation": "De droite à gauche : calculer x + 1 avec la valeur actuelle, puis ranger le résultat dans x. Ce n'est pas une égalité mathématique.",
+          "options": [
+            { "text": "calculer x + 1, puis ranger le résultat dans x", "correct": true },
+            { "text": "affirmer que x égale x plus un" },
+            { "text": "comparer x à x + 1" },
+            { "text": "c'est une erreur de syntaxe" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "title": "Les expressions",
+      "subtitle": "Traduire une formule sans se faire piéger.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'ordre des opérations tient",
+          "body": "Les règles sont celles des mathématiques. Les parenthèses d'abord, puis les multiplications et divisions, puis les additions et soustractions.\n\nDonc `2 + 3 * 4` vaut 14, et non 20. L'ordinateur ne lit pas de gauche à droite comme une calculatrice de poche bon marché.\n\nEn cas de doute, on met des parenthèses. Elles ne coûtent rien et elles se relisent."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Deux divisions différentes",
+          "body": "Beaucoup de langages distinguent deux divisions.\n\nLa division entière jette la partie décimale : 7 divisé entièrement par 2 donne 3, pas 3,5.\n\nLe reste, ou modulo, donne ce qui reste : 7 modulo 2 donne 1.\n\nCes deux opérations sont celles de la division posée à l'école primaire, et elles servent constamment — le modulo dit par exemple si un nombre est pair, puisque n modulo 2 vaut 0 exactement pour les pairs."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Traduire une formule du cours",
+          "formula": "moyenne = (note1 + note2 + note3) / 3",
+          "body": "Sans les parenthèses, on écrirait note1 + note2 + note3 / 3, qui ne divise que la troisième note. L'erreur passe inaperçue : le programme s'exécute, et il donne un résultat faux."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Le plus qui ne compte pas",
+          "body": "Avec des nombres, `+` additionne. Avec des textes, il colle : « bon » + « jour » donne « bonjour ».\n\nD'où un piège classique : si une saisie d'utilisateur arrive sous forme de texte, « 2 » + « 3 » donne « 23 » et non 5. Le programme ne signale rien, et le résultat est absurde.\n\nIl faut convertir explicitement le texte en nombre avant de calculer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 2 + 3 * 4 ?",
+          "explanation": "14. La multiplication passe avant l'addition : 3 × 4 = 12, puis 2 + 12 = 14.",
+          "answer": 14
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut (2 + 3) * 4 ?",
+          "explanation": "20. Les parenthèses forcent l'addition d'abord : 5 × 4 = 20.",
+          "answer": 20
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut la division entière de 17 par 5 ?",
+          "explanation": "3. La division entière jette la partie décimale : 17 = 5 × 3 + 2.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 17 modulo 5 ?",
+          "explanation": "2, le reste de la division : 17 = 5 × 3 + 2.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que donne « 2 » + « 3 » si les deux sont des textes ?",
+          "explanation": "« 23 ». Avec des textes, le plus colle au lieu d'additionner, et aucune erreur n'est signalée.",
+          "options": [
+            { "text": "« 23 »", "correct": true },
+            { "text": "5" },
+            { "text": "une erreur" },
+            { "text": "« 5 »" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que calcule note1 + note2 + note3 / 3 ?",
+          "explanation": "La somme des deux premières notes plus le tiers de la troisième. Il manque les parenthèses, et le programme ne signale rien.",
+          "options": [
+            { "text": "note1 + note2 + le tiers de note3", "correct": true },
+            { "text": "la moyenne des trois notes" },
+            { "text": "le tiers de la somme" },
+            { "text": "rien, c'est une erreur de syntaxe" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Comment tester si un nombre n est pair ?",
+          "explanation": "En vérifiant que n modulo 2 vaut 0 : le reste de la division par deux est nul exactement pour les nombres pairs.",
+          "options": [
+            { "text": "n modulo 2 vaut 0", "correct": true },
+            { "text": "n divisé par 2 vaut un entier affiché" },
+            { "text": "n modulo 2 vaut 1" },
+            { "text": "n divisé entièrement par 2 vaut n/2" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tracer",
+      "title": "Dérouler un programme",
+      "subtitle": "Un tableau, une ligne par instruction.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La table de trace",
+          "body": "On écrit une colonne par variable et une ligne par instruction exécutée.\n\nÀ chaque ligne, on recopie les valeurs inchangées et on met à jour celle qui change.\n\nC'est fastidieux, et c'est la seule méthode qui marche à coup sûr. Les développeurs professionnels le font encore, avec un outil qui affiche la table automatiquement — mais la méthode est la même."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Un petit programme déroulé",
+          "body": "a = 2 ; b = 5 ; a = a + b ; b = a − b\n\nAprès la première instruction : a vaut 2.\n\nAprès la deuxième : a vaut 2, b vaut 5.\n\nAprès la troisième : a vaut 7, b vaut 5.\n\nAprès la quatrième : a vaut 7, b vaut 2.\n\nLes valeurs ont été échangées, sans variable temporaire. C'est une astuce, et elle demande de dérouler pour y croire."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Les accumulateurs",
+          "body": "Une variable qui sert à accumuler doit être initialisée avant la boucle, jamais dedans.\n\nMettre `somme = 0` à l'intérieur de la boucle remet le compteur à zéro à chaque tour, et la somme finale vaut le dernier terme.\n\nC'est l'erreur la plus fréquente avec les boucles, et elle produit un résultat plausible — ce qui la rend difficile à voir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "a = 2 ; b = 5 ; a = a + b. Combien vaut a ?",
+          "explanation": "7. On calcule 2 + 5 et on range dans a.",
+          "answer": 7
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "En continuant : b = a − b. Combien vaut b ?",
+          "explanation": "2. a vaut 7 et b vaut 5, donc 7 − 5 = 2 : c'est l'ancienne valeur de a, récupérée sans variable temporaire.",
+          "answer": 2
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Puis a = a − b. Combien vaut a ?",
+          "explanation": "5. a vaut 7 et b vaut 2, donc 7 − 2 = 5 : l'échange est complet en trois instructions sans variable temporaire.",
+          "answer": 5
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "somme = 0, puis pour i de 1 à 4 : somme = somme + i. Combien vaut somme à la fin ?",
+          "explanation": "1 + 2 + 3 + 4 = 10. L'initialisation est bien avant la boucle.",
+          "answer": 10
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Même boucle, mais avec somme = 0 écrit à l'intérieur. Combien vaut somme à la fin ?",
+          "hint": "Le compteur repart à zéro à chaque tour.",
+          "explanation": "4, le dernier terme seulement : la remise à zéro à chaque tour efface l'accumulation.",
+          "answer": 4
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "produit = 1, puis pour i de 1 à 5 : produit = produit * i. Combien vaut produit ?",
+          "explanation": "1 × 2 × 3 × 4 × 5 = 120. Un accumulateur de produit s'initialise à 1, jamais à 0 — sinon tout reste à zéro.",
+          "answer": 120
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi initialiser un accumulateur de produit à 1 et non à 0 ?",
+          "explanation": "Parce que multiplier par zéro donne zéro à chaque tour. Un accumulateur s'initialise à l'élément neutre de son opération : 0 pour l'addition, 1 pour la multiplication.",
+          "options": [
+            { "text": "parce que 0 multiplié par quoi que ce soit reste 0", "correct": true },
+            { "text": "par convention d'écriture" },
+            { "text": "pour gagner un tour de boucle" },
+            { "text": "cela ne change rien" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-variables",
+      "title": "Défi : la caisse qui se trompe",
+      "subtitle": "Quatre bugs à trouver par le déroulé.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un programme de caisse",
+          "body": "Un élève écrit le programme d'une caisse. Il doit additionner les prix de trois articles, appliquer 10 % de remise, et afficher le total.\n\nSon programme donne 9,90 € pour trois articles à 5 €, 3 € et 2 €. Le bon résultat est 9 €.\n\nLe programme ne plante pas, n'affiche aucune erreur, et se trompe. C'est exactement le genre de bug qui coûte cher, parce que rien ne le signale."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce qu'il a écrit",
+          "body": "total = 5 + 3 + 2\n\nremise = total * 10 / 100\n\ntotal = total − remise\n\nCe programme est correct et donne bien 9. Son erreur était ailleurs : il avait écrit `total = total − remise / 100`, ce qui divise la remise une seconde fois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "total = 5 + 3 + 2. Combien vaut total ?",
+          "explanation": "10 €, la somme des trois articles.",
+          "answer": 10
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "remise = total * 10 / 100 avec total à 10. Combien vaut remise ?",
+          "explanation": "10 × 10 ÷ 100 = 1 €, soit les 10 % annoncés.",
+          "answer": 1
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "total = total − remise. Combien vaut total ?",
+          "explanation": "10 − 1 = 9 €, le bon résultat.",
+          "answer": 9
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Avec le bug, total = total − remise / 100. Combien vaut total alors ?",
+          "hint": "La division passe avant la soustraction.",
+          "explanation": "remise ÷ 100 = 0,01, et 10 − 0,01 = 9,99 €. La remise a été divisée deux fois et ne retire presque rien.",
+          "answer": 9.99,
+          "tolerance": 0.001,
+          "unit": "€"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un deuxième bug : remise = total * 10 écrit sans le /100. Combien vaut alors total − remise ?",
+          "explanation": "remise vaudrait 100, et 10 − 100 = −90 €. La caisse rendrait de l'argent : un bug visible, donc beaucoup moins dangereux que le précédent.",
+          "answer": -90,
+          "unit": "€"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Lequel de ces deux bugs est le plus dangereux ?",
+          "explanation": "Celui qui donne 9,99 €, parce que le résultat reste plausible. Un total de −90 € se remarque immédiatement.",
+          "options": [
+            { "text": "celui qui donne 9,99 €, car il reste plausible", "correct": true },
+            { "text": "celui qui donne −90 €, car le montant est gros" },
+            { "text": "les deux également" },
+            { "text": "aucun, le programme s'exécute" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Quelle méthode permet de trouver ce genre de bug à coup sûr ?",
+          "explanation": "Dérouler le programme instruction par instruction dans un tableau, en notant chaque variable. C'est fastidieux et c'est la seule méthode fiable.",
+          "options": [
+            { "text": "dérouler le programme dans une table de trace", "correct": true },
+            { "text": "relire le code attentivement" },
+            { "text": "le réécrire depuis le début" },
+            { "text": "essayer d'autres valeurs au hasard" }
+          ]
+        }
+      ]
+    }
+  ]
+}

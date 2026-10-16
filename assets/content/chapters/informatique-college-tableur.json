@@ -1,0 +1,476 @@
+{
+  "chapter": "informatique-college-le-tableur",
+  "lessons": [
+    {
+      "id": "cellules",
+      "title": "Une cellule, une formule",
+      "subtitle": "Calculer sans jamais retaper.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qui distingue un tableur d'un tableau de papier",
+          "body": "Chaque cellule porte une adresse : la lettre de sa colonne et le numéro de sa ligne. B3 est la cellule de la colonne B, ligne 3.\n\nUne cellule peut contenir une valeur, ou une formule qui commence par le signe égal. Une formule ne stocke pas un résultat : elle stocke un calcul, refait chaque fois qu'une cellule dont elle dépend change.\n\nC'est toute la différence. Sur papier, corriger une donnée oblige à refaire tous les calculs qui en dépendaient. Dans un tableur, ils se refont seuls."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Écrire une formule",
+          "body": "On commence par le signe égal. Sans lui, le tableur comprend du texte et affiche la formule au lieu de la calculer.\n\nOn désigne les cellules par leur adresse, jamais par leur valeur. Écrire `=5*2` donne bien 10, mais ce 10 ne se mettra jamais à jour.\n\nOn valide, et la cellule affiche le résultat tout en gardant la formule. La barre de formule la montre quand on sélectionne la cellule."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Jamais de nombre en dur dans une formule",
+          "body": "Si le taux de TVA vaut 20 %, on le met dans une cellule et on y fait référence, plutôt que d'écrire 1,2 dans trente formules.\n\nLe jour où le taux change, il y a une cellule à modifier au lieu de trente formules à retrouver. Et on ne risque pas d'en oublier une, ce qui est le vrai danger.\n\nC'est la même règle qu'en programmation : une valeur qui peut changer vit dans une variable."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "La référence circulaire",
+          "body": "Écrire en B2 la formule `=B2+1` demande au tableur de calculer B2 à partir de B2. Il n'y a aucune réponse, et le tableur refuse en signalant une référence circulaire.\n\nCe n'est pas un défaut du logiciel : la demande n'a pas de sens. C'est une différence réelle avec `x = x + 1` en programmation, où l'instruction s'exécute une fois, dans le temps. Une formule de tableur, elle, décrit un état permanent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Par quoi commence une formule dans un tableur ?",
+          "explanation": "Par le signe égal. Sans lui, le contenu est pris pour du texte et affiché tel quel.",
+          "options": [
+            {
+              "text": "le signe égal",
+              "correct": true
+            },
+            {
+              "text": "le signe plus"
+            },
+            {
+              "text": "une parenthèse"
+            },
+            {
+              "text": "le nom de la fonction"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi écrire =A1*A2 plutôt que =5*2 ?",
+          "explanation": "Parce que la formule se recalcule quand A1 ou A2 change. Un nombre écrit en dur ne se mettra jamais à jour.",
+          "options": [
+            {
+              "text": "pour que le calcul se refasse quand les données changent",
+              "correct": true
+            },
+            {
+              "text": "pour que la formule soit plus courte"
+            },
+            {
+              "text": "parce que les nombres sont interdits"
+            },
+            {
+              "text": "pour éviter les erreurs de frappe uniquement"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'arrive-t-il si l'on écrit =B2+1 dans la cellule B2 ?",
+          "explanation": "Le tableur refuse en signalant une référence circulaire : il faudrait connaître B2 pour calculer B2.",
+          "options": [
+            {
+              "text": "le tableur refuse, référence circulaire",
+              "correct": true
+            },
+            {
+              "text": "la cellule augmente de 1 à chaque seconde"
+            },
+            {
+              "text": "la cellule affiche 1"
+            },
+            {
+              "text": "la cellule affiche 0"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Le taux de TVA apparaît dans trente formules. Où faut-il le mettre ?",
+          "explanation": "Dans une cellule, à laquelle les trente formules font référence. Le jour où il change, il y a une seule modification à faire.",
+          "options": [
+            {
+              "text": "dans une cellule, référencée par les formules",
+              "correct": true
+            },
+            {
+              "text": "en dur dans chaque formule"
+            },
+            {
+              "text": "dans le titre de la feuille"
+            },
+            {
+              "text": "dans un commentaire"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recopie",
+      "title": "La recopie et le dollar",
+      "subtitle": "Ce qui bouge et ce qui reste.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une référence relative suit la recopie",
+          "body": "En B2, la formule `=A2*2`. Recopie-la vers le bas : B3 contient `=A3*2`, B4 contient `=A4*2`.\n\nLe tableur n'a pas copié le texte de la formule : il a compris « la cellule à ma gauche », et l'a réinterprété à chaque ligne.\n\nC'est ce qui permet de remplir mille lignes en un geste, et c'est la fonctionnalité qui a fait le succès du tableur en 1979."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le dollar fige",
+          "body": "`A2` : la colonne et la ligne bougent toutes les deux à la recopie.\n\n`$A2` : la colonne A est figée, la ligne bouge.\n\n`A$2` : la ligne 2 est figée, la colonne bouge.\n\n`$A$2` : rien ne bouge, la formule pointera toujours A2 où qu'on la copie.\n\nLe dollar se lit « ne change pas ce qui suit »."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Le cas qui impose le dollar",
+          "body": "En D1 se trouve le taux de TVA. En C2, on veut `=B2*D1`.\n\nRecopiée vers le bas, cette formule devient `=B3*D2` en ligne 3 — et D2 est vide. Toutes les lignes suivantes donnent zéro.\n\nIl faut écrire `=B2*$D$1`. Recopiée, elle devient `=B3*$D$1` : la colonne de prix suit, le taux reste. Ce bug est le plus courant du tableur, et il se voit tout de suite parce qu'il donne des zéros."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Reconnaître le besoin de dollar",
+          "body": "Pose-toi une question par référence : « quand je recopie, est-ce que je veux que celle-ci suive ? »\n\nSi oui, laisse-la relative. Si non, mets des dollars. Une formule bien pensée mélange souvent les deux, et c'est normal.\n\nLa table de multiplication complète en est le cas d'école : `=$A2*B$1` remplit la grille entière d'un seul geste, parce que la colonne de gauche est figée en colonne et la ligne du haut figée en ligne."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "En B2 il y a =A2*2. Que contient B5 après recopie vers le bas ?",
+          "explanation": "=A5*2. Les références relatives suivent le décalage : trois lignes plus bas, la référence descend de trois lignes.",
+          "options": [
+            {
+              "text": "=A5*2",
+              "correct": true
+            },
+            {
+              "text": "=A2*2"
+            },
+            {
+              "text": "=B5*2"
+            },
+            {
+              "text": "=A2*5"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "En B2 il y a =$A$2*2. Que contient B5 après recopie ?",
+          "explanation": "=$A$2*2. Les deux dollars figent la colonne et la ligne : la référence ne bouge pas.",
+          "options": [
+            {
+              "text": "=$A$2*2",
+              "correct": true
+            },
+            {
+              "text": "=$A$5*2"
+            },
+            {
+              "text": "=A5*2"
+            },
+            {
+              "text": "=$A5*2"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "En B2 il y a =A$2*2. Que contient C2 après recopie vers la droite ?",
+          "explanation": "=B$2*2. La ligne est figée par le dollar, la colonne avance d'un cran vers la droite.",
+          "options": [
+            {
+              "text": "=B$2*2",
+              "correct": true
+            },
+            {
+              "text": "=A$2*2"
+            },
+            {
+              "text": "=A$3*2"
+            },
+            {
+              "text": "=B$3*2"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "=B2*D1 recopiée vers le bas donne des zéros à partir de la ligne 3. Pourquoi ?",
+          "explanation": "Parce que D1 est devenu D2, puis D3, qui sont vides. Il fallait figer le taux avec $D$1.",
+          "options": [
+            {
+              "text": "la référence au taux a glissé vers des cellules vides",
+              "correct": true
+            },
+            {
+              "text": "la colonne B est vide"
+            },
+            {
+              "text": "le taux est mal saisi"
+            },
+            {
+              "text": "la recopie ne marche pas vers le bas"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que fait =$A2*B$1 recopiée dans toute une grille ?",
+          "explanation": "Elle remplit une table de multiplication : la colonne A est figée en colonne et fournit le premier facteur, la ligne 1 est figée en ligne et fournit le second.",
+          "options": [
+            {
+              "text": "elle remplit une table de multiplication",
+              "correct": true
+            },
+            {
+              "text": "elle recopie toujours la même valeur"
+            },
+            {
+              "text": "elle donne une erreur circulaire"
+            },
+            {
+              "text": "elle additionne la ligne et la colonne"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Associe chaque écriture à ce qu'elle fige.",
+          "explanation": "Le dollar fige ce qui le suit immédiatement : la lettre de colonne ou le numéro de ligne.",
+          "pairs": [
+            {
+              "left": "A2",
+              "right": "rien n'est figé"
+            },
+            {
+              "left": "$A2",
+              "right": "la colonne seule"
+            },
+            {
+              "left": "A$2",
+              "right": "la ligne seule"
+            },
+            {
+              "left": "$A$2",
+              "right": "la colonne et la ligne"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fonctions",
+      "title": "Les fonctions utiles",
+      "subtitle": "Somme, moyenne, et le test.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les cinq qui servent tout le temps",
+          "body": "`=SOMME(A1:A10)` additionne une plage. Les deux-points se lisent « de … à ».\n\n`=MOYENNE(A1:A10)` en fait la moyenne, en ignorant les cellules vides — ce qui n'est pas anodin.\n\n`=MIN(…)` et `=MAX(…)` donnent le plus petit et le plus grand.\n\n`=NB.SI(A1:A10;\">10\")` compte les cellules qui remplissent une condition."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le test",
+          "formula": "=SI(condition ; valeur si vrai ; valeur si faux)",
+          "body": "`=SI(B2>=10;\"admis\";\"recalé\")` affiche admis quand la note atteint 10, et recalé sinon. C'est exactement le « si … alors … sinon » de la programmation, écrit sur une ligne."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Les cellules vides ne sont pas des zéros",
+          "body": "`MOYENNE` ignore les cellules vides, et c'est généralement ce qu'on veut : une absence n'est pas un zéro.\n\nMais si un élève absent doit compter zéro, il faut écrire le zéro. Sinon sa moyenne de classe sera calculée sur un élève de moins, et elle sera plus haute qu'elle ne devrait.\n\nLa même feuille donne donc deux résultats différents selon qu'on a saisi des vides ou des zéros, sans aucune erreur visible."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "A1 à A5 contiennent 4, 8, 6, 10 et 2. Que donne =SOMME(A1:A5) ?",
+          "explanation": "4 + 8 + 6 + 10 + 2 = 30.",
+          "answer": 30
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Que donne =MOYENNE(A1:A5) sur ces mêmes valeurs ?",
+          "explanation": "30 ÷ 5 = 6. MOYENNE divise la somme par le nombre de cellules non vides de la plage.",
+          "answer": 6
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Que donne =MAX(A1:A5) − =MIN(A1:A5) sur ces valeurs ?",
+          "explanation": "10 − 2 = 8, l'étendue de la série.",
+          "answer": 8
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Que donne =NB.SI(A1:A5;\">5\") sur ces valeurs ?",
+          "hint": "Combien de valeurs dépassent 5 ?",
+          "explanation": "Trois : 8, 6 et 10. Les valeurs 4 et 2 ne comptent pas.",
+          "answer": 3
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "La cellule A3 est vidée. Que donne alors =MOYENNE(A1:A5) ?",
+          "hint": "MOYENNE ignore les vides.",
+          "explanation": "(4 + 8 + 10 + 2) ÷ 4 = 24 ÷ 4 = 6. Ici le hasard fait que la moyenne ne change pas, mais elle a été calculée sur quatre valeurs et non cinq.",
+          "answer": 6
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Et si A3 contenait 0 au lieu d'être vide ?",
+          "explanation": "(4 + 8 + 0 + 10 + 2) ÷ 5 = 24 ÷ 5 = 4,8. Un vide et un zéro donnent deux résultats différents, sans qu'aucune erreur soit signalée.",
+          "answer": 4.8,
+          "tolerance": 0.01
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "=SI(B2>=10;\"admis\";\"recalé\") avec B2 valant exactement 10. Qu'affiche la cellule ?",
+          "explanation": "« admis » : le test est supérieur ou égal, donc 10 le satisfait. Avec un simple « supérieur à », il aurait affiché recalé.",
+          "options": [
+            {
+              "text": "admis",
+              "correct": true
+            },
+            {
+              "text": "recalé"
+            },
+            {
+              "text": "une erreur"
+            },
+            {
+              "text": "la cellule reste vide"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-moyennes",
+      "title": "Défi : la moyenne des moyennes",
+      "subtitle": "Un piège qui trompe des professionnels.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux classes, deux moyennes",
+          "body": "La classe A compte 10 élèves, de moyenne 12. La classe B compte 30 élèves, de moyenne 16.\n\nQuelle est la moyenne des 40 élèves ?\n\nLa réponse qui vient spontanément est (12 + 16) ÷ 2 = 14. Elle est fausse.\n\nIl faut repasser par les totaux : 10 × 12 = 120 points, et 30 × 16 = 480 points, soit 600 points pour 40 élèves. 600 ÷ 40 = 15.\n\nUn point d'écart, parce que la classe B est trois fois plus nombreuse et tire la moyenne vers elle."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Pourquoi 14 serait juste",
+          "body": "La moyenne des moyennes est correcte dans un seul cas : quand les groupes ont le même effectif.\n\nDès que les effectifs diffèrent, il faut une moyenne pondérée — c'est-à-dire repasser par les totaux. C'est la raison d'être de la formule `=SOMMEPROD(effectifs;moyennes)/SOMME(effectifs)`.\n\nCe piège se retrouve partout : dans les taux de réussite nationaux, dans les prix moyens, dans les rendements financiers. Il est si fréquent qu'il a coûté des millions à des entreprises qui ont moyenné des pourcentages."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Classe A : 10 élèves à 12 de moyenne. Combien de points au total ?",
+          "explanation": "10 × 12 = 120 points.",
+          "answer": 120
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Classe B : 30 élèves à 16 de moyenne. Combien de points ?",
+          "explanation": "30 × 16 = 480 points.",
+          "answer": 480
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la vraie moyenne des 40 élèves ?",
+          "explanation": "(120 + 480) ÷ 40 = 600 ÷ 40 = 15. Et non 14, qui serait la moyenne des moyennes.",
+          "answer": 15
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "De combien la moyenne des moyennes se trompe-t-elle ici ?",
+          "explanation": "15 − 14 = 1 point d'écart, ce qui est considérable sur une note.",
+          "answer": 1
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Trois classes : 10 élèves à 12, 20 à 14, 30 à 16. Quelle est la vraie moyenne ? Arrondis au centième.",
+          "hint": "Totalise les points, puis divise par 60.",
+          "explanation": "120 + 280 + 480 = 880 points pour 60 élèves, soit 880 ÷ 60 ≈ 14,67. La moyenne des moyennes donnerait exactement 14.",
+          "answer": 14.67,
+          "tolerance": 0.02
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Dans quel cas la moyenne des moyennes est-elle correcte ?",
+          "explanation": "Quand tous les groupes ont le même effectif. Dès que les effectifs diffèrent, il faut pondérer.",
+          "options": [
+            {
+              "text": "quand tous les groupes ont le même effectif",
+              "correct": true
+            },
+            {
+              "text": "quand les moyennes sont proches"
+            },
+            {
+              "text": "quand il y a exactement deux groupes"
+            },
+            {
+              "text": "jamais"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "On peut moyenner des pourcentages comme on moyenne des nombres.",
+          "explanation": "Faux, si les effectifs derrière ces pourcentages diffèrent. Un taux de 50 % sur 10 cas et un taux de 90 % sur 1 000 cas ne se moyennent pas à 70 % : le vrai taux est de 89,6 %.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
