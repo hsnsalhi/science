@@ -1,0 +1,322 @@
+{
+  "chapter": "informatique-primaire-comment-ca-marche",
+  "lessons": [
+    {
+      "id": "la-chaine-d-information",
+      "title": "Capter, décider, agir",
+      "subtitle": "Trois étapes dans presque tout appareil.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "La chaîne d'information",
+          "body": "Suis le signal depuis le capteur jusqu'à l'action.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Les portes du supermarché",
+          "body": "Tu approches, elles s'ouvrent. Comment savent-elles ?\n\nUn capteur te détecte. Une petite électronique décide qu'il faut ouvrir. Un moteur écarte les portes.\n\nCapter, décider, agir. Ces trois étapes se retrouvent dans un lave-linge, un radiateur, un feu rouge, une voiture."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Les trois rôles",
+          "body": "Le capteur transforme quelque chose du monde en signal : lumière, chaleur, présence, pression.\n\nLa partie qui décide compare le signal à une consigne.\n\nL'actionneur agit : moteur, lampe, sonnerie, vanne."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le thermostat",
+          "body": "Un capteur mesure la température de la pièce.\n\nLa consigne est réglée à 20 degrés.\n\nSi la pièce est plus froide, le chauffage s'allume. Si elle est plus chaude, il s'éteint.\n\nL'appareil se corrige tout seul. C'est ce qu'on appelle une régulation, et c'est partout."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Un capteur ne comprend rien",
+          "body": "Le capteur des portes ne sait pas que tu es une personne. Il détecte un mouvement, ou une chaleur.\n\nC'est pourquoi les portes s'ouvrent aussi pour un chariot vide ou une feuille qui vole. L'appareil n'a pas d'intention : il réagit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les trois étapes d'une chaîne d'information.",
+          "explanation": "On capte d'abord, on décide ensuite, on agit enfin.",
+          "items": ["un capteur détecte", "l'appareil décide", "un actionneur agit"]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces éléments : capteurs ou actionneurs ?",
+          "explanation": "Le capteur reçoit une information du monde ; l'actionneur agit sur le monde.",
+          "categories": ["capteur", "actionneur"],
+          "items": [
+            { "text": "un thermomètre électronique", "category": 0 },
+            { "text": "un détecteur de mouvement", "category": 0 },
+            { "text": "un bouton poussoir", "category": 0 },
+            { "text": "un moteur", "category": 1 },
+            { "text": "une lampe", "category": 1 },
+            { "text": "une sonnerie", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les portes automatiques s'ouvrent-elles parfois pour rien ?",
+          "explanation": "Parce que le capteur détecte un mouvement ou une chaleur sans savoir ce que c'est. Il réagit, il ne comprend pas.",
+          "options": [
+            { "text": "le capteur détecte sans comprendre ce qu'il détecte", "correct": true },
+            { "text": "elles sont mal réglées en usine" },
+            { "text": "le moteur se déclenche au hasard" },
+            { "text": "elles s'ouvrent toutes les minutes" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un thermostat est réglé sur 20 °C. La pièce est à 17 °C. De combien de degrés faut-il chauffer ?",
+          "explanation": "20 − 17 = 3 degrés. Le chauffage s'allume tant que l'écart est positif.",
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-energie",
+      "title": "D'où vient l'énergie",
+      "subtitle": "Il faut toujours en apporter.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Rien ne marche tout seul",
+          "body": "Une lampe a besoin d'électricité. Une voiture, d'essence ou de batterie. Un vélo, de tes jambes.\n\nUn appareil ne crée pas d'énergie : il en reçoit, et la transforme en quelque chose d'utile.\n\nDébranche-le, il s'arrête. C'est la preuve la plus simple qu'il en consommait."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La chaîne d'énergie",
+          "body": "Une source fournit l'énergie : prise, pile, carburant, muscle.\n\nUn élément la transforme : moteur, résistance, ampoule.\n\nQuelque chose d'utile en sort : mouvement, chaleur, lumière.\n\nEt toujours une part qui se perd, le plus souvent en chaleur."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Une part se perd toujours",
+          "body": "Un chargeur de téléphone chauffe : cette chaleur est de l'énergie perdue.\n\nUne ampoule à filament dégageait plus de chaleur que de lumière — c'est pour cela qu'on les a remplacées.\n\nAucun appareil ne transforme tout ce qu'il reçoit en ce qu'on veut."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Veille ne veut pas dire éteint",
+          "body": "Un appareil en veille consomme encore. Une box internet, une télévision, un chargeur branché à vide.\n\nMis bout à bout, cela représente dans un foyer l'équivalent de plusieurs ampoules allumées en permanence."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque appareil à ce qu'il produit d'utile.",
+          "explanation": "Chaque appareil transforme de l'énergie en une forme utile, plus une part perdue.",
+          "pairs": [
+            { "left": "une lampe", "right": "de la lumière" },
+            { "left": "un ventilateur", "right": "du mouvement d'air" },
+            { "left": "un radiateur", "right": "de la chaleur" },
+            { "left": "un haut-parleur", "right": "du son" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un chargeur de téléphone chauffe-t-il ?",
+          "explanation": "Parce qu'une part de l'énergie qu'il reçoit est perdue en chaleur au lieu d'aller dans la batterie.",
+          "options": [
+            { "text": "une part de l'énergie se perd en chaleur", "correct": true },
+            { "text": "il stocke la chaleur pour plus tard" },
+            { "text": "c'est un signe qu'il est cassé" },
+            { "text": "la batterie renvoie de la chaleur" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un appareil en veille ne consomme plus rien.",
+          "explanation": "Faux. Il consomme peu mais en permanence. Dans un foyer, la somme des veilles équivaut à plusieurs ampoules allumées jour et nuit.",
+          "answer": false
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre la chaîne d'énergie d'un ventilateur.",
+          "explanation": "La prise fournit, le moteur transforme, les pales brassent l'air.",
+          "items": [
+            "la prise fournit l'électricité",
+            "le moteur la transforme en rotation",
+            "les pales brassent l'air",
+            "une part se perd en chaleur et en bruit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entrainement-fonctionnement",
+      "title": "S'entraîner",
+      "subtitle": "Démonter par la pensée.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Une lampe de poche",
+          "body": "Source : les piles.\n\nInterrupteur : il décide si le courant passe.\n\nActionneur : l'ampoule, qui transforme l'électricité en lumière.\n\nTrois éléments seulement, et pourtant toute la chaîne y est."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Un lave-linge",
+          "body": "Capteurs : niveau d'eau, température, vitesse.\n\nDécision : le programme choisi.\n\nActionneurs : la vanne d'eau, la résistance chauffante, le moteur du tambour, la pompe de vidange.\n\nPlus l'appareil est complexe, plus il a de capteurs et d'actionneurs — mais la structure ne change pas."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Chercher les trois rôles",
+          "body": "Devant n'importe quel appareil, demande-toi : qu'est-ce qui capte, qu'est-ce qui décide, qu'est-ce qui agit ?\n\nC'est le même squelette dans un grille-pain et dans un avion."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Dans un lave-linge, range ces éléments.",
+          "explanation": "Les capteurs mesurent, les actionneurs agissent sur le linge et l'eau.",
+          "categories": ["capteur", "actionneur"],
+          "items": [
+            { "text": "le capteur de niveau d'eau", "category": 0 },
+            { "text": "le capteur de température", "category": 0 },
+            { "text": "le moteur du tambour", "category": 1 },
+            { "text": "la pompe de vidange", "category": 1 },
+            { "text": "la résistance chauffante", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans une lampe de poche, quel est le rôle de l'interrupteur ?",
+          "explanation": "Il décide si le courant passe ou non. C'est l'étape « décider » de la chaîne.",
+          "options": [
+            { "text": "décider si le courant passe", "correct": true },
+            { "text": "produire la lumière" },
+            { "text": "fournir l'énergie" },
+            { "text": "mesurer la luminosité" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une lampe de poche a 3 piles de 1,5 volt en série. Quelle tension en tout, en volts ?",
+          "explanation": "3 × 1,5 = 4,5 volts. En série, les tensions s'additionnent.",
+          "answer": 4.5,
+          "tolerance": 0.01
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un appareil en veille consomme 2 watts. Combien de watts pour 6 appareils ?",
+          "explanation": "2 × 6 = 12 watts, soit l'équivalent d'une ampoule économique allumée en permanence.",
+          "answer": 12
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un appareil complexe a une structure différente d'un appareil simple.",
+          "explanation": "Faux. Il a plus de capteurs et d'actionneurs, mais le squelette est le même : capter, décider, agir.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-fonctionnement",
+      "title": "Défi : des appareils à percer",
+      "subtitle": "Deviner ce qu'il y a dedans.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le réfrigérateur ne fabrique pas de froid",
+          "body": "On croit qu'il produit du froid. En réalité il transporte la chaleur : il la prend à l'intérieur et la rejette derrière, dans la pièce.\n\nTouche la grille à l'arrière : elle est tiède. C'est la chaleur de tes aliments qui sort par là.\n\nC'est pourquoi laisser la porte du réfrigérateur ouverte ne refroidit pas une cuisine : cela la réchauffe, puisque le moteur travaille et que toute la chaleur reste dans la pièce."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que fait vraiment un réfrigérateur ?",
+          "explanation": "Il transporte la chaleur de l'intérieur vers l'extérieur. Il ne fabrique pas de froid : le froid est l'absence de chaleur.",
+          "options": [
+            { "text": "il déplace la chaleur vers l'extérieur", "correct": true },
+            { "text": "il fabrique du froid" },
+            { "text": "il détruit la chaleur" },
+            { "text": "il ralentit le temps" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Laisser la porte du réfrigérateur ouverte rafraîchit la cuisine.",
+          "explanation": "Faux. Cela la réchauffe : le moteur travaille et rejette sa chaleur dans la même pièce, en plus de celle qu'il extrait.",
+          "answer": false
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans un feu de circulation, qu'est-ce qui joue le rôle de capteur ?",
+          "hint": "Certains feux changent quand une voiture arrive.",
+          "explanation": "Une boucle enfouie dans la chaussée détecte la masse métallique du véhicule. C'est elle qui informe le feu qu'une voiture attend.",
+          "options": [
+            { "text": "une boucle dans la chaussée qui détecte le métal", "correct": true },
+            { "text": "l'ampoule rouge" },
+            { "text": "le poteau" },
+            { "text": "le passage piéton" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque appareil à son capteur principal.",
+          "explanation": "Chaque appareil mesure ce dont sa décision dépend.",
+          "pairs": [
+            { "left": "un thermostat", "right": "la température" },
+            { "left": "un détecteur de fumée", "right": "les particules dans l'air" },
+            { "left": "une lampe de jardin automatique", "right": "la luminosité" },
+            { "left": "un portail automatique", "right": "la présence d'un véhicule" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un radiateur de 1 000 watts fonctionne 3 heures. Combien de wattheures consomme-t-il ?",
+          "explanation": "1 000 × 3 = 3 000 wattheures, soit 3 kilowattheures.",
+          "answer": 3000
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Le froid est quelque chose qu'on peut fabriquer et déplacer.",
+          "explanation": "Faux. Le froid est l'absence de chaleur. On ne déplace que la chaleur, dans un sens ou dans l'autre.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

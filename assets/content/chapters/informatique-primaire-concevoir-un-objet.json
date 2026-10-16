@@ -1,0 +1,314 @@
+{
+  "chapter": "informatique-primaire-concevoir-un-objet",
+  "lessons": [
+    {
+      "id": "partir-du-besoin",
+      "title": "Partir du besoin",
+      "subtitle": "Avant de fabriquer, comprendre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La question d'abord",
+          "body": "« Je veux construire une boîte » n'est pas un besoin, c'est déjà une solution.\n\nLe besoin serait : « je veux ranger mes crayons pour les retrouver vite ». Et une boîte n'est qu'une réponse possible parmi d'autres : un pot, un tiroir, un support debout.\n\nCommencer par la solution ferme des portes avant d'avoir regardé."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le cahier des charges",
+          "body": "Avant de construire, on écrit ce que l'objet devra faire et respecter :\n\nÀ quoi il sert.\n\nQuelle taille, quel poids maximum.\n\nQuels matériaux sont permis.\n\nCombien de temps et d'argent on a.\n\nC'est une liste de contraintes, et elle sert à juger si l'objet fini est réussi."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les contraintes aident",
+          "body": "On croit qu'elles gênent. En réalité elles orientent.\n\nSans contrainte, on ne sait pas par où commencer et toutes les idées se valent. Avec « il doit tenir dans un cartable », une foule de solutions tombent d'elles-mêmes, et il reste celles qui valent d'être essayées."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Une idée n'est pas un objet",
+          "body": "Beaucoup d'idées excellentes ne tiennent pas debout une fois construites.\n\nC'est pour cela qu'on fait un prototype : un premier exemplaire, souvent laid, uniquement destiné à vérifier que ça marche."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Laquelle de ces phrases exprime un besoin, et non une solution ?",
+          "explanation": "« Ranger ses crayons pour les retrouver vite » décrit ce qu'on veut obtenir. « Construire une boîte » impose déjà la réponse.",
+          "options": [
+            { "text": "ranger ses crayons pour les retrouver vite", "correct": true },
+            { "text": "construire une boîte en carton" },
+            { "text": "acheter un pot en plastique" },
+            { "text": "percer une planche" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixMultiple",
+          "prompt": "Que contient un cahier des charges ?",
+          "explanation": "Il liste la fonction et toutes les contraintes : taille, matériaux, temps, budget.",
+          "options": [
+            { "text": "ce que l'objet doit faire", "correct": true },
+            { "text": "les dimensions maximales", "correct": true },
+            { "text": "les matériaux autorisés", "correct": true },
+            { "text": "le budget disponible", "correct": true },
+            { "text": "le nom de l'inventeur" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "À quoi sert un prototype ?",
+          "explanation": "À vérifier que l'idée fonctionne pour de vrai. Il est souvent laid, et ce n'est pas grave.",
+          "options": [
+            { "text": "vérifier que l'idée marche vraiment", "correct": true },
+            { "text": "faire joli pour la présentation" },
+            { "text": "remplacer le cahier des charges" },
+            { "text": "vendre l'objet" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Les contraintes empêchent d'avoir de bonnes idées.",
+          "explanation": "Faux. Elles orientent : sans elles, toutes les idées se valent et on ne sait pas par où commencer.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "concevoir-et-fabriquer",
+      "title": "Du croquis à l'objet",
+      "subtitle": "Dessiner, essayer, recommencer.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les étapes d'un projet",
+          "body": "1. Comprendre le besoin.\n\n2. Écrire le cahier des charges.\n\n3. Chercher plusieurs idées, sans en éliminer trop vite.\n\n4. Choisir, et dessiner avec les dimensions.\n\n5. Fabriquer un prototype.\n\n6. Tester, corriger, recommencer."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le dessin porte les mesures",
+          "body": "Un croquis sans dimensions ne permet pas de fabriquer : deux personnes en feraient deux objets différents.\n\nOn note donc les longueurs, et on précise l'unité. « 12 » ne veut rien dire ; « 12 cm » si."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Le premier essai rate presque toujours",
+          "body": "Ce n'est pas un échec, c'est une étape. On apprend du prototype ce qu'aucun dessin ne pouvait dire.\n\nLes ingénieurs appellent cela itérer : essayer, mesurer l'écart, corriger. Les plus grandes réussites techniques ont toutes derrière elles une pile de ratés."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Tester contre le cahier des charges",
+          "body": "Pour savoir si l'objet est réussi, on reprend la liste écrite au début et on coche.\n\nSi aucune liste n'a été écrite, on ne peut que donner un avis — et les avis ne se discutent pas, contrairement aux mesures."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes d'un projet technique.",
+          "explanation": "On comprend, on écrit les contraintes, on cherche, on choisit et on dessine, on fabrique, on teste.",
+          "items": [
+            "comprendre le besoin",
+            "écrire le cahier des charges",
+            "chercher plusieurs idées",
+            "dessiner la solution choisie",
+            "fabriquer un prototype",
+            "tester et corriger"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que manque-t-il à un croquis où il est écrit seulement « 12 » ?",
+          "explanation": "L'unité. Douze centimètres et douze millimètres ne donnent pas le même objet.",
+          "options": [
+            { "text": "l'unité de mesure", "correct": true },
+            { "text": "la couleur" },
+            { "text": "le nom du dessinateur" },
+            { "text": "la date" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que faire quand le premier prototype ne marche pas ?",
+          "explanation": "Mesurer ce qui cloche et corriger. C'est l'étape normale du travail, pas un échec.",
+          "options": [
+            { "text": "comprendre pourquoi, corriger, recommencer", "correct": true },
+            { "text": "abandonner le projet" },
+            { "text": "changer de besoin" },
+            { "text": "le présenter quand même tel quel" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Sans cahier des charges, on peut quand même juger si l'objet est réussi.",
+          "explanation": "Faux. On ne peut donner qu'un avis. Avec une liste écrite au début, on coche des points vérifiables.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "entrainement-concevoir",
+      "title": "S'entraîner",
+      "subtitle": "Des projets à cadrer.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Un porte-crayons",
+          "body": "Besoin : garder ses crayons debout, à portée de main.\n\nContraintes : tenir sur un coin de bureau de 10 cm sur 10, contenir au moins 12 crayons, être fait de matériaux de récupération.\n\nIdées : un pot décoré, une planche percée, des rouleaux de carton collés côte à côte.\n\nChacune respecte les contraintes. Il faut en choisir une et la dessiner."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Compter avant de construire",
+          "body": "Douze crayons de 8 mm de diamètre, serrés côte à côte sur une rangée, occuperaient presque 10 centimètres.\n\nMieux vaut donc plusieurs rangées, ou un pot rond. Ce calcul de trente secondes évite de fabriquer un objet trop petit."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Prévoir du jeu",
+          "body": "Si un crayon fait exactement 8 mm et le trou exactement 8 mm, il ne rentrera pas.\n\nIl faut toujours un peu de marge. Les fabricants appellent cela le jeu, et l'oublier est l'erreur la plus fréquente des débutants."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Douze crayons de 8 mm côte à côte sur une seule rangée occupent combien de millimètres ?",
+          "explanation": "12 × 8 = 96 mm, soit presque 10 centimètres.",
+          "answer": 96
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Sur un support de 10 cm, combien de crayons de 8 mm tiennent en une rangée ?",
+          "hint": "100 mm divisés par 8.",
+          "explanation": "100 ÷ 8 = 12,5, donc 12 crayons. On ne compte pas les demi-crayons.",
+          "answer": 12
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Pour un crayon de 8 mm, quel diamètre de trou faut-il percer si on prévoit 1 mm de jeu, en millimètres ?",
+          "explanation": "9 mm. Un trou exactement de la taille du crayon ne le laisserait pas entrer.",
+          "answer": 9
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces phrases : besoin ou solution ?",
+          "explanation": "Le besoin dit ce qu'on veut obtenir ; la solution dit déjà comment.",
+          "categories": ["besoin", "solution"],
+          "items": [
+            { "text": "garder mes crayons à portée de main", "category": 0 },
+            { "text": "protéger mon cahier de la pluie", "category": 0 },
+            { "text": "coller des rouleaux de carton", "category": 1 },
+            { "text": "acheter une pochette plastique", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un support de 10 cm sur 10 cm avec des trous de 9 mm espacés de 1 mm : combien de trous par rangée ?",
+          "hint": "Chaque trou occupe 9 mm plus 1 mm d'espace.",
+          "explanation": "Chaque emplacement fait 10 mm, et 100 ÷ 10 = 10 trous par rangée.",
+          "answer": 10
+        }
+      ]
+    },
+    {
+      "id": "defi-concevoir",
+      "title": "Défi : des contraintes qui s'opposent",
+      "subtitle": "Quand on ne peut pas tout avoir.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Solide, léger, pas cher : choisis-en deux",
+          "body": "C'est une plaisanterie d'ingénieur, et elle est vraie.\n\nUn objet très solide demande de la matière, donc du poids. Le rendre léger et solide demande des matériaux de pointe, donc cher.\n\nConcevoir, c'est choisir ce qu'on sacrifie. Un vélo de course est léger et solide — et coûte le prix d'une voiture d'occasion.\n\nC'est pourquoi le cahier des charges doit dire ce qui compte le plus : on ne peut pas tout optimiser à la fois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne peut-on pas faire un objet à la fois très solide, très léger et bon marché ?",
+          "explanation": "Parce que les trois s'opposent : la solidité demande de la matière, la légèreté des matériaux de pointe, et ceux-ci coûtent cher.",
+          "options": [
+            { "text": "les trois exigences s'opposent entre elles", "correct": true },
+            { "text": "les fabricants ne veulent pas" },
+            { "text": "la loi l'interdit" },
+            { "text": "on ne sait pas encore le faire" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque objet à la contrainte qui a primé.",
+          "explanation": "Chaque objet sacrifie quelque chose au profit de ce qui compte le plus pour son usage.",
+          "pairs": [
+            { "left": "un vélo de course", "right": "la légèreté, au prix fort" },
+            { "left": "un marteau de chantier", "right": "la solidité, tant pis pour le poids" },
+            { "left": "un stylo jetable", "right": "le prix, tant pis pour la durée" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un pont peut porter 1 200 kg. Combien de personnes de 60 kg au maximum ?",
+          "explanation": "1 200 ÷ 60 = 20 personnes.",
+          "answer": 20
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Par sécurité, on n'autorise que la moitié de cette charge. Combien de personnes ?",
+          "hint": "Les ingénieurs gardent toujours une marge.",
+          "explanation": "10 personnes. Le coefficient de sécurité protège contre l'imprévu : une charge mal répartie, un matériau fatigué.",
+          "answer": 10
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les ingénieurs prévoient-ils une marge de sécurité ?",
+          "explanation": "Parce que la réalité réserve des surprises : matériaux imparfaits, charges mal réparties, vieillissement. La marge absorbe l'imprévu.",
+          "options": [
+            { "text": "pour absorber l'imprévu et le vieillissement", "correct": true },
+            { "text": "pour vendre plus cher" },
+            { "text": "parce qu'ils calculent mal" },
+            { "text": "pour rendre l'objet plus lourd" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un bon cahier des charges dit ce qui compte le plus.",
+          "explanation": "Vrai. Comme on ne peut pas tout optimiser, il faut écrire ce qu'on accepte de sacrifier — sinon le choix se fera au hasard pendant la fabrication.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}
