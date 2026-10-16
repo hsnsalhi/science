@@ -1,0 +1,368 @@
+{
+  "chapter": "logique-college-et-ou-non",
+  "lessons": [
+    {
+      "id": "et",
+      "title": "Et",
+      "subtitle": "Les deux conditions, pas une seule.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Tout doit être vrai",
+          "body": "« A et B » n'est vrai que si A est vrai et B est vrai. Une seule condition qui tombe, et l'ensemble est faux."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Essaie les quatre cas",
+          "body": "Bascule A et B, et regarde la ligne « A et B ».",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Avec des nombres",
+          "body": "« n est pair et n dépasse 10 »\n\nn = 12 : vrai et vrai → vrai.\nn = 8 : vrai et faux → faux.\nn = 15 : faux et vrai → faux."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "En mathématiques, « et » ne tolère aucune exception. Si une seule des deux conditions échoue sur un seul exemple, l'affirmation entière est fausse."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Le « et »",
+          "bullets": [
+            "Vrai seulement si les deux parties sont vraies.",
+            "Un seul cas qui échoue suffit à tout rendre faux.",
+            "Sur quatre combinaisons possibles, une seule donne vrai."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "« n est pair et n dépasse 10 ». Pour lequel de ces nombres est-ce vrai ?",
+          "hint": "Il faut que les deux conditions tiennent en même temps.",
+          "explanation": "14 est pair, et 14 dépasse 10 : les deux conditions sont vraies. 8 est pair mais ne dépasse pas 10 ; 15 dépasse 10 mais n'est pas pair ; 9 n'est ni l'un ni l'autre.",
+          "figureId": "table-de-verite",
+          "options": [
+            { "text": "14", "correct": true },
+            { "text": "8" },
+            { "text": "15" },
+            { "text": "9" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "« Le nombre est pair et plus grand que 10 ». Range ces nombres.",
+          "hint": "Les deux conditions à la fois.",
+          "explanation": "12 et 20 sont pairs et dépassent 10. 6 est pair mais trop petit, 11 et 13 dépassent 10 mais sont impairs.",
+          "categories": ["L'affirmation est vraie", "L'affirmation est fausse"],
+          "items": [
+            { "text": "12", "category": 0 },
+            { "text": "20", "category": 0 },
+            { "text": "6", "category": 1 },
+            { "text": "11", "category": 1 },
+            { "text": "13", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Si A est faux, alors « A et B » est faux, quelle que soit la valeur de B.",
+          "answer": true,
+          "explanation": "Oui. Le « et » exige les deux ; dès que l'un manque, l'ensemble tombe. On n'a même pas besoin de regarder B."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Sur les quatre combinaisons possibles de A et B, pour combien « A et B » est-il vrai ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "Essaie les quatre cas sur la figure.",
+          "explanation": "Une seule : celle où A et B sont vrais tous les deux."
+        }
+      ]
+    },
+    {
+      "id": "ou",
+      "title": "Ou",
+      "subtitle": "Le « ou » des maths n'est pas celui du restaurant.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Au moins l'un des deux",
+          "body": "« A ou B » est vrai dès que l'un des deux est vrai. Et il reste vrai si les deux le sont."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Le cas qui surprend",
+          "body": "Allume A et B en même temps. « A ou B » reste vrai.",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Fromage ou dessert",
+          "body": "Au restaurant, « fromage ou dessert » veut dire l'un des deux, pas les deux. En mathématiques, « ou » autorise toujours les deux."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Quand le sens courant exclut les deux, on le dit explicitement : « ou bien… ou bien », ou « l'un des deux mais pas les deux »."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Le « ou »",
+          "bullets": [
+            "Vrai dès qu'une des deux parties est vraie.",
+            "Vrai aussi quand les deux le sont.",
+            "Sur quatre combinaisons, trois donnent vrai."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "En mathématiques, « A ou B » est faux lorsque A et B sont vrais tous les deux.",
+          "answer": false,
+          "explanation": "Faux. Le « ou » des mathématiques est inclusif : il reste vrai quand les deux le sont. C'est l'usage courant, celui du « fromage ou dessert », qui exclut les deux.",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Sur les quatre combinaisons possibles de A et B, pour combien « A ou B » est-il vrai ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Un seul cas donne faux.",
+          "explanation": "Trois. Seul le cas où A et B sont faux tous les deux rend « A ou B » faux."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "« Le nombre est pair ou plus grand que 10 ». Range ces nombres.",
+          "hint": "Il suffit qu'une seule condition tienne.",
+          "explanation": "4 est pair, 11 et 13 dépassent 10, 12 fait les deux : tous rendent l'affirmation vraie. Seuls 7 et 9 échouent sur les deux conditions.",
+          "categories": ["L'affirmation est vraie", "L'affirmation est fausse"],
+          "items": [
+            { "text": "4", "category": 0 },
+            { "text": "12", "category": 0 },
+            { "text": "11", "category": 0 },
+            { "text": "7", "category": 1 },
+            { "text": "9", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque phrase au connecteur qu'elle utilise vraiment.",
+          "explanation": "Le « ou » des mathématiques autorise les deux ; celui du menu les exclut, et on le signale alors par « ou bien ».",
+          "pairs": [
+            { "left": "n est pair ou n > 10", "right": "Ou inclusif : les deux sont permis" },
+            { "left": "Fromage ou dessert", "right": "Ou exclusif : l'un des deux seulement" },
+            { "left": "n est pair et n > 10", "right": "Les deux conditions exigées" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "non",
+      "title": "Non",
+      "subtitle": "Nier une phrase, sans se tromper de contraire.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le contraire exact",
+          "body": "La négation d'une affirmation est vraie précisément quand l'affirmation est fausse. Rien de plus, rien de moins."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Nier une comparaison",
+          "body": "Le contraire de « x > 3 » n'est pas « x < 3 ».\n\nIl reste le cas x = 3, où ni l'un ni l'autre ne serait vrai.\n\nLe contraire de « x > 3 » est « x ≤ 3 ».",
+          "formula": "non (x > 3)  ⟺  x ≤ 3"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Nier un « tous »",
+          "body": "Le contraire de « tous les élèves sont présents » n'est pas « aucun élève n'est présent ».\n\nIl suffit d'un seul absent pour que le « tous » tombe.\n\nLe contraire est : « au moins un élève est absent »."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour nier, demande-toi : dans quel cas exactement l'affirmation serait-elle en défaut ? La réponse est la négation."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Nier juste",
+          "bullets": [
+            "non (x > 3) donne x ≤ 3, et non pas x < 3.",
+            "Le contraire de « tous » est « au moins un… ne pas ».",
+            "Le contraire de « il existe » est « aucun »."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « x > 3 » ?",
+          "hint": "N'oublie pas le cas x = 3.",
+          "explanation": "x ≤ 3. Si on écrivait x < 3, le cas x = 3 ne serait couvert ni par l'affirmation ni par sa négation — ce qui est impossible.",
+          "options": [
+            { "text": "x ≤ 3", "correct": true },
+            { "text": "x < 3" },
+            { "text": "x ≥ 3" },
+            { "text": "x = 3" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « tous les nombres de la liste sont pairs » ?",
+          "hint": "Qu'est-ce qui suffit à faire tomber un « tous » ?",
+          "explanation": "Il suffit d'un seul nombre impair pour que l'affirmation soit fausse. Sa négation est donc « au moins un nombre de la liste est impair », et non « aucun n'est pair ».",
+          "options": [
+            { "text": "Au moins un nombre est impair", "correct": true },
+            { "text": "Aucun nombre n'est pair" },
+            { "text": "Tous les nombres sont impairs" },
+            { "text": "La moitié des nombres sont impairs" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète ces négations.",
+          "template": "La négation de « x ≥ 5 » est « x ___ 5 ». La négation de « il existe un carré rouge » est « ___ carré n'est rouge ».",
+          "blanks": [
+            { "accepted": ["<", "inférieur à", "plus petit que"] },
+            { "accepted": ["aucun", "nul"] }
+          ],
+          "hint": "Le contraire de « au moins un », c'est « pas un seul ».",
+          "explanation": "non (x ≥ 5) donne x < 5. Et le contraire de « il existe » est « aucun »."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La négation de « A et B » est « non A et non B ».",
+          "answer": false,
+          "explanation": "Faux. Il suffit que l'une des deux parties tombe pour que « A et B » soit faux. La négation est donc « non A ou non B ».",
+          "figureId": "table-de-verite"
+        }
+      ]
+    },
+    {
+      "id": "defi-logique",
+      "title": "Défi : et, ou, non",
+      "subtitle": "Les trois connecteurs mêlés, chronomètre en marche.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Les pièges de ce chapitre sont tous des pièges de vocabulaire courant : lis chaque phrase deux fois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "« n est impair ou n est plus petit que 5 ». Range ces nombres.",
+          "hint": "Le « ou » suffit avec une seule condition.",
+          "explanation": "3 est impair et petit, 7 et 9 sont impairs, 2 et 4 sont plus petits que 5. Seuls 6 et 8 échouent : pairs et au-dessus de 5.",
+          "categories": ["Vrai", "Faux"],
+          "items": [
+            { "text": "3", "category": 0 },
+            { "text": "7", "category": 0 },
+            { "text": "4", "category": 0 },
+            { "text": "6", "category": 1 },
+            { "text": "8", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « A ou B » ?",
+          "hint": "Pour que « ou » soit faux, il faut que les deux tombent.",
+          "explanation": "« non A et non B ». Un « ou » n'est faux que si aucune de ses deux parties n'est vraie.",
+          "options": [
+            { "text": "non A et non B", "correct": true },
+            { "text": "non A ou non B" },
+            { "text": "A et non B" },
+            { "text": "non A seulement" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "« Je prends une entrée ou un dessert » autorise, en mathématiques, à prendre les deux.",
+          "answer": true,
+          "explanation": "Oui, le « ou » mathématique est inclusif. Au restaurant l'usage l'exclut, mais c'est une convention de la langue courante, pas une règle de logique."
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces affirmations de la plus exigeante à la moins exigeante.",
+          "hint": "Combien de cas chacune accepte-t-elle, sur les quatre possibles ?",
+          "explanation": "« A et B » n'accepte qu'un cas sur quatre, « A » seul en accepte deux, « A ou B » en accepte trois, et une affirmation toujours vraie les accepte tous.",
+          "items": [
+            "A et B",
+            "A",
+            "A ou B",
+            "Toujours vrai"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "texteATrous",
+          "prompt": "Complète ce raisonnement sur une liste de nombres.",
+          "template": "« Tous sont positifs » est fausse dès qu'___ nombre est négatif ou nul. Sa négation est « ___ moins un n'est pas positif ».",
+          "blanks": [
+            { "accepted": ["un", "un seul", "au moins un"] },
+            { "accepted": ["au"] }
+          ],
+          "hint": "Un seul contre-exemple suffit.",
+          "explanation": "Un seul contre-exemple fait tomber un « tous ». La négation est donc « au moins un n'est pas positif »."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "« n est pair et n est impair ». Combien de nombres rendent cette affirmation vraie ?",
+          "hint": "Un nombre peut-il être les deux à la fois ?",
+          "explanation": "Aucun. Un nombre est pair ou impair, jamais les deux : les deux conditions ne peuvent pas être vraies en même temps. L'affirmation est fausse pour tout nombre.",
+          "options": [
+            { "text": "Aucun", "correct": true },
+            { "text": "Tous les nombres pairs" },
+            { "text": "Le nombre 0 seulement" },
+            { "text": "Tous les nombres" }
+          ]
+        }
+      ]
+    }
+  ]
+}

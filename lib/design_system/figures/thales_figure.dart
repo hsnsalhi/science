@@ -1,7 +1,6 @@
 /// Configuration de Thalès : une parallèle qui coupe un triangle.
 library;
 
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 

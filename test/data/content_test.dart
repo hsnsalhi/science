@@ -432,4 +432,78 @@ void main() {
       expect(thales.lessons.last.kind, LessonKind.defi);
     });
   });
+
+  // Logique : les tris du chapitre portent sur des nombres et des
+  // prédicats explicites. Plutôt que de relire les corrigés, on réévalue
+  // chaque prédicat sur chaque nombre cité — une inversion de catégorie
+  // dans un chapitre consacré à la rigueur serait difficile à défendre.
+  group('Chapitre complet : et, ou, non', () {
+    late Chapter logique;
+
+    setUpAll(() {
+      logique = catalog.chapterById('logique-college-et-ou-non')!;
+    });
+
+    ClassifyQuestion tri(String lessonId, String questionId) =>
+        logique.lessonById(lessonId)!.questions.firstWhere(
+              (Question q) => q.id == questionId,
+            )
+            as ClassifyQuestion;
+
+    void verifierTri(
+      String lessonId,
+      String questionId,
+      bool Function(int n) predicat,
+    ) {
+      final ClassifyQuestion q = tri(lessonId, questionId);
+      for (final ClassifyItem item in q.items) {
+        final int n = int.parse(item.text);
+        // Catégorie 0 : l'affirmation est vraie.
+        expect(
+          item.category == 0,
+          predicat(n),
+          reason: '$questionId : $n est mal rangé',
+        );
+      }
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(logique.isPlayable, isTrue);
+      expect(logique.lessons.length, 4);
+    });
+
+    test('« et » exige les deux conditions', () {
+      verifierTri('et', 'q2', (int n) => n.isEven && n > 10);
+    });
+
+    test('« ou » se contente d\'une seule', () {
+      verifierTri('ou', 'q3', (int n) => n.isEven || n > 10);
+    });
+
+    test('le défi combine impair et petitesse', () {
+      verifierTri('defi-logique', 'q1', (int n) => n.isOdd || n < 5);
+    });
+
+    test('les comptes sur quatre combinaisons sont justes', () {
+      int compter(bool Function(bool a, bool b) f) {
+        int total = 0;
+        for (final bool a in <bool>[true, false]) {
+          for (final bool b in <bool>[true, false]) {
+            if (f(a, b)) total++;
+          }
+        }
+        return total;
+      }
+
+      double attendu(String lessonId, String questionId) =>
+          (logique.lessonById(lessonId)!.questions.firstWhere(
+                    (Question q) => q.id == questionId,
+                  )
+                  as NumericQuestion)
+              .expected;
+
+      expect(attendu('et', 'q4'), compter((bool a, bool b) => a && b));
+      expect(attendu('ou', 'q2'), compter((bool a, bool b) => a || b));
+    });
+  });
 }

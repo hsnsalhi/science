@@ -280,6 +280,22 @@ void main() {
         await shoot(tester, '$device-6-astronomie');
       });
 
+      // La table de vérité : c'est en basculant A et B qu'on voit « ou »
+      // rester vrai quand les deux le sont.
+      testWidgets('logique : table de vérité', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Logique et énigmes');
+        await tapText(tester, 'Et, ou, non');
+        await tapText(tester, 'Ou');
+        await tapText(tester, 'Suivant');
+        // Tap direct : la carte d'une figure n'est pas dans une zone
+        // défilante, et ensureVisible y cherche un Scrollable en vain.
+        await tester.tap(find.text('Le nombre dépasse 10'));
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-14-logique');
+      });
+
       // La figure de Thalès : les trois rapports doivent afficher la même
       // valeur, c'est tout l'enseignement du chapitre.
       testWidgets('maths : configuration de Thalès', (
