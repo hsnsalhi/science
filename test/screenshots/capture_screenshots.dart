@@ -456,6 +456,30 @@ void main() {
         await shoot(tester, '$device-9-orbites');
       });
 
+      // Le robot de la boucle : la capture le prend après exécution,
+      // quand le carré est tracé. Figé avant, on ne verrait qu'une
+      // grille vide et la figure ne dirait rien.
+      testWidgets('informatique : robot et boucle', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Informatique');
+        await tapText(tester, 'Boucles et conditions');
+        await tapText(tester, 'La boucle');
+        // La figure est sur la deuxième carte.
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        // Captures en mode « animations réduites » : le tracé ne part pas
+        // tout seul, on appuie sur Exécuter puis on laisse courir
+        // l'animation jusqu'au bout.
+        await tester.tap(find.byIcon(Icons.play_arrow_rounded).first);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 3));
+        await shoot(tester, '$device-17-boucle');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

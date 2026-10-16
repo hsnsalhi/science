@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'cross_figure.dart';
+import 'loop_robot_figure.dart';
 import 'orbits_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'right_triangle_figure.dart';
@@ -33,6 +34,9 @@ abstract final class FigureRegistry {
     // Même triangle, avec les carrés construits sur les côtés.
     'pythagore-carres': (BuildContext context, Color accent) =>
         RightTriangleFigure(accent: accent, showSquares: true),
+    // Un robot qui répète « avancer, tourner » sur une grille.
+    'boucle-robot': (BuildContext context, Color accent) =>
+        LoopRobotFigure(accent: accent),
     // Croisement de deux pois : quatre descendants possibles.
     'croisement': (BuildContext context, Color accent) =>
         CrossFigure(accent: accent),

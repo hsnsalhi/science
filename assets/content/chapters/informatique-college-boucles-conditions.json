@@ -1,0 +1,342 @@
+{
+  "chapter": "informatique-college-boucles-et-conditions",
+  "lessons": [
+    {
+      "id": "la-boucle",
+      "title": "La boucle",
+      "subtitle": "Écrire une fois ce qu'on veut faire dix fois.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Répéter sans recopier",
+          "body": "Au lieu d'écrire quatre fois la même instruction, on écrit une fois « répéter 4 fois » et on place l'instruction dedans."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Exécute le programme",
+          "body": "Change le nombre de tours et regarde le tracé.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le bon nombre de tours",
+          "body": "Avec trois tours, le chemin reste ouvert. Avec quatre, il se referme. Le nombre n'est pas une consigne à retenir : c'est une conséquence qu'on observe."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ce qui est à l'intérieur de la boucle se répète ; ce qui est à l'extérieur ne se fait qu'une fois. Le décalage à gauche n'est pas décoratif, il dit ce qui est dedans."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "La boucle",
+          "bullets": [
+            "Elle répète les instructions qu'elle contient.",
+            "Le décalage indique ce qui est dans la boucle.",
+            "Changer le nombre de tours change le résultat, pas le programme."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "« répéter 4 fois : avancer de 2, tourner à droite ». Combien de fois le robot avance-t-il en tout ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Une fois par tour de boucle.",
+          "explanation": "Quatre fois, une par tour. Il parcourt donc 4 × 2 = 8 cases au total.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Combien de tours faut-il pour que le chemin se referme en carré ?",
+          "hint": "Un carré a quatre côtés, et quatre coins.",
+          "explanation": "Quatre. À chaque tour, le robot trace un côté puis pivote d'un quart de tour ; après quatre quarts de tour il a fait un tour complet et revient à son point de départ.",
+          "figureId": "boucle-robot",
+          "options": [
+            { "text": "4", "correct": true },
+            { "text": "3" },
+            { "text": "5" },
+            { "text": "8" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une boucle permet d'écrire un programme plus court, mais le robot fait exactement le même travail.",
+          "answer": true,
+          "explanation": "Oui. La boucle raccourcit l'écriture, pas l'exécution : le robot avance et tourne autant de fois que si tout avait été recopié."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces tâches selon qu'une boucle est utile ou non.",
+          "hint": "Une boucle sert quand la même chose revient.",
+          "explanation": "Dessiner dix carrés identiques ou saluer trente élèves, c'est la même action répétée : la boucle s'impose. Allumer la lumière une fois, ou calculer une seule somme, ne se répète pas.",
+          "categories": ["Une boucle est utile", "Une boucle est inutile"],
+          "items": [
+            { "text": "Dessiner dix carrés identiques", "category": 0 },
+            { "text": "Saluer les trente élèves", "category": 0 },
+            { "text": "Allumer la lumière", "category": 1 },
+            { "text": "Calculer une seule somme", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-condition",
+      "title": "La condition",
+      "subtitle": "Faire une chose, ou une autre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Si… alors… sinon",
+          "formula": "si (condition) alors A sinon B",
+          "body": "la machine évalue la condition, puis fait A ou B — jamais les deux."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Un exemple",
+          "body": "si (le mur est devant) alors\n    tourner à droite\nsinon\n    avancer\n\nÀ chaque passage, une seule des deux branches est exécutée."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le « sinon » est facultatif",
+          "body": "On peut écrire « si (condition) alors A » sans suite. Quand la condition est fausse, il ne se passe simplement rien."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une condition est une question dont la réponse est vrai ou faux. « Le mur est devant » en est une ; « avancer » n'en est pas une."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "La condition",
+          "bullets": [
+            "Une condition vaut vrai ou faux, jamais autre chose.",
+            "Une seule branche est exécutée à chaque passage.",
+            "Sans « sinon », rien ne se passe quand c'est faux."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces phrases selon qu'elles peuvent servir de condition.",
+          "hint": "Une condition se répond par vrai ou faux.",
+          "explanation": "« Le score dépasse 10 » et « la case est vide » se répondent par vrai ou faux : ce sont des conditions. « Avancer » et « ajouter 1 au score » sont des actions.",
+          "categories": ["C'est une condition", "C'est une action"],
+          "items": [
+            { "text": "Le score dépasse 10", "category": 0 },
+            { "text": "La case est vide", "category": 0 },
+            { "text": "Avancer de 3", "category": 1 },
+            { "text": "Ajouter 1 au score", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "« si (x > 5) alors afficher A sinon afficher B ». Que se passe-t-il si x vaut 5 ?",
+          "hint": "5 est-il strictement supérieur à 5 ?",
+          "explanation": "B s'affiche. La condition x > 5 est fausse pour x = 5, puisque l'inégalité est stricte. C'est le piège classique du cas limite.",
+          "options": [
+            { "text": "B s'affiche", "correct": true },
+            { "text": "A s'affiche" },
+            { "text": "Les deux s'affichent" },
+            { "text": "Rien ne s'affiche" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Dans un « si… alors… sinon », les deux branches peuvent s'exécuter au même passage.",
+          "answer": false,
+          "explanation": "Non. La condition est soit vraie soit fausse : une seule branche est prise à chaque passage."
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre ce que fait la machine devant une condition.",
+          "explanation": "Elle lit la condition, l'évalue à vrai ou faux, choisit la branche correspondante, l'exécute, puis continue après le bloc.",
+          "items": [
+            "Lire la condition",
+            "L'évaluer : vrai ou faux",
+            "Choisir la branche correspondante",
+            "Exécuter cette branche",
+            "Continuer après le bloc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "composer",
+      "title": "Composer les deux",
+      "subtitle": "Une condition dans une boucle.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Une condition dans une boucle",
+          "body": "répéter 10 fois\n    si (la case est vide) alors\n        avancer\n    sinon\n        tourner à droite\n\nÀ chaque tour, la condition est réévaluée : la réponse peut changer d'un tour à l'autre."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Compter avec une variable",
+          "body": "score ← 0\nrépéter 5 fois\n    score ← score + 2\n\nÀ la fin, score vaut 10. La flèche signifie « reçoit la valeur »."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Pour prévoir ce que fait un programme, déroule-le à la main sur deux ou trois tours. C'est plus sûr que de le deviner d'un coup d'œil."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "score ← 0, puis « répéter 5 fois : score ← score + 2 ». Que vaut score à la fin ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "hint": "Cinq ajouts de 2.",
+          "explanation": "score vaut 10 : on ajoute 2 cinq fois de suite, en partant de 0."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "score ← 1, puis « répéter 3 fois : score ← score × 2 ». Que vaut score à la fin ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "hint": "On double à chaque tour, trois fois.",
+          "explanation": "1 puis 2, puis 4, puis 8. Doubler trois fois revient à multiplier par 2 × 2 × 2 = 8."
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète ce programme pour qu'il affiche « gagné » à partir de 10 points.",
+          "template": "si (score ___ 10) alors afficher « gagné » ___ afficher « perdu »",
+          "blanks": [
+            { "accepted": [">=", "≥", "supérieur ou égal à"] },
+            { "accepted": ["sinon"] }
+          ],
+          "hint": "« À partir de 10 » inclut 10.",
+          "explanation": "score ≥ 10, parce que « à partir de 10 » comprend 10 lui-même. Avec « > 10 », un score de 10 pile serait perdant."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "« répéter 3 fois : si (vrai) alors avancer ». Combien de fois le robot avance-t-il ?",
+          "hint": "La condition est vraie à chaque passage.",
+          "explanation": "Trois fois. La condition est réévaluée à chaque tour et reste vraie, donc la branche est prise à chaque fois.",
+          "options": [
+            { "text": "3", "correct": true },
+            { "text": "1" },
+            { "text": "0" },
+            { "text": "9" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-boucles",
+      "title": "Défi : boucles et conditions",
+      "subtitle": "Dérouler avant de répondre.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chacune, déroule le programme sur deux tours avant de répondre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "n ← 20, puis « répéter 2 fois : n ← n ÷ 2 ». Que vaut n ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "On divise deux fois de suite.",
+          "explanation": "20 puis 10, puis 5. Diviser deux fois par 2 revient à diviser par 4."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "« répéter 4 fois : avancer de 3, tourner à droite ». Quelle figure est tracée ?",
+          "hint": "Quatre côtés égaux, quatre quarts de tour.",
+          "explanation": "Un carré de 3 cases de côté. Quatre côtés égaux séparés par quatre quarts de tour referment le chemin.",
+          "figureId": "boucle-robot",
+          "options": [
+            { "text": "Un carré", "correct": true },
+            { "text": "Un triangle" },
+            { "text": "Une ligne droite" },
+            { "text": "Un cercle" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces éléments de programme.",
+          "explanation": "« répéter 5 fois » et « tant que la case est vide » commandent des répétitions. « si le score dépasse 10 » et « si la case est rouge » commandent un choix.",
+          "categories": ["Répétition", "Choix"],
+          "items": [
+            { "text": "répéter 5 fois", "category": 0 },
+            { "text": "tant que la case est vide", "category": 0 },
+            { "text": "si le score dépasse 10", "category": 1 },
+            { "text": "si la case est rouge", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Dans « répéter 0 fois : avancer », le robot avance une fois.",
+          "answer": false,
+          "explanation": "Non, il n'avance pas du tout. Une boucle de zéro tour n'exécute jamais son contenu — un cas limite qu'on oublie souvent."
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque mot à son rôle.",
+          "explanation": "La boucle répète, la condition choisit, la variable retient une valeur, l'instruction est l'action élémentaire.",
+          "pairs": [
+            { "left": "Boucle", "right": "Répète un bloc d'instructions" },
+            { "left": "Condition", "right": "Choisit entre deux chemins" },
+            { "left": "Variable", "right": "Retient une valeur qui peut changer" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "score ← 0. « répéter 4 fois : si (score < 2) alors score ← score + 1 ». Que vaut score ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "Déroule : au troisième tour, la condition est-elle encore vraie ?",
+          "explanation": "score vaut 2. Il passe à 1 puis à 2 ; aux deux derniers tours la condition score < 2 est fausse, donc rien ne s'ajoute. La condition est bien réévaluée à chaque tour."
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
+import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
@@ -640,6 +641,97 @@ void main() {
         reponse('defi-genetique', 'q6') * 2,
         reason: '46 chromosomes, soit 23 paires',
       );
+    });
+  });
+
+  group('Chapitre complet : boucles et conditions', () {
+    late Chapter info;
+
+    setUpAll(() {
+      info = catalog.chapterById('informatique-college-boucles-et-conditions')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (info.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(info.isPlayable, isTrue);
+      expect(info.lessons.length, 4);
+    });
+
+    test('le chemin du robot se referme à quatre tours, pas avant', () {
+      // Le chapitre affirme qu'il faut quatre tours pour fermer le carré.
+      // On ne le relit pas : on exécute la boucle et on regarde.
+      ({int x, int y}) fin(int tours) => LoopRobotFigure.chemin(tours).last;
+      final ({int x, int y}) depart = LoopRobotFigure.chemin(0).first;
+
+      for (int tours = 1; tours <= 3; tours++) {
+        expect(
+          fin(tours),
+          isNot(depart),
+          reason: 'le chemin ne devrait pas être fermé à $tours tours',
+        );
+      }
+      expect(fin(4), depart, reason: 'quatre tours doivent refermer le carré');
+    });
+
+    test('le carré tracé a bien quatre côtés égaux', () {
+      final List<({int x, int y})> points = LoopRobotFigure.chemin(4);
+      // Un « avancer de 2 » par tour, donc deux segments unitaires.
+      expect(points.length, 1 + 4 * LoopRobotFigure.pas);
+      // Aucun point ne sort de la grille : la figure tient dans le plateau.
+      for (final ({int x, int y}) p in points) {
+        expect(p.x, inInclusiveRange(0, LoopRobotFigure.cotes - 1));
+        expect(p.y, inInclusiveRange(0, LoopRobotFigure.cotes - 1));
+      }
+      // Quatre coins distincts : c'est ce qui fait un carré et non un
+      // aller-retour sur la même ligne.
+      final Set<({int x, int y})> coins = <({int x, int y})>{
+        for (int t = 1; t <= 4; t++) LoopRobotFigure.chemin(t).last,
+      };
+      expect(coins.length, 4);
+    });
+
+    test('le robot avance autant de fois qu’il y a de tours', () {
+      // « répéter 4 fois : avancer de 2 » — la leçon dit quatre avancées.
+      final int avancees = (LoopRobotFigure.chemin(4).length - 1) ~/
+          LoopRobotFigure.pas;
+      expect(avancees, reponseNum('la-boucle', 'q1'));
+    });
+
+    test('les accumulations annoncées sont recalculées', () {
+      // score ← 0 ; répéter 5 fois : score ← score + 2
+      int score = 0;
+      for (int i = 0; i < 5; i++) {
+        score += 2;
+      }
+      expect(score, reponseNum('composer', 'q1'));
+
+      // score ← 1 ; répéter 3 fois : score ← score × 2
+      score = 1;
+      for (int i = 0; i < 3; i++) {
+        score *= 2;
+      }
+      expect(score, reponseNum('composer', 'q2'));
+
+      // n ← 20 ; répéter 2 fois : n ← n ÷ 2
+      double n = 20;
+      for (int i = 0; i < 2; i++) {
+        n /= 2;
+      }
+      expect(n, reponseNum('defi-boucles', 'q1'));
+
+      // score ← 0 ; répéter 4 fois : si (score < 2) alors score ← score + 1
+      // Le piège du chapitre : la condition est réévaluée à chaque tour.
+      score = 0;
+      for (int i = 0; i < 4; i++) {
+        if (score < 2) score += 1;
+      }
+      expect(score, reponseNum('defi-boucles', 'q6'));
     });
   });
 }
