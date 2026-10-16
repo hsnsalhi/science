@@ -1,0 +1,319 @@
+{
+  "chapter": "physique-chimie-universite-thermodynamique",
+  "lessons": [
+    {
+      "id": "premier-principe",
+      "title": "Le premier principe",
+      "subtitle": "L'énergie se conserve, et se compte.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Bilan sur un système fermé",
+          "formula": "ΔU = W + Q",
+          "body": "la variation d'énergie interne est la somme du travail et de la chaleur reçus."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce que le principe dit, et ce qu'il ne dit pas",
+          "body": "Il dit que l'énergie ne se crée ni ne se perd : tout bilan doit se refermer.\n\nIl ne dit rien du sens des transformations. Un gaz qui se rassemblerait spontanément dans une moitié de récipient respecterait parfaitement le premier principe."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Travail et chaleur ne sont pas des contenus",
+          "body": "Un système ne « contient » ni travail ni chaleur : ce sont deux modes de transfert.\n\nL'énergie interne, elle, est une fonction d'état : sa variation ne dépend que des états de départ et d'arrivée, jamais du chemin suivi."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "C'est pourquoi on écrit ΔU et non ΔW : la première est une différence entre deux états, les secondes sont des quantités échangées le long d'un trajet."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un système reçoit 300 J de chaleur et fournit 120 J de travail. Quelle est la variation de son énergie interne, en joules ?",
+          "answer": 180,
+          "tolerance": 0.5,
+          "unit": "J",
+          "hint": "Le travail fourni est compté négativement.",
+          "explanation": "180 J : 300 − 120. Le système reçoit plus qu'il ne donne, donc son énergie interne augmente."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Laquelle de ces grandeurs est une fonction d'état ?",
+          "hint": "Laquelle ne dépend pas du chemin ?",
+          "explanation": "L'énergie interne. Le travail et la chaleur dépendent du chemin suivi, et un système n'en contient pas.",
+          "options": [
+            { "text": "L'énergie interne", "correct": true },
+            { "text": "Le travail" },
+            { "text": "La chaleur" },
+            { "text": "Les trois également" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Le premier principe interdit à un gaz de se rassembler spontanément dans une moitié du récipient.",
+          "answer": false,
+          "explanation": "Non : un tel rassemblement conserve parfaitement l'énergie. Ce qui l'exclut en pratique relève du second principe."
+        }
+      ]
+    },
+    {
+      "id": "second-principe",
+      "title": "Le second principe",
+      "subtitle": "Une affaire de dénombrement.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Ouvre la cloison",
+          "body": "Toutes les particules commencent à gauche. Laisse passer les instants.",
+          "figureId": "entropie"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Rien n'est interdit",
+          "body": "Le modèle de la figure est réversible : à chaque instant, une particule tirée au hasard change de côté. Aucune règle n'empêche le retour.\n\nEt pourtant le gaz ne revient jamais. Ce n'est pas une interdiction : c'est un écart de dénombrement."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "L'entropie de Boltzmann",
+          "formula": "S = k ln(W)",
+          "body": "avec W le nombre de configurations microscopiques compatibles avec l'état observé."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Les ordres de grandeur",
+          "body": "Avec 24 particules, une seule configuration sur 16 millions les met toutes à gauche.\n\nAvec les 10 puissance 23 molécules d'un volume de gaz réel, le nombre à écrire au dénominateur dépasse tout ce qu'on peut nommer. L'improbable devient l'impossible pratique, sans jamais devenir l'interdit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de configurations possibles pour 24 particules réparties entre deux moitiés ?",
+          "answer": 16777216,
+          "tolerance": 1,
+          "unit": "configurations",
+          "hint": "Deux choix par particule.",
+          "explanation": "2 puissance 24, soit 16 777 216. Une seule d'entre elles met toutes les particules à gauche.",
+          "figureId": "entropie"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et pour 10 particules ?",
+          "answer": 1024,
+          "tolerance": 0.5,
+          "unit": "configurations",
+          "hint": "2 puissance 10.",
+          "explanation": "1 024. Dix particules de plus multiplient déjà ce nombre par mille.",
+          "figureId": "entropie"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le gaz ne revient-il jamais dans une seule moitié ?",
+          "hint": "Est-ce interdit, ou improbable ?",
+          "explanation": "Parce que les configurations équilibrées sont écrasantes en nombre. Rien ne l'interdit : le retour est seulement d'une improbabilité démesurée.",
+          "figureId": "entropie",
+          "options": [
+            { "text": "Les configurations équilibrées sont bien plus nombreuses", "correct": true },
+            { "text": "Les lois du mouvement l'interdisent" },
+            { "text": "Les particules se repoussent" },
+            { "text": "L'énergie ne le permet pas" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Les lois du mouvement des particules sont réversibles.",
+          "answer": true,
+          "explanation": "Oui : renverser le temps dans ces lois donne un mouvement tout aussi légitime. L'irréversibilité observée est statistique, pas mécanique."
+        }
+      ]
+    },
+    {
+      "id": "machines-thermiques",
+      "title": "Les machines thermiques",
+      "subtitle": "La limite que personne ne franchit.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le schéma commun",
+          "body": "Une machine thermique prélève de la chaleur à une source chaude, en rejette à une source froide, et transforme la différence en travail.\n\nLa source froide n'est pas un défaut qu'on pourrait supprimer : sans elle, le second principe interdit tout fonctionnement cyclique."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le rendement de Carnot",
+          "formula": "rendement maximal = 1 − Tfroide / Tchaude",
+          "body": "avec les températures en kelvins. Aucune machine réelle ne l'atteint."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Et la chaîne réelle",
+          "body": "Le rendement de Carnot borne un seul étage. Chaque étage suivant retire encore sa part.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Pourquoi les centrales chauffent",
+          "body": "Une centrale fonctionne entre environ 800 K et 300 K : son plafond de Carnot est de 62 %.\n\nLes pertes mécaniques et thermiques la ramènent autour de 40 %. Le reste part dans les tours de refroidissement, et ce n'est pas un gaspillage évitable : c'est la source froide qui fait fonctionner la machine."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une machine fonctionne entre 600 K et 300 K. Quel est son rendement maximal, en pour-cent ?",
+          "answer": 50,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "1 moins le rapport des températures.",
+          "explanation": "50 % : 1 − 300/600. Diviser la température chaude par deux n'est pas une option gratuite.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Entre 800 K et 300 K ?",
+          "answer": 62.5,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "1 − 300/800.",
+          "explanation": "62,5 %. C'est le plafond d'une centrale thermique, et les pertes réelles la ramènent vers 40 %.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que se passerait-il sans source froide ?",
+          "hint": "Que vaut alors le rendement de Carnot ?",
+          "explanation": "La machine ne pourrait pas fonctionner en cycle : le rendement maximal serait nul. La source froide est une condition, pas une perte.",
+          "options": [
+            { "text": "La machine ne pourrait pas fonctionner en cycle", "correct": true },
+            { "text": "Le rendement atteindrait 100 %" },
+            { "text": "La machine irait deux fois plus vite" },
+            { "text": "Rien ne changerait" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces affirmations : relèvent-elles du premier ou du second principe ?",
+          "hint": "Bilan, ou sens d'évolution ?",
+          "explanation": "Le premier principe fait les bilans. Le second décide du sens des transformations et impose les plafonds.",
+          "categories": ["Premier principe", "Second principe"],
+          "items": [
+            { "text": "l'énergie d'un système isolé ne change pas", "category": 0 },
+            { "text": "tout bilan énergétique doit se refermer", "category": 0 },
+            { "text": "la chaleur va spontanément du chaud vers le froid", "category": 1 },
+            { "text": "aucun moteur ne dépasse le rendement de Carnot", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-thermodynamique",
+      "title": "Défi : thermodynamique",
+      "subtitle": "Six questions, du bilan au dénombrement.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque énoncé, demande-toi lequel des deux principes est en jeu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une machine fonctionne entre 400 K et 300 K. Quel rendement maximal, en pour-cent ?",
+          "answer": 25,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "1 − 300/400.",
+          "explanation": "25 %. Un écart de température faible donne un plafond faible, quelle que soit la qualité de la machine.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de configurations pour 20 particules réparties entre deux moitiés ?",
+          "answer": 1048576,
+          "tolerance": 1,
+          "unit": "configurations",
+          "hint": "2 puissance 20.",
+          "explanation": "1 048 576. Et une seule d'entre elles les met toutes à gauche.",
+          "figureId": "entropie"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un moteur de rendement 100 % violerait le premier principe.",
+          "answer": false,
+          "explanation": "Non : il respecterait le bilan énergétique. C'est le second principe qu'il violerait, en se passant de source froide."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que mesure l'entropie dans la formule de Boltzmann ?",
+          "hint": "Le logarithme de quoi ?",
+          "explanation": "Le nombre de configurations microscopiques compatibles avec l'état observé. Plus il est grand, plus l'état est probable.",
+          "figureId": "entropie",
+          "options": [
+            { "text": "Le nombre de configurations microscopiques", "correct": true },
+            { "text": "La quantité de chaleur contenue" },
+            { "text": "Le désordre visible à l'œil" },
+            { "text": "La température du système" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "L'irréversibilité vient d'une asymétrie dans les lois du mouvement.",
+          "answer": false,
+          "explanation": "Non : ces lois sont réversibles. L'irréversibilité vient du nombre écrasant de configurations équilibrées."
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à ce qu'elle est.",
+          "explanation": "Deux fonctions d'état, deux modes de transfert : la distinction commande toute l'écriture des bilans.",
+          "pairs": [
+            { "left": "l'énergie interne", "right": "une fonction d'état" },
+            { "left": "l'entropie", "right": "une fonction d'état" },
+            { "left": "le travail", "right": "un mode de transfert" },
+            { "left": "la chaleur", "right": "un mode de transfert" }
+          ]
+        }
+      ]
+    }
+  ]
+}

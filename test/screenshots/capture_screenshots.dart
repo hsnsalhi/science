@@ -1054,6 +1054,22 @@ void main() {
         await shoot(tester, '$device-48-classification');
       });
 
+      // L'entropie après quarante instants : le gaz occupe les deux
+      // moitiés, et la probabilité du retour est affichée.
+      testWidgets('université : l\'entropie', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Physique-chimie');
+        await tapText(tester, 'Université');
+        await tapText(tester, 'Thermodynamique');
+        await tapText(tester, 'Le second principe');
+        for (int i = 0; i < 2; i++) {
+          await tester.tap(find.text('Vingt instants'));
+          await tester.pumpAndSettle();
+        }
+        await shoot(tester, '$device-49-entropie');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

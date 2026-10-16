@@ -15,6 +15,12 @@ import 'package:flutter_test/flutter_test.dart';
 /// Ce test lit la table de correspondance des polices elles-mêmes et
 /// confronte chaque caractère du contenu à ce qu'elles savent dessiner.
 /// C'est la seule façon de rendre le défaut visible avant publication.
+///
+/// Une limite à connaître : les caractères écrits en Dart sous forme
+/// d'échappement, comme `\u202f`, ne sont pas vus — le fichier source ne
+/// contient alors que des caractères ASCII. Mieux vaut donc vérifier à la
+/// main une échappée inhabituelle, ou s'en tenir aux caractères déjà
+/// employés ailleurs.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 

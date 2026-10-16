@@ -14,6 +14,7 @@ import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/dna_figure.dart';
 import 'package:eureka/design_system/figures/energy_chain_figure.dart';
+import 'package:eureka/design_system/figures/entropy_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/expansion_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
@@ -6375,6 +6376,136 @@ void main() {
         ClassificationFigure.plusPetitGroupe(parNom('truite')),
         'vertèbres',
       );
+    });
+  });
+
+
+  group('Chapitre complet : thermodynamique', () {
+    late Chapter thermo;
+
+    setUpAll(() {
+      thermo = catalog.chapterById(
+        'physique-chimie-universite-thermodynamique',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = thermo.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    double carnot(double chaude, double froide) => (1 - froide / chaude) * 100;
+
+    test('est jouable de bout en bout', () {
+      expect(thermo.isPlayable, isTrue);
+      expect(thermo.lessons.length, 4);
+    });
+
+    test('les bilans et rendements annoncés sont justes', () {
+      expect(300 - 120, reponseNum('premier-principe', 'q1'));
+      expect(
+        carnot(600, 300),
+        closeTo(reponseNum('machines-thermiques', 'q1'), 0.5),
+      );
+      expect(
+        carnot(800, 300),
+        closeTo(reponseNum('machines-thermiques', 'q2'), 0.5),
+      );
+      expect(
+        carnot(400, 300),
+        closeTo(reponseNum('defi-thermodynamique', 'q1'), 0.5),
+      );
+    });
+
+    test('le rendement de Carnot reste entre 0 et 1', () {
+      // Et il s'annule quand les deux sources sont à la même température,
+      // ce qui est l'argument de la question sur l'absence de source
+      // froide.
+      for (double chaude = 300; chaude <= 1200; chaude += 50) {
+        for (double froide = 200; froide <= chaude; froide += 50) {
+          final double r = carnot(chaude, froide);
+          expect(r, greaterThanOrEqualTo(-1e-9));
+          expect(r, lessThan(100));
+        }
+      }
+      expect(carnot(500, 500), closeTo(0, 1e-9));
+    });
+
+    test('les nombres de configurations sont ceux de la figure', () {
+      expect(
+        EntropyFigure.configurations(EntropyFigure.particules),
+        reponseNum('second-principe', 'q1'),
+      );
+      expect(
+        EntropyFigure.configurations(10),
+        reponseNum('second-principe', 'q2'),
+      );
+      expect(
+        EntropyFigure.configurations(20),
+        reponseNum('defi-thermodynamique', 'q2'),
+      );
+      // Une seule configuration sur toutes les met à gauche.
+      for (final int n in <int>[1, 5, 10, 24]) {
+        expect(
+          EntropyFigure.probabiliteToutesAGauche(n) *
+              EntropyFigure.configurations(n),
+          closeTo(1, 1e-9),
+          reason: 'n = $n',
+        );
+      }
+    });
+
+    test('le modèle ne contient aucune règle qui empêche le retour', () {
+      // L'argument de la leçon : chaque instant ne fait que changer une
+      // particule de côté, et rien dans la règle ne privilégie la droite.
+      for (int etape = 0; etape < 200; etape++) {
+        final List<bool> avant = EntropyFigure.configuration(etape);
+        final List<bool> apres = EntropyFigure.configuration(etape + 1);
+        int differences = 0;
+        for (int i = 0; i < avant.length; i++) {
+          if (avant[i] != apres[i]) differences++;
+        }
+        expect(differences, 1, reason: 'instant $etape');
+      }
+    });
+
+    test('le gaz part bien de la gauche et s’équilibre', () {
+      expect(EntropyFigure.aGauche(0), EntropyFigure.particules);
+      // Après quelques dizaines d'instants, le compte s'approche de la
+      // moitié et n'en repart plus beaucoup.
+      int extremes = 0;
+      for (int etape = 100; etape < 400; etape++) {
+        final int gauche = EntropyFigure.aGauche(etape);
+        expect(gauche, inInclusiveRange(0, EntropyFigure.particules));
+        if ((gauche - EntropyFigure.particules / 2).abs() >
+            EntropyFigure.particules / 4) {
+          extremes++;
+        }
+      }
+      expect(extremes, lessThan(60), reason: '$extremes écarts marqués');
+      // Et le retour complet ne se produit jamais sur cet intervalle.
+      for (int etape = 50; etape < 400; etape++) {
+        expect(
+          EntropyFigure.aGauche(etape),
+          isNot(EntropyFigure.particules),
+          reason: 'instant $etape',
+        );
+      }
+    });
+
+    test('la figure se rejoue à l’identique', () {
+      // Sans cela, une capture d'écran ne voudrait rien dire, et deux
+      // élèves ne verraient pas la même chose au même instant.
+      for (final int etape in <int>[0, 1, 20, 137]) {
+        expect(
+          EntropyFigure.configuration(etape),
+          orderedEquals(EntropyFigure.configuration(etape)),
+        );
+      }
     });
   });
 

@@ -15,6 +15,7 @@ import 'cross_figure.dart';
 import 'derivative_figure.dart';
 import 'dna_figure.dart';
 import 'energy_chain_figure.dart';
+import 'entropy_figure.dart';
 import 'eratosthene_figure.dart';
 import 'expansion_figure.dart';
 import 'fraction_bar_figure.dart';
@@ -94,6 +95,9 @@ abstract final class FigureRegistry {
     // Des boîtes emboîtées, et les animaux qu'on y range.
     'classification': (BuildContext context, Color accent) =>
         ClassificationFigure(accent: accent),
+    // Un gaz qui envahit la boîte, et la probabilité du retour.
+    'entropie': (BuildContext context, Color accent) =>
+        EntropyFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),
