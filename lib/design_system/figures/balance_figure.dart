@@ -9,6 +9,7 @@ import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/app_typography.dart';
+import 'realism.dart';
 
 /// L'équation ax + b = c, posée sur une balance qu'on rééquilibre.
 ///
@@ -208,87 +209,266 @@ class _BalancePainter extends CustomPainter {
   final Color trait;
   final Color muted;
 
+  /// Le laiton d'une vraie balance d'épicier.
+  static const Color _laiton = Color(0xFFBE9A4A);
+  static const Color _laitonSombre = Color(0xFF7D6227);
+  static const Color _bois = Color(0xFF6B4B32);
+
   @override
   void paint(Canvas canvas, Size size) {
-    final double centre = size.width / 2;
-    const double hauteurFleau = 34;
-    final double demiFleau = math.min(centre - 20, 110);
+    final double cx = size.width / 2;
+    const double hauteurFleau = 30;
+    final double demiFleau = math.min(cx - 26, 108);
+    const double hautPlateau = 88;
 
-    // Le fléau reste horizontal : les deux gestes proposés préservent
-    // l'égalité, donc l'équilibre. Le montrer pencher serait enseigner le
-    // contraire de ce que la figure dit.
-    canvas.drawLine(
-      Offset(centre - demiFleau, hauteurFleau),
-      Offset(centre + demiFleau, hauteurFleau),
-      Paint()
-        ..color = trait
-        ..strokeWidth = 3
-        ..strokeCap = StrokeCap.round,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(centre, hauteurFleau)
-        ..lineTo(centre - 16, 112)
-        ..lineTo(centre + 16, 112)
-        ..close(),
-      Paint()..color = trait.withValues(alpha: 0.5),
-    );
+    // Le fléau reste horizontal, et ce n'est pas une facilité de dessin :
+    // les deux gestes que la figure propose préservent l'égalité, donc
+    // l'équilibre. Montrer la balance pencher enseignerait le contraire de
+    // ce qu'elle a à dire.
+    _socle(canvas, cx, size.height);
+    _colonne(canvas, cx, hauteurFleau, size.height);
+    _fleau(canvas, cx, hauteurFleau, demiFleau);
+    _aiguille(canvas, cx, hauteurFleau);
 
-    _plateau(canvas, centre - demiFleau, hauteurFleau, coefficient,
-        constante, true);
-    _plateau(canvas, centre + demiFleau, hauteurFleau, 0, total, false);
+    _plateau(canvas, cx - demiFleau, hauteurFleau, hautPlateau,
+        coefficient, constante);
+    _plateau(canvas, cx + demiFleau, hauteurFleau, hautPlateau, 0, total);
   }
 
-  /// Un plateau, ses jetons x et ses jetons unité.
+  /// Le pied, lesté : une balance tient debout toute seule.
+  void _socle(Canvas canvas, double cx, double hauteur) {
+    final Rect cadre = Rect.fromCenter(
+      center: Offset(cx, hauteur - 7),
+      width: 86,
+      height: 13,
+    );
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(cadre, const Radius.circular(5)),
+      Realisme.chair(cadre, _bois),
+    );
+    // L'ombre portée, qui pose l'objet sur une table plutôt que dans le vide.
+    canvas.drawOval(
+      Rect.fromCenter(
+        center: Offset(cx + 4, hauteur - 1),
+        width: 104,
+        height: 9,
+      ),
+      Paint()
+        ..color = Colors.black.withValues(alpha: 0.18)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3),
+    );
+  }
+
+  /// La colonne centrale et son chapiteau.
+  void _colonne(Canvas canvas, double cx, double hautFleau, double hauteur) {
+    final Rect fut = Rect.fromCenter(
+      center: Offset(cx, (hautFleau + hauteur - 14) / 2),
+      width: 11,
+      height: hauteur - 14 - hautFleau,
+    );
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(fut, const Radius.circular(4)),
+      Realisme.chair(fut, _laiton),
+    );
+    // Le chapiteau qui porte le couteau du fléau.
+    canvas.drawPath(
+      Path()
+        ..moveTo(cx - 13, hautFleau + 12)
+        ..lineTo(cx, hautFleau + 1)
+        ..lineTo(cx + 13, hautFleau + 12)
+        ..close(),
+      Paint()..color = _laitonSombre,
+    );
+  }
+
+  /// Le fléau, avec son renflement central.
+  void _fleau(Canvas canvas, double cx, double hauteur, double demi) {
+    final Rect barre = Rect.fromCenter(
+      center: Offset(cx, hauteur),
+      width: demi * 2,
+      height: 7,
+    );
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(barre, const Radius.circular(3.5)),
+      Realisme.chair(barre, _laiton),
+    );
+    // Les deux embouts d'où pendent les plateaux.
+    for (final double cote in <double>[-1, 1]) {
+      canvas.drawCircle(
+        Offset(cx + cote * demi, hauteur),
+        5,
+        Paint()..color = _laitonSombre,
+      );
+    }
+    canvas.drawCircle(
+      Offset(cx, hauteur),
+      7,
+      Paint()..color = _laitonSombre,
+    );
+  }
+
+  /// L'aiguille et son repère : elle est au zéro, et doit y rester.
+  void _aiguille(Canvas canvas, double cx, double hautFleau) {
+    canvas.drawLine(
+      Offset(cx, hautFleau + 6),
+      Offset(cx, hautFleau + 26),
+      Paint()
+        ..strokeWidth = 2
+        ..strokeCap = StrokeCap.round
+        ..color = _laitonSombre,
+    );
+    // La graduation derrière l'aiguille : c'est elle qui rend l'équilibre
+    // lisible comme un fait et non comme une impression.
+    for (final double decalage in <double>[-9, -4.5, 0, 4.5, 9]) {
+      final bool centre = decalage == 0;
+      canvas.drawLine(
+        Offset(cx + decalage, hautFleau + 27),
+        Offset(cx + decalage, hautFleau + (centre ? 34 : 31)),
+        Paint()
+          ..strokeWidth = centre ? 1.8 : 1
+          ..color = trait.withValues(alpha: centre ? 0.8 : 0.45),
+      );
+    }
+  }
+
+  /// Un plateau suspendu, et ce qu'on y a posé.
   void _plateau(
     Canvas canvas,
     double x,
     double hautFleau,
+    double hautPlateau,
     int nbX,
     int nbUn,
-    bool gauche,
   ) {
-    const double hautPlateau = 86;
-    canvas.drawLine(
-      Offset(x, hautFleau),
-      Offset(x, hautPlateau),
-      Paint()
-        ..color = trait
-        ..strokeWidth = 1.6,
+    // Trois cordes, comme sur une vraie balance : une seule tige ferait
+    // tourner le plateau au moindre déséquilibre.
+    const double demiLargeur = 38;
+    for (final double cote in <double>[-1, 0, 1]) {
+      canvas.drawLine(
+        Offset(x, hautFleau + 4),
+        Offset(x + cote * demiLargeur * 0.8, hautPlateau - 3),
+        Paint()
+          ..strokeWidth = 1.1
+          ..color = _laitonSombre.withValues(alpha: 0.8),
+      );
+    }
+
+    // Le plateau : une coupelle, pas un trait. Son creux est ce qui
+    // retient les objets.
+    final Rect coupelle = Rect.fromCenter(
+      center: Offset(x, hautPlateau + 3),
+      width: demiLargeur * 2,
+      height: 13,
     );
-    canvas.drawLine(
-      Offset(x - 34, hautPlateau),
-      Offset(x + 34, hautPlateau),
+    canvas.drawOval(coupelle, Realisme.chair(coupelle, _laiton));
+    canvas.drawOval(
+      coupelle,
       Paint()
-        ..color = trait
-        ..strokeWidth = 3
-        ..strokeCap = StrokeCap.round,
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.4
+        ..color = _laitonSombre,
+    );
+    // Le bord supérieur, plus clair : la lumière vient d'en haut.
+    canvas.drawArc(
+      coupelle,
+      math.pi,
+      math.pi,
+      false,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2
+        ..color = Colors.white.withValues(alpha: 0.4),
     );
 
-    // Les jetons sont empilés par rangées de six, pour qu'un plateau à
-    // vingt unités reste lisible sans changer d'échelle.
-    const double taille = 11;
-    const double ecart = 2.5;
-    final List<({Color couleur, String etiquette})> jetons =
-        <({Color couleur, String etiquette})>[
-      for (int i = 0; i < nbX; i++) (couleur: accent, etiquette: 'x'),
-      for (int i = 0; i < nbUn.abs(); i++)
-        (couleur: muted.withValues(alpha: 0.6), etiquette: ''),
-    ];
-    for (int i = 0; i < jetons.length; i++) {
-      final int colonne = i % 6;
-      final int rangee = i ~/ 6;
-      final double cx =
-          x - 2.5 * (taille + ecart) + colonne * (taille + ecart);
-      final double cy = hautPlateau - 8 - rangee * (taille + ecart);
-      final Rect r = Rect.fromCenter(
-        center: Offset(cx, cy),
+    _poids(canvas, x, hautPlateau, nbX, nbUn);
+  }
+
+  /// Les masses posées dans la coupelle.
+  ///
+  /// Les x sont des sachets scellés dont on ignore le contenu — c'est
+  /// exactement ce qu'est une inconnue. Les unités sont des poids
+  /// d'épicier, empilés par rangées pour rester lisibles jusqu'à vingt.
+  void _poids(
+    Canvas canvas,
+    double x,
+    double hautPlateau,
+    int nbX,
+    int nbUn,
+  ) {
+    const double taille = 13;
+    const double ecart = 2;
+    const int parRangee = 5;
+    double y = hautPlateau - 4;
+
+    // Les poids unité d'abord, au fond de la coupelle.
+    for (int i = 0; i < nbUn.abs(); i++) {
+      final int colonne = i % parRangee;
+      final int rangee = i ~/ parRangee;
+      final Rect masse = Rect.fromCenter(
+        center: Offset(
+          x - (parRangee - 1) / 2 * (taille + ecart) +
+              colonne * (taille + ecart),
+          y - rangee * (taille * 0.62 + ecart),
+        ),
         width: taille,
-        height: taille,
+        height: taille * 0.62,
+      );
+      // Un poids d'épicier : un tronc de cône avec son bouton.
+      canvas.drawPath(
+        Path()
+          ..moveTo(masse.left, masse.bottom)
+          ..lineTo(masse.left + 2, masse.top)
+          ..lineTo(masse.right - 2, masse.top)
+          ..lineTo(masse.right, masse.bottom)
+          ..close(),
+        Realisme.chair(masse, muted),
+      );
+      canvas.drawCircle(
+        Offset(masse.center.dx, masse.top - 1),
+        1.6,
+        Paint()..color = Color.lerp(muted, Colors.black, 0.3)!,
+      );
+    }
+
+    // Puis les sachets « x », posés par-dessus pour rester visibles.
+    y -= ((nbUn.abs() + parRangee - 1) ~/ parRangee) * (taille * 0.62 + ecart);
+    for (int i = 0; i < nbX; i++) {
+      final Rect sachet = Rect.fromCenter(
+        center: Offset(
+          x - (nbX - 1) / 2 * (taille + 3) + i * (taille + 3),
+          y - 7,
+        ),
+        width: taille,
+        height: taille * 1.15,
       );
       canvas.drawRRect(
-        RRect.fromRectAndRadius(r, const Radius.circular(3)),
-        Paint()..color = jetons[i].couleur,
+        RRect.fromRectAndRadius(sachet, const Radius.circular(2.5)),
+        Realisme.chair(sachet, accent),
+      );
+      // Le cordon du sachet : il est fermé, on ne sait pas ce qu'il y a
+      // dedans. C'est l'image même de l'inconnue.
+      canvas.drawLine(
+        Offset(sachet.left + 2, sachet.top + 2.5),
+        Offset(sachet.right - 2, sachet.top + 2.5),
+        Paint()
+          ..strokeWidth = 1.6
+          ..color = Color.lerp(accent, Colors.black, 0.4)!,
+      );
+      final TextPainter etiquette = TextPainter(
+        text: TextSpan(
+          text: 'x',
+          style: TextStyle(
+            fontFamily: AppTypography.body,
+            color: Colors.white.withValues(alpha: 0.95),
+            fontSize: 9,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      etiquette.paint(
+        canvas,
+        sachet.center.translate(-etiquette.width / 2, -1),
       );
     }
   }
