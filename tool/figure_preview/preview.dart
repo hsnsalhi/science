@@ -39,8 +39,11 @@ void main() {
       ('sombre', Brightness.dark),
     ]) {
       testWidgets('$id — $nom', (WidgetTester tester) async {
+        // Haut : certaines figures dépassent 500 points de haut, et dans
+        // l'application elles vivent dans une carte défilante. Un banc
+        // trop court les ferait déborder sans que ce soit leur faute.
         tester.view
-          ..physicalSize = const Size(840, 1000)
+          ..physicalSize = const Size(840, 1500)
           ..devicePixelRatio = 2;
         addTearDown(tester.view.reset);
 
@@ -51,7 +54,7 @@ void main() {
                 : AppTheme.dark(),
             home: Builder(
               builder: (BuildContext context) => Scaffold(
-                body: Center(
+                body: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: FigureRegistry.build(
@@ -65,7 +68,19 @@ void main() {
             ),
           ),
         );
-        await tester.pumpAndSettle();
+        // Certaines figures tournent en boucle — une Lune qui orbite ne
+        // s'arrête jamais — donc pumpAndSettle n'y converge pas. On avance
+        // d'un nombre fixe d'images : c'est reproductible, et cela suffit
+        // à laisser les animations d'entrée se poser.
+        for (int i = 0; i < 12; i++) {
+          await tester.pump(const Duration(milliseconds: 60));
+        }
+        // Les figures animées sont avancées plus loin pour sortir de leur
+        // état initial, qui est souvent le moins parlant — la figure des
+        // phases s'ouvre sur la nouvelle lune, c'est-à-dire un disque noir.
+        for (int i = 0; i < 90; i++) {
+          await tester.pump(const Duration(milliseconds: 60));
+        }
 
         Directory('tool/figure_preview/out').createSync(recursive: true);
         await expectLater(

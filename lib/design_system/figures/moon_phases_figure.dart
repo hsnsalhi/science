@@ -9,6 +9,7 @@ import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/app_typography.dart';
+import 'realism.dart';
 import '../../domain/models/question.dart';
 
 /// La Lune autour de la Terre, et ce qu'on en voit depuis le sol.
@@ -296,36 +297,56 @@ class _LunePainter extends CustomPainter {
     );
   }
 
-  /// Ce qu'on voit depuis la Terre : le disque, et sa part éclairée.
+  /// Ce qu'on voit depuis la Terre : la Lune, et sa part éclairée.
+  ///
+  /// C'est le sujet même du chapitre, donc c'est la Lune qui doit être là
+  /// — grise, criblée, avec ses mers sombres — et non un disque. Les mers
+  /// comptent plus qu'on ne croit : ce sont elles qu'on reconnaît d'un coup
+  /// d'œil dans le ciel, et elles sont toujours aux mêmes endroits parce
+  /// que la Lune nous montre toujours la même face.
   void _vueDIci(Canvas canvas, Rect zone) {
     final double phase = 2 * math.pi * jours / MoonPhasesFigure.periode;
     final double rayon = math.min(zone.height * 0.40, zone.width * 0.16);
     final Offset centre = Offset(zone.center.dx, zone.top + zone.height * 0.47);
 
-    canvas.drawCircle(centre, rayon + 7, Paint()..color = const Color(0xFF1B2038));
-    canvas.drawCircle(centre, rayon, Paint()..color = ink.withValues(alpha: 0.5));
+    // Le ciel derrière, pour que la Lune ne flotte pas sur du papier.
+    canvas.drawCircle(
+      centre,
+      rayon + 9,
+      Paint()
+        ..color = const Color(0xFF11162A)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 7),
+    );
 
-    // La partie éclairée : tous les points du disque situés du bon côté
-    // du terminateur, lequel se projette en demi-ellipse.
-    final double cosPhase = math.cos(phase);
-    final bool droite = math.sin(phase) >= 0;
-    final Path eclairee = Path();
-    const int pas = 48;
-    for (int i = 0; i <= pas; i++) {
-      final double y = -rayon + 2 * rayon * i / pas;
-      final double demiLargeur = math.sqrt(math.max(0, rayon * rayon - y * y));
-      final double x = cosPhase * demiLargeur * (droite ? 1 : -1);
-      final Offset p = centre + Offset(x, y);
-      i == 0 ? eclairee.moveTo(p.dx, p.dy) : eclairee.lineTo(p.dx, p.dy);
-    }
-    for (int i = pas; i >= 0; i--) {
-      final double y = -rayon + 2 * rayon * i / pas;
-      final double demiLargeur = math.sqrt(math.max(0, rayon * rayon - y * y));
-      final Offset p = centre + Offset(droite ? demiLargeur : -demiLargeur, y);
-      eclairee.lineTo(p.dx, p.dy);
-    }
-    eclairee.close();
-    canvas.drawPath(eclairee, Paint()..color = _eclaire);
+    // L'angle de phase attendu par Realisme : 0 pour la pleine lune,
+    // 180 pour la nouvelle. L'ombre doit tomber à gauche au premier
+    // quartier — c'est ce qu'on voit depuis l'hémisphère nord, et
+    // l'inverser serait une erreur vérifiable dans le ciel.
+    final double anglePhase = (180 + phase * 180 / math.pi) % 360;
+
+    Realisme.sphere(
+      canvas,
+      centre,
+      rayon,
+      couleur: const Color(0xFFBCB8AE),
+      lumiere: Offset(
+        -math.cos(anglePhase * math.pi / 180) * 0.8,
+        -0.35,
+      ),
+    );
+    Realisme.crateres(
+      canvas,
+      centre,
+      rayon,
+      graine: 7,
+      nombre: 22,
+      intensite: 1.2,
+    );
+    // Les mers passent par-dessus les cratères, et non dessous : ce sont
+    // d'anciennes coulées de lave qui ont noyé le relief, et c'est
+    // précisément pour cela qu'elles sont lisses et sombres.
+    _mers(canvas, centre, rayon);
+    Realisme.phase(canvas, centre, rayon, anglePhase, ambiant: 0.07);
 
     // Sous le disque, jamais dessus : le libellé se posait sur la Lune
     // dès que la place verticale était généreuse.
@@ -338,6 +359,49 @@ class _LunePainter extends CustomPainter {
       ),
       muted,
     );
+  }
+
+  /// Les mers lunaires, aux mêmes places que dans le ciel.
+  ///
+  /// Ce sont d'anciennes coulées de basalte, plus sombres que les hautes
+  /// terres. Leurs positions sont fixes et approximatives mais reconnaissables :
+  /// la grande tache en haut à gauche est la mer des Pluies, celle du centre
+  /// droit la mer de la Tranquillité, où Apollo 11 s'est posé.
+  void _mers(Canvas canvas, Offset centre, double rayon) {
+    const List<(double, double, double, double)> mers =
+        <(double, double, double, double)>[
+      // (x relatif, y relatif, largeur relative, hauteur relative)
+      (-0.34, -0.36, 0.52, 0.42), // mer des Pluies
+      (0.22, -0.18, 0.40, 0.34), // mer de la Sérénité
+      (0.34, 0.14, 0.36, 0.30), // mer de la Tranquillité
+      (-0.46, 0.20, 0.34, 0.40), // océan des Tempêtes
+      (0.06, 0.44, 0.30, 0.22), // mer des Nuées
+      (-0.08, -0.02, 0.22, 0.20), // mer des Vapeurs
+    ];
+    canvas.save();
+    canvas.clipPath(
+      Path()..addOval(Rect.fromCircle(center: centre, radius: rayon)),
+    );
+    for (final (double dx, double dy, double w, double h) in mers) {
+      final Rect cadre = Rect.fromCenter(
+        center: centre + Offset(dx * rayon, dy * rayon),
+        width: w * rayon,
+        height: h * rayon,
+      );
+      // Un contour irrégulier : une mer lunaire n'est pas une ellipse.
+      canvas.drawPath(
+        Realisme.paroiOrganique(
+          cadre,
+          graine: (dx * 100).round().abs() + 3,
+          sommets: 11,
+          irregularite: 0.22,
+        ),
+        Paint()
+          ..color = const Color(0xFF4C4A47).withValues(alpha: 0.8)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2.2),
+      );
+    }
+    canvas.restore();
   }
 
   void _texte(Canvas canvas, String texte, Offset centre, Color couleur) {
