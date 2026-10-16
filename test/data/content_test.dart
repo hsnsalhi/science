@@ -4819,4 +4819,133 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : direct, contraposée, absurde', () {
+    late Chapter preuves;
+
+    setUpAll(() {
+      preuves =
+          catalog.chapterById('logique-lycee-types-de-demonstration')!;
+    });
+
+    bool reponseVF(String lessonId, String questionId) {
+      final TrueFalseQuestion q =
+          preuves.lessonById(lessonId)!.questions.firstWhere(
+                (Question x) => x.id == questionId,
+              )
+              as TrueFalseQuestion;
+      return q.expected;
+    }
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = preuves.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    const List<bool> valeurs = <bool>[true, false];
+
+    test('est jouable de bout en bout', () {
+      expect(preuves.isPlayable, isTrue);
+      expect(preuves.lessons.length, 4);
+    });
+
+    test('la contraposée est bien équivalente à l’implication', () {
+      // L'affirmation centrale du chapitre, vérifiée sur les quatre cas.
+      for (final bool a in valeurs) {
+        for (final bool b in valeurs) {
+          expect(
+            ImplicationFigure.implique(a, b),
+            ImplicationFigure.implique(!b, !a),
+            reason: 'A=$a, B=$b',
+          );
+        }
+      }
+      expect(reponseVF('la-contraposee', 'q2'), isTrue);
+      expect(reponseVF('defi-demonstrations', 'q3'), isTrue);
+    });
+
+    test('la réciproque, elle, ne l’est pas', () {
+      final List<String> contre = <String>[
+        for (final bool a in valeurs)
+          for (final bool b in valeurs)
+            if (ImplicationFigure.implique(a, b) !=
+                ImplicationFigure.implique(b, a))
+              'A=$a, B=$b',
+      ];
+      expect(contre, isNotEmpty, reason: 'il faut au moins un cas qui sépare');
+      expect(reponseVF('la-contraposee', 'q3'), isFalse);
+      expect(reponseVF('defi-demonstrations', 'q4'), isFalse);
+    });
+
+    test('le raisonnement par l’absurde repose sur une équivalence', () {
+      // « A et non B » est exactement la négation de « si A alors B » :
+      // c'est ce qui autorise à partir de ce couple pour chercher une
+      // contradiction.
+      for (final bool a in valeurs) {
+        for (final bool b in valeurs) {
+          expect(
+            ImplicationFigure.implique(a, b),
+            !(a && !b),
+            reason: 'A=$a, B=$b',
+          );
+        }
+      }
+    });
+
+    test('l’implication n’est fausse que dans un seul cas', () {
+      final List<String> faux = <String>[
+        for (final bool a in valeurs)
+          for (final bool b in valeurs)
+            if (!ImplicationFigure.implique(a, b)) 'A=$a, B=$b',
+      ];
+      expect(faux, <String>['A=true, B=false']);
+    });
+
+    test('la contraposée de « n² pair donne n pair » se vérifie', () {
+      // Le chapitre démontre l'énoncé par sa contraposée : n impair donne
+      // n² impair. Les deux sont rejoués sur une plage d'entiers.
+      for (int n = 0; n <= 300; n++) {
+        expect(n.isOdd, (n * n).isOdd, reason: 'n = $n');
+        if ((n * n).isEven) expect(n.isEven, isTrue, reason: 'n = $n');
+      }
+    });
+
+    test('aucune fraction simple ne donne racine de 2', () {
+      // La preuve par l'absurde conclut qu'il n'existe aucun couple
+      // d'entiers avec p² = 2q². On ne démontre rien en énumérant, mais
+      // un contre-exemple, lui, invaliderait le chapitre.
+      for (int q = 1; q <= 400; q++) {
+        for (int p = 1; p <= 600; p++) {
+          expect(p * p == 2 * q * q, isFalse, reason: '$p / $q');
+        }
+      }
+    });
+
+    test('le produit des premiers, plus un, échappe à la liste', () {
+      // L'argument d'Euclide : le nombre formé n'est divisible par aucun
+      // premier de la liste, et a pourtant un diviseur premier.
+      const List<int> premiers = <int>[2, 3, 5, 7, 11, 13];
+      for (int k = 1; k <= premiers.length; k++) {
+        final List<int> liste = premiers.take(k).toList();
+        final int n =
+            liste.fold(1, (int produit, int p) => produit * p) + 1;
+        for (final int p in liste) {
+          expect(n % p, 1, reason: 'liste de $k premiers, divisé par $p');
+        }
+        // Un diviseur premier existe, et il est hors de la liste.
+        int diviseur = 2;
+        while (n % diviseur != 0) {
+          diviseur++;
+        }
+        expect(liste, isNot(contains(diviseur)), reason: 'n = $n');
+      }
+      expect(reponseNum('par-l-absurde', 'q3'), 2 * 3 * 5 * 7 + 1);
+      expect(reponseNum('defi-demonstrations', 'q5'), 2 * 3 * 5 + 1);
+    });
+  });
+
 }

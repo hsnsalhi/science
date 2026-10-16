@@ -1,0 +1,320 @@
+{
+  "chapter": "logique-lycee-types-de-demonstration",
+  "lessons": [
+    {
+      "id": "demonstration-directe",
+      "title": "La démonstration directe",
+      "subtitle": "Des hypothèses à la conclusion.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le chemin le plus court",
+          "body": "On part de ce qu'on suppose, on enchaîne des pas justifiés, on arrive à ce qu'on veut prouver.\n\nChaque pas doit s'appuyer sur une définition, un théorème ou une hypothèse. Aucun ne peut s'appuyer sur l'évidence."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "La somme de deux nombres pairs est paire",
+          "body": "Soient a et b pairs. Par définition, a = 2k et b = 2m avec k et m entiers.\n\nAlors a + b = 2k + 2m = 2(k + m). Comme k + m est un entier, a + b est pair."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "La phrase « par définition » fait le vrai travail. Une démonstration directe consiste presque toujours à remplacer les mots par ce qu'ils signifient."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "On part des hypothèses, jamais de la conclusion.",
+            "Chaque pas s'appuie sur une définition ou un résultat connu.",
+            "Écrire les définitions est souvent la moitié de la preuve."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans une démonstration directe, de quoi part-on ?",
+          "hint": "Pas de ce qu'on veut prouver.",
+          "explanation": "Des hypothèses. Partir de la conclusion pour retomber sur les hypothèses est une erreur de rédaction fréquente, et parfois une faute de logique.",
+          "options": [
+            { "text": "Des hypothèses", "correct": true },
+            { "text": "De la conclusion" },
+            { "text": "D'un contre-exemple" },
+            { "text": "De la négation de la conclusion" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Complète le début de la preuve que la somme de deux nombres pairs est paire.",
+          "template": "Soient a et b pairs. Par définition, a = 2k et b = ___. Alors a + b = 2(___).",
+          "blanks": [
+            { "accepted": ["2m", "2 m"] },
+            { "accepted": ["k + m", "k+m", "m + k", "m+k"] }
+          ],
+          "hint": "Écris la définition, puis factorise par 2.",
+          "explanation": "a + b = 2k + 2m = 2(k + m). Il suffit alors de remarquer que k + m est un entier."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un exemple bien choisi suffit à démontrer un énoncé général.",
+          "answer": false,
+          "explanation": "Non. Un exemple illustre, il ne démontre pas. En revanche un seul contre-exemple suffit à réfuter."
+        }
+      ]
+    },
+    {
+      "id": "la-contraposee",
+      "title": "La contraposée",
+      "subtitle": "Retourner l'implication sans la changer.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Deux énoncés, une seule vérité",
+          "formula": "« si A alors B »  a la même valeur que  « si non B alors non A »",
+          "body": "ce sont deux façons d'écrire la même chose."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Vérifie sur les quatre cas",
+          "body": "Parcours les quatre combinaisons : l'implication et sa contraposée tombent toujours d'accord.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Si n² est pair, alors n est pair",
+          "body": "Directement, c'est pénible. Par la contraposée, c'est immédiat.\n\nSupposons n impair : n = 2k + 1. Alors n² = 4k² + 4k + 1 = 2(2k² + 2k) + 1, qui est impair.\n\nOn a prouvé « si n est impair alors n² est impair », donc l'énoncé de départ."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ne confonds pas la contraposée avec la réciproque. « Si non B alors non A » est équivalente à l'énoncé ; « si B alors A » ne l'est pas du tout."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la contraposée de « si n est un multiple de 4, alors n est pair » ?",
+          "hint": "On nie les deux, et on échange.",
+          "explanation": "« Si n est impair, alors n n'est pas un multiple de 4. » On nie les deux membres et on les échange.",
+          "figureId": "implication",
+          "options": [
+            { "text": "Si n est impair, alors n n'est pas un multiple de 4", "correct": true },
+            { "text": "Si n est pair, alors n est un multiple de 4" },
+            { "text": "Si n n'est pas un multiple de 4, alors n est impair" },
+            { "text": "Si n est un multiple de 4, alors n est impair" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Une implication et sa contraposée sont toujours vraies ou fausses ensemble.",
+          "answer": true,
+          "explanation": "Oui : elles sont équivalentes. C'est ce qui autorise à démontrer l'une en démontrant l'autre.",
+          "figureId": "implication"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une implication et sa réciproque sont toujours vraies ou fausses ensemble.",
+          "answer": false,
+          "explanation": "Non. « S'il pleut, le sol est mouillé » est vraie ; sa réciproque est fausse dès que quelqu'un arrose.",
+          "figureId": "implication"
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque transformation de « si A alors B » à son nom.",
+          "explanation": "La réciproque échange sans nier, la contraposée nie et échange, la négation décrit le seul cas où l'implication est fausse.",
+          "pairs": [
+            { "left": "si B alors A", "right": "la réciproque" },
+            { "left": "si non B alors non A", "right": "la contraposée" },
+            { "left": "A et non B", "right": "la négation" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "par-l-absurde",
+      "title": "Le raisonnement par l'absurde",
+      "subtitle": "Supposer le contraire, et s'y casser les dents.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le principe",
+          "body": "On suppose que la conclusion est fausse, en gardant toutes les hypothèses.\n\nOn raisonne jusqu'à une contradiction : une affirmation et son contraire, ou un énoncé manifestement faux.\n\nLa supposition était donc intenable : la conclusion est vraie."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "La racine de 2 n'est pas une fraction",
+          "body": "Supposons le contraire : racine de 2 = p/q, fraction irréductible. Alors p² = 2q², donc p² est pair, donc p est pair — par la contraposée vue plus haut.\n\nÉcrivons p = 2r : 4r² = 2q², donc q² = 2r², donc q est pair lui aussi.\n\nMais p et q pairs contredit l'irréductibilité. La supposition tombe."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Il y a une infinité de nombres premiers",
+          "body": "Supposons qu'il n'y en ait qu'un nombre fini, et dressons-en la liste complète : p₁, p₂, et ainsi de suite jusqu'au dernier.\n\nFormons N : le produit de tous les nombres de la liste, plus 1. Aucun d'eux ne divise N, puisque chacun laisse le reste 1.\n\nN a pourtant un diviseur premier. Il n'est pas dans la liste : la liste n'était pas complète."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'absurde a un coût : la preuve ne montre pas pourquoi l'énoncé est vrai, seulement qu'il ne peut pas être faux. Quand une preuve directe existe, elle apprend davantage."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que suppose-t-on au début d'un raisonnement par l'absurde ?",
+          "hint": "On garde les hypothèses.",
+          "explanation": "Les hypothèses, et la négation de la conclusion. C'est de ce couple qu'on tire une contradiction.",
+          "options": [
+            { "text": "Les hypothèses, et la négation de la conclusion", "correct": true },
+            { "text": "La négation des hypothèses" },
+            { "text": "La conclusion elle-même" },
+            { "text": "Rien du tout" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans la preuve sur racine de 2, quelle est la contradiction finale ?",
+          "hint": "Que supposait-on sur la fraction ?",
+          "explanation": "p et q sont tous deux pairs, alors que la fraction était supposée irréductible. Les deux ne peuvent pas tenir ensemble.",
+          "options": [
+            { "text": "p et q sont pairs alors que la fraction était irréductible", "correct": true },
+            { "text": "p² n'est pas pair" },
+            { "text": "q est nul" },
+            { "text": "racine de 2 est plus grande que 2" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Les quatre premiers nombres premiers sont 2, 3, 5 et 7. Que vaut leur produit augmenté de 1 ?",
+          "answer": 211,
+          "tolerance": 0.01,
+          "hint": "2 × 3 × 5 × 7, puis + 1.",
+          "explanation": "211, qui se trouve être premier lui-même. Aucun des quatre ne le divise : chacun laisse le reste 1."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces débuts de preuve selon la méthode employée.",
+          "hint": "Que suppose-t-on en première ligne ?",
+          "explanation": "Partir des hypothèses, c'est le direct. Nier et échanger, c'est la contraposée. Supposer la conclusion fausse, c'est l'absurde.",
+          "categories": ["Contraposée", "Par l'absurde"],
+          "items": [
+            { "text": "Supposons n impair, montrons que n² est impair", "category": 0 },
+            { "text": "Supposons que n ne soit pas premier, montrons que n est pair", "category": 0 },
+            { "text": "Supposons que racine de 2 soit une fraction", "category": 1 },
+            { "text": "Supposons qu'il n'existe qu'un nombre fini de premiers", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-demonstrations",
+      "title": "Défi : choisir sa méthode",
+      "subtitle": "Six questions, trois outils.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Devant un énoncé, la première question n'est pas « est-ce vrai ? » mais « par quel bout le prendre ? »."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quand une implication « si A alors B » est-elle fausse ?",
+          "hint": "Un seul cas sur quatre.",
+          "explanation": "Quand A est vraie et B fausse : promettre et ne pas tenir. Les trois autres cas la laissent debout.",
+          "figureId": "implication",
+          "options": [
+            { "text": "Quand A est vraie et B fausse", "correct": true },
+            { "text": "Quand A est fausse et B vraie" },
+            { "text": "Quand A et B sont fausses" },
+            { "text": "Quand A et B sont vraies" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la contraposée de « si un entier est premier et dépasse 2, alors il est impair » ?",
+          "hint": "Nie la conclusion, nie l'hypothèse, échange.",
+          "explanation": "« Si un entier est pair, alors il n'est pas premier ou il ne dépasse pas 2. » La négation d'un « et » est un « ou ».",
+          "options": [
+            { "text": "Si un entier est pair, alors il n'est pas premier ou ne dépasse pas 2", "correct": true },
+            { "text": "Si un entier est impair, alors il est premier et dépasse 2" },
+            { "text": "Si un entier n'est pas premier, alors il est pair" },
+            { "text": "Si un entier est pair, alors il est premier" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Démontrer la contraposée d'un énoncé, c'est démontrer l'énoncé.",
+          "answer": true,
+          "explanation": "Oui, puisque les deux sont équivalents. C'est souvent la route la plus courte.",
+          "figureId": "implication"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Démontrer la réciproque d'un énoncé, c'est démontrer l'énoncé.",
+          "answer": false,
+          "explanation": "Non. La réciproque est un énoncé différent, qui peut être faux alors que l'énoncé est vrai.",
+          "figureId": "implication"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Les trois premiers nombres premiers sont 2, 3 et 5. Que vaut leur produit augmenté de 1 ?",
+          "answer": 31,
+          "tolerance": 0.01,
+          "hint": "2 × 3 × 5, puis + 1.",
+          "explanation": "31. Comme 211, il est premier, mais ce n'est pas nécessaire : il suffit qu'il ait un diviseur premier hors de la liste."
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre un raisonnement par l'absurde.",
+          "explanation": "On garde les hypothèses, on nie la conclusion, on en tire une contradiction, et l'on conclut que la négation était intenable.",
+          "items": [
+            "on garde les hypothèses",
+            "on suppose la conclusion fausse",
+            "on obtient une contradiction",
+            "on conclut que la conclusion est vraie"
+          ]
+        }
+      ]
+    }
+  ]
+}
