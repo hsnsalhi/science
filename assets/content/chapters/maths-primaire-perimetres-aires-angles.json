@@ -1,0 +1,380 @@
+{
+  "chapter": "maths-primaire-perimetres-aires-et-angles",
+  "lessons": [
+    {
+      "id": "perimetre",
+      "title": "Le périmètre",
+      "subtitle": "La longueur du tour.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qu'on mesure, exactement",
+          "body": "Le périmètre d'une figure est la longueur de son contour : ce qu'il faudrait de ficelle pour en faire le tour, ou de grillage pour clôturer un terrain.\n\nC'est une longueur. Elle se mesure en centimètres, en mètres, en kilomètres — jamais en centimètres carrés."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le rectangle",
+          "formula": "P = 2 × (L + l)",
+          "body": "Un rectangle de 7 cm sur 3 cm : L + l = 10, et P = 2 × 10 = 20 cm. On fait le tour en passant deux fois par une longueur et deux fois par une largeur."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Le carré",
+          "formula": "P = 4 × côté",
+          "body": "Un carré de 6 cm de côté a un périmètre de 4 × 6 = 24 cm. C'est le cas particulier du rectangle où les quatre côtés sont égaux."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Les figures tordues aussi",
+          "body": "Pour une figure quelconque, il n'y a pas de formule : on mesure chaque côté et on additionne. C'est tout.\n\nLes formules du rectangle et du carré ne sont que des raccourcis pour éviter d'écrire quatre nombres."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle de 9 cm sur 4 cm. Quel périmètre en centimètres ?",
+          "explanation": "2 × (9 + 4) = 2 × 13 = 26 cm.",
+          "answer": 26,
+          "unit": "cm"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un carré de 7 cm de côté. Quel périmètre en centimètres ?",
+          "explanation": "4 × 7 = 28 cm. Un carré a quatre côtés égaux, donc son périmètre est quatre fois son côté.",
+          "answer": 28,
+          "unit": "cm"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle a un périmètre de 30 cm et une longueur de 10 cm. Quelle largeur en centimètres ?",
+          "hint": "La moitié du périmètre est L + l.",
+          "explanation": "30 ÷ 2 = 15, et 15 − 10 = 5 cm de largeur.",
+          "answer": 5,
+          "unit": "cm"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle a des côtés de 5, 8 et 11 cm. Quel périmètre en centimètres ?",
+          "explanation": "5 + 8 + 11 = 24 cm. Pour une figure quelconque, on additionne simplement les côtés.",
+          "answer": 24,
+          "unit": "cm"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "En quelle unité s'exprime un périmètre ?",
+          "explanation": "En unité de longueur : centimètre, mètre, kilomètre. Jamais en unité carrée, qui mesure une surface.",
+          "options": [
+            {
+              "text": "en centimètres, mètres ou kilomètres",
+              "correct": true
+            },
+            {
+              "text": "en centimètres carrés"
+            },
+            {
+              "text": "en litres"
+            },
+            {
+              "text": "en degrés"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aire",
+      "title": "L'aire",
+      "subtitle": "La place occupée, en carrés.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Compter des carrés",
+          "body": "L'aire d'une figure est le nombre de carrés unité qu'elle contient. Si le carré unité mesure 1 cm de côté, l'aire s'exprime en centimètres carrés, notés cm².\n\nUn rectangle de 7 cm sur 3 cm contient 7 carrés par rangée et 3 rangées : 21 carrés, donc 21 cm². C'est de là que vient la formule — ce n'est pas une règle à apprendre, c'est un comptage."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les trois formules utiles",
+          "formula": "rectangle = L × l     carré = c × c     triangle = (b × h) ÷ 2",
+          "body": "Un triangle est toujours la moitié d'un rectangle de même base et même hauteur : trace le rectangle autour du triangle et tu verras les deux moitiés se compléter."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Le piège des conversions",
+          "body": "1 m fait 100 cm, mais 1 m² ne fait pas 100 cm².\n\nUn mètre carré est un carré de 100 cm de côté : il contient 100 × 100 = 10 000 cm².\n\nPour les aires, le facteur de conversion est toujours le carré de celui des longueurs. C'est l'erreur la plus fréquente du chapitre, chez les élèves comme chez les adultes."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Aire et périmètre ne vont pas ensemble",
+          "body": "Deux figures de même périmètre peuvent avoir des aires très différentes. Deux figures de même aire peuvent avoir des périmètres très différents.\n\nCe sont deux mesures indépendantes : l'une dit la longueur du tour, l'autre la place à l'intérieur. Connaître l'une ne dit rien de l'autre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle de 8 cm sur 5 cm. Quelle aire en centimètres carrés ?",
+          "explanation": "8 × 5 = 40 cm². C'est le nombre de carrés de 1 cm de côté que le rectangle contient : 8 par rangée, 5 rangées.",
+          "answer": 40
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un carré de 9 cm de côté. Quelle aire en centimètres carrés ?",
+          "explanation": "9 × 9 = 81 cm². Pour un carré, l'aire est le côté multiplié par lui-même.",
+          "answer": 81
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle de base 10 cm et de hauteur 6 cm. Quelle aire en centimètres carrés ?",
+          "explanation": "(10 × 6) ÷ 2 = 60 ÷ 2 = 30 cm², la moitié du rectangle qui l'entoure.",
+          "answer": 30
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de centimètres carrés dans 1 mètre carré ?",
+          "hint": "Un carré de 100 cm de côté.",
+          "explanation": "100 × 100 = 10 000 cm². Pas 100 : pour les aires, le facteur est le carré de celui des longueurs.",
+          "answer": 10000
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une pièce de 4 m sur 3 m. Quelle aire en mètres carrés ?",
+          "explanation": "4 × 3 = 12 m². La formule du rectangle ne change pas quand on passe des centimètres aux mètres, seule l'unité suit.",
+          "answer": 12
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Deux figures de même périmètre ont forcément la même aire.",
+          "explanation": "Faux. Un rectangle de 1 × 9 et un carré de 5 × 5 ont tous deux un périmètre de 20 cm, mais des aires de 9 cm² et 25 cm².",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "angles",
+      "title": "Les angles",
+      "subtitle": "Mesurer un écartement.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un angle n'a pas de longueur",
+          "body": "Un angle mesure l'écartement entre deux demi-droites parties du même point, pas la longueur de ces demi-droites.\n\nDeux angles identiques dessinés avec des traits courts et des traits longs mesurent la même chose. Allonger les côtés ne change rien à l'angle — c'est le point le plus souvent mal compris.\n\nL'unité est le degré. Un tour complet fait 360°."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les quatre angles à reconnaître d'un coup d'œil",
+          "body": "L'angle droit : 90°, le quart de tour, celui de l'équerre et du coin d'une feuille.\n\nL'angle aigu : plus petit que l'angle droit, il pique.\n\nL'angle obtus : plus grand que l'angle droit mais plus petit que l'angle plat.\n\nL'angle plat : 180°, le demi-tour. Les deux demi-droites sont dans le prolongement l'une de l'autre."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Lire un rapporteur sans se tromper",
+          "body": "Un rapporteur porte deux graduations qui vont en sens inverse : 40° et 140° sont marqués sur le même trait.\n\nPour choisir, regarde d'abord si l'angle est aigu ou obtus. Aigu, prends le nombre plus petit que 90. Obtus, prends le plus grand.\n\nCe réflexe évite l'erreur de lecture la plus courante, et il demande une seconde."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de degrés dans un tour complet ?",
+          "explanation": "360°. C'est la convention retenue depuis les Babyloniens, parce que 360 se divise par beaucoup de nombres entiers.",
+          "answer": 360,
+          "unit": "°"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de degrés dans un angle plat ?",
+          "explanation": "180°, soit un demi-tour : les deux demi-droites sont alignées.",
+          "answer": 180,
+          "unit": "°"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces angles selon leur sorte.",
+          "explanation": "Moins de 90° est aigu, exactement 90° est droit, entre 90° et 180° est obtus, exactement 180° est plat.",
+          "categories": [
+            "aigu",
+            "droit",
+            "obtus",
+            "plat"
+          ],
+          "items": [
+            {
+              "text": "30°",
+              "category": 0
+            },
+            {
+              "text": "75°",
+              "category": 0
+            },
+            {
+              "text": "90°",
+              "category": 1
+            },
+            {
+              "text": "120°",
+              "category": 2
+            },
+            {
+              "text": "160°",
+              "category": 2
+            },
+            {
+              "text": "180°",
+              "category": 3
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un angle mesure 55°. Combien lui manque-t-il de degrés pour faire un angle droit ?",
+          "explanation": "90 − 55 = 35°. Deux angles qui forment ensemble un angle droit sont dits complémentaires.",
+          "answer": 35,
+          "unit": "°"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Deux angles se complètent pour faire un angle plat. L'un fait 115°. Combien fait l'autre, en degrés ?",
+          "explanation": "180 − 115 = 65°. Deux angles qui forment ensemble un angle plat sont dits supplémentaires.",
+          "answer": 65,
+          "unit": "°"
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Allonger les côtés d'un angle rend l'angle plus grand.",
+          "explanation": "Faux. Un angle mesure l'écartement, pas la longueur des côtés. Le même angle dessiné avec des traits de 2 cm ou de 20 cm mesure autant.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-enclos",
+      "title": "Défi : l'enclos du fermier",
+      "subtitle": "Même grillage, pas la même place.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Vingt mètres de grillage",
+          "body": "Un fermier a exactement 20 mètres de grillage et veut enclore un rectangle. Il hésite entre plusieurs formes.\n\nS'il fait 1 m sur 9 m, il utilise bien ses 20 m de grillage, et ses moutons disposent de 9 m².\n\nS'il fait 5 m sur 5 m, il utilise les mêmes 20 m de grillage — et ses moutons disposent de 25 m².\n\nMême dépense, presque trois fois la place. Il vaut la peine de calculer avant de poser les piquets."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le carré est le meilleur rectangle",
+          "body": "À périmètre fixé, c'est le carré qui enferme la plus grande aire. Plus le rectangle s'allonge, plus son aire diminue, jusqu'à devenir presque nulle pour un rectangle très fin.\n\nSi l'on s'autorise toutes les formes et pas seulement les rectangles, le champion devient le cercle. C'est pour cela qu'une bulle de savon est ronde : la tension de sa paroi lui fait enfermer le plus d'air possible avec le moins de surface."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avec 20 m de grillage, un rectangle de 1 m sur 9 m. Quelle aire en mètres carrés ?",
+          "explanation": "1 × 9 = 9 m², alors que le grillage mesure bien 2 × (1 + 9) = 20 m.",
+          "answer": 9
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Toujours 20 m de grillage, mais 4 m sur 6 m. Quelle aire en mètres carrés ?",
+          "explanation": "4 × 6 = 24 m². Le périmètre fait toujours 2 × 10 = 20 m.",
+          "answer": 24
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Et avec 5 m sur 5 m ? Quelle aire en mètres carrés ?",
+          "explanation": "5 × 5 = 25 m². C'est le maximum possible avec 20 m de grillage pour un rectangle.",
+          "answer": 25
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces rectangles de périmètre 20 m, de la plus petite aire à la plus grande.",
+          "explanation": "1×9 donne 9 m², 2×8 donne 16, 3×7 donne 21, 4×6 donne 24, 5×5 donne 25. L'aire augmente à mesure que le rectangle s'approche du carré.",
+          "items": [
+            "1 m sur 9 m",
+            "2 m sur 8 m",
+            "3 m sur 7 m",
+            "4 m sur 6 m",
+            "5 m sur 5 m"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Le fermier veut 36 m² et un carré. Combien de mètres de grillage lui faut-il ?",
+          "hint": "Trouve d'abord le côté.",
+          "explanation": "Un carré de 36 m² a 6 m de côté, puisque 6 × 6 = 36. Son périmètre est 4 × 6 = 24 m.",
+          "answer": 24,
+          "unit": "m"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Les mêmes 36 m², mais en bande de 1 m sur 36 m. Combien de mètres de grillage ?",
+          "explanation": "2 × (1 + 36) = 74 m, soit trois fois plus de grillage pour exactement la même place.",
+          "answer": 74,
+          "unit": "m"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une bulle de savon est-elle ronde ?",
+          "explanation": "Parce que la sphère enferme le plus de volume avec le moins de surface. La paroi, qui tire sur elle-même, adopte naturellement cette forme.",
+          "options": [
+            {
+              "text": "la sphère enferme le plus avec le moins de surface",
+              "correct": true
+            },
+            {
+              "text": "parce que l'air est rond"
+            },
+            {
+              "text": "parce qu'elle tourne en montant"
+            },
+            {
+              "text": "par hasard, elle pourrait être cubique"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

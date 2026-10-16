@@ -1,0 +1,437 @@
+{
+  "chapter": "maths-primaire-figures-planes-et-solides",
+  "lessons": [
+    {
+      "id": "triangles",
+      "title": "Classer les triangles",
+      "subtitle": "Par les côtés, ou par les angles.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Deux façons de classer, pas une",
+          "body": "Par les côtés : équilatéral si les trois côtés sont égaux, isocèle s'il y en a au moins deux égaux, quelconque sinon.\n\nPar les angles : rectangle s'il a un angle droit, obtusangle s'il a un angle plus grand qu'un angle droit, acutangle si ses trois angles sont plus petits.\n\nCes deux classements se croisent. C'est pourquoi un triangle peut porter deux noms à la fois."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "La somme des angles",
+          "figureId": "angles-triangle",
+          "body": "Déforme le triangle du doigt et regarde la somme des trois angles. Elle ne bouge pas : 180°, toujours, quel que soit le triangle."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Isocèle et rectangle à la fois",
+          "body": "Prends un carré et coupe-le en deux par une diagonale. Chaque moitié a un angle droit, et deux côtés égaux : elle est à la fois rectangle et isocèle.\n\nSes angles valent 90°, 45° et 45°. C'est une équerre d'écolier, et c'est le seul triangle rectangle isocèle qui existe, à la taille près."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Ce qui est impossible",
+          "body": "Un triangle équilatéral ne peut pas être rectangle : ses trois angles valent 60°, et 60 n'est pas 90.\n\nUn triangle ne peut pas avoir deux angles droits : 90 + 90 = 180, il ne resterait rien pour le troisième.\n\nUn équilatéral est toujours isocèle, puisque « au moins deux côtés égaux » est vrai quand les trois le sont."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font les trois angles d'un triangle additionnés, en degrés ?",
+          "explanation": "180°, pour tout triangle sans exception.",
+          "answer": 180,
+          "unit": "°"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle a deux angles de 70° et 50°. Combien mesure le troisième, en degrés ?",
+          "explanation": "180 − 70 − 50 = 60°. Les trois angles d'un triangle font toujours 180°, donc le troisième se déduit des deux autres.",
+          "answer": 60,
+          "unit": "°"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien mesure chaque angle d'un triangle équilatéral, en degrés ?",
+          "explanation": "180 ÷ 3 = 60°. Les trois côtés égaux entraînent trois angles égaux.",
+          "answer": 60,
+          "unit": "°"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle rectangle a un angle de 35° en plus de son angle droit. Combien mesure le dernier, en degrés ?",
+          "explanation": "180 − 90 − 35 = 55°. Dans un triangle rectangle, les deux autres angles font toujours 90° ensemble.",
+          "answer": 55,
+          "unit": "°"
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un triangle équilatéral peut être rectangle.",
+          "explanation": "Faux. Ses trois angles valent 60°, et aucun ne peut donc valoir 90°.",
+          "answer": false
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un triangle équilatéral est aussi isocèle.",
+          "explanation": "Vrai. Isocèle demande au moins deux côtés égaux, ce qui est satisfait quand les trois le sont.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "quadrilateres",
+      "title": "Classer les quadrilatères",
+      "subtitle": "Des familles emboîtées.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les cinq noms, du plus large au plus serré",
+          "body": "Un trapèze a au moins deux côtés parallèles.\n\nUn parallélogramme a ses côtés parallèles deux à deux.\n\nUn rectangle est un parallélogramme à quatre angles droits.\n\nUn losange est un parallélogramme à quatre côtés égaux.\n\nUn carré a les deux : quatre angles droits et quatre côtés égaux."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le piège à éviter",
+          "body": "La question « est-ce un carré ou un rectangle ? » n'a pas de réponse, parce qu'elle suppose qu'il faut choisir.\n\nUn carré est un rectangle. Il a bien quatre angles droits, donc il remplit la définition. Il est aussi un losange, et un parallélogramme, et un trapèze.\n\nLes familles s'emboîtent comme des poupées russes : un carré est le cas le plus spécial, celui qui appartient à toutes les familles en même temps."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Le carré est l'intersection",
+          "body": "Un rectangle qui a ses quatre côtés égaux est un carré.\n\nUn losange qui a ses quatre angles droits est un carré.\n\nLe carré est exactement ce qui est à la fois rectangle et losange — rien de plus, rien de moins."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Reconnaître sans se tromper",
+          "body": "Mesure les quatre côtés, puis vérifie les quatre angles à l'équerre.\n\nQuatre côtés égaux et quatre angles droits : carré.\n\nQuatre angles droits seulement : rectangle.\n\nQuatre côtés égaux seulement : losange.\n\nNi l'un ni l'autre, mais côtés parallèles deux à deux : parallélogramme."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Un carré est un rectangle.",
+          "explanation": "Vrai. Un rectangle est un parallélogramme à quatre angles droits, et le carré en a quatre. Il est le cas particulier le plus spécial.",
+          "answer": true
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Un rectangle est un carré.",
+          "explanation": "Faux, en général : un rectangle de 3 cm sur 5 cm n'a pas ses côtés égaux. L'inclusion ne marche que dans un sens.",
+          "answer": false
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un carré est un losange.",
+          "explanation": "Vrai. Un losange est un parallélogramme à quatre côtés égaux, ce que le carré est aussi.",
+          "answer": true
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Une figure a quatre côtés égaux mais aucun angle droit. Qu'est-ce que c'est ?",
+          "explanation": "Un losange, et pas un carré : il manque les angles droits.",
+          "options": [
+            {
+              "text": "un losange",
+              "correct": true
+            },
+            {
+              "text": "un carré"
+            },
+            {
+              "text": "un rectangle"
+            },
+            {
+              "text": "un trapèze seulement"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que faut-il ajouter à un rectangle pour en faire un carré ?",
+          "explanation": "Que ses quatre côtés soient égaux. Un rectangle a déjà les quatre angles droits.",
+          "options": [
+            {
+              "text": "que ses quatre côtés soient égaux",
+              "correct": true
+            },
+            {
+              "text": "qu'il ait quatre angles droits"
+            },
+            {
+              "text": "que ses côtés soient parallèles"
+            },
+            {
+              "text": "rien, c'est déjà un carré"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "tri",
+          "prompt": "Ces affirmations sont-elles toujours vraies, ou pas ?",
+          "explanation": "Les inclusions vont du cas particulier vers le cas général : carré vers rectangle, carré vers losange, rectangle vers parallélogramme. Jamais l'inverse.",
+          "categories": [
+            "toujours vrai",
+            "pas toujours vrai"
+          ],
+          "items": [
+            {
+              "text": "un carré est un rectangle",
+              "category": 0
+            },
+            {
+              "text": "un carré est un losange",
+              "category": 0
+            },
+            {
+              "text": "un rectangle est un parallélogramme",
+              "category": 0
+            },
+            {
+              "text": "un rectangle est un carré",
+              "category": 1
+            },
+            {
+              "text": "un losange est un carré",
+              "category": 1
+            },
+            {
+              "text": "un parallélogramme est un rectangle",
+              "category": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "solides",
+      "title": "Les solides",
+      "subtitle": "Faces, arêtes et sommets.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trois choses à compter",
+          "body": "Une face est une surface plate du solide.\n\nUne arête est le trait où deux faces se rencontrent.\n\nUn sommet est le point où plusieurs arêtes se rejoignent.\n\nSur un cube : 6 faces, 12 arêtes, 8 sommets. Compte-les sur un dé, en le faisant tourner."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La relation d'Euler",
+          "formula": "faces + sommets − arêtes = 2",
+          "body": "Pour le cube : 6 + 8 − 12 = 2. Pour une pyramide à base carrée : 5 + 5 − 8 = 2. Pour un tétraèdre : 4 + 4 − 6 = 2. Essaie avec n'importe quel solide à faces plates : le résultat est toujours 2."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Les solides qui n'ont pas d'arête",
+          "body": "La sphère n'a aucune face plate, aucune arête, aucun sommet.\n\nLe cylindre a deux disques plats et une surface courbe ; le cône a un disque et une pointe.\n\nLa relation d'Euler ne s'applique pas à eux : elle vaut pour les solides entièrement faits de faces plates, qu'on appelle polyèdres."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'arêtes a un cube ?",
+          "explanation": "12 arêtes : quatre en haut, quatre en bas, quatre verticales.",
+          "answer": 12
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de sommets a un cube ?",
+          "explanation": "8 sommets, les huit coins.",
+          "answer": 8
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une pyramide à base carrée a 5 faces et 5 sommets. Combien d'arêtes, d'après la relation d'Euler ?",
+          "hint": "faces + sommets − arêtes = 2.",
+          "explanation": "5 + 5 − arêtes = 2, donc arêtes = 8 : les quatre côtés du carré et les quatre montantes.",
+          "answer": 8
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un prisme droit à base triangulaire a 5 faces et 9 arêtes. Combien de sommets ?",
+          "explanation": "5 + sommets − 9 = 2, donc sommets = 6 : trois en haut, trois en bas.",
+          "answer": 6
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque solide à son nombre de faces.",
+          "explanation": "Le tétraèdre a 4 faces triangulaires, la pyramide à base carrée 5, le cube 6, et le prisme à base hexagonale 8 — deux hexagones et six rectangles.",
+          "pairs": [
+            {
+              "left": "le tétraèdre",
+              "right": "4 faces"
+            },
+            {
+              "left": "la pyramide à base carrée",
+              "right": "5 faces"
+            },
+            {
+              "left": "le cube",
+              "right": "6 faces"
+            },
+            {
+              "left": "le prisme à base hexagonale",
+              "right": "8 faces"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la relation d'Euler ne s'applique-t-elle pas à la sphère ?",
+          "explanation": "Parce qu'elle n'a ni face plate, ni arête, ni sommet. La relation vaut pour les polyèdres, faits uniquement de faces plates.",
+          "options": [
+            {
+              "text": "elle n'a ni face plate, ni arête, ni sommet",
+              "correct": true
+            },
+            {
+              "text": "elle est trop ronde pour être mesurée"
+            },
+            {
+              "text": "elle a une infinité de faces"
+            },
+            {
+              "text": "elle a un seul sommet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-patrons",
+      "title": "Défi : les patrons du cube",
+      "subtitle": "Six carrés, mais pas n'importe comment.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Déplier un cube",
+          "body": "Prends une boîte cubique, coupe le long de certaines arêtes et aplatis-la : tu obtiens six carrés tenant les uns aux autres. C'est un patron.\n\nTout patron de cube a exactement six carrés — c'est le nombre de faces, et aucun carré ne peut manquer ni se répéter.\n\nMais l'inverse est faux : six carrés assemblés ne se replient pas forcément en cube. Il y a une infinité de façons d'en coller six, et seulement onze donnent un cube."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Le test du pliage mental",
+          "body": "Choisis un carré comme fond. Replie ses voisins directs : ils forment les murs.\n\nS'il reste un carré sans place, ou si deux carrés viennent se superposer au même endroit, le patron ne marche pas.\n\nLe cas qui échoue le plus souvent est celui de quatre carrés en carré 2 × 2 : deux se recouvrent dès le pliage."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les faces opposées",
+          "body": "Dans un dé, les faces opposées font toujours 7 : 1 avec 6, 2 avec 5, 3 avec 4.\n\nSur un patron, deux carrés séparés par exactement un carré dans une même ligne se retrouvent opposés après pliage. Deux carrés voisins, jamais."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de carrés compte tout patron de cube ?",
+          "explanation": "6, autant que le cube a de faces.",
+          "answer": 6
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de patrons différents du cube existe-t-il ?",
+          "hint": "Entre dix et douze.",
+          "explanation": "Exactement onze, si l'on ne compte qu'une fois les patrons identiques à une rotation ou un retournement près.",
+          "answer": 11
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Sur un dé, la face opposée au 2 porte quel nombre ?",
+          "explanation": "5, puisque les faces opposées d'un dé font toujours 7 : 2 + 5 = 7.",
+          "answer": 5
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Additionne les six faces d'un dé.",
+          "explanation": "1 + 2 + 3 + 4 + 5 + 6 = 21. On peut aussi le voir comme trois paires opposées valant 7 : 3 × 7 = 21.",
+          "answer": 21
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi quatre carrés en bloc 2 × 2 empêchent-ils de former un cube ?",
+          "explanation": "Parce qu'au pliage deux d'entre eux viennent se superposer au même endroit, laissant une face du cube à nu.",
+          "options": [
+            {
+              "text": "deux carrés se superposent au pliage",
+              "correct": true
+            },
+            {
+              "text": "il manque un carré"
+            },
+            {
+              "text": "les carrés sont trop petits"
+            },
+            {
+              "text": "il y a un carré de trop"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un cube d'arête 3 cm. Quelle est l'aire totale de ses six faces, en centimètres carrés ?",
+          "hint": "L'aire d'une face, puis six fois.",
+          "explanation": "Une face fait 3 × 3 = 9 cm², et six faces font 6 × 9 = 54 cm². C'est aussi la surface de carton d'un patron.",
+          "answer": 54
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Six carrés collés ensemble forment-ils toujours un patron de cube ?",
+          "explanation": "Non. Six carrés sont nécessaires mais pas suffisants : sur l'infinité d'assemblages possibles, seuls onze se replient en cube.",
+          "options": [
+            {
+              "text": "non, six carrés ne suffisent pas",
+              "correct": true
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "oui, sauf s'ils sont en ligne"
+            },
+            {
+              "text": "oui, à condition qu'ils soient de même taille"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "chapter": "maths-primaire-geometrie-droites-cercles-polygones",
+  "lessons": [
+    {
+      "id": "points-droites",
+      "title": "Points, droites et segments",
+      "subtitle": "Le vocabulaire qui évite les malentendus.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trois objets, trois noms",
+          "body": "Un point n'a pas de taille. On le marque d'une croix fine, pas d'un gros rond, et on le nomme par une majuscule : A, B, C.\n\nUne droite est illimitée des deux côtés. On ne peut pas la dessiner en entier, on en trace un morceau et on la nomme (AB).\n\nUn segment est le morceau de droite entre deux points. Il a deux extrémités et une longueur. On l'écrit [AB], et sa longueur se note AB."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Les crochets ne sont pas une décoration",
+          "body": "(AB) est une droite : illimitée, sans longueur.\n\n[AB] est un segment : limité, avec une longueur.\n\nAB tout court est un nombre : la longueur du segment. On peut écrire AB = 5 cm, jamais [AB] = 5 cm.\n\nCette distinction paraît tatillonne au primaire et devient indispensable au collège : autant la prendre tout de suite."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Trois points alignés",
+          "body": "Trois points sont alignés s'il existe une droite qui passe par les trois.\n\nPour le vérifier, on pose le bord de la règle sur deux d'entre eux et on regarde si le troisième est dessus. À l'œil nu, un point à un millimètre du bord paraît aligné : il ne l'est pas.\n\nPar deux points, il passe toujours exactement une droite. Par trois points pris au hasard, en général aucune."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Deux points suffisent",
+          "body": "Par un seul point passent une infinité de droites.\n\nPar deux points distincts passe une droite, et une seule. C'est pour cela qu'il suffit de deux clous pour fixer une planche de façon qu'elle ne tourne plus."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque écriture à ce qu'elle désigne.",
+          "explanation": "Les parenthèses désignent la droite, les crochets le segment, et le nom nu la longueur.",
+          "pairs": [
+            {
+              "left": "(AB)",
+              "right": "la droite, illimitée"
+            },
+            {
+              "left": "[AB]",
+              "right": "le segment, limité"
+            },
+            {
+              "left": "AB",
+              "right": "la longueur, un nombre"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de droites passent par deux points distincts ?",
+          "explanation": "Une seule. C'est la propriété de base de la géométrie plane.",
+          "answer": 1
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Comment vérifier que trois points sont alignés ?",
+          "explanation": "On pose le bord de la règle sur deux d'entre eux et on regarde si le troisième est exactement dessus.",
+          "options": [
+            {
+              "text": "poser la règle sur deux et regarder le troisième",
+              "correct": true
+            },
+            {
+              "text": "mesurer les trois distances"
+            },
+            {
+              "text": "les relier au compas"
+            },
+            {
+              "text": "regarder de loin"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "On peut écrire [AB] = 5 cm.",
+          "explanation": "Faux. [AB] est un segment, pas un nombre. La longueur s'écrit AB = 5 cm, sans crochets.",
+          "answer": false
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux clous suffisent-ils à empêcher une planche de tourner ?",
+          "explanation": "Parce que deux points distincts déterminent une seule droite : la planche n'a plus aucune liberté de rotation.",
+          "options": [
+            {
+              "text": "deux points déterminent une seule direction",
+              "correct": true
+            },
+            {
+              "text": "parce que les clous sont solides"
+            },
+            {
+              "text": "parce que le bois est rigide"
+            },
+            {
+              "text": "un seul clou suffirait aussi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perpendiculaires",
+      "title": "Perpendiculaires et parallèles",
+      "subtitle": "Deux relations entre droites.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Perpendiculaires : l'angle droit",
+          "body": "Deux droites sont perpendiculaires si elles se croisent en formant un angle droit, c'est-à-dire un quart de tour.\n\nOn le vérifie avec l'équerre, jamais à l'œil : un angle de 87° ressemble beaucoup à un angle droit sur un dessin.\n\nQuand deux droites se croisent en angle droit, les quatre angles formés sont droits. Il suffit donc d'en vérifier un."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Parallèles : jamais de rencontre",
+          "body": "Deux droites sont parallèles si elles ne se croisent jamais, même prolongées indéfiniment.\n\nCela revient à dire qu'elles gardent partout le même écart. Pour vérifier, on mesure la distance entre elles à deux endroits éloignés : si elle a changé, elles finiront par se croiser quelque part.\n\nDeux rails de chemin de fer sont parallèles. Les bords d'une route qui monte vers l'horizon le sont aussi, même s'ils semblent se rejoindre : le dessin trompe, pas la route."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Tracer une parallèle à la règle et à l'équerre",
+          "body": "Poser l'équerre contre la droite donnée, un de ses côtés de l'angle droit le long de la droite.\n\nTracer un trait le long de l'autre côté : il est perpendiculaire à la droite.\n\nGlisser l'équerre le long de ce trait, de la distance voulue.\n\nTracer le long du premier côté : ce trait est parallèle à la droite de départ, puisque tous deux sont perpendiculaires au même trait."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "La règle qui enchaîne les deux",
+          "body": "Deux droites perpendiculaires à une même troisième sont parallèles entre elles.\n\nC'est la propriété qui fait tenir tous les tracés d'atelier, et elle explique pourquoi on trace une parallèle en passant par une perpendiculaire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de degrés dans un angle droit ?",
+          "explanation": "90 degrés, soit un quart de tour.",
+          "answer": 90,
+          "unit": "°"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Deux droites perpendiculaires forment combien d'angles droits à leur croisement ?",
+          "explanation": "Quatre. Il suffit donc d'en vérifier un seul à l'équerre.",
+          "answer": 4
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Deux droites sont chacune perpendiculaires à une même troisième. Que peut-on dire ?",
+          "explanation": "Elles sont parallèles entre elles. C'est la propriété qui sert à tracer une parallèle avec une équerre.",
+          "options": [
+            {
+              "text": "elles sont parallèles entre elles",
+              "correct": true
+            },
+            {
+              "text": "elles sont perpendiculaires entre elles"
+            },
+            {
+              "text": "elles se croisent en un point"
+            },
+            {
+              "text": "on ne peut rien en dire"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Comment vérifier que deux droites sont parallèles ?",
+          "explanation": "En mesurant leur écart à deux endroits éloignés : s'il a changé, elles ne sont pas parallèles.",
+          "options": [
+            {
+              "text": "mesurer leur écart en deux endroits éloignés",
+              "correct": true
+            },
+            {
+              "text": "vérifier qu'elles ont la même longueur"
+            },
+            {
+              "text": "regarder si elles semblent se rejoindre"
+            },
+            {
+              "text": "les prolonger jusqu'au bord de la feuille"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Les bords d'une route droite qui semblent se rejoindre à l'horizon ne sont pas parallèles.",
+          "explanation": "Faux. Ils le sont : c'est le dessin de la perspective qui les fait converger, pas la route. L'écart réel reste constant.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "cercle",
+      "title": "Le cercle",
+      "subtitle": "Tous les points à la même distance.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une définition, pas une forme",
+          "body": "Le cercle de centre O et de rayon 3 cm est l'ensemble de tous les points situés à exactement 3 cm de O.\n\nC'est cette définition qui fait du compas un outil exact : sa pointe tient le centre, son écartement tient le rayon, et il ne peut rien dessiner d'autre qu'un cercle.\n\nUne chèvre attachée à un piquet par une corde de 5 m broute exactement un disque de rayon 5 m. Le bord de la zone broutée est un cercle, et ce n'est pas une analogie : c'est la même chose."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le diamètre",
+          "formula": "diamètre = 2 × rayon",
+          "body": "Le diamètre est un segment qui joint deux points du cercle en passant par le centre. C'est la plus grande distance entre deux points du cercle."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Cercle ou disque",
+          "body": "Le cercle est la ligne, le bord.\n\nLe disque est la surface, le bord et tout l'intérieur.\n\nUne pièce de monnaie est un disque ; un anneau est un cercle. On parle de la longueur d'un cercle et de l'aire d'un disque, jamais le contraire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un cercle a un rayon de 7 cm. Quel est son diamètre en centimètres ?",
+          "explanation": "2 × 7 = 14 cm. Le diamètre vaut toujours deux fois le rayon, puisqu'il traverse le cercle en passant par le centre.",
+          "answer": 14,
+          "unit": "cm"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un cercle a un diamètre de 18 cm. Quel est son rayon en centimètres ?",
+          "explanation": "18 ÷ 2 = 9 cm. On remonte du diamètre au rayon en divisant par deux.",
+          "answer": 9,
+          "unit": "cm"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Un point est à 4 cm du centre O. Le cercle de centre O a un rayon de 4 cm. Où est ce point ?",
+          "explanation": "Exactement sur le cercle : le cercle est l'ensemble des points à cette distance du centre, ni plus près ni plus loin.",
+          "options": [
+            {
+              "text": "sur le cercle",
+              "correct": true
+            },
+            {
+              "text": "à l'intérieur du disque, pas sur le cercle"
+            },
+            {
+              "text": "à l'extérieur"
+            },
+            {
+              "text": "au centre"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Ces points sont-ils sur, dedans ou dehors, pour un cercle de centre O et de rayon 5 cm ?",
+          "explanation": "On compare simplement la distance au centre avec 5 cm : plus petite c'est dedans, égale c'est dessus, plus grande c'est dehors.",
+          "categories": [
+            "à l'intérieur",
+            "sur le cercle",
+            "à l'extérieur"
+          ],
+          "items": [
+            {
+              "text": "un point à 2 cm de O",
+              "category": 0
+            },
+            {
+              "text": "un point à 4,9 cm de O",
+              "category": 0
+            },
+            {
+              "text": "un point à 5 cm de O",
+              "category": 1
+            },
+            {
+              "text": "un point à 5,1 cm de O",
+              "category": 2
+            },
+            {
+              "text": "un point à 12 cm de O",
+              "category": 2
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la différence entre un cercle et un disque ?",
+          "explanation": "Le cercle est la ligne, le bord ; le disque est la surface, bord et intérieur compris.",
+          "options": [
+            {
+              "text": "le cercle est la ligne, le disque est la surface",
+              "correct": true
+            },
+            {
+              "text": "le disque est plus petit"
+            },
+            {
+              "text": "le cercle n'a pas de centre"
+            },
+            {
+              "text": "c'est exactement la même chose"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Une chèvre est attachée par une corde de 6 m. Quel est le diamètre de la zone qu'elle broute, en mètres ?",
+          "explanation": "La corde est le rayon, donc le diamètre fait 2 × 6 = 12 m.",
+          "answer": 12,
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "id": "defi-construire",
+      "title": "Défi : le triangle impossible",
+      "subtitle": "Trois longueurs ne font pas toujours un triangle.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Construire un triangle de 4, 5 et 6 cm",
+          "body": "Tracer le segment [AB] de 6 cm : ce sera le plus long côté.\n\nOuvrir le compas à 4 cm, pointe sur A, tracer un arc.\n\nOuvrir le compas à 5 cm, pointe sur B, tracer un second arc.\n\nLes deux arcs se croisent : leur intersection est le point C. Relier. Le triangle est construit, et il est exact au dixième de millimètre."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Maintenant essaie avec 3, 4 et 10",
+          "body": "Trace [AB] de 10 cm. Arc de 3 cm depuis A, arc de 4 cm depuis B.\n\nLes arcs ne se croisent pas. Ils s'arrêtent chacun de leur côté, séparés par 3 centimètres de vide.\n\nCe n'est pas une maladresse de tracé : ce triangle n'existe pas. 3 + 4 = 7, et 7 est plus petit que 10. Les deux petits côtés réunis n'arrivent même pas à rejoindre les deux bouts du grand."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "L'inégalité triangulaire",
+          "body": "Un triangle existe si, et seulement si, chaque côté est plus court que la somme des deux autres.\n\nIl suffit de le vérifier pour le plus grand côté : si le plus grand passe, les deux autres passent forcément.\n\nC'est aussi la raison pour laquelle le chemin direct est toujours le plus court : passer par un point C ne peut jamais raccourcir le trajet de A à B."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avec les côtés 3, 4 et 10 : combien font 3 + 4 ?",
+          "explanation": "7, et 7 est plus petit que 10. Le triangle est donc impossible.",
+          "answer": 7
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Ces triplets de longueurs forment-ils un triangle ?",
+          "explanation": "On compare le plus grand côté à la somme des deux autres. 4+5=9 > 6 ; 3+3=6 > 5 ; 2+2=4 > 3. Mais 3+4=7 < 10 ; 1+2=3 = 3, ce qui donne trois points alignés et non un triangle ; 2+3=5 < 9.",
+          "categories": [
+            "triangle possible",
+            "triangle impossible"
+          ],
+          "items": [
+            {
+              "text": "4, 5 et 6",
+              "category": 0
+            },
+            {
+              "text": "3, 3 et 5",
+              "category": 0
+            },
+            {
+              "text": "2, 2 et 3",
+              "category": 0
+            },
+            {
+              "text": "3, 4 et 10",
+              "category": 1
+            },
+            {
+              "text": "1, 2 et 3",
+              "category": 1
+            },
+            {
+              "text": "2, 3 et 9",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Avec 1, 2 et 3, qu'obtient-on exactement ?",
+          "explanation": "1 + 2 = 3, soit exactement le troisième côté : les arcs se touchent en un seul point, sur le segment. On obtient trois points alignés, pas un triangle.",
+          "options": [
+            {
+              "text": "trois points alignés, pas un triangle",
+              "correct": true
+            },
+            {
+              "text": "un triangle très plat mais valable"
+            },
+            {
+              "text": "un triangle rectangle"
+            },
+            {
+              "text": "deux triangles possibles"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Deux côtés font 5 cm et 8 cm. Quelle est la plus grande longueur entière possible pour le troisième, en centimètres ?",
+          "hint": "Il doit rester plus petit que 5 + 8.",
+          "explanation": "Il doit être strictement plus petit que 13, donc 12 cm au maximum.",
+          "answer": 12,
+          "unit": "cm"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Avec les mêmes 5 et 8 cm, quelle est la plus petite longueur entière possible pour le troisième ?",
+          "hint": "Le côté de 8 doit rester plus petit que 5 plus le troisième.",
+          "explanation": "Il faut 5 + x > 8, donc x > 3 : la plus petite valeur entière est 4 cm.",
+          "answer": 4,
+          "unit": "cm"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de longueurs entières, de 4 à 12 cm, conviennent donc pour ce troisième côté ?",
+          "explanation": "De 4 à 12 inclus, cela fait 12 − 4 + 1 = 9 valeurs possibles.",
+          "answer": 9
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le chemin direct de A à B est-il toujours le plus court ?",
+          "explanation": "Parce que AC + CB est toujours supérieur ou égal à AB : c'est exactement l'inégalité triangulaire. Passer par un détour ne peut jamais raccourcir.",
+          "options": [
+            {
+              "text": "parce que AC + CB est toujours au moins égal à AB",
+              "correct": true
+            },
+            {
+              "text": "parce qu'une droite est plus rapide à parcourir"
+            },
+            {
+              "text": "parce que les détours fatiguent"
+            },
+            {
+              "text": "ce n'est vrai que sur une feuille"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

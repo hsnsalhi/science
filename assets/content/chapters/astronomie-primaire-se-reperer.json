@@ -1,0 +1,442 @@
+{
+  "chapter": "astronomie-primaire-se-reperer-avec-le-ciel",
+  "lessons": [
+    {
+      "id": "soleil-nord",
+      "title": "Trouver le nord avec le Soleil",
+      "subtitle": "Une ombre suffit.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le Soleil ne passe pas au-dessus de ta tête",
+          "body": "En France, le Soleil se lève vers l'est, se couche vers l'ouest, et à midi solaire il est au plus haut — mais au sud, jamais à la verticale.\n\nC'est pour cela que les ombres de midi ne disparaissent pas : elles raccourcissent, puis rallongent, en pointant toujours vers le nord.\n\nPlante un bâton droit dans le sol, un piquet, un crayon. Son ombre la plus courte de la journée te donne le nord. C'est un gnomon, et c'est le plus vieil instrument d'astronomie du monde."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Pourquoi la hauteur change",
+          "figureId": "saisons",
+          "body": "L'axe de la Terre est penché. Le Soleil monte donc plus haut en juin qu'en décembre, et l'ombre de midi est bien plus courte en été."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "La méthode des deux ombres",
+          "body": "Plante le bâton et marque le bout de son ombre d'un caillou.\n\nAttends une vingtaine de minutes et marque le nouveau bout.\n\nRelie les deux cailloux : cette ligne va d'ouest en est, parce que l'ombre se déplace dans le sens inverse du Soleil.\n\nTiens-toi le pied gauche sur le premier caillou et le droit sur le second : tu regardes le nord. Cette méthode marche même sans savoir l'heure."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Dans l'hémisphère sud, tout s'inverse",
+          "body": "En Australie ou en Argentine, le Soleil de midi est au nord, et l'ombre pointe vers le sud.\n\nUn repère astronomique n'est jamais universel : il dépend de l'endroit d'où on regarde. Dire « l'ombre de midi pointe le nord » sans préciser où est une erreur pour la moitié de la planète."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "En France, dans quelle direction pointe l'ombre de midi ?",
+          "explanation": "Vers le nord, puisque le Soleil de midi est au sud. L'ombre part toujours à l'opposé de la source.",
+          "options": [
+            {
+              "text": "vers le nord",
+              "correct": true
+            },
+            {
+              "text": "vers le sud"
+            },
+            {
+              "text": "vers l'est"
+            },
+            {
+              "text": "vers l'ouest"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "À quel moment de la journée l'ombre d'un bâton est-elle la plus courte ?",
+          "explanation": "À midi solaire, quand le Soleil est au plus haut. C'est ce moment qui donne la direction du nord.",
+          "options": [
+            {
+              "text": "à midi solaire",
+              "correct": true
+            },
+            {
+              "text": "au lever du Soleil"
+            },
+            {
+              "text": "au coucher du Soleil"
+            },
+            {
+              "text": "elle ne change pas"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "À quelle saison l'ombre de midi est-elle la plus courte en France ?",
+          "explanation": "En été, vers le 21 juin : le Soleil y monte le plus haut, parce que l'axe de la Terre penche l'hémisphère nord vers lui.",
+          "options": [
+            {
+              "text": "en été",
+              "correct": true
+            },
+            {
+              "text": "en hiver"
+            },
+            {
+              "text": "au printemps"
+            },
+            {
+              "text": "elle est identique toute l'année"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode des deux ombres dans l'ordre.",
+          "explanation": "On plante, on marque, on attend, on marque encore, et la ligne entre les deux marques va d'ouest en est.",
+          "items": [
+            "planter un bâton droit",
+            "marquer le bout de l'ombre",
+            "attendre vingt minutes",
+            "marquer le nouveau bout",
+            "relier les deux marques : la ligne va d'ouest en est"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "L'ombre de midi pointe vers le nord partout sur la Terre.",
+          "explanation": "Faux. Dans l'hémisphère sud, le Soleil de midi est au nord et l'ombre pointe vers le sud. Aucun repère du ciel n'est valable partout.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "polaire",
+      "title": "L'étoile Polaire",
+      "subtitle": "La seule étoile qui ne bouge pas.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi elle semble immobile",
+          "body": "La Terre tourne autour d'un axe. Prolonge cet axe vers le nord, très loin : il tombe presque exactement sur une étoile, l'étoile Polaire.\n\nComme elle est dans la direction de l'axe, elle ne tourne pas avec le reste du ciel. Toutes les autres étoiles décrivent des cercles autour d'elle pendant la nuit ; elle reste sur place.\n\nC'est ce qui en a fait pendant des siècles le repère des marins : la seule chose fixe dans un ciel qui tourne."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La trouver avec la Grande Ourse",
+          "body": "Repère la Grande Ourse, sept étoiles brillantes en forme de casserole.\n\nPrends les deux étoiles du bout de la casserole, celles qui forment le bord opposé au manche.\n\nMesure mentalement la distance entre ces deux-là.\n\nProlonge cette ligne de cinq fois cette distance, en partant du fond de la casserole vers l'extérieur. Tu tombes sur l'étoile Polaire."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Ce n'est pas la plus brillante",
+          "body": "Beaucoup de gens croient que l'étoile Polaire est l'étoile la plus brillante du ciel. Elle ne l'est pas, et de loin : elle ne figure même pas parmi les quarante premières.\n\nL'étoile la plus brillante du ciel nocturne est Sirius, visible en hiver, bien plus bas vers le sud. La Polaire n'est pas remarquable par son éclat, mais par sa position."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Sa hauteur donne la latitude",
+          "body": "Mesure de combien de degrés l'étoile Polaire est au-dessus de l'horizon : ce nombre est ta latitude.\n\nÀ Paris, elle est à environ 49° du sol. À Marseille, 43°. À l'équateur, elle rase l'horizon : 0°. Au pôle Nord, elle est juste au-dessus de la tête : 90°.\n\nC'est ainsi que les navigateurs connaissaient leur latitude bien avant toute électronique — avec un instrument à viser et une table."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'étoile Polaire semble-t-elle immobile ?",
+          "explanation": "Parce qu'elle se trouve presque dans la direction de l'axe de rotation de la Terre : elle ne tourne donc pas avec le reste du ciel.",
+          "options": [
+            {
+              "text": "elle est dans la direction de l'axe de la Terre",
+              "correct": true
+            },
+            {
+              "text": "elle est la plus proche de nous"
+            },
+            {
+              "text": "elle tourne à la même vitesse que la Terre"
+            },
+            {
+              "text": "elle est beaucoup plus grosse"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien faut-il multiplier l'écart des deux étoiles du bout de la casserole pour atteindre la Polaire ?",
+          "explanation": "Environ cinq fois cet écart, en prolongeant vers l'extérieur de la casserole.",
+          "answer": 5
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle hauteur en degrés voit-on l'étoile Polaire depuis le pôle Nord ?",
+          "explanation": "90°, c'est-à-dire juste au-dessus de la tête : la latitude du pôle Nord est 90°.",
+          "answer": 90,
+          "unit": "°"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un marin voit la Polaire à 43° au-dessus de l'horizon. Quelle est sa latitude en degrés ?",
+          "explanation": "43° : la hauteur de la Polaire est exactement la latitude. Il est à peu près à la hauteur de Marseille.",
+          "answer": 43,
+          "unit": "°"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Un marin voit la Polaire raser l'horizon. Où est-il ?",
+          "explanation": "À l'équateur, dont la latitude est 0°. Plus au sud, la Polaire disparaît sous l'horizon et devient invisible.",
+          "options": [
+            {
+              "text": "à l'équateur",
+              "correct": true
+            },
+            {
+              "text": "au pôle Nord"
+            },
+            {
+              "text": "à Paris"
+            },
+            {
+              "text": "au pôle Sud"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "L'étoile Polaire est l'étoile la plus brillante du ciel.",
+          "explanation": "Faux. Elle n'est même pas dans les quarante premières. La plus brillante du ciel nocturne est Sirius. La Polaire compte par sa position, pas par son éclat.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "constellations",
+      "title": "Les constellations",
+      "subtitle": "Des dessins que nous avons inventés.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Elles n'existent pas vraiment",
+          "body": "Les sept étoiles de la Grande Ourse ne forment aucun groupe. Elles sont à des distances très différentes de nous — certaines deux fois plus loin que d'autres — et ne sont voisines que par un effet de perspective.\n\nVues depuis une autre étoile, elles ne dessineraient aucune casserole.\n\nUne constellation n'est pas un objet du ciel : c'est une figure que des humains ont tracée depuis un point de vue particulier, le nôtre."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le ciel tourne de quinze degrés par heure",
+          "body": "La Terre fait un tour complet en 24 heures. Le ciel semble donc tourner de 360 ÷ 24 = 15 degrés chaque heure.\n\nEn six heures, les étoiles ont pivoté d'un quart de tour autour de la Polaire. La Grande Ourse qui était au-dessus se retrouve sur le côté. Beaucoup de gens croient avoir mal vu : c'est simplement la Terre qui a tourné."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Pourquoi les constellations changent avec les saisons",
+          "body": "La nuit, nous regardons le côté du ciel opposé au Soleil. Comme la Terre fait le tour du Soleil en un an, ce côté change au fil des mois.\n\nOrion est une constellation d'hiver, le Scorpion une constellation d'été — non pas parce qu'elles se déplacent, mais parce qu'en juillet Orion est dans la direction du Soleil, donc dans le ciel de jour, où personne ne la voit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "De combien de degrés le ciel tourne-t-il en une heure ?",
+          "hint": "360 degrés en 24 heures.",
+          "explanation": "360 ÷ 24 = 15 degrés par heure.",
+          "answer": 15,
+          "unit": "°"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "De combien de degrés en 6 heures ?",
+          "explanation": "15 × 6 = 90°, soit un quart de tour autour de l'étoile Polaire.",
+          "answer": 90,
+          "unit": "°"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'heures faut-il au ciel pour tourner de 45° ?",
+          "explanation": "45 ÷ 15 = 3 heures. Le ciel tourne toujours au même rythme : une rotation complète en vingt-quatre heures.",
+          "answer": 3,
+          "unit": "h"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Les sept étoiles de la Grande Ourse sont-elles proches les unes des autres ?",
+          "explanation": "Non. Elles sont à des distances très différentes et ne paraissent voisines que par effet de perspective, depuis notre point de vue.",
+          "options": [
+            {
+              "text": "non, elles ne sont voisines qu'en apparence",
+              "correct": true
+            },
+            {
+              "text": "oui, elles forment un amas"
+            },
+            {
+              "text": "oui, elles tournent l'une autour de l'autre"
+            },
+            {
+              "text": "oui, elles sont nées ensemble"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Orion n'est-elle pas visible en juillet ?",
+          "explanation": "Parce qu'en juillet elle se trouve dans la direction du Soleil : elle est dans le ciel de jour, où sa lumière est noyée.",
+          "options": [
+            {
+              "text": "elle est dans le ciel de jour, du côté du Soleil",
+              "correct": true
+            },
+            {
+              "text": "elle s'est déplacée loin de la Terre"
+            },
+            {
+              "text": "ses étoiles s'éteignent en été"
+            },
+            {
+              "text": "elle passe sous l'horizon pour toujours"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Une constellation est un véritable groupe d'étoiles liées entre elles.",
+          "explanation": "Faux. C'est une figure tracée par des humains depuis un point de vue particulier. Vue d'ailleurs dans la galaxie, le dessin disparaît.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-boussole",
+      "title": "Défi : perdu sans boussole",
+      "subtitle": "Retrouver son chemin avec le ciel.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois situations, trois méthodes",
+          "body": "En plein jour, avec le Soleil : la méthode des deux ombres donne l'axe est-ouest en vingt minutes, sans rien connaître.\n\nLa nuit, par ciel clair : la Polaire donne le nord instantanément, et sa hauteur donne même la latitude.\n\nPar temps couvert : plus aucune des deux. Reste l'observation du terrain — le sens d'écoulement des ruisseaux, la mousse, les traces de vent sur les arbres. Beaucoup moins fiable, et c'est une information utile en soi : savoir qu'une méthode est mauvaise vaut mieux que lui faire confiance."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Il est 15 h au Soleil. Midi solaire était à 12 h. De combien de degrés le Soleil s'est-il déplacé depuis midi ?",
+          "hint": "15° par heure.",
+          "explanation": "Trois heures à 15° par heure font 45°. Le Soleil est donc à 45° à l'ouest du sud.",
+          "answer": 45,
+          "unit": "°"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Tu vois la Polaire à 49° de hauteur. Tu marches vers le nord jusqu'à la voir à 52°. De combien de degrés de latitude as-tu monté ?",
+          "explanation": "52 − 49 = 3 degrés de latitude. La hauteur de la Polaire suit exactement la latitude.",
+          "answer": 3,
+          "unit": "°"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un degré de latitude vaut environ 111 km. Combien de kilomètres font ces 3 degrés ?",
+          "explanation": "3 × 111 = 333 km. C'est ainsi qu'un navigateur estimait sa route du nord au sud.",
+          "answer": 333,
+          "unit": "km"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "La Grande Ourse était au-dessus de la Polaire à 22 h. À quelle heure sera-t-elle à un quart de tour de là ?",
+          "hint": "Un quart de tour fait 90°, à 15° par heure.",
+          "explanation": "90 ÷ 15 = 6 heures après 22 h, donc à 4 h du matin.",
+          "answer": 4,
+          "unit": "h"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Tu es dans l'hémisphère sud, de nuit. Peux-tu utiliser l'étoile Polaire ?",
+          "explanation": "Non : elle est sous l'horizon et donc invisible. Les navigateurs du sud utilisent la Croix du Sud à la place.",
+          "options": [
+            {
+              "text": "non, elle est sous l'horizon",
+              "correct": true
+            },
+            {
+              "text": "oui, elle est visible partout"
+            },
+            {
+              "text": "oui, mais elle indique le sud"
+            },
+            {
+              "text": "oui, en la cherchant plus bas"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Par temps couvert, que valent les repères de terrain comme la mousse ou le vent ?",
+          "explanation": "Ils sont beaucoup moins fiables, et le savoir fait partie de la méthode : une mauvaise mesure à laquelle on fait confiance est plus dangereuse que pas de mesure.",
+          "options": [
+            {
+              "text": "beaucoup moins fiables, et il faut le savoir",
+              "correct": true
+            },
+            {
+              "text": "aussi fiables que la Polaire"
+            },
+            {
+              "text": "totalement inutiles"
+            },
+            {
+              "text": "fiables seulement en forêt"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "estimation",
+          "prompt": "Environ combien de kilomètres fait un degré de latitude sur Terre ?",
+          "explanation": "Environ 111 km. Les 40 000 km du tour de la Terre divisés par 360 degrés donnent bien cette valeur.",
+          "min": 10,
+          "max": 500,
+          "answer": 111,
+          "tolerance": 35,
+          "unit": "km"
+        }
+      ]
+    }
+  ]
+}
