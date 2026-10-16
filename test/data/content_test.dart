@@ -13,6 +13,7 @@ import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
 import 'package:eureka/design_system/figures/food_web_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
+import 'package:eureka/design_system/figures/implication_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/number_line_figure.dart';
@@ -2244,6 +2245,135 @@ void main() {
         240 * FractionBarFigure.valeur(15, 100),
         reponseNum('defi-fractions-college', 'q4'),
       );
+    });
+  });
+
+  group('Chapitre complet : si… alors', () {
+    late Chapter implication;
+
+    setUpAll(() {
+      implication = catalog.chapterById('logique-college-si-alors')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (implication.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(implication.isPlayable, isTrue);
+      expect(implication.lessons.length, 4);
+    });
+
+    test('un seul des quatre cas rend l’implication fausse', () {
+      // C'est l'affirmation centrale du chapitre, et le défi la
+      // chiffre : quatre cas, un seul interdit.
+      final List<(bool, bool)> cas = <(bool, bool)>[
+        (true, true),
+        (true, false),
+        (false, true),
+        (false, false),
+      ];
+      expect(cas.length, reponseNum('contrapposee', 'q4'));
+      final List<(bool, bool)> fausses = cas
+          .where(((bool, bool) c) => !ImplicationFigure.implique(c.$1, c.$2))
+          .toList();
+      expect(fausses, <(bool, bool)>[(true, false)]);
+    });
+
+    test('la réciproque peut tomber quand l’implication tient', () {
+      // Le cas de l'arrosoir : pas de pluie, sol mouillé.
+      expect(ImplicationFigure.implique(false, true), isTrue);
+      expect(ImplicationFigure.implique(true, false), isFalse);
+    });
+
+    test('la contraposée vaut exactement l’implication', () {
+      // « si P alors M » et « si non M alors non P » doivent s'accorder
+      // sur les quatre cas : c'est ce que la leçon affirme, et ce qui la
+      // distingue de la réciproque.
+      for (final bool p in <bool>[true, false]) {
+        for (final bool m in <bool>[true, false]) {
+          expect(
+            ImplicationFigure.implique(p, m),
+            ImplicationFigure.implique(!m, !p),
+            reason: 'P=$p, M=$m',
+          );
+        }
+      }
+      // Et la réciproque, elle, diverge sur au moins un cas.
+      final bool memeVerite = <(bool, bool)>[
+        (true, true),
+        (true, false),
+        (false, true),
+        (false, false),
+      ].every(
+        ((bool, bool) c) =>
+            ImplicationFigure.implique(c.$1, c.$2) ==
+            ImplicationFigure.implique(c.$2, c.$1),
+      );
+      expect(memeVerite, isFalse);
+    });
+
+    test('les contre-exemples proposés en sont vraiment', () {
+      // « pair ⇒ divisible par 4 » : la réponse doit être paire et non
+      // divisible par 4.
+      final int pair = reponseNum('reciproque', 'q2').round();
+      expect(pair.isEven, isTrue);
+      expect(pair % 4 == 0, isFalse);
+      expect(pair, lessThan(10));
+      // « divisible par 3 ⇒ divisible par 6 » : divisible par 3, pas
+      // par 6.
+      final int trois = reponseNum('defi-implication', 'q5').round();
+      expect(trois % 3, 0);
+      expect(trois % 6 == 0, isFalse);
+    });
+
+    test('le tri des contre-exemples suit la définition', () {
+      // « divisible par 5 ⇒ finit par 0 » : contredire demande les deux
+      // conditions à la fois.
+      final ClassifyQuestion q =
+          implication.lessonById('ce-que-promet-une-implication')!.questions
+                  .firstWhere((Question x) => x.id == 'q3')
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int n = int.parse(item.text);
+        final bool contredit = n % 5 == 0 && n % 10 != 0;
+        expect(item.category == 0, contredit, reason: item.text);
+      }
+    });
+
+    test('le tri des implications vraies et fausses est juste', () {
+      // Chaque énoncé est réévalué sur les nombres de 1 à 200, ou sur
+      // la hiérarchie des quadrilatères selon le cas.
+      bool toujours(bool Function(int) regle) =>
+          List<int>.generate(200, (int i) => i + 1).every(regle);
+
+      expect(toujours((int n) => n % 10 != 0 || n % 5 == 0), isTrue);
+      expect(toujours((int n) => n % 2 != 0 || n % 4 == 0), isFalse);
+
+      final ClassifyQuestion q =
+          implication.lessonById('defi-implication')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      final Map<String, bool> verites = <String, bool>{
+        'Si n est divisible par 10, alors n est divisible par 5':
+            toujours((int n) => n % 10 != 0 || n % 5 == 0),
+        'Si c\'est un carré, alors c\'est un rectangle': true,
+        'Si n est pair, alors n est divisible par 4':
+            toujours((int n) => n % 2 != 0 || n % 4 == 0),
+        'Si c\'est un rectangle, alors c\'est un carré': false,
+      };
+      for (final ClassifyItem item in q.items) {
+        expect(
+          verites.containsKey(item.text),
+          isTrue,
+          reason: '${item.text} n’est pas évalué',
+        );
+        expect(item.category == 0, verites[item.text], reason: item.text);
+      }
     });
   });
 }

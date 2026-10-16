@@ -1,0 +1,457 @@
+{
+  "chapter": "logique-college-si-alors",
+  "lessons": [
+    {
+      "id": "ce-que-promet-une-implication",
+      "title": "Ce que promet « si… alors »",
+      "subtitle": "Un seul cas la met en défaut.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une promesse conditionnelle",
+          "body": "« S'il pleut, alors le sol est mouillé » ne dit rien du temps qu'il fait. Elle dit seulement ceci : dans le cas où il pleut, le sol sera mouillé.\n\nTant qu'il ne pleut pas, la phrase ne promet rien et ne peut donc pas être prise en défaut."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Les quatre cas",
+          "body": "Bascule P et M, et regarde quand la règle tombe.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le seul cas interdit",
+          "body": "L'implication « si P alors M » est fausse dans un seul cas : P vrai et M faux.\n\nC'est exactement une promesse non tenue. Partout ailleurs, elle reste vraie — y compris quand P est faux, où elle n'engage à rien."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour réfuter une implication, il ne sert à rien de chercher un cas où P est faux : il faut trouver un cas où P est vrai et M faux. C'est ce qu'on appelle un contre-exemple."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "« Si P alors M » n'est fausse que si P est vrai et M faux.",
+            "Quand P est faux, elle reste vraie.",
+            "Un contre-exemple doit vérifier P et contredire M."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans quel cas la phrase « s'il pleut, alors le sol est mouillé » est-elle fausse ?",
+          "hint": "Une promesse non tenue.",
+          "explanation": "Quand il pleut et que le sol est sec. C'est le seul cas où la promesse est prise en défaut.",
+          "figureId": "implication",
+          "options": [
+            {
+              "text": "Il pleut et le sol est sec",
+              "correct": true
+            },
+            {
+              "text": "Il ne pleut pas et le sol est sec"
+            },
+            {
+              "text": "Il ne pleut pas et le sol est mouillé"
+            },
+            {
+              "text": "Il pleut et le sol est mouillé"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "S'il ne pleut pas, la phrase « s'il pleut, alors le sol est mouillé » est fausse.",
+          "answer": false,
+          "explanation": "Non, elle reste vraie. Quand la condition n'est pas remplie, la phrase ne promet rien et ne peut pas être démentie.",
+          "figureId": "implication"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces nombres selon qu'ils contredisent ou non « si un nombre est divisible par 5, alors il finit par 0 ».",
+          "hint": "Pour contredire, il faut être divisible par 5 sans finir par 0.",
+          "explanation": "15 et 35 sont divisibles par 5 et ne finissent pas par 0 : chacun suffit à réfuter la règle. 20 et 50 la vérifient, et vérifier une règle ne la démontre jamais.",
+          "categories": [
+            "Contredit la règle",
+            "Ne la contredit pas"
+          ],
+          "items": [
+            {
+              "text": "15",
+              "category": 0
+            },
+            {
+              "text": "35",
+              "category": 0
+            },
+            {
+              "text": "20",
+              "category": 1
+            },
+            {
+              "text": "50",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que faut-il trouver pour réfuter « si un quadrilatère a quatre côtés égaux, alors c'est un carré » ?",
+          "hint": "Il faut vérifier la condition et contredire la conclusion.",
+          "explanation": "Un quadrilatère à quatre côtés égaux qui ne soit pas un carré : le losange non carré convient. Chercher un carré, ou une figure aux côtés inégaux, ne prouverait rien.",
+          "options": [
+            {
+              "text": "Une figure à quatre côtés égaux qui n'est pas un carré",
+              "correct": true
+            },
+            {
+              "text": "Un carré"
+            },
+            {
+              "text": "Une figure aux côtés inégaux"
+            },
+            {
+              "text": "Un triangle équilatéral"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reciproque",
+      "title": "La réciproque",
+      "subtitle": "Retourner la phrase change tout.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Échanger condition et conclusion",
+          "body": "La réciproque de « si P alors M » est « si M alors P ».\n\nCe n'est pas la même phrase, et elle n'a aucune raison d'être vraie en même temps."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Le cas qui tranche",
+          "body": "Mets P à faux et M à vrai : la règle tient, sa réciproque tombe.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "L'arrosoir",
+          "body": "« S'il pleut, alors le sol est mouillé » est vraie.\n\n« Si le sol est mouillé, alors il pleut » est fausse : quelqu'un a pu arroser. Un seul cas suffit à l'abattre."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Quand les deux sont vraies",
+          "body": "Il arrive que l'implication et sa réciproque soient toutes deux vraies. On dit alors que les deux affirmations sont équivalentes.\n\nC'est le cas pour Pythagore : un triangle est rectangle si et seulement si a² + b² = c². Le théorème et sa réciproque sont deux énoncés distincts, et chacun se démontre."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "La réciproque échange la condition et la conclusion.",
+            "Elle peut être fausse alors que l'implication est vraie.",
+            "Si les deux sont vraies, on parle d'équivalence."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la réciproque de « si un nombre est divisible par 4, alors il est pair » ?",
+          "hint": "On échange les deux parties.",
+          "explanation": "« Si un nombre est pair, alors il est divisible par 4 ». Elle est fausse : 6 est pair sans être divisible par 4.",
+          "options": [
+            {
+              "text": "Si un nombre est pair, alors il est divisible par 4",
+              "correct": true
+            },
+            {
+              "text": "Si un nombre n'est pas divisible par 4, alors il est impair"
+            },
+            {
+              "text": "Si un nombre est impair, alors il n'est pas divisible par 4"
+            },
+            {
+              "text": "Si un nombre est divisible par 4, alors il est impair"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un nombre pair inférieur à 10 qui montre que la réciproque précédente est fausse.",
+          "answer": 6,
+          "tolerance": 0.01,
+          "hint": "Il doit être pair sans être divisible par 4.",
+          "explanation": "6 convient : il est pair, mais 6 ÷ 4 ne tombe pas juste. 2 conviendrait également."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Si une implication est vraie, sa réciproque l'est aussi.",
+          "answer": false,
+          "explanation": "Non. « S'il pleut, le sol est mouillé » est vraie, mais un sol mouillé peut venir d'un arrosage.",
+          "figureId": "implication"
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque implication à sa réciproque.",
+          "explanation": "La réciproque échange toujours la condition et la conclusion, sans rien nier.",
+          "pairs": [
+            {
+              "left": "Si c'est un carré, alors c'est un rectangle",
+              "right": "Si c'est un rectangle, alors c'est un carré"
+            },
+            {
+              "left": "S'il gèle, alors l'eau est solide",
+              "right": "Si l'eau est solide, alors il gèle"
+            },
+            {
+              "left": "Si x = 2, alors x² = 4",
+              "right": "Si x² = 4, alors x = 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contrapposee",
+      "title": "La contraposée",
+      "subtitle": "La seule retournée qui soit toujours vraie.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La contraposée",
+          "formula": "« si P alors M »  équivaut à  « si non M alors non P »",
+          "body": "on échange et on nie les deux parties."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Sur la pluie",
+          "body": "« S'il pleut, alors le sol est mouillé. »\n\nContraposée : « si le sol est sec, alors il ne pleut pas. »\n\nLes deux disent exactement la même chose, et l'une est parfois plus facile à vérifier que l'autre."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Ne pas la confondre avec la réciproque",
+          "body": "La réciproque échange sans nier : elle peut être fausse.\n\nLa contraposée échange et nie : elle est toujours vraie en même temps que l'implication de départ. C'est ce qui en fait un outil de démonstration."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour montrer qu'un nombre dont le carré est impair est lui-même impair, on passe par la contraposée : si le nombre était pair, son carré le serait aussi. C'est bien plus court que la voie directe."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la contraposée de « s'il pleut, alors le sol est mouillé » ?",
+          "hint": "On échange et on nie.",
+          "explanation": "« Si le sol est sec, alors il ne pleut pas ». Elle dit la même chose que l'implication de départ.",
+          "options": [
+            {
+              "text": "Si le sol est sec, alors il ne pleut pas",
+              "correct": true
+            },
+            {
+              "text": "Si le sol est mouillé, alors il pleut"
+            },
+            {
+              "text": "S'il ne pleut pas, alors le sol est sec"
+            },
+            {
+              "text": "S'il pleut, alors le sol est sec"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces phrases selon ce qu'elles sont, par rapport à « si un nombre est divisible par 6, alors il est pair ».",
+          "hint": "La contraposée échange et nie ; la réciproque échange seulement.",
+          "explanation": "Échanger et nier donne la contraposée, toujours vraie. Échanger seulement donne la réciproque, ici fausse — 10 est pair sans être divisible par 6.",
+          "categories": [
+            "Contraposée",
+            "Réciproque"
+          ],
+          "items": [
+            {
+              "text": "Si un nombre est impair, alors il n'est pas divisible par 6",
+              "category": 0
+            },
+            {
+              "text": "Si un nombre n'est pas pair, alors il n'est pas divisible par 6",
+              "category": 0
+            },
+            {
+              "text": "Si un nombre est pair, alors il est divisible par 6",
+              "category": 1
+            },
+            {
+              "text": "Si un nombre est pair, alors 6 le divise",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une implication et sa contraposée sont toujours vraies ou fausses ensemble.",
+          "answer": true,
+          "explanation": "Oui. Ce sont deux façons d'écrire la même chose : nier la conclusion force à nier la condition."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cas faut-il examiner pour vérifier une implication portant sur deux affirmations ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "cas",
+          "hint": "Chaque affirmation peut être vraie ou fausse.",
+          "explanation": "4 cas : vrai-vrai, vrai-faux, faux-vrai, faux-faux. Un seul d'entre eux rend l'implication fausse.",
+          "figureId": "implication"
+        }
+      ]
+    },
+    {
+      "id": "defi-implication",
+      "title": "Défi : si… alors",
+      "subtitle": "Six questions, condition et conclusion.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Repère à chaque fois ce qui est la condition et ce qui est la conclusion."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "« Si 2 + 2 = 5, alors je suis le roi de France » est une phrase fausse.",
+          "answer": false,
+          "explanation": "Elle est vraie ! Sa condition est fausse, donc elle ne promet rien et ne peut pas être prise en défaut. C'est déroutant, et pourtant parfaitement cohérent."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "« Tous les carrés sont des rectangles. » Que peut-on en déduire d'une figure qui n'est pas un rectangle ?",
+          "hint": "Pense à la contraposée.",
+          "explanation": "Qu'elle n'est pas un carré. C'est la contraposée, et elle est aussi sûre que l'énoncé de départ.",
+          "options": [
+            {
+              "text": "Ce n'est pas un carré",
+              "correct": true
+            },
+            {
+              "text": "C'est un carré"
+            },
+            {
+              "text": "C'est un losange"
+            },
+            {
+              "text": "On ne peut rien en déduire"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "« Tous les carrés sont des rectangles. » Que peut-on déduire d'une figure qui est un rectangle ?",
+          "hint": "Attention : ce serait la réciproque.",
+          "explanation": "Rien du tout. Conclure qu'elle est un carré reviendrait à utiliser la réciproque, qui est fausse.",
+          "options": [
+            {
+              "text": "Rien du tout",
+              "correct": true
+            },
+            {
+              "text": "C'est un carré"
+            },
+            {
+              "text": "Ce n'est pas un carré"
+            },
+            {
+              "text": "C'est un losange"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces implications selon qu'elles sont vraies ou fausses.",
+          "explanation": "Un nombre divisible par 10 est bien divisible par 5, et un carré est bien un rectangle. En revanche, 10 est pair sans être divisible par 4, et un rectangle n'est pas toujours un carré.",
+          "categories": [
+            "Vraie",
+            "Fausse"
+          ],
+          "items": [
+            {
+              "text": "Si n est divisible par 10, alors n est divisible par 5",
+              "category": 0
+            },
+            {
+              "text": "Si c'est un carré, alors c'est un rectangle",
+              "category": 0
+            },
+            {
+              "text": "Si n est pair, alors n est divisible par 4",
+              "category": 1
+            },
+            {
+              "text": "Si c'est un rectangle, alors c'est un carré",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un nombre entier qui montre que « si n est divisible par 3, alors n est divisible par 6 » est fausse.",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Il doit être divisible par 3 et pas par 6.",
+          "explanation": "3 convient : il est divisible par 3 mais pas par 6. 9, 15 ou 21 conviendraient aussi — un seul contre-exemple suffit."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Pour démontrer une implication, il suffit de vérifier un cas où elle fonctionne.",
+          "answer": false,
+          "explanation": "Non. Un exemple ne démontre rien ; il faut traiter tous les cas où la condition est vraie. En revanche, un seul contre-exemple suffit à réfuter."
+        }
+      ]
+    }
+  ]
+}

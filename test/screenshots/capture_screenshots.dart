@@ -714,6 +714,24 @@ void main() {
         await shoot(tester, '$device-29-relatifs');
       });
 
+      // L'implication prise au cas qui tranche : pas de pluie, sol
+      // mouillé. La règle tient, sa réciproque tombe — c'est le seul
+      // état de la figure qui montre les deux verdicts opposés.
+      testWidgets('logique : si… alors', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Logique et énigmes');
+        await tapText(tester, 'Si… alors : l\'implication');
+        await tapText(tester, 'Ce que promet « si… alors »');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('il pleut'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-30-implication');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
