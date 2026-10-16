@@ -1,0 +1,480 @@
+{
+  "chapter": "physique-chimie-college-melanges-corps-purs-et-solutions",
+  "lessons": [
+    {
+      "id": "corps-purs",
+      "title": "Corps pur ou mélange",
+      "subtitle": "La température de changement d'état tranche.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Les changements d'état",
+          "figureId": "etats-matiere",
+          "body": "Chauffe et refroidis. Un corps pur change d'état à une température fixe, et elle ne bouge pas pendant toute la transformation."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le test qui ne trompe pas",
+          "body": "L'eau pure bout à 100 °C sous la pression normale, et la température reste à 100 °C tant qu'il reste de l'eau liquide. Le thermomètre fait un palier.\n\nDe l'eau salée bout plus haut, et sa température monte pendant toute l'ébullition, parce que l'eau qui part laisse le sel derrière et la solution se concentre.\n\nUn palier net signale donc un corps pur. Une température qui dérive signale un mélange — et c'est vrai sans qu'on ait besoin de savoir ce qu'il contient."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Trois sortes de mélanges",
+          "body": "Homogène : on ne distingue pas les constituants, même à la loupe. L'eau salée, l'air, le vinaigre.\n\nHétérogène : on les distingue. L'eau boueuse, une vinaigrette, le sang à l'œil nu.\n\nEt la frontière dépend de l'échelle d'observation : le lait paraît homogène et devient hétérogène au microscope, où l'on voit ses gouttelettes de graisse."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Miscible n'est pas soluble",
+          "body": "Deux liquides qui se mélangent en toutes proportions sont miscibles : l'eau et l'alcool.\n\nUn solide qui disparaît dans un liquide est soluble : le sel dans l'eau.\n\nL'huile et l'eau ne sont pas miscibles, et aucune agitation n'y change rien durablement. Secouer disperse en gouttelettes ; dès qu'on arrête, la densité les sépare à nouveau."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle température l'eau pure bout-elle, sous pression normale, en degrés Celsius ?",
+          "explanation": "100 °C, et la température reste à 100 tant qu'il reste du liquide : c'est le palier qui signale un corps pur.",
+          "answer": 100,
+          "unit": "°C"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pendant l'ébullition, le thermomètre monte lentement. Corps pur ou mélange ?",
+          "explanation": "Un mélange. Un corps pur fait un palier ; une température qui dérive trahit un mélange, sans qu'on ait besoin d'en connaître la composition.",
+          "options": [
+            {
+              "text": "un mélange",
+              "correct": true
+            },
+            {
+              "text": "un corps pur"
+            },
+            {
+              "text": "impossible à dire"
+            },
+            {
+              "text": "cela dépend du liquide"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Homogène ou hétérogène, à l'œil nu ?",
+          "explanation": "On ne distingue pas les constituants d'une eau salée, de l'air ou du vinaigre. On distingue ceux d'une eau boueuse, d'une vinaigrette ou d'un granit.",
+          "categories": [
+            "homogène",
+            "hétérogène"
+          ],
+          "items": [
+            {
+              "text": "l'eau salée",
+              "category": 0
+            },
+            {
+              "text": "l'air",
+              "category": 0
+            },
+            {
+              "text": "le vinaigre",
+              "category": 0
+            },
+            {
+              "text": "l'eau boueuse",
+              "category": 1
+            },
+            {
+              "text": "une vinaigrette",
+              "category": 1
+            },
+            {
+              "text": "du granit",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Le lait est-il homogène ?",
+          "explanation": "À l'œil nu oui, au microscope non : on y voit des gouttelettes de graisse. La réponse dépend de l'échelle d'observation.",
+          "options": [
+            {
+              "text": "à l'œil nu oui, au microscope non",
+              "correct": true
+            },
+            {
+              "text": "oui, à toute échelle"
+            },
+            {
+              "text": "non, jamais"
+            },
+            {
+              "text": "seulement s'il est écrémé"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Agiter suffisamment rend l'huile et l'eau miscibles.",
+          "explanation": "Faux. Secouer disperse l'huile en gouttelettes ; dès qu'on arrête, la différence de masse volumique les sépare de nouveau.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title": "Les solutions",
+      "subtitle": "Dissoudre, et jusqu'où.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le vocabulaire exact",
+          "body": "Le solvant est le liquide qui dissout, en général l'eau.\n\nLe soluté est ce qu'on dissout.\n\nLa solution est l'ensemble des deux après dissolution.\n\nUne solution est saturée quand le solvant ne peut plus rien dissoudre : le surplus reste au fond, et en ajouter davantage ne change plus rien à la concentration."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Dissoudre n'est pas fondre",
+          "body": "Le sucre qui disparaît dans le thé se dissout : il est encore là, dispersé entre les molécules d'eau. Évapore l'eau et il revient, intact.\n\nLe beurre qui devient liquide dans la poêle fond : c'est un changement d'état, et il n'y a qu'un seul corps en jeu.\n\nLes deux mots sont employés l'un pour l'autre dans le langage courant, et ils désignent deux phénomènes sans rapport."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "La concentration massique",
+          "formula": "c = masse de soluté ÷ volume de solution",
+          "body": "En grammes par litre. 30 g de sel dans 0,5 L donnent 60 g/L. Attention au volume : c'est celui de la solution finale, pas celui du solvant ajouté."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "La masse se conserve, le volume non",
+          "body": "Dissous 20 g de sel dans 100 g d'eau : la solution pèse exactement 120 g. La masse se conserve toujours.\n\nMais le volume ne s'additionne pas : 50 mL d'eau plus 50 mL d'alcool ne font pas 100 mL, ils en font environ 97. Les molécules s'imbriquent.\n\nC'est pourquoi une concentration se définit par le volume de la solution finale, qu'on mesure, et jamais par la somme des volumes versés."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "30 g de sel dans 0,5 L de solution. Quelle concentration en grammes par litre ?",
+          "explanation": "30 ÷ 0,5 = 60 g/L. On divise la masse de soluté par le volume de solution.",
+          "answer": 60,
+          "unit": "g/L"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "On dissout 20 g de sel dans 100 g d'eau. Quelle masse de solution en grammes ?",
+          "explanation": "120 g : la masse se conserve toujours lors d'une dissolution.",
+          "answer": 120,
+          "unit": "g"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle masse de sel dans 2 L d'une solution à 60 g/L ?",
+          "explanation": "60 × 2 = 120 g. La concentration multipliée par le volume donne la masse.",
+          "answer": 120,
+          "unit": "g"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quel volume d'une solution à 60 g/L contient 15 g de sel, en litres ?",
+          "explanation": "15 ÷ 60 = 0,25 litre, soit 250 mL.",
+          "answer": 0.25,
+          "tolerance": 0.01,
+          "unit": "L"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la différence entre dissoudre et fondre ?",
+          "explanation": "Dissoudre disperse un corps dans un autre, et il est récupérable par évaporation. Fondre est un changement d'état d'un seul corps.",
+          "options": [
+            {
+              "text": "dissoudre disperse deux corps, fondre change l'état d'un seul",
+              "correct": true
+            },
+            {
+              "text": "aucune, les deux mots sont synonymes"
+            },
+            {
+              "text": "dissoudre détruit le corps"
+            },
+            {
+              "text": "fondre demande de l'eau"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "50 mL d'eau plus 50 mL d'alcool font 100 mL.",
+          "explanation": "Faux : environ 97 mL. Les volumes ne s'additionnent pas, car les molécules s'imbriquent. Les masses, elles, s'additionnent toujours.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "separer",
+      "title": "Séparer un mélange",
+      "subtitle": "Quatre techniques, quatre principes.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Chaque technique exploite une différence",
+          "body": "La décantation attend que la gravité sépare, en exploitant une différence de masse volumique. Lente, gratuite, et elle ne marche que sur un mélange hétérogène.\n\nLa filtration retient ce qui est plus gros que les pores du filtre. Elle exploite donc une différence de taille, et elle ne retire rien de ce qui est dissous.\n\nLa distillation fait bouillir et recondense : elle exploite une différence de température d'ébullition. C'est la seule des trois qui sépare un mélange homogène.\n\nLa chromatographie fait migrer les constituants à des vitesses différentes sur un support, et sépare des colorants que l'œil confond."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Le piège du filtre",
+          "body": "Filtre de l'eau salée : il en sort de l'eau salée. Le filtre n'a rien retenu, parce que le sel dissous passe entre ses pores comme l'eau.\n\nC'est l'erreur la plus fréquente du chapitre, et elle vient d'une confusion entre « invisible » et « absent ».\n\nPour retirer du sel, il faut une distillation, ou une évaporation si c'est le sel qu'on veut garder."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Pourquoi l'eau de mer n'est pas potable malgré le filtrage",
+          "body": "Les usines de dessalement ne filtrent pas au sens ordinaire : elles poussent l'eau à très haute pression contre une membrane dont les pores sont de la taille d'une molécule.\n\nC'est pour cela que dessaler coûte très cher en énergie, là qu'une filtration ordinaire ne coûte presque rien.\n\nSéparer ce qui est dissous est toujours coûteux. Séparer ce qui est seulement mélangé est bon marché."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque technique à la différence qu'elle exploite.",
+          "explanation": "Chaque technique repose sur une propriété qui diffère entre les constituants : masse volumique, taille, température d'ébullition, vitesse de migration.",
+          "pairs": [
+            {
+              "left": "la décantation",
+              "right": "la masse volumique"
+            },
+            {
+              "left": "la filtration",
+              "right": "la taille des particules"
+            },
+            {
+              "left": "la distillation",
+              "right": "la température d'ébullition"
+            },
+            {
+              "left": "la chromatographie",
+              "right": "la vitesse de migration"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que donne la filtration d'une eau salée ?",
+          "explanation": "De l'eau salée. Le sel est dissous : il passe à travers le filtre comme l'eau.",
+          "options": [
+            {
+              "text": "de l'eau salée, le filtre ne retient rien",
+              "correct": true
+            },
+            {
+              "text": "de l'eau pure"
+            },
+            {
+              "text": "du sel sec"
+            },
+            {
+              "text": "de l'eau trouble"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle technique sépare un mélange homogène ?",
+          "explanation": "La distillation : elle exploite la différence de température d'ébullition, la seule propriété qui distingue encore les constituants d'un mélange homogène.",
+          "options": [
+            {
+              "text": "la distillation",
+              "correct": true
+            },
+            {
+              "text": "la décantation"
+            },
+            {
+              "text": "la filtration"
+            },
+            {
+              "text": "aucune"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Pour une eau boueuse et salée, remets les étapes dans l'ordre le plus économique.",
+          "explanation": "On commence par le moins coûteux et le plus grossier : décanter, filtrer ce qui reste en suspension, et distiller en dernier pour le sel dissous.",
+          "items": [
+            "décanter pour éliminer le plus gros",
+            "filtrer les particules restantes",
+            "distiller pour retirer le sel dissous"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le dessalement coûte-t-il cher en énergie ?",
+          "explanation": "Parce qu'il faut séparer ce qui est dissous : des pores de la taille d'une molécule et une très haute pression. Séparer un simple mélange ne coûte presque rien.",
+          "options": [
+            {
+              "text": "séparer ce qui est dissous est toujours coûteux",
+              "correct": true
+            },
+            {
+              "text": "l'eau de mer est trop sale"
+            },
+            {
+              "text": "les filtres sont rares"
+            },
+            {
+              "text": "il faut la chauffer à 1 000 °C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-melanges",
+      "title": "Défi : identifier un liquide inconnu",
+      "subtitle": "Trois mesures, une conclusion.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le flacon sans étiquette",
+          "body": "Un flacon contient un liquide transparent. Trois mesures sont faites.\n\nSa masse volumique : 1,00 g/mL.\n\nIl bout entre 100 et 104 °C, la température montant pendant toute l'ébullition.\n\nAprès évaporation complète, il reste 12 g de résidu blanc dans le fond pour 200 mL de départ.\n\nQue peut-on affirmer, et que ne peut-on pas ?"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce que chaque mesure établit",
+          "body": "La masse volumique de 1,00 g/mL est compatible avec de l'eau — et avec beaucoup de solutions aqueuses diluées. Elle n'identifie rien à elle seule.\n\nLa température qui monte pendant l'ébullition établit avec certitude qu'il s'agit d'un mélange, et non d'un corps pur.\n\nLe résidu confirme qu'un solide y était dissous, et il en donne la masse. Mais rien dans ces trois mesures ne dit lequel : du sel, du sucre ou autre chose donneraient les mêmes résultats.\n\nOn a donc établi « solution aqueuse d'un solide, à 60 g/L » et pas davantage. Savoir ce qu'on n'a pas démontré fait partie de la mesure."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "12 g de résidu pour 200 mL. Quelle concentration en grammes par litre ?",
+          "explanation": "200 mL font 0,2 L, et 12 ÷ 0,2 = 60 g/L.",
+          "answer": 60,
+          "unit": "g/L"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle masse de résidu obtiendrait-on en évaporant 1,5 L de ce liquide, en grammes ?",
+          "explanation": "60 × 1,5 = 90 g de résidu, la concentration étant la même quel que soit le volume évaporé.",
+          "answer": 90,
+          "unit": "g"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle mesure établit à elle seule qu'il s'agit d'un mélange ?",
+          "explanation": "La température qui monte pendant l'ébullition. Un corps pur ferait un palier net.",
+          "options": [
+            {
+              "text": "la température qui monte pendant l'ébullition",
+              "correct": true
+            },
+            {
+              "text": "la masse volumique de 1,00 g/mL"
+            },
+            {
+              "text": "le résidu blanc"
+            },
+            {
+              "text": "la transparence du liquide"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Peut-on conclure que c'est de l'eau salée ?",
+          "explanation": "Non. Du sucre ou un autre solide dissous donneraient exactement les mêmes trois résultats. Les mesures établissent une solution aqueuse à 60 g/L, pas son soluté.",
+          "options": [
+            {
+              "text": "non, d'autres solutés donneraient les mêmes mesures",
+              "correct": true
+            },
+            {
+              "text": "oui, c'est certain"
+            },
+            {
+              "text": "oui, à cause de la masse volumique"
+            },
+            {
+              "text": "oui, le résidu blanc le prouve"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "La masse volumique est de 1,00 g/mL. Quelle masse pour les 200 mL de départ, en grammes ?",
+          "explanation": "200 × 1,00 = 200 g, dont 12 g de soluté et donc 188 g d'eau.",
+          "answer": 200,
+          "unit": "g"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle masse d'eau contenait donc ce flacon, en grammes ?",
+          "explanation": "200 − 12 = 188 g d'eau, puisque la masse se conserve.",
+          "answer": 188,
+          "unit": "g"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Quelle mesure supplémentaire permettrait d'identifier le soluté ?",
+          "explanation": "Un test chimique spécifique, comme le nitrate d'argent qui précipite en blanc avec les chlorures. Une mesure physique de plus ne suffirait pas : il faut une réaction qui distingue.",
+          "options": [
+            {
+              "text": "un test chimique spécifique du soluté",
+              "correct": true
+            },
+            {
+              "text": "une masse volumique plus précise"
+            },
+            {
+              "text": "une deuxième évaporation"
+            },
+            {
+              "text": "mesurer la transparence"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

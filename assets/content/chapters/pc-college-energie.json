@@ -1,0 +1,423 @@
+{
+  "chapter": "physique-chimie-college-energie-transferts-et-conversions",
+  "lessons": [
+    {
+      "id": "formes",
+      "title": "Les formes d'énergie",
+      "subtitle": "Une seule grandeur, plusieurs visages.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Six formes à reconnaître",
+          "body": "L'énergie cinétique : celle d'un corps en mouvement.\n\nL'énergie de position : celle d'un corps en hauteur, qu'il libérera en tombant.\n\nL'énergie thermique : celle de l'agitation des molécules, autrement dit la chaleur.\n\nL'énergie chimique : stockée dans les liaisons, dans un aliment, un carburant, une pile.\n\nL'énergie électrique et l'énergie lumineuse : celles qui se transportent le mieux."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le principe de conservation",
+          "body": "L'énergie ne se crée pas et ne se détruit pas. Elle se transfère d'un corps à un autre, et se convertit d'une forme à une autre.\n\nUn bilan énergétique se referme donc toujours exactement. S'il ne se referme pas, c'est qu'on a oublié un terme — en général la chaleur, qui est le terme qu'on oublie toujours.\n\nC'est l'un des principes les plus solides de toute la physique : aucune expérience ne l'a jamais contredit."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "La chaîne énergétique",
+          "figureId": "chaine-energie",
+          "body": "Suis les conversions. À chaque flèche, une part partant en chaleur : elle n'est pas perdue, elle est devenue inutilisable."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Le mot « perte » est trompeur",
+          "body": "Quand on dit qu'un moteur perd 70 % de l'énergie, rien n'a disparu : ces 70 % sont partis en chaleur dans le moteur et l'air alentour.\n\nL'énergie est conservée ; c'est sa capacité à produire un effet utile qui s'est dégradée.\n\nOn ne peut pas remonter la pente : la chaleur diffuse dans l'environnement et on ne la rassemble pas. C'est pour cela qu'il n'existe aucune machine à rendement total, et qu'aucune n'en existera."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Quelle forme d'énergie ?",
+          "explanation": "Le mouvement donne du cinétique, la hauteur de la position, l'agitation moléculaire du thermique, les liaisons du chimique.",
+          "categories": [
+            "cinétique",
+            "de position",
+            "thermique",
+            "chimique"
+          ],
+          "items": [
+            {
+              "text": "une voiture qui roule",
+              "category": 0
+            },
+            {
+              "text": "un livre sur une étagère haute",
+              "category": 1
+            },
+            {
+              "text": "une casserole d'eau bouillante",
+              "category": 2
+            },
+            {
+              "text": "un morceau de sucre",
+              "category": 3
+            },
+            {
+              "text": "une pile neuve",
+              "category": 3
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Un bilan énergétique ne se referme pas. Que faut-il en conclure ?",
+          "explanation": "Qu'on a oublié un terme, en général la chaleur. Le principe de conservation n'a jamais été contredit par aucune expérience.",
+          "options": [
+            {
+              "text": "qu'un terme a été oublié, souvent la chaleur",
+              "correct": true
+            },
+            {
+              "text": "que de l'énergie a disparu"
+            },
+            {
+              "text": "que le principe est faux dans ce cas"
+            },
+            {
+              "text": "que la mesure est impossible"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que signifie vraiment « perdre 70 % de l'énergie » ?",
+          "explanation": "Que ces 70 % sont devenus de la chaleur diffuse, donc inutilisables. L'énergie est conservée, c'est sa qualité qui s'est dégradée.",
+          "options": [
+            {
+              "text": "qu'ils sont devenus de la chaleur diffuse",
+              "correct": true
+            },
+            {
+              "text": "qu'ils ont disparu"
+            },
+            {
+              "text": "qu'ils retournent à la source"
+            },
+            {
+              "text": "qu'ils seront récupérés plus tard"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une machine de rendement 100 % pourrait exister avec une meilleure technique.",
+          "explanation": "Faux. La chaleur diffuse dans l'environnement et on ne la rassemble pas. C'est une limite de principe, pas d'ingénierie.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "cinetique",
+      "title": "L'énergie cinétique",
+      "subtitle": "Et pourquoi la vitesse compte au carré.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La formule, et le carré",
+          "formula": "Ec = ½ × m × v × v",
+          "body": "La masse intervient une fois, la vitesse deux fois. Doubler la masse double l'énergie ; doubler la vitesse la multiplie par quatre. Ce n'est pas un détail d'écriture : c'est la clé de tout le chapitre."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Une voiture de mille kilogrammes",
+          "body": "À 50 km/h, soit environ 14 m/s : Ec = ½ × 1 000 × 14 × 14 ≈ 98 000 joules.\n\nÀ 100 km/h, soit 28 m/s : Ec = ½ × 1 000 × 28 × 28 ≈ 392 000 joules.\n\nQuatre fois plus, pour une vitesse deux fois plus grande. Et toute cette énergie devra être dissipée par les freins, ou par la déformation de la carrosserie."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "La distance d'arrêt suit le carré",
+          "body": "Les freins dissipent une énergie à peu près proportionnelle à la distance parcourue. Si l'énergie quadruple, la distance de freinage quadruple.\n\nLa règle enseignée en auto-école : la distance d'arrêt sur route sèche vaut à peu près le carré du chiffre des dizaines, en mètres. À 50 km/h, 5² = 25 m. À 90, 9² = 81 m. À 130, 13² = 169 m.\n\nEntre 90 et 130 km/h, la vitesse augmente de moins de la moitié et la distance d'arrêt double."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Pourquoi un choc à 70 n'est pas « un peu pire » qu'à 50",
+          "body": "70 ÷ 50 vaut 1,4. Mais 1,4 × 1,4 vaut presque 2 : l'énergie à dissiper est le double.\n\nLes structures d'une voiture sont conçues pour absorber une énergie donnée. Doubler cette énergie ne double pas les dégâts : cela dépasse ce que la structure sait encaisser.\n\nC'est le raisonnement physique derrière les limitations de vitesse, et il n'a rien d'arbitraire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture de 1 000 kg à 14 m/s. Quelle énergie cinétique en kilojoules ? Arrondis à l'entier.",
+          "explanation": "½ × 1 000 × 14 × 14 = 98 000 J, soit 98 kJ.",
+          "answer": 98,
+          "tolerance": 1,
+          "unit": "kJ"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La même voiture à 28 m/s. Quelle énergie en kilojoules ?",
+          "explanation": "½ × 1 000 × 28 × 28 = 392 000 J, soit 392 kJ : quatre fois plus pour une vitesse doublée.",
+          "answer": 392,
+          "tolerance": 2,
+          "unit": "kJ"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien l'énergie est-elle multipliée quand la vitesse double ?",
+          "explanation": "Par 4, puisque la vitesse intervient deux fois dans la formule.",
+          "answer": 4
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien l'énergie est-elle multipliée quand la masse double, à vitesse égale ?",
+          "explanation": "Par 2 seulement : la masse n'intervient qu'une fois.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Distance d'arrêt à 90 km/h, par la règle du carré des dizaines, en mètres ?",
+          "explanation": "9 × 9 = 81 mètres sur route sèche.",
+          "answer": 81,
+          "unit": "m"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Et à 130 km/h, en mètres ?",
+          "explanation": "13 × 13 = 169 mètres, soit plus du double de la distance à 90 km/h pour une vitesse inférieure de moitié en plus.",
+          "answer": 169,
+          "unit": "m"
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien l'énergie est-elle multipliée en passant de 50 à 70 km/h ? Arrondis au dixième.",
+          "hint": "Le rapport des vitesses, au carré.",
+          "explanation": "70 ÷ 50 = 1,4, et 1,4 × 1,4 = 1,96, soit environ 2 : l'énergie à dissiper double presque.",
+          "answer": 2,
+          "tolerance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "puissance",
+      "title": "Puissance et consommation",
+      "subtitle": "Un débit, puis une quantité.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La puissance",
+          "formula": "P = E ÷ t",
+          "body": "En watts, soit des joules par seconde. La puissance est un débit d'énergie : elle dit à quelle vitesse l'énergie est transférée, pas combien il y en a."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Des ordres de grandeur utiles",
+          "body": "Une ampoule LED : 8 W. Un ordinateur portable : 50 W. Un téléviseur : 100 W.\n\nUn réfrigérateur : 150 W en marche, mais il s'arrête souvent.\n\nUn four : 2 000 W. Une plaque à induction : 2 000 W. Un radiateur électrique : 1 500 W.\n\nUn humain au repos : environ 100 W, soit une ampoule à filament. En effort intense : 400 W pendant quelques minutes."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le kilowattheure, et pourquoi on le préfère",
+          "body": "Un joule est minuscule : un radiateur en consomme cinq millions quand il tourne une heure. On utilise donc le kilowattheure, c'est-à-dire mille watts pendant une heure.\n\n1 kWh vaut 3 600 000 joules. Ce n'est pas une unité plus savante : c'est seulement une unité de la bonne taille pour une facture.\n\nUne maison française consomme de l'ordre de 10 à 15 kWh par jour hors chauffage."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un appareil transfère 6 000 J en 30 s. Quelle puissance en watts ?",
+          "explanation": "6 000 ÷ 30 = 200 watts.",
+          "answer": 200,
+          "unit": "W"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un radiateur de 1 500 W pendant 2 heures. Combien de kilowattheures ?",
+          "explanation": "1,5 kW × 2 h = 3 kWh. La puissance en kilowatts multipliée par la durée en heures.",
+          "answer": 3,
+          "unit": "kWh"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de joules dans 1 kWh ?",
+          "hint": "1 000 W pendant 3 600 s.",
+          "explanation": "1 000 × 3 600 = 3 600 000 joules. Le joule est trop petit pour une facture, d'où le kilowattheure.",
+          "answer": 3600000,
+          "unit": "J"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une LED de 8 W allumée 5 heures par jour pendant 30 jours. Combien de kilowattheures ?",
+          "explanation": "8 × 5 × 30 = 1 200 Wh, soit 1,2 kWh en un mois.",
+          "answer": 1.2,
+          "tolerance": 0.05,
+          "unit": "kWh"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "À 0,20 € le kilowattheure, combien coûtent les 3 kWh du radiateur, en euros ?",
+          "explanation": "3 × 0,20 = 0,60 euro.",
+          "answer": 0.6,
+          "tolerance": 0.01,
+          "unit": "€"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un humain au repos dissipe environ 100 W. Combien de kilowattheures en 24 h ?",
+          "explanation": "100 × 24 = 2 400 Wh, soit 2,4 kWh — l'équivalent d'une heure et demie de four.",
+          "answer": 2.4,
+          "tolerance": 0.1,
+          "unit": "kWh"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la différence entre le watt et le kilowattheure ?",
+          "explanation": "Le watt est un débit d'énergie, le kilowattheure une quantité. L'un dit à quelle vitesse, l'autre combien.",
+          "options": [
+            {
+              "text": "l'un est un débit, l'autre une quantité",
+              "correct": true
+            },
+            {
+              "text": "le kilowattheure est mille fois le watt"
+            },
+            {
+              "text": "ce sont deux noms pour la même chose"
+            },
+            {
+              "text": "le watt sert pour l'électricité seulement"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-arret",
+      "title": "Défi : la distance d'arrêt",
+      "subtitle": "Deux termes, et un seul suit le carré.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La distance d'arrêt se décompose",
+          "body": "La distance de réaction : ce qu'on parcourt avant que la pédale ne bouge. Avec un temps de réaction de 1 seconde, elle vaut simplement la vitesse en mètres par seconde. Elle est proportionnelle à la vitesse.\n\nLa distance de freinage : ce qu'on parcourt pédale enfoncée. Elle suit le carré de la vitesse.\n\nC'est la somme des deux qui compte, et la seconde finit toujours par dominer la première."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le calcul à trois vitesses",
+          "body": "À 50 km/h, soit 14 m/s : 14 m de réaction, et environ 14 m de freinage. Total 28 m.\n\nÀ 100 km/h, soit 28 m/s : 28 m de réaction, et environ 56 m de freinage. Total 84 m.\n\nLa vitesse a doublé. La réaction a doublé, le freinage a quadruplé, et le total a triplé.\n\nC'est exactement pourquoi un piéton qui serait évité à 50 km/h est heurté à 100 : la voiture n'a même pas commencé à ralentir au point où l'autre se serait arrêtée."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "À 14 m/s avec 1 s de réaction, quelle distance de réaction en mètres ?",
+          "explanation": "14 × 1 = 14 mètres, parcourus avant que la pédale ne bouge.",
+          "answer": 14,
+          "unit": "m"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "À 28 m/s, quelle distance de réaction en mètres ?",
+          "explanation": "28 mètres : la distance de réaction est proportionnelle à la vitesse, elle double simplement.",
+          "answer": 28,
+          "unit": "m"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Le freinage vaut 14 m à 14 m/s. Combien à 28 m/s, en mètres ?",
+          "explanation": "Il suit le carré : 14 × 4 = 56 mètres.",
+          "answer": 56,
+          "unit": "m"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle distance d'arrêt totale à 28 m/s, en mètres ?",
+          "explanation": "28 + 56 = 84 mètres, contre 28 à vitesse moitié : le total a triplé.",
+          "answer": 84,
+          "unit": "m"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien la distance d'arrêt totale a-t-elle été multipliée ?",
+          "explanation": "84 ÷ 28 = 3. Ni 2 comme la réaction, ni 4 comme le freinage : un mélange des deux.",
+          "answer": 3
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le total triple-t-il, et non quadruple ?",
+          "explanation": "Parce que la distance de réaction ne fait que doubler. Elle tempère le quadruplement du freinage, mais de moins en moins à mesure que la vitesse monte.",
+          "options": [
+            {
+              "text": "la distance de réaction ne double que, elle tempère le total",
+              "correct": true
+            },
+            {
+              "text": "parce que les freins sont plus efficaces vite"
+            },
+            {
+              "text": "parce que la route est plus lisse"
+            },
+            {
+              "text": "parce que le temps de réaction raccourcit"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "À 50 km/h on s'arrête en 28 m. Un piéton est à 40 m. À 100 km/h, où est la voiture quand le piéton serait sauf ?",
+          "hint": "La distance d'arrêt à 100 km/h dépasse-t-elle 40 m ?",
+          "explanation": "84 − 40 = 44 mètres au-delà du piéton. À 50 km/h la voiture s'arrêtait 12 m avant lui ; à 100 elle le dépasse de 44 m sans être arrêtée.",
+          "answer": 44,
+          "unit": "m"
+        },
+        {
+          "id": "q8",
+          "kind": "vraiFaux",
+          "prompt": "Rouler deux fois plus vite double le risque d'un accident grave.",
+          "explanation": "Faux, et la sous-estimation est grossière : l'énergie à dissiper quadruple et la distance d'arrêt triple. Les deux effets se cumulent bien au-delà d'un facteur deux.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

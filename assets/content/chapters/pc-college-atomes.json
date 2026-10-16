@@ -1,0 +1,413 @@
+{
+  "chapter": "physique-chimie-college-atomes-molecules-et-reactions",
+  "lessons": [
+    {
+      "id": "atomes",
+      "title": "Atomes et molécules",
+      "subtitle": "Une centaine de briques pour tout.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le vide, surtout",
+          "body": "Un atome est fait d'un noyau minuscule entouré d'électrons. Si le noyau faisait la taille d'une bille au centre d'un stade, les électrons seraient dans les gradins.\n\nUn atome est donc essentiellement vide. Ce qui rend la matière solide n'est pas la matière elle-même : ce sont les forces électriques entre les atomes, qui refusent de se laisser traverser.\n\nTa main ne touche jamais la table. Elle en est repoussée à quelques milliardièmes de millimètre."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Lire une formule chimique",
+          "body": "Le symbole dit quel atome : H pour hydrogène, O pour oxygène, C pour carbone, Fe pour fer.\n\nL'indice en bas dit combien d'atomes dans la molécule. H₂O contient deux hydrogènes et un oxygène.\n\nLe nombre devant dit combien de molécules. 3 H₂O représente trois molécules d'eau, donc six hydrogènes et trois oxygènes.\n\nConfondre l'indice et le coefficient est l'erreur la plus courante : 2 H₂ et H₄ ne veulent pas dire la même chose, et le second n'existe pas."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les molécules à connaître",
+          "body": "H₂O, l'eau. O₂, le dioxygène de l'air. N₂, le diazote, qui en fait les quatre cinquièmes.\n\nCO₂, le dioxyde de carbone. CH₄, le méthane. C₆H₁₂O₆, le glucose.\n\nUne même formule décrit toujours la même substance, partout dans l'univers. C'est ce qui fait de la chimie une science et non un catalogue de recettes."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Atome, molécule, ion",
+          "body": "Un atome est une brique seule.\n\nUne molécule est un assemblage d'atomes liés.\n\nUn ion est un atome ou un groupe qui a gagné ou perdu des électrons, et porte donc une charge. Le sel de cuisine n'est pas fait de molécules mais d'ions sodium et chlorure, empilés.\n\nC'est pour cela que l'eau salée conduit le courant et que l'eau pure, très mal : il faut des porteurs de charge libres."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'atomes en tout dans une molécule de H₂O ?",
+          "explanation": "Trois : deux hydrogènes et un oxygène.",
+          "answer": 3
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'atomes d'hydrogène dans 3 H₂O ?",
+          "explanation": "3 × 2 = 6 hydrogènes. Le coefficient multiplie tout l'intérieur de la molécule.",
+          "answer": 6
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'atomes en tout dans une molécule de glucose C₆H₁₂O₆ ?",
+          "explanation": "6 + 12 + 6 = 24 atomes.",
+          "answer": 24
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'atomes d'oxygène dans 2 CO₂ ?",
+          "explanation": "2 × 2 = 4 oxygènes : le coefficient 2 multiplie les deux oxygènes de chaque CO₂.",
+          "answer": 4
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'eau salée conduit-elle le courant, et l'eau pure très mal ?",
+          "explanation": "Parce que le sel dissous libère des ions, qui portent une charge et peuvent se déplacer. L'eau pure n'en contient presque pas.",
+          "options": [
+            {
+              "text": "le sel dissous libère des ions, porteurs de charge mobiles",
+              "correct": true
+            },
+            {
+              "text": "le sel est un métal"
+            },
+            {
+              "text": "l'eau salée est plus chaude"
+            },
+            {
+              "text": "l'eau pure n'existe pas"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui empêche ta main de traverser la table ?",
+          "explanation": "Les forces électriques entre les atomes. Un atome est presque entièrement vide : c'est la répulsion, et non la matière, qui fait la solidité.",
+          "options": [
+            {
+              "text": "les forces électriques entre atomes",
+              "correct": true
+            },
+            {
+              "text": "la matière pleine des atomes"
+            },
+            {
+              "text": "le poids de la table"
+            },
+            {
+              "text": "la dureté du bois"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reactions",
+      "title": "Les réactions chimiques",
+      "subtitle": "Les atomes se réarrangent, ils ne disparaissent pas.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qui se passe réellement",
+          "body": "Dans une réaction chimique, les liaisons se défont et se refont autrement. Aucun atome n'est créé, aucun n'est détruit : ils changent de voisins.\n\nC'est la conséquence immédiate et la plus utile : la masse totale se conserve. Ce qui entre pèse exactement ce qui sort.\n\nLavoisier l'a établi en pesant des récipients fermés, à la fin du dix-huitième siècle. C'est l'un des rares énoncés de chimie qui n'ait jamais eu besoin d'être corrigé."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Équilibrer une équation",
+          "body": "On écrit les réactifs à gauche, les produits à droite.\n\nOn compte chaque sorte d'atome des deux côtés.\n\nOn ajuste les coefficients devant les formules — jamais les indices dedans, qui changeraient la nature des substances.\n\nPour la combustion du méthane : CH₄ + 2 O₂ donne CO₂ + 2 H₂O. Un carbone de chaque côté, quatre hydrogènes, quatre oxygènes. L'équation est équilibrée."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Jamais toucher aux indices",
+          "body": "Pour équilibrer H₂ + O₂ donne H₂O, la tentation est d'écrire H₂O₂ à droite. Les comptes tombent juste, et c'est faux : H₂O₂ est de l'eau oxygénée, un produit qui décolore les cheveux et qu'on ne boit pas.\n\nChanger un indice change la substance. Seuls les coefficients devant sont ajustables.\n\nLa bonne réponse est 2 H₂ + O₂ donne 2 H₂O."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "La laine de fer qui s'alourdit en brûlant",
+          "body": "Brûle de la laine de fer sur une balance : la masse augmente.\n\nCela semble contredire la conservation, et ne la contredit pas du tout : le fer s'est combiné à l'oxygène de l'air, dont la masse s'ajoute. Le système « laine + air » n'a rien gagné.\n\nUne bougie, elle, semble perdre de la masse — parce que ses produits partent en gaz. En récipient fermé, la balance ne bouge pas d'un milligramme."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans CH₄ + 2 O₂ donne CO₂ + 2 H₂O, combien d'atomes d'oxygène à gauche ?",
+          "explanation": "2 × 2 = 4 atomes d'oxygène, apportés par les deux molécules de dioxygène.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et combien à droite ?",
+          "explanation": "2 dans le CO₂ plus 2 × 1 dans les deux H₂O, soit 4. L'équation est équilibrée en oxygène.",
+          "answer": 4
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Pour équilibrer H₂ + O₂ donne H₂O, quel coefficient faut-il devant H₂O ?",
+          "explanation": "2 : l'équation équilibrée est 2 H₂ + O₂ donne 2 H₂O. On ajuste les coefficients, jamais les indices.",
+          "answer": 2
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette équation équilibrée, quel coefficient devant H₂ ?",
+          "explanation": "2 également : 2 H₂ apportent quatre hydrogènes, qui se retrouvent dans les deux H₂O.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "16 g de méthane brûlent avec 64 g de dioxygène. Quelle masse de produits en grammes ?",
+          "explanation": "16 + 64 = 80 g. La masse se conserve : ce qui entre pèse exactement ce qui sort.",
+          "answer": 80,
+          "unit": "g"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Ces produits sont 44 g de CO₂ et du H₂O. Quelle masse d'eau en grammes ?",
+          "explanation": "80 − 44 = 36 g d'eau. Le bilan se referme exactement.",
+          "answer": 36,
+          "unit": "g"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la laine de fer s'alourdit-elle en brûlant ?",
+          "explanation": "Parce qu'elle se combine à l'oxygène de l'air, dont la masse s'ajoute. Le système laine plus air n'a rien gagné : la conservation tient.",
+          "options": [
+            {
+              "text": "elle se combine à l'oxygène de l'air",
+              "correct": true
+            },
+            {
+              "text": "la chaleur a une masse"
+            },
+            {
+              "text": "la balance se dérègle en chauffant"
+            },
+            {
+              "text": "la conservation de la masse est fausse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "equilibrer",
+      "title": "S'entraîner à équilibrer",
+      "subtitle": "Compter, ajuster, recompter.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'ordre qui fait gagner du temps",
+          "body": "On commence par l'atome qui apparaît dans le moins de formules : il contraint le plus.\n\nOn garde l'oxygène et l'hydrogène pour la fin, parce qu'ils apparaissent presque partout.\n\nOn recompte tout à la fin, sans exception. Une équation qu'on croit équilibrée et qui ne l'est pas se repère en vingt secondes de recomptage, et pas autrement."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "La combustion du propane, pas à pas",
+          "body": "C₃H₈ + O₂ donne CO₂ + H₂O.\n\nLe carbone : trois à gauche, donc 3 CO₂ à droite.\n\nL'hydrogène : huit à gauche, donc 4 H₂O à droite.\n\nL'oxygène à droite : 3 × 2 + 4 × 1 = 10. Il faut donc 5 O₂ à gauche.\n\nRésultat : C₃H₈ + 5 O₂ donne 3 CO₂ + 4 H₂O. On recompte : carbone 3 et 3, hydrogène 8 et 8, oxygène 10 et 10."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Quand il faut des coefficients pairs",
+          "body": "Pour la combustion de l'éthane C₂H₆, l'oxygène tombe sur un nombre impair et on bloque.\n\nLa solution : doubler toute l'équation. 2 C₂H₆ + 7 O₂ donnent 4 CO₂ + 6 H₂O.\n\nDoubler est toujours permis, puisqu'une équation décrit des proportions et non des quantités absolues."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "C₃H₈ + ? O₂ donne 3 CO₂ + 4 H₂O. Quel coefficient devant O₂ ?",
+          "hint": "Compte d'abord les oxygènes à droite.",
+          "explanation": "À droite : 3 × 2 + 4 = 10 oxygènes, donc 5 molécules de O₂ à gauche.",
+          "answer": 5
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans C₃H₈ + 5 O₂ donne 3 CO₂ + 4 H₂O, combien d'hydrogènes de chaque côté ?",
+          "explanation": "8 : huit dans le propane, et 4 × 2 dans les quatre molécules d'eau.",
+          "answer": 8
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "2 C₂H₆ + ? O₂ donne 4 CO₂ + 6 H₂O. Quel coefficient devant O₂ ?",
+          "explanation": "À droite : 4 × 2 + 6 = 14 oxygènes, donc 7 molécules de O₂.",
+          "answer": 7
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Fe + S donne FeS. Quel coefficient faut-il devant Fe ?",
+          "explanation": "1 : l'équation est déjà équilibrée, un fer et un soufre de chaque côté.",
+          "answer": 1
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "56 g de fer réagissent avec 32 g de soufre. Quelle masse de FeS en grammes ?",
+          "explanation": "56 + 32 = 88 g, par conservation de la masse.",
+          "answer": 88,
+          "unit": "g"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Par quel atome commencer pour équilibrer ?",
+          "explanation": "Celui qui apparaît dans le moins de formules : il contraint le plus. L'oxygène et l'hydrogène se gardent pour la fin.",
+          "options": [
+            {
+              "text": "celui qui apparaît dans le moins de formules",
+              "correct": true
+            },
+            {
+              "text": "l'oxygène, toujours"
+            },
+            {
+              "text": "le plus lourd"
+            },
+            {
+              "text": "n'importe lequel, l'ordre est égal"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Peut-on doubler tous les coefficients d'une équation équilibrée ?",
+          "explanation": "Oui : une équation décrit des proportions, pas des quantités absolues. C'est ce qui débloque les cas où l'oxygène tombe sur un nombre impair.",
+          "options": [
+            {
+              "text": "oui, elle décrit des proportions",
+              "correct": true
+            },
+            {
+              "text": "non, jamais"
+            },
+            {
+              "text": "seulement pour les combustions"
+            },
+            {
+              "text": "seulement si tout reste entier et petit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-combustion",
+      "title": "Défi : le bilan d'une combustion",
+      "subtitle": "Compter les atomes, puis les grammes.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Brûler un kilogramme de méthane",
+          "body": "Le méthane CH₄ brûle selon CH₄ + 2 O₂ donne CO₂ + 2 H₂O.\n\nLes masses en jeu pour une molécule de chaque, en grammes par mole : CH₄ pèse 16, O₂ pèse 32, CO₂ pèse 44, H₂O pèse 18.\n\nVérifions le bilan : 16 + 2 × 32 = 80 à gauche. 44 + 2 × 18 = 80 à droite. Les deux côtés coïncident, ce qui confirme que l'équation est bien équilibrée — un bilan de masse qui ne tombe pas juste signale toujours une équation fausse."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le facteur qui surprend",
+          "body": "Brûler 16 g de méthane produit 44 g de CO₂. Le rapport est donc de 2,75.\n\nAutrement dit : un kilogramme de gaz brûlé relâche environ 2,75 kg de dioxyde de carbone.\n\nLa masse supplémentaire ne sort pas de nulle part : elle vient de l'oxygène de l'air, qui est plus lourd que le carburant lui-même. C'est la même raison que la laine de fer qui s'alourdit, et c'est pourquoi les chiffres d'émissions paraissent toujours trop grands."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Masse à gauche : 16 pour CH₄ et 2 × 32 pour O₂. Quel total ?",
+          "explanation": "16 + 64 = 80 unités de masse à gauche, carburant et comburant réunis.",
+          "answer": 80
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Masse à droite : 44 pour CO₂ et 2 × 18 pour H₂O. Quel total ?",
+          "explanation": "44 + 36 = 80. Les deux côtés coïncident, l'équation est bien équilibrée.",
+          "answer": 80
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quel rapport entre la masse de CO₂ produite et celle de méthane brûlé ? Arrondis au centième.",
+          "explanation": "44 ÷ 16 = 2,75. Un kilogramme de méthane produit 2,75 kg de CO₂.",
+          "answer": 2.75,
+          "tolerance": 0.01
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de kilogrammes de CO₂ pour 4 kg de méthane brûlés ?",
+          "explanation": "4 × 2,75 = 11 kg de CO₂, puisque chaque kilogramme de méthane en produit 2,75.",
+          "answer": 11,
+          "unit": "kg"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle masse de dioxygène faut-il pour brûler 4 kg de méthane, en kilogrammes ?",
+          "hint": "64 pour 16, soit un facteur 4.",
+          "explanation": "64 ÷ 16 = 4, donc 4 × 4 = 16 kg de dioxygène. Il faut quatre fois la masse du carburant en oxygène.",
+          "answer": 16,
+          "unit": "kg"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle masse d'eau produite par ces 4 kg de méthane, en kilogrammes ?",
+          "explanation": "36 ÷ 16 = 2,25, donc 4 × 2,25 = 9 kg d'eau. Et 11 + 9 = 20, qui vaut bien 4 + 16 : le bilan se referme.",
+          "answer": 9,
+          "unit": "kg"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "D'où vient la masse supplémentaire du CO₂ par rapport au méthane ?",
+          "explanation": "De l'oxygène de l'air, qui pèse ici quatre fois le carburant. C'est pourquoi les chiffres d'émissions paraissent toujours trop grands pour la quantité de carburant brûlée.",
+          "options": [
+            {
+              "text": "de l'oxygène de l'air qui s'y combine",
+              "correct": true
+            },
+            {
+              "text": "de la chaleur dégagée"
+            },
+            {
+              "text": "d'une erreur de mesure"
+            },
+            {
+              "text": "du carbone qui gonfle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

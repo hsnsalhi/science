@@ -1,0 +1,507 @@
+{
+  "chapter": "physique-chimie-college-gravitation-et-systeme-solaire",
+  "lessons": [
+    {
+      "id": "masse-poids",
+      "title": "Masse et poids",
+      "subtitle": "Deux grandeurs qu'on confond tous les jours.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Le même corps, quatre astres",
+          "figureId": "poids-astres",
+          "body": "Change d'astre. La masse affichée ne bouge pas ; le poids, lui, change du tout au tout."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Ce que chacune mesure",
+          "body": "La masse est une quantité de matière. Elle se mesure en kilogrammes, et elle est la même partout dans l'univers : sur Terre, sur la Lune, en orbite, dans le vide.\n\nLe poids est une force : l'attraction qu'un astre exerce sur ce corps. Il se mesure en newtons, et il dépend de l'astre.\n\nUne balance de cuisine mesure en réalité un poids, et affiche une masse en supposant qu'on est sur Terre. Sur la Lune, elle afficherait un sixième de la vérité."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "La relation",
+          "formula": "P = m × g",
+          "body": "P en newtons, m en kilogrammes, g en newtons par kilogramme. Sur Terre g vaut environ 9,8 — souvent arrondi à 10 pour les calculs de tête, ce qui donne 2 % d'erreur."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Quelques valeurs de g",
+          "body": "La Terre : 9,8 N/kg. La Lune : 1,6. Mars : 3,7.\n\nJupiter : 24,8. Le Soleil : 274.\n\nUn humain de 60 kg pèse 588 N sur Terre, 96 N sur la Lune et 1 488 N sur Jupiter — où il ne pourrait pas se tenir debout. Sa masse reste 60 kg dans les trois cas."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un corps de 60 kg sur Terre, avec g = 9,8. Quel poids en newtons ?",
+          "explanation": "60 × 9,8 = 588 newtons.",
+          "answer": 588,
+          "tolerance": 1,
+          "unit": "N"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le même corps sur la Lune, avec g = 1,6. Quel poids en newtons ?",
+          "explanation": "60 × 1,6 = 96 newtons, soit six fois moins.",
+          "answer": 96,
+          "tolerance": 1,
+          "unit": "N"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est sa masse sur la Lune, en kilogrammes ?",
+          "explanation": "60 kg : la masse ne change jamais. Seul le poids dépend de l'astre.",
+          "answer": 60,
+          "unit": "kg"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Son poids sur Jupiter, avec g = 24,8, en newtons ?",
+          "explanation": "60 × 24,8 = 1 488 newtons, soit plus de deux fois et demie le poids terrestre.",
+          "answer": 1488,
+          "tolerance": 5,
+          "unit": "N"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien le poids est-il divisé en passant de la Terre à la Lune ? Arrondis à l'entier.",
+          "explanation": "9,8 ÷ 1,6 ≈ 6,1, soit environ six fois moins. D'où les bonds des astronautes d'Apollo.",
+          "answer": 6,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que mesure réellement une balance de cuisine ?",
+          "explanation": "Un poids, qu'elle convertit en masse en supposant qu'on est sur Terre. Sur la Lune elle afficherait un sixième de la vérité.",
+          "options": [
+            {
+              "text": "un poids, converti en masse pour la Terre",
+              "correct": true
+            },
+            {
+              "text": "une masse directement"
+            },
+            {
+              "text": "un volume"
+            },
+            {
+              "text": "une force en newtons affichée telle quelle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attraction",
+      "title": "L'attraction universelle",
+      "subtitle": "Tous les corps s'attirent.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce que Newton a vraiment compris",
+          "body": "Avant lui, on pensait que la chute d'une pomme et le mouvement de la Lune relevaient de deux physiques différentes : l'une terrestre, l'autre céleste.\n\nSon idée est qu'il n'y en a qu'une. La Lune tombe, elle aussi — en permanence. Mais elle avance assez vite de côté pour que sa chute l'amène toujours à côté de la Terre plutôt que dessus.\n\nUne orbite n'est donc pas un équilibre entre deux forces : c'est une chute qui n'en finit pas."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "De quoi dépend l'attraction",
+          "body": "Des deux masses : plus elles sont grandes, plus la force est grande. Et elle est proportionnelle à chacune.\n\nDe la distance : plus les corps sont éloignés, plus la force est faible — mais pas proportionnellement. Elle décroît comme le carré de la distance.\n\nDoubler la distance divise donc la force par quatre. Tripler la divise par neuf. C'est ce carré qui donne aux orbites leur forme."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Le Système solaire",
+          "figureId": "systeme-solaire",
+          "body": "Les planètes lointaines tournent plus lentement : à grande distance, l'attraction est faible, et il suffit d'aller doucement pour rester en orbite."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Pourquoi les astronautes flottent",
+          "body": "Pas parce qu'il n'y a plus de gravité. À 400 km d'altitude, g vaut encore environ 8,7 N/kg, soit près de 90 % de sa valeur au sol.\n\nIls flottent parce qu'ils tombent, et que la station tombe avec eux, à la même vitesse. Rien ne les presse contre le plancher, et c'est tout ce que signifie « flotter ».\n\nL'expression « absence de gravité » est donc fausse. Le mot exact est chute libre, et un ascenseur dont le câble casse donnerait la même sensation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "On double la distance entre deux corps. Par combien la force est-elle divisée ?",
+          "explanation": "Par 4 : la force décroît comme le carré de la distance.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "On triple la distance. Par combien la force est-elle divisée ?",
+          "explanation": "Par 9, soit 3 au carré.",
+          "answer": 9
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "On double une seule des deux masses. Par combien la force est-elle multipliée ?",
+          "explanation": "Par 2 : la force est proportionnelle à chaque masse, sans carré.",
+          "answer": 2
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les astronautes de la station flottent-ils ?",
+          "explanation": "Parce qu'ils sont en chute libre avec la station. À 400 km, g vaut encore près de 90 % de sa valeur au sol.",
+          "options": [
+            {
+              "text": "ils sont en chute libre avec la station",
+              "correct": true
+            },
+            {
+              "text": "il n'y a plus de gravité à cette altitude"
+            },
+            {
+              "text": "ils sont trop loin de la Terre"
+            },
+            {
+              "text": "la station crée une anti-gravité"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'une orbite, selon Newton ?",
+          "explanation": "Une chute qui n'en finit pas : le corps tombe en permanence, mais avance assez vite de côté pour toujours manquer la Terre.",
+          "options": [
+            {
+              "text": "une chute permanente qui manque toujours sa cible",
+              "correct": true
+            },
+            {
+              "text": "un équilibre entre deux forces opposées"
+            },
+            {
+              "text": "un état sans force appliquée"
+            },
+            {
+              "text": "une trajectoire imposée par le vide"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les planètes lointaines tournent-elles plus lentement ?",
+          "explanation": "Parce que l'attraction y est faible : il suffit d'une petite vitesse pour rester en orbite. Aller plus vite les éjecterait.",
+          "options": [
+            {
+              "text": "l'attraction y est faible, une petite vitesse suffit",
+              "correct": true
+            },
+            {
+              "text": "elles sont plus lourdes"
+            },
+            {
+              "text": "le vide y freine davantage"
+            },
+            {
+              "text": "elles sont plus vieilles"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Il n'y a plus de gravité à 400 km d'altitude.",
+          "explanation": "Faux : g y vaut encore environ 8,7 N/kg, soit près de 90 % de sa valeur au sol. Les astronautes flottent parce qu'ils tombent, pas parce que la gravité a disparu.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "systeme",
+      "title": "Le Système solaire",
+      "subtitle": "Huit planètes, deux familles.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Deux familles bien séparées",
+          "body": "Les quatre rocheuses, proches du Soleil : Mercure, Vénus, la Terre, Mars. Petites, denses, peu ou pas de lune, pas d'anneau.\n\nLes quatre géantes, lointaines : Jupiter, Saturne, Uranus, Neptune. Énormes, peu denses, beaucoup de lunes, toutes avec des anneaux.\n\nLa séparation n'est pas un hasard : près du Soleil, la chaleur du jeune système a chassé les gaz légers, et seuls les matériaux résistants ont pu s'agglomérer."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Saturne flotterait",
+          "body": "Sa masse volumique moyenne vaut environ 0,7 g/cm³, soit moins que l'eau.\n\nUne Saturne posée dans un océan assez grand flotterait. Ce n'est pas une anecdote : c'est ce que « géante gazeuse » veut dire concrètement.\n\nLa Terre, elle, fait 5,5 g/cm³ — huit fois plus dense que Saturne."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Plus loin, plus lent",
+          "body": "La Terre fait son tour en 1 an. Jupiter en 12 ans. Saturne en 29. Neptune en 165.\n\nDeux raisons se cumulent : l'orbite est plus longue, et la vitesse est plus faible.\n\nUne année neptunienne dépasse donc deux vies humaines. Depuis sa découverte en 1846, Neptune n'a bouclé qu'un seul tour — achevé en 2011."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Rocheuse ou géante ?",
+          "explanation": "Les quatre premières sont rocheuses, les quatre suivantes gazeuses ou glacées. La frontière suit la distance au Soleil.",
+          "categories": [
+            "rocheuse",
+            "géante"
+          ],
+          "items": [
+            {
+              "text": "Mercure",
+              "category": 0
+            },
+            {
+              "text": "Vénus",
+              "category": 0
+            },
+            {
+              "text": "la Terre",
+              "category": 0
+            },
+            {
+              "text": "Mars",
+              "category": 0
+            },
+            {
+              "text": "Jupiter",
+              "category": 1
+            },
+            {
+              "text": "Saturne",
+              "category": 1
+            },
+            {
+              "text": "Uranus",
+              "category": 1
+            },
+            {
+              "text": "Neptune",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces planètes de la plus proche du Soleil à la plus lointaine.",
+          "explanation": "Mercure, Vénus, Terre, Mars, puis Jupiter, Saturne, Uranus, Neptune.",
+          "items": [
+            "Mercure",
+            "Vénus",
+            "la Terre",
+            "Mars",
+            "Jupiter",
+            "Saturne",
+            "Uranus",
+            "Neptune"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Saturne fait 0,7 g/cm³ et la Terre 5,5. Par combien la Terre est-elle plus dense ? Arrondis à l'entier.",
+          "explanation": "5,5 ÷ 0,7 ≈ 7,9, soit environ huit fois plus dense.",
+          "answer": 8,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Saturne flotterait-elle dans l'eau ?",
+          "explanation": "Oui : sa masse volumique moyenne, 0,7 g/cm³, est inférieure à celle de l'eau. C'est ce que « géante gazeuse » signifie concrètement.",
+          "options": [
+            {
+              "text": "oui, sa masse volumique est inférieure à 1",
+              "correct": true
+            },
+            {
+              "text": "non, elle est trop grosse"
+            },
+            {
+              "text": "non, elle est trop lourde"
+            },
+            {
+              "text": "seulement ses anneaux flotteraient"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Neptune met 165 ans à faire un tour. Depuis sa découverte en 1846, combien de tours achevés en 2011 ?",
+          "explanation": "2011 − 1846 = 165 ans, soit exactement un seul tour achevé.",
+          "answer": 1
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'années terrestres pour que Jupiter fasse 3 tours ?",
+          "explanation": "12 × 3 = 36 ans, puisque Jupiter met douze ans par tour.",
+          "answer": 36,
+          "unit": "ans"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les planètes proches sont-elles rocheuses ?",
+          "explanation": "Parce que la chaleur du jeune Soleil a chassé les gaz légers des régions internes : seuls les matériaux résistants ont pu s'y agglomérer.",
+          "options": [
+            {
+              "text": "la chaleur du jeune Soleil a chassé les gaz légers",
+              "correct": true
+            },
+            {
+              "text": "elles sont plus récentes"
+            },
+            {
+              "text": "le Soleil les attire plus fort"
+            },
+            {
+              "text": "c'est un hasard de formation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-gravitation",
+      "title": "Défi : peser ailleurs",
+      "subtitle": "Et comprendre ce que l'altitude change.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un sac de 20 kg en voyage",
+          "body": "Un sac de 20 kg est transporté sur plusieurs astres. Sa masse reste 20 kg partout ; c'est son poids qui change.\n\nSur Terre, avec g = 9,8 : 196 N. Il faut cette force pour le soulever.\n\nSur la Lune, avec g = 1,6 : 32 N. Un enfant le soulèverait d'une main.\n\nSur Jupiter, avec g = 24,8 : 496 N. Il faudrait une poulie.\n\nEt en orbite, en chute libre : il ne presse sur rien, mais il garde ses 20 kg — le pousser demande toujours autant d'effort pour le mettre en mouvement."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "La masse résiste même sans poids",
+          "body": "C'est la distinction la plus utile du chapitre. En orbite, un sac de 20 kg ne pèse rien et reste difficile à lancer, et difficile à arrêter.\n\nUn astronaute qui pousse une caisse de 200 kg dans la station la met en mouvement lentement, et prend autant de peine à l'arrêter. S'il s'interpose mal, elle l'écrase contre la cloison.\n\nL'apesanteur supprime le poids. Elle ne supprime pas l'inertie, et c'est une source réelle d'accidents."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un sac de 20 kg sur Terre, g = 9,8. Quel poids en newtons ?",
+          "explanation": "20 × 9,8 = 196 newtons.",
+          "answer": 196,
+          "tolerance": 1,
+          "unit": "N"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le même sac sur la Lune, g = 1,6. Quel poids en newtons ?",
+          "explanation": "20 × 1,6 = 32 newtons.",
+          "answer": 32,
+          "unit": "N"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Et sur Jupiter, g = 24,8 ? En newtons.",
+          "explanation": "20 × 24,8 = 496 newtons, plus du double du poids terrestre.",
+          "answer": 496,
+          "tolerance": 2,
+          "unit": "N"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle masse a ce sac en orbite, en kilogrammes ?",
+          "explanation": "20 kg, comme partout. L'apesanteur supprime le poids, jamais la masse.",
+          "answer": 20,
+          "unit": "kg"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "À 400 km d'altitude, g vaut 8,7. Quel poids pour ce sac, en newtons, s'il était immobile par rapport au sol ?",
+          "explanation": "20 × 8,7 = 174 newtons, soit encore 89 % du poids au sol. La gravité n'a presque pas faibli.",
+          "answer": 174,
+          "tolerance": 1,
+          "unit": "N"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage du g terrestre reste-t-il à 400 km ? Arrondis à l'entier.",
+          "explanation": "8,7 ÷ 9,8 ≈ 0,89, soit environ 89 %. C'est pourquoi « absence de gravité » est une expression fausse.",
+          "answer": 89,
+          "tolerance": 1
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "En orbite, une caisse de 200 kg est-elle facile à manipuler ?",
+          "explanation": "Non : elle ne pèse rien mais garde toute son inertie. La mettre en mouvement et l'arrêter demandent autant d'effort, et mal s'interposer peut blesser.",
+          "options": [
+            {
+              "text": "non, elle ne pèse rien mais garde toute son inertie",
+              "correct": true
+            },
+            {
+              "text": "oui, elle n'a plus de masse"
+            },
+            {
+              "text": "oui, tout est léger en orbite"
+            },
+            {
+              "text": "non, elle est encore plus lourde"
+            }
+          ]
+        },
+        {
+          "id": "q8",
+          "kind": "choixUnique",
+          "prompt": "Quelle expression décrit correctement l'état des astronautes ?",
+          "explanation": "La chute libre. Ils tombent avec leur station, et rien ne les presse contre le plancher : c'est tout ce que « flotter » signifie.",
+          "options": [
+            {
+              "text": "la chute libre",
+              "correct": true
+            },
+            {
+              "text": "l'absence de gravité"
+            },
+            {
+              "text": "l'anti-gravité"
+            },
+            {
+              "text": "le vide spatial"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
