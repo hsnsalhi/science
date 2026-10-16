@@ -1,0 +1,450 @@
+{
+  "chapter": "technologie-college-energie-dans-un-objet",
+  "lessons": [
+    {
+      "id": "chaine",
+      "title": "La chaîne d'énergie",
+      "subtitle": "Quatre maillons, toujours les mêmes.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Alimenter, distribuer, convertir, transmettre",
+          "figureId": "chaine-energie",
+          "body": "Suis le trajet de l'énergie dans l'objet. À chaque maillon, une partie se perd — et elle se perd toujours en chaleur."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les quatre fonctions",
+          "body": "Alimenter : la source. Prise de courant, pile, carburant, muscle.\n\nDistribuer : ce qui laisse passer ou non. Interrupteur, variateur, robinet.\n\nConvertir : ce qui change la forme de l'énergie. Moteur, résistance, lampe, haut-parleur.\n\nTransmettre : ce qui porte l'énergie mécanique jusqu'à l'effet voulu. Engrenages, courroie, arbre, roue.\n\nTout objet technique motorisé se décrit dans ces quatre cases, du sèche-cheveux au train."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Rien n'est perdu, tout est dégradé",
+          "body": "L'énergie ne disparaît jamais : elle change de forme. Ce qu'on appelle une perte est de l'énergie qui a fini en chaleur, là où on n'en voulait pas.\n\nC'est pourquoi tout objet qui fonctionne chauffe : le chargeur, l'ampoule, le moteur, le processeur. La chaleur n'est pas un symptôme de défaut, c'est la part de l'énergie qui n'a pas servi."
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "Le rendement",
+          "formula": "rendement = énergie utile ÷ énergie fournie",
+          "body": "Toujours inférieur à 1, jamais égal. Un rendement de 0,8 veut dire que 80 % de l'énergie fournie a servi et 20 % est partie en chaleur."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces composants selon leur fonction dans la chaîne.",
+          "explanation": "La pile alimente, l'interrupteur distribue, le moteur et la lampe convertissent, les engrenages transmettent.",
+          "categories": [
+            "alimenter",
+            "distribuer",
+            "convertir",
+            "transmettre"
+          ],
+          "items": [
+            {
+              "text": "une pile",
+              "category": 0
+            },
+            {
+              "text": "un interrupteur",
+              "category": 1
+            },
+            {
+              "text": "un moteur électrique",
+              "category": 2
+            },
+            {
+              "text": "une lampe",
+              "category": 2
+            },
+            {
+              "text": "un train d'engrenages",
+              "category": 3
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Où part l'énergie « perdue » ?",
+          "explanation": "En chaleur. Elle ne disparaît pas : elle a changé de forme, là où on n'en voulait pas.",
+          "options": [
+            {
+              "text": "en chaleur",
+              "correct": true
+            },
+            {
+              "text": "elle disparaît"
+            },
+            {
+              "text": "en lumière"
+            },
+            {
+              "text": "elle retourne à la source"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un appareil reçoit 100 J et en utilise 80. Quel rendement en pourcentage ?",
+          "explanation": "80 ÷ 100 = 0,8, soit 80 %. Les 20 J restants sont partis en chaleur.",
+          "answer": 80
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Le même appareil : combien de joules partent en chaleur ?",
+          "explanation": "100 − 80 = 20 joules.",
+          "answer": 20,
+          "unit": "J"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Un rendement peut-il valoir 1 ?",
+          "explanation": "Non : toute conversion dégrade une part de l'énergie en chaleur. Un rendement de 1 signifierait qu'aucun frottement, aucune résistance n'existe.",
+          "options": [
+            {
+              "text": "non, il reste toujours une part dégradée",
+              "correct": true
+            },
+            {
+              "text": "oui, avec un bon moteur"
+            },
+            {
+              "text": "oui, pour une résistance chauffante"
+            },
+            {
+              "text": "oui, en supprimant les frottements"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un appareil qui chauffe est forcément défectueux.",
+          "explanation": "Faux. La chaleur est la part de l'énergie qui n'a pas servi, et il y en a toujours. Un chargeur, une ampoule et un processeur chauffent en fonctionnant normalement.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "rendements",
+      "title": "Les rendements se multiplient",
+      "subtitle": "Et c'est une mauvaise nouvelle.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La règle de la chaîne",
+          "formula": "rendement total = r₁ × r₂ × r₃ × …",
+          "body": "Les rendements ne s'additionnent pas et ne se moyennent pas : ils se multiplient. Trois maillons à 0,9 donnent 0,9 × 0,9 × 0,9 = 0,73, et non 0,9."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Pourquoi les longues chaînes sont coûteuses",
+          "body": "Chaque maillon ne retire qu'un peu, et pourtant le total s'effondre.\n\nUne chaîne de cinq maillons à 0,9 chacun donne 0,59 : on a perdu plus de 40 % alors qu'aucun maillon n'était mauvais.\n\nC'est la raison technique pour laquelle on cherche à raccourcir les chaînes plutôt qu'à améliorer un maillon. Supprimer une conversion gagne plus que perfectionner celle qui reste."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Du charbon à la roue",
+          "body": "Centrale thermique : 0,40. Réseau électrique : 0,95. Chargeur : 0,90. Batterie : 0,95. Moteur électrique : 0,90.\n\nProduit : 0,40 × 0,95 × 0,90 × 0,95 × 0,90 ≈ 0,29.\n\nSur cent unités d'énergie du charbon, vingt-neuf arrivent à la roue. Et le maillon le plus coûteux est le premier, de loin : il retire à lui seul 60 % du total, là où les quatre autres réunis n'en retirent que 27 %."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Chercher le maillon faible",
+          "body": "Un maillon de rendement r ne peut jamais rapporter plus qu'un facteur 1 ÷ r, puisqu'il ne peut pas dépasser 1.\n\nUn maillon à 0,95 a donc au mieux 5 % à donner. Un maillon à 0,99, au mieux 1 %. Un maillon à 0,40, jusqu'à 150 %.\n\nToute la marge est dans le maillon faible, et cette borne se calcule avant d'avoir engagé le moindre travail. C'est elle qui dit où chercher."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Trois maillons de rendement 0,9. Quel rendement total en pourcentage, arrondi à l'entier ?",
+          "explanation": "0,9 × 0,9 × 0,9 = 0,729, soit environ 73 %.",
+          "answer": 73,
+          "tolerance": 1
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Cinq maillons de rendement 0,9. Quel total en pourcentage, arrondi à l'entier ?",
+          "explanation": "0,9 élevé à la puissance cinq vaut 0,590, soit environ 59 % : plus de 40 % perdus sans aucun maillon mauvais.",
+          "answer": 59,
+          "tolerance": 1
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Deux maillons, 0,8 et 0,5. Quel rendement total en pourcentage ?",
+          "explanation": "0,8 × 0,5 = 0,4, soit 40 %. La moyenne des deux donnerait 65 %, ce qui est faux.",
+          "answer": 40
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "La chaîne charbon-roue : 0,40 × 0,95 × 0,90 × 0,95 × 0,90. Quel total en pourcentage, arrondi à l'entier ?",
+          "explanation": "Le produit vaut environ 0,293, soit 29 %. Sur cent unités de charbon, vingt-neuf arrivent à la roue.",
+          "answer": 29,
+          "tolerance": 1
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Dans cette chaîne, quel maillon offre la plus grande marge d'amélioration ?",
+          "explanation": "La centrale, à 0,40 : elle peut au mieux rapporter un facteur 1 ÷ 0,40 = 2,5, soit +150 %. Un maillon à 0,95 n'a que 5 % à donner, quoi qu'on fasse.",
+          "options": [
+            {
+              "text": "la centrale, à 0,40, qui peut encore gagner 150 %",
+              "correct": true
+            },
+            {
+              "text": "le réseau, à 0,95"
+            },
+            {
+              "text": "la batterie, à 0,95"
+            },
+            {
+              "text": "tous offrent la même marge"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Les rendements s'additionnent-ils ou se multiplient-ils ?",
+          "explanation": "Ils se multiplient. Les additionner ou les moyenner donne un résultat bien trop optimiste.",
+          "options": [
+            {
+              "text": "ils se multiplient",
+              "correct": true
+            },
+            {
+              "text": "ils s'additionnent"
+            },
+            {
+              "text": "on prend la moyenne"
+            },
+            {
+              "text": "on prend le plus faible seulement"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Ajouter un maillon de rendement 0,95 à une chaîne la laisse presque inchangée.",
+          "explanation": "Faux, à la longue : chaque maillon retire sa part. Dix maillons à 0,95 donnent 0,60, soit 40 % perdus par des maillons tous excellents.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "stocker",
+      "title": "Stocker et mesurer",
+      "subtitle": "Watts, wattheures, et le piège des unités.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "avertissement",
+          "title": "Le watt n'est pas le wattheure",
+          "body": "Le watt est une puissance : un débit d'énergie, à un instant donné.\n\nLe wattheure est une énergie : une quantité, accumulée dans le temps.\n\nUn appareil de 2 000 W allumé pendant une demi-heure consomme 1 000 Wh, soit 1 kWh. Une ampoule de 10 W allumée cent heures consomme la même chose.\n\nConfondre les deux rend tout calcul de consommation impossible, et c'est la confusion la plus répandue sur le sujet."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La relation",
+          "formula": "énergie (Wh) = puissance (W) × durée (h)",
+          "body": "Et inversement : la durée de fonctionnement d'une batterie vaut sa capacité en wattheures divisée par la puissance consommée."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Les milliampèreheures des batteries",
+          "body": "Une batterie de téléphone est annoncée en milliampèreheures, par exemple 4 000 mAh. Ce chiffre ne dit rien à lui seul : il faut la tension.\n\nÀ 3,7 volts, 4 000 mAh font 4 × 3,7 = 14,8 wattheures.\n\nComparer deux batteries par leurs mAh seuls n'a donc de sens que si elles ont la même tension — ce qui est souvent le cas entre téléphones, et presque jamais entre un téléphone et un ordinateur."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un radiateur de 2 000 W allumé 3 heures. Combien de wattheures consommés ?",
+          "explanation": "2 000 × 3 = 6 000 Wh, soit 6 kWh.",
+          "answer": 6000,
+          "unit": "Wh"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une ampoule de 10 W allumée 100 heures. Combien de wattheures ?",
+          "explanation": "10 × 100 = 1 000 Wh, soit 1 kWh — la même chose que le radiateur en une demi-heure.",
+          "answer": 1000,
+          "unit": "Wh"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes le radiateur de 2 000 W met-il à consommer ces 1 000 Wh ?",
+          "explanation": "1 000 ÷ 2 000 = 0,5 heure, soit 30 minutes.",
+          "answer": 30,
+          "unit": "min"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une batterie de 4 000 mAh sous 3,7 V. Combien de wattheures ?",
+          "hint": "4 Ah multiplié par la tension.",
+          "explanation": "4 Ah × 3,7 V = 14,8 Wh. Les milliampèreheures seuls ne disent rien : il faut la tension pour obtenir une énergie.",
+          "answer": 14.8,
+          "tolerance": 0.1,
+          "unit": "Wh"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Cette batterie de 14,8 Wh alimente un appareil de 2 W. Combien d'heures, arrondi à l'unité ?",
+          "explanation": "14,8 ÷ 2 = 7,4 heures, soit environ 7 heures.",
+          "answer": 7,
+          "tolerance": 0.5,
+          "unit": "h"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un kilowattheure coûte 0,20 €. Combien coûtent les 6 kWh du radiateur ?",
+          "explanation": "6 kWh × 0,20 € = 1,20 €. C'est le prix de trois heures de radiateur.",
+          "answer": 1.2,
+          "tolerance": 0.01,
+          "unit": "€"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Peut-on comparer deux batteries par leurs mAh seuls ?",
+          "explanation": "Seulement si elles ont la même tension. Les mAh multipliés par les volts donnent les wattheures, qui sont la vraie quantité d'énergie.",
+          "options": [
+            {
+              "text": "seulement si leur tension est la même",
+              "correct": true
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "non, jamais"
+            },
+            {
+              "text": "oui, si elles ont la même taille"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-energie",
+      "title": "Défi : l'ampoule et le chauffage",
+      "subtitle": "Une surprise de comptable.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le rendement d'une ampoule",
+          "body": "Une ampoule à filament convertit environ 5 % de l'électricité reçue en lumière. Les 95 % restants partent en chaleur.\n\nUne LED en convertit environ 40 %. C'est huit fois mieux, et c'est pour cette raison que les ampoules à filament ont été retirées du marché.\n\nUn détail amusant, et qui se calcule : en hiver, dans une pièce chauffée à l'électricité, la chaleur de l'ampoule à filament n'est pas perdue — elle remplace exactement autant de chauffage. L'argument tombe dès qu'on chauffe autrement, ou qu'on est en été et qu'on climatise : là, chaque watt de chaleur se paie deux fois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une ampoule à filament de 60 W, rendement lumineux 5 %. Combien de watts de lumière ?",
+          "explanation": "60 × 5 % = 3 watts de lumière, et 57 de chaleur.",
+          "answer": 3,
+          "unit": "W"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de watts partent en chaleur ?",
+          "explanation": "60 − 3 = 57 watts, soit 95 % du total.",
+          "answer": 57,
+          "unit": "W"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle puissance faut-il à une LED de rendement 40 % pour donner les mêmes 3 W de lumière ? Arrondis au dixième.",
+          "explanation": "3 ÷ 0,40 = 7,5 watts. Huit fois moins que les 60 W du filament.",
+          "answer": 7.5,
+          "tolerance": 0.1,
+          "unit": "W"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien la LED divise-t-elle la consommation, à lumière égale ?",
+          "explanation": "60 ÷ 7,5 = 8 fois. Exactement le rapport des rendements, 40 divisé par 5.",
+          "answer": 8
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Dix ampoules de 60 W allumées 4 heures par jour pendant 30 jours. Combien de kilowattheures ?",
+          "hint": "D'abord la puissance totale, puis les heures.",
+          "explanation": "10 × 60 = 600 W, puis 600 × 4 × 30 = 72 000 Wh, soit 72 kWh.",
+          "answer": 72,
+          "unit": "kWh"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Les mêmes dix lampes en LED de 7,5 W, même usage. Combien de kilowattheures ?",
+          "explanation": "10 × 7,5 = 75 W, puis 75 × 4 × 30 = 9 000 Wh, soit 9 kWh — huit fois moins.",
+          "answer": 9,
+          "unit": "kWh"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "En été avec climatisation, que coûte la chaleur d'une ampoule à filament ?",
+          "explanation": "Elle se paie deux fois : une fois pour la produire, une fois pour l'évacuer. L'argument du chauffage d'appoint tombe complètement.",
+          "options": [
+            {
+              "text": "deux fois : la produire, puis l'évacuer",
+              "correct": true
+            },
+            {
+              "text": "rien, elle remplace du chauffage"
+            },
+            {
+              "text": "une fois seulement"
+            },
+            {
+              "text": "elle fait baisser la facture"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

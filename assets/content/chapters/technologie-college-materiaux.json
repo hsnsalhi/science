@@ -1,0 +1,458 @@
+{
+  "chapter": "technologie-college-materiaux-choisir-et-justifier",
+  "lessons": [
+    {
+      "id": "proprietes",
+      "title": "Des propriétés chiffrées",
+      "subtitle": "« Solide » ne veut rien dire tout seul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les grandeurs qui servent à choisir",
+          "body": "La résistance : la contrainte qu'un matériau supporte avant de céder, en mégapascals. L'acier doux tient environ 400 MPa en traction.\n\nLa masse volumique, en grammes par centimètre cube. L'acier fait 7,9 ; l'aluminium 2,7 ; le pin 0,5.\n\nLa rigidité : de combien il se déforme sous une charge donnée, avant toute rupture.\n\nLe coût au kilogramme, et l'énergie qu'il a fallu pour le produire.\n\nAucune de ces grandeurs ne suffit seule, et c'est tout le problème."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Résistance et rigidité sont deux choses",
+          "body": "Un élastique est très peu rigide — il s'allonge énormément — et pourtant il ne casse pas facilement.\n\nUn biscuit sec est rigide — il ne plie pas du tout — et il casse au moindre effort.\n\nConfondre les deux conduit à choisir un matériau qui ne plie pas pour une pièce qui ne doit pas casser, ou l'inverse. Ce sont deux exigences différentes, et un cahier des charges doit dire laquelle compte."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "La résistance spécifique",
+          "formula": "résistance spécifique = résistance ÷ masse volumique",
+          "body": "C'est la grandeur à comparer quand la masse compte : elle dit combien de résistance on obtient par kilogramme embarqué. Et son classement n'est pas celui auquel on s'attend."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le bois bat l'acier, à masse égale",
+          "body": "Acier : 400 ÷ 7,9 ≈ 51. Aluminium d'alliage : 300 ÷ 2,7 ≈ 111. Pin, dans le sens des fibres : 50 ÷ 0,5 = 100.\n\nÀ masse égale, le pin tient donc presque deux fois mieux que l'acier, et presque aussi bien qu'un alliage d'aluminium.\n\nCe n'est pas une curiosité : c'est pourquoi les avions ont été en bois pendant quarante ans, pourquoi les planeurs de compétition l'ont été longtemps, et pourquoi on construit à nouveau des immeubles en bois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Acier : 400 MPa pour une masse volumique de 7,9. Quelle résistance spécifique, arrondie à l'entier ?",
+          "explanation": "400 ÷ 7,9 ≈ 51. C'est la résistance obtenue par unité de masse.",
+          "answer": 51,
+          "tolerance": 1
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pin : 50 MPa pour une masse volumique de 0,5. Quelle résistance spécifique ?",
+          "explanation": "50 ÷ 0,5 = 100, soit presque le double de l'acier à masse égale.",
+          "answer": 100
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Alliage d'aluminium : 300 MPa pour 2,7. Quelle résistance spécifique, arrondie à l'entier ?",
+          "explanation": "300 ÷ 2,7 ≈ 111, le meilleur des trois.",
+          "answer": 111,
+          "tolerance": 2
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces trois matériaux de la plus faible à la plus forte résistance spécifique.",
+          "explanation": "Acier 51, pin 100, aluminium 111. Le classement par résistance brute donnerait l'ordre inverse pour le bois.",
+          "items": [
+            "l'acier",
+            "le pin",
+            "l'alliage d'aluminium"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la différence entre résistance et rigidité ?",
+          "explanation": "La résistance dit quand ça casse, la rigidité dit de combien ça plie avant. Un élastique est peu rigide et résistant ; un biscuit est rigide et fragile.",
+          "options": [
+            {
+              "text": "l'une dit quand ça casse, l'autre de combien ça plie",
+              "correct": true
+            },
+            {
+              "text": "aucune, ce sont deux mots pour la même chose"
+            },
+            {
+              "text": "la rigidité est la résistance au choc"
+            },
+            {
+              "text": "la résistance ne se mesure pas"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "L'acier est toujours le meilleur choix quand il faut de la résistance.",
+          "explanation": "Faux. Si la masse compte, le bois et l'aluminium le battent par unité de masse. L'acier gagne quand c'est le volume ou le coût qui est contraint.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "pas-parfait",
+      "title": "Aucun matériau n'est parfait",
+      "subtitle": "Choisir, c'est accepter un défaut.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le bois a aussi ses défauts",
+          "body": "Sa résistance dépend du sens : excellente dans le sens des fibres, cinq à dix fois moindre en travers. Une pièce mal orientée casse à une charge qu'elle aurait dû tenir sans peine.\n\nIl travaille avec l'humidité : il gonfle, il se tord, il fend.\n\nIl brûle, et ses propriétés varient d'une planche à l'autre — là où une tôle d'acier est identique d'un bout à l'autre du monde.\n\nCette régularité est un avantage qu'on oublie, et c'est elle qui permet de calculer une structure avec confiance."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les quatre questions à poser",
+          "body": "La pièce est-elle sollicitée en traction, en compression, en flexion ou en torsion ? Les matériaux ne se classent pas pareil selon le cas — la fonte est excellente en compression et mauvaise en traction.\n\nLa masse compte-t-elle ? Si oui, on compare les résistances spécifiques.\n\nQuel est le milieu ? Humidité, sel, soleil, température.\n\nQuelle fin de vie ? Un matériau recyclable à l'infini comme l'acier et l'aluminium n'est pas dans la même catégorie qu'un composite collé, qu'on ne sait pas séparer."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "L'énergie contenue",
+          "body": "Produire un kilogramme d'aluminium depuis le minerai demande environ 15 fois plus d'énergie que le refondre à partir de déchets.\n\nL'acier recyclé coûte environ 3 à 4 fois moins d'énergie que l'acier neuf.\n\nUn matériau n'a donc pas un coût énergétique, il en a deux : neuf et recyclé. Et le choix du concepteur décide lequel s'appliquera à la fin de la vie de l'objet."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Les composites, et le prix de leur performance",
+          "body": "Un composite de fibres de carbone a une résistance spécifique excellente, bien supérieure à l'aluminium.\n\nMais il est fait de fibres noyées dans une résine, et personne ne sait séparer proprement les deux. Un cadre de vélo en carbone n'est donc pas recyclable au sens où l'acier l'est : il finit broyé, ou brûlé.\n\nC'est un compromis réel, pas un détail : le gain de performance est payé en fin de vie."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'orientation d'une pièce en bois est-elle critique ?",
+          "explanation": "Parce que sa résistance en travers des fibres est cinq à dix fois plus faible que dans leur sens.",
+          "options": [
+            {
+              "text": "sa résistance en travers est bien plus faible",
+              "correct": true
+            },
+            {
+              "text": "le bois est plus joli dans un sens"
+            },
+            {
+              "text": "les fibres conduisent la chaleur"
+            },
+            {
+              "text": "l'orientation n'a pas d'importance"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le pin tient 50 MPa dans le sens des fibres et 8 fois moins en travers. Combien en travers, en mégapascals ?",
+          "explanation": "50 ÷ 8 = 6,25 MPa. Une pièce mal orientée cède à une fraction de la charge prévue.",
+          "answer": 6.25,
+          "tolerance": 0.05
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quel avantage de l'acier sur le bois oublie-t-on souvent ?",
+          "explanation": "Sa régularité : une tôle d'acier a les mêmes propriétés partout, ce qui permet de calculer une structure avec confiance. Le bois varie d'une planche à l'autre.",
+          "options": [
+            {
+              "text": "ses propriétés sont identiques partout",
+              "correct": true
+            },
+            {
+              "text": "il est moins cher"
+            },
+            {
+              "text": "il est plus léger"
+            },
+            {
+              "text": "il ne rouille pas"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Refondre l'aluminium coûte 15 fois moins d'énergie. Si le neuf demande 45 unités, combien pour le recyclé ?",
+          "explanation": "45 ÷ 15 = 3 unités. Recycler l'aluminium économise donc quinze fois l'énergie de sa production depuis le minerai.",
+          "answer": 3
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quel est le défaut majeur d'un composite carbone-résine ?",
+          "explanation": "On ne sait pas séparer les fibres de la résine : il n'est donc pas recyclable comme l'est un métal. La performance est payée en fin de vie.",
+          "options": [
+            {
+              "text": "on ne sait pas séparer ses constituants pour le recycler",
+              "correct": true
+            },
+            {
+              "text": "il est trop lourd"
+            },
+            {
+              "text": "il est trop souple"
+            },
+            {
+              "text": "il rouille"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixMultiple",
+          "prompt": "Quelles questions poser avant de choisir un matériau ?",
+          "explanation": "Le type de sollicitation, l'importance de la masse, le milieu d'usage et la fin de vie. Les quatre, et dans cet ordre.",
+          "options": [
+            {
+              "text": "en traction, compression, flexion ou torsion ?",
+              "correct": true
+            },
+            {
+              "text": "la masse compte-t-elle ?",
+              "correct": true
+            },
+            {
+              "text": "quel milieu d'usage ?",
+              "correct": true
+            },
+            {
+              "text": "quelle fin de vie ?",
+              "correct": true
+            },
+            {
+              "text": "quelle couleur ?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifier",
+      "title": "Justifier un choix",
+      "subtitle": "Par le calcul, pas par l'habitude.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La méthode, pour une pièce donnée",
+          "body": "On écarte d'abord les matériaux qui violent une contrainte impérative : milieu, sécurité, budget.\n\nOn calcule ensuite, pour chaque candidat restant, la grandeur qui correspond vraiment à la sollicitation — la résistance spécifique si la masse compte, la résistance brute sinon.\n\nOn chiffre la masse et le coût de la pièce réelle, pas d'un kilogramme abstrait.\n\nEt on vérifie la fin de vie. Un choix justifié tient en quatre lignes chiffrées."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Un cadre de vélo",
+          "body": "La pièce doit tenir une charge donnée, et la masse compte beaucoup.\n\nAcier : résistance spécifique 51, coût faible, recyclable, réparable par soudure. Cadre d'environ 2,5 kg.\n\nAluminium : 111, coût moyen, recyclable, mal réparable. Cadre d'environ 1,4 kg.\n\nCarbone : supérieur, coût élevé, non recyclable, non réparable. Cadre d'environ 0,9 kg.\n\nAucun ne gagne sur tout. Le choix dépend du cahier des charges, et il se justifie — il ne se devine pas."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "La forme rattrape souvent le matériau",
+          "body": "Un tube d'acier bien dimensionné est plus rigide qu'une barre pleine de même masse, parce que la matière est placée loin de l'axe.\n\nAvant de changer de matériau, il vaut souvent mieux changer la section : c'est gratuit, et le gain peut dépasser celui qu'apporterait un matériau trois fois plus cher.\n\nC'est pourquoi les cadres de vélo sont des tubes et non des barres, depuis toujours."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un cadre acier pèse 2,5 kg, un cadre aluminium 1,4 kg. Combien de grammes gagnés ?",
+          "explanation": "2,5 − 1,4 = 1,1 kg, soit 1 100 grammes.",
+          "answer": 1100,
+          "unit": "g"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage de masse l'aluminium fait-il gagner par rapport à l'acier ? Arrondis à l'entier.",
+          "explanation": "1,1 ÷ 2,5 = 0,44, soit 44 % de masse en moins.",
+          "answer": 44,
+          "tolerance": 1
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Le carbone descend à 0,9 kg. Combien de grammes gagnés sur l'aluminium ?",
+          "explanation": "1,4 − 0,9 = 0,5 kg, soit 500 grammes. Un gain deux fois plus petit que le précédent, pour un coût bien plus élevé.",
+          "answer": 500,
+          "unit": "g"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pour un vélo de ville réparable et bon marché, quel matériau justifier ?",
+          "explanation": "L'acier : il se répare par soudure, se recycle facilement et coûte peu. Les 1,1 kg de plus pèsent peu face à ces avantages pour un usage urbain.",
+          "options": [
+            {
+              "text": "l'acier, réparable et bon marché",
+              "correct": true
+            },
+            {
+              "text": "le carbone, le plus léger"
+            },
+            {
+              "text": "l'aluminium, le compromis"
+            },
+            {
+              "text": "n'importe lequel, c'est équivalent"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un tube est-il plus rigide qu'une barre pleine de même masse ?",
+          "explanation": "Parce que la matière est placée loin de l'axe, là où elle travaille le plus. C'est la même idée que le papier plié : la forme rattrape la matière.",
+          "options": [
+            {
+              "text": "la matière est placée loin de l'axe, où elle travaille",
+              "correct": true
+            },
+            {
+              "text": "l'air à l'intérieur le rigidifie"
+            },
+            {
+              "text": "le tube est plus épais"
+            },
+            {
+              "text": "c'est une illusion, ils sont équivalents"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode de justification dans l'ordre.",
+          "explanation": "On écarte d'abord les impossibles, on calcule la grandeur pertinente, on chiffre masse et coût réels, puis on vérifie la fin de vie.",
+          "items": [
+            "écarter ceux qui violent une contrainte impérative",
+            "calculer la grandeur qui correspond à la sollicitation",
+            "chiffrer la masse et le coût de la pièce réelle",
+            "vérifier la fin de vie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-materiaux",
+      "title": "Défi : la pièce qui casse",
+      "subtitle": "Trouver pourquoi, avec les chiffres.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le support qui a cédé",
+          "body": "Un groupe conçoit un support d'étagère en pin. Il doit tenir 30 kg.\n\nLa pièce a une section de 2 cm sur 1 cm, soit 200 mm², et le pin tient 50 MPa dans le sens des fibres.\n\nUn mégapascal vaut un newton par millimètre carré. La pièce devrait donc tenir 200 × 50 = 10 000 newtons, soit environ une tonne.\n\nElle a cassé à 25 kg. L'écart est tel que la cause ne peut pas être une marge de calcul : il y a une erreur de conception."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "La vraie raison",
+          "body": "Le groupe avait découpé la pièce en travers du fil, pour économiser de la planche.\n\nEn travers, le pin ne tient plus 50 MPa mais environ 6 MPa. La pièce ne pouvait donc tenir que 200 × 6 = 1 200 newtons, soit environ 120 kg — et encore, en traction pure.\n\nLe support travaillait en flexion sur un porte-à-faux, ce qui divise encore largement la charge admissible. Les deux erreurs combinées expliquent la rupture à 25 kg."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Section de 2 cm sur 1 cm. Combien de millimètres carrés ?",
+          "explanation": "20 mm × 10 mm = 200 mm².",
+          "answer": 200
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "200 mm² à 50 MPa, soit 50 newtons par millimètre carré. Quelle force en newtons ?",
+          "explanation": "200 × 50 = 10 000 newtons, soit environ une tonne.",
+          "answer": 10000,
+          "unit": "N"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "En travers du fil, le pin ne tient que 6 MPa. Quelle force alors, en newtons ?",
+          "explanation": "200 × 6 = 1 200 newtons, soit un peu plus de 120 kg : huit fois moins.",
+          "answer": 1200,
+          "unit": "N"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien l'erreur d'orientation a-t-elle divisé la résistance ?",
+          "explanation": "10 000 ÷ 1 200 ≈ 8,3. Une seule décision de découpe, et la pièce perd plus de huit fois sa résistance.",
+          "answer": 8.3,
+          "tolerance": 0.2
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "30 kg à tenir, et la pièce casse à 25. Quel pourcentage de l'objectif atteint-elle ?",
+          "explanation": "25 ÷ 30 ≈ 0,833, soit 83 % de l'objectif : insuffisant, et dangereux.",
+          "answer": 83,
+          "tolerance": 1
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quelle était la cause première de la rupture ?",
+          "explanation": "La découpe en travers du fil, qui a divisé la résistance par plus de huit. La flexion en porte-à-faux a aggravé le cas.",
+          "options": [
+            {
+              "text": "la pièce a été découpée en travers du fil",
+              "correct": true
+            },
+            {
+              "text": "le pin est un mauvais matériau"
+            },
+            {
+              "text": "la section était trop petite"
+            },
+            {
+              "text": "la charge annoncée était fausse"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Que retenir de cet échec ?",
+          "explanation": "Qu'un matériau n'a pas une seule résistance : elle dépend de l'orientation et du type de sollicitation. Un calcul juste sur la mauvaise hypothèse reste faux.",
+          "options": [
+            {
+              "text": "la résistance dépend de l'orientation et de la sollicitation",
+              "correct": true
+            },
+            {
+              "text": "il faut toujours surdimensionner au double"
+            },
+            {
+              "text": "le bois ne convient pas aux étagères"
+            },
+            {
+              "text": "il fallait calculer en kilogrammes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "chapter": "technologie-college-ecoconception-et-cycle-de-vie",
+  "lessons": [
+    {
+      "id": "cinq-phases",
+      "title": "Les cinq phases d'une vie",
+      "subtitle": "Compter autre chose que le prix.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "De la mine à la déchetterie",
+          "body": "L'extraction des matières premières : mine, forêt, puits de pétrole.\n\nLa fabrication : transformation, assemblage, emballage.\n\nLe transport, à chaque étape et jusqu'au magasin.\n\nL'usage : l'énergie, l'eau, les consommables pendant toute la durée de vie.\n\nLa fin de vie : collecte, démontage, recyclage ou enfouissement.\n\nUne analyse de cycle de vie additionne les cinq. Ne regarder que le prix d'achat revient à n'en compter qu'une partie de la deuxième."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "La phase qui domine change selon l'objet",
+          "body": "C'est le point qu'on sous-estime toujours, et il décide de tout.\n\nPour un réfrigérateur ou un lave-linge, l'usage pèse l'essentiel : il consomme pendant dix ou quinze ans. Changer pour un modèle plus sobre est donc rentable, même en fabriquant un objet neuf.\n\nPour un téléphone, c'est l'inverse : environ 80 % de son empreinte vient de sa fabrication. Le garder plus longtemps est ce qui change tout, et le remplacer par un modèle « plus efficace » est presque toujours une perte.\n\nMême geste, conclusions opposées. Il faut savoir où est le poids avant d'agir."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Le piège du geste symbolique",
+          "body": "Un fabricant annonce un emballage en carton recyclé pour un appareil dont l'usage pèse mille fois plus. L'annonce est vraie et sans effet.\n\nÀ l'inverse, améliorer la réparabilité d'un objet dont la fabrication domine vaut bien plus que tout le reste, et ne se voit pas sur l'emballage.\n\nUn chiffre qu'on ne rapporte pas au total ne veut rien dire — et c'est précisément pour cela qu'il est mis en avant."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Les leviers du concepteur",
+          "body": "Réduire la matière, sans perdre la fonction.\n\nChoisir des matériaux recyclables et peu nombreux : un objet fait de trois matériaux séparables se recycle, un objet de quinze matériaux collés non.\n\nRendre démontable : des vis plutôt que de la colle, des pièces standard plutôt que spécifiques.\n\nAllonger la durée de vie : réparabilité, disponibilité des pièces, mises à jour.\n\nRéduire la consommation à l'usage, quand c'est elle qui domine."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les cinq phases du cycle de vie dans l'ordre.",
+          "explanation": "Extraction, fabrication, transport, usage, fin de vie. Une analyse complète additionne les cinq.",
+          "items": [
+            "l'extraction des matières premières",
+            "la fabrication",
+            "le transport",
+            "l'usage",
+            "la fin de vie"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Pour ces objets, quelle phase pèse le plus ?",
+          "explanation": "Un appareil qui consomme pendant quinze ans est dominé par son usage ; un téléphone ou un vêtement, par sa fabrication.",
+          "categories": ["l'usage domine", "la fabrication domine"],
+          "items": [
+            { "text": "un réfrigérateur", "category": 0 },
+            { "text": "un lave-linge", "category": 0 },
+            { "text": "un radiateur électrique", "category": 0 },
+            { "text": "un téléphone", "category": 1 },
+            { "text": "un tee-shirt", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pour un téléphone, quel geste a le plus d'effet ?",
+          "explanation": "Le garder plus longtemps : environ 80 % de son empreinte vient de sa fabrication. Le remplacer par un modèle plus efficace est presque toujours une perte.",
+          "options": [
+            { "text": "le garder plus longtemps", "correct": true },
+            { "text": "le remplacer par un modèle plus efficace" },
+            { "text": "baisser la luminosité de l'écran" },
+            { "text": "le charger la nuit" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pour un réfrigérateur de quinze ans d'âge, quel geste a le plus d'effet ?",
+          "explanation": "Le remplacer par un modèle sobre : ici l'usage domine, et quinze ans de consommation dépassent le coût de fabrication du neuf.",
+          "options": [
+            { "text": "le remplacer par un modèle beaucoup plus sobre", "correct": true },
+            { "text": "le garder encore quinze ans" },
+            { "text": "le dégivrer plus souvent uniquement" },
+            { "text": "changer son emballage d'origine" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixMultiple",
+          "prompt": "Quels leviers a le concepteur ?",
+          "explanation": "Réduire la matière, limiter le nombre de matériaux et les rendre séparables, rendre démontable, allonger la durée de vie, et réduire la consommation quand elle domine.",
+          "options": [
+            { "text": "réduire la matière sans perdre la fonction", "correct": true },
+            { "text": "limiter le nombre de matériaux et les rendre séparables", "correct": true },
+            { "text": "rendre l'objet démontable", "correct": true },
+            { "text": "allonger la durée de vie", "correct": true },
+            { "text": "augmenter la taille de l'emballage" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "durer",
+      "title": "Faire durer",
+      "subtitle": "Diviser par deux sans rien fabriquer.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "L'empreinte annuelle",
+          "formula": "empreinte annuelle = empreinte totale ÷ durée de vie",
+          "body": "Doubler la durée de vie divise l'empreinte annuelle par deux, sans rien changer à l'objet. C'est le seul levier qui ne coûte rien à personne."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le calcul pour un téléphone",
+          "body": "Un téléphone représente environ 60 kg de CO₂ sur toute sa vie, dont à peu près 50 pour sa seule fabrication.\n\nGardé deux ans : 30 kg par an.\n\nGardé quatre ans : 15 kg par an.\n\nGardé six ans : 10 kg par an.\n\nAucune amélioration technique du modèle ne produit un effet comparable. Et l'objet gardé est exactement le même."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Ce qui empêche de faire durer",
+          "body": "Des pièces collées plutôt que vissées, qui cassent au démontage.\n\nDes pièces de rechange indisponibles, ou plus chères que l'objet neuf.\n\nDes mises à jour logicielles arrêtées, qui rendent un matériel sain inutilisable.\n\nDes vis non standard, qui demandent un outil spécifique.\n\nAucun de ces obstacles n'est une nécessité technique : ce sont des décisions de conception, et l'indice de réparabilité français existe pour les rendre visibles à l'achat."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Réparer, réemployer, puis recycler",
+          "body": "Réparer garde l'objet entier : c'est le meilleur.\n\nRéemployer le donne à quelqu'un d'autre : l'objet continue sa vie.\n\nRecycler récupère la matière, en perd une partie, et consomme de l'énergie.\n\nL'ordre compte, et le recyclage arrive bon dernier des trois. Il est souvent présenté comme la solution, alors qu'il est le dernier recours avant la perte complète."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un téléphone de 60 kg de CO₂ gardé 2 ans. Combien de kilogrammes par an ?",
+          "explanation": "60 ÷ 2 = 30 kg par an.",
+          "answer": 30
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le même téléphone gardé 4 ans. Combien par an ?",
+          "explanation": "60 ÷ 4 = 15 kg par an : l'empreinte annuelle est divisée par deux sans rien changer à l'objet.",
+          "answer": 15
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Gardé 6 ans. Combien par an ?",
+          "explanation": "60 ÷ 6 = 10 kg par an.",
+          "answer": 10
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Sur 60 kg, 50 viennent de la fabrication. Quel pourcentage, arrondi à l'entier ?",
+          "explanation": "50 ÷ 60 ≈ 0,83, soit environ 83 % : la fabrication domine très largement.",
+          "answer": 83,
+          "tolerance": 1
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces trois gestes du meilleur au moins bon.",
+          "explanation": "Réparer garde l'objet entier, réemployer le fait continuer chez quelqu'un d'autre, recycler ne récupère que la matière et coûte de l'énergie.",
+          "items": ["réparer", "réemployer", "recycler"]
+        },
+        {
+          "id": "q6",
+          "kind": "choixMultiple",
+          "prompt": "Qu'est-ce qui empêche de faire durer un objet ?",
+          "explanation": "Le collage, l'indisponibilité ou le prix des pièces, l'arrêt des mises à jour et les vis non standard. Aucun n'est une nécessité technique.",
+          "options": [
+            { "text": "des pièces collées au lieu d'être vissées", "correct": true },
+            { "text": "des pièces de rechange indisponibles", "correct": true },
+            { "text": "des mises à jour logicielles arrêtées", "correct": true },
+            { "text": "des vis non standard", "correct": true },
+            { "text": "une notice en plusieurs langues" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparer-objets",
+      "title": "Comparer deux objets",
+      "subtitle": "Où est le point de bascule.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le calcul qui tranche",
+          "body": "Un vieux réfrigérateur consomme 500 kWh par an. Un modèle neuf en consomme 150, et sa fabrication a coûté l'équivalent de 400 kWh.\n\nL'économie annuelle est de 350 kWh. La dette de fabrication est de 400 kWh.\n\nElle est donc remboursée en 400 ÷ 350 ≈ 1,1 an. Au-delà, chaque année est un gain net.\n\nC'est ce calcul, et lui seul, qui dit s'il faut remplacer. Ni l'intuition, ni la publicité, ni l'âge de l'appareil."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le même calcul pour un téléphone",
+          "body": "Un téléphone neuf coûte 50 kg de CO₂ à fabriquer, et consomme environ 2 kg par an à l'usage.\n\nLe modèle neuf consomme disons 1,5 kg : l'économie annuelle est de 0,5 kg.\n\nLa dette de 50 kg se rembourse alors en 100 ans.\n\nMême méthode, réponse opposée. C'est pourquoi la question « faut-il remplacer ? » n'a pas de réponse générale, seulement un calcul."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le signe qui prévient",
+          "body": "Si la consommation à l'usage est petite devant le coût de fabrication, remplacer est presque toujours une perte.\n\nSi elle est grande devant lui, remplacer par un modèle nettement plus sobre est presque toujours un gain.\n\nIl suffit donc de comparer un seul coût de fabrication à une seule année d'usage pour savoir dans quel régime on se trouve, avant tout calcul détaillé."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Vieux frigo 500 kWh par an, neuf 150. Quelle économie annuelle en kilowattheures ?",
+          "explanation": "500 − 150 = 350 kWh par an.",
+          "answer": 350
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La fabrication du neuf coûte 400 kWh. En combien d'années est-elle remboursée ? Arrondis au dixième.",
+          "explanation": "400 ÷ 350 ≈ 1,1 an. Au-delà, chaque année est un gain net.",
+          "answer": 1.1,
+          "tolerance": 0.1,
+          "unit": "ans"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Sur 10 ans, quel gain net en kilowattheures ?",
+          "hint": "Dix ans d'économie, moins la dette.",
+          "explanation": "350 × 10 = 3 500 kWh économisés, moins les 400 de fabrication : 3 100 kWh de gain net.",
+          "answer": 3100,
+          "unit": "kWh"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Téléphone : fabrication 50 kg, économie annuelle à l'usage 0,5 kg. En combien d'années la dette est-elle remboursée ?",
+          "explanation": "50 ÷ 0,5 = 100 ans. Autrement dit : jamais, à l'échelle d'un téléphone.",
+          "answer": 100,
+          "unit": "ans"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la même méthode donne-t-elle des conclusions opposées ?",
+          "explanation": "Parce que le rapport entre coût de fabrication et consommation annuelle n'est pas du même ordre : petit pour le frigo, énorme pour le téléphone.",
+          "options": [
+            { "text": "le rapport fabrication / usage annuel n'est pas du même ordre", "correct": true },
+            { "text": "parce que les unités diffèrent" },
+            { "text": "parce que le téléphone est plus petit" },
+            { "text": "parce que le calcul est faux dans un des cas" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quel test rapide dit dans quel régime on se trouve ?",
+          "explanation": "Comparer le coût de fabrication à une seule année d'usage. Si une année d'usage est petite devant la fabrication, remplacer est une perte.",
+          "options": [
+            { "text": "comparer la fabrication à une année d'usage", "correct": true },
+            { "text": "regarder l'âge de l'appareil" },
+            { "text": "comparer les prix d'achat" },
+            { "text": "regarder l'étiquette énergie seule" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-eco",
+      "title": "Défi : le tee-shirt et le jean",
+      "subtitle": "Compter l'eau et les kilomètres.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce que coûte un vêtement",
+          "body": "Produire un tee-shirt en coton demande environ 2 500 litres d'eau, l'essentiel pour la culture du coton. Un jean en demande environ 8 000.\n\nUn Français achète en moyenne une dizaine de vêtements neufs par an, et en porte beaucoup moins.\n\nPour un vêtement, la fabrication domine presque toujours : le lavage pèse réellement, mais beaucoup moins que la production du tissu. Le geste efficace est donc d'en acheter moins et de les garder, pas de laver autrement."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un jean demande 8 000 L, un tee-shirt 2 500 L. Par combien le jean est-il plus coûteux en eau ? Arrondis au dixième.",
+          "explanation": "8 000 ÷ 2 500 = 3,2 fois.",
+          "answer": 3.2,
+          "tolerance": 0.05
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dix tee-shirts par an. Combien de litres d'eau ?",
+          "explanation": "10 × 2 500 = 25 000 litres, soit 25 mètres cubes.",
+          "answer": 25000,
+          "unit": "L"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de douches de 60 L cela représente-t-il ?",
+          "explanation": "25 000 ÷ 60 ≈ 417 douches, soit plus d'une par jour pendant un an.",
+          "answer": 417,
+          "tolerance": 5
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un tee-shirt porté 30 fois : combien de litres d'eau par port ?",
+          "explanation": "2 500 ÷ 30 ≈ 83 litres par port.",
+          "answer": 83,
+          "tolerance": 2,
+          "unit": "L"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Le même tee-shirt porté 100 fois : combien de litres par port ?",
+          "explanation": "2 500 ÷ 100 = 25 litres par port, soit trois fois moins. Porter davantage le même vêtement est le seul levier qui divise ce chiffre.",
+          "answer": 25,
+          "unit": "L"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pour un vêtement, quel geste pèse le plus ?",
+          "explanation": "En acheter moins et les garder plus longtemps. La fabrication du tissu domine très largement les lavages.",
+          "options": [
+            { "text": "en acheter moins et les porter plus longtemps", "correct": true },
+            { "text": "laver à froid" },
+            { "text": "sécher à l'air libre" },
+            { "text": "les repasser moins" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Laver à froid est le geste le plus efficace pour réduire l'empreinte d'un vêtement.",
+          "explanation": "Faux. C'est un geste utile, et très loin derrière la décision d'acheter ce vêtement : sa fabrication coûte bien plus que tous ses lavages réunis.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
