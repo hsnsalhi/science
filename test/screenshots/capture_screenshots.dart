@@ -845,6 +845,22 @@ void main() {
         await shoot(tester, '$device-36-projectile');
       });
 
+      // L'octet, avec ses poids écrits au-dessus de chaque bit : le
+      // nombre se lit par addition, ce qu'une division successive ne
+      // montre jamais.
+      testWidgets('lycée : le binaire', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Informatique');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'La représentation des données');
+        await tapText(tester, 'Compter en binaire');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-37-binaire');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

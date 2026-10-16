@@ -1,0 +1,352 @@
+{
+  "chapter": "informatique-lycee-representation-des-donnees",
+  "lessons": [
+    {
+      "id": "pourquoi-deux-etats",
+      "title": "Pourquoi deux états",
+      "subtitle": "Ce qu'une machine sait distinguer.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une contrainte physique, pas un choix esthétique",
+          "body": "Un composant électronique distingue facilement deux états : courant ou pas de courant, aimantation dans un sens ou dans l'autre.\n\nDistinguer dix niveaux de tension serait possible mais fragile : le moindre parasite ferait confondre un 6 et un 7. Deux états tolèrent le bruit."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Bit et octet",
+          "body": "Un bit est une information à deux valeurs, notées 0 et 1.\n\nHuit bits forment un octet. Avec n bits, on distingue 2ⁿ valeurs différentes : 2 avec un bit, 4 avec deux, et 256 avec huit."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Un octet",
+          "body": "Huit bits, et le nombre qu'ils écrivent. Essaie « tout allumer ».",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Tout est codé en binaire : nombres, textes, images, sons. Ce qui change d'un type à l'autre, ce n'est pas le codage mais la convention qui dit comment relire les bits."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Deux états sont plus sûrs que dix.",
+            "n bits distinguent 2ⁿ valeurs.",
+            "Un octet vaut 8 bits, soit 256 valeurs."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de valeurs différentes un octet peut-il représenter ?",
+          "answer": 256,
+          "tolerance": 0.01,
+          "unit": "valeurs",
+          "hint": "2 puissance 8.",
+          "explanation": "256, soit 2⁸. Les valeurs vont de 0 à 255, ce qui fait bien 256 possibilités.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la plus grande valeur qu'un octet puisse écrire ?",
+          "answer": 255,
+          "tolerance": 0.01,
+          "hint": "Tous les bits allumés.",
+          "explanation": "255 : tous les bits allumés, soit 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1. Il y a 256 valeurs, mais la première est 0.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de valeurs différentes peut-on écrire avec 10 bits ?",
+          "answer": 1024,
+          "tolerance": 0.01,
+          "unit": "valeurs",
+          "hint": "2 puissance 10.",
+          "explanation": "1 024, soit 2¹⁰. C'est aussi pourquoi un kibioctet vaut 1 024 octets et non 1 000."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les ordinateurs n'utilisent-ils pas dix états par composant ?",
+          "hint": "Que se passe-t-il en présence de parasites ?",
+          "explanation": "Parce que dix niveaux se confondraient au moindre parasite. Deux états bien séparés résistent au bruit, et c'est ce qui rend le calcul fiable.",
+          "options": [
+            { "text": "Dix niveaux se confondraient au moindre parasite", "correct": true },
+            { "text": "Ce serait trop lent" },
+            { "text": "Les mathématiques l'interdisent" },
+            { "text": "Personne n'y a pensé" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compter-en-binaire",
+      "title": "Compter en binaire",
+      "subtitle": "Chaque bit porte son poids.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Écriture positionnelle",
+          "formula": "b₇×128 + b₆×64 + b₅×32 + b₄×16 + b₃×8 + b₂×4 + b₁×2 + b₀×1",
+          "body": "chaque bit vaut deux fois le précédent."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Lis le nombre",
+          "body": "Les poids sont écrits au-dessus des bits : allumer un bit ajoute son poids.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Du décimal au binaire",
+          "body": "Pour écrire 77, on prend les poids du plus grand au plus petit.\n\n128 ? trop grand. 64 ? oui, reste 13. 32 ? non. 16 ? non. 8 ? oui, reste 5. 4 ? oui, reste 1. 2 ? non. 1 ? oui.\n\n77 s'écrit 0100 1101."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "L'hexadécimal, pour abréger",
+          "body": "Un chiffre hexadécimal vaut exactement quatre bits : de 0 à 9 puis A à F.\n\n0100 1101 se lit 4 puis D, soit 4D. C'est la même information, écrite deux fois plus court — raison pour laquelle on l'emploie pour les couleurs et les adresses mémoire."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Chaque bit vaut le double du précédent.",
+            "On convertit en soustrayant les poids du plus grand au plus petit.",
+            "Un chiffre hexadécimal remplace quatre bits."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut 0100 1101 en décimal ?",
+          "answer": 77,
+          "tolerance": 0.01,
+          "hint": "64 + 8 + 4 + 1.",
+          "explanation": "77 : les bits allumés valent 64, 8, 4 et 1, et leur somme fait 77.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut 1100 1000 en décimal ?",
+          "answer": 200,
+          "tolerance": 0.01,
+          "hint": "128 + 64 + 8.",
+          "explanation": "200. Les trois bits allumés valent 128, 64 et 8.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de bits un seul chiffre hexadécimal remplace-t-il ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "bits",
+          "hint": "16 valeurs possibles.",
+          "explanation": "4 bits, car 2⁴ = 16, soit exactement le nombre de chiffres hexadécimaux de 0 à F.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces écritures binaires selon la valeur qu'elles représentent.",
+          "hint": "Additionne les poids des bits allumés.",
+          "explanation": "0000 1010 et 0000 1010 valent 10 ; 0001 0000 vaut 16 et 0000 1111 vaut 15. Il suffit d'additionner les poids allumés.",
+          "categories": ["Vaut moins de 16", "Vaut 16 ou plus"],
+          "items": [
+            { "text": "0000 1010", "category": 0 },
+            { "text": "0000 1111", "category": 0 },
+            { "text": "0001 0000", "category": 1 },
+            { "text": "0010 0000", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "textes-et-images",
+      "title": "Textes, images, tailles",
+      "subtitle": "Les mêmes bits, d'autres conventions.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Coder un texte",
+          "body": "Une table associe à chaque caractère un nombre. Dans la table ASCII, « A » vaut 65, « B » 66, et ainsi de suite.\n\nASCII n'utilise que 7 bits et ne couvre que 128 caractères : ni accents, ni alphabets non latins. Unicode les a tous, et UTF-8 les code sur un à quatre octets."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Coder une image",
+          "body": "Une image est une grille de pixels. Chaque pixel porte trois octets : un pour le rouge, un pour le vert, un pour le bleu.\n\nChaque composante va de 0 à 255, ce qui fait 256³ couleurs, soit 16 777 216 — le fameux « 16 millions de couleurs »."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Une composante de couleur",
+          "body": "Les huit bits d'une composante : 255 donne le rouge le plus vif, 0 l'absence de rouge.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une couleur hexadécimale comme #FF8000 n'a rien de mystérieux : FF, 80 et 00 sont les trois octets, soit 255 de rouge, 128 de vert et 0 de bleu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans la table ASCII, « A » vaut 65. Combien vaut « C » ?",
+          "answer": 67,
+          "tolerance": 0.01,
+          "hint": "Les lettres se suivent.",
+          "explanation": "67 : les lettres majuscules se suivent dans l'ordre, donc C vaut A plus deux."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de couleurs différentes peut-on coder avec trois octets ?",
+          "answer": 16777216,
+          "tolerance": 1,
+          "unit": "couleurs",
+          "hint": "256 × 256 × 256.",
+          "explanation": "16 777 216, soit 256³. C'est ce que l'on appelle le « vrai » codage des couleurs.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q3",
+          "kind": "estimation",
+          "prompt": "Quelle taille occupe, en millions d'octets, une image de 1 920 × 1 080 pixels non compressée en trois octets par pixel ?",
+          "min": 0.5,
+          "max": 100,
+          "answer": 6.2,
+          "tolerance": 1.5,
+          "unit": "millions d'octets",
+          "logarithmic": true,
+          "explanation": "Environ 6,2 millions d'octets : 1 920 × 1 080 × 3. C'est pourquoi les formats compressés existent — le même cliché tient en quelques centaines de milliers d'octets en JPEG."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que vaut la composante rouge de la couleur #FF8000 ?",
+          "hint": "FF en hexadécimal.",
+          "explanation": "255. FF vaut 15 × 16 + 15 = 255, c'est-à-dire tous les bits de l'octet allumés.",
+          "figureId": "binaire",
+          "options": [
+            { "text": "255", "correct": true },
+            { "text": "128" },
+            { "text": "0" },
+            { "text": "160" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-representation",
+      "title": "Défi : représenter les données",
+      "subtitle": "Six questions, bit à bit.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à additionner les poids des bits allumés."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut 0000 1111 en décimal ?",
+          "answer": 15,
+          "tolerance": 0.01,
+          "hint": "8 + 4 + 2 + 1.",
+          "explanation": "15. Les quatre bits de poids faible allumés donnent toujours 15, et un chiffre hexadécimal F.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de bits faut-il au minimum pour écrire le nombre 100 ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "unit": "bits",
+          "hint": "2⁶ = 64, 2⁷ = 128.",
+          "explanation": "7 bits : six bits ne vont que jusqu'à 63, sept vont jusqu'à 127.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces affirmations.",
+          "explanation": "Un octet vaut huit bits et code 256 valeurs : c'est exact. En revanche un octet ne va pas jusqu'à 256, et un chiffre hexadécimal vaut quatre bits, pas huit.",
+          "categories": ["Vrai", "Faux"],
+          "items": [
+            { "text": "Un octet contient 8 bits", "category": 0 },
+            { "text": "Un octet code 256 valeurs différentes", "category": 0 },
+            { "text": "Un octet peut écrire le nombre 256", "category": 1 },
+            { "text": "Un chiffre hexadécimal vaut 8 bits", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une image carrée de 100 pixels de côté est codée en trois octets par pixel. Combien d'octets occupe-t-elle ?",
+          "answer": 30000,
+          "tolerance": 1,
+          "unit": "octets",
+          "hint": "100 × 100 × 3.",
+          "explanation": "30 000 octets. Doubler le côté quadruplerait cette taille, puisque le nombre de pixels suit le carré."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Une image et un texte sont codés avec des bits différents.",
+          "answer": false,
+          "explanation": "Non : ce sont les mêmes bits. Seule change la convention qui dit comment les relire — c'est pourquoi ouvrir une image dans un éditeur de texte affiche des caractères absurdes."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ASCII ne suffit-il pas pour le français ?",
+          "hint": "Combien de caractères couvre-t-il ?",
+          "explanation": "Parce qu'il ne couvre que 128 caractères, sans accents. Unicode les a ajoutés, et UTF-8 les code sur un à quatre octets.",
+          "options": [
+            { "text": "Il ne contient pas les lettres accentuées", "correct": true },
+            { "text": "Il est trop lent" },
+            { "text": "Il ne contient pas les chiffres" },
+            { "text": "Il est réservé aux images" }
+          ]
+        }
+      ]
+    }
+  ]
+}

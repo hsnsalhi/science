@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'array_figure.dart';
+import 'binary_figure.dart';
 import 'cell_figure.dart';
 import 'circuit_figure.dart';
 import 'complexity_figure.dart';
@@ -108,6 +109,9 @@ abstract final class FigureRegistry {
     // Un projectile lancé, dont on règle l'angle et la vitesse.
     'projectile': (BuildContext context, Color accent) =>
         ProjectileFigure(accent: accent),
+    // Huit bits qu'on bascule, et le nombre qu'ils écrivent.
+    'binaire': (BuildContext context, Color accent) =>
+        BinaryFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

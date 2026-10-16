@@ -5,6 +5,7 @@ import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/array_figure.dart';
+import 'package:eureka/design_system/figures/binary_figure.dart';
 import 'package:eureka/design_system/figures/cell_figure.dart';
 import 'package:eureka/design_system/figures/circuit_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
@@ -3482,6 +3483,111 @@ void main() {
           reason: 'v = $v',
         );
       }
+    });
+  });
+
+  group('Chapitre complet : représentation des données', () {
+    late Chapter donnees;
+
+    setUpAll(() {
+      donnees = catalog.chapterById(
+        'informatique-lycee-representation-des-donnees',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = donnees.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Lit « 0100 1101 » et rend les huit bits.
+    List<bool> lireBits(String ecriture) => ecriture
+        .replaceAll(' ', '')
+        .split('')
+        .map((String c) => c == '1')
+        .toList();
+
+    test('est jouable de bout en bout', () {
+      expect(donnees.isPlayable, isTrue);
+      expect(donnees.lessons.length, 4);
+    });
+
+    test('les capacités annoncées sont des puissances de deux', () {
+      expect(1 << BinaryFigure.bits, reponseNum('pourquoi-deux-etats', 'q1'));
+      expect(BinaryFigure.maximum, reponseNum('pourquoi-deux-etats', 'q2'));
+      expect(1 << 10, reponseNum('pourquoi-deux-etats', 'q3'));
+      // Le maximum est bien le nombre de valeurs moins une : c'est le
+      // piège que la leçon signale.
+      expect(
+        reponseNum('pourquoi-deux-etats', 'q2'),
+        reponseNum('pourquoi-deux-etats', 'q1') - 1,
+      );
+    });
+
+    test('les écritures binaires citées valent ce qui est annoncé', () {
+      expect(
+        BinaryFigure.valeur(lireBits('0100 1101')),
+        reponseNum('compter-en-binaire', 'q1'),
+      );
+      expect(
+        BinaryFigure.valeur(lireBits('1100 1000')),
+        reponseNum('compter-en-binaire', 'q2'),
+      );
+      expect(
+        BinaryFigure.valeur(lireBits('0000 1111')),
+        reponseNum('defi-representation', 'q1'),
+      );
+      // Et la conversion fait l'aller-retour.
+      for (final int n in <int>[0, 1, 77, 128, 200, 255]) {
+        expect(BinaryFigure.valeur(BinaryFigure.ecriture(n)), n);
+      }
+    });
+
+    test('l’hexadécimal annoncé par la figure est le bon', () {
+      expect(BinaryFigure.hexadecimal(77), '4D');
+      expect(BinaryFigure.hexadecimal(255), 'FF');
+      expect(BinaryFigure.hexadecimal(128), '80');
+      expect(BinaryFigure.hexadecimal(0), '00');
+      // Un chiffre hexadécimal vaut quatre bits : la question le dit, et
+      // il faut que 2⁴ égale bien le nombre de chiffres de 0 à F.
+      final int bitsParChiffre =
+          reponseNum('compter-en-binaire', 'q3').round();
+      expect(1 << bitsParChiffre, 16);
+    });
+
+    test('le tri des écritures binaires suit leur valeur', () {
+      final ClassifyQuestion q =
+          donnees.lessonById('compter-en-binaire')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int valeur = BinaryFigure.valeur(lireBits(item.text));
+        expect(item.category == 0, valeur < 16, reason: '${item.text} = $valeur');
+      }
+    });
+
+    test('les tailles de données annoncées sont recalculées', () {
+      // Couleurs codables sur trois octets.
+      const int parComposante = 1 << BinaryFigure.bits;
+      expect(
+        parComposante * parComposante * parComposante,
+        reponseNum('textes-et-images', 'q2'),
+      );
+      // Images : pixels × trois octets.
+      expect(
+        1920 * 1080 * 3 / 1e6,
+        closeTo(reponseNum('textes-et-images', 'q3'), 0.1),
+      );
+      expect(100 * 100 * 3, reponseNum('defi-representation', 'q4'));
+      // Le minimum de bits pour écrire 100.
+      final int bits = reponseNum('defi-representation', 'q2').round();
+      expect((1 << bits) - 1, greaterThanOrEqualTo(100));
+      expect((1 << (bits - 1)) - 1, lessThan(100));
     });
   });
 }
