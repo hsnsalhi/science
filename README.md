@@ -27,7 +27,7 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 
-Les trente-quatre chapitres rédigés couvrent les huit matières et les quatre
+Les trente-trois chapitres rédigés couvrent les huit matières et les quatre
 niveaux : un élève de CM1 comme un étudiant de licence trouve de quoi jouer.
 Les autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
 afin que l'élève voie tout de suite l'étendue du programme. Écrire un nouveau
