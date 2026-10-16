@@ -17,6 +17,7 @@ import 'decimals_figure.dart';
 import 'derivative_figure.dart';
 import 'distributivity_figure.dart';
 import 'dna_figure.dart';
+import 'eclipse_figure.dart';
 import 'energy_chain_figure.dart';
 import 'entropy_figure.dart';
 import 'eratosthene_figure.dart';
@@ -79,6 +80,9 @@ abstract final class FigureRegistry {
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),
+    // Soleil, Terre, Lune : l'alignement qu'une éclipse exige.
+    'eclipses': (BuildContext context, Color accent) =>
+        EclipseFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
