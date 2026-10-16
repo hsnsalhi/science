@@ -47,6 +47,7 @@ import 'solar_system_figure.dart';
 import 'speed_figure.dart';
 import 'stack_queue_figure.dart';
 import 'states_figure.dart';
+import 'supply_figure.dart';
 import 'thales_figure.dart';
 import 'truth_table_figure.dart';
 import 'triangle_angles_figure.dart';
@@ -87,6 +88,9 @@ abstract final class FigureRegistry {
     // Une pile et une file nourries des mêmes éléments, côte à côte.
     'pile-file': (BuildContext context, Color accent) =>
         StackQueueFigure(accent: accent),
+    // Le trajet du dioxygène et du glucose jusqu'à une cellule.
+    'approvisionnement': (BuildContext context, Color accent) =>
+        SupplyFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),

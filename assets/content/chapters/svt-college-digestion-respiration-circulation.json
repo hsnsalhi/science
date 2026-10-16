@@ -1,0 +1,373 @@
+{
+  "chapter": "svt-college-digestion-respiration-circulation",
+  "lessons": [
+    {
+      "id": "le-probleme-a-resoudre",
+      "title": "Le problème du corps",
+      "subtitle": "Des milliards de cellules à nourrir.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Chaque cellule a faim",
+          "body": "Une cellule a besoin de deux choses en permanence : du glucose, pour l'énergie, et du dioxygène, pour le libérer. Elle produit deux déchets : du dioxyde de carbone et de l'eau.\n\nLe corps compte des dizaines de milliers de milliards de cellules. Aucune ne touche directement l'air ni la nourriture. Il faut donc un service de livraison."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Trois appareils, un seul circuit",
+          "body": "Suis le glucose et le dioxygène depuis leur entrée jusqu'à une cellule.",
+          "figureId": "approvisionnement"
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "La respiration cellulaire",
+          "formula": "glucose + dioxygène donne dioxyde de carbone + eau + énergie",
+          "body": "C'est la réaction qui fait vivre chaque cellule. Tout le reste du chapitre n'est que logistique autour d'elle."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "La division du travail",
+          "body": "Appareil digestif : fait entrer le glucose, en découpant les aliments.\n\nAppareil respiratoire : fait entrer le dioxygène et sort le dioxyde de carbone.\n\nAppareil circulatoire : transporte les deux jusqu'aux cellules, et rapporte les déchets.\n\nLes deux premiers sont des portes. Le troisième est la route."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Ce découpage explique pourquoi on peut survivre des semaines sans manger, des jours sans boire, mais seulement quelques minutes sans respirer. Le corps stocke du glucose ; il ne stocke presque pas de dioxygène."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixMultiple",
+          "prompt": "De quoi une cellule a-t-elle besoin pour produire son énergie ?",
+          "explanation": "Du glucose et du dioxygène. Le dioxyde de carbone et l'eau sont les déchets, pas les ingrédients.",
+          "options": [
+            { "text": "du glucose", "correct": true },
+            { "text": "du dioxygène", "correct": true },
+            { "text": "du dioxyde de carbone" },
+            { "text": "de l'azote" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque appareil à son rôle.",
+          "explanation": "Le digestif et le respiratoire font entrer, le circulatoire transporte.",
+          "pairs": [
+            { "left": "appareil digestif", "right": "fait entrer le glucose" },
+            { "left": "appareil respiratoire", "right": "fait entrer le dioxygène" },
+            { "left": "appareil circulatoire", "right": "transporte jusqu'aux cellules" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi survit-on des semaines sans manger mais quelques minutes sans respirer ?",
+          "explanation": "Le corps stocke du glucose, sous forme de glycogène et de graisses, mais il ne stocke presque pas de dioxygène.",
+          "options": [
+            { "text": "le corps stocke du glucose, mais pas le dioxygène", "correct": true },
+            { "text": "le dioxygène est plus rare que la nourriture" },
+            { "text": "la digestion est plus rapide que la respiration" },
+            { "text": "les cellules peuvent se passer de glucose" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "L'eau et le dioxyde de carbone sont des produits de la respiration cellulaire.",
+          "explanation": "Vrai. Ce sont les deux déchets de la réaction, avec l'énergie libérée. C'est pour cela qu'on expire de l'air humide et chargé en dioxyde de carbone.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "digestion",
+      "title": "La digestion",
+      "subtitle": "Découper jusqu'à ce que ça passe.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trop gros pour passer",
+          "body": "Un morceau de pain ne peut pas entrer dans le sang : ses molécules sont bien trop grandes. L'amidon du pain est une chaîne de centaines de glucoses accrochés.\n\nDigérer, c'est défaire la chaîne. Le but n'est pas de faire disparaître l'aliment : c'est de le réduire à des molécules assez petites pour traverser une paroi."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Deux actions, pas une",
+          "body": "Action mécanique : les dents broient, l'estomac brasse. Cela augmente la surface sur laquelle les enzymes peuvent agir.\n\nAction chimique : les enzymes des sucs digestifs coupent les grandes molécules. C'est elle qui fait le travail décisif ; la mécanique ne fait que l'aider."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Le trajet",
+          "formula": "bouche, œsophage, estomac, intestin grêle, gros intestin",
+          "body": "Environ neuf mètres en tout, et de 24 à 48 heures de voyage."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "L'intestin grêle, l'organe clé",
+          "body": "C'est là que presque tout est absorbé. Sa paroi porte des millions de replis minuscules — les villosités — qui multiplient la surface d'échange.\n\nDéplié, cet intestin couvrirait plusieurs dizaines de mètres carrés. Un tuyau lisse de la même longueur n'en offrirait qu'un demi. La surface est tout le secret."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "L'estomac ne digère pas tout",
+          "body": "On imagine souvent l'estomac comme le lieu de la digestion. Il n'en fait qu'une partie — surtout les protéines — et il n'absorbe presque rien.\n\nL'absorption se passe dans l'intestin grêle, pas dans l'estomac. Confondre les deux, c'est manquer le rôle de la surface."
+        },
+        {
+          "id": "c6",
+          "kind": "exemple",
+          "title": "Les enzymes sont spécialisées",
+          "body": "L'amylase coupe l'amidon. Les protéases coupent les protéines. Les lipases coupent les graisses.\n\nChaque enzyme ne reconnaît qu'une sorte de liaison. C'est pour cela qu'il en faut plusieurs, et qu'une seule ne suffirait pas."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "À quoi sert la digestion ?",
+          "explanation": "À réduire les grandes molécules des aliments en molécules assez petites pour traverser la paroi intestinale.",
+          "options": [
+            { "text": "réduire les aliments en molécules assez petites pour passer dans le sang", "correct": true },
+            { "text": "faire disparaître les aliments" },
+            { "text": "réchauffer les aliments" },
+            { "text": "produire directement de l'énergie" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les organes du tube digestif dans l'ordre du trajet.",
+          "explanation": "Bouche, œsophage, estomac, intestin grêle, gros intestin : environ neuf mètres.",
+          "items": [
+            "bouche",
+            "œsophage",
+            "estomac",
+            "intestin grêle",
+            "gros intestin"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans quel organe se fait l'essentiel de l'absorption ?",
+          "hint": "Celui dont la paroi est couverte de replis.",
+          "explanation": "L'intestin grêle. Ses villosités multiplient la surface d'échange ; l'estomac, lui, n'absorbe presque rien.",
+          "options": [
+            { "text": "l'intestin grêle", "correct": true },
+            { "text": "l'estomac" },
+            { "text": "le gros intestin" },
+            { "text": "l'œsophage" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque enzyme à ce qu'elle coupe.",
+          "explanation": "Chaque enzyme ne reconnaît qu'une sorte de liaison : c'est pourquoi il en faut plusieurs.",
+          "pairs": [
+            { "left": "amylase", "right": "l'amidon" },
+            { "left": "protéase", "right": "les protéines" },
+            { "left": "lipase", "right": "les graisses" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Mâcher longuement ne sert à rien puisque les enzymes font tout le travail.",
+          "explanation": "Faux. Mâcher augmente la surface sur laquelle les enzymes peuvent agir : la même quantité d'enzymes travaille alors beaucoup plus vite.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "respiration-et-circulation",
+      "title": "Respirer et transporter",
+      "subtitle": "Toujours la même astuce : la surface.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les alvéoles",
+          "body": "L'air descend par la trachée, puis par des bronches qui se divisent une vingtaine de fois, jusqu'à des sacs minuscules : les alvéoles.\n\nIl y en a environ 300 millions. Mises à plat, elles couvriraient environ 70 mètres carrés — la moitié d'un court de tennis, dans le volume de deux poumons.\n\nC'est la même astuce que les villosités intestinales : quand il faut échanger beaucoup, il faut de la surface."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le double circuit",
+          "formula": "cœur, poumons, cœur, organes, cœur",
+          "body": "Le sang passe par le cœur deux fois à chaque tour complet : une fois pour aller se charger en dioxygène, une fois pour le distribuer."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Les trois sortes de vaisseaux",
+          "body": "Artères : partent du cœur, paroi épaisse et élastique pour encaisser la pression.\n\nCapillaires : si fins qu'une seule cellule y passe à la fois. C'est là, et seulement là, que les échanges se font.\n\nVeines : reviennent au cœur, paroi mince, avec des valvules pour empêcher le sang de redescendre."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Artère ne veut pas dire sang riche en dioxygène",
+          "body": "La définition d'une artère est qu'elle part du cœur, pas qu'elle transporte du sang oxygéné.\n\nL'artère pulmonaire va du cœur aux poumons : elle transporte du sang pauvre en dioxygène. La veine pulmonaire, elle, en rapporte du riche.\n\nC'est l'exception qui fait rater beaucoup de contrôles."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Où se font les échanges",
+          "body": "Jamais dans les artères, jamais dans les veines. Toujours dans les capillaires.\n\nUne paroi d'une seule cellule d'épaisseur, et un débit assez lent pour que les molécules aient le temps de traverser."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans quels vaisseaux les échanges avec les cellules se font-ils ?",
+          "explanation": "Dans les capillaires. Leur paroi n'a qu'une cellule d'épaisseur et le sang y circule lentement.",
+          "options": [
+            { "text": "les capillaires", "correct": true },
+            { "text": "les artères" },
+            { "text": "les veines" },
+            { "text": "dans les trois également" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Toutes les artères transportent du sang riche en dioxygène.",
+          "explanation": "Faux. Une artère est définie par le fait qu'elle part du cœur. L'artère pulmonaire transporte du sang pauvre en dioxygène, vers les poumons.",
+          "answer": false
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces vaisseaux selon leur sens par rapport au cœur.",
+          "explanation": "Les artères partent du cœur, les veines y reviennent — quel que soit le sang qu'elles transportent.",
+          "categories": ["part du cœur", "revient au cœur"],
+          "items": [
+            { "text": "artère pulmonaire", "category": 0 },
+            { "text": "artère aorte", "category": 0 },
+            { "text": "veine pulmonaire", "category": 1 },
+            { "text": "veine cave", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fois le sang traverse-t-il le cœur au cours d'un tour complet du corps ?",
+          "hint": "Il y a deux circuits en série.",
+          "explanation": "Deux fois : une fois pour partir vers les poumons, une fois pour partir vers les organes.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "estimation",
+          "prompt": "Estime le nombre d'alvéoles pulmonaires, en millions.",
+          "explanation": "Environ 300 millions. Mises à plat, elles couvriraient environ 70 mètres carrés, soit la moitié d'un court de tennis.",
+          "answer": 300,
+          "unit": "millions",
+          "min": 1,
+          "max": 2000,
+          "tolerance": 120
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'ont en commun les villosités intestinales et les alvéoles pulmonaires ?",
+          "explanation": "Les deux multiplient la surface d'échange dans un volume réduit. C'est la même solution au même problème.",
+          "options": [
+            { "text": "elles augmentent énormément la surface d'échange", "correct": true },
+            { "text": "elles filtrent les déchets" },
+            { "text": "elles produisent des enzymes" },
+            { "text": "elles stockent du dioxygène" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-approvisionnement",
+      "title": "Défi : les nombres du corps",
+      "subtitle": "Des ordres de grandeur qui surprennent.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un cœur qui ne s'arrête pas",
+          "body": "Au repos, un cœur bat environ 70 fois par minute et envoie à peu près 70 millilitres de sang à chaque battement. Cela fait près de cinq litres par minute — tout le sang du corps, qui passe donc entièrement par le cœur chaque minute.\n\nSur une journée, cela représente environ 7 000 litres. Sur une vie de 80 ans, plus de 200 millions de litres, et environ 3 milliards de battements, sans une seule pause."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "70 battements par minute et 70 millilitres par battement : combien de litres par minute ?",
+          "hint": "70 × 70 millilitres, puis en litres.",
+          "explanation": "70 × 70 = 4 900 millilitres, soit 4,9 litres par minute — environ tout le sang du corps.",
+          "answer": 4.9,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "À 4,9 litres par minute, combien de litres en une journée ? Réponds en milliers de litres, arrondi à l'unité.",
+          "hint": "1 440 minutes dans une journée.",
+          "explanation": "4,9 × 1 440 = 7 056 litres, soit environ 7 milliers de litres.",
+          "answer": 7,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "À 70 battements par minute, combien de battements en 80 ans ? Réponds en milliards, arrondi au dixième.",
+          "hint": "Il y a environ 525 600 minutes dans une année.",
+          "explanation": "70 × 525 600 × 80 = 2,94 milliards, soit environ 2,9 milliards de battements.",
+          "answer": 2.9,
+          "tolerance": 0.2
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La totalité du sang du corps passe par le cœur chaque minute, au repos.",
+          "explanation": "Vrai. Le corps contient environ cinq litres de sang, et le cœur en débite presque autant par minute au repos. À l'effort, ce débit peut quintupler.",
+          "answer": true
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le monoxyde de carbone est-il mortel ?",
+          "hint": "Pense à ce qui transporte le dioxygène dans le sang.",
+          "explanation": "Il se fixe sur l'hémoglobine à la place du dioxygène, et bien plus solidement. Le sang circule normalement mais ne transporte plus rien : les cellules étouffent dans un corps qui respire.",
+          "options": [
+            { "text": "il prend la place du dioxygène sur l'hémoglobine", "correct": true },
+            { "text": "il bouche les alvéoles" },
+            { "text": "il arrête le cœur directement" },
+            { "text": "il détruit les capillaires" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Les villosités de l'intestin grêle et les alvéoles des poumons résolvent le même problème.",
+          "explanation": "Vrai. Les deux organes doivent échanger beaucoup de matière à travers une paroi, dans un volume limité. La réponse est la même : multiplier la surface par des replis.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}
