@@ -52,10 +52,19 @@
           "explanation": "Mercure tourne à 58 millions de kilomètres du Soleil, soit près de trois fois plus près que la Terre.",
           "figureId": "systeme-solaire",
           "options": [
-            { "text": "Mercure", "correct": true },
-            { "text": "Vénus" },
-            { "text": "La Terre" },
-            { "text": "Mars" }
+            {
+              "text": "Mercure",
+              "correct": true
+            },
+            {
+              "text": "Vénus"
+            },
+            {
+              "text": "La Terre"
+            },
+            {
+              "text": "Mars"
+            }
           ]
         },
         {
@@ -72,10 +81,20 @@
           "hint": "Ce sont les quatre dernières de la liste.",
           "explanation": "Jupiter, Saturne, Uranus et Neptune sont les quatre géantes. Jupiter et Saturne sont gazeuses, Uranus et Neptune sont dites glacées. Aucune n'offre de sol sur lequel se poser.",
           "options": [
-            { "text": "Jupiter", "correct": true },
-            { "text": "Neptune", "correct": true },
-            { "text": "Mars" },
-            { "text": "Vénus" }
+            {
+              "text": "Jupiter",
+              "correct": true
+            },
+            {
+              "text": "Neptune",
+              "correct": true
+            },
+            {
+              "text": "Mars"
+            },
+            {
+              "text": "Vénus"
+            }
           ]
         },
         {
@@ -157,8 +176,17 @@
           "prompt": "Complète ces ordres de grandeur.",
           "template": "La lumière du Soleil met ___ minutes à atteindre la Terre, en parcourant ___ 000 km par seconde.",
           "blanks": [
-            { "accepted": ["8", "huit"] },
-            { "accepted": ["300"] }
+            {
+              "accepted": [
+                "8",
+                "huit"
+              ]
+            },
+            {
+              "accepted": [
+                "300"
+              ]
+            }
           ],
           "hint": "Huit minutes, et trois cent mille kilomètres par seconde.",
           "explanation": "La lumière va à 300 000 km/s et parcourt 150 millions de km en environ 500 secondes, soit un peu plus de 8 minutes."
@@ -178,10 +206,19 @@
           "hint": "4 495 millions de km, divisés par 150 millions.",
           "explanation": "4 495 ÷ 150 ≈ 30. Neptune est donc trente fois plus loin du Soleil que nous.",
           "options": [
-            { "text": "Environ 30", "correct": true },
-            { "text": "Environ 3" },
-            { "text": "Environ 300" },
-            { "text": "Environ 4 500" }
+            {
+              "text": "Environ 30",
+              "correct": true
+            },
+            {
+              "text": "Environ 3"
+            },
+            {
+              "text": "Environ 300"
+            },
+            {
+              "text": "Environ 4 500"
+            }
           ]
         }
       ]
@@ -208,9 +245,10 @@
         },
         {
           "id": "c3",
-          "kind": "etape",
+          "kind": "figure",
           "title": "Plus loin, plus lent",
-          "body": "Plus une planète est éloignée, plus son tour est long — et pour deux raisons : le chemin est plus grand, et elle va moins vite.\n\nTerre : 365 jours.\nJupiter : 12 ans.\nNeptune : 165 ans."
+          "body": "Lance le temps. Au bout d'une année terrestre, compte les tours de chacune.",
+          "figureId": "orbites"
         },
         {
           "id": "c4",
@@ -236,10 +274,19 @@
           "hint": "Elle agit entre deux corps qui ont une masse.",
           "explanation": "La gravitation. C'est la même force qui fait tomber une pomme et qui maintient Neptune sur son orbite, à quatre milliards et demi de kilomètres.",
           "options": [
-            { "text": "La gravitation", "correct": true },
-            { "text": "Le magnétisme" },
-            { "text": "La pression de l'air" },
-            { "text": "La lumière du Soleil" }
+            {
+              "text": "La gravitation",
+              "correct": true
+            },
+            {
+              "text": "Le magnétisme"
+            },
+            {
+              "text": "La pression de l'air"
+            },
+            {
+              "text": "La lumière du Soleil"
+            }
           ]
         },
         {
@@ -248,10 +295,22 @@
           "prompt": "Associe chaque mot à ce qu'il décrit.",
           "explanation": "La rotation fait le jour, la révolution fait l'année, l'orbite est le chemin suivi, et la gravitation est la force qui retient.",
           "pairs": [
-            { "left": "Rotation", "right": "La planète tourne sur elle-même : le jour" },
-            { "left": "Révolution", "right": "Le tour complet autour du Soleil : l'année" },
-            { "left": "Orbite", "right": "Le chemin suivi autour du Soleil" },
-            { "left": "Gravitation", "right": "La force qui attire deux corps massifs" }
+            {
+              "left": "Rotation",
+              "right": "La planète tourne sur elle-même : le jour"
+            },
+            {
+              "left": "Révolution",
+              "right": "Le tour complet autour du Soleil : l'année"
+            },
+            {
+              "left": "Orbite",
+              "right": "Le chemin suivi autour du Soleil"
+            },
+            {
+              "left": "Gravitation",
+              "right": "La force qui attire deux corps massifs"
+            }
           ]
         },
         {
@@ -259,7 +318,8 @@
           "kind": "vraiFaux",
           "prompt": "Plus une planète est éloignée du Soleil, plus son année est longue.",
           "answer": true,
-          "explanation": "Oui. Neptune met 165 ans à faire un tour, contre 365 jours pour la Terre : son chemin est plus long, et elle le parcourt plus lentement."
+          "explanation": "Oui. Neptune met 165 ans à faire un tour, contre 365 jours pour la Terre : son chemin est plus long, et elle le parcourt plus lentement.",
+          "figureId": "orbites"
         },
         {
           "id": "q4",
@@ -296,10 +356,19 @@
           "hint": "La décision date de 2006.",
           "explanation": "En 2006, les astronomes ont précisé la définition d'une planète : elle doit avoir fait le vide sur son orbite. Pluton partage la sienne avec de nombreux autres corps : elle est devenue une planète naine.",
           "options": [
-            { "text": "Elle n'a pas fait le vide autour de son orbite", "correct": true },
-            { "text": "Elle a été détruite" },
-            { "text": "Elle ne tourne pas autour du Soleil" },
-            { "text": "Elle est trop froide" }
+            {
+              "text": "Elle n'a pas fait le vide autour de son orbite",
+              "correct": true
+            },
+            {
+              "text": "Elle a été détruite"
+            },
+            {
+              "text": "Elle ne tourne pas autour du Soleil"
+            },
+            {
+              "text": "Elle est trop froide"
+            }
           ]
         },
         {
@@ -308,9 +377,25 @@
           "prompt": "Complète cette comparaison.",
           "template": "La Terre est à ___ millions de km du Soleil, Mars à ___ millions. Mars est donc plus ___ du Soleil que nous.",
           "blanks": [
-            { "accepted": ["150"] },
-            { "accepted": ["228"] },
-            { "accepted": ["loin", "éloignée", "eloignee", "éloigné", "eloigne"] }
+            {
+              "accepted": [
+                "150"
+              ]
+            },
+            {
+              "accepted": [
+                "228"
+              ]
+            },
+            {
+              "accepted": [
+                "loin",
+                "éloignée",
+                "eloignee",
+                "éloigné",
+                "eloigne"
+              ]
+            }
           ],
           "hint": "Regarde l'axe : Mars vient juste après la Terre.",
           "explanation": "150 et 228 millions de kilomètres. Mars est la planète suivante en s'éloignant du Soleil."
@@ -321,10 +406,20 @@
           "prompt": "Quelles affirmations sont exactes ?",
           "explanation": "Le Soleil est bien une étoile et contient l'essentiel de la masse du Système solaire. En revanche les planètes ne produisent pas de lumière, et elles ne sont pas réparties régulièrement.",
           "options": [
-            { "text": "Le Soleil est une étoile", "correct": true },
-            { "text": "Le Soleil contient presque toute la masse du Système solaire", "correct": true },
-            { "text": "Les planètes produisent leur propre lumière" },
-            { "text": "Les planètes sont également espacées" }
+            {
+              "text": "Le Soleil est une étoile",
+              "correct": true
+            },
+            {
+              "text": "Le Soleil contient presque toute la masse du Système solaire",
+              "correct": true
+            },
+            {
+              "text": "Les planètes produisent leur propre lumière"
+            },
+            {
+              "text": "Les planètes sont également espacées"
+            }
           ]
         },
         {

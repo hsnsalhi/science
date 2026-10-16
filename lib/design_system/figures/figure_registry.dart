@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'orbits_figure.dart';
+import 'pythagore_proof_figure.dart';
 import 'right_triangle_figure.dart';
 import 'solar_system_figure.dart';
 import 'triangle_test_figure.dart';
@@ -30,6 +32,13 @@ abstract final class FigureRegistry {
     // Réciproque : un triangle est-il rectangle ?
     'triangle-reciproque': (BuildContext context, Color accent) =>
         TriangleTestFigure(accent: accent),
+    // La preuve par réarrangement : les triangles glissent, l'aire libre
+    // passe de deux carrés à un seul.
+    'pythagore-preuve': (BuildContext context, Color accent) =>
+        PythagoreProofFigure(accent: accent),
+    // Les quatre planètes rocheuses en orbite, le temps défilant.
+    'orbites': (BuildContext context, Color accent) =>
+        OrbitsFigure(accent: accent),
     // Les huit planètes à l'échelle de leurs distances au Soleil.
     'systeme-solaire': (BuildContext context, Color accent) =>
         SolarSystemFigure(accent: accent),

@@ -280,6 +280,66 @@ void main() {
         await shoot(tester, '$device-6-astronomie');
       });
 
+      // La preuve de Pythagore se joue en glissant : deux captures, au
+      // départ et à l'arrivée, pour vérifier que les triangles tombent
+      // bien aux bons endroits dans les deux dispositions.
+      testWidgets('maths : preuve par réarrangement', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Le théorème de Pythagore');
+        await tapText(tester, 'Le théorème');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-10-preuve-depart');
+
+        final Rect piste = tester.getRect(find.byType(Slider));
+        await tester.tapAt(Offset(piste.center.dx, piste.center.dy));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-10-preuve-milieu');
+        await tester.tapAt(Offset(piste.right - 2, piste.center.dy));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-10-preuve-arrivee');
+      });
+
+      // Les orbites s'animent : la capture fige un instant précis, un an
+      // après le départ, où les quatre compteurs ont déjà divergé.
+      testWidgets('astronomie : orbites animées', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Le Système solaire');
+        // Le titre d'une leçon l'ouvre directement : pas de « Commencer »
+        // à passer.
+        await tapText(tester, 'Tourner sans tomber');
+        await tapText(tester, 'Suivant');
+        // Dernier pas sans pumpAndSettle : la figure qui suit tourne en
+        // continu, et attendre la fin des animations n'aurait pas de fin.
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        // Les captures tournent avec « réduire les animations » : la
+        // figure démarre donc à l'arrêt, et c'est le curseur qui fait
+        // avancer le temps. On le pousse à une année terrestre — là où
+        // les quatre compteurs ont visiblement divergé.
+        final Finder curseur = find.byType(Slider);
+        final Rect piste = tester.getRect(curseur);
+        await tester.tapAt(
+          Offset(piste.left + piste.width * 0.53, piste.center.dy),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-9-orbites');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

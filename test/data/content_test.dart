@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
+import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
@@ -331,6 +332,21 @@ void main() {
       // 150 millions de km à 300 000 km/s : un peu plus de 8 minutes.
       final double minutes = terre * 1e6 / 299792.458 / 60;
       expect(minutes, closeTo(8, 0.5));
+    });
+
+    // La figure des orbites ne fait une démonstration que si ses durées
+    // sont justes : c'est l'écart entre les compteurs qui enseigne
+    // « plus loin, plus lent ».
+    test('les périodes de révolution sont justes et croissantes', () {
+      expect(periodes.length, 4);
+      for (int i = 1; i < periodes.length; i++) {
+        expect(periodes[i], greaterThan(periodes[i - 1]));
+      }
+      expect(periodes[2], 365, reason: 'l\'année terrestre');
+      // Au bout d'une année terrestre, Mercure a tourné quatre fois et
+      // Mars pas la moitié d'une : c'est ce que la carte doit montrer.
+      expect(365 / periodes[0], closeTo(4.1, 0.1));
+      expect(365 / periodes[3], closeTo(0.53, 0.02));
     });
 
     test('s\'appuie sur la figure du Système solaire', () {

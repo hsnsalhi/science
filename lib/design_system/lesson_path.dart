@@ -141,7 +141,18 @@ class LessonPath extends StatelessWidget {
                   top: centers[i].dy + nodeSize / 2 + AppSpacing.sm,
                   width: _labelWidth,
                   height: _labelHeight,
-                  child: IgnorePointer(
+                  // Le titre ouvre la leçon, comme le rond. Il était
+                  // jusqu'ici dans un IgnorePointer : visuellement partie
+                  // du bouton, mais sourd aux touches — or c'est le mot
+                  // qu'on lit et donc celui qu'on vise. Les libellés
+                  // s'arrêtent 8 points au-dessus du rond suivant, ils ne
+                  // lui volent aucune touche.
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      context.tapFeedback();
+                      onTap(nodes[i].id);
+                    },
                     child: Text(
                       nodes[i].title,
                       textAlign: TextAlign.center,
