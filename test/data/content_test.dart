@@ -384,7 +384,11 @@ void main() {
     // sont justes : c'est l'écart entre les compteurs qui enseigne
     // « plus loin, plus lent ».
     test('les périodes de révolution sont justes et croissantes', () {
-      expect(periodes.length, 4);
+      // La table des périodes s'indexe avec celle des planètes : la figure
+      // n'en dessine que les quatre premières, mais les deux listes doivent
+      // rester alignées, sans quoi une période se retrouverait attribuée à
+      // la mauvaise planète.
+      expect(periodes.length, planetes.length);
       for (int i = 1; i < periodes.length; i++) {
         expect(periodes[i], greaterThan(periodes[i - 1]));
       }
@@ -4709,6 +4713,108 @@ void main() {
           ailleurs,
           reason: 'série, autre lampe présente = $ailleurs',
         );
+      }
+    });
+  });
+
+
+  group('Chapitre complet : les lois de Kepler', () {
+    late Chapter kepler;
+
+    setUpAll(() {
+      kepler = catalog.chapterById('astronomie-lycee-lois-de-kepler')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = kepler.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Période, en années terrestres, pour un demi-grand axe en unités
+    /// astronomiques. C'est la troisième loi, et rien d'autre.
+    double periode(double demiGrandAxe) =>
+        math.sqrt(math.pow(demiGrandAxe, 3).toDouble());
+
+    test('est jouable de bout en bout', () {
+      expect(kepler.isPlayable, isTrue);
+      expect(kepler.lessons.length, 4);
+    });
+
+    test('la troisième loi tient sur les huit planètes', () {
+      // L'énoncé du chapitre, éprouvé sur les tables de la figure plutôt
+      // que sur les quatre planètes qu'elle dessine. L'unité est la Terre
+      // elle-même : son rapport vaut donc 1 par construction, et c'est
+      // l'écart des sept autres qui dit si la loi tient.
+      final double anneeTerrestre = periodes[2];
+      final double uniteAstronomique = planetes[2].distance;
+      for (int i = 0; i < planetes.length; i++) {
+        final double t = periodes[i] / anneeTerrestre;
+        final double a = planetes[i].distance / uniteAstronomique;
+        expect(
+          t * t / math.pow(a, 3),
+          closeTo(1, 0.02),
+          reason: planetes[i].nom,
+        );
+      }
+    });
+
+    test('les périodes annoncées se recalculent par la loi', () {
+      expect(periode(1.52), closeTo(reponseNum('la-troisieme-loi', 'q1'), 0.1));
+      expect(periode(5.2), closeTo(reponseNum('la-troisieme-loi', 'q2'), 0.6));
+      expect(periode(2), closeTo(reponseNum('la-troisieme-loi', 'q3'), 0.1));
+      expect(periode(30), closeTo(reponseNum('defi-kepler', 'q6'), 10));
+    });
+
+    test('les valeurs calculées retrouvent les périodes mesurées', () {
+      // Mars et Jupiter sont annoncées par la loi ; les tables donnent
+      // leur période observée. Les deux doivent se rejoindre.
+      for (final ({String nom, double reponse, double marge}) cas
+          in <({String nom, double reponse, double marge})>[
+            (nom: 'Mars', reponse: reponseNum('la-troisieme-loi', 'q1'), marge: 0.1),
+            (nom: 'Jupiter', reponse: reponseNum('la-troisieme-loi', 'q2'), marge: 0.6),
+          ]) {
+        final int rang = planetes.indexWhere((Planete p) => p.nom == cas.nom);
+        expect(
+          periodes[rang] / periodes[2],
+          closeTo(cas.reponse, cas.marge),
+          reason: cas.nom,
+        );
+      }
+    });
+
+    test('le problème inverse se résout aussi', () {
+      // Huit ans de période, quelle distance ? La loi se lit dans les deux
+      // sens, et c'est ce que demande le défi.
+      final double a = reponseNum('defi-kepler', 'q2');
+      expect(periode(a), closeTo(8, 0.5));
+    });
+
+    test('le nombre de tours de Mercure est celui des tables', () {
+      expect(
+        periodes[2] / periodes[0],
+        closeTo(reponseNum('la-troisieme-loi', 'q4'), 0.3),
+      );
+    });
+
+    test('l’ordre des années suit celui des distances', () {
+      final OrderingQuestion q =
+          kepler.lessonById('defi-kepler')!.questions.firstWhere(
+                (Question x) => x.id == 'q5',
+              )
+              as OrderingQuestion;
+      final List<double> annees = q.items.map((String nom) {
+        final int rang = planetes.indexWhere(
+          (Planete p) => p.nom == nom.replaceAll('la ', ''),
+        );
+        expect(rang, isNonNegative, reason: nom);
+        return periodes[rang];
+      }).toList();
+      for (int i = 1; i < annees.length; i++) {
+        expect(annees[i], greaterThan(annees[i - 1]));
       }
     });
   });

@@ -11,7 +11,23 @@ import '../../core/theme/app_tokens.dart';
 import 'solar_system_figure.dart';
 
 /// Période de révolution, en jours terrestres.
-const List<double> periodes = <double>[88, 225, 365, 687];
+///
+/// La liste suit l'ordre de [planetes], Mercure d'abord : les deux tables
+/// s'indexent ensemble, ce qui permet de confronter une période à une
+/// distance sans recopier l'une ni l'autre. La figure ne dessine que les
+/// quatre premières, les seules dont l'orbite tienne à l'écran, mais la loi
+/// de Kepler ne s'arrête pas à Mars et le chapitre du lycée l'éprouve sur
+/// les huit.
+const List<double> periodes = <double>[
+  88,
+  225,
+  365,
+  687,
+  4333,
+  10759,
+  30687,
+  60190,
+];
 
 /// Les quatre planètes rocheuses tournant autour du Soleil.
 ///

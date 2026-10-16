@@ -1,0 +1,321 @@
+{
+  "chapter": "astronomie-lycee-lois-de-kepler",
+  "lessons": [
+    {
+      "id": "des-cercles-aux-ellipses",
+      "title": "Des cercles aux ellipses",
+      "subtitle": "La première loi.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux mille ans de cercles",
+          "body": "De Platon à Copernic, une orbite devait être un cercle, ou une combinaison de cercles. C'était un principe, pas un résultat de mesure.\n\nKepler a passé des années sur les relevés de Mars de Tycho Brahe. Les cercles laissaient un écart de huit minutes d'arc. Il a choisi de croire les mesures plutôt que le principe."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Première loi",
+          "body": "Chaque planète décrit une ellipse dont le Soleil occupe l'un des deux foyers.\n\nLe second foyer est vide : rien ne s'y trouve, et c'est pourtant lui qui fixe la forme de l'orbite."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Des ellipses très peu allongées",
+          "body": "Attention à l'image : les schémas de manuel dessinent des ovales très marqués, mais l'orbite terrestre est presque un cercle.\n\nCe qui n'est pas au centre, en revanche, c'est le Soleil. C'est ce décentrement, et non l'allongement, qui change tout."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Huit minutes d'arc, c'est un quart du diamètre apparent de la Lune. Kepler aurait pu les attribuer à l'erreur de mesure et garder ses cercles. Toute la suite tient à ce refus."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Où se trouve le Soleil dans l'orbite d'une planète ?",
+          "hint": "Pas au centre.",
+          "explanation": "À l'un des deux foyers de l'ellipse. Le centre géométrique de l'ellipse, lui, est vide.",
+          "options": [
+            { "text": "À l'un des foyers de l'ellipse", "correct": true },
+            { "text": "Au centre de l'ellipse" },
+            { "text": "Sur l'ellipse elle-même" },
+            { "text": "À l'extérieur de l'ellipse" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "L'orbite de la Terre est un ovale nettement allongé.",
+          "answer": false,
+          "explanation": "Non : elle est très proche d'un cercle. Ce qui compte n'est pas son allongement mais la position décentrée du Soleil."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui a conduit Kepler à abandonner le cercle ?",
+          "hint": "Un écart qu'il a refusé de négliger.",
+          "explanation": "Un écart de huit minutes d'arc entre les positions calculées et les mesures de Tycho Brahe. Il a préféré douter du cercle que des mesures.",
+          "options": [
+            { "text": "Un écart de huit minutes d'arc sur Mars", "correct": true },
+            { "text": "Une observation au télescope" },
+            { "text": "Un calcul de Newton" },
+            { "text": "Une décision de l'Église" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-loi-des-aires",
+      "title": "La loi des aires",
+      "subtitle": "La deuxième loi.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Deuxième loi",
+          "formula": "aire balayée / durée = constante",
+          "body": "le segment qui joint le Soleil à la planète balaie des aires égales en des durées égales."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce que cela impose",
+          "body": "Près du Soleil, le segment est court : pour balayer la même aire, la planète doit parcourir un grand arc. Elle va donc vite.\n\nLoin du Soleil, le segment est long : un petit arc suffit à balayer la même aire. Elle va lentement."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pour la Terre",
+          "body": "La Terre est au plus près du Soleil début janvier, et au plus loin début juillet.\n\nElle va donc légèrement plus vite en hiver boréal. C'est pour cela que l'automne et l'hiver de l'hémisphère nord sont un peu plus courts que le printemps et l'été."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Cette loi n'a rien d'une coïncidence : c'est la conservation du moment cinétique, pour une force toujours dirigée vers le Soleil. Kepler l'a trouvée avant qu'on sache l'énoncer ainsi."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Où une planète va-t-elle le plus vite sur son orbite ?",
+          "hint": "Là où le segment Soleil-planète est le plus court.",
+          "explanation": "Au plus près du Soleil : le segment est court, donc il faut parcourir un grand arc pour balayer la même aire.",
+          "options": [
+            { "text": "Au plus près du Soleil", "correct": true },
+            { "text": "Au plus loin du Soleil" },
+            { "text": "À mi-distance" },
+            { "text": "Sa vitesse ne change jamais" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Une planète parcourt son orbite à vitesse constante.",
+          "answer": false,
+          "explanation": "Non : elle accélère en se rapprochant du Soleil et ralentit en s'en éloignant. Seule l'aire balayée par unité de temps reste constante."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'hiver de l'hémisphère nord est-il un peu plus court que son été ?",
+          "hint": "À quel moment la Terre est-elle au plus près du Soleil ?",
+          "explanation": "Parce que la Terre passe au plus près du Soleil en janvier et va donc plus vite à ce moment-là. Elle franchit ce quartier d'orbite en moins de jours.",
+          "options": [
+            { "text": "La Terre va plus vite quand elle est près du Soleil", "correct": true },
+            { "text": "La Terre est plus petite en hiver" },
+            { "text": "L'axe de la Terre se redresse en hiver" },
+            { "text": "Le Soleil ralentit en hiver" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces affirmations selon qu'elles décrivent le point le plus proche ou le plus lointain.",
+          "hint": "Aire égale en temps égal.",
+          "explanation": "Près du Soleil : segment court, grand arc, grande vitesse. Loin : segment long, petit arc, faible vitesse.",
+          "categories": ["Au plus près du Soleil", "Au plus loin du Soleil"],
+          "items": [
+            { "text": "la vitesse est maximale", "category": 0 },
+            { "text": "l'arc parcouru en un jour est le plus long", "category": 0 },
+            { "text": "la vitesse est minimale", "category": 1 },
+            { "text": "l'arc parcouru en un jour est le plus court", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-troisieme-loi",
+      "title": "La troisième loi",
+      "subtitle": "Le carré du temps, le cube de la distance.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Troisième loi",
+          "formula": "T² = a³",
+          "body": "avec T la période en années et a le demi-grand axe en unités astronomiques."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Regarde-les tourner",
+          "body": "Laisse défiler le temps : au bout d'une année terrestre, compte les tours de chacune.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Pourquoi un cube",
+          "body": "Doubler la distance ne double pas l'année : le tour est plus long, mais la planète va aussi plus lentement.\n\nLes deux effets se cumulent. À distance double, l'année est 2 fois racine de 2, soit environ 2,8 fois plus longue."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le même rapport pour toutes",
+          "body": "C'est le seul résultat de Kepler qui relie les planètes entre elles. Les deux premières lois décrivent chacune une orbite isolée ; la troisième dit que toutes obéissent à la même règle.\n\nSoixante-dix ans plus tard, Newton en fera une conséquence de la gravitation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Mars est à 1,52 unité astronomique du Soleil. Quelle est la durée de son année, en années terrestres ?",
+          "answer": 1.87,
+          "tolerance": 0.1,
+          "unit": "ans",
+          "hint": "Racine carrée de 1,52 au cube.",
+          "explanation": "Environ 1,87 an : 1,52³ vaut 3,51, et sa racine carrée 1,87. La mesure donne 687 jours, soit 1,88 an.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Jupiter est à 5,2 unités astronomiques. Quelle est la durée de son année, en années terrestres ?",
+          "answer": 11.9,
+          "tolerance": 0.6,
+          "unit": "ans",
+          "hint": "Racine carrée de 5,2 au cube.",
+          "explanation": "Environ 11,9 ans. C'est pour cela que Jupiter met douze ans à faire le tour du ciel, une constellation par an ou presque.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une planète deux fois plus loin du Soleil que la Terre : son année est combien de fois plus longue ?",
+          "answer": 2.83,
+          "tolerance": 0.1,
+          "unit": "fois",
+          "hint": "Racine carrée de 2 au cube.",
+          "explanation": "Environ 2,83 fois, soit 2 racine de 2. Ce n'est ni 2, ni 4 : c'est bien un exposant 3/2.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de tours Mercure fait-il pendant une année terrestre ?",
+          "answer": 4.1,
+          "tolerance": 0.3,
+          "unit": "tours",
+          "hint": "365 divisé par sa période.",
+          "explanation": "Un peu plus de 4 : sa période est de 88 jours, et 365 divisé par 88 fait 4,1.",
+          "figureId": "orbites"
+        }
+      ]
+    },
+    {
+      "id": "defi-kepler",
+      "title": "Défi : les trois lois",
+      "subtitle": "Six questions, de Mars à Neptune.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque question, demande-toi d'abord laquelle des trois lois est en jeu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque énoncé à sa loi.",
+          "explanation": "La première décrit la forme de l'orbite, la deuxième la façon dont la planète la parcourt, la troisième le lien entre toutes les planètes.",
+          "pairs": [
+            { "left": "l'orbite est une ellipse", "right": "première loi" },
+            { "left": "aires égales en temps égaux", "right": "deuxième loi" },
+            { "left": "T² proportionnel à a³", "right": "troisième loi" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une planète met 8 ans à faire le tour du Soleil. À quelle distance est-elle, en unités astronomiques ?",
+          "answer": 4,
+          "tolerance": 0.2,
+          "unit": "ua",
+          "hint": "a³ = T², donc a est la racine cubique de 64.",
+          "explanation": "4 unités astronomiques : 8² fait 64, et la racine cubique de 64 vaut 4.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Laquelle des trois lois relie les planètes entre elles ?",
+          "hint": "Les deux autres décrivent une orbite isolée.",
+          "explanation": "La troisième : elle énonce un rapport valable pour toutes les planètes à la fois. Les deux premières ne parlent que d'une orbite.",
+          "options": [
+            { "text": "La troisième", "correct": true },
+            { "text": "La première" },
+            { "text": "La deuxième" },
+            { "text": "Aucune : elles décrivent chacune une seule orbite" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Les lois de Kepler expliquent pourquoi les planètes tournent ainsi.",
+          "answer": false,
+          "explanation": "Non : elles décrivent, elles n'expliquent pas. L'explication viendra de Newton et de la gravitation, soixante-dix ans plus tard."
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces planètes de l'année la plus courte à la plus longue.",
+          "explanation": "L'ordre des années est celui des distances : c'est exactement ce que dit la troisième loi.",
+          "items": [
+            "Mercure",
+            "la Terre",
+            "Jupiter",
+            "Neptune"
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "estimation",
+          "prompt": "Neptune est à 30 unités astronomiques. Combien d'années dure son tour du Soleil ?",
+          "answer": 164,
+          "min": 30,
+          "max": 300,
+          "unit": "ans",
+          "explanation": "Environ 164 ans : la racine carrée de 30³. Découverte en 1846, Neptune n'a bouclé son premier tour observé qu'en 2011.",
+          "figureId": "orbites"
+        }
+      ]
+    }
+  ]
+}
