@@ -23,6 +23,7 @@ import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
+import 'package:eureka/design_system/figures/triangle_test_figure.dart';
 import 'package:eureka/design_system/figures/states_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
@@ -2722,6 +2723,84 @@ void main() {
       // divisés par la taille annoncée.
       expect(1000 / 10, reponseNum('tout-est-cellules', 'q1'));
       expect(1000 / 50, reponseNum('defi-cellule', 'q5'));
+    });
+  });
+
+  group('Chapitre complet : la naissance de la géométrie', () {
+    late Chapter geometrie;
+
+    setUpAll(() {
+      geometrie = catalog.chapterById(
+        'histoire-sciences-college-naissance-de-la-geometrie',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (geometrie.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(geometrie.isPlayable, isTrue);
+      expect(geometrie.lessons.length, 4);
+    });
+
+    test('le triangle de la corde est bien rectangle', () {
+      // La corde à treize nœuds donne 3-4-5, et la figure travaille sur
+      // 6-8-10 : il faut que les deux vérifient la réciproque.
+      bool rectangle(double a, double b, double c) =>
+          (a * a + b * b - c * c).abs() < 1e-9;
+
+      expect(rectangle(3, 4, reponseNum('defi-geometrie', 'q2')), isTrue);
+      expect(
+        rectangle(
+          TriangleTestFigure.sideA,
+          TriangleTestFigure.sideB,
+          reponseNum('arpenter-les-champs', 'q2'),
+        ),
+        isTrue,
+      );
+      // Et le grand côté de la figure doit bien être le double de celui
+      // de la corde : c'est ce que la carte affirme.
+      expect(
+        reponseNum('arpenter-les-champs', 'q2'),
+        2 * reponseNum('defi-geometrie', 'q2'),
+      );
+      // Le troisième côté réglable doit pouvoir atteindre cette valeur.
+      expect(
+        reponseNum('arpenter-les-champs', 'q2'),
+        inInclusiveRange(TriangleTestFigure.minC, TriangleTestFigure.maxC),
+      );
+    });
+
+    test('les intervalles de la corde font bien 3 + 4 + 5', () {
+      expect(3 + 4 + 5, reponseNum('arpenter-les-champs', 'q1'));
+    });
+
+    test('les hauteurs déduites des ombres sont recalculées', () {
+      // Le rapport hauteur sur ombre, mesuré sur le bâton, s'applique à
+      // l'objet inaccessible.
+      double hauteur({
+        required double hauteurBaton,
+        required double ombreBaton,
+        required double ombreObjet,
+      }) =>
+          ombreObjet * hauteurBaton / ombreBaton;
+
+      expect(
+        hauteur(hauteurBaton: 2, ombreBaton: 2, ombreObjet: 30),
+        reponseNum('la-preuve-grecque', 'q2'),
+      );
+      expect(
+        hauteur(hauteurBaton: 1, ombreBaton: 2, ombreObjet: 14),
+        reponseNum('la-preuve-grecque', 'q3'),
+      );
+      expect(
+        hauteur(hauteurBaton: 1.5, ombreBaton: 3, ombreObjet: 60),
+        reponseNum('defi-geometrie', 'q3'),
+      );
     });
   });
 }
