@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
+import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
@@ -556,6 +557,89 @@ void main() {
     test('l\'allure du piéton estimée reste plausible', () {
       final double marche = reponse('la-vitesse', 'q4');
       expect(marche * 3.6, closeTo(5, 1));
+    });
+  });
+
+  // Génétique : les proportions annoncées dans les corrigés se
+  // recalculent depuis la règle de dominance, et depuis celle que la
+  // figure applique elle-même. Contenu et figure doivent dire la même
+  // chose, sinon l'élève voit l'un et lit l'autre.
+  group('Chapitre complet : génétique et hérédité', () {
+    late Chapter genetique;
+
+    setUpAll(() {
+      genetique = catalog.chapterById('svt-college-genetique-et-heredite')!;
+    });
+
+    /// Nombre de descendants jaunes pour un croisement donné.
+    int jaunes(List<bool> pere, List<bool> mere) {
+      int total = 0;
+      for (final bool p in pere) {
+        for (final bool m in mere) {
+          if (CrossFigure.estJaune(<bool>[p, m])) total++;
+        }
+      }
+      return total;
+    }
+
+    double reponse(String lessonId, String questionId) =>
+        (genetique.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(genetique.isPlayable, isTrue);
+      expect(genetique.lessons.length, 4);
+    });
+
+    test('un allèle dominant suffit, deux récessifs sont nécessaires', () {
+      expect(CrossFigure.estJaune(<bool>[true, true]), isTrue);
+      expect(CrossFigure.estJaune(<bool>[true, false]), isTrue);
+      expect(CrossFigure.estJaune(<bool>[false, true]), isTrue);
+      expect(CrossFigure.estJaune(<bool>[false, false]), isFalse);
+    });
+
+    test('les proportions annoncées sont celles du croisement', () {
+      const List<bool> jv = <bool>[true, false];
+      const List<bool> vv = <bool>[false, false];
+      const List<bool> jj = <bool>[true, true];
+
+      // Jv × Jv : une verte sur quatre, donc trois jaunes.
+      expect(4 - jaunes(jv, jv), reponse('dominant-recessif', 'q3'));
+      expect(jaunes(jv, jv), reponse('defi-genetique', 'q1'));
+      // Jv × vv : la moitié de vertes, ce que dit le défi q4.
+      expect(jaunes(jv, vv), 2);
+      // JJ × vv : toute la descendance est jaune.
+      expect(jaunes(jj, vv), 4);
+    });
+
+    test('le tri des combinaisons suit la dominance', () {
+      final ClassifyQuestion q =
+          genetique.lessonById('dominant-recessif')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<bool> alleles = item.text
+            .split('')
+            .map((String c) => c == 'J')
+            .toList();
+        expect(
+          item.category == 0,
+          CrossFigure.estJaune(alleles),
+          reason: '${item.text} est mal rangé',
+        );
+      }
+    });
+
+    test('le nombre de chromosomes est cohérent entre les deux questions', () {
+      expect(
+        reponse('support', 'q2'),
+        reponse('defi-genetique', 'q6') * 2,
+        reason: '46 chromosomes, soit 23 paires',
+      );
     });
   });
 }

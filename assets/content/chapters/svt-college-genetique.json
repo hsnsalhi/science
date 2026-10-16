@@ -1,0 +1,345 @@
+{
+  "chapter": "svt-college-genetique-et-heredite",
+  "lessons": [
+    {
+      "id": "support",
+      "title": "Où est écrite l'information",
+      "subtitle": "Du noyau au gène, en trois emboîtements.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois emboîtements",
+          "body": "Chaque cellule a un noyau. Le noyau contient des chromosomes. Un chromosome est une longue molécule d'ADN, et un gène en est un morceau."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Quarante-six, par paires",
+          "body": "Les cellules humaines portent 46 chromosomes, soit 23 paires. Dans chaque paire, un chromosome vient du père et l'autre de la mère."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Deux versions d'un même gène",
+          "body": "Un gène occupe la même place sur les deux chromosomes d'une paire, mais les deux exemplaires peuvent différer. Ces versions s'appellent des allèles."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ne confonds pas gène et allèle. Le gène est l'emplacement et la fonction ; l'allèle est la version précise qu'on y trouve."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Les emboîtements",
+          "bullets": [
+            "Cellule → noyau → chromosome → gène.",
+            "46 chromosomes humains, en 23 paires.",
+            "Un allèle est une version d'un gène."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces éléments du plus grand au plus petit.",
+          "hint": "On part de ce qui contient tout le reste.",
+          "explanation": "La cellule contient le noyau, qui contient les chromosomes, dont chacun est une molécule d'ADN portant de nombreux gènes.",
+          "items": [
+            "La cellule",
+            "Le noyau",
+            "Le chromosome",
+            "Le gène"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de chromosomes compte une cellule humaine ?",
+          "answer": 46,
+          "tolerance": 0.01,
+          "hint": "Vingt-trois paires.",
+          "explanation": "46 chromosomes, soit 23 paires. Dans chaque paire, l'un vient du père et l'autre de la mère."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque mot à sa définition.",
+          "explanation": "Le chromosome porte les gènes, le gène occupe une place précise, l'allèle est la version qu'on y trouve.",
+          "pairs": [
+            { "left": "Chromosome", "right": "Une longue molécule d'ADN portant de nombreux gènes" },
+            { "left": "Gène", "right": "Un morceau d'ADN responsable d'un caractère" },
+            { "left": "Allèle", "right": "Une version possible d'un gène" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Les deux chromosomes d'une même paire portent exactement le même ADN.",
+          "answer": false,
+          "explanation": "Non. Ils portent les mêmes gènes, aux mêmes emplacements, mais pas forcément les mêmes allèles : c'est précisément ce qui fait la diversité."
+        }
+      ]
+    },
+    {
+      "id": "dominant-recessif",
+      "title": "Dominant, récessif",
+      "subtitle": "Deux allèles, un seul caractère visible.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Lequel s'exprime ?",
+          "body": "Quand les deux allèles diffèrent, l'un peut masquer l'autre. Celui qui s'exprime est dit dominant, celui qui est masqué, récessif."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compose un croisement",
+          "body": "Chez le pois, l'allèle J (jaune) domine l'allèle v (vert). Change les parents et regarde.",
+          "figureId": "croisement"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le récessif se cache",
+          "body": "Une graine n'est verte que si elle porte vv. Une graine Jv est jaune, mais transmet quand même l'allèle v à la moitié de sa descendance."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un caractère récessif peut sauter des générations. Deux parents jaunes Jv donnent en moyenne une graine verte sur quatre : l'allèle était là, invisible."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Dominant et récessif",
+          "bullets": [
+            "Un allèle dominant s'exprime dès qu'il est présent.",
+            "Un allèle récessif ne s'exprime qu'en double.",
+            "Jv est jaune, mais porte le vert sans le montrer."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Une graine de pois porte les allèles J et v. De quelle couleur est-elle ?",
+          "hint": "J domine v.",
+          "explanation": "Jaune. L'allèle dominant J s'exprime dès qu'il est présent ; le v reste masqué, mais il est bien là et sera transmis.",
+          "figureId": "croisement",
+          "options": [
+            { "text": "Jaune", "correct": true },
+            { "text": "Verte" },
+            { "text": "Mi-jaune mi-verte" },
+            { "text": "On ne peut pas savoir" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces combinaisons d'allèles selon la couleur de la graine.",
+          "hint": "Le vert ne sort qu'en double.",
+          "explanation": "JJ et Jv donnent du jaune, puisque J suffit à s'exprimer. Seule la combinaison vv donne du vert.",
+          "categories": ["Graine jaune", "Graine verte"],
+          "items": [
+            { "text": "JJ", "category": 0 },
+            { "text": "Jv", "category": 0 },
+            { "text": "vJ", "category": 0 },
+            { "text": "vv", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Deux parents Jv sont croisés. Sur quatre graines, combien sont vertes en moyenne ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "Essaie ce croisement sur la figure.",
+          "explanation": "Une sur quatre. Les quatre combinaisons sont JJ, Jv, vJ et vv : seule la dernière donne du vert."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Deux parents jaunes ne peuvent jamais avoir de descendance verte.",
+          "answer": false,
+          "explanation": "Faux. Deux parents Jv sont jaunes tous les deux et donnent pourtant une graine verte sur quatre. C'est ce qui fait qu'un caractère récessif peut sauter des générations."
+        }
+      ]
+    },
+    {
+      "id": "transmission",
+      "title": "La transmission",
+      "subtitle": "Pourquoi les enfants ne sont pas des copies.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Chaque parent n'en donne qu'un",
+          "body": "Une cellule reproductrice ne reçoit qu'un chromosome de chaque paire. Elle n'emporte donc qu'un seul allèle de chaque gène."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La fécondation recompose",
+          "body": "À la fécondation, les deux cellules s'unissent : l'enfant reçoit un allèle du père et un de la mère, et retrouve ses 46 chromosomes."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Les quatre combinaisons",
+          "body": "Chaque parent peut donner l'un ou l'autre de ses deux allèles : cela fait quatre combinaisons.",
+          "figureId": "croisement"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "C'est le hasard de cette rencontre qui fait que deux enfants des mêmes parents ne se ressemblent pas exactement."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'allèles d'un gène donné une cellule reproductrice transporte-t-elle ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "Elle ne reçoit qu'un chromosome de chaque paire.",
+          "explanation": "Un seul. C'est pour cela que l'enfant en reçoit deux au total : un de chaque parent."
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes de la transmission.",
+          "explanation": "Chaque parent forme des cellules reproductrices à un seul allèle, l'une du père rencontre l'une de la mère, et l'enfant se retrouve avec deux allèles dont un seul s'exprimera si l'autre est récessif.",
+          "items": [
+            "Chaque parent possède deux allèles du gène",
+            "Ses cellules reproductrices n'en emportent qu'un",
+            "Une cellule du père rencontre une cellule de la mère",
+            "L'enfant reçoit un allèle de chacun",
+            "Le caractère visible dépend du couple obtenu"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Un parent JJ est croisé avec un parent vv. Quelle est la couleur de toute la descendance ?",
+          "hint": "Chaque enfant reçoit un J et un v.",
+          "explanation": "Toutes jaunes. Chaque enfant est Jv : il reçoit forcément le J du premier parent et le v du second, et le J l'emporte.",
+          "figureId": "croisement",
+          "options": [
+            { "text": "Toutes jaunes", "correct": true },
+            { "text": "Toutes vertes" },
+            { "text": "La moitié de chaque" },
+            { "text": "Trois jaunes pour une verte" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Complète ce bilan.",
+          "template": "Une cellule reproductrice porte ___ allèle de chaque gène. Après la fécondation, l'enfant en porte ___ .",
+          "blanks": [
+            { "accepted": ["1", "un", "un seul"] },
+            { "accepted": ["2", "deux"] }
+          ],
+          "hint": "Un de chaque parent.",
+          "explanation": "Un seul dans la cellule reproductrice, deux après la fécondation : un du père, un de la mère."
+        }
+      ]
+    },
+    {
+      "id": "defi-genetique",
+      "title": "Défi : génétique",
+      "subtitle": "Tout le chapitre, chronomètre en marche.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à distinguer ce qu'on voit de ce qui est porté."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Deux parents Jv. Sur quatre graines, combien sont jaunes en moyenne ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Seule une combinaison sur quatre donne du vert.",
+          "explanation": "Trois sur quatre : JJ, Jv et vJ sont jaunes, seule vv est verte."
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces affirmations selon qu'elles sont exactes ou non.",
+          "explanation": "Un allèle est bien une version d'un gène, et un récessif peut rester caché. En revanche le dominant n'est pas le plus fréquent, et deux parents jaunes peuvent donner du vert.",
+          "categories": ["Exact", "Faux"],
+          "items": [
+            { "text": "Un allèle est une version d'un gène", "category": 0 },
+            { "text": "Un allèle récessif peut rester invisible", "category": 0 },
+            { "text": "L'allèle dominant est toujours le plus fréquent", "category": 1 },
+            { "text": "Deux parents jaunes donnent toujours du jaune", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une graine Jv et une graine JJ ont la même apparence.",
+          "answer": true,
+          "explanation": "Oui, toutes deux sont jaunes. Mais elles ne transmettent pas la même chose : la Jv peut donner un v à sa descendance, la JJ non."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Un croisement donne la moitié de graines vertes. Que portaient les parents ?",
+          "hint": "Essaie les combinaisons sur la figure.",
+          "explanation": "Jv croisé avec vv : les quatre combinaisons sont Jv, Jv, vv, vv, soit la moitié de vertes. Deux Jv n'en donneraient qu'un quart.",
+          "figureId": "croisement",
+          "options": [
+            { "text": "Jv et vv", "correct": true },
+            { "text": "Jv et Jv" },
+            { "text": "JJ et vv" },
+            { "text": "JJ et Jv" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque combinaison à ce qu'elle produit.",
+          "explanation": "Deux dominants donnent toujours le caractère dominant ; un de chaque aussi, mais en portant le récessif ; deux récessifs le font apparaître.",
+          "pairs": [
+            { "left": "JJ", "right": "Jaune, ne transmet que du J" },
+            { "left": "Jv", "right": "Jaune, mais porte le v" },
+            { "left": "vv", "right": "Verte" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de paires de chromosomes compte une cellule humaine ?",
+          "answer": 23,
+          "tolerance": 0.01,
+          "hint": "La moitié de 46.",
+          "explanation": "23 paires, soit 46 chromosomes. Les cellules reproductrices, elles, n'en portent que 23 au total."
+        }
+      ]
+    }
+  ]
+}

@@ -280,6 +280,18 @@ void main() {
         await shoot(tester, '$device-6-astronomie');
       });
 
+      // Le croisement : deux parents Jv, et le quart de vert qui apparaît.
+      testWidgets('svt : croisement génétique', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'SVT');
+        await tapText(tester, 'Génétique et hérédité');
+        await tapText(tester, 'Dominant, récessif');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-16-croisement');
+      });
+
       // La piste de vitesse s'anime : la capture fige le mobile en route,
       // avec ses positions passées également espacées.
       testWidgets('physique : vitesse sur une piste', (
