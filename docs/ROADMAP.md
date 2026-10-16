@@ -1,12 +1,17 @@
 # Feuille de route
 
-Le socle technique est posé, et cinquante-neuf chapitres sont jouables — au
-moins un par matière et par niveau. La répartition est désormais la vraie
-question : 21 chapitres au collège contre 15 au primaire, 15 au lycée et 8 à
-l'université. Les huit matières sont désormais représentées aux quatre
-niveaux, sans case vide. La suite se joue surtout sur le **contenu**, et sur un petit
-nombre de briques techniques qui ne sont utiles qu'une fois le contenu
-étoffé.
+Le socle technique est posé, et cinquante-neuf chapitres sont jouables. Les
+huit matières sont représentées aux quatre niveaux : le tableau n'a plus de
+case vide.
+
+La question n'est donc plus la couverture, mais la profondeur. Par niveau :
+21 chapitres au collège, 15 au primaire, 15 au lycée, 8 à l'université. Par
+matière : 14 en mathématiques, 8 en physique-chimie, 7 en SVT, en astronomie
+et en logique, 6 en informatique, 5 en technologie et en histoire des
+sciences.
+
+La suite se joue surtout sur le **contenu**, et sur un petit nombre de
+briques techniques qui ne sont utiles qu'une fois le contenu étoffé.
 
 ---
 
@@ -14,15 +19,16 @@ nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 
 L'ordre proposé suit l'utilité pour un élève, pas la facilité d'écriture.
 
-1. **Le primaire**, remonté à quatorze chapitres. L'écart avec le
-   collège se referme ; il reste à lui donner une progression suivie
-   plutôt qu'un chapitre par matière. C'est le niveau où une suite tenue de dix chapitres change le plus
-   l'usage, et celui où l'écriture est la plus exigeante : moins de texte,
-   plus de manipulation.
-2. **Les matières les plus maigres** : la technologie et l'histoire
-   des sciences en ont quatre chacune, contre douze aux mathématiques.
-3. **L'université**, qui n'a que huit chapitres, un par matière.
-   C'est une amorce, pas une progression.
+1. **Des progressions suivies, plutôt qu'un chapitre par case.** Les
+   mathématiques au primaire en ont une — multiplication, division,
+   fractions, décimaux — et c'est le seul endroit où un élève
+   peut enchaîner plusieurs chapitres sans sauter d'un sujet à l'autre.
+   Reproduire cela ailleurs vaut mieux qu'ouvrir de nouvelles cases.
+2. **Les matières les plus maigres** : la technologie et l'histoire des
+   sciences en ont cinq chacune, contre quatorze aux mathématiques.
+3. **L'université**, qui n'a que huit chapitres, un par matière. C'est une
+   amorce, pas un cursus : chaque chapitre y demande une figure neuve et
+   une écriture plus dense.
 
 Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 
@@ -31,10 +37,10 @@ Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 | Brique | Pourquoi, et quand |
 |---|---|
 | **Révision espacée explicite** | Les données sont déjà là (`distinctDays`, justesse par leçon). Un écran « à réviser aujourd'hui » devient utile dès qu'il y a une dizaine de chapitres terminés, pas avant. |
-| **Rendu LaTeX** | Les formules Unicode suffisent jusqu'au lycée. Le supérieur (intégrales, matrices, sommes) en aura besoin : à faire en même temps que les premiers chapitres universitaires. |
+| **Rendu LaTeX** | Les huit chapitres universitaires ont tenu en Unicode, mais de justesse, et en évitant les intégrales et les matrices écrites en ligne. `typographie_test.dart` dit précisément ce que les polices savent dessiner : la vraie contrainte est là, pas dans le goût. C'est le premier chantier technique quand le supérieur s'étoffera. |
 | **Éditeur de code embarqué** | Pour l'informatique au lycée : exécuter un petit programme Python dans l'application. Techniquement le plus gros morceau restant. |
 | **Sons** | Un retour sonore court sur bonne réponse, désactivable. Volontairement repoussé : mal fait, c'est pire que rien. |
-| **Plus de figures interactives** | Quarante-trois existent ; le circuit, la cellule et la parabole sont faits. Restent la balance chimique, le repère orthonormé et une figure de géométrie dans l'espace. Chaque figure sert plusieurs chapitres. |
+| **Plus de figures interactives** | Quarante-trois existent, et plusieurs servent déjà trois ou quatre chapitres — la chaîne d'énergie, le code génétique, la machine de Turing. Restent la balance chimique, une figure de géométrie dans l'espace, et un spectre lumineux. Écrire un chapitre autour d'une figure existante coûte deux fois moins cher. |
 | **Icône et écran de lancement** | À produire avant toute mise en ligne sur les stores. |
 
 ## Long terme — ce qui demande une décision
