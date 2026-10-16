@@ -19,7 +19,7 @@
           "id": "c2",
           "kind": "formule",
           "title": "La notation O",
-          "formula": "f(n) = O(g(n))  ⟺  ∃ c > 0, ∃ n₀, ∀ n ≥ n₀ : f(n) ≤ c·g(n)",
+          "formula": "f(n) = O(g(n)) s'il existe c > 0 et n₀ tels que f(n) ≤ c·g(n) pour tout n ≥ n₀",
           "body": "à partir d'un certain rang, f ne dépasse pas g à une constante près."
         },
         {
@@ -125,7 +125,7 @@
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
-            "log n ≪ n ≪ n log n ≪ n² ≪ 2^n.",
+            "log n, puis n, puis n log n, puis n², puis 2^n : chaque coût écrase le précédent.",
             "L'exponentiel est hors d'atteinte dès quelques dizaines d'éléments.",
             "Doubler n est le bon test pour identifier une classe."
           ]
@@ -203,7 +203,7 @@
           "id": "c2",
           "kind": "etape",
           "title": "Recherche dichotomique",
-          "body": "Sur un tableau trié, on compare au milieu et on élimine la moitié restante.\n\nChaque comparaison divise l'espace par deux : au pire ⌈log₂(n+1)⌉ comparaisons. Pour un million d'éléments, vingt suffisent."
+          "body": "Sur un tableau trié, on compare au milieu et on élimine la moitié restante.\n\nChaque comparaison divise l'espace par deux : au pire la partie entière supérieure de log₂(n+1) comparaisons. Pour un million d'éléments, vingt suffisent."
         },
         {
           "id": "c3",
@@ -295,7 +295,7 @@
           "answer": 11,
           "tolerance": 0.5,
           "hint": "Après dix divisions, que reste-t-il à faire ?",
-          "explanation": "11, et non 10. Dix divisions ramènent l'intervalle à un seul élément, qu'il faut encore comparer à la valeur cherchée : au pire ⌊log₂ n⌋ + 1 comparaisons. Ce « + 1 » est le piège habituel.",
+          "explanation": "11, et non 10. Dix divisions ramènent l'intervalle à un seul élément, qu'il faut encore comparer à la valeur cherchée : au pire la partie entière de log₂ n, plus 1, comparaisons. Ce « + 1 » est le piège habituel.",
           "figureId": "complexite"
         },
         {

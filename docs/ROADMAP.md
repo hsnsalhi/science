@@ -1,8 +1,8 @@
 # Feuille de route
 
-Le socle technique est posé, et quarante-deux chapitres sont jouables — au
+Le socle technique est posé, et quarante-trois chapitres sont jouables — au
 moins un par matière et par niveau. La répartition est désormais la vraie
-question : 21 chapitres au collège contre 13 au primaire, 7 au lycée et 1 à
+question : 21 chapitres au collège contre 13 au primaire, 8 au lycée et 1 à
 l'université. La suite se joue surtout sur le **contenu**, et sur un petit
 nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 étoffé.

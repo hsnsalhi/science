@@ -203,7 +203,7 @@
           "id": "c2",
           "kind": "etape",
           "title": "Compter avec une variable",
-          "body": "score ← 0\nrépéter 5 fois\n    score ← score + 2\n\nÀ la fin, score vaut 10. La flèche signifie « reçoit la valeur »."
+          "body": "score <- 0\nrépéter 5 fois\n    score <- score + 2\n\nÀ la fin, score vaut 10. La flèche signifie « reçoit la valeur »."
         },
         {
           "id": "c3",
@@ -215,7 +215,7 @@
         {
           "id": "q1",
           "kind": "saisieNumerique",
-          "prompt": "score ← 0, puis « répéter 5 fois : score ← score + 2 ». Que vaut score à la fin ?",
+          "prompt": "score <- 0, puis « répéter 5 fois : score <- score + 2 ». Que vaut score à la fin ?",
           "answer": 10,
           "tolerance": 0.01,
           "hint": "Cinq ajouts de 2.",
@@ -224,7 +224,7 @@
         {
           "id": "q2",
           "kind": "saisieNumerique",
-          "prompt": "score ← 1, puis « répéter 3 fois : score ← score × 2 ». Que vaut score à la fin ?",
+          "prompt": "score <- 1, puis « répéter 3 fois : score <- score × 2 ». Que vaut score à la fin ?",
           "answer": 8,
           "tolerance": 0.01,
           "hint": "On double à chaque tour, trois fois.",
@@ -276,7 +276,7 @@
         {
           "id": "q1",
           "kind": "saisieNumerique",
-          "prompt": "n ← 20, puis « répéter 2 fois : n ← n ÷ 2 ». Que vaut n ?",
+          "prompt": "n <- 20, puis « répéter 2 fois : n <- n ÷ 2 ». Que vaut n ?",
           "answer": 5,
           "tolerance": 0.01,
           "hint": "On divise deux fois de suite.",
@@ -330,7 +330,7 @@
         {
           "id": "q6",
           "kind": "saisieNumerique",
-          "prompt": "score ← 0. « répéter 4 fois : si (score < 2) alors score ← score + 1 ». Que vaut score ?",
+          "prompt": "score <- 0. « répéter 4 fois : si (score < 2) alors score <- score + 1 ». Que vaut score ?",
           "answer": 2,
           "tolerance": 0.01,
           "hint": "Déroule : au troisième tour, la condition est-elle encore vraie ?",

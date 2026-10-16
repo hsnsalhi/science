@@ -198,9 +198,9 @@ class QuizResultView extends ConsumerWidget {
   }
 
   String _starHint(int stars) => switch (stars) {
-    0 => 'Termine toutes les leçons du chapitre pour décrocher ta 1ʳᵉ étoile.',
-    1 => 'Vise 80 % de bonnes réponses pour la 2ᵉ étoile.',
-    _ => 'Reviens un autre jour avec un quasi sans-faute pour la 3ᵉ étoile.',
+    0 => 'Termine toutes les leçons du chapitre pour décrocher ta 1re étoile.',
+    1 => 'Vise 80 % de bonnes réponses pour la 2e étoile.',
+    _ => 'Reviens un autre jour avec un quasi sans-faute pour la 3e étoile.',
   };
 }
 

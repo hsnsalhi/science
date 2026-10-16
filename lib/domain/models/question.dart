@@ -704,7 +704,7 @@ final class OrderingQuestion extends Question {
   }
 
   @override
-  String get solutionLabel => items.join(' → ');
+  String get solutionLabel => items.join(', puis ');
 }
 
 /// Paires à associer.
@@ -735,7 +735,7 @@ final class MatchingQuestion extends Question {
 
   @override
   String get solutionLabel =>
-      pairs.map((MatchPair p) => '${p.left} → ${p.right}').join(' · ');
+      pairs.map((MatchPair p) => '${p.left} : ${p.right}').join(' · ');
 }
 
 /// Éléments à ranger dans des catégories.

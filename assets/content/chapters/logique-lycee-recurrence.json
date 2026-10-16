@@ -1,0 +1,319 @@
+{
+  "chapter": "logique-lycee-recurrence",
+  "lessons": [
+    {
+      "id": "principe-de-recurrence",
+      "title": "Le principe",
+      "subtitle": "Deux marches, et l'escalier entier.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Prouver une infinité d'énoncés",
+          "body": "« Pour tout entier n, la somme des n premiers entiers vaut n(n+1)/2. »\n\nIl y a une infinité d'énoncés à vérifier, un par valeur de n. On ne peut pas les faire un par un. La récurrence les attrape tous d'un coup."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les deux conditions",
+          "formula": "P(0) vraie, et P(n) donne P(n+1)",
+          "body": "alors P(n) est vraie pour tout entier n."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "L'image des dominos",
+          "body": "Initialisation : on fait tomber le premier domino.\n\nHérédité : on a placé les dominos assez près pour que chacun fasse tomber le suivant.\n\nSi les deux sont vraies, toute la rangée tombe — et il n'a pas fallu la pousser domino par domino."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'hérédité ne dit jamais que P(n) est vraie. Elle dit seulement : si elle l'était, alors P(n+1) le serait. C'est une promesse de transmission, pas une affirmation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que dit l'hérédité d'une récurrence ?",
+          "hint": "C'est une implication, pas une affirmation.",
+          "explanation": "Que si P(n) est vraie, alors P(n+1) l'est. Elle ne dit rien de la vérité de P(n) elle-même.",
+          "options": [
+            { "text": "Si P(n) est vraie, alors P(n+1) l'est", "correct": true },
+            { "text": "P(n) est vraie pour tout n" },
+            { "text": "P(n) est vraie pour un n au moins" },
+            { "text": "P(n+1) est vraie, donc P(n) aussi" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes d'une démonstration par récurrence.",
+          "explanation": "On énonce la propriété, on vérifie le premier cas, on suppose P(n) et on en déduit P(n+1), puis on conclut.",
+          "items": [
+            "énoncer la propriété P(n)",
+            "vérifier P(0)",
+            "supposer P(n) et démontrer P(n+1)",
+            "conclure que P(n) est vraie pour tout n"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une récurrence démontre une infinité d'énoncés en un nombre fini de lignes.",
+          "answer": true,
+          "explanation": "Oui, et c'est tout son intérêt. Deux vérifications suffisent à couvrir une infinité de cas."
+        }
+      ]
+    },
+    {
+      "id": "rediger-une-recurrence",
+      "title": "Rédiger une récurrence",
+      "subtitle": "La somme des n premiers entiers.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Ce qu'on veut prouver",
+          "formula": "1 + 2 + … + n = n(n+1)/2",
+          "body": "pour tout entier n supérieur ou égal à 1."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Initialisation",
+          "body": "Pour n = 1, le membre de gauche vaut 1.\n\nLe membre de droite vaut 1 × 2 / 2, soit 1. La propriété est vraie au rang 1."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Hérédité",
+          "body": "Supposons la formule vraie au rang n. Alors la somme jusqu'à n+1 vaut n(n+1)/2 + (n+1).\n\nEn mettant (n+1) en facteur : (n+1)(n/2 + 1), soit (n+1)(n+2)/2.\n\nC'est exactement la formule au rang n+1."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Pour vérifier",
+          "body": "n = 100 : la formule donne 100 × 101 / 2, soit 5 050.\n\nC'est la somme que Gauss, enfant, aurait trouvée en quelques secondes en appariant 1 avec 100, 2 avec 99, et ainsi de suite."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Dans l'hérédité, on part toujours du membre qu'on connaît — la somme jusqu'à n+1 — pour y faire apparaître l'hypothèse. Partir de ce qu'on veut prouver est le défaut de rédaction le plus courant."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 1 + 2 + … + 100 ?",
+          "answer": 5050,
+          "tolerance": 0.01,
+          "hint": "100 × 101 / 2.",
+          "explanation": "5 050. La formule évite d'additionner cent nombres."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 1 + 2 + … + 20 ?",
+          "answer": 210,
+          "tolerance": 0.01,
+          "hint": "20 × 21 / 2.",
+          "explanation": "210 : 20 × 21 / 2. On peut vérifier à la main, ce qui est une bonne habitude avant de faire confiance à une formule."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans l'hérédité, de quoi part-on ?",
+          "hint": "Du côté qu'on sait manipuler.",
+          "explanation": "De la somme jusqu'à n+1, pour y faire apparaître l'hypothèse de récurrence. Partir de la conclusion est un défaut de rédaction classique.",
+          "options": [
+            { "text": "De la somme jusqu'à n+1", "correct": true },
+            { "text": "De la formule au rang n+1, qu'on veut prouver" },
+            { "text": "De la valeur n = 1" },
+            { "text": "De la conclusion générale" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "texteATrous",
+          "prompt": "Complète les deux étapes de la démonstration.",
+          "template": "On vérifie d'abord la propriété au rang 1 : c'est l'___. On suppose ensuite P(n) pour en déduire P(n+1) : c'est l'___.",
+          "blanks": [
+            { "accepted": ["initialisation"] },
+            { "accepted": ["hérédité", "heredite"] }
+          ],
+          "hint": "Deux mots, dans l'ordre.",
+          "explanation": "Initialisation, puis hérédité. Les deux sont indispensables, et l'ordre de rédaction est toujours celui-là."
+        }
+      ]
+    },
+    {
+      "id": "pieges-de-la-recurrence",
+      "title": "Quand la récurrence échoue",
+      "subtitle": "Une marche manquante suffit.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une hérédité parfaite, et un énoncé faux",
+          "body": "Soit P(n) : « n² + n est impair ».\n\nSupposons P(n). Alors (n+1)² + (n+1) vaut n² + n + 2n + 2 : on ajoute un nombre pair à un nombre impair, donc le résultat est impair. L'hérédité est démontrée, sans faute."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Et pourtant",
+          "body": "Pour n = 1, n² + n vaut 2, qui est pair. P(1) est fausse.\n\nEn fait n² + n = n(n+1) est le produit de deux entiers consécutifs : il est pair pour tout n. La propriété est fausse partout.\n\nL'hérédité toute seule ne prouve rien : aucun domino n'est tombé."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "L'erreur symétrique",
+          "body": "Vérifier P(0), P(1), P(2) et conclure ne vaut pas mieux.\n\nP(n) : « n² + n + 41 est premier » est vraie pour n allant de 0 à 39, et fausse pour n = 40 — où elle vaut 41², donc 1 681.\n\nQuarante vérifications ne font pas une démonstration."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Retiens les deux échecs : une hérédité sans initialisation ne démarre jamais ; une initialisation sans hérédité s'arrête au premier cas vérifié."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut n² + n pour n = 1 ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "1 + 1.",
+          "explanation": "2, qui est pair. L'énoncé « n² + n est impair » est donc faux dès le premier rang, malgré une hérédité correcte."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « n² + n est impair » n'est-elle vraie pour aucun n ?",
+          "hint": "Factorise.",
+          "explanation": "Parce que n² + n = n(n+1) est le produit de deux entiers consécutifs : l'un des deux est forcément pair, donc le produit l'est.",
+          "options": [
+            { "text": "n(n+1) est le produit de deux entiers consécutifs", "correct": true },
+            { "text": "L'hérédité est fausse" },
+            { "text": "n² est toujours pair" },
+            { "text": "La récurrence ne s'applique pas aux carrés" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Pour quelle valeur de n l'expression n² + n + 41 cesse-t-elle d'être un nombre premier ?",
+          "answer": 40,
+          "tolerance": 0.01,
+          "hint": "Cherche le moment où 41 apparaît en facteur.",
+          "explanation": "Pour n = 40 : l'expression vaut 40 × 41 + 41, soit 41 × 41. Quarante cas vérifiés ne prouvaient rien."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces démonstrations : sont-elles valides ?",
+          "hint": "Les deux étapes sont-elles présentes ?",
+          "explanation": "Il faut l'initialisation et l'hérédité. L'une sans l'autre ne démontre rien, quel que soit le nombre de cas vérifiés.",
+          "categories": ["Démonstration valide", "Démonstration invalide"],
+          "items": [
+            { "text": "P(0) vérifiée et hérédité démontrée", "category": 0 },
+            { "text": "P(1) vérifiée et hérédité démontrée", "category": 0 },
+            { "text": "hérédité démontrée, aucun cas vérifié", "category": 1 },
+            { "text": "quarante cas vérifiés, pas d'hérédité", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-recurrence",
+      "title": "Défi : la récurrence",
+      "subtitle": "Six questions, de la somme aux suites.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Une suite à démontrer",
+          "body": "La formule explicite d'une suite géométrique se démontre par récurrence : chaque terme est le précédent multiplié par la raison.",
+          "figureId": "suite"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 1 + 2 + … + 50 ?",
+          "answer": 1275,
+          "tolerance": 0.01,
+          "hint": "50 × 51 / 2.",
+          "explanation": "1 275. La formule tient pour tout n, et c'est précisément ce que la récurrence a établi."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une suite géométrique de premier terme 3 et de raison 2. Combien vaut son terme de rang 5 ?",
+          "answer": 96,
+          "tolerance": 0.01,
+          "hint": "3 multiplié cinq fois par 2.",
+          "explanation": "96 : 3 multiplié cinq fois par 2, soit 3 × 32. La formule explicite se démontre par récurrence à partir de la relation de récurrence.",
+          "figureId": "suite"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Une hérédité est démontrée, mais aucune initialisation. Que peut-on conclure ?",
+          "hint": "Le premier domino est-il tombé ?",
+          "explanation": "Rien du tout. Sans premier domino qui tombe, la chaîne d'implications ne démarre jamais.",
+          "options": [
+            { "text": "Rien : la chaîne ne démarre pas", "correct": true },
+            { "text": "Que P(n) est vraie pour tout n" },
+            { "text": "Que P(n) est vraie à partir d'un certain rang" },
+            { "text": "Que P(n) est fausse pour tout n" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une propriété vérifiée pour les mille premiers entiers est vraie pour tous.",
+          "answer": false,
+          "explanation": "Non. L'exemple de n² + n + 41 échoue au rang 40 après trente-neuf succès ; mille cas ne valent pas davantage."
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Une récurrence peut-elle démarrer à un autre rang que 0 ?",
+          "hint": "Qu'est-ce que l'initialisation fixe exactement ?",
+          "explanation": "Oui : on initialise au rang voulu, et la conclusion vaut à partir de ce rang. C'est le cas de 2^n > n², vraie seulement à partir de 5.",
+          "options": [
+            { "text": "Oui, et la conclusion vaut à partir de ce rang", "correct": true },
+            { "text": "Non, elle doit toujours partir de 0" },
+            { "text": "Non, elle doit toujours partir de 1" },
+            { "text": "Oui, mais la conclusion vaut quand même pour tout n" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "À partir de quel entier n l'inégalité 2^n > n² devient-elle vraie et le reste-t-elle ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "Teste 2, 3, 4, puis 5.",
+          "explanation": "À partir de 5 : 2^5 vaut 32 et 5² vaut 25. Pour n = 4, les deux valent 16, et l'inégalité stricte est fausse.",
+          "figureId": "suite"
+        }
+      ]
+    }
+  ]
+}

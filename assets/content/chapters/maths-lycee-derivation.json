@@ -13,7 +13,7 @@
           "id": "c1",
           "kind": "formule",
           "title": "Pente d'une sécante",
-          "formula": "τ = (f(a + h) − f(a)) / h",
+          "formula": "taux = (f(a + h) − f(a)) / h",
           "body": "l'écart des ordonnées divisé par l'écart des abscisses."
         },
         {
@@ -33,7 +33,7 @@
           "id": "c4",
           "kind": "exemple",
           "title": "Un calcul complet",
-          "body": "Pour f(x) = x², entre 1 et 1,5 :\n\nτ = (1,5² − 1²) / 0,5 = (2,25 − 1) / 0,5 = 2,5.\n\nAucune notion nouvelle n'est intervenue : ce n'est qu'une division."
+          "body": "Pour f(x) = x², entre 1 et 1,5 :\n\ntaux = (1,5² − 1²) / 0,5 = (2,25 − 1) / 0,5 = 2,5.\n\nAucune notion nouvelle n'est intervenue : ce n'est qu'une division."
         },
         {
           "id": "c5",
@@ -102,7 +102,7 @@
           "id": "c1",
           "kind": "formule",
           "title": "Le nombre dérivé",
-          "formula": "f'(a) = lim (h→0) (f(a + h) − f(a)) / h",
+          "formula": "f'(a) = lim (h vers 0) (f(a + h) − f(a)) / h",
           "body": "quand cette limite existe, f est dérivable en a."
         },
         {
@@ -190,7 +190,7 @@
           "id": "c1",
           "kind": "formule",
           "title": "Les dérivées usuelles",
-          "formula": "(xⁿ)' = n·xⁿ⁻¹,   (k)' = 0,   (k·u)' = k·u',   (u + v)' = u' + v'",
+          "formula": "(x^n)' = n·x^(n−1),   (k)' = 0,   (k·u)' = k·u',   (u + v)' = u' + v'",
           "body": "de quoi dériver tout polynôme."
         },
         {
@@ -227,7 +227,7 @@
           "prompt": "Pour f(x) = x³, que vaut f'(2) ?",
           "answer": 12,
           "tolerance": 0.01,
-          "hint": "(xⁿ)' = n·xⁿ⁻¹.",
+          "hint": "(x^n)' = n·x^(n−1).",
           "explanation": "f'(x) = 3x², donc f'(2) = 3 × 4 = 12."
         },
         {
