@@ -78,11 +78,25 @@ cours lisible sur un téléphone.
 | `formule` | Une formule mise en valeur | `formula` (obligatoire), `title`, `body` |
 | `exemple` | Un exemple résolu | `title`, `body` |
 | `astuce` | Un piège fréquent | `body` |
+| `avertissement` | Une mise en garde de sécurité | `body` |
 | `figure` | Une figure manipulable | `figureId` (obligatoire), `title`, `body` |
 | `etape` | Une étape de méthode, numérotée automatiquement | `title`, `body` |
 | `aRetenir` | La synthèse de fin | `title`, `body`, `bullets`, `formula` |
 
 Les formules s'écrivent en Unicode : `a² + b² = c²`, `√2`, `×`, `÷`, `π`, `≈`.
+
+**Attention au jeu de caractères.** Les polices du projet ne couvrent pas
+tout Unicode, et un caractère absent est dessiné comme un rectangle vide —
+sans la moindre erreur, chez l'élève et nulle part ailleurs. Sont notamment
+absents : les flèches (`→`, `←`), les lettres grecques minuscules (`α`,
+`ρ`, `τ`), l'exposant en lettre (`xⁿ`), les quantificateurs (`∀`, `∃`), les
+coches (`✓`, `✗`) et les crochets de partie entière. Écrire « vers », « 2^n »,
+« il existe » ou « l'angle a » règle le problème.
+
+`flutter test test/data/typographie_test.dart` lit la table de caractères des
+polices et refuse tout contenu qui ne s'afficherait pas. Il vaut mieux le
+lancer avant d'écrire une formule inhabituelle que découvrir des carrés sur
+une capture d'écran.
 
 ### Les neuf types de question
 
@@ -194,4 +208,12 @@ jamais atteindre un élève.
   existe pour cela : montrer que la règle fonctionne, avant de l'énoncer.
 - **Nommer les pièges** dans une carte `astuce` : l'erreur fréquente anticipée
   vaut mieux que l'erreur corrigée.
+- **Réserver `avertissement` à ce qui peut blesser** — l'électricité du
+  secteur, un produit chimique, une source de chaleur. Elle est ambre et
+  porte un triangle, là où l'astuce est bleue : un enfant doit voir la
+  différence avant d'avoir lu.
+- **Préférer une figure existante.** Écrire un chapitre autour d'une figure
+  déjà faite coûte environ deux fois moins cher qu'en inventer une, et la
+  figure y gagne : celle du code génétique sert à trois chapitres, de la
+  seconde à la licence.
 - **Doser les XP** : 20 à 25 pour un cours court, 40 pour un défi long.
