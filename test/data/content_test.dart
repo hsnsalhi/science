@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
+import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
@@ -1368,6 +1369,119 @@ void main() {
           reason: '${paire.left} n’a pas ce discriminant',
         );
       }
+    });
+  });
+
+  group('Chapitre complet : algorithmique et complexité', () {
+    late Chapter complexite;
+
+    setUpAll(() {
+      complexite = catalog.chapterById(
+        'informatique-universite-algorithmique-et-complexite',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (complexite.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(complexite.isPlayable, isTrue);
+      expect(complexite.lessons.length, 4);
+    });
+
+    test('les comparaisons de dichotomie annoncées sont recalculées', () {
+      // Le nombre de comparaisons au pire est ⌈log₂(n+1)⌉, et c'est la
+      // courbe logarithmique de la figure qui le porte.
+      double comparaisons(double n) =>
+          Complexite.logarithmique.operations(n + 1).ceilToDouble();
+
+      expect(comparaisons(1000000), reponseNum('recherche-et-tri', 'q1'));
+      expect(comparaisons(1024), reponseNum('defi-complexite', 'q2'));
+    });
+
+    test('les mises à l’échelle annoncées suivent la bonne classe', () {
+      // Quadratique : de mille à deux mille éléments, puis de dix mille
+      // à trente mille. On refait le rapport plutôt que de le relire.
+      double facteur(Complexite c, double avant, double apres) =>
+          c.operations(apres) / c.operations(avant);
+
+      expect(
+        1 * facteur(Complexite.quadratique, 1000, 2000),
+        closeTo(reponseNum('les-classes', 'q1'), 0.001),
+      );
+      expect(
+        2 * facteur(Complexite.quadratique, 10000, 30000),
+        closeTo(reponseNum('recherche-et-tri', 'q4'), 0.001),
+      );
+      expect(
+        3 * facteur(Complexite.lineaire, 1000000, 4000000),
+        closeTo(reponseNum('defi-complexite', 'q5'), 0.001),
+      );
+    });
+
+    test('l’estimation sur 2^50 tombe dans la bonne fourchette', () {
+      final EstimateQuestion q =
+          complexite.lessonById('les-classes')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as EstimateQuestion;
+      final double jours =
+          ComplexityFigure.secondes(Complexite.exponentielle.operations(50)) /
+              86400;
+      expect(
+        (q.expected - jours).abs(),
+        lessThan(q.tolerance),
+        reason: 'la vraie durée est de $jours jours',
+      );
+      expect(jours, inInclusiveRange(q.min, q.max));
+    });
+
+    test('le classement praticable / impraticable suit les courbes', () {
+      // Pour mille éléments, une machine ordinaire finit un n² en une
+      // seconde ; un 2^n ne finit pas. C'est la frontière que le tri
+      // des deux exercices affirme, et on la recalcule.
+      final Map<String, Complexite> classes = <String, Complexite>{
+        'log n': Complexite.logarithmique,
+        'n': Complexite.lineaire,
+        'n log n': Complexite.quasiLineaire,
+        'n²': Complexite.quadratique,
+        '2^n': Complexite.exponentielle,
+      };
+      final ClassifyQuestion q =
+          complexite.lessonById('les-classes')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final Complexite? c = classes[item.text];
+        expect(c, isNotNull, reason: '${item.text} n’est pas une classe connue');
+        // Dix millions d'éléments, ce que « grandes données » veut
+        // dire ici : au-delà d'une heure de calcul, on ne parle plus de
+        // traitement mais d'attente.
+        final double secondes =
+            ComplexityFigure.secondes(c!.operations(10000000));
+        expect(
+          item.category == 0,
+          secondes < 3600,
+          reason: '${item.text} demande $secondes s sur dix millions',
+        );
+      }
+    });
+
+    test('les durées lisibles passent les bons seuils', () {
+      expect(ComplexityFigure.dureeLisible(1e-9), 'instantané');
+      expect(ComplexityFigure.dureeLisible(0.5), '500 ms');
+      expect(ComplexityFigure.dureeLisible(90), '2 min');
+      expect(ComplexityFigure.dureeLisible(86400 * 3), '3 jours');
+      // Trente-six ans pour 2^60, comme l'annonce la leçon.
+      final double ans =
+          ComplexityFigure.secondes(Complexite.exponentielle.operations(60)) /
+              31557600;
+      expect(ans, closeTo(36.5, 1.5));
     });
   });
 }

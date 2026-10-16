@@ -1,0 +1,348 @@
+{
+  "chapter": "informatique-universite-algorithmique-et-complexite",
+  "lessons": [
+    {
+      "id": "compter-les-operations",
+      "title": "Compter les opérations",
+      "subtitle": "Mesurer un algorithme sans le lancer.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi ne pas chronométrer",
+          "body": "Chronométrer un programme mesure autant la machine que l'algorithme : un processeur deux fois plus rapide halve le temps sans rien changer à la méthode.\n\nOn compte donc les opérations élémentaires en fonction de la taille n des données."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La notation O",
+          "formula": "f(n) = O(g(n))  ⟺  ∃ c > 0, ∃ n₀, ∀ n ≥ n₀ : f(n) ≤ c·g(n)",
+          "body": "à partir d'un certain rang, f ne dépasse pas g à une constante près."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Ce qu'on jette, et pourquoi",
+          "body": "3n² + 50n + 1000 est O(n²).\n\nLe terme 50n finit par être négligeable devant n², et la constante 3 dépend du langage, du compilateur, de la machine. Ce qui reste est ce qui ne dépend que de l'algorithme.\n\nLa contrepartie est franche : pour de petites entrées, un O(n²) avec de bonnes constantes bat souvent un O(n log n)."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "On raisonne d'ordinaire au pire cas. C'est une garantie, pas une prédiction : le cas moyen peut être bien meilleur, et c'est précisément l'écart entre les deux qui fait l'intérêt du tri rapide."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "On compte des opérations, pas des secondes.",
+            "Constantes et termes dominés sont écartés.",
+            "O(·) est une majoration asymptotique, au pire cas sauf mention."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la complexité de 3n² + 50n + 1000 ?",
+          "hint": "Quel terme l'emporte quand n devient grand ?",
+          "explanation": "O(n²). Les constantes et les termes dominés disparaissent : seul le terme de plus haut degré décide du comportement asymptotique.",
+          "options": [
+            { "text": "O(n²)", "correct": true },
+            { "text": "O(n)" },
+            { "text": "O(3n²)" },
+            { "text": "O(n² + n)" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Un algorithme en O(n log n) est toujours plus rapide qu'un algorithme en O(n²), quelle que soit la taille des données.",
+          "answer": false,
+          "explanation": "Faux. La notation ne dit rien des petites entrées ni des constantes. Les bibliothèques de tri basculent d'ailleurs sur un tri par insertion sous une quarantaine d'éléments."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces expressions selon leur classe de complexité.",
+          "hint": "Ne garde que le terme dominant.",
+          "explanation": "n + 1000 et 5n sont linéaires. n²/2 et 2n² + n sont quadratiques : la constante devant n² ne change pas la classe.",
+          "categories": ["O(n)", "O(n²)"],
+          "items": [
+            { "text": "n + 1000", "category": 0 },
+            { "text": "5n", "category": 0 },
+            { "text": "n²/2", "category": 1 },
+            { "text": "2n² + n", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Doubler la vitesse du processeur change la complexité d'un algorithme.",
+          "answer": false,
+          "explanation": "Non : elle divise le temps par deux, ce qui est une constante. La complexité décrit la façon dont le coût croît avec n, pas la vitesse de la machine."
+        }
+      ]
+    },
+    {
+      "id": "les-classes",
+      "title": "Les classes de complexité",
+      "subtitle": "De log n à 2^n.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Fais grossir n",
+          "body": "Cinq classes, et le temps que cela représente à un milliard d'opérations par seconde.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "La frontière du praticable",
+          "body": "Les classes polynomiales — n, n log n, n² — restent utilisables sur de grandes données.\n\nLa classe exponentielle ne l'est pas. Pousse le curseur à 70 : le même milliard d'opérations par seconde demande des dizaines de milliers d'années. Aucune machine plus rapide ne rattrape cela, car doubler la vitesse ne fait gagner qu'une unité sur n."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Lire l'échelle",
+          "body": "L'axe vertical est logarithmique : chaque graduation vaut cent mille fois la précédente. Sur une échelle ordinaire, quatre des cinq courbes seraient indiscernables de l'axe horizontal.\n\nUne droite sur une échelle logarithmique signale une croissance exponentielle : c'est le cas de 2^n, et d'aucune autre."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour reconnaître une complexité, regarde comment le coût réagit quand n double : il augmente d'une constante pour log n, double pour n, quadruple pour n², et s'élève au carré pour 2^n."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "log n ≪ n ≪ n log n ≪ n² ≪ 2^n.",
+            "L'exponentiel est hors d'atteinte dès quelques dizaines d'éléments.",
+            "Doubler n est le bon test pour identifier une classe."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un algorithme quadratique traite 1 000 éléments en 1 seconde. Combien de secondes lui faut-il pour 2 000 éléments ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "s",
+          "hint": "Doubler n multiplie n² par quatre.",
+          "explanation": "4 secondes : le coût suit n², et (2n)² = 4n². C'est le test du doublement.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces classes selon qu'elles restent praticables sur de grandes données.",
+          "explanation": "log n, n et n log n passent à l'échelle sans difficulté. n² devient lourd au-delà de quelques centaines de milliers d'éléments, et 2^n est hors d'atteinte dès quelques dizaines.",
+          "categories": ["Praticable sur de grandes données", "Impraticable"],
+          "items": [
+            { "text": "log n", "category": 0 },
+            { "text": "n log n", "category": 0 },
+            { "text": "n²", "category": 1 },
+            { "text": "2^n", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Sur l'échelle logarithmique de la figure, quelle courbe est une droite ?",
+          "hint": "Quelle croissance donne une droite en échelle log ?",
+          "explanation": "Celle de 2^n. Son logarithme est proportionnel à n : la courbe devient une droite, et c'est la signature d'une croissance exponentielle.",
+          "figureId": "complexite",
+          "options": [
+            { "text": "2^n", "correct": true },
+            { "text": "n" },
+            { "text": "n²" },
+            { "text": "log n" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "estimation",
+          "prompt": "À un milliard d'opérations par seconde, combien de jours faut-il pour effectuer 2^50 opérations ?",
+          "min": 1,
+          "max": 1000,
+          "answer": 13,
+          "tolerance": 6,
+          "unit": "jours",
+          "logarithmic": true,
+          "explanation": "Environ 13 jours : 2^50 vaut à peu près 1,1 × 10^15, soit 1,1 million de secondes. Et pour 2^60, il faudrait trente-six ans.",
+          "figureId": "complexite"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-tri",
+      "title": "Chercher et trier",
+      "subtitle": "Là où le choix de l'algorithme se voit.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Recherche séquentielle",
+          "body": "On parcourt le tableau du début à la fin. Au pire, n comparaisons : la valeur cherchée est la dernière, ou absente.\n\nAucune hypothèse sur les données : c'est son seul avantage, et il n'est pas mince."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Recherche dichotomique",
+          "body": "Sur un tableau trié, on compare au milieu et on élimine la moitié restante.\n\nChaque comparaison divise l'espace par deux : au pire ⌈log₂(n+1)⌉ comparaisons. Pour un million d'éléments, vingt suffisent."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Trier",
+          "body": "Le tri par sélection compare chaque élément à tous les autres : O(n²).\n\nLe tri fusion découpe en deux, trie chaque moitié, puis fusionne : O(n log n). C'est l'optimum pour un tri par comparaisons, et on sait le démontrer."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Trier pour pouvoir chercher n'est rentable que si l'on cherche souvent : un tri en n log n suivi de k recherches en log n bat k recherches linéaires dès que k dépasse l'ordre de log n."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons au pire pour une recherche dichotomique dans un tableau trié d'un million d'éléments ?",
+          "answer": 20,
+          "tolerance": 0.5,
+          "hint": "Combien de fois peut-on diviser un million par deux ?",
+          "explanation": "20 comparaisons : 2^20 vaut 1 048 576, un peu plus d'un million. Chaque comparaison élimine la moitié du tableau.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque algorithme à sa complexité au pire cas.",
+          "explanation": "La recherche séquentielle parcourt tout : O(n). La dichotomie divise par deux : O(log n). Le tri par sélection compare par paires : O(n²). Le tri fusion atteint O(n log n).",
+          "pairs": [
+            { "left": "Recherche séquentielle", "right": "O(n)" },
+            { "left": "Recherche dichotomique", "right": "O(log n)" },
+            { "left": "Tri par sélection", "right": "O(n²)" },
+            { "left": "Tri fusion", "right": "O(n log n)" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "La recherche dichotomique fonctionne sur un tableau quelconque.",
+          "answer": false,
+          "explanation": "Non : le tableau doit être trié. Sans cette hypothèse, éliminer une moitié n'est plus justifié, et le résultat peut être faux."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un tri par sélection met 2 secondes sur 10 000 éléments. Combien de secondes sur 30 000 ?",
+          "answer": 18,
+          "tolerance": 0.01,
+          "unit": "s",
+          "hint": "Tripler n multiplie n² par neuf.",
+          "explanation": "18 secondes : 2 × 3² = 18. Un tri fusion, lui, serait passé d'environ 2 à environ 7 secondes."
+        }
+      ]
+    },
+    {
+      "id": "defi-complexite",
+      "title": "Défi : complexité",
+      "subtitle": "Six questions, au pire cas.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chaque algorithme, demande-toi comment le coût réagit quand n double."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Deux boucles imbriquées parcourant chacune le tableau entier : quelle complexité ?",
+          "hint": "Chaque tour de la boucle externe déclenche n tours de l'interne.",
+          "explanation": "O(n²) : n tours externes, n internes à chaque fois.",
+          "options": [
+            { "text": "O(n²)", "correct": true },
+            { "text": "O(n)" },
+            { "text": "O(n log n)" },
+            { "text": "O(log n)" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons au pire pour une dichotomie dans 1 024 éléments ?",
+          "answer": 11,
+          "tolerance": 0.5,
+          "hint": "Après dix divisions, que reste-t-il à faire ?",
+          "explanation": "11, et non 10. Dix divisions ramènent l'intervalle à un seul élément, qu'il faut encore comparer à la valeur cherchée : au pire ⌊log₂ n⌋ + 1 comparaisons. Ce « + 1 » est le piège habituel.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces complexités.",
+          "explanation": "log n et n log n croissent lentement ; n² et 2^n explosent. La frontière du praticable passe entre les deux groupes bien avant le million d'éléments.",
+          "categories": ["Croissance lente", "Croissance rapide"],
+          "items": [
+            { "text": "log n", "category": 0 },
+            { "text": "n log n", "category": 0 },
+            { "text": "n²", "category": 1 },
+            { "text": "2^n", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Aucun tri par comparaisons ne peut faire mieux que O(n log n) au pire cas.",
+          "answer": true,
+          "explanation": "C'est un théorème : un arbre de décision à n! feuilles a une profondeur au moins log₂(n!), soit de l'ordre de n log n. Les tris plus rapides, comme le tri par comptage, ne comparent pas les éléments entre eux."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un algorithme linéaire traite 1 000 000 d'éléments en 3 ms. Combien de millisecondes pour 4 000 000 ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "unit": "ms",
+          "hint": "Le coût est proportionnel à n.",
+          "explanation": "12 ms : quadrupler n quadruple le temps, puisque la croissance est linéaire."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une machine deux fois plus rapide n'aide-t-elle presque pas un algorithme exponentiel ?",
+          "hint": "De combien la taille traitable augmente-t-elle ?",
+          "explanation": "Parce qu'elle ne permet de traiter qu'un seul élément de plus : doubler la vitesse revient à gagner un facteur 2, soit exactement un pas de 2^n.",
+          "figureId": "complexite",
+          "options": [
+            { "text": "Elle ne fait gagner qu'une unité sur n", "correct": true },
+            { "text": "Elle ne change rien du tout" },
+            { "text": "Elle double la taille traitable" },
+            { "text": "Elle change la classe de complexité" }
+          ]
+        }
+      ]
+    }
+  ]
+}

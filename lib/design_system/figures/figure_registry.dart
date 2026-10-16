@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'eratosthene_figure.dart';
 import 'fraction_bar_figure.dart';
@@ -56,6 +57,9 @@ abstract final class FigureRegistry {
     // Une barre partagée et coloriée, comparée à une demie.
     'fraction-barre': (BuildContext context, Color accent) =>
         FractionBarFigure(accent: accent),
+    // Cinq courbes de coût, et le temps que cela ferait.
+    'complexite': (BuildContext context, Color accent) =>
+        ComplexityFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

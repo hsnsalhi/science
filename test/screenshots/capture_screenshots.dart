@@ -603,6 +603,27 @@ void main() {
         await shoot(tester, '$device-23-parabole');
       });
 
+      // L'université : les cinq classes de complexité, et ce qu'elles
+      // coûtent en temps réel. Le curseur est poussé assez loin pour
+      // que l'exponentielle se chiffre en jours.
+      testWidgets('université : les complexités', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Informatique');
+        await tapText(tester, 'Université');
+        await tapText(tester, 'Algorithmique et complexité');
+        await tester.tap(find.text('Les classes de complexité').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        final Rect piste = tester.getRect(find.byType(Slider));
+        await tester.tapAt(
+          Offset(piste.left + piste.width * 0.74, piste.center.dy),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-24-complexite');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
