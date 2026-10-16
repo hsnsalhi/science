@@ -12,6 +12,7 @@ import 'circuit_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'derivative_figure.dart';
+import 'dna_figure.dart';
 import 'eratosthene_figure.dart';
 import 'fraction_bar_figure.dart';
 import 'food_web_figure.dart';
@@ -116,6 +117,9 @@ abstract final class FigureRegistry {
     // Les dix premiers termes d'une suite, en bâtons.
     'suite': (BuildContext context, Color accent) =>
         SequenceFigure(accent: accent),
+    // Une séquence d'ARN qu'on mute, et la protéine qui en sort.
+    'code-genetique': (BuildContext context, Color accent) =>
+        DnaFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

@@ -1,0 +1,360 @@
+{
+  "chapter": "svt-lycee-adn-genes-et-expression",
+  "lessons": [
+    {
+      "id": "l-adn-support",
+      "title": "L'ADN, support de l'information",
+      "subtitle": "Quatre lettres, une molécule.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une double hélice",
+          "body": "L'ADN est formé de deux brins enroulés l'un autour de l'autre. Chaque brin est une suite de nucléotides, portant l'une des quatre bases : A, T, G ou C.\n\nLa structure a été établie en 1953 par Watson et Crick, à partir des clichés de diffraction de Rosalind Franklin."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "L'appariement des bases",
+          "body": "En face d'un A se trouve toujours un T, en face d'un G toujours un C.\n\nChaque brin porte donc toute l'information : connaître l'un, c'est connaître l'autre. C'est ce qui rend la copie possible avant chaque division cellulaire."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Gène et génome",
+          "body": "Un gène est un segment d'ADN porteur de l'information d'une protéine.\n\nLe génome humain compte environ trois milliards de paires de bases, pour à peu près vingt mille gènes — qui n'occupent qu'une faible part de l'ensemble."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Toutes les cellules d'un organisme portent le même ADN. Ce qui distingue un neurone d'une cellule de peau n'est pas le texte, mais les pages qui y sont lues."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Quatre bases : A, T, G, C.",
+            "A s'apparie avec T, G avec C.",
+            "Un gène code une protéine ; le génome les contient tous."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de bases différentes l'ADN comporte-t-il ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "bases",
+          "hint": "A, T, G et…",
+          "explanation": "4 : adénine, thymine, guanine et cytosine. L'ARN remplace la thymine par l'uracile."
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque base à celle qui lui fait face.",
+          "explanation": "A s'apparie toujours avec T, et G avec C. Cette règle suffit à reconstituer un brin à partir de l'autre.",
+          "pairs": [
+            { "left": "A", "right": "T" },
+            { "left": "G", "right": "C" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Un brin porte la séquence A T G C. Complète le brin complémentaire.",
+          "template": "T ___ C ___",
+          "blanks": [
+            { "accepted": ["A"] },
+            { "accepted": ["G"] }
+          ],
+          "hint": "A face à T, G face à C.",
+          "explanation": "T A C G. Chaque base impose celle qui lui fait face, ce qui rend la copie fidèle."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un neurone et une cellule de peau d'une même personne portent des ADN différents.",
+          "answer": false,
+          "explanation": "Non : le même ADN. Ce qui diffère, c'est quels gènes y sont exprimés — quelles pages du texte sont lues."
+        }
+      ]
+    },
+    {
+      "id": "du-gene-a-la-proteine",
+      "title": "Du gène à la protéine",
+      "subtitle": "Transcrire, puis traduire.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "1. La transcription",
+          "body": "Dans le noyau, le gène est recopié en ARN messager. La séquence est la même, à une lettre près : l'uracile (U) remplace la thymine (T).\n\nL'ARN messager sort ensuite du noyau."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "2. La traduction",
+          "body": "Dans le cytoplasme, un ribosome lit l'ARN par groupes de trois bases, appelés codons.\n\nÀ chaque codon correspond un acide aminé, qui vient s'ajouter à la chaîne. La protéine se construit ainsi, acide aminé après acide aminé."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Lis la séquence",
+          "body": "Le brin d'ADN, l'ARN messager qu'il donne, et les acides aminés qui en sortent. Touche une base de l'ARN pour la changer.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Un code redondant et universel",
+          "body": "Il existe 4³ = 64 codons pour seulement 20 acides aminés et 3 signaux d'arrêt. Plusieurs codons désignent donc souvent le même acide aminé.\n\nCe code est le même chez la bactérie, la levure, le chêne et l'être humain. C'est l'un des arguments les plus forts en faveur d'une origine commune."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Transcription dans le noyau : ADN vers ARN, T devient U.",
+            "Traduction dans le cytoplasme : codons vers acides aminés.",
+            "64 codons pour 20 acides aminés : le code est redondant."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de codons différents existe-t-il ?",
+          "answer": 64,
+          "tolerance": 0.01,
+          "unit": "codons",
+          "hint": "Quatre bases, trois positions.",
+          "explanation": "64, soit 4³. Trois positions, quatre choix pour chacune.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'acides aminés différents le code génétique désigne-t-il ?",
+          "answer": 20,
+          "tolerance": 0.01,
+          "hint": "Nettement moins que 64.",
+          "explanation": "20. Les 64 codons se répartissent entre ces 20 acides aminés et 3 signaux d'arrêt : le code est donc redondant.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes de l'expression d'un gène.",
+          "explanation": "Le gène est transcrit en ARN messager dans le noyau, l'ARN sort, le ribosome le lit codon par codon, et la protéine s'assemble.",
+          "items": [
+            "Le gène est transcrit en ARN messager",
+            "L'ARN messager sort du noyau",
+            "Le ribosome lit les codons",
+            "La protéine s'assemble"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quelle base de l'ADN est remplacée dans l'ARN messager ?",
+          "hint": "Une seule lettre change.",
+          "explanation": "La thymine, remplacée par l'uracile. Les trois autres bases sont identiques.",
+          "options": [
+            { "text": "La thymine, remplacée par l'uracile", "correct": true },
+            { "text": "L'adénine, remplacée par l'uracile" },
+            { "text": "La guanine, remplacée par la cytosine" },
+            { "text": "Aucune : la séquence est identique" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "les-mutations",
+      "title": "Les mutations",
+      "subtitle": "Trois issues pour un changement de base.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Changer une seule lettre",
+          "body": "Une mutation ponctuelle remplace une base par une autre. Le codon change, et donc peut-être l'acide aminé.\n\nTrois issues sont possibles, et elles n'ont pas les mêmes conséquences."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Essaie les trois",
+          "body": "Change la troisième base d'un codon, puis la première : les effets ne sont pas les mêmes.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Silencieuse, faux-sens, non-sens",
+          "body": "Silencieuse : le nouveau codon désigne le même acide aminé. La protéine est identique.\n\nFaux-sens : un autre acide aminé prend la place. La protéine change, parfois sans conséquence, parfois gravement.\n\nNon-sens : le codon devient un signal d'arrêt. La protéine est tronquée, et le plus souvent inutilisable."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Pourquoi la troisième base compte moins",
+          "body": "Dans le code génétique, les codons qui ne diffèrent que par leur troisième base désignent très souvent le même acide aminé.\n\nUne mutation sur cette position a donc de bonnes chances d'être silencieuse. Ce n'est pas un hasard : c'est une protection construite dans le code lui-même."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Une mutation n'est ni bonne ni mauvaise en soi. La plupart sont sans effet, quelques-unes nuisent, de rares autres apportent un avantage — et ce sont celles-là que la sélection retient."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Une mutation remplace le codon UUC par UUU. Que devient la protéine ?",
+          "hint": "Les deux codons désignent-ils le même acide aminé ?",
+          "explanation": "Elle est inchangée : UUC et UUU désignent tous deux la phénylalanine. La mutation est silencieuse.",
+          "figureId": "code-genetique",
+          "options": [
+            { "text": "Elle est inchangée", "correct": true },
+            { "text": "Elle change d'un acide aminé" },
+            { "text": "Elle est tronquée" },
+            { "text": "Elle n'est pas produite" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Une mutation remplace le codon UAU par UAA. Que devient la protéine ?",
+          "hint": "UAA est un codon particulier.",
+          "explanation": "Elle est tronquée : UAA est un signal d'arrêt, et la traduction s'interrompt. C'est une mutation non-sens.",
+          "figureId": "code-genetique",
+          "options": [
+            { "text": "Elle est tronquée", "correct": true },
+            { "text": "Elle est inchangée" },
+            { "text": "Elle change d'un acide aminé" },
+            { "text": "Elle devient plus longue" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces mutations selon leur effet sur la protéine.",
+          "hint": "Compare les acides aminés désignés par les deux codons.",
+          "explanation": "UUC vers UUU et GGA vers GGG ne changent pas l'acide aminé : elles sont silencieuses. UUC vers UUA donne une leucine à la place d'une phénylalanine, et UGU vers UGA crée un signal d'arrêt.",
+          "categories": ["Protéine inchangée", "Protéine modifiée"],
+          "items": [
+            { "text": "UUC vers UUU", "category": 0 },
+            { "text": "GGA vers GGG", "category": 0 },
+            { "text": "UUC vers UUA", "category": 1 },
+            { "text": "UGU vers UGA", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Toute mutation modifie la protéine produite.",
+          "answer": false,
+          "explanation": "Non : une mutation silencieuse laisse la protéine identique. La redondance du code rend ce cas fréquent, surtout sur la troisième base d'un codon.",
+          "figureId": "code-genetique"
+        }
+      ]
+    },
+    {
+      "id": "defi-adn",
+      "title": "Défi : ADN et expression",
+      "subtitle": "Six questions, codon par codon.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chaque mutation, compare les acides aminés avant et après."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de codons sont des signaux d'arrêt ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "codons",
+          "hint": "UAA, UAG et un troisième.",
+          "explanation": "3 : UAA, UAG et UGA. Les 61 autres désignent des acides aminés.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de codons désignent un acide aminé, et non un arrêt ?",
+          "answer": 61,
+          "tolerance": 0.01,
+          "unit": "codons",
+          "hint": "64 moins les signaux d'arrêt.",
+          "explanation": "61 : 64 − 3. Ces 61 codons se partagent 20 acides aminés, d'où la redondance.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète les deux étapes de l'expression d'un gène.",
+          "template": "Dans le noyau, le gène est ___ en ARN messager ; dans le cytoplasme, l'ARN est ___ en protéine.",
+          "blanks": [
+            { "accepted": ["transcrit"] },
+            { "accepted": ["traduit"] }
+          ],
+          "hint": "Deux verbes, dans l'ordre.",
+          "explanation": "Transcrit, puis traduit. La transcription change de support, la traduction change de langage."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le même code génétique chez la bactérie et chez l'être humain est-il un argument fort ?",
+          "hint": "Qu'est-ce qu'un héritage partagé ?",
+          "explanation": "Parce qu'il s'explique le plus simplement par une origine commune : le code a été hérité d'un ancêtre partagé, et non réinventé.",
+          "options": [
+            { "text": "Il s'explique par une origine commune", "correct": true },
+            { "text": "Il prouve que les bactéries sont humaines" },
+            { "text": "Il montre que le code est le seul possible" },
+            { "text": "C'est une coïncidence sans portée" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Une mutation sur la troisième base d'un codon a de bonnes chances d'être silencieuse.",
+          "answer": true,
+          "explanation": "Oui. Les codons qui ne diffèrent que par leur troisième base désignent très souvent le même acide aminé : c'est une protection inscrite dans le code.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui distingue un neurone d'une cellule de peau ?",
+          "hint": "Leur ADN est le même.",
+          "explanation": "Les gènes qui y sont exprimés. Le texte est identique, seules les pages lues diffèrent.",
+          "options": [
+            { "text": "Les gènes qui y sont exprimés", "correct": true },
+            { "text": "Leur ADN" },
+            { "text": "Leur code génétique" },
+            { "text": "Le nombre de leurs chromosomes" }
+          ]
+        }
+      ]
+    }
+  ]
+}

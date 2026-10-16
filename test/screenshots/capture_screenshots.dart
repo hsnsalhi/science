@@ -879,6 +879,25 @@ void main() {
         await shoot(tester, '$device-38-suite');
       });
 
+      // Le code génétique : trois codons lus, trois acides aminés nommés.
+      // La capture sert surtout à vérifier que la table tient dans la carte
+      // sans déborder, car c'est la figure la plus dense du lot.
+      testWidgets('lycée : le code génétique', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'SVT');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'ADN, gènes et expression génétique');
+        await tapText(tester, 'Du gène à la protéine');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-39-code-genetique');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

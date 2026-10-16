@@ -11,6 +11,7 @@ import 'package:eureka/design_system/figures/circuit_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
+import 'package:eureka/design_system/figures/dna_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
@@ -3731,4 +3732,174 @@ void main() {
       expect(epaisseur, closeTo(reponseNum('defi-suites', 'q3'), 1));
     });
   });
+
+  group('Chapitre complet : ADN, gènes et expression', () {
+    late Chapter adn;
+
+    setUpAll(() {
+      adn = catalog.chapterById('svt-lycee-adn-genes-et-expression')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = adn.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Lit « UUC vers UUU » et renvoie les deux codons.
+    List<String> lireMutation(String texte) =>
+        texte.split(' vers ').map((String s) => s.trim()).toList();
+
+    test('est jouable de bout en bout', () {
+      expect(adn.isPlayable, isTrue);
+      expect(adn.lessons.length, 4);
+    });
+
+    test('le code génétique embarqué est complet et bien formé', () {
+      // 4³ = 64 codons de trois bases, écrits avec le seul alphabet de l'ARN.
+      expect(DnaFigure.code.length, 64);
+      for (final String codon in DnaFigure.code.keys) {
+        expect(codon.length, 3, reason: codon);
+        for (final String base in codon.split('')) {
+          expect(<String>['A', 'U', 'G', 'C'], contains(base), reason: codon);
+        }
+      }
+      expect(DnaFigure.code.keys.toSet().length, 64);
+    });
+
+    test('les nombres annoncés se recomptent dans la table', () {
+      final int arrets = DnaFigure.code.values
+          .where((String acide) => acide == 'Stop')
+          .length;
+      final int acides = DnaFigure.code.values
+          .where((String acide) => acide != 'Stop')
+          .toSet()
+          .length;
+
+      expect(reponseNum('du-gene-a-la-proteine', 'q1'), DnaFigure.code.length);
+      expect(reponseNum('du-gene-a-la-proteine', 'q2'), acides);
+      expect(reponseNum('defi-adn', 'q1'), arrets);
+      expect(
+        reponseNum('defi-adn', 'q2'),
+        DnaFigure.code.length - arrets,
+      );
+      // Le chapitre annonce 20 acides aminés et 3 arrêts : c'est bien ce que
+      // porte la table, et c'est de là que vient la redondance du code.
+      expect(acides, 20);
+      expect(arrets, 3);
+    });
+
+    test('les mutations citées ont bien l’effet annoncé', () {
+      // q1 : UUC vers UUU laisse la protéine identique.
+      expect(DnaFigure.acideAmine('UUC'), DnaFigure.acideAmine('UUU'));
+      // q2 : UAU vers UAA interrompt la traduction.
+      expect(DnaFigure.acideAmine('UAU'), isNot('Stop'));
+      expect(DnaFigure.acideAmine('UAA'), 'Stop');
+    });
+
+    test('le tri des mutations se recalcule depuis la table', () {
+      final ClassifyQuestion q =
+          adn.lessonById('les-mutations')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<String> codons = lireMutation(item.text);
+        final bool silencieuse =
+            DnaFigure.acideAmine(codons[0]) == DnaFigure.acideAmine(codons[1]);
+        expect(
+          item.category == 0,
+          silencieuse,
+          reason: '${item.text} : '
+              '${DnaFigure.acideAmine(codons[0])} vers '
+              '${DnaFigure.acideAmine(codons[1])}',
+        );
+      }
+    });
+
+    test('la troisième base est bien la plus tolérante', () {
+      // Le cours affirme qu'une mutation sur la troisième base a de bonnes
+      // chances d'être silencieuse. On balaie les 61 codons codants et les
+      // trois positions, et on compare les proportions.
+      final List<int> silencieuses = <int>[0, 0, 0];
+      final List<int> essais = <int>[0, 0, 0];
+      for (final String codon in DnaFigure.code.keys) {
+        if (DnaFigure.acideAmine(codon) == 'Stop') continue;
+        for (int position = 0; position < 3; position++) {
+          for (final String base in <String>['A', 'U', 'G', 'C']) {
+            if (codon[position] == base) continue;
+            final String mute = codon.replaceRange(position, position + 1, base);
+            essais[position]++;
+            if (DnaFigure.acideAmine(mute) == DnaFigure.acideAmine(codon)) {
+              silencieuses[position]++;
+            }
+          }
+        }
+      }
+      final List<double> part = <double>[
+        for (int i = 0; i < 3; i++) silencieuses[i] / essais[i],
+      ];
+      expect(part[2], greaterThan(0.5), reason: 'troisième base : ${part[2]}');
+      expect(part[2], greaterThan(part[0]));
+      expect(part[2], greaterThan(part[1]));
+    });
+
+    test('l’ARN est bien la copie complémentaire du brin d’ADN', () {
+      // La figure affiche le brin transcrit au-dessus de l'ARN : base pour
+      // base, l'un doit se déduire de l'autre, avec T là où l'ARN porte un A.
+      expect(DnaFigure.brinTranscrit('AUGUUCGGA'), 'TACAAGCCT');
+      for (final String codon in DnaFigure.code.keys) {
+        final String brin = DnaFigure.brinTranscrit(codon);
+        expect(brin.length, 3, reason: codon);
+        expect(brin, isNot(contains('U')), reason: 'l’ADN ne porte pas d’U');
+        for (int i = 0; i < 3; i++) {
+          expect(
+            DnaFigure.complement[codon[i]],
+            brin[i],
+            reason: '$codon / $brin',
+          );
+        }
+      }
+    });
+
+    test('la traduction s’arrête au premier signal d’arrêt', () {
+      // AUG UUC GGA UAA UUC : la dernière phénylalanine ne doit pas être lue.
+      final List<String> proteine = DnaFigure.traduire('AUGUUCGGAUAAUUC');
+      expect(proteine, <String>['Met', 'Phe', 'Gly']);
+      expect(DnaFigure.codons('AUGUUCGGAUAAUUC'), hasLength(5));
+    });
+
+    test('le brin complémentaire du texte à trous est exact', () {
+      const Map<String, String> face = <String, String>{
+        'A': 'T',
+        'T': 'A',
+        'G': 'C',
+        'C': 'G',
+      };
+      final FillBlanksQuestion q =
+          adn.lessonById('l-adn-support')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as FillBlanksQuestion;
+      // Le brin donné est A T G C, le modèle fournit T _ C _.
+      expect(q.accepted[0].first, face['T']);
+      expect(q.accepted[1].first, face['C']);
+    });
+
+    test('l’appariement proposé est celui des bases', () {
+      const Map<String, String> face = <String, String>{'A': 'T', 'G': 'C'};
+      final MatchingQuestion q =
+          adn.lessonById('l-adn-support')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as MatchingQuestion;
+      for (final MatchPair pair in q.pairs) {
+        expect(face[pair.left], pair.right, reason: pair.left);
+      }
+    });
+  });
+
 }
