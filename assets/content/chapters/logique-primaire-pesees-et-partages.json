@@ -1,0 +1,338 @@
+{
+  "chapter": "logique-primaire-pesees-et-partages",
+  "lessons": [
+    {
+      "id": "trois-reponses-balance",
+      "title": "La balance dit trois choses",
+      "subtitle": "Et c'est ce qui la rend puissante.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Deux plateaux",
+          "figureId": "balance-equation",
+          "body": "Une balance à deux plateaux ne donne pas un poids : elle donne une comparaison. Pose et retire pour voir ce qu'elle t'apprend à chaque fois."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Trois résultats possibles",
+          "body": "Le plateau de gauche descend, le plateau de droite descend, ou les deux s'équilibrent.\n\nTrois résultats, pas deux. C'est beaucoup plus qu'une question à laquelle on répond par oui ou non, et c'est exactement pour cela qu'une balance résout si vite des problèmes qui paraissent longs.\n\nUne pesée partage les possibilités en trois paquets. Deux pesées en neuf. Trois pesées en vingt-sept."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Ce qu'on peut distinguer",
+          "formula": "avec n pesées : 3 × 3 × … = 3 multiplié n fois",
+          "body": "Une pesée distingue 3 cas, deux pesées 9, trois pesées 27, quatre pesées 81. Chaque pesée de plus multiplie par trois ce qu'on sait démêler."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le secret : des groupes égaux",
+          "body": "Pour tirer les trois réponses d'une pesée, il faut que les deux plateaux portent le même nombre d'objets, et qu'un troisième groupe de même taille reste de côté.\n\nUne pesée qui met cinq objets contre quatre gaspille son pouvoir : elle ne peut plus répondre « égalité » de façon utile."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de résultats différents une seule pesée peut-elle donner ?",
+          "explanation": "Trois : gauche plus lourd, droite plus lourd, ou équilibre.",
+          "answer": 3
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et avec deux pesées à la suite, combien de cas peut-on distinguer ?",
+          "explanation": "3 × 3 = 9 cas. Chaque pesée multiplie par trois.",
+          "answer": 9
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Avec trois pesées ?",
+          "explanation": "3 × 3 × 3 = 27 cas distinguables.",
+          "answer": 27
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi faut-il mettre le même nombre d'objets sur chaque plateau ?",
+          "explanation": "Pour que l'équilibre soit un résultat possible et informatif. Cinq contre quatre ne peut jamais s'équilibrer, et la pesée perd un tiers de son pouvoir.",
+          "options": [
+            { "text": "pour que l'équilibre soit possible et informatif", "correct": true },
+            { "text": "pour que la balance ne casse pas" },
+            { "text": "pour aller plus vite" },
+            { "text": "ce n'est pas nécessaire" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fausse-piece",
+      "title": "La pièce plus lourde",
+      "subtitle": "Neuf pièces, deux pesées.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le problème",
+          "body": "Neuf pièces d'apparence identique. L'une est plus lourde que les huit autres, qui pèsent toutes exactement pareil.\n\nTu disposes d'une balance à deux plateaux. Combien de pesées te faut-il, au pire, pour trouver la pièce lourde à coup sûr ?\n\nLa plupart des gens répondent quatre ou cinq. La bonne réponse est deux."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La méthode",
+          "body": "Première pesée : fais trois tas de trois pièces. Mets le tas A à gauche, le tas B à droite, et laisse le tas C de côté.\n\nSi A descend, la pièce lourde est dans A. Si B descend, elle est dans B. S'il y a équilibre, elle est dans C — celui qu'on n'a même pas pesé.\n\nDeuxième pesée : prends les trois pièces du tas trouvé. Une à gauche, une à droite, une de côté. Même raisonnement : tu as la pièce.\n\nDeux pesées, toujours, quel que soit le hasard."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi le tas qu'on ne pèse pas est le plus utile",
+          "body": "On pourrait croire qu'il faut tout mettre sur la balance. C'est l'inverse : laisser un tiers de côté est ce qui permet d'exploiter la réponse « équilibre ».\n\nSans ce tas témoin, l'équilibre ne dirait rien et on gâcherait un résultat sur trois."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "La règle générale",
+          "body": "Avec 3 pièces, une pesée suffit. Avec 9, deux. Avec 27, trois. Avec 81, quatre.\n\nEt entre deux : 10 pièces demandent aussi trois pesées, parce que 9 ne suffit plus. On cherche le plus petit nombre de pesées dont le pouvoir dépasse le nombre de pièces."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de pesées faut-il pour trouver la pièce lourde parmi 9 ?",
+          "explanation": "Deux : trois tas de trois, puis trois pièces séparées.",
+          "answer": 2
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et parmi 27 pièces ?",
+          "explanation": "Trois pesées, puisque 3 × 3 × 3 = 27.",
+          "answer": 3
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Et parmi 10 pièces ?",
+          "hint": "Deux pesées ne distinguent que 9 cas.",
+          "explanation": "Trois pesées. Deux ne distinguent que 9 cas, ce qui ne suffit plus pour 10 pièces.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "À la première pesée, les deux plateaux s'équilibrent. Où est la pièce lourde ?",
+          "explanation": "Dans le tas resté de côté. C'est l'information la plus précieuse de la pesée, et elle vient du tas qu'on n'a pas touché.",
+          "options": [
+            { "text": "dans le tas qu'on n'a pas pesé", "correct": true },
+            { "text": "sur le plateau de gauche" },
+            { "text": "sur le plateau de droite" },
+            { "text": "la pesée a échoué" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode dans l'ordre.",
+          "explanation": "Trois tas égaux, une pesée, on identifie le tas, puis on recommence sur ses trois pièces.",
+          "items": [
+            "faire trois tas de trois pièces",
+            "peser le tas A contre le tas B",
+            "identifier le tas qui contient la pièce lourde",
+            "peser une pièce de ce tas contre une autre"
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Il faut mettre toutes les pièces sur la balance pour ne rien rater.",
+          "explanation": "Faux. Laisser un tiers de côté est précisément ce qui permet d'exploiter la réponse « équilibre ». Tout peser gâcherait un résultat sur trois.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "partager",
+      "title": "Partager sans se disputer",
+      "subtitle": "Des règles plutôt qu'un arbitre.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Je coupe, tu choisis",
+          "body": "Deux enfants, un gâteau, et aucune confiance. Comment faire un partage que les deux acceptent ?\n\nLa règle : l'un coupe en deux parts, l'autre choisit sa part le premier.\n\nCelui qui coupe a intérêt à faire deux parts égales, puisqu'il recevra celle que l'autre ne veut pas. Celui qui choisit prend la meilleure des deux, donc au moins la moitié.\n\nPersonne n'a eu besoin d'être honnête. La règle rend l'honnêteté avantageuse, ce qui vaut beaucoup mieux."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Une bonne règle n'exige pas de bonne volonté",
+          "body": "Ce procédé marche même entre deux personnes qui veulent chacune le maximum.\n\nC'est le signe d'une règle bien conçue : elle n'a pas besoin de supposer que les gens sont gentils. Les bonnes règles de jeu, de vote et de partage ont toutes cette propriété."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "À trois, c'est plus dur",
+          "body": "À trois personnes, « je coupe, tu choisis » ne marche plus directement : il faut un procédé plus long, où chacun peut rogner une part qu'il juge trop grosse.\n\nLes mathématiciens ont mis longtemps à trouver une méthode valable pour un nombre quelconque de personnes. Le partage équitable est un vrai sujet de recherche, pas une question d'éducation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi celui qui coupe fait-il deux parts égales ?",
+          "explanation": "Parce qu'il recevra la part dont l'autre ne veut pas. Couper inégalement lui ferait prendre la plus petite.",
+          "options": [
+            { "text": "il recevra celle que l'autre n'a pas choisie", "correct": true },
+            { "text": "parce que c'est la règle du jeu" },
+            { "text": "parce qu'il est honnête" },
+            { "text": "parce que l'autre le surveille" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que gagne celui qui choisit ?",
+          "explanation": "Au moins la moitié : il prend la meilleure des deux parts, donc jamais moins que la moyenne.",
+          "options": [
+            { "text": "au moins la moitié", "correct": true },
+            { "text": "exactement un tiers" },
+            { "text": "moins que l'autre" },
+            { "text": "cela dépend de sa gentillesse" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui fait la qualité de cette règle ?",
+          "explanation": "Elle fonctionne même si personne n'est honnête : elle rend l'équité avantageuse au lieu de l'exiger.",
+          "options": [
+            { "text": "elle marche sans supposer personne honnête", "correct": true },
+            { "text": "elle est rapide à expliquer" },
+            { "text": "elle avantage celui qui coupe" },
+            { "text": "elle évite d'avoir un couteau" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "On partage 24 billes équitablement entre 3 enfants. Combien chacun ?",
+          "explanation": "24 ÷ 3 = 8 billes chacun.",
+          "answer": 8
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "On partage 25 billes entre 3 enfants, le plus équitablement possible. Combien en reste-t-il ?",
+          "explanation": "25 = 3 × 8 + 1 : chacun en a 8, et il en reste 1 qu'aucun partage entier ne peut distribuer.",
+          "answer": 1
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "« Je coupe, tu choisis » fonctionne aussi bien à trois personnes.",
+          "explanation": "Faux. À trois il faut un procédé plus long, où chacun peut rogner une part jugée trop grosse. Le partage équitable à n personnes est un vrai sujet de recherche.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-poids",
+      "title": "Défi : les quatre poids du marchand",
+      "subtitle": "Peser tout de 1 à 40 kilos.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le problème du marchand",
+          "body": "Un marchand a une balance à deux plateaux et veut peser n'importe quel sac, de 1 à 40 kilos, par nombres entiers.\n\nIl ne veut emporter que quatre poids. Lesquels choisir ?\n\nLa réponse surprend : 1, 3, 9 et 27 kilos. Et le secret est qu'il peut poser des poids des deux côtés de la balance."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Comment poser des poids des deux côtés",
+          "body": "Pour peser 2 kg : le sac et le poids de 1 à gauche, le poids de 3 à droite. Le sac vaut 3 − 1 = 2.\n\nPour peser 5 kg : le sac et 3 et 1 à gauche, 9 à droite. Le sac vaut 9 − 3 − 1 = 5.\n\nPour peser 13 kg : le sac à gauche, 9 et 3 et 1 à droite. 9 + 3 + 1 = 13.\n\nChaque poids a trois états : à gauche avec le sac, à droite contre le sac, ou dans la poche. Encore trois possibilités — comme les trois réponses de la balance."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi exactement 40",
+          "body": "Quatre poids à trois états donnent 3 × 3 × 3 × 3 = 81 combinaisons. L'une ne pèse rien, et les quatre-vingts autres se répartissent en quarante valeurs positives et leurs quarante opposées.\n\nQuarante, donc, et pas une de plus. Et 1 + 3 + 9 + 27 = 40 : la somme des poids est exactement la plus grande masse qu'on puisse peser, ce qui n'est pas un hasard."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Additionne les quatre poids : 1 + 3 + 9 + 27.",
+          "explanation": "40, qui est aussi la plus grande masse pesable — en mettant tous les poids du même côté.",
+          "answer": 40
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Comment peser 2 kg ? Donne le poids à placer du côté du sac.",
+          "explanation": "Le poids de 1 kg, avec le sac, face au poids de 3 kg : 3 − 1 = 2.",
+          "answer": 1
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quel poids faut-il seul face au sac pour peser 5 kg, si l'on met 3 et 1 avec le sac ?",
+          "explanation": "9 kg : 9 − 3 − 1 = 5.",
+          "answer": 9
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de combinaisons donnent 4 poids ayant chacun 3 états possibles ?",
+          "hint": "3 multiplié par lui-même quatre fois.",
+          "explanation": "3 × 3 × 3 × 3 = 81 combinaisons. Une ne pèse rien, et les quatre-vingts autres donnent quarante valeurs et leurs opposées.",
+          "answer": 81
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Si le marchand ne pouvait poser ses poids que d'un seul côté, quels poids choisirait-il ? Donne le plus grand des quatre pour couvrir 1 à 15.",
+          "hint": "Chaque poids n'aurait plus que deux états : posé ou non.",
+          "explanation": "1, 2, 4 et 8 : chaque poids n'a plus que deux états, et 1 + 2 + 4 + 8 = 15. Deux fois moins de portée pour les mêmes quatre poids.",
+          "answer": 8
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Avec un cinquième poids de 81 kg, jusqu'à quelle masse le marchand pourrait-il peser ?",
+          "explanation": "1 + 3 + 9 + 27 + 81 = 121 kg. Chaque poids ajouté triple presque la portée.",
+          "answer": 121
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce que les deux problèmes de ce chapitre ont en commun ?",
+          "explanation": "Les trois états. La balance donne trois réponses, et chaque poids a trois positions : c'est le même 3 qui gouverne les deux problèmes.",
+          "options": [
+            { "text": "le nombre trois, qui gouverne les deux", "correct": true },
+            { "text": "le nombre de pièces à peser" },
+            { "text": "le poids des objets" },
+            { "text": "rien, ils sont indépendants" }
+          ]
+        }
+      ]
+    }
+  ]
+}

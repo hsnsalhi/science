@@ -1,0 +1,396 @@
+{
+  "chapter": "histoire-sciences-primaire-compter-avant-les-chiffres",
+  "lessons": [
+    {
+      "id": "premieres-marques",
+      "title": "Les premières marques",
+      "subtitle": "Compter avant d'écrire.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un os couvert d'entailles",
+          "body": "On a trouvé en Afrique australe un os de babouin portant vingt-neuf entailles régulières. Il a environ quarante mille ans — bien avant toute écriture, toute ville, tout chiffre.\n\nPersonne ne sait ce que son propriétaire comptait. Mais il comptait, et il avait compris qu'une marque peut tenir la place d'une chose absente.\n\nC'est la première idée mathématique de l'histoire humaine, et elle est énorme : un trait sur un os vaut un mouton qu'on ne voit pas."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Pourquoi nous comptons par dix",
+          "body": "Nous avons dix doigts, et la main a été la première calculatrice.\n\nD'autres peuples ont compté par vingt, doigts et orteils réunis. Le français en garde la trace : « quatre-vingts » veut dire quatre fois vingt, là où le français de Suisse dit simplement « huitante ».\n\nD'autres encore ont compté par soixante — les Babyloniens. Nous leur devons les soixante minutes de l'heure et les trois cent soixante degrés du tour complet."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Rien d'obligatoire dans le dix",
+          "body": "La base dix n'a aucune supériorité mathématique. Douze aurait même été plus pratique : il se divise par 2, 3, 4 et 6, là où dix ne se divise que par 2 et 5.\n\nC'est pour cela que l'on a longtemps compté les œufs par douze et les heures par vingt-quatre. Notre base dix est un accident d'anatomie, pas un choix de raison."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Les marques groupées",
+          "body": "Dessiner vingt-neuf traits et les recompter est long et source d'erreur. Très vite, on a groupé : quatre traits puis un cinquième en travers.\n\nLe regard saisit un paquet de cinq d'un coup, là où il doit compter des traits isolés. C'est la première astuce de calcul de l'humanité, et elle sert encore pour tenir les scores."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font quatre-vingts, exprimé comme quatre fois vingt ?",
+          "explanation": "4 × 20 = 80. Le mot français garde la trace d'un comptage par vingt, doigts et orteils réunis.",
+          "answer": 80
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Par quels nombres entiers 12 se divise-t-il, en plus de 1 et de lui-même ? Donne le nombre de ces diviseurs.",
+          "hint": "2, 3, 4 et 6.",
+          "explanation": "Quatre : 2, 3, 4 et 6. Dix n'en a que deux, 2 et 5 — c'est pourquoi la base douze aurait été plus commode.",
+          "answer": 4
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque base à ce qu'elle nous a laissé.",
+          "explanation": "La base dix vient des doigts, la base vingt a laissé « quatre-vingts », et la base soixante des Babyloniens nous a laissé les minutes et les degrés.",
+          "pairs": [
+            {
+              "left": "la base dix",
+              "right": "nos dix doigts"
+            },
+            {
+              "left": "la base vingt",
+              "right": "le mot quatre-vingts"
+            },
+            {
+              "left": "la base soixante",
+              "right": "les minutes et les degrés"
+            },
+            {
+              "left": "la base douze",
+              "right": "la douzaine d'œufs"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi groupe-t-on les traits par cinq ?",
+          "explanation": "Parce que le regard saisit un paquet d'un coup, alors qu'il doit compter des traits isolés un par un.",
+          "options": [
+            {
+              "text": "le regard saisit un paquet d'un seul coup",
+              "correct": true
+            },
+            {
+              "text": "parce qu'on a cinq doigts par main et qu'il faut le rappeler"
+            },
+            {
+              "text": "pour économiser de la place"
+            },
+            {
+              "text": "parce que cinq est un nombre premier"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La base dix est mathématiquement supérieure aux autres.",
+          "explanation": "Faux. Elle vient de nos dix doigts, pas d'une raison mathématique. Douze se divise par plus de nombres et aurait été plus pratique.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "romains",
+      "title": "Les chiffres romains",
+      "subtitle": "Lisibles, mais impossibles à calculer.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les sept lettres",
+          "body": "I vaut 1, V vaut 5, X vaut 10, L vaut 50, C vaut 100, D vaut 500, M vaut 1 000.\n\nOn additionne de gauche à droite : XVI fait 10 + 5 + 1 = 16.\n\nSauf quand une petite lettre précède une grande : alors on soustrait. IV fait 5 − 1 = 4, et IX fait 10 − 1 = 9.\n\nMCMXLIV se lit donc 1 000, puis 1 000 − 100, puis 50 − 10, puis 5 − 1 : 1944."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Essaie de multiplier",
+          "body": "Pose XXIII multiplié par VII en chiffres romains, sans traduire.\n\nTu n'y arriveras pas, et ce n'est pas une question d'habitude : il n'existe aucune méthode. Les Romains calculaient sur un boulier, puis écrivaient le résultat en lettres. L'écriture servait à garder les nombres, jamais à les travailler.\n\nPendant mille cinq cents ans, l'Europe a donc su écrire ses nombres sans savoir les calculer sur le papier."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Et aucun zéro",
+          "body": "Il n'y a pas de chiffre romain pour zéro. Ce n'est pas un oubli : dans ce système, zéro ne sert à rien. On n'écrit que ce qu'on a, et quand on n'a rien, on n'écrit rien.\n\nLe problème apparaît dès qu'on veut un système où la place d'un chiffre compte. Là, il faut absolument pouvoir dire « ici, rien » — et c'est tout l'objet du zéro."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Ce qui manquait vraiment",
+          "body": "Les chiffres romains ne sont pas plus bêtes que les nôtres : ils sont faits pour un autre usage.\n\nCe qui leur manque est la position. Dans MM, les deux M valent la même chose. Dans 22, les deux 2 ne valent pas la même chose du tout, et c'est précisément ce qui rend le calcul possible."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut XVI ?",
+          "explanation": "10 + 5 + 1 = 16. On additionne de gauche à droite, chaque lettre valant son nombre.",
+          "answer": 16
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut XL ?",
+          "hint": "Une petite lettre devant une grande : on soustrait.",
+          "explanation": "50 − 10 = 40. Le X placé avant le L se retranche.",
+          "answer": 40
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut MCMXLIV ?",
+          "explanation": "1 000 + (1 000 − 100) + (50 − 10) + (5 − 1) = 1 000 + 900 + 40 + 4 = 1944.",
+          "answer": 1944
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut MMXXVI ?",
+          "explanation": "1 000 + 1 000 + 10 + 10 + 5 + 1 = 2026.",
+          "answer": 2026
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Comment les Romains calculaient-ils, alors ?",
+          "explanation": "Sur un boulier, puis ils écrivaient le résultat en lettres. Leur écriture servait à conserver les nombres, pas à les travailler.",
+          "options": [
+            {
+              "text": "sur un boulier, l'écriture ne servant qu'à noter",
+              "correct": true
+            },
+            {
+              "text": "en posant les opérations en lettres"
+            },
+            {
+              "text": "ils ne calculaient pas"
+            },
+            {
+              "text": "avec des chiffres arabes en secret"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui manque vraiment aux chiffres romains ?",
+          "explanation": "La position. Dans MM les deux M valent pareil ; dans 22 les deux 2 ne valent pas la même chose, et c'est ce qui rend le calcul écrit possible.",
+          "options": [
+            {
+              "text": "la position, qui donne sa valeur au chiffre",
+              "correct": true
+            },
+            {
+              "text": "des lettres pour les grands nombres"
+            },
+            {
+              "text": "la possibilité d'écrire des fractions"
+            },
+            {
+              "text": "rien, ils sont équivalents aux nôtres"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zero",
+      "title": "Le zéro et la position",
+      "subtitle": "L'invention qui a tout débloqué.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une idée venue d'Inde",
+          "body": "Vers le cinquième siècle, en Inde, on met au point un système où dix signes suffisent à tout écrire, parce que la place d'un chiffre lui donne sa valeur.\n\nDans 352, le 3 vaut trois centaines, le 5 cinq dizaines, le 2 deux unités. Le même signe 3 vaudrait trois unités s'il était à droite.\n\nPour que cela marche, il faut un signe qui dise « à cette place, rien » : c'est le zéro. Sans lui, 302 et 32 s'écriraient pareil."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le voyage de ces chiffres",
+          "body": "Les mathématiciens de langue arabe les adoptent et les perfectionnent, en particulier Al-Khwarizmi, à Bagdad, autour de l'an 820. Son nom a donné le mot « algorithme ».\n\nIls arrivent en Europe par l'Espagne et par l'Italie. Le marchand pisan Fibonacci les défend dans un livre de 1202.\n\nIl faudra encore trois siècles pour qu'ils l'emportent : plusieurs villes italiennes les ont d'abord interdits dans les comptes, les jugeant trop faciles à falsifier."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Zéro ne vaut rien et change tout",
+          "body": "Zéro ne compte aucun objet, et pourtant on ne peut pas l'enlever : son travail est de tenir une place vide.\n\nRetire le zéro de 305 et tu obtiens 35. Le nombre a été divisé par presque dix par la suppression d'un signe qui « ne valait rien »."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans 352, combien valent les centaines ?",
+          "explanation": "Le 3 occupe la place des centaines, donc 300.",
+          "answer": 300
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Que devient 305 si on enlève son zéro ?",
+          "explanation": "35. Le zéro ne compte aucun objet, et le retirer divise pourtant le nombre par presque dix.",
+          "answer": 35
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de signes différents suffisent au système indien pour tout écrire ?",
+          "explanation": "Dix : les chiffres de 0 à 9. La position fait le reste.",
+          "answer": 10
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le zéro est-il indispensable à un système de position ?",
+          "explanation": "Pour signaler une place vide. Sans lui, 302 et 32 s'écriraient de la même façon.",
+          "options": [
+            {
+              "text": "pour dire qu'une place est vide",
+              "correct": true
+            },
+            {
+              "text": "pour compter les objets absents"
+            },
+            {
+              "text": "pour marquer la fin du nombre"
+            },
+            {
+              "text": "pour séparer les chiffres"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quel mot vient du nom d'Al-Khwarizmi ?",
+          "explanation": "Algorithme. Son traité du neuvième siècle a fait voyager les chiffres indiens et leur méthode de calcul.",
+          "options": [
+            {
+              "text": "algorithme",
+              "correct": true
+            },
+            {
+              "text": "arithmétique"
+            },
+            {
+              "text": "logarithme"
+            },
+            {
+              "text": "abaque"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le voyage des chiffres dans l'ordre historique.",
+          "explanation": "Inventés en Inde, transmis et perfectionnés en pays d'islam, défendus en Italie par Fibonacci, puis adoptés en Europe après des siècles de résistance.",
+          "items": [
+            "le système de position naît en Inde",
+            "les mathématiciens de Bagdad l'adoptent",
+            "Fibonacci le défend en Italie en 1202",
+            "l'Europe l'adopte après trois siècles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-compter",
+      "title": "Défi : le comptable romain",
+      "subtitle": "Mesurer ce que le zéro a fait gagner.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux comptables, une même addition",
+          "body": "Un comptable romain et un comptable indien doivent additionner 1 847 et 2 459.\n\nL'Indien pose l'opération en colonnes, retient quand il dépasse dix, et obtient 4 306 en quelques secondes.\n\nLe Romain doit écrire MDCCCXLVII et MMCDLIX, et il n'a aucune façon de les empiler. Il va chercher son boulier.\n\nLe même calcul, deux mondes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 1 847 + 2 459 ?",
+          "explanation": "1 847 + 2 459 = 4 306. En colonnes, chaque rang se traite séparément avec ses retenues.",
+          "answer": 4306
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut MDCCCXLVII ?",
+          "hint": "M, puis D, puis trois C, puis XL, puis VII.",
+          "explanation": "1 000 + 500 + 300 + 40 + 7 = 1 847.",
+          "answer": 1847
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut MMCDLIX ?",
+          "explanation": "2 000 + (500 − 100) + 50 + (10 − 1) = 2 000 + 400 + 50 + 9 = 2 459.",
+          "answer": 2459
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lettres faut-il pour écrire 1 847 en chiffres romains ?",
+          "hint": "MDCCCXLVII.",
+          "explanation": "Dix lettres : M, D, C, C, C, X, L, V, I, I. Contre quatre chiffres seulement en écriture de position.",
+          "answer": 10
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de chiffres pour écrire 1 847 dans notre système ?",
+          "explanation": "Quatre : 1, 8, 4, 7. L'écriture de position est deux fois et demie plus courte, et surtout calculable.",
+          "answer": 4
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quel est le vrai avantage de notre écriture des nombres ?",
+          "explanation": "Qu'on peut calculer directement dessus, en colonnes. La brièveté n'est qu'un avantage secondaire.",
+          "options": [
+            {
+              "text": "on peut calculer directement dessus",
+              "correct": true
+            },
+            {
+              "text": "elle est plus courte à écrire"
+            },
+            {
+              "text": "elle est plus jolie"
+            },
+            {
+              "text": "elle évite les fautes d'orthographe"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

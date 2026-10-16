@@ -1,0 +1,350 @@
+{
+  "chapter": "logique-primaire-enigmes-de-deduction",
+  "lessons": [
+    {
+      "id": "eliminer",
+      "title": "Déduire en éliminant",
+      "subtitle": "Ce qu'on sait faux apprend autant.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois enfants, trois animaux",
+          "body": "Alice, Bruno et Chloé ont chacun un animal : un chat, un chien, un lapin. On sait deux choses.\n\nAlice n'a pas le chien. Bruno a le lapin.\n\nQue peut-on en tirer ? Bruno a le lapin, donc Alice et Chloé ont le chat et le chien. Comme Alice n'a pas le chien, Alice a le chat. Il reste le chien pour Chloé.\n\nTout est trouvé, et pourtant personne n'a dit qui avait le chat."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Une information négative est une information",
+          "body": "« Alice n'a pas le chien » ne dit pas ce qu'Alice a. Et c'est pourtant ce qui permet de tout résoudre.\n\nUne déduction avance aussi bien en barrant des possibilités qu'en en confirmant. C'est le principe de toute énigme, et de tout diagnostic médical."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "La méthode du tableau",
+          "body": "Dessine un tableau : les personnes en lignes, les animaux en colonnes.\n\nPour chaque information, mets une croix dans les cases impossibles et un rond dans les cases certaines.\n\nQuand une ligne n'a plus qu'une case libre, c'est la bonne : mets un rond.\n\nQuand une case reçoit un rond, barre tout le reste de sa ligne et de sa colonne. Puis recommence : chaque rond en fait apparaître d'autres."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Ne jamais deviner",
+          "body": "Dans une énigme bien posée, on n'a jamais besoin d'essayer au hasard : chaque étape se déduit de ce qui précède.\n\nSi tu te sens obligé de deviner, c'est presque toujours qu'une information n'a pas encore été utilisée. Relis l'énoncé en cochant chaque phrase une fois exploitée."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Bruno a le lapin, Alice n'a pas le chien. Qui a le chien ?",
+          "explanation": "Chloé. Bruno a le lapin, Alice ne peut avoir que le chat, donc il ne reste que le chien pour Chloé.",
+          "options": [
+            { "text": "Chloé", "correct": true },
+            { "text": "Alice" },
+            { "text": "Bruno" },
+            { "text": "impossible à savoir" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans la même énigme, qui a le chat ?",
+          "explanation": "Alice : elle n'a ni le chien, ni le lapin pris par Bruno.",
+          "options": [
+            { "text": "Alice", "correct": true },
+            { "text": "Chloé" },
+            { "text": "Bruno" },
+            { "text": "personne" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Une ligne du tableau n'a plus qu'une seule case libre. Que faire ?",
+          "explanation": "Y mettre un rond : c'est forcément la bonne réponse. Puis barrer le reste de sa colonne.",
+          "options": [
+            { "text": "y mettre un rond, c'est la bonne", "correct": true },
+            { "text": "la barrer aussi" },
+            { "text": "attendre une information de plus" },
+            { "text": "essayer au hasard" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Savoir ce qu'une personne n'a pas ne sert à rien.",
+          "explanation": "Faux. C'est souvent ce qui débloque tout : barrer une possibilité en force une autre ailleurs.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "menteurs",
+      "title": "Ceux qui mentent",
+      "subtitle": "Tester chaque hypothèse jusqu'au bout.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux villages",
+          "body": "Dans un village, tout le monde dit toujours la vérité. Dans l'autre, tout le monde ment toujours. Les habitants se ressemblent et ne portent aucun signe.\n\nTu rencontres quelqu'un qui te dit : « Je suis un menteur. »\n\nC'est impossible. Un menteur ne peut pas dire qu'il mente, ce serait vrai. Un sincère ne peut pas dire qu'il mente, ce serait faux. Donc cette phrase n'a jamais été prononcée dans ces deux villages."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La méthode : supposer, puis vérifier",
+          "body": "Prends la première hypothèse : « cette personne dit la vérité ».\n\nDéroule ses conséquences jusqu'au bout.\n\nSi tu arrives à une contradiction, l'hypothèse est fausse, et tu sais donc que la personne mentait.\n\nSi tu n'arrives à aucune contradiction, l'hypothèse tient. Ne t'arrête pas en route : une contradiction se cache souvent à la troisième conséquence."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "« Nous sommes tous les deux des menteurs »",
+          "body": "Deux personnes, A et B. A déclare : « Nous sommes tous les deux des menteurs. »\n\nSuppose A sincère : alors ce qu'il dit est vrai, donc A est un menteur. Contradiction. A mentait donc.\n\nComme A mentait, sa phrase est fausse : ils ne sont pas tous les deux menteurs. Or A en est un. Donc B n'en est pas un : B est sincère.\n\nUne seule phrase, et les deux sont identifiés."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "La question qui marche toujours",
+          "body": "Pour trouver le bon chemin à un carrefour, sans savoir à qui tu parles, demande : « Que répondrait l'autre village si je lui demandais si c'est par ici ? »\n\nUn sincère rapporte fidèlement le mensonge : il te donne la fausse réponse. Un menteur déforme la vérité : il te donne aussi la fausse réponse.\n\nLes deux donnent la même réponse, donc tu prends le contraire. On a neutralisé le mensonge en le faisant passer deux fois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelqu'un dit « je suis un menteur ». Qu'en conclure ?",
+          "explanation": "Que cette phrase est impossible dans les deux villages : un menteur la rendrait vraie, un sincère la rendrait fausse.",
+          "options": [
+            { "text": "cette phrase est impossible à prononcer", "correct": true },
+            { "text": "c'est un menteur" },
+            { "text": "c'est un sincère" },
+            { "text": "il vient d'un troisième village" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "A dit : « nous sommes tous les deux des menteurs ». Qui est quoi ?",
+          "explanation": "A mentait, sinon sa phrase le rendrait menteur. Sa phrase étant fausse, ils ne sont pas tous deux menteurs : B est donc sincère.",
+          "options": [
+            { "text": "A mentait, B est sincère", "correct": true },
+            { "text": "A est sincère, B mentait" },
+            { "text": "les deux mentaient" },
+            { "text": "les deux sont sincères" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Tu demandes « que dirait l'autre village ? » et on te répond oui. Que fais-tu ?",
+          "explanation": "Tu prends le contraire : les deux sortes d'habitants donnent la même réponse, et c'est la fausse.",
+          "options": [
+            { "text": "tu prends le contraire de la réponse", "correct": true },
+            { "text": "tu suis la réponse" },
+            { "text": "tu reposes la question" },
+            { "text": "tu cherches quelqu'un d'autre" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode du raisonnement par l'absurde dans l'ordre.",
+          "explanation": "On suppose, on déroule, et si l'on tombe sur une contradiction, l'hypothèse de départ était fausse.",
+          "items": [
+            "supposer que la personne dit la vérité",
+            "dérouler les conséquences",
+            "chercher une contradiction",
+            "conclure que l'hypothèse était fausse si on en trouve une"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un menteur peut dire « je mens ».",
+          "explanation": "Faux. S'il mentait vraiment en disant cela, la phrase serait fausse, donc il dirait la vérité. C'est contradictoire.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "entrainement-deduction",
+      "title": "S'entraîner",
+      "subtitle": "Quatre énigmes à dérouler.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Si… alors",
+          "figureId": "implication",
+          "body": "Attention au sens. « S'il pleut, je prends mon parapluie » ne dit rien du jour où je prends mon parapluie sans qu'il pleuve. Manipule la figure pour voir ce que l'implication autorise."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "L'erreur la plus fréquente",
+          "body": "« Tous les chats ont quatre pattes. Mon chien a quatre pattes. Donc mon chien est un chat. »\n\nLa règle dit ce que font les chats ; elle ne dit pas que seuls les chats le font. Une règle se lit dans un seul sens, et la retourner est le piège le plus courant du raisonnement."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Trois sœurs : Léa est plus grande que Maya. Maya est plus grande que Nora. Qui est la plus petite ?",
+          "explanation": "Nora. Léa dépasse Maya qui dépasse Nora, donc l'ordre est Léa, Maya, Nora.",
+          "options": [
+            { "text": "Nora", "correct": true },
+            { "text": "Maya" },
+            { "text": "Léa" },
+            { "text": "impossible à savoir" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "« S'il pleut, Paul prend son parapluie. » Paul a son parapluie. Pleut-il ?",
+          "explanation": "On ne peut pas le savoir. La règle dit ce qu'il fait quand il pleut, pas qu'il ne le prend jamais autrement.",
+          "options": [
+            { "text": "on ne peut pas le savoir", "correct": true },
+            { "text": "oui, forcément" },
+            { "text": "non, sûrement pas" },
+            { "text": "la règle est fausse" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Même règle. Paul n'a pas son parapluie. Pleut-il ?",
+          "explanation": "Non. S'il pleuvait, il l'aurait pris. Ne pas l'avoir prouve donc qu'il ne pleut pas : c'est la seule déduction valable dans l'autre sens.",
+          "options": [
+            { "text": "non, il ne pleut pas", "correct": true },
+            { "text": "oui, il pleut" },
+            { "text": "on ne peut pas le savoir" },
+            { "text": "il a oublié son parapluie" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "« Tous les chats ont quatre pattes. Rex a quatre pattes. » Rex est-il un chat ?",
+          "explanation": "On ne peut pas le savoir. La règle dit que les chats ont quatre pattes, pas que seuls les chats en ont.",
+          "options": [
+            { "text": "on ne peut pas le savoir", "correct": true },
+            { "text": "oui" },
+            { "text": "non" },
+            { "text": "la règle est fausse" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quatre coureurs. Ana devant Bob. Bob devant Cléo. Dan devant Ana. Qui gagne ?",
+          "explanation": "Dan. Il devance Ana, qui devance Bob, qui devance Cléo : l'ordre complet est Dan, Ana, Bob, Cléo.",
+          "options": [
+            { "text": "Dan", "correct": true },
+            { "text": "Ana" },
+            { "text": "Bob" },
+            { "text": "Cléo" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces quatre coureurs du premier au dernier.",
+          "explanation": "Dan devant Ana, Ana devant Bob, Bob devant Cléo : la chaîne donne tout l'ordre.",
+          "items": ["Dan", "Ana", "Bob", "Cléo"]
+        }
+      ]
+    },
+    {
+      "id": "defi-deduction",
+      "title": "Défi : les quatre maisons",
+      "subtitle": "Une énigme à grille complète.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'énoncé",
+          "body": "Quatre maisons alignées, numérotées 1 à 4 de gauche à droite. Chacune a une couleur : bleue, jaune, rouge, verte.\n\nUn : la maison verte est tout à droite.\n\nDeux : la maison bleue est juste à gauche de la rouge.\n\nTrois : la maison jaune est en 1.\n\nQuelle est la couleur de chaque maison ?"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le déroulé",
+          "body": "La jaune est en 1, la verte en 4. Restent la bleue et la rouge pour les positions 2 et 3.\n\nLa bleue est juste à gauche de la rouge : il n'y a qu'une façon de placer ce couple dans 2 et 3.\n\nDonc bleue en 2, rouge en 3.\n\nRésultat : jaune, bleue, rouge, verte. Aucune hypothèse n'a été nécessaire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la couleur de la maison 2 ?",
+          "explanation": "Bleue. Jaune occupe la 1 et verte la 4 ; la bleue devant être juste à gauche de la rouge, elle ne peut qu'être en 2.",
+          "options": [
+            { "text": "bleue", "correct": true },
+            { "text": "rouge" },
+            { "text": "verte" },
+            { "text": "jaune" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range les quatre couleurs de la maison 1 à la maison 4.",
+          "explanation": "Jaune en 1, verte en 4, et le couple bleue-rouge ne rentre que dans cet ordre en 2 et 3.",
+          "items": ["jaune", "bleue", "rouge", "verte"]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Si l'on retirait l'indice « la jaune est en 1 », combien de solutions resterait-il ?",
+          "hint": "La verte reste en 4, et le couple bleue-rouge peut glisser.",
+          "explanation": "Deux : bleue-rouge en 1-2 avec la jaune en 3, ou jaune en 1 avec bleue-rouge en 2-3. Un indice de moins, et l'énigme n'a plus de réponse unique.",
+          "options": [
+            { "text": "deux", "correct": true },
+            { "text": "une seule" },
+            { "text": "trois" },
+            { "text": "aucune" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Sans aucun indice, de combien de façons peut-on colorier les quatre maisons avec quatre couleurs différentes ?",
+          "hint": "4 choix, puis 3, puis 2, puis 1.",
+          "explanation": "4 × 3 × 2 × 1 = 24 façons. Les trois indices de l'énigme réduisent 24 possibilités à une seule.",
+          "answer": 24
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Avec seulement l'indice « la verte est en 4 », combien de possibilités restent-il ?",
+          "explanation": "La verte étant fixée, il reste 3 × 2 × 1 = 6 façons de placer les trois autres.",
+          "answer": 6
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "À quoi reconnaît-on qu'une énigme est bien posée ?",
+          "explanation": "Elle a exactement une solution, et on y arrive sans deviner : chaque étape se déduit des précédentes.",
+          "options": [
+            { "text": "elle a une seule solution, atteinte sans deviner", "correct": true },
+            { "text": "elle a plusieurs solutions valables" },
+            { "text": "elle demande d'essayer au hasard" },
+            { "text": "elle n'a aucun indice négatif" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "chapter": "logique-primaire-vrai-faux-peut-etre",
+  "lessons": [
+    {
+      "id": "trois-reponses",
+      "title": "Trois réponses, pas deux",
+      "subtitle": "« On ne peut pas savoir » est une réponse.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La troisième case",
+          "body": "Devant une affirmation, on a l'habitude de chercher si elle est vraie ou fausse. Mais il existe une troisième réponse, et c'est souvent la bonne : on ne peut pas savoir.\n\n« Il y a un chien dans la maison d'en face. » Si tu ne l'as pas vu, tu ne peux ni l'affirmer ni le nier. Dire « faux » parce qu'on n'a pas vu de chien est une erreur de raisonnement, pas une prudence."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Ne pas savoir n'est pas la même chose que savoir que non",
+          "body": "« Je ne sais pas si c'est vrai » et « je sais que c'est faux » sont deux états très différents.\n\nConfondre les deux est l'erreur la plus répandue dans les discussions, y compris entre adultes. On conclut qu'une chose est fausse parce qu'elle n'a pas été prouvée, alors qu'on n'a établi qu'une absence de preuve."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Trois affirmations, trois réponses",
+          "body": "« 7 est plus grand que 5. » Vrai, et on peut le vérifier.\n\n« 7 est plus petit que 5. » Faux, et on peut le vérifier aussi.\n\n« Le nombre auquel je pense est plus grand que 5. » On ne peut pas savoir : il manque une information, et aucun raisonnement ne la remplacera."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Comment choisir la bonne case",
+          "body": "Demande-toi : « qu'est-ce qui me permettrait d'en être sûr ? »\n\nSi tu peux répondre, et que tu l'as, c'est vrai ou faux.\n\nSi tu peux répondre mais que tu ne l'as pas, c'est « on ne peut pas savoir » — et tu sais maintenant quoi aller chercher. C'est même le principal usage de cette troisième case : elle nomme ce qui manque."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces affirmations selon ce qu'on peut en dire.",
+          "explanation": "Les deux premières se vérifient par calcul. Les deux dernières dépendent d'une information qu'on n'a pas.",
+          "categories": ["vrai", "faux", "on ne peut pas savoir"],
+          "items": [
+            { "text": "12 est un nombre pair", "category": 0 },
+            { "text": "3 + 4 = 8", "category": 1 },
+            { "text": "il pleut en ce moment à Lima", "category": 2 },
+            { "text": "le nombre auquel je pense est pair", "category": 2 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Tu n'as jamais vu de chien chez le voisin. Peux-tu dire qu'il n'en a pas ?",
+          "explanation": "Non. Ne pas avoir vu n'est pas avoir vu qu'il n'y en a pas. C'est « on ne peut pas savoir ».",
+          "options": [
+            { "text": "non, on ne peut pas savoir", "correct": true },
+            { "text": "oui, puisqu'on ne l'a pas vu" },
+            { "text": "oui, il n'en a pas" },
+            { "text": "oui, il en a un" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la différence entre « je ne sais pas » et « je sais que non » ?",
+          "explanation": "La première dit qu'il manque une information ; la seconde affirme un fait établi. Les confondre est l'erreur la plus répandue dans les discussions.",
+          "options": [
+            { "text": "la première signale un manque, la seconde affirme", "correct": true },
+            { "text": "aucune, c'est la même chose" },
+            { "text": "la première est plus polie" },
+            { "text": "la seconde est toujours fausse" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une affirmation qui n'a pas été prouvée est fausse.",
+          "explanation": "Faux. Elle est seulement non prouvée, ce qui la place dans la troisième case. L'absence de preuve n'est pas une preuve d'absence.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "tous-certains",
+      "title": "Tous, certains, aucun",
+      "subtitle": "Et comment dire le contraire.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trois façons de parler d'un groupe",
+          "body": "« Tous les chats de la rue sont gris » : il n'y a aucune exception.\n\n« Certains chats de la rue sont gris » : il y en a au moins un. Peut-être tous, peut-être un seul.\n\n« Aucun chat de la rue n'est gris » : il n'y en a pas un seul.\n\nCes trois phrases ne disent pas la même chose, et pourtant on les échange sans y penser dans la conversation courante."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Le contraire de « tous » n'est pas « aucun »",
+          "body": "Pour prouver que « tous les chats sont gris » est faux, il suffit de trouver un seul chat qui ne l'est pas. Un seul.\n\nLe contraire de « tous sont gris » est donc « au moins un n'est pas gris » — et pas du tout « aucun n'est gris », qui est une affirmation bien plus forte.\n\nC'est l'erreur de logique la plus fréquente de toutes, et elle empoisonne les discussions : on croit devoir démontrer l'inverse total alors qu'un contre-exemple suffit."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les deux contraires à retenir",
+          "body": "Le contraire de « tous » est « au moins un ne... ».\n\nLe contraire de « au moins un » est « aucun ».\n\nLe « tous » et le « aucun » ne sont donc pas contraires l'un de l'autre : ils peuvent être faux tous les deux en même temps, ce qui arrive dès qu'il y a des chats gris et des chats roux dans la rue."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Un seul contre-exemple suffit",
+          "body": "Pour abattre un « tous », cherche un contre-exemple, et un seul.\n\nPour abattre un « au moins un », il faut en revanche tout passer en revue : c'est beaucoup plus coûteux.\n\nLes deux affirmations se ressemblent et ne se réfutent pas du tout au même prix. Savoir laquelle on a devant soi fait gagner un temps considérable."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel est le contraire de « tous les chats sont gris » ?",
+          "explanation": "« Au moins un chat n'est pas gris. » Un seul contre-exemple suffit à abattre un « tous ».",
+          "options": [
+            { "text": "au moins un chat n'est pas gris", "correct": true },
+            { "text": "aucun chat n'est gris" },
+            { "text": "tous les chats sont roux" },
+            { "text": "certains chats sont gris" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quel est le contraire de « au moins un élève est absent » ?",
+          "explanation": "« Aucun élève n'est absent », c'est-à-dire que tous sont présents. Pour le prouver, il faut passer toute la classe en revue.",
+          "options": [
+            { "text": "aucun élève n'est absent", "correct": true },
+            { "text": "tous les élèves sont absents" },
+            { "text": "certains élèves sont présents" },
+            { "text": "au moins un élève est présent" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de contre-exemples faut-il pour prouver que « tous les chats sont gris » est faux ?",
+          "explanation": "Un seul. C'est toute la force du contre-exemple : il abat un « tous » sans qu'il soit besoin d'en chercher davantage.",
+          "answer": 1
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Dans la rue il y a trois chats gris et un chat roux. Que peut-on dire ?",
+          "explanation": "« Tous sont gris » est faux à cause du roux, et « aucun n'est gris » est faux à cause des trois autres. Les deux sont faux en même temps.",
+          "options": [
+            { "text": "« tous gris » et « aucun gris » sont tous deux faux", "correct": true },
+            { "text": "« tous gris » est vrai" },
+            { "text": "« aucun gris » est vrai" },
+            { "text": "on ne peut rien dire" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "« Tous » et « aucun » sont contraires l'un de l'autre.",
+          "explanation": "Faux. Ils peuvent être faux tous les deux en même temps, ce qui arrive dès qu'il y a un mélange dans le groupe.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "et-ou",
+      "title": "Et, ou, non",
+      "subtitle": "Trois petits mots qui changent tout.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "La table de vérité",
+          "figureId": "table-de-verite",
+          "body": "Chaque ligne est un cas possible. Coche et décoche pour voir quand la phrase entière est vraie."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Quand chaque phrase est-elle vraie",
+          "body": "« A et B » est vraie seulement si les deux le sont. Il suffit qu'une seule soit fausse pour tout faire tomber.\n\n« A ou B » est vraie dès qu'au moins l'une l'est — y compris si les deux le sont.\n\n« non A » est vraie exactement quand A est fausse."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le « ou » de la logique n'est pas celui du restaurant",
+          "body": "« Fromage ou dessert ? » veut dire l'un des deux, pas les deux. Le langage courant emploie un « ou » exclusif.\n\nEn logique, « ou » est inclusif : « il est grand ou blond » reste vrai pour quelqu'un de grand et blond.\n\nQuand on veut exclure, il faut le dire : « l'un ou l'autre, mais pas les deux »."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "« Il fait beau ET je suis en vacances. » Il fait beau mais je travaille. La phrase est-elle vraie ?",
+          "explanation": "Non. Un « et » exige que les deux parties soient vraies ; il suffit d'une fausse pour tout faire tomber.",
+          "options": [
+            { "text": "non", "correct": true },
+            { "text": "oui" },
+            { "text": "on ne peut pas savoir" },
+            { "text": "à moitié vraie" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "« Il fait beau OU je suis en vacances. » Il fait beau mais je travaille. La phrase est-elle vraie ?",
+          "explanation": "Oui. Un « ou » suffit à être satisfait par une seule des deux parties.",
+          "options": [
+            { "text": "oui", "correct": true },
+            { "text": "non" },
+            { "text": "on ne peut pas savoir" },
+            { "text": "seulement si les deux sont vrais" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "En logique, « il est grand ou blond » est-elle vraie pour quelqu'un de grand ET blond ?",
+          "explanation": "Oui. Le « ou » de la logique est inclusif : il est satisfait par une des deux conditions, ou par les deux.",
+          "options": [
+            { "text": "oui, le « ou » logique est inclusif", "correct": true },
+            { "text": "non, il faut choisir" },
+            { "text": "non, c'est contradictoire" },
+            { "text": "cela dépend de la taille" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Sur les 4 cas possibles de deux affirmations, dans combien « A et B » est-elle vraie ?",
+          "explanation": "Un seul cas sur quatre : celui où A et B sont toutes les deux vraies.",
+          "answer": 1
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Sur ces mêmes 4 cas, dans combien « A ou B » est-elle vraie ?",
+          "explanation": "Trois sur quatre : tous les cas sauf celui où les deux sont fausses.",
+          "answer": 3
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quel est le contraire de « il est grand ET blond » ?",
+          "hint": "Il suffit qu'une seule condition tombe.",
+          "explanation": "« Il n'est pas grand, ou il n'est pas blond. » Il suffit qu'une seule des deux conditions soit fausse pour que le « et » tombe.",
+          "options": [
+            { "text": "il n'est pas grand, ou il n'est pas blond", "correct": true },
+            { "text": "il n'est ni grand ni blond" },
+            { "text": "il est petit et brun" },
+            { "text": "il est grand ou blond" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-cartes",
+      "title": "Défi : les quatre cartes",
+      "subtitle": "Une énigme que la plupart des adultes rate.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'énoncé",
+          "body": "Quatre cartes sont posées sur la table. Chacune porte une lettre d'un côté et un nombre de l'autre.\n\nTu vois : A, B, 4, 7.\n\nQuelqu'un affirme une règle : « Si une carte a une voyelle d'un côté, alors elle a un nombre pair de l'autre. »\n\nQuelles cartes faut-il retourner, et seulement celles-là, pour savoir si la règle est respectée ?"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Examiner chaque carte séparément",
+          "body": "La carte A porte une voyelle. La règle promet donc un nombre pair derrière. Il faut vérifier : on la retourne.\n\nLa carte B porte une consonne. La règle ne dit rien des consonnes : quoi qu'il y ait derrière, elle est respectée. Inutile.\n\nLa carte 4 porte un nombre pair. La règle ne dit pas que seules les voyelles ont un nombre pair : une consonne derrière ne la violerait pas. Inutile.\n\nLa carte 7 porte un nombre impair. Si une voyelle était derrière, la règle serait violée. Il faut vérifier : on la retourne."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi presque tout le monde se trompe",
+          "body": "La plupart des gens retournent A et 4. C'est le réflexe de chercher ce qui confirme la règle.\n\nOr une règle ne se vérifie pas en cherchant des exemples qui lui vont : elle se vérifie en cherchant ce qui pourrait la contredire.\n\nLes deux cartes à retourner sont donc A et 7 : la voyelle, et l'impair. Cette expérience a été menée des milliers de fois, et moins d'un adulte sur cinq trouve la bonne réponse."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixMultiple",
+          "prompt": "Quelles cartes faut-il retourner ?",
+          "explanation": "A, parce qu'une voyelle doit avoir un pair derrière. Et 7, parce qu'une voyelle derrière un impair violerait la règle. Les deux autres ne peuvent rien révéler.",
+          "options": [
+            { "text": "la carte A", "correct": true },
+            { "text": "la carte 7", "correct": true },
+            { "text": "la carte 4" },
+            { "text": "la carte B" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la carte 4 est-elle inutile ?",
+          "explanation": "Parce que la règle ne dit pas que seules les voyelles ont un nombre pair. Une consonne derrière le 4 ne la contredirait pas.",
+          "options": [
+            { "text": "la règle n'interdit pas une consonne derrière un pair", "correct": true },
+            { "text": "parce que 4 est trop petit" },
+            { "text": "parce qu'on voit déjà qu'il est pair" },
+            { "text": "parce que la règle parle des impairs" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la carte 7 est-elle indispensable ?",
+          "explanation": "Parce qu'une voyelle derrière un nombre impair violerait directement la règle. C'est la seule carte invisible qui peut la contredire, en plus de A.",
+          "options": [
+            { "text": "une voyelle derrière un impair violerait la règle", "correct": true },
+            { "text": "parce que 7 est impair, donc interdit" },
+            { "text": "pour confirmer que la règle marche" },
+            { "text": "parce que 7 est plus grand que 4" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cartes faut-il retourner en tout ?",
+          "explanation": "Deux : A et 7. Les deux autres ne peuvent rien apprendre, quoi qu'elles cachent.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la bonne façon de tester une règle ?",
+          "explanation": "Chercher ce qui pourrait la contredire. Accumuler des exemples qui lui vont ne prouve rien.",
+          "options": [
+            { "text": "chercher ce qui pourrait la contredire", "correct": true },
+            { "text": "chercher des exemples qui la confirment" },
+            { "text": "compter les cas favorables" },
+            { "text": "demander à celui qui l'a énoncée" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "La règle devient « seules les voyelles ont un nombre pair ». Quelles cartes retourner alors ?",
+          "hint": "La règle a changé de sens : pair implique maintenant voyelle.",
+          "explanation": "B et 4 : la consonne B ne doit pas cacher un pair, et le 4 doit cacher une voyelle. En retournant la règle, on retourne aussi les cartes à examiner.",
+          "options": [
+            { "text": "B et 4", "correct": true },
+            { "text": "A et 7" },
+            { "text": "A et 4" },
+            { "text": "les quatre" }
+          ]
+        }
+      ]
+    }
+  ]
+}
