@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'array_figure.dart';
+import 'circuit_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'derivative_figure.dart';
@@ -84,6 +85,9 @@ abstract final class FigureRegistry {
     // « Si… alors », sa réciproque, et le seul cas interdit.
     'implication': (BuildContext context, Color accent) =>
         ImplicationFigure(accent: accent),
+    // Deux lampes, en série ou en dérivation, et une à dévisser.
+    'circuit': (BuildContext context, Color accent) =>
+        CircuitFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

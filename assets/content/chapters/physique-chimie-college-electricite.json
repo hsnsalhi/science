@@ -1,0 +1,359 @@
+{
+  "chapter": "physique-chimie-college-electricite-circuits-et-lois",
+  "lessons": [
+    {
+      "id": "le-circuit-ferme",
+      "title": "Un circuit doit être fermé",
+      "subtitle": "Une boucle, sans interruption.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La boucle",
+          "body": "Le courant ne circule que si le chemin forme une boucle complète, du générateur jusqu'à lui-même.\n\nUne seule coupure suffit à tout arrêter : c'est exactement ce que fait un interrupteur ouvert."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Ouvre et ferme",
+          "body": "Ouvre l'interrupteur, puis dévisse une lampe.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Conducteurs et isolants",
+          "body": "Les métaux laissent passer le courant : ce sont des conducteurs. Le plastique, le verre, le bois sec ne le laissent pas passer : ce sont des isolants.\n\nUn fil électrique est précisément les deux à la fois : du cuivre pour conduire, du plastique autour pour isoler."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le court-circuit",
+          "body": "Si un fil relie directement les deux bornes du générateur, le courant emprunte ce raccourci plutôt que de traverser les lampes.\n\nL'intensité devient très forte, les fils chauffent, et la pile se vide en quelques instants. C'est un danger réel, pas une simple erreur de montage."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Pas de boucle fermée, pas de courant.",
+            "Les métaux conduisent, le plastique isole.",
+            "Un court-circuit fait chauffer les fils : il est dangereux."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Si l'interrupteur est ouvert, les lampes peuvent rester allumées.",
+          "answer": false,
+          "explanation": "Non : la boucle est coupée, et aucun courant ne circule. Toutes les lampes s'éteignent, quel que soit le montage.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces matériaux.",
+          "hint": "Les métaux ont un point commun.",
+          "explanation": "Le cuivre et l'aluminium sont des métaux : ils conduisent. Le plastique et le verre sont des isolants, et c'est pour cela qu'on les met autour des fils.",
+          "categories": ["Conducteur", "Isolant"],
+          "items": [
+            { "text": "Le cuivre", "category": 0 },
+            { "text": "L'aluminium", "category": 0 },
+            { "text": "Le plastique", "category": 1 },
+            { "text": "Le verre", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il lors d'un court-circuit ?",
+          "hint": "Le courant choisit le chemin le plus facile.",
+          "explanation": "L'intensité devient très forte et les fils chauffent. La pile se décharge en quelques instants, et le montage peut prendre feu.",
+          "options": [
+            { "text": "L'intensité devient très forte et les fils chauffent", "correct": true },
+            { "text": "Le courant s'arrête complètement" },
+            { "text": "Les lampes brillent davantage" },
+            { "text": "La pile se recharge" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un fil électrique est-il entouré de plastique ?",
+          "hint": "Que fait le plastique au courant ?",
+          "explanation": "Parce que le plastique est isolant : il empêche le courant de passer ailleurs que dans le cuivre, et protège celui qui manipule le fil.",
+          "options": [
+            { "text": "Parce que le plastique est isolant", "correct": true },
+            { "text": "Parce que le plastique conduit mieux" },
+            { "text": "Pour rendre le fil plus joli" },
+            { "text": "Pour alourdir le fil" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie-et-derivation",
+      "title": "Série et dérivation",
+      "subtitle": "Un chemin, ou plusieurs.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "En série",
+          "body": "Les dipôles sont placés à la suite, sur un seul chemin. Le courant les traverse tous, l'un après l'autre.\n\nSi l'un est retiré, le chemin est coupé et tout s'arrête."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "En dérivation",
+          "body": "Les dipôles sont placés sur des branches séparées. Chacun a son propre chemin.\n\nSi l'un est retiré, les autres continuent de fonctionner."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Dévisse une lampe",
+          "body": "Essaie dans les deux montages : c'est là que la différence se voit.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Pourquoi les maisons sont en dérivation",
+          "body": "Si l'installation d'une maison était en série, éteindre une lampe éteindrait toute la maison, et chaque appareil ajouté affaiblirait les autres.\n\nEn dérivation, chaque appareil reçoit la même tension et fonctionne indépendamment."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "En série : un seul chemin, tout dépend de tout.",
+            "En dérivation : un chemin par branche, indépendants.",
+            "Les installations domestiques sont en dérivation."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Deux lampes sont en série. On en dévisse une. Que fait l'autre ?",
+          "hint": "Combien y a-t-il de chemins ?",
+          "explanation": "Elle s'éteint. Le seul chemin du courant est coupé : il n'y a plus de boucle fermée.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Elle s'éteint", "correct": true },
+            { "text": "Elle reste allumée" },
+            { "text": "Elle brille plus fort" },
+            { "text": "Elle clignote" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Deux lampes sont en dérivation. On en dévisse une. Que fait l'autre ?",
+          "hint": "Chaque branche a son chemin.",
+          "explanation": "Elle reste allumée, et brille même comme avant : sa branche n'a pas été touchée.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Elle reste allumée", "correct": true },
+            { "text": "Elle s'éteint" },
+            { "text": "Elle s'éteint une seconde puis revient" },
+            { "text": "Elle brille deux fois moins" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces affirmations selon le montage qu'elles décrivent.",
+          "hint": "Un seul chemin, ou plusieurs ?",
+          "explanation": "Un seul chemin et une panne qui arrête tout caractérisent la série. Des branches séparées et des appareils indépendants caractérisent la dérivation.",
+          "categories": ["En série", "En dérivation"],
+          "items": [
+            { "text": "Un seul chemin pour le courant", "category": 0 },
+            { "text": "Une lampe retirée arrête tout", "category": 0 },
+            { "text": "Chaque appareil a sa branche", "category": 1 },
+            { "text": "Les appareils fonctionnent indépendamment", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "L'installation électrique d'une maison est montée en série.",
+          "answer": false,
+          "explanation": "Non, en dérivation. En série, éteindre une lampe éteindrait toute la maison, et chaque appareil branché affaiblirait les autres."
+        }
+      ]
+    },
+    {
+      "id": "tension-et-intensite",
+      "title": "Tension et intensité",
+      "subtitle": "Deux grandeurs, deux appareils.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux grandeurs à ne pas confondre",
+          "body": "L'intensité I mesure le débit du courant, en ampères (A). On la mesure avec un ampèremètre, branché en série : il doit être traversé par le courant.\n\nLa tension U mesure l'écart électrique entre deux points, en volts (V). On la mesure avec un voltmètre, branché en dérivation aux bornes du dipôle."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les lois en série",
+          "formula": "I est la même partout  ·  U se partage : U = U₁ + U₂",
+          "body": "un seul chemin, donc un seul débit."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Les lois en dérivation",
+          "formula": "U est la même partout  ·  I se partage : I = I₁ + I₂",
+          "body": "chaque branche reçoit toute la tension."
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "La loi d'Ohm",
+          "formula": "U = R × I",
+          "body": "pour un conducteur ohmique, R en ohms (Ω)."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Pour ne pas confondre les branchements : l'ampèremètre doit être traversé, donc en série ; le voltmètre compare deux points, donc en dérivation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Deux lampes en série sous 6 V. La première supporte 2,5 V. Quelle tension, en volts, aux bornes de la seconde ?",
+          "answer": 3.5,
+          "tolerance": 0.01,
+          "unit": "V",
+          "hint": "Les tensions s'additionnent.",
+          "explanation": "3,5 V : 6 − 2,5. En série, la tension du générateur se partage entre les dipôles."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Deux lampes en dérivation sous 6 V. Quelle tension, en volts, aux bornes de la seconde ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "V",
+          "hint": "Chaque branche reçoit toute la tension.",
+          "explanation": "6 V. En dérivation, la tension est la même aux bornes de chaque branche : c'est pourquoi tous les appareils d'une maison reçoivent 230 V."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un circuit en dérivation, les branches sont traversées par 0,2 A et 0,3 A. Quelle intensité, en ampères, sort du générateur ?",
+          "answer": 0.5,
+          "tolerance": 0.001,
+          "unit": "A",
+          "hint": "Les intensités des branches s'additionnent.",
+          "explanation": "0,5 A : 0,2 + 0,3. Le courant se sépare à l'entrée des branches et se rassemble à la sortie."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un conducteur ohmique de 20 Ω est traversé par 0,3 A. Quelle tension, en volts, à ses bornes ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "V",
+          "hint": "U = R × I.",
+          "explanation": "6 V : 20 × 0,3. La tension est proportionnelle à l'intensité, et c'est la résistance qui fixe le coefficient."
+        }
+      ]
+    },
+    {
+      "id": "defi-electricite",
+      "title": "Défi : les circuits",
+      "subtitle": "Six questions, lois en main.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Demande-toi chaque fois s'il y a un chemin ou plusieurs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Trois lampes identiques en série sous 9 V. Quelle tension, en volts, aux bornes de chacune ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "V",
+          "hint": "La tension se partage également entre des lampes identiques.",
+          "explanation": "3 V : 9 ÷ 3. C'est aussi pourquoi trois lampes en série brillent moins que deux."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un circuit en série, l'ampèremètre indique 0,25 A près du générateur. Que lit-on, en ampères, après la deuxième lampe ?",
+          "answer": 0.25,
+          "tolerance": 0.001,
+          "unit": "A",
+          "hint": "Un seul chemin, un seul débit.",
+          "explanation": "0,25 A. L'intensité est la même en tout point d'un circuit en série : le courant ne s'use pas en traversant une lampe."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque appareil à son branchement et à son unité.",
+          "explanation": "L'ampèremètre se branche en série et lit des ampères ; le voltmètre se branche en dérivation et lit des volts. La résistance se mesure en ohms.",
+          "pairs": [
+            { "left": "Ampèremètre", "right": "En série, en ampères" },
+            { "left": "Voltmètre", "right": "En dérivation, en volts" },
+            { "left": "Résistance", "right": "En ohms" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une résistance de 50 Ω est soumise à 10 V. Quelle intensité, en ampères, la traverse ?",
+          "answer": 0.2,
+          "tolerance": 0.001,
+          "unit": "A",
+          "hint": "I = U ÷ R.",
+          "explanation": "0,2 A : 10 ÷ 50. Plus la résistance est grande, plus l'intensité est faible à tension donnée."
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range ces grandeurs selon ce qu'elles valent dans un circuit en série.",
+          "explanation": "En série, l'intensité est la même partout ; la tension, elle, se partage entre les dipôles. En dérivation, c'est exactement l'inverse.",
+          "categories": ["La même partout", "Se partage"],
+          "items": [
+            { "text": "L'intensité en série", "category": 0 },
+            { "text": "La tension en dérivation", "category": 0 },
+            { "text": "La tension en série", "category": 1 },
+            { "text": "L'intensité en dérivation", "category": 1 }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Le courant s'use en traversant une lampe : il en sort moins qu'il n'en entre.",
+          "answer": false,
+          "explanation": "Non. L'intensité est la même avant et après la lampe. Ce qui est consommé, c'est l'énergie, pas le courant lui-même."
+        }
+      ]
+    }
+  ]
+}

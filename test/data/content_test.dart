@@ -5,6 +5,7 @@ import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/array_figure.dart';
+import 'package:eureka/design_system/figures/circuit_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
@@ -2374,6 +2375,103 @@ void main() {
         );
         expect(item.category == 0, verites[item.text], reason: item.text);
       }
+    });
+  });
+
+  group('Chapitre complet : électricité, circuits et lois', () {
+    late Chapter electricite;
+
+    setUpAll(() {
+      electricite = catalog.chapterById(
+        'physique-chimie-college-electricite-circuits-et-lois',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (electricite.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(electricite.isPlayable, isTrue);
+      expect(electricite.lessons.length, 4);
+    });
+
+    test('dévisser une lampe n’a pas le même effet selon le montage', () {
+      // C'est l'affirmation que les deux questions de la leçon posent,
+      // et c'est la figure qui en décide.
+      bool deuxieme({required bool serie, required bool premierePresente}) =>
+          CircuitFigure.allumee(
+            ferme: true,
+            serie: serie,
+            presenteIci: true,
+            presenteAilleurs: premierePresente,
+          );
+
+      expect(deuxieme(serie: true, premierePresente: true), isTrue);
+      expect(deuxieme(serie: true, premierePresente: false), isFalse);
+      expect(deuxieme(serie: false, premierePresente: true), isTrue);
+      expect(deuxieme(serie: false, premierePresente: false), isTrue);
+    });
+
+    test('un interrupteur ouvert éteint tout, quel que soit le montage', () {
+      for (final bool serie in <bool>[true, false]) {
+        for (final bool presente in <bool>[true, false]) {
+          expect(
+            CircuitFigure.allumee(
+              ferme: false,
+              serie: serie,
+              presenteIci: presente,
+              presenteAilleurs: true,
+            ),
+            isFalse,
+            reason: 'série=$serie, lampe présente=$presente',
+          );
+        }
+      }
+    });
+
+    test('une lampe dévissée ne s’allume jamais', () {
+      for (final bool serie in <bool>[true, false]) {
+        expect(
+          CircuitFigure.allumee(
+            ferme: true,
+            serie: serie,
+            presenteIci: false,
+            presenteAilleurs: true,
+          ),
+          isFalse,
+        );
+      }
+    });
+
+    test('les lois des tensions et des intensités sont recalculées', () {
+      // En série, les tensions s'ajoutent : la seconde lampe reçoit ce
+      // que la première laisse.
+      expect(6 - 2.5, reponseNum('tension-et-intensite', 'q1'));
+      // En dérivation, chaque branche reçoit toute la tension.
+      expect(6, reponseNum('tension-et-intensite', 'q2'));
+      // En dérivation, les intensités s'ajoutent.
+      expect(
+        reponseNum('tension-et-intensite', 'q3'),
+        closeTo(0.2 + 0.3, 1e-9),
+      );
+      // Trois lampes identiques en série sous 9 V.
+      expect(9 / 3, reponseNum('defi-electricite', 'q1'));
+      // En série, l'intensité est la même partout.
+      expect(0.25, reponseNum('defi-electricite', 'q2'));
+    });
+
+    test('la loi d’Ohm est appliquée dans les deux sens', () {
+      double tension(double r, double i) => r * i;
+      double intensite(double u, double r) => u / r;
+
+      expect(tension(20, 0.3), closeTo(reponseNum('tension-et-intensite', 'q4'), 1e-9));
+      expect(intensite(10, 50), closeTo(reponseNum('defi-electricite', 'q4'), 1e-9));
+      // Et les deux formes doivent se répondre.
+      expect(intensite(tension(20, 0.3), 20), closeTo(0.3, 1e-9));
     });
   });
 }

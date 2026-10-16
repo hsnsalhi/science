@@ -732,6 +732,31 @@ void main() {
         await shoot(tester, '$device-30-implication');
       });
 
+      // Le circuit en dérivation, une lampe dévissée : l'autre reste
+      // allumée. C'est l'état qui distingue les deux montages, et le
+      // seul que deux schémas côte à côte ne montreraient pas.
+      testWidgets('physique : circuit en dérivation', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Physique-chimie');
+        await tapText(tester, 'Électricité : circuits et lois');
+        await tapText(tester, 'Série et dérivation');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        // Taps directs : les boutons de la figure ne sont pas dans une
+        // zone défilante, et ensureVisible y chercherait un Scrollable
+        // en vain.
+        await tester.tap(find.text('Passer en dérivation'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Dévisser la lampe 1'));
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-31-circuit');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
