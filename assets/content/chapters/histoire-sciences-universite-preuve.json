@@ -1,0 +1,316 @@
+{
+  "chapter": "histoire-sciences-universite-qu-est-ce-qu-une-preuve",
+  "lessons": [
+    {
+      "id": "d-euclide-au-doute",
+      "title": "D'Euclide au doute",
+      "subtitle": "Deux mille ans d'un modèle.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le modèle euclidien",
+          "body": "Vers 300 avant notre ère, Euclide pose des définitions, des axiomes, et déduit tout le reste.\n\nCe geste fixe pour deux millénaires ce qu'est une démonstration : une chaîne de déductions partant de propositions admises."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le cinquième postulat",
+          "body": "Un axiome gênait : par un point extérieur à une droite, il passe exactement une parallèle.\n\nMoins évident que les autres, il semblait démontrable. Des générations s'y sont essayées. Au dix-neuvième siècle, Lobatchevski et Bolyai ont montré qu'en le remplaçant, on obtient une géométrie parfaitement cohérente."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Ce que cela change",
+          "body": "Les axiomes cessent d'être des vérités évidentes sur le monde. Ils deviennent des règles du jeu qu'on choisit.\n\nUne démonstration ne dit plus ce qui est vrai : elle dit ce qui suit des axiomes qu'on s'est donnés."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "La géométrie de la relativité générale n'est pas euclidienne. L'axiome qu'on croyait imposé par l'évidence se révèle faux pour l'espace réel."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'ont montré Lobatchevski et Bolyai ?",
+          "hint": "Ils n'ont pas démontré le postulat.",
+          "explanation": "Qu'en remplaçant le cinquième postulat, on obtient une géométrie cohérente. Il n'était donc pas déductible des autres.",
+          "options": [
+            { "text": "Qu'une géométrie sans ce postulat est cohérente", "correct": true },
+            { "text": "Que le postulat est démontrable" },
+            { "text": "Que la géométrie d'Euclide est fausse" },
+            { "text": "Que les axiomes sont inutiles" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Après ces travaux, un axiome est une vérité évidente sur le monde.",
+          "answer": false,
+          "explanation": "Non : c'est une règle du jeu qu'on choisit. Plusieurs choix cohérents coexistent, et l'expérience seule dit lequel décrit l'espace réel."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que dit une démonstration, après ce changement ?",
+          "hint": "Elle est relative à quelque chose.",
+          "explanation": "Ce qui suit des axiomes qu'on s'est donnés. La vérité absolue n'est plus ce qu'elle établit.",
+          "options": [
+            { "text": "Ce qui suit des axiomes choisis", "correct": true },
+            { "text": "Ce qui est vrai dans le monde" },
+            { "text": "Ce qui est évident" },
+            { "text": "Ce que la majorité des savants accepte" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-crise-des-fondements",
+      "title": "La crise des fondements",
+      "subtitle": "Un paradoxe, un programme, un théorème.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le paradoxe de Russell",
+          "body": "En 1901, Russell considère l'ensemble de tous les ensembles qui ne se contiennent pas eux-mêmes.\n\nSe contient-il ? S'il se contient, il ne devrait pas. S'il ne se contient pas, il devrait. La théorie des ensembles de l'époque est contradictoire."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "La même forme, en plus familier",
+          "body": "Un barbier rase exactement les habitants du village qui ne se rasent pas eux-mêmes. Qui rase le barbier ?\n\nLa question n'a pas de réponse, et ce n'est pas une énigme : c'est la preuve qu'un tel barbier ne peut pas exister."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le programme de Hilbert",
+          "body": "Hilbert propose de refonder : un système d'axiomes dont on démontrerait, par des moyens finitaires, qu'il est cohérent et complet.\n\nComplet veut dire : tout énoncé vrai y est démontrable."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Ce que Gödel établit en 1931",
+          "body": "Tout système d'axiomes cohérent et assez riche pour l'arithmétique contient des énoncés vrais qu'il ne démontre pas.\n\nEt un tel système ne peut pas démontrer sa propre cohérence. Le programme de Hilbert est hors d'atteinte, non par manque d'astuce, mais par nécessité."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que montre le paradoxe du barbier ?",
+          "hint": "C'est une démonstration, pas une énigme.",
+          "explanation": "Qu'aucun barbier de ce type ne peut exister. La contradiction élimine l'hypothèse, elle ne demande pas de réponse.",
+          "options": [
+            { "text": "Qu'un tel barbier ne peut pas exister", "correct": true },
+            { "text": "Que le barbier se rase lui-même" },
+            { "text": "Que le barbier ne se rase pas" },
+            { "text": "Qu'il manque une information dans l'énoncé" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que signifie « complet » dans le programme de Hilbert ?",
+          "hint": "Vrai et démontrable.",
+          "explanation": "Que tout énoncé vrai du système y est démontrable. C'est précisément ce que Gödel a rendu impossible.",
+          "options": [
+            { "text": "Tout énoncé vrai y est démontrable", "correct": true },
+            { "text": "Le système contient tous les axiomes possibles" },
+            { "text": "Les démonstrations y sont courtes" },
+            { "text": "Le système est cohérent" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Gödel a montré qu'il manquait des axiomes, et qu'en ajouter suffirait.",
+          "answer": false,
+          "explanation": "Non : tout système cohérent assez riche a le même défaut, y compris après ajout d'axiomes. Ce n'est pas une lacune mais une limite."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un système cohérent assez riche peut démontrer sa propre cohérence.",
+          "answer": false,
+          "explanation": "Non, c'est le second théorème de Gödel. Il faut un système plus fort, dont la cohérence pose à son tour la même question."
+        }
+      ]
+    },
+    {
+      "id": "preuves-d-aujourd-hui",
+      "title": "Les preuves d'aujourd'hui",
+      "subtitle": "Quand l'ordinateur entre dans la démonstration.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le théorème des quatre couleurs",
+          "body": "Toute carte plane se colorie avec quatre couleurs sans que deux régions voisines partagent la même.\n\nConjecturé en 1852, démontré en 1976 par Appel et Haken — en réduisant le problème à 1 936 configurations, vérifiées une à une par ordinateur."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Pourquoi quatre, et pas trois",
+          "body": "Quatre pays qui se touchent tous deux à deux suffisent à montrer que trois couleurs ne peuvent pas suffire.\n\nQue cinq ne soient jamais nécessaires est, lui, un théorème difficile — et c'est celui-là que l'ordinateur a établi."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une preuve qu'on ne peut pas lire",
+          "body": "Aucun humain ne vérifiera les 1 936 cas à la main. La communauté a dû décider si cela restait une démonstration.\n\nLa réponse a mis des années à se stabiliser : oui, à condition que le programme soit lui-même vérifié. En 2005, Gonthier en a produit une version entièrement contrôlée par un assistant de preuve."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un assistant de preuve ne trouve pas la démonstration : il vérifie chaque pas d'une démonstration qu'on lui donne. La confiance se déplace alors sur son noyau, quelques milliers de lignes relues par beaucoup de monde."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de couleurs suffisent pour toute carte plane ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "couleurs",
+          "hint": "C'est dans le nom du théorème.",
+          "explanation": "4. Et il faut bien quatre : quatre pays mutuellement voisins ne se colorient pas avec trois."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de pays mutuellement voisins suffisent à prouver que trois couleurs ne suffisent pas ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "pays",
+          "hint": "Chacun touche tous les autres.",
+          "explanation": "4 : chacun touchant les trois autres, il leur faut quatre couleurs distinctes."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que fait un assistant de preuve ?",
+          "hint": "Il ne cherche pas.",
+          "explanation": "Il vérifie chaque pas d'une démonstration fournie. Il ne la découvre pas à votre place.",
+          "options": [
+            { "text": "Il vérifie chaque pas d'une démonstration fournie", "correct": true },
+            { "text": "Il trouve la démonstration tout seul" },
+            { "text": "Il teste l'énoncé sur beaucoup d'exemples" },
+            { "text": "Il remplace les axiomes" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces procédés : démontrent-ils un énoncé général ?",
+          "hint": "Un cas vérifié n'est pas une démonstration.",
+          "explanation": "Une déduction et une vérification exhaustive des cas démontrent. Des essais, même nombreux, et une simulation ne démontrent rien.",
+          "categories": ["Démontre", "Ne démontre pas"],
+          "items": [
+            { "text": "une déduction depuis les axiomes", "category": 0 },
+            { "text": "l'examen exhaustif de tous les cas possibles", "category": 0 },
+            { "text": "un million d'exemples vérifiés", "category": 1 },
+            { "text": "une simulation numérique concluante", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-preuve",
+      "title": "Défi : qu'est-ce qu'une preuve ?",
+      "subtitle": "Six questions, d'Euclide aux assistants.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Le pas élémentaire",
+          "body": "Toute démonstration se ramène à des implications enchaînées, et une implication n'est fausse que dans un seul cas.",
+          "figureId": "implication"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces événements dans l'ordre chronologique.",
+          "explanation": "Euclide vers 300 avant notre ère, les géométries non euclidiennes au dix-neuvième siècle, Russell en 1901, Gödel en 1931, les quatre couleurs en 1976.",
+          "items": [
+            "les Éléments d'Euclide",
+            "les géométries non euclidiennes",
+            "le paradoxe de Russell",
+            "le théorème de Gödel",
+            "le théorème des quatre couleurs"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Un énoncé indémontrable dans un système est-il faux ?",
+          "hint": "Démontrable et vrai ne sont pas la même chose.",
+          "explanation": "Non : Gödel exhibe des énoncés vrais et non démontrables. Démontrable est relatif à un système, vrai ne l'est pas.",
+          "options": [
+            { "text": "Non : il peut être vrai sans être démontrable", "correct": true },
+            { "text": "Oui, par définition" },
+            { "text": "Oui, s'il est indémontrable dans tous les systèmes" },
+            { "text": "La question n'a pas de sens" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une démonstration vérifiée par ordinateur est moins fiable qu'une démonstration relue par des humains.",
+          "answer": false,
+          "explanation": "Ce n'est pas si simple : les relectures humaines laissent passer des erreurs, et un noyau de vérification est court et très relu. La confiance change de place, elle ne disparaît pas."
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque nom à son apport.",
+          "explanation": "Cinq moments, cinq déplacements de ce qu'on appelle une preuve.",
+          "pairs": [
+            { "left": "Euclide", "right": "la méthode axiomatique" },
+            { "left": "Lobatchevski", "right": "une géométrie non euclidienne" },
+            { "left": "Russell", "right": "un paradoxe des ensembles" },
+            { "left": "Gödel", "right": "les limites de la démonstration" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Le paradoxe de Russell a été résolu en interdisant certaines constructions d'ensembles.",
+          "answer": true,
+          "explanation": "Oui : les axiomatisations modernes ne permettent plus de former l'ensemble de tous les ensembles vérifiant une propriété arbitraire."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui distingue une démonstration d'une vérification sur des exemples ?",
+          "hint": "Combien de cas chacune couvre-t-elle ?",
+          "explanation": "La démonstration couvre tous les cas d'un coup, y compris ceux qu'on ne peut pas énumérer. Les exemples n'en couvrent qu'un nombre fini.",
+          "figureId": "implication",
+          "options": [
+            { "text": "Elle couvre tous les cas, même non énumérables", "correct": true },
+            { "text": "Elle est plus courte" },
+            { "text": "Elle est écrite par un mathématicien" },
+            { "text": "Elle utilise des symboles" }
+          ]
+        }
+      ]
+    }
+  ]
+}

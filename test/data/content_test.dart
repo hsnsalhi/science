@@ -6807,4 +6807,124 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : qu’est-ce qu’une preuve', () {
+    late Chapter preuve;
+
+    setUpAll(() {
+      preuve = catalog.chapterById(
+        'histoire-sciences-universite-qu-est-ce-qu-une-preuve',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = preuve.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(preuve.isPlayable, isTrue);
+      expect(preuve.lessons.length, 4);
+    });
+
+    test('aucun barbier de Russell n’existe, sur aucun village', () {
+      // Le chapitre affirme que le paradoxe n'est pas une énigme mais une
+      // démonstration d'inexistence. Sur des villages de petite taille,
+      // cela se vérifie par épuisement : on énumère toutes les relations
+      // « rase » possibles, et on cherche un barbier qui raserait
+      // exactement ceux qui ne se rasent pas eux-mêmes.
+      for (int habitants = 1; habitants <= 3; habitants++) {
+        final int relations = 1 << (habitants * habitants);
+        int barbiersTrouves = 0;
+        for (int code = 0; code < relations; code++) {
+          bool rase(int qui, int quoi) =>
+              (code >> (qui * habitants + quoi)) & 1 == 1;
+          for (int barbier = 0; barbier < habitants; barbier++) {
+            bool convient = true;
+            for (int h = 0; h < habitants; h++) {
+              if (rase(barbier, h) != !rase(h, h)) {
+                convient = false;
+                break;
+              }
+            }
+            if (convient) barbiersTrouves++;
+          }
+        }
+        expect(
+          barbiersTrouves,
+          0,
+          reason: 'un barbier existerait dans un village de $habitants',
+        );
+      }
+    });
+
+    test('quatre pays mutuellement voisins exigent quatre couleurs', () {
+      // L'affirmation de la troisième leçon, établie par épuisement :
+      // aucune coloration à trois couleurs ne convient, et il en existe
+      // une à quatre.
+      bool coloriable(int couleurs) {
+        final int total = math.pow(couleurs, 4).toInt();
+        for (int code = 0; code < total; code++) {
+          final List<int> teinte = <int>[
+            for (int i = 0; i < 4; i++)
+              (code ~/ math.pow(couleurs, i).toInt()) % couleurs,
+          ];
+          bool bon = true;
+          for (int a = 0; a < 4 && bon; a++) {
+            for (int b = a + 1; b < 4; b++) {
+              // Chacun touche tous les autres.
+              if (teinte[a] == teinte[b]) {
+                bon = false;
+                break;
+              }
+            }
+          }
+          if (bon) return true;
+        }
+        return false;
+      }
+
+      expect(coloriable(3), isFalse);
+      expect(coloriable(4), isTrue);
+      expect(reponseNum('preuves-d-aujourd-hui', 'q1'), 4);
+      expect(reponseNum('preuves-d-aujourd-hui', 'q2'), 4);
+    });
+
+    test('la chronologie du défi est bien croissante', () {
+      const Map<String, int> dates = <String, int>{
+        'les Éléments d’Euclide': -300,
+        'les géométries non euclidiennes': 1829,
+        'le paradoxe de Russell': 1901,
+        'le théorème de Gödel': 1931,
+        'le théorème des quatre couleurs': 1976,
+      };
+      final OrderingQuestion q =
+          preuve.lessonById('defi-preuve')!.questions.firstWhere(
+                (Question x) => x.id == 'q1',
+              )
+              as OrderingQuestion;
+      final List<int> annees = q.items
+          .map((String item) => dates[item.replaceAll("'", '’')]!)
+          .toList();
+      for (int i = 1; i < annees.length; i++) {
+        expect(annees[i], greaterThan(annees[i - 1]), reason: q.items[i]);
+      }
+    });
+
+    test('l’implication citée par le défi reste celle de la figure', () {
+      // La dernière carte affirme qu'une implication n'est fausse que
+      // dans un seul cas : c'est le pas élémentaire de toute preuve.
+      final List<String> faux = <String>[
+        for (final bool a in <bool>[true, false])
+          for (final bool b in <bool>[true, false])
+            if (!ImplicationFigure.implique(a, b)) '$a-$b',
+      ];
+      expect(faux, hasLength(1));
+    });
+  });
+
 }
