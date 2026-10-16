@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'array_figure.dart';
+import 'cell_figure.dart';
 import 'circuit_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
@@ -92,6 +93,9 @@ abstract final class FigureRegistry {
     // La Terre sur son orbite, axe penché, et la durée du jour.
     'saisons': (BuildContext context, Color accent) =>
         SeasonsFigure(accent: accent),
+    // Une cellule à explorer, animale ou végétale.
+    'cellule': (BuildContext context, Color accent) =>
+        CellFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

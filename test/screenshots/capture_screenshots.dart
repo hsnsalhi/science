@@ -772,6 +772,32 @@ void main() {
         await shoot(tester, '$device-32-saisons');
       });
 
+      // La cellule végétale, un organite sélectionné : la figure montre
+      // alors à la fois le schéma et le rôle de la partie touchée, ce
+      // qu'un schéma légendé ne fait jamais.
+      testWidgets('svt : la cellule', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'SVT');
+        await tapText(tester, 'La cellule et l\'organisation du vivant');
+        await tapText(tester, 'Ce qu\'il y a dans une cellule');
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Voir une cellule végétale'));
+        await tester.pumpAndSettle();
+        // Le chloroplaste : c'est lui qui distingue le végétal.
+        final Rect figure = tester.getRect(find.byType(CustomPaint).first);
+        await tester.tapAt(
+          Offset(
+            figure.left + figure.width * 0.31,
+            figure.top + figure.height * 0.64,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-33-cellule');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

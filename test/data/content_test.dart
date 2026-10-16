@@ -5,6 +5,7 @@ import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/array_figure.dart';
+import 'package:eureka/design_system/figures/cell_figure.dart';
 import 'package:eureka/design_system/figures/circuit_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
@@ -2605,6 +2606,122 @@ void main() {
       expect(juin, greaterThan(decembre));
       // Le chapitre annonce un écart d'environ huit heures.
       expect(juin - decembre, closeTo(8, 1));
+    });
+  });
+
+  group('Chapitre complet : la cellule', () {
+    late Chapter cellule;
+
+    setUpAll(() {
+      cellule = catalog.chapterById(
+        'svt-college-la-cellule-et-l-organisation-du-vivant',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (cellule.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(cellule.isPlayable, isTrue);
+      expect(cellule.lessons.length, 4);
+    });
+
+    test('les comptages de constituants sont ceux de la figure', () {
+      expect(
+        CellFigure.organites(vegetale: false).length,
+        reponseNum('dans-la-cellule', 'q2'),
+      );
+      expect(
+        CellFigure.organites(vegetale: true).length,
+        reponseNum('defi-cellule', 'q2'),
+      );
+      expect(
+        CellFigure.propresAuxVegetaux.length,
+        reponseNum('animale-ou-vegetale', 'q1'),
+      );
+      // Et les trois comptes doivent s'additionner.
+      expect(
+        CellFigure.organites(vegetale: false).length +
+            CellFigure.propresAuxVegetaux.length,
+        CellFigure.organites(vegetale: true).length,
+      );
+    });
+
+    test('le tri des constituants suit la figure', () {
+      final ClassifyQuestion q =
+          cellule.lessonById('animale-ou-vegetale')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      final Set<String> vegetaux = CellFigure.propresAuxVegetaux
+          .map((Organite o) => o.nom)
+          .toSet();
+      for (final ClassifyItem item in q.items) {
+        expect(
+          CellFigure.tous.any((Organite o) => o.nom == item.text),
+          isTrue,
+          reason: '${item.text} n’existe pas dans la figure',
+        );
+        expect(
+          item.category == 0,
+          vegetaux.contains(item.text),
+          reason: '${item.text} est mal rangé',
+        );
+      }
+    });
+
+    test('les éléments appariés existent, et du bon côté', () {
+      // Les quatre parties communes d'abord.
+      final MatchingQuestion communes =
+          cellule.lessonById('dans-la-cellule')!.questions.firstWhere(
+                (Question x) => x.id == 'q1',
+              )
+              as MatchingQuestion;
+      final Set<String> animales = CellFigure.organites(vegetale: false)
+          .map((Organite o) => o.nom)
+          .toSet();
+      for (final MatchPair paire in communes.pairs) {
+        expect(
+          animales.contains(paire.left),
+          isTrue,
+          reason: '${paire.left} n’est pas dans la cellule animale',
+        );
+      }
+      expect(communes.pairs.length, animales.length);
+
+      // Puis les trois éléments propres aux végétaux.
+      final MatchingQuestion vegetales =
+          cellule.lessonById('defi-cellule')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as MatchingQuestion;
+      final Set<String> propres = CellFigure.propresAuxVegetaux
+          .map((Organite o) => o.nom)
+          .toSet();
+      expect(
+        vegetales.pairs.map((MatchPair p) => p.left).toSet(),
+        propres,
+      );
+    });
+
+    test('chaque constituant de la figure porte un rôle lisible', () {
+      // La figure affiche ce texte seul, sous le dessin : une phrase
+      // vide ou tronquée ne se verrait qu'en jouant.
+      for (final Organite o in CellFigure.tous) {
+        expect(o.role.length, greaterThan(25), reason: o.nom);
+        expect(o.role.endsWith('.'), isTrue, reason: o.nom);
+      }
+    });
+
+    test('les conversions de tailles tombent juste', () {
+      // Combien de cellules dans un millimètre : mille micromètres
+      // divisés par la taille annoncée.
+      expect(1000 / 10, reponseNum('tout-est-cellules', 'q1'));
+      expect(1000 / 50, reponseNum('defi-cellule', 'q5'));
     });
   });
 }

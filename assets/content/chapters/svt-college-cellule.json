@@ -1,0 +1,357 @@
+{
+  "chapter": "svt-college-la-cellule-et-l-organisation-du-vivant",
+  "lessons": [
+    {
+      "id": "tout-est-cellules",
+      "title": "Tout être vivant est fait de cellules",
+      "subtitle": "Une seule, ou des milliers de milliards.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une découverte liée au microscope",
+          "body": "Au XVIIe siècle, Robert Hooke observe une fine lame de liège et y voit de petites loges qu'il nomme cellules.\n\nIl faudra près de deux siècles pour comprendre que tous les êtres vivants en sont faits — et que toute cellule provient d'une autre cellule."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Une ou plusieurs",
+          "body": "Une bactérie, une amibe, une levure : un seul être vivant, une seule cellule. On les dit unicellulaires.\n\nUne plante, un champignon, un animal : des milliards de cellules qui coopèrent. On les dit pluricellulaires."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "De très petites tailles",
+          "body": "Une cellule animale mesure typiquement quelques dizaines de micromètres, soit quelques centièmes de millimètre.\n\nIl en faudrait une centaine alignées pour couvrir un millimètre. C'est pourquoi on ne les voit qu'au microscope."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un virus n'est pas une cellule : il n'a ni membrane vivante, ni cytoplasme, ni la capacité de se reproduire seul. C'est pour cela qu'on hésite à le dire vivant."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Tout être vivant est fait d'une ou plusieurs cellules.",
+            "Toute cellule provient d'une cellule.",
+            "Quelques dizaines de micromètres : il faut un microscope."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cellules de 10 micromètres faudrait-il aligner pour couvrir 1 millimètre ?",
+          "answer": 100,
+          "tolerance": 0.01,
+          "unit": "cellules",
+          "hint": "1 mm vaut 1 000 micromètres.",
+          "explanation": "100 : 1 000 ÷ 10. C'est l'ordre de grandeur à retenir — une cellule est au millimètre ce qu'un millimètre est au décimètre."
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces êtres vivants.",
+          "hint": "Combien de cellules chacun possède-t-il ?",
+          "explanation": "La bactérie et la levure sont formées d'une seule cellule. Le chêne et la souris en comptent des milliards, organisées en tissus et en organes.",
+          "categories": ["Une seule cellule", "Beaucoup de cellules"],
+          "items": [
+            { "text": "Une bactérie", "category": 0 },
+            { "text": "Une levure", "category": 0 },
+            { "text": "Un chêne", "category": 1 },
+            { "text": "Une souris", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un virus est une cellule très petite.",
+          "answer": false,
+          "explanation": "Non. Un virus n'a ni cytoplasme ni machinerie propre : il ne peut se multiplier qu'en détournant une cellule qu'il infecte."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "D'où vient une nouvelle cellule ?",
+          "hint": "C'est le deuxième principe de la théorie cellulaire.",
+          "explanation": "D'une cellule qui se divise. Aucune cellule n'apparaît spontanément à partir de matière inerte : c'est ce qu'ont établi les travaux du XIXe siècle.",
+          "options": [
+            { "text": "De la division d'une cellule existante", "correct": true },
+            { "text": "Elle se forme spontanément" },
+            { "text": "Elle vient de l'air" },
+            { "text": "Elle est fabriquée par le noyau seul" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dans-la-cellule",
+      "title": "Ce qu'il y a dans une cellule",
+      "subtitle": "Quatre parties à reconnaître.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Explore",
+          "body": "Touche chaque partie pour lire son rôle.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "La membrane",
+          "body": "Elle entoure la cellule et sépare l'intérieur de l'extérieur.\n\nElle n'est pas étanche : elle laisse passer certaines substances et en retient d'autres. C'est elle qui décide des échanges."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le noyau et le cytoplasme",
+          "body": "Le noyau contient l'ADN, c'est-à-dire le programme de la cellule.\n\nLe cytoplasme est le liquide qui remplit la cellule, et dans lequel baignent tous les autres éléments."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Les mitochondries",
+          "body": "Ce sont elles qui libèrent l'énergie contenue dans les aliments, en consommant du dioxygène.\n\nUne cellule musculaire en contient beaucoup plus qu'une cellule de peau : elle en a davantage besoin."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Membrane : la frontière et les échanges.",
+            "Noyau : l'ADN, donc le programme.",
+            "Cytoplasme : le liquide intérieur.",
+            "Mitochondries : l'énergie."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque partie à son rôle.",
+          "explanation": "La membrane filtre les échanges, le noyau porte l'ADN, les mitochondries libèrent l'énergie, et le cytoplasme est le liquide où tout baigne.",
+          "figureId": "cellule",
+          "pairs": [
+            { "left": "Membrane", "right": "Contrôle les échanges" },
+            { "left": "Noyau", "right": "Contient l'ADN" },
+            { "left": "Mitochondrie", "right": "Libère l'énergie" },
+            { "left": "Cytoplasme", "right": "Le liquide intérieur" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de constituants la figure montre-t-elle dans une cellule animale ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Compte-les sur le schéma.",
+          "explanation": "4 : la membrane, le noyau, le cytoplasme et les mitochondries.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle cellule contient le plus de mitochondries ?",
+          "hint": "Laquelle consomme le plus d'énergie ?",
+          "explanation": "Une cellule musculaire. Elle doit fournir beaucoup d'énergie pour contracter le muscle, et ses mitochondries sont bien plus nombreuses.",
+          "options": [
+            { "text": "Une cellule musculaire", "correct": true },
+            { "text": "Une cellule de peau" },
+            { "text": "Toutes en ont le même nombre" },
+            { "text": "Aucune n'en contient" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La membrane est étanche : rien ne la traverse.",
+          "answer": false,
+          "explanation": "Non. Elle laisse entrer les nutriments et le dioxygène, et sortir les déchets. Une cellule totalement étanche mourrait."
+        }
+      ]
+    },
+    {
+      "id": "animale-ou-vegetale",
+      "title": "Animale ou végétale",
+      "subtitle": "Trois éléments en plus.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Compare",
+          "body": "Bascule d'un type à l'autre et repère ce qui apparaît.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La paroi",
+          "body": "En plus de la membrane, la cellule végétale possède une paroi rigide, faite de cellulose.\n\nC'est elle qui donne sa forme à la cellule et permet à une plante de tenir debout sans squelette."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Les chloroplastes",
+          "body": "Ils captent la lumière du Soleil et fabriquent des sucres à partir d'eau et de dioxyde de carbone.\n\nC'est la photosynthèse, et c'est elle qui rend les plantes autonomes : elles n'ont pas besoin de manger d'autres êtres vivants."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "La vacuole",
+          "body": "Une grande poche remplie d'eau occupe souvent l'essentiel du volume de la cellule végétale.\n\nSa pression plaque le contenu contre la paroi et maintient la plante ferme. Quand elle se vide, la plante fane."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Les trois éléments supplémentaires se tiennent : la paroi pour tenir, les chloroplastes pour se nourrir de lumière, la vacuole pour rester gonflée. Un être vivant fixé au sol a exactement ces trois besoins."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'éléments la cellule végétale possède-t-elle en plus de la cellule animale ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Bascule d'un type à l'autre et compte.",
+          "explanation": "3 : la paroi, les chloroplastes et la grande vacuole.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces constituants.",
+          "hint": "Lesquels n'existent que chez les végétaux ?",
+          "explanation": "La paroi, les chloroplastes et la grande vacuole sont propres aux cellules végétales. La membrane et le noyau existent dans les deux.",
+          "categories": ["Seulement chez les végétaux", "Dans les deux"],
+          "items": [
+            { "text": "Paroi", "category": 0 },
+            { "text": "Chloroplaste", "category": 0 },
+            { "text": "Vacuole", "category": 0 },
+            { "text": "Noyau", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une plante privée d'eau se met-elle à faner ?",
+          "hint": "Pense à la vacuole.",
+          "explanation": "Parce que ses vacuoles se vident : elles ne pressent plus le contenu contre la paroi, et les cellules perdent leur fermeté.",
+          "figureId": "cellule",
+          "options": [
+            { "text": "Ses vacuoles se vident et les cellules ramollissent", "correct": true },
+            { "text": "Ses chloroplastes s'éteignent" },
+            { "text": "Sa paroi se dissout" },
+            { "text": "Son noyau disparaît" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Les cellules végétales n'ont pas de mitochondries, puisqu'elles ont des chloroplastes.",
+          "answer": false,
+          "explanation": "Faux. Les végétaux respirent aussi : leurs cellules possèdent des mitochondries en plus des chloroplastes. Fabriquer des sucres et en libérer l'énergie sont deux opérations différentes.",
+          "figureId": "cellule"
+        }
+      ]
+    },
+    {
+      "id": "defi-cellule",
+      "title": "Défi : la cellule",
+      "subtitle": "Six questions sur le vivant.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense au schéma et à ce que fait chaque partie."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Où se trouve l'ADN dans une cellule animale ?",
+          "hint": "Dans la partie qui porte le programme.",
+          "explanation": "Dans le noyau. C'est lui qui contient le programme de la cellule.",
+          "figureId": "cellule",
+          "options": [
+            { "text": "Dans le noyau", "correct": true },
+            { "text": "Dans la membrane" },
+            { "text": "Dans les mitochondries uniquement" },
+            { "text": "Dans la vacuole" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de constituants la figure montre-t-elle dans une cellule végétale ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "hint": "Les quatre de la cellule animale, plus les ajouts.",
+          "explanation": "7 : les quatre de la cellule animale et les trois éléments propres aux végétaux.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque élément végétal à ce qu'il permet.",
+          "explanation": "La paroi fait tenir debout, les chloroplastes nourrissent de lumière, la vacuole garde la plante ferme.",
+          "pairs": [
+            { "left": "Paroi", "right": "Tenir debout sans squelette" },
+            { "left": "Chloroplaste", "right": "Fabriquer des sucres avec la lumière" },
+            { "left": "Vacuole", "right": "Rester gonflée et ferme" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Toutes les cellules d'un même organisme ont le même ADN.",
+          "answer": true,
+          "explanation": "Oui, elles proviennent toutes d'une même cellule de départ. Ce qui diffère, c'est la partie du programme utilisée : une cellule de peau et un neurone n'en lisent pas les mêmes pages."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une cellule mesure 50 micromètres. Combien en faudrait-il pour couvrir 1 millimètre ?",
+          "answer": 20,
+          "tolerance": 0.01,
+          "unit": "cellules",
+          "hint": "1 000 ÷ 50.",
+          "explanation": "20. Même une cellule parmi les plus grosses reste invisible à l'œil nu."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui rend les feuilles vertes ?",
+          "hint": "Un élément propre aux végétaux.",
+          "explanation": "Les chloroplastes, grâce au pigment qu'ils contiennent. Ce sont eux qui captent la lumière pour la photosynthèse.",
+          "figureId": "cellule",
+          "options": [
+            { "text": "Les chloroplastes", "correct": true },
+            { "text": "La paroi" },
+            { "text": "La vacuole" },
+            { "text": "Les mitochondries" }
+          ]
+        }
+      ]
+    }
+  ]
+}
