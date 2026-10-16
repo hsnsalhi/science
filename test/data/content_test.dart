@@ -3060,4 +3060,200 @@ void main() {
       }
     });
   });
+
+  group('Chapitre complet : le contre-exemple', () {
+    late Chapter contreExemple;
+
+    setUpAll(() {
+      contreExemple = catalog.chapterById('logique-college-contre-exemple')!;
+    });
+
+    int reponseEntiere(String lessonId, String questionId) =>
+        (contreExemple.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected
+            .round();
+
+    bool premier(int n) {
+      if (n < 2) return false;
+      for (int d = 2; d * d <= n; d++) {
+        if (n % d == 0) return false;
+      }
+      return true;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(contreExemple.isPlayable, isTrue);
+      expect(contreExemple.lessons.length, 4);
+    });
+
+    test('chaque contre-exemple demandé en est bien un', () {
+      // Un contre-exemple doit vérifier la condition et contredire la
+      // conclusion : on contrôle les deux, séparément.
+      void verifier(
+        int valeur, {
+        required bool Function(int) condition,
+        required bool Function(int) conclusion,
+        required String regle,
+      }) {
+        expect(condition(valeur), isTrue, reason: '$valeur ne vérifie pas « $regle »');
+        expect(
+          conclusion(valeur),
+          isFalse,
+          reason: '$valeur ne contredit pas « $regle »',
+        );
+      }
+
+      verifier(
+        reponseEntiere('un-seul-suffit', 'q1'),
+        condition: premier,
+        conclusion: (int n) => n.isOdd,
+        regle: 'tout nombre premier est impair',
+      );
+      verifier(
+        reponseEntiere('un-seul-suffit', 'q4'),
+        condition: (int n) => n.isEven,
+        conclusion: (int n) => n % 4 == 0,
+        regle: 'tout nombre pair est divisible par 4',
+      );
+      verifier(
+        reponseEntiere('fabriquer-un-contre-exemple', 'q1'),
+        condition: (int n) => n % 3 == 0,
+        conclusion: (int n) => n % 9 == 0,
+        regle: 'tout multiple de 3 est multiple de 9',
+      );
+      verifier(
+        reponseEntiere('fabriquer-un-contre-exemple', 'q2'),
+        condition: (int n) => n % 10 == 5,
+        conclusion: (int n) => n % 10 == 0,
+        regle: 'un nombre finissant par 5 est divisible par 10',
+      );
+      verifier(
+        reponseEntiere('defi-contre-exemple', 'q1'),
+        condition: (int n) => n.isOdd,
+        conclusion: premier,
+        regle: 'tout nombre impair est premier',
+      );
+      verifier(
+        reponseEntiere('defi-contre-exemple', 'q4'),
+        condition: (int n) => n % 6 == 0,
+        conclusion: (int n) => n % 4 == 0,
+        regle: 'un multiple de 6 est multiple de 4',
+      );
+    });
+
+    test('les bornes annoncées dans les énoncés sont respectées', () {
+      expect(reponseEntiere('un-seul-suffit', 'q4'), lessThan(10));
+      expect(reponseEntiere('defi-contre-exemple', 'q1'), lessThan(15));
+      // « Le plus petit » : il ne doit exister aucun contre-exemple
+      // plus petit.
+      final int plusPetit = reponseEntiere('defi-contre-exemple', 'q4');
+      for (int n = 1; n < plusPetit; n++) {
+        expect(
+          n % 6 == 0 && n % 4 != 0,
+          isFalse,
+          reason: '$n serait un contre-exemple plus petit',
+        );
+      }
+    });
+
+    test('le tri des multiples de 4 sépare bien les contre-exemples', () {
+      final ClassifyQuestion q =
+          contreExemple.lessonById('fabriquer-un-contre-exemple')!.questions
+                  .firstWhere((Question x) => x.id == 'q4')
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int n = int.parse(item.text);
+        expect(
+          item.category == 0,
+          n % 4 == 0 && n % 8 != 0,
+          reason: item.text,
+        );
+      }
+    });
+
+    test('le tri des affirmations vraies ou réfutables est juste', () {
+      bool toujours(bool Function(int) regle) =>
+          List<int>.generate(300, (int i) => i + 1).every(regle);
+
+      final Map<String, bool> verites = <String, bool>{
+        'Tout multiple de 10 est multiple de 5':
+            toujours((int n) => n % 10 != 0 || n % 5 == 0),
+        'Tout carré est un rectangle': true,
+        'Tout nombre impair est premier':
+            toujours((int n) => !n.isOdd || premier(n)),
+        'Tout rectangle est un carré': false,
+      };
+      final ClassifyQuestion q =
+          contreExemple.lessonById('defi-contre-exemple')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        expect(verites.containsKey(item.text), isTrue, reason: item.text);
+        expect(item.category == 0, verites[item.text], reason: item.text);
+      }
+    });
+  });
+
+  group('Chapitre complet : algorithmes et instructions', () {
+    late Chapter algos;
+
+    setUpAll(() {
+      algos = catalog.chapterById(
+        'informatique-college-algorithmes-et-instructions',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (algos.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(algos.isPlayable, isTrue);
+      expect(algos.lessons.length, 4);
+    });
+
+    test('les distances parcourues sont celles du robot', () {
+      // On exécute le programme plutôt que de multiplier de tête : le
+      // chemin de la figure est la référence.
+      double casesParcourues(int tours) =>
+          (LoopRobotFigure.chemin(tours).length - 1).toDouble();
+
+      expect(casesParcourues(2), reponseNum('une-suite-d-instructions', 'q2'));
+      expect(casesParcourues(3), reponseNum('decrire-sans-ambiguite', 'q3'));
+      expect(casesParcourues(5), reponseNum('defi-algorithmes', 'q1'));
+    });
+
+    test('le chemin se referme au rythme annoncé', () {
+      final ({int x, int y}) depart = LoopRobotFigure.chemin(0).first;
+      final int tours = reponseNum('l-ordre-compte', 'q3').round();
+      expect(LoopRobotFigure.chemin(tours).last, depart);
+
+      // Et après huit tours, le robot est repassé deux fois par son
+      // point de départ : c'est ce que compte le défi.
+      int passages = 0;
+      for (int t = 1; t <= 8; t++) {
+        if (LoopRobotFigure.chemin(t).last == depart) passages++;
+      }
+      expect(passages, reponseNum('defi-algorithmes', 'q4'));
+    });
+
+    test('avancer puis tourner ne mène pas au même endroit', () {
+      // L'affirmation de la deuxième leçon. « Avancer puis tourner »
+      // est un tour de boucle ; « tourner puis avancer » revient à
+      // partir avec un quart de tour d'avance, c'est-à-dire à regarder
+      // le deuxième segment du chemin.
+      final List<({int x, int y})> chemin = LoopRobotFigure.chemin(2);
+      final ({int x, int y}) apresAvancer = chemin[LoopRobotFigure.pas];
+      final ({int x, int y}) apresTournerPuisAvancer =
+          chemin[LoopRobotFigure.pas * 2];
+      expect(apresAvancer, isNot(apresTournerPuisAvancer));
+    });
+  });
 }

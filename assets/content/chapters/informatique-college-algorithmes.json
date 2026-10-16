@@ -1,0 +1,348 @@
+{
+  "chapter": "informatique-college-algorithmes-et-instructions",
+  "lessons": [
+    {
+      "id": "une-suite-d-instructions",
+      "title": "Une suite d'instructions",
+      "subtitle": "Ce qu'est un algorithme.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une marche à suivre",
+          "body": "Un algorithme est une suite d'instructions qui résout un problème, écrite assez précisément pour qu'on puisse l'exécuter sans réfléchir.\n\nUne recette de cuisine, un itinéraire, une technique de calcul posé : ce sont des algorithmes."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Un robot qui exécute",
+          "body": "Le robot suit les instructions à la lettre, dans l'ordre, sans rien interpréter.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "La machine ne devine pas",
+          "body": "Un humain à qui l'on dit « avance un peu » comprend. Une machine, non : il faut dire de combien.\n\nChaque instruction doit être élémentaire, sans ambiguïté, et exécutable telle quelle."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour tester un algorithme, joue-le toi-même, instruction par instruction, en faisant semblant de ne rien comprendre. C'est exactement ce que fait la machine."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Un algorithme est une suite d'instructions précises.",
+            "Chaque instruction doit être exécutable sans interprétation.",
+            "La machine fait ce qui est écrit, pas ce qu'on voulait écrire."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces consignes selon qu'une machine peut les exécuter.",
+          "hint": "Y a-t-il un nombre, une quantité précise ?",
+          "explanation": "« Avance de 3 cases » et « tourne à droite » sont exécutables telles quelles. « Avance un peu » et « va par là » demandent une interprétation qu'une machine ne sait pas faire.",
+          "categories": ["Exécutable", "Trop vague"],
+          "items": [
+            { "text": "Avance de 3 cases", "category": 0 },
+            { "text": "Tourne à droite", "category": 0 },
+            { "text": "Avance un peu", "category": 1 },
+            { "text": "Va par là", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "« Avancer de 2, tourner à droite, avancer de 2 ». Combien de cases le robot parcourt-il en tout ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "cases",
+          "hint": "Deux avancées de 2.",
+          "explanation": "4 cases : 2 + 2. Tourner ne fait pas avancer, c'est une instruction à part entière.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'un algorithme ?",
+          "hint": "Ce n'est pas forcément de l'informatique.",
+          "explanation": "Une suite d'instructions précises qui résout un problème. Une recette de cuisine en est un, même sans ordinateur.",
+          "options": [
+            { "text": "Une suite d'instructions précises", "correct": true },
+            { "text": "Un programme écrit en anglais" },
+            { "text": "Un calcul très compliqué" },
+            { "text": "Une machine" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une recette de cuisine est un algorithme.",
+          "answer": true,
+          "explanation": "Oui : c'est une suite d'instructions à exécuter dans l'ordre pour obtenir un résultat. Un algorithme n'a pas besoin d'ordinateur."
+        }
+      ]
+    },
+    {
+      "id": "l-ordre-compte",
+      "title": "L'ordre compte",
+      "subtitle": "Les mêmes instructions, un résultat différent.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Deux programmes, deux résultats",
+          "body": "« Avancer de 2, puis tourner à droite » amène le robot deux cases plus loin, tourné vers la droite.\n\n« Tourner à droite, puis avancer de 2 » l'amène deux cases dans une autre direction.\n\nMêmes instructions, places différentes."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Suis le tracé",
+          "body": "Chaque tour exécute « avancer, puis tourner ». Regarde où le robot arrive.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une erreur d'ordre est invisible à la lecture",
+          "body": "Les deux programmes contiennent exactement les mêmes mots. Rien ne distingue le bon du mauvais, sauf l'exécution.\n\nC'est pourquoi on déroule un programme à la main avant de le lancer."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Les instructions s'exécutent dans l'ordre écrit.",
+            "Changer l'ordre change le résultat.",
+            "Dérouler à la main permet de s'en rendre compte."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "« Avancer puis tourner » et « tourner puis avancer » amènent le robot au même endroit.",
+          "answer": false,
+          "explanation": "Non. Dans le premier cas, il avance dans sa direction de départ ; dans le second, il a déjà changé de direction.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes pour faire du thé.",
+          "explanation": "Faire bouillir l'eau, la verser sur le sachet, laisser infuser, retirer le sachet. Intervertir deux étapes donne un thé raté.",
+          "items": [
+            "Faire bouillir l'eau",
+            "Verser l'eau sur le sachet",
+            "Laisser infuser trois minutes",
+            "Retirer le sachet"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Le robot répète « avancer de 2, tourner à droite ». Après combien de répétitions revient-il à son point de départ ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "répétitions",
+          "hint": "Il lui faut un tour complet.",
+          "explanation": "4 : quatre quarts de tour font un tour complet, et le chemin se referme en carré.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Comment repérer une erreur d'ordre dans un programme ?",
+          "hint": "La lecture ne suffit pas.",
+          "explanation": "En le déroulant à la main, instruction par instruction. Deux programmes aux mêmes mots se lisent pareil et ne font pas la même chose.",
+          "options": [
+            { "text": "En le déroulant à la main", "correct": true },
+            { "text": "En comptant les instructions" },
+            { "text": "En le relisant plus attentivement" },
+            { "text": "On ne peut pas les repérer" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decrire-sans-ambiguite",
+      "title": "Décrire sans ambiguïté",
+      "subtitle": "Dire exactement ce qu'on veut.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Un exemple raté",
+          "body": "« Prends le pain, mets-le dans le grille-pain, attends. »\n\nAttends combien de temps ? Une machine s'arrêterait là, ou attendrait indéfiniment."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le même, corrigé",
+          "body": "« Prends une tranche de pain. Place-la dans le grille-pain. Règle la minuterie sur 2 minutes. Attends la fin de la minuterie. Retire la tranche. »\n\nChaque phrase est exécutable sans décision à prendre."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Un algorithme doit s'arrêter",
+          "body": "« Répète : avancer d'une case » ne s'arrête jamais.\n\nUn bon algorithme doit se terminer, et donner un résultat. C'est l'une des conditions pour mériter ce nom."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Teste une consigne en te demandant : deux personnes qui la suivent obtiendraient-elles exactement le même résultat ? Si non, elle est encore ambiguë."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces instructions.",
+          "hint": "Deux personnes obtiendraient-elles le même résultat ?",
+          "explanation": "« Règle la minuterie sur 2 minutes » et « avance de 5 cases » donnent toujours le même résultat. « Attends un moment » et « fais cuire un peu » dépendent de celui qui les lit.",
+          "categories": ["Sans ambiguïté", "Ambiguë"],
+          "items": [
+            { "text": "Règle la minuterie sur 2 minutes", "category": 0 },
+            { "text": "Avance de 5 cases", "category": 0 },
+            { "text": "Attends un moment", "category": 1 },
+            { "text": "Fais cuire un peu", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « répète : avancer d'une case » n'est-il pas un bon algorithme ?",
+          "hint": "Quand s'arrête-t-il ?",
+          "explanation": "Parce qu'il ne s'arrête jamais. Un algorithme doit se terminer et produire un résultat.",
+          "figureId": "boucle-robot",
+          "options": [
+            { "text": "Il ne s'arrête jamais", "correct": true },
+            { "text": "Il est trop court" },
+            { "text": "Il est ambigu" },
+            { "text": "Il avance trop vite" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "« Répéter 3 fois : avancer de 2 ». Combien de cases le robot parcourt-il ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "cases",
+          "hint": "3 × 2.",
+          "explanation": "6 cases : trois répétitions de deux cases.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une instruction est claire si celui qui l'écrit la comprend.",
+          "answer": false,
+          "explanation": "Non. Elle doit être comprise de la même façon par n'importe qui — et par une machine, qui ne comprend rien et se contente d'exécuter."
+        }
+      ]
+    },
+    {
+      "id": "defi-algorithmes",
+      "title": "Défi : algorithmes",
+      "subtitle": "Six questions à dérouler.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Déroule chaque programme à la main avant de répondre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "« Répéter 5 fois : avancer de 2 ». Combien de cases en tout ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "cases",
+          "hint": "5 × 2.",
+          "explanation": "10 cases. Le robot avance deux cases à chacune des cinq répétitions.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces suites d'actions selon qu'elles sont des algorithmes.",
+          "explanation": "Une recette et un itinéraire détaillé sont des suites d'instructions précises. Un souhait et une opinion ne s'exécutent pas.",
+          "categories": ["C'est un algorithme", "Ce n'en est pas un"],
+          "items": [
+            { "text": "Une recette de gâteau", "category": 0 },
+            { "text": "Un itinéraire étape par étape", "category": 0 },
+            { "text": "« J'aimerais être à Paris »", "category": 1 },
+            { "text": "« Ce film est intéressant »", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes pour envoyer une lettre.",
+          "explanation": "Écrire la lettre, la plier, la mettre dans l'enveloppe, coller le timbre, poster. Inverser deux étapes rend la suivante impossible.",
+          "items": [
+            "Écrire la lettre",
+            "Plier la lettre",
+            "Mettre la lettre dans l'enveloppe",
+            "Coller le timbre",
+            "Poster l'enveloppe"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Le robot répète « avancer de 2, tourner à droite ». Après 8 répétitions, combien de fois est-il passé par son point de départ ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "fois",
+          "hint": "Il y revient tous les quatre tours.",
+          "explanation": "2 fois : au quatrième tour, puis au huitième. Le chemin se referme à chaque tour complet.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un algorithme peut ne jamais s'arrêter et rester un bon algorithme.",
+          "answer": false,
+          "explanation": "Non : il doit se terminer et donner un résultat. Un programme qui tourne sans fin est un défaut, pas une fonctionnalité."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Une machine fait-elle ce qu'on veut, ou ce qu'on écrit ?",
+          "hint": "Elle ne devine pas.",
+          "explanation": "Ce qu'on écrit. C'est la source de la plupart des erreurs de programmation : l'intention était bonne, l'écriture ne l'était pas.",
+          "options": [
+            { "text": "Ce qu'on écrit", "correct": true },
+            { "text": "Ce qu'on veut" },
+            { "text": "Ce qui est le plus logique" },
+            { "text": "Ce qui est le plus rapide" }
+          ]
+        }
+      ]
+    }
+  ]
+}

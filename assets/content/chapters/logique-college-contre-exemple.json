@@ -1,0 +1,332 @@
+{
+  "chapter": "logique-college-contre-exemple",
+  "lessons": [
+    {
+      "id": "un-seul-suffit",
+      "title": "Un seul suffit",
+      "subtitle": "Pour abattre une affirmation générale.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'asymétrie fondamentale",
+          "body": "Pour démontrer qu'une affirmation générale est vraie, il faut traiter tous les cas — parfois une infinité.\n\nPour montrer qu'elle est fausse, un seul cas suffit. Ce cas s'appelle un contre-exemple."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Tous les nombres premiers sont impairs ?",
+          "body": "C'est faux : 2 est premier et pair.\n\nUn seul nombre a suffi. Aucun calcul, aucune théorie : il fallait simplement y penser."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Ce qu'un contre-exemple doit faire",
+          "body": "Il doit vérifier la condition et contredire la conclusion : c'est le seul cas interdit.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Les mauvais candidats",
+          "body": "Pour réfuter « si P alors M », on cherche parfois un cas où P est faux. Cela ne sert à rien : l'affirmation n'y promet rien.\n\nIl faut un cas où P est vrai et M faux, et rien d'autre ne convient."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Un exemple ne démontre rien, un contre-exemple réfute.",
+            "Il doit vérifier la condition et contredire la conclusion.",
+            "Chercher un cas où la condition est fausse ne sert à rien."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un contre-exemple à « tous les nombres premiers sont impairs ».",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "Le plus petit nombre premier.",
+          "explanation": "2 : il est premier et pair. C'est le seul, et il suffit à faire tomber l'affirmation."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que doit vérifier un contre-exemple à « si P alors M » ?",
+          "hint": "Un seul cas rend l'implication fausse.",
+          "explanation": "Il doit vérifier P et contredire M. C'est le seul cas où la promesse n'est pas tenue.",
+          "figureId": "implication",
+          "options": [
+            { "text": "P vrai et M faux", "correct": true },
+            { "text": "P faux et M vrai" },
+            { "text": "P faux et M faux" },
+            { "text": "P vrai et M vrai" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Trouver dix exemples qui vérifient une affirmation suffit à la démontrer.",
+          "answer": false,
+          "explanation": "Non. Dix cas, ou mille, ne disent rien du cas suivant. C'est toute la différence entre vérifier et démontrer."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un contre-exemple à « tout nombre pair est divisible par 4 », inférieur à 10.",
+          "answer": 6,
+          "tolerance": 0.01,
+          "hint": "Il doit être pair, mais pas divisible par 4.",
+          "explanation": "6 convient : il est pair et 6 ÷ 4 ne tombe pas juste. 2 ou 10 conviendraient également."
+        }
+      ]
+    },
+    {
+      "id": "en-geometrie",
+      "title": "Des contre-exemples en géométrie",
+      "subtitle": "Une figure suffit à faire tomber une règle.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les quadrilatères",
+          "body": "« Un quadrilatère à quatre côtés égaux est un carré. »\n\nFaux : le losange a quatre côtés égaux sans avoir d'angle droit. Une seule figure suffit."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Triangle rectangle ou non",
+          "body": "Fais varier le troisième côté : la plupart des valeurs donnent un triangle qui n'est pas rectangle.",
+          "figureId": "triangle-reciproque"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pourquoi la réciproque de Pythagore est un théorème",
+          "body": "Si un triangle a des côtés 6, 8 et 10, alors il est rectangle : cela se démontre, et vaut pour tous les cas.\n\nMais l'affirmation « tout triangle dont le grand côté vaut 10 est rectangle » est fausse, et il suffit d'un triangle de côtés 9, 9 et 10 pour le voir."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Avant de croire une règle de géométrie, essaie de la mettre en défaut avec une figure aplatie, allongée, ou très irrégulière. C'est là que se cachent les contre-exemples."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel contre-exemple réfute « un quadrilatère à quatre côtés égaux est un carré » ?",
+          "hint": "Quatre côtés égaux, mais pas d'angle droit.",
+          "explanation": "Un losange non carré. Il vérifie la condition — quatre côtés égaux — et contredit la conclusion.",
+          "options": [
+            { "text": "Un losange qui n'est pas un carré", "correct": true },
+            { "text": "Un rectangle" },
+            { "text": "Un carré" },
+            { "text": "Un triangle équilatéral" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans la figure, les côtés valent 6 et 8. Pour quelle valeur du troisième côté le triangle est-il rectangle ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "hint": "36 + 64.",
+          "explanation": "10, et pour toute autre valeur le triangle ne l'est pas : chacune est un contre-exemple à l'idée que la forme suffirait.",
+          "figureId": "triangle-reciproque"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces figures selon qu'elles réfutent ou non « tout rectangle est un carré ».",
+          "hint": "Il faut un rectangle qui ne soit pas un carré.",
+          "explanation": "Un rectangle de 3 sur 5 et un rectangle de 2 sur 7 réfutent la règle. Un carré de côté 4 la vérifie, et un losange n'est même pas un rectangle : il ne prouve rien.",
+          "categories": ["Réfute la règle", "Ne la réfute pas"],
+          "items": [
+            { "text": "Un rectangle de 3 sur 5", "category": 0 },
+            { "text": "Un rectangle de 2 sur 7", "category": 0 },
+            { "text": "Un carré de côté 4", "category": 1 },
+            { "text": "Un losange sans angle droit", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un losange sans angle droit réfute « tout rectangle est un carré ».",
+          "answer": false,
+          "explanation": "Non : il n'est pas un rectangle, donc il ne vérifie pas la condition. Un contre-exemple doit d'abord entrer dans le cas prévu par la règle."
+        }
+      ]
+    },
+    {
+      "id": "fabriquer-un-contre-exemple",
+      "title": "Fabriquer un contre-exemple",
+      "subtitle": "Une méthode en trois temps.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "1. Repérer la condition",
+          "body": "Dans « tout nombre divisible par 3 est divisible par 9 », la condition est « divisible par 3 ».\n\nLe contre-exemple devra la vérifier."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "2. Repérer la conclusion",
+          "body": "Ici, c'est « divisible par 9 ».\n\nLe contre-exemple devra la contredire."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "3. Chercher aux extrêmes",
+          "body": "Les contre-exemples se cachent souvent dans les petits nombres, le zéro, les cas limites ou les figures dégénérées.\n\nIci, 3 suffit : il est divisible par 3 et pas par 9."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Quand tu ne trouves pas de contre-exemple après avoir cherché sérieusement, cela ne prouve pas que l'affirmation est vraie — mais c'est souvent le signe qu'il faut maintenant essayer de la démontrer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un contre-exemple à « tout nombre divisible par 3 est divisible par 9 ».",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Le plus petit convient.",
+          "explanation": "3 : divisible par 3, pas par 9. On aurait aussi pu prendre 6, 12 ou 15."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un contre-exemple à « tout nombre dont le chiffre des unités est 5 est divisible par 10 ».",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "Le plus petit nombre finissant par 5.",
+          "explanation": "5 : il finit par 5 et n'est pas divisible par 10. 15, 25 ou 35 conviendraient aussi."
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre la méthode pour fabriquer un contre-exemple.",
+          "explanation": "On repère la condition, puis la conclusion, on cherche un cas qui vérifie l'une et contredit l'autre, et l'on vérifie les deux points.",
+          "items": [
+            "Repérer la condition",
+            "Repérer la conclusion",
+            "Chercher un cas qui vérifie la condition",
+            "Vérifier qu'il contredit la conclusion"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Pour réfuter « tout multiple de 4 est multiple de 8 », range ces nombres.",
+          "hint": "Il faut être multiple de 4 sans être multiple de 8.",
+          "explanation": "4 et 12 sont multiples de 4 sans l'être de 8 : chacun réfute la règle. 8 et 16 la vérifient, et vérifier ne prouve rien.",
+          "categories": ["Réfute la règle", "Ne la réfute pas"],
+          "items": [
+            { "text": "4", "category": 0 },
+            { "text": "12", "category": 0 },
+            { "text": "8", "category": 1 },
+            { "text": "16", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-contre-exemple",
+      "title": "Défi : le contre-exemple",
+      "subtitle": "Six affirmations à mettre à l'épreuve.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chaque affirmation, demande-toi d'abord quelle est sa condition."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Donne un contre-exemple à « tout nombre impair est premier », inférieur à 15.",
+          "answer": 9,
+          "tolerance": 0.01,
+          "hint": "9 = 3 × 3.",
+          "explanation": "9 : il est impair et n'est pas premier, puisque 3 le divise. 1 serait un autre contre-exemple, car il n'est pas premier non plus."
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces affirmations selon qu'elles sont vraies ou qu'elles ont un contre-exemple.",
+          "explanation": "Tout multiple de 10 est multiple de 5, et tout carré est un rectangle : ces deux-là tiennent. En revanche 9 est impair sans être premier, et un rectangle de 3 sur 5 n'est pas un carré.",
+          "categories": ["Vraie", "A un contre-exemple"],
+          "items": [
+            { "text": "Tout multiple de 10 est multiple de 5", "category": 0 },
+            { "text": "Tout carré est un rectangle", "category": 0 },
+            { "text": "Tout nombre impair est premier", "category": 1 },
+            { "text": "Tout rectangle est un carré", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pour réfuter « si un nombre est divisible par 6, alors il est divisible par 4 », que faut-il chercher ?",
+          "hint": "Condition d'abord, conclusion ensuite.",
+          "explanation": "Un nombre divisible par 6 qui ne l'est pas par 4 : 6 lui-même convient. Chercher un nombre non divisible par 6 ne prouverait rien.",
+          "options": [
+            { "text": "Un nombre divisible par 6 mais pas par 4", "correct": true },
+            { "text": "Un nombre divisible par 4 mais pas par 6" },
+            { "text": "Un nombre divisible par les deux" },
+            { "text": "Un nombre divisible par aucun des deux" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Donne le plus petit contre-exemple à « si un nombre est divisible par 6, alors il est divisible par 4 ».",
+          "answer": 6,
+          "tolerance": 0.01,
+          "hint": "Le plus petit multiple de 6.",
+          "explanation": "6 : divisible par 6, pas par 4. Un seul nombre a suffi à faire tomber la règle."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Ne pas trouver de contre-exemple démontre qu'une affirmation est vraie.",
+          "answer": false,
+          "explanation": "Non. Cela peut vouloir dire qu'on n'a pas assez cherché. Pour conclure, il faut une démonstration."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Où cherche-t-on souvent les contre-exemples ?",
+          "hint": "Pense aux cas que l'on néglige.",
+          "explanation": "Dans les cas limites : zéro, un, les petits nombres, les figures aplaties. Ce sont ceux auxquels on pense le moins en formulant une règle.",
+          "options": [
+            { "text": "Dans les cas limites et les petits nombres", "correct": true },
+            { "text": "Dans les très grands nombres seulement" },
+            { "text": "Dans les cas les plus ordinaires" },
+            { "text": "Il n'y a pas de méthode" }
+          ]
+        }
+      ]
+    }
+  ]
+}
