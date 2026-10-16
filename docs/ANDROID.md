@@ -48,6 +48,20 @@ importance.
 Une clé stable permet aux mises à jour de remplacer la version précédente
 sans désinstallation, et c'est le préalable à toute publication.
 
+**Prérequis : un JDK.** La clé est fabriquée par `keytool`, qui est livré
+avec le JDK et avec rien d'autre. Si Android Studio est installé, son JDK
+embarqué suffit et le script le trouve tout seul. Sinon :
+
+| Système | Quoi installer |
+|---|---|
+| Windows | « Temurin 17 (JDK) » sur [adoptium.net](https://adoptium.net), en cochant **Set JAVA_HOME variable** et **Add to PATH** — décochées par défaut |
+| macOS | `brew install openjdk@17` |
+| Linux | `sudo apt install default-jdk` |
+
+Sous Windows, il faut **fermer et rouvrir le terminal** après l'installation :
+une fenêtre déjà ouverte garde l'ancien PATH. C'est la cause la plus
+fréquente d'un « keytool introuvable » juste après avoir installé le JDK.
+
 ```bash
 python3 tool/android_signing.py creer
 python3 tool/android_signing.py verifier

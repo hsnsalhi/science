@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import base64
 import getpass
+import os
 import re
 import shutil
 import subprocess
@@ -47,23 +48,84 @@ def erreur(message: str) -> None:
 
 
 def keytool() -> str:
-    """Le chemin de `keytool`, livré avec n'importe quel JDK."""
+    """Le chemin de `keytool`, livré avec n'importe quel JDK.
+
+    La recherche va au-delà du PATH parce qu'un JDK présent mais absent du
+    PATH est le cas le plus courant : sous Windows, l'installateur
+    d'Adoptium laisse la case « Add to PATH » décochée, et Android Studio
+    embarque son propre JDK sans l'exposer du tout.
+    """
     trouve = shutil.which("keytool")
     if trouve:
         return trouve
-    # Sur certaines installations, keytool n'est pas dans le PATH mais le
-    # JDK est là : on tente l'emplacement habituel plutôt que d'abandonner.
-    for base in (Path("/usr/lib/jvm"), Path("/Library/Java/JavaVirtualMachines")):
-        if not base.exists():
-            continue
-        for candidat in sorted(base.glob("*/bin/keytool")) + sorted(
-            base.glob("*/Contents/Home/bin/keytool")
-        ):
+
+    exe = ".exe" if os.name == "nt" else ""
+
+    # JAVA_HOME d'abord : c'est la réponse la plus fiable quand elle existe.
+    java_home = os.environ.get("JAVA_HOME")
+    if java_home:
+        candidat = Path(java_home) / "bin" / f"keytool{exe}"
+        if candidat.exists():
             return str(candidat)
+
+    # Puis les emplacements habituels, par système.
+    motifs: list[Path] = []
+    if os.name == "nt":
+        # Une variable absente vaut la chaîne vide, et Path("") désigne le
+        # répertoire courant : sans ce filtre, on irait chercher un JDK
+        # dans le dossier d'où le script est lancé.
+        dossiers = [
+            os.environ.get("ProgramFiles") or "C:\\Program Files",
+            os.environ.get("ProgramFiles(x86)") or "C:\\Program Files (x86)",
+        ]
+        local = os.environ.get("LOCALAPPDATA")
+        if local:
+            dossiers.append(str(Path(local) / "Programs"))
+        for chemin in dossiers:
+            racine = Path(chemin)
+            if not racine.exists():
+                continue
+            motifs += [
+                # Le JDK embarqué d'Android Studio : déjà là chez beaucoup
+                # de monde, et suffisant pour fabriquer une clé.
+                racine / "Android" / "Android Studio" / "jbr" / "bin" / f"keytool{exe}",
+                *sorted(racine.glob(f"Eclipse Adoptium/*/bin/keytool{exe}")),
+                *sorted(racine.glob(f"Java/*/bin/keytool{exe}")),
+                *sorted(racine.glob(f"Microsoft/jdk*/bin/keytool{exe}")),
+                *sorted(racine.glob(f"Amazon Corretto/*/bin/keytool{exe}")),
+            ]
+    else:
+        for base in (
+            Path("/usr/lib/jvm"),
+            Path("/Library/Java/JavaVirtualMachines"),
+            Path("/opt/homebrew/opt"),
+        ):
+            if not base.exists():
+                continue
+            motifs += sorted(base.glob("*/bin/keytool"))
+            motifs += sorted(base.glob("*/Contents/Home/bin/keytool"))
+            motifs += sorted(base.glob("*/libexec/openjdk.jdk/Contents/Home/bin/keytool"))
+
+    for candidat in motifs:
+        if candidat.exists():
+            return str(candidat)
+
+    if os.name == "nt":
+        erreur(
+            "keytool est introuvable. Il est livré avec le JDK.\n\n"
+            "  1. Installer « Temurin 17 (JDK) » depuis adoptium.net\n"
+            "  2. Pendant l'installation, cocher « Set JAVA_HOME variable »\n"
+            "     et « Add to PATH » — elles sont décochées par défaut.\n"
+            "  3. Fermer et rouvrir ce terminal : une fenêtre déjà ouverte\n"
+            "     garde l'ancien PATH.\n\n"
+            "Si Android Studio est installé, son JDK suffit et ce script\n"
+            "le trouve tout seul — vérifier qu'il est bien à l'emplacement\n"
+            r"« C:\Program Files\Android\Android Studio\jbr »."
+        )
     erreur(
         "keytool est introuvable. Il est livré avec le JDK : installer "
-        "« Temurin 17 » (adoptium.net) ou, sous Linux, le paquet "
-        "default-jdk."
+        "« Temurin 17 » (adoptium.net), le paquet default-jdk sous Linux, "
+        "ou « brew install openjdk@17 » sous macOS."
     )
     raise AssertionError("inatteignable")
 
@@ -75,6 +137,11 @@ def creer(args: argparse.Namespace) -> None:
             "mise à jour d'une application déjà publiée avec l'ancienne. "
             "Utiliser --remplacer seulement si rien n'a encore été publié."
         )
+
+    # On vérifie l'outillage avant de demander quoi que ce soit : échouer
+    # après deux saisies de mot de passe pousse à en choisir un court au
+    # second essai, ce qui est exactement ce qu'il ne faut pas.
+    outil = keytool()
 
     print("Création de la clé de téléversement.")
     print(
@@ -94,7 +161,7 @@ def creer(args: argparse.Namespace) -> None:
         f"L={args.ville}, C={args.pays}"
     )
     commande = [
-        keytool(),
+        outil,
         "-genkeypair",
         "-v",
         "-keystore",

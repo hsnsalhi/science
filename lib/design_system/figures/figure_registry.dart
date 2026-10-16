@@ -26,6 +26,7 @@ import 'fraction_bar_figure.dart';
 import 'feedback_figure.dart';
 import 'food_web_figure.dart';
 import 'gears_figure.dart';
+import 'half_life_figure.dart';
 import 'implication_figure.dart';
 import 'loop_robot_figure.dart';
 import 'matrix_figure.dart';
@@ -103,6 +104,9 @@ abstract final class FigureRegistry {
     // Une lampe, un objet, un mur : d'où vient une ombre.
     'ombre-lumiere': (BuildContext context, Color accent) =>
         ShadowFigure(accent: accent),
+    // Des noyaux radioactifs qui se désintègrent, chacun pour soi.
+    'demi-vie': (BuildContext context, Color accent) =>
+        HalfLifeFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),

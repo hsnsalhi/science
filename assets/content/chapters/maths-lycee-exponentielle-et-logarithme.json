@@ -1,0 +1,333 @@
+{
+  "chapter": "maths-lycee-exponentielle-et-logarithme",
+  "lessons": [
+    {
+      "id": "croitre-en-proportion",
+      "title": "Croître en proportion de soi",
+      "subtitle": "La seule fonction qui est sa propre dérivée.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux façons de grandir",
+          "body": "Une plante qui pousse de 2 cm par semaine grandit de la même quantité chaque semaine : c'est linéaire.\n\nUne population de bactéries qui double toutes les vingt minutes grandit d'autant plus vite qu'elle est déjà nombreuse. Son accroissement est proportionnel à sa taille.\n\nCette seconde loi est partout : intérêts composés, épidémies, désintégration radioactive, refroidissement d'un café."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La définition",
+          "formula": "exp' = exp et exp(0) = 1",
+          "body": "C'est la seule fonction qui soit égale à sa propre dérivée et vaille 1 en zéro. Tout le reste s'en déduit."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La propriété fondamentale",
+          "body": "exp(a + b) = exp(a) × exp(b)\n\nUne somme devient un produit. C'est d'elle que viennent toutes les autres règles : exp(−a) = 1/exp(a), et exp(a + a + a) = exp(a) × exp(a) × exp(a).\n\nL'exponentielle transforme l'addition en multiplication. Le logarithme fera l'inverse."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Elle ne s'annule jamais",
+          "body": "exp(x) est strictement positive pour tout x réel. Même exp(−1000), qui est minuscule, reste strictement supérieure à zéro.\n\nUne équation comme exp(x) = 0 n'a donc aucune solution, et il ne sert à rien de la chercher."
+        },
+        {
+          "id": "c5",
+          "kind": "exemple",
+          "title": "Elle écrase tout",
+          "body": "exp(10) vaut environ 22 000. exp(20) environ 485 millions. exp(50) dépasse 5 × 10²¹.\n\nAucune puissance de x ne la rattrape : exp(x) divisé par n'importe quelle puissance de x tend vers l'infini. C'est ce qu'on appelle la croissance exponentielle, et c'est pourquoi le mot est devenu une image."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle propriété définit la fonction exponentielle ?",
+          "explanation": "Elle est égale à sa propre dérivée et vaut 1 en zéro. C'est la seule fonction à vérifier les deux.",
+          "options": [
+            { "text": "elle est sa propre dérivée et vaut 1 en 0", "correct": true },
+            { "text": "elle est toujours croissante" },
+            { "text": "elle est positive" },
+            { "text": "elle tend vers l'infini" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que vaut exp(a + b) ?",
+          "explanation": "exp(a) × exp(b). L'exponentielle transforme une somme en produit.",
+          "options": [
+            { "text": "exp(a) × exp(b)", "correct": true },
+            { "text": "exp(a) + exp(b)" },
+            { "text": "exp(a × b)" },
+            { "text": "exp(a) ÷ exp(b)" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien l'équation exp(x) = 0 a-t-elle de solutions ?",
+          "explanation": "Aucune. L'exponentielle est strictement positive sur tout l'ensemble des réels : elle approche zéro sans jamais l'atteindre.",
+          "answer": 0
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour x assez grand, x¹⁰⁰ finit par dépasser exp(x).",
+          "explanation": "Faux. L'exponentielle l'emporte sur toute puissance : exp(x) divisé par n'importe quelle puissance de x tend vers l'infini.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "le-logarithme",
+      "title": "Le logarithme",
+      "subtitle": "La question inverse.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une question, pas un objet mystérieux",
+          "body": "L'exponentielle répond à : « je pars de 1 et je grandis pendant un temps x, où j'arrive ? »\n\nLe logarithme répond à la question inverse : « je veux arriver à y, combien de temps faut-il ? »\n\nln(y) est donc l'exposant qu'il faut donner à e pour obtenir y. Rien de plus."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les deux se défont",
+          "formula": "ln(exp(x)) = x et exp(ln(y)) = y",
+          "body": "Pour tout réel x, et pour tout y strictement positif. L'un annule l'autre."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Il transforme les produits en sommes",
+          "body": "ln(a × b) = ln(a) + ln(b)\n\nC'est l'inverse exact de la propriété de l'exponentielle. Avant les calculatrices, c'est ce qui servait à multiplier de grands nombres : on cherchait deux logarithmes dans une table, on les additionnait, et on remontait.\n\nLa règle à calcul, qui a conçu les fusées Apollo, ne fait rien d'autre que cela."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Il n'existe que pour les nombres strictement positifs",
+          "body": "ln(0) et ln(−3) n'ont pas de sens : aucun exposant ne permet d'atteindre zéro ou un nombre négatif à partir de e.\n\nAvant d'écrire ln(quelque chose), il faut toujours vérifier que ce quelque chose est strictement positif. C'est la première source d'erreurs du chapitre."
+        },
+        {
+          "id": "c5",
+          "kind": "exemple",
+          "title": "Résoudre une équation",
+          "body": "2^x = 1000\n\nOn applique ln aux deux membres : x × ln(2) = ln(1000).\n\nDonc x = ln(1000) ÷ ln(2) ≈ 6,908 ÷ 0,693 ≈ 9,97.\n\nIl faut un peu moins de dix doublements pour atteindre mille — ce qui est la version calculée de « 2¹⁰ = 1024 »."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut ln(1) ?",
+          "explanation": "0, puisque exp(0) = 1. Il ne faut aucun temps de croissance pour rester à 1.",
+          "answer": 0
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que vaut ln(a × b) ?",
+          "explanation": "ln(a) + ln(b). Le logarithme transforme un produit en somme — c'est ce qui faisait l'intérêt des tables.",
+          "options": [
+            { "text": "ln(a) + ln(b)", "correct": true },
+            { "text": "ln(a) × ln(b)" },
+            { "text": "ln(a + b)" },
+            { "text": "ln(a) − ln(b)" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Résous 2^x = 1000. Donne x au centième.",
+          "hint": "Applique ln aux deux membres.",
+          "explanation": "x = ln(1000) ÷ ln(2) ≈ 9,97. C'est cohérent avec 2¹⁰ = 1024, un peu au-dessus de mille.",
+          "answer": 9.97,
+          "tolerance": 0.03
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces expressions : lesquelles ont un sens ?",
+          "explanation": "Le logarithme n'existe que pour les nombres strictement positifs. ln(0) et ln d'un négatif n'ont pas de sens.",
+          "categories": ["a un sens", "n'a pas de sens"],
+          "items": [
+            { "text": "ln(2)", "category": 0 },
+            { "text": "ln(0,001)", "category": 0 },
+            { "text": "ln(0)", "category": 1 },
+            { "text": "ln(−3)", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "ln(a + b) vaut ln(a) + ln(b).",
+          "explanation": "Faux, et c'est l'erreur la plus fréquente. C'est le produit qui devient somme : ln(a × b) = ln(a) + ln(b).",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "demi-vie",
+      "title": "La demi-vie",
+      "subtitle": "Quand la décroissance est exponentielle.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Des noyaux qui se désintègrent",
+          "body": "Avance le temps et compte ce qu'il reste. Chaque noyau décide seul.",
+          "figureId": "demi-vie"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Un noyau n'a pas de mémoire",
+          "body": "Un noyau radioactif n'a aucune idée de son âge. À chaque instant, il a la même probabilité de se désintégrer, qu'il ait été créé hier ou il y a mille ans.\n\nC'est de cette absence de mémoire que vient la loi exponentielle. Et c'est pourquoi on ne peut jamais dire quand un noyau donné se désintégrera — seulement combien, sur un grand nombre, l'auront fait."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "La loi",
+          "formula": "N(t) = N₀ × (1/2) élevé à t/T",
+          "body": "N₀ le nombre initial, T la demi-vie. À chaque durée T écoulée, on divise par deux. La forme avec exp s'en déduit : exp(−t ln(2) / T)."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Ce que demi-vie veut dire",
+          "body": "Au bout d'une demi-vie, il reste la moitié. Au bout de deux, le quart. Au bout de trois, le huitième.\n\nJamais zéro : on divise par deux à chaque fois, et diviser par deux n'atteint pas zéro. C'est le même fait que « l'exponentielle ne s'annule jamais », vu par l'autre bout."
+        },
+        {
+          "id": "c5",
+          "kind": "exemple",
+          "title": "Le carbone 14",
+          "body": "Sa demi-vie est de 5 730 ans. Un os qui ne contient plus que le quart du carbone 14 attendu a donc deux demi-vies, soit 11 460 ans.\n\nAu-delà de dix demi-vies — environ 57 000 ans — il en reste moins d'un millième, trop peu pour mesurer. C'est la limite de la méthode, et elle se calcule."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Il reste un quart d'un échantillon. Combien de demi-vies se sont écoulées ?",
+          "explanation": "Deux : la moitié, puis la moitié de la moitié.",
+          "answer": 2
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La demi-vie du carbone 14 est de 5 730 ans. Quel âge, en années, pour un os contenant le quart du carbone attendu ?",
+          "explanation": "Deux demi-vies : 2 × 5 730 = 11 460 ans.",
+          "answer": 11460
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de demi-vies pour qu'il reste moins de 1 % ? Donne le plus petit entier qui convient.",
+          "hint": "Divise par deux en comptant, jusqu'à passer sous 0,01.",
+          "explanation": "n = 7 : (1/2)⁷ ≈ 0,0078, soit 0,78 %. Avec 6, il reste encore 1,56 %. Le calcul exact donne ln(100)/ln(2) ≈ 6,64, qu'on arrondit au-dessus.",
+          "answer": 7
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Après dix demi-vies, l'échantillon est totalement épuisé.",
+          "explanation": "Faux. Il en reste environ un millième. Diviser par deux n'atteint jamais zéro — c'est la même chose que « l'exponentielle ne s'annule jamais ».",
+          "answer": false
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la décroissance radioactive est-elle exponentielle ?",
+          "hint": "Que sait un noyau de son passé ?",
+          "explanation": "Parce qu'un noyau n'a pas de mémoire : sa probabilité de se désintégrer ne dépend pas de son âge. Le nombre de désintégrations est donc proportionnel au nombre de noyaux restants.",
+          "options": [
+            { "text": "chaque noyau a la même chance à chaque instant, quel que soit son âge", "correct": true },
+            { "text": "les noyaux vieillissent et deviennent fragiles" },
+            { "text": "les désintégrations se déclenchent entre elles" },
+            { "text": "la température baisse avec le temps" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-exponentielle",
+      "title": "Défi : l'intuition prise en défaut",
+      "subtitle": "Là où l'exponentielle surprend tout le monde.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le nénuphar",
+          "body": "Un nénuphar double de surface chaque jour. En trente jours, il couvre tout l'étang.\n\nQuand couvrait-il la moitié ?\n\nLe vingt-neuvième jour. Pas le quinzième. Pendant vingt-huit jours, le problème paraît lointain ; il devient visible la veille du désastre.\n\nC'est pourquoi les croissances exponentielles sont si mal anticipées — épidémies, dettes, extinctions. L'intuition humaine est linéaire, et le monde ne l'est pas toujours."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Le nénuphar double chaque jour et couvre l'étang au jour 30. À quel jour en couvrait-il la moitié ?",
+          "hint": "Remonte d'un seul doublement.",
+          "explanation": "Au jour 29. Un doublement sépare la moitié du tout.",
+          "answer": 29
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et le quart ?",
+          "explanation": "Au jour 28. Deux doublements avant la fin.",
+          "answer": 28
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "On plie une feuille de 0,1 mm en deux, 42 fois. Quelle épaisseur en kilomètres ? Donne l'ordre de grandeur en milliers de kilomètres, arrondi à l'unité.",
+          "hint": "L'épaisseur double à chaque pli : 0,1 mm × 2⁴².",
+          "explanation": "0,1 mm × 2⁴² ≈ 4,4 × 10¹¹ mm, soit environ 440 000 km — plus que la distance Terre-Lune. En milliers de kilomètres : 440.",
+          "answer": 440,
+          "tolerance": 15
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un placement rapporte 5 % par an. En combien d'années double-t-il ? Donne l'entier le plus proche.",
+          "hint": "Cherche n tel que 1,05 multiplié n fois par lui-même donne 2.",
+          "explanation": "n = ln(2) ÷ ln(1,05) ≈ 14,2, donc environ 14 ans. La règle de 72 donne 72 ÷ 5 ≈ 14,4 : une bonne approximation de tête.",
+          "answer": 14,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les croissances exponentielles surprennent-elles ?",
+          "explanation": "Parce qu'elles restent longtemps imperceptibles puis explosent. L'intuition humaine extrapole linéairement, ce qui sous-estime massivement la suite.",
+          "options": [
+            { "text": "elles restent longtemps petites puis explosent", "correct": true },
+            { "text": "elles sont irrégulières" },
+            { "text": "elles ne suivent pas de loi" },
+            { "text": "elles s'arrêtent brutalement" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "La règle de 72 — diviser 72 par le taux en pourcentage — donne à peu près le temps de doublement.",
+          "explanation": "Vrai. Elle vient de ln(2) × 100 ≈ 69,3, arrondi à 72 parce que 72 a beaucoup de diviseurs. Elle reste bonne pour des taux de quelques pour cent.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}
