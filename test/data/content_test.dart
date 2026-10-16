@@ -2124,4 +2124,126 @@ void main() {
       }
     });
   });
+
+  group('Chapitre complet : fractions et proportions', () {
+    late Chapter fractions;
+
+    setUpAll(() {
+      fractions = catalog.chapterById('maths-college-fractions-et-proportions')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (fractions.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    ({int haut, int bas}) lire(String texte) {
+      final List<String> morceaux = texte.split('/');
+      return (haut: int.parse(morceaux[0]), bas: int.parse(morceaux[1]));
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(fractions.isPlayable, isTrue);
+      expect(fractions.lessons.length, 4);
+    });
+
+    test('les écritures décimales annoncées sont exactes', () {
+      expect(
+        FractionBarFigure.valeur(3, 4),
+        closeTo(reponseNum('fraction-quotient', 'q1'), 1e-9),
+      );
+      expect(
+        FractionBarFigure.valeur(6, 4),
+        closeTo(reponseNum('fraction-quotient', 'q2'), 1e-9),
+      );
+      expect(
+        FractionBarFigure.valeur(7, 8),
+        closeTo(reponseNum('defi-fractions-college', 'q1'), 1e-9),
+      );
+    });
+
+    test('les fractions annoncées égales le sont vraiment', () {
+      // 3/4 = 9/12 : le numérateur demandé doit donner une fraction
+      // égale, pas seulement un nombre plausible.
+      expect(
+        FractionBarFigure.comparer(
+          reponseNum('egalites-et-comparaison', 'q1').round(),
+          12,
+          3,
+          4,
+        ),
+        0,
+      );
+      // 18/24 simplifié : le numérateur attendu est celui de la réduite.
+      expect(
+        FractionBarFigure.simplifier(18, 24).numerateur,
+        reponseNum('egalites-et-comparaison', 'q4'),
+      );
+      for (final ClassifyItem item
+          in (fractions.lessonById('defi-fractions-college')!.questions
+                      .firstWhere((Question x) => x.id == 'q3')
+                  as ClassifyQuestion)
+              .items) {
+        final ({int haut, int bas}) f = lire(item.text);
+        expect(
+          item.category == 0,
+          FractionBarFigure.comparer(f.haut, f.bas, 3, 4) == 0,
+          reason: '${item.text} est mal rangée',
+        );
+      }
+    });
+
+    test('le tri par rapport à 1 est juste', () {
+      final ClassifyQuestion q =
+          fractions.lessonById('egalites-et-comparaison')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final ({int haut, int bas}) f = lire(item.text);
+        expect(
+          item.category == 0,
+          FractionBarFigure.comparer(f.haut, f.bas, 1, 1) > 0,
+          reason: '${item.text} est mal rangée',
+        );
+      }
+    });
+
+    test('les comparaisons annoncées sont recalculées', () {
+      // 2/3 contre 3/4, puis 5/6 contre 7/9 : les deux cas où les
+      // numérateurs seuls induisent en erreur.
+      expect(FractionBarFigure.comparer(3, 4, 2, 3), greaterThan(0));
+      expect(FractionBarFigure.comparer(5, 6, 7, 9), greaterThan(0));
+    });
+
+    test('les fractions de quantités tombent juste', () {
+      expect(
+        60 * FractionBarFigure.valeur(3, 4),
+        reponseNum('fraction-d-une-quantite', 'q1'),
+      );
+      expect(
+        480 * FractionBarFigure.valeur(2, 5),
+        reponseNum('fraction-d-une-quantite', 'q2'),
+      );
+      expect(
+        320 * FractionBarFigure.valeur(25, 100),
+        reponseNum('fraction-d-une-quantite', 'q3'),
+      );
+      // Une baisse de 30 % : le prix restant vaut 70 % du prix de départ.
+      expect(
+        40 * FractionBarFigure.valeur(70, 100),
+        reponseNum('fraction-d-une-quantite', 'q4'),
+      );
+      expect(
+        72 * FractionBarFigure.valeur(5, 6),
+        reponseNum('defi-fractions-college', 'q2'),
+      );
+      expect(
+        240 * FractionBarFigure.valeur(15, 100),
+        reponseNum('defi-fractions-college', 'q4'),
+      );
+    });
+  });
 }

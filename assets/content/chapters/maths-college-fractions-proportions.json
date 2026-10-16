@@ -1,0 +1,341 @@
+{
+  "chapter": "maths-college-fractions-et-proportions",
+  "lessons": [
+    {
+      "id": "fraction-quotient",
+      "title": "Une fraction est un quotient",
+      "subtitle": "Partager, et le nombre qui en sort.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Ce que désigne a/b",
+          "formula": "a/b = a ÷ b,  avec b ≠ 0",
+          "body": "le nombre qui, multiplié par b, redonne a."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Deux lectures du même objet",
+          "body": "3/4 se lit « trois quarts » : trois parts d'une unité partagée en quatre.\n\n3/4 se lit aussi « 3 divisé par 4 » : c'est le résultat du partage de trois unités entre quatre personnes.\n\nLes deux lectures donnent le même nombre, 0,75."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Vois la part",
+          "body": "Règle le nombre de parts, puis le nombre de parts coloriées.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Pourquoi b ne peut pas être nul",
+          "body": "a/0 désignerait un nombre qui, multiplié par 0, donnerait a. Or tout nombre multiplié par 0 donne 0.\n\nAucun nombre ne convient : la division par zéro n'a pas de résultat, et ce n'est pas une interdiction arbitraire."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "a/b est le quotient de a par b.",
+            "C'est aussi a parts d'une unité partagée en b.",
+            "Le dénominateur n'est jamais nul."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Écris 3/4 sous forme décimale.",
+          "answer": 0.75,
+          "tolerance": 0.001,
+          "hint": "3 divisé par 4.",
+          "explanation": "0,75. Trois unités partagées en quatre donnent trois quarts d'unité chacune.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quatre amis se partagent équitablement 6 pizzas. Combien de pizza chacun reçoit-il ?",
+          "answer": 1.5,
+          "tolerance": 0.001,
+          "unit": "pizzas",
+          "hint": "6 ÷ 4.",
+          "explanation": "1,5 pizza, soit 6/4 ou encore 3/2. La fraction est le résultat du partage, pas seulement une façon de l'écrire.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi n'écrit-on jamais 5/0 ?",
+          "hint": "Quel nombre multiplié par 0 donnerait 5 ?",
+          "explanation": "Parce qu'aucun nombre multiplié par 0 ne donne 5 : tout produit par zéro vaut zéro. Le quotient n'existe pas.",
+          "options": [
+            { "text": "Aucun nombre multiplié par 0 ne donne 5", "correct": true },
+            { "text": "Le résultat serait trop grand" },
+            { "text": "Le résultat serait 0" },
+            { "text": "C'est une règle sans raison" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "7/7 et 1 désignent le même nombre.",
+          "answer": true,
+          "explanation": "Oui. Sept parts sur sept, c'est l'unité entière ; et 7 ÷ 7 = 1."
+        }
+      ]
+    },
+    {
+      "id": "egalites-et-comparaison",
+      "title": "Égalités et comparaison",
+      "subtitle": "Multiplier le haut et le bas par le même nombre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Fractions égales",
+          "formula": "a/b = (a × k) / (b × k),  k ≠ 0",
+          "body": "le partage est plus fin, la part reste la même."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Cherche les égalités",
+          "body": "Trouve toutes les façons de colorier exactement une moitié, puis exactement un quart.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Comparer deux fractions",
+          "body": "Même dénominateur : on compare les numérateurs. 5/8 > 3/8.\n\nDénominateurs différents : on les ramène au même. Pour comparer 2/3 et 3/4, on écrit 8/12 et 9/12 : la seconde est la plus grande."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Comparer à 1 ne demande aucun calcul : une fraction dont le numérateur dépasse le dénominateur est plus grande que 1."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Multiplier haut et bas par le même nombre ne change rien.",
+            "Pour comparer, on ramène au même dénominateur.",
+            "Numérateur plus grand que le dénominateur : la fraction dépasse 1."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Complète : 3/4 = ?/12. Quel numérateur faut-il ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "hint": "Le dénominateur a été multiplié par 3.",
+          "explanation": "9. En multipliant 4 par 3 pour obtenir 12, il faut multiplier 3 par 3 : 3/4 = 9/12.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la plus grande : 2/3 ou 3/4 ?",
+          "hint": "Ramène au dénominateur 12.",
+          "explanation": "3/4, car 2/3 = 8/12 et 3/4 = 9/12. Comparer les numérateurs sans ramener au même dénominateur n'aurait aucun sens.",
+          "figureId": "fraction-barre",
+          "options": [
+            { "text": "3/4", "correct": true },
+            { "text": "2/3" },
+            { "text": "Elles sont égales" },
+            { "text": "On ne peut pas comparer" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces fractions par rapport à 1.",
+          "hint": "Compare le numérateur au dénominateur.",
+          "explanation": "7/5 et 9/4 ont un numérateur plus grand que leur dénominateur : elles dépassent 1. 3/8 et 5/6 restent en dessous.",
+          "categories": ["Plus grande que 1", "Plus petite que 1"],
+          "items": [
+            { "text": "7/5", "category": 0 },
+            { "text": "9/4", "category": 0 },
+            { "text": "3/8", "category": 1 },
+            { "text": "5/6", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Simplifie 18/24 : quel est le numérateur de la fraction la plus simple ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Le plus grand diviseur commun de 18 et 24 vaut 6.",
+          "explanation": "3, car 18/24 = 3/4 en divisant les deux termes par 6.",
+          "figureId": "fraction-barre"
+        }
+      ]
+    },
+    {
+      "id": "fraction-d-une-quantite",
+      "title": "Prendre une fraction d'une quantité",
+      "subtitle": "Les trois quarts de quelque chose.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La méthode",
+          "formula": "a/b de N = N ÷ b × a",
+          "body": "on partage en b, puis on prend a parts."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Un exemple",
+          "body": "Les trois quarts de 60 élèves :\n\n60 ÷ 4 = 15, puis 15 × 3 = 45.\n\nOn peut aussi multiplier d'abord : 60 × 3 = 180, puis 180 ÷ 4 = 45. L'ordre ne change pas le résultat, mais diviser d'abord donne souvent des nombres plus simples."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Les pourcentages sont des fractions",
+          "body": "25 % signifie 25/100, soit un quart.\n\nPrendre 25 % d'une quantité, c'est donc en prendre le quart. Rien de nouveau : un pourcentage est une fraction de dénominateur 100."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour vérifier un calcul de fraction, demande-toi si le résultat est cohérent : les trois quarts d'une quantité en sont forcément plus que la moitié, et moins que le tout."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font les trois quarts de 60 ?",
+          "answer": 45,
+          "tolerance": 0.01,
+          "hint": "60 ÷ 4 = 15.",
+          "explanation": "45 : un quart vaut 15, donc trois quarts valent 45."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un collège de 480 élèves, deux cinquièmes sont demi-pensionnaires. Combien cela fait-il d'élèves ?",
+          "answer": 192,
+          "tolerance": 0.01,
+          "unit": "élèves",
+          "hint": "480 ÷ 5 = 96.",
+          "explanation": "192 élèves : un cinquième vaut 96, donc deux cinquièmes valent 192."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 25 % de 320 ?",
+          "answer": 80,
+          "tolerance": 0.01,
+          "hint": "25 %, c'est un quart.",
+          "explanation": "80. 25 % vaut 25/100, soit un quart : il suffit de diviser par 4."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un article coûte 40 €. Il baisse de 30 %. Quel est son nouveau prix, en euros ?",
+          "answer": 28,
+          "tolerance": 0.01,
+          "unit": "€",
+          "hint": "Calcule d'abord 30 % de 40.",
+          "explanation": "28 €. La baisse vaut 12 €, et 40 − 12 = 28. On peut aussi calculer directement 70 % de 40."
+        }
+      ]
+    },
+    {
+      "id": "defi-fractions-college",
+      "title": "Défi : fractions et proportions",
+      "subtitle": "Six questions, dénominateurs en tête.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à ramener au même dénominateur avant de comparer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Écris 7/8 sous forme décimale.",
+          "answer": 0.875,
+          "tolerance": 0.001,
+          "hint": "7 divisé par 8.",
+          "explanation": "0,875. La fraction dépasse 0,5 sans atteindre 1, ce qui était prévisible : 7 est proche de 8."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font les cinq sixièmes de 72 ?",
+          "answer": 60,
+          "tolerance": 0.01,
+          "hint": "72 ÷ 6 = 12.",
+          "explanation": "60 : un sixième vaut 12, donc cinq sixièmes valent 60."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces fractions selon qu'elles valent trois quarts ou non.",
+          "explanation": "6/8 et 15/20 valent trois quarts : les deux termes ont été multipliés par le même nombre. 5/8 et 7/10 non.",
+          "categories": ["Vaut 3/4", "Ne vaut pas 3/4"],
+          "items": [
+            { "text": "6/8", "category": 0 },
+            { "text": "15/20", "category": 0 },
+            { "text": "5/8", "category": 1 },
+            { "text": "7/10", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 15 % de 240 ?",
+          "answer": 36,
+          "tolerance": 0.01,
+          "hint": "10 % valent 24, et 5 % en valent la moitié.",
+          "explanation": "36. On décompose : 10 % font 24, 5 % font 12, et 24 + 12 = 36."
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la plus grande : 5/6 ou 7/9 ?",
+          "hint": "Ramène au dénominateur 18.",
+          "explanation": "5/6, car 5/6 = 15/18 et 7/9 = 14/18. Les numérateurs seuls auraient suggéré l'inverse.",
+          "options": [
+            { "text": "5/6", "correct": true },
+            { "text": "7/9" },
+            { "text": "Elles sont égales" },
+            { "text": "On ne peut pas comparer" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Multiplier le numérateur et le dénominateur d'une fraction par 5 rend la fraction cinq fois plus grande.",
+          "answer": false,
+          "explanation": "Non : la fraction ne change pas de valeur. Les parts sont cinq fois plus petites, mais on en prend cinq fois plus."
+        }
+      ]
+    }
+  ]
+}
