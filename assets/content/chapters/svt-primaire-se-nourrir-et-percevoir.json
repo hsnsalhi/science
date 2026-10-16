@@ -1,0 +1,338 @@
+{
+  "chapter": "svt-primaire-se-nourrir-et-percevoir",
+  "lessons": [
+    {
+      "id": "regimes",
+      "title": "Qui mange quoi",
+      "subtitle": "Les régimes alimentaires des animaux.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois régimes",
+          "body": "Un animal qui ne mange que des végétaux est végétarien — la vache, le lapin, la chenille.\n\nUn animal qui ne mange que de la viande est carnivore — le renard, la chouette, l'araignée.\n\nUn animal qui mange les deux est omnivore — le sanglier, la poule, et nous."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Les dents trahissent le régime",
+          "body": "Un carnivore a de longues canines pointues pour percer, et des dents coupantes comme des ciseaux.\n\nUn végétarien a de larges molaires plates pour broyer, et souvent pas de canines du tout.\n\nRegarde le crâne d'un animal inconnu : ses dents te diront ce qu'il mangeait, même si personne ne l'a jamais vu manger."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "La chaîne alimentaire",
+          "figureId": "chaine-alimentaire",
+          "body": "Chaque flèche se lit « est mangé par ». Tout part toujours d'un végétal : lui seul sait fabriquer sa propre matière à partir de lumière, d'eau et d'air."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le début de toute chaîne",
+          "body": "Aucune chaîne alimentaire ne commence par un animal.\n\nLes plantes sont les seules à produire de la matière vivante sans en consommer : elles sont les producteurs. Tous les animaux sont des consommateurs, directement ou non, de ce que les plantes ont fabriqué."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces animaux selon leur régime.",
+          "explanation": "Le lapin et la chenille ne mangent que des végétaux ; la chouette et le renard que de la viande ; le sanglier et la poule les deux.",
+          "categories": ["végétarien", "carnivore", "omnivore"],
+          "items": [
+            { "text": "le lapin", "category": 0 },
+            { "text": "la chenille", "category": 0 },
+            { "text": "la chouette", "category": 1 },
+            { "text": "le renard", "category": 1 },
+            { "text": "le sanglier", "category": 2 },
+            { "text": "la poule", "category": 2 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Tu trouves un crâne avec de larges molaires plates et aucune canine. Que mangeait cet animal ?",
+          "explanation": "Des végétaux. Les molaires plates servent à broyer les plantes ; les canines à percer une proie.",
+          "options": [
+            { "text": "des végétaux", "correct": true },
+            { "text": "de la viande" },
+            { "text": "des os" },
+            { "text": "impossible à savoir" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Par quoi commence toujours une chaîne alimentaire ?",
+          "explanation": "Par un végétal : seules les plantes fabriquent leur propre matière à partir de lumière, d'eau et d'air.",
+          "options": [
+            { "text": "un végétal", "correct": true },
+            { "text": "un petit animal" },
+            { "text": "un carnivore" },
+            { "text": "le soleil lui-même" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une chaîne alimentaire peut commencer par un carnivore.",
+          "explanation": "Faux. Le carnivore mange un animal, qui mange un autre animal ou un végétal. En remontant, on tombe toujours sur une plante.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "les-sens",
+      "title": "Les cinq sens",
+      "subtitle": "Comment le corps capte le monde.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Cinq portes d'entrée",
+          "body": "La vue, avec les yeux : la lumière.\n\nL'ouïe, avec les oreilles : les vibrations de l'air.\n\nL'odorat, avec le nez : des molécules qui flottent.\n\nLe goût, avec la langue : des molécules dissoutes.\n\nLe toucher, avec la peau : la pression, la chaleur, la douleur."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "L'organe ne décide pas",
+          "body": "L'œil ne voit pas tout seul : il transforme la lumière en messages électriques, qu'un nerf conduit au cerveau. C'est le cerveau qui voit.\n\nLa preuve : quand on rêve, on voit des images les yeux fermés. Et quand on appuie doucement sur le coin de son œil fermé, on voit une tache lumineuse alors qu'aucune lumière n'est entrée."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le goût est surtout du nez",
+          "body": "La langue ne distingue que quelques saveurs : sucré, salé, acide, amer, et l'umami du bouillon.\n\nTout le reste — la fraise, le café, le poulet rôti — vient de l'odorat. C'est pourquoi un gros rhume rend les aliments fades : le nez bouché, il ne reste que cinq saveurs."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Protéger ses oreilles",
+          "body": "Les cellules de l'oreille qui captent les sons ne se remplacent pas. Une fois détruites par un bruit trop fort, elles sont perdues définitivement.\n\nUn casque à plein volume, un concert au premier rang, une pétarade : chacun en détruit quelques-unes. La perte ne se sent pas à vingt ans ; elle se compte à cinquante."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque sens à son organe.",
+          "explanation": "Chaque sens a un organe spécialisé qui transforme un signal du monde en message nerveux.",
+          "pairs": [
+            { "left": "la vue", "right": "l'œil" },
+            { "left": "l'ouïe", "right": "l'oreille" },
+            { "left": "l'odorat", "right": "le nez" },
+            { "left": "le goût", "right": "la langue" },
+            { "left": "le toucher", "right": "la peau" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui voit, au bout du compte ?",
+          "explanation": "Le cerveau. L'œil ne fait que transformer la lumière en messages nerveux ; c'est le cerveau qui en fait une image.",
+          "options": [
+            { "text": "le cerveau", "correct": true },
+            { "text": "l'œil seul" },
+            { "text": "le nerf optique" },
+            { "text": "la pupille" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les aliments semblent-ils fades quand on a un gros rhume ?",
+          "explanation": "Parce que l'essentiel du goût vient de l'odorat. Nez bouché, il ne reste que les cinq saveurs de la langue.",
+          "options": [
+            { "text": "le nez bouché supprime la plus grande part du goût", "correct": true },
+            { "text": "la langue gonfle" },
+            { "text": "le rhume change la salive" },
+            { "text": "on mange moins vite" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de saveurs la langue distingue-t-elle ?",
+          "hint": "Sucré, salé, acide, amer… et une cinquième.",
+          "explanation": "Cinq : sucré, salé, acide, amer et umami.",
+          "answer": 5
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Les cellules de l'oreille détruites par un bruit trop fort se remplacent avec le temps.",
+          "explanation": "Faux. Elles ne se remplacent pas. C'est pourquoi la protection est la seule option : il n'y a pas de réparation possible.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "entrainement-nourrir",
+      "title": "Entraînement : d'où vient ce que je mange",
+      "subtitle": "Remonter les chaînes.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Le trajet des aliments",
+          "figureId": "approvisionnement",
+          "body": "Ce que tu avales ne va pas dans tes jambes : il passe dans le sang, et le sang le porte partout. Suis le trajet du doigt."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Chaque repas vient du soleil",
+          "body": "Un steak vient d'une vache, la vache de l'herbe, l'herbe de la lumière du soleil.\n\nUn verre de lait suit le même chemin. Un morceau de pain aussi, en plus court : blé, puis soleil.\n\nAucun repas sur Terre n'échappe à cette règle — à part quelques bactéries des profondeurs océaniques, qui tirent leur énergie de la chaleur des roches."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets cette chaîne dans l'ordre, du producteur au dernier mangeur.",
+          "explanation": "Le soleil fait pousser l'herbe, la sauterelle la mange, la grenouille mange la sauterelle, le héron mange la grenouille.",
+          "items": ["l'herbe", "la sauterelle", "la grenouille", "le héron"]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans cette chaîne, que se passe-t-il s'il n'y a plus de sauterelles ?",
+          "explanation": "Les grenouilles manquent de nourriture, donc leur nombre baisse, et les hérons en souffrent à leur tour. Une chaîne se casse vers le haut.",
+          "options": [
+            { "text": "les grenouilles diminuent, puis les hérons", "correct": true },
+            { "text": "rien ne change" },
+            { "text": "l'herbe disparaît aussi" },
+            { "text": "les hérons mangent de l'herbe" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète.",
+          "explanation": "Les plantes sont les producteurs ; les animaux sont des consommateurs.",
+          "template": "Les plantes sont des ___ et les animaux des ___.",
+          "blanks": [
+            { "accepted": ["producteurs", "producteur"] },
+            { "accepted": ["consommateurs", "consommateur"] }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Que fait le sang dans le corps ?",
+          "explanation": "Il distribue les nutriments venus de l'intestin et l'oxygène venu des poumons, et emporte les déchets.",
+          "options": [
+            { "text": "il distribue les nutriments", "correct": true },
+            { "text": "il distribue l'oxygène", "correct": true },
+            { "text": "il emporte les déchets", "correct": true },
+            { "text": "il digère les aliments" },
+            { "text": "il fabrique les os" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "L'énergie d'un steak vient à l'origine du soleil.",
+          "explanation": "Vrai. Le steak vient de la vache, la vache de l'herbe, l'herbe de la lumière du soleil.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "defi-nourrir",
+      "title": "Défi : l'enquête du crâne",
+      "subtitle": "Déduire un régime sans voir l'animal.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois crânes sur une table",
+          "body": "Un paléontologue reçoit trois crânes sans étiquette.\n\nLe premier : canines de 4 cm, molaires coupantes, yeux placés devant, orientés dans la même direction.\n\nLe deuxième : pas de canines, molaires larges et striées, yeux sur les côtés de la tête.\n\nLe troisième : canines moyennes, molaires à la fois plates et pointues.\n\nIl sait déjà ce que chacun mangeait. Et toi ?"
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "La position des yeux aussi",
+          "body": "Des yeux placés devant, regardant dans la même direction, permettent de juger les distances : c'est l'équipement du chasseur.\n\nDes yeux sur les côtés couvrent presque tout l'horizon, au prix d'une mauvaise estimation des distances : c'est l'équipement de la proie, qui doit voir venir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Le premier crâne : canines longues, molaires coupantes, yeux devant. Régime ?",
+          "explanation": "Carnivore. Les longues canines percent, les molaires coupantes découpent, et les yeux devant servent à juger la distance d'un bond.",
+          "options": [
+            { "text": "carnivore", "correct": true },
+            { "text": "végétarien" },
+            { "text": "omnivore" },
+            { "text": "il ne mangeait pas" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Le deuxième : pas de canines, molaires larges, yeux sur les côtés. Régime ?",
+          "explanation": "Végétarien. Les molaires larges broient les plantes, et les yeux latéraux surveillent l'horizon : c'est un animal chassé, pas chasseur.",
+          "options": [
+            { "text": "végétarien", "correct": true },
+            { "text": "carnivore" },
+            { "text": "omnivore" },
+            { "text": "impossible à dire" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Le troisième : canines moyennes, molaires mixtes. Régime ?",
+          "explanation": "Omnivore : il a de quoi percer et de quoi broyer. C'est aussi la denture humaine.",
+          "options": [
+            { "text": "omnivore", "correct": true },
+            { "text": "carnivore strict" },
+            { "text": "végétarien strict" },
+            { "text": "aucun des trois" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Il faut 10 kg d'herbe pour faire 1 kg de sauterelles, et 10 kg de sauterelles pour 1 kg de grenouilles. Combien de kilogrammes d'herbe pour 1 kg de grenouilles ?",
+          "hint": "Deux étapes de 10.",
+          "explanation": "10 × 10 = 100 kg d'herbe. À chaque étage de la chaîne, l'essentiel de la matière est perdu : c'est pourquoi les grands carnivores sont rares.",
+          "answer": 100
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Et combien de kilogrammes d'herbe pour 1 kg de hérons, un étage au-dessus des grenouilles ?",
+          "explanation": "100 × 10 = 1 000 kg d'herbe, soit une tonne pour un kilo de héron.",
+          "answer": 1000
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi y a-t-il bien moins de hérons que de sauterelles dans un marais ?",
+          "explanation": "Parce que chaque étage de la chaîne perd l'essentiel de la matière : nourrir un héron coûte mille fois son poids en herbe.",
+          "options": [
+            { "text": "chaque étage de la chaîne perd presque toute la matière", "correct": true },
+            { "text": "les hérons pondent moins d'œufs" },
+            { "text": "les sauterelles volent mieux" },
+            { "text": "les hérons vivent moins longtemps" }
+          ]
+        }
+      ]
+    }
+  ]
+}

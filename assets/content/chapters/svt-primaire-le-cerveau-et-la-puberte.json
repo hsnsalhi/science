@@ -1,0 +1,362 @@
+{
+  "chapter": "svt-primaire-le-cerveau-et-la-puberte",
+  "lessons": [
+    {
+      "id": "le-cerveau",
+      "title": "Le cerveau, chef d'orchestre",
+      "subtitle": "Un kilo et demi qui commande tout.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Des messages, pas des ordres criés",
+          "body": "Le cerveau pèse environ 1,4 kg, soit 2 % du poids du corps — et il consomme à lui seul 20 % de son énergie. C'est l'organe le plus gourmand qui existe.\n\nIl communique par des messages électriques qui filent dans les nerfs, jusqu'à 100 mètres par seconde. C'est pour cela qu'on retire sa main d'une plaque chaude avant même d'avoir eu le temps d'y penser."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le trajet d'un réflexe",
+          "body": "La main touche la plaque brûlante.\n\nLes capteurs de la peau envoient un message par un nerf.\n\nLe message atteint la moelle épinière, dans la colonne vertébrale.\n\nLa moelle renvoie immédiatement l'ordre de contracter le muscle, sans attendre le cerveau.\n\nLe cerveau, lui, reçoit l'information un peu après : c'est le moment où tu dis « aïe ». La main est déjà partie."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Le réflexe court-circuite la réflexion",
+          "body": "Un réflexe ne passe pas par le cerveau pour décider : c'est un raccourci par la moelle épinière.\n\nL'avantage est le temps gagné : quelques centièmes de seconde, qui font la différence entre une rougeur et une brûlure."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Un casque, pour de vrai",
+          "body": "Les cellules du cerveau ne se remplacent pratiquement pas. Une commotion efface une partie de ce qui s'y trouvait, et cela ne revient pas.\n\nC'est pourquoi un casque à vélo, en trottinette ou en skateboard n'est pas une précaution excessive : c'est le seul organe du corps dont on n'a aucune pièce de rechange."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le trajet du réflexe dans l'ordre.",
+          "explanation": "La peau capte, le nerf transmet, la moelle épinière décide, le muscle agit — et le cerveau n'est informé qu'après.",
+          "items": [
+            "la peau capte la brûlure",
+            "le nerf transmet le message",
+            "la moelle épinière renvoie l'ordre",
+            "le muscle retire la main",
+            "le cerveau reçoit l'information"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un réflexe est-il plus rapide qu'un geste réfléchi ?",
+          "explanation": "Parce qu'il ne passe pas par le cerveau : la moelle épinière répond directement, ce qui économise quelques centièmes de seconde.",
+          "options": [
+            { "text": "il ne passe pas par le cerveau", "correct": true },
+            { "text": "les muscles sont plus forts" },
+            { "text": "la peau réagit toute seule" },
+            { "text": "le nerf va dans les deux sens à la fois" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage de l'énergie du corps le cerveau consomme-t-il ?",
+          "explanation": "Environ 20 %, pour seulement 2 % du poids. C'est l'organe le plus gourmand du corps.",
+          "answer": 20,
+          "tolerance": 3
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un message nerveux va à 100 m/s. Combien de mètres parcourt-il en 1 centième de seconde ?",
+          "hint": "Un centième de 100.",
+          "explanation": "100 ÷ 100 = 1 mètre. En un centième de seconde, le message traverse déjà tout un bras.",
+          "answer": 1
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Quand on retire sa main d'une plaque brûlante, c'est le cerveau qui a décidé.",
+          "explanation": "Faux. C'est la moelle épinière. Le cerveau est informé juste après : le « aïe » arrive quand la main est déjà partie.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "apprendre",
+      "title": "Comment on apprend",
+      "subtitle": "Ce qui se passe dans la tête quand on s'entraîne.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Des liaisons, pas un disque dur",
+          "body": "Le cerveau contient environ 86 milliards de neurones, reliés entre eux par des milliers de milliards de liaisons.\n\nApprendre ne consiste pas à ranger un fichier quelque part : cela consiste à renforcer certaines liaisons. Une liaison utilisée souvent devient plus rapide ; une liaison jamais utilisée s'affaiblit et finit par disparaître.\n\nC'est exactement ce que veut dire « oublier »."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Pourquoi réviser cinq fois dix minutes vaut mieux qu'une fois cinquante",
+          "body": "Une liaison se renforce à chaque réactivation, et elle s'affaiblit entre deux. Revenir sur un sujet le lendemain, puis trois jours après, oblige le cerveau à le reconstruire — et c'est la reconstruction qui renforce.\n\nTout relire d'un coup la veille donne l'impression de savoir, parce que c'est frais. L'impression tombe en deux jours."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Se tester plutôt que relire",
+          "body": "Relire un cours est passif : le cerveau reconnaît le texte et croit le savoir.\n\nFermer le cahier et essayer de réciter est actif : si ça ne vient pas, c'est que la liaison était faible — et l'effort de la chercher la renforce bien plus que dix relectures.\n\nC'est le principe de cette application : elle te fait répondre, pas lire."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "L'erreur est utile",
+          "body": "Se tromper puis voir la correction renforce davantage la mémoire que lire d'emblée la bonne réponse.\n\nC'est pourquoi un quiz explique même quand tu as juste, et laisse un second essai quand tu t'es trompé : l'erreur signalée est le meilleur moment d'apprentissage de la journée."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'apprendre, pour le cerveau ?",
+          "explanation": "Renforcer des liaisons entre neurones. Une liaison souvent utilisée devient rapide ; une liaison inutilisée s'affaiblit.",
+          "options": [
+            { "text": "renforcer des liaisons entre neurones", "correct": true },
+            { "text": "fabriquer de nouveaux neurones" },
+            { "text": "ranger un fichier dans une zone" },
+            { "text": "augmenter le poids du cerveau" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui marche le mieux pour retenir durablement ?",
+          "explanation": "Des séances courtes et espacées, et se tester plutôt que relire. La reconstruction d'un souvenir est ce qui le renforce.",
+          "options": [
+            { "text": "cinq fois dix minutes, en se testant", "correct": true },
+            { "text": "une fois cinquante minutes, en relisant" },
+            { "text": "tout relire la veille" },
+            { "text": "recopier le cours trois fois" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi se tromper puis voir la correction est-il utile ?",
+          "explanation": "L'erreur signalée renforce la mémoire davantage que lire d'emblée la bonne réponse : l'effort de chercher consolide la liaison.",
+          "options": [
+            { "text": "l'erreur corrigée renforce plus que la réponse donnée", "correct": true },
+            { "text": "cela fait gagner du temps" },
+            { "text": "cela rend l'exercice plus facile" },
+            { "text": "cela n'a aucun effet" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Tu révises 10 minutes par jour pendant 6 jours. Combien de minutes au total ?",
+          "explanation": "10 × 6 = 60 minutes, réparties en six séances — bien plus efficaces qu'une heure d'un seul bloc.",
+          "answer": 60
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Relire un cours plusieurs fois est la meilleure méthode pour le retenir.",
+          "explanation": "Faux. Relire est passif : on reconnaît le texte et on croit le savoir. Se tester oblige à reconstruire, et c'est la reconstruction qui renforce.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "puberte",
+      "title": "La puberté",
+      "subtitle": "Ce qui change, et pourquoi c'est normal.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le corps devient capable de se reproduire",
+          "body": "Entre environ 9 et 16 ans, le cerveau envoie de nouveaux messages chimiques — des hormones — qui déclenchent une série de transformations.\n\nChez tous : une poussée de croissance, parfois dix centimètres en un an ; de la transpiration plus forte ; des poils ; souvent de l'acné.\n\nChez les filles : la poitrine se développe, les hanches s'élargissent, les règles apparaissent.\n\nChez les garçons : la voix mue, les épaules s'élargissent, la barbe commence.\n\nTout cela ne se produit pas au même âge chez deux personnes, et ce n'est pas une course."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Chacun à son rythme",
+          "body": "Dans une même classe de cinquième, certains ont fini leur puberté et d'autres ne l'ont pas commencée. L'écart peut atteindre quatre ans.\n\nCe n'est ni une avance ni un retard : c'est une fourchette normale. Être le plus petit à douze ans ne dit rien de la taille qu'on aura à vingt."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le cerveau change aussi",
+          "body": "Il ne grossit plus, mais il se réorganise en profondeur jusque vers 25 ans — et les zones qui gèrent les émotions mûrissent avant celles qui freinent et anticipent.\n\nCe décalage explique beaucoup : l'humeur qui bascule sans raison apparente, l'envie de prendre des risques, la susceptibilité. Ce n'est pas un défaut de caractère, c'est un chantier en cours."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Le sommeil se décale",
+          "body": "À la puberté, l'horloge interne se décale : l'endormissement devient naturellement plus tardif d'une à deux heures.\n\nLe besoin de sommeil, lui, ne baisse pas — il reste de huit à dix heures. D'où la fatigue chronique des collégiens, qui se couchent tard par biologie et se lèvent tôt par horaire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui déclenche la puberté ?",
+          "explanation": "Des hormones, messages chimiques envoyés par le cerveau, qui déclenchent les transformations du corps.",
+          "options": [
+            { "text": "des hormones commandées par le cerveau", "correct": true },
+            { "text": "l'alimentation seule" },
+            { "text": "la taille atteinte" },
+            { "text": "le passage au collège" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Deux élèves du même âge n'en sont pas au même point. Qu'en conclure ?",
+          "explanation": "Rien d'anormal : l'écart entre deux personnes du même âge peut atteindre quatre ans, et c'est une fourchette normale.",
+          "options": [
+            { "text": "rien, les rythmes diffèrent de plusieurs années", "correct": true },
+            { "text": "l'un est en retard de croissance" },
+            { "text": "l'autre est en avance anormale" },
+            { "text": "il faut consulter d'urgence" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les collégiens sont-ils souvent fatigués ?",
+          "explanation": "Leur horloge interne se décale d'une à deux heures, mais leur besoin de sommeil reste de huit à dix heures et les horaires ne changent pas.",
+          "options": [
+            { "text": "leur horloge se décale alors que les horaires ne changent pas", "correct": true },
+            { "text": "ils ont besoin de moins de sommeil" },
+            { "text": "ils travaillent plus qu'avant" },
+            { "text": "la croissance ne fatigue pas" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quels changements concernent aussi bien les filles que les garçons ?",
+          "explanation": "La poussée de croissance, l'apparition de poils, la transpiration plus forte et souvent l'acné sont communs.",
+          "options": [
+            { "text": "une poussée de croissance", "correct": true },
+            { "text": "l'apparition de poils", "correct": true },
+            { "text": "une transpiration plus forte", "correct": true },
+            { "text": "souvent de l'acné", "correct": true },
+            { "text": "la mue de la voix" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'heures de sommeil faut-il au minimum à un adolescent ?",
+          "explanation": "Huit heures au minimum, dix étant mieux. Le besoin ne diminue pas à la puberté.",
+          "answer": 8
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Le cerveau a fini de se développer à la fin de la puberté.",
+          "explanation": "Faux. Il se réorganise jusque vers 25 ans, et les zones qui freinent et anticipent mûrissent après celles des émotions.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-cerveau",
+      "title": "Défi : mesurer son temps de réaction",
+      "subtitle": "Une expérience à faire à deux.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La règle qui tombe",
+          "body": "Une personne tient une règle de 30 cm à la verticale, le zéro en bas. L'autre place le pouce et l'index de part et d'autre du zéro, sans toucher.\n\nSans prévenir, la première lâche. La seconde attrape la règle le plus vite possible, et on lit la graduation à l'endroit où les doigts se sont fermés.\n\nPlus la distance de chute est courte, plus la réaction a été rapide. Ce n'est pas un réflexe : le message passe par les yeux, le cerveau, puis la main — c'est pourquoi ça prend si longtemps."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Lire le résultat",
+          "body": "Une chute de 5 cm correspond à environ 0,10 seconde.\n\nUne chute de 20 cm correspond à environ 0,20 seconde.\n\nUne chute de 30 cm correspond à environ 0,25 seconde.\n\nLa distance ne grandit pas proportionnellement au temps : un objet qui tombe accélère, il parcourt donc bien plus de distance dans le deuxième dixième de seconde que dans le premier."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Attraper la règle est-il un réflexe ?",
+          "explanation": "Non. L'information passe par les yeux, puis le cerveau, puis la main. Un réflexe court-circuite le cerveau par la moelle épinière et va bien plus vite.",
+          "options": [
+            { "text": "non, le message passe par le cerveau", "correct": true },
+            { "text": "oui, la main agit seule" },
+            { "text": "oui, c'est la moelle épinière" },
+            { "text": "oui, puisque c'est rapide" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quatre fois plus de distance de chute, est-ce quatre fois plus de temps ?",
+          "explanation": "Non : 5 cm donnent 0,10 s et 20 cm environ 0,20 s. Quatre fois la distance ne fait que doubler le temps, parce que la chute accélère.",
+          "options": [
+            { "text": "non, le temps double seulement", "correct": true },
+            { "text": "oui, exactement quatre fois" },
+            { "text": "non, le temps est huit fois plus grand" },
+            { "text": "le temps ne change pas" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Tu fais 5 essais : 18, 22, 20, 19 et 21 cm. Quelle est la moyenne en centimètres ?",
+          "explanation": "18 + 22 + 20 + 19 + 21 = 100, et 100 ÷ 5 = 20 cm.",
+          "answer": 20
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une réaction de 0,2 s au volant, à 50 km/h, soit environ 14 m/s. Combien de mètres parcourus avant de freiner ?",
+          "hint": "Distance = vitesse × temps.",
+          "explanation": "14 × 0,2 = 2,8 mètres parcourus avant même que la pédale ne bouge. À 90 km/h, ce serait 5 mètres.",
+          "answer": 2.8,
+          "tolerance": 0.2,
+          "unit": "m"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Qu'arrive-t-il au temps de réaction quand on manque de sommeil ?",
+          "explanation": "Il augmente nettement. Une nuit trop courte dégrade la réaction autant que certaines substances : c'est mesuré, et c'est pourquoi la fatigue au volant tue.",
+          "options": [
+            { "text": "il augmente nettement", "correct": true },
+            { "text": "il ne change pas" },
+            { "text": "il diminue, par vigilance" },
+            { "text": "il devient irrégulier mais plus rapide" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "estimation",
+          "prompt": "Combien de millisecondes dure environ un temps de réaction visuel chez un enfant ?",
+          "explanation": "Environ 250 millisecondes, soit un quart de seconde. Un réflexe médullaire est bien plus rapide : quelques dizaines de millisecondes.",
+          "min": 20,
+          "max": 1000,
+          "answer": 250,
+          "tolerance": 100,
+          "unit": "ms"
+        }
+      ]
+    }
+  ]
+}

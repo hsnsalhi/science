@@ -1,0 +1,321 @@
+{
+  "chapter": "svt-primaire-alimentation-et-sante",
+  "lessons": [
+    {
+      "id": "pourquoi-manger",
+      "title": "Pourquoi on mange",
+      "subtitle": "Du carburant et des matériaux.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux raisons, pas une",
+          "body": "On mange d'abord pour avoir de l'énergie : marcher, courir, réfléchir, et même rester au chaud en dormant.\n\nMais aussi pour construire et réparer : tes os grandissent, ta peau se renouvelle, tes cheveux poussent. Tout cela se fabrique avec ce que tu manges.\n\nC'est pourquoi un enfant qui grandit a des besoins différents d'un adulte."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les grandes familles",
+          "body": "Les sucres : l'énergie disponible tout de suite. Pain, pâtes, riz, fruits.\n\nLes graisses : l'énergie de réserve, deux fois plus concentrée. Huile, beurre, fruits à coque.\n\nLes protéines : les matériaux de construction. Viande, poisson, œufs, légumineuses.\n\nLes vitamines et les minéraux : en toutes petites quantités, mais indispensables."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Varier plutôt que compter",
+          "body": "Aucun aliment ne contient tout ce dont le corps a besoin — pas même le lait, pas même un fruit.\n\nManger varié est donc plus efficace que de chercher l'aliment parfait, qui n'existe pas."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Les sucres rapides et les autres",
+          "body": "Un bonbon donne de l'énergie en quelques minutes, puis elle retombe aussi vite.\n\nDu pain complet la libère lentement, sur plusieurs heures.\n\nLa même quantité d'énergie, mais pas du tout le même effet sur la journée — et c'est pourquoi un petit-déjeuner sucré ne tient pas jusqu'à midi."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces aliments selon ce qu'ils apportent surtout.",
+          "explanation": "Les féculents apportent des sucres, les viandes et œufs des protéines, les huiles des graisses.",
+          "categories": ["surtout des sucres", "surtout des protéines", "surtout des graisses"],
+          "items": [
+            { "text": "les pâtes", "category": 0 },
+            { "text": "le riz", "category": 0 },
+            { "text": "le poisson", "category": 1 },
+            { "text": "les lentilles", "category": 1 },
+            { "text": "l'huile d'olive", "category": 2 },
+            { "text": "les noix", "category": 2 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi faut-il manger varié ?",
+          "explanation": "Parce qu'aucun aliment ne contient tout ce dont le corps a besoin. L'aliment parfait n'existe pas.",
+          "options": [
+            { "text": "aucun aliment ne contient tout", "correct": true },
+            { "text": "pour ne pas s'ennuyer" },
+            { "text": "pour manger moins" },
+            { "text": "parce que c'est moins cher" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un petit-déjeuner très sucré ne tient-il pas jusqu'à midi ?",
+          "explanation": "Les sucres rapides libèrent leur énergie en quelques minutes, puis elle retombe. Les sucres lents la libèrent sur plusieurs heures.",
+          "options": [
+            { "text": "l'énergie arrive vite puis retombe vite", "correct": true },
+            { "text": "le sucre n'apporte pas d'énergie" },
+            { "text": "l'estomac le rejette" },
+            { "text": "le sucre empêche de digérer" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "On mange seulement pour avoir de l'énergie.",
+          "explanation": "Faux. On mange aussi pour construire et réparer : les os, la peau, les muscles se fabriquent avec ce qu'on mange.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "equilibrer",
+      "title": "Équilibrer ses repas",
+      "subtitle": "Des proportions, pas des interdictions.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Une assiette raisonnable",
+          "body": "La moitié de légumes et de fruits.\n\nUn quart de féculents : pâtes, riz, pain, pommes de terre.\n\nUn quart de protéines : viande, poisson, œuf, légumineuses.\n\nEt de l'eau comme boisson."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "L'eau, seule boisson indispensable",
+          "body": "Le corps est fait d'environ 60 % d'eau, et il en perd tous les jours par la respiration, la transpiration et les urines.\n\nIl faut en boire environ un litre et demi par jour, plus s'il fait chaud ou si l'on bouge beaucoup."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Aucun aliment n'est interdit",
+          "body": "Un gâteau de temps en temps ne fait aucun mal. C'est la régularité qui compte, pas l'écart.\n\nParler d'aliments « interdits » crée surtout de la culpabilité, et la culpabilité n'a jamais aidé personne à mieux manger."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Lire une étiquette",
+          "body": "Les ingrédients sont listés du plus abondant au moins abondant.\n\nSi le sucre est en premier ou en deuxième, le produit en contient beaucoup — quel que soit ce qu'affiche la boîte."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans une assiette équilibrée, quelle part en pourcentage occupent les légumes et les fruits ?",
+          "explanation": "50 %, c'est-à-dire la moitié de l'assiette.",
+          "answer": 50
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de litres d'eau faut-il boire environ par jour ?",
+          "explanation": "Environ 1,5 litre, davantage s'il fait chaud ou si l'on fait du sport.",
+          "answer": 1.5,
+          "tolerance": 0.3
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Le corps humain est fait d'environ quel pourcentage d'eau ?",
+          "explanation": "Environ 60 %. C'est pourquoi il faut en boire tous les jours : le corps en perd sans arrêt.",
+          "answer": 60,
+          "tolerance": 5
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Sur une étiquette, que signifie voir le sucre en premier dans la liste ?",
+          "explanation": "Que c'est l'ingrédient le plus abondant du produit : la liste va du plus au moins présent.",
+          "options": [
+            { "text": "c'est l'ingrédient le plus présent", "correct": true },
+            { "text": "il y en a très peu" },
+            { "text": "il a été ajouté en dernier" },
+            { "text": "le produit est sans sucre" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Certains aliments doivent être totalement interdits.",
+          "explanation": "Faux. C'est la régularité qui compte, pas l'écart occasionnel. Les interdits créent surtout de la culpabilité.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "bouger-dormir",
+      "title": "Bouger et dormir",
+      "subtitle": "Aussi importants que l'assiette.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le sommeil construit",
+          "body": "Pendant la nuit, le corps fabrique l'hormone de croissance, range les souvenirs de la journée et répare les muscles.\n\nUn enfant de dix ans a besoin de neuf à onze heures de sommeil. Dormir moins n'est pas « tenir le coup » : c'est accumuler une dette qui se paie en concentration et en humeur."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Les écrans le soir",
+          "body": "La lumière des écrans dit au cerveau qu'il fait encore jour, et retarde l'endormissement.\n\nUne heure sans écran avant de dormir change nettement la qualité du sommeil — c'est l'un des rares conseils de santé dont l'effet se sent en deux jours."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Bouger une heure par jour",
+          "body": "Pas forcément du sport : marcher, monter des escaliers, jouer dehors, faire du vélo pour aller à l'école.\n\nL'activité renforce le cœur, les os et les muscles, et aide aussi à dormir. Les trois choses se tiennent."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Rester assis longtemps",
+          "body": "Le corps n'est pas fait pour l'immobilité prolongée. Même en faisant du sport une fois par semaine, rester assis huit heures par jour reste mauvais.\n\nSe lever quelques minutes toutes les heures fait plus de bien qu'on ne croit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'heures de sommeil faut-il environ à un enfant de 10 ans ?",
+          "explanation": "Entre neuf et onze heures. Dix est une bonne valeur moyenne.",
+          "answer": 10,
+          "tolerance": 1
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes d'activité physique par jour sont recommandées ?",
+          "hint": "Une heure.",
+          "explanation": "60 minutes, pas forcément d'un coup ni sous forme de sport.",
+          "answer": 60
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les écrans le soir gênent-ils le sommeil ?",
+          "explanation": "Leur lumière fait croire au cerveau qu'il fait encore jour, ce qui retarde l'endormissement.",
+          "options": [
+            { "text": "leur lumière retarde l'endormissement", "correct": true },
+            { "text": "ils font du bruit" },
+            { "text": "ils chauffent la chambre" },
+            { "text": "ils fatiguent les yeux seulement" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Que fait le corps pendant le sommeil ?",
+          "explanation": "Il fabrique l'hormone de croissance, range les souvenirs et répare les muscles.",
+          "options": [
+            { "text": "il fabrique l'hormone de croissance", "correct": true },
+            { "text": "il range les souvenirs de la journée", "correct": true },
+            { "text": "il répare les muscles", "correct": true },
+            { "text": "il arrête complètement de fonctionner" },
+            { "text": "il digère deux fois plus vite" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Faire du sport une fois par semaine compense huit heures assis par jour.",
+          "explanation": "Faux. L'immobilité prolongée a ses effets propres. Se lever quelques minutes toutes les heures compte autant que la séance hebdomadaire.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-sante",
+      "title": "Défi : les pièges du rayon",
+      "subtitle": "Ce que les emballages ne disent pas.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "« Riche en vitamines »",
+          "body": "Une boisson peut afficher « riche en vitamine C » et contenir six morceaux de sucre par verre.\n\nL'affirmation est vraie, et elle détourne l'attention. Un jus industriel reste une boisson sucrée ; un fruit entier apporte en plus des fibres, qui ralentissent l'arrivée du sucre dans le sang.\n\nLa règle la plus simple : regarder la liste des ingrédients plutôt que les phrases écrites en gros."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un verre de soda contient 25 g de sucre. Un morceau de sucre pèse 5 g. Combien de morceaux ?",
+          "explanation": "25 ÷ 5 = 5 morceaux dans un seul verre.",
+          "answer": 5
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Trois verres de ce soda font combien de morceaux de sucre ?",
+          "explanation": "5 × 3 = 15 morceaux, soit bien plus que ce qu'on mettrait dans un café.",
+          "answer": 15
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un fruit entier est-il préférable à son jus ?",
+          "hint": "Qu'est-ce que le jus a perdu ?",
+          "explanation": "Le fruit entier contient des fibres, qui ralentissent l'arrivée du sucre dans le sang et calent davantage.",
+          "options": [
+            { "text": "il garde ses fibres, qui ralentissent le sucre", "correct": true },
+            { "text": "il contient plus de vitamines" },
+            { "text": "il contient moins d'eau" },
+            { "text": "il se conserve plus longtemps" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Où faut-il regarder en premier sur un emballage ?",
+          "explanation": "La liste des ingrédients, qui va du plus au moins abondant. Les phrases en gros sont choisies pour vendre.",
+          "options": [
+            { "text": "la liste des ingrédients", "correct": true },
+            { "text": "la phrase écrite en gros" },
+            { "text": "la photo du produit" },
+            { "text": "la couleur de la boîte" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Tu bois 1,5 L d'eau par jour. Combien de litres en une semaine ?",
+          "explanation": "1,5 × 7 = 10,5 litres par semaine.",
+          "answer": 10.5,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "« Riche en vitamines » signifie qu'un produit est bon pour la santé.",
+          "explanation": "Faux. L'affirmation peut être exacte tout en détournant l'attention : une boisson peut être riche en vitamine C et contenir cinq morceaux de sucre par verre.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
