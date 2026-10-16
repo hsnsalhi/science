@@ -47,6 +47,13 @@ enum LessonCardKind {
   /// Astuce ou piège fréquent.
   astuce('astuce'),
 
+  /// Mise en garde de sécurité.
+  ///
+  /// Réservée à ce qui peut blesser : l'électricité du secteur, un produit
+  /// chimique, une source de chaleur. Elle se distingue de l'astuce, qui
+  /// n'avertit de rien — un enfant doit voir la différence sans lire.
+  avertissement('avertissement'),
+
   /// Figure interactive à manipuler.
   figure('figure'),
 

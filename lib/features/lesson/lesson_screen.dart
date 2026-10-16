@@ -353,6 +353,17 @@ class LessonCardView extends StatelessWidget {
             child: Text(card.body ?? '', style: context.text.bodyMedium),
           ),
         ),
+        // La mise en garde emprunte la même forme que l'astuce, mais la
+        // couleur d'alerte : c'est la seule carte qu'un élève doit
+        // reconnaître avant de l'avoir lue.
+        LessonCardKind.avertissement => Center(
+          child: AppNotice(
+            color: tokens.warning,
+            icon: Icons.warning_amber_rounded,
+            title: 'Prudence',
+            child: Text(card.body ?? '', style: context.text.bodyMedium),
+          ),
+        ),
         LessonCardKind.aRetenir => Center(
           child: SingleChildScrollView(
             child: _Remember(card: card, accent: accent),

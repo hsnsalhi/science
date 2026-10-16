@@ -4470,4 +4470,247 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : les états de l’eau au primaire', () {
+    late Chapter etats;
+
+    setUpAll(() {
+      etats = catalog.chapterById(
+        'physique-chimie-primaire-les-etats-de-la-matiere',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = etats.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    String bonneReponse(String lessonId, String questionId) {
+      final SingleChoiceQuestion q =
+          etats.lessonById(lessonId)!.questions.firstWhere(
+                (Question x) => x.id == questionId,
+              )
+              as SingleChoiceQuestion;
+      return q.options.firstWhere((AnswerOption o) => o.isCorrect).text;
+    }
+
+    /// Le nom d'état tel que les énoncés l'écrivent.
+    String nomEtat(double celsius) => switch (StatesFigure.etat(celsius)) {
+      EtatMatiere.solide => 'Solide',
+      EtatMatiere.liquide => 'Liquide',
+      EtatMatiere.gaz => 'Gaz',
+    };
+
+    test('est jouable de bout en bout', () {
+      expect(etats.isPlayable, isTrue);
+      expect(etats.lessons.length, 4);
+    });
+
+    test('les deux seuils annoncés sont ceux de la figure', () {
+      expect(reponseNum('changer-d-etat', 'q1'), StatesFigure.fusion);
+      expect(reponseNum('changer-d-etat', 'q2'), StatesFigure.ebullition);
+      expect(
+        StatesFigure.ebullition - StatesFigure.fusion,
+        reponseNum('defi-etats', 'q3'),
+      );
+    });
+
+    test('les états annoncés sont ceux que calcule la figure', () {
+      expect(bonneReponse('changer-d-etat', 'q3'), nomEtat(20));
+      expect(bonneReponse('defi-etats', 'q1'), nomEtat(-10));
+      expect(bonneReponse('defi-etats', 'q2'), nomEtat(150));
+    });
+
+    test('les seuils séparent bien les trois états', () {
+      // Juste en dessous, juste au-dessus : c'est là qu'une erreur de
+      // comparaison stricte se verrait.
+      expect(StatesFigure.etat(-0.1), EtatMatiere.solide);
+      expect(StatesFigure.etat(0), EtatMatiere.liquide);
+      expect(StatesFigure.etat(99.9), EtatMatiere.liquide);
+      expect(StatesFigure.etat(100), EtatMatiere.gaz);
+      for (double t = -40; t <= 200; t += 0.5) {
+        final EtatMatiere etat = StatesFigure.etat(t);
+        if (t < StatesFigure.fusion) {
+          expect(etat, EtatMatiere.solide, reason: '$t');
+        } else if (t < StatesFigure.ebullition) {
+          expect(etat, EtatMatiere.liquide, reason: '$t');
+        } else {
+          expect(etat, EtatMatiere.gaz, reason: '$t');
+        }
+      }
+    });
+
+    test('le nombre de particules est une constante, pas un réglage', () {
+      // « Rien ne se perd » : la leçon demande que le compte de billes ne
+      // dépende d'aucune température. Le vérifier en balayant le
+      // thermomètre serait une tautologie — `particules` est une
+      // constante. Ce qui se vérifie ici, c'est qu'elle en est bien une,
+      // et qu'aucune signature de la figure ne la fait dépendre de l'état.
+      expect(StatesFigure.particules, 36);
+    });
+
+    test('le rangement du plus froid au plus chaud suit les seuils', () {
+      final OrderingQuestion q =
+          etats.lessonById('defi-etats')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as OrderingQuestion;
+      const Map<String, double> temoins = <String, double>{
+        'la glace': -10,
+        'l’eau liquide': 20,
+        'la vapeur': 150,
+      };
+      final List<double> suite = q.items
+          .map((String item) => temoins[item.replaceAll("'", '’')]!)
+          .toList();
+      for (int i = 1; i < suite.length; i++) {
+        expect(suite[i], greaterThan(suite[i - 1]));
+        expect(
+          StatesFigure.etat(suite[i]),
+          isNot(StatesFigure.etat(suite[i - 1])),
+        );
+      }
+    });
+  });
+
+
+  group('Chapitre complet : les circuits au primaire', () {
+    late Chapter circuits;
+
+    setUpAll(() {
+      circuits = catalog.chapterById(
+        'physique-chimie-primaire-les-circuits-electriques',
+      )!;
+    });
+
+    bool reponseVF(String lessonId, String questionId) {
+      final TrueFalseQuestion q =
+          circuits.lessonById(lessonId)!.questions.firstWhere(
+                (Question x) => x.id == questionId,
+              )
+              as TrueFalseQuestion;
+      return q.expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(circuits.isPlayable, isTrue);
+      expect(circuits.lessons.length, 4);
+    });
+
+    test('la mise en garde électrique est bien une carte d’avertissement', () {
+      // Un enfant doit voir que cette carte n'est pas une astuce avant même
+      // de l'avoir lue : le type de carte porte cette distinction.
+      final Lesson boucle = circuits.lessonById('une-boucle-fermee')!;
+      final LessonCard garde = boucle.cards.firstWhere(
+        (LessonCard c) => c.kind == LessonCardKind.avertissement,
+      );
+      expect(garde.body, contains('pile'));
+      expect(garde.body, contains('prise'));
+    });
+
+    test('les trois situations du défi se recalculent sur la figure', () {
+      // Interrupteur ouvert, dérivation, les deux lampes : éteint.
+      expect(
+        CircuitFigure.allumee(
+          ferme: false,
+          serie: false,
+          presenteIci: true,
+          presenteAilleurs: true,
+        ),
+        reponseVF('defi-circuits', 'q1'),
+      );
+      // Fermé, dérivation, l'autre lampe retirée : allumé quand même.
+      expect(
+        CircuitFigure.allumee(
+          ferme: true,
+          serie: false,
+          presenteIci: true,
+          presenteAilleurs: false,
+        ),
+        reponseVF('defi-circuits', 'q2'),
+      );
+      // Fermé, série, l'autre lampe retirée : éteint.
+      expect(
+        CircuitFigure.allumee(
+          ferme: true,
+          serie: true,
+          presenteIci: true,
+          presenteAilleurs: false,
+        ),
+        reponseVF('defi-circuits', 'q3'),
+      );
+    });
+
+    test('le tri des quatre situations est exact', () {
+      final ClassifyQuestion q =
+          circuits.lessonById('defi-circuits')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final bool ferme = item.text.startsWith('fermé');
+        final bool serie = item.text.contains('en série');
+        final bool autrePresente = !item.text.contains('retirée');
+        final bool allumee = CircuitFigure.allumee(
+          ferme: ferme,
+          serie: serie,
+          presenteIci: true,
+          presenteAilleurs: autrePresente,
+        );
+        expect(item.category, allumee ? 0 : 1, reason: item.text);
+      }
+    });
+
+    test('l’interrupteur ouvert éteint tout, quel que soit le montage', () {
+      // L'affirmation de la troisième leçon, balayée sur tous les cas.
+      for (final bool serie in <bool>[true, false]) {
+        for (final bool ici in <bool>[true, false]) {
+          for (final bool ailleurs in <bool>[true, false]) {
+            expect(
+              CircuitFigure.allumee(
+                ferme: false,
+                serie: serie,
+                presenteIci: ici,
+                presenteAilleurs: ailleurs,
+              ),
+              isFalse,
+              reason: 'série=$serie ici=$ici ailleurs=$ailleurs',
+            );
+          }
+        }
+      }
+    });
+
+    test('la dérivation rend les deux lampes indépendantes', () {
+      // Le cœur du chapitre : en dérivation, l'état de l'autre lampe
+      // n'entre pas dans le résultat ; en série, il décide de tout.
+      for (final bool ailleurs in <bool>[true, false]) {
+        expect(
+          CircuitFigure.allumee(
+            ferme: true,
+            serie: false,
+            presenteIci: true,
+            presenteAilleurs: ailleurs,
+          ),
+          isTrue,
+          reason: 'dérivation, autre lampe présente = $ailleurs',
+        );
+        expect(
+          CircuitFigure.allumee(
+            ferme: true,
+            serie: true,
+            presenteIci: true,
+            presenteAilleurs: ailleurs,
+          ),
+          ailleurs,
+          reason: 'série, autre lampe présente = $ailleurs',
+        );
+      }
+    });
+  });
+
 }

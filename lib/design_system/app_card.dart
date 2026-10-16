@@ -128,6 +128,10 @@ class AppNotice extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        // Sans cela, l'encadré s'étire sur toute la hauteur disponible dès
+        // qu'il est posé dans un Center : une astuce de deux lignes
+        // occupait alors l'écran entier.
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           if (title != null) ...<Widget>[
             Row(

@@ -1,0 +1,333 @@
+{
+  "chapter": "physique-chimie-primaire-les-etats-de-la-matiere",
+  "lessons": [
+    {
+      "id": "trois-etats",
+      "title": "Solide, liquide, gaz",
+      "subtitle": "Trois façons d'occuper une place.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Reconnaître sans toucher",
+          "body": "Un solide garde sa forme : un glaçon reste un glaçon, qu'il soit dans ta main ou dans un bol.\n\nUn liquide prend la forme de ce qui le contient, mais garde son niveau : l'eau d'un verre versée dans une assiette s'étale sans disparaître."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le gaz remplit tout",
+          "body": "Un gaz, lui, occupe tout l'espace disponible. Ouvre un flacon de parfum dans un coin de la pièce : au bout d'un moment, ça sent partout.\n\nIl n'a ni forme propre, ni niveau."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Pour reconnaître l'état d'une matière, pose-toi deux questions : garde-t-elle sa forme ? A-t-elle une surface plate quand elle est au repos ?"
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Le solide garde sa forme.",
+            "Le liquide prend la forme du récipient et garde son niveau.",
+            "Le gaz remplit tout l'espace qu'on lui laisse."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces matières dans leur état.",
+          "hint": "Gardent-elles leur forme ?",
+          "explanation": "Le caillou et le glaçon gardent leur forme ; l'eau et l'huile prennent celle du récipient.",
+          "categories": ["Solide", "Liquide"],
+          "items": [
+            { "text": "un caillou", "category": 0 },
+            { "text": "un glaçon", "category": 0 },
+            { "text": "de l'eau", "category": 1 },
+            { "text": "de l'huile", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui distingue un gaz d'un liquide ?",
+          "hint": "Pense au flacon de parfum.",
+          "explanation": "Le gaz occupe tout l'espace disponible, alors que le liquide se pose au fond et garde une surface plate.",
+          "options": [
+            { "text": "Le gaz remplit tout l'espace disponible", "correct": true },
+            { "text": "Le gaz garde sa forme" },
+            { "text": "Le liquide est toujours transparent" },
+            { "text": "Le gaz ne pèse rien" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Le sable coule comme un liquide, donc le sable est un liquide.",
+          "answer": false,
+          "explanation": "Non : chaque grain de sable est un solide qui garde sa forme. C'est le tas qui coule, pas les grains."
+        }
+      ]
+    },
+    {
+      "id": "changer-d-etat",
+      "title": "Changer d'état",
+      "subtitle": "Zéro et cent degrés.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La même eau",
+          "body": "La glace, l'eau liquide et la vapeur sont la même matière.\n\nCe qui change, c'est la température. Et le passage se fait toujours aux mêmes températures."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Fais varier la température",
+          "body": "Déplace le thermomètre et regarde les particules se ranger ou s'échapper.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Deux seuils",
+          "body": "À 0 degré, la glace fond : c'est la fusion. En refroidissant, l'eau se solidifie au même endroit.\n\nÀ 100 degrés, l'eau bout et devient vapeur : c'est l'ébullition. En refroidissant, la vapeur se condense en gouttes."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "La buée sur une vitre froide, c'est de la vapeur d'eau de l'air qui se condense. Elle était là, invisible, avant de rencontrer le froid."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle température la glace fond-elle ?",
+          "answer": 0,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "C'est aussi la température où l'eau gèle.",
+          "explanation": "À 0 degré. C'est la même température dans les deux sens : l'eau gèle et la glace fond au même endroit.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle température l'eau bout-elle ?",
+          "answer": 100,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "C'est un nombre rond.",
+          "explanation": "À 100 degrés. Le thermomètre Celsius a d'ailleurs été construit sur ces deux repères : 0 et 100.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans quel état est l'eau à 20 degrés ?",
+          "hint": "Entre les deux seuils.",
+          "explanation": "Liquide : 20 degrés est au-dessus de 0 et en dessous de 100.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "Liquide", "correct": true },
+            { "text": "Solide" },
+            { "text": "Gaz" },
+            { "text": "Cela dépend du récipient" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque changement à son nom.",
+          "explanation": "Chaque passage d'un état à l'autre porte un nom précis, et chacun a son retour.",
+          "pairs": [
+            { "left": "la glace devient eau", "right": "fusion" },
+            { "left": "l'eau devient glace", "right": "solidification" },
+            { "left": "l'eau devient vapeur", "right": "ébullition" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rien-ne-se-perd",
+      "title": "Rien ne se perd",
+      "subtitle": "La matière change d'aspect, pas de quantité.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pèse avant, pèse après",
+          "body": "Mets un glaçon dans un verre fermé et pose le tout sur une balance. Attends qu'il fonde, puis repèse.\n\nLa balance indique exactement la même chose."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compte les particules",
+          "body": "Change la température autant que tu veux : le nombre de billes ne bouge jamais.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Ce qui change et ce qui ne change pas",
+          "body": "Ce qui change : la forme, l'aspect, la place que la matière occupe.\n\nCe qui ne change pas : la quantité de matière. Il y a autant d'eau dans le glaçon que dans la flaque qu'il laisse."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Quand une flaque disparaît au soleil, l'eau n'a pas été détruite : elle est partie dans l'air sous forme de vapeur, invisible."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Un glaçon fond dans un verre fermé. Que dit la balance ?",
+          "hint": "La matière est-elle sortie du verre ?",
+          "explanation": "Exactement la même chose qu'avant : rien n'est entré, rien n'est sorti, donc la masse ne change pas.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "La même chose qu'avant", "correct": true },
+            { "text": "Moins qu'avant" },
+            { "text": "Plus qu'avant" },
+            { "text": "Elle ne peut plus peser" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Où va l'eau d'une flaque qui sèche au soleil ?",
+          "hint": "Elle ne disparaît pas.",
+          "explanation": "Dans l'air, sous forme de vapeur invisible. C'est de là qu'elle redescendra un jour en pluie.",
+          "options": [
+            { "text": "Dans l'air, sous forme de vapeur", "correct": true },
+            { "text": "Elle est détruite par le Soleil" },
+            { "text": "Elle rentre dans le sol et disparaît" },
+            { "text": "Elle devient de la lumière" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un glaçon qui fond contient moins d'eau qu'avant.",
+          "answer": false,
+          "explanation": "Non : exactement autant. Seule la forme a changé, pas la quantité de matière."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Quand un glaçon fond, qu'est-ce qui change ?",
+          "hint": "Pense à ce qu'une balance mesure.",
+          "explanation": "La forme et l'état changent ; la masse et la quantité de matière restent les mêmes.",
+          "categories": ["Change", "Ne change pas"],
+          "items": [
+            { "text": "la forme", "category": 0 },
+            { "text": "l'état", "category": 0 },
+            { "text": "la masse", "category": 1 },
+            { "text": "la quantité de matière", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-etats",
+      "title": "Défi : les états de l'eau",
+      "subtitle": "Six questions, de la glace à la vapeur.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Tu peux revenir au thermomètre de la figure si tu hésites sur un état."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans quel état est l'eau à moins 10 degrés ?",
+          "hint": "En dessous de zéro.",
+          "explanation": "Solide : en dessous de 0 degré, l'eau est de la glace.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "Solide", "correct": true },
+            { "text": "Liquide" },
+            { "text": "Gaz" },
+            { "text": "Elle n'existe plus" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans quel état est l'eau à 150 degrés ?",
+          "hint": "Au-dessus du second seuil.",
+          "explanation": "Gaz : au-dessus de 100 degrés, toute l'eau est passée en vapeur.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "Gaz", "correct": true },
+            { "text": "Liquide" },
+            { "text": "Solide" },
+            { "text": "Moitié liquide, moitié solide" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de degrés séparent la fusion de l'ébullition de l'eau ?",
+          "answer": 100,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "De 0 à 100.",
+          "explanation": "100 degrés. C'est exactement l'écart qui a servi à graduer le thermomètre Celsius.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces états de l'eau du plus froid au plus chaud.",
+          "explanation": "La glace en dessous de 0 degré, l'eau liquide entre 0 et 100, la vapeur au-delà.",
+          "items": [
+            "la glace",
+            "l'eau liquide",
+            "la vapeur"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La buée sur une vitre froide vient de l'eau contenue dans l'air.",
+          "answer": true,
+          "explanation": "Oui : l'air contient de la vapeur d'eau invisible, qui se condense en gouttelettes au contact du froid."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "La glace, l'eau et la vapeur sont-elles la même matière ?",
+          "hint": "Qu'est-ce qui change entre les trois ?",
+          "explanation": "Oui : la même eau, dans trois états différents. Seule la température décide lequel.",
+          "options": [
+            { "text": "Oui, la même eau dans trois états", "correct": true },
+            { "text": "Non, ce sont trois matières différentes" },
+            { "text": "Seules la glace et l'eau sont les mêmes" },
+            { "text": "Seules l'eau et la vapeur sont les mêmes" }
+          ]
+        }
+      ]
+    }
+  ]
+}

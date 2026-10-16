@@ -916,6 +916,23 @@ void main() {
         await shoot(tester, '$device-40-suite-motifs');
       });
 
+      // La carte de mise en garde, nouvelle : elle doit se distinguer de
+      // l'astuce au premier regard, sans quoi elle ne sert à rien.
+      testWidgets('primaire : une mise en garde', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Physique-chimie');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'Les circuits électriques');
+        await tapText(tester, 'Une boucle fermée');
+        for (int i = 0; i < 2; i++) {
+          await tester.tap(find.text('Suivant').first);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+        }
+        await shoot(tester, '$device-41-avertissement');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

@@ -1,0 +1,332 @@
+{
+  "chapter": "physique-chimie-primaire-les-circuits-electriques",
+  "lessons": [
+    {
+      "id": "une-boucle-fermee",
+      "title": "Une boucle fermée",
+      "subtitle": "Le courant fait le tour, ou rien ne marche.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois choses, et un chemin",
+          "body": "Pour allumer une lampe il faut une pile, des fils et la lampe.\n\nMais cela ne suffit pas : il faut que le chemin fasse une boucle complète, de la pile à la lampe et de la lampe à la pile."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Un seul fil ne suffit pas",
+          "body": "Relie la lampe à la pile par un seul fil : rien ne s'allume.\n\nIl en faut deux, un de chaque côté. Le courant doit pouvoir partir et revenir."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "body": "Tout ceci se fait avec une pile plate, jamais avec une prise murale. Le courant de la maison est dangereux : on ne fait aucune expérience avec."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Un circuit est une boucle fermée.",
+            "Il faut une pile, des fils et un appareil.",
+            "Si la boucle est coupée quelque part, rien ne fonctionne."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un seul fil entre la pile et la lampe ne suffit-il pas ?",
+          "hint": "Le courant doit faire un aller-retour.",
+          "explanation": "Parce que le courant doit faire une boucle complète : un fil pour aller, un fil pour revenir.",
+          "options": [
+            { "text": "Le courant doit faire une boucle complète", "correct": true },
+            { "text": "Le fil est trop court" },
+            { "text": "La pile est trop faible" },
+            { "text": "Il faut toujours trois fils" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "On peut faire ces expériences avec une prise murale si on fait attention.",
+          "answer": false,
+          "explanation": "Non, jamais. Le courant d'une prise est bien trop dangereux : ces montages se font uniquement avec une pile."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "De quoi a-t-on besoin pour allumer une lampe ?",
+          "hint": "Qu'est-ce qui fournit, qu'est-ce qui relie ?",
+          "explanation": "La pile fournit, les fils relient, la lampe consomme. La règle et le crayon n'ont aucun rôle dans le circuit.",
+          "categories": ["Nécessaire", "Inutile ici"],
+          "items": [
+            { "text": "une pile", "category": 0 },
+            { "text": "deux fils", "category": 0 },
+            { "text": "une règle", "category": 1 },
+            { "text": "un crayon", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ouvrir-et-fermer",
+      "title": "Ouvrir et fermer",
+      "subtitle": "L'interrupteur coupe la boucle.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce que fait un interrupteur",
+          "body": "Un interrupteur n'ajoute rien au circuit : il se contente de couper la boucle, ou de la refermer.\n\nQuand il est ouvert, le chemin est interrompu et plus rien ne passe."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Ouvre, ferme, dévisse",
+          "body": "Essaie d'ouvrir l'interrupteur, puis de retirer une lampe.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Attention au vocabulaire",
+          "body": "Un circuit fermé, c'est un circuit qui fonctionne : la boucle est complète.\n\nUn circuit ouvert, c'est un circuit coupé : rien ne s'allume. C'est exactement l'inverse de ce qu'on dirait d'une porte."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une lampe grillée agit comme un interrupteur ouvert : son fil intérieur est cassé, et la boucle est coupée au même titre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quand la lampe est-elle allumée ?",
+          "hint": "La boucle doit être complète.",
+          "explanation": "Quand le circuit est fermé : la boucle est complète et le courant peut passer.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Quand le circuit est fermé", "correct": true },
+            { "text": "Quand le circuit est ouvert" },
+            { "text": "Toujours, dès qu'il y a une pile" },
+            { "text": "Quand on retire un fil" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Un circuit ouvert est un circuit qui fonctionne.",
+          "answer": false,
+          "explanation": "Non, c'est l'inverse : ouvert veut dire coupé. Le circuit qui fonctionne est le circuit fermé.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Une lampe est grillée. Que se passe-t-il ?",
+          "hint": "Son fil intérieur est cassé.",
+          "explanation": "Elle coupe la boucle, comme un interrupteur ouvert : son fil intérieur est rompu.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Elle coupe la boucle, comme un interrupteur ouvert", "correct": true },
+            { "text": "Elle laisse passer le courant quand même" },
+            { "text": "Elle fait briller les autres lampes plus fort" },
+            { "text": "Elle vide la pile d'un coup" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre ce qui se passe quand on ferme l'interrupteur.",
+          "explanation": "On ferme l'interrupteur, la boucle redevient complète, le courant circule, et la lampe s'allume.",
+          "items": [
+            "on ferme l'interrupteur",
+            "la boucle est de nouveau complète",
+            "le courant circule",
+            "la lampe s'allume"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deux-lampes",
+      "title": "Deux lampes, deux montages",
+      "subtitle": "À la suite, ou chacune sur sa branche.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux façons de brancher",
+          "body": "On peut mettre les deux lampes l'une derrière l'autre, sur la même boucle : c'est le montage en série.\n\nOu bien donner à chacune sa propre branche : c'est le montage en dérivation."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Dévisse une lampe",
+          "body": "Change de montage, puis retire une lampe. Regarde ce qui arrive à l'autre.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le test qui distingue tout",
+          "body": "En série, retirer une lampe éteint l'autre : il n'y a qu'une boucle, et elle est coupée.\n\nEn dérivation, retirer une lampe laisse l'autre allumée : chaque branche est une boucle à elle seule."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "C'est pour cela que les lampes d'une maison sont en dérivation. Sinon, une ampoule grillée dans la cuisine plongerait toute la maison dans le noir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Deux lampes en série. On en dévisse une. Que fait l'autre ?",
+          "hint": "Combien y a-t-il de boucles ?",
+          "explanation": "Elle s'éteint : en série il n'y a qu'une seule boucle, et retirer une lampe la coupe.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Elle s'éteint", "correct": true },
+            { "text": "Elle reste allumée" },
+            { "text": "Elle brille plus fort" },
+            { "text": "Elle grille à son tour" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Deux lampes en dérivation. On en dévisse une. Que fait l'autre ?",
+          "hint": "Chacune a sa propre branche.",
+          "explanation": "Elle reste allumée : chaque branche forme sa propre boucle, indépendante de l'autre.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Elle reste allumée", "correct": true },
+            { "text": "Elle s'éteint" },
+            { "text": "Elle clignote" },
+            { "text": "Elle s'éteint puis se rallume" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les lampes d'une maison sont-elles en dérivation ?",
+          "hint": "Que se passerait-il en série ?",
+          "explanation": "Pour qu'une ampoule grillée n'éteigne pas toutes les autres. En série, une seule panne suffirait à tout éteindre.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "Pour qu'une ampoule grillée n'éteigne pas les autres", "correct": true },
+            { "text": "Parce que cela coûte moins cher" },
+            { "text": "Pour qu'elles brillent moins" },
+            { "text": "Pour utiliser moins de fils" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "En série comme en dérivation, ouvrir l'interrupteur éteint tout.",
+          "answer": true,
+          "explanation": "Oui : l'interrupteur est sur le chemin commun, avant la séparation des branches. L'ouvrir coupe tout.",
+          "figureId": "circuit"
+        }
+      ]
+    },
+    {
+      "id": "defi-circuits",
+      "title": "Défi : le circuit",
+      "subtitle": "Six questions, interrupteur en main.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque question, demande-toi d'abord : la boucle est-elle complète ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Interrupteur ouvert, montage en dérivation, les deux lampes en place : elles sont allumées.",
+          "answer": false,
+          "explanation": "Non : l'interrupteur ouvert coupe le chemin commun, donc aucune des deux branches n'est alimentée.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Interrupteur fermé, montage en dérivation, une seule lampe en place : elle est allumée.",
+          "answer": true,
+          "explanation": "Oui : sa branche forme une boucle complète, et l'absence de l'autre lampe ne la concerne pas.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Interrupteur fermé, montage en série, une seule lampe en place : elle est allumée.",
+          "answer": false,
+          "explanation": "Non : en série, la boucle passe par les deux emplacements. Celui qui est vide la coupe.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces situations : la lampe est-elle allumée ?",
+          "hint": "Vérifie que la boucle est complète jusqu'au bout.",
+          "explanation": "Il faut à la fois l'interrupteur fermé et un chemin complet. En série, l'autre lampe fait partie de ce chemin.",
+          "categories": ["Allumée", "Éteinte"],
+          "items": [
+            { "text": "fermé, en dérivation, les deux lampes en place", "category": 0 },
+            { "text": "fermé, en série, les deux lampes en place", "category": 0 },
+            { "text": "ouvert, en série, les deux lampes en place", "category": 1 },
+            { "text": "fermé, en série, une lampe retirée", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Dans quel montage les deux lampes sont-elles indépendantes ?",
+          "hint": "Celui où chacune a sa branche.",
+          "explanation": "En dérivation : chaque lampe a sa propre boucle, et ce qui arrive à l'une ne change rien à l'autre.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "En dérivation", "correct": true },
+            { "text": "En série" },
+            { "text": "Dans les deux" },
+            { "text": "Dans aucun des deux" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que signifie « circuit fermé » ?",
+          "hint": "Attention, c'est le contraire d'une porte fermée.",
+          "explanation": "La boucle est complète et le courant passe. Le mot « fermé » décrit la boucle, pas un passage bloqué.",
+          "figureId": "circuit",
+          "options": [
+            { "text": "La boucle est complète et le courant passe", "correct": true },
+            { "text": "Le courant est bloqué" },
+            { "text": "La pile est vide" },
+            { "text": "L'interrupteur est ouvert" }
+          ]
+        }
+      ]
+    }
+  ]
+}
