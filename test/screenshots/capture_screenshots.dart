@@ -508,6 +508,45 @@ void main() {
         await shoot(tester, '$device-18-engrenage');
       });
 
+      // La mesure d'Ératosthène : la capture la prend telle quelle, à
+      // l'angle historique de 7,2°.
+      testWidgets('histoire : la Terre mesurée', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Histoire des sciences');
+        await tapText(tester, 'De la Terre plate au Système solaire');
+        await tapText(tester, 'Mesurer la Terre');
+        await tapText(tester, 'Suivant');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-19-eratosthene');
+      });
+
+      // Le recul de Mars : l'instant choisi est celui du dépassement,
+      // là où la trace repart en arrière. Pris trop tôt, le graphique
+      // ne montrerait qu'une ligne montante.
+      testWidgets('histoire : le recul de Mars', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Histoire des sciences');
+        await tapText(tester, 'De la Terre plate au Système solaire');
+        await tapText(tester, 'La Terre au centre');
+        await tapText(tester, 'Suivant');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        final Rect piste = tester.getRect(find.byType(Slider));
+        await tester.tapAt(
+          Offset(piste.left + piste.width * 0.49, piste.center.dy),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-20-retrogradation');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

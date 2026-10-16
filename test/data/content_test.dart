@@ -1,9 +1,12 @@
+import 'dart:math' as math;
 import 'dart:convert';
 
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
+import 'package:eureka/design_system/figures/eratosthene_figure.dart';
+import 'package:eureka/design_system/figures/retrograde_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
@@ -804,6 +807,131 @@ void main() {
       expect(2 * 6, reponseNum('transformer', 'q2'));
       // 24 mm à 3 mm par tour.
       expect(24 / 3, reponseNum('defi-mecanismes', 'q6'));
+    });
+  });
+
+  group('Chapitre complet : de la Terre plate au Système solaire', () {
+    late Chapter histoire;
+
+    setUpAll(() {
+      histoire = catalog.chapterById(
+        'histoire-sciences-college-de-la-terre-plate-au-systeme-solaire',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (histoire.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(histoire.isPlayable, isTrue);
+      expect(histoire.lessons.length, 4);
+    });
+
+    test('les mesures à la façon d’Ératosthène sont recalculées', () {
+      // Le chapitre affirme qu'un angle de 7,2° vaut un cinquantième de
+      // tour : on le redivise plutôt que de le relire.
+      expect(360 / 7.2, reponseNum('la-terre-est-ronde', 'q1'));
+      expect(
+        EratostheneFigure.circonference(7.2, 800),
+        reponseNum('la-terre-est-ronde', 'q2'),
+      );
+      expect(
+        EratostheneFigure.circonference(5, 560),
+        reponseNum('defi-histoire', 'q1'),
+      );
+    });
+
+    test('la méthode donne le même tour quelle que soit la ville', () {
+      // C'est l'affirmation portée par la figure, et le cœur de la
+      // leçon : le quotient ne dépend pas de l'endroit choisi.
+      for (final double angle in <double>[3, 7.2, 15, 28, 40]) {
+        final double distance = EratostheneFigure.distancePourAngle(angle);
+        expect(
+          EratostheneFigure.circonference(angle, distance),
+          closeTo(2 * math.pi * EratostheneFigure.rayonTerre, 0.001),
+          reason: 'à $angle° le tour trouvé devrait être le même',
+        );
+      }
+    });
+
+    test('Mars recule bien dans le ciel, et jamais sur son orbite', () {
+      // Les deux affirmations du chapitre, recalculées : le recul est
+      // apparent (la direction observée diminue), et Mars ne fait pas
+      // demi-tour (sa position autour du Soleil, elle, avance toujours).
+      final List<PointDuCiel> trace = RetrogradeFigure.releve(4.4, points: 4400);
+      bool unReculObserve = false;
+      for (int i = 1; i < trace.length; i++) {
+        if (trace[i].longitude < trace[i - 1].longitude) unReculObserve = true;
+      }
+      expect(unReculObserve, isTrue, reason: 'aucune rétrogradation observée');
+
+      // Et la position de Mars autour du Soleil, elle, avance toujours :
+      // chaque pas de temps la fait progresser d'un angle positif.
+      double angleDe(double t) {
+        final ({double x, double y}) m = RetrogradeFigure.mars(t);
+        return math.atan2(m.y, m.x);
+      }
+
+      for (int i = 1; i <= 880; i++) {
+        final double avant = angleDe(4.4 * (i - 1) / 880);
+        final double apres = angleDe(4.4 * i / 880);
+        double pas = apres - avant;
+        while (pas <= -math.pi) {
+          pas += 2 * math.pi;
+        }
+        while (pas > math.pi) {
+          pas -= 2 * math.pi;
+        }
+        expect(
+          pas,
+          greaterThan(0),
+          reason: 'Mars ne doit jamais reculer sur son orbite',
+        );
+      }
+    });
+
+    test('le recul dure quelques semaines et revient tous les deux ans', () {
+      final List<PointDuCiel> trace = RetrogradeFigure.releve(9, points: 9000);
+      final List<(double, double)> episodes = <(double, double)>[];
+      double? debut;
+      for (int i = 1; i < trace.length; i++) {
+        final bool arriere = trace[i].longitude < trace[i - 1].longitude;
+        if (arriere && debut == null) debut = trace[i - 1].annees;
+        if (!arriere && debut != null) {
+          episodes.add((debut, trace[i - 1].annees));
+          debut = null;
+        }
+      }
+      // Le premier épisode commence avant le relevé (les deux planètes
+      // sont alignées à l'instant zéro) : il est tronqué, on l'écarte.
+      final List<(double, double)> entiers = episodes
+          .where(((double, double) e) => e.$1 > 0.01)
+          .toList();
+      expect(entiers.length, greaterThanOrEqualTo(3));
+
+      for (final (double, double) episode in entiers) {
+        final double mois = (episode.$2 - episode.$1) * 12;
+        expect(
+          mois,
+          inInclusiveRange(1.5, 3.5),
+          reason: 'le chapitre parle de quelques semaines, pas de mois',
+        );
+      }
+      // « Tous les deux ans environ » : l'écart entre deux reculs est la
+      // période synodique, que la figure calcule de son côté.
+      expect(
+        entiers[1].$1 - entiers[0].$1,
+        closeTo(RetrogradeFigure.periodeSynodique, 0.02),
+      );
+      expect(RetrogradeFigure.periodeSynodique * 12, closeTo(25.6, 0.2));
+    });
+
+    test('l’écart entre Copernic et Galilée est le bon', () {
+      expect(1610 - 1543, reponseNum('le-soleil-au-centre', 'q4'));
     });
   });
 }

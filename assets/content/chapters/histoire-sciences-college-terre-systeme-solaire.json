@@ -1,0 +1,385 @@
+{
+  "chapter": "histoire-sciences-college-de-la-terre-plate-au-systeme-solaire",
+  "lessons": [
+    {
+      "id": "la-terre-est-ronde",
+      "title": "Mesurer la Terre",
+      "subtitle": "Une ombre, deux villes, et le tour du monde.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une idée bien plus ancienne qu'on ne croit",
+          "body": "On raconte souvent qu'au Moyen Âge tout le monde croyait la Terre plate. C'est faux. Les savants grecs la savaient ronde dès le IVe siècle avant notre ère, et les savants du Moyen Âge le savaient aussi."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Trois observations",
+          "body": "Un navire qui s'éloigne disparaît par la coque avant les voiles.\n\nPendant une éclipse de Lune, l'ombre de la Terre est toujours un arc de cercle.\n\nEn voyageant vers le sud, on voit des étoiles qui n'étaient pas visibles plus au nord.\n\nAucune de ces trois observations ne s'explique sur une Terre plate."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Ératosthène, vers 240 avant notre ère",
+          "body": "À Syène, le jour du solstice d'été, le Soleil est au zénith : il éclaire le fond d'un puits et un bâton planté droit n'a aucune ombre. Le même jour, à Alexandrie, le bâton en a une."
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Refais la mesure",
+          "body": "Déplace la ville le long du méridien : l'angle change, la distance change, le tour de la Terre non.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "c5",
+          "kind": "texte",
+          "title": "Ce que vaut le résultat",
+          "body": "Ératosthène mesure un angle de 1/50 de tour, et connaît la distance entre les deux villes : 5 000 stades. Le tour de la Terre vaut donc 50 fois cette distance, soit 250 000 stades.\n\nNous ne savons pas exactement quelle longueur faisait son stade. Selon la valeur retenue, son résultat vaut entre 39 000 et 46 000 km — la vraie valeur étant 40 075 km. Sa méthode, elle, est exacte."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "La mesure d'Ératosthène",
+          "bullets": [
+            "L'angle de l'ombre donne la fraction de tour entre deux villes.",
+            "Cette fraction, appliquée à la distance, donne le tour entier.",
+            "Aucun voyage autour du monde n'a été nécessaire."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "L'angle mesuré vaut 7,2°. Par combien faut-il multiplier la distance entre les deux villes pour obtenir le tour de la Terre ?",
+          "answer": 50,
+          "tolerance": 0.01,
+          "hint": "Combien de fois 7,2° dans 360° ?",
+          "explanation": "Par 50 : 360 ÷ 7,2 = 50. L'angle représente un cinquantième de tour, donc la distance aussi.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Les deux villes sont distantes de 800 km et l'angle vaut 7,2°. Quel tour de la Terre cela donne-t-il, en kilomètres ?",
+          "answer": 40000,
+          "tolerance": 1,
+          "unit": "km",
+          "hint": "50 fois 800.",
+          "explanation": "40 000 km : 50 × 800. La valeur mesurée aujourd'hui est 40 075 km — l'écart tient à la distance entre les villes, connue approximativement.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Au Moyen Âge, les savants européens croyaient que la Terre était plate.",
+          "answer": false,
+          "explanation": "Non. La rotondité de la Terre était admise par les savants depuis l'Antiquité grecque et ne s'est jamais perdue. L'histoire de la « Terre plate médiévale » a été inventée au XIXe siècle."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces faits selon qu'ils prouvent ou non la rotondité de la Terre.",
+          "hint": "Demande-toi si le fait s'expliquerait aussi sur une Terre plate.",
+          "explanation": "La coque qui disparaît avant les voiles et l'ombre toujours circulaire ne s'expliquent que sur une sphère. Un horizon qui paraît plat et un sol plat sous nos pieds s'expliqueraient dans les deux cas : la Terre est simplement très grande devant nous.",
+          "categories": ["Prouve la rotondité", "Ne prouve rien"],
+          "items": [
+            { "text": "La coque du navire disparaît avant les voiles", "category": 0 },
+            { "text": "L'ombre sur la Lune est toujours un arc de cercle", "category": 0 },
+            { "text": "L'horizon paraît plat", "category": 1 },
+            { "text": "Le sol est plat sous nos pieds", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-terre-au-centre",
+      "title": "La Terre au centre",
+      "subtitle": "Un modèle faux, mais pas déraisonnable.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce que tout le monde voit",
+          "body": "Le Soleil se lève, traverse le ciel et se couche. Les étoiles tournent. Le sol, lui, ne bouge pas : on ne sent rien, rien ne tombe de travers, aucun vent ne nous emporte. Placer la Terre immobile au centre est l'hypothèse la plus simple."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Un argument que personne ne savait réfuter",
+          "body": "Si la Terre tournait autour du Soleil, les étoiles devraient sembler se déplacer légèrement au fil de l'année, comme un arbre proche se déplace devant le paysage quand on avance. On ne voyait rien de tel.\n\nL'explication était la bonne — les étoiles sont trop loin — mais personne ne pouvait le prouver avant 1838."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Sauf une chose",
+          "body": "Une planète comme Mars avance dans le ciel de nuit en nuit, puis ralentit, s'arrête, revient en arrière pendant quelques semaines, s'arrête encore et repart. Ce recul s'appelle la rétrogradation."
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Le recul de Mars",
+          "body": "En haut, les deux planètes. En bas, ce qu'un observateur note dans le ciel.",
+          "figureId": "retrogradation"
+        },
+        {
+          "id": "c5",
+          "kind": "texte",
+          "title": "Les cercles sur les cercles",
+          "body": "Ptolémée, au IIe siècle, rend compte de ce recul en faisant tourner chaque planète sur un petit cercle, lui-même porté par un grand cercle autour de la Terre. Ces épicycles fonctionnaient : on prévoyait correctement les positions. Mais il en fallait un nouveau à chaque difficulté."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Le géocentrisme",
+          "bullets": [
+            "La Terre immobile au centre, tout tourne autour.",
+            "La rétrogradation exigeait des épicycles.",
+            "Le modèle prévoyait bien, mais au prix d'ajouts successifs."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'appelle-t-on rétrogradation d'une planète ?",
+          "hint": "Il s'agit de ce qu'on observe, pas de ce qui se passe vraiment.",
+          "explanation": "C'est le recul apparent d'une planète dans le ciel pendant quelques semaines. Elle ne fait pas demi-tour sur son orbite : c'est la Terre qui la dépasse.",
+          "figureId": "retrogradation",
+          "options": [
+            { "text": "Elle semble reculer dans le ciel pendant quelques semaines", "correct": true },
+            { "text": "Elle s'éloigne définitivement du Soleil" },
+            { "text": "Elle cesse de tourner autour du Soleil" },
+            { "text": "Elle disparaît derrière le Soleil" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Le modèle de Ptolémée était incapable de prévoir la position des planètes.",
+          "answer": false,
+          "explanation": "Faux : il prévoyait correctement, et c'est pour cela qu'il a duré quatorze siècles. Son défaut était ailleurs — il fallait lui ajouter un cercle chaque fois qu'une observation résistait."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'absence de déplacement apparent des étoiles semblait-elle condamner l'idée d'une Terre en mouvement ?",
+          "hint": "Pense à un arbre proche devant un paysage lointain.",
+          "explanation": "Parce qu'un observateur qui se déplace devrait voir les objets proches bouger devant les lointains. On ne voyait rien : les étoiles sont bien plus loin qu'on ne l'imaginait, et ce minuscule déplacement n'a été mesuré qu'en 1838.",
+          "options": [
+            { "text": "Un observateur qui se déplace devrait voir les étoiles proches bouger", "correct": true },
+            { "text": "Les étoiles auraient dû s'éteindre" },
+            { "text": "Les étoiles auraient dû tomber" },
+            { "text": "On aurait dû sentir le vent du mouvement" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre ce qu'on observe pendant une rétrogradation.",
+          "explanation": "La planète avance de nuit en nuit, ralentit, s'arrête, recule quelques semaines, s'arrête de nouveau, puis repart en avant.",
+          "items": [
+            "La planète avance nuit après nuit",
+            "Elle ralentit",
+            "Elle s'arrête",
+            "Elle recule pendant quelques semaines",
+            "Elle repart en avant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-soleil-au-centre",
+      "title": "Le Soleil au centre",
+      "subtitle": "Quand une boucle cesse d'avoir besoin d'explication.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une idée ancienne, longtemps écartée",
+          "body": "Aristarque de Samos avait proposé de mettre le Soleil au centre vers 280 avant notre ère. L'idée n'a pas été retenue : elle contredisait la physique de l'époque, et rien ne l'imposait."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Copernic, 1543",
+          "body": "Copernic replace le Soleil au centre et fait tourner la Terre comme les autres planètes. Son modèle n'était pas plus précis que celui de Ptolémée, et utilisait encore des cercles. Mais il n'avait plus besoin d'épicycles pour la rétrogradation."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Pourquoi Mars recule",
+          "body": "La Terre est plus proche du Soleil, donc plus rapide : elle rattrape Mars et la dépasse. Pendant le dépassement, Mars semble reculer — comme une voiture qu'on double sur l'autoroute.",
+          "figureId": "retrogradation"
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Galilée, 1610",
+          "body": "Avec sa lunette, Galilée voit quatre lunes tourner autour de Jupiter : tout ne tourne donc pas autour de la Terre.\n\nIl voit aussi Vénus passer par toutes les phases, du croissant au disque presque plein. C'est impossible dans l'arrangement de Ptolémée, où Vénus reste toujours entre la Terre et le Soleil."
+        },
+        {
+          "id": "c5",
+          "kind": "texte",
+          "title": "Kepler, puis Newton",
+          "body": "Kepler, en 1609, remplace les cercles par des ellipses : les derniers écarts disparaissent. Newton, en 1687, explique enfin pourquoi — la même force qui fait tomber une pomme retient les planètes."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Le changement de centre",
+          "bullets": [
+            "La rétrogradation est un effet de dépassement, pas un mouvement réel.",
+            "Les lunes de Jupiter et les phases de Vénus ont tranché.",
+            "Les ellipses de Kepler ont rendu le modèle exact."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans le modèle héliocentrique, pourquoi Mars semble-t-elle reculer ?",
+          "hint": "Qui va le plus vite, la Terre ou Mars ?",
+          "explanation": "Parce que la Terre, plus proche du Soleil et plus rapide, dépasse Mars par l'intérieur. Pendant le dépassement, Mars paraît revenir en arrière — exactement comme une voiture doublée.",
+          "figureId": "retrogradation",
+          "options": [
+            { "text": "La Terre la dépasse sur son orbite intérieure", "correct": true },
+            { "text": "Mars fait demi-tour sur son orbite" },
+            { "text": "Mars tourne autour de la Terre" },
+            { "text": "Mars ralentit puis s'arrête réellement" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque savant à son apport.",
+          "explanation": "Ératosthène mesure la Terre, Ptolémée installe le géocentrisme pour quatorze siècles, Copernic met le Soleil au centre, Kepler remplace les cercles par des ellipses.",
+          "pairs": [
+            { "left": "Ératosthène", "right": "Mesure le tour de la Terre" },
+            { "left": "Ptolémée", "right": "Modèle géocentrique à épicycles" },
+            { "left": "Copernic", "right": "Place le Soleil au centre" },
+            { "left": "Kepler", "right": "Remplace les cercles par des ellipses" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Le modèle de Copernic était immédiatement plus précis que celui de Ptolémée.",
+          "answer": false,
+          "explanation": "Non. Copernic gardait des cercles, et ses prévisions n'étaient pas meilleures. Son avantage était ailleurs : il n'avait plus besoin d'inventer un mécanisme pour la rétrogradation. La précision est venue avec les ellipses de Kepler."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'années séparent le livre de Copernic (1543) des observations de Galilée (1610) ?",
+          "answer": 67,
+          "tolerance": 0.01,
+          "unit": "ans",
+          "hint": "1610 − 1543.",
+          "explanation": "67 ans. Le changement de modèle n'a pas été un coup de théâtre : il a demandé deux générations, et des observations que Copernic ne pouvait pas faire."
+        }
+      ]
+    },
+    {
+      "id": "defi-histoire",
+      "title": "Défi : du sol au Système solaire",
+      "subtitle": "Ce qu'on observe, ce qu'on en déduit.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chacune, demande-toi ce qui a été observé, et ce qui en a été déduit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un angle d'ombre de 5° est mesuré entre deux villes distantes de 560 km. Quel tour de planète cela donne-t-il, en kilomètres ?",
+          "answer": 40320,
+          "tolerance": 1,
+          "unit": "km",
+          "hint": "360 ÷ 5 = 72.",
+          "explanation": "40 320 km : 72 × 560. La méthode d'Ératosthène fonctionne avec n'importe quelle paire de villes situées sur le même méridien.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces énoncés.",
+          "explanation": "Le recul de Mars dans le ciel et les phases de Vénus se voient : ce sont des observations. Les épicycles et le Soleil au centre sont des modèles construits pour rendre compte de ce qu'on voit.",
+          "categories": ["Observation", "Modèle"],
+          "items": [
+            { "text": "Mars recule dans le ciel", "category": 0 },
+            { "text": "Vénus montre toutes les phases", "category": 0 },
+            { "text": "Les planètes tournent sur des épicycles", "category": 1 },
+            { "text": "Le Soleil est au centre", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'ont montré les quatre lunes de Jupiter observées par Galilée ?",
+          "hint": "Que tournent-elles autour de quoi ?",
+          "explanation": "Que tout ne tourne pas autour de la Terre : voilà au moins quatre objets qui tournent autour d'autre chose. Cela ne prouvait pas l'héliocentrisme, mais cela ruinait un principe du géocentrisme.",
+          "options": [
+            { "text": "Que tout ne tourne pas autour de la Terre", "correct": true },
+            { "text": "Que Jupiter tourne autour de la Terre" },
+            { "text": "Que la Terre est ronde" },
+            { "text": "Que le Soleil est immobile" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets ces étapes dans l'ordre chronologique.",
+          "explanation": "Ératosthène mesure la Terre vers 240 avant notre ère, Ptolémée publie son modèle au IIe siècle, Copernic en 1543, Galilée observe en 1610, Newton explique en 1687.",
+          "items": [
+            "Ératosthène mesure la Terre",
+            "Ptolémée installe le géocentrisme",
+            "Copernic place le Soleil au centre",
+            "Galilée observe les lunes de Jupiter",
+            "Newton explique la gravitation"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Pendant une rétrogradation, Mars fait réellement marche arrière sur son orbite.",
+          "answer": false,
+          "explanation": "Non. Mars continue son chemin dans le même sens. C'est la Terre qui la dépasse, et le recul n'existe que pour l'observateur terrestre.",
+          "figureId": "retrogradation"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi n'avait-on pas détecté le déplacement apparent des étoiles au temps de Copernic ?",
+          "hint": "Plus un objet est loin, moins il semble se déplacer.",
+          "explanation": "Parce que les étoiles sont bien plus éloignées qu'on ne l'imaginait : leur déplacement apparent est si petit qu'il a fallu attendre 1838 pour le mesurer.",
+          "options": [
+            { "text": "Les étoiles sont bien trop lointaines pour que l'effet soit visible", "correct": true },
+            { "text": "Les étoiles ne se déplacent jamais" },
+            { "text": "Les instruments étaient interdits" },
+            { "text": "Personne n'avait pensé à regarder" }
+          ]
+        }
+      ]
+    }
+  ]
+}
