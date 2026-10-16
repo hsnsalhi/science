@@ -25,6 +25,7 @@ import 'pythagore_proof_figure.dart';
 import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
 import 'seasons_figure.dart';
+import 'sensor_chain_figure.dart';
 import 'solar_system_figure.dart';
 import 'speed_figure.dart';
 import 'states_figure.dart';
@@ -96,6 +97,9 @@ abstract final class FigureRegistry {
     // Une cellule à explorer, animale ou végétale.
     'cellule': (BuildContext context, Color accent) =>
         CellFigure(accent: accent),
+    // Capteur, traitement, actionneur : un thermostat complet.
+    'chaine-information': (BuildContext context, Color accent) =>
+        SensorChainFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

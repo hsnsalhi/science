@@ -22,6 +22,7 @@ import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
+import 'package:eureka/design_system/figures/sensor_chain_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/design_system/figures/triangle_test_figure.dart';
 import 'package:eureka/design_system/figures/states_figure.dart';
@@ -2801,6 +2802,61 @@ void main() {
         hauteur(hauteurBaton: 1.5, ombreBaton: 3, ombreObjet: 60),
         reponseNum('defi-geometrie', 'q3'),
       );
+    });
+  });
+
+  group('Chapitre complet : capteurs et actionneurs', () {
+    late Chapter capteurs;
+
+    setUpAll(() {
+      capteurs = catalog.chapterById(
+        'technologie-college-capteurs-et-actionneurs',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (capteurs.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(capteurs.isPlayable, isTrue);
+      expect(capteurs.lessons.length, 4);
+    });
+
+    test('le cas limite du seuil est bien celui qu’annonce le chapitre', () {
+      // « température < seuil » : à égalité, le chauffage reste éteint.
+      // C'est la réponse de la question du cas limite, et elle doit
+      // sortir de la figure, pas d'une relecture.
+      expect(SensorChainFigure.chauffe(19, 19), isFalse);
+      expect(SensorChainFigure.chauffe(18.9, 19), isTrue);
+      expect(SensorChainFigure.chauffe(19.1, 19), isFalse);
+    });
+
+    test('changer le seuil change la décision à mesure constante', () {
+      // L'affirmation de la première leçon : la décision dépend des
+      // deux valeurs, pas de la seule mesure.
+      const double mesure = 18;
+      expect(SensorChainFigure.chauffe(mesure, 19), isTrue);
+      expect(SensorChainFigure.chauffe(mesure, 17), isFalse);
+    });
+
+    test('l’écart à combler annoncé dans le défi est le bon', () {
+      // Pièce à 23 °C, seuil à 20 °C : il faut descendre sous 20.
+      final double ecart = reponseNum('defi-capteurs', 'q3');
+      expect(23 - ecart, 20);
+      expect(SensorChainFigure.chauffe(23 - ecart, 20), isFalse);
+      expect(SensorChainFigure.chauffe(23 - ecart - 0.1, 20), isTrue);
+    });
+
+    test('les deux seuils du thermostat sont séparés de la bonne valeur', () {
+      expect(20 - 19, reponseNum('programmer-un-objet', 'q2'));
+      // Et entre les deux, la décision dépend de ce qui précède : c'est
+      // précisément pourquoi un seul seuil ferait clignoter le radiateur.
+      expect(SensorChainFigure.chauffe(19.5, 19), isFalse);
+      expect(SensorChainFigure.chauffe(19.5, 20), isTrue);
     });
   });
 }

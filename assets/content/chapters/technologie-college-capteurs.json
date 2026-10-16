@@ -1,0 +1,364 @@
+{
+  "chapter": "technologie-college-capteurs-et-actionneurs",
+  "lessons": [
+    {
+      "id": "la-chaine-d-information",
+      "title": "La chaîne d'information",
+      "subtitle": "Capter, décider, agir.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois maillons",
+          "body": "Un capteur mesure quelque chose du monde : une température, une lumière, une présence.\n\nUn programme décide à partir de cette mesure.\n\nUn actionneur agit : il chauffe, allume, ouvre, tourne."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Un thermostat complet",
+          "body": "Règle la température mesurée, puis le seuil : regarde où la décision se prend.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Qui décide ?",
+          "body": "Ce n'est pas le capteur. Le thermomètre dit qu'il fait 17 °C, rien de plus — il ne sait pas s'il fait froid.\n\nC'est le programme qui compare cette mesure à un seuil et décide. Changer le seuil change la décision sans que la température ait bougé."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour reconnaître les maillons d'un objet technique, demande-toi : qu'est-ce qui mesure, qu'est-ce qui décide, qu'est-ce qui bouge ou chauffe ?"
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Capteur : il mesure, il ne décide pas.",
+            "Programme : il compare et décide.",
+            "Actionneur : il agit sur le monde."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces éléments dans la chaîne d'information.",
+          "hint": "Lequel mesure, lequel agit ?",
+          "explanation": "Le thermomètre et le détecteur de présence mesurent : ce sont des capteurs. Le radiateur et le moteur agissent sur le monde : ce sont des actionneurs.",
+          "categories": ["Capteur", "Actionneur"],
+          "items": [
+            { "text": "Thermomètre", "category": 0 },
+            { "text": "Détecteur de présence", "category": 0 },
+            { "text": "Radiateur", "category": 1 },
+            { "text": "Moteur", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans un thermostat, qui décide d'allumer le chauffage ?",
+          "hint": "Le thermomètre donne un nombre, rien de plus.",
+          "explanation": "Le programme. Le capteur se contente de mesurer ; c'est la comparaison au seuil qui déclenche l'action.",
+          "figureId": "chaine-information",
+          "options": [
+            { "text": "Le programme", "correct": true },
+            { "text": "Le thermomètre" },
+            { "text": "Le radiateur" },
+            { "text": "L'utilisateur, à chaque fois" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne d'information dans l'ordre.",
+          "explanation": "Le capteur mesure, le programme compare au seuil et décide, l'actionneur agit.",
+          "items": [
+            "Le capteur mesure",
+            "Le programme compare au seuil",
+            "Le programme décide",
+            "L'actionneur agit"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Changer le seuil d'un thermostat change la décision, même si la température ne bouge pas.",
+          "answer": true,
+          "explanation": "Oui. La décision dépend des deux valeurs. C'est bien le programme qui tranche, pas la mesure seule.",
+          "figureId": "chaine-information"
+        }
+      ]
+    },
+    {
+      "id": "les-capteurs",
+      "title": "Ce que mesure un capteur",
+      "subtitle": "Tout ou rien, ou toute une échelle.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux familles",
+          "body": "Un capteur tout ou rien ne répond que par oui ou non : un interrupteur de porte, un détecteur de présence.\n\nUn capteur analogique donne une valeur sur toute une échelle : une température, une luminosité, une distance."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Toujours une grandeur physique",
+          "body": "Un capteur transforme une grandeur du monde — chaleur, lumière, force, distance — en un signal électrique que le programme peut lire.\n\nC'est pour cela qu'un objet technique peut réagir à son environnement sans que personne ne surveille."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Un capteur analogique",
+          "body": "Le thermomètre donne toute une échelle de valeurs, pas seulement « chaud » ou « froid ».",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Dans un téléphone",
+          "body": "Un capteur de lumière règle la luminosité de l'écran, un accéléromètre détecte la rotation, un capteur de proximité éteint l'écran quand on l'approche de l'oreille.\n\nTrois capteurs, trois décisions automatiques, et aucune touche à presser."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Tout ou rien : oui ou non.",
+            "Analogique : toute une échelle de valeurs.",
+            "Un capteur transforme une grandeur physique en signal."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces capteurs selon ce qu'ils renvoient.",
+          "hint": "Lequel ne peut répondre que par oui ou non ?",
+          "explanation": "L'interrupteur de porte et le détecteur de présence ne renvoient que deux états. Le thermomètre et le capteur de luminosité donnent une valeur sur une échelle.",
+          "categories": ["Tout ou rien", "Analogique"],
+          "items": [
+            { "text": "Interrupteur de porte", "category": 0 },
+            { "text": "Détecteur de présence", "category": 0 },
+            { "text": "Thermomètre", "category": 1 },
+            { "text": "Capteur de luminosité", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque capteur à la grandeur qu'il mesure.",
+          "explanation": "Chaque capteur traduit une grandeur physique précise en signal électrique.",
+          "pairs": [
+            { "left": "Thermomètre", "right": "Une température" },
+            { "left": "Photorésistance", "right": "Une luminosité" },
+            { "left": "Capteur à ultrasons", "right": "Une distance" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'écran d'un téléphone s'éteint-il quand on le porte à l'oreille ?",
+          "hint": "Un capteur détecte quelque chose de proche.",
+          "explanation": "Un capteur de proximité détecte un objet tout près, et le programme éteint l'écran. Cela évite les touches involontaires et économise la batterie.",
+          "options": [
+            { "text": "Un capteur de proximité détecte l'oreille", "correct": true },
+            { "text": "L'écran chauffe trop" },
+            { "text": "Le micro coupe l'écran" },
+            { "text": "C'est l'utilisateur qui l'éteint" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un capteur de température sait s'il fait froid.",
+          "answer": false,
+          "explanation": "Non : il donne une valeur, par exemple 17 °C. C'est le programme qui décide si cette valeur compte comme « froid », en la comparant à un seuil.",
+          "figureId": "chaine-information"
+        }
+      ]
+    },
+    {
+      "id": "programmer-un-objet",
+      "title": "Programmer la décision",
+      "subtitle": "Le seuil, et les cas limites.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La décision du thermostat",
+          "formula": "si (température < seuil) alors chauffer sinon arrêter",
+          "body": "une comparaison, et deux issues."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Le cas limite",
+          "body": "Mets la température exactement au seuil : le radiateur s'allume-t-il ?",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Strict ou large",
+          "body": "Avec « température < seuil », le chauffage reste éteint quand les deux valeurs sont égales.\n\nAvec « température ≤ seuil », il s'allumerait. Ce n'est pas un détail : c'est le programmeur qui tranche, et ce choix se constate en essayant le cas limite."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Éviter le clignotement",
+          "body": "Un vrai thermostat n'utilise pas un seul seuil : il chauffe en dessous de 19 °C et s'arrête au-dessus de 20 °C.\n\nSans cet écart, le radiateur s'allumerait et s'éteindrait sans cesse autour du seuil, ce qui l'userait rapidement."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Pour tester un programme, essaie toujours trois valeurs : nettement en dessous du seuil, nettement au-dessus, et exactement dessus. C'est la troisième qui révèle les erreurs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Le seuil est à 19 °C et la température mesurée vaut exactement 19 °C. Avec la condition « température < seuil », que fait le radiateur ?",
+          "hint": "19 est-il strictement inférieur à 19 ?",
+          "explanation": "Il reste éteint : 19 n'est pas strictement inférieur à 19. C'est le cas limite, et il ne se devine pas — il s'essaie.",
+          "figureId": "chaine-information",
+          "options": [
+            { "text": "Il reste éteint", "correct": true },
+            { "text": "Il s'allume" },
+            { "text": "Il clignote" },
+            { "text": "Cela dépend du capteur" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un thermostat chauffe en dessous de 19 °C et s'arrête au-dessus de 20 °C. Quel est l'écart, en degrés, entre les deux seuils ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "unit": "°C",
+          "hint": "20 moins 19.",
+          "explanation": "1 °C. Cet écart évite que le radiateur s'allume et s'éteigne sans arrêt autour d'une valeur unique."
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète le programme d'un éclairage automatique de couloir.",
+          "template": "si (présence ___ luminosité < 50) alors allumer ___ éteindre",
+          "blanks": [
+            { "accepted": ["et"] },
+            { "accepted": ["sinon"] }
+          ],
+          "hint": "Les deux conditions doivent être réunies.",
+          "explanation": "« et », puis « sinon ». Avec « ou », la lumière s'allumerait en plein jour dès qu'un passant arrive — et resterait allumée toute la nuit sans personne."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un programme bien testé n'a besoin d'être essayé qu'avec des valeurs très au-dessus et très en dessous du seuil.",
+          "answer": false,
+          "explanation": "Non. C'est la valeur exactement égale au seuil qui révèle le plus d'erreurs, parce que c'est là que le choix entre < et ≤ se voit."
+        }
+      ]
+    },
+    {
+      "id": "defi-capteurs",
+      "title": "Défi : capteurs et actionneurs",
+      "subtitle": "Six questions, chaîne en tête.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chaque objet, repère ce qui mesure, ce qui décide et ce qui agit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Dans un portail automatique, range ces éléments.",
+          "explanation": "La télécommande et la cellule de sécurité renseignent le programme : ce sont des capteurs. Le moteur et le gyrophare agissent : ce sont des actionneurs.",
+          "categories": ["Capteur", "Actionneur"],
+          "items": [
+            { "text": "Récepteur de télécommande", "category": 0 },
+            { "text": "Cellule de sécurité", "category": 0 },
+            { "text": "Moteur du portail", "category": 1 },
+            { "text": "Gyrophare", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "La cellule de sécurité d'un portail détecte un obstacle pendant la fermeture. Que doit faire le programme ?",
+          "hint": "La sécurité passe avant la consigne.",
+          "explanation": "Arrêter le portail, et le rouvrir. Le programme doit donner la priorité à cette information sur l'ordre de fermeture.",
+          "options": [
+            { "text": "Arrêter et rouvrir le portail", "correct": true },
+            { "text": "Continuer la fermeture" },
+            { "text": "Ignorer la cellule" },
+            { "text": "Couper l'alimentation" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un thermostat a pour seuil 20 °C et la pièce est à 23 °C. Combien de degrés faut-il perdre pour que le chauffage se déclenche, avec la condition « température < seuil » ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "°C",
+          "hint": "Il faut passer strictement sous 20.",
+          "explanation": "Un peu plus de 3 °C : à 20 °C pile, le chauffage reste éteint. On retient 3 degrés comme écart à combler.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque objet à son actionneur.",
+          "explanation": "Chaque objet technique agit sur le monde par un actionneur précis.",
+          "pairs": [
+            { "left": "Volet roulant", "right": "Un moteur" },
+            { "left": "Chauffage", "right": "Une résistance chauffante" },
+            { "left": "Éclairage automatique", "right": "Une lampe" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un objet connecté peut recevoir une consigne à distance, mais il garde ses capteurs sur place.",
+          "answer": true,
+          "explanation": "Oui. La consigne peut venir d'un téléphone à l'autre bout du monde ; la mesure, elle, doit être prise là où se trouve l'objet."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un vrai thermostat utilise-t-il deux seuils plutôt qu'un seul ?",
+          "hint": "Que se passerait-il juste autour d'un seuil unique ?",
+          "explanation": "Pour éviter que le radiateur s'allume et s'éteigne sans arrêt autour de la valeur du seuil, ce qui l'userait et consommerait inutilement.",
+          "options": [
+            { "text": "Pour éviter que le radiateur clignote sans arrêt", "correct": true },
+            { "text": "Pour mesurer plus précisément" },
+            { "text": "Pour économiser le capteur" },
+            { "text": "Parce que la loi l'impose" }
+          ]
+        }
+      ]
+    }
+  ]
+}

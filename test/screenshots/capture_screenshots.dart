@@ -798,6 +798,23 @@ void main() {
         await shoot(tester, '$device-33-cellule');
       });
 
+      // La chaîne d'information au complet, dans l'état où la décision
+      // est prise : le capteur mesure, le programme conclut, le
+      // radiateur chauffe.
+      testWidgets('technologie : la chaîne d\'information', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Technologie');
+        await tapText(tester, 'Capteurs et actionneurs');
+        await tapText(tester, 'La chaîne d\'information');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-34-capteurs');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
