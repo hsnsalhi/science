@@ -84,7 +84,7 @@ cours lisible sur un téléphone.
 
 Les formules s'écrivent en Unicode : `a² + b² = c²`, `√2`, `×`, `÷`, `π`, `≈`.
 
-### Les sept types de question
+### Les neuf types de question
 
 Chaque question exige `id`, `kind`, `prompt` et **`explanation`**. Les champs
 facultatifs `hint` (indice sans pénalité) et `figureId` s'ajoutent partout.
@@ -121,7 +121,29 @@ facultatifs `hint` (indice sans pénalité) et `figureId` s'ajoutent partout.
 // 7. appariement — colonne de droite mélangée à l'affichage
 {"id":"q7","kind":"appariement","prompt":"…","explanation":"…",
  "pairs":[{"left":"Angle droit","right":"90°"},{"left":"Plat","right":"180°"}]}
+
+// 8. tri — éléments à ranger dans des catégories, au glisser-déposer
+//    "category" est l'indice dans "categories" ; aucune ne peut rester vide
+{"id":"q8","kind":"tri","prompt":"…","explanation":"…",
+ "categories":["Rocheuses","Géantes"],
+ "items":[{"text":"Mars","category":0},{"text":"Jupiter","category":1}]}
+
+// 9. estimation — ordre de grandeur visé au curseur
+//    "logarithmic" n'agit que sur la course du curseur, pas sur la correction
+{"id":"q9","kind":"estimation","prompt":"…","explanation":"…",
+ "min":100,"max":20000,"answer":4495,"tolerance":1500,
+ "unit":"millions de km","logarithmic":true}
 ```
+
+Le `tri` refuse d'emblée une catégorie sans élément ou un indice hors
+limites : ces fautes ne se verraient qu'en jouant. L'`estimation` refuse
+une réponse hors de la course du curseur et une échelle logarithmique
+partant de zéro.
+
+Une `estimation` n'est pas une `saisieNumerique` déguisée : elle demande un
+jugement, pas un calcul. Sa tolérance doit être large — viser la bonne
+dizaine de minutes, le bon millier de kilomètres. Un exercice d'estimation
+qui exige le dixième près devient une loterie.
 
 La comparaison des réponses textuelles ignore la casse, les accents, les
 espaces, les apostrophes et la notation des exposants : « HYPOTÉNUSE »,
