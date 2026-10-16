@@ -2859,4 +2859,205 @@ void main() {
       expect(SensorChainFigure.chauffe(19.5, 20), isTrue);
     });
   });
+
+  group('Chapitre complet : le jour, la nuit et les saisons', () {
+    late Chapter jourNuit;
+
+    setUpAll(() {
+      jourNuit = catalog.chapterById(
+        'astronomie-primaire-jour-nuit-et-saisons',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (jourNuit.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(jourNuit.isPlayable, isTrue);
+      expect(jourNuit.lessons.length, 4);
+    });
+
+    test('les durées annoncées s’emboîtent', () {
+      final double heuresParJour = reponseNum('le-jour-et-la-nuit', 'q1');
+      final double joursParAn = reponseNum('l-annee', 'q1');
+      final double moisParSaison = reponseNum('defi-jour-nuit', 'q2');
+      final double saisons = reponseNum('les-quatre-saisons', 'q1');
+      final double ansBissextile = reponseNum('l-annee', 'q2');
+
+      expect(heuresParJour, 24);
+      expect(saisons * moisParSaison, 12, reason: 'les saisons font l’année');
+      // Les six heures mises de côté chaque année font un jour entier au
+      // bout de quatre ans : c'est l'explication donnée par la leçon.
+      expect(ansBissextile * 6, heuresParJour);
+      // Et l'année réelle dépasse bien 365 jours d'un quart de jour.
+      expect(joursParAn + 6 / heuresParJour, closeTo(365.25, 0.01));
+    });
+
+    test('le tri des mois suit les saisons calculées', () {
+      // Le chapitre du collège et celui du primaire doivent s'accorder :
+      // la même figure sert aux deux.
+      final ClassifyQuestion q =
+          jourNuit.lessonById('les-quatre-saisons')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int index = SeasonsFigure.mois.indexOf(item.text);
+        expect(index, isNot(-1), reason: '${item.text} inconnu');
+        expect(
+          item.category == 0,
+          SeasonsFigure.saisonNord(index + 0.5) == 'été',
+          reason: item.text,
+        );
+      }
+    });
+
+    test('les saisons à remettre en ordre se suivent vraiment', () {
+      final OrderingQuestion q =
+          jourNuit.lessonById('les-quatre-saisons')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as OrderingQuestion;
+      // On relit l'ordre dans la figure, en parcourant l'année.
+      final List<String> vues = <String>[];
+      for (int demiMois = 0; demiMois < 24; demiMois++) {
+        final String saison = SeasonsFigure.saisonNord(
+          SeasonsFigure.solsticeJuin - 3 + demiMois / 2,
+        );
+        if (vues.isEmpty || vues.last != saison) vues.add(saison);
+      }
+      expect(
+        q.items.map((String s) => s.toLowerCase()).toList(),
+        vues.take(q.items.length).toList(),
+      );
+    });
+  });
+
+  group('Chapitre complet : diviser et partager', () {
+    late Chapter division;
+
+    setUpAll(() {
+      division = catalog.chapterById('maths-primaire-diviser-et-partager')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (division.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(division.isPlayable, isTrue);
+      expect(division.lessons.length, 4);
+    });
+
+    test('chaque quotient annoncé se vérifie par la multiplication', () {
+      // C'est exactement la méthode que le chapitre enseigne : on refait
+      // le calcul à l'envers, avec la figure des jetons.
+      final Map<String, (int, int)> partages = <String, (int, int)>{
+        'partager-equitablement/q1': (12, 3),
+        'partager-equitablement/q2': (24, 6),
+        'partager-equitablement/q3': (20, 4),
+        'combien-de-fois/q1': (35, 5),
+        'combien-de-fois/q2': (48, 6),
+        'combien-de-fois/q3': (42, 7),
+        'defi-division/q1': (56, 8),
+        'defi-division/q5': (45, 9),
+      };
+      partages.forEach((String chemin, (int, int) donnees) {
+        final List<String> parts = chemin.split('/');
+        final int quotient = reponseNum(parts[0], parts[1]).round();
+        expect(
+          ArrayFigure.produit(donnees.$2, quotient),
+          donnees.$1,
+          reason: '$chemin : ${donnees.$1} ÷ ${donnees.$2}',
+        );
+      });
+    });
+
+    test('les divisions avec reste se reconstituent', () {
+      // dividende = diviseur × quotient + reste, et le reste doit être
+      // plus petit que le diviseur : les deux moitiés de la règle.
+      void verifier({
+        required int dividende,
+        required int diviseur,
+        required double quotient,
+        required double reste,
+      }) {
+        expect(
+          ArrayFigure.produit(diviseur, quotient.round()) + reste.round(),
+          dividende,
+          reason: '$dividende ÷ $diviseur',
+        );
+        expect(reste, lessThan(diviseur));
+      }
+
+      verifier(
+        dividende: 14,
+        diviseur: 3,
+        quotient: reponseNum('avec-un-reste', 'q1'),
+        reste: reponseNum('avec-un-reste', 'q2'),
+      );
+      verifier(
+        dividende: 23,
+        diviseur: 5,
+        quotient: reponseNum('avec-un-reste', 'q3'),
+        reste: 3,
+      );
+      verifier(
+        dividende: 27,
+        diviseur: 4,
+        quotient: reponseNum('defi-division', 'q2'),
+        reste: reponseNum('defi-division', 'q3'),
+      );
+    });
+
+    test('le tri des divisions qui tombent juste est exact', () {
+      final ClassifyQuestion q =
+          division.lessonById('defi-division')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<String> morceaux = item.text.split('÷');
+        final int a = int.parse(morceaux[0].trim());
+        final int b = int.parse(morceaux[1].trim());
+        expect(item.category == 0, a % b == 0, reason: item.text);
+      }
+    });
+
+    test('les deux lectures d’une même division donnent le même nombre', () {
+      // Le tri de la deuxième leçon range des questions différentes
+      // sous un même calcul : il faut que ce calcul soit bien le même.
+      final ClassifyQuestion q =
+          division.lessonById('combien-de-fois')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<String> categorie = q.categories[item.category]
+            .replaceAll('Se résout par ', '')
+            .split('÷');
+        final int a = int.parse(categorie[0].trim());
+        final int b = int.parse(categorie[1].trim());
+        // Les nombres cités dans l'énoncé doivent être ceux du calcul.
+        expect(
+          item.text.contains('$a'),
+          isTrue,
+          reason: '${item.text} ne parle pas de $a',
+        );
+        expect(
+          item.text.contains('$b'),
+          isTrue,
+          reason: '${item.text} ne parle pas de $b',
+        );
+        expect(a % b, 0, reason: 'le calcul ${q.categories[item.category]}');
+      }
+    });
+  });
 }

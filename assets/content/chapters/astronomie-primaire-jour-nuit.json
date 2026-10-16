@@ -1,0 +1,329 @@
+{
+  "chapter": "astronomie-primaire-jour-nuit-et-saisons",
+  "lessons": [
+    {
+      "id": "le-jour-et-la-nuit",
+      "title": "Le jour et la nuit",
+      "subtitle": "La Terre tourne sur elle-même.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le Soleil ne bouge pas",
+          "body": "Le matin, le Soleil semble se lever ; le soir, se coucher. Pourtant, ce n'est pas lui qui se déplace.\n\nC'est la Terre qui tourne sur elle-même, comme une toupie. En un jour, elle fait un tour complet."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "La moitié éclairée",
+          "body": "Le Soleil éclaire toujours la moitié de la Terre. Sur l'autre moitié, il fait nuit.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Il fait toujours jour quelque part",
+          "body": "Quand il fait nuit chez nous, il fait jour de l'autre côté de la Terre.\n\nC'est pour cela qu'un ami au Japon se lève quand nous allons dormir."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour essayer chez toi : prends une balle et une lampe. Éclaire la balle : une moitié est éclairée, l'autre dans le noir. Fais tourner la balle lentement sur elle-même, et tu verras le jour arriver."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "La Terre tourne sur elle-même en un jour.",
+            "Le Soleil éclaire toujours la moitié de la Terre.",
+            "Quand il fait nuit ici, il fait jour ailleurs."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "En combien d'heures la Terre fait-elle un tour complet sur elle-même ?",
+          "answer": 24,
+          "tolerance": 0.5,
+          "unit": "heures",
+          "hint": "C'est la durée d'une journée entière.",
+          "explanation": "24 heures : c'est exactement ce qu'on appelle un jour."
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Le Soleil tourne autour de la Terre en une journée.",
+          "answer": false,
+          "explanation": "Non. C'est la Terre qui tourne sur elle-même. Le Soleil nous semble bouger parce que nous tournons avec la Terre."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle part de la Terre le Soleil éclaire-t-il à chaque instant ?",
+          "hint": "Pense à la balle éclairée par la lampe.",
+          "explanation": "La moitié. L'autre moitié est dans le noir : c'est la nuit.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "La moitié", "correct": true },
+            { "text": "La Terre entière" },
+            { "text": "Un quart" },
+            { "text": "Cela change chaque jour" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Quand il fait nuit en France, il fait nuit partout sur Terre.",
+          "answer": false,
+          "explanation": "Non : il fait jour de l'autre côté de la Terre. C'est pour cela que les horaires ne sont pas les mêmes selon les pays."
+        }
+      ]
+    },
+    {
+      "id": "l-annee",
+      "title": "L'année",
+      "subtitle": "La Terre tourne aussi autour du Soleil.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux mouvements en même temps",
+          "body": "La Terre tourne sur elle-même : cela fait le jour et la nuit.\n\nEt elle tourne autour du Soleil : un tour complet dure une année."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Le tour de l'année",
+          "body": "Fais avancer les mois : la Terre fait le tour du Soleil.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une année dure un peu plus de 365 jours",
+          "body": "Il faut 365 jours et presque six heures pour faire le tour.\n\nCes six heures sont mises de côté : au bout de quatre ans, elles font un jour entier, qu'on ajoute au mois de février. C'est l'année bissextile."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Un tour sur elle-même : un jour.",
+            "Un tour autour du Soleil : une année.",
+            "Tous les quatre ans, février a un jour de plus."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de jours dure une année ordinaire ?",
+          "answer": 365,
+          "tolerance": 0.5,
+          "unit": "jours",
+          "hint": "Un peu plus de 360.",
+          "explanation": "365 jours. Et presque six heures en plus, qu'on rattrape tous les quatre ans."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Tous les combien d'années ajoute-t-on un jour à février ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "ans",
+          "hint": "Quatre fois six heures font une journée.",
+          "explanation": "Tous les 4 ans : quatre fois six heures font vingt-quatre heures, soit un jour entier."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque mouvement à ce qu'il produit.",
+          "explanation": "La Terre qui tourne sur elle-même fait le jour et la nuit ; la Terre qui tourne autour du Soleil fait l'année ; la Lune qui tourne autour de la Terre fait le mois.",
+          "pairs": [
+            { "left": "La Terre tourne sur elle-même", "right": "Le jour et la nuit" },
+            { "left": "La Terre tourne autour du Soleil", "right": "L'année" },
+            { "left": "La Lune tourne autour de la Terre", "right": "Le mois" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La Terre fait ses deux mouvements en même temps.",
+          "answer": true,
+          "explanation": "Oui : elle tourne sur elle-même tout en faisant le tour du Soleil, comme une toupie qui se déplacerait sur un grand cercle."
+        }
+      ]
+    },
+    {
+      "id": "les-quatre-saisons",
+      "title": "Les quatre saisons",
+      "subtitle": "Pourquoi l'été est chaud.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'axe de la Terre est penché",
+          "body": "La Terre ne tourne pas bien droite : son axe est incliné, toujours dans la même direction.\n\nPendant une partie de l'année, notre moitié de la Terre est penchée vers le Soleil. C'est l'été."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Regarde l'axe",
+          "body": "Fais passer l'année : le petit trait sur la Terre garde toujours la même inclinaison.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Deux choses changent en été",
+          "body": "Le Soleil monte plus haut dans le ciel : ses rayons arrivent plus droit et chauffent mieux.\n\nEt les journées sont plus longues : il y a plus d'heures pour chauffer."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ce n'est pas parce que la Terre est plus proche du Soleil ! Quand c'est l'été chez nous, c'est l'hiver en Australie — et pourtant les deux pays sont à la même distance du Soleil."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien y a-t-il de saisons dans une année ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "saisons",
+          "hint": "Printemps, été…",
+          "explanation": "4 : le printemps, l'été, l'automne et l'hiver. Chacune dure environ trois mois."
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les saisons dans l'ordre, en commençant par le printemps.",
+          "explanation": "Printemps, été, automne, hiver : elles se suivent toujours dans cet ordre, année après année.",
+          "items": ["Printemps", "Été", "Automne", "Hiver"]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi fait-il plus chaud en été ?",
+          "hint": "Pense à la hauteur du Soleil dans le ciel.",
+          "explanation": "Parce que le Soleil monte plus haut et que les journées sont plus longues. Ce n'est pas une question de distance.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "Le Soleil monte plus haut et les jours sont plus longs", "correct": true },
+            { "text": "La Terre est bien plus proche du Soleil" },
+            { "text": "Le Soleil chauffe davantage en été" },
+            { "text": "L'air est plus épais" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces mois selon la saison en France.",
+          "hint": "Juillet est au milieu de l'été.",
+          "explanation": "Juillet et août sont en été ; janvier et février en hiver. En Australie, ce serait exactement l'inverse.",
+          "categories": ["En été", "En hiver"],
+          "items": [
+            { "text": "juillet", "category": 0 },
+            { "text": "août", "category": 0 },
+            { "text": "janvier", "category": 1 },
+            { "text": "février", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-jour-nuit",
+      "title": "Défi : le jour, l'année, les saisons",
+      "subtitle": "Six questions pour vérifier.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à la balle et à la lampe."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui fait le jour et la nuit ?",
+          "hint": "Un des deux mouvements de la Terre.",
+          "explanation": "La Terre qui tourne sur elle-même. Elle présente tour à tour chaque côté au Soleil.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "La Terre tourne sur elle-même", "correct": true },
+            { "text": "Le Soleil s'éteint la nuit" },
+            { "text": "La Lune cache le Soleil" },
+            { "text": "Les nuages cachent le Soleil" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Environ combien de mois dure une saison ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "mois",
+          "hint": "12 mois partagés en 4 saisons.",
+          "explanation": "3 mois : 12 ÷ 4. Les quatre saisons se partagent l'année à parts égales."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Quand c'est l'été en France, c'est aussi l'été en Australie.",
+          "answer": false,
+          "explanation": "Non : c'est l'hiver là-bas. Les deux moitiés de la Terre n'ont jamais la même saison en même temps.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Il est midi en France. De l'autre côté de la Terre, fait-il jour ou nuit ? Réponds par 1 pour le jour, 2 pour la nuit.",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "Le Soleil n'éclaire que la moitié de la Terre.",
+          "explanation": "2 : il y fait nuit. Nous sommes du côté éclairé, l'autre côté est dans l'ombre."
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "L'axe de la Terre change de direction au cours de l'année.",
+          "answer": false,
+          "explanation": "Non, il garde toujours la même inclinaison. C'est la place de la Terre autour du Soleil qui change.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il tous les quatre ans ?",
+          "hint": "Un mois gagne un jour.",
+          "explanation": "Février compte 29 jours au lieu de 28. On rattrape ainsi les six heures mises de côté chaque année.",
+          "options": [
+            { "text": "Février a un jour de plus", "correct": true },
+            { "text": "L'année a un mois de plus" },
+            { "text": "Il y a une saison de plus" },
+            { "text": "Le jour dure 25 heures" }
+          ]
+        }
+      ]
+    }
+  ]
+}

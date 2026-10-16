@@ -1,0 +1,329 @@
+{
+  "chapter": "maths-primaire-diviser-et-partager",
+  "lessons": [
+    {
+      "id": "partager-equitablement",
+      "title": "Partager équitablement",
+      "subtitle": "Le même nombre pour chacun.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une division, c'est un partage",
+          "body": "Tu as 12 billes à partager entre 3 amis, autant pour chacun.\n\nChacun en reçoit 4. On écrit 12 ÷ 3 = 4."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Range-les en lignes",
+          "body": "Mets 3 lignes et cherche combien de colonnes donnent 12 jetons.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Vérifier avec la multiplication",
+          "body": "Pour savoir si 12 ÷ 3 = 4, fais le calcul à l'envers : 3 × 4 = 12.\n\nC'est vrai, donc la division était juste. On peut toujours vérifier une division par une multiplication."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Dans un partage équitable, personne n'a plus que les autres. Si tu dois donner 13 billes à 3 amis, ce n'est plus possible sans qu'il en reste."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Diviser, c'est partager en parts égales.",
+            "12 ÷ 3 = 4 parce que 3 × 4 = 12.",
+            "On vérifie toujours une division par une multiplication."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 12 ÷ 3 ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Quel nombre multiplié par 3 donne 12 ?",
+          "explanation": "4, car 3 × 4 = 12. Trois amis reçoivent chacun quatre billes.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "On partage 24 bonbons entre 6 enfants, autant pour chacun. Combien de bonbons chacun reçoit-il ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "bonbons",
+          "hint": "6 × ? = 24.",
+          "explanation": "4 bonbons chacun, car 6 × 4 = 24. Personne n'en a plus que les autres, et il ne reste rien.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle de 20 jetons a 4 lignes. Combien de colonnes a-t-il ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "unit": "colonnes",
+          "hint": "4 × ? = 20.",
+          "explanation": "5 colonnes, car 4 × 5 = 20. Trouver le nombre de colonnes, c'est faire une division.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour vérifier que 30 ÷ 5 = 6, on peut calculer 5 × 6.",
+          "answer": true,
+          "explanation": "Oui : 5 × 6 = 30, donc la division était juste. C'est la meilleure façon de vérifier."
+        }
+      ]
+    },
+    {
+      "id": "combien-de-fois",
+      "title": "Combien de fois ?",
+      "subtitle": "L'autre façon de lire une division.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux questions, un seul calcul",
+          "body": "« Je partage 20 crayons entre 4 enfants » : combien chacun en a-t-il ?\n\n« Je range 20 crayons par paquets de 4 » : combien de paquets ?\n\nLes deux se résolvent par 20 ÷ 4 = 5, et pourtant ce ne sont pas les mêmes questions."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Vois les deux lectures",
+          "body": "Le même rectangle se lit en lignes ou en colonnes, selon la question posée.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Diviser, c'est enlever plusieurs fois",
+          "body": "Pour savoir combien de fois 4 tient dans 20, on peut retirer 4 encore et encore :\n\n20, 16, 12, 8, 4, 0.\n\nOn a retiré 5 fois. C'est bien 20 ÷ 4 = 5."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Partager en parts égales : une division.",
+            "Chercher combien de fois un nombre tient : la même division.",
+            "On peut la faire en retirant plusieurs fois."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fois 5 tient-il dans 35 ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "unit": "fois",
+          "hint": "5 × ? = 35.",
+          "explanation": "7 fois, car 5 × 7 = 35. On peut aussi compter de 5 en 5 : 5, 10, 15, 20, 25, 30, 35.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "On range 48 œufs dans des boîtes de 6. Combien de boîtes faut-il ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "unit": "boîtes",
+          "hint": "6 × ? = 48.",
+          "explanation": "8 boîtes, car 6 × 8 = 48. Les œufs remplissent exactement les boîtes, sans qu'il en reste.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fois peut-on retirer 7 de 42 avant d'arriver à zéro ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "fois",
+          "hint": "7 × ? = 42.",
+          "explanation": "6 fois : 42, 35, 28, 21, 14, 7, 0. Retirer plusieurs fois le même nombre, c'est diviser."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces questions selon le calcul qui les résout.",
+          "hint": "Combien font 18 ÷ 3 ? Et 24 ÷ 4 ?",
+          "explanation": "Partager 18 en 3, et compter les paquets de 3 dans 18, donnent tous deux 6. Partager 24 en 4, et compter les paquets de 4 dans 24, donnent 6 aussi — mais ce sont bien quatre questions différentes.",
+          "categories": ["Se résout par 18 ÷ 3", "Se résout par 24 ÷ 4"],
+          "items": [
+            { "text": "Partager 18 billes entre 3 enfants", "category": 0 },
+            { "text": "Compter les paquets de 3 dans 18", "category": 0 },
+            { "text": "Partager 24 crayons entre 4 enfants", "category": 1 },
+            { "text": "Compter les paquets de 4 dans 24", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "avec-un-reste",
+      "title": "Quand il reste quelque chose",
+      "subtitle": "Le partage ne tombe pas toujours juste.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Un exemple",
+          "body": "On partage 14 billes entre 3 enfants.\n\nChacun en reçoit 4, et il en reste 2 : on ne peut pas aller plus loin sans couper une bille.\n\nOn écrit : 14 = 3 × 4 + 2."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le reste est toujours plus petit",
+          "body": "Le reste doit toujours être plus petit que le nombre de parts.\n\nSi en partageant entre 3 il restait 3 billes, on pourrait encore en donner une à chacun. Le partage n'était pas terminé."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Compte les jetons",
+          "body": "Forme un rectangle de 3 lignes : combien de jetons entiers peux-tu ranger avec 14 ?",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour vérifier une division avec reste, refais le calcul à l'envers : multiplie, puis ajoute le reste. Tu dois retrouver le nombre de départ."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "On partage 14 billes entre 3 enfants. Combien en reçoit chacun ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "billes",
+          "hint": "3 × 4 = 12, et il reste quelque chose.",
+          "explanation": "4 billes chacun. Il en reste 2, qu'on ne peut pas partager sans les couper."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans ce partage de 14 billes entre 3 enfants, combien de billes restent-elles ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "billes",
+          "hint": "14 − 12.",
+          "explanation": "2 billes : 14 = 3 × 4 + 2. Le reste est bien plus petit que 3."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "On range 23 gâteaux dans des boîtes de 5. Combien de boîtes sont pleines ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "boîtes",
+          "hint": "5 × 4 = 20.",
+          "explanation": "4 boîtes pleines, et 3 gâteaux en trop : 23 = 5 × 4 + 3."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "En partageant des objets entre 4 enfants, il peut rester 4 objets.",
+          "answer": false,
+          "explanation": "Non : avec 4 objets restants, on pourrait encore en donner un à chacun. Le reste est toujours plus petit que le nombre de parts."
+        }
+      ]
+    },
+    {
+      "id": "defi-division",
+      "title": "Défi : diviser et partager",
+      "subtitle": "Six questions à partager.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à vérifier chaque division par une multiplication."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 56 ÷ 8 ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "hint": "8 × ? = 56.",
+          "explanation": "7, car 8 × 7 = 56. On peut aussi compter de 8 en 8 jusqu'à 56 : cela fait bien sept pas.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une classe de 27 élèves est partagée en groupes de 4. Combien de groupes complets ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "groupes",
+          "hint": "4 × 6 = 24.",
+          "explanation": "6 groupes complets, et 3 élèves qui rejoindront un groupe : 27 = 4 × 6 + 3."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette classe de 27 élèves partagée en groupes de 4, combien d'élèves restent-ils ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "élèves",
+          "hint": "27 − 24.",
+          "explanation": "3 élèves. Le reste est plus petit que 4, donc le partage est bien terminé."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces divisions selon qu'elles tombent juste ou non.",
+          "hint": "Y a-t-il un reste ?",
+          "explanation": "20 ÷ 5 et 36 ÷ 6 tombent juste. 17 ÷ 5 laisse 2, et 20 ÷ 6 laisse 2 également.",
+          "categories": ["Tombe juste", "Laisse un reste"],
+          "items": [
+            { "text": "20 ÷ 5", "category": 0 },
+            { "text": "36 ÷ 6", "category": 0 },
+            { "text": "17 ÷ 5", "category": 1 },
+            { "text": "20 ÷ 6", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un ruban de 45 cm est coupé en morceaux de 9 cm. Combien de morceaux obtient-on ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "unit": "morceaux",
+          "hint": "9 × ? = 45.",
+          "explanation": "5 morceaux, car 9 × 5 = 45. Le ruban est entièrement utilisé."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Si 63 ÷ 9 = 7, alors 9 × 7 doit faire 63.",
+          "answer": true,
+          "explanation": "Oui, et c'est exactement ainsi qu'on vérifie : la multiplication défait la division."
+        }
+      ]
+    }
+  ]
+}
