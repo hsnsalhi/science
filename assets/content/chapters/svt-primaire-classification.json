@@ -1,0 +1,328 @@
+{
+  "chapter": "svt-primaire-unite-et-diversite-du-vivant",
+  "lessons": [
+    {
+      "id": "vivant-ou-non",
+      "title": "Vivant, ou pas",
+      "subtitle": "Trois choses que font tous les vivants.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une question moins simple qu'elle n'en a l'air",
+          "body": "Un chat est vivant, un caillou non. Mais un arbre ? Une graine ? Une bougie qui consomme de la cire et produit de la chaleur ?\n\nIl faut des critères, pas des impressions."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les trois critères",
+          "body": "Un être vivant se nourrit : il prend dans son milieu ce dont il a besoin.\n\nIl grandit et se développe.\n\nIl se reproduit : il donne naissance à d'autres êtres de son espèce."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "La bougie consomme et produit de la chaleur, mais elle ne grandit pas et ne fait pas d'autres bougies. Les trois critères doivent être réunis."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Un vivant se nourrit, grandit et se reproduit.",
+            "Les trois en même temps, pas un seul.",
+            "Une graine est vivante : elle attend, mais elle peut germer."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces objets : sont-ils vivants ?",
+          "hint": "Grandissent-ils ? Se reproduisent-ils ?",
+          "explanation": "L'arbre et la fourmi se nourrissent, grandissent et se reproduisent. La bougie et le cristal de sel grandissent parfois, mais ne se reproduisent pas.",
+          "categories": ["Vivant", "Non vivant"],
+          "items": [
+            { "text": "un arbre", "category": 0 },
+            { "text": "une fourmi", "category": 0 },
+            { "text": "une bougie allumée", "category": 1 },
+            { "text": "un cristal de sel", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une bougie allumée n'est-elle pas vivante ?",
+          "hint": "Elle consomme, mais ensuite ?",
+          "explanation": "Parce qu'elle ne se reproduit pas : elle ne donne jamais naissance à d'autres bougies.",
+          "options": [
+            { "text": "Elle ne se reproduit pas", "correct": true },
+            { "text": "Elle ne consomme rien" },
+            { "text": "Elle ne produit pas de chaleur" },
+            { "text": "Elle est trop petite" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une graine est vivante.",
+          "answer": true,
+          "explanation": "Oui : elle est en attente, mais placée dans de bonnes conditions, elle germe, grandit et donnera des graines à son tour."
+        }
+      ]
+    },
+    {
+      "id": "ranger-les-animaux",
+      "title": "Ranger les animaux",
+      "subtitle": "Par ce qu'ils ont, pas par ce qui leur manque.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le piège du « sans »",
+          "body": "On range souvent les animaux en « avec pattes » et « sans pattes », ou en « vertébrés » et « invertébrés ».\n\nLe second groupe ne veut rien dire : il rassemble l'escargot, la méduse et l'araignée au seul motif qu'il leur manque quelque chose."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Les boîtes emboîtées",
+          "body": "Touche un animal : les boîtes auxquelles il appartient s'allument.",
+          "figureId": "classification"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "On range par ce qu'on partage",
+          "body": "Chaque boîte porte un attribut : avoir des vertèbres, avoir quatre membres, avoir des poils.\n\nUn animal entre dans une boîte s'il possède cet attribut. L'escargot n'entre dans aucune : il reste dehors, et ce n'est pas un groupe pour autant."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Les boîtes s'emboîtent au lieu de se croiser. Tout ce qui a des poils a aussi quatre membres, et des vertèbres. Jamais l'inverse."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « sans vertèbres » n'est-il pas un bon groupe ?",
+          "hint": "Qu'est-ce que ses membres partagent ?",
+          "explanation": "Parce que ses membres ne partagent rien : ils sont seulement réunis par ce qui leur manque, ce qui ne dit rien de leur parenté.",
+          "figureId": "classification",
+          "options": [
+            { "text": "Ses membres ne partagent rien", "correct": true },
+            { "text": "Il contient trop d'animaux" },
+            { "text": "Il contient trop peu d'animaux" },
+            { "text": "Les vertèbres sont difficiles à voir" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces animaux : ont-ils des poils ?",
+          "hint": "Touche-les sur la figure si tu hésites.",
+          "explanation": "Le chat et la souris ont des poils ; le pigeon a des plumes et le lézard des écailles. Les trois ont pourtant quatre membres.",
+          "categories": ["A des poils", "N'a pas de poils"],
+          "items": [
+            { "text": "le chat", "category": 0 },
+            { "text": "la souris", "category": 0 },
+            { "text": "le pigeon", "category": 1 },
+            { "text": "le lézard", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un animal qui a des poils a forcément des vertèbres.",
+          "answer": true,
+          "explanation": "Oui : la boîte des poils est entièrement contenue dans celle des vertèbres. C'est ce que montre l'emboîtement.",
+          "figureId": "classification"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un animal qui a des vertèbres a forcément des poils.",
+          "answer": false,
+          "explanation": "Non : la truite et le pigeon ont des vertèbres sans poils. L'emboîtement ne marche que dans un sens.",
+          "figureId": "classification"
+        }
+      ]
+    },
+    {
+      "id": "unite-et-diversite",
+      "title": "Tous différents, tous parents",
+      "subtitle": "Ce que l'emboîtement raconte.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi des boîtes dans des boîtes",
+          "body": "Si l'on rangeait au hasard, les groupes se croiseraient : certains animaux seraient dans deux boîtes à la fois sans être dans une troisième.\n\nCe n'est pas ce qu'on observe. Les groupes s'emboîtent toujours proprement, et cela demande une explication."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Vérifie-le",
+          "body": "Touche le chat, puis le pigeon, puis la truite. Les boîtes allumées sont toujours emboîtées.",
+          "figureId": "classification"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "L'explication",
+          "body": "Les animaux d'une même boîte ont un ancêtre commun, qui possédait déjà cet attribut et l'a transmis.\n\nPlus la boîte est petite, plus l'ancêtre commun est récent. Chat et souris sont plus proches entre eux que chacun ne l'est du pigeon."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "C'est pour cela que tous les vivants se ressemblent par certains côtés : les plus grandes boîtes correspondent aux ancêtres les plus anciens."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Lequel de ces animaux est le plus proche parent du chat ?",
+          "hint": "Cherche la plus petite boîte commune.",
+          "explanation": "La souris : ils partagent la boîte des poils, la plus petite qui les contienne tous les deux.",
+          "figureId": "classification",
+          "options": [
+            { "text": "La souris", "correct": true },
+            { "text": "Le pigeon" },
+            { "text": "La truite" },
+            { "text": "L'escargot" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'ont en commun le chat et le pigeon ?",
+          "hint": "Quelle est la plus petite boîte qui les contient tous les deux ?",
+          "explanation": "Des vertèbres et quatre membres. En revanche l'un a des poils, l'autre des plumes : ils sont dans deux boîtes différentes à ce niveau.",
+          "figureId": "classification",
+          "options": [
+            { "text": "Des vertèbres et quatre membres", "correct": true },
+            { "text": "Des poils" },
+            { "text": "Des plumes" },
+            { "text": "Rien du tout" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans combien de boîtes le chat se trouve-t-il ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "boîtes",
+          "hint": "Compte les boîtes qui s'allument.",
+          "explanation": "3 : vertèbres, quatre membres, et poils. Chacune est contenue dans la précédente.",
+          "figureId": "classification"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Et la truite ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "unit": "boîte",
+          "hint": "Une seule s'allume.",
+          "explanation": "1 : celle des vertèbres. La truite n'a pas quatre membres, donc elle n'entre pas dans la boîte suivante.",
+          "figureId": "classification"
+        }
+      ]
+    },
+    {
+      "id": "defi-classification",
+      "title": "Défi : ranger le vivant",
+      "subtitle": "Six questions, du caillou au chat.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Souviens-toi : on range par ce qu'un animal possède, jamais par ce qui lui manque."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans combien de boîtes le pigeon se trouve-t-il ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "boîtes",
+          "hint": "Vertèbres, quatre membres, et encore une.",
+          "explanation": "3 : vertèbres, quatre membres, plumes. Les ailes comptent comme deux des quatre membres.",
+          "figureId": "classification"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et l'escargot ?",
+          "answer": 0,
+          "tolerance": 0.01,
+          "unit": "boîtes",
+          "hint": "Aucune boîte ne s'allume.",
+          "explanation": "0 : il ne possède aucun de ces attributs. Cela ne fait pas de lui un membre d'un groupe « sans », seulement un animal rangé ailleurs.",
+          "figureId": "classification"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un animal qui a des plumes a aussi quatre membres.",
+          "answer": true,
+          "explanation": "Oui : la boîte des plumes est à l'intérieur de celle des quatre membres. Les ailes d'un oiseau sont deux de ces membres.",
+          "figureId": "classification"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un animal peut avoir à la fois des poils et des plumes.",
+          "answer": false,
+          "explanation": "Non : ce sont deux boîtes séparées, à l'intérieur de celle des quatre membres. Aucun animal de la figure n'est dans les deux.",
+          "figureId": "classification"
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range ces critères : servent-ils à reconnaître un vivant ?",
+          "hint": "Trois critères, et seulement trois.",
+          "explanation": "Se nourrir, grandir et se reproduire définissent le vivant. Bouger et faire du bruit ne suffisent pas : une voiture fait les deux.",
+          "categories": ["Critère du vivant", "Ne suffit pas"],
+          "items": [
+            { "text": "se nourrir", "category": 0 },
+            { "text": "se reproduire", "category": 0 },
+            { "text": "bouger", "category": 1 },
+            { "text": "faire du bruit", "category": 1 }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les boîtes s'emboîtent-elles au lieu de se croiser ?",
+          "hint": "D'où vient un attribut partagé ?",
+          "explanation": "Parce que les animaux d'une même boîte descendent d'un ancêtre commun qui possédait déjà cet attribut.",
+          "figureId": "classification",
+          "options": [
+            { "text": "Parce qu'ils ont un ancêtre commun", "correct": true },
+            { "text": "Parce que c'est plus pratique à dessiner" },
+            { "text": "Parce que les savants l'ont décidé" },
+            { "text": "C'est un hasard" }
+          ]
+        }
+      ]
+    }
+  ]
+}

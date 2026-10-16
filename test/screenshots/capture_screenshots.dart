@@ -1037,6 +1037,23 @@ void main() {
         await shoot(tester, '$device-47-expansion');
       });
 
+      // La classification emboîtée, le chat choisi : trois boîtes
+      // allumées, et l'escargot dehors.
+      testWidgets('primaire : la classification', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'SVT');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'L\'unité et la diversité du vivant');
+        await tapText(tester, 'Ranger les animaux');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.widgetWithText(ActionChip, 'chat'));
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-48-classification');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

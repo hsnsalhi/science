@@ -8,6 +8,7 @@ import 'package:eureka/design_system/figures/array_figure.dart';
 import 'package:eureka/design_system/figures/binary_figure.dart';
 import 'package:eureka/design_system/figures/cell_figure.dart';
 import 'package:eureka/design_system/figures/circuit_figure.dart';
+import 'package:eureka/design_system/figures/classification_figure.dart';
 import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
@@ -6236,6 +6237,144 @@ void main() {
       // « mille » ; le rapport vaut 1 111, et c'est ce test qui l'a dit.
       final double recu = reponseNum('l-age-et-le-fond', 'q1');
       expect(3000 / recu, closeTo(1100, 150));
+    });
+  });
+
+
+  group('Chapitre complet : l’unité et la diversité du vivant', () {
+    late Chapter vivant;
+
+    setUpAll(() {
+      vivant = catalog.chapterById(
+        'svt-primaire-unite-et-diversite-du-vivant',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = vivant.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    EtreVivant parNom(String nom) => ClassificationFigure.animaux.firstWhere(
+      (EtreVivant e) => e.nom == nom,
+    );
+
+    test('est jouable de bout en bout', () {
+      expect(vivant.isPlayable, isTrue);
+      expect(vivant.lessons.length, 4);
+    });
+
+    test('les groupes s’emboîtent vraiment', () {
+      // L'affirmation qui porte tout le chapitre : les boîtes ne se
+      // croisent jamais. Pour chaque paire de groupes, l'un contient
+      // l'autre, ou bien ils sont disjoints.
+      for (final String a in ClassificationFigure.groupes) {
+        for (final String b in ClassificationFigure.groupes) {
+          if (a == b) continue;
+          final Set<String> membresA = ClassificationFigure.membres(a)
+              .map((EtreVivant e) => e.nom)
+              .toSet();
+          final Set<String> membresB = ClassificationFigure.membres(b)
+              .map((EtreVivant e) => e.nom)
+              .toSet();
+          final bool inclus =
+              membresA.containsAll(membresB) || membresB.containsAll(membresA);
+          final bool disjoints = membresA.intersection(membresB).isEmpty;
+          expect(
+            inclus || disjoints,
+            isTrue,
+            reason: '« $a » et « $b » se croisent',
+          );
+        }
+      }
+    });
+
+    test('poils et plumes impliquent quatre membres et des vertèbres', () {
+      // L'emboîtement annoncé, dans le bon sens — et le test vérifie
+      // aussi qu'il ne vaut pas dans l'autre.
+      for (final String etroit in <String>['poils', 'plumes']) {
+        for (final EtreVivant e in ClassificationFigure.membres(etroit)) {
+          expect(e.attributs, contains('quatre membres'), reason: e.nom);
+          expect(e.attributs, contains('vertèbres'), reason: e.nom);
+        }
+      }
+      final bool reciproque = ClassificationFigure.membres('vertèbres')
+          .every((EtreVivant e) => e.attributs.contains('poils'));
+      expect(reciproque, isFalse);
+    });
+
+    test('aucun animal n’est à la fois dans poils et dans plumes', () {
+      for (final EtreVivant e in ClassificationFigure.animaux) {
+        expect(
+          e.attributs.contains('poils') && e.attributs.contains('plumes'),
+          isFalse,
+          reason: e.nom,
+        );
+      }
+    });
+
+    test('les comptes de boîtes annoncés sont les bons', () {
+      int boites(String nom) => parNom(nom).attributs.length;
+      expect(boites('chat'), reponseNum('unite-et-diversite', 'q3'));
+      expect(boites('truite'), reponseNum('unite-et-diversite', 'q4'));
+      expect(boites('pigeon'), reponseNum('defi-classification', 'q1'));
+      expect(boites('escargot'), reponseNum('defi-classification', 'q2'));
+    });
+
+    test('le plus proche parent du chat est bien la souris', () {
+      // Le plus proche parent est celui qui partage la plus petite boîte.
+      final EtreVivant chat = parNom('chat');
+      String? plusProche;
+      int meilleur = -1;
+      for (final EtreVivant e in ClassificationFigure.animaux) {
+        if (e.nom == chat.nom) continue;
+        final int partages =
+            e.attributs.intersection(chat.attributs).length;
+        if (partages > meilleur) {
+          meilleur = partages;
+          plusProche = e.nom;
+        }
+      }
+      expect(plusProche, 'souris');
+      // Et ce que chat et pigeon partagent, exactement.
+      expect(
+        parNom('pigeon').attributs.intersection(chat.attributs),
+        <String>{'vertèbres', 'quatre membres'},
+      );
+    });
+
+    test('le tri des poils suit la figure', () {
+      final ClassifyQuestion q =
+          vivant.lessonById('ranger-les-animaux')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final String nom = item.text.replaceFirst(RegExp(r'^l[ae] '), '');
+        final EtreVivant e = parNom(nom);
+        expect(
+          item.category == 0,
+          e.attributs.contains('poils'),
+          reason: item.text,
+        );
+      }
+    });
+
+    test('l’escargot reste hors de toutes les boîtes', () {
+      expect(parNom('escargot').attributs, isEmpty);
+      expect(
+        ClassificationFigure.plusPetitGroupe(parNom('escargot')),
+        isNull,
+      );
+      expect(ClassificationFigure.plusPetitGroupe(parNom('chat')), 'poils');
+      expect(
+        ClassificationFigure.plusPetitGroupe(parNom('truite')),
+        'vertèbres',
+      );
     });
   });
 

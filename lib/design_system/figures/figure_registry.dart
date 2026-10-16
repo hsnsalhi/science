@@ -9,6 +9,7 @@ import 'array_figure.dart';
 import 'binary_figure.dart';
 import 'cell_figure.dart';
 import 'circuit_figure.dart';
+import 'classification_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'derivative_figure.dart';
@@ -90,6 +91,9 @@ abstract final class FigureRegistry {
     // Une rangée de galaxies qui s'écartent, sans centre.
     'expansion': (BuildContext context, Color accent) =>
         ExpansionFigure(accent: accent),
+    // Des boîtes emboîtées, et les animaux qu'on y range.
+    'classification': (BuildContext context, Color accent) =>
+        ClassificationFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),
