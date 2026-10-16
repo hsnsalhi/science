@@ -1,0 +1,343 @@
+{
+  "chapter": "astronomie-college-gravitation",
+  "lessons": [
+    {
+      "id": "une-force-universelle",
+      "title": "La même force partout",
+      "subtitle": "La pomme et la Lune, le même phénomène.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'idée qui a tout changé",
+          "body": "Avant Newton, on pensait que le ciel obéissait à d'autres lois que la Terre. En bas, les choses tombent. En haut, les astres tournent éternellement. Deux mondes.\n\nNewton a proposé qu'il n'y en ait qu'un. La pomme tombe parce que la Terre l'attire ; la Lune tourne parce que la Terre l'attire aussi. La même force, la même loi."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Deux masses s'attirent",
+          "formula": "F = G × m₁ × m₂ ÷ d²",
+          "body": "Deux fois plus de masse, deux fois plus de force. Deux fois plus loin, quatre fois moins de force — c'est le carré qui fait toute la différence."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Elle est partout, et réciproque",
+          "body": "Toutes les masses s'attirent, sans exception. Toi et ton stylo vous attirez — mais vos masses sont si petites que la force est indétectable.\n\nEt elle est réciproque : la Terre attire la Lune exactement autant que la Lune attire la Terre. C'est la Terre, bien plus massive, qui bouge le moins."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le carré, pas le double",
+          "body": "Si tu éloignes deux corps de 3 fois, la force ne devient pas 3 fois plus faible mais 9 fois.\n\nC'est pourquoi la gravité décroît si vite, et pourquoi elle reste pourtant sensible sur des distances énormes : elle ne s'annule jamais tout à fait."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "On éloigne deux corps de 2 fois. Par combien la force est-elle divisée ?",
+          "hint": "C'est le carré de la distance.",
+          "explanation": "Par 4. La force varie en 1 ÷ d², donc doubler la distance la divise par 2² = 4.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et si on les éloigne de 3 fois ?",
+          "explanation": "Par 9, puisque 3² = 9.",
+          "answer": 9
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "La Terre attire la Lune plus fort que la Lune n'attire la Terre.",
+          "explanation": "Faux. Les deux forces sont exactement égales. Ce qui diffère, c'est l'effet : la Terre étant 81 fois plus massive, elle bouge d'autant moins.",
+          "answer": false
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quelle a été l'idée nouvelle de Newton ?",
+          "explanation": "Que la chute d'une pomme et la ronde de la Lune relèvent de la même force. Avant lui, ciel et Terre obéissaient à des lois séparées.",
+          "options": [
+            { "text": "la pomme et la Lune obéissent à la même force", "correct": true },
+            { "text": "la Terre tourne autour du Soleil" },
+            { "text": "les objets lourds tombent plus vite" },
+            { "text": "le ciel est immuable" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-la-lune-ne-tombe-pas",
+      "title": "La Lune tombe",
+      "subtitle": "Mais elle rate la Terre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Le boulet de Newton",
+          "body": "Tire de plus en plus fort depuis la montagne, et regarde où le boulet retombe.",
+          "figureId": "canon-newton"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "L'expérience de pensée",
+          "body": "Newton imagine un canon au sommet d'une montagne très haute, au-dessus de l'atmosphère.\n\nTir faible : le boulet décrit une courbe et retombe près du pied. Tir plus fort : il va plus loin. Plus fort encore : il tombe si loin que la Terre s'est courbée sous lui.\n\nÀ une certaine vitesse, le boulet tombe exactement aussi vite que la Terre se dérobe. Il ne touche jamais le sol. Il est en orbite."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Une orbite est une chute permanente",
+          "body": "La Lune tombe vers la Terre à chaque instant. Si la gravité cessait, elle partirait tout droit, en ligne droite, et ne reviendrait jamais.\n\nElle ne nous atteint pas parce qu'elle avance assez vite de côté. Tomber et avancer, combinés, donnent une courbe fermée."
+        },
+        {
+          "id": "c4",
+          "kind": "formule",
+          "title": "La vitesse qu'il faut",
+          "formula": "environ 7,9 km/s au ras du sol",
+          "body": "Soit près de 28 000 km/h. À 400 km d'altitude il en faut un peu moins, 7,7 km/s : c'est la vitesse de la Station spatiale, qui boucle ses 42 000 km de tour en 92 minutes."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Ce n'est pas l'altitude qui compte",
+          "body": "On croit souvent qu'il suffit de monter assez haut pour flotter. C'est faux : à 400 km, la gravité vaut encore presque 90 % de sa valeur au sol.\n\nCe qui met en orbite, c'est la vitesse horizontale, pas la hauteur. Une fusée monte d'abord pour sortir de l'air, mais l'essentiel de son effort sert à prendre de la vitesse de côté."
+        },
+        {
+          "id": "c6",
+          "kind": "exemple",
+          "title": "Pourquoi la Lune va si lentement",
+          "body": "La Lune est à 384 400 km, soit 60 fois le rayon terrestre. La gravité y est 3 600 fois plus faible qu'au sol.\n\nElle n'a donc besoin que de 1 km/s pour tenir son orbite, et met 27 jours à en faire le tour. Plus c'est loin, plus c'est lent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la Lune ne tombe-t-elle pas sur la Terre ?",
+          "explanation": "Elle tombe, en permanence. Mais elle avance assez vite de côté pour que la Terre se dérobe sous elle à chaque instant.",
+          "options": [
+            { "text": "elle tombe, mais elle avance assez vite pour rater la Terre", "correct": true },
+            { "text": "elle est trop loin pour être attirée" },
+            { "text": "elle n'a pas de masse" },
+            { "text": "le Soleil la retient" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Si la gravité disparaissait, la Lune partirait en ligne droite.",
+          "explanation": "Vrai. Sans force pour la courber, elle garderait sa vitesse en ligne droite et s'éloignerait pour toujours.",
+          "answer": true
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "La Lune est à 60 rayons terrestres. Par combien la gravité y est-elle divisée par rapport au sol ?",
+          "hint": "Le carré, encore.",
+          "explanation": "Par 60² = 3 600. C'est pourquoi la Lune met 27 jours à faire son tour au lieu de 90 minutes.",
+          "answer": 3600
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui met un satellite en orbite ?",
+          "hint": "Pense à ce que fait le boulet de Newton.",
+          "explanation": "Sa vitesse horizontale. L'altitude ne sert qu'à sortir de l'atmosphère ; sans vitesse de côté, l'objet retombe.",
+          "options": [
+            { "text": "sa vitesse horizontale", "correct": true },
+            { "text": "son altitude" },
+            { "text": "sa légèreté" },
+            { "text": "l'absence de gravité en haut" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "estimation",
+          "prompt": "Estime la durée d'un tour de Terre pour la Station spatiale, en minutes.",
+          "explanation": "Environ 90 minutes. À 7,7 km/s et 400 km d'altitude, elle parcourt plus de 40 000 km à chaque tour.",
+          "answer": 90,
+          "unit": "minutes",
+          "min": 10,
+          "max": 600,
+          "tolerance": 20
+        }
+      ]
+    },
+    {
+      "id": "peser-les-astres",
+      "title": "Peser les astres",
+      "subtitle": "Ce que la gravité permet de mesurer.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "On n'a jamais posé la Terre sur une balance",
+          "body": "Et pourtant on connaît sa masse : 6 × 10²⁴ kg, à moins de 1 % près.\n\nLa gravitation suffit. En mesurant comment un objet tombe, ou combien de temps la Lune met à faire son tour, on remonte à la masse de ce qui attire. C'est l'outil le plus puissant de l'astronomie."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le raisonnement",
+          "body": "1. observer la période et la distance d'un satellite\n\n2. la force de gravitation doit valoir exactement ce qu'il faut pour courber sa trajectoire\n\n3. une seule valeur de masse rend l'égalité vraie\n\nC'est ainsi qu'on a pesé le Soleil, Jupiter, et même des trous noirs qu'on ne voit pas."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Ce qu'on voit n'est pas tout",
+          "body": "Dans les galaxies, les étoiles du bord tournent bien trop vite pour la matière visible. Il faudrait beaucoup plus de masse pour les retenir.\n\nCette masse manquante, qu'on ne voit pas mais dont on mesure l'attraction, on l'appelle matière noire. On ignore encore ce qu'elle est."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "La gravité ne se bloque pas",
+          "body": "Aucun matériau ne fait écran à la gravitation. On peut arrêter la lumière avec un mur, le son avec du silence, un champ électrique avec une cage métallique — mais rien n'arrête l'attraction.\n\nC'est pourquoi on sent la Lune à travers toute l'épaisseur de la Terre, deux fois par jour, sous forme de marées."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "On peut construire un écran qui bloque la gravitation.",
+          "explanation": "Faux. Aucun matériau connu ne fait écran à la gravitation, contrairement à la lumière ou aux champs électriques.",
+          "answer": false
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Comment a-t-on mesuré la masse de la Terre ?",
+          "explanation": "Par la gravitation : en observant comment les corps tombent et comment la Lune orbite, une seule masse rend les équations vraies.",
+          "options": [
+            { "text": "en mesurant des effets gravitationnels", "correct": true },
+            { "text": "en la posant sur une balance géante" },
+            { "text": "en comptant ses atomes" },
+            { "text": "en la comparant au Soleil" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi parle-t-on de matière noire ?",
+          "hint": "Que manque-t-il pour expliquer les observations ?",
+          "explanation": "Les étoiles du bord des galaxies tournent trop vite pour la masse visible. Il faut une masse supplémentaire, qu'on détecte par son attraction mais qu'on ne voit pas.",
+          "options": [
+            { "text": "les galaxies tournent trop vite pour leur masse visible", "correct": true },
+            { "text": "certaines étoiles sont éteintes" },
+            { "text": "l'espace est noir" },
+            { "text": "les trous noirs sont invisibles" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "La Lune est 81 fois moins massive que la Terre. Si la Terre attire la Lune avec une force de 2 × 10²⁰ N, avec quelle force, en 10²⁰ N, la Lune attire-t-elle la Terre ?",
+          "hint": "Relis la carte sur la réciprocité.",
+          "explanation": "2 × 10²⁰ N, soit exactement la même. Les deux forces d'une interaction sont toujours égales, quelles que soient les masses.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range : qu'est-ce que la gravitation explique ?",
+          "explanation": "Marées, orbites et chute viennent toutes de la gravitation. La couleur du ciel vient de la diffusion de la lumière, et l'aimant d'une autre force.",
+          "categories": ["la gravitation", "autre chose"],
+          "items": [
+            { "text": "les marées", "category": 0 },
+            { "text": "l'orbite de la Station spatiale", "category": 0 },
+            { "text": "la chute d'une pomme", "category": 0 },
+            { "text": "le bleu du ciel", "category": 1 },
+            { "text": "un aimant qui attire un clou", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-gravitation",
+      "title": "Défi : tomber sans fin",
+      "subtitle": "Des conséquences qui dérangent l'intuition.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'ascenseur d'Einstein",
+          "body": "Enfermé dans une cabine sans fenêtre, tu flottes. Deux explications possibles : tu es loin de toute masse, ou bien tu es en chute libre.\n\nEinstein a remarqué qu'aucune expérience menée à l'intérieur ne peut les distinguer. Être en chute libre et être sans pesanteur sont indiscernables.\n\nDe cette remarque est née la relativité générale, et l'idée que la gravitation n'est pas vraiment une force : c'est la forme de l'espace et du temps autour des masses."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans une cabine fermée où l'on flotte, que peut-on conclure ?",
+          "explanation": "Rien : chute libre et absence de masse alentour produisent exactement les mêmes effets. C'est le principe d'équivalence.",
+          "options": [
+            { "text": "rien : les deux situations sont indiscernables", "correct": true },
+            { "text": "qu'il n'y a aucune masse alentour" },
+            { "text": "qu'on est en chute libre" },
+            { "text": "que la cabine tourne" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un satellite à 2 rayons terrestres du centre subit une gravité divisée par combien, par rapport à la surface ?",
+          "hint": "La surface est à 1 rayon du centre.",
+          "explanation": "Par 4. La distance au centre double, donc la force est divisée par 2² = 4.",
+          "answer": 4
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un astronaute en orbite est hors de portée de la gravité terrestre.",
+          "explanation": "Faux. À 400 km, la gravité vaut encore près de 90 % de sa valeur au sol. Il flotte parce qu'il tombe avec sa station, pas parce que la Terre a lâché.",
+          "answer": false
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre le raisonnement du boulet de Newton.",
+          "explanation": "On tire de plus en plus fort : le boulet va plus loin, puis la courbure de la Terre devient comparable à sa chute, et il finit par ne plus retomber.",
+          "items": [
+            "un tir faible : le boulet retombe près de la montagne",
+            "un tir plus fort : il retombe plus loin",
+            "la Terre se courbe autant que le boulet tombe",
+            "le boulet ne touche plus le sol : il est en orbite"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Selon Einstein, qu'est-ce que la gravitation ?",
+          "explanation": "La courbure de l'espace et du temps par les masses. Les corps ne sont pas tirés : ils suivent le chemin le plus droit dans un espace déformé.",
+          "options": [
+            { "text": "la forme que les masses donnent à l'espace et au temps", "correct": true },
+            { "text": "une attraction magnétique" },
+            { "text": "une propriété de l'air" },
+            { "text": "une illusion d'optique" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Plus un satellite est loin, plus il met de temps à faire un tour.",
+          "explanation": "Vrai. La Station spatiale met 90 minutes à 400 km, la Lune 27 jours à 384 400 km. C'est la troisième loi de Kepler, que la gravitation explique.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}

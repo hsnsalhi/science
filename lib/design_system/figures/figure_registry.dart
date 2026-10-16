@@ -30,6 +30,7 @@ import 'implication_figure.dart';
 import 'loop_robot_figure.dart';
 import 'matrix_figure.dart';
 import 'moon_phases_figure.dart';
+import 'newton_cannon_figure.dart';
 import 'number_line_figure.dart';
 import 'orbits_figure.dart';
 import 'parabola_figure.dart';
@@ -91,6 +92,9 @@ abstract final class FigureRegistry {
     // Le trajet du dioxygène et du glucose jusqu'à une cellule.
     'approvisionnement': (BuildContext context, Color accent) =>
         SupplyFigure(accent: accent),
+    // Le canon de Newton : tirer assez fort pour rater la Terre.
+    'canon-newton': (BuildContext context, Color accent) =>
+        NewtonCannonFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
