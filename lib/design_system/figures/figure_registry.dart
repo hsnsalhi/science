@@ -45,6 +45,7 @@ import 'sensor_chain_figure.dart';
 import 'sequence_figure.dart';
 import 'solar_system_figure.dart';
 import 'speed_figure.dart';
+import 'stack_queue_figure.dart';
 import 'states_figure.dart';
 import 'thales_figure.dart';
 import 'truth_table_figure.dart';
@@ -83,6 +84,9 @@ abstract final class FigureRegistry {
     // Soleil, Terre, Lune : l'alignement qu'une éclipse exige.
     'eclipses': (BuildContext context, Color accent) =>
         EclipseFigure(accent: accent),
+    // Une pile et une file nourries des mêmes éléments, côte à côte.
+    'pile-file': (BuildContext context, Color accent) =>
+        StackQueueFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
