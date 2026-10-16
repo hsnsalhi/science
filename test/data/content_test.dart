@@ -15,6 +15,7 @@ import 'package:eureka/design_system/figures/food_web_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/moon_phases_figure.dart';
+import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
@@ -1947,6 +1948,180 @@ void main() {
         FoodWebFigure.affectees(producteurs.single.nom).length,
         FoodWebFigure.reseau.length - 1,
       );
+    });
+  });
+
+  group('Chapitre complet : priorités et nombres relatifs', () {
+    late Chapter relatifs;
+
+    setUpAll(() {
+      relatifs =
+          catalog.chapterById('maths-college-priorites-et-nombres-relatifs')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (relatifs.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    /// Évalue une expression en respectant les priorités.
+    ///
+    /// Un chapitre qui enseigne les priorités ne peut pas vérifier ses
+    /// propres corrigés en recopiant des résultats à côté : il lui faut
+    /// une machine qui applique les règles. Celle-ci est volontairement
+    /// courte — parenthèses, puis × et ÷, puis + et −, de gauche à
+    /// droite — et c'est exactement ce que la leçon énonce.
+    double evaluer(String expression) {
+      final String texte = expression
+          .replaceAll('−', '-')
+          .replaceAll('×', '*')
+          .replaceAll('÷', '/')
+          .replaceAll(' ', '');
+      int position = 0;
+      // Déclarée d'avance : le facteur peut contenir une parenthèse, et
+      // une parenthèse contient une somme. Dart n'accepte pas qu'une
+      // fonction locale en appelle une déclarée plus bas.
+      late final double Function() somme;
+
+      double facteur() {
+        if (texte[position] == '(') {
+          position++;
+          final double valeur = somme();
+          position++; // la parenthèse fermante
+          return valeur;
+        }
+        if (texte[position] == '-') {
+          position++;
+          return -facteur();
+        }
+        final int debut = position;
+        while (position < texte.length &&
+            RegExp(r'[0-9.]').hasMatch(texte[position])) {
+          position++;
+        }
+        return double.parse(texte.substring(debut, position));
+      }
+
+      double produit() {
+        double valeur = facteur();
+        while (position < texte.length &&
+            (texte[position] == '*' || texte[position] == '/')) {
+          final String signe = texte[position++];
+          final double suivant = facteur();
+          valeur = signe == '*' ? valeur * suivant : valeur / suivant;
+        }
+        return valeur;
+      }
+
+      somme = () {
+        double valeur = produit();
+        while (position < texte.length &&
+            (texte[position] == '+' || texte[position] == '-')) {
+          final String signe = texte[position++];
+          final double suivant = produit();
+          valeur = signe == '+' ? valeur + suivant : valeur - suivant;
+        }
+        return valeur;
+      };
+
+      return somme();
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(relatifs.isPlayable, isTrue);
+      expect(relatifs.lessons.length, 4);
+    });
+
+    test('l’évaluateur respecte bien les priorités', () {
+      // Il sert à vérifier tout le reste : s'il se trompait, les
+      // corrigés faux passeraient avec lui.
+      expect(evaluer('3 + 4 × 5'), 23);
+      expect(evaluer('(3 + 4) × 5'), 35);
+      expect(evaluer('20 − 8 − 3'), 9);
+      expect(evaluer('24 ÷ 4 × 2'), 12);
+      expect(evaluer('(−8) + 5'), -3);
+      expect(evaluer('7 − (−4)'), 11);
+    });
+
+    test('tous les calculs annoncés sont réévalués', () {
+      final Map<String, String> calculs = <String, String>{
+        'additionner-et-soustraire/q1': '3 + (−7)',
+        'additionner-et-soustraire/q2': '(−5) + (−6)',
+        'additionner-et-soustraire/q3': '(−2) − (−9)',
+        'priorites/q1': '3 + 4 × 5',
+        'priorites/q2': '(3 + 4) × 5',
+        'priorites/q3': '20 − 8 − 3',
+        'priorites/q4': '2 + 3 × (7 − 5)',
+        'defi-relatifs/q1': '(−8) + 5',
+        'defi-relatifs/q2': '7 − (−4)',
+        'defi-relatifs/q3': '10 − 2 × 3',
+        'defi-relatifs/q4': '24 ÷ 4 × 2',
+      };
+      calculs.forEach((String chemin, String expression) {
+        final List<String> parts = chemin.split('/');
+        expect(
+          evaluer(expression),
+          reponseNum(parts[0], parts[1]),
+          reason: '$chemin : $expression',
+        );
+      });
+    });
+
+    test('les déplacements sur la droite donnent les mêmes résultats', () {
+      // La figure et l'évaluateur doivent tomber d'accord : c'est ce qui
+      // garantit que le dessin illustre bien le calcul écrit.
+      expect(NumberLineFigure.arrivee(3, -7), evaluer('3 + (−7)'));
+      expect(NumberLineFigure.arrivee(-5, -6), evaluer('(−5) + (−6)'));
+      expect(NumberLineFigure.arrivee(-2, 9), evaluer('(−2) − (−9)'));
+      expect(NumberLineFigure.arrivee(-8, 5), evaluer('(−8) + 5'));
+      // Et l'écriture produite par la figure est celle du chapitre.
+      expect(NumberLineFigure.ecriture(3, -7), '3 + (-7) = -4');
+    });
+
+    test('le tri par signe du résultat est juste', () {
+      final ClassifyQuestion q =
+          relatifs.lessonById('additionner-et-soustraire')!.questions
+                  .firstWhere((Question x) => x.id == 'q4')
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        expect(
+          item.category == 0,
+          evaluer(item.text) < 0,
+          reason: '${item.text} vaut ${evaluer(item.text)}',
+        );
+      }
+    });
+
+    test('le tri par résultat du défi est juste', () {
+      final ClassifyQuestion q =
+          relatifs.lessonById('defi-relatifs')!.questions.firstWhere(
+                (Question x) => x.id == 'q5',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final double attendu = double.parse(
+          q.categories[item.category].replaceAll('Fait ', ''),
+        );
+        expect(evaluer(item.text), attendu, reason: item.text);
+      }
+    });
+
+    test('la remise en ordre des relatifs est croissante', () {
+      final OrderingQuestion q =
+          relatifs.lessonById('les-nombres-relatifs')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as OrderingQuestion;
+      final List<double> valeurs = q.items.map(evaluer).toList();
+      for (int i = 1; i < valeurs.length; i++) {
+        expect(
+          valeurs[i],
+          greaterThan(valeurs[i - 1]),
+          reason: '${q.items[i]} ne suit pas ${q.items[i - 1]}',
+        );
+      }
     });
   });
 }

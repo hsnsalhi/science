@@ -9,7 +9,9 @@ import 'package:eureka/data/repositories/progress_repository.dart';
 import 'package:eureka/data/repositories/settings_repository.dart';
 import 'package:eureka/design_system/lesson_path.dart';
 import 'package:eureka/domain/models/app_settings.dart';
+import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
+import 'package:eureka/domain/models/lesson.dart';
 import 'package:eureka/domain/models/progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -125,12 +127,25 @@ void main() {
     await boot(tester, onboarded: true);
 
     expect(find.text('Reprendre'), findsOneWidget);
-    expect(find.text('Le triangle rectangle'), findsOneWidget);
+
+    // Le test ne nomme pas la leçon attendue : l'accueil conseille la
+    // première du niveau, et ce conseil change dès qu'un chapitre est
+    // écrit plus tôt dans le programme. On vérifie donc que la leçon
+    // proposée en est bien une, et qu'elle s'ouvre.
+    final List<Lesson> lecons = <Lesson>[
+      for (final Chapter chapitre in catalog.chapters)
+        if (chapitre.isPlayable && chapitre.level == EducationLevel.college)
+          ...chapitre.lessons,
+    ];
+    final List<Lesson> proposees = lecons
+        .where((Lesson l) => find.text(l.title).evaluate().isNotEmpty)
+        .toList();
+    expect(proposees, hasLength(1));
 
     await tester.tap(find.text('Commencer'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Un triangle pas comme les autres'), findsOneWidget);
+    expect(find.text(proposees.single.cards.first.title!), findsOneWidget);
   });
 
   testWidgets('le parcours du chapitre affiche toutes ses leçons', (
@@ -162,8 +177,21 @@ void main() {
       'avancer', (WidgetTester tester) async {
     await boot(tester, onboarded: true);
 
-    await tester.tap(find.text('Commencer'));
+    // On passe par le catalogue plutôt que par « Reprendre » : la leçon
+    // conseillée sur l'accueil dépend du contenu écrit, alors que ce
+    // test porte sur une question précise de Pythagore.
+    await tester.tap(find.text('Mathématiques'));
     await tester.pumpAndSettle();
+    final Finder pythagore = find.text('Le théorème de Pythagore');
+    await tester.scrollUntilVisible(
+      pythagore,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(pythagore);
+    await tester.pumpAndSettle();
+    await tapText(tester, 'Le triangle rectangle');
 
     // On fait défiler les cartes jusqu'aux exercices.
     for (int i = 0; i < 12; i++) {

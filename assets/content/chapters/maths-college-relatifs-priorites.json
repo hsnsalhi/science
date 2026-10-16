@@ -1,0 +1,346 @@
+{
+  "chapter": "maths-college-priorites-et-nombres-relatifs",
+  "lessons": [
+    {
+      "id": "les-nombres-relatifs",
+      "title": "Les nombres relatifs",
+      "subtitle": "De l'autre côté du zéro.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi des nombres négatifs",
+          "body": "Une température peut descendre sous zéro, un compte en banque peut être à découvert, un sous-sol est sous le niveau de la rue.\n\nLes nombres relatifs permettent de décrire ces situations sans changer d'unité ni inventer de mot."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "La droite graduée",
+          "body": "Déplace le point de départ : les négatifs sont à gauche de zéro.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Comparer",
+          "body": "Sur la droite graduée, un nombre est plus petit qu'un autre s'il est plus à gauche.\n\nAinsi −7 < −3, bien que 7 soit plus grand que 3. C'est le piège le plus courant du chapitre."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Opposé et distance à zéro",
+          "body": "L'opposé de 5 est −5, l'opposé de −8 est 8 : deux nombres opposés sont à la même distance de zéro, de part et d'autre.\n\nCette distance s'appelle la distance à zéro. Celle de −8 vaut 8."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Les négatifs sont à gauche de zéro.",
+            "Plus à gauche veut dire plus petit : −7 < −3.",
+            "Deux opposés ont la même distance à zéro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel est le plus petit de ces deux nombres : −7 ou −3 ?",
+          "hint": "Lequel est le plus à gauche sur la droite ?",
+          "explanation": "−7, car il est plus à gauche sur la droite graduée. L'ordre des négatifs est inversé par rapport à celui des positifs.",
+          "figureId": "droite-graduee",
+          "options": [
+            { "text": "−7", "correct": true },
+            { "text": "−3" },
+            { "text": "Ils sont égaux" },
+            { "text": "On ne peut pas comparer" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est l'opposé de −8 ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "hint": "Même distance à zéro, de l'autre côté.",
+          "explanation": "8. Les deux nombres sont à huit unités de zéro, l'un à gauche et l'autre à droite."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces températures.",
+          "hint": "Zéro sépare les deux groupes.",
+          "explanation": "−5 °C et −12 °C sont sous zéro, 3 °C et 8 °C au-dessus. Attention : −12 est plus froid que −5.",
+          "categories": ["Sous zéro", "Au-dessus de zéro"],
+          "items": [
+            { "text": "−5 °C", "category": 0 },
+            { "text": "−12 °C", "category": 0 },
+            { "text": "3 °C", "category": 1 },
+            { "text": "8 °C", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces nombres du plus petit au plus grand.",
+          "explanation": "−9, −4, 0, 2, 6 : sur la droite graduée, on les lit de gauche à droite.",
+          "items": ["−9", "−4", "0", "2", "6"]
+        }
+      ]
+    },
+    {
+      "id": "additionner-et-soustraire",
+      "title": "Additionner et soustraire",
+      "subtitle": "Avancer, reculer.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une addition est un déplacement",
+          "body": "Ajouter un nombre positif, c'est avancer vers la droite.\n\nAjouter un nombre négatif, c'est reculer vers la gauche.\n\nIl n'y a rien d'autre à comprendre : le signe du nombre ajouté donne le sens du déplacement."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Vérifie chaque cas",
+          "body": "Essaie un départ négatif avec un déplacement négatif, puis l'inverse.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Soustraire, c'est ajouter l'opposé",
+          "formula": "a − b = a + (−b)",
+          "body": "une seule règle remplace la soustraction."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Deux exemples",
+          "body": "5 − 8 = 5 + (−8) = −3 : on part de 5 et on recule de 8.\n\n−4 − 3 = −4 + (−3) = −7 : on part de −4 et on recule encore de 3."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Ajouter un positif : avancer. Ajouter un négatif : reculer.",
+            "Soustraire revient à ajouter l'opposé.",
+            "Deux négatifs additionnés donnent un nombre encore plus petit."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 3 + (−7) ?",
+          "answer": -4,
+          "tolerance": 0.01,
+          "hint": "Pars de 3 et recule de 7.",
+          "explanation": "−4. On part de 3, on recule de 7 : on passe par zéro et on continue de 4.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font (−5) + (−6) ?",
+          "answer": -11,
+          "tolerance": 0.01,
+          "hint": "Deux reculs à la suite.",
+          "explanation": "−11. On part de −5 et on recule encore de 6 : les deux déplacements s'ajoutent dans le même sens.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font (−2) − (−9) ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "hint": "Soustraire −9 revient à ajouter 9.",
+          "explanation": "7. (−2) − (−9) = (−2) + 9 : on part de −2 et on avance de 9. Reculer d'un recul revient bien à avancer.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces calculs selon le signe de leur résultat.",
+          "hint": "Lequel des deux déplacements l'emporte ?",
+          "explanation": "4 + (−9) et (−3) + (−2) donnent un résultat négatif. (−6) + 10 et (−1) − (−5) donnent un résultat positif.",
+          "categories": ["Résultat négatif", "Résultat positif"],
+          "items": [
+            { "text": "4 + (−9)", "category": 0 },
+            { "text": "(−3) + (−2)", "category": 0 },
+            { "text": "(−6) + 10", "category": 1 },
+            { "text": "(−1) − (−5)", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "priorites",
+      "title": "Les priorités",
+      "subtitle": "Dans quel ordre calculer.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trois règles, dans cet ordre",
+          "body": "1. Ce qui est entre parenthèses se calcule en premier.\n\n2. Puis les multiplications et les divisions.\n\n3. Puis les additions et les soustractions.\n\nÀ égalité, on calcule de gauche à droite."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Pourquoi cela compte",
+          "body": "3 + 4 × 5 ne vaut pas 35 mais 23 : la multiplication passe avant.\n\nPour obtenir 35, il faut écrire (3 + 4) × 5. Les parenthèses ne décorent pas, elles changent le résultat."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "À égalité, de gauche à droite",
+          "body": "20 − 8 − 3 vaut 9, et non 15 : on calcule 20 − 8 d'abord.\n\nDe même 24 ÷ 4 × 2 vaut 12, et non 3."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le produit de deux négatifs",
+          "body": "Observe cette suite : 3 × (−2) = −6, puis 2 × (−2) = −4, puis 1 × (−2) = −2, puis 0 × (−2) = 0.\n\nÀ chaque pas, le résultat augmente de 2. En continuant : (−1) × (−2) = 2, et (−2) × (−2) = 4. Le produit de deux négatifs est positif, et c'est la seule suite qui reste cohérente."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Parenthèses, puis × et ÷, puis + et −.",
+            "À égalité, de gauche à droite.",
+            "Deux facteurs de même signe donnent un produit positif."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 3 + 4 × 5 ?",
+          "answer": 23,
+          "tolerance": 0.01,
+          "hint": "La multiplication passe avant l'addition.",
+          "explanation": "23 : on calcule 4 × 5 = 20, puis 3 + 20. Sans la règle, on obtiendrait 35, qui est le résultat de (3 + 4) × 5."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font (3 + 4) × 5 ?",
+          "answer": 35,
+          "tolerance": 0.01,
+          "hint": "Les parenthèses d'abord.",
+          "explanation": "35 : la parenthèse donne 7, puis 7 × 5. Les mêmes nombres, les mêmes signes, un résultat différent."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 20 − 8 − 3 ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "hint": "De gauche à droite.",
+          "explanation": "9 : on calcule 20 − 8 = 12, puis 12 − 3. Commencer par 8 − 3 donnerait 15, ce qui est faux."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 2 + 3 × (7 − 5) ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "hint": "Parenthèse, puis multiplication, puis addition.",
+          "explanation": "8 : la parenthèse donne 2, puis 3 × 2 = 6, puis 2 + 6."
+        }
+      ]
+    },
+    {
+      "id": "defi-relatifs",
+      "title": "Défi : relatifs et priorités",
+      "subtitle": "Six calculs à ne pas bâcler.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Repère d'abord l'opération prioritaire, puis calcule."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font (−8) + 5 ?",
+          "answer": -3,
+          "tolerance": 0.01,
+          "hint": "Pars de −8 et avance de 5.",
+          "explanation": "−3. On part de −8 et on avance de 5 : on n'atteint pas encore zéro.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 7 − (−4) ?",
+          "answer": 11,
+          "tolerance": 0.01,
+          "hint": "Soustraire −4 revient à ajouter 4.",
+          "explanation": "11 : 7 + 4. Soustraire un nombre négatif fait avancer, pas reculer.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 10 − 2 × 3 ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "La multiplication d'abord.",
+          "explanation": "4 : on calcule 2 × 3 = 6, puis 10 − 6."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 24 ÷ 4 × 2 ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "hint": "À égalité, de gauche à droite.",
+          "explanation": "12 : on calcule 24 ÷ 4 = 6, puis 6 × 2. Commencer par 4 × 2 donnerait 3."
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range ces calculs selon leur résultat.",
+          "explanation": "3 + 2 × 4 et (−1) + 12 font 11 ; 2 × (3 + 2) et 4 + 3 × 2 font 10. Dans chaque cas, c'est la priorité qui décide : lue de gauche à droite sans règle, la première expression donnerait 20.",
+          "categories": ["Fait 11", "Fait 10"],
+          "items": [
+            { "text": "3 + 2 × 4", "category": 0 },
+            { "text": "(−1) + 12", "category": 0 },
+            { "text": "2 × (3 + 2)", "category": 1 },
+            { "text": "4 + 3 × 2", "category": 1 }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Le produit (−3) × (−4) est négatif.",
+          "answer": false,
+          "explanation": "Non, il vaut 12. Deux facteurs de même signe donnent un produit positif : c'est ce que montre la suite de multiplications de la leçon."
+        }
+      ]
+    }
+  ]
+}

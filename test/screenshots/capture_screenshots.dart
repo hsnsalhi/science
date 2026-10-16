@@ -699,6 +699,21 @@ void main() {
         await shoot(tester, '$device-28-reseau');
       });
 
+      // La droite graduée des nombres relatifs, réglée sur un départ
+      // positif et un déplacement négatif : le cas où l'on traverse
+      // zéro, et celui que l'écriture rend le plus obscur.
+      testWidgets('collège : la droite graduée', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Priorités et nombres relatifs');
+        await tapText(tester, 'Les nombres relatifs');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-29-relatifs');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
