@@ -21,14 +21,14 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Moteur de quiz : **9 types d'exercices**, correction expliquée | ✅ |
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
 | Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
-| Contenu rédigé de bout en bout | **74 chapitres** : 296 leçons, 1 075 cartes, 1 357 questions |
+| Contenu rédigé de bout en bout | **78 chapitres** : 312 leçons, 1 127 cartes, 1 438 questions |
 | **55 figures interactives**, dessinées d'après le réel | ✅ |
 | 572 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 | Pipeline Android : APK installable, puis Google Play | ✅ |
 
-Les soixante-quatorze chapitres rédigés couvrent les huit matières et les quatre
+Les soixante-dix-huit chapitres rédigés couvrent les huit matières et les quatre
 niveaux : un élève de CM1 comme un étudiant de licence trouve de quoi jouer.
 Les autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
 afin que l'élève voie tout de suite l'étendue du programme. Écrire un nouveau

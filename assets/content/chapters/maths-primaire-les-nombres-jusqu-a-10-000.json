@@ -1,0 +1,293 @@
+{
+  "chapter": "maths-primaire-les-nombres-jusqu-a-10-000",
+  "lessons": [
+    {
+      "id": "les-milliers",
+      "title": "Au-delà de cent",
+      "subtitle": "On recommence à faire des paquets.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La même idée, en plus grand",
+          "body": "Dix unités font une dizaine. Dix dizaines font une centaine. Dix centaines font un millier.\n\nÀ chaque fois, on groupe par dix. C'est la seule règle, et elle ne change jamais — c'est ce qui rend notre numération si pratique."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les quatre rangs",
+          "formula": "milliers, centaines, dizaines, unités",
+          "body": "Dans 3 472 : 3 milliers, 4 centaines, 7 dizaines, 2 unités."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Décomposer",
+          "body": "3 472 = 3 000 + 400 + 70 + 2\n\nChaque chiffre garde sa valeur de position : le 4 vaut quatre cents, pas quatre."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "L'espace des milliers",
+          "body": "On écrit 3 472 avec une espace, pas 3472 ni 3.472.\n\nCette espace sépare les milliers et rend le nombre lisible d'un coup d'œil. Pour les nombres à quatre chiffres elle est facultative, mais c'est une bonne habitude."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Le zéro tient la place",
+          "body": "Dans 3 072, il n'y a aucune centaine. Mais on ne peut pas écrire 372 : ce serait un autre nombre.\n\nLe zéro ne vaut rien, et pourtant on ne peut pas l'enlever. Son travail est de tenir la place."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans 3 472, combien y a-t-il de centaines ?",
+          "hint": "C'est le deuxième chiffre en partant de la gauche.",
+          "explanation": "4. Il vaut quatre cents, parce qu'il occupe le rang des centaines.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 3 000 + 400 + 70 + 2 ?",
+          "explanation": "3 472. Chaque terme correspond à un rang.",
+          "answer": 3472
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de centaines dans un millier ?",
+          "explanation": "10. Dix centaines font mille, comme dix dizaines font cent.",
+          "answer": 10
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le zéro dans 3 072 ?",
+          "explanation": "À tenir la place des centaines. Sans lui, le 3 glisserait au rang des centaines et le nombre deviendrait 372.",
+          "options": [
+            { "text": "à tenir la place des centaines", "correct": true },
+            { "text": "à rien, on peut l'enlever" },
+            { "text": "à séparer les milliers" },
+            { "text": "à indiquer que le nombre est pair" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'unités dans 10 000 ?",
+          "explanation": "10 000. Dix mille unités, c'est dix paquets de mille.",
+          "answer": 10000
+        }
+      ]
+    },
+    {
+      "id": "comparer-grands-nombres",
+      "title": "Comparer et ranger",
+      "subtitle": "Le chiffre le plus à gauche décide.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Comparer deux nombres",
+          "body": "1. Compte les chiffres. Celui qui en a le plus est le plus grand.\n\n2. S'ils en ont autant, compare les chiffres de gauche à droite, au premier qui diffère.\n\n3 472 et 3 429 : mêmes milliers, mêmes centaines. Au rang des dizaines, 7 bat 2. Donc 3 472 gagne."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Plus de chiffres, plus grand — toujours",
+          "body": "999 est plus petit que 1 000, même si ses chiffres sont tous des 9.\n\nTrois chiffres ne peuvent jamais battre quatre chiffres. C'est une règle sans exception, et elle évite beaucoup d'hésitations."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Encadrer et arrondir",
+          "body": "3 472 est entre 3 000 et 4 000. À la centaine près, il est entre 3 400 et 3 500.\n\nArrondir à la centaine : on regarde le chiffre des dizaines. 7 est au moins 5, donc on monte : 3 500."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Arrondir sert à vérifier. 3 472 + 2 891 doit faire à peu près 3 500 + 2 900, soit 6 400. Si tu trouves 1 263, c'est que quelque chose a mal tourné."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel nombre est le plus grand : 999 ou 1 000 ?",
+          "explanation": "1 000. Quatre chiffres battent toujours trois chiffres, même des 9.",
+          "options": [
+            { "text": "1 000", "correct": true },
+            { "text": "999" },
+            { "text": "ils sont égaux" },
+            { "text": "cela dépend" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Arrondis 3 472 à la centaine la plus proche.",
+          "hint": "Regarde le chiffre des dizaines.",
+          "explanation": "3 500. Le chiffre des dizaines est 7, donc au moins 5 : on monte à la centaine supérieure.",
+          "answer": 3500
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Arrondis 3 429 à la centaine la plus proche.",
+          "explanation": "3 400. Le chiffre des dizaines est 2, donc moins de 5 : on garde la centaine.",
+          "answer": 3400
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces nombres du plus petit au plus grand.",
+          "explanation": "On compte d'abord les chiffres, puis on compare de gauche à droite.",
+          "items": ["987", "1 203", "3 429", "3 472", "9 999"]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Entre quels milliers se trouve 3 472 ? Donne le plus petit des deux.",
+          "explanation": "3 000. Le nombre est entre 3 000 et 4 000.",
+          "answer": 3000
+        }
+      ]
+    },
+    {
+      "id": "entrainement-milliers",
+      "title": "S'entraîner",
+      "subtitle": "Lire, écrire, calculer en grand.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Lire à voix haute",
+          "body": "3 472 se lit « trois mille quatre cent soixante-douze ».\n\nOn dit d'abord les milliers, puis le reste comme un nombre ordinaire.\n\n5 008 se lit « cinq mille huit » — on ne prononce pas les zéros."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ajouter des milliers",
+          "body": "2 300 + 1 500 : on ajoute les milliers entre eux, les centaines entre elles.\n\n2 + 1 = 3 milliers, 3 + 5 = 8 centaines. Résultat : 3 800.\n\nC'est la même méthode qu'avec les petits nombres, un rang plus loin."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Compter de mille en mille",
+          "body": "1 472, 2 472, 3 472, 4 472…\n\nSeul le chiffre des milliers change. Comme pour les dizaines, c'est une des choses les plus utiles à faire de tête."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Écris en chiffres : trois mille quatre cent soixante-douze.",
+          "explanation": "3 472. Les milliers d'abord, puis le reste.",
+          "answer": 3472
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Écris en chiffres : cinq mille huit.",
+          "hint": "Il n'y a ni centaine ni dizaine.",
+          "explanation": "5 008. Les deux zéros tiennent les places vides des centaines et des dizaines.",
+          "answer": 5008
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 2 300 + 1 500.",
+          "explanation": "3 800. Trois milliers et huit centaines.",
+          "answer": 3800
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Tu comptes de mille en mille depuis 472. Quel nombre vient après 3 472 ?",
+          "explanation": "4 472. Seul le chiffre des milliers augmente.",
+          "answer": 4472
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 4 000 − 1 200.",
+          "hint": "4 000, c'est 40 centaines.",
+          "explanation": "2 800. Quarante centaines moins douze centaines font vingt-huit centaines.",
+          "answer": 2800
+        }
+      ]
+    },
+    {
+      "id": "defi-milliers",
+      "title": "Défi : des grands nombres partout",
+      "subtitle": "Ce que valent dix mille de quelque chose.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Se représenter dix mille",
+          "body": "Dix mille, c'est beaucoup plus qu'on ne croit.\n\nCompter jusqu'à dix mille à raison d'un nombre par seconde prend près de trois heures.\n\nDix mille pas, c'est environ sept kilomètres de marche.\n\nUne salle de classe contient environ trente élèves. Il en faudrait plus de trois cents pour faire dix mille enfants."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de classes de 30 élèves pour réunir 9 000 enfants ?",
+          "explanation": "9 000 ÷ 30 = 300 classes.",
+          "answer": 300
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de billets de 10 euros pour faire 1 000 euros ?",
+          "explanation": "100 billets, car 100 × 10 = 1 000.",
+          "answer": 100
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes dure le comptage de 1 à 6 000 à raison d'un nombre par seconde ?",
+          "hint": "6 000 secondes, puis convertis.",
+          "explanation": "6 000 ÷ 60 = 100 minutes, soit une heure quarante.",
+          "answer": 100
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un livre a 250 pages. Combien de pages dans 8 livres identiques ?",
+          "explanation": "250 × 8 = 2 000 pages.",
+          "answer": 2000
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Je suis le plus grand nombre à quatre chiffres. Qui suis-je ?",
+          "explanation": "9 999. Le suivant, 10 000, en a cinq.",
+          "answer": 9999
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Dans 5 008, on peut retirer les zéros et écrire 58.",
+          "explanation": "Faux. Les zéros tiennent les places des centaines et des dizaines : 58 est un tout autre nombre.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

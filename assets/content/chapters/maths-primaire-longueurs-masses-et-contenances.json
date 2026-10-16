@@ -1,0 +1,310 @@
+{
+  "chapter": "maths-primaire-longueurs-masses-et-contenances",
+  "lessons": [
+    {
+      "id": "mesurer",
+      "title": "Mesurer, c'est comparer",
+      "subtitle": "À une unité choisie une fois pour toutes.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Avant le mètre",
+          "body": "On mesurait en pieds, en coudées, en pouces. Le problème : le pied du roi n'est pas celui du voisin.\n\nÀ la Révolution, on a décidé une unité valable pour tout le monde : le mètre. Depuis, « deux mètres » veut dire la même chose à Paris, à Tokyo et sur la Lune."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les longueurs",
+          "formula": "1 km = 1 000 m ; 1 m = 100 cm ; 1 cm = 10 mm",
+          "body": "Toujours des paquets de dix, comme pour les nombres. C'est ce qui rend les conversions faciles."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Les masses et les contenances",
+          "formula": "1 kg = 1 000 g ; 1 L = 100 cL = 1 000 mL",
+          "body": "Le préfixe kilo veut toujours dire mille, et milli toujours un millième. Un kilomètre, un kilogramme : même mot, même sens."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Des repères pour estimer",
+          "body": "Un pas d'adulte : environ 70 cm. Une porte : 2 m. Un étage : 3 m.\n\nUne pomme : 150 g. Un paquet de sucre : 1 kg. Une bouteille d'eau : 1,5 L.\n\nSavoir estimer vaut mieux que savoir convertir : cela permet de repérer un résultat absurde."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Comparer demande la même unité",
+          "body": "Qu'est-ce qui est le plus long : 250 cm ou 3 m ?\n\nOn ne peut pas comparer tant qu'on n'a pas converti. 3 m font 300 cm, donc 3 m est plus long.\n\nComparer des nombres sans regarder les unités est l'erreur la plus fréquente du chapitre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de centimètres dans 3 mètres ?",
+          "explanation": "300 cm, car un mètre en compte cent.",
+          "answer": 300
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de grammes dans 2 kilogrammes ?",
+          "explanation": "2 000 g. Le préfixe kilo veut dire mille.",
+          "answer": 2000
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui est le plus long : 250 cm ou 3 m ?",
+          "hint": "Convertis avant de comparer.",
+          "explanation": "3 m, car cela fait 300 cm. On ne peut pas comparer des nombres d'unités différentes.",
+          "options": [
+            { "text": "3 m", "correct": true },
+            { "text": "250 cm" },
+            { "text": "c'est pareil" },
+            { "text": "on ne peut pas savoir" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque objet à son ordre de grandeur.",
+          "explanation": "Ces repères servent à estimer, et surtout à repérer un résultat absurde.",
+          "pairs": [
+            { "left": "une porte", "right": "2 m" },
+            { "left": "une pomme", "right": "150 g" },
+            { "left": "un paquet de sucre", "right": "1 kg" },
+            { "left": "une bouteille d'eau", "right": "1,5 L" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de millilitres dans un litre ?",
+          "explanation": "1 000 mL. Le préfixe milli veut dire un millième.",
+          "answer": 1000
+        }
+      ]
+    },
+    {
+      "id": "convertir",
+      "title": "Convertir sans se tromper",
+      "subtitle": "Monter ou descendre d'un rang.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le sens de la conversion",
+          "body": "Vers une unité plus petite : on multiplie, le nombre grandit.\n\nVers une unité plus grande : on divise, le nombre diminue.\n\n5 m en centimètres : le centimètre est plus petit, donc 5 × 100 = 500 cm."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Le contrôle de bon sens",
+          "body": "Quand on passe à une unité plus petite, il en faut plus pour mesurer la même chose.\n\nUn mètre, c'est beaucoup de millimètres. Si ta conversion rend un nombre plus petit, tu as divisé au lieu de multiplier."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Des conversions courantes",
+          "body": "2,5 km = 2 500 m\n\n750 g = 0,75 kg\n\n30 cm = 300 mm\n\n1,5 L = 1 500 mL"
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "La virgule ne se déplace pas au hasard",
+          "body": "De mètres en centimètres, on multiplie par 100 : la virgule avance de deux rangs.\n\nDe mètres en millimètres, par 1 000 : trois rangs.\n\nCompter les zéros de la conversion donne le nombre de rangs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Convertis 2,5 km en mètres.",
+          "explanation": "2 500 m. On passe à une unité plus petite, donc on multiplie par 1 000.",
+          "answer": 2500
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Convertis 750 g en kilogrammes.",
+          "hint": "Le kilogramme est plus grand, donc le nombre va diminuer.",
+          "explanation": "0,75 kg. On divise par 1 000.",
+          "answer": 0.75,
+          "tolerance": 0.001
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Convertis 30 cm en millimètres.",
+          "explanation": "300 mm, car un centimètre vaut dix millimètres.",
+          "answer": 300
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Convertis 1,5 L en millilitres.",
+          "explanation": "1 500 mL. Un litre vaut mille millilitres, donc un litre et demi en vaut mille cinq cents.",
+          "answer": 1500
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Quand on convertit vers une unité plus petite, le nombre augmente.",
+          "explanation": "Vrai. Il faut davantage de petites unités pour mesurer la même chose : un mètre, c'est mille millimètres.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "entrainement-mesures",
+      "title": "S'entraîner",
+      "subtitle": "Additionner des mesures, estimer des objets.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Additionner des mesures",
+          "body": "1 m 40 + 85 cm ?\n\n1. Tout convertir dans la même unité : 140 cm + 85 cm.\n\n2. Additionner : 225 cm.\n\n3. Reconvertir si on veut : 2 m 25.\n\nOn ne peut jamais additionner des nombres d'unités différentes sans les convertir d'abord."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Une recette",
+          "body": "Il faut 250 g de farine, 125 g de sucre et 500 g de pommes.\n\nTotal : 875 g, soit moins d'un kilogramme.\n\nEstimer d'abord — « à peu près un kilo » — permet de repérer une erreur de calcul."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le périmètre, c'est le tour",
+          "body": "Un rectangle de 8 cm sur 5 cm : on fait le tour en additionnant les quatre côtés.\n\n8 + 5 + 8 + 5 = 26 cm. Ou plus vite : (8 + 5) × 2."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 1 m 40 plus 85 cm, en centimètres ?",
+          "explanation": "140 + 85 = 225 cm, soit 2 m 25.",
+          "answer": 225
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "250 g de farine, 125 g de sucre, 500 g de pommes. Quel poids total, en grammes ?",
+          "explanation": "250 + 125 + 500 = 875 g, soit un peu moins d'un kilogramme.",
+          "answer": 875
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le périmètre d'un rectangle de 8 cm sur 5 cm, en centimètres ?",
+          "hint": "Fais le tour complet.",
+          "explanation": "(8 + 5) × 2 = 26 cm. On compte les quatre côtés.",
+          "answer": 26
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une bouteille de 1,5 L est remplie aux trois quarts. Combien de millilitres contient-elle ?",
+          "hint": "1 500 mL, puis trois quarts.",
+          "explanation": "1 500 × 3 ÷ 4 = 1 125 mL.",
+          "answer": 1125
+        },
+        {
+          "id": "q5",
+          "kind": "estimation",
+          "prompt": "Estime la hauteur d'une porte, en centimètres.",
+          "explanation": "Environ 200 cm, soit deux mètres. C'est un repère qui sert à estimer beaucoup d'autres hauteurs.",
+          "answer": 200,
+          "unit": "cm",
+          "min": 50,
+          "max": 500,
+          "tolerance": 40
+        }
+      ]
+    },
+    {
+      "id": "defi-mesures",
+      "title": "Défi : estimer sans mesurer",
+      "subtitle": "Quand le résultat est manifestement faux.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le réflexe qui sauve",
+          "body": "Un élève calcule la longueur de sa classe et trouve 7 millimètres. Un autre trouve 70 kilomètres.\n\nAucun des deux n'a besoin de refaire le calcul pour savoir qu'il s'est trompé : une classe fait quelques mètres, pas la taille d'un ongle ni celle d'un trajet en voiture.\n\nAvoir des repères en tête vaut mieux que savoir convertir, parce que cela attrape les erreurs que la conversion produit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces mesures : plausibles ou absurdes ?",
+          "explanation": "Les repères du chapitre suffisent à trancher sans rien calculer.",
+          "categories": ["plausible", "absurde"],
+          "items": [
+            { "text": "une classe de 7 m de long", "category": 0 },
+            { "text": "un adulte de 1,75 m", "category": 0 },
+            { "text": "une pomme de 150 g", "category": 0 },
+            { "text": "une classe de 7 mm de long", "category": 1 },
+            { "text": "un adulte de 175 kg en moyenne", "category": 1 },
+            { "text": "une pomme de 150 kg", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Tu fais 2 000 pas de 70 cm. Quelle distance, en kilomètres ?",
+          "hint": "D'abord en centimètres, puis en mètres.",
+          "explanation": "2 000 × 70 = 140 000 cm, soit 1 400 m, soit 1,4 km.",
+          "answer": 1.4,
+          "tolerance": 0.05
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un immeuble a 12 étages de 3 m. Quelle hauteur, en mètres ?",
+          "explanation": "Douze étages de trois mètres chacun : 12 × 3 = 36 m, la hauteur d'un immeuble courant.",
+          "answer": 36
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de bouteilles de 50 cL pour remplir un bidon de 10 L ?",
+          "hint": "Convertis tout en centilitres.",
+          "explanation": "10 L font 1 000 cL, divisés par 50 : 20 bouteilles.",
+          "answer": 20
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une recette pour 4 personnes demande 600 g de pommes de terre. Combien de grammes pour 6 personnes ?",
+          "explanation": "600 ÷ 4 = 150 g par personne, puis × 6 = 900 g.",
+          "answer": 900
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "On peut additionner 1 m et 85 cm sans rien convertir.",
+          "explanation": "Faux. Il faut d'abord la même unité : 100 cm + 85 cm = 185 cm. Additionner 1 et 85 donnerait 86, qui ne veut rien dire.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

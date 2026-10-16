@@ -1,0 +1,291 @@
+{
+  "chapter": "maths-primaire-tableaux-graphiques-et-hasard",
+  "lessons": [
+    {
+      "id": "lire-des-donnees",
+      "title": "Lire des données",
+      "subtitle": "Un tableau répond vite, si on sait le lire.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi ranger les nombres",
+          "body": "« Lundi 12 élèves à la cantine, mardi 18, jeudi 15, vendredi 9. »\n\nEn phrase, il faut tout relire pour répondre à la moindre question. Dans un tableau, on trouve la réponse en un coup d'œil.\n\nRanger les données n'ajoute aucune information : cela rend seulement celle qui existe utilisable."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Lire un tableau à double entrée",
+          "body": "1. Trouve la ligne qui t'intéresse.\n\n2. Trouve la colonne.\n\n3. La réponse est à leur croisement.\n\nSe tromper de ligne ou de colonne donne un nombre qui a l'air normal — c'est pourquoi il faut pointer du doigt."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Trois questions utiles",
+          "body": "Le total : on additionne tout.\n\nLe maximum : la plus grande valeur.\n\nL'écart : la différence entre la plus grande et la plus petite.\n\nAvec 12, 18, 15 et 9 : total 54, maximum 18, écart 18 − 9 = 9."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Un tableau ne dit pas pourquoi",
+          "body": "Le tableau montre que le vendredi est creux. Il n'explique pas pourquoi.\n\nConfondre ce qu'on observe et ce qu'on en déduit est l'erreur la plus courante quand on lit des données — y compris chez les adultes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Lundi 12, mardi 18, jeudi 15, vendredi 9. Combien d'élèves en tout sur la semaine ?",
+          "explanation": "12 + 18 + 15 + 9 = 54 élèves.",
+          "answer": 54
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est l'écart entre le jour le plus fréquenté et le moins fréquenté ?",
+          "explanation": "Le maximum est mardi avec 18, le minimum vendredi avec 9 : l'écart vaut 18 − 9 = 9 élèves.",
+          "answer": 9
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la moyenne du nombre d'élèves sur ces quatre jours ?",
+          "hint": "Le total divisé par le nombre de jours.",
+          "explanation": "54 ÷ 4 = 13,5 élèves. Une moyenne n'est pas toujours un nombre entier, même quand on compte des personnes.",
+          "answer": 13.5,
+          "tolerance": 0.01
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le tableau explique pourquoi le vendredi est creux.",
+          "explanation": "Faux. Il montre que c'est le cas ; la raison demande une autre enquête. Observer n'est pas expliquer.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "representer",
+      "title": "Représenter",
+      "subtitle": "Choisir le bon dessin.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trois façons de montrer",
+          "body": "Le diagramme en barres : pour comparer des quantités. La hauteur se compare d'un coup d'œil.\n\nLa courbe : pour montrer une évolution dans le temps.\n\nLe diagramme circulaire : pour montrer des parts d'un tout."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "L'axe qui ment",
+          "body": "Si l'axe des hauteurs ne part pas de zéro, les différences paraissent énormes.\n\nUne barre de 102 à côté d'une de 100 semblera deux fois plus haute si l'axe commence à 99. Les deux valeurs sont pourtant presque égales.\n\nC'est le truc le plus employé pour faire dire à un graphique ce qu'il ne dit pas."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Ce qu'un graphique doit porter",
+          "body": "Un titre, le nom de chaque axe, et l'unité.\n\nSans eux, les barres ne veulent rien dire : on ne sait ni de quoi on parle ni dans quelle unité."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Le diagramme circulaire",
+          "body": "Le disque entier vaut le total, c'est-à-dire 100 %.\n\nLa moitié du disque vaut 50 %, le quart 25 %. Si une part occupe visiblement plus de la moitié, elle dépasse 50 % — on peut souvent répondre sans calcul."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque situation au bon graphique.",
+          "explanation": "Barres pour comparer, courbe pour une évolution, disque pour des parts d'un tout.",
+          "pairs": [
+            { "left": "comparer les ventes de 5 magasins", "right": "diagramme en barres" },
+            { "left": "la température heure par heure", "right": "courbe" },
+            { "left": "la répartition des sports pratiqués", "right": "diagramme circulaire" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un axe qui ne part pas de zéro est-il trompeur ?",
+          "explanation": "Parce qu'il exagère les différences : deux valeurs proches semblent très éloignées.",
+          "options": [
+            { "text": "il exagère les écarts entre les barres", "correct": true },
+            { "text": "il rend le graphique illisible" },
+            { "text": "il change les valeurs" },
+            { "text": "il efface le titre" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un diagramme circulaire, combien de pour cent représente la moitié du disque ?",
+          "explanation": "50 %. Le disque entier vaut le total, donc 100 %.",
+          "answer": 50
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Que doit porter tout graphique ?",
+          "explanation": "Un titre, le nom des axes et l'unité. Sans eux, les barres ne veulent rien dire.",
+          "options": [
+            { "text": "un titre", "correct": true },
+            { "text": "le nom de chaque axe", "correct": true },
+            { "text": "l'unité", "correct": true },
+            { "text": "des couleurs vives" },
+            { "text": "le nom de son auteur" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-hasard",
+      "title": "Le hasard",
+      "subtitle": "Ce qu'on peut prévoir, et ce qu'on ne peut pas.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Impossible, possible, certain",
+          "body": "En lançant un dé à six faces :\n\nObtenir 7 est impossible.\n\nObtenir 4 est possible.\n\nObtenir un nombre entre 1 et 6 est certain.\n\nEntre l'impossible et le certain, il y a toutes les nuances — et c'est là que vivent les probabilités."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Compter les chances",
+          "formula": "chances = cas favorables ÷ cas possibles",
+          "body": "Sur un dé, obtenir un nombre pair : 3 cas favorables (2, 4, 6) sur 6 possibles. Soit une chance sur deux."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Le dé n'a pas de mémoire",
+          "body": "Si tu as fait cinq fois 6 d'affilée, la probabilité de refaire 6 reste une sur six.\n\nLe dé ne sait pas ce qui s'est passé avant. Croire le contraire porte un nom — l'erreur du joueur — et elle ruine des gens tous les jours."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Beaucoup de lancers, pas peu",
+          "body": "Sur 6 lancers, obtenir six fois le même chiffre n'a rien d'extraordinaire.\n\nSur 600 lancers, chaque chiffre sort environ 100 fois. Les proportions ne deviennent fiables qu'avec beaucoup d'essais."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Avec un dé à six faces, range ces événements.",
+          "explanation": "Rien au-dessus de 6 n'est possible, et tout résultat est forcément entre 1 et 6.",
+          "categories": ["impossible", "possible", "certain"],
+          "items": [
+            { "text": "obtenir 7", "category": 0 },
+            { "text": "obtenir 0", "category": 0 },
+            { "text": "obtenir 4", "category": 1 },
+            { "text": "obtenir un nombre pair", "category": 1 },
+            { "text": "obtenir un nombre entre 1 et 6", "category": 2 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Sur un dé à six faces, combien de résultats donnent un nombre pair ?",
+          "explanation": "3 : les faces 2, 4 et 6.",
+          "answer": 3
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un sac de 10 billes dont 4 rouges, combien de chances sur 10 de tirer une rouge ?",
+          "explanation": "4 sur 10. Quatre cas favorables sur dix possibles.",
+          "answer": 4
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Après cinq 6 d'affilée, le prochain lancer a moins de chances de donner 6.",
+          "explanation": "Faux. Le dé n'a pas de mémoire : c'est toujours une chance sur six. Croire le contraire s'appelle l'erreur du joueur.",
+          "answer": false
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Sur 600 lancers d'un dé équilibré, combien de fois environ sort le 3 ?",
+          "explanation": "Environ 100 fois, car 600 ÷ 6 = 100.",
+          "answer": 100,
+          "tolerance": 5
+        }
+      ]
+    },
+    {
+      "id": "defi-donnees",
+      "title": "Défi : les graphiques qui trompent",
+      "subtitle": "Savoir regarder avant de croire.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux barres, deux histoires",
+          "body": "Un magasin a vendu 100 articles en janvier et 102 en février.\n\nAvec un axe partant de zéro, les deux barres sont presque identiques : la hausse est de 2 %.\n\nAvec un axe partant de 99, la seconde barre fait trois fois la hauteur de la première. Rien n'est faux dans les chiffres — c'est le dessin qui ment.\n\nRegarder d'où part l'axe est le premier réflexe à prendre devant un graphique."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "De 100 à 102 ventes, quelle est la hausse en pourcentage ?",
+          "explanation": "2 %. Deux articles de plus sur cent.",
+          "answer": 2
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Avec un axe qui part de 99, la barre de janvier mesure 1 et celle de février 3. Combien de fois plus haute paraît février ?",
+          "explanation": "3 fois. Pourtant la hausse réelle n'est que de 2 %. Le dessin exagère, les chiffres non.",
+          "answer": 3
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une classe de 25 élèves : 10 font du foot, 8 de la danse, 7 de la natation. Combien de pour cent font du foot ?",
+          "hint": "10 sur 25, ramené sur 100.",
+          "explanation": "10 ÷ 25 = 0,4, soit 40 %.",
+          "answer": 40
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans ce même diagramme circulaire, quel sport occupe la plus grande part ? Donne son nombre d'élèves.",
+          "explanation": "Le foot, avec 10 élèves, soit un peu moins de la moitié du disque.",
+          "answer": 10
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un sac contient 3 billes bleues, 5 rouges et 2 vertes. Combien de chances sur 10 de tirer une rouge ?",
+          "explanation": "5 sur 10, soit une chance sur deux : il y a dix billes en tout.",
+          "answer": 5
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un graphique sans titre ni unité peut quand même être lu correctement.",
+          "explanation": "Faux. Sans savoir de quoi on parle ni dans quelle unité, des barres ne veulent rien dire — on peut leur faire raconter n'importe quoi.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

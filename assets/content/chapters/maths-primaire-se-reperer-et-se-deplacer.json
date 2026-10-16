@@ -1,0 +1,304 @@
+{
+  "chapter": "maths-primaire-se-reperer-et-se-deplacer",
+  "lessons": [
+    {
+      "id": "dire-ou-c-est",
+      "title": "Dire où c'est",
+      "subtitle": "Il faut un point de départ commun.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "« À gauche » ne suffit pas",
+          "body": "Si tu dis « le trésor est à gauche de l'arbre », tout dépend d'où on regarde. Ta gauche n'est pas celle de quelqu'un qui te fait face.\n\nPour que l'information soit utile, il faut un repère que tout le monde partage."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le quadrillage",
+          "body": "On numérote les colonnes avec des lettres, les lignes avec des chiffres.\n\nChaque case a alors un nom unique : B3, D5.\n\nOn dit toujours la colonne puis la ligne. C'est une convention, mais si chacun la respecte, personne ne se trompe."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les quatre directions",
+          "body": "Sur une carte, le nord est en haut, le sud en bas, l'est à droite, l'ouest à gauche.\n\nContrairement à « gauche » et « droite », ces mots ne changent pas selon où l'on se tient. C'est pour cela qu'on les a inventés."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Case ou nœud ?",
+          "body": "Sur un quadrillage, on peut désigner une case — la surface — ou un nœud — le point où deux traits se croisent.\n\nLes deux se repèrent pareil, mais ce ne sont pas les mêmes objets. Au jeu de bataille navale on vise des cases ; sur une carte au trésor, souvent des points."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « à gauche de l'arbre » est-il une mauvaise indication ?",
+          "explanation": "Parce que la gauche dépend d'où l'on regarde. Deux personnes face à face n'ont pas la même gauche.",
+          "options": [
+            { "text": "la gauche dépend d'où l'on se tient", "correct": true },
+            { "text": "les arbres bougent" },
+            { "text": "c'est trop vague en distance" },
+            { "text": "il faut toujours dire le nord" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Sur une carte, où se trouve le nord ?",
+          "explanation": "En haut, par convention. L'est est alors à droite et l'ouest à gauche.",
+          "options": [
+            { "text": "en haut", "correct": true },
+            { "text": "en bas" },
+            { "text": "à droite" },
+            { "text": "cela dépend de la carte" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque direction à sa position sur une carte.",
+          "explanation": "Nord en haut, sud en bas, est à droite, ouest à gauche.",
+          "pairs": [
+            { "left": "nord", "right": "en haut" },
+            { "left": "sud", "right": "en bas" },
+            { "left": "est", "right": "à droite" },
+            { "left": "ouest", "right": "à gauche" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Dans le nom d'une case, on dit d'abord la colonne puis la ligne.",
+          "explanation": "Vrai, c'est la convention. B3 désigne la colonne B et la ligne 3 ; l'inverse désignerait une autre case.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "coder-un-deplacement",
+      "title": "Coder un déplacement",
+      "subtitle": "Une suite d'instructions, sans ambiguïté.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Un robot sur sa grille",
+          "body": "Donne-lui des instructions et regarde-le les exécuter.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les instructions de base",
+          "body": "Avancer d'une case.\n\nTourner à droite d'un quart de tour.\n\nTourner à gauche d'un quart de tour.\n\nAvec ces trois ordres seulement, on peut atteindre n'importe quelle case de la grille."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Tourner ne déplace pas",
+          "body": "Après un quart de tour à droite, le robot est toujours sur la même case : il a seulement changé d'orientation.\n\nC'est l'erreur la plus fréquente quand on compte les cases parcourues — on compte les rotations comme des déplacements."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Répéter plutôt que recopier",
+          "body": "Pour faire un carré : avancer, tourner à droite — et recommencer quatre fois.\n\nÉcrire « répéter 4 fois » est plus court que recopier huit instructions, et surtout plus facile à corriger. C'est déjà de la programmation."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "title": "Quatre quarts de tour",
+          "body": "Quatre quarts de tour dans le même sens ramènent à l'orientation de départ.\n\nDonc tourner cinq fois à droite revient à tourner une fois. Compter modulo quatre évite de simuler tout le parcours."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un robot avance de 3 cases, tourne à droite, avance de 2 cases. Combien de cases a-t-il parcourues en tout ?",
+          "hint": "Tourner ne fait pas avancer.",
+          "explanation": "5 cases. La rotation ne déplace pas le robot, elle change seulement son orientation.",
+          "answer": 5
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de quarts de tour pour revenir à son orientation de départ ?",
+          "explanation": "4. Quatre quarts font un tour complet.",
+          "answer": 4
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un robot tourne 5 fois à droite. À combien de quarts de tour cela revient-il ?",
+          "hint": "Quatre tours s'annulent.",
+          "explanation": "1. Les quatre premiers quarts font un tour complet, il n'en reste qu'un.",
+          "answer": 1
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les instructions pour tracer un carré en répétant.",
+          "explanation": "On avance d'un côté, on tourne, et on répète quatre fois.",
+          "items": [
+            "répéter 4 fois",
+            "avancer d'un côté",
+            "tourner d'un quart de tour à droite",
+            "fin de la répétition"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Pour tracer un carré en avançant puis tournant, combien d'instructions faut-il en tout si on ne répète pas ?",
+          "hint": "Quatre côtés, quatre rotations.",
+          "explanation": "8 instructions : quatre « avancer » et quatre « tourner ». C'est pourquoi la répétition est utile.",
+          "answer": 8
+        }
+      ]
+    },
+    {
+      "id": "entrainement-reperage",
+      "title": "S'entraîner",
+      "subtitle": "Plans, itinéraires et trajets.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Suivre un itinéraire",
+          "body": "Départ en A1. Trois cases vers l'est, puis deux vers le nord.\n\nVers l'est, on change de lettre : A devient D après trois cases.\n\nVers le nord, on monte dans les chiffres : 1 devient 3 après deux cases.\n\nArrivée : D3."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Le chemin le plus court sur un quadrillage",
+          "body": "Si on ne se déplace qu'horizontalement et verticalement, la longueur du plus court chemin est la somme des deux écarts.\n\nDe A1 à D3 : 3 cases d'écart en colonnes, 2 en lignes. Donc 5 cases, quel que soit le chemin choisi.\n\nTous les chemins sans détour font la même longueur. C'est surprenant, et c'est vrai."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Lire une échelle",
+          "body": "Sur un plan, une légende indique ce que vaut une distance. « 1 cm pour 50 m » : deux centimètres sur le papier font cent mètres en vrai."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Départ en A1. Trois cases vers l'est, deux vers le nord. Où arrive-t-on ?",
+          "explanation": "D3. Trois colonnes après A vient D, et deux lignes après 1 vient 3.",
+          "options": [
+            { "text": "D3", "correct": true },
+            { "text": "C3" },
+            { "text": "D2" },
+            { "text": "A3" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cases au minimum pour aller de A1 à D3, en ne se déplaçant qu'en ligne droite horizontale ou verticale ?",
+          "hint": "Additionne les deux écarts.",
+          "explanation": "5 cases : 3 en colonnes plus 2 en lignes. Tous les chemins sans détour font cette longueur.",
+          "answer": 5
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Sur un plan au 1 cm pour 50 m, que représentent 4 cm, en mètres ?",
+          "explanation": "Chaque centimètre vaut cinquante mètres, donc quatre centimètres en valent 4 × 50 = 200.",
+          "answer": 200
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Sur ce même plan, combien de centimètres pour représenter 350 m ?",
+          "explanation": "On fait l'opération inverse : 350 ÷ 50 = 7 cm sur le papier pour 350 mètres en vrai.",
+          "answer": 7
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Sur un quadrillage, deux chemins différents sans détour entre les mêmes cases ont la même longueur.",
+          "explanation": "Vrai. Tant qu'on ne recule jamais, la longueur vaut la somme des deux écarts, quel que soit l'ordre des déplacements.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "defi-reperage",
+      "title": "Défi : des parcours à démêler",
+      "subtitle": "Suivre sans se perdre.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Revenir au point de départ",
+          "body": "Un robot avance de 4 cases, tourne à droite, avance de 4, tourne à droite, avance de 4, tourne à droite, avance de 4.\n\nIl a dessiné un carré et il est revenu exactement d'où il partait.\n\nMais il n'est pas tourné dans le même sens qu'au début : il a fait trois quarts de tour, pas quatre. Il faudrait une rotation de plus."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un robot fait quatre fois « avancer de 4 cases », avec un quart de tour à droite entre chaque. Combien de cases a-t-il parcourues ?",
+          "explanation": "16 cases : quatre côtés de quatre.",
+          "answer": 16
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Après ce parcours, combien de quarts de tour a-t-il faits au total ?",
+          "hint": "Les rotations sont entre les côtés.",
+          "explanation": "3. Avec quatre côtés, il n'y a que trois rotations intercalées — il en manque une pour revenir à l'orientation de départ.",
+          "answer": 3
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un robot va de A1 à F1, puis de F1 à F6. Combien de cases en tout ?",
+          "hint": "De A à F, puis de 1 à 6.",
+          "explanation": "5 + 5 = 10 cases. De A à F il y a cinq pas, et de 1 à 6 également.",
+          "answer": 10
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cases dans un quadrillage de 8 colonnes et 8 lignes ?",
+          "explanation": "8 × 8 = 64 cases, comme un échiquier.",
+          "answer": 64
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un robot tourne 11 fois à droite. À combien de quarts de tour cela revient-il ?",
+          "hint": "Enlève les tours complets.",
+          "explanation": "3. Onze quarts font deux tours complets, soit huit quarts, plus trois.",
+          "answer": 3
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Tourner d'un quart de tour déplace le robot d'une case.",
+          "explanation": "Faux. Une rotation change l'orientation sans changer la position : le robot reste sur la même case.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
