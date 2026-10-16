@@ -1,0 +1,323 @@
+{
+  "chapter": "histoire-sciences-primaire-mesurer-le-monde",
+  "lessons": [
+    {
+      "id": "mesurer-avec-son-corps",
+      "title": "Mesurer avec son corps",
+      "subtitle": "Des pieds, des coudées, des pouces.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qu'on a sous la main",
+          "body": "Pendant très longtemps, on a mesuré avec son corps : le pouce, le pied, la coudée — du coude au bout des doigts.\n\nC'est pratique : on a toujours sa règle avec soi."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le problème",
+          "body": "Mesure la table avec tes pieds, puis demande à un adulte de recommencer avec les siens.\n\nVous ne trouverez pas le même nombre. Pourtant la table n'a pas changé."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Pourquoi c'est grave",
+          "body": "Si le marchand mesure le tissu avec son bras et que l'acheteur mesure avec le sien, lequel a raison ?\n\nSans unité commune, impossible de commercer, de construire une maison à plusieurs, ou de comparer deux mesures faites ailleurs."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Les premières unités venaient du corps humain.",
+            "Elles changeaient d'une personne à l'autre.",
+            "Mesurer ensemble demande une unité commune."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi mesurer en pieds posait-il problème ?",
+          "hint": "Tout le monde a-t-il les mêmes pieds ?",
+          "explanation": "Parce que les pieds ne font pas tous la même longueur : deux personnes mesurant la même table trouvent deux nombres différents.",
+          "options": [
+            { "text": "Les pieds n'ont pas tous la même longueur", "correct": true },
+            { "text": "C'était trop long à faire" },
+            { "text": "On ne savait pas compter" },
+            { "text": "Les pieds sont trop petits" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Deux personnes qui mesurent la même table en pieds trouvent le même nombre.",
+          "answer": false,
+          "explanation": "Non : celle qui a les plus grands pieds en compte moins. La table n'a pourtant pas changé de taille."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque ancienne unité à la partie du corps dont elle vient.",
+          "explanation": "Ces trois unités viennent directement du corps : c'est ce qui les rendait commodes, et c'est aussi ce qui les rendait incertaines.",
+          "pairs": [
+            { "left": "la coudée", "right": "du coude aux doigts" },
+            { "left": "le pouce", "right": "la largeur du pouce" },
+            { "left": "le pied", "right": "la longueur du pied" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "une-mesure-pour-tous",
+      "title": "Une mesure pour tous",
+      "subtitle": "L'invention du mètre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trouver quelque chose qui ne bouge pas",
+          "body": "À la fin du 18e siècle, en France, on décide de créer une unité que personne ne pourra contester.\n\nIl fallait la prendre sur quelque chose que tout le monde partage. On l'a prise sur la Terre elle-même."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le mètre",
+          "body": "On imagine le trajet qui va du pôle Nord à l'équateur, en passant par Paris : un quart de tour de la Terre.\n\nLe mètre a été défini comme la dix-millionième partie de ce trajet. Un quart de tour vaut donc 10 000 kilomètres, et le tour complet 40 000 kilomètres."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "C'est pour cela que la circonférence de la Terre fait un nombre aussi rond. Ce n'est pas une coïncidence : c'est le mètre qui a été taillé pour, pas la Terre."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le même partout",
+          "body": "Aujourd'hui presque tous les pays l'utilisent. Un mètre à Dakar, à Tokyo ou à Lima, c'est exactement la même longueur.\n\nC'est ce qui permet à une pièce fabriquée ici d'entrer dans une machine construite là-bas."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de kilomètres fait le tour de la Terre, d'après la définition du mètre ?",
+          "answer": 40000,
+          "tolerance": 100,
+          "unit": "km",
+          "hint": "Quatre fois le quart.",
+          "explanation": "40 000 km : le quart valait 10 000 km, et il y a quatre quarts dans un tour.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de mètres y a-t-il dans 1 kilomètre ?",
+          "answer": 1000,
+          "tolerance": 0.01,
+          "unit": "mètres",
+          "hint": "« Kilo » veut dire mille.",
+          "explanation": "1 000 mètres. « Kilo » signifie mille : c'est le même préfixe que dans kilogramme.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Sur quoi le mètre a-t-il été pris ?",
+          "hint": "Quelque chose que tout le monde partage.",
+          "explanation": "Sur la Terre : un dix-millionième du trajet entre le pôle et l'équateur. Personne ne peut prétendre que sa Terre est plus grande.",
+          "options": [
+            { "text": "Sur la taille de la Terre", "correct": true },
+            { "text": "Sur le pied du roi" },
+            { "text": "Sur la hauteur d'un homme" },
+            { "text": "Sur la longueur d'une barre de fer choisie au hasard" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le tour de la Terre fait 40 000 km par hasard.",
+          "answer": false,
+          "explanation": "Non : c'est le mètre qui a été choisi pour que ce soit un compte rond. La Terre n'y est pour rien."
+        }
+      ]
+    },
+    {
+      "id": "mesurer-la-terre",
+      "title": "Mesurer la Terre avec un bâton",
+      "subtitle": "Ératosthène, il y a 2 200 ans.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux villes, deux ombres",
+          "body": "Bien avant le mètre, un savant grec d'Égypte, Ératosthène, a mesuré la Terre sans quitter son pays.\n\nIl savait qu'à Syène, le même jour à midi, un bâton planté droit ne faisait aucune ombre. À Alexandrie, le sien en faisait une."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Son raisonnement",
+          "body": "Règle l'angle de l'ombre et la distance entre les deux villes.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le calcul",
+          "body": "L'ombre d'Alexandrie donnait un angle d'environ 7 degrés, soit un cinquantième du tour complet.\n\nLes deux villes étaient distantes d'environ 800 km. Si 800 km font un cinquantième du tour, le tour entier fait 50 fois 800, soit 40 000 km."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Il n'avait ni satellite, ni avion, ni même de carte complète. Juste deux bâtons, une distance, et l'idée que la Terre est ronde."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un cinquantième de tour, cela fait combien de degrés ?",
+          "answer": 7.2,
+          "tolerance": 0.2,
+          "unit": "degrés",
+          "hint": "360 divisé par 50.",
+          "explanation": "7,2 degrés : un tour fait 360 degrés, et 360 divisé par 50 donne 7,2.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Si 800 km font un cinquantième du tour, combien fait le tour entier ?",
+          "answer": 40000,
+          "tolerance": 500,
+          "unit": "km",
+          "hint": "50 fois 800.",
+          "explanation": "40 000 km. Le vrai tour de la Terre fait environ 40 030 km : Ératosthène s'est trompé de moins de 1 pour cent.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'Ératosthène a dû supposer pour que son calcul marche ?",
+          "hint": "Sans cela, les deux ombres seraient identiques.",
+          "explanation": "Que la Terre est ronde. Sur une Terre plate, les deux bâtons feraient la même ombre, et il n'y aurait rien à mesurer.",
+          "figureId": "eratosthene",
+          "options": [
+            { "text": "Que la Terre est ronde", "correct": true },
+            { "text": "Que la Terre est plate" },
+            { "text": "Que le Soleil tourne autour de la Terre" },
+            { "text": "Que les deux villes ont la même taille" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets son raisonnement dans l'ordre.",
+          "explanation": "Il part de l'ombre mesurée, en déduit la part du tour, utilise la distance connue, et obtient le tour entier.",
+          "items": [
+            "mesurer l'angle de l'ombre à Alexandrie",
+            "en déduire quelle part du tour sépare les deux villes",
+            "connaître la distance entre les deux villes",
+            "calculer le tour complet de la Terre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-mesurer-le-monde",
+      "title": "Défi : mesurer le monde",
+      "subtitle": "Six questions, du pouce au méridien.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Deux mille ans séparent le bâton d'Ératosthène de l'invention du mètre. Les deux mesurent pourtant la même Terre."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "body": "Quand deux méthodes très différentes donnent le même nombre, c'est un bon signe que le nombre est juste."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Ératosthène avait besoin de faire le tour de la Terre pour la mesurer.",
+          "answer": false,
+          "explanation": "Non : il n'a mesuré qu'une ombre et une distance entre deux villes. Tout le reste est du raisonnement."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Ératosthène trouve 40 000 km. Les mesures d'aujourd'hui donnent environ 40 030 km. De combien s'est-il trompé ?",
+          "answer": 30,
+          "tolerance": 5,
+          "unit": "km",
+          "hint": "Fais la différence.",
+          "explanation": "D'environ 30 km sur 40 000, soit moins de 1 pour mille. Avec deux bâtons et une idée juste.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces unités : viennent-elles du corps, ou non ?",
+          "hint": "Lesquelles peut-on mesurer sur soi ?",
+          "explanation": "Le pouce, le pied et la coudée se prennent sur le corps. Le mètre et le kilomètre ont été définis à partir de la Terre.",
+          "categories": ["Vient du corps", "Ne vient pas du corps"],
+          "items": [
+            { "text": "le pouce", "category": 0 },
+            { "text": "la coudée", "category": 0 },
+            { "text": "le mètre", "category": 1 },
+            { "text": "le kilomètre", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de kilomètres sépare le pôle Nord de l'équateur, d'après la définition du mètre ?",
+          "answer": 10000,
+          "tolerance": 50,
+          "unit": "km",
+          "hint": "C'est un quart du tour.",
+          "explanation": "10 000 km : c'est exactement ce que la définition du mètre a fixé, le tour complet valant 40 000 km.",
+          "figureId": "eratosthene"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi a-t-on voulu une unité prise sur la Terre ?",
+          "hint": "Qui pourrait la contester ?",
+          "explanation": "Pour que personne ne puisse la contester : la Terre n'appartient à aucun roi et ne change pas de taille d'un pays à l'autre.",
+          "options": [
+            { "text": "Pour que personne ne puisse la contester", "correct": true },
+            { "text": "Parce que c'était plus facile à mesurer" },
+            { "text": "Pour faire plaisir aux savants" },
+            { "text": "Parce que les autres unités étaient interdites" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Une unité commune permet de comparer des mesures faites dans deux pays différents.",
+          "answer": true,
+          "explanation": "Oui, et c'est tout l'intérêt. Sans elle, chaque mesure ne vaudrait que là où elle a été prise."
+        }
+      ]
+    }
+  ]
+}

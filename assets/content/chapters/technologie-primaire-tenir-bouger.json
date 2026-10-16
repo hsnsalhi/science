@@ -1,0 +1,342 @@
+{
+  "chapter": "technologie-primaire-comment-ca-bouge",
+  "lessons": [
+    {
+      "id": "ca-tient",
+      "title": "Comment ça tient",
+      "subtitle": "Large en bas, lourd en bas.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi ça tombe",
+          "body": "Pose une bouteille sur la table : elle tient. Pose-la sur son bouchon : elle tombe.\n\nC'est la même bouteille. Ce qui change, c'est la largeur de ce qui touche la table."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Deux règles simples",
+          "body": "Plus la base est large, mieux l'objet tient.\n\nPlus le poids est bas, mieux il tient aussi. Une tour de cubes avec les gros cubes en bas tient bien mieux que l'inverse."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le triangle ne se déforme pas",
+          "body": "Fabrique un carré avec quatre baguettes attachées aux coins : il se tord, il s'aplatit.\n\nFais un triangle avec trois baguettes : impossible de le déformer. C'est pour cela qu'on voit des triangles dans les grues, les ponts et les charpentes."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Une base large tient mieux qu'une base étroite.",
+            "Un poids bas tient mieux qu'un poids haut.",
+            "Le triangle est la forme qui ne se déforme pas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle tour de cubes tiendra le mieux ?",
+          "hint": "Où mettre les gros cubes ?",
+          "explanation": "Les gros cubes en bas : la base est large et le poids est bas, les deux conditions sont réunies.",
+          "options": [
+            { "text": "Les gros cubes en bas, les petits en haut", "correct": true },
+            { "text": "Les petits cubes en bas, les gros en haut" },
+            { "text": "Les cubes en alternance" },
+            { "text": "Cela ne change rien" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi voit-on des triangles dans les grues et les ponts ?",
+          "hint": "Essaie de déformer un triangle en papier.",
+          "explanation": "Parce qu'un triangle ne se déforme pas. Un carré, lui, s'aplatit en losange si on pousse sur un coin.",
+          "options": [
+            { "text": "Parce qu'un triangle ne se déforme pas", "correct": true },
+            { "text": "Parce que c'est plus joli" },
+            { "text": "Parce que cela coûte moins cher" },
+            { "text": "Pour laisser passer le vent" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces objets selon leur stabilité.",
+          "hint": "Regarde la largeur de la base.",
+          "explanation": "Une pyramide et une pile de gros cubes ont une base large. Un bâton planté et un verre sur son bord ont une base minuscule.",
+          "categories": ["Tient bien", "Tombe facilement"],
+          "items": [
+            { "text": "une pyramide", "category": 0 },
+            { "text": "une pile de gros cubes", "category": 0 },
+            { "text": "un bâton planté droit", "category": 1 },
+            { "text": "un verre posé sur son bord", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un objet lourd tient toujours mieux qu'un objet léger.",
+          "answer": false,
+          "explanation": "Non : ce qui compte n'est pas le poids, mais où il se trouve. Un objet lourd dont tout le poids est en haut tombe très facilement."
+        }
+      ]
+    },
+    {
+      "id": "ca-bouge",
+      "title": "Comment ça bouge",
+      "subtitle": "Une roue en entraîne une autre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Faire passer le mouvement",
+          "body": "Dans un vélo, tu pédales devant et c'est la roue arrière qui tourne.\n\nLe mouvement a voyagé. Dans beaucoup de machines, ce sont des roues dentées qui s'en chargent."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Deux roues en prise",
+          "body": "Change le nombre de dents de la seconde roue et regarde les compteurs.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Elles tournent à l'envers",
+          "body": "Deux roues dentées qui se touchent ne tournent jamais dans le même sens.\n\nSi la première va dans le sens des aiguilles d'une montre, la seconde va dans l'autre sens. Les dents de l'une poussent celles de l'autre."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Avec trois roues à la suite, la dernière retrouve le sens de la première : le sens s'inverse à chaque contact, et deux inversions s'annulent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Deux roues dentées qui se touchent tournent dans le même sens.",
+          "answer": false,
+          "explanation": "Non, elles tournent en sens contraire : les dents de l'une poussent celles de l'autre.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Trois roues dentées à la suite. La troisième tourne-t-elle comme la première ?",
+          "hint": "Compte les inversions.",
+          "explanation": "Oui : le sens s'inverse deux fois, et deux inversions ramènent au sens de départ.",
+          "figureId": "engrenages",
+          "options": [
+            { "text": "Oui, dans le même sens", "correct": true },
+            { "text": "Non, en sens contraire" },
+            { "text": "Elle ne tourne pas" },
+            { "text": "Cela dépend de sa taille" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quatre roues dentées à la suite. La quatrième tourne-t-elle comme la première ?",
+          "hint": "Une inversion de plus qu'avec trois.",
+          "explanation": "Non : avec quatre roues, il y a trois inversions, et la dernière tourne à l'envers de la première.",
+          "figureId": "engrenages",
+          "options": [
+            { "text": "Non, en sens contraire", "correct": true },
+            { "text": "Oui, dans le même sens" },
+            { "text": "Elle tourne deux fois plus vite" },
+            { "text": "Elle ne tourne pas" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Dans ces objets, qu'est-ce qui transmet le mouvement ?",
+          "hint": "Cherche ce qui relie la source au reste.",
+          "explanation": "La chaîne du vélo et les roues dentées de l'horloge transportent le mouvement. La selle et le cadran ne bougent pas.",
+          "categories": ["Transmet le mouvement", "Ne transmet rien"],
+          "items": [
+            { "text": "la chaîne d'un vélo", "category": 0 },
+            { "text": "les roues dentées d'une horloge", "category": 0 },
+            { "text": "la selle du vélo", "category": 1 },
+            { "text": "le cadran de l'horloge", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plus-vite-ou-plus-fort",
+      "title": "Plus vite, ou plus fort",
+      "subtitle": "On ne gagne jamais les deux.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une question de dents",
+          "body": "Si la roue qui entraîne a 12 dents et que la roue entraînée en a 24, celle-ci tourne deux fois moins vite.\n\nSi c'est l'inverse, elle tourne deux fois plus vite. Tout se joue sur le nombre de dents."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compte les tours",
+          "body": "Mets la seconde roue à 24 dents, puis à 6, et compare les compteurs.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "L'échange",
+          "body": "Une petite roue entraînée tourne vite, mais elle pousse moins fort.\n\nUne grande roue entraînée tourne lentement, mais elle pousse beaucoup plus fort. C'est exactement ce que tu fais en changeant de vitesse sur un vélo."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "En côte, on choisit de tourner vite les pédales pour avancer lentement mais sans forcer. On n'a rien gagné en puissance : on a échangé de la vitesse contre de la force."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "La roue qui entraîne a 12 dents, celle qui est entraînée en a 6. Combien de tours fait la petite pendant un tour de la grande ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "tours",
+          "hint": "Deux fois moins de dents.",
+          "explanation": "2 tours : avec deux fois moins de dents, elle tourne deux fois plus vite.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La roue qui entraîne a 12 dents, celle qui est entraînée en a 24. Combien de tours fait la grande pendant deux tours de la petite ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "unit": "tour",
+          "hint": "Elle tourne deux fois moins vite.",
+          "explanation": "1 tour : avec deux fois plus de dents, elle tourne deux fois moins vite, donc il faut deux tours de l'autre.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pour monter une côte à vélo sans trop forcer, que choisis-tu ?",
+          "hint": "Tu acceptes d'aller moins vite.",
+          "explanation": "Pédaler vite pour avancer lentement : on échange de la vitesse contre de la force, et c'est le seul échange possible.",
+          "options": [
+            { "text": "Pédaler vite et avancer lentement", "correct": true },
+            { "text": "Pédaler lentement et avancer vite" },
+            { "text": "Pédaler vite et avancer vite" },
+            { "text": "Cela ne change rien" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Avec le bon engrenage, on peut aller à la fois plus vite et pousser plus fort.",
+          "answer": false,
+          "explanation": "Non. Un engrenage échange de la vitesse contre de la force, ou l'inverse. Il n'ajoute jamais rien."
+        }
+      ]
+    },
+    {
+      "id": "defi-tenir-bouger",
+      "title": "Défi : tenir et bouger",
+      "subtitle": "Six questions sur les objets qui marchent.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pense à des objets que tu connais : un vélo, une horloge, une grue."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une roue de 12 dents entraîne une roue de 4 dents. Combien de tours fait la petite pendant un tour de la grande ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "tours",
+          "hint": "12 divisé par 4.",
+          "explanation": "3 tours : trois fois moins de dents, donc trois fois plus de tours.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Cinq roues dentées à la suite. La dernière tourne-t-elle comme la première ?",
+          "hint": "Compte les contacts entre roues.",
+          "explanation": "Oui : avec cinq roues il y a quatre inversions, et un nombre pair d'inversions ramène au sens de départ.",
+          "figureId": "engrenages",
+          "options": [
+            { "text": "Oui, dans le même sens", "correct": true },
+            { "text": "Non, en sens contraire" },
+            { "text": "Elle ne tourne pas" },
+            { "text": "Elle tourne cinq fois plus vite" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une grue a-t-elle une base très large ?",
+          "hint": "Elle soulève des charges très haut.",
+          "explanation": "Pour ne pas basculer : elle porte des charges très haut, donc il lui faut une base d'autant plus large.",
+          "options": [
+            { "text": "Pour ne pas basculer", "correct": true },
+            { "text": "Pour aller plus vite" },
+            { "text": "Pour être plus légère" },
+            { "text": "Pour tourner plus facilement" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque forme à ce qu'elle fait.",
+          "explanation": "Le triangle garde sa forme quoi qu'il arrive ; le carré s'aplatit en losange dès qu'on pousse sur un coin.",
+          "pairs": [
+            { "left": "le triangle", "right": "ne se déforme pas" },
+            { "left": "le carré", "right": "s'aplatit en losange" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Dans un engrenage, la roue qui a le plus de dents tourne le plus lentement.",
+          "answer": true,
+          "explanation": "Oui. À chaque tour, les deux roues font passer le même nombre de dents : celle qui en a le plus met donc plus de temps.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre le trajet du mouvement sur un vélo.",
+          "explanation": "Le pied pousse la pédale, la pédale entraîne le plateau, le plateau tire la chaîne, et la chaîne fait tourner la roue arrière.",
+          "items": [
+            "le pied pousse la pédale",
+            "la pédale fait tourner le plateau",
+            "le plateau tire la chaîne",
+            "la chaîne fait tourner la roue arrière"
+          ]
+        }
+      ]
+    }
+  ]
+}

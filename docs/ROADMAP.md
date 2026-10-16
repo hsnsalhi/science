@@ -1,8 +1,8 @@
 # Feuille de route
 
-Le socle technique est posé, et trente-sept chapitres sont jouables — au
+Le socle technique est posé, et trente-neuf chapitres sont jouables — au
 moins un par matière et par niveau. La répartition est désormais la vraie
-question : 21 chapitres au collège contre 9 au primaire, 6 au lycée et 1 à
+question : 21 chapitres au collège contre 11 au primaire, 6 au lycée et 1 à
 l'université. La suite se joue surtout sur le **contenu**, et sur un petit
 nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 étoffé.
@@ -13,12 +13,12 @@ nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 
 L'ordre proposé suit l'utilité pour un élève, pas la facilité d'écriture.
 
-1. **Le primaire**, remonté à neuf chapitres mais encore loin des vingt
+1. **Le primaire**, remonté à onze chapitres mais encore loin des vingt
    et un du collège. C'est le niveau où une suite tenue de dix chapitres change le plus
    l'usage, et celui où l'écriture est la plus exigeante : moins de texte,
    plus de manipulation.
-2. **Les matières les plus maigres** : technologie et histoire des sciences
-   n'ont que deux chapitres chacune.
+2. **Les matières les plus maigres** : technologie et histoire des
+   sciences en ont trois chacune, contre onze aux mathématiques.
 3. **Le lycée et l'université**, où chaque chapitre demande plus de travail
    d'écriture et souvent une figure neuve. L'université n'en a qu'un.
 

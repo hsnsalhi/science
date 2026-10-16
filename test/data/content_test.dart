@@ -4300,4 +4300,174 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : comment ça tient, comment ça bouge', () {
+    late Chapter objets;
+
+    setUpAll(() {
+      objets = catalog.chapterById('technologie-primaire-comment-ca-bouge')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = objets.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    String bonneReponse(String lessonId, String questionId) {
+      final SingleChoiceQuestion q =
+          objets.lessonById(lessonId)!.questions.firstWhere(
+                (Question x) => x.id == questionId,
+              )
+              as SingleChoiceQuestion;
+      return q.options.firstWhere((AnswerOption o) => o.isCorrect).text;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(objets.isPlayable, isTrue);
+      expect(objets.lessons.length, 4);
+    });
+
+    test('les rapports de transmission sont ceux de la figure', () {
+      // 12 dents qui en entraînent 6 : deux tours pour un.
+      expect(
+        GearsFigure.rapport(12, 6),
+        reponseNum('plus-vite-ou-plus-fort', 'q1'),
+      );
+      // 12 dents qui en entraînent 24 : il faut deux tours de la menante
+      // pour un tour de la menée, donc un seul tour pendant deux.
+      expect(
+        GearsFigure.rapport(12, 24) * 2,
+        reponseNum('plus-vite-ou-plus-fort', 'q2'),
+      );
+      expect(
+        GearsFigure.rapport(12, 4),
+        reponseNum('defi-tenir-bouger', 'q1'),
+      );
+    });
+
+    test('le rapport ne dépend que du nombre de dents', () {
+      // L'affirmation du cours : « tout se joue sur le nombre de dents ».
+      // Doubler les deux roues ne change donc rien au rapport.
+      for (final int menante in <int>[6, 12, 24]) {
+        for (final int menee in <int>[4, 6, 12, 24]) {
+          expect(
+            GearsFigure.rapport(menante, menee),
+            closeTo(GearsFigure.rapport(menante * 2, menee * 2), 1e-9),
+            reason: '$menante / $menee',
+          );
+        }
+      }
+    });
+
+    test('le sens de rotation suit la parité du nombre de roues', () {
+      expect(GearsFigure.memeSens(2), isFalse);
+      expect(
+        bonneReponse('ca-bouge', 'q2'),
+        GearsFigure.memeSens(3)
+            ? 'Oui, dans le même sens'
+            : 'Non, en sens contraire',
+      );
+      expect(
+        bonneReponse('ca-bouge', 'q3'),
+        GearsFigure.memeSens(4)
+            ? 'Oui, dans le même sens'
+            : 'Non, en sens contraire',
+      );
+      expect(
+        bonneReponse('defi-tenir-bouger', 'q2'),
+        GearsFigure.memeSens(5)
+            ? 'Oui, dans le même sens'
+            : 'Non, en sens contraire',
+      );
+    });
+
+    test('plus de dents veut bien dire moins de tours', () {
+      // L'affirmation du défi, vérifiée sur toute la plage de la figure.
+      double precedent = double.infinity;
+      for (int dents = 4; dents <= 36; dents++) {
+        final double tours = GearsFigure.rapport(
+          GearsFigure.dentsMenante,
+          dents,
+        );
+        expect(tours, lessThan(precedent), reason: '$dents dents');
+        precedent = tours;
+      }
+    });
+  });
+
+
+  group('Chapitre complet : mesurer le monde', () {
+    late Chapter mesures;
+
+    setUpAll(() {
+      mesures =
+          catalog.chapterById('histoire-sciences-primaire-mesurer-le-monde')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = mesures.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(mesures.isPlayable, isTrue);
+      expect(mesures.lessons.length, 4);
+    });
+
+    test('un cinquantième de tour fait bien l’angle annoncé', () {
+      expect(360 / 50, closeTo(reponseNum('mesurer-la-terre', 'q1'), 0.2));
+    });
+
+    test('la mesure d’Ératosthène se refait sur la figure', () {
+      final double angle = reponseNum('mesurer-la-terre', 'q1');
+      final double trouvee = EratostheneFigure.circonference(angle, 800);
+      expect(trouvee, closeTo(reponseNum('mesurer-la-terre', 'q2'), 500));
+      // « Moins de 1 pour cent d'erreur », dit l'explication.
+      const double reelle = 2 * math.pi * EratostheneFigure.rayonTerre;
+      expect((trouvee - reelle).abs() / reelle, lessThan(0.01));
+    });
+
+    test('l’écart annoncé entre 40 000 km et la vraie valeur est exact', () {
+      const double reelle = 2 * math.pi * EratostheneFigure.rayonTerre;
+      expect(
+        reelle - 40000,
+        closeTo(reponseNum('defi-mesurer-le-monde', 'q2'), 5),
+      );
+    });
+
+    test('le quart de méridien est bien le quart du tour', () {
+      expect(
+        reponseNum('une-mesure-pour-tous', 'q1') / 4,
+        closeTo(reponseNum('defi-mesurer-le-monde', 'q4'), 50),
+      );
+      // Le mètre : dix-millionième du quart. Le compte doit retomber.
+      final double quartEnMetres =
+          reponseNum('defi-mesurer-le-monde', 'q4') *
+          reponseNum('une-mesure-pour-tous', 'q2');
+      expect(quartEnMetres, closeTo(1e7, 5e4));
+    });
+
+    test('la méthode marche pour d’autres villes', () {
+      // Si le raisonnement tient, n'importe quel couple angle / distance
+      // pris sur la vraie Terre doit redonner la même circonférence.
+      const double reelle = 2 * math.pi * EratostheneFigure.rayonTerre;
+      for (final double angle in <double>[2, 5, 7.2, 12, 30]) {
+        final double distance = EratostheneFigure.distancePourAngle(angle);
+        expect(
+          EratostheneFigure.circonference(angle, distance),
+          closeTo(reelle, 1),
+          reason: 'angle de $angle degrés',
+        );
+      }
+    });
+  });
+
 }
