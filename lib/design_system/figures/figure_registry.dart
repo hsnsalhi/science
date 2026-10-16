@@ -13,6 +13,7 @@ import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'derivative_figure.dart';
 import 'dna_figure.dart';
+import 'energy_chain_figure.dart';
 import 'eratosthene_figure.dart';
 import 'fraction_bar_figure.dart';
 import 'food_web_figure.dart';
@@ -74,6 +75,9 @@ abstract final class FigureRegistry {
     // Les cinq fonctions de référence, sur un même repère.
     'fonctions-reference': (BuildContext context, Color accent) =>
         ReferenceFunctionsFigure(accent: accent),
+    // Quatre étages de conversion, et le rendement qui en sort.
+    'chaine-energie': (BuildContext context, Color accent) =>
+        EnergyChainFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

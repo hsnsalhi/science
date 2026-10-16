@@ -971,6 +971,21 @@ void main() {
         await shoot(tester, '$device-43-fonctions');
       });
 
+      // La chaîne d'énergie : quatre barres qui rétrécissent, et le
+      // maillon faible en ambre. Le rendement global est écrit dessous.
+      testWidgets('lycée : la chaîne d\'énergie', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Technologie');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Analyser un système pluritechnologique');
+        await tapText(tester, 'La chaîne d\'énergie');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-44-chaine-energie');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

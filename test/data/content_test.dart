@@ -12,6 +12,7 @@ import 'package:eureka/design_system/figures/complexity_figure.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/dna_figure.dart';
+import 'package:eureka/design_system/figures/energy_chain_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/reference_functions_figure.dart';
@@ -5543,6 +5544,125 @@ void main() {
       );
       expect(carte.body, contains('4 098'));
       expect(carte.body, contains('2024'));
+    });
+  });
+
+
+  group('Chapitre complet : analyser un système', () {
+    late Chapter systeme;
+
+    setUpAll(() {
+      systeme = catalog.chapterById('technologie-lycee-analyser-un-systeme')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = systeme.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(systeme.isPlayable, isTrue);
+      expect(systeme.lessons.length, 4);
+    });
+
+    test('les rendements annoncés se recalculent sur la figure', () {
+      expect(
+        EnergyChainFigure.rendementGlobal(<double>[80, 80, 80, 80]),
+        closeTo(reponseNum('la-chaine-d-energie', 'q1'), 1),
+      );
+      expect(
+        EnergyChainFigure.rendementGlobal(<double>[50, 50]),
+        closeTo(reponseNum('la-chaine-d-energie', 'q2'), 0.5),
+      );
+      expect(
+        EnergyChainFigure.rendementGlobal(
+          EnergyChainFigure.rendementsInitiaux,
+        ),
+        closeTo(reponseNum('ou-agir', 'q1'), 1),
+      );
+      expect(
+        EnergyChainFigure.rendementGlobal(<double>[90, 95, 80, 85]),
+        closeTo(reponseNum('ou-agir', 'q2'), 1),
+      );
+      expect(
+        EnergyChainFigure.rendementGlobal(<double>[50, 80, 50]),
+        closeTo(reponseNum('defi-systeme', 'q1'), 0.5),
+      );
+      expect(
+        EnergyChainFigure.rendementGlobal(<double>[100, 100, 60, 100]),
+        closeTo(reponseNum('defi-systeme', 'q2'), 0.5),
+      );
+    });
+
+    test('le global ne dépasse jamais le plus mauvais étage', () {
+      // L'affirmation centrale de la troisième leçon, balayée sur un
+      // grand nombre de chaînes tirées au hasard.
+      final math.Random hasard = math.Random(23);
+      for (int essai = 0; essai < 500; essai++) {
+        final List<double> chaine = <double>[
+          for (int i = 0; i < 2 + hasard.nextInt(4); i++)
+            10 + hasard.nextInt(19) * 5,
+        ];
+        final double global = EnergyChainFigure.rendementGlobal(chaine);
+        final double pire = chaine.reduce(
+          (double a, double b) => a < b ? a : b,
+        );
+        expect(global, lessThanOrEqualTo(pire + 1e-9), reason: '$chaine');
+      }
+    });
+
+    test('améliorer le pire étage rapporte plus que le meilleur', () {
+      // Le chapitre compare deux améliorations de même ampleur sur la
+      // chaîne réelle. Le gain doit bien être du côté annoncé.
+      const List<double> chaine = <double>[90, 95, 40, 85];
+      double avecEtage(int index, double valeur) =>
+          EnergyChainFigure.rendementGlobal(
+            List<double>.of(chaine)..[index] = valeur,
+          );
+      final double depart = EnergyChainFigure.rendementGlobal(chaine);
+      final double parfaitLeMeilleur = avecEtage(1, 100);
+      final double doubleLePire = avecEtage(2, 80);
+      expect(parfaitLeMeilleur - depart, lessThan(3));
+      expect(doubleLePire - depart, greaterThan(25));
+    });
+
+    test('doubler un rendement double le rendement global', () {
+      // Conséquence directe du produit, et c'est ce que l'explication
+      // affirme : le global est linéaire en chacun de ses facteurs.
+      const List<double> chaine = <double>[90, 95, 40, 85];
+      final double global = EnergyChainFigure.rendementGlobal(chaine);
+      final double doublee = EnergyChainFigure.rendementGlobal(
+        List<double>.of(chaine)..[2] = 80,
+      );
+      expect(doublee, closeTo(2 * global, 1e-9));
+    });
+
+    test('l’énergie restante décroît étage après étage', () {
+      const List<double> chaine = <double>[90, 95, 40, 85];
+      double precedent = 100;
+      for (int i = 1; i <= chaine.length; i++) {
+        final double restant = EnergyChainFigure.apres(chaine, i);
+        expect(restant, lessThan(precedent), reason: 'étage $i');
+        precedent = restant;
+      }
+      expect(EnergyChainFigure.apres(chaine, 0), 100);
+      expect(
+        EnergyChainFigure.apres(chaine, chaine.length),
+        EnergyChainFigure.rendementGlobal(chaine),
+      );
+    });
+
+    test('le thermostat de la chaîne d’information décide bien', () {
+      // La première leçon affirme que la décision appartient au
+      // traitement : la même mesure donne deux décisions selon le seuil,
+      // et le capteur n'y est pour rien.
+      expect(SensorChainFigure.chauffe(18, 20), isTrue);
+      expect(SensorChainFigure.chauffe(18, 16), isFalse);
+      expect(SensorChainFigure.chauffe(20, 20), isFalse);
     });
   });
 

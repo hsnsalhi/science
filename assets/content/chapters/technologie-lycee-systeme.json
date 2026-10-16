@@ -1,0 +1,339 @@
+{
+  "chapter": "technologie-lycee-analyser-un-systeme",
+  "lessons": [
+    {
+      "id": "deux-chaines",
+      "title": "Deux chaînes, un système",
+      "subtitle": "L'information décide, l'énergie agit.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Analyser, c'est séparer",
+          "body": "Devant un système, on ne décrit pas les pièces une à une. On sépare deux circuits qui le traversent.\n\nLa chaîne d'information acquiert, traite, communique. La chaîne d'énergie alimente, distribue, convertit, transmet."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "La chaîne d'information",
+          "body": "Règle la température mesurée et le seuil : la décision se prend, et l'actionneur suit.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Qui fait quoi",
+          "body": "Le capteur ne décide de rien : il mesure et transmet une grandeur.\n\nLe traitement compare, calcule, décide. C'est là, et nulle part ailleurs, que le comportement du système est défini.\n\nL'actionneur exécute, sans savoir pourquoi."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Changer le seuil d'un thermostat ne change ni le capteur ni le radiateur. C'est le signe qu'on a bien affaire à deux chaînes distinctes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans un thermostat, qui décide d'allumer le radiateur ?",
+          "hint": "Pas celui qui mesure, pas celui qui chauffe.",
+          "explanation": "Le traitement : il compare la mesure au seuil. Le capteur ne fait que mesurer, l'actionneur ne fait qu'exécuter.",
+          "figureId": "chaine-information",
+          "options": [
+            { "text": "Le traitement", "correct": true },
+            { "text": "Le capteur" },
+            { "text": "L'actionneur" },
+            { "text": "L'alimentation" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces éléments dans la bonne chaîne.",
+          "hint": "L'un transporte une information, l'autre de la puissance.",
+          "explanation": "Le capteur et le microcontrôleur manipulent de l'information. Le transformateur et le moteur manipulent de l'énergie.",
+          "categories": ["Chaîne d'information", "Chaîne d'énergie"],
+          "items": [
+            { "text": "un capteur de température", "category": 0 },
+            { "text": "un microcontrôleur", "category": 0 },
+            { "text": "un transformateur", "category": 1 },
+            { "text": "un moteur électrique", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne d'information dans l'ordre.",
+          "explanation": "On acquiert une grandeur, on la traite pour décider, on transmet l'ordre, et l'actionneur agit.",
+          "items": [
+            "acquérir la grandeur",
+            "traiter et décider",
+            "transmettre l'ordre",
+            "agir sur le système"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le capteur décide du comportement du système.",
+          "answer": false,
+          "explanation": "Non : il mesure. Le comportement est fixé par le traitement, c'est-à-dire par le programme."
+        }
+      ]
+    },
+    {
+      "id": "la-chaine-d-energie",
+      "title": "La chaîne d'énergie",
+      "subtitle": "Quatre étages, et ce qu'ils gardent.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les quatre fonctions",
+          "body": "Alimenter : fournir l'énergie à partir d'une source.\n\nDistribuer : la laisser passer, ou non. C'est le rôle d'un relais, d'un variateur.\n\nConvertir : changer sa forme — électrique vers mécanique, par exemple.\n\nTransmettre : l'amener jusqu'à l'effecteur, par un engrenage ou une courroie."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Règle les rendements",
+          "body": "Touche un étage pour le choisir, puis déplace le curseur. Regarde le rendement global.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Les rendements se multiplient",
+          "formula": "rendement global = produit des rendements",
+          "body": "chaque étage ne transmet qu'une fraction de ce qu'il reçoit, pas de ce qui est entré au départ."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Un résultat qui surprend",
+          "body": "Quatre étages très honnêtes, à 80 % chacun, ne laissent passer que 41 % de l'énergie.\n\nMultiplier des nombres inférieurs à 1 fait descendre vite. C'est pour cela qu'on compte les étages d'une chaîne avant d'en vanter le rendement."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quatre étages à 80 % chacun : quel est le rendement global, en pour-cent ?",
+          "answer": 41,
+          "tolerance": 1,
+          "unit": "%",
+          "hint": "0,8 multiplié quatre fois par lui-même.",
+          "explanation": "Environ 41 %. Aucun étage n'est mauvais, et pourtant il se perd près de 60 % de l'énergie.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Deux étages, à 50 % et 50 % : quel rendement global, en pour-cent ?",
+          "answer": 25,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "La moitié de la moitié.",
+          "explanation": "25 %. Les rendements se multiplient, ils ne s'additionnent ni ne se moyennent.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que deviennent les 59 % perdus par une chaîne à 41 % ?",
+          "hint": "L'énergie ne disparaît pas.",
+          "explanation": "Essentiellement de la chaleur. L'énergie se conserve : ce qui n'arrive pas au bout est dissipé en route.",
+          "figureId": "chaine-energie",
+          "options": [
+            { "text": "De la chaleur dissipée", "correct": true },
+            { "text": "Ils sont détruits" },
+            { "text": "Ils reviennent à la source" },
+            { "text": "Ils sont stockés dans le système" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne d'énergie dans l'ordre.",
+          "explanation": "On alimente, on distribue, on convertit, puis on transmet jusqu'à l'effecteur.",
+          "items": [
+            "alimenter",
+            "distribuer",
+            "convertir",
+            "transmettre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ou-agir",
+      "title": "Où agir pour améliorer",
+      "subtitle": "Le pire étage commande tout.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Une chaîne réelle",
+          "body": "Alimenter 90 %, distribuer 95 %, convertir 40 %, transmettre 85 %.\n\nLe rendement global vaut 29 %. Le moteur, à 40 %, est de loin le plus mauvais étage."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Deux améliorations possibles",
+          "body": "Porter la distribution de 95 % à 100 % — un étage déjà presque parfait — fait passer le global de 29 % à 31 %.\n\nPorter la conversion de 40 % à 80 % le fait passer à 58 %. Le même effort n'a pas le même effet selon l'étage.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Pourquoi le pire domine",
+          "body": "Le rendement global est inférieur ou égal à celui du plus mauvais étage. Toujours.\n\nAucune amélioration des autres ne peut franchir ce plafond. C'est la raison pour laquelle on commence toujours par identifier le maillon faible."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "La même règle vaut pour la vitesse d'un programme, le débit d'un réseau ou la cadence d'une ligne de production. On l'appelle le goulot d'étranglement."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Alimenter 90 %, distribuer 95 %, convertir 40 %, transmettre 85 %. Quel rendement global, en pour-cent ?",
+          "answer": 29,
+          "tolerance": 1,
+          "unit": "%",
+          "hint": "Multiplie les quatre.",
+          "explanation": "Environ 29 %. Le moteur à 40 % impose à lui seul le plafond.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette chaîne, on porte la conversion de 40 % à 80 %. Quel est le nouveau rendement global, en pour-cent ?",
+          "answer": 58,
+          "tolerance": 1,
+          "unit": "%",
+          "hint": "Le rendement double, le global aussi.",
+          "explanation": "Environ 58 %. Doubler le rendement d'un étage double le rendement global : c'est un produit.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Sur quel étage faut-il agir en priorité ?",
+          "hint": "Celui qui impose le plafond.",
+          "explanation": "Sur le plus mauvais. Le global ne dépassera jamais son rendement, quoi qu'on fasse ailleurs.",
+          "figureId": "chaine-energie",
+          "options": [
+            { "text": "Sur celui dont le rendement est le plus faible", "correct": true },
+            { "text": "Sur celui dont le rendement est le plus élevé" },
+            { "text": "Sur le premier de la chaîne" },
+            { "text": "Sur le dernier de la chaîne" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le rendement global peut dépasser celui du plus mauvais étage.",
+          "answer": false,
+          "explanation": "Non, jamais. Tous les autres facteurs valent au plus 1, donc le produit reste sous le plus petit d'entre eux."
+        }
+      ]
+    },
+    {
+      "id": "defi-systeme",
+      "title": "Défi : analyser un système",
+      "subtitle": "Six questions, des deux chaînes au rendement.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque question, demande-toi d'abord de quelle chaîne il s'agit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Trois étages à 50 %, 80 % et 50 % : quel rendement global, en pour-cent ?",
+          "answer": 20,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "Multiplie les trois.",
+          "explanation": "20 %. Deux étages à moitié perdants suffisent à ramener le global à un cinquième.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une chaîne de 100 % partout sauf un étage à 60 % : quel rendement global, en pour-cent ?",
+          "answer": 60,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "Multiplier par 1 ne change rien.",
+          "explanation": "60 % : le seul étage imparfait fixe tout. C'est le cas limite du maillon faible.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque composant à sa fonction.",
+          "explanation": "Quatre composants, quatre fonctions de la chaîne d'énergie : chacun occupe un étage précis.",
+          "pairs": [
+            { "left": "une batterie", "right": "alimenter" },
+            { "left": "un relais", "right": "distribuer" },
+            { "left": "un moteur", "right": "convertir" },
+            { "left": "un engrenage", "right": "transmettre" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Changer le programme d'un système modifie sa chaîne d'énergie.",
+          "answer": false,
+          "explanation": "Non : le programme appartient à la chaîne d'information. Il change les décisions, pas les composants qui transportent l'énergie."
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range ces grandeurs : information, ou énergie ?",
+          "hint": "Qu'est-ce qui se mesure, qu'est-ce qui se consomme ?",
+          "explanation": "Une mesure et un ordre sont des informations. Une puissance et un couple sont des grandeurs énergétiques.",
+          "categories": ["Information", "Énergie"],
+          "items": [
+            { "text": "une température mesurée", "category": 0 },
+            { "text": "un ordre de démarrage", "category": 0 },
+            { "text": "une puissance en watts", "category": 1 },
+            { "text": "un couple en newtons-mètres", "category": 1 }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Comment s'appelle, en général, l'étage qui limite toute la chaîne ?",
+          "hint": "On en parle aussi pour un réseau ou un programme.",
+          "explanation": "Le goulot d'étranglement. La notion dépasse largement la technologie : elle vaut pour tout système en série.",
+          "options": [
+            { "text": "Le goulot d'étranglement", "correct": true },
+            { "text": "Le point de consigne" },
+            { "text": "L'actionneur" },
+            { "text": "Le rendement nominal" }
+          ]
+        }
+      ]
+    }
+  ]
+}
