@@ -1,0 +1,322 @@
+{
+  "chapter": "astronomie-primaire-le-soleil-et-les-planetes",
+  "lessons": [
+    {
+      "id": "le-soleil-notre-etoile",
+      "title": "Le Soleil, notre étoile",
+      "subtitle": "Une étoile parmi des milliards.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une étoile, pas une planète",
+          "body": "Le Soleil brille de sa propre lumière : c'est une étoile.\n\nLes planètes, elles, ne brillent pas toutes seules. Quand tu vois Vénus le soir, tu vois la lumière du Soleil qui rebondit dessus."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Si loin, et pourtant",
+          "body": "Le Soleil est à 150 millions de kilomètres de nous.\n\nSa lumière voyage très vite, et pourtant elle met environ 8 minutes pour arriver jusqu'à toi. La lumière que tu vois est partie il y a 8 minutes."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Les autres étoiles du ciel ne sont pas plus petites que le Soleil : elles sont beaucoup, beaucoup plus loin."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Le Soleil est une étoile : il produit sa lumière.",
+            "Les planètes ne font que renvoyer la lumière reçue.",
+            "La lumière du Soleil met 8 minutes à nous atteindre."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi voit-on les planètes briller dans le ciel ?",
+          "hint": "D'où vient leur lumière ?",
+          "explanation": "Elles renvoient la lumière du Soleil. Contrairement aux étoiles, elles n'en produisent aucune.",
+          "options": [
+            { "text": "Elles renvoient la lumière du Soleil", "correct": true },
+            { "text": "Elles produisent leur propre lumière" },
+            { "text": "Elles reflètent la lumière de la Terre" },
+            { "text": "Elles sont en feu" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes met la lumière du Soleil pour arriver sur Terre ?",
+          "answer": 8,
+          "tolerance": 0.5,
+          "unit": "minutes",
+          "hint": "Un peu plus de huit.",
+          "explanation": "Environ 8 minutes. C'est très court pour 150 millions de kilomètres, et pourtant tu vois toujours le Soleil avec 8 minutes de retard.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Le Soleil est une planète.",
+          "answer": false,
+          "explanation": "Non : c'est une étoile. Les planètes tournent autour de lui, et aucune ne produit sa propre lumière."
+        }
+      ]
+    },
+    {
+      "id": "les-huit-planetes",
+      "title": "Les huit planètes",
+      "subtitle": "Quatre petites, puis quatre géantes.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Dans l'ordre",
+          "body": "En partant du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus, Neptune.\n\nHuit planètes, et la nôtre est la troisième."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Choisis une planète",
+          "body": "Touche une planète pour voir sa distance au Soleil.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Deux familles",
+          "body": "Les quatre premières — Mercure, Vénus, la Terre, Mars — sont petites et faites de roche. On peut s'y poser.\n\nLes quatre suivantes — Jupiter, Saturne, Uranus, Neptune — sont géantes et faites surtout de gaz. Il n'y a pas de sol où atterrir."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Jupiter, la plus grosse",
+          "body": "Jupiter est de loin la plus grande : son diamètre vaut environ 11 fois celui de la Terre.\n\nMis côte à côte, il faudrait aligner onze Terres pour faire la largeur de Jupiter."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de planètes tournent autour du Soleil ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "unit": "planètes",
+          "hint": "De Mercure à Neptune.",
+          "explanation": "8 planètes. Pluton en faisait partie autrefois, mais elle est aujourd'hui classée comme planète naine.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces planètes de la plus proche du Soleil à la plus lointaine.",
+          "explanation": "Mercure, Vénus, la Terre puis Mars : ce sont les quatre planètes rocheuses, dans l'ordre.",
+          "items": [
+            "Mercure",
+            "Vénus",
+            "la Terre",
+            "Mars"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces planètes dans leur famille.",
+          "hint": "Les petites sont les plus proches du Soleil.",
+          "explanation": "Les quatre planètes rocheuses sont les plus proches du Soleil ; les quatre géantes de gaz sont au-delà de Mars.",
+          "categories": ["Rocheuse", "Géante de gaz"],
+          "items": [
+            { "text": "Mercure", "category": 0 },
+            { "text": "Mars", "category": 0 },
+            { "text": "Jupiter", "category": 1 },
+            { "text": "Neptune", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de Terres faudrait-il aligner pour faire la largeur de Jupiter ?",
+          "answer": 11,
+          "tolerance": 0.5,
+          "unit": "Terres",
+          "hint": "Plus de dix.",
+          "explanation": "Environ 11. Jupiter mesure près de 143 000 km de diamètre, contre moins de 13 000 km pour la Terre.",
+          "figureId": "systeme-solaire"
+        }
+      ]
+    },
+    {
+      "id": "surtout-du-vide",
+      "title": "Surtout du vide",
+      "subtitle": "Les dessins mentent tous un peu.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les images trompent",
+          "body": "Sur presque tous les dessins, les huit planètes sont bien rangées, à peu près à la même distance les unes des autres.\n\nC'est faux. Et ce n'est pas un petit détail : c'est l'essentiel."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Regarde les vraies distances",
+          "body": "Les quatre planètes rocheuses sont tassées tout près du Soleil. Tout le reste est du vide.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Un ordre de grandeur",
+          "body": "La Terre est à 150 millions de kilomètres du Soleil.\n\nNeptune est à 4 495 millions de kilomètres : environ 30 fois plus loin que nous.\n\nEntre les deux, il n'y a presque rien."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Si le Soleil était une balle posée dans la cour, la Terre serait un grain de sable à vingt mètres, et Neptune un autre grain à six cents mètres."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Neptune est combien de fois plus loin du Soleil que la Terre ?",
+          "answer": 30,
+          "tolerance": 1,
+          "unit": "fois",
+          "hint": "4 495 divisé par 150.",
+          "explanation": "Environ 30 fois. C'est ce chiffre que les dessins du Système solaire écrasent toujours.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "q2",
+          "kind": "estimation",
+          "prompt": "À ton avis, combien de minutes met la lumière du Soleil pour atteindre Neptune ?",
+          "answer": 250,
+          "min": 10,
+          "max": 500,
+          "unit": "minutes",
+          "explanation": "Environ 250 minutes, soit plus de quatre heures. Pour la Terre, il ne fallait que 8 minutes.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Les huit planètes sont régulièrement espacées, comme sur les dessins.",
+          "answer": false,
+          "explanation": "Non. Les quatre rocheuses sont serrées près du Soleil, et les distances deviennent ensuite énormes."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Qu'y a-t-il entre les planètes ?",
+          "hint": "Pense à ce que traverse une sonde spatiale.",
+          "explanation": "Presque rien : du vide. C'est pour cela qu'un voyage vers une autre planète dure des mois ou des années.",
+          "options": [
+            { "text": "Presque rien : du vide", "correct": true },
+            { "text": "De l'air, comme sur Terre" },
+            { "text": "Des nuages" },
+            { "text": "D'autres petites planètes, partout" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-soleil-planetes",
+      "title": "Défi : le Système solaire",
+      "subtitle": "Six questions, du Soleil à Neptune.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Tu peux revenir à la figure si tu hésites sur une distance."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "La Terre est la combientième planète à partir du Soleil ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Mercure, Vénus, puis…",
+          "explanation": "La troisième, après Mercure et Vénus.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la planète la plus proche du Soleil ?",
+          "hint": "C'est aussi la plus petite.",
+          "explanation": "Mercure, à 58 millions de kilomètres. C'est aussi la plus petite des huit.",
+          "figureId": "systeme-solaire",
+          "options": [
+            { "text": "Mercure", "correct": true },
+            { "text": "Vénus" },
+            { "text": "la Terre" },
+            { "text": "Mars" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la plus grosse planète ?",
+          "hint": "Onze fois la largeur de la Terre.",
+          "explanation": "Jupiter : son diamètre vaut environ onze fois celui de la Terre. Toutes les autres planètes réunies tiendraient à l'intérieur.",
+          "figureId": "systeme-solaire",
+          "options": [
+            { "text": "Jupiter", "correct": true },
+            { "text": "Saturne" },
+            { "text": "Neptune" },
+            { "text": "la Terre" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque planète à sa famille.",
+          "explanation": "Les quatre planètes proches du Soleil sont rocheuses ; les quatre lointaines sont des géantes de gaz.",
+          "pairs": [
+            { "left": "Mars", "right": "rocheuse" },
+            { "left": "Saturne", "right": "géante de gaz" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Les étoiles du ciel sont plus petites que le Soleil.",
+          "answer": false,
+          "explanation": "Non : beaucoup sont bien plus grosses. Elles paraissent minuscules parce qu'elles sont immensément plus loin."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de planètes rocheuses compte le Système solaire ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "planètes",
+          "hint": "Les quatre premières.",
+          "explanation": "4 : Mercure, Vénus, la Terre et Mars. Les quatre autres sont des géantes de gaz.",
+          "figureId": "systeme-solaire"
+        }
+      ]
+    }
+  ]
+}

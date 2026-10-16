@@ -71,6 +71,14 @@ class SolarSystemFigure extends StatefulWidget {
 
   final Color accent;
 
+  /// Vitesse de la lumière, en kilomètres par seconde.
+  static const double vitesseLumiere = 299792.458;
+
+  /// Minutes que met la lumière du Soleil pour parcourir [distance],
+  /// exprimée en millions de kilomètres.
+  static double minutesLumiere(double distance) =>
+      distance * 1e6 / vitesseLumiere / 60;
+
   @override
   State<SolarSystemFigure> createState() => _SolarSystemFigureState();
 }
@@ -86,7 +94,8 @@ class _SolarSystemFigureState extends State<SolarSystemFigure> {
 
   /// Durée du trajet de la lumière, du Soleil à la planète.
   String get _tempsLumiere {
-    final double minutes = planetes[_choisie].distance * 1e6 / 299792.458 / 60;
+    final double minutes =
+        SolarSystemFigure.minutesLumiere(planetes[_choisie].distance);
     if (minutes < 60) return '${minutes.round()} min';
     final double heures = minutes / 60;
     return '${heures.toStringAsFixed(1).replaceAll('.', ',')} h';

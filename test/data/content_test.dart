@@ -4058,4 +4058,246 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : programmer des déplacements', () {
+    late Chapter robot;
+
+    setUpAll(() {
+      robot = catalog.chapterById(
+        'informatique-primaire-programmer-des-deplacements',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = robot.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Les cases réellement traversées pour [tours] répétitions.
+    int casesParcourues(int tours) =>
+        LoopRobotFigure.chemin(tours).length - 1;
+
+    test('est jouable de bout en bout', () {
+      expect(robot.isPlayable, isTrue);
+      expect(robot.lessons.length, 4);
+    });
+
+    test('le carré se referme à quatre tours, et pas avant', () {
+      final List<({int x, int y})> quatre = LoopRobotFigure.chemin(4);
+      expect(quatre.last, quatre.first, reason: 'le carré doit se refermer');
+      for (final int tours in <int>[1, 2, 3]) {
+        final List<({int x, int y})> partiel =
+            LoopRobotFigure.chemin(tours);
+        expect(
+          partiel.last == partiel.first,
+          isFalse,
+          reason: '$tours tours ne doivent pas refermer le chemin',
+        );
+      }
+      expect(reponseNum('repeter-sans-recopier', 'q1'), 4);
+      // Un côté par tour : c'est ce que le défi annonce.
+      expect(reponseNum('defi-deplacements', 'q3'), 4);
+    });
+
+    test('les cases parcourues sont celles qu’annoncent les énoncés', () {
+      expect(reponseNum('avancer-et-tourner', 'q1'), casesParcourues(3));
+      expect(reponseNum('defi-deplacements', 'q1'), casesParcourues(3));
+      // Deux cases par tour, « tourner » ne déplace rien.
+      for (int tours = 1; tours <= 4; tours++) {
+        expect(casesParcourues(tours), tours * LoopRobotFigure.pas);
+      }
+    });
+
+    test('le nombre d’ordres exécutés est bien le double des tours', () {
+      // La boucle s'écrit en une ligne mais exécute deux ordres par tour.
+      expect(reponseNum('repeter-sans-recopier', 'q2'), 4 * 2);
+    });
+
+    test('le cinquième tour repasse sur un côté déjà parcouru', () {
+      final Set<String> deja = LoopRobotFigure.chemin(4)
+          .map((({int x, int y}) p) => '${p.x},${p.y}')
+          .toSet();
+      final List<({int x, int y})> cinq = LoopRobotFigure.chemin(5);
+      for (int i = 8; i < cinq.length; i++) {
+        expect(
+          deja,
+          contains('${cinq[i].x},${cinq[i].y}'),
+          reason: 'la case ${cinq[i]} devrait déjà avoir été visitée',
+        );
+      }
+    });
+
+    test('deux quarts de tour font bien un demi-tour', () {
+      // Le premier côté et le troisième doivent se parcourir en sens
+      // opposés : c'est l'affirmation de la question sur les directions.
+      final List<({int x, int y})> chemin = LoopRobotFigure.chemin(4);
+      final ({int x, int y}) premier = (
+        x: chemin[1].x - chemin[0].x,
+        y: chemin[1].y - chemin[0].y,
+      );
+      final ({int x, int y}) troisieme = (
+        x: chemin[5].x - chemin[4].x,
+        y: chemin[5].y - chemin[4].y,
+      );
+      expect(troisieme.x, -premier.x);
+      expect(troisieme.y, -premier.y);
+      expect(reponseNum('avancer-et-tourner', 'q3'), 4);
+    });
+
+    test('le robot ne sort jamais de la grille', () {
+      for (int tours = 0; tours <= 8; tours++) {
+        for (final ({int x, int y}) p in LoopRobotFigure.chemin(tours)) {
+          expect(p.x, inInclusiveRange(0, LoopRobotFigure.cotes - 1));
+          expect(p.y, inInclusiveRange(0, LoopRobotFigure.cotes - 1));
+        }
+      }
+    });
+  });
+
+
+  group('Chapitre complet : le Soleil et les planètes', () {
+    late Chapter systeme;
+
+    setUpAll(() {
+      systeme = catalog.chapterById(
+        'astronomie-primaire-le-soleil-et-les-planetes',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = systeme.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    Planete parNom(String nom) =>
+        planetes.firstWhere((Planete p) => p.nom == nom);
+
+    test('est jouable de bout en bout', () {
+      expect(systeme.isPlayable, isTrue);
+      expect(systeme.lessons.length, 4);
+    });
+
+    test('les comptes de planètes sont ceux de la table', () {
+      expect(reponseNum('les-huit-planetes', 'q1'), planetes.length);
+      // La Terre est la troisième en partant du Soleil.
+      expect(
+        planetes.indexWhere((Planete p) => p.nom == 'Terre') + 1,
+        reponseNum('defi-soleil-planetes', 'q1'),
+      );
+      // Les quatre rocheuses sont celles d'avant Jupiter.
+      final int rocheuses =
+          planetes.indexWhere((Planete p) => p.nom == 'Jupiter');
+      expect(reponseNum('defi-soleil-planetes', 'q6'), rocheuses);
+      expect(rocheuses, 4);
+    });
+
+    test('la table est bien rangée par distance croissante', () {
+      // Tout le chapitre repose sur cet ordre : si la table changeait,
+      // la remise en ordre des planètes deviendrait fausse en silence.
+      for (int i = 1; i < planetes.length; i++) {
+        expect(
+          planetes[i].distance,
+          greaterThan(planetes[i - 1].distance),
+          reason: planetes[i].nom,
+        );
+      }
+      final OrderingQuestion q =
+          systeme.lessonById('les-huit-planetes')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as OrderingQuestion;
+      final List<double> distances = q.items
+          .map((String nom) => parNom(nom.replaceAll('la ', '')).distance)
+          .toList();
+      for (int i = 1; i < distances.length; i++) {
+        expect(distances[i], greaterThan(distances[i - 1]));
+      }
+    });
+
+    test('Mercure est la plus proche et Jupiter la plus grosse', () {
+      final Planete proche = planetes.reduce(
+        (Planete a, Planete b) => a.distance < b.distance ? a : b,
+      );
+      expect(proche.nom, 'Mercure');
+      final Planete grosse = planetes.reduce(
+        (Planete a, Planete b) => a.diametre > b.diametre ? a : b,
+      );
+      expect(grosse.nom, 'Jupiter');
+      // « Toutes les autres planètes réunies tiendraient à l'intérieur » :
+      // c'est une affaire de volumes, pas de diamètres. Additionner les
+      // diamètres donnerait le résultat inverse, et l'affirmation serait
+      // fausse — c'est ce test qui a attrapé la première version.
+      double volume(Planete p) => math.pow(p.diametre, 3).toDouble();
+      final double autres = planetes
+          .where((Planete p) => p.nom != 'Jupiter')
+          .fold(0.0, (double somme, Planete p) => somme + volume(p));
+      expect(volume(grosse), greaterThan(autres));
+    });
+
+    test('les rapports annoncés se recalculent', () {
+      final double terre = parNom('Terre').diametre;
+      expect(
+        parNom('Jupiter').diametre / terre,
+        closeTo(reponseNum('les-huit-planetes', 'q4'), 0.5),
+      );
+      expect(
+        parNom('Neptune').distance / parNom('Terre').distance,
+        closeTo(reponseNum('surtout-du-vide', 'q1'), 1),
+      );
+    });
+
+    test('les temps de lumière annoncés sont les bons', () {
+      expect(
+        SolarSystemFigure.minutesLumiere(parNom('Terre').distance),
+        closeTo(reponseNum('le-soleil-notre-etoile', 'q2'), 0.5),
+      );
+      expect(
+        SolarSystemFigure.minutesLumiere(parNom('Neptune').distance),
+        closeTo(reponseNum('surtout-du-vide', 'q2'), 5),
+      );
+    });
+
+    test('le tri rocheuses / géantes suit la table', () {
+      final ClassifyQuestion q =
+          systeme.lessonById('les-huit-planetes')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as ClassifyQuestion;
+      final int premiereGeante =
+          planetes.indexWhere((Planete p) => p.nom == 'Jupiter');
+      for (final ClassifyItem item in q.items) {
+        final int rang =
+            planetes.indexWhere((Planete p) => p.nom == item.text);
+        expect(rang, isNonNegative, reason: item.text);
+        expect(
+          item.category,
+          rang < premiereGeante ? 0 : 1,
+          reason: item.text,
+        );
+        // Une géante est forcément plus grosse que toutes les rocheuses.
+        if (item.category == 1) {
+          expect(
+            planetes[rang].diametre,
+            greaterThan(parNom('Terre').diametre),
+            reason: item.text,
+          );
+        }
+      }
+    });
+
+    test('l’image du Soleil-balle garde les bonnes proportions', () {
+      // « La Terre à vingt mètres, Neptune à six cents. »
+      final double facteur = 20 / parNom('Terre').distance;
+      expect(parNom('Neptune').distance * facteur, closeTo(600, 50));
+    });
+  });
+
 }
