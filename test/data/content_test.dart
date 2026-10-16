@@ -5055,4 +5055,189 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : tri et recherche', () {
+    late Chapter algos;
+
+    setUpAll(() {
+      algos = catalog.chapterById(
+        'informatique-lycee-algorithmique-tri-et-recherche',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = algos.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Comparaisons d'une recherche dichotomique, dans le pire cas.
+    ///
+    /// Chaque comparaison écarte l'élément du milieu et l'une des deux
+    /// moitiés. Le pire cas garde la plus grande des deux : prendre la
+    /// plus petite donnerait une comparaison de moins et flatterait
+    /// l'algorithme d'un cran.
+    int dichotomie(int n) {
+      int restant = n;
+      int comparaisons = 0;
+      while (restant > 0) {
+        comparaisons++;
+        final int apresLeMilieu = restant - 1;
+        restant = apresLeMilieu - apresLeMilieu ~/ 2;
+      }
+      return comparaisons;
+    }
+
+    /// Comparaisons d'un tri par sélection, réellement exécuté.
+    int triSelection(List<int> tableau) {
+      final List<int> t = List<int>.of(tableau);
+      int comparaisons = 0;
+      for (int i = 0; i < t.length - 1; i++) {
+        int mini = i;
+        for (int j = i + 1; j < t.length; j++) {
+          comparaisons++;
+          if (t[j] < t[mini]) mini = j;
+        }
+        final int echange = t[i];
+        t[i] = t[mini];
+        t[mini] = echange;
+      }
+      expect(t, orderedEquals(List<int>.of(tableau)..sort()));
+      return comparaisons;
+    }
+
+    /// Comparaisons d'un tri par insertion, réellement exécuté.
+    int triInsertion(List<int> tableau) {
+      final List<int> t = List<int>.of(tableau);
+      int comparaisons = 0;
+      for (int i = 1; i < t.length; i++) {
+        int j = i - 1;
+        final int valeur = t[i];
+        while (j >= 0) {
+          comparaisons++;
+          if (t[j] <= valeur) break;
+          t[j + 1] = t[j];
+          j--;
+        }
+        t[j + 1] = valeur;
+      }
+      expect(t, orderedEquals(List<int>.of(tableau)..sort()));
+      return comparaisons;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(algos.isPlayable, isTrue);
+      expect(algos.lessons.length, 4);
+    });
+
+    test('les comparaisons de la dichotomie sont celles annoncées', () {
+      expect(dichotomie(1000), reponseNum('chercher-dans-un-tableau', 'q1'));
+      expect(
+        dichotomie(1000000),
+        reponseNum('chercher-dans-un-tableau', 'q2'),
+      );
+      expect(dichotomie(64), reponseNum('defi-tri-recherche', 'q2'));
+      // La formule du cours : partie entière de log₂ n, plus 1.
+      for (int n = 1; n <= 5000; n++) {
+        expect(
+          dichotomie(n),
+          (math.log(n) / math.ln2).floor() + 1,
+          reason: 'n = $n',
+        );
+      }
+    });
+
+    test('le tri par sélection fait bien n(n−1)/2 comparaisons', () {
+      // Le tri est réellement exécuté, et son résultat vérifié trié : le
+      // compte ne vaudrait rien s'il venait d'un algorithme faux.
+      final math.Random hasard = math.Random(7);
+      for (final int n in <int>[2, 5, 10, 20, 50]) {
+        final List<int> tableau = <int>[
+          for (int i = 0; i < n; i++) hasard.nextInt(1000),
+        ];
+        expect(triSelection(tableau), n * (n - 1) ~/ 2, reason: 'n = $n');
+        // Et le compte ne dépend pas du contenu : déjà trié, ou à l'envers.
+        expect(
+          triSelection(List<int>.of(tableau)..sort()),
+          n * (n - 1) ~/ 2,
+        );
+        expect(
+          triSelection(List<int>.of(tableau)..sort((int a, int b) => b - a)),
+          n * (n - 1) ~/ 2,
+        );
+      }
+      expect(triSelection(<int>[9, 3, 7, 1, 8, 2, 6, 4, 10, 5]),
+          reponseNum('trier-en-n-carre', 'q1'));
+      final List<int> cent = <int>[for (int i = 100; i > 0; i--) i];
+      expect(triSelection(cent), reponseNum('defi-tri-recherche', 'q1'));
+    });
+
+    test('le tri par insertion dépend du tableau, lui', () {
+      const int n = 10;
+      final List<int> trie = <int>[for (int i = 0; i < n; i++) i];
+      final List<int> envers = <int>[for (int i = n; i > 0; i--) i];
+      expect(triInsertion(trie), n - 1);
+      expect(triInsertion(trie), reponseNum('trier-en-n-carre', 'q2'));
+      expect(triInsertion(envers), n * (n - 1) ~/ 2);
+      // C'est ce contraste que le chapitre oppose à la sélection.
+      expect(triInsertion(trie), lessThan(triInsertion(envers)));
+      expect(triSelection(trie), triSelection(envers));
+    });
+
+    test('le quadratique est bien multiplié par cent', () {
+      expect(
+        Complexite.quadratique.operations(1000) /
+            Complexite.quadratique.operations(100),
+        closeTo(100, 1e-9),
+      );
+    });
+
+    test('n log n reste très en dessous de n², et l’écart grandit', () {
+      double ecart(double n) =>
+          Complexite.quadratique.operations(n) /
+          Complexite.quasiLineaire.operations(n);
+      expect(ecart(1000), greaterThan(40));
+      double precedent = 0;
+      for (final double n in <double>[100, 1000, 10000, 100000]) {
+        expect(ecart(n), greaterThan(precedent), reason: 'n = $n');
+        precedent = ecart(n);
+      }
+    });
+
+    test('le temps annoncé pour un million d’éléments est juste', () {
+      // Un tri quadratique sur un million d'éléments, à un milliard
+      // d'opérations par seconde.
+      final double secondes = ComplexityFigure.secondes(
+        Complexite.quadratique.operations(1e6) / 2,
+      );
+      expect(
+        secondes,
+        closeTo(reponseNum('defi-tri-recherche', 'q5'), 100),
+      );
+      // Le tri fusion, lui, répond en quelques dizaines de millisecondes.
+      expect(
+        ComplexityFigure.secondes(Complexite.quasiLineaire.operations(1e6)),
+        lessThan(0.05),
+      );
+    });
+
+    test('le nombre de niveaux du tri fusion est celui annoncé', () {
+      int niveaux(int n) {
+        int morceaux = n;
+        int compte = 0;
+        while (morceaux > 1) {
+          morceaux = (morceaux / 2).ceil();
+          compte++;
+        }
+        return compte;
+      }
+
+      expect(niveaux(1024), reponseNum('pourquoi-n-log-n', 'q1'));
+      expect(niveaux(1024), 10);
+    });
+  });
+
 }

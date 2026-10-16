@@ -1,0 +1,332 @@
+{
+  "chapter": "informatique-lycee-algorithmique-tri-et-recherche",
+  "lessons": [
+    {
+      "id": "chercher-dans-un-tableau",
+      "title": "Chercher dans un tableau",
+      "subtitle": "Et ce que le tri change à tout.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La recherche séquentielle",
+          "body": "On parcourt les cases une à une jusqu'à trouver la valeur, ou jusqu'au bout.\n\nElle marche toujours, sur n'importe quel tableau. Au pire, elle lit les n cases."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La recherche dichotomique",
+          "body": "Si le tableau est trié, on compare à la case du milieu : la valeur cherchée est avant, après, ou c'est elle.\n\nÀ chaque comparaison, la moitié du tableau disparaît. Au pire, il faut la partie entière de log₂ n, plus 1, comparaisons."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Sur un million d'éléments",
+          "body": "Séquentielle : jusqu'à un million de lectures.\n\nDichotomique : 20 comparaisons. Pas 20 000, ni 2 000. Vingt."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "body": "La dichotomie exige un tableau trié. Appliquée à un tableau quelconque, elle ne ralentit pas : elle répond faux, sans prévenir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un tableau trié de 1 000 éléments, combien de comparaisons au pire pour une recherche dichotomique ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "comparaisons",
+          "hint": "Combien de fois peut-on diviser 1 000 par 2 ?",
+          "explanation": "10 : la partie entière de log₂ 1 000 vaut 9, plus 1. Chaque comparaison élimine la moitié du reste.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et dans un tableau trié d'un million d'éléments ?",
+          "answer": 20,
+          "tolerance": 0.01,
+          "unit": "comparaisons",
+          "hint": "Mille fois plus grand, dix comparaisons de plus.",
+          "explanation": "20. Multiplier la taille par mille ne coûte que dix comparaisons supplémentaires : c'est la signature d'un coût logarithmique.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il si l'on applique la dichotomie à un tableau non trié ?",
+          "hint": "Sur quoi repose l'élimination d'une moitié ?",
+          "explanation": "Elle peut répondre faux sans rien signaler : éliminer une moitié n'a de sens que si le tableau est trié.",
+          "options": [
+            { "text": "Elle peut répondre faux sans rien signaler", "correct": true },
+            { "text": "Elle devient aussi lente qu'une recherche séquentielle" },
+            { "text": "Elle trie le tableau au passage" },
+            { "text": "Elle provoque une erreur d'exécution" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La recherche séquentielle fonctionne sur n'importe quel tableau.",
+          "answer": true,
+          "explanation": "Oui : elle n'exige rien. C'est son seul avantage sur la dichotomie, et il est réel."
+        }
+      ]
+    },
+    {
+      "id": "trier-en-n-carre",
+      "title": "Trier, naïvement",
+      "subtitle": "Sélection et insertion.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le tri par sélection",
+          "body": "On cherche le plus petit élément et on le met en première place. Puis le plus petit du reste, en deuxième place. Et ainsi de suite.\n\nLe nombre de comparaisons ne dépend pas du tableau : toujours n(n−1)/2."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le tri par insertion",
+          "body": "On prend les éléments un par un et on les glisse à leur place parmi ceux déjà rangés, comme on trie des cartes en main.\n\nSur un tableau déjà trié, il ne fait que n−1 comparaisons. Sur un tableau rangé à l'envers, il en fait n(n−1)/2."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Sur 1 000 éléments",
+          "body": "n(n−1)/2 vaut 499 500 comparaisons.\n\nSur 10 000 éléments, près de 50 millions. Multiplier la taille par 10 multiplie le travail par 100 : c'est ce que veut dire « quadratique »."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "L'insertion garde un intérêt : sur un tableau presque trié, elle est imbattable. Les bibliothèques réelles s'en servent pour les petits morceaux."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons fait un tri par sélection sur 10 éléments ?",
+          "answer": 45,
+          "tolerance": 0.01,
+          "unit": "comparaisons",
+          "hint": "10 × 9 / 2.",
+          "explanation": "45, soit 10 × 9 / 2. Ce nombre ne dépend pas du contenu du tableau.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons fait un tri par insertion sur un tableau de 10 éléments déjà trié ?",
+          "answer": 9,
+          "tolerance": 0.01,
+          "unit": "comparaisons",
+          "hint": "Chaque élément est comparé une fois à son voisin.",
+          "explanation": "9, soit n−1. Chaque élément se révèle déjà bien placé après une seule comparaison.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Le tableau est multiplié par 10. Par combien le travail d'un tri quadratique est-il multiplié ?",
+          "hint": "Le coût suit le carré.",
+          "explanation": "Par 100 : le coût suit le carré de la taille. C'est ce que mesure le mot « quadratique ».",
+          "figureId": "complexite",
+          "options": [
+            { "text": "Par 100", "correct": true },
+            { "text": "Par 10" },
+            { "text": "Par 20" },
+            { "text": "Par 1 000" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces affirmations selon le tri qu'elles décrivent.",
+          "hint": "L'un est insensible au contenu, l'autre non.",
+          "explanation": "La sélection fait toujours le même nombre de comparaisons. L'insertion profite d'un tableau déjà presque trié.",
+          "categories": ["Tri par sélection", "Tri par insertion"],
+          "items": [
+            { "text": "le nombre de comparaisons ne dépend pas du tableau", "category": 0 },
+            { "text": "il cherche le minimum du reste à chaque tour", "category": 0 },
+            { "text": "il est très rapide sur un tableau presque trié", "category": 1 },
+            { "text": "il glisse chaque élément à sa place, comme des cartes", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-n-log-n",
+      "title": "Diviser pour régner",
+      "subtitle": "Le tri fusion, et la barrière des n log n.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le tri fusion",
+          "body": "On coupe le tableau en deux, on trie chaque moitié de la même façon, puis on fusionne les deux moitiés triées.\n\nLa fusion coûte n comparaisons au plus, et il y a log₂ n niveaux de découpage. Au total : de l'ordre de n log n."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Compare les coûts",
+          "body": "Pousse le curseur et regarde l'écart se creuser entre n log n et n².",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Sur 1 000 éléments, encore",
+          "body": "Quadratique : 499 500 comparaisons.\n\nTri fusion : environ 10 000. Cinquante fois moins, et l'écart grandit avec la taille."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Une limite qu'on ne franchit pas",
+          "body": "Aucun tri par comparaisons ne fait mieux que n log n dans le cas général. Ce n'est pas faute d'avoir cherché : c'est démontré.\n\nLes tris plus rapides existent, mais ils n'utilisent pas de comparaisons — ils exploitent la forme des données."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de niveaux de découpage pour un tri fusion sur 1 024 éléments ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "unit": "niveaux",
+          "hint": "Combien de fois diviser 1 024 par 2 pour arriver à 1 ?",
+          "explanation": "10 : 2 puissance 10 vaut 1 024. À chaque niveau, les morceaux sont deux fois plus petits.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le tri fusion coûte-t-il de l'ordre de n log n ?",
+          "hint": "Combien de niveaux, et combien par niveau ?",
+          "explanation": "Parce qu'il y a log n niveaux de découpage, et que chaque niveau coûte de l'ordre de n comparaisons pour fusionner.",
+          "figureId": "complexite",
+          "options": [
+            { "text": "log n niveaux, coûtant chacun de l'ordre de n", "correct": true },
+            { "text": "n niveaux, coûtant chacun log n" },
+            { "text": "Il compare chaque élément à tous les autres" },
+            { "text": "Il trie par comptage, sans comparaison" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un tri par comparaisons peut descendre en dessous de n log n dans le cas général.",
+          "answer": false,
+          "explanation": "Non, c'est démontré impossible. Les tris plus rapides existent, mais ils n'utilisent pas de comparaisons."
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes du tri fusion dans l'ordre.",
+          "explanation": "On coupe, on trie chaque moitié de la même façon, puis on fusionne deux listes déjà triées — ce qui est facile.",
+          "items": [
+            "couper le tableau en deux moitiés",
+            "trier chaque moitié de la même façon",
+            "fusionner les deux moitiés triées",
+            "rendre le tableau trié"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-tri-recherche",
+      "title": "Défi : trier et chercher",
+      "subtitle": "Six questions, du pire au moyen.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque question, demande-toi d'abord : quel est le pire cas, et quelle hypothèse l'algorithme exige-t-il ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons fait un tri par sélection sur 100 éléments ?",
+          "answer": 4950,
+          "tolerance": 0.01,
+          "unit": "comparaisons",
+          "hint": "100 × 99 / 2.",
+          "explanation": "4 950. Le même tableau trié par fusion demanderait environ 700 comparaisons.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un tableau trié de 64 éléments, combien de comparaisons au pire par dichotomie ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "unit": "comparaisons",
+          "hint": "64 est une puissance de 2.",
+          "explanation": "7 : la partie entière de log₂ 64 vaut 6, plus 1. Le « plus 1 » est le piège classique.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque algorithme à son coût dans le pire cas.",
+          "explanation": "La dichotomie est logarithmique, la recherche séquentielle linéaire, le tri fusion quasi-linéaire, la sélection quadratique.",
+          "pairs": [
+            { "left": "recherche dichotomique", "right": "log n" },
+            { "left": "recherche séquentielle", "right": "n" },
+            { "left": "tri fusion", "right": "n log n" },
+            { "left": "tri par sélection", "right": "n²" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quel algorithme profite d'un tableau déjà presque trié ?",
+          "hint": "Lequel compare chaque élément à son voisin de gauche ?",
+          "explanation": "Le tri par insertion : chaque élément se révèle presque toujours déjà bien placé, et une comparaison suffit.",
+          "figureId": "complexite",
+          "options": [
+            { "text": "Le tri par insertion", "correct": true },
+            { "text": "Le tri par sélection" },
+            { "text": "Le tri fusion" },
+            { "text": "Aucun : le contenu ne change jamais rien" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "estimation",
+          "prompt": "Trier un million d'éléments par sélection, à un milliard d'opérations par seconde : combien de secondes ?",
+          "answer": 500,
+          "min": 1,
+          "max": 2000,
+          "unit": "secondes",
+          "explanation": "Environ 500 secondes, soit plus de huit minutes. Le tri fusion, lui, répondrait en vingt millisecondes.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Trier un tableau pour pouvoir ensuite y chercher plusieurs fois peut valoir le coût du tri.",
+          "answer": true,
+          "explanation": "Oui : le tri se paie une fois, et chaque recherche devient logarithmique. Dès quelques recherches, l'opération est gagnante."
+        }
+      ]
+    }
+  ]
+}
