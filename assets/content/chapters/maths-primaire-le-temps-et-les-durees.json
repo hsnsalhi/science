@@ -1,0 +1,294 @@
+{
+  "chapter": "maths-primaire-le-temps-et-les-durees",
+  "lessons": [
+    {
+      "id": "lire-l-heure",
+      "title": "Lire l'heure",
+      "subtitle": "Deux aiguilles, deux vitesses.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Une horloge à aiguilles",
+          "body": "Bouge l'heure et regarde les deux aiguilles tourner.",
+          "figureId": "horloge"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Qui fait quoi",
+          "body": "La petite aiguille montre les heures. Elle fait un tour en douze heures.\n\nLa grande aiguille montre les minutes. Elle fait un tour en une heure.\n\nLa grande va donc douze fois plus vite que la petite."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les graduations",
+          "body": "Le cadran porte douze chiffres, mais soixante petits traits.\n\nChaque chiffre vaut une heure pour la petite aiguille, et cinq minutes pour la grande. Quand la grande est sur le 3, il est et quart : 3 × 5 = 15 minutes."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le même instant, deux façons de le dire",
+          "body": "« Trois heures moins le quart » et « 14 h 45 » désignent le même moment.\n\nMoins le quart veut dire quinze minutes avant l'heure suivante. Et après midi, on peut ajouter 12 : 2 h de l'après-midi, c'est 14 h."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "La grande aiguille est sur le 3. Combien de minutes cela fait-il ?",
+          "hint": "Chaque chiffre vaut cinq minutes.",
+          "explanation": "15 minutes, car 3 × 5 = 15. C'est « et quart ».",
+          "answer": 15
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La grande aiguille est sur le 8. Combien de minutes ?",
+          "explanation": "40 minutes, car 8 × 5 = 40.",
+          "answer": 40
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque heure à son autre écriture.",
+          "explanation": "Après midi, on ajoute 12 heures. Et « moins le quart » veut dire 45 minutes de l'heure précédente.",
+          "pairs": [
+            { "left": "2 h de l'après-midi", "right": "14 h" },
+            { "left": "3 h moins le quart, l'après-midi", "right": "14 h 45" },
+            { "left": "midi et demi", "right": "12 h 30" },
+            { "left": "8 h du soir", "right": "20 h" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes la grande aiguille met-elle pour faire un tour complet ?",
+          "explanation": "60 minutes, c'est-à-dire une heure.",
+          "answer": 60
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "La petite aiguille fait deux tours par jour.",
+          "explanation": "Vrai. Elle fait un tour en douze heures, et un jour en compte vingt-quatre.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "les-durees",
+      "title": "Calculer une durée",
+      "subtitle": "Compter en soixante, pas en dix.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "avertissement",
+          "title": "Le piège du temps",
+          "body": "Une heure ne fait pas 100 minutes mais 60.\n\nDonc 1 h 45 + 30 min ne fait pas 1 h 75 : les 75 minutes valent 1 h 15, et le total est 2 h 15.\n\nC'est la seule chose vraiment difficile de ce chapitre, et c'est là que presque toutes les erreurs se font."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les conversions",
+          "formula": "1 h = 60 min ; 1 min = 60 s ; 1 jour = 24 h",
+          "body": "Une semaine fait 7 jours. Une année en fait 365, ou 366 les années bissextiles."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Durée entre deux heures",
+          "body": "De 9 h 40 à 11 h 15 :\n\n1. de 9 h 40 à 10 h : 20 minutes\n\n2. de 10 h à 11 h : 1 heure\n\n3. de 11 h à 11 h 15 : 15 minutes\n\nTotal : 1 h 35. On passe par les heures rondes, c'est bien plus sûr qu'une soustraction."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Les durées utiles à connaître",
+          "body": "Un quart d'heure : 15 minutes. Une demi-heure : 30. Trois quarts d'heure : 45.\n\nUn film dure une heure et demie à deux heures. Une nuit de sommeil, huit à dix heures pour un enfant."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes dans 2 heures ?",
+          "explanation": "120 minutes, car 2 × 60 = 120.",
+          "answer": 120
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes dure le trajet de 9 h 40 à 11 h 15 ?",
+          "hint": "Passe par 10 h puis par 11 h.",
+          "explanation": "20 + 60 + 15 = 95 minutes, soit 1 h 35.",
+          "answer": 95
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Il est 1 h 45. Dans 30 minutes, combien de minutes après 2 h sera-t-il ?",
+          "hint": "1 h 45 + 30 min dépasse 2 h.",
+          "explanation": "15 minutes. 1 h 45 + 30 min = 2 h 15, et non 1 h 75.",
+          "answer": 15
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de secondes dans une heure ?",
+          "hint": "60 minutes, chacune de 60 secondes.",
+          "explanation": "60 × 60 = 3 600 secondes.",
+          "answer": 3600
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'heures dans une semaine ?",
+          "explanation": "Une semaine compte 7 jours de 24 heures : 7 × 24 = 168 heures.",
+          "answer": 168
+        }
+      ]
+    },
+    {
+      "id": "entrainement-temps",
+      "title": "S'entraîner",
+      "subtitle": "Des horaires de tous les jours.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "exemple",
+          "title": "Lire un horaire",
+          "body": "Le train part à 8 h 25 et arrive à 10 h 10.\n\nDe 8 h 25 à 9 h : 35 minutes. De 9 h à 10 h : 1 heure. De 10 h à 10 h 10 : 10 minutes.\n\nTotal : 1 h 45."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Remonter dans le temps",
+          "body": "« Le film finit à 16 h 20 et dure 1 h 50. À quelle heure commence-t-il ? »\n\nOn recule : 16 h 20 moins 1 h donne 15 h 20. Moins 50 minutes : 15 h 20 moins 20 donne 15 h, moins 30 encore donne 14 h 30."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Avant ou après midi",
+          "body": "Les horaires officiels vont de 0 h à 23 h 59.\n\nPour passer de l'après-midi à l'heure officielle, on ajoute 12 : 5 h de l'après-midi devient 17 h."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Le train part à 8 h 25 et arrive à 10 h 10. Combien de minutes dure le trajet ?",
+          "explanation": "35 + 60 + 10 = 105 minutes, soit 1 h 45.",
+          "answer": 105
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un film finit à 16 h 20 et dure 1 h 50. À quelle heure a-t-il commencé ? Donne l'heure seule, sans les minutes.",
+          "hint": "Recule d'une heure, puis de cinquante minutes.",
+          "explanation": "14 h 30, donc l'heure est 14.",
+          "answer": 14
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Cinq heures de l'après-midi, c'est quelle heure officielle ?",
+          "explanation": "17 h, car on ajoute 12.",
+          "answer": 17
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "La récréation dure de 10 h 15 à 10 h 35. Combien de minutes ?",
+          "explanation": "De 10 h 15 à 10 h 35, il s'écoule 20 minutes : on reste dans la même heure, donc une simple soustraction suffit.",
+          "answer": 20
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range ces durées : plus courtes ou plus longues qu'une heure ?",
+          "explanation": "Une heure fait 60 minutes. Tout ce qui est en dessous est plus court.",
+          "categories": ["plus court qu'une heure", "plus long qu'une heure"],
+          "items": [
+            { "text": "un quart d'heure", "category": 0 },
+            { "text": "45 minutes", "category": 0 },
+            { "text": "90 minutes", "category": 1 },
+            { "text": "une matinée d'école", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-temps",
+      "title": "Défi : les horaires qui piègent",
+      "subtitle": "Minuit, et les trajets qui durent.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Passer minuit",
+          "body": "Un train part à 23 h 40 et arrive à 1 h 20. Combien de temps dure le trajet ?\n\nOn ne peut pas faire 1 h 20 moins 23 h 40 : l'arrivée semble avant le départ. Il faut passer par minuit.\n\nDe 23 h 40 à minuit : 20 minutes. De minuit à 1 h 20 : 1 h 20. Total : 1 h 40.\n\nC'est le même procédé que les heures rondes, avec minuit comme étape."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un train part à 23 h 40 et arrive à 1 h 20. Combien de minutes dure le trajet ?",
+          "hint": "Passe par minuit.",
+          "explanation": "20 minutes jusqu'à minuit, puis 80 minutes : 100 minutes en tout, soit 1 h 40.",
+          "answer": 100
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes dans une journée entière ?",
+          "hint": "24 heures de 60 minutes.",
+          "explanation": "24 × 60 = 1 440 minutes.",
+          "answer": 1440
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Tu dors de 21 h 30 à 7 h. Combien d'heures dors-tu ?",
+          "hint": "Passe par minuit.",
+          "explanation": "2 h 30 jusqu'à minuit, puis 7 h : 9 h 30 en tout. Soit 9 heures et demie.",
+          "answer": 9.5,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de secondes dans une journée ?",
+          "explanation": "24 × 60 × 60 = 86 400 secondes.",
+          "answer": 86400
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une année bissextile compte combien de jours ?",
+          "explanation": "366. On ajoute un 29 février tous les quatre ans, parce que la Terre met un peu plus de 365 jours à faire le tour du Soleil.",
+          "answer": 366
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "1 h 45 plus 30 minutes font 1 h 75.",
+          "explanation": "Faux. Une heure fait 60 minutes, pas 100 : 75 minutes valent 1 h 15, donc le total est 2 h 15.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

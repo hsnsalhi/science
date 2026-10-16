@@ -1,0 +1,290 @@
+{
+  "chapter": "maths-primaire-la-proportionnalite",
+  "lessons": [
+    {
+      "id": "reconnaitre",
+      "title": "Reconnaître une proportion",
+      "subtitle": "Deux fois plus de ceci, deux fois plus de cela.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une recette",
+          "body": "Pour 4 personnes : 200 g de farine.\n\nPour 8 personnes, soit deux fois plus de monde, il faut deux fois plus de farine : 400 g.\n\nPour 2 personnes, deux fois moins : 100 g.\n\nQuand les deux quantités augmentent et diminuent ensemble, dans le même rapport, elles sont proportionnelles."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Tout n'est pas proportionnel",
+          "body": "L'âge et la taille ne le sont pas : un enfant de 10 ans ne mesure pas deux fois plus qu'à 5 ans.\n\nLe temps de cuisson d'un gâteau non plus : deux gâteaux ne cuisent pas en deux fois plus de temps.\n\nAvant d'appliquer une règle, il faut se demander si la situation s'y prête."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Le test du zéro",
+          "body": "Dans une situation proportionnelle, zéro va avec zéro.\n\nZéro personne, zéro farine. C'est cohérent.\n\nZéro an, zéro centimètre ? Non : un nouveau-né mesure cinquante centimètres. Donc l'âge et la taille ne sont pas proportionnels, et ce test suffit à le voir."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un taxi qui compte 3 euros de prise en charge plus 2 euros par kilomètre n'est pas proportionnel : à zéro kilomètre, on paie déjà 3 euros. C'est le même test."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "200 g de farine pour 4 personnes. Combien pour 8 personnes ?",
+          "explanation": "400 g. Deux fois plus de personnes, deux fois plus de farine.",
+          "answer": 400
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et pour 2 personnes ?",
+          "explanation": "100 g. Deux fois moins de personnes, deux fois moins de farine.",
+          "answer": 100
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces situations : proportionnelles ou non ?",
+          "explanation": "Le test du zéro tranche : zéro litre coûte zéro euro, mais zéro an ne donne pas zéro centimètre.",
+          "categories": ["proportionnel", "pas proportionnel"],
+          "items": [
+            { "text": "le prix de l'essence et le nombre de litres", "category": 0 },
+            { "text": "la distance parcourue et le temps, à vitesse constante", "category": 0 },
+            { "text": "l'âge et la taille d'un enfant", "category": 1 },
+            { "text": "le temps de cuisson et le nombre de gâteaux", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un taxi à 3 euros de prise en charge plus 2 euros du kilomètre pratique un prix proportionnel à la distance.",
+          "explanation": "Faux. À zéro kilomètre on paie déjà 3 euros, donc zéro ne va pas avec zéro.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "calculer",
+      "title": "Trouver la quantité qui manque",
+      "subtitle": "Trois méthodes, au choix.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le passage par l'unité",
+          "body": "6 croissants coûtent 9 euros. Combien coûtent 10 croissants ?\n\n1. Un croissant : 9 ÷ 6 = 1,50 euro\n\n2. Dix croissants : 1,50 × 10 = 15 euros\n\nC'est la méthode la plus sûre, et elle marche toujours."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le coefficient",
+          "body": "Dans le tableau, on passe des croissants au prix en multipliant par 1,5.\n\n6 × 1,5 = 9. Et 10 × 1,5 = 15.\n\nCe nombre s'appelle le coefficient de proportionnalité. Il ne change jamais dans une même situation."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Les produits en croix",
+          "body": "6 croissants pour 9 euros, 10 croissants pour x euros.\n\n6 × x = 9 × 10, donc 6x = 90, donc x = 15.\n\nPlus rapide, mais il faut bien placer les nombres — une erreur de position donne un résultat qui a l'air normal."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Vérifier par le bon sens",
+          "body": "Dix croissants coûtent plus cher que six. Si ton résultat est plus petit que 9, tu t'es trompé de sens.\n\nCe réflexe attrape la plupart des erreurs avant qu'elles ne soient écrites."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "6 croissants coûtent 9 euros. Combien coûte un croissant, en euros ?",
+          "explanation": "On partage le prix total entre les six croissants : 9 ÷ 6 = 1,50 euro l'unité.",
+          "answer": 1.5,
+          "tolerance": 0.01
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien coûtent 10 croissants, en euros ?",
+          "explanation": "1,50 × 10 = 15 euros.",
+          "answer": 15
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "4 cahiers coûtent 10 euros. Combien coûtent 6 cahiers, en euros ?",
+          "hint": "Passe d'abord par un cahier.",
+          "explanation": "Un cahier : 10 ÷ 4 = 2,50 euros. Six cahiers : 2,50 × 6 = 15 euros.",
+          "answer": 15
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture roule à vitesse constante et parcourt 120 km en 2 heures. Combien de kilomètres en 5 heures ?",
+          "explanation": "120 ÷ 2 = 60 km par heure, puis 60 × 5 = 300 km.",
+          "answer": 300
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Dans le tableau croissants-prix, quel est le coefficient qui fait passer du nombre au prix ?",
+          "explanation": "1,5. On vérifie : 6 × 1,5 = 9, et 10 × 1,5 = 15.",
+          "answer": 1.5,
+          "tolerance": 0.01
+        }
+      ]
+    },
+    {
+      "id": "pourcentages-echelles",
+      "title": "Pourcentages et échelles",
+      "subtitle": "Deux déguisements de la même idée.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Un pourcentage est une proportion sur cent",
+          "formula": "25 % de 80 = 80 × 25 ÷ 100",
+          "body": "Soit 20. Prendre 25 % c'est prendre 25 parts sur 100, donc multiplier par 0,25."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Les pourcentages de tête",
+          "body": "50 % : la moitié. 25 % : le quart. 10 % : on divise par 10.\n\n20 % : deux fois 10 %. 75 % : trois quarts, soit la moitié plus le quart.\n\n1 % : on divise par 100. Avec 10 % et 1 %, on reconstruit presque tout."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Une échelle",
+          "body": "Sur une carte au 1/25 000, un centimètre sur le papier représente 25 000 centimètres en vrai, soit 250 mètres.\n\nPour convertir : on multiplie la longueur mesurée par le nombre de l'échelle, puis on convertit l'unité."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Les pourcentages ne s'additionnent pas toujours",
+          "body": "Une hausse de 10 % suivie d'une baisse de 10 % ne ramène pas au prix de départ.\n\n100 euros, plus 10 % : 110. Moins 10 % de 110 : on enlève 11, donc 99.\n\nOn a perdu un euro, parce que les deux pourcentages ne portaient pas sur la même somme."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 25 % de 80 ?",
+          "explanation": "80 ÷ 4 = 20, car 25 % est le quart.",
+          "answer": 20
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 10 % de 350 ?",
+          "explanation": "35. Prendre 10 %, c'est diviser par 10.",
+          "answer": 35
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un article coûte 40 euros et bénéficie de 30 % de réduction. Quel est le nouveau prix, en euros ?",
+          "hint": "Calcule d'abord la réduction.",
+          "explanation": "30 % de 40 font 12, donc le prix passe à 40 − 12 = 28 euros.",
+          "answer": 28
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Sur une carte au 1/25 000, un centimètre représente combien de mètres ?",
+          "hint": "25 000 centimètres, puis convertis.",
+          "explanation": "25 000 cm font 250 m.",
+          "answer": 250
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un prix de 100 euros augmente de 10 %, puis baisse de 10 %. Quel est le prix final, en euros ?",
+          "hint": "La baisse ne porte pas sur 100.",
+          "explanation": "100 + 10 = 110, puis 10 % de 110 font 11, donc 110 − 11 = 99 euros. On a perdu un euro.",
+          "answer": 99
+        }
+      ]
+    },
+    {
+      "id": "defi-proportionnalite",
+      "title": "Défi : les fausses proportions",
+      "subtitle": "Là où la règle de trois se trompe.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les ouvriers et le mur",
+          "body": "« Trois ouvriers construisent un mur en six jours. Combien de jours pour six ouvriers ? »\n\nLa règle de trois donnerait douze jours, et ce serait absurde : plus d'ouvriers ne peut pas prendre plus de temps.\n\nIci, quand l'un double, l'autre est divisé par deux : six ouvriers mettent trois jours. On parle de proportions inverses.\n\nLa leçon n'est pas qu'il faut une autre formule. Elle est qu'il faut regarder dans quel sens va la situation avant de calculer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Trois ouvriers construisent un mur en six jours. Combien de jours pour six ouvriers ?",
+          "hint": "Plus d'ouvriers, moins de temps.",
+          "explanation": "3 jours. Deux fois plus d'ouvriers, deux fois moins de temps.",
+          "answer": 3
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et pour un seul ouvrier ?",
+          "explanation": "18 jours. Un ouvrier seul met trois fois plus longtemps que trois ouvriers.",
+          "answer": 18
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une recette pour 4 personnes demande 3 œufs. Combien d'œufs pour 10 personnes ? Arrondis à l'entier supérieur.",
+          "hint": "Un œuf ne se coupe pas en quart.",
+          "explanation": "3 ÷ 4 = 0,75 œuf par personne, puis × 10 = 7,5. On arrondit à 8 œufs, parce qu'on ne peut pas en casser un demi proprement.",
+          "answer": 8
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un robinet remplit une baignoire en 12 minutes. En combien de minutes avec deux robinets identiques ?",
+          "explanation": "6 minutes. Deux fois plus de débit, deux fois moins de temps : c'est encore une proportion inverse.",
+          "answer": 6
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la règle de trois échoue-t-elle sur les ouvriers et le mur ?",
+          "explanation": "Parce que les deux grandeurs varient en sens contraire : plus d'ouvriers, moins de temps. La proportionnalité directe suppose qu'elles varient dans le même sens.",
+          "options": [
+            { "text": "les deux grandeurs varient en sens contraire", "correct": true },
+            { "text": "les nombres sont trop grands" },
+            { "text": "il manque une donnée" },
+            { "text": "les ouvriers ne travaillent pas pareil" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Une hausse de 10 % puis une baisse de 10 % ramènent au prix de départ.",
+          "explanation": "Faux. On perd 1 % : 100 devient 110 puis 99, parce que la baisse porte sur une somme plus grande que la hausse.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

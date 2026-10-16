@@ -1,0 +1,284 @@
+{
+  "chapter": "maths-primaire-additionner-et-soustraire",
+  "lessons": [
+    {
+      "id": "le-sens-des-operations",
+      "title": "Ce que font les deux opérations",
+      "subtitle": "Réunir, ou enlever.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Additionner, c'est réunir",
+          "body": "J'ai 8 billes, on m'en donne 5. J'en ai 13.\n\nOn met ensemble, on compte le tout. C'est l'addition."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Soustraire, c'est trois choses",
+          "body": "Enlever : j'avais 13 billes, j'en perds 5, il m'en reste 8.\n\nComparer : Léa a 13 billes, Tom en a 5. Léa en a 8 de plus.\n\nChercher ce qui manque : j'ai 5 billes, j'en veux 13. Il m'en manque 8.\n\nTrois questions différentes, un seul calcul : 13 − 5."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les deux se défont",
+          "body": "8 + 5 = 13, et 13 − 5 = 8.\n\nSoustraire annule ce qu'on a ajouté. C'est pourquoi on peut toujours vérifier une soustraction en additionnant."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "L'ordre compte pour l'une, pas pour l'autre",
+          "body": "8 + 5 et 5 + 8 font pareil : 13.\n\nMais 13 − 5 fait 8, alors que 5 − 13 ne se calcule pas encore à ton niveau. La soustraction n'aime pas qu'on l'inverse."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "J'ai 8 billes et on m'en donne 5. Combien en ai-je ?",
+          "explanation": "13. On réunit les deux quantités.",
+          "answer": 13
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Léa a 13 bonbons, Tom en a 5. Combien Léa en a-t-elle de plus ?",
+          "hint": "C'est une comparaison, mais le calcul est une soustraction.",
+          "explanation": "8. On calcule 13 − 5, même si personne ne perd rien.",
+          "answer": 8
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "J'ai 5 euros et je veux un jeu à 13 euros. Combien me manque-t-il ?",
+          "explanation": "8 euros. Chercher ce qui manque est aussi une soustraction : 13 − 5.",
+          "answer": 8
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "7 + 4 donne le même résultat que 4 + 7.",
+          "explanation": "Vrai, les deux font 11. Dans une addition, l'ordre ne change rien.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "calcul-mental",
+      "title": "Calculer de tête",
+      "subtitle": "Des chemins plus courts.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Passer par dix",
+          "body": "8 + 5 : il manque 2 à 8 pour faire 10.\n\nOn coupe le 5 en 2 + 3.\n\n8 + 2 = 10, puis 10 + 3 = 13.\n\nC'est plus rapide que de compter sur ses doigts, et ça marche toujours."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Ajouter presque dix",
+          "body": "27 + 9 : ajouter 10, puis retirer 1.\n\n27 + 10 = 37, puis 37 − 1 = 36.\n\nMême idée pour +19, +29, +99."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les doubles, à connaître par cœur",
+          "body": "3 + 3 = 6, 4 + 4 = 8, 5 + 5 = 10, 6 + 6 = 12, 7 + 7 = 14, 8 + 8 = 16, 9 + 9 = 18.\n\nIls servent partout : 7 + 8, c'est le double de 7, plus 1, donc 15."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Soustraire en avançant",
+          "body": "52 − 48 : au lieu d'enlever, demande-toi combien il faut ajouter à 48 pour atteindre 52.\n\n48 + 2 = 50, puis 50 + 2 = 52. Donc 4.\n\nQuand les deux nombres sont proches, avancer est bien plus facile que reculer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 8 + 5 en passant par dix.",
+          "explanation": "8 + 2 = 10, puis 10 + 3 = 13.",
+          "answer": 13
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 27 + 9.",
+          "hint": "Ajoute 10, puis retire 1.",
+          "explanation": "27 + 10 = 37, puis 37 − 1 = 36.",
+          "answer": 36
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 7 + 8.",
+          "hint": "Pense au double de 7.",
+          "explanation": "Le double de 7 fait 14, plus 1 : 15.",
+          "answer": 15
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 52 − 48 en avançant depuis 48.",
+          "explanation": "48 + 2 = 50, puis 50 + 2 = 52. Il a fallu 4.",
+          "answer": 4
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 45 + 19.",
+          "hint": "19, c'est 20 moins 1.",
+          "explanation": "45 + 20 = 65, puis 65 − 1 = 64.",
+          "answer": 64
+        }
+      ]
+    },
+    {
+      "id": "poser-une-operation",
+      "title": "Poser l'opération",
+      "subtitle": "Quand les nombres sont trop gros pour la tête.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'addition posée",
+          "body": "1. Aligne les unités sous les unités, les dizaines sous les dizaines.\n\n2. Commence par la colonne de droite.\n\n3. Si le total d'une colonne dépasse 9, écris le chiffre des unités et retiens la dizaine.\n\n4. Ajoute la retenue à la colonne suivante."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "47 + 38",
+          "body": "Unités : 7 + 8 = 15. J'écris 5, je retiens 1.\n\nDizaines : 4 + 3 = 7, plus la retenue 1 = 8.\n\nRésultat : 85."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Aligner, toujours",
+          "body": "La faute la plus fréquente n'est pas de mal calculer : c'est de mal aligner.\n\n47 + 8 posé de travers donne 127 au lieu de 55. Les unités vont sous les unités, même quand un nombre est plus court."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Vérifier",
+          "body": "Après une soustraction, additionne le résultat et ce que tu as enlevé : tu dois retrouver le départ.\n\n85 − 38 = 47 ? Alors 47 + 38 doit faire 85. C'est le cas."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 47 + 38.",
+          "explanation": "7 + 8 = 15 : j'écris 5, je retiens 1. Puis 4 + 3 + 1 = 8. Donc 85.",
+          "answer": 85
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 47 + 8.",
+          "hint": "Les unités sous les unités.",
+          "explanation": "55. Le 8 est un nombre d'unités : il se place sous le 7, pas sous le 4.",
+          "answer": 55
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 85 − 38.",
+          "explanation": "47. Et pour vérifier : 47 + 38 = 85.",
+          "answer": 47
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Calcule 63 + 29.",
+          "explanation": "3 + 9 = 12 : j'écris 2, je retiens 1. Puis 6 + 2 + 1 = 9. Donc 92.",
+          "answer": 92
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes d'une addition posée.",
+          "explanation": "On aligne, on commence par la droite, on pose la retenue, puis on continue.",
+          "items": [
+            "aligner les unités sous les unités",
+            "additionner la colonne des unités",
+            "écrire le chiffre des unités et retenir la dizaine",
+            "additionner la colonne des dizaines et la retenue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-operations",
+      "title": "Défi : des problèmes à lire",
+      "subtitle": "Le calcul est facile, la question l'est moins.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Lire avant de calculer",
+          "body": "« Dans le bus il y a 23 personnes. À l'arrêt, 7 descendent et 12 montent. Combien y a-t-il de personnes maintenant ? »\n\nIl y a deux opérations, dans l'ordre : 23 − 7 = 16, puis 16 + 12 = 28.\n\nCalculer 23 + 7 − 12 donnerait 18, et ce serait faux. L'erreur n'est pas dans le calcul : elle est dans la lecture."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans le bus il y a 23 personnes. 7 descendent, puis 12 montent. Combien sont-elles maintenant ?",
+          "hint": "Fais les deux étapes dans l'ordre.",
+          "explanation": "23 − 7 = 16, puis 16 + 12 = 28.",
+          "answer": 28
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "J'avais 50 euros. J'ai acheté un livre à 12 euros et un stylo à 3 euros. Combien me reste-t-il ?",
+          "explanation": "12 + 3 = 15 de dépenses, puis 50 − 15 = 35 euros.",
+          "answer": 35
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une boîte contient 24 œufs. J'en casse 6 et j'en achète une autre boîte de 24. Combien en ai-je ?",
+          "explanation": "24 − 6 = 18, puis 18 + 24 = 42.",
+          "answer": 42
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Paul a 34 billes, soit 8 de plus que Sarah. Combien Sarah en a-t-elle ?",
+          "hint": "Paul en a plus : Sarah en a donc moins.",
+          "explanation": "26. « 8 de plus » pour Paul veut dire 8 de moins pour Sarah : 34 − 8.",
+          "answer": 26
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Je pense à un nombre, j'ajoute 15, j'obtiens 42. Quel était ce nombre ?",
+          "hint": "Il faut défaire l'addition.",
+          "explanation": "27. On retire ce qu'on a ajouté : 42 − 15 = 27.",
+          "answer": 27
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Pour vérifier que 85 − 38 = 47, on peut calculer 47 + 38.",
+          "explanation": "Vrai. Addition et soustraction se défont l'une l'autre : 47 + 38 doit redonner 85.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}

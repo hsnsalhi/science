@@ -10,6 +10,7 @@ import 'balance_figure.dart';
 import 'binary_figure.dart';
 import 'cell_figure.dart';
 import 'circuit_figure.dart';
+import 'clock_figure.dart';
 import 'classification_figure.dart';
 import 'complexity_figure.dart';
 import 'cross_figure.dart';
@@ -107,6 +108,9 @@ abstract final class FigureRegistry {
     // Des noyaux radioactifs qui se désintègrent, chacun pour soi.
     'demi-vie': (BuildContext context, Color accent) =>
         HalfLifeFigure(accent: accent),
+    // Une horloge à aiguilles, qu'on règle à la main.
+    'horloge': (BuildContext context, Color accent) =>
+        ClockFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
