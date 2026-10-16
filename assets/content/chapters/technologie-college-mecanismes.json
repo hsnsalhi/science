@@ -1,0 +1,352 @@
+{
+  "chapter": "technologie-college-mecanismes-et-mouvement",
+  "lessons": [
+    {
+      "id": "transmettre",
+      "title": "Transmettre le mouvement",
+      "subtitle": "Faire tourner autre chose que ce qu'on tourne.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une roue en entraîne une autre",
+          "body": "Le moteur, ou la pédale, fait tourner une première roue : la roue menante. Elle en entraîne une seconde, la roue menée, qui fait tourner ce qu'on veut mettre en mouvement."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Deux roues en prise",
+          "body": "Change le nombre de dents de la roue menée et regarde les deux compteurs.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Toujours en sens contraire",
+          "body": "Deux roues dentées en contact tournent dans des sens opposés : les dents de l'une poussent celles de l'autre. Pour retrouver le sens de départ, on intercale une troisième roue."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Transmettre à distance",
+          "body": "Quand les deux axes sont éloignés, on n'utilise pas des roues dentées mais une courroie ou une chaîne : le vélo transmet ainsi le mouvement du pédalier à la roue arrière.\n\nAvec une courroie ordinaire, les deux poulies tournent dans le même sens ; il faut la croiser pour inverser."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Transmettre",
+          "bullets": [
+            "Menante : celle qu'on entraîne. Menée : celle qui suit.",
+            "Deux roues dentées en prise tournent en sens inverse.",
+            "Chaîne et courroie transmettent entre axes éloignés."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Deux roues dentées sont en prise. La menante tourne vers la droite. Dans quel sens tourne la menée ?",
+          "hint": "Les dents de l'une poussent celles de l'autre.",
+          "explanation": "Vers la gauche. Au point de contact, une dent de la menante pousse une dent de la menée : les deux roues ne peuvent pas tourner dans le même sens.",
+          "figureId": "engrenages",
+          "options": [
+            { "text": "Vers la gauche", "correct": true },
+            { "text": "Vers la droite" },
+            { "text": "Elle ne tourne pas" },
+            { "text": "Cela dépend du nombre de dents" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Trois roues dentées se suivent, chacune en prise avec la suivante. Combien de changements de sens y a-t-il entre la première et la troisième ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "Un changement à chaque contact.",
+          "explanation": "Deux : un à chaque contact. La troisième roue tourne donc comme la première — c'est pour cela qu'on intercale une roue quand on veut garder le sens de départ."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Sur un vélo, la chaîne sert à transmettre le mouvement entre deux axes éloignés.",
+          "answer": true,
+          "explanation": "Oui. Des roues dentées devraient se toucher ; la chaîne porte le mouvement du pédalier jusqu'à la roue arrière, à bonne distance."
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque pièce à son rôle.",
+          "explanation": "La roue menante reçoit le mouvement, la menée le reçoit d'elle, la chaîne le porte à distance, et la roue intermédiaire ne sert qu'à rétablir le sens.",
+          "pairs": [
+            { "left": "Roue menante", "right": "Reçoit le mouvement du moteur" },
+            { "left": "Roue menée", "right": "Entraînée par la précédente" },
+            { "left": "Chaîne", "right": "Transmet entre deux axes éloignés" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "changer-la-vitesse",
+      "title": "Changer la vitesse",
+      "subtitle": "Pourquoi une petite roue tourne plus vite.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les dents se comptent",
+          "body": "À chaque instant, autant de dents passent d'un côté que de l'autre du contact : les deux roues ne peuvent pas avancer à des rythmes différents. Une roue deux fois plus petite fait donc deux fois plus de tours."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Rapport de transmission",
+          "formula": "tours de la menée = tours de la menante × (dents menante ÷ dents menée)",
+          "body": "le rapport ne dépend que des nombres de dents."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Vérifie-le",
+          "body": "Mets la roue menée à 6 dents, puis à 24 : les compteurs changent, le rapport se lit directement.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Réduire la vitesse augmente la force transmise, et inversement. Un vélo en petit braquet avance lentement mais monte la côte : rien ne se crée, on échange de la vitesse contre de la force."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Le rapport",
+          "bullets": [
+            "Petite roue menée : elle tourne plus vite.",
+            "Grande roue menée : elle tourne moins vite, mais plus fort.",
+            "Seuls les nombres de dents comptent."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une roue menante de 12 dents entraîne une roue menée de 6 dents. Combien de tours fait la menée pendant un tour de la menante ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "12 dents passent ; combien de fois 6 dents cela fait-il ?",
+          "explanation": "Deux tours. Pendant un tour de la menante, 12 dents passent au contact ; la menée n'en a que 6, elle fait donc deux tours complets.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une roue menante de 12 dents entraîne une roue menée de 36 dents. La menante fait 3 tours. Combien de tours fait la menée ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "La menée est trois fois plus grande.",
+          "explanation": "Un seul tour. La menée a trois fois plus de dents, elle tourne trois fois moins vite : 3 × 12 ÷ 36 = 1."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "On veut qu'un axe tourne plus lentement que le moteur. Que faut-il mettre comme roue menée ?",
+          "hint": "Plus elle a de dents, plus elle met de temps à faire un tour.",
+          "explanation": "Une roue menée plus grande que la menante. Elle fait moins de tours, et transmet en échange davantage de force.",
+          "options": [
+            { "text": "Une roue avec plus de dents que la menante", "correct": true },
+            { "text": "Une roue avec moins de dents que la menante" },
+            { "text": "Une roue du même nombre de dents" },
+            { "text": "Le nombre de dents ne change rien" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "La roue menante a 20 dents. Range les roues menées selon leur effet.",
+          "hint": "Compare chaque nombre à 20.",
+          "explanation": "Moins de 20 dents : la menée tourne plus vite que la menante. Plus de 20 : elle tourne moins vite. Seul le nombre de dents décide.",
+          "categories": ["Tourne plus vite", "Tourne moins vite"],
+          "items": [
+            { "text": "10 dents", "category": 0 },
+            { "text": "5 dents", "category": 0 },
+            { "text": "40 dents", "category": 1 },
+            { "text": "60 dents", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transformer",
+      "title": "Transformer le mouvement",
+      "subtitle": "D'une rotation à un déplacement en ligne droite.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Transmettre n'est pas transformer",
+          "body": "Transmettre, c'est porter le mouvement ailleurs sans en changer la nature : une rotation reste une rotation. Transformer, c'est en changer la nature : une rotation devient un déplacement en ligne droite."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Pignon et crémaillère",
+          "body": "Une roue dentée roule sur une barre dentée : la roue tourne, la barre avance. C'est le mécanisme d'un portail coulissant ou d'une direction de voiture."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Vis et écrou",
+          "body": "La vis tourne, l'écrou ne peut pas tourner : il avance le long de la vis. Chaque tour le fait avancer d'un pas, toujours le même — c'est ce qui rend l'étau et le cric si précis."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Bielle et manivelle",
+          "body": "La manivelle tourne, la bielle pousse et tire une pièce qui va et vient. Le mouvement obtenu est alternatif : il change de sens à chaque demi-tour. C'est celui des pistons d'un moteur."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Pour reconnaître un mécanisme, regarde l'entrée et la sortie : même nature, c'est une transmission ; nature différente, c'est une transformation."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces mécanismes.",
+          "hint": "La sortie est-elle encore une rotation ?",
+          "explanation": "Engrenage et poulie-courroie gardent une rotation en sortie : ils transmettent. Pignon-crémaillère et vis-écrou donnent un déplacement en ligne droite : ils transforment.",
+          "categories": ["Transmet", "Transforme"],
+          "items": [
+            { "text": "Engrenage", "category": 0 },
+            { "text": "Poulie et courroie", "category": 0 },
+            { "text": "Pignon et crémaillère", "category": 1 },
+            { "text": "Vis et écrou", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une vis avance son écrou de 2 mm par tour. De combien de millimètres l'écrou avance-t-il en 6 tours ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "unit": "mm",
+          "hint": "Le pas est le même à chaque tour.",
+          "explanation": "12 mm, soit 6 × 2. Le pas étant constant, l'avance est proportionnelle au nombre de tours : c'est ce qui permet de régler une pièce au dixième de tour près."
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque mécanisme à un objet qui l'utilise.",
+          "explanation": "Le pignon-crémaillère ouvre un portail coulissant, la vis-écrou serre un étau, la bielle-manivelle anime les pistons d'un moteur.",
+          "pairs": [
+            { "left": "Pignon et crémaillère", "right": "Portail coulissant" },
+            { "left": "Vis et écrou", "right": "Étau d'établi" },
+            { "left": "Bielle et manivelle", "right": "Piston de moteur" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le mouvement obtenu avec une bielle et une manivelle est un déplacement toujours dans le même sens.",
+          "answer": false,
+          "explanation": "Non, il est alternatif : la pièce avance pendant un demi-tour, recule pendant l'autre. C'est exactement ce que fait un piston."
+        }
+      ]
+    },
+    {
+      "id": "defi-mecanismes",
+      "title": "Défi : mécanismes",
+      "subtitle": "Compter les dents avant de répondre.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pour chaque calcul, pose le rapport des dents avant de chercher le résultat."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Menante 24 dents, menée 8 dents. Combien de tours fait la menée pendant un tour de la menante ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "24 ÷ 8.",
+          "explanation": "Trois tours : 24 dents passent au contact, et la menée n'en a que 8."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Menante 15 dents, menée 45 dents. La menante fait 9 tours. Combien de tours fait la menée ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "La menée a trois fois plus de dents.",
+          "explanation": "Trois tours : 9 × 15 ÷ 45 = 3. La menée tourne trois fois moins vite, donc trois fois moins de tours."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quatre roues dentées se suivent, chacune en prise avec la suivante. La quatrième tourne-t-elle comme la première ?",
+          "hint": "Compte les contacts : trois.",
+          "explanation": "Non, en sens inverse. Il y a trois contacts, donc trois inversions : le sens est rétabli après un nombre pair d'inversions seulement.",
+          "options": [
+            { "text": "Non, en sens inverse", "correct": true },
+            { "text": "Oui, dans le même sens" },
+            { "text": "Cela dépend des nombres de dents" },
+            { "text": "Elle ne tourne pas" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces besoins selon la roue menée à choisir, la menante ayant toujours 20 dents.",
+          "explanation": "Pour aller plus vite, il faut une menée plus petite que 20 dents. Pour gagner en force, il faut une menée plus grande, qui tourne moins vite.",
+          "categories": ["Menée plus petite", "Menée plus grande"],
+          "items": [
+            { "text": "Faire tourner une hélice très vite", "category": 0 },
+            { "text": "Accélérer un ventilateur", "category": 0 },
+            { "text": "Soulever une charge lourde", "category": 1 },
+            { "text": "Monter une côte à vélo", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "texteATrous",
+          "prompt": "Complète ces deux phrases.",
+          "template": "Un engrenage ___ le mouvement ; un pignon-crémaillère le ___ en déplacement rectiligne.",
+          "blanks": [
+            { "accepted": ["transmet"] },
+            { "accepted": ["transforme", "change"] }
+          ],
+          "hint": "L'un garde une rotation en sortie, l'autre non.",
+          "explanation": "Un engrenage transmet : la sortie est encore une rotation. Un pignon-crémaillère transforme : la sortie est un déplacement en ligne droite."
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Une vis de 3 mm de pas doit faire avancer son écrou de 24 mm. Combien de tours faut-il ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "hint": "Combien de fois 3 mm dans 24 mm ?",
+          "explanation": "Huit tours : 24 ÷ 3 = 8. Le pas étant constant, il suffit de diviser la distance voulue par l'avance d'un tour."
+        }
+      ]
+    }
+  ]
+}

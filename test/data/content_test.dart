@@ -4,6 +4,7 @@ import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
+import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
@@ -732,6 +733,77 @@ void main() {
         if (score < 2) score += 1;
       }
       expect(score, reponseNum('defi-boucles', 'q6'));
+    });
+  });
+
+  group('Chapitre complet : mécanismes et mouvement', () {
+    late Chapter meca;
+
+    setUpAll(() {
+      meca = catalog.chapterById('technologie-college-mecanismes-et-mouvement')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (meca.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(meca.isPlayable, isTrue);
+      expect(meca.lessons.length, 4);
+    });
+
+    test('les rapports de transmission annoncés sont recalculés', () {
+      // Chaque corrigé est réécrit en appel à la formule que porte la
+      // figure : si l'une bouge, l'autre le dit.
+      double tours(int menante, int menee, double toursMenante) =>
+          toursMenante * GearsFigure.rapport(menante, menee);
+
+      expect(tours(12, 6, 1), reponseNum('changer-la-vitesse', 'q1'));
+      expect(tours(12, 36, 3), reponseNum('changer-la-vitesse', 'q2'));
+      expect(tours(24, 8, 1), reponseNum('defi-mecanismes', 'q1'));
+      expect(tours(15, 45, 9), reponseNum('defi-mecanismes', 'q2'));
+    });
+
+    test('le tri des roues suit le rapport, pas l’intuition', () {
+      // La menante a 20 dents dans les deux tris : une menée rangée en
+      // « plus vite » doit effectivement tourner plus d'un tour.
+      const int menante = 20;
+      final ClassifyQuestion q =
+          meca.lessonById('changer-la-vitesse')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int dents = int.parse(item.text.split(' ').first);
+        final bool plusVite = GearsFigure.rapport(menante, dents) > 1;
+        expect(
+          item.category == 0,
+          plusVite,
+          reason: '${item.text} est mal rangé',
+        );
+      }
+    });
+
+    test('le sens de rotation suit le nombre de roues', () {
+      // Trois roues : la dernière tourne comme la première. Quatre : non.
+      // Le défi q3 et la leçon q2 disent les deux, il faut qu'ils
+      // s'accordent avec la règle portée par la figure.
+      expect(GearsFigure.memeSens(3), isTrue);
+      expect(GearsFigure.memeSens(4), isFalse);
+      // La leçon compte les changements de sens entre trois roues : deux
+      // contacts, donc deux inversions, donc le même sens au bout.
+      expect(reponseNum('transmettre', 'q2'), 2);
+      expect(GearsFigure.memeSens(3), (reponseNum('transmettre', 'q2')) % 2 == 0);
+    });
+
+    test('les avances de la vis sont proportionnelles au pas', () {
+      // 2 mm par tour, six tours.
+      expect(2 * 6, reponseNum('transformer', 'q2'));
+      // 24 mm à 3 mm par tour.
+      expect(24 / 3, reponseNum('defi-mecanismes', 'q6'));
     });
   });
 }

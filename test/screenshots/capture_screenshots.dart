@@ -480,6 +480,34 @@ void main() {
         await shoot(tester, '$device-17-boucle');
       });
 
+      // L'engrenage : deux roues en prise, la menée réglée au plus
+      // petit nombre de dents — c'est là que l'écart de vitesse entre
+      // les deux compteurs saute aux yeux.
+      testWidgets('technologie : engrenage', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Technologie');
+        await tapText(tester, 'Transmettre et transformer le mouvement');
+        await tapText(tester, 'Transmettre le mouvement');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        final Rect piste = tester.getRect(find.byType(Slider));
+        final TestGesture reglage = await tester.startGesture(piste.center);
+        await reglage.moveTo(Offset(piste.left + 2, piste.center.dy));
+        await tester.pump();
+        await reglage.up();
+        await tester.pump(const Duration(milliseconds: 600));
+        // Puis on lance la rotation : l'infobulle du curseur, qui
+        // recouvrait la phrase de résultat, disparaît du même coup, et
+        // les deux compteurs affichent enfin des valeurs différentes —
+        // ce que la figure a justement à montrer.
+        await tester.tap(find.byIcon(Icons.play_arrow_rounded).first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 900));
+        await shoot(tester, '$device-18-engrenage');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
