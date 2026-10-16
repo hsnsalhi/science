@@ -236,7 +236,7 @@ jobs:
           fi
 
       - name: Conserver les paquets comme artefacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: eureka-android-build-${{ github.run_number }}
           path: |

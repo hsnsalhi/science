@@ -220,7 +220,7 @@ jobs:
           ls -lh build/ios/ipa/
 
       - name: Conserver l'IPA comme artefact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: eureka-ipa-build-${{ github.run_number }}
           path: build/ios/ipa/*.ipa

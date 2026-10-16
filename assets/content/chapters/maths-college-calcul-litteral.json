@@ -1,0 +1,433 @@
+{
+  "chapter": "maths-college-calcul-litteral",
+  "lessons": [
+    {
+      "id": "pourquoi-une-lettre",
+      "title": "Pourquoi une lettre",
+      "subtitle": "Un seul calcul pour tous les nombres.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le même calcul, mille fois",
+          "body": "Un carré de côté 4 a pour périmètre 4 × 4. De côté 7, c'est 4 × 7. De côté 12,5, c'est 4 × 12,5.\n\nOn refait le même geste à chaque fois. La lettre sert à l'écrire une seule fois : périmètre = 4 × c."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Une lettre est un nombre qu'on n'a pas encore choisi",
+          "formula": "P = 4 × c",
+          "body": "c n'est pas un mystère : c'est une case vide. Choisis 7, la formule rend 28."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Remplacer, c'est tout",
+          "body": "Pour calculer 3a + 5 quand a = 4 :\n\n1. recopier en laissant un trou : 3 × ___ + 5\n2. poser la valeur : 3 × 4 + 5\n3. calculer en respectant les priorités : 12 + 5 = 17"
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le signe × disparaît, pas la multiplication",
+          "body": "3a veut dire 3 × a. ab veut dire a × b. a² veut dire a × a.\n\nMais 35 ne veut pas dire 3 × 5 : entre deux chiffres, on garde le signe. C'est pour cela qu'on l'efface seulement devant une lettre."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "body": "Quand une lettre te gêne, remplace-la par un nombre au brouillon. Si le calcul marche avec 2, avec 5 et avec 10, tu es sans doute sur la bonne piste — sans preuve, mais rarement perdu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 3a + 5 quand a = 4 ?",
+          "hint": "La multiplication d'abord.",
+          "explanation": "3 × 4 = 12, puis 12 + 5 = 17.",
+          "answer": 17
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 5x − 2 quand x = 3 ?",
+          "explanation": "5 × 3 = 15, puis 15 − 2 = 13.",
+          "answer": 13
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que veut dire l'écriture 7b ?",
+          "explanation": "Un nombre collé à une lettre est une multiplication : 7 × b.",
+          "options": [
+            {
+              "text": "7 × b",
+              "correct": true
+            },
+            {
+              "text": "7 + b"
+            },
+            {
+              "text": "le nombre à deux chiffres 7 puis b"
+            },
+            {
+              "text": "b sept fois additionné à 7"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un carré a pour côté 12,5 cm. Quel est son périmètre, en centimètres ?",
+          "hint": "P = 4 × c.",
+          "explanation": "La formule P = 4 × c vaut pour n'importe quel côté, décimal compris : 4 × 12,5 = 50 cm.",
+          "answer": 50
+        }
+      ]
+    },
+    {
+      "id": "developper",
+      "title": "Développer",
+      "subtitle": "Enlever les parenthèses sans rien perdre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Pourquoi ça marche",
+          "body": "Un rectangle coupé en deux : l'aire totale ne change pas, seule l'écriture change.",
+          "figureId": "distributivite"
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La distributivité",
+          "formula": "k(a + b) = ka + kb",
+          "body": "Le facteur devant la parenthèse touche chaque terme à l'intérieur. Chacun, pas seulement le premier."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Trois développements",
+          "body": "3(x + 4) = 3x + 12\n\n5(2y − 3) = 10y − 15\n\nx(x + 7) = x² + 7x"
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le signe moins devant la parenthèse",
+          "body": "−2(x + 5) ne donne pas −2x + 10.\n\nLe facteur est −2, et il multiplie aussi le 5 : −2 × x = −2x, puis −2 × 5 = −10. Donc −2x − 10.\n\nC'est l'erreur la plus fréquente du chapitre."
+        },
+        {
+          "id": "c5",
+          "kind": "formule",
+          "title": "Deux parenthèses",
+          "formula": "(a + b)(c + d) = ac + ad + bc + bd",
+          "body": "Quatre produits, un par couple. Aucun ne se perd en route."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Réduire, ensuite",
+          "body": "Développer donne souvent des termes semblables : 2x + 5x s'écrit 7x.\n\nMais 2x + 5x² ne se réduit pas : x et x² ne sont pas la même chose. On n'additionne que des termes de même nature, comme on n'additionne pas des pommes et des litres."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Développe 3(x + 4).",
+          "explanation": "3 × x = 3x et 3 × 4 = 12.",
+          "options": [
+            {
+              "text": "3x + 12",
+              "correct": true
+            },
+            {
+              "text": "3x + 4"
+            },
+            {
+              "text": "x + 12"
+            },
+            {
+              "text": "3x × 12"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Développe −2(x + 5).",
+          "hint": "Le facteur est −2, signe compris.",
+          "explanation": "−2 × x = −2x et −2 × 5 = −10, donc −2x − 10.",
+          "options": [
+            {
+              "text": "−2x − 10",
+              "correct": true
+            },
+            {
+              "text": "−2x + 10"
+            },
+            {
+              "text": "−2x + 5"
+            },
+            {
+              "text": "2x − 10"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans le développement de (x + 3)(x + 5), combien vaut le terme constant ?",
+          "hint": "Le produit des deux nombres seuls.",
+          "explanation": "(x + 3)(x + 5) = x² + 5x + 3x + 15 = x² + 8x + 15. Le terme constant est 15.",
+          "answer": 15
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans ce même développement de (x + 3)(x + 5), quel est le coefficient de x ?",
+          "explanation": "5x + 3x = 8x : le coefficient est 8.",
+          "answer": 8
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "2x + 5x² se réduit en 7x².",
+          "explanation": "Non. x et x² ne sont pas des termes semblables : l'expression reste 2x + 5x².",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "factoriser",
+      "title": "Factoriser",
+      "subtitle": "Lire la distributivité à l'envers.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le même égal, dans l'autre sens",
+          "body": "Développer va de k(a + b) vers ka + kb. Factoriser revient en arrière.\n\nRien de nouveau à apprendre : c'est la même égalité, lue de droite à gauche. Ce qui change, c'est ce qu'il faut chercher — le facteur commun."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Trouver le facteur commun",
+          "body": "Pour factoriser 6x + 9 :\n\n1. regarder ce qui apparaît dans les deux termes : 6 = 3 × 2 et 9 = 3 × 3, donc 3\n2. l'écrire devant la parenthèse : 3( … )\n3. remplir : 6x ÷ 3 = 2x et 9 ÷ 3 = 3\n4. résultat : 3(2x + 3)"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Quand le facteur est une lettre",
+          "body": "x² + 7x = x(x + 7)\n\n5a − a² = a(5 − a)\n\n4y² + 6y = 2y(2y + 3)"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Vérifier en redéveloppant",
+          "body": "Une factorisation se contrôle toute seule : redéveloppe, tu dois retomber sur le départ.\n\n3(2x + 3) = 6x + 9. C'est bien ce qu'on avait. Deux secondes de contrôle contre une erreur recopiée sur six lignes."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Prendre le plus grand facteur",
+          "body": "6x + 9 = 3(2x + 3) est complet. On pourrait écrire 6x + 9 sans facteur commun au-delà de 3, car 2 et 3 n'en ont plus.\n\nEn revanche 4x + 8 = 2(2x + 4) n'est pas terminé : 2x + 4 se factorise encore. La réponse attendue est 4(x + 2)."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Factorise 6x + 9.",
+          "explanation": "3 divise 6 et 9 : 6x + 9 = 3(2x + 3).",
+          "options": [
+            {
+              "text": "3(2x + 3)",
+              "correct": true
+            },
+            {
+              "text": "3(2x + 9)"
+            },
+            {
+              "text": "6(x + 9)"
+            },
+            {
+              "text": "9(x + 1)"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Factorise complètement 4x + 8.",
+          "hint": "Cherche le plus grand facteur commun.",
+          "explanation": "4 divise 4 et 8 : 4x + 8 = 4(x + 2). Écrire 2(2x + 4) laisse une factorisation possible à l'intérieur.",
+          "options": [
+            {
+              "text": "4(x + 2)",
+              "correct": true
+            },
+            {
+              "text": "2(2x + 4)"
+            },
+            {
+              "text": "4(x + 8)"
+            },
+            {
+              "text": "8(x + 1)"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Factorise x² + 7x.",
+          "explanation": "x apparaît dans les deux termes : x² + 7x = x(x + 7).",
+          "options": [
+            {
+              "text": "x(x + 7)",
+              "correct": true
+            },
+            {
+              "text": "x(x + 7x)"
+            },
+            {
+              "text": "7x(x + 1)"
+            },
+            {
+              "text": "x²(1 + 7)"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "On factorise 12y + 18 au maximum. Quel nombre se trouve devant la parenthèse ?",
+          "hint": "Le plus grand diviseur commun de 12 et 18.",
+          "explanation": "12 = 6 × 2 et 18 = 6 × 3, donc 12y + 18 = 6(2y + 3).",
+          "answer": 6
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Pour vérifier une factorisation, il suffit de redévelopper et de comparer au départ.",
+          "explanation": "Oui. C'est un contrôle complet et immédiat, puisque les deux opérations sont inverses.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "defi-calcul-litteral",
+      "title": "Défi : la lettre et la preuve",
+      "subtitle": "Là où le calcul littéral démontre ce qu'un exemple ne peut pas.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À quoi ça sert, vraiment",
+          "body": "« La somme de deux nombres impairs est paire. » Tu peux vérifier : 3 + 5 = 8, 7 + 11 = 18, 101 + 203 = 304.\n\nMille exemples ne font pas une preuve — il reste une infinité de cas. Une lettre, si : un impair s'écrit 2n + 1, et la somme de deux impairs vaut 2n + 1 + 2m + 1 = 2(n + m + 1). Un double, donc un nombre pair. Tous les cas, d'un coup."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle écriture désigne un nombre pair, n étant un entier ?",
+          "explanation": "Un pair est un double : 2n. 2n + 1 est impair.",
+          "options": [
+            {
+              "text": "2n",
+              "correct": true
+            },
+            {
+              "text": "2n + 1"
+            },
+            {
+              "text": "n + 2"
+            },
+            {
+              "text": "n²"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Complète la preuve : la somme de deux nombres pairs est paire.",
+          "explanation": "2n + 2m = 2(n + m) : c'est un double, donc un nombre pair.",
+          "template": "2n + 2m = 2(___ + m), qui est un nombre ___",
+          "blanks": [
+            {
+              "accepted": [
+                "n"
+              ]
+            },
+            {
+              "accepted": [
+                "pair",
+                "pair.",
+                "double"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Prends trois entiers consécutifs : n, n + 1, n + 2. Leur somme vaut 3n + combien ?",
+          "hint": "Additionne les trois écritures.",
+          "explanation": "n + (n + 1) + (n + 2) = 3n + 3. La somme de trois entiers consécutifs est donc toujours un multiple de 3.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Un nombre à deux chiffres a pour dizaines d et pour unités u. Comment s'écrit-il ?",
+          "hint": "37, c'est 3 dizaines et 7 unités.",
+          "explanation": "10d + u. L'écriture du + u oublierait que d compte des dizaines.",
+          "options": [
+            {
+              "text": "10d + u",
+              "correct": true
+            },
+            {
+              "text": "d + u"
+            },
+            {
+              "text": "du"
+            },
+            {
+              "text": "d + 10u"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Pense à un nombre, ajoute 3, double le résultat, retire 6, puis divise par 2. Quel nombre obtiens-tu si tu étais parti de 29 ?",
+          "hint": "Suis les étapes, ou écris-les avec une lettre.",
+          "explanation": "Avec une lettre : ((n + 3) × 2 − 6) ÷ 2 = (2n + 6 − 6) ÷ 2 = n. Le tour rend toujours le nombre de départ, donc 29.",
+          "answer": 29
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Vérifier une égalité sur vingt valeurs de x suffit à la démontrer pour tout x.",
+          "explanation": "Non. Il reste une infinité de valeurs non testées. Seul le calcul littéral les couvre toutes.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

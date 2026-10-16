@@ -14,6 +14,7 @@ import 'complexity_figure.dart';
 import 'cross_figure.dart';
 import 'decimals_figure.dart';
 import 'derivative_figure.dart';
+import 'distributivity_figure.dart';
 import 'dna_figure.dart';
 import 'energy_chain_figure.dart';
 import 'entropy_figure.dart';
@@ -67,6 +68,9 @@ abstract final class FigureRegistry {
     // Même triangle, avec les carrés construits sur les côtés.
     'pythagore-carres': (BuildContext context, Color accent) =>
         RightTriangleFigure(accent: accent, showSquares: true),
+    // Le rectangle k(a + b) coupé en deux : la distributivité comme aire.
+    'distributivite': (BuildContext context, Color accent) =>
+        DistributivityFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
