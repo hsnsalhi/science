@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import base64
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -84,9 +85,13 @@ def _jeton_acces(compte: dict) -> str:
         Path(chemin_cle).unlink(missing_ok=True)
 
     if resultat.returncode != 0:
+        # Le message d'openssl cite le fichier temporaire, déjà effacé et
+        # sans intérêt pour qui lit : on garde la cause, pas le chemin.
+        detail = resultat.stderr.decode(errors="replace").strip()
+        detail = re.sub(r"\s*from /tmp/\S+", "", detail)
         raise Echec(
-            "openssl n'a pas pu signer le jeton : la clé du compte de "
-            f"service est peut-être tronquée.\n{resultat.stderr.decode().strip()}"
+            "openssl n'a pas pu signer le jeton : le champ private_key du "
+            f"compte de service est inutilisable.\n{detail}"
         )
 
     assertion = f"{a_signer}.{_b64url(resultat.stdout)}"

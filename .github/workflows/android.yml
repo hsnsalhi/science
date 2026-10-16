@@ -63,18 +63,26 @@ jobs:
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          # Une entrée de workflow ne s'interpole jamais dans le corps d'un
+          # script : elle passe par l'environnement. `destination` est une
+          # liste fermée, donc sans risque ici, mais la règle vaut mieux
+          # sans exception.
+          DESTINATION: ${{ github.event.inputs.destination }}
         run: |
           set -euo pipefail
           signature=non
           play=non
-          [ -n "${ANDROID_KEYSTORE_BASE64:-}" ] && signature=oui
-          [ -n "${GOOGLE_PLAY_SERVICE_ACCOUNT_JSON:-}" ] && play=oui
+          # Forme explicite plutôt que `[ -n … ] && signature=oui` : bash
+          # exempte les listes « && » de `set -e`, donc les deux marchent,
+          # mais il faut connaître la règle pour en être sûr.
+          if [ -n "${ANDROID_KEYSTORE_BASE64:-}" ]; then signature=oui; fi
+          if [ -n "${GOOGLE_PLAY_SERVICE_ACCOUNT_JSON:-}" ]; then play=oui; fi
           echo "signature=$signature" >> "$GITHUB_OUTPUT"
           echo "play=$play" >> "$GITHUB_OUTPUT"
           echo "Clé de téléversement : $signature"
           echo "Compte de service Google Play : $play"
 
-          if [ "${{ github.event.inputs.destination }}" = "play-interne" ]; then
+          if [ "$DESTINATION" = "play-interne" ]; then
             if [ "$signature" = "non" ] || [ "$play" = "non" ]; then
               echo "::error::Un envoi sur Google Play demande ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD et GOOGLE_PLAY_SERVICE_ACCOUNT_JSON."
               echo "Voir docs/ANDROID.md. Relancer avec « apk-seulement » pour obtenir quand même un APK installable."

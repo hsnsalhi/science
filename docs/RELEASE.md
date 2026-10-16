@@ -19,15 +19,21 @@
 
 ## Android
 
+Tout est automatisé depuis le dépôt : voir [ANDROID.md](ANDROID.md). En
+résumé, onglet Actions → *Android* → *Run workflow*. Sans aucun secret, le
+workflow produit un APK installable à la main ; avec la clé de téléversement,
+il produit aussi l'AAB ; avec le compte de service, il le dépose sur la piste
+de test interne.
+
+La signature est déjà branchée dans `android/app/build.gradle.kts`, et
+`tool/android_signing.py` fabrique la clé et affiche les secrets à déposer.
+Il n'y a plus d'étape manuelle de `keytool`.
+
+Pour un build local, une fois `android/key.properties` en place :
+
 ```bash
 flutter build appbundle --release
 ```
-
-1. Créer un magasin de clés (`keytool -genkey -v -keystore eureka.jks …`).
-2. Renseigner `android/key.properties` — **jamais versionné**, déjà exclu par
-   `.gitignore`.
-3. Référencer la signature dans `android/app/build.gradle.kts`.
-4. Déposer le `.aab` sur la Google Play Console.
 
 Déclarations attendues par Play :
 
