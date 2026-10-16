@@ -68,6 +68,43 @@
           ]
         },
         {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range chaque planète dans sa famille.",
+          "hint": "Les quatre premières du Soleil sont rocheuses.",
+          "explanation": "Mercure, Vénus, la Terre et Mars sont rocheuses : elles ont un sol. Jupiter, Saturne, Uranus et Neptune sont des géantes, sans surface solide.",
+          "categories": [
+            "Rocheuses",
+            "Géantes"
+          ],
+          "items": [
+            {
+              "text": "Mercure",
+              "category": 0
+            },
+            {
+              "text": "Vénus",
+              "category": 0
+            },
+            {
+              "text": "Mars",
+              "category": 0
+            },
+            {
+              "text": "Jupiter",
+              "category": 1
+            },
+            {
+              "text": "Saturne",
+              "category": 1
+            },
+            {
+              "text": "Neptune",
+              "category": 1
+            }
+          ]
+        },
+        {
           "id": "q2",
           "kind": "vraiFaux",
           "prompt": "Le Soleil est une planète.",
@@ -169,6 +206,19 @@
           "unit": "millions de km",
           "hint": "C'est la définition de l'unité astronomique.",
           "explanation": "150 millions de kilomètres. Cette distance sert d'unité de mesure dans tout le Système solaire : on l'appelle l'unité astronomique."
+        },
+        {
+          "id": "q5",
+          "kind": "estimation",
+          "prompt": "Sans calculer : à quelle distance du Soleil se trouve Neptune ?",
+          "hint": "La Terre est à 150 millions de km, et Neptune trente fois plus loin.",
+          "explanation": "4 495 millions de kilomètres, soit environ 30 unités astronomiques. Viser le bon ordre de grandeur suffit : c'est le millier de millions qui compte, pas l'unité.",
+          "min": 100,
+          "max": 20000,
+          "answer": 4495,
+          "tolerance": 1500,
+          "unit": "millions de km",
+          "logarithmic": true
         },
         {
           "id": "q2",
@@ -451,6 +501,18 @@
           "prompt": "La rotation de la Terre sur elle-même est ce qui fait l'année.",
           "answer": false,
           "explanation": "Non : la rotation fait le jour et la nuit, en 24 heures. C'est la révolution autour du Soleil, en 365 jours, qui fait l'année."
+        },
+        {
+          "id": "q7",
+          "kind": "estimation",
+          "prompt": "Estime le temps que met la lumière du Soleil pour atteindre Mars.",
+          "hint": "Huit minutes pour la Terre, et Mars est une fois et demie plus loin.",
+          "explanation": "Environ 12 minutes et demie. Mars est à 228 millions de km, soit 1,5 fois la distance Terre-Soleil : la lumière met donc une fois et demie plus longtemps que les 8 minutes qu'elle met à nous parvenir.",
+          "min": 1,
+          "max": 40,
+          "answer": 12.7,
+          "tolerance": 3,
+          "unit": "minutes"
         }
       ]
     }

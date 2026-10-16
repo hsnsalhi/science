@@ -24,7 +24,13 @@ enum QuestionKind {
   remiseEnOrdre('remiseEnOrdre'),
 
   /// Paires à associer.
-  appariement('appariement');
+  appariement('appariement'),
+
+  /// Éléments à ranger dans des catégories.
+  tri('tri'),
+
+  /// Ordre de grandeur à estimer avec un curseur.
+  estimation('estimation');
 
   const QuestionKind(this.id);
 
@@ -91,6 +97,13 @@ final class MatchingAnswer extends Answer {
   final Map<int, int> pairing;
 }
 
+/// Rangements proposés : indice de l'élément vers indice de la catégorie.
+final class ClassifyAnswer extends Answer {
+  const ClassifyAnswer(this.placement);
+
+  final Map<int, int> placement;
+}
+
 /// Une proposition de réponse.
 class AnswerOption {
   const AnswerOption({required this.text, this.isCorrect = false});
@@ -116,6 +129,22 @@ class MatchPair {
       MatchPair(
         left: json.str('left', context: context),
         right: json.str('right', context: context),
+      );
+}
+
+/// Un élément à ranger, et la catégorie qui lui revient.
+class ClassifyItem {
+  const ClassifyItem({required this.text, required this.category});
+
+  final String text;
+
+  /// Indice de la catégorie attendue.
+  final int category;
+
+  factory ClassifyItem.fromJson(Map<String, Object?> json, String context) =>
+      ClassifyItem(
+        text: json.str('text', context: context),
+        category: json.integer('category', context: context),
       );
 }
 
@@ -310,6 +339,82 @@ sealed class Question {
           figureId: figureId,
           pairs: pairs,
         );
+
+      case QuestionKind.tri:
+        final List<String> categories = json.strings(
+          'categories',
+          context: ctx,
+        );
+        if (categories.length < 2) {
+          throw FormatException('$ctx : au moins deux catégories requises.');
+        }
+        final List<ClassifyItem> items = json
+            .objects('items', context: ctx)
+            .map((Map<String, Object?> i) {
+              final ClassifyItem item = ClassifyItem.fromJson(i, ctx);
+              if (item.category < 0 || item.category >= categories.length) {
+                throw FormatException(
+                  '$ctx : « ${item.text} » vise la catégorie '
+                  '${item.category}, hors des ${categories.length} '
+                  'déclarées.',
+                );
+              }
+              return item;
+            })
+            .toList(growable: false);
+        if (items.length < 2) {
+          throw FormatException('$ctx : au moins deux éléments requis.');
+        }
+        // Une catégorie vide est presque toujours une faute de saisie, et
+        // elle fausse l'exercice : l'élève la laisse de côté sans risque.
+        for (int c = 0; c < categories.length; c++) {
+          if (!items.any((ClassifyItem i) => i.category == c)) {
+            throw FormatException(
+              '$ctx : la catégorie « ${categories[c]} » n\'a aucun élément.',
+            );
+          }
+        }
+        return ClassifyQuestion(
+          id: id,
+          prompt: prompt,
+          explanation: explanation,
+          hint: hint,
+          figureId: figureId,
+          categories: categories,
+          items: items,
+        );
+
+      case QuestionKind.estimation:
+        final double min = json.number('min', context: ctx);
+        final double max = json.number('max', context: ctx);
+        final double attendu = json.number('answer', context: ctx);
+        if (max <= min) {
+          throw FormatException('$ctx : « max » doit dépasser « min ».');
+        }
+        if (attendu < min || attendu > max) {
+          throw FormatException(
+            '$ctx : la réponse $attendu sort de l\'intervalle [$min, $max].',
+          );
+        }
+        final bool logarithmique = json['logarithmic'] == true;
+        if (logarithmique && min <= 0) {
+          throw FormatException(
+            '$ctx : une échelle logarithmique exige un minimum positif.',
+          );
+        }
+        return EstimateQuestion(
+          id: id,
+          prompt: prompt,
+          explanation: explanation,
+          hint: hint,
+          figureId: figureId,
+          min: min,
+          max: max,
+          expected: attendu,
+          tolerance: json.numberOr('tolerance', (max - min) / 10),
+          unit: json.strOrNull('unit'),
+          logarithmic: logarithmique,
+        );
     }
   }
 }
@@ -447,7 +552,20 @@ final class NumericQuestion extends Question {
     final String raw = value == value.roundToDouble()
         ? value.round().toString()
         : value.toStringAsFixed(2).replaceFirst(RegExp(r'0+$'), '');
-    return raw.replaceAll('.', ',');
+    final List<String> parties = raw.split('.');
+    // Séparateur de milliers : « 20000 millions de km » se lit mal, et
+    // l'usage français groupe par trois avec une espace insécable. Seule
+    // la partie entière est groupée ; les décimales ne le sont pas.
+    final bool negatif = parties[0].startsWith('-');
+    final String entier = negatif ? parties[0].substring(1) : parties[0];
+    final String groupe = entier.replaceAllMapped(
+      RegExp(r'(\d)(?=(\d{3})+$)'),
+      (Match m) => '${m[1]}\u202f',
+    );
+    final String signe = negatif ? '-' : '';
+    return parties.length > 1
+        ? '$signe$groupe,${parties[1]}'
+        : '$signe$groupe';
   }
 
   /// Lit une saisie d'élève : virgule décimale et espaces acceptés.
@@ -618,4 +736,95 @@ final class MatchingQuestion extends Question {
   @override
   String get solutionLabel =>
       pairs.map((MatchPair p) => '${p.left} → ${p.right}').join(' · ');
+}
+
+/// Éléments à ranger dans des catégories.
+final class ClassifyQuestion extends Question {
+  const ClassifyQuestion({
+    required super.id,
+    required super.prompt,
+    required super.explanation,
+    required this.categories,
+    required this.items,
+    super.hint,
+    super.figureId,
+  });
+
+  /// Intitulés des catégories, dans l'ordre d'affichage.
+  final List<String> categories;
+
+  final List<ClassifyItem> items;
+
+  @override
+  QuestionKind get kind => QuestionKind.tri;
+
+  @override
+  bool isSatisfiedBy(Answer answer) {
+    if (answer is! ClassifyAnswer) return false;
+    if (answer.placement.length != items.length) return false;
+    for (int i = 0; i < items.length; i++) {
+      if (answer.placement[i] != items[i].category) return false;
+    }
+    return true;
+  }
+
+  @override
+  String get solutionLabel => <String>[
+    for (int c = 0; c < categories.length; c++)
+      '${categories[c]} : '
+          '${items.where((ClassifyItem i) => i.category == c).map((ClassifyItem i) => i.text).join(', ')}',
+  ].join(' · ');
+}
+
+/// Ordre de grandeur à estimer au curseur.
+///
+/// Ce type ne demande pas un calcul mais un jugement : viser la bonne
+/// dizaine de millions de kilomètres, la bonne poignée de minutes. La
+/// tolérance est donc large par construction — l'exercice échoue s'il se
+/// transforme en loterie du dixième près.
+final class EstimateQuestion extends Question {
+  const EstimateQuestion({
+    required super.id,
+    required super.prompt,
+    required super.explanation,
+    required this.min,
+    required this.max,
+    required this.expected,
+    required this.tolerance,
+    this.unit,
+    this.logarithmic = false,
+    super.hint,
+    super.figureId,
+  });
+
+  final double min;
+  final double max;
+  final double expected;
+
+  /// Écart absolu admis, dans l'unité de la question.
+  final double tolerance;
+
+  final String? unit;
+
+  /// Échelle logarithmique du curseur.
+  ///
+  /// N'agit que sur la course du curseur, pas sur la correction : un
+  /// intervalle qui va de l'année-lumière au kilomètre est inutilisable en
+  /// échelle linéaire, mais la réponse reste jugée sur un écart absolu,
+  /// annoncé dans le contenu.
+  final bool logarithmic;
+
+  @override
+  QuestionKind get kind => QuestionKind.estimation;
+
+  @override
+  bool isSatisfiedBy(Answer answer) =>
+      answer is NumericAnswer &&
+      (answer.value - expected).abs() <= tolerance;
+
+  @override
+  String get solutionLabel {
+    final String value = NumericQuestion.formatNumber(expected);
+    return unit == null ? value : '$value $unit';
+  }
 }

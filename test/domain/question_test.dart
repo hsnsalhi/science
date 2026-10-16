@@ -295,4 +295,148 @@ void main() {
       expect(question.isNumericBlank(2), isFalse);
     });
   });
+
+  // Les deux formes ajoutées après coup. Leur analyse refuse d'emblée les
+  // fautes de contenu qui, sinon, ne se verraient qu'en jouant : une
+  // catégorie sans élément, un indice qui vise une catégorie inexistante,
+  // une réponse hors de la course du curseur.
+  group('Tri en catégories', () {
+    Map<String, Object?> tri(Map<String, Object?> extra) => <String, Object?>{
+      'id': 'q',
+      'kind': 'tri',
+      'prompt': 'Range.',
+      'explanation': 'Parce que.',
+      'categories': <String>['Pairs', 'Impairs'],
+      'items': <Object?>[
+        <String, Object?>{'text': '2', 'category': 0},
+        <String, Object?>{'text': '3', 'category': 1},
+      ],
+      ...extra,
+    };
+
+    test('accepte le rangement exact', () {
+      final ClassifyQuestion q =
+          Question.fromJson(tri(<String, Object?>{})) as ClassifyQuestion;
+      expect(
+        q.isSatisfiedBy(const ClassifyAnswer(<int, int>{0: 0, 1: 1})),
+        isTrue,
+      );
+    });
+
+    test('refuse un élément mal rangé', () {
+      final ClassifyQuestion q =
+          Question.fromJson(tri(<String, Object?>{})) as ClassifyQuestion;
+      expect(
+        q.isSatisfiedBy(const ClassifyAnswer(<int, int>{0: 1, 1: 0})),
+        isFalse,
+      );
+    });
+
+    test('refuse un rangement incomplet', () {
+      final ClassifyQuestion q =
+          Question.fromJson(tri(<String, Object?>{})) as ClassifyQuestion;
+      expect(
+        q.isSatisfiedBy(const ClassifyAnswer(<int, int>{0: 0})),
+        isFalse,
+      );
+    });
+
+    test('refuse une catégorie laissée vide', () {
+      expect(
+        () => Question.fromJson(
+          tri(<String, Object?>{
+            'items': <Object?>[
+              <String, Object?>{'text': '2', 'category': 0},
+              <String, Object?>{'text': '4', 'category': 0},
+            ],
+          }),
+        ),
+        throwsFormatException,
+      );
+    });
+
+    test('refuse un indice de catégorie hors limites', () {
+      expect(
+        () => Question.fromJson(
+          tri(<String, Object?>{
+            'items': <Object?>[
+              <String, Object?>{'text': '2', 'category': 0},
+              <String, Object?>{'text': '3', 'category': 7},
+            ],
+          }),
+        ),
+        throwsFormatException,
+      );
+    });
+  });
+
+  group('Estimation', () {
+    Map<String, Object?> estim(Map<String, Object?> extra) =>
+        <String, Object?>{
+          'id': 'q',
+          'kind': 'estimation',
+          'prompt': 'Estime.',
+          'explanation': 'Parce que.',
+          'min': 1,
+          'max': 100,
+          'answer': 50,
+          'tolerance': 10,
+          ...extra,
+        };
+
+    test('accepte une valeur dans la tolérance', () {
+      final EstimateQuestion q =
+          Question.fromJson(estim(<String, Object?>{})) as EstimateQuestion;
+      expect(q.isSatisfiedBy(const NumericAnswer(58)), isTrue);
+      expect(q.isSatisfiedBy(const NumericAnswer(40)), isTrue);
+    });
+
+    test('refuse une valeur hors tolérance', () {
+      final EstimateQuestion q =
+          Question.fromJson(estim(<String, Object?>{})) as EstimateQuestion;
+      expect(q.isSatisfiedBy(const NumericAnswer(61)), isFalse);
+    });
+
+    test('refuse une réponse hors de la course du curseur', () {
+      expect(
+        () => Question.fromJson(estim(<String, Object?>{'answer': 500})),
+        throwsFormatException,
+      );
+    });
+
+    test('refuse un intervalle vide', () {
+      expect(
+        () => Question.fromJson(
+          estim(<String, Object?>{'min': 10, 'max': 10, 'answer': 10}),
+        ),
+        throwsFormatException,
+      );
+    });
+
+    test('refuse une échelle logarithmique partant de zéro', () {
+      expect(
+        () => Question.fromJson(
+          estim(<String, Object?>{'min': 0, 'logarithmic': true}),
+        ),
+        throwsFormatException,
+      );
+    });
+  });
+
+  group('Écriture des nombres', () {
+    test('groupe les milliers', () {
+      expect(NumericQuestion.formatNumber(20000), '20\u202f000');
+      expect(NumericQuestion.formatNumber(4495), '4\u202f495');
+      expect(NumericQuestion.formatNumber(150), '150');
+    });
+
+    test('garde la virgule française et ne groupe pas les décimales', () {
+      expect(NumericQuestion.formatNumber(12.5), '12,5');
+      expect(NumericQuestion.formatNumber(1234.25), '1\u202f234,25');
+    });
+
+    test('préserve le signe', () {
+      expect(NumericQuestion.formatNumber(-4495), '-4\u202f495');
+    });
+  });
 }

@@ -472,6 +472,35 @@
               "text": "2 ; 3 ; 4"
             }
           ]
+        },
+        {
+          "id": "q6",
+          "kind": "tri",
+          "prompt": "Range chaque triplet selon qu'il forme ou non un triangle rectangle.",
+          "hint": "Compare le carré du plus grand côté à la somme des carrés des deux autres.",
+          "explanation": "3-4-5 : 9 + 16 = 25 ✓. 5-12-13 : 25 + 144 = 169 ✓. 4-5-6 : 16 + 25 = 41, mais 6² = 36 ✗. 2-3-4 : 4 + 9 = 13, mais 4² = 16 ✗.",
+          "categories": [
+            "Rectangle",
+            "Pas rectangle"
+          ],
+          "items": [
+            {
+              "text": "3, 4, 5",
+              "category": 0
+            },
+            {
+              "text": "5, 12, 13",
+              "category": 0
+            },
+            {
+              "text": "4, 5, 6",
+              "category": 1
+            },
+            {
+              "text": "2, 3, 4",
+              "category": 1
+            }
+          ]
         }
       ]
     }

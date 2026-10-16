@@ -280,6 +280,59 @@ void main() {
         await shoot(tester, '$device-6-astronomie');
       });
 
+      // Les deux formes d'exercice ajoutées : un tri dans des bacs, et
+      // une estimation au curseur. Elles n'existaient pas quand les
+      // captures ont été écrites, et rien d'autre ne les montre.
+      testWidgets('exercice : tri en catégories', (WidgetTester tester) async {
+        await boot(tester, logical, ratio, withHistory: false);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Le Système solaire');
+        await tapText(tester, 'Huit planètes');
+        for (int i = 0; i < 12; i++) {
+          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
+            await tapText(tester, 'Passer aux exercices');
+            break;
+          }
+          await tapText(tester, 'Suivant');
+        }
+        // Le tri est la deuxième question.
+        await tapText(tester, 'Mercure');
+        await tapText(tester, 'Valider');
+        await tapText(tester, 'Continuer');
+        await shoot(tester, '$device-11-tri');
+      });
+
+      // L'estimation : un curseur, pas un clavier. La capture le montre
+      // après un premier réglage, sans quoi la valeur affichée reste un
+      // tiret et on ne verrait rien de l'exercice.
+      testWidgets('exercice : estimation au curseur', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio, withHistory: false);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Le Système solaire');
+        await tapText(tester, 'Les distances');
+        for (int i = 0; i < 12; i++) {
+          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
+            await tapText(tester, 'Passer aux exercices');
+            break;
+          }
+          await tapText(tester, 'Suivant');
+        }
+        await tester.enterText(find.byType(TextField).first, '150');
+        await tester.pumpAndSettle();
+        await tapText(tester, 'Valider');
+        await tapText(tester, 'Continuer');
+        final Rect piste = tester.getRect(find.byType(Slider));
+        await tester.tapAt(
+          Offset(piste.left + piste.width * 0.72, piste.center.dy),
+        );
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-12-estimation');
+      });
+
       // La preuve de Pythagore se joue en glissant : deux captures, au
       // départ et à l'arrivée, pour vérifier que les triangles tombent
       // bien aux bons endroits dans les deux dispositions.

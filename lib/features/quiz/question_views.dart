@@ -1,6 +1,8 @@
 /// Saisie des réponses, un composant par type de question.
 library;
 
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -78,6 +80,21 @@ class QuestionAnswerArea extends StatelessWidget {
         key: key,
         question: question as OrderingQuestion,
         session: session,
+        onAnswer: onAnswer,
+        locked: locked,
+        accent: accent,
+      ),
+      ClassifyQuestion() => _ClassifyView(
+        key: key,
+        question: question as ClassifyQuestion,
+        session: session,
+        onAnswer: onAnswer,
+        locked: locked,
+        accent: accent,
+      ),
+      EstimateQuestion() => _EstimateView(
+        key: key,
+        question: question as EstimateQuestion,
         onAnswer: onAnswer,
         locked: locked,
         accent: accent,
@@ -901,5 +918,361 @@ class _Definition extends StatelessWidget {
             );
           },
     );
+  }
+}
+
+// ------------------------------------------------------- Tri en catégories
+
+/// Éléments à ranger dans des catégories, au glisser-déposer.
+///
+/// Même geste que l'appariement, et pour la même raison : une réserve qui
+/// se vide montre ce qu'il reste à faire, et des bacs qui se remplissent
+/// montrent ce qui est fait. Rien à mémoriser entre deux touches.
+class _ClassifyView extends StatefulWidget {
+  const _ClassifyView({
+    required this.question,
+    required this.session,
+    required this.onAnswer,
+    required this.locked,
+    required this.accent,
+    super.key,
+  });
+
+  final ClassifyQuestion question;
+  final QuizSession session;
+  final ValueChanged<Answer?> onAnswer;
+  final bool locked;
+  final Color accent;
+
+  @override
+  State<_ClassifyView> createState() => _ClassifyViewState();
+}
+
+class _ClassifyViewState extends State<_ClassifyView> {
+  /// Indice de l'élément vers indice de la catégorie.
+  final Map<int, int> _range = <int, int>{};
+
+  int? _choisi;
+
+  late final List<int> _ordre =
+      widget.session.displayOrder[widget.question.id] ??
+      List<int>.generate(widget.question.items.length, (int i) => i);
+
+  void _ranger(int item, int categorie) {
+    if (widget.locked) return;
+    context.tapFeedback();
+    setState(() {
+      _range[item] = categorie;
+      _choisi = null;
+    });
+    _emit();
+  }
+
+  void _reprendre(int item) {
+    if (widget.locked) return;
+    setState(() {
+      _range.remove(item);
+      _choisi = null;
+    });
+    _emit();
+  }
+
+  void _emit() {
+    widget.onAnswer(
+      _range.length == widget.question.items.length
+          ? ClassifyAnswer(Map<int, int>.of(_range))
+          : null,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final ClassifyQuestion q = widget.question;
+    final List<int> libres = <int>[
+      for (final int i in _ordre)
+        if (!_range.containsKey(i)) i,
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          libres.isEmpty
+              ? 'Touche un élément rangé pour le reprendre.'
+              : 'Fais glisser chaque élément dans sa catégorie.',
+          style: context.text.labelSmall?.copyWith(
+            color: context.tokens.inkMuted,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        Wrap(
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.sm,
+          children: <Widget>[
+            for (final int i in libres)
+              _Etiquette(
+                label: q.items[i].text,
+                accent: widget.accent,
+                selectionnee: _choisi == i,
+                locked: widget.locked,
+                onTap: () => setState(() => _choisi = _choisi == i ? null : i),
+                index: i,
+              ),
+            if (libres.isEmpty)
+              Text(
+                'Tout est rangé.',
+                style: context.text.bodySmall?.copyWith(
+                  color: context.tokens.inkMuted,
+                ),
+              ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.lg),
+        for (int c = 0; c < q.categories.length; c++)
+          _Bac(
+            titre: q.categories[c],
+            contenu: <int>[
+              for (final MapEntry<int, int> e in _range.entries)
+                if (e.value == c) e.key,
+            ],
+            libelleDe: (int i) => q.items[i].text,
+            justeDe: (int i) => q.items[i].category == c,
+            accent: widget.accent,
+            locked: widget.locked,
+            attendUnDepot: _choisi != null,
+            onAccepte: (int item) => _ranger(item, c),
+            onTap: () {
+              final int? item = _choisi;
+              if (item != null) _ranger(item, c);
+            },
+            onReprendre: _reprendre,
+          ),
+      ],
+    );
+  }
+}
+
+/// Catégorie qui reçoit des éléments.
+class _Bac extends StatelessWidget {
+  const _Bac({
+    required this.titre,
+    required this.contenu,
+    required this.libelleDe,
+    required this.justeDe,
+    required this.accent,
+    required this.locked,
+    required this.attendUnDepot,
+    required this.onAccepte,
+    required this.onTap,
+    required this.onReprendre,
+  });
+
+  final String titre;
+  final List<int> contenu;
+  final String Function(int item) libelleDe;
+  final bool Function(int item) justeDe;
+  final Color accent;
+  final bool locked;
+  final bool attendUnDepot;
+  final void Function(int item) onAccepte;
+  final VoidCallback onTap;
+  final void Function(int item) onReprendre;
+
+  @override
+  Widget build(BuildContext context) {
+    return DragTarget<int>(
+      onAcceptWithDetails: (DragTargetDetails<int> d) => onAccepte(d.data),
+      builder:
+          (
+            BuildContext context,
+            List<int?> candidats,
+            List<dynamic> rejetes,
+          ) {
+            final AppTokens tokens = context.tokens;
+            final bool survol = candidats.isNotEmpty;
+            return Padding(
+              padding: const EdgeInsets.only(bottom: AppSpacing.md),
+              child: GestureDetector(
+                onTap: onTap,
+                child: AnimatedContainer(
+                  duration: context.motionDuration(AppDurations.fast),
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  decoration: BoxDecoration(
+                    color: survol
+                        ? accent.withValues(alpha: context.isDark ? 0.2 : 0.09)
+                        : context.colors.surface,
+                    borderRadius: BorderRadius.circular(AppRadii.sm),
+                    border: Border.all(
+                      color: survol || attendUnDepot ? accent : tokens.border,
+                      width: survol ? 2 : 1.5,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(titre, style: context.text.titleSmall),
+                      const SizedBox(height: AppSpacing.sm),
+                      if (contenu.isEmpty)
+                        Container(
+                          height: 34,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: accent.withValues(
+                              alpha: survol ? 0.18 : 0.06,
+                            ),
+                            borderRadius: BorderRadius.circular(AppRadii.sm),
+                          ),
+                          child: Text(
+                            survol ? 'Lâche ici' : 'Dépose ici',
+                            style: context.text.labelSmall?.copyWith(
+                              color: survol ? accent : tokens.inkSubtle,
+                            ),
+                          ),
+                        )
+                      else
+                        Wrap(
+                          spacing: AppSpacing.sm,
+                          runSpacing: AppSpacing.xs,
+                          children: <Widget>[
+                            for (final int i in contenu)
+                              GestureDetector(
+                                onTap: locked ? null : () => onReprendre(i),
+                                child: AppChip(
+                                  label: libelleDe(i),
+                                  icon: locked
+                                      ? (justeDe(i)
+                                            ? Icons.check_rounded
+                                            : Icons.close_rounded)
+                                      : Icons.close_rounded,
+                                  color: locked
+                                      ? (justeDe(i)
+                                            ? tokens.success
+                                            : tokens.error)
+                                      : accent,
+                                ),
+                              ),
+                          ],
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+    );
+  }
+}
+
+// ----------------------------------------------------- Estimation au curseur
+
+/// Ordre de grandeur à viser avec un curseur.
+///
+/// L'exercice ne demande pas un calcul mais un jugement. Le curseur rend
+/// ce jugement possible sans clavier, et la valeur s'affiche en grand :
+/// c'est elle qu'on règle, pas une position sur une piste.
+class _EstimateView extends StatefulWidget {
+  const _EstimateView({
+    required this.question,
+    required this.onAnswer,
+    required this.locked,
+    required this.accent,
+    super.key,
+  });
+
+  final EstimateQuestion question;
+  final ValueChanged<Answer?> onAnswer;
+  final bool locked;
+  final Color accent;
+
+  @override
+  State<_EstimateView> createState() => _EstimateViewState();
+}
+
+class _EstimateViewState extends State<_EstimateView> {
+  /// Position du curseur, de 0 à 1.
+  double _position = 0.5;
+  bool _touche = false;
+
+  /// Valeur visée par la position courante.
+  double get _valeur {
+    final EstimateQuestion q = widget.question;
+    if (!q.logarithmic) return q.min + (q.max - q.min) * _position;
+    // Échelle logarithmique : sans elle, un intervalle qui couvre
+    // plusieurs ordres de grandeur écrase toutes les petites valeurs sur
+    // le premier millimètre de la piste.
+    final double lmin = math.log(q.min);
+    final double lmax = math.log(q.max);
+    return math.exp(lmin + (lmax - lmin) * _position);
+  }
+
+  void _regler(double position) {
+    if (widget.locked) return;
+    setState(() {
+      _position = position;
+      _touche = true;
+    });
+    widget.onAnswer(NumericAnswer(_valeur));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final EstimateQuestion q = widget.question;
+    final AppTokens tokens = context.tokens;
+    final String unite = q.unit == null ? '' : ' ${q.unit}';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Center(
+          child: Text(
+            _touche
+                ? '${NumericQuestion.formatNumber(_arrondi(_valeur))}$unite'
+                : '— ',
+            style: AppTypography.formula(
+              size: 30,
+              color: _touche ? widget.accent : tokens.inkSubtle,
+            ),
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Slider(
+          value: _position,
+          onChanged: widget.locked ? null : _regler,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              '${NumericQuestion.formatNumber(q.min)}$unite',
+              style: context.text.labelSmall?.copyWith(
+                color: tokens.inkSubtle,
+              ),
+            ),
+            Text(
+              '${NumericQuestion.formatNumber(q.max)}$unite',
+              style: context.text.labelSmall?.copyWith(
+                color: tokens.inkSubtle,
+              ),
+            ),
+          ],
+        ),
+        if (!_touche) ...<Widget>[
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            'Déplace le curseur pour proposer une valeur.',
+            textAlign: TextAlign.center,
+            style: context.text.labelSmall?.copyWith(color: tokens.inkMuted),
+          ),
+        ],
+      ],
+    );
+  }
+
+  /// Arrondi d'affichage, pour ne pas montrer dix décimales.
+  double _arrondi(double valeur) {
+    if (valeur >= 100) return valeur.roundToDouble();
+    if (valeur >= 10) return (valeur * 10).roundToDouble() / 10;
+    return (valeur * 100).roundToDouble() / 100;
   }
 }

@@ -81,6 +81,25 @@ void main() {
     }
   });
 
+  // Exiger de chaque chapitre qu'il exerce les neuf formes serait une
+  // contrainte d'écriture absurde : un chapitre de logique n'a que faire
+  // d'une estimation d'ordre de grandeur. Mais une forme que personne
+  // n'emploie est du code mort qui se dégrade en silence — elle doit
+  // vivre quelque part.
+  test('chaque forme de question est employée dans le catalogue', () {
+    final Set<QuestionKind> employees = <QuestionKind>{
+      for (final Chapter chapter in catalog.chapters)
+        for (final Lesson lesson in chapter.lessons)
+          for (final Question question in lesson.questions) question.kind,
+    };
+    expect(
+      employees,
+      containsAll(QuestionKind.values),
+      reason: 'formes jamais employées : '
+          '${QuestionKind.values.toSet().difference(employees).map((QuestionKind k) => k.id).join(', ')}',
+    );
+  });
+
   test('au moins un chapitre est entièrement jouable', () {
     expect(catalog.chapters.where((Chapter c) => c.isPlayable), isNotEmpty);
   });
@@ -239,12 +258,12 @@ void main() {
       );
     });
 
-    test('exerce les sept types de question', () {
+    test('varie les formes de question', () {
       final Set<QuestionKind> kinds = <QuestionKind>{
         for (final Lesson lesson in pythagore.lessons)
           for (final Question question in lesson.questions) question.kind,
       };
-      expect(kinds, containsAll(QuestionKind.values));
+      expect(kinds.length, greaterThanOrEqualTo(6));
     });
 
     test('les réponses numériques respectent bien Pythagore', () {

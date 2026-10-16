@@ -130,6 +130,11 @@ class QuizSession {
         case MatchingQuestion(:final List<MatchPair> pairs):
           display[question.id] = _permutation(pairs.length, rng, false);
           match[question.id] = _shuffledNonIdentity(pairs.length, rng);
+        case ClassifyQuestion(:final List<ClassifyItem> items):
+          // Les éléments arrivent mélangés : rangés dans l'ordre des
+          // catégories, le premier de chaque groupe donnerait la réponse.
+          display[question.id] = _shuffledNonIdentity(items.length, rng);
+        case EstimateQuestion():
         case TrueFalseQuestion():
         case NumericQuestion():
         case FillBlanksQuestion():
@@ -321,6 +326,11 @@ class QuizSession {
         answer is OrderingAnswer && answer.order.length == items.length,
       MatchingQuestion(:final List<MatchPair> pairs) =>
         answer is MatchingAnswer && answer.pairing.length == pairs.length,
+      ClassifyQuestion(:final List<ClassifyItem> items) =>
+        answer is ClassifyAnswer && answer.placement.length == items.length,
+      // Le curseur porte toujours une valeur : dès qu'on y a touché, la
+      // réponse est complète.
+      EstimateQuestion() => answer is NumericAnswer,
     };
   }
 
