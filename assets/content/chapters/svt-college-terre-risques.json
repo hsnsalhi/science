@@ -1,0 +1,386 @@
+{
+  "chapter": "svt-college-la-planete-terre-et-les-risques",
+  "lessons": [
+    {
+      "id": "plaques",
+      "title": "Des plaques qui bougent",
+      "subtitle": "Quelques centimètres par an, et tout s'explique.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'indice que personne n'a voulu croire",
+          "body": "En 1912, Alfred Wegener remarque que les côtes de l'Afrique et de l'Amérique du Sud s'emboîtent, que les mêmes fossiles se trouvent de part et d'autre, et que les mêmes chaînes de montagnes se prolongent.\n\nIl en déduit que les continents ont été réunis et se sont séparés. On se moque de lui pendant cinquante ans, pour une bonne raison : il n'avait aucun moteur à proposer.\n\nLe moteur a été trouvé dans les années 1960, au fond des océans."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Trois sortes de frontières",
+          "body": "Les dorsales, où deux plaques s'écartent : du magma monte, refroidit, et fabrique de la croûte océanique neuve. L'Atlantique s'élargit ainsi d'environ 2 cm par an.\n\nLes zones de subduction, où une plaque océanique plonge sous une autre. Elle entraîne de l'eau en profondeur, ce qui produit du magma : c'est là que se trouvent les volcans les plus explosifs et les séismes les plus profonds.\n\nLes failles coulissantes, où deux plaques frottent latéralement sans se détruire. La faille de San Andreas en est une."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La croûte est recyclée",
+          "body": "La croûte océanique se fabrique aux dorsales et disparaît en subduction. Son âge maximal est d'environ 200 millions d'années, nulle part davantage.\n\nLes continents, eux, sont trop légers pour plonger : certaines roches continentales ont 4 milliards d'années. C'est pourquoi l'histoire ancienne de la Terre se lit sur les continents et jamais au fond des océans."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Deux centimètres par an, c'est énorme",
+          "body": "Deux centimètres paraissent dérisoires. Multiplie par un million d'années : 20 kilomètres. Par cent millions : 2 000 kilomètres.\n\nL'Atlantique a 4 000 km de large environ au niveau de l'équateur. À 2 cm par an, il a fallu de l'ordre de 200 millions d'années pour l'ouvrir — ce qui est exactement l'âge de ses roches les plus vieilles. La mesure et la datation se répondent."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une dorsale écarte deux plaques de 2 cm par an. Combien de kilomètres en 1 million d'années ?",
+          "hint": "2 cm × 1 000 000, puis en kilomètres.",
+          "explanation": "2 cm × 1 000 000 = 2 000 000 cm = 20 000 m = 20 km.",
+          "answer": 20,
+          "unit": "km"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Au même rythme, combien de kilomètres en 100 millions d'années ?",
+          "explanation": "20 km × 100 = 2 000 km.",
+          "answer": 2000,
+          "unit": "km"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "À 2 cm par an, combien de millions d'années pour ouvrir un océan de 4 000 km ?",
+          "explanation": "4 000 km font 400 000 000 cm, divisés par 2 cm par an : 200 000 000 ans, soit 200 millions d'années.",
+          "answer": 200
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces phénomènes selon le type de frontière.",
+          "explanation": "Aux dorsales la croûte se crée, en subduction elle disparaît avec volcanisme explosif, aux failles coulissantes les plaques frottent.",
+          "categories": ["dorsale", "subduction", "faille coulissante"],
+          "items": [
+            { "text": "création de croûte océanique", "category": 0 },
+            { "text": "l'Atlantique qui s'élargit", "category": 0 },
+            { "text": "volcans explosifs", "category": 1 },
+            { "text": "séismes très profonds", "category": 1 },
+            { "text": "la faille de San Andreas", "category": 2 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi aucune roche océanique n'a plus de 200 millions d'années ?",
+          "explanation": "Parce que la croûte océanique est recyclée : créée aux dorsales, elle replonge en subduction. Les continents, trop légers pour plonger, conservent des roches de 4 milliards d'années.",
+          "options": [
+            { "text": "la croûte océanique est recyclée en subduction", "correct": true },
+            { "text": "l'eau de mer dissout les roches anciennes" },
+            { "text": "les océans sont récents" },
+            { "text": "on n'a pas encore foré assez profond" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'idée de Wegener a-t-elle été rejetée cinquante ans ?",
+          "explanation": "Parce qu'il n'avait aucun moteur à proposer. Les indices étaient bons, mais une explication sans mécanisme ne convainc pas — et c'est une exigence légitime.",
+          "options": [
+            { "text": "il ne proposait aucun mécanisme", "correct": true },
+            { "text": "ses fossiles étaient des faux" },
+            { "text": "les cartes de l'époque étaient fausses" },
+            { "text": "il n'était pas géologue" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seismes",
+      "title": "Les séismes",
+      "subtitle": "Une échelle qui trompe tout le monde.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qui casse",
+          "body": "Les plaques ne glissent pas régulièrement : elles accrochent. La contrainte s'accumule pendant des années ou des siècles, la roche se déforme élastiquement, puis elle cède brusquement.\n\nL'énergie accumulée part alors en ondes dans toutes les directions. Le point de rupture s'appelle le foyer, et le point de la surface juste au-dessus l'épicentre.\n\nUn séisme n'est donc pas un événement imprévisible par nature : c'est la libération d'une contrainte qu'on peut mesurer. Ce qu'on ne sait pas prédire, c'est l'instant."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Une échelle logarithmique",
+          "formula": "+1 de magnitude = 10 fois l'amplitude = environ 32 fois l'énergie",
+          "body": "Un séisme de magnitude 7 n'est pas « un peu plus fort » qu'un de magnitude 5 : il secoue 100 fois plus, et il a libéré environ 1 000 fois plus d'énergie."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Ce qui tue n'est pas le séisme",
+          "body": "Un séisme de magnitude 7 dans une région aux constructions parasismiques fait quelques blessés. Le même sous des bâtiments non conçus pour cela en tue des dizaines de milliers.\n\nLa magnitude mesure l'énergie libérée. Le nombre de victimes mesure l'état du bâti. Les deux n'ont presque aucun rapport, et c'est une bonne nouvelle : le second se change, le premier non."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Localiser un épicentre avec trois stations",
+          "body": "Les ondes P vont plus vite que les ondes S. L'écart entre leurs arrivées donne la distance à l'épicentre.\n\nChaque station connaît donc sa distance, mais pas la direction : l'épicentre est quelque part sur un cercle autour d'elle.\n\nAvec trois stations, trois cercles. Ils se coupent en un seul point : l'épicentre. C'est de la géométrie de collège, et c'est exactement ce que font les sismologues."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fois plus d'amplitude entre une magnitude 5 et une magnitude 7 ?",
+          "hint": "Dix par unité.",
+          "explanation": "10 × 10 = 100 fois plus d'amplitude.",
+          "answer": 100
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et combien de fois plus d'énergie, environ ?",
+          "hint": "Environ 32 par unité.",
+          "explanation": "32 × 32 ≈ 1 000 fois plus d'énergie. Un séisme de magnitude 7 est mille fois plus énergétique qu'un magnitude 5.",
+          "answer": 1000,
+          "tolerance": 50
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de stations faut-il au minimum pour localiser un épicentre ?",
+          "explanation": "Trois : chaque station donne un cercle de positions possibles, et trois cercles se coupent en un point unique.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui détermine le nombre de victimes d'un séisme ?",
+          "explanation": "L'état du bâti, bien plus que la magnitude. Le même séisme tue très peu ou énormément selon les constructions — et c'est ce facteur-là qu'on peut changer.",
+          "options": [
+            { "text": "l'état des constructions", "correct": true },
+            { "text": "la magnitude seule" },
+            { "text": "la profondeur du foyer seule" },
+            { "text": "l'heure de la journée seule" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Comment une station estime-t-elle sa distance à l'épicentre ?",
+          "explanation": "Par l'écart entre l'arrivée des ondes P, plus rapides, et des ondes S. Plus l'écart est grand, plus l'épicentre est loin.",
+          "options": [
+            { "text": "par l'écart entre l'arrivée des ondes P et S", "correct": true },
+            { "text": "par l'amplitude des secousses" },
+            { "text": "par la direction du premier mouvement" },
+            { "text": "par la durée totale du séisme" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un séisme de magnitude 6 est deux fois moins fort qu'un magnitude 12.",
+          "explanation": "Faux, et c'est un abîme : six unités de magnitude font un million de fois l'amplitude. Aucun séisme de magnitude 12 n'est d'ailleurs physiquement possible sur Terre.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "volcans",
+      "title": "Les volcans",
+      "subtitle": "Deux familles, deux dangers.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Dans la cheminée",
+          "figureId": "volcan",
+          "body": "Fais varier la viscosité du magma et la quantité de gaz dissous. L'éruption change complètement de nature, et c'est tout le sujet."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce qui décide du type d'éruption",
+          "body": "Un magma pauvre en silice est fluide : les gaz s'en échappent facilement, et la lave coule. Ce sont les éruptions effusives, celles d'Hawaï ou de la Réunion. Spectaculaires, rarement meurtrières.\n\nUn magma riche en silice est visqueux : les gaz restent prisonniers et la pression monte jusqu'à faire éclater le bouchon. Ce sont les éruptions explosives, celles des zones de subduction — Vésuve, Pinatubo, Montagne Pelée.\n\nLa viscosité, et non la quantité de magma, fait la différence."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Les nuées ardentes",
+          "body": "Le danger principal d'un volcan explosif n'est ni la lave ni les cendres : c'est la nuée ardente, un mélange de gaz brûlants et de débris qui descend les pentes à plusieurs centaines de kilomètres par heure, à plusieurs centaines de degrés.\n\nEn 1902, la nuée de la Montagne Pelée a détruit Saint-Pierre en moins de deux minutes : 28 000 morts. On ne fuit pas une nuée ardente, on part avant."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces caractéristiques selon le type d'éruption.",
+          "explanation": "Magma fluide et pauvre en silice donne des coulées ; magma visqueux et riche en silice donne des explosions et des nuées ardentes.",
+          "categories": ["effusive", "explosive"],
+          "items": [
+            { "text": "magma fluide", "category": 0 },
+            { "text": "coulées de lave", "category": 0 },
+            { "text": "pauvre en silice", "category": 0 },
+            { "text": "magma visqueux", "category": 1 },
+            { "text": "nuées ardentes", "category": 1 },
+            { "text": "riche en silice", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui décide du caractère explosif d'une éruption ?",
+          "explanation": "La viscosité du magma : un magma visqueux retient ses gaz jusqu'à l'éclatement. La quantité de magma n'y est pour rien.",
+          "options": [
+            { "text": "la viscosité du magma, qui retient les gaz", "correct": true },
+            { "text": "la quantité de magma disponible" },
+            { "text": "la hauteur du volcan" },
+            { "text": "la température extérieure" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quel est le principal danger d'un volcan explosif ?",
+          "explanation": "La nuée ardente : gaz brûlants et débris descendant les pentes à plusieurs centaines de kilomètres par heure. On ne la fuit pas, on part avant.",
+          "options": [
+            { "text": "la nuée ardente", "correct": true },
+            { "text": "la coulée de lave" },
+            { "text": "le bruit de l'explosion" },
+            { "text": "les retombées de cendres seules" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Une nuée ardente descend à 150 km/h. Combien de mètres par seconde, environ ?",
+          "hint": "Diviser par 3,6.",
+          "explanation": "150 ÷ 3,6 ≈ 42 m/s. Elle couvre un kilomètre en moins de 25 secondes : aucune fuite n'est possible.",
+          "answer": 42,
+          "tolerance": 2,
+          "unit": "m/s"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "À 42 m/s, combien de secondes pour parcourir les 6 km qui séparaient le cratère de Saint-Pierre ?",
+          "explanation": "6 000 ÷ 42 ≈ 143 secondes, soit moins de deux minutes et demie.",
+          "answer": 143,
+          "tolerance": 10,
+          "unit": "s"
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Les éruptions effusives sont les plus meurtrières.",
+          "explanation": "Faux. Une coulée de lave avance lentement et se contourne. Ce sont les éruptions explosives, avec leurs nuées ardentes, qui tuent.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-risques",
+      "title": "Défi : évaluer un risque",
+      "subtitle": "Aléa, vulnérabilité, et ce qu'on peut changer.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La définition du risque",
+          "formula": "risque = aléa × vulnérabilité",
+          "body": "L'aléa est la probabilité du phénomène : il dépend de la géologie et ne se change pas. La vulnérabilité est ce qu'on perd s'il arrive : elle dépend du bâti, de l'organisation, de l'information — et elle se change."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Deux villes, un même séisme",
+          "body": "Deux villes de 500 000 habitants sont sur la même faille, donc exposées au même aléa.\n\nL'une applique des normes parasismiques depuis trente ans et organise des exercices dans les écoles. L'autre a construit sans contrainte.\n\nUn séisme de magnitude 7 frappe les deux. La première compte quelques dizaines de morts, la seconde des dizaines de milliers.\n\nL'aléa était identique. Toute la différence est dans la vulnérabilité, qui est un choix politique et budgétaire, pas une fatalité géologique."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Lequel des deux termes du risque peut-on diminuer ?",
+          "explanation": "La vulnérabilité. L'aléa dépend de la géologie et ne se négocie pas ; le bâti, l'organisation et l'information se changent.",
+          "options": [
+            { "text": "la vulnérabilité", "correct": true },
+            { "text": "l'aléa" },
+            { "text": "les deux également" },
+            { "text": "aucun des deux" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Une zone à fort aléa mais à vulnérabilité très faible : le risque est-il élevé ?",
+          "explanation": "Non. Le risque est le produit des deux : si l'un des facteurs est très faible, le produit l'est aussi. C'est toute la stratégie du Japon.",
+          "options": [
+            { "text": "non, le produit reste faible", "correct": true },
+            { "text": "oui, l'aléa suffit" },
+            { "text": "oui, toujours" },
+            { "text": "impossible à dire" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un séisme a 1 chance sur 100 de survenir chaque année. Quelle est cette probabilité en pourcentage ?",
+          "explanation": "1 ÷ 100 = 1 %. Soit, en moyenne, un séisme par siècle.",
+          "answer": 1
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Au même rythme, combien de séismes attendus en 500 ans ?",
+          "explanation": "500 × 1 % = 5 séismes attendus en moyenne.",
+          "answer": 5
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "La dernière rupture date de 180 ans et la faille casse en moyenne tous les 100 ans. Depuis combien d'années est-elle en retard ?",
+          "explanation": "180 − 100 = 80 ans de retard sur la moyenne. Un tel retard n'annonce pas une date, mais il justifie de renforcer le bâti maintenant.",
+          "answer": 80
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Une faille en retard de 80 ans va-t-elle casser bientôt ?",
+          "explanation": "On ne peut pas le savoir. Les intervalles sont irréguliers : la moyenne décrit le passé, elle ne fixe aucune date. Le retard justifie la prévention, pas une prédiction.",
+          "options": [
+            { "text": "on ne peut pas le savoir, les intervalles sont irréguliers", "correct": true },
+            { "text": "oui, dans les prochains mois" },
+            { "text": "non, elle a déjà passé son tour" },
+            { "text": "oui, exactement dans 20 ans" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixMultiple",
+          "prompt": "Que peut faire une ville pour réduire sa vulnérabilité ?",
+          "explanation": "Normes parasismiques, exercices d'évacuation, cartographie des zones à risque et système d'alerte réduisent tous la vulnérabilité. L'aléa, lui, ne se réduit pas.",
+          "options": [
+            { "text": "imposer des normes parasismiques", "correct": true },
+            { "text": "organiser des exercices d'évacuation", "correct": true },
+            { "text": "cartographier les zones à risque", "correct": true },
+            { "text": "installer un système d'alerte", "correct": true },
+            { "text": "réduire la fréquence des séismes" }
+          ]
+        }
+      ]
+    }
+  ]
+}

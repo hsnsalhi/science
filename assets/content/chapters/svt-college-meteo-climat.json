@@ -1,0 +1,375 @@
+{
+  "chapter": "svt-college-meteo-climat-et-changement-climatique",
+  "lessons": [
+    {
+      "id": "meteo-climat",
+      "title": "Météo ou climat",
+      "subtitle": "Une question d'échelle de temps.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux mots qu'on confond sans cesse",
+          "body": "La météo décrit l'état de l'atmosphère maintenant et dans les jours qui viennent : il pleut, il fera 12 °C demain.\n\nLe climat décrit les statistiques du temps sur une longue période — par convention internationale, trente ans. On ne dit pas « le climat de mardi » : cela n'a aucun sens.\n\nUn hiver froid ne contredit donc pas le réchauffement, pas plus qu'un joueur qui perd une partie ne contredit son classement. L'un est un tirage, l'autre est la distribution."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Pourquoi la météo s'arrête à dix jours",
+          "body": "L'atmosphère est un système où une minuscule différence de départ donne, quelques jours plus tard, un temps complètement différent.\n\nOn ne peut jamais connaître l'état initial parfaitement : il y a toujours une erreur de mesure, et elle grossit. Au-delà d'une dizaine de jours, elle a tout envahi.\n\nCe n'est pas un manque de puissance de calcul, et plus d'ordinateurs n'y changeront rien : c'est une limite de principe."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Et pourtant le climat se prévoit",
+          "body": "C'est le paradoxe qui désarçonne : on ne sait pas dire le temps dans trois semaines, mais on sait dire que le climat sera plus chaud dans cinquante ans.\n\nParce que ce ne sont pas les mêmes questions. Personne ne peut dire quel jour un dé donnera un six ; tout le monde peut dire qu'un dé lancé six mille fois donnera environ mille six.\n\nLa météo demande un tirage, le climat demande une moyenne."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Les grands facteurs du climat d'un lieu",
+          "body": "La latitude : l'énergie solaire reçue par mètre carré diminue vers les pôles, parce que les rayons y arrivent inclinés.\n\nL'altitude : environ 6 °C de moins par 1 000 m de montée.\n\nLa proximité de la mer : l'eau se réchauffe et se refroidit lentement, ce qui adoucit les extrêmes.\n\nLes courants marins : le Gulf Stream rend Brest plus douce que Québec, à latitude presque égale."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Sur combien d'années se calcule un climat, par convention ?",
+          "explanation": "Trente ans. C'est la période de référence adoptée internationalement.",
+          "answer": 30,
+          "unit": "ans"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Il fait 20 °C au niveau de la mer. Quelle température environ à 2 000 m d'altitude ?",
+          "hint": "6 °C de moins par 1 000 m.",
+          "explanation": "2 × 6 = 12 °C de moins, donc environ 8 °C.",
+          "answer": 8,
+          "tolerance": 1,
+          "unit": "°C"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Météo ou climat ?",
+          "explanation": "Un état ponctuel ou une prévision à quelques jours relève de la météo ; une statistique sur trente ans relève du climat.",
+          "categories": ["météo", "climat"],
+          "items": [
+            { "text": "il pleuvra demain après-midi", "category": 0 },
+            { "text": "il a fait 32 °C hier", "category": 0 },
+            { "text": "la moyenne de juillet est de 24 °C ici", "category": 1 },
+            { "text": "les hivers se réchauffent depuis 1970", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la prévision météo s'arrête-t-elle vers dix jours ?",
+          "explanation": "Parce qu'une minuscule erreur sur l'état initial grossit jusqu'à tout envahir. C'est une limite de principe, que la puissance de calcul ne lève pas.",
+          "options": [
+            { "text": "une erreur initiale minuscule grossit jusqu'à tout envahir", "correct": true },
+            { "text": "les ordinateurs ne sont pas assez puissants" },
+            { "text": "les satellites ne voient pas assez loin" },
+            { "text": "les modèles sont mal écrits" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Un hiver particulièrement froid contredit-il le réchauffement ?",
+          "explanation": "Non. Un hiver est un tirage, le climat est la distribution. Un joueur qui perd une partie ne contredit pas son classement.",
+          "options": [
+            { "text": "non, un hiver est un tirage, pas une moyenne", "correct": true },
+            { "text": "oui, c'est une preuve contraire" },
+            { "text": "oui, si le record est battu" },
+            { "text": "cela dépend du pays" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Brest est-elle plus douce que Québec, à latitude voisine ?",
+          "explanation": "Grâce au Gulf Stream, qui apporte de l'eau chaude vers l'Europe de l'Ouest. Les courants marins comptent autant que la latitude.",
+          "options": [
+            { "text": "le Gulf Stream apporte de l'eau chaude", "correct": true },
+            { "text": "Brest est plus basse en altitude" },
+            { "text": "Brest reçoit plus de soleil" },
+            { "text": "Québec est plus au nord" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "effet-de-serre",
+      "title": "L'effet de serre",
+      "subtitle": "Sans lui, la Terre serait gelée.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le mécanisme, en trois temps",
+          "body": "La lumière du Soleil traverse l'atmosphère et chauffe le sol.\n\nLe sol, réchauffé, rayonne à son tour — mais en infrarouge, invisible, parce qu'il est bien moins chaud que le Soleil.\n\nCertains gaz de l'atmosphère laissent passer la lumière visible et absorbent l'infrarouge. Ils renvoient donc une partie de cette chaleur vers le sol au lieu de la laisser filer dans l'espace."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Trente-trois degrés de cadeau",
+          "body": "Sans effet de serre, la température moyenne de la Terre serait d'environ −18 °C. Elle est d'environ +15 °C.\n\nL'effet de serre naturel apporte donc 33 °C, et c'est lui qui rend la planète habitable. Le problème n'est pas l'effet de serre : c'est son renforcement par ce que nous ajoutons."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Ce que nous ajoutons",
+          "body": "Avant l'industrialisation, l'atmosphère contenait environ 280 parties de CO₂ par million. Elle en contient aujourd'hui environ 425 : une augmentation de près de la moitié.\n\nL'origine est connue sans ambiguïté. Le carbone des combustibles fossiles porte une signature isotopique différente de celle du carbone végétal récent, et c'est cette signature-là qui augmente dans l'air.\n\nS'y ajoutent le méthane, bien plus absorbant mais à durée de vie plus courte, et le protoxyde d'azote des engrais."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Pourquoi l'inertie est le vrai problème",
+          "body": "Le CO₂ émis aujourd'hui restera dans l'atmosphère pendant des siècles : une part s'y trouvera encore dans mille ans.\n\nArrêter les émissions ne refroidirait donc pas la planète, cela arrêterait seulement le réchauffement supplémentaire. On ne revient pas en arrière, on cesse d'avancer.\n\nC'est ce qui rend le délai décisif : chaque année d'émission ajoute un palier qui ne se redescendra pas à l'échelle d'une vie humaine."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "La Terre serait à −18 °C sans effet de serre, elle est à +15 °C. Combien de degrés l'effet de serre naturel apporte-t-il ?",
+          "explanation": "15 − (−18) = 33 °C. C'est cet effet qui rend la planète habitable.",
+          "answer": 33,
+          "unit": "°C"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le CO₂ est passé de 280 à 425 ppm. Combien de ppm d'augmentation ?",
+          "explanation": "425 − 280 = 145 ppm de plus qu'avant l'industrialisation.",
+          "answer": 145
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Cela représente quelle augmentation en pourcentage, arrondie à l'entier ?",
+          "hint": "145 divisé par 280.",
+          "explanation": "145 ÷ 280 ≈ 0,52, soit environ 52 % de plus — près de la moitié en plus.",
+          "answer": 52,
+          "tolerance": 2
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le mécanisme de l'effet de serre dans l'ordre.",
+          "explanation": "La lumière traverse, le sol chauffe, le sol rayonne en infrarouge, les gaz absorbent cet infrarouge et en renvoient une partie vers le sol.",
+          "items": [
+            "la lumière du Soleil traverse l'atmosphère",
+            "le sol absorbe cette lumière et se réchauffe",
+            "le sol rayonne de l'infrarouge",
+            "les gaz à effet de serre absorbent cet infrarouge",
+            "une partie de la chaleur repart vers le sol"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Comment sait-on que le CO₂ supplémentaire vient des combustibles fossiles ?",
+          "explanation": "Par sa signature isotopique : le carbone fossile diffère du carbone végétal récent, et c'est cette signature-là qui augmente dans l'air.",
+          "options": [
+            { "text": "par sa signature isotopique", "correct": true },
+            { "text": "parce qu'on l'a vu sortir des cheminées" },
+            { "text": "par la couleur de l'atmosphère" },
+            { "text": "on ne le sait pas vraiment" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Si l'on arrêtait toutes les émissions demain, que se passerait-il ?",
+          "explanation": "Le réchauffement supplémentaire cesserait, mais la planète ne refroidirait pas : le CO₂ déjà émis reste des siècles. On ne revient pas en arrière, on cesse d'avancer.",
+          "options": [
+            { "text": "le réchauffement cesserait, sans refroidissement", "correct": true },
+            { "text": "la planète refroidirait en quelques années" },
+            { "text": "rien ne changerait du tout" },
+            { "text": "la température reviendrait à celle de 1900" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consequences",
+      "title": "Ce qui change déjà",
+      "subtitle": "Des mesures, pas des prévisions.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Quatre choses mesurées",
+          "body": "La température moyenne a augmenté d'environ 1,4 °C depuis la fin du dix-neuvième siècle. Une année isolée peut dépasser ce chiffre, puisque c'est une moyenne.\n\nLe niveau de la mer monte d'environ 3,4 mm par an, par fonte des glaces continentales et par dilatation de l'eau qui se réchauffe.\n\nLes glaciers de montagne reculent presque partout, et cela se photographie.\n\nL'océan s'acidifie : une partie du CO₂ s'y dissout et y forme un acide, ce qui gêne la fabrication des coquilles."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "La dilatation compte autant que la fonte",
+          "body": "On pense d'abord à la glace qui fond. Mais l'eau de mer, en se réchauffant, occupe plus de place — et l'océan est profond de quatre kilomètres en moyenne.\n\nDilater de très peu une épaisseur énorme donne beaucoup. C'est pourquoi le niveau monterait encore pendant des siècles même si toute la fonte s'arrêtait."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La banquise ne change rien au niveau",
+          "body": "La banquise flotte déjà : elle déplace exactement son propre poids d'eau. Sa fonte ne fait donc pas monter la mer d'un millimètre, comme un glaçon fondant dans un verre plein ne le fait pas déborder.\n\nCe qui fait monter la mer, c'est la glace posée sur une terre : Groenland, Antarctique, glaciers. Confondre les deux est l'erreur la plus courante sur ce sujet."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Le niveau monte de 3,4 mm par an. Combien de centimètres en un siècle, à ce rythme ?",
+          "explanation": "3,4 × 100 = 340 mm, soit 34 cm.",
+          "answer": 34,
+          "unit": "cm"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et en 10 ans, combien de centimètres ?",
+          "explanation": "3,4 × 10 = 34 mm, soit 3,4 cm.",
+          "answer": 3.4,
+          "tolerance": 0.1,
+          "unit": "cm"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "La fonte de la banquise arctique fait-elle monter le niveau de la mer ?",
+          "explanation": "Non : elle flotte déjà et déplace son propre poids d'eau. Seule la glace posée sur une terre fait monter la mer.",
+          "options": [
+            { "text": "non, elle flotte déjà", "correct": true },
+            { "text": "oui, beaucoup" },
+            { "text": "oui, un peu" },
+            { "text": "elle le fait baisser" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quelles glaces font monter le niveau de la mer en fondant ?",
+          "explanation": "Celles qui reposent sur une terre : Groenland, Antarctique, glaciers de montagne. La banquise flotte et ne change rien.",
+          "options": [
+            { "text": "la calotte du Groenland", "correct": true },
+            { "text": "la calotte antarctique", "correct": true },
+            { "text": "les glaciers de montagne", "correct": true },
+            { "text": "la banquise arctique" },
+            { "text": "les icebergs déjà à flot" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'océan s'acidifie-t-il ?",
+          "explanation": "Parce qu'une partie du CO₂ atmosphérique s'y dissout et y forme un acide, ce qui gêne la fabrication des coquilles.",
+          "options": [
+            { "text": "une partie du CO₂ s'y dissout et forme un acide", "correct": true },
+            { "text": "les pluies acides y tombent" },
+            { "text": "le sel se concentre" },
+            { "text": "la chaleur acidifie l'eau" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la dilatation de l'eau compte-t-elle autant que la fonte ?",
+          "explanation": "Parce que l'océan a quatre kilomètres de profondeur en moyenne : dilater très peu une épaisseur énorme donne beaucoup de hauteur.",
+          "options": [
+            { "text": "l'océan est très profond, donc même une faible dilatation compte", "correct": true },
+            { "text": "l'eau se dilate énormément" },
+            { "text": "la fonte est négligeable" },
+            { "text": "la dilatation accélère la fonte" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-climat",
+      "title": "Défi : le budget carbone",
+      "subtitle": "Compter ce qu'il reste à ne pas émettre.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une relation étonnamment simple",
+          "body": "Le réchauffement total dépend à peu près de la quantité cumulée de CO₂ émise depuis le début, et non du rythme auquel on l'émet.\n\nCela permet de raisonner comme avec un budget : pour ne pas dépasser une température donnée, il reste une quantité totale à ne pas dépasser. Émettre moins par an ne change pas ce total, cela étale seulement le temps qu'on met à l'épuiser.\n\nL'humanité émet actuellement de l'ordre de 40 milliards de tonnes de CO₂ par an."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Il reste un budget de 400 milliards de tonnes et l'on émet 40 par an. Combien d'années avant épuisement ?",
+          "explanation": "400 ÷ 40 = 10 ans au rythme actuel.",
+          "answer": 10,
+          "unit": "ans"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Si l'on divisait les émissions par deux, soit 20 par an, combien d'années ?",
+          "explanation": "400 ÷ 20 = 20 ans. Diviser le rythme par deux double le délai, sans changer le total.",
+          "answer": 20,
+          "unit": "ans"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Pour tenir 40 ans avec ce budget de 400, combien peut-on émettre par an ?",
+          "explanation": "400 ÷ 40 = 10 milliards de tonnes par an, soit le quart des émissions actuelles.",
+          "answer": 10
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "L'humanité compte 8 milliards d'habitants et émet 40 milliards de tonnes. Combien de tonnes par personne et par an ?",
+          "explanation": "40 ÷ 8 = 5 tonnes par personne et par an, en moyenne mondiale.",
+          "answer": 5
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Pour descendre à 2 tonnes par personne avec 8 milliards d'habitants, quel total annuel en milliards de tonnes ?",
+          "explanation": "2 × 8 = 16 milliards de tonnes par an, soit une division par deux et demie des émissions actuelles.",
+          "answer": 16
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi parle-t-on d'un budget plutôt que d'un rythme ?",
+          "explanation": "Parce que le réchauffement dépend du cumul émis, pas du rythme. Émettre moins par an étale le délai sans changer le total à ne pas dépasser.",
+          "options": [
+            { "text": "le réchauffement dépend du cumul, pas du rythme", "correct": true },
+            { "text": "parce que c'est plus facile à comprendre" },
+            { "text": "parce que les économistes l'ont imposé" },
+            { "text": "parce que le CO₂ disparaît chaque année" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Émettre la même quantité totale plus lentement évite le réchauffement.",
+          "explanation": "Faux. C'est le cumul qui compte : la même quantité étalée donne à peu près le même réchauffement final, seulement plus tard.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "chapter": "svt-college-evolution-et-biodiversite",
+  "lessons": [
+    {
+      "id": "parentes",
+      "title": "Des espèces apparentées",
+      "subtitle": "Classer par ce qu'on possède, jamais par ce qui manque.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "L'arbre du vivant",
+          "figureId": "classification",
+          "body": "Chaque nœud marque l'apparition d'un caractère nouveau, partagé par tous les descendants. Déplie les branches : un groupe valable est toujours un nœud et tout ce qui pend dessous."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Pourquoi « poisson » n'est pas un groupe",
+          "body": "Prends un saumon, un dipneuste — un poisson à poumons — et une vache. Lequel est le plus proche parent de la vache ?\n\nLe dipneuste. Il partage avec la vache un ancêtre plus récent qu'avec le saumon, et il a comme elle des poumons et des membres à squelette interne articulé.\n\n« Poisson » désigne donc des animaux qui ne forment aucune branche : c'est une commodité de langage, pas une famille. Pour faire un groupe de poissons, il faudrait y mettre la vache."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La règle de la classification moderne",
+          "body": "On regroupe par caractères partagés nouveaux, jamais par absence de caractère.\n\n« Animaux sans pattes » n'est pas un groupe : le serpent, le ver de terre et la méduse n'ont rien à voir entre eux. L'absence ne dit rien de la parenté, parce qu'on peut perdre un caractère que les ancêtres avaient — et c'est ce qui est arrivé au serpent."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Les indices les plus solides",
+          "body": "L'anatomie : le membre d'une chauve-souris, d'une baleine et d'un cheval contient les mêmes os, dans le même ordre, et pour des usages totalement différents. Cela ne s'explique que par un héritage.\n\nLes molécules : plus deux espèces partagent de séquences d'ADN, plus leur ancêtre commun est récent. Et ce classement moléculaire retrouve, sans y avoir été contraint, celui que l'anatomie donnait — ce qui est l'argument le plus fort de tous."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Saumon, dipneuste, vache : qui est le plus proche parent de la vache ?",
+          "explanation": "Le dipneuste. Il partage avec elle un ancêtre plus récent qu'avec le saumon, et des caractères comme les poumons.",
+          "options": [
+            { "text": "le dipneuste", "correct": true },
+            { "text": "le saumon" },
+            { "text": "les deux à égalité" },
+            { "text": "aucun, la vache est à part" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « animaux sans pattes » n'est-il pas un groupe valable ?",
+          "explanation": "Parce qu'on classe par caractères possédés, pas par absence. Le serpent a perdu des pattes que ses ancêtres avaient : son absence de pattes ne le rapproche pas du ver de terre.",
+          "options": [
+            { "text": "l'absence d'un caractère ne dit rien de la parenté", "correct": true },
+            { "text": "parce qu'il y en a trop" },
+            { "text": "parce qu'ils vivent dans des milieux différents" },
+            { "text": "parce que les pattes sont difficiles à compter" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que montre le fait que chauve-souris, baleine et cheval aient les mêmes os dans le membre ?",
+          "explanation": "Un héritage d'un ancêtre commun. Les usages sont très différents, mais le plan de construction est le même : c'est la signature d'une ascendance partagée.",
+          "options": [
+            { "text": "qu'ils héritent d'un ancêtre commun", "correct": true },
+            { "text": "qu'ils vivent dans le même milieu" },
+            { "text": "que ces os sont les plus solides" },
+            { "text": "qu'ils se nourrissent pareil" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quel est l'argument le plus fort en faveur de l'arbre du vivant ?",
+          "explanation": "Que la classification obtenue par l'ADN retrouve celle que l'anatomie donnait, sans y avoir été contrainte. Deux méthodes indépendantes aboutissent au même arbre.",
+          "options": [
+            { "text": "l'ADN et l'anatomie donnent le même arbre indépendamment", "correct": true },
+            { "text": "les fossiles sont très nombreux" },
+            { "text": "tous les biologistes sont d'accord" },
+            { "text": "l'arbre est simple à dessiner" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Les poissons forment un groupe d'espèces apparentées entre elles.",
+          "explanation": "Faux. Pour qu'un groupe contenant saumon et dipneuste soit valable, il faudrait y inclure tous les vertébrés terrestres, la vache comprise.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "selection",
+      "title": "La sélection naturelle",
+      "subtitle": "Trois ingrédients, aucune intention.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Trier une variation existante",
+          "figureId": "selection",
+          "body": "Change la pression de sélection et observe la population génération après génération. Rien de nouveau n'apparaît : ce qui existait déjà devient plus ou moins fréquent."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les trois conditions, et elles suffisent",
+          "body": "La variation : au sein d'une espèce, les individus ne sont pas identiques.\n\nL'hérédité : une partie de ces différences se transmet aux descendants.\n\nLa survie et la reproduction différentielles : dans un milieu donné, certaines variantes laissent plus de descendants.\n\nRéunis ces trois faits, et la composition de la population change au fil des générations. Il n'y a rien à ajouter : aucune intention, aucun but, aucun progrès vers quoi que ce soit."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "La sélection ne crée rien",
+          "body": "Dire « la girafe a développé un long cou pour atteindre les feuilles » est une erreur de raisonnement, et pas seulement une formule maladroite.\n\nAucun individu n'allonge son cou parce qu'il en a besoin. Ce qui se passe : des cous de longueurs variées existaient, les plus longs ont mieux nourri leurs porteurs, ceux-là ont eu plus de descendants.\n\nLa mutation est aveugle et précède le besoin. La sélection trie après coup, et n'invente rien."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Ce qui est avantageux dépend du milieu",
+          "body": "Un papillon clair sur une écorce claire est invisible, donc avantagé. Les troncs noircis par la suie des usines, et le même papillon devient repérable tandis que les sombres disparaissent des radars.\n\nAucune variante n'est bonne en soi. L'avantage est une relation entre un caractère et un milieu, et il change quand le milieu change."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixMultiple",
+          "prompt": "Quelles conditions suffisent à produire la sélection naturelle ?",
+          "explanation": "La variation, l'hérédité de cette variation, et des survies ou reproductions différentes. Rien d'autre n'est nécessaire.",
+          "options": [
+            { "text": "les individus varient", "correct": true },
+            { "text": "ces différences se transmettent", "correct": true },
+            { "text": "certaines variantes laissent plus de descendants", "correct": true },
+            { "text": "les individus cherchent à s'améliorer" },
+            { "text": "le milieu a un but" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'y a-t-il de faux dans « la girafe a allongé son cou pour atteindre les feuilles » ?",
+          "explanation": "Aucun individu n'allonge son cou parce qu'il en a besoin. La variation existait avant, et la sélection l'a triée après coup.",
+          "options": [
+            { "text": "la variation précède le besoin, elle n'en découle pas", "correct": true },
+            { "text": "les girafes ne mangent pas de feuilles" },
+            { "text": "le cou n'est pas héritable" },
+            { "text": "rien, la phrase est exacte" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "La sélection naturelle crée-t-elle de nouvelles variantes ?",
+          "explanation": "Non. Les mutations créent la variation, au hasard ; la sélection la trie ensuite selon le milieu.",
+          "options": [
+            { "text": "non, elle trie une variation qui existait déjà", "correct": true },
+            { "text": "oui, elle fabrique les caractères utiles" },
+            { "text": "oui, en réponse au besoin" },
+            { "text": "seulement chez les plantes" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Un papillon sombre est-il avantagé ?",
+          "explanation": "Cela dépend du milieu. Sur une écorce noircie il est invisible, sur une écorce claire il est repéré. L'avantage est une relation, pas une propriété.",
+          "options": [
+            { "text": "cela dépend de la couleur de l'écorce", "correct": true },
+            { "text": "oui, toujours" },
+            { "text": "non, jamais" },
+            { "text": "seulement la nuit" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre ce qui se passe réellement.",
+          "explanation": "La mutation survient au hasard, elle donne une variation, le milieu la trie, et la fréquence du caractère change dans la population.",
+          "items": [
+            "une mutation survient au hasard",
+            "la population contient des variantes",
+            "le milieu avantage certaines d'entre elles",
+            "la fréquence du caractère change au fil des générations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antibioresistance",
+      "title": "L'évolution en direct",
+      "subtitle": "L'antibiorésistance, en une après-midi.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une expérience que personne n'a voulu faire",
+          "body": "Dans une population d'un million de bactéries, une seule porte par hasard une mutation qui la rend résistante à un antibiotique. Elle n'en tire aucun avantage : rien ne la menace.\n\nOn donne l'antibiotique. Les 999 999 autres meurent. Il reste une bactérie, et la place entière pour elle.\n\nUne bactérie se divise toutes les vingt minutes. Combien de temps pour reconstituer un million ? Vingt divisions, soit un peu moins de sept heures. La population est revenue, entièrement résistante."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "L'antibiotique n'a rien créé",
+          "body": "Il n'a pas rendu la bactérie résistante : la mutation existait avant lui, inutile.\n\nIl a seulement supprimé toute la concurrence de celle qui l'était. C'est exactement la sélection naturelle, observée en une après-midi au lieu de millions d'années."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Pourquoi finir son traitement",
+          "body": "Arrêter l'antibiotique dès qu'on se sent mieux laisse en vie les bactéries les plus résistantes — celles qui ont tenu le plus longtemps.\n\nOn a donc fait le tri sans aller jusqu'au bout, et ce sont les plus coriaces qui repeuplent. C'est le mécanisme par lequel un traitement mal mené fabrique des souches difficiles à soigner.\n\nEt un antibiotique ne fait rien contre un virus : le prendre pour une grippe ne soigne rien et sélectionne quand même les bactéries résistantes qu'on héberge."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une bactérie se divise toutes les 20 minutes. Combien y en a-t-il après 3 divisions ?",
+          "explanation": "1, 2, 4, 8 : après trois divisions il y en a 8.",
+          "answer": 8
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de divisions pour dépasser un million à partir d'une seule bactérie ?",
+          "hint": "Deux multiplié par lui-même vingt fois dépasse un million.",
+          "explanation": "Vingt divisions donnent 1 048 576 bactéries, soit un peu plus d'un million.",
+          "answer": 20
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Vingt divisions de 20 minutes : combien de minutes en tout ?",
+          "explanation": "20 × 20 = 400 minutes, soit 6 heures et 40 minutes.",
+          "answer": 400,
+          "unit": "min"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "L'antibiotique a-t-il rendu la bactérie résistante ?",
+          "explanation": "Non. La mutation existait avant, sans utilité. L'antibiotique a seulement éliminé toute la concurrence.",
+          "options": [
+            { "text": "non, il a éliminé la concurrence de celle qui l'était déjà", "correct": true },
+            { "text": "oui, il l'a mutée" },
+            { "text": "oui, en la stressant" },
+            { "text": "oui, en modifiant son ADN" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi faut-il finir un traitement antibiotique ?",
+          "explanation": "Parce qu'arrêter tôt laisse en vie les bactéries les plus résistantes, celles qui ont tenu le plus longtemps — et ce sont elles qui repeuplent.",
+          "options": [
+            { "text": "pour ne pas laisser survivre les plus résistantes", "correct": true },
+            { "text": "pour ne pas gâcher les comprimés" },
+            { "text": "parce que le médecin l'a dit" },
+            { "text": "pour éviter les effets secondaires" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un antibiotique est utile contre une grippe.",
+          "explanation": "Faux. La grippe est virale, et les antibiotiques n'agissent que sur les bactéries. Le prendre ne soigne rien et sélectionne quand même des résistances.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-evolution",
+      "title": "Défi : les papillons de Manchester",
+      "subtitle": "Mesurer une sélection sur un siècle.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un cas suivi de bout en bout",
+          "body": "Avant 1850, autour de Manchester, les troncs sont couverts de lichens clairs. Le papillon de nuit Biston betularia y est presque toujours clair : à peine 2 sur 100 sont sombres.\n\nLes usines noircissent les troncs. Vers 1900, 95 papillons sur 100 sont sombres.\n\nPuis les lois antipollution des années 1960 nettoient l'air. Les lichens repoussent, et la proportion de sombres redescend sous les 10 % à la fin du siècle.\n\nLa sélection a changé de sens parce que le milieu avait changé de sens. Rien dans les papillons n'a été modifié."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avant 1850, 2 papillons sur 100 sont sombres. Combien sont clairs sur 100 ?",
+          "explanation": "100 − 2 = 98 papillons clairs sur 100.",
+          "answer": 98
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Vers 1900, 95 sur 100 sont sombres. De combien de points la proportion de sombres a-t-elle augmenté depuis 1850 ?",
+          "explanation": "95 − 2 = 93 points de pourcentage, en cinquante ans environ.",
+          "answer": 93
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien la proportion de sombres a-t-elle été multipliée entre 1850 et 1900 ?",
+          "explanation": "95 ÷ 2 = 47,5 fois. Une sélection très rapide, à l'échelle de quelques dizaines de générations.",
+          "answer": 47.5,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'années séparent 1850 de 1900 ?",
+          "explanation": "50 ans. Le papillon fait une génération par an : la bascule a donc pris une cinquantaine de générations.",
+          "answer": 50
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la proportion de sombres est-elle redescendue après 1960 ?",
+          "explanation": "Parce que les lois antipollution ont permis aux lichens clairs de repousser : sur une écorce claire, le papillon sombre redevient repérable.",
+          "options": [
+            { "text": "les troncs sont redevenus clairs", "correct": true },
+            { "text": "les papillons sombres ont muté en clairs" },
+            { "text": "les oiseaux ont changé de régime" },
+            { "text": "les papillons ont migré" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Les papillons sombres existaient-ils avant la pollution ?",
+          "explanation": "Oui, à hauteur de 2 %. La pollution n'a créé aucune variante : elle a inversé laquelle était avantagée.",
+          "options": [
+            { "text": "oui, environ 2 % de la population", "correct": true },
+            { "text": "non, ils sont apparus avec la suie" },
+            { "text": "non, ils venaient d'ailleurs" },
+            { "text": "on ne peut pas le savoir" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Cette histoire montre que les êtres vivants s'adaptent volontairement à leur milieu.",
+          "explanation": "Faux. Aucun papillon n'a changé de couleur. Ce sont les proportions dans la population qui ont changé, parce que les oiseaux repéraient les uns plutôt que les autres.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
