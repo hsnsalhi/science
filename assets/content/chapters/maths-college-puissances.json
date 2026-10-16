@@ -1,0 +1,384 @@
+{
+  "chapter": "maths-college-puissances-et-racine-carree",
+  "lessons": [
+    {
+      "id": "puissances",
+      "title": "Les puissances",
+      "subtitle": "Écrire court ce qui serait long.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une notation, pas une opération nouvelle",
+          "body": "2⁵ veut dire 2 × 2 × 2 × 2 × 2, soit 32. L'exposant compte les facteurs, pas les multiplications : il y a cinq 2 et quatre signes ×.\n\nC'est de l'abréviation. Mais écrire 10¹⁵ au lieu d'un 1 suivi de quinze zéros change la façon dont on pense : on peut comparer 10¹⁵ et 10¹⁸ d'un coup d'œil, là où compter des zéros échoue."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les trois règles qui suffisent",
+          "formula": "a^m × a^n = a^(m+n)     a^m ÷ a^n = a^(m−n)     (a^m)^n = a^(m×n)",
+          "body": "Elles ne sont pas à retenir par cœur : elles se retrouvent en comptant les facteurs. 2³ × 2² met trois 2 à côté de deux 2, donc cinq 2 en tout."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi a⁰ vaut 1",
+          "body": "La règle de la division donne a^n ÷ a^n = a^(n−n) = a^0.\n\nOr un nombre divisé par lui-même vaut 1. Donc a^0 = 1, pour tout a non nul.\n\nCe n'est pas une convention arbitraire : c'est la seule valeur qui laisse la règle vraie. Et le même raisonnement donne a^(−n) = 1 ÷ a^n."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "L'erreur qui ne s'oublie plus une fois vue",
+          "body": "(2 + 3)² ne vaut pas 2² + 3².\n\nÀ gauche : 5² = 25. À droite : 4 + 9 = 13. Douze d'écart.\n\nUne puissance ne se distribue pas sur une somme. Elle se distribue sur un produit : (2 × 3)² = 2² × 3² = 36, et c'est vrai. Produit oui, somme non."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 2⁵ ?",
+          "explanation": "2 × 2 × 2 × 2 × 2 = 32. Cinq facteurs, quatre multiplications.",
+          "answer": 32
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 2³ × 2² ?",
+          "hint": "Additionne les exposants.",
+          "explanation": "2^(3+2) = 2⁵ = 32. Trois 2 à côté de deux 2 font cinq 2.",
+          "answer": 32
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut (2³)² ?",
+          "explanation": "2^(3×2) = 2⁶ = 64. On répète six fois le facteur 2.",
+          "answer": 64
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 7⁰ ?",
+          "explanation": "1. C'est la seule valeur qui laisse vraie la règle de la division : 7^n ÷ 7^n vaut 1 et s'écrit 7⁰.",
+          "answer": 1
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut (2 + 3)² ?",
+          "explanation": "5² = 25. On calcule la somme d'abord, puis on élève au carré.",
+          "answer": 25
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Et combien vaut 2² + 3² ?",
+          "explanation": "4 + 9 = 13, soit douze de moins que (2 + 3)². Une puissance ne se distribue jamais sur une somme.",
+          "answer": 13
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "(a × b)² = a² × b²",
+          "explanation": "Vrai. Une puissance se distribue sur un produit, et jamais sur une somme. C'est toute la distinction à tenir.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "scientifique",
+      "title": "L'écriture scientifique",
+      "subtitle": "Comparer des nombres de tailles très différentes.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c0",
+          "kind": "astuce",
+          "title": "Deux façons d'écrire un exposant",
+          "body": "Dans ce chapitre tu verras 10⁴ avec l'exposant en petit, et 10^−4 avec un chapeau.\n\nC'est la même chose. Le chapeau s'utilise quand l'exposant est négatif ou qu'il contient une lettre, parce que tous les petits caractères n'existent pas dans toutes les écritures.\n\nC'est aussi ce que fait ta calculatrice : elle affiche 2^5 ou 2E5, jamais 2⁵. Les deux notations se lisent « dix puissance moins quatre »."
+        },
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La forme imposée",
+          "formula": "a × 10^n, avec 1 ≤ a < 10",
+          "body": "Un seul chiffre avant la virgule, et il n'est pas zéro. 42 000 s'écrit 4,2 × 10⁴ et jamais 42 × 10³, qui est juste mais pas en écriture scientifique."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La méthode, dans les deux sens",
+          "body": "Pour un grand nombre : on place la virgule après le premier chiffre, et l'exposant est le nombre de rangs qu'elle a reculé. 42 000 devient 4,2 et la virgule a reculé de 4 rangs : 4,2 × 10⁴.\n\nPour un petit nombre : la virgule avance, et l'exposant est négatif. 0,00057 devient 5,7 et la virgule a avancé de 4 rangs : 5,7 × 10^−4.\n\nLe signe de l'exposant dit donc simplement si le nombre est grand ou petit, et rien d'autre."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Pourquoi cette forme sert vraiment",
+          "body": "Comparer 0,000042 et 0,0000091 demande de compter des zéros, et tout le monde se trompe.\n\nComparer 4,2 × 10^−5 et 9,1 × 10^−6 est immédiat : l'exposant −5 est plus grand que −6, donc le premier nombre est le plus grand, quoi que valent les 4,2 et les 9,1.\n\nOn ne regarde le nombre devant que si les exposants sont égaux."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Multiplier devient facile",
+          "body": "(3 × 10⁸) × (2 × 10⁵) = 6 × 10¹³. On multiplie les nombres devant, on additionne les exposants.\n\nSi le nombre devant dépasse 10, on rectifie : (5 × 10⁸) × (4 × 10⁵) = 20 × 10¹³ = 2 × 10¹⁴.\n\nC'est exactement ce que fait une calculatrice quand elle affiche 2e14."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Écris 42 000 en écriture scientifique. Quel est l'exposant de 10 ?",
+          "explanation": "4,2 × 10⁴ : la virgule a reculé de quatre rangs.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Écris 0,00057 en écriture scientifique. Quel est l'exposant de 10 ?",
+          "explanation": "5,7 × 10^−4 : la virgule a avancé de quatre rangs, donc l'exposant est −4.",
+          "answer": -4
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 3 × 10⁴ en écriture décimale ?",
+          "explanation": "3 × 10 000 = 30 000. L'exposant 4 compte les zéros du facteur 10 000.",
+          "answer": 30000
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Lequel est le plus grand : 4,2 × 10^−5 ou 9,1 × 10^−6 ?",
+          "explanation": "4,2 × 10^−5, parce que −5 est plus grand que −6. Le nombre devant ne compte que si les exposants sont égaux.",
+          "options": [
+            {
+              "text": "4,2 × 10^−5",
+              "correct": true
+            },
+            {
+              "text": "9,1 × 10^−6"
+            },
+            {
+              "text": "ils sont égaux"
+            },
+            {
+              "text": "impossible à comparer"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "(3 × 10⁸) × (2 × 10⁵) : quel est l'exposant du résultat ?",
+          "explanation": "6 × 10¹³ : on additionne 8 et 5.",
+          "answer": 13
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "(5 × 10⁸) × (4 × 10⁵) donne 20 × 10¹³. Quel est l'exposant après rectification ?",
+          "hint": "20 fait 2 × 10.",
+          "explanation": "20 × 10¹³ = 2 × 10¹⁴ : l'exposant monte de un quand on ramène le nombre devant entre 1 et 10.",
+          "answer": 14
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "42 × 10³ est-il en écriture scientifique ?",
+          "explanation": "Non. L'écriture est juste, mais elle demande un seul chiffre avant la virgule : il faut écrire 4,2 × 10⁴.",
+          "options": [
+            {
+              "text": "non, il faut un seul chiffre avant la virgule",
+              "correct": true
+            },
+            {
+              "text": "oui"
+            },
+            {
+              "text": "non, l'exposant doit être positif"
+            },
+            {
+              "text": "non, 42 n'est pas un nombre valable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "racine",
+      "title": "La racine carrée",
+      "subtitle": "L'opération qui défait le carré.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La définition, et sa précision",
+          "body": "√a est le nombre positif dont le carré vaut a.\n\nLe mot positif n'est pas décoratif. L'équation x² = 9 a deux solutions, 3 et −3. Mais √9 désigne un seul nombre, et c'est 3. Les deux énoncés sont différents, et les confondre fait perdre ou inventer des solutions.\n\nEt √a n'existe que pour a positif ou nul : aucun carré ne vaut −4."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "La racine ne se distribue pas sur une somme",
+          "body": "√(9 + 16) vaut √25, soit 5.\n\n√9 + √16 vaut 3 + 4, soit 7.\n\nDeux d'écart, et c'est l'erreur la plus fréquente du chapitre. Comme pour les puissances : la racine passe sur un produit, jamais sur une somme.\n\n√(4 × 25) = √4 × √25 = 2 × 5 = 10, et c'est bien √100. Produit oui, somme non."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Les carrés parfaits à reconnaître",
+          "body": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, puis 121, 144, 169, 196, 225.\n\nLes connaître permet de simplifier : √72 = √(36 × 2) = 6√2. On cherche le plus grand carré parfait qui divise.\n\nEt √2 ne vaut aucune fraction : son écriture décimale ne s'arrête jamais et ne se répète jamais. 1,414 n'est qu'une approximation, et 1,414² vaut 1,999396 — pas 2."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut √144 ?",
+          "explanation": "12, puisque 12 × 12 = 144.",
+          "answer": 12
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut √(9 + 16) ?",
+          "explanation": "√25 = 5. On calcule la somme sous la racine d'abord.",
+          "answer": 5
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Et combien vaut √9 + √16 ?",
+          "explanation": "3 + 4 = 7, soit deux de plus que √(9 + 16). La racine ne se distribue pas sur une somme.",
+          "answer": 7
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut √4 × √25 ?",
+          "explanation": "2 × 5 = 10, et c'est bien √100. La racine se distribue sur un produit.",
+          "answer": 10
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de solutions a l'équation x² = 9 ?",
+          "explanation": "Deux : 3 et −3. Mais √9 désigne un seul nombre, 3. Les deux énoncés ne demandent pas la même chose.",
+          "answer": 2
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "√72 s'écrit a√2. Combien vaut a ?",
+          "hint": "Cherche le plus grand carré parfait qui divise 72.",
+          "explanation": "72 = 36 × 2, donc √72 = 6√2 : a vaut 6.",
+          "answer": 6
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "1,414 est la valeur exacte de √2.",
+          "explanation": "Faux. 1,414² = 1,999396, pas 2. L'écriture décimale de √2 ne s'arrête jamais et ne se répète jamais : aucune fraction ne la donne.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-puissances",
+      "title": "Défi : les ordres de grandeur",
+      "subtitle": "Du noyau à la galaxie.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Quarante-cinq puissances de dix",
+          "body": "Un noyau d'atome mesure environ 10^−15 mètre. Notre galaxie mesure environ 10²¹ mètres.\n\nEntre les deux, trente-six puissances de dix. Autrement dit : il y a autant de rapport entre un noyau et nous qu'entre nous et une galaxie — à peu près, et c'est une coïncidence qui vaut d'être remarquée.\n\nL'écriture scientifique est le seul outil qui permette de manier ces nombres sans se noyer. Essaie d'écrire 10²¹ en chiffres, et tu verras pourquoi."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Comparer, c'est soustraire les exposants",
+          "body": "Le rapport entre 10²¹ et 10^−15 s'obtient en soustrayant : 21 − (−15) = 36. Donc un facteur 10³⁶.\n\nUn humain fait environ 1 mètre, soit 10⁰. Le rapport humain / noyau est donc 10¹⁵, et le rapport galaxie / humain est 10²¹.\n\nLes deux rapports ne sont pas égaux, mais ils sont du même genre d'énormité — et c'est ce que l'écriture scientifique rend visible d'un coup d'œil."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est l'exposant du rapport entre 10²¹ et 10^−15 ?",
+          "explanation": "21 − (−15) = 36. Soustraire un négatif revient à ajouter.",
+          "answer": 36
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un humain mesure environ 10⁰ m. Quel est l'exposant du rapport humain / noyau ?",
+          "explanation": "0 − (−15) = 15, soit un facteur mille milliards de fois mille.",
+          "answer": 15
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est l'exposant du rapport galaxie / humain ?",
+          "explanation": "21 − 0 = 21. Un humain mesurant 10⁰ m, le rapport est l'exposant de la galaxie lui-même.",
+          "answer": 21
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "La somme de ces deux exposants, 15 et 21, redonne-t-elle le rapport total ? Écris la somme.",
+          "explanation": "15 + 21 = 36, qui est bien l'exposant du rapport total : les rapports se multiplient, donc leurs exposants s'additionnent.",
+          "answer": 36
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de zéros faut-il écrire pour noter 10²¹ en chiffres ?",
+          "explanation": "21 zéros après le 1, soit 22 caractères. C'est exactement ce que l'écriture scientifique évite.",
+          "answer": 21
+        },
+        {
+          "id": "q6",
+          "kind": "estimation",
+          "prompt": "Combien de secondes dans une vie humaine de 80 ans, en puissance de 10 ? Donne l'exposant.",
+          "hint": "80 × 365 × 24 × 3 600.",
+          "explanation": "80 × 365 × 24 × 3 600 ≈ 2,5 × 10⁹ secondes. L'exposant est 9 : une vie compte quelques milliards de secondes.",
+          "min": 5,
+          "max": 15,
+          "answer": 9,
+          "tolerance": 1
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'écriture scientifique est-elle indispensable en sciences ?",
+          "explanation": "Parce qu'elle rend les comparaisons immédiates par simple lecture de l'exposant, là où compter des zéros échoue systématiquement.",
+          "options": [
+            {
+              "text": "elle rend les comparaisons immédiates",
+              "correct": true
+            },
+            {
+              "text": "elle évite la calculatrice"
+            },
+            {
+              "text": "elle est plus jolie"
+            },
+            {
+              "text": "elle rend les nombres plus précis"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

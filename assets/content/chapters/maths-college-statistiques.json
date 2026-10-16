@@ -1,0 +1,447 @@
+{
+  "chapter": "maths-college-statistiques-et-probabilites",
+  "lessons": [
+    {
+      "id": "effectifs",
+      "title": "Effectifs et fréquences",
+      "subtitle": "Compter, puis rapporter au total.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux chiffres pour une même réalité",
+          "body": "L'effectif est un nombre d'individus : 12 élèves ont choisi le volley.\n\nLa fréquence est ce même effectif rapporté au total : 12 sur 30, soit 0,4, soit 40 %.\n\nL'effectif dit combien. La fréquence dit quelle part. Et seule la fréquence permet de comparer deux groupes de tailles différentes : 12 amateurs de volley sur 30 et 12 sur 300, ce n'est pas la même chose du tout."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La fréquence",
+          "formula": "fréquence = effectif ÷ effectif total",
+          "body": "Elle vaut toujours entre 0 et 1. Multipliée par 100, elle donne un pourcentage. Et la somme de toutes les fréquences d'un tableau vaut exactement 1, soit 100 % — c'est le contrôle qui attrape les erreurs de saisie."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le contrôle qui ne coûte rien",
+          "body": "Additionne tes fréquences. Si tu n'obtiens pas 1, il y a une erreur quelque part : un effectif mal reporté, un total faux, ou une catégorie oubliée.\n\nEn pourcentages, la somme doit faire 100. Un tableau qui totalise 97 % ou 103 % contient une faute, sauf arrondis explicitement signalés.\n\nC'est la première chose à vérifier devant n'importe quel tableau de statistiques, y compris ceux publiés dans la presse."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Un pourcentage sans son effectif ne vaut rien",
+          "body": "« 100 % des personnes interrogées recommandent ce produit » peut vouloir dire deux personnes sur deux.\n\n« Deux fois plus de cas » peut signifier qu'on est passé de 1 à 2.\n\nUn pourcentage se lit toujours avec l'effectif total à côté. Quand il manque, ce n'est presque jamais un oubli."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "12 élèves sur 30 choisissent le volley. Quelle fréquence en pourcentage ?",
+          "explanation": "12 ÷ 30 = 0,4, soit 40 %.",
+          "answer": 40
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un tableau donne 25 %, 30 % et 40 %. Quel pourcentage manque ?",
+          "explanation": "100 − 25 − 30 − 40 = 5 %. La somme doit faire exactement 100.",
+          "answer": 5
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Sur 240 élèves, 15 % font du judo. Combien d'élèves ?",
+          "explanation": "240 × 15 % = 36 élèves.",
+          "answer": 36
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "18 élèves sur 45 ont choisi le théâtre. Quelle fréquence en pourcentage ?",
+          "explanation": "18 ÷ 45 = 0,4, soit 40 %.",
+          "answer": 40
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que vaut la somme de toutes les fréquences d'un tableau ?",
+          "explanation": "Exactement 1, soit 100 %. C'est le contrôle le plus rapide pour repérer une erreur de saisie.",
+          "options": [
+            {
+              "text": "1, soit 100 %",
+              "correct": true
+            },
+            {
+              "text": "l'effectif total"
+            },
+            {
+              "text": "le nombre de catégories"
+            },
+            {
+              "text": "cela dépend du tableau"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "« 100 % des personnes interrogées sont satisfaites. » Que manque-t-il ?",
+          "explanation": "L'effectif total. Cela peut vouloir dire deux personnes sur deux, et quand il manque ce n'est presque jamais un oubli.",
+          "options": [
+            {
+              "text": "le nombre de personnes interrogées",
+              "correct": true
+            },
+            {
+              "text": "la date de l'enquête"
+            },
+            {
+              "text": "le nom du produit"
+            },
+            {
+              "text": "rien, l'information est complète"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moyenne-mediane",
+      "title": "Moyenne et médiane",
+      "subtitle": "Deux réponses à « combien, en général ».",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les trois indicateurs",
+          "body": "La moyenne : on additionne tout et on divise par l'effectif.\n\nLa médiane : on range les valeurs dans l'ordre et on prend celle du milieu. Autant de valeurs en dessous qu'au-dessus.\n\nL'étendue : la plus grande valeur moins la plus petite. Elle ne dit rien du centre, seulement de la dispersion."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Cinq salaires",
+          "body": "1 500, 1 600, 1 700, 1 800 et 10 000 euros.\n\nLa moyenne : 16 600 ÷ 5 = 3 320 euros.\n\nLa médiane : la valeur du milieu de la liste rangée, soit 1 700 euros.\n\nPresque deux fois l'écart. Et quatre personnes sur cinq gagnent moins que la moyenne — ce qui est tout sauf une exception statistique."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La médiane résiste aux valeurs extrêmes",
+          "body": "Remplace les 10 000 par 100 000 : la moyenne bondit à 21 320 euros, la médiane ne bouge pas d'un centime.\n\nC'est pour cela que les salaires et les prix de l'immobilier se publient en médiane, et que lire une moyenne dans ces domaines est trompeur.\n\nLa moyenne n'est pas fausse : elle répond à une autre question. Elle dit combien chacun aurait si l'on partageait tout également, ce qui n'est presque jamais la question posée."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Quand la médiane tombe entre deux valeurs",
+          "body": "Avec un effectif pair, il n'y a pas de valeur du milieu : il y en a deux.\n\nOn prend alors leur moyenne. Pour 1, 2, 8, 9 la médiane vaut (2 + 8) ÷ 2 = 5, qui ne figure pas dans la liste — et c'est normal.\n\nAvec un effectif impair, la médiane est toujours une valeur de la série."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Salaires 1 500, 1 600, 1 700, 1 800 et 10 000. Quelle est la moyenne en euros ?",
+          "explanation": "La somme fait 16 600, divisée par 5 : 3 320 euros.",
+          "answer": 3320,
+          "unit": "€"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la médiane de ces cinq salaires, en euros ?",
+          "explanation": "1 700 euros, la valeur du milieu de la liste rangée.",
+          "answer": 1700,
+          "unit": "€"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de ces cinq personnes gagnent moins que la moyenne ?",
+          "explanation": "Quatre : 1 500, 1 600, 1 700 et 1 800 sont toutes sous 3 320. Une seule valeur extrême tire la moyenne au-dessus de presque tout le monde.",
+          "answer": 4
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "On remplace 10 000 par 100 000. Quelle est la nouvelle médiane en euros ?",
+          "explanation": "1 700 euros : elle ne bouge pas. La médiane ne regarde que la position, pas la valeur des extrêmes.",
+          "answer": 1700,
+          "unit": "€"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la médiane de la série 1, 2, 8, 9 ?",
+          "hint": "L'effectif est pair.",
+          "explanation": "(2 + 8) ÷ 2 = 5. Avec un effectif pair, la médiane est la moyenne des deux valeurs centrales, et elle peut ne pas figurer dans la série.",
+          "answer": 5
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est l'étendue de la série 1 500, 1 600, 1 700, 1 800, 10 000 ?",
+          "explanation": "10 000 − 1 500 = 8 500 euros. L'étendue mesure la dispersion, pas le centre.",
+          "answer": 8500,
+          "unit": "€"
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi publie-t-on les salaires en médiane ?",
+          "explanation": "Parce qu'elle résiste aux valeurs extrêmes : quelques très hauts revenus tirent la moyenne loin au-dessus de ce que gagne la plupart des gens.",
+          "options": [
+            {
+              "text": "elle résiste aux valeurs extrêmes",
+              "correct": true
+            },
+            {
+              "text": "elle est plus facile à calculer"
+            },
+            {
+              "text": "elle est toujours plus grande"
+            },
+            {
+              "text": "la moyenne est fausse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "probabilites",
+      "title": "Les probabilités",
+      "subtitle": "Compter les cas favorables.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Dans un cas équiprobable",
+          "formula": "P = nombre de cas favorables ÷ nombre de cas possibles",
+          "body": "Le mot équiprobable est essentiel : la formule n'est valable que si tous les cas ont la même chance. Elle marche pour un dé équilibré et pas pour un dé pipé, ni pour « il pleut ou il ne pleut pas »."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Trois propriétés à connaître",
+          "body": "Une probabilité est toujours entre 0 et 1. Un résultat hors de cet intervalle signale une erreur de calcul, pas un évènement très probable.\n\nLa somme des probabilités de tous les résultats possibles vaut 1.\n\nLa probabilité du contraire vaut 1 moins celle de l'évènement. Calculer « au moins un » est souvent bien plus facile en passant par « aucun »."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Le dé n'a pas de mémoire",
+          "body": "Après cinq 6 d'affilée, la probabilité d'un 6 au tirage suivant est toujours 1 sur 6.\n\nLe dé ne sait pas ce qu'il a fait, et rien ne « doit » se rééquilibrer. Croire le contraire s'appelle l'erreur du joueur, et c'est le socle économique de tous les casinos du monde.\n\nCe qui est vrai : sur dix mille lancers, la fréquence des 6 approchera 1/6. Mais cela ne contraint aucun lancer en particulier."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un dé à 6 faces. Quelle est la probabilité d'obtenir un nombre pair, en pourcentage ?",
+          "explanation": "Trois cas favorables sur six : 3 ÷ 6 = 0,5, soit 50 %.",
+          "answer": 50
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la probabilité d'obtenir un nombre supérieur à 4, en pourcentage ? Arrondis à l'entier.",
+          "explanation": "Les faces 5 et 6, soit 2 ÷ 6 ≈ 0,333, donc environ 33 %.",
+          "answer": 33,
+          "tolerance": 1
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une urne contient 4 boules rouges et 6 bleues. Probabilité de tirer une rouge, en pourcentage ?",
+          "explanation": "4 boules favorables sur 10 au total, soit 0,4 ou 40 %.",
+          "answer": 40
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette urne, probabilité de ne PAS tirer une rouge, en pourcentage ?",
+          "explanation": "100 − 40 = 60 %. La probabilité du contraire est 1 moins celle de l'évènement.",
+          "answer": 60
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "On vient d'obtenir cinq 6 d'affilée. Probabilité d'un 6 au lancer suivant ?",
+          "explanation": "Toujours 1 sur 6. Le dé n'a aucune mémoire, et rien ne doit se rééquilibrer.",
+          "options": [
+            {
+              "text": "1 sur 6, comme toujours",
+              "correct": true
+            },
+            {
+              "text": "plus faible, la série doit s'arrêter"
+            },
+            {
+              "text": "plus forte, le dé est chaud"
+            },
+            {
+              "text": "impossible à dire"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Une probabilité de 1,4 est-elle possible ?",
+          "explanation": "Non : une probabilité est toujours entre 0 et 1. Un tel résultat signale une erreur de calcul.",
+          "options": [
+            {
+              "text": "non, c'est une erreur de calcul",
+              "correct": true
+            },
+            {
+              "text": "oui, c'est très probable"
+            },
+            {
+              "text": "oui, en pourcentage"
+            },
+            {
+              "text": "oui, pour un dé pipé"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la formule ne marche-t-elle pas pour « il pleut ou il ne pleut pas » ?",
+          "explanation": "Parce que les deux cas ne sont pas équiprobables : rien ne dit qu'il pleut un jour sur deux. La formule exige des cas de même chance.",
+          "options": [
+            {
+              "text": "les deux cas ne sont pas équiprobables",
+              "correct": true
+            },
+            {
+              "text": "il y a trop de cas possibles"
+            },
+            {
+              "text": "la météo n'est pas un hasard"
+            },
+            {
+              "text": "elle marche très bien"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-deux-des",
+      "title": "Défi : la somme de deux dés",
+      "subtitle": "Pourquoi 7 et pas 6.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Onze sommes, pas équiprobables",
+          "body": "On lance deux dés et on additionne. Les sommes vont de 2 à 12, soit onze résultats possibles.\n\nBeaucoup de joueurs en concluent que chaque somme a une chance sur onze. C'est faux, et c'est ce qui a longtemps fait vivre les tenanciers de jeux.\n\nLa bonne façon de compter : il y a 6 × 6 = 36 lancers possibles, et c'est eux qui sont équiprobables, pas les sommes. Il faut donc compter combien de lancers donnent chaque somme."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le décompte",
+          "body": "La somme 2 : seulement 1 et 1. Un seul lancer.\n\nLa somme 7 : 1-6, 2-5, 3-4, 4-3, 5-2, 6-1. Six lancers.\n\nLa somme 12 : seulement 6 et 6. Un seul lancer.\n\nLe 7 est donc six fois plus probable que le 2. Et il est le plus probable de tous, parce que c'est la seule somme qu'aucune face ne peut rendre impossible."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Pourquoi le 7 précisément",
+          "body": "Pour obtenir 7, quel que soit le résultat du premier dé, il existe exactement une valeur du second qui convient — et elle est toujours entre 1 et 6.\n\nPour obtenir 12, il n'y a qu'un seul premier dé possible : le 6.\n\nC'est la seule somme à avoir cette propriété, et c'est pour cela qu'elle est unique dans le tableau."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lancers différents avec deux dés ?",
+          "explanation": "6 × 6 = 36. Ce sont ces 36 lancers qui sont équiprobables, pas les onze sommes.",
+          "answer": 36
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lancers donnent la somme 7 ?",
+          "explanation": "Six : 1-6, 2-5, 3-4, 4-3, 5-2 et 6-1.",
+          "answer": 6
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lancers donnent la somme 2 ?",
+          "explanation": "Un seul lancer la donne : 1 sur le premier dé et 1 sur le second.",
+          "answer": 1
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lancers donnent la somme 6 ?",
+          "hint": "1-5, 2-4, et les autres.",
+          "explanation": "Cinq : 1-5, 2-4, 3-3, 4-2 et 5-1. Le 3-3 ne compte qu'une fois, puisqu'il n'y a qu'une façon de l'obtenir.",
+          "answer": 5
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Par combien le 7 est-il plus probable que le 2 ?",
+          "explanation": "6 ÷ 1 = 6 fois plus probable.",
+          "answer": 6
+        },
+        {
+          "id": "q6",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces sommes de la moins probable à la plus probable.",
+          "explanation": "Le 2 a 1 chance, le 3 en a 2, le 5 en a 4, le 6 en a 5, le 7 en a 6. Le nombre de façons monte jusqu'à 7 puis redescend symétriquement.",
+          "items": [
+            "la somme 2",
+            "la somme 3",
+            "la somme 5",
+            "la somme 6",
+            "la somme 7"
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le 7 est-il la somme la plus probable ?",
+          "explanation": "Parce que quel que soit le premier dé, il existe toujours une valeur du second entre 1 et 6 qui complète à 7. Aucune autre somme n'a cette propriété.",
+          "options": [
+            {
+              "text": "quel que soit le premier dé, le second peut toujours compléter",
+              "correct": true
+            },
+            {
+              "text": "parce que 7 est au milieu de 2 et 12"
+            },
+            {
+              "text": "parce que 7 est un nombre premier"
+            },
+            {
+              "text": "parce qu'il y a sept façons de l'obtenir"
+            }
+          ]
+        },
+        {
+          "id": "q8",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la probabilité de la somme 7, en pourcentage ? Arrondis à l'entier.",
+          "explanation": "6 ÷ 36 = 0,167, soit environ 17 % — et non les 9 % qu'on obtiendrait en divisant par onze.",
+          "answer": 17,
+          "tolerance": 1
+        }
+      ]
+    }
+  ]
+}

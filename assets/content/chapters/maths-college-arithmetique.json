@@ -1,0 +1,460 @@
+{
+  "chapter": "maths-college-multiples-diviseurs-et-arithmetique",
+  "lessons": [
+    {
+      "id": "divisibilite",
+      "title": "Les critères de divisibilité",
+      "subtitle": "Savoir sans diviser.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les six critères utiles",
+          "body": "Par 2 : le chiffre des unités est 0, 2, 4, 6 ou 8.\n\nPar 5 : le chiffre des unités est 0 ou 5.\n\nPar 10 : le chiffre des unités est 0.\n\nPar 4 : le nombre formé par les deux derniers chiffres est divisible par 4.\n\nPar 3 : la somme des chiffres est divisible par 3.\n\nPar 9 : la somme des chiffres est divisible par 9."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Pourquoi le critère de 3 marche",
+          "body": "Prends 237. On peut l'écrire 2 × 100 + 3 × 10 + 7.\n\nOr 100 = 99 + 1 et 10 = 9 + 1. Donc 237 = 2 × 99 + 3 × 9 + (2 + 3 + 7).\n\nLes deux premiers morceaux sont des multiples de 3, puisque 99 et 9 le sont. Il ne reste donc que la somme des chiffres à tester.\n\nCe n'est pas une astuce : c'est une démonstration, et elle marche pour n'importe quel nombre de chiffres."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Pourquoi il n'y a pas de critère simple pour 7",
+          "body": "Le critère de 3 et celui de 9 marchent parce que 10 vaut 1 de plus qu'un multiple de 9.\n\nPour 7, 10 ne vaut pas 1 de plus qu'un multiple de 7 : il vaut 3 de plus. Les chiffres se retrouvent alors multipliés par 1, 3, 2, 6, 4, 5, puis ça recommence — une suite trop pénible pour servir.\n\nIl est plus rapide de diviser. Savoir pourquoi un outil n'existe pas évite de le chercher."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Divisible par 6, par 12, par 15",
+          "body": "Par 6 : il faut être divisible par 2 ET par 3, puisque 6 = 2 × 3 et que 2 et 3 n'ont aucun diviseur commun.\n\nPar 15 : par 3 et par 5.\n\nAttention : par 12 il ne suffit pas d'être divisible par 2 et par 6 — il faut par 4 et par 3. On décompose toujours en facteurs sans diviseur commun. 36 le montre : divisible par 2 et par 6, et bien divisible par 12 ; mais 18 l'est aussi par 2 et par 6, et ne l'est pas par 12."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Ces nombres sont-ils divisibles par 3 ?",
+          "explanation": "On additionne les chiffres : 2+3+7=12 oui, 1+2+3=6 oui, 4+5=9 oui ; 1+0+0=1 non, 2+5=7 non, 1+6=7 non.",
+          "categories": [
+            "divisible par 3",
+            "non divisible par 3"
+          ],
+          "items": [
+            {
+              "text": "237",
+              "category": 0
+            },
+            {
+              "text": "123",
+              "category": 0
+            },
+            {
+              "text": "45",
+              "category": 0
+            },
+            {
+              "text": "100",
+              "category": 1
+            },
+            {
+              "text": "25",
+              "category": 1
+            },
+            {
+              "text": "16",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la somme des chiffres de 237 ?",
+          "explanation": "2 + 3 + 7 = 12, qui est divisible par 3 : donc 237 l'est aussi.",
+          "answer": 12
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "716 est-il divisible par 4 ?",
+          "hint": "Regarde les deux derniers chiffres.",
+          "explanation": "Oui : 16 est divisible par 4, donc 716 l'est. Le critère ne regarde que les deux derniers chiffres.",
+          "options": [
+            {
+              "text": "oui, car 16 l'est",
+              "correct": true
+            },
+            {
+              "text": "non"
+            },
+            {
+              "text": "oui, car 7 + 1 + 6 = 14"
+            },
+            {
+              "text": "impossible à dire sans diviser"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que faut-il vérifier pour la divisibilité par 6 ?",
+          "explanation": "Par 2 et par 3, puisque 6 = 2 × 3 et que 2 et 3 n'ont aucun diviseur commun.",
+          "options": [
+            {
+              "text": "la divisibilité par 2 et par 3",
+              "correct": true
+            },
+            {
+              "text": "la divisibilité par 2 et par 4"
+            },
+            {
+              "text": "la divisibilité par 3 seule"
+            },
+            {
+              "text": "la somme des chiffres divisible par 6"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "18 est divisible par 2 et par 6. Est-il divisible par 12 ?",
+          "explanation": "Non : 18 = 12 + 6. Il ne suffit pas d'être divisible par 2 et par 6, car 2 et 6 ont un diviseur commun. Pour 12 il faut par 4 et par 3.",
+          "options": [
+            {
+              "text": "non",
+              "correct": true
+            },
+            {
+              "text": "oui"
+            },
+            {
+              "text": "oui, puisque 2 × 6 = 12"
+            },
+            {
+              "text": "impossible à dire"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi n'existe-t-il pas de critère simple pour 7 ?",
+          "explanation": "Parce que 10 ne vaut pas 1 de plus qu'un multiple de 7, mais 3 de plus. Les chiffres se retrouvent affectés de coefficients 1, 3, 2, 6, 4, 5, trop pénibles à manier.",
+          "options": [
+            {
+              "text": "10 ne vaut pas 1 de plus qu'un multiple de 7",
+              "correct": true
+            },
+            {
+              "text": "parce que 7 est premier"
+            },
+            {
+              "text": "parce que 7 est impair"
+            },
+            {
+              "text": "il en existe un, mais il est secret"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pgcd",
+      "title": "Le plus grand diviseur commun",
+      "subtitle": "Et l'algorithme d'Euclide.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Les nombres premiers",
+          "figureId": "eratosthene",
+          "body": "Le crible d'Ératosthène raye les multiples et laisse les nombres premiers. Ce sont les briques : tout entier se décompose en produit de nombres premiers, et d'une seule façon."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le PGCD par décomposition",
+          "body": "On décompose les deux nombres en facteurs premiers.\n\n60 = 2 × 2 × 3 × 5. Et 36 = 2 × 2 × 3 × 3.\n\nOn garde les facteurs communs, avec leur plus petit nombre d'occurrences : deux 2 et un 3.\n\nLe PGCD vaut donc 2 × 2 × 3 = 12. C'est le plus grand nombre qui divise à la fois 60 et 36."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "L'algorithme d'Euclide, plus rapide",
+          "body": "On divise le plus grand par le plus petit et on garde le reste.\n\n60 divisé par 36 : reste 24.\n\n36 divisé par 24 : reste 12.\n\n24 divisé par 12 : reste 0.\n\nLe dernier reste non nul est le PGCD : 12. Trois divisions, aucune décomposition — et cela marche aussi bien sur des nombres de vingt chiffres, où la décomposition serait hors de portée."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À quoi ça sert vraiment",
+          "body": "À rendre une fraction irréductible : on divise numérateur et dénominateur par leur PGCD, et en une seule opération la fraction est au plus simple.\n\n36/60 : on divise par 12, et on obtient 3/5. Simplifier par 2 puis par 2 puis par 3 aurait donné le même résultat en trois fois plus d'étapes.\n\nUne fraction est irréductible exactement quand le PGCD de ses deux termes vaut 1."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PGCD de 60 et 36 ?",
+          "explanation": "12. Par Euclide : 60 mod 36 = 24, 36 mod 24 = 12, 24 mod 12 = 0. Le dernier reste non nul est 12.",
+          "answer": 12
+        },
+        {
+          "id": "q2",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes d'Euclide pour 60 et 36 dans l'ordre.",
+          "explanation": "On divise, on garde le reste, on recommence avec le diviseur et le reste, jusqu'à un reste nul.",
+          "items": [
+            "60 divisé par 36, reste 24",
+            "36 divisé par 24, reste 12",
+            "24 divisé par 12, reste 0",
+            "le PGCD est 12, le dernier reste non nul"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Simplifie 36/60 par son PGCD. Quel est le numérateur obtenu ?",
+          "explanation": "36 ÷ 12 = 3, et 60 ÷ 12 = 5 : la fraction vaut 3/5, irréductible.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PGCD de 7 et 12 ?",
+          "explanation": "1 : ils n'ont aucun diviseur commun autre que 1. On dit qu'ils sont premiers entre eux, et 7/12 est déjà irréductible.",
+          "answer": 1
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PGCD de 48 et 18 ?",
+          "hint": "48 mod 18, puis continue.",
+          "explanation": "48 mod 18 = 12, 18 mod 12 = 6, 12 mod 6 = 0 : le PGCD est 6.",
+          "answer": 6
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quand une fraction est-elle irréductible ?",
+          "explanation": "Quand le PGCD de son numérateur et de son dénominateur vaut 1. C'est la définition opérationnelle, et elle se vérifie par Euclide.",
+          "options": [
+            {
+              "text": "quand le PGCD de ses deux termes vaut 1",
+              "correct": true
+            },
+            {
+              "text": "quand le numérateur est premier"
+            },
+            {
+              "text": "quand elle est plus petite que 1"
+            },
+            {
+              "text": "quand le dénominateur est impair"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi préférer Euclide à la décomposition sur de grands nombres ?",
+          "explanation": "Parce que décomposer un grand nombre en facteurs premiers est très coûteux, alors qu'Euclide ne fait que des divisions et termine en quelques dizaines d'étapes même sur vingt chiffres.",
+          "options": [
+            {
+              "text": "décomposer de grands nombres est hors de portée",
+              "correct": true
+            },
+            {
+              "text": "Euclide donne un résultat plus précis"
+            },
+            {
+              "text": "la décomposition peut échouer"
+            },
+            {
+              "text": "Euclide marche aussi sur les décimaux"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ppcm",
+      "title": "Le plus petit multiple commun",
+      "subtitle": "Quand deux cycles se retrouvent.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Deux bus qui repartent ensemble",
+          "body": "Un bus passe toutes les 12 minutes, un autre toutes les 18. Ils partent ensemble à 8 h. Quand repartiront-ils ensemble ?\n\nLes multiples de 12 : 12, 24, 36, 48…\n\nLes multiples de 18 : 18, 36, 54…\n\nLe premier commun est 36. Ils repartiront ensemble à 8 h 36, puis toutes les 36 minutes."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La relation avec le PGCD",
+          "formula": "PGCD × PPCM = a × b",
+          "body": "Pour 12 et 18 : le PGCD vaut 6, donc le PPCM vaut 12 × 18 ÷ 6 = 36. On obtient l'un dès qu'on a l'autre, sans chercher de multiple commun."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le PPCM pour additionner des fractions",
+          "body": "Pour additionner 1/12 et 1/18, on cherche un dénominateur commun. Le produit 216 marche, mais le PPCM 36 est bien plus commode.\n\n1/12 = 3/36 et 1/18 = 2/36, donc la somme vaut 5/36 — déjà irréductible.\n\nPasser par le produit aurait donné 30/216, qu'il aurait fallu simplifier ensuite. Le PPCM fait gagner cette étape à chaque fois."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PPCM de 12 et 18 ?",
+          "explanation": "36, le premier multiple commun aux deux listes.",
+          "answer": 36
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PGCD de 12 et 18 ?",
+          "explanation": "6 : 18 mod 12 = 6, puis 12 mod 6 = 0.",
+          "answer": 6
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Vérifie la relation : combien vaut 12 × 18 ?",
+          "explanation": "216, qui est bien égal à 6 × 36, soit PGCD × PPCM.",
+          "answer": 216
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Les bus partent à 8 h. À quelle minute repartiront-ils ensemble ?",
+          "explanation": "À la 36e minute, soit 8 h 36, puis toutes les 36 minutes.",
+          "answer": 36
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "1/12 + 1/18 au dénominateur 36. Quel est le numérateur de la somme ?",
+          "explanation": "3/36 + 2/36 = 5/36 : le numérateur est 5, et la fraction est déjà irréductible.",
+          "answer": 5
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PPCM de 4 et 6 ?",
+          "hint": "Leur PGCD vaut 2.",
+          "explanation": "4 × 6 ÷ 2 = 12. Et non 24, qui est un multiple commun mais pas le plus petit.",
+          "answer": 12
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PPCM de 7 et 12 ?",
+          "explanation": "Leur PGCD vaut 1, donc le PPCM est leur produit : 84. Quand deux nombres sont premiers entre eux, le PPCM est le produit.",
+          "answer": 84
+        }
+      ]
+    },
+    {
+      "id": "defi-arithmetique",
+      "title": "Défi : les engrenages et le carrelage",
+      "subtitle": "Deux problèmes, un même outil.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le premier : deux roues dentées",
+          "body": "Une roue de 24 dents entraîne une roue de 18 dents. On marque une dent sur chacune, face à face au départ.\n\nAprès combien de dents engrenées les deux marques se retrouveront-elles face à face ?\n\nIl faut un nombre de dents qui soit à la fois un multiple de 24 et de 18 : c'est le PPCM, soit 72. La grande roue aura fait 3 tours et la petite 4."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Le second : carreler sans couper",
+          "body": "Une pièce mesure 180 cm sur 144 cm. On veut la carreler avec des carreaux carrés, tous identiques, le plus grands possible, sans en couper aucun.\n\nIl faut un côté qui divise à la fois 180 et 144 : c'est le PGCD, soit 36 cm.\n\nUn PPCM quand on cherche un rendez-vous, un PGCD quand on cherche un découpage. Reconnaître lequel est le vrai travail — le calcul vient après."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le PGCD de 24 et 18 ?",
+          "explanation": "6 : 24 mod 18 = 6, puis 18 mod 6 = 0.",
+          "answer": 6
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de dents faut-il engrener pour que les marques se retrouvent ?",
+          "hint": "C'est le PPCM de 24 et 18.",
+          "explanation": "24 × 18 ÷ 6 = 72 dents.",
+          "answer": 72
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de tours fait alors la roue de 24 dents ?",
+          "explanation": "72 ÷ 24 = 3 tours pour la grande roue, celle qui a le plus de dents.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Et la roue de 18 dents ?",
+          "explanation": "72 ÷ 18 = 4 tours. La petite roue tourne plus vite, comme toujours.",
+          "answer": 4
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Pièce de 180 cm sur 144 cm. Quel côté de carreau, en centimètres ?",
+          "hint": "C'est le PGCD de 180 et 144.",
+          "explanation": "180 mod 144 = 36, puis 144 mod 36 = 0 : le PGCD est 36 cm.",
+          "answer": 36,
+          "unit": "cm"
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de carreaux de 36 cm faudra-t-il en tout ?",
+          "explanation": "180 ÷ 36 = 5 et 144 ÷ 36 = 4, donc 5 × 4 = 20 carreaux.",
+          "answer": 20
+        },
+        {
+          "id": "q7",
+          "kind": "choixUnique",
+          "prompt": "Comment reconnaître s'il faut un PGCD ou un PPCM ?",
+          "explanation": "Un PGCD quand on découpe quelque chose en parts égales ; un PPCM quand on cherche quand deux cycles se retrouvent. C'est la question posée qui tranche, pas les nombres.",
+          "options": [
+            {
+              "text": "PGCD pour découper, PPCM pour un rendez-vous de cycles",
+              "correct": true
+            },
+            {
+              "text": "PGCD si les nombres sont grands"
+            },
+            {
+              "text": "PPCM si les nombres sont premiers"
+            },
+            {
+              "text": "les deux donnent la même réponse"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

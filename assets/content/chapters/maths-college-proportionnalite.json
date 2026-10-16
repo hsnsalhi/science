@@ -1,0 +1,426 @@
+{
+  "chapter": "maths-college-proportionnalite-et-fonctions",
+  "lessons": [
+    {
+      "id": "reconnaitre",
+      "title": "Reconnaître la proportionnalité",
+      "subtitle": "Un rapport constant, ou rien.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le test, et un seul",
+          "body": "Deux grandeurs sont proportionnelles si le quotient de l'une par l'autre est le même partout.\n\n3 kg pour 6 €, 5 kg pour 10 €, 8 kg pour 16 € : les quotients valent 2, 2 et 2. C'est proportionnel, et le coefficient est 2 euros par kilogramme.\n\nIl ne suffit pas que les deux grandeurs augmentent ensemble. Il faut que le rapport ne bouge pas, et c'est beaucoup plus exigeant."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Ce qui augmente ensemble sans être proportionnel",
+          "body": "L'âge et la taille d'un enfant augmentent tous deux, et ne sont pas proportionnels : un enfant de 10 ans ne fait pas le double d'un enfant de 5 ans.\n\nLe côté d'un carré et son aire augmentent ensemble : doubler le côté quadruple l'aire.\n\nLe prix d'un abonnement avec frais d'inscription : 20 € puis 5 € par mois. Trois mois coûtent 35 €, six mois coûtent 50 € — pas le double. C'est le cas le plus fréquent dans la vie courante, et le plus souvent mal traité."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Trois façons de compléter un tableau",
+          "body": "Par le coefficient : on le calcule une fois, puis on multiplie. Toujours la plus sûre.\n\nPar linéarité : 8 kg = 5 kg + 3 kg, donc le prix de 8 kg est la somme des deux prix. Valable seulement en proportionnalité.\n\nPar le produit en croix : utile quand on cherche une valeur isolée, et source d'erreurs quand on le pose de travers. Le coefficient reste préférable quand on a plusieurs valeurs à trouver."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le graphique trahit tout",
+          "body": "Une situation proportionnelle donne des points alignés sur une droite qui passe par l'origine.\n\nL'abonnement à frais d'inscription donne une droite aussi — mais qui ne passe pas par l'origine, puisqu'à zéro mois on paie déjà 20 €.\n\nL'aire du carré donne une courbe. Un seul coup d'œil au graphique suffit donc, et il attrape le piège de l'abonnement que les tableaux laissent passer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "3 kg coûtent 6 €. Quel est le prix du kilogramme, en euros ?",
+          "explanation": "6 ÷ 3 = 2 euros par kilogramme : c'est le coefficient de proportionnalité.",
+          "answer": 2,
+          "unit": "€"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Au même prix, combien coûtent 8 kg, en euros ?",
+          "explanation": "8 × 2 = 16 euros. On multiplie la quantité par le coefficient, une fois pour toutes.",
+          "answer": 16,
+          "unit": "€"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Ces situations sont-elles proportionnelles ?",
+          "explanation": "Le prix au poids et la distance à vitesse constante ont un rapport fixe. L'âge et la taille, l'aire d'un carré et l'abonnement à frais fixes non.",
+          "categories": [
+            "proportionnel",
+            "non proportionnel"
+          ],
+          "items": [
+            {
+              "text": "le prix et le poids d'une marchandise",
+              "category": 0
+            },
+            {
+              "text": "la distance et le temps à vitesse constante",
+              "category": 0
+            },
+            {
+              "text": "l'âge et la taille d'un enfant",
+              "category": 1
+            },
+            {
+              "text": "le côté d'un carré et son aire",
+              "category": 1
+            },
+            {
+              "text": "un abonnement à frais d'inscription",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Abonnement : 20 € d'inscription puis 5 € par mois. Combien pour 3 mois, en euros ?",
+          "explanation": "20 + 3 × 5 = 35 euros.",
+          "answer": 35,
+          "unit": "€"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Et pour 6 mois, en euros ?",
+          "explanation": "20 + 6 × 5 = 50 euros, et non 70 : les frais d'inscription ne se paient qu'une fois, donc ce n'est pas proportionnel.",
+          "answer": 50,
+          "unit": "€"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "À quoi reconnaît-on la proportionnalité sur un graphique ?",
+          "explanation": "Des points alignés sur une droite qui passe par l'origine. L'abonnement donne une droite aussi, mais décalée vers le haut.",
+          "options": [
+            {
+              "text": "une droite qui passe par l'origine",
+              "correct": true
+            },
+            {
+              "text": "n'importe quelle droite"
+            },
+            {
+              "text": "une courbe qui monte"
+            },
+            {
+              "text": "des points alignés, où qu'ils soient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pourcentages",
+      "title": "Les pourcentages",
+      "subtitle": "Et pourquoi ils ne s'additionnent pas.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Augmenter ou diminuer, en une multiplication",
+          "formula": "augmenter de 20 % : × 1,20     diminuer de 20 % : × 0,80",
+          "body": "C'est la seule méthode à retenir : un pourcentage de variation devient un coefficient multiplicateur. Elle évite tous les pièges, et elle permet d'enchaîner les variations."
+        },
+        {
+          "id": "c2",
+          "kind": "avertissement",
+          "title": "Plus 20 % puis moins 20 % ne revient pas au point de départ",
+          "body": "Un prix de 100 € augmente de 20 % : il passe à 120 €.\n\nIl baisse ensuite de 20 % : 120 × 0,80 = 96 €.\n\nOn a perdu 4 €. La raison : le premier 20 % se calculait sur 100, le second sur 120. Un pourcentage s'applique toujours à ce qui précède, et jamais à une valeur fixe.\n\nL'ordre, lui, n'y change rien : 100 × 0,80 × 1,20 donne aussi 96."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Annuler une augmentation de 20 %",
+          "body": "Il faut un coefficient qui ramène 1,20 à 1, soit 1 ÷ 1,20 ≈ 0,8333.\n\nC'est donc une baisse d'environ 16,67 %, et non de 20 %.\n\nEt pour annuler une hausse de 100 %, il faut une baisse de 50 %. Plus la hausse est forte, plus l'écart est frappant — un prix doublé ne se défait pas en retirant 100 %, qui le mettrait à zéro."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Point de pourcentage, ou pourcentage",
+          "body": "Un taux passe de 4 % à 6 %. On peut dire deux choses, toutes deux vraies :\n\nIl a augmenté de 2 points de pourcentage.\n\nIl a augmenté de 50 %, puisque 6 ÷ 4 = 1,5.\n\nLes deux formulations décrivent le même fait et donnent des impressions opposées. C'est le levier rhétorique le plus simple qui existe sur des chiffres, et il est parfaitement honnête des deux côtés — à condition de dire lequel on emploie."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un prix de 100 € augmente de 20 %. Combien vaut-il, en euros ?",
+          "explanation": "100 × 1,20 = 120 euros.",
+          "answer": 120,
+          "unit": "€"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Il baisse ensuite de 20 %. Combien vaut-il, en euros ?",
+          "explanation": "120 × 0,80 = 96 euros. On a perdu 4 € parce que les deux 20 % ne portaient pas sur la même base.",
+          "answer": 96,
+          "unit": "€"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans l'autre ordre : 100 € baisse de 20 % puis augmente de 20 %. Combien, en euros ?",
+          "explanation": "100 × 0,80 × 1,20 = 96 euros également. L'ordre n'y change rien, puisque la multiplication est commutative.",
+          "answer": 96,
+          "unit": "€"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle baisse en pourcentage annule une hausse de 100 % ?",
+          "explanation": "50 %. Un prix doublé revient à sa valeur en étant divisé par deux, et non en perdant 100 % — ce qui le mettrait à zéro.",
+          "answer": 50
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un taux passe de 4 % à 6 %. De combien de points de pourcentage ?",
+          "explanation": "6 − 4 = 2 points de pourcentage.",
+          "answer": 2
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Et de combien de pourcentage a-t-il augmenté ?",
+          "hint": "Divise 6 par 4.",
+          "explanation": "6 ÷ 4 = 1,5, soit une augmentation de 50 %. Le même fait décrit de deux façons vraies et d'effet opposé.",
+          "answer": 50
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Trois hausses de 10 % de suite sur 100 €. Combien à la fin, en euros ?",
+          "hint": "1,10 trois fois de suite.",
+          "explanation": "100 × 1,10 × 1,10 × 1,10 = 133,10 euros, et non 130 : chaque hausse porte sur un montant déjà augmenté.",
+          "answer": 133.1,
+          "tolerance": 0.05,
+          "unit": "€"
+        }
+      ]
+    },
+    {
+      "id": "vitesses",
+      "title": "Vitesses, échelles, fonctions",
+      "subtitle": "La proportionnalité au travail.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Distance, temps, vitesse",
+          "figureId": "vitesse",
+          "body": "Fais varier la vitesse et le temps. La distance est proportionnelle à chacun des deux séparément — mais seulement si l'autre reste fixe."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La notion de fonction",
+          "formula": "f(x) = 2x + 20",
+          "body": "Une fonction est une machine : on y entre un nombre, elle en ressort un seul. L'abonnement à 20 € plus 5 € par mois est la fonction qui à m associe 20 + 5m, et qu'on note f(m) = 20 + 5m. Les situations proportionnelles sont exactement les fonctions de la forme f(x) = ax."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Vocabulaire des fonctions",
+          "body": "f(3) désigne l'image de 3 : ce qui sort quand on entre 3.\n\nChercher x tel que f(x) = 50 est la question inverse : on connaît la sortie, on cherche l'entrée. C'est ce qu'on appelle un antécédent, et c'est une équation à résoudre.\n\nUn nombre a toujours une seule image, et peut avoir plusieurs antécédents — ou aucun. La fonction f(x) = x² donne deux antécédents à 9, et aucun à −1."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture roule 3 h à 80 km/h. Combien de kilomètres ?",
+          "explanation": "80 × 3 = 240 km. À vitesse constante, la distance est proportionnelle au temps.",
+          "answer": 240,
+          "unit": "km"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Elle parcourt 300 km en 4 h. Quelle vitesse moyenne en km/h ?",
+          "explanation": "300 ÷ 4 = 75 km/h. Une vitesse moyenne est toujours une distance divisée par un temps.",
+          "answer": 75,
+          "unit": "km/h"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une carte à l'échelle 1/25 000. Quelle distance réelle, en mètres, pour 4 cm sur la carte ?",
+          "hint": "4 × 25 000 centimètres, puis en mètres.",
+          "explanation": "4 × 25 000 = 100 000 cm, soit 1 000 mètres, c'est-à-dire 1 km.",
+          "answer": 1000,
+          "unit": "m"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction f(x) = 20 + 5x, combien vaut f(6) ?",
+          "explanation": "20 + 5 × 6 = 50. C'est le prix de six mois d'abonnement.",
+          "answer": 50
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la même fonction, quel x donne f(x) = 65 ?",
+          "hint": "Résous 20 + 5x = 65.",
+          "explanation": "20 + 5x = 65 donne 5x = 45, donc x = 9. C'est un antécédent de 65.",
+          "answer": 9
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la fonction f(x) = x², combien 9 a-t-il d'antécédents ?",
+          "explanation": "Deux : 3 et −3, puisque les deux ont 9 pour carré. Une image peut avoir plusieurs antécédents.",
+          "answer": 2
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Pour cette même fonction, combien −1 a-t-il d'antécédents ?",
+          "explanation": "Aucun : aucun carré ne vaut −1. Une image peut n'avoir aucun antécédent.",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "defi-vitesse-moyenne",
+      "title": "Défi : la vitesse moyenne",
+      "subtitle": "Le piège qui attrape tout le monde.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'aller et le retour",
+          "body": "Une voiture fait 60 km à 30 km/h, puis 60 km à 60 km/h.\n\nQuelle est sa vitesse moyenne sur les 120 km ?\n\nTout le monde répond 45, la moyenne de 30 et 60. C'est faux, et l'écart n'est pas petit.\n\nIl faut repasser par la définition : la vitesse moyenne est la distance totale divisée par le temps total. Pas la moyenne des vitesses."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le calcul juste",
+          "body": "Les 60 premiers kilomètres à 30 km/h prennent 60 ÷ 30 = 2 heures.\n\nLes 60 suivants à 60 km/h prennent 60 ÷ 60 = 1 heure.\n\nTotal : 120 km en 3 heures.\n\nVitesse moyenne : 120 ÷ 3 = 40 km/h. Et non 45.\n\nLa raison est intuitive une fois vue : on passe deux fois plus de temps à la vitesse lente, donc elle compte double dans la moyenne."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Quand la moyenne simple serait juste",
+          "body": "Si l'on roulait 1 heure à 30 puis 1 heure à 60, la moyenne serait bien 45 : 90 km en 2 heures.\n\nLa moyenne simple des vitesses est correcte quand les durées sont égales, jamais quand les distances le sont.\n\nC'est le même piège que la moyenne des moyennes : il faut pondérer par ce qui est réellement partagé — ici, le temps."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "60 km à 30 km/h. Combien d'heures ?",
+          "explanation": "60 ÷ 30 = 2 heures. C'est le trajet lent, et il occupe les deux tiers du temps total.",
+          "answer": 2,
+          "unit": "h"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "60 km à 60 km/h. Combien d'heures ?",
+          "explanation": "60 ÷ 60 = 1 heure, soit moitié moins que le premier trajet pour la même distance.",
+          "answer": 1,
+          "unit": "h"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la vitesse moyenne sur les 120 km, en km/h ?",
+          "explanation": "120 km en 3 heures, soit 120 ÷ 3 = 40 km/h. Et non 45.",
+          "answer": 40,
+          "unit": "km/h"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "De combien de km/h la réponse naïve de 45 se trompe-t-elle ?",
+          "explanation": "45 − 40 = 5 km/h de trop, soit 12,5 % d'erreur.",
+          "answer": 5,
+          "unit": "km/h"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Maintenant 1 h à 30 km/h puis 1 h à 60 km/h. Quelle vitesse moyenne en km/h ?",
+          "explanation": "30 + 60 = 90 km en 2 heures, soit 45 km/h. Ici la moyenne simple est juste, parce que les durées sont égales.",
+          "answer": 45,
+          "unit": "km/h"
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quand la moyenne simple des vitesses est-elle correcte ?",
+          "explanation": "Quand les durées sont égales. Si ce sont les distances qui sont égales, il faut repasser par le temps total.",
+          "options": [
+            {
+              "text": "quand les durées passées à chaque vitesse sont égales",
+              "correct": true
+            },
+            {
+              "text": "quand les distances sont égales"
+            },
+            {
+              "text": "toujours"
+            },
+            {
+              "text": "jamais"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "saisieNumerique",
+          "prompt": "Un aller à 20 km/h et un retour à 60 km/h sur la même route. Quelle vitesse moyenne en km/h ?",
+          "hint": "Prends une distance commode, par exemple 60 km dans chaque sens.",
+          "explanation": "60 km à 20 km/h font 3 h, 60 km à 60 km/h font 1 h : 120 km en 4 h, soit 30 km/h. La moyenne naïve aurait donné 40.",
+          "answer": 30,
+          "unit": "km/h"
+        },
+        {
+          "id": "q8",
+          "kind": "choixUnique",
+          "prompt": "La vitesse moyenne sur un aller-retour peut-elle dépasser la moyenne des deux vitesses ?",
+          "explanation": "Non, jamais. Elle est toujours inférieure ou égale, parce qu'on passe plus de temps à la vitesse lente. L'égalité n'a lieu que si les deux vitesses sont identiques.",
+          "options": [
+            {
+              "text": "non, elle est toujours inférieure ou égale",
+              "correct": true
+            },
+            {
+              "text": "oui, si le retour est rapide"
+            },
+            {
+              "text": "oui, si la route descend"
+            },
+            {
+              "text": "cela dépend de la distance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
