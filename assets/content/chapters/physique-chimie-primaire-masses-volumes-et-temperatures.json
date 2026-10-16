@@ -1,0 +1,306 @@
+{
+  "chapter": "physique-chimie-primaire-masses-volumes-et-temperatures",
+  "lessons": [
+    {
+      "id": "masse-et-volume",
+      "title": "Lourd n'est pas gros",
+      "subtitle": "Deux choses différentes, souvent confondues.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La question piège",
+          "body": "Qu'est-ce qui est le plus lourd : un kilo de plumes ou un kilo de plomb ?\n\nNi l'un ni l'autre : ils font tous les deux un kilo. Ce qui change, c'est la place qu'ils prennent. Les plumes rempliraient une pièce, le plomb tiendrait dans la main.\n\nLa masse dit combien il y a de matière. Le volume dit combien de place elle occupe."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Deux grandeurs, deux instruments",
+          "formula": "masse : la balance, en grammes. Volume : le verre gradué, en litres.",
+          "body": "On ne mesure pas l'une avec l'instrument de l'autre."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Certaines matières sont plus tassées",
+          "body": "Un litre d'eau pèse un kilogramme. Un litre d'huile pèse un peu moins. Un litre de miel pèse environ un kilo et demi.\n\nC'est pourquoi l'huile flotte sur l'eau et le miel coule au fond : à volume égal, elle n'ont pas la même masse."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le volume ne se perd pas en changeant de forme",
+          "body": "Verse un litre d'eau d'un verre large dans un verre étroit : le niveau monte beaucoup plus haut.\n\nIl y a pourtant toujours un litre. Croire qu'un verre haut contient davantage est une erreur que presque tous les jeunes enfants font, et dont on ne guérit qu'en versant soi-même."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Un kilo de plumes ou un kilo de plomb : lequel est le plus lourd ?",
+          "explanation": "Aucun des deux : ils ont la même masse. Ce qui diffère est le volume, c'est-à-dire la place occupée.",
+          "options": [
+            { "text": "ils pèsent pareil", "correct": true },
+            { "text": "le plomb" },
+            { "text": "les plumes" },
+            { "text": "cela dépend de la balance" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à son instrument.",
+          "explanation": "La balance mesure la matière, le verre gradué mesure la place occupée.",
+          "pairs": [
+            { "left": "la masse", "right": "la balance" },
+            { "left": "le volume", "right": "le verre gradué" },
+            { "left": "la température", "right": "le thermomètre" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien pèse un litre d'eau, en grammes ?",
+          "explanation": "1 000 g, soit un kilogramme. C'est le repère le plus utile de tout le chapitre.",
+          "answer": 1000
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un litre d'eau versé dans un verre étroit devient plus d'un litre.",
+          "explanation": "Faux. Le niveau monte plus haut parce que le verre est étroit, mais la quantité d'eau n'a pas changé.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "la-temperature",
+      "title": "La température",
+      "subtitle": "Ni chaud ni froid : un nombre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les mains se trompent",
+          "body": "Plonge une main dans l'eau chaude et l'autre dans l'eau froide. Puis mets les deux dans de l'eau tiède.\n\nUne main la trouve froide, l'autre la trouve chaude. C'est pourtant la même eau.\n\nNos sensations comparent, elles ne mesurent pas. D'où le thermomètre."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les deux repères de l'eau",
+          "formula": "0 °C : la glace fond. 100 °C : l'eau bout.",
+          "body": "L'échelle Celsius a été construite sur ces deux points, qui sont faciles à retrouver partout."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Des températures à connaître",
+          "body": "Un congélateur : −18 °C. Un réfrigérateur : 4 °C.\n\nUne pièce agréable : 20 °C. Le corps humain : 37 °C.\n\nUn four : 180 °C. La fièvre commence vers 38 °C."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Sous zéro, les nombres s'inversent",
+          "body": "−10 °C est plus froid que −5 °C, alors que 10 est plus grand que 5.\n\nC'est le premier endroit où l'on rencontre des nombres négatifs, et le thermomètre est le meilleur dessin pour les comprendre : plus on descend, plus il fait froid."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle température, en degrés Celsius, la glace fond-elle ?",
+          "explanation": "0 °C. C'est l'un des deux repères qui ont servi à construire l'échelle.",
+          "answer": 0
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la température du corps humain, en degrés ?",
+          "explanation": "Environ 37 °C. Au-dessus de 38, on parle de fièvre.",
+          "answer": 37
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle température est la plus froide : −10 °C ou −5 °C ?",
+          "hint": "Plus on descend sur le thermomètre, plus il fait froid.",
+          "explanation": "−10 °C. Sous zéro, plus le nombre est grand, plus il fait froid.",
+          "options": [
+            { "text": "−10 °C", "correct": true },
+            { "text": "−5 °C" },
+            { "text": "c'est pareil" },
+            { "text": "on ne peut pas comparer" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces températures de la plus froide à la plus chaude.",
+          "explanation": "Les négatives d'abord, et parmi elles la plus grande en valeur est la plus froide.",
+          "items": ["−18 °C", "4 °C", "20 °C", "37 °C", "180 °C"]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Il fait −3 °C le matin et 12 °C l'après-midi. De combien de degrés la température a-t-elle monté ?",
+          "hint": "Passe par zéro.",
+          "explanation": "De −3 à 0 : 3 degrés. De 0 à 12 : 12 degrés. Total : 15 degrés.",
+          "answer": 15
+        }
+      ]
+    },
+    {
+      "id": "entrainement-mesures-pc",
+      "title": "S'entraîner",
+      "subtitle": "Mesurer pour de vrai.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Peser un liquide",
+          "body": "1. Pose le récipient vide sur la balance et note sa masse.\n\n2. Verse le liquide et note la nouvelle masse.\n\n3. Soustrais : tu as la masse du liquide seul.\n\nOublier de peser le récipient vide est l'erreur numéro un."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Mesurer le volume d'un caillou",
+          "body": "1. Mets de l'eau dans un verre gradué et note le niveau.\n\n2. Plonge le caillou et note le nouveau niveau.\n\n3. La différence est le volume du caillou.\n\nOn mesure ainsi le volume d'objets de forme compliquée, qu'aucune règle ne permettrait de calculer."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Lire un verre gradué",
+          "body": "L'œil doit être à la hauteur du liquide, pas au-dessus ni en dessous.\n\nEt on lit le bas du creux que forme la surface, pas les bords qui remontent le long du verre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un verre vide pèse 120 g. Rempli d'eau, il pèse 420 g. Quelle masse d'eau, en grammes ?",
+          "explanation": "420 − 120 = 300 g d'eau.",
+          "answer": 300
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Ces 300 g d'eau font combien de millilitres ?",
+          "hint": "Un gramme d'eau occupe un millilitre.",
+          "explanation": "300 mL. Pour l'eau, un gramme correspond à un millilitre — ce qui en fait un liquide très commode.",
+          "answer": 300
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "L'eau est à 200 mL. On plonge un caillou, le niveau monte à 260 mL. Quel est le volume du caillou, en millilitres ?",
+          "explanation": "260 − 200 = 60 mL. Le caillou a pris la place de 60 mL d'eau.",
+          "answer": 60
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes pour mesurer le volume d'un caillou.",
+          "explanation": "On note le niveau avant, on plonge, on note après, on soustrait.",
+          "items": [
+            "noter le niveau d'eau de départ",
+            "plonger le caillou",
+            "noter le nouveau niveau",
+            "calculer la différence"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "On peut lire un verre gradué de haut, en regardant par-dessus.",
+          "explanation": "Faux. L'œil doit être à la hauteur du liquide, sinon on lit une graduation qui n'est pas la bonne.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-mesures-pc",
+      "title": "Défi : flotter ou couler",
+      "subtitle": "Ce qui décide vraiment.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce n'est pas le poids",
+          "body": "Un trombone coule, un bateau de plusieurs milliers de tonnes flotte.\n\nCe qui décide n'est donc ni la masse ni le volume pris séparément, mais les deux ensemble : pour un même volume, l'objet est-il plus lourd ou plus léger que l'eau ?\n\nUn litre d'eau pèse un kilo. Un objet d'un litre qui pèse moins d'un kilo flotte ; s'il pèse plus, il coule.\n\nUn bateau est énorme mais surtout creux : il contient beaucoup d'air, ce qui le rend léger pour sa taille."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui décide si un objet flotte ?",
+          "explanation": "La comparaison entre sa masse et celle du même volume d'eau. Un objet d'un litre pesant moins d'un kilo flotte.",
+          "options": [
+            { "text": "sa masse comparée à celle du même volume d'eau", "correct": true },
+            { "text": "sa masse seule" },
+            { "text": "son volume seul" },
+            { "text": "sa couleur" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un objet occupe 1 litre et pèse 800 g. Combien de grammes pèse le même volume d'eau ?",
+          "explanation": "1 000 g. Comme l'objet pèse moins, il flotte.",
+          "answer": 1000
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces objets : flottent ou coulent dans l'eau ?",
+          "explanation": "Le bois et l'huile sont plus légers que l'eau à volume égal. Le fer et le miel sont plus lourds.",
+          "categories": ["flotte", "coule"],
+          "items": [
+            { "text": "un morceau de bois", "category": 0 },
+            { "text": "de l'huile", "category": 0 },
+            { "text": "un clou en fer", "category": 1 },
+            { "text": "du miel", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un litre de miel pèse environ 1 500 g. Combien de grammes de plus qu'un litre d'eau ?",
+          "explanation": "1 500 − 1 000 = 500 g de plus. C'est pourquoi le miel coule au fond du verre.",
+          "answer": 500
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un bateau en acier flotte-t-il alors qu'un clou coule ?",
+          "hint": "Qu'y a-t-il à l'intérieur du bateau ?",
+          "explanation": "Parce qu'il est creux : il contient beaucoup d'air, donc il est léger pour son volume. Le clou est plein d'acier.",
+          "options": [
+            { "text": "il est creux et contient beaucoup d'air", "correct": true },
+            { "text": "l'acier des bateaux est plus léger" },
+            { "text": "il avance, donc il flotte" },
+            { "text": "l'eau de mer porte mieux" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un objet lourd coule toujours.",
+          "explanation": "Faux. Un paquebot pèse des milliers de tonnes et flotte, parce qu'il est très volumineux et creux. C'est le rapport entre masse et volume qui décide.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

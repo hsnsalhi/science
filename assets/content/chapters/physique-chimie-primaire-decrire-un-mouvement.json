@@ -1,0 +1,300 @@
+{
+  "chapter": "physique-chimie-primaire-decrire-un-mouvement",
+  "lessons": [
+    {
+      "id": "bouger-par-rapport-a-quoi",
+      "title": "Bouger par rapport à quoi",
+      "subtitle": "La question qu'on oublie toujours de poser.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Assis dans le train",
+          "body": "Tu es assis dans un train qui roule. Bouges-tu ?\n\nPar rapport à ton siège : non, tu ne bouges pas d'un centimètre.\n\nPar rapport aux arbres dehors : oui, tu files à 120 km/h.\n\nLes deux réponses sont justes. La question « est-ce que ça bouge ? » n'a pas de sens tant qu'on n'a pas dit par rapport à quoi."
+        },
+        {
+          "id": "c2",
+          "kind": "aRetenir",
+          "title": "Le point de référence",
+          "body": "Décrire un mouvement demande toujours de choisir un objet immobile de référence.\n\nSur Terre, on prend le sol la plupart du temps, et c'est si naturel qu'on oublie de le dire. Mais le sol lui-même tourne avec la planète."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Trois choses à dire",
+          "body": "La trajectoire : le chemin suivi. Droite, courbe, circulaire.\n\nLe sens : dans quelle direction on va.\n\nLa vitesse : vite ou lentement, et si cela change."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Le Soleil ne se lève pas",
+          "body": "On dit que le Soleil se lève et se couche, mais c'est la Terre qui tourne.\n\nLe mouvement apparent du Soleil est dû au nôtre. C'est le plus bel exemple de ce que vaut un changement de point de référence — et il a fallu des siècles pour l'admettre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Tu es assis dans un train qui roule. Bouges-tu ?",
+          "explanation": "Cela dépend du point de référence : immobile par rapport au siège, en mouvement par rapport aux arbres.",
+          "options": [
+            { "text": "cela dépend par rapport à quoi", "correct": true },
+            { "text": "oui, toujours" },
+            { "text": "non, jamais" },
+            { "text": "seulement si le train accélère" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le Soleil semble-t-il se déplacer dans le ciel ?",
+          "explanation": "Parce que la Terre tourne sur elle-même. Le mouvement est le nôtre, pas le sien.",
+          "options": [
+            { "text": "parce que la Terre tourne sur elle-même", "correct": true },
+            { "text": "parce que le Soleil tourne autour de nous" },
+            { "text": "parce que l'air le déplace" },
+            { "text": "parce qu'il grossit le matin" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque objet à la forme de sa trajectoire.",
+          "explanation": "Une trajectoire est le chemin suivi : droit, circulaire, ou courbe.",
+          "pairs": [
+            { "left": "une bille qui roule sur une table", "right": "droite" },
+            { "left": "un cheval de manège", "right": "circulaire" },
+            { "left": "un ballon lancé en l'air", "right": "courbe" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "On peut dire si un objet bouge sans préciser par rapport à quoi.",
+          "explanation": "Faux. La question n'a pas de sens sans point de référence : immobile dans le train, en mouvement par rapport au sol.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "la-vitesse",
+      "title": "La vitesse",
+      "subtitle": "Une distance et une durée, ensemble.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Comparer deux vitesses",
+          "body": "Règle les deux mobiles et regarde lequel arrive en premier.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La vitesse",
+          "formula": "vitesse = distance ÷ durée",
+          "body": "Cent kilomètres en deux heures : 50 kilomètres par heure. On dit « par heure » parce qu'on a divisé par des heures."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Des vitesses à connaître",
+          "body": "Un piéton : 5 km/h. Un vélo : 20 km/h.\n\nUne voiture en ville : 50 km/h. Sur autoroute : 130 km/h.\n\nUn TGV : 300 km/h. Un avion de ligne : 900 km/h.\n\nCes repères permettent de repérer un résultat absurde."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Il faut les deux",
+          "body": "« J'ai parcouru 100 kilomètres » ne dit rien de la vitesse : en une heure c'est rapide, en une journée c'est une promenade.\n\n« J'ai roulé deux heures » non plus. Il faut toujours la distance et la durée ensemble."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture parcourt 100 km en 2 heures. Quelle est sa vitesse, en kilomètres par heure ?",
+          "explanation": "On divise la distance par la durée : 100 ÷ 2 = 50 kilomètres par heure.",
+          "answer": 50
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un cycliste roule à 20 km/h pendant 3 heures. Quelle distance, en kilomètres ?",
+          "explanation": "À 20 km chaque heure pendant trois heures : 20 × 3 = 60 kilomètres.",
+          "answer": 60
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un piéton marche à 5 km/h. Combien d'heures pour parcourir 15 km ?",
+          "explanation": "Il avance de 5 km par heure, donc il lui faut 15 ÷ 5 = 3 heures pour en parcourir quinze.",
+          "answer": 3
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces moyens de déplacement du plus lent au plus rapide.",
+          "explanation": "Piéton 5, vélo 20, voiture en ville 50, TGV 300, avion 900 kilomètres par heure.",
+          "items": ["un piéton", "un vélo", "une voiture en ville", "un TGV", "un avion de ligne"]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Savoir qu'on a parcouru 100 km suffit à connaître la vitesse.",
+          "explanation": "Faux. Il manque la durée : cent kilomètres en une heure ou en une journée ne donnent pas la même vitesse.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "entrainement-mouvement",
+      "title": "S'entraîner",
+      "subtitle": "Des trajets et des graphiques.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Lire un mouvement sur des traces",
+          "body": "On photographie un objet à intervalles réguliers, par exemple toutes les secondes.\n\nSi les positions sont régulièrement espacées, la vitesse est constante.\n\nSi elles s'écartent de plus en plus, l'objet accélère. Si elles se resserrent, il ralentit."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Une bille qui descend une pente",
+          "body": "Positions à chaque seconde : 2 cm, 6 cm, 12 cm, 20 cm.\n\nLes écarts valent 4, puis 6, puis 8 centimètres : ils augmentent.\n\nLa bille accélère, ce qui est normal pour une descente."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Changer d'unité",
+          "body": "Pour passer des mètres par seconde aux kilomètres par heure, on multiplie par 3,6.\n\n10 m/s font 36 km/h. Un sprinteur de haut niveau court à environ 10 m/s."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une bille est à 2, 6, 12 puis 20 cm. Quel est l'écart entre la troisième et la quatrième position, en centimètres ?",
+          "explanation": "20 − 12 = 8 cm. Les écarts grandissent : 4, 6, 8.",
+          "answer": 8
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que fait cette bille ?",
+          "explanation": "Elle accélère : les écarts entre positions successives augmentent régulièrement.",
+          "options": [
+            { "text": "elle accélère", "correct": true },
+            { "text": "elle ralentit" },
+            { "text": "elle va à vitesse constante" },
+            { "text": "elle s'arrête" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Convertis 10 mètres par seconde en kilomètres par heure.",
+          "hint": "On multiplie par 3,6.",
+          "explanation": "10 × 3,6 = 36 km/h. C'est la vitesse d'un sprinteur de haut niveau.",
+          "answer": 36
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un train parcourt 240 km en 2 heures. Quelle vitesse, en kilomètres par heure ?",
+          "explanation": "La distance divisée par la durée : 240 ÷ 2 = 120 kilomètres par heure, l'allure d'un train classique.",
+          "answer": 120
+        },
+        {
+          "id": "q5",
+          "kind": "tri",
+          "prompt": "Range ces situations selon ce que fait la vitesse.",
+          "explanation": "Les positions régulièrement espacées signalent une vitesse constante ; des écarts croissants, une accélération.",
+          "categories": ["vitesse constante", "la vitesse change"],
+          "items": [
+            { "text": "positions espacées de 5 cm à chaque seconde", "category": 0 },
+            { "text": "un train lancé sur une voie droite", "category": 0 },
+            { "text": "écarts de 4, 6 puis 8 cm", "category": 1 },
+            { "text": "une voiture qui freine au feu rouge", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-mouvement",
+      "title": "Défi : des mouvements qui trompent",
+      "subtitle": "Quand l'œil se fait avoir.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le train d'à côté",
+          "body": "Tu es dans un train à l'arrêt. Le train voisin démarre, et tu as l'impression très nette de reculer.\n\nTon œil ne voit que le train d'à côté, et il le prend pour référence. Par rapport à lui, tu recules bel et bien.\n\nIl suffit de regarder le quai pour que l'illusion tombe. Ce n'est pas une erreur de ton cerveau : c'est une bonne réponse à une mauvaise référence."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi a-t-on l'impression de reculer quand le train voisin démarre ?",
+          "explanation": "Parce que l'œil prend le train voisin pour référence. Par rapport à lui, on recule vraiment.",
+          "options": [
+            { "text": "l'œil prend le train voisin comme référence", "correct": true },
+            { "text": "le sol bouge" },
+            { "text": "le cerveau se trompe de côté" },
+            { "text": "le train recule un peu avant de partir" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Deux voitures roulent côte à côte à 90 km/h. Quelle est la vitesse de l'une par rapport à l'autre, en kilomètres par heure ?",
+          "hint": "Elles ne se rapprochent ni ne s'éloignent.",
+          "explanation": "0 km/h. L'une par rapport à l'autre, elles sont immobiles — c'est ce qui permet de se parler d'une fenêtre à l'autre.",
+          "answer": 0
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Deux voitures se croisent, chacune à 50 km/h. À quelle vitesse se rapprochent-elles, en kilomètres par heure ?",
+          "hint": "Les deux vitesses s'ajoutent.",
+          "explanation": "100 km/h. C'est pourquoi un choc frontal est bien plus violent qu'un choc contre un mur à la même vitesse.",
+          "answer": 100
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un avion vole à 900 km/h. Combien de kilomètres en 30 minutes ?",
+          "explanation": "900 ÷ 2 = 450 km, car une demi-heure est la moitié d'une heure.",
+          "answer": 450
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Tu marches à 5 km/h dans un train qui roule à 100 km/h, dans le même sens. Quelle est ta vitesse par rapport au sol, en kilomètres par heure ?",
+          "explanation": "105 km/h. Ta vitesse s'ajoute à celle du train.",
+          "answer": 105
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Le sol est un point de référence parfaitement immobile.",
+          "explanation": "Faux. Il tourne avec la Terre, et la Terre file autour du Soleil. Le sol est commode, pas immobile — rien ne l'est absolument.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
