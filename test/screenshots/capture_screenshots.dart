@@ -898,6 +898,24 @@ void main() {
         await shoot(tester, '$device-39-code-genetique');
       });
 
+      // La suite de motifs, avec la case encore cachée : c'est l'écran que
+      // voit un élève de primaire avant de proposer quelque chose, et il
+      // doit tenir sans défilement.
+      testWidgets('primaire : une suite de motifs', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Logique et énigmes');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'Suites et régularités');
+        await tapText(tester, 'Voir la régularité');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-40-suite-motifs');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

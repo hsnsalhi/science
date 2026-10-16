@@ -1,0 +1,351 @@
+{
+  "chapter": "logique-primaire-suites-et-regularites",
+  "lessons": [
+    {
+      "id": "voir-la-regularite",
+      "title": "Voir la régularité",
+      "subtitle": "Ce qui revient, encore et encore.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un collier de perles",
+          "body": "Rouge, bleu, rouge, bleu, rouge…\n\nTu sais déjà quelle perle vient après. Pas parce qu'on te l'a dite : parce que tu as vu ce qui se répète."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "À toi de continuer",
+          "body": "Trouve la case cachée. Il y a trois suites différentes.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le motif",
+          "body": "Le petit bout qui se répète s'appelle le motif.\n\nDans « rouge, bleu, rouge, bleu », le motif est « rouge, bleu » : deux perles. Dans « vert, vert, orange, vert, vert, orange », le motif en compte trois."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour trouver le motif, cherche le plus petit bout qui, recopié plusieurs fois, redonne toute la suite."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Une suite régulière répète toujours la même chose.",
+            "Le motif est le bout qui se répète.",
+            "Quand on connaît le motif, on connaît toute la suite."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans « rouge, bleu, rouge, bleu, rouge, bleu », combien de perles compte le motif ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "perles",
+          "hint": "Quel est le plus petit bout qui se répète ?",
+          "explanation": "2 perles : rouge, bleu. Ce bout recopié trois fois redonne toute la suite.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans « vert, vert, orange, vert, vert, orange », combien de cases compte le motif ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "cases",
+          "hint": "Compte jusqu'au moment où ça recommence.",
+          "explanation": "3 cases : vert, vert, orange. Attention, le motif n'est pas « vert, orange » : il y a bien deux verts.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Dans une suite régulière, on peut deviner la case suivante sans qu'on nous la montre.",
+          "answer": true,
+          "explanation": "Oui : c'est justement à cela qu'on reconnaît une régularité. La règle dit ce qui vient après."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Quelle suite n'est pas régulière ?",
+          "hint": "Cherche celle où rien ne se répète.",
+          "explanation": "« rouge, bleu, vert, jaune » : chaque couleur est nouvelle, rien ne revient. Les trois autres répètent un motif.",
+          "options": [
+            { "text": "rouge, bleu, vert, jaune", "correct": true },
+            { "text": "rouge, bleu, rouge, bleu" },
+            { "text": "vert, vert, orange, vert, vert, orange" },
+            { "text": "rond, carré, rond, carré" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aller-plus-loin",
+      "title": "Aller loin sans tout dessiner",
+      "subtitle": "La 20e case, sans compter une par une.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Trop long à dessiner",
+          "body": "On te demande la 20e perle du collier rouge, bleu, rouge, bleu…\n\nTu peux les dessiner toutes les vingt. Mais il y a plus rapide, et c'est ce qui rend les régularités utiles."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Avec un motif de deux",
+          "body": "Les perles impaires (1, 3, 5, 7…) sont rouges.\n\nLes perles paires (2, 4, 6, 8…) sont bleues.\n\n20 est pair, donc la 20e perle est bleue. Sans rien dessiner."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Avec un motif de trois",
+          "body": "Le motif « vert, vert, orange » fait trois cases. On divise le numéro par 3 et on regarde le reste.\n\nReste 1 : vert. Reste 2 : vert. Reste 0 : orange.\n\nPour la 12e case : 12 divisé par 3 fait 4, reste 0. C'est orange."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Le reste de la division dit où l'on tombe dans le motif. C'est la même idée que les jours de la semaine : sept jours, et on recommence."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Collier rouge, bleu, rouge, bleu… De quelle couleur est la 10e perle ?",
+          "hint": "10, c'est pair ou impair ?",
+          "explanation": "Bleue. Les perles paires sont bleues, et 10 est pair.",
+          "figureId": "suite-motifs",
+          "options": [
+            { "text": "Bleue", "correct": true },
+            { "text": "Rouge" },
+            { "text": "On ne peut pas le savoir" },
+            { "text": "Verte" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Suite vert, vert, orange, vert, vert, orange… De quelle couleur est la 10e case ?",
+          "hint": "Divise 10 par 3 et regarde le reste.",
+          "explanation": "Verte. 10 divisé par 3 fait 3, reste 1 : on tombe sur la première case du motif, qui est verte.",
+          "figureId": "suite-motifs",
+          "options": [
+            { "text": "Verte", "correct": true },
+            { "text": "Orange" },
+            { "text": "Rouge" },
+            { "text": "On ne peut pas le savoir" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans les 10 premières perles du collier rouge, bleu, rouge, bleu… combien sont rouges ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "unit": "perles",
+          "hint": "Une perle sur deux.",
+          "explanation": "5 : une perle sur deux est rouge, et la moitié de 10 fait 5.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Collier rouge, bleu, rouge, bleu… Range ces numéros de perles.",
+          "hint": "Les impairs d'un côté, les pairs de l'autre.",
+          "explanation": "Les perles impaires sont rouges, les paires sont bleues. Il suffit de regarder si le numéro est pair.",
+          "categories": ["Perle rouge", "Perle bleue"],
+          "items": [
+            { "text": "la 7e", "category": 0 },
+            { "text": "la 15e", "category": 0 },
+            { "text": "la 8e", "category": 1 },
+            { "text": "la 20e", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suites-qui-grandissent",
+      "title": "Les suites qui grandissent",
+      "subtitle": "Rien ne se répète, et pourtant il y a une règle.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un point de plus",
+          "body": "1 point, puis 2 points, puis 3 points, puis 4…\n\nIci rien ne se répète. Pourtant il y a bien une règle : chaque case a un point de plus que la précédente."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Essaie la troisième suite",
+          "body": "Touche « Une autre suite » jusqu'à celle qui grandit.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Deux sortes de règles",
+          "body": "Une suite qui se répète : on revient toujours aux mêmes cases.\n\nUne suite qui grandit : chaque case est nouvelle, mais on sait comment passer de l'une à l'autre.\n\nDans les deux cas, connaître la règle suffit pour continuer."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Devant une suite nouvelle, pose-toi toujours la même question : qu'est-ce qui change d'une case à la suivante, et de combien ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "1 point, 2 points, 3 points… Combien de points dans la 7e case ?",
+          "answer": 7,
+          "tolerance": 0.01,
+          "unit": "points",
+          "hint": "Le numéro de la case.",
+          "explanation": "7 points. Dans cette suite, chaque case a autant de points que son numéro.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette même suite, combien de points en tout dans les 6 premières cases ?",
+          "answer": 21,
+          "tolerance": 0.01,
+          "unit": "points",
+          "hint": "1 + 2 + 3 + 4 + 5 + 6.",
+          "explanation": "21 points. En rangeant les cases par paires, 1 avec 6, 2 avec 5, 3 avec 4, on obtient trois paquets de 7.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets ces cases dans l'ordre de la suite qui grandit.",
+          "explanation": "Chaque case a un point de plus que la précédente : 2, puis 3, puis 4, puis 5.",
+          "items": [
+            "2 points",
+            "3 points",
+            "4 points",
+            "5 points"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Suite : 2, 4, 6, 8… Quelle est la règle ?",
+          "hint": "Regarde ce qu'on ajoute à chaque fois.",
+          "explanation": "On ajoute 2 à chaque fois. Ce sont les nombres pairs, dans l'ordre.",
+          "options": [
+            { "text": "On ajoute 2 à chaque fois", "correct": true },
+            { "text": "On double à chaque fois" },
+            { "text": "On ajoute 1 à chaque fois" },
+            { "text": "Il n'y a pas de règle" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-regularites",
+      "title": "Défi : trouve la règle",
+      "subtitle": "Six suites, six règles.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque suite, demande-toi d'abord : est-ce qu'elle se répète, ou est-ce qu'elle grandit ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces suites selon leur sorte.",
+          "hint": "Est-ce que les mêmes cases reviennent ?",
+          "explanation": "Les deux premières reviennent toujours aux mêmes cases. Les deux autres ne repassent jamais par la même : elles grandissent.",
+          "categories": ["Elle se répète", "Elle grandit"],
+          "items": [
+            { "text": "rouge, bleu, rouge, bleu", "category": 0 },
+            { "text": "rond, rond, carré, rond, rond, carré", "category": 0 },
+            { "text": "1, 2, 3, 4, 5", "category": 1 },
+            { "text": "2, 4, 6, 8, 10", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Collier rouge, bleu, rouge, bleu… De quelle couleur est la 21e perle ?",
+          "hint": "21 est impair.",
+          "explanation": "Rouge. Les perles impaires sont rouges, et 21 est impair.",
+          "figureId": "suite-motifs",
+          "options": [
+            { "text": "Rouge", "correct": true },
+            { "text": "Bleue" },
+            { "text": "Verte" },
+            { "text": "On ne peut pas le savoir" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Suite vert, vert, orange… De quelle couleur est la 15e case ?",
+          "hint": "15 divisé par 3 tombe juste.",
+          "explanation": "Orange. 15 divisé par 3 fait 5, reste 0 : on tombe sur la dernière case du motif, qui est orange.",
+          "figureId": "suite-motifs",
+          "options": [
+            { "text": "Orange", "correct": true },
+            { "text": "Verte" },
+            { "text": "Rouge" },
+            { "text": "Bleue" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Suite : 3, 6, 9, 12… Quel est le nombre suivant ?",
+          "answer": 15,
+          "tolerance": 0.01,
+          "hint": "On ajoute toujours la même chose.",
+          "explanation": "15 : on ajoute 3 à chaque fois. Ce sont les nombres de la table de 3.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Suite : 1, 2, 4, 8, 16… Quel est le nombre suivant ?",
+          "answer": 32,
+          "tolerance": 0.01,
+          "hint": "Ici on n'ajoute pas : on double.",
+          "explanation": "32 : chaque nombre est le double du précédent. Cette suite grandit beaucoup plus vite que la table de 3.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Une suite qui grandit ne repasse jamais deux fois par la même case.",
+          "answer": true,
+          "explanation": "Oui : puisqu'elle augmente à chaque fois, elle ne peut pas revenir en arrière. C'est ce qui la distingue d'une suite qui se répète."
+        }
+      ]
+    }
+  ]
+}

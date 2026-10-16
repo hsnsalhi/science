@@ -23,6 +23,7 @@ import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
+import 'package:eureka/design_system/figures/pattern_figure.dart';
 import 'package:eureka/design_system/figures/projectile_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
 import 'package:eureka/design_system/figures/sequence_figure.dart';
@@ -3898,6 +3899,161 @@ void main() {
               as MatchingQuestion;
       for (final MatchPair pair in q.pairs) {
         expect(face[pair.left], pair.right, reason: pair.left);
+      }
+    });
+  });
+
+
+  group('Chapitre complet : suites et régularités', () {
+    late Chapter regularites;
+
+    setUpAll(() {
+      regularites =
+          catalog.chapterById('logique-primaire-suites-et-regularites')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q =
+          regularites.lessonById(lessonId)!.questions.firstWhere(
+                (Question x) => x.id == questionId,
+              );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// La couleur annoncée par la bonne réponse d'un QCM.
+    String bonneReponse(String lessonId, String questionId) {
+      final SingleChoiceQuestion q =
+          regularites.lessonById(lessonId)!.questions.firstWhere(
+                (Question x) => x.id == questionId,
+              )
+              as SingleChoiceQuestion;
+      return q.options
+          .firstWhere((AnswerOption o) => o.isCorrect)
+          .text
+          .toLowerCase();
+    }
+
+    /// Traduit « rond-bleu » en « bleue », tel que l'énoncé le dit.
+    const Map<String, String> accordees = <String, String>{
+      'rouge': 'rouge',
+      'bleu': 'bleue',
+      'vert': 'verte',
+      'orange': 'orange',
+    };
+    String couleur(String element) => accordees[element.split('-').last]!;
+
+    test('est jouable de bout en bout', () {
+      expect(regularites.isPlayable, isTrue);
+      expect(regularites.lessons.length, 4);
+    });
+
+    test('les motifs annoncés ont la longueur annoncée', () {
+      expect(
+        reponseNum('voir-la-regularite', 'q1'),
+        PatternFigure.periode(0),
+      );
+      expect(
+        reponseNum('voir-la-regularite', 'q2'),
+        PatternFigure.periode(1),
+      );
+      // La suite croissante n'a pas de motif : elle ne reboucle jamais.
+      expect(PatternFigure.periode(PatternFigure.croissante), 0);
+    });
+
+    test('les couleurs lointaines se recalculent sur la figure', () {
+      // Les énoncés comptent les perles à partir de 1, la figure à partir
+      // de 0 : c'est le décalage le plus facile à rater, donc on le rejoue.
+      expect(
+        bonneReponse('aller-plus-loin', 'q1'),
+        couleur(PatternFigure.element(0, 9)),
+      );
+      expect(
+        bonneReponse('defi-regularites', 'q2'),
+        couleur(PatternFigure.element(0, 20)),
+      );
+      expect(
+        bonneReponse('aller-plus-loin', 'q2'),
+        couleur(PatternFigure.element(1, 9)),
+      );
+      expect(
+        bonneReponse('defi-regularites', 'q3'),
+        couleur(PatternFigure.element(1, 14)),
+      );
+    });
+
+    test('le tri des perles rouges et bleues est exact', () {
+      final ClassifyQuestion q =
+          regularites.lessonById('aller-plus-loin')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        // « la 15e » → 15.
+        final int rang = int.parse(
+          RegExp(r'\d+').firstMatch(item.text)!.group(0)!,
+        );
+        final String attendu = PatternFigure.element(0, rang - 1);
+        expect(
+          item.category,
+          attendu == 'rond-rouge' ? 0 : 1,
+          reason: '${item.text} : $attendu',
+        );
+      }
+    });
+
+    test('les comptes de perles et de points sont recalculés', () {
+      final int rouges = <int>[
+        for (int i = 0; i < 10; i++) i,
+      ].where((int i) => PatternFigure.element(0, i) == 'rond-rouge').length;
+      expect(reponseNum('aller-plus-loin', 'q3'), rouges);
+
+      // La 7e case de la suite croissante porte sept points.
+      final int septieme = int.parse(
+        PatternFigure.element(PatternFigure.croissante, 6).split('-').last,
+      );
+      expect(reponseNum('suites-qui-grandissent', 'q1'), septieme);
+
+      int total = 0;
+      for (int i = 0; i < 6; i++) {
+        total += int.parse(
+          PatternFigure.element(PatternFigure.croissante, i).split('-').last,
+        );
+      }
+      expect(reponseNum('suites-qui-grandissent', 'q2'), total);
+    });
+
+    test('les propositions de la figure sont jouables', () {
+      // Trois choix distincts, dont la bonne réponse : sans cela l'élève
+      // tomberait juste par hasard, ou verrait deux cases identiques.
+      for (int suite = 0; suite < PatternFigure.motifs.length; suite++) {
+        for (int position = 0; position < 12; position++) {
+          final List<String> choix =
+              PatternFigure.propositions(suite, position);
+          expect(choix, hasLength(3), reason: 'suite $suite, case $position');
+          expect(choix.toSet(), hasLength(3), reason: 'doublon');
+          expect(choix, contains(PatternFigure.element(suite, position)));
+        }
+      }
+    });
+
+    test('les suites périodiques rebouclent, la croissante jamais', () {
+      for (int suite = 0; suite < 2; suite++) {
+        final int periode = PatternFigure.periode(suite);
+        for (int position = 0; position < 20; position++) {
+          expect(
+            PatternFigure.element(suite, position),
+            PatternFigure.element(suite, position + periode),
+            reason: 'suite $suite, case $position',
+          );
+        }
+      }
+      final Set<String> vues = <String>{};
+      for (int position = 0; position < 20; position++) {
+        final String element =
+            PatternFigure.element(PatternFigure.croissante, position);
+        expect(vues.add(element), isTrue, reason: '$element revient');
       }
     });
   });

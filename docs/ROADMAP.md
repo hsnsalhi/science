@@ -1,8 +1,8 @@
 # Feuille de route
 
-Le socle technique est posé, et trente-quatre chapitres sont jouables — au
+Le socle technique est posé, et trente-cinq chapitres sont jouables — au
 moins un par matière et par niveau. La répartition est désormais la vraie
-question : 21 chapitres au collège contre 6 au primaire, 6 au lycée et 1 à
+question : 21 chapitres au collège contre 7 au primaire, 6 au lycée et 1 à
 l'université. La suite se joue surtout sur le **contenu**, et sur un petit
 nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 étoffé.
@@ -13,12 +13,12 @@ nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 
 L'ordre proposé suit l'utilité pour un élève, pas la facilité d'écriture.
 
-1. **Le primaire**, resté à six chapitres pendant que le collège en gagnait
-   quinze. C'est le niveau où une suite tenue de dix chapitres change le plus
+1. **Le primaire**, resté à sept chapitres pendant que le collège en
+   gagnait quinze. C'est le niveau où une suite tenue de dix chapitres change le plus
    l'usage, et celui où l'écriture est la plus exigeante : moins de texte,
    plus de manipulation.
 2. **Les matières les plus maigres** : technologie et histoire des sciences
-   n'ont que deux chapitres chacune, la logique trois.
+   n'ont que deux chapitres chacune.
 3. **Le lycée et l'université**, où chaque chapitre demande plus de travail
    d'écriture et souvent une figure neuve. L'université n'en a qu'un.
 
@@ -32,7 +32,7 @@ Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 | **Rendu LaTeX** | Les formules Unicode suffisent jusqu'au lycée. Le supérieur (intégrales, matrices, sommes) en aura besoin : à faire en même temps que les premiers chapitres universitaires. |
 | **Éditeur de code embarqué** | Pour l'informatique au lycée : exécuter un petit programme Python dans l'application. Techniquement le plus gros morceau restant. |
 | **Sons** | Un retour sonore court sur bonne réponse, désactivable. Volontairement repoussé : mal fait, c'est pire que rien. |
-| **Plus de figures interactives** | Trente-deux existent ; le circuit, la cellule et la parabole sont faits. Restent la balance chimique, le repère orthonormé et une figure de géométrie dans l'espace. Chaque figure sert plusieurs chapitres. |
+| **Plus de figures interactives** | Trente-trois existent ; le circuit, la cellule et la parabole sont faits. Restent la balance chimique, le repère orthonormé et une figure de géométrie dans l'espace. Chaque figure sert plusieurs chapitres. |
 | **Icône et écran de lancement** | À produire avant toute mise en ligne sur les stores. |
 
 ## Long terme — ce qui demande une décision
