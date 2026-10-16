@@ -20,6 +20,7 @@ import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
+import 'package:eureka/design_system/figures/seasons_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/design_system/figures/states_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
@@ -2472,6 +2473,138 @@ void main() {
       expect(intensite(10, 50), closeTo(reponseNum('defi-electricite', 'q4'), 1e-9));
       // Et les deux formes doivent se répondre.
       expect(intensite(tension(20, 0.3), 20), closeTo(0.3, 1e-9));
+    });
+  });
+
+  group('Chapitre complet : les saisons et l’inclinaison', () {
+    late Chapter saisons;
+
+    setUpAll(() {
+      saisons = catalog.chapterById(
+        'astronomie-college-les-saisons-et-l-inclinaison',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = saisons.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(saisons.isPlayable, isTrue);
+      expect(saisons.lessons.length, 4);
+    });
+
+    test('l’inclinaison et le cercle polaire s’accordent', () {
+      expect(
+        SeasonsFigure.inclinaison,
+        closeTo(reponseNum('pas-une-question-de-distance', 'q4'), 1),
+      );
+      // Le cercle polaire est à 90° moins l'inclinaison : le chapitre
+      // l'annonce comme une conséquence, pas comme une coïncidence.
+      expect(
+        90 - SeasonsFigure.inclinaison,
+        closeTo(reponseNum('la-duree-du-jour', 'q2'), 0.1),
+      );
+    });
+
+    test('les durées de jour annoncées sortent du calcul', () {
+      // « À la mi-juin » et « à la mi-décembre » : 5,5 et 11,5 mois
+      // écoulés depuis le 1er janvier.
+      expect(
+        SeasonsFigure.dureeDuJour(5.5),
+        closeTo(reponseNum('la-duree-du-jour', 'q1'), 0.2),
+      );
+      expect(
+        SeasonsFigure.dureeDuJour(11.5),
+        closeTo(reponseNum('defi-saisons', 'q3'), 0.2),
+      );
+      // Aux équinoxes, douze heures partout.
+      for (final double latitude in <double>[0, 20, 48.85, 65]) {
+        expect(
+          SeasonsFigure.dureeDuJour(
+            SeasonsFigure.solsticeJuin - 3,
+            latitude: latitude,
+          ),
+          closeTo(12, 0.05),
+          reason: 'équinoxe de mars à $latitude°',
+        );
+        expect(
+          SeasonsFigure.dureeDuJour(
+            SeasonsFigure.solsticeJuin + 3,
+            latitude: latitude,
+          ),
+          closeTo(12, 0.05),
+          reason: 'équinoxe de septembre à $latitude°',
+        );
+      }
+    });
+
+    test('l’équateur ne connaît pas de saison de durée', () {
+      // Le chapitre affirme que le jour y dure douze heures toute
+      // l'année : on parcourt les douze mois plutôt que de le croire.
+      for (int m = 0; m <= 12; m++) {
+        expect(
+          SeasonsFigure.dureeDuJour(m.toDouble(), latitude: 0),
+          closeTo(12, 0.05),
+          reason: 'mois $m',
+        );
+      }
+    });
+
+    test('au-delà du cercle polaire, le Soleil ne se couche plus', () {
+      expect(SeasonsFigure.dureeDuJour(5.69, latitude: 70), 24);
+      expect(SeasonsFigure.dureeDuJour(11.69, latitude: 70), 0);
+      // Et juste en dessous de la limite, le jour reste fini.
+      expect(SeasonsFigure.dureeDuJour(5.69, latitude: 60), lessThan(24));
+    });
+
+    test('les deux hémisphères ont toujours des saisons opposées', () {
+      const Map<String, String> opposees = <String, String>{
+        'hiver': 'été',
+        'été': 'hiver',
+        'printemps': 'automne',
+        'automne': 'printemps',
+      };
+      for (int m = 0; m < 12; m++) {
+        final String nord = SeasonsFigure.saisonNord(m.toDouble());
+        expect(
+          SeasonsFigure.saisonSud(m.toDouble()),
+          opposees[nord],
+          reason: 'mois $m',
+        );
+      }
+    });
+
+    test('le tri des mois suit la saison calculée', () {
+      final ClassifyQuestion q =
+          saisons.lessonById('defi-saisons')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final int index = SeasonsFigure.mois.indexOf(item.text);
+        expect(index, isNot(-1), reason: '${item.text} inconnu');
+        // On se place au milieu du mois.
+        final String saison = SeasonsFigure.saisonNord(index + 0.5);
+        expect(
+          item.category == 0,
+          saison == 'été',
+          reason: '${item.text} est en $saison au nord',
+        );
+      }
+    });
+
+    test('le jour est bien plus long en juin qu’en décembre, à Paris', () {
+      final double juin = SeasonsFigure.dureeDuJour(5.5);
+      final double decembre = SeasonsFigure.dureeDuJour(11.5);
+      expect(juin, greaterThan(decembre));
+      // Le chapitre annonce un écart d'environ huit heures.
+      expect(juin - decembre, closeTo(8, 1));
     });
   });
 }

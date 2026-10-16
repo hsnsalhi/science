@@ -1,0 +1,351 @@
+{
+  "chapter": "astronomie-college-les-saisons-et-l-inclinaison",
+  "lessons": [
+    {
+      "id": "pas-une-question-de-distance",
+      "title": "Ce n'est pas une question de distance",
+      "subtitle": "L'erreur la mieux partagée.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La réponse spontanée",
+          "body": "Interrogés sur la cause des saisons, la plupart des gens répondent que la Terre est plus proche du Soleil en été.\n\nC'est faux, et deux faits suffisent à le montrer."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Deux objections",
+          "body": "Quand c'est l'été en France, c'est l'hiver en Argentine. Or les deux pays sont à la même distance du Soleil au même instant.\n\nEt la Terre est en réalité au plus près du Soleil début janvier — en plein hiver de l'hémisphère nord."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Regarde l'axe",
+          "body": "Fais passer l'année : l'orbite est presque circulaire, et l'axe garde la même direction.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "L'orbite est presque un cercle",
+          "body": "L'écart entre le point le plus proche et le plus éloigné est d'environ 3 %. Une variation si faible ne peut pas produire des étés et des hivers.\n\nLes schémas de manuels dessinent souvent une orbite très allongée, pour des raisons de place : c'est ce dessin qui installe l'erreur."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Les saisons ne viennent pas de la distance au Soleil.",
+            "Les deux hémisphères ont des saisons opposées.",
+            "L'orbite terrestre est presque circulaire."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quand c'est l'été en France, quelle saison est-il en Argentine ?",
+          "hint": "L'Argentine est dans l'hémisphère sud.",
+          "explanation": "L'hiver. Les deux pays sont à la même distance du Soleil : seule l'inclinaison de l'axe explique cette opposition.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "L'hiver", "correct": true },
+            { "text": "L'été aussi" },
+            { "text": "Le printemps" },
+            { "text": "Cela dépend des années" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "La Terre est plus proche du Soleil en juillet qu'en janvier.",
+          "answer": false,
+          "explanation": "C'est l'inverse : la Terre passe au plus près du Soleil début janvier. L'hémisphère nord y est pourtant en plein hiver."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces affirmations.",
+          "hint": "Une seule cause explique les saisons.",
+          "explanation": "L'inclinaison de l'axe et l'opposition des hémisphères sont justes. La distance au Soleil ne change que de 3 %, et elle est minimale en janvier.",
+          "categories": ["Vrai", "Faux"],
+          "items": [
+            { "text": "L'axe de la Terre est incliné", "category": 0 },
+            { "text": "Les deux hémisphères ont des saisons opposées", "category": 0 },
+            { "text": "La Terre est bien plus proche du Soleil en été", "category": 1 },
+            { "text": "L'orbite terrestre est très allongée", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "De combien de degrés l'axe de rotation de la Terre est-il incliné, à l'unité près ?",
+          "answer": 23,
+          "tolerance": 1,
+          "unit": "degrés",
+          "hint": "Un peu plus de 23 degrés.",
+          "explanation": "Environ 23,4°. C'est cette inclinaison, et elle seule, qui donne les saisons.",
+          "figureId": "saisons"
+        }
+      ]
+    },
+    {
+      "id": "l-inclinaison-explique-tout",
+      "title": "L'inclinaison explique tout",
+      "subtitle": "Un axe qui ne bouge pas, une Terre qui tourne autour.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'axe garde sa direction",
+          "body": "L'axe de rotation de la Terre reste pointé dans la même direction tout au long de l'année — vers l'étoile Polaire.\n\nComme la Terre fait le tour du Soleil, cet axe penche tantôt vers le Soleil, tantôt à l'opposé."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Suis l'axe",
+          "body": "Les quatre Terres pâles montrent les positions remarquables : l'axe y pointe toujours au même endroit.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Deux effets qui s'ajoutent",
+          "body": "Quand l'hémisphère nord penche vers le Soleil, les rayons y arrivent plus verticalement : la même quantité de lumière se répartit sur une plus petite surface, donc chauffe davantage.\n\nEt le jour y dure plus longtemps : le Soleil reste plus de temps au-dessus de l'horizon. Les deux effets vont dans le même sens."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Solstices et équinoxes",
+          "body": "Au solstice de juin, le jour est le plus long au nord ; au solstice de décembre, le plus court.\n\nAux deux équinoxes, en mars et en septembre, le jour et la nuit durent douze heures partout sur Terre."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "L'axe garde une direction fixe dans l'espace.",
+            "Rayons plus verticaux et jours plus longs vont ensemble.",
+            "Aux équinoxes, jour et nuit durent douze heures."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les rayons du Soleil chauffent-ils davantage quand ils arrivent verticalement ?",
+          "hint": "Pense à la surface éclairée.",
+          "explanation": "Parce que la même quantité de lumière se répartit sur une surface plus petite. En rasant le sol, elle s'étale et chauffe moins.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "La lumière se répartit sur une surface plus petite", "correct": true },
+            { "text": "Les rayons vont plus vite" },
+            { "text": "Le Soleil est plus proche" },
+            { "text": "L'atmosphère disparaît" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Aux équinoxes, combien d'heures dure le jour ?",
+          "answer": 12,
+          "tolerance": 0.3,
+          "unit": "heures",
+          "hint": "Jour et nuit sont égaux.",
+          "explanation": "12 heures, partout sur Terre. C'est le sens du mot équinoxe : nuit égale.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque moment de l'année à ce qu'il apporte dans l'hémisphère nord.",
+          "explanation": "Le solstice de juin donne le jour le plus long, celui de décembre le plus court, et les équinoxes des jours égaux aux nuits.",
+          "pairs": [
+            { "left": "Solstice de juin", "right": "Le jour le plus long" },
+            { "left": "Solstice de décembre", "right": "Le jour le plus court" },
+            { "left": "Équinoxe de mars", "right": "Jour et nuit égaux" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "L'axe de la Terre se redresse en été et se penche en hiver.",
+          "answer": false,
+          "explanation": "Non : l'axe garde la même direction toute l'année. C'est la position de la Terre sur son orbite qui change, pas l'inclinaison."
+        }
+      ]
+    },
+    {
+      "id": "la-duree-du-jour",
+      "title": "La durée du jour",
+      "subtitle": "Elle se calcule, et elle dépend de la latitude.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Lis la durée",
+          "body": "Fais varier le mois : la durée du jour à Paris est affichée sous le dessin.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Plus on monte vers le nord, plus l'écart est grand",
+          "body": "À l'équateur, le jour dure environ douze heures toute l'année.\n\nÀ Paris, il varie d'environ huit heures en décembre à seize heures en juin.\n\nAu-delà du cercle polaire, le Soleil ne se couche pas du tout pendant une partie de l'été, et ne se lève pas en hiver."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le soleil de minuit",
+          "body": "Le cercle polaire arctique est à 66,6° de latitude, soit 90° − 23,4°.\n\nCe n'est pas une coïncidence : c'est exactement la limite au-delà de laquelle l'inclinaison suffit à garder un point dans la lumière pendant tout un tour de la Terre."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Les saisons sont décalées par rapport au maximum d'ensoleillement : le mois le plus chaud n'est pas juin mais juillet ou août. Les sols et les océans mettent des semaines à se réchauffer."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "estimation",
+          "prompt": "Combien d'heures dure le jour à Paris à la mi-juin ?",
+          "min": 8,
+          "max": 24,
+          "answer": 15.9,
+          "tolerance": 1.2,
+          "unit": "heures",
+          "explanation": "Environ 16 heures. À la mi-décembre, il n'en dure que huit : l'écart atteint huit heures à cette latitude.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle latitude, en degrés, se trouve le cercle polaire arctique ?",
+          "answer": 66.6,
+          "tolerance": 1,
+          "unit": "degrés",
+          "hint": "90 moins l'inclinaison de l'axe.",
+          "explanation": "66,6°, soit 90 − 23,4. C'est la limite du soleil de minuit, et elle découle directement de l'inclinaison."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Comment varie la durée du jour à l'équateur au cours de l'année ?",
+          "hint": "L'équateur est à mi-chemin des deux pôles.",
+          "explanation": "Elle reste proche de douze heures toute l'année. L'inclinaison ne favorise aucune des deux moitiés vues de l'équateur.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "Elle reste proche de douze heures", "correct": true },
+            { "text": "Elle varie de six à dix-huit heures" },
+            { "text": "Elle est toujours de vingt-quatre heures" },
+            { "text": "Elle suit les saisons comme à Paris" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le mois le plus chaud de l'année est celui où le jour est le plus long.",
+          "answer": false,
+          "explanation": "Non. Le jour le plus long tombe en juin, mais juillet et août sont plus chauds : les sols et les mers mettent des semaines à accumuler la chaleur."
+        }
+      ]
+    },
+    {
+      "id": "defi-saisons",
+      "title": "Défi : les saisons",
+      "subtitle": "Six questions, axe en tête.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Rappelle-toi : l'axe ne bouge pas, c'est la Terre qui se déplace autour du Soleil."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la cause des saisons ?",
+          "hint": "Une seule bonne réponse, et ce n'est pas la distance.",
+          "explanation": "L'inclinaison de l'axe de rotation. Elle change à la fois la hauteur du Soleil et la durée du jour.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "L'inclinaison de l'axe de rotation", "correct": true },
+            { "text": "La distance au Soleil" },
+            { "text": "La vitesse de la Terre" },
+            { "text": "L'activité du Soleil" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces mois selon la saison dans l'hémisphère nord.",
+          "explanation": "Juillet et août sont en été au nord ; janvier et février en hiver. Dans l'hémisphère sud, c'est exactement l'inverse.",
+          "categories": ["Été au nord", "Hiver au nord"],
+          "items": [
+            { "text": "juillet", "category": 0 },
+            { "text": "août", "category": 0 },
+            { "text": "janvier", "category": 1 },
+            { "text": "février", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien d'heures dure environ le jour à Paris à la mi-décembre ?",
+          "answer": 8.1,
+          "tolerance": 1,
+          "unit": "heures",
+          "hint": "Un peu plus de huit heures.",
+          "explanation": "Environ huit heures. Le Soleil se lève tard et se couche tôt, et reste bas dans le ciel.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Au pôle Nord, le Soleil ne se couche pas pendant plusieurs mois d'été.",
+          "answer": true,
+          "explanation": "Oui. Au-delà du cercle polaire, l'inclinaison suffit à garder le point éclairé pendant tout un tour de la Terre, et au pôle même cela dure six mois."
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Le 21 mars, que vaut la durée du jour à Paris ?",
+          "hint": "C'est un équinoxe.",
+          "explanation": "Environ douze heures. Aux équinoxes, le jour et la nuit se partagent la journée à parts égales, à toutes les latitudes.",
+          "figureId": "saisons",
+          "options": [
+            { "text": "Environ douze heures", "correct": true },
+            { "text": "Environ huit heures" },
+            { "text": "Environ seize heures" },
+            { "text": "Vingt-quatre heures" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Si l'axe de la Terre n'était pas incliné, il n'y aurait pas de saisons.",
+          "answer": true,
+          "explanation": "Oui. Le Soleil éclairerait les deux hémisphères de la même façon toute l'année, et la durée du jour ne changerait pas."
+        }
+      ]
+    }
+  ]
+}

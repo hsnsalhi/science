@@ -757,6 +757,21 @@ void main() {
         await shoot(tester, '$device-31-circuit');
       });
 
+      // Les saisons, prises au solstice de juin : l'hémisphère nord
+      // penché vers le Soleil, et la durée du jour au maximum.
+      testWidgets('astronomie : les saisons', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Les saisons et l\'inclinaison de l\'axe');
+        await tapText(tester, 'Ce n\'est pas une question de distance');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-32-saisons');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

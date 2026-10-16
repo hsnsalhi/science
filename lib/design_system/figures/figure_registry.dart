@@ -23,6 +23,7 @@ import 'parabola_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
+import 'seasons_figure.dart';
 import 'solar_system_figure.dart';
 import 'speed_figure.dart';
 import 'states_figure.dart';
@@ -88,6 +89,9 @@ abstract final class FigureRegistry {
     // Deux lampes, en série ou en dérivation, et une à dévisser.
     'circuit': (BuildContext context, Color accent) =>
         CircuitFigure(accent: accent),
+    // La Terre sur son orbite, axe penché, et la durée du jour.
+    'saisons': (BuildContext context, Color accent) =>
+        SeasonsFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),
