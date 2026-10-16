@@ -624,6 +624,23 @@ void main() {
         await shoot(tester, '$device-24-complexite');
       });
 
+      // Les états de la matière : la capture prend l'état liquide, le
+      // seul où l'on voit à la fois la surface libre et le désordre des
+      // particules.
+      testWidgets('physique : les états de la matière', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Physique-chimie');
+        await tapText(tester, 'États et constitution de la matière');
+        await tapText(tester, 'Trois états, une seule matière');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-25-etats');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

@@ -19,6 +19,7 @@ import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
 import 'solar_system_figure.dart';
 import 'speed_figure.dart';
+import 'states_figure.dart';
 import 'thales_figure.dart';
 import 'truth_table_figure.dart';
 import 'triangle_test_figure.dart';
@@ -60,6 +61,9 @@ abstract final class FigureRegistry {
     // Cinq courbes de coût, et le temps que cela ferait.
     'complexite': (BuildContext context, Color accent) =>
         ComplexityFigure(accent: accent),
+    // Un thermomètre, une boîte, et les particules qui se rangent.
+    'etats-matiere': (BuildContext context, Color accent) =>
+        StatesFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

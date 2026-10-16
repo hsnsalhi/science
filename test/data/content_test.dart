@@ -15,6 +15,7 @@ import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
+import 'package:eureka/design_system/figures/states_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
 import 'package:eureka/domain/models/lesson.dart';
@@ -1482,6 +1483,91 @@ void main() {
           ComplexityFigure.secondes(Complexite.exponentielle.operations(60)) /
               31557600;
       expect(ans, closeTo(36.5, 1.5));
+    });
+  });
+
+  group('Chapitre complet : états et constitution de la matière', () {
+    late Chapter matiere;
+
+    setUpAll(() {
+      matiere = catalog.chapterById(
+        'physique-chimie-college-etats-et-constitution-de-la-matiere',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (matiere.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(matiere.isPlayable, isTrue);
+      expect(matiere.lessons.length, 4);
+    });
+
+    test('les seuils annoncés sont ceux de la figure', () {
+      expect(
+        reponseNum('changements-d-etat', 'q2'),
+        StatesFigure.ebullition,
+      );
+      expect(reponseNum('defi-matiere', 'q2'), StatesFigure.fusion);
+    });
+
+    test('la figure change d’état exactement aux seuils annoncés', () {
+      // Juste en dessous et juste au-dessus : c'est là que se jouent les
+      // deux questions du chapitre, et une inégalité large prise pour
+      // stricte ferait mentir le thermomètre.
+      expect(StatesFigure.etat(-0.1), EtatMatiere.solide);
+      expect(StatesFigure.etat(0), EtatMatiere.liquide);
+      expect(StatesFigure.etat(99.9), EtatMatiere.liquide);
+      expect(StatesFigure.etat(100), EtatMatiere.gaz);
+    });
+
+    test('les masses annoncées suivent la masse volumique de l’eau', () {
+      // 1 g par cm³, et 1 kg par litre : c'est la même chose écrite
+      // autrement, et les quatre énoncés doivent s'y tenir.
+      const double gParCm3 = 1;
+      expect(250 * gParCm3, reponseNum('masse-et-volume', 'q1'));
+      expect(3 * gParCm3, reponseNum('masse-et-volume', 'q4'));
+      expect(20 + 500 * gParCm3, reponseNum('defi-matiere', 'q5'));
+      // Conservation de la masse : ce qui entre au congélateur en
+      // ressort au gramme près.
+      expect(reponseNum('masse-et-volume', 'q2'), 200);
+    });
+
+    test('le tri des changements d’état suit le sens du chauffage', () {
+      // Chauffer fait passer vers un état plus désordonné : on le
+      // revérifie sur le thermomètre de la figure plutôt que sur une
+      // liste de noms.
+      final Map<String, (double, double)> passages = <String, (double, double)>{
+        'Fusion': (-10, 20),
+        'Vaporisation': (20, 120),
+        'Solidification': (20, -10),
+        'Liquéfaction': (120, 20),
+      };
+      final ClassifyQuestion q =
+          matiere.lessonById('defi-matiere')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final (double, double)? passage = passages[item.text];
+        expect(passage, isNotNull, reason: '${item.text} inconnu');
+        final bool onChauffe = passage!.$2 > passage.$1;
+        expect(
+          item.category == 0,
+          onChauffe,
+          reason: '${item.text} est mal rangé',
+        );
+        // Et le passage doit bien faire changer d'état.
+        expect(
+          StatesFigure.etat(passage.$1),
+          isNot(StatesFigure.etat(passage.$2)),
+          reason: '${item.text} ne change pas d’état',
+        );
+      }
     });
   });
 }

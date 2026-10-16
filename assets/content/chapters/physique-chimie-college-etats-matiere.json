@@ -1,0 +1,343 @@
+{
+  "chapter": "physique-chimie-college-etats-et-constitution-de-la-matiere",
+  "lessons": [
+    {
+      "id": "trois-etats",
+      "title": "Trois états, une seule matière",
+      "subtitle": "Ce qui change, et ce qui ne change pas.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Reconnaître un état",
+          "body": "Un solide a une forme propre : il la garde quand on le pose ailleurs.\n\nUn liquide a un volume propre mais prend la forme du récipient, et sa surface libre reste horizontale.\n\nUn gaz n'a ni forme ni volume propres : il occupe tout l'espace qu'on lui laisse."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Chauffe et refroidis",
+          "body": "Déplace la température et regarde comment les particules se rangent.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le modèle particulaire",
+          "body": "Toute matière est faite de particules bien trop petites pour être vues.\n\nDans un solide, elles sont rangées et serrées, et ne font que vibrer sur place. Dans un liquide, elles restent au contact mais glissent les unes sur les autres. Dans un gaz, elles sont très éloignées et vont vite."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Les particules elles-mêmes ne grossissent pas quand on chauffe. C'est l'espace entre elles qui change : cela suffit à expliquer qu'un gaz occupe bien plus de place que le liquide dont il vient."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Solide : forme propre. Liquide : volume propre. Gaz : ni l'un ni l'autre.",
+            "Les particules sont rangées, puis glissantes, puis dispersées.",
+            "Le nombre de particules ne change jamais."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces propriétés selon l'état qu'elles décrivent.",
+          "hint": "Pense au récipient : la matière en prend-elle la forme ?",
+          "explanation": "Un solide garde sa forme et ses particules sont rangées. Un gaz occupe tout le volume disponible, et ses particules sont très éloignées les unes des autres.",
+          "categories": ["Solide", "Gaz"],
+          "items": [
+            { "text": "Garde sa forme", "category": 0 },
+            { "text": "Particules rangées et serrées", "category": 0 },
+            { "text": "Occupe tout le volume disponible", "category": 1 },
+            { "text": "Particules très éloignées", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui distingue un liquide d'un gaz ?",
+          "hint": "Les deux prennent la forme du récipient.",
+          "explanation": "Le liquide a un volume propre : un litre d'eau reste un litre quel que soit le récipient. Un gaz, lui, se répand dans tout l'espace offert.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "Le liquide a un volume propre, pas le gaz", "correct": true },
+            { "text": "Le liquide a une forme propre, pas le gaz" },
+            { "text": "Le gaz n'est pas fait de particules" },
+            { "text": "Le gaz ne pèse rien" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Quand de la glace fond, une partie de la matière disparaît.",
+          "answer": false,
+          "explanation": "Non. Les mêmes particules sont toujours là, simplement rangées autrement. La masse ne change pas lors d'un changement d'état."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un gaz est pesant.",
+          "answer": true,
+          "explanation": "Oui. Un ballon gonflé est plus lourd que le même ballon vide, et la balance le montre. Un gaz est de la matière, donc il a une masse."
+        }
+      ]
+    },
+    {
+      "id": "changements-d-etat",
+      "title": "Les changements d'état",
+      "subtitle": "Six passages, six noms.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Du solide au gaz",
+          "body": "Fusion : du solide au liquide.\n\nVaporisation : du liquide au gaz.\n\nSublimation : du solide directement au gaz, sans passer par le liquide — c'est ce que fait la neige carbonique."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Et dans l'autre sens",
+          "body": "Solidification : du liquide au solide.\n\nLiquéfaction : du gaz au liquide — c'est la buée sur une vitre froide.\n\nCondensation : du gaz directement au solide, comme le givre."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Repère les seuils",
+          "body": "Les deux traits sur le thermomètre marquent 0 °C et 100 °C.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "La température ne bouge plus",
+          "body": "Pendant que la glace fond, on continue de chauffer et pourtant le thermomètre reste bloqué à 0 °C.\n\nL'énergie apportée ne sert pas à élever la température : elle sert à défaire l'arrangement des particules. La température ne remonte qu'une fois toute la glace fondue."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Fusion, vaporisation, sublimation en chauffant.",
+            "Solidification, liquéfaction, condensation en refroidissant.",
+            "Pendant un changement d'état, la température reste constante."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque changement d'état à son nom.",
+          "explanation": "Du solide au liquide, c'est la fusion. Du liquide au gaz, la vaporisation. Du gaz au liquide, la liquéfaction. Du liquide au solide, la solidification.",
+          "pairs": [
+            { "left": "Solide → liquide", "right": "Fusion" },
+            { "left": "Liquide → gaz", "right": "Vaporisation" },
+            { "left": "Gaz → liquide", "right": "Liquéfaction" },
+            { "left": "Liquide → solide", "right": "Solidification" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle température l'eau pure bout-elle, sous la pression ordinaire ?",
+          "answer": 100,
+          "tolerance": 0.5,
+          "unit": "°C",
+          "hint": "Regarde le trait du haut sur le thermomètre.",
+          "explanation": "100 °C. En altitude, la pression étant plus faible, l'eau bout à une température plus basse — environ 85 °C à 4 000 mètres.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "On chauffe un mélange d'eau et de glace. Que montre le thermomètre tant qu'il reste de la glace ?",
+          "hint": "Où passe l'énergie apportée ?",
+          "explanation": "Il reste à 0 °C. L'énergie sert à faire fondre la glace, pas à élever la température : c'est ce qui rend les glaçons si efficaces dans une boisson.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "Il reste à 0 °C", "correct": true },
+            { "text": "Il monte régulièrement" },
+            { "text": "Il descend" },
+            { "text": "Il monte puis redescend" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La buée qui se forme sur une vitre froide est de la vapeur d'eau.",
+          "answer": false,
+          "explanation": "Non : la buée est faite de fines gouttes d'eau liquide. La vapeur d'eau, elle, est un gaz invisible. Le nuage qui sort d'une casserole n'est pas de la vapeur mais de l'eau déjà liquéfiée."
+        }
+      ]
+    },
+    {
+      "id": "masse-et-volume",
+      "title": "Masse et volume",
+      "subtitle": "L'un se conserve, l'autre non.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La masse se conserve",
+          "body": "On pèse une bouteille fermée contenant de l'eau liquide, on la met au congélateur, on la repèse une fois l'eau gelée : la balance affiche la même masse.\n\nLes particules sont les mêmes, en même nombre."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le volume, lui, change",
+          "body": "L'eau est une exception remarquable : en gelant, elle occupe environ 9 % de place en plus. C'est pour cela qu'une bouteille pleine et fermée peut éclater au congélateur, et que la glace flotte.\n\nPour presque toutes les autres substances, le solide est plus compact que le liquide."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Masse volumique",
+          "formula": "ρ = m / V",
+          "body": "pour l'eau liquide, 1 g par cm³, soit 1 kg par litre."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un corps flotte s'il est moins dense que le liquide. La glace flotte sur l'eau parce qu'elle est plus légère à volume égal — conséquence directe des 9 % gagnés en gelant."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la masse, en grammes, de 250 cm³ d'eau liquide ?",
+          "answer": 250,
+          "tolerance": 0.01,
+          "unit": "g",
+          "hint": "1 cm³ d'eau pèse 1 g.",
+          "explanation": "250 g : la masse volumique de l'eau vaut 1 g/cm³, donc m = 1 × 250."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "On congèle 200 g d'eau. Quelle masse de glace obtient-on, en grammes ?",
+          "answer": 200,
+          "tolerance": 0.01,
+          "unit": "g",
+          "hint": "Que deviennent les particules ?",
+          "explanation": "200 g. La masse se conserve lors d'un changement d'état : seul le volume a augmenté."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces grandeurs selon qu'elles changent ou non quand l'eau gèle.",
+          "explanation": "La masse et le nombre de particules ne changent pas. Le volume augmente d'environ 9 %, et la masse volumique diminue d'autant : c'est pourquoi la glace flotte.",
+          "categories": ["Ne change pas", "Change"],
+          "items": [
+            { "text": "La masse", "category": 0 },
+            { "text": "Le nombre de particules", "category": 0 },
+            { "text": "Le volume", "category": 1 },
+            { "text": "La masse volumique", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la masse, en kilogrammes, de 3 litres d'eau liquide ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "kg",
+          "hint": "1 litre d'eau pèse 1 kg.",
+          "explanation": "3 kg. C'est la même masse volumique écrite autrement : 1 g/cm³ vaut 1 kg/L."
+        }
+      ]
+    },
+    {
+      "id": "defi-matiere",
+      "title": "Défi : la matière",
+      "subtitle": "Six questions sur les états.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense chaque fois à ce que font les particules."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans quel état les particules sont-elles les plus éloignées les unes des autres ?",
+          "hint": "Lequel occupe le plus de place ?",
+          "explanation": "Dans un gaz. C'est précisément pour cela qu'il occupe tout le volume offert : rien ne retient ses particules les unes aux autres.",
+          "figureId": "etats-matiere",
+          "options": [
+            { "text": "Gaz", "correct": true },
+            { "text": "Liquide" },
+            { "text": "Solide" },
+            { "text": "Elles sont aussi proches dans les trois" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "À quelle température la glace fond-elle, sous la pression ordinaire ?",
+          "answer": 0,
+          "tolerance": 0.5,
+          "unit": "°C",
+          "hint": "Regarde le trait du bas sur le thermomètre.",
+          "explanation": "0 °C. C'est aussi la température à laquelle l'eau liquide se solidifie : fusion et solidification se font au même seuil.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces changements d'état.",
+          "explanation": "La fusion et la vaporisation demandent de chauffer. La solidification et la liquéfaction se produisent en refroidissant.",
+          "categories": ["On chauffe", "On refroidit"],
+          "items": [
+            { "text": "Fusion", "category": 0 },
+            { "text": "Vaporisation", "category": 0 },
+            { "text": "Solidification", "category": 1 },
+            { "text": "Liquéfaction", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La vapeur d'eau est le nuage blanc que l'on voit au-dessus d'une casserole.",
+          "answer": false,
+          "explanation": "Non. La vapeur d'eau est un gaz invisible. Le panache blanc est déjà fait de gouttelettes liquides, formées au contact de l'air plus froid."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une bouteille vide pèse 20 g. Remplie de 500 cm³ d'eau, combien pèse-t-elle en grammes ?",
+          "answer": 520,
+          "tolerance": 0.01,
+          "unit": "g",
+          "hint": "500 cm³ d'eau pèsent 500 g.",
+          "explanation": "520 g : 20 g pour la bouteille et 500 g pour l'eau."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Pendant toute la fusion d'un glaçon, la température du mélange reste à 0 °C.",
+          "answer": true,
+          "explanation": "Oui. L'énergie apportée sert à défaire l'arrangement des particules, pas à élever la température. Celle-ci ne remonte qu'une fois la fusion terminée."
+        }
+      ]
+    }
+  ]
+}
