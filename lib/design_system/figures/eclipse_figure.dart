@@ -9,6 +9,7 @@ import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/app_typography.dart';
+import 'realism.dart';
 
 /// Ce qu'un alignement donné produit.
 enum TypeEclipse {
@@ -154,6 +155,19 @@ class _EclipseFigureState extends State<EclipseFigure> {
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
+        // Ce qu'aucun dessin ne peut montrer, et qu'il vaut mieux écrire
+        // que laisser croire : à l'échelle, si la Terre faisait ce disque,
+        // la Lune serait à trois mètres et le Soleil à plus d'un
+        // kilomètre. La figure est juste en géométrie, fausse en échelle.
+        Text(
+          'Tailles et distances ne sont pas à l\'échelle : '
+          'le Soleil serait mille fois plus loin.',
+          textAlign: TextAlign.center,
+          style: context.text.bodySmall?.copyWith(
+            color: tokens.inkSubtle,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
         const SizedBox(height: AppSpacing.xs),
         _Curseur(
           nom: 'position',
@@ -254,96 +268,233 @@ class _EclipsePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    const double axeY = 78;
-    const double xSoleil = 26;
-    final double xTerre = size.width * 0.58;
-    final double rayonOrbite = math.min(size.width * 0.3, 62);
+    const double axeY = 96;
+    const double xSoleil = 40;
+    final double xTerre = size.width * 0.60;
+    final double rayonOrbite = math.min(size.width * 0.28, 70);
 
-    // L'axe Soleil-Terre, prolongé derrière la Terre : c'est la ligne sur
-    // laquelle une éclipse devient possible, et la seule.
+    _fond(canvas, size);
+
+    // L'axe Soleil-Terre : la seule ligne sur laquelle une éclipse devient
+    // possible. Discret, parce que c'est une aide de lecture et non une
+    // chose qui existe dans le ciel.
     canvas.drawLine(
       const Offset(xSoleil, axeY),
       Offset(size.width - 6, axeY),
       Paint()
-        ..color = trait.withValues(alpha: 0.4)
-        ..strokeWidth = 1.2,
+        ..color = Colors.white.withValues(alpha: 0.12)
+        ..strokeWidth = 1,
     );
 
-    // L'orbite, vue par la tranche : une ellipse très aplatie, inclinée.
-    // La vue de profil est le seul point de vue depuis lequel la rareté des
-    // éclipses se voit ; vue de dessus, l'inclinaison disparaît.
-    canvas.save();
-    canvas.translate(xTerre, axeY);
-    canvas.rotate(-0.16);
-    canvas.drawOval(
-      Rect.fromCenter(
-        center: Offset.zero,
-        width: rayonOrbite * 2,
-        height: rayonOrbite * 0.5,
-      ),
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.2
-        ..color = muted.withValues(alpha: 0.5),
-    );
-    canvas.restore();
+    _orbite(canvas, xTerre, axeY, rayonOrbite);
 
-    _astre(canvas, const Offset(xSoleil, axeY), 17, const Color(0xFFF2B01E), 'Soleil');
-    _astre(canvas, Offset(xTerre, axeY), 11, accent, 'Terre');
-
-    // La Lune : la longitude la place sur l'orbite, la hauteur la décale
-    // hors du plan. Les deux réglages sont indépendants, comme dans le ciel.
+    // La position de la Lune : la longitude la place sur l'orbite, la
+    // hauteur la décale hors du plan.
     final double rad = longitude * math.pi / 180;
     final double lx = xTerre - math.cos(rad) * rayonOrbite;
-    final double ly = axeY +
-        math.sin(rad) * rayonOrbite * 0.25 -
-        latitude * 4.2;
-    _astre(canvas, Offset(lx, ly), 6, muted, 'Lune');
+    final double ly =
+        axeY + math.sin(rad) * rayonOrbite * 0.26 - latitude * 4.6;
+    // Devant ou derrière la Terre : la Lune passe sous le disque terrestre
+    // quand elle est du côté opposé au Soleil.
+    final bool lunePremierPlan = math.cos(rad) > 0;
 
-    // Le cône d'ombre, dessiné seulement quand il tombe juste : le montrer
-    // en permanence laisserait croire qu'une éclipse a lieu chaque mois,
-    // ce qui est précisément l'erreur à défaire.
-    if (type == TypeEclipse.soleil || type == TypeEclipse.lune) {
-      final Offset depuis = type == TypeEclipse.soleil
-          ? Offset(lx, ly)
-          : Offset(xTerre, axeY);
-      final Offset vers = type == TypeEclipse.soleil
-          ? Offset(xTerre, axeY)
-          : Offset(lx, ly);
-      canvas.drawLine(
-        depuis,
-        vers,
+    if (!lunePremierPlan) {
+      _lune(canvas, Offset(lx, ly), const Offset(xSoleil, axeY));
+    }
+    _coneSiEclipse(canvas, Offset(lx, ly), Offset(xTerre, axeY));
+    _soleil(canvas, const Offset(xSoleil, axeY));
+    _terre(canvas, Offset(xTerre, axeY), const Offset(xSoleil, axeY));
+    if (lunePremierPlan) {
+      _lune(canvas, Offset(lx, ly), const Offset(xSoleil, axeY));
+    }
+
+    _etiquette(canvas, const Offset(xSoleil, axeY), 20, 'Soleil');
+    _etiquette(canvas, Offset(xTerre, axeY), 15, 'Terre');
+  }
+
+  /// Le vide, et ses étoiles. Positions figées.
+  void _fond(Canvas canvas, Size size) {
+    final Rect cadre = Offset.zero & size;
+    canvas.drawRect(
+      cadre,
+      Paint()
+        ..shader = const RadialGradient(
+          center: Alignment(-0.6, -0.1),
+          radius: 1.3,
+          colors: <Color>[Color(0xFF131A2B), Color(0xFF05070D)],
+        ).createShader(cadre),
+    );
+    final math.Random alea = math.Random(42);
+    for (int i = 0; i < 70; i++) {
+      canvas.drawCircle(
+        Offset(alea.nextDouble() * size.width, alea.nextDouble() * size.height),
+        alea.nextDouble() * 1.1 + 0.3,
         Paint()
-          ..color = accent.withValues(alpha: 0.65)
-          ..strokeWidth = 7
-          ..strokeCap = StrokeCap.round,
+          ..color = Colors.white.withValues(
+            alpha: 0.25 + alea.nextDouble() * 0.5,
+          ),
       );
     }
   }
 
-  void _astre(
+  /// L'orbite lunaire, vue par la tranche et inclinée.
+  ///
+  /// C'est le seul point de vue depuis lequel la rareté des éclipses se
+  /// voit : de dessus, l'inclinaison disparaît et le schéma suggère une
+  /// éclipse par mois.
+  void _orbite(Canvas canvas, double xTerre, double axeY, double rayon) {
+    canvas.save();
+    canvas.translate(xTerre, axeY);
+    canvas.rotate(-0.17);
+    canvas.drawOval(
+      Rect.fromCenter(
+        center: Offset.zero,
+        width: rayon * 2,
+        height: rayon * 0.52,
+      ),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1
+        ..color = Colors.white.withValues(alpha: 0.22),
+    );
+    canvas.restore();
+  }
+
+  /// Le Soleil : une sphère incandescente et sa couronne.
+  void _soleil(Canvas canvas, Offset centre) {
+    const Color feu = Color(0xFFFFC53D);
+    Realisme.couronne(canvas, centre, 20, couleur: feu, portee: 2.9);
+    canvas.drawCircle(
+      centre,
+      20,
+      Paint()
+        ..shader = const RadialGradient(
+          colors: <Color>[Color(0xFFFFF4C2), Color(0xFFFFB515), Color(0xFFE8730C)],
+          stops: <double>[0, 0.6, 1],
+        ).createShader(Rect.fromCircle(center: centre, radius: 20)),
+    );
+    // Quelques taches : le Soleil n'est pas une surface unie, et c'est
+    // Galilée qui l'a établi en les regardant dériver.
+    final math.Random alea = math.Random(5);
+    for (int i = 0; i < 4; i++) {
+      final double r = 20 * math.sqrt(alea.nextDouble()) * 0.7;
+      final double a = alea.nextDouble() * 2 * math.pi;
+      canvas.drawCircle(
+        centre + Offset(math.cos(a) * r, math.sin(a) * r),
+        1.4 + alea.nextDouble() * 1.6,
+        Paint()..color = const Color(0xFFB4530A).withValues(alpha: 0.45),
+      );
+    }
+  }
+
+  /// La Terre : océans, continents, atmosphère, et sa face nuit.
+  void _terre(Canvas canvas, Offset centre, Offset soleil) {
+    const double rayon = 15;
+    final Offset versSoleil = (soleil - centre) / (soleil - centre).distance;
+    Realisme.atmosphere(canvas, centre, rayon, couleur: const Color(0xFF7FB9F0));
+    Realisme.sphere(
+      canvas,
+      centre,
+      rayon,
+      couleur: const Color(0xFF1F5FA8),
+      lumiere: versSoleil,
+    );
+    Realisme.continents(canvas, centre, rayon, graine: 3, nombre: 4);
+    _faceNuit(canvas, centre, rayon, versSoleil);
+  }
+
+  /// La Lune : grise, criblée, éclairée du côté du Soleil.
+  ///
+  /// La figure est une vue de dessus du système, pas une vue depuis la
+  /// Terre. Y dessiner une phase lunaire serait une faute : dans ce
+  /// point de vue, la Lune n'a pas de phase, elle a un côté jour et un
+  /// côté nuit, exactement comme la Terre à côté d'elle. La phase est ce
+  /// que cette même géométrie produit quand on la regarde d'ici — et
+  /// c'est ce que montre l'autre figure du chapitre.
+  void _lune(Canvas canvas, Offset centre, Offset soleil) {
+    const double rayon = 7.5;
+    final Offset versSoleil = (soleil - centre) / (soleil - centre).distance;
+    Realisme.sphere(
+      canvas,
+      centre,
+      rayon,
+      couleur: const Color(0xFFB8B5AD),
+      lumiere: versSoleil,
+    );
+    Realisme.crateres(
+      canvas,
+      centre,
+      rayon,
+      graine: 7,
+      nombre: 9,
+      intensite: 1.6,
+    );
+    _faceNuit(canvas, centre, rayon, versSoleil);
+  }
+
+  /// Assombrit la moitié de la sphère qui tourne le dos au Soleil.
+  ///
+  /// Les deux astres reçoivent le même traitement, et c'est voulu : le
+  /// jour et la nuit sont le même phénomène sur la Terre et sur la Lune.
+  void _faceNuit(
     Canvas canvas,
     Offset centre,
     double rayon,
-    Color couleur,
-    String nom,
+    Offset versSoleil,
   ) {
-    canvas.drawCircle(centre, rayon, Paint()..color = couleur);
+    canvas.save();
+    canvas.translate(centre.dx, centre.dy);
+    canvas.clipPath(
+      Path()..addOval(Rect.fromCircle(center: Offset.zero, radius: rayon)),
+    );
+    // On tourne le repère pour que « l'opposé du Soleil » soit la droite,
+    // puis on noircit ce demi-disque. Le flou adoucit le terminateur,
+    // qui dans la réalité n'est pas une arête nette.
+    canvas.rotate(math.atan2(versSoleil.dy, versSoleil.dx));
+    canvas.drawRect(
+      Rect.fromLTWH(-rayon * 1.05, -rayon, rayon * 1.05, rayon * 2),
+      Paint()
+        ..color = Colors.black.withValues(alpha: 0.62)
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, rayon * 0.22),
+    );
+    canvas.restore();
+  }
+
+  /// Le cône d'ombre, quand il tombe juste.
+  ///
+  /// Le dessiner en permanence laisserait croire qu'une éclipse a lieu
+  /// chaque mois, ce qui est précisément l'erreur à défaire.
+  void _coneSiEclipse(Canvas canvas, Offset lune, Offset terre) {
+    if (type != TypeEclipse.soleil && type != TypeEclipse.lune) return;
+    final bool deSoleil = type == TypeEclipse.soleil;
+    final Offset depuis = deSoleil ? lune : terre;
+    final Offset vers = deSoleil ? terre : lune;
+    Realisme.coneOmbre(
+      canvas,
+      depuis,
+      deSoleil ? 7.5 : 15,
+      vers - depuis,
+      (vers - depuis).distance,
+      couleur: Colors.black,
+    );
+  }
+
+  void _etiquette(Canvas canvas, Offset centre, double rayon, String nom) {
     final TextPainter painter = TextPainter(
       text: TextSpan(
         text: nom,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: AppTypography.body,
-          color: couleur,
+          color: Colors.white70,
           fontSize: 11,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w700,
         ),
       ),
       textDirection: TextDirection.ltr,
     )..layout();
     painter.paint(
       canvas,
-      centre.translate(-painter.width / 2, rayon + 3),
+      centre.translate(-painter.width / 2, rayon + 5),
     );
   }
 

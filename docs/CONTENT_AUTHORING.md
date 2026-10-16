@@ -179,6 +179,50 @@ Ajouter une figure demande cette fois du code : écrire le widget dans
 `lib/design_system/figures/`, puis l'inscrire dans `FigureRegistry`. Le reste
 du contenu n'a pas à changer.
 
+### La règle : ce qui existe doit y ressembler
+
+Quand une figure représente une chose réelle, elle s'en approche. Une Lune
+est grise et criblée, pas un rond ; un cœur est un cône émoussé qui pointe en
+bas à gauche, pas le symbole des cartes à jouer ; un poumon a un bord
+irrégulier, pas un ovale. Le ciel de la Lune est noir en plein jour, et c'est
+une information qu'aucune phrase ne fait passer aussi bien que l'image.
+
+Ce n'est pas de la décoration. L'ombrage d'une sphère **est** le contenu
+quand on parle de phases ; le dégradé du limbe est ce qui dit qu'un astre est
+une boule et non un disque ; le grain alvéolaire d'un poumon est l'argument
+du chapitre sur la surface d'échange. Un schéma plat demande à l'élève de
+faire ce travail dans sa tête, et la plupart ne le font pas.
+
+`lib/design_system/figures/realism.dart` fournit l'outillage commun :
+sphères éclairées, terminateur jour-nuit, cratères, bandes nuageuses,
+calottes, couronne solaire, cônes d'ombre, parois organiques. Tout y est
+déterministe — jamais de `Random()` sans graine — pour que les captures de
+référence restent stables.
+
+Trois réserves, qui valent règles :
+
+- **L'abstrait reste abstrait.** Un rectangle qui illustre `k(a + b)` est
+  déjà la chose elle-même ; lui ajouter une texture ne l'approcherait de
+  rien. La règle vise ce qui existe dans le monde, pas les objets
+  mathématiques.
+- **Dire ce qu'on ne peut pas montrer.** Aucune figure ne peut tenir
+  l'échelle du Système solaire. La figure des éclipses l'écrit donc en
+  toutes lettres sous le dessin, plutôt que de laisser croire que la Lune
+  est à trois diamètres terrestres.
+- **La géométrie se vérifie.** `test/domain/realisme_test.dart` mesure la
+  surface d'ombre réellement peinte et la compare à la fraction éclairée
+  théorique d'une sphère, à seize phases. Un croissant au bord intérieur
+  droit décrit un disque découpé et non une boule ; personne ne le
+  remarquerait à l'œil, le test si.
+
+Pour mettre une figure au point sans naviguer dans l'application :
+
+```bash
+flutter test tool/figure_preview/preview.dart --update-goldens
+```
+
+Les images sortent dans `tool/figure_preview/out/`, qui n'est pas versionné.
+
 ## 4. Vérifier son travail
 
 ```bash
