@@ -1,0 +1,331 @@
+{
+  "chapter": "logique-universite-calculabilite",
+  "lessons": [
+    {
+      "id": "decidable-ou-semi-decidable",
+      "title": "Décidable, ou seulement semi-décidable",
+      "subtitle": "Répondre toujours, ou répondre parfois.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Un problème de décision",
+          "body": "On se donne un ensemble d'entrées et une question à réponse oui ou non.\n\nLe problème est décidable s'il existe un algorithme qui, pour toute entrée, s'arrête et donne la bonne réponse."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Semi-décidable",
+          "body": "Un problème est semi-décidable s'il existe un algorithme qui s'arrête et répond oui quand la réponse est oui — mais qui peut tourner indéfiniment quand elle est non.\n\nC'est le cas de l'arrêt : on lance le programme et on attend. S'il s'arrête, on le voit. S'il ne s'arrête pas, on ne le saura jamais."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Une machine qui, elle, s'arrête",
+          "body": "Ce programme-ci s'arrête sur toute entrée, et on sait le démontrer. L'indécidabilité ne porte pas sur un programme donné.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Décidable, c'est semi-décidable des deux côtés",
+          "body": "Un problème est décidable si et seulement si lui et son complémentaire sont tous deux semi-décidables.\n\nLancer les deux semi-algorithmes en parallèle : l'un des deux finira par répondre. L'arrêt est semi-décidable, son complémentaire ne l'est pas — c'est exactement pourquoi il n'est pas décidable."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'exige-t-on d'un algorithme de décision ?",
+          "hint": "Pour toute entrée, sans exception.",
+          "explanation": "Qu'il s'arrête sur toute entrée et donne la bonne réponse. Un algorithme qui ne s'arrête parfois pas ne décide rien.",
+          "options": [
+            { "text": "Qu'il s'arrête sur toute entrée avec la bonne réponse", "correct": true },
+            { "text": "Qu'il réponde oui quand la réponse est oui" },
+            { "text": "Qu'il soit rapide" },
+            { "text": "Qu'il tienne en moins de mille lignes" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Le problème de l'arrêt est semi-décidable.",
+          "answer": true,
+          "explanation": "Oui : on exécute le programme. S'il s'arrête, on l'observe en un temps fini. C'est le cas « non » qui échappe à l'observation."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que peut-on conclure si un problème et son complémentaire sont tous deux semi-décidables ?",
+          "hint": "Lance les deux en parallèle.",
+          "explanation": "Qu'il est décidable : les deux semi-algorithmes lancés en parallèle garantissent qu'une réponse arrive.",
+          "options": [
+            { "text": "Qu'il est décidable", "correct": true },
+            { "text": "Qu'il est indécidable" },
+            { "text": "Qu'il est seulement semi-décidable" },
+            { "text": "On ne peut rien en conclure" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces problèmes selon leur statut.",
+          "hint": "Peut-on toujours s'arrêter avec une réponse ?",
+          "explanation": "La primalité et la divisibilité se décident par un calcul borné. L'arrêt et son complémentaire ne le sont pas : le premier est semi-décidable, le second ne l'est même pas.",
+          "categories": ["Décidable", "Indécidable"],
+          "items": [
+            { "text": "ce nombre est-il premier ?", "category": 0 },
+            { "text": "ce nombre est-il divisible par 7 ?", "category": 0 },
+            { "text": "ce programme s'arrête-t-il ?", "category": 1 },
+            { "text": "ce programme boucle-t-il indéfiniment ?", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trop-de-fonctions",
+      "title": "Trop de fonctions pour les programmes",
+      "subtitle": "Un argument de dénombrement.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les programmes se comptent",
+          "body": "Un programme est une suite finie de symboles pris dans un alphabet fini.\n\nOn peut donc les ranger : d'abord ceux de longueur 1, puis de longueur 2, et ainsi de suite. L'ensemble des programmes est dénombrable."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les fonctions, non",
+          "body": "Considérons les fonctions des entiers vers {0, 1}. Supposons-les rangées en une liste : la fonction numéro 0, la fonction numéro 1, et ainsi de suite.\n\nDéfinissons g par : g(n) vaut 1 si la fonction numéro n donne 0 en n, et 0 sinon. Alors g diffère de la fonction numéro n au point n, et cela pour tout n : g n'est dans la liste à aucune place.\n\nAucune liste ne les contient toutes : elles ne sont pas dénombrables."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "La conclusion",
+          "body": "Il y a strictement plus de fonctions que de programmes.\n\nPresque toutes les fonctions ne sont donc calculables par aucun programme — et cela sans exhiber la moindre fonction précise. Le problème de l'arrêt, lui, en donne une explicite."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "C'est le même argument diagonal que chez Cantor pour les réels, et que chez Turing pour l'arrêt. Trois résultats, une seule idée."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'ensemble des programmes est-il dénombrable ?",
+          "hint": "De quoi un programme est-il fait ?",
+          "explanation": "Parce qu'un programme est une suite finie de symboles d'un alphabet fini : on peut les énumérer par longueur croissante.",
+          "options": [
+            { "text": "Ce sont des suites finies sur un alphabet fini", "correct": true },
+            { "text": "Parce qu'il y en a un nombre fini" },
+            { "text": "Parce qu'ils s'arrêtent tous" },
+            { "text": "Parce qu'on peut les compiler" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans l'argument diagonal, comment construit-on g ?",
+          "hint": "On regarde la diagonale de la liste.",
+          "explanation": "En prenant, pour chaque n, le contraire de ce que la fonction numéro n donne en n. La fonction g diffère alors de la fonction numéro n au point n, et cela pour tout n.",
+          "options": [
+            { "text": "En prenant le contraire de ce que donne la n-ième fonction en n", "correct": true },
+            { "text": "En additionnant toutes les fonctions de la liste" },
+            { "text": "En prenant la limite de la liste" },
+            { "text": "En choisissant la première fonction non calculable de la liste" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "L'argument de dénombrement exhibe une fonction précise non calculable.",
+          "answer": false,
+          "explanation": "Non : il montre qu'il en existe énormément, sans en nommer aucune. C'est le problème de l'arrêt qui en fournit une explicite."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Presque toutes les fonctions des entiers vers {0, 1} sont non calculables.",
+          "answer": true,
+          "explanation": "Oui : les calculables sont en bijection avec une partie des programmes, donc dénombrables, alors que les fonctions ne le sont pas."
+        }
+      ]
+    },
+    {
+      "id": "reduire-un-probleme",
+      "title": "Réduire un problème à un autre",
+      "subtitle": "Propager l'indécidabilité.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le principe de réduction",
+          "body": "Réduire A à B, c'est transformer toute instance de A en une instance de B dont la réponse est la même, par un calcul qui s'arrête.\n\nSi B était décidable, A le serait. Donc si A est indécidable, B l'est aussi."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Le problème du vide",
+          "body": "« Ce programme refuse-t-il toutes les entrées ? » est indécidable.\n\nOn y réduit l'arrêt : à partir de P et de son entrée e, on fabrique un programme qui ignore son entrée, exécute P sur e, puis accepte. Ce programme refuse tout si et seulement si P ne s'arrête pas sur e."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le théorème de Rice",
+          "body": "Toute propriété non triviale de la fonction calculée par un programme est indécidable.\n\nNon triviale veut dire : vraie pour certains programmes et fausse pour d'autres. Autrement dit, aucune question intéressante sur ce que fait un programme ne se décide automatiquement."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le castor affairé",
+          "body": "Parmi les machines à n états qui s'arrêtent, combien de 1 la plus productive laisse-t-elle au maximum ?\n\n1, 4, 6, puis 13 pour quatre états. Le cas de cinq états a été réglé en 2024 : 4 098. Au-delà, la suite croît plus vite que toute fonction calculable — la connaître reviendrait à décider l'arrêt."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "On réduit A à B. Que peut-on en conclure si A est indécidable ?",
+          "hint": "Que se passerait-il si B était décidable ?",
+          "explanation": "Que B est indécidable. Si B se décidait, la réduction donnerait un algorithme pour A, ce qui est exclu.",
+          "options": [
+            { "text": "B est indécidable", "correct": true },
+            { "text": "B est décidable" },
+            { "text": "B est semi-décidable" },
+            { "text": "On ne peut rien conclure sur B" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "D'après le théorème de Rice, que peut-on décider sur la fonction calculée par un programme ?",
+          "hint": "Que veut dire « non triviale » ?",
+          "explanation": "Seulement les propriétés triviales : celles vraies pour tous les programmes, ou fausses pour tous. Toutes les autres sont indécidables.",
+          "options": [
+            { "text": "Uniquement les propriétés triviales", "correct": true },
+            { "text": "Toutes les propriétés, mais lentement" },
+            { "text": "Les propriétés de sa syntaxe" },
+            { "text": "Les propriétés de son temps d'exécution" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de 1 laisse le castor affairé à quatre états ?",
+          "answer": 13,
+          "tolerance": 0.01,
+          "unit": "uns",
+          "hint": "Après 1, 4 et 6.",
+          "explanation": "13. Le cas suivant, cinq états, a demandé plus de cinquante ans et a été réglé en 2024 : 4 098.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "La propriété « le code source de ce programme contient une boucle » est indécidable.",
+          "answer": false,
+          "explanation": "Non : elle porte sur la syntaxe, pas sur la fonction calculée. On lit le code et on répond. Rice ne concerne que ce que le programme calcule."
+        }
+      ]
+    },
+    {
+      "id": "defi-calculabilite",
+      "title": "Défi : calculabilité",
+      "subtitle": "Six questions sur les limites du calcul.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Pour chaque énoncé, demande-toi : la question porte-t-elle sur la syntaxe du programme, ou sur ce qu'il calcule ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces questions selon qu'elles sont décidables.",
+          "hint": "Syntaxe ou comportement ?",
+          "explanation": "Les deux premières se lisent dans le code source. Les deux autres portent sur la fonction calculée : Rice les interdit.",
+          "categories": ["Décidable", "Indécidable"],
+          "items": [
+            { "text": "ce programme fait-il plus de 100 lignes ?", "category": 0 },
+            { "text": "ce programme contient-il le mot « while » ?", "category": 0 },
+            { "text": "ce programme calcule-t-il la fonction nulle ?", "category": 1 },
+            { "text": "ces deux programmes calculent-ils la même fonction ?", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Le complémentaire du problème de l'arrêt est semi-décidable.",
+          "answer": false,
+          "explanation": "Non. S'il l'était, l'arrêt serait décidable, puisque les deux semi-algorithmes lancés ensemble trancheraient toujours."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de 1 laisse le castor affairé à trois états ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "uns",
+          "hint": "Entre 4 et 13.",
+          "explanation": "6. La suite commence par 1, 4, 6, 13, puis 4 098 — et personne ne connaît le terme suivant.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la suite du castor affairé n'est-elle pas calculable ?",
+          "hint": "Que permettrait de faire sa connaissance ?",
+          "explanation": "Parce que la connaître permettrait de décider l'arrêt : il suffirait de simuler une machine à n états pendant le nombre de pas correspondant.",
+          "options": [
+            { "text": "La connaître permettrait de décider l'arrêt", "correct": true },
+            { "text": "Parce qu'elle croît trop lentement" },
+            { "text": "Parce que ses termes sont irrationnels" },
+            { "text": "Parce qu'il y a une infinité de machines" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre l'argument diagonal sur les fonctions.",
+          "explanation": "On suppose la liste complète, on construit g en inversant la diagonale, on constate que g diffère de chacune, donc la liste n'était pas complète.",
+          "items": [
+            "supposer les fonctions rangées en une liste",
+            "construire g en inversant la diagonale",
+            "constater que g diffère de chaque fonction de la liste",
+            "conclure qu'aucune liste ne les contient toutes"
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Associe chaque notion à sa définition.",
+          "explanation": "Quatre notions à ne pas confondre : décider, semi-décider, réduire, et le périmètre du théorème de Rice.",
+          "pairs": [
+            { "left": "décidable", "right": "un algorithme répond toujours" },
+            { "left": "semi-décidable", "right": "un algorithme répond quand c'est oui" },
+            { "left": "réduction", "right": "transformer A en B sans changer la réponse" },
+            { "left": "théorème de Rice", "right": "aucune propriété non triviale du calculé" }
+          ]
+        }
+      ]
+    }
+  ]
+}

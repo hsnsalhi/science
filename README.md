@@ -21,13 +21,13 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Moteur de quiz : **9 types d'exercices**, correction expliquée | ✅ |
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
 | Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
-| Contenu rédigé de bout en bout | **47 chapitres** : 188 leçons, 694 cartes, 843 questions |
+| Contenu rédigé de bout en bout | **48 chapitres** : 192 leçons, 707 cartes, 861 questions |
 | **35 figures interactives**, plusieurs animées | ✅ |
-| 473 tests (domaine, contenu, parcours d'interface) | ✅ |
+| 479 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 
-Les quarante-sept chapitres rédigés couvrent les huit matières et les quatre
+Les quarante-huit chapitres rédigés couvrent les huit matières et les quatre
 niveaux : un élève de CM1 comme un étudiant de licence trouve de quoi jouer.
 Les autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
 afin que l'élève voie tout de suite l'étendue du programme. Écrire un nouveau
@@ -76,7 +76,7 @@ build**, et produit les valeurs des secrets GitHub.
 ```bash
 flutter pub get
 flutter run              # appareil ou émulateur connecté
-flutter test             # 473 tests
+flutter test             # 479 tests
 flutter analyze          # analyse statique stricte
 ```
 

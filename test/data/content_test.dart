@@ -5428,4 +5428,122 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : calculabilité et décidabilité', () {
+    late Chapter calcul;
+
+    setUpAll(() {
+      calcul = catalog.chapterById('logique-universite-calculabilite')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = calcul.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(calcul.isPlayable, isTrue);
+      expect(calcul.lessons.length, 4);
+    });
+
+    test('l’argument diagonal fonctionne sur toute liste finie', () {
+      // La diagonale n'est pas une image : elle se calcule. Pour n'importe
+      // quelle liste de fonctions de {0..n-1} vers {0, 1}, la fonction
+      // construite en inversant la diagonale diffère de chacune.
+      final math.Random hasard = math.Random(11);
+      for (final int n in <int>[1, 2, 5, 12, 40]) {
+        final List<List<int>> liste = <List<int>>[
+          for (int i = 0; i < n; i++)
+            <int>[for (int j = 0; j < n; j++) hasard.nextInt(2)],
+        ];
+        final List<int> g = <int>[
+          for (int i = 0; i < n; i++) 1 - liste[i][i],
+        ];
+        for (int i = 0; i < n; i++) {
+          expect(g[i], isNot(liste[i][i]), reason: 'ligne $i');
+          expect(g, isNot(orderedEquals(liste[i])), reason: 'ligne $i');
+        }
+      }
+    });
+
+    test('la diagonale échappe même à une liste choisie contre elle', () {
+      // Cas limite : toutes les fonctions identiques, puis toutes
+      // différentes deux à deux. L'argument ne doit dépendre d'aucune
+      // hypothèse sur la liste.
+      for (final List<List<int>> liste in <List<List<int>>>[
+        <List<int>>[<int>[0, 0, 0], <int>[0, 0, 0], <int>[0, 0, 0]],
+        <List<int>>[<int>[1, 0, 0], <int>[0, 1, 0], <int>[0, 0, 1]],
+        <List<int>>[<int>[1, 1, 1], <int>[1, 1, 1], <int>[0, 0, 0]],
+      ]) {
+        final List<int> g = <int>[
+          for (int i = 0; i < liste.length; i++) 1 - liste[i][i],
+        ];
+        for (final List<int> f in liste) {
+          expect(g, isNot(orderedEquals(f)));
+        }
+      }
+    });
+
+    test('les problèmes dits décidables le sont par un algorithme écrit', () {
+      // Le chapitre range « ce nombre est-il premier ? » parmi les
+      // décidables. Un algorithme qui s'arrête toujours et répond juste,
+      // c'est exactement ce que cela veut dire : en voici un.
+      bool estPremier(int n) {
+        if (n < 2) return false;
+        for (int d = 2; d * d <= n; d++) {
+          if (n % d == 0) return false;
+        }
+        return true;
+      }
+
+      final List<bool> crible = List<bool>.filled(2001, true);
+      crible[0] = false;
+      crible[1] = false;
+      for (int i = 2; i * i <= 2000; i++) {
+        if (!crible[i]) continue;
+        for (int m = i * i; m <= 2000; m += i) {
+          crible[m] = false;
+        }
+      }
+      for (int n = 0; n <= 2000; n++) {
+        expect(estPremier(n), crible[n], reason: 'n = $n');
+      }
+    });
+
+    test('la machine de la figure s’arrête bien sur toute entrée', () {
+      // La leçon s'appuie sur ce point : l'indécidabilité de l'arrêt ne
+      // dit rien d'un programme particulier, et celui-ci se démontre.
+      for (int valeur = 0; valeur <= 255; valeur++) {
+        expect(
+          TuringFigure.executer(TuringFigure.ruban(valeur)).termine,
+          isTrue,
+          reason: 'entrée $valeur',
+        );
+      }
+    });
+
+    test('les valeurs du castor affairé citées sont cohérentes', () {
+      // Ces valeurs ne se recalculent pas ici : ce sont des résultats
+      // extérieurs, le cinquième établi en 2024 après cinquante ans. Ce
+      // que le test garde, c'est que le chapitre cite les bons termes de
+      // la suite, et dans le bon ordre.
+      const List<int> castor = <int>[1, 4, 6, 13, 4098];
+      expect(reponseNum('defi-calculabilite', 'q3'), castor[2]);
+      expect(reponseNum('reduire-un-probleme', 'q3'), castor[3]);
+      for (int i = 1; i < castor.length; i++) {
+        expect(castor[i], greaterThan(castor[i - 1]));
+      }
+      final Lesson lecon = calcul.lessonById('reduire-un-probleme')!;
+      final LessonCard carte = lecon.cards.firstWhere(
+        (LessonCard c) => c.title == 'Le castor affairé',
+      );
+      expect(carte.body, contains('4 098'));
+      expect(carte.body, contains('2024'));
+    });
+  });
+
 }
