@@ -26,6 +26,7 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | 572 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
+| Pipeline Android : APK installable, puis Google Play | ✅ |
 
 Les cinquante-neuf chapitres rédigés couvrent les huit matières et les quatre
 niveaux : un élève de CM1 comme un étudiant de licence trouve de quoi jouer.
@@ -58,18 +59,26 @@ entre autres, une erreur de comptage sur la recherche dichotomique.
 
 ## Tester sur un vrai téléphone
 
-Le dépôt contient un workflow GitHub Actions qui construit l'IPA signé et
-l'envoie sur **TestFlight depuis un runner macOS** : posséder un Mac n'est pas
-nécessaire, seul le compte Apple Developer l'est.
+Deux workflows GitHub Actions, indépendants et lançables en parallèle.
+
+**Android** — [docs/ANDROID.md](docs/ANDROID.md). Le plus court chemin :
+onglet Actions → *Android* → *Run workflow*, et l'APK est dans les artefacts
+huit minutes plus tard. Ni compte, ni clé, ni machine particulière. Une clé
+de téléversement, puis un compte Play Console à 25 $ une seule fois, ouvrent
+ensuite la piste de test interne. `tool/android_signing.py` fabrique la clé
+et `tool/play_upload.py` fait l'envoi — avec la seule bibliothèque standard,
+sans action tierce à qui confier le compte de service.
+
+**iOS** — [docs/TESTFLIGHT.md](docs/TESTFLIGHT.md). Le workflow construit
+l'IPA signé et l'envoie sur **TestFlight depuis un runner macOS** : posséder
+un Mac n'est pas nécessaire, seul le compte Apple Developer l'est. Compter
+une heure de mise en place, puis un clic par build. `tool/ios_signing.py`
+crée le certificat de distribution depuis Linux, **vérifie la cohérence
+certificat / profil / clé d'API avant le premier build**, et produit les
+valeurs des secrets GitHub.
 
 Plusieurs applications sur le même compte Apple ? Six des sept secrets se
 partagent — voir [docs/SECRETS.md](docs/SECRETS.md).
-
-Mise en place (une heure, une seule fois) puis un clic par build :
-[docs/TESTFLIGHT.md](docs/TESTFLIGHT.md). L'outil
-`tool/ios_signing.py` crée le certificat de distribution depuis Linux,
-**vérifie la cohérence certificat / profil / clé d'API avant le premier
-build**, et produit les valeurs des secrets GitHub.
 
 ## Démarrer
 

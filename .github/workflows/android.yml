@@ -1,0 +1,278 @@
+# Construit Eurêka pour Android, et l'envoie sur Google Play si les secrets
+# nécessaires sont présents.
+#
+# Ce dépôt n'a besoin ni d'Android Studio ni d'un SDK local : le travail
+# tourne sur un runner Ubuntu fourni par GitHub, qui porte déjà le SDK
+# Android et Java 17.
+#
+# Deux sorties, à des fins différentes :
+#
+#   - un **APK** universel, qu'on installe directement sur un téléphone en
+#     le téléchargeant depuis l'onglet Actions. Il ne demande aucun compte
+#     Google Play et sert à faire essayer l'application tout de suite ;
+#   - un **AAB**, le format que Google Play exige, envoyé sur la piste de
+#     test interne quand le compte de service est configuré.
+#
+# Le déclenchement est manuel, comme pour iOS, parce que chaque envoi
+# consomme un `versionCode` que Google Play n'accepte jamais deux fois.
+#
+# Secrets attendus dans Settings → Secrets and variables → Actions.
+# La procédure pour les obtenir est dans docs/ANDROID.md.
+name: Android
+
+on:
+  workflow_dispatch:
+    inputs:
+      destination:
+        description: Où envoyer le résultat
+        required: true
+        default: apk-seulement
+        type: choice
+        options:
+          - apk-seulement
+          - play-interne
+      notes:
+        description: Notes de version pour les testeurs
+        required: false
+        default: Build de test.
+
+# Un groupe distinct de celui d'iOS : les deux plateformes se construisent
+# en parallèle, et rien ne justifie qu'un envoi iOS retarde un envoi Android.
+# En revanche deux envois Android simultanés se disputeraient le même
+# `versionCode`.
+concurrency:
+  group: android
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Construire et envoyer
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      # Les secrets de signature ne sont nécessaires que pour un envoi sur
+      # Google Play. Sans eux, la compilation produit tout de même un APK
+      # signé avec la clé de débogage : installable à la main, refusé par
+      # Play. On le dit maintenant plutôt qu'à l'étape d'envoi.
+      - name: Déterminer ce qui est faisable
+        id: capacites
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+        run: |
+          set -euo pipefail
+          signature=non
+          play=non
+          [ -n "${ANDROID_KEYSTORE_BASE64:-}" ] && signature=oui
+          [ -n "${GOOGLE_PLAY_SERVICE_ACCOUNT_JSON:-}" ] && play=oui
+          echo "signature=$signature" >> "$GITHUB_OUTPUT"
+          echo "play=$play" >> "$GITHUB_OUTPUT"
+          echo "Clé de téléversement : $signature"
+          echo "Compte de service Google Play : $play"
+
+          if [ "${{ github.event.inputs.destination }}" = "play-interne" ]; then
+            if [ "$signature" = "non" ] || [ "$play" = "non" ]; then
+              echo "::error::Un envoi sur Google Play demande ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD et GOOGLE_PLAY_SERVICE_ACCOUNT_JSON."
+              echo "Voir docs/ANDROID.md. Relancer avec « apk-seulement » pour obtenir quand même un APK installable."
+              exit 1
+            fi
+          fi
+
+      - name: Installer Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Installer Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.7
+          channel: stable
+          cache: true
+
+      - name: Versions de l'environnement
+        run: |
+          flutter --version
+          java -version
+          echo "SDK Android : ${ANDROID_SDK_ROOT:-${ANDROID_HOME:-inconnu}}"
+
+      - name: Récupérer les dépendances
+        run: flutter pub get
+
+      # Mêmes garde-fous que pour iOS : un paquet cassé fait perdre un
+      # numéro de version et le temps des testeurs.
+      - name: Analyse statique
+        run: flutter analyze
+
+      - name: Tests
+        run: flutter test
+
+      - name: Préparer la signature
+        if: steps.capacites.outputs.signature == 'oui'
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          manquants=()
+          for nom in ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD; do
+            if [ -z "${!nom:-}" ]; then manquants+=("$nom"); fi
+          done
+          if [ ${#manquants[@]} -ne 0 ]; then
+            echo "::error::Le magasin de clés est présent mais il manque : ${manquants[*]}"
+            exit 1
+          fi
+
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/upload-keystore.jks
+          taille=$(wc -c < android/upload-keystore.jks)
+          if [ "$taille" -lt 500 ]; then
+            echo "::error::Le magasin décodé ne fait que $taille octets : ANDROID_KEYSTORE_BASE64 est probablement tronqué."
+            exit 1
+          fi
+
+          cat > android/key.properties <<EOF
+          storeFile=upload-keystore.jks
+          storePassword=$ANDROID_KEYSTORE_PASSWORD
+          keyAlias=$ANDROID_KEY_ALIAS
+          keyPassword=$ANDROID_KEY_PASSWORD
+          EOF
+
+          # Contrôle immédiat : un mot de passe erroné échouerait sinon à la
+          # toute fin du build, après plusieurs minutes de compilation.
+          if ! keytool -list -keystore android/upload-keystore.jks \
+                -alias "$ANDROID_KEY_ALIAS" \
+                -storepass "$ANDROID_KEYSTORE_PASSWORD" > /dev/null 2>&1; then
+            echo "::error::Le magasin ne s'ouvre pas avec cet alias et ce mot de passe."
+            echo "Vérifier ANDROID_KEY_ALIAS et ANDROID_KEYSTORE_PASSWORD, puis relancer."
+            exit 1
+          fi
+          echo "Magasin de clés accepté ($taille octets), alias « $ANDROID_KEY_ALIAS »."
+
+      # Le `versionCode` doit croître à chaque envoi et ne jamais se répéter.
+      # `github.run_number` s'incrémente tout seul et ne revient jamais en
+      # arrière. Ce compteur est propre à ce workflow : il est donc
+      # indépendant de celui de TestFlight, ce qui est sans importance —
+      # les deux magasins comptent séparément.
+      - name: Construire l'APK
+        run: |
+          set -euo pipefail
+          flutter build apk --release --build-number="${{ github.run_number }}"
+          ls -lh build/app/outputs/flutter-apk/
+
+      - name: Construire l'AAB
+        if: steps.capacites.outputs.signature == 'oui'
+        run: |
+          set -euo pipefail
+          flutter build appbundle --release --build-number="${{ github.run_number }}"
+          ls -lh build/app/outputs/bundle/release/
+
+      # Un APK signé avec la clé de débogage s'installe sur un téléphone mais
+      # ne peut pas être publié. Le dire ici évite de découvrir le problème
+      # devant le formulaire de Google Play.
+      - name: Vérifier la signature de l'APK
+        run: |
+          set -uo pipefail
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          SDK="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
+          APKSIGNER=""
+          if [ -n "$SDK" ] && [ -d "$SDK/build-tools" ]; then
+            APKSIGNER="$(find "$SDK/build-tools" -name apksigner -type f \
+              | sort -V | tail -1)"
+          fi
+          if [ -z "$APKSIGNER" ]; then
+            echo "::warning::apksigner introuvable : signature non vérifiée."
+            exit 0
+          fi
+          SIGNATAIRE="$("$APKSIGNER" verify --print-certs "$APK" \
+            | grep -m1 'Subject' || true)"
+          echo "Signataire : ${SIGNATAIRE:-inconnu}"
+          if printf '%s' "$SIGNATAIRE" | grep -q 'CN=Android Debug'; then
+            echo "::warning::APK signé avec la clé de débogage : installable à la main, refusé par Google Play."
+          else
+            echo "APK signé avec une clé de publication."
+          fi
+
+      - name: Conserver les paquets comme artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: eureka-android-build-${{ github.run_number }}
+          path: |
+            build/app/outputs/flutter-apk/app-release.apk
+            build/app/outputs/bundle/release/*.aab
+          retention-days: 14
+          if-no-files-found: error
+
+      # L'envoi passe par `tool/play_upload.py` plutôt que par une action
+      # tierce. Une action du Marketplace recevrait le compte de service,
+      # qui a le droit de publier l'application : c'est beaucoup de
+      # confiance pour du code qu'on ne relit pas à chaque mise à jour. Le
+      # script n'utilise que la bibliothèque standard et openssl.
+      - name: Envoyer sur Google Play
+        if: >-
+          github.event.inputs.destination == 'play-interne' &&
+          steps.capacites.outputs.play == 'oui'
+        env:
+          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          NOTES: ${{ github.event.inputs.notes }}
+        run: |
+          set -euo pipefail
+          umask 077
+          printf '%s' "$GOOGLE_PLAY_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/play.json"
+
+          # Contrôle des droits avant le dépôt : une erreur de configuration
+          # se manifeste sinon après le téléversement de cinquante mégaoctets.
+          python3 tool/play_upload.py verifier --compte "$RUNNER_TEMP/play.json"
+
+          python3 tool/play_upload.py envoyer \
+            --compte "$RUNNER_TEMP/play.json" \
+            --aab build/app/outputs/bundle/release/app-release.aab \
+            --piste internal \
+            --notes "$NOTES"
+
+      - name: Résumé
+        if: success()
+        env:
+          NOTES: ${{ github.event.inputs.notes }}
+          DESTINATION: ${{ github.event.inputs.destination }}
+          SIGNATURE: ${{ steps.capacites.outputs.signature }}
+        run: |
+          {
+            echo "### Build Android"
+            echo ""
+            echo "- Version : \`$(grep '^version:' pubspec.yaml | cut -d' ' -f2)\`"
+            echo "- Code de version : \`${{ github.run_number }}\`"
+            echo "- Destination : \`$DESTINATION\`"
+            echo "- Notes : $NOTES"
+            echo ""
+            if [ "$DESTINATION" = "play-interne" ]; then
+              echo "L'AAB est déposé sur la piste de test interne. Il y est"
+              echo "disponible en quelques minutes, et les testeurs le"
+              echo "reçoivent via le lien d'inscription de la console."
+            else
+              echo "L'APK est dans les artefacts de cette exécution, en bas"
+              echo "de cette page. Le télécharger, le transférer sur le"
+              echo "téléphone et l'ouvrir : Android demandera d'autoriser"
+              echo "l'installation depuis cette source."
+            fi
+            if [ "$SIGNATURE" = "non" ]; then
+              echo ""
+              echo "> Signé avec la clé de débogage, faute de secrets de"
+              echo "> signature. Suffisant pour essayer l'application,"
+              echo "> insuffisant pour la publier — voir docs/ANDROID.md."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Les secrets déchiffrés ne doivent pas survivre à l'exécution, même en
+      # cas d'échec d'une étape précédente.
+      - name: Nettoyer les secrets
+        if: always()
+        run: |
+          rm -f android/upload-keystore.jks android/key.properties || true
+          rm -f "$RUNNER_TEMP/play.json" || true
