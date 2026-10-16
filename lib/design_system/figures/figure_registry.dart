@@ -9,6 +9,7 @@ import 'orbits_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'right_triangle_figure.dart';
 import 'solar_system_figure.dart';
+import 'thales_figure.dart';
 import 'triangle_test_figure.dart';
 
 /// Fabrique une figure à partir de son identifiant de contenu.
@@ -29,6 +30,9 @@ abstract final class FigureRegistry {
     // Même triangle, avec les carrés construits sur les côtés.
     'pythagore-carres': (BuildContext context, Color accent) =>
         RightTriangleFigure(accent: accent, showSquares: true),
+    // Triangle coupé par une parallèle qu'on fait glisser.
+    'thales': (BuildContext context, Color accent) =>
+        ThalesFigure(accent: accent),
     // Réciproque : un triangle est-il rectangle ?
     'triangle-reciproque': (BuildContext context, Color accent) =>
         TriangleTestFigure(accent: accent),

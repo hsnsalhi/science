@@ -1,0 +1,356 @@
+{
+  "chapter": "maths-college-le-theoreme-de-thales",
+  "lessons": [
+    {
+      "id": "configuration",
+      "title": "La configuration",
+      "subtitle": "Reconnaître le dessin avant d'écrire quoi que ce soit.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une parallèle dans un triangle",
+          "body": "Trace un triangle, puis une droite parallèle à un côté qui coupe les deux autres. Tu obtiens un petit triangle, qui est une réduction du grand."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Déplace la parallèle",
+          "body": "Tout change sauf une chose. Regarde les trois rapports.",
+          "figureId": "thales"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Nommer les points",
+          "body": "A est le sommet commun aux deux triangles. D est sur [AB], E sur [AC], et (DE) est parallèle à (BC)."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour repérer la configuration, cherche le sommet d'où partent les deux droites coupées. C'est lui qu'on écrit en premier dans chaque longueur : AD, AB, AE, AC."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Trois conditions",
+          "bullets": [
+            "Un sommet commun aux deux triangles.",
+            "Deux droites sécantes issues de ce sommet.",
+            "Deux droites parallèles qui les coupent."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Dans la configuration de Thalès, que doit-on savoir sur les droites (DE) et (BC) ?",
+          "hint": "C'est la condition sans laquelle rien ne marche.",
+          "explanation": "Elles doivent être parallèles. Sans cette condition, les rapports ne sont plus égaux et le théorème ne s'applique pas.",
+          "figureId": "thales",
+          "options": [
+            { "text": "Elles sont parallèles", "correct": true },
+            { "text": "Elles sont perpendiculaires" },
+            { "text": "Elles ont la même longueur" },
+            { "text": "Elles se coupent en leur milieu" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces couples de longueurs selon qu'ils forment ou non un rapport du théorème.",
+          "hint": "Chaque rapport compare un segment du petit triangle au segment correspondant du grand, depuis le même sommet.",
+          "explanation": "Les trois rapports sont AD/AB, AE/AC et DE/BC : à chaque fois, le petit segment sur le grand, vus du sommet A. AD/AC mélange deux côtés différents, et DB/AB part d'un autre point.",
+          "categories": ["Un rapport du théorème", "Pas un rapport"],
+          "items": [
+            { "text": "AD sur AB", "category": 0 },
+            { "text": "DE sur BC", "category": 0 },
+            { "text": "AE sur AC", "category": 0 },
+            { "text": "AD sur AC", "category": 1 },
+            { "text": "DB sur AB", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Le petit triangle ADE est une réduction du grand triangle ABC.",
+          "answer": true,
+          "explanation": "Oui. Les trois côtés du petit sont obtenus en multipliant ceux du grand par un même nombre : c'est exactement ce qu'on appelle une réduction.",
+          "figureId": "thales"
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque point à sa position.",
+          "explanation": "A est le sommet commun, D et E sont les points de la parallèle, B et C ceux du grand triangle.",
+          "pairs": [
+            { "left": "A", "right": "Le sommet commun aux deux triangles" },
+            { "left": "D", "right": "Sur le segment [AB]" },
+            { "left": "E", "right": "Sur le segment [AC]" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-theoreme",
+      "title": "Le théorème",
+      "subtitle": "Trois rapports, et ils sont toujours égaux.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Ce qui ne change pas",
+          "body": "Déplace la parallèle : les six longueurs changent. Les trois rapports, eux, restent égaux entre eux."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "L'égalité",
+          "formula": "AD/AB = AE/AC = DE/BC",
+          "body": "chaque fraction compare un segment du petit triangle au segment correspondant du grand, vus du sommet A."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Vérifie par toi-même",
+          "body": "Les trois valeurs affichées sont les trois rapports. Fais glisser : elles bougent ensemble.",
+          "figureId": "thales"
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Avec des nombres",
+          "body": "AB = 10, AD = 4, AC = 15.\n\nAD/AB = 4/10 = 0,4\n\nDonc AE/AC = 0,4, c'est-à-dire AE = 0,4 × 15 = 6."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Le théorème de Thalès",
+          "formula": "AD/AB = AE/AC = DE/BC",
+          "bullets": [
+            "Il faut d'abord que les droites soient parallèles.",
+            "Chaque fraction part du sommet commun A.",
+            "Les trois rapports valent le même nombre : le coefficient de réduction."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "texteATrous",
+          "prompt": "Complète l'égalité du théorème.",
+          "template": "AD/AB = AE/___ = DE/___",
+          "blanks": [
+            { "accepted": ["AC", "ac"] },
+            { "accepted": ["BC", "bc"] }
+          ],
+          "hint": "Chaque fraction compare le petit triangle au grand.",
+          "explanation": "AD/AB = AE/AC = DE/BC. Les dénominateurs sont toujours les longueurs du grand triangle."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "AB = 10, AD = 4 et AC = 15. Combien vaut AE ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Calcule d'abord AD/AB, puis applique ce rapport à AC.",
+          "explanation": "AD/AB = 4/10 = 0,4. Donc AE = 0,4 × 15 = 6 cm."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Si le rapport vaut 0,5, que peut-on dire du petit triangle ?",
+          "hint": "Un rapport de 0,5, c'est une multiplication par un demi.",
+          "explanation": "Toutes ses longueurs sont la moitié de celles du grand triangle. Attention : son aire, elle, est quatre fois plus petite.",
+          "options": [
+            { "text": "Ses longueurs sont deux fois plus petites", "correct": true },
+            { "text": "Ses longueurs sont deux fois plus grandes" },
+            { "text": "Son aire est deux fois plus petite" },
+            { "text": "Il est identique au grand" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "On peut appliquer le théorème de Thalès même si les droites ne sont pas parallèles.",
+          "answer": false,
+          "explanation": "Non. Le parallélisme est la condition de départ : sans lui, les rapports ne sont pas égaux et l'égalité est fausse."
+        }
+      ]
+    },
+    {
+      "id": "calculer",
+      "title": "Calculer une longueur",
+      "subtitle": "La méthode, dans l'ordre, sans sauter d'étape.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Vérifier la configuration",
+          "body": "Repère le sommet commun, les deux droites sécantes et les deux parallèles. Sans ces trois éléments, on n'écrit rien."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Écrire l'égalité complète",
+          "body": "AD/AB = AE/AC = DE/BC\n\nÉcris les trois rapports même si tu n'en utiliseras que deux : c'est ce qui évite de mélanger les côtés."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Isoler l'inconnue",
+          "body": "Garde les deux rapports qui contiennent trois longueurs connues et l'inconnue.\n\nAD/AB = AE/AC\n4/10 = AE/15\nAE = 4 × 15 ÷ 10 = 6",
+          "formula": "produit en croix : AE = AD × AC ÷ AB"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Contrôle ton résultat : le petit triangle est plus petit. Si tu trouves une longueur du petit plus grande que celle du grand, tu as inversé un rapport."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode dans l'ordre.",
+          "hint": "On vérifie avant d'écrire, et on écrit avant de calculer.",
+          "explanation": "Vérifier la configuration, écrire l'égalité des trois rapports, choisir les deux rapports utiles, faire le produit en croix, puis contrôler la vraisemblance.",
+          "items": [
+            "Vérifier que les droites sont parallèles",
+            "Écrire l'égalité des trois rapports",
+            "Choisir les deux rapports qui contiennent l'inconnue",
+            "Faire le produit en croix",
+            "Vérifier que le résultat est vraisemblable"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "AB = 9, AD = 3 et BC = 12. Combien vaut DE ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "Le rapport vaut 3/9, soit un tiers.",
+          "explanation": "AD/AB = 3/9 = 1/3. Donc DE = 12 × 1/3 = 4 cm."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "AD = 5, AB = 8 et AE = 7,5. Combien vaut AC ?",
+          "answer": 12,
+          "tolerance": 0.05,
+          "unit": "cm",
+          "hint": "Cette fois l'inconnue est au dénominateur.",
+          "explanation": "AD/AB = AE/AC donne 5/8 = 7,5/AC, donc AC = 7,5 × 8 ÷ 5 = 12 cm."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "AD = 6, AB = 4. Que doit-on en conclure ?",
+          "hint": "Compare les deux longueurs : D est-il bien entre A et B ?",
+          "explanation": "C'est impossible : D est sur le segment [AB], donc AD ne peut pas dépasser AB. L'énoncé contient une erreur, ou les points ne sont pas placés comme on le croit.",
+          "options": [
+            { "text": "L'énoncé est impossible", "correct": true },
+            { "text": "Le rapport vaut 1,5" },
+            { "text": "Le petit triangle est plus grand" },
+            { "text": "Les droites ne sont pas parallèles" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-thales",
+      "title": "Défi : Thalès",
+      "subtitle": "Tout le chapitre, chronomètre en marche.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions qui mélangent les trois leçons."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "AB = 12, AD = 9 et AC = 8. Combien vaut AE ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "unit": "cm",
+          "hint": "9/12, c'est trois quarts.",
+          "explanation": "AD/AB = 9/12 = 0,75. Donc AE = 0,75 × 8 = 6 cm."
+        },
+        {
+          "id": "q2",
+          "kind": "texteATrous",
+          "prompt": "Complète ce raisonnement.",
+          "template": "AD/AB = 6/15 = ___ , donc DE = ___ × BC.",
+          "blanks": [
+            { "accepted": ["0,4", "0.4", "2/5"] },
+            { "accepted": ["0,4", "0.4", "2/5"] }
+          ],
+          "hint": "6 divisé par 15.",
+          "explanation": "6/15 = 0,4. Ce rapport vaut pour les trois fractions, donc DE = 0,4 × BC."
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Si le coefficient vaut 1, les deux triangles sont confondus.",
+          "answer": true,
+          "explanation": "Oui : un rapport de 1 signifie AD = AB, donc D est confondu avec B, et la parallèle est la droite (BC) elle-même."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces situations selon qu'on peut ou non appliquer le théorème.",
+          "explanation": "Le théorème exige un sommet commun, deux droites sécantes issues de ce sommet, et deux parallèles qui les coupent. Deux droites perpendiculaires ou un quadrilateur quelconque ne suffisent pas.",
+          "categories": ["Thalès s'applique", "Thalès ne s'applique pas"],
+          "items": [
+            { "text": "Un triangle coupé par une parallèle à un côté", "category": 0 },
+            { "text": "Deux droites sécantes coupées par deux parallèles", "category": 0 },
+            { "text": "Un triangle coupé par une perpendiculaire", "category": 1 },
+            { "text": "Un quadrilatère sans côtés parallèles", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Le rapport vaut 0,25. Par combien l'aire du petit triangle est-elle plus petite que celle du grand ?",
+          "hint": "Une aire dépend de deux longueurs, pas d'une.",
+          "explanation": "Par 16. Quand les longueurs sont divisées par 4, les aires le sont par 4 × 4 = 16. C'est l'erreur la plus fréquente du chapitre.",
+          "options": [
+            { "text": "16", "correct": true },
+            { "text": "4" },
+            { "text": "8" },
+            { "text": "0,25" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "saisieNumerique",
+          "prompt": "Un arbre projette une ombre de 6 m au moment où un piquet de 1,5 m en projette une de 2 m. Quelle est la hauteur de l'arbre ?",
+          "answer": 4.5,
+          "tolerance": 0.05,
+          "unit": "m",
+          "hint": "Les rayons du Soleil sont parallèles : c'est une configuration de Thalès.",
+          "explanation": "Le rapport des ombres vaut 6/2 = 3. L'arbre est donc trois fois plus haut que le piquet : 1,5 × 3 = 4,5 m."
+        }
+      ]
+    }
+  ]
+}

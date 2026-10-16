@@ -378,4 +378,58 @@ void main() {
       expect(figures, contains('systeme-solaire'));
     });
   });
+
+  // Thalès : chaque réponse numérique du chapitre est recalculée depuis
+  // les données de son énoncé. Une coquille dans un corrigé de maths est
+  // pire qu'un chapitre absent — l'élève qui a juste se croit faux.
+  group('Chapitre complet : le théorème de Thalès', () {
+    late Chapter thales;
+
+    setUpAll(() {
+      thales = catalog.chapterById('maths-college-le-theoreme-de-thales')!;
+    });
+
+    double reponse(String lessonId, String questionId) {
+      final Lesson lesson = thales.lessonById(lessonId)!;
+      final Question q = lesson.questions.firstWhere(
+        (Question x) => x.id == questionId,
+      );
+      return (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(thales.isPlayable, isTrue);
+      expect(thales.lessons.length, 4);
+      expect(thales.objectives, isNotEmpty);
+    });
+
+    test('les longueurs calculées respectent l\'égalité des rapports', () {
+      // AB = 10, AD = 4, AC = 15 : AE = AD × AC ÷ AB.
+      expect(reponse('le-theoreme', 'q2'), closeTo(4 * 15 / 10, 1e-9));
+      // AB = 9, AD = 3, BC = 12 : DE = AD × BC ÷ AB.
+      expect(reponse('calculer', 'q2'), closeTo(3 * 12 / 9, 1e-9));
+      // AD = 5, AB = 8, AE = 7,5 : AC = AE × AB ÷ AD.
+      expect(reponse('calculer', 'q3'), closeTo(7.5 * 8 / 5, 1e-9));
+      // AB = 12, AD = 9, AC = 8 : AE = AD × AC ÷ AB.
+      expect(reponse('defi-thales', 'q1'), closeTo(9 * 8 / 12, 1e-9));
+      // Ombres : l'arbre est au piquet ce que 6 m d'ombre sont à 2 m.
+      expect(reponse('defi-thales', 'q6'), closeTo(1.5 * 6 / 2, 1e-9));
+    });
+
+    test('la figure de Thalès est employée', () {
+      final Set<String> figures = <String>{
+        for (final Lesson lesson in thales.lessons) ...<String>[
+          for (final LessonCard card in lesson.cards)
+            if (card.figureId != null) card.figureId!,
+          for (final Question question in lesson.questions)
+            if (question.figureId != null) question.figureId!,
+        ],
+      };
+      expect(figures, contains('thales'));
+    });
+
+    test('le chapitre finit par un défi', () {
+      expect(thales.lessons.last.kind, LessonKind.defi);
+    });
+  });
 }

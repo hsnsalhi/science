@@ -280,6 +280,20 @@ void main() {
         await shoot(tester, '$device-6-astronomie');
       });
 
+      // La figure de Thalès : les trois rapports doivent afficher la même
+      // valeur, c'est tout l'enseignement du chapitre.
+      testWidgets('maths : configuration de Thalès', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Le théorème de Thalès');
+        await tapText(tester, 'La configuration');
+        await tapText(tester, 'Suivant');
+        await shoot(tester, '$device-13-thales');
+      });
+
       // Les deux formes d'exercice ajoutées : un tri dans des bacs, et
       // une estimation au curseur. Elles n'existaient pas quand les
       // captures ont été écrites, et rien d'autre ne les montre.
