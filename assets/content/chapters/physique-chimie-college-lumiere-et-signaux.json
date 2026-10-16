@@ -1,0 +1,342 @@
+{
+  "chapter": "physique-chimie-college-lumiere-et-signaux",
+  "lessons": [
+    {
+      "id": "la-lumiere-va-droit",
+      "title": "La lumière va droit",
+      "subtitle": "Et tout le reste en découle.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un fait, et ses conséquences",
+          "body": "Dans un milieu homogène — l'air, l'eau, le vide — la lumière se propage en ligne droite.\n\nCe seul fait explique les ombres, les éclipses, pourquoi on ne voit pas derrière un mur, et pourquoi un rayon laser trace un trait et non une courbe."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Une source, un objet, une ombre",
+          "body": "Déplace la lampe et l'objet, et regarde l'ombre changer.",
+          "figureId": "ombre-lumiere"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Voir demande trois choses",
+          "body": "1. une source qui émet de la lumière\n\n2. un objet qui la diffuse vers nous — sauf si l'objet est lui-même la source\n\n3. un œil qui la reçoit\n\nSi l'un des trois manque, on ne voit rien. Dans une pièce parfaitement noire, un objet blanc est invisible."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "On ne voit pas un rayon de côté",
+          "body": "Au cinéma, le faisceau du projecteur se voit. C'est parce que la poussière en suspension renvoie un peu de lumière vers nous.\n\nDans un air parfaitement propre, on ne verrait rien entre le projecteur et l'écran. Un rayon ne se voit que s'il entre dans l'œil."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Deux sortes de sources",
+          "body": "Sources primaires : elles produisent leur lumière. Le Soleil, une flamme, une lampe, une étoile.\n\nSources secondaires : elles ne font que renvoyer celle qu'elles reçoivent. La Lune, un mur, cette page, toi.\n\nLa Lune ne brille pas : elle réfléchit le Soleil. Sans lui, elle serait invisible."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces objets selon qu'ils produisent ou renvoient la lumière.",
+          "explanation": "Une source primaire produit sa lumière. Une source secondaire ne fait que renvoyer celle qu'elle reçoit — c'est le cas de la Lune.",
+          "categories": ["source primaire", "source secondaire"],
+          "items": [
+            { "text": "le Soleil", "category": 0 },
+            { "text": "une bougie", "category": 0 },
+            { "text": "une étoile", "category": 0 },
+            { "text": "la Lune", "category": 1 },
+            { "text": "un miroir", "category": 1 },
+            { "text": "une page blanche", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Dans une pièce parfaitement noire, que vois-tu d'un objet blanc ?",
+          "explanation": "Rien. Sans lumière à renvoyer, un objet blanc est aussi invisible qu'un objet noir.",
+          "options": [
+            { "text": "rien du tout", "correct": true },
+            { "text": "sa silhouette" },
+            { "text": "une lueur blanche" },
+            { "text": "sa couleur, en plus sombre" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Au cinéma, on voit le faisceau du projecteur parce que la lumière se voit de côté.",
+          "explanation": "Faux. On le voit parce que la poussière en suspension renvoie un peu de lumière vers nos yeux. Dans un air parfaitement propre, il serait invisible.",
+          "answer": false
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l'ombre d'un objet grandit-elle quand on approche la lampe ?",
+          "hint": "Trace les rayons qui frôlent les bords de l'objet.",
+          "explanation": "Les rayons qui frôlent l'objet s'écartent davantage quand la source est proche : le cône d'ombre s'évase donc plus vite.",
+          "options": [
+            { "text": "les rayons qui frôlent l'objet s'écartent davantage", "correct": true },
+            { "text": "la lampe chauffe l'objet" },
+            { "text": "l'objet devient plus opaque" },
+            { "text": "la lumière ralentit" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vitesse-et-distances",
+      "title": "La vitesse de la lumière",
+      "subtitle": "Vite, mais pas infiniment.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Dans le vide",
+          "formula": "c = 300 000 km/s",
+          "body": "Sept fois et demie le tour de la Terre en une seconde. C'est la vitesse maximale de l'univers : rien ne va plus vite."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Quelques trajets",
+          "body": "De la Lune à nous : 1,3 seconde.\n\nDu Soleil à nous : 8 minutes et 20 secondes.\n\nDe l'étoile la plus proche : 4,2 ans.\n\nRegarder loin, c'est donc regarder dans le passé. Le Soleil que tu vois a émis cette lumière il y a huit minutes."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "L'année-lumière",
+          "formula": "1 al = distance parcourue en un an",
+          "body": "Environ 9 500 milliards de kilomètres. C'est une unité de distance, pas de temps — le piège du chapitre."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le son, lui, est lent",
+          "body": "340 mètres par seconde dans l'air, soit près d'un million de fois moins vite que la lumière.\n\nD'où l'orage : l'éclair arrive tout de suite, le tonnerre met trois secondes par kilomètre. Compte les secondes, divise par trois, tu as la distance en kilomètres."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Le son a besoin de matière",
+          "body": "La lumière traverse le vide. Le son, non : il a besoin d'air, d'eau ou de solide pour se propager, car il est une vibration de la matière.\n\nDans l'espace, aucune explosion ne fait de bruit. C'est une des libertés que prennent tous les films."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Tu vois un éclair, puis entends le tonnerre 9 secondes après. À quelle distance est l'orage, en kilomètres ?",
+          "hint": "Le son met environ 3 secondes par kilomètre.",
+          "explanation": "9 ÷ 3 = 3 km. Plus précisément, 9 × 340 = 3 060 mètres.",
+          "answer": 3
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes la lumière du Soleil met-elle à nous parvenir ?",
+          "explanation": "Environ 8 minutes et 20 secondes : 150 millions de kilomètres divisés par 300 000 km/s font 500 secondes.",
+          "answer": 8,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'une année-lumière ?",
+          "explanation": "Une distance : celle que la lumière parcourt en un an, environ 9 500 milliards de kilomètres. Jamais une durée.",
+          "options": [
+            { "text": "une distance", "correct": true },
+            { "text": "une durée" },
+            { "text": "une vitesse" },
+            { "text": "une quantité de lumière" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Dans l'espace, une explosion fait un bruit assourdissant.",
+          "explanation": "Faux. Le son est une vibration de la matière : sans air, il ne se propage pas. Les films prennent tous cette liberté.",
+          "answer": false
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "La lumière parcourt 300 000 km en une seconde. Combien de kilomètres en une minute ?",
+          "explanation": "300 000 × 60 = 18 000 000 km, soit dix-huit millions de kilomètres par minute.",
+          "answer": 18000000
+        }
+      ]
+    },
+    {
+      "id": "signaux",
+      "title": "Transmettre un message",
+      "subtitle": "De la fumée à la fibre optique.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un signal porte une information",
+          "body": "Un signal de fumée, un coup de sifflet, un éclair de phare, une impulsion dans un câble : tous transportent un message d'un endroit à un autre.\n\nCe qui compte n'est pas la matière qui voyage, mais ce qu'on a convenu de lui faire dire."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Trois familles",
+          "body": "Signal lumineux : phare, feu tricolore, fibre optique. Très rapide, en ligne droite, arrêté par les obstacles.\n\nSignal sonore : sirène, voix, sonar. Lent, mais contourne les obstacles et traverse les murs.\n\nSignal électrique : câble, antenne. Rapide, et guidé là où on veut."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "La fibre optique",
+          "body": "Un fil de verre si pur qu'on verrait à travers plusieurs kilomètres de son épaisseur. La lumière y rebondit sur les parois sans en sortir, et suit donc les virages.\n\nC'est ainsi qu'un message traverse un océan en quelques centièmes de seconde — la quasi-totalité du trafic internet mondial passe par des câbles sous-marins, pas par des satellites."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Numérique veut dire compté",
+          "body": "Un signal numérique ne prend que deux valeurs : allumé ou éteint, 0 ou 1. Un signal analogique varie continûment, comme la pression de l'air dans une onde sonore.\n\nL'avantage du numérique : un petit bruit n'empêche pas de distinguer 0 de 1, donc la copie reste parfaite. C'est pourquoi un fichier recopié mille fois ne se dégrade pas, contrairement à une cassette."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque signal à sa nature.",
+          "explanation": "La fibre et le phare portent de la lumière, la sirène et le sonar du son, le câble de l'électricité.",
+          "pairs": [
+            { "left": "fibre optique", "right": "signal lumineux" },
+            { "left": "sirène", "right": "signal sonore" },
+            { "left": "sonar", "right": "signal sonore" },
+            { "left": "câble réseau", "right": "signal électrique" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi entend-on une sirène derrière un bâtiment alors qu'on ne la voit pas ?",
+          "hint": "Les deux signaux ne se comportent pas pareil face à un obstacle.",
+          "explanation": "Le son contourne les obstacles, la lumière non. C'est pourquoi les avertisseurs sont sonores et non lumineux.",
+          "options": [
+            { "text": "le son contourne les obstacles, pas la lumière", "correct": true },
+            { "text": "le son traverse le béton sans perte" },
+            { "text": "la lumière est trop rapide" },
+            { "text": "les sirènes sont très puissantes" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "L'essentiel du trafic internet mondial passe par des satellites.",
+          "explanation": "Faux. La quasi-totalité passe par des câbles sous-marins en fibre optique. Les satellites ne servent qu'aux zones mal reliées.",
+          "answer": false
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un fichier copié mille fois reste-t-il identique ?",
+          "explanation": "Parce qu'il est numérique : un petit bruit n'empêche pas de distinguer 0 de 1, donc chaque copie est exacte. Un signal analogique, lui, se dégrade à chaque reprise.",
+          "options": [
+            { "text": "parce qu'un 0 reste un 0 malgré le bruit", "correct": true },
+            { "text": "parce que les copies sont vérifiées à l'œil" },
+            { "text": "parce que les fichiers sont petits" },
+            { "text": "parce que l'ordinateur ne fait jamais d'erreur" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un sonar envoie une impulsion et reçoit l'écho 4 secondes plus tard. Le son va à 1 500 m/s dans l'eau. À quelle profondeur est le fond, en mètres ?",
+          "hint": "L'aller-retour, pas l'aller seul.",
+          "explanation": "Le son a parcouru 1 500 × 4 = 6 000 m aller-retour, donc le fond est à 3 000 m.",
+          "answer": 3000
+        }
+      ]
+    },
+    {
+      "id": "defi-lumiere",
+      "title": "Défi : voir, c'est regarder le passé",
+      "subtitle": "Des conséquences qui donnent le vertige.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le ciel est une machine à remonter le temps",
+          "body": "La lumière met du temps à arriver. Donc tu ne vois jamais les choses telles qu'elles sont maintenant, mais telles qu'elles étaient quand la lumière est partie.\n\nPour un objet dans la pièce, c'est quelques milliardièmes de seconde — autant dire maintenant. Pour le Soleil, huit minutes. Pour l'étoile Proxima, quatre ans. Pour la galaxie d'Andromède, deux millions et demi d'années : tu la vois telle qu'elle était avant l'apparition de l'humanité.\n\nSi le Soleil s'éteignait à l'instant, nous continuerions à le voir briller pendant huit minutes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Si le Soleil s'éteignait maintenant, pendant combien de minutes le verrions-nous encore briller ?",
+          "explanation": "Environ 8 minutes : le temps que la dernière lumière émise nous parvienne.",
+          "answer": 8,
+          "tolerance": 0.5
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Tu observes une étoile à 100 années-lumière. Quand sa lumière est-elle partie ?",
+          "explanation": "Il y a 100 ans. Une année-lumière étant la distance parcourue en un an, 100 al correspondent à 100 ans de trajet.",
+          "options": [
+            { "text": "il y a 100 ans", "correct": true },
+            { "text": "il y a 100 jours" },
+            { "text": "à l'instant" },
+            { "text": "impossible à savoir" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "La Lune est à 384 000 km. Combien de secondes sa lumière met-elle à nous parvenir ? Donne la réponse au dixième.",
+          "hint": "Divise par 300 000 km/s.",
+          "explanation": "384 000 ÷ 300 000 = 1,28 seconde, soit environ 1,3 s. C'est pourquoi les dialogues avec Apollo avaient un léger décalage.",
+          "answer": 1.3,
+          "tolerance": 0.1
+        },
+        {
+          "id": "q4",
+          "kind": "estimation",
+          "prompt": "Estime en millions d'années le temps que met la lumière d'Andromède à nous parvenir.",
+          "explanation": "Environ 2,5 millions d'années. Andromède est la galaxie majeure la plus proche, et c'est le plus lointain objet visible à l'œil nu.",
+          "answer": 2.5,
+          "unit": "millions d'années",
+          "min": 0.1,
+          "max": 100,
+          "tolerance": 1.2
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Un signal met 60 millisecondes pour un aller-retour Paris-New York par fibre. Sachant que la lumière y va à 200 000 km/s, quelle distance, en kilomètres, parcourt-il en tout ?",
+          "hint": "60 millisecondes font 0,06 seconde.",
+          "explanation": "200 000 × 0,06 = 12 000 km aller-retour, soit 6 000 km dans chaque sens — l'ordre de grandeur de la traversée atlantique.",
+          "answer": 12000
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Dans une fibre optique, la lumière va moins vite que dans le vide.",
+          "explanation": "Vrai. Elle y va à environ 200 000 km/s au lieu de 300 000 : le verre la ralentit. Les 300 000 km/s ne valent que dans le vide.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}

@@ -44,6 +44,7 @@ import 'seasons_figure.dart';
 import 'selection_figure.dart';
 import 'sensor_chain_figure.dart';
 import 'sequence_figure.dart';
+import 'shadow_figure.dart';
 import 'solar_system_figure.dart';
 import 'speed_figure.dart';
 import 'stack_queue_figure.dart';
@@ -99,6 +100,9 @@ abstract final class FigureRegistry {
     // Un volcan en coupe : chambre, cheminée, couches et éruptions.
     'volcan': (BuildContext context, Color accent) =>
         VolcanoFigure(accent: accent),
+    // Une lampe, un objet, un mur : d'où vient une ombre.
+    'ombre-lumiere': (BuildContext context, Color accent) =>
+        ShadowFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
