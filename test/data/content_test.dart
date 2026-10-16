@@ -6509,4 +6509,148 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : biologie cellulaire', () {
+    late Chapter cellule;
+
+    setUpAll(() {
+      cellule = catalog.chapterById('svt-universite-biologie-cellulaire')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = cellule.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Rapport surface sur volume d'une sphère, calculé depuis les
+    /// formules de la géométrie et non depuis le raccourci 3/r : c'est
+    /// ce raccourci que le cours annonce, et qu'il faut donc vérifier.
+    double rapport(double rayon) {
+      final double surface = 4 * math.pi * rayon * rayon;
+      final double volume = 4 / 3 * math.pi * rayon * rayon * rayon;
+      return surface / volume;
+    }
+
+    /// Durée de diffusion, avec le coefficient annoncé par le cours.
+    double diffusion(double distance) => distance * distance / (2 * 500);
+
+    test('est jouable de bout en bout', () {
+      expect(cellule.isPlayable, isTrue);
+      expect(cellule.lessons.length, 4);
+    });
+
+    test('le raccourci 3 sur le rayon est exact', () {
+      for (final double rayon in <double>[0.5, 1, 5, 10, 50, 100]) {
+        expect(rapport(rayon), closeTo(3 / rayon, 1e-9), reason: 'r = $rayon');
+      }
+      expect(
+        rapport(10),
+        closeTo(reponseNum('pourquoi-si-petites', 'q1'), 0.01),
+      );
+      expect(
+        rapport(5),
+        closeTo(reponseNum('defi-biologie-cellulaire', 'q1'), 0.01),
+      );
+    });
+
+    test('doubler le rayon multiplie le volume par huit', () {
+      for (final double rayon in <double>[1, 3, 7.5]) {
+        final double v1 = rayon * rayon * rayon;
+        final double v2 = 8 * v1;
+        expect(
+          math.pow(2 * rayon, 3).toDouble(),
+          closeTo(v2, 1e-9),
+          reason: 'r = $rayon',
+        );
+        // La surface, elle, n'est multipliée que par quatre.
+        expect(
+          math.pow(2 * rayon, 2) / math.pow(rayon, 2),
+          closeTo(4, 1e-9),
+        );
+      }
+      expect(reponseNum('pourquoi-si-petites', 'q2'), 8);
+      // Tripler le rayon divise le rapport par trois.
+      expect(
+        rapport(1) / rapport(3),
+        closeTo(reponseNum('defi-biologie-cellulaire', 'q2'), 1e-9),
+      );
+    });
+
+    test('les durées de diffusion annoncées sont celles de la formule', () {
+      expect(
+        diffusion(100),
+        closeTo(reponseNum('pourquoi-si-petites', 'q3'), 0.5),
+      );
+      expect(
+        diffusion(1000),
+        closeTo(reponseNum('pourquoi-si-petites', 'q4'), 50),
+      );
+      expect(
+        diffusion(10),
+        closeTo(reponseNum('defi-biologie-cellulaire', 'q3'), 0.01),
+      );
+      // Doubler la distance quadruple la durée : l'affirmation du défi.
+      for (final double distance in <double>[1, 10, 100]) {
+        expect(
+          diffusion(2 * distance) / diffusion(distance),
+          closeTo(4, 1e-9),
+        );
+      }
+    });
+
+    test('le tri des constituants suit la figure de la cellule', () {
+      final ClassifyQuestion q =
+          cellule.lessonById('compartimenter')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      final Set<String> vegetaux = CellFigure.propresAuxVegetaux
+          .map((Organite o) => o.nom)
+          .toSet();
+      for (final ClassifyItem item in q.items) {
+        expect(
+          item.category == 0,
+          vegetaux.contains(item.text),
+          reason: item.text,
+        );
+        // Et chaque nom cité existe bien dans la figure.
+        expect(
+          CellFigure.tous.any((Organite o) => o.nom == item.text),
+          isTrue,
+          reason: item.text,
+        );
+      }
+    });
+
+    test('l’appariement ne cite que des constituants de la figure', () {
+      // Comparer deux formulations en prose n'apprendrait rien : « contrôle
+      // les échanges » et « contrôle ce qui entre et sort » disent la même
+      // chose sans partager de mot. Ce qu'un test peut établir, c'est que
+      // chaque nom cité existe dans la figure, qu'aucun n'y figure deux
+      // fois, et qu'aucun organite propre aux végétaux n'est présenté
+      // comme commun.
+      final MatchingQuestion q =
+          cellule.lessonById('defi-biologie-cellulaire')!.questions.firstWhere(
+                (Question x) => x.id == 'q5',
+              )
+              as MatchingQuestion;
+      final List<String> cites = <String>[];
+      for (final MatchPair pair in q.pairs) {
+        final String nom = pair.left.replaceFirst(RegExp(r'^l[ae] '), '');
+        final Iterable<Organite> trouves = CellFigure.tous.where(
+          (Organite o) => o.nom.toLowerCase() == nom.toLowerCase(),
+        );
+        expect(trouves, hasLength(1), reason: pair.left);
+        cites.add(nom.toLowerCase());
+      }
+      expect(cites.toSet(), hasLength(cites.length));
+      expect(q.pairs.map((MatchPair p) => p.right).toSet(),
+          hasLength(q.pairs.length));
+    });
+  });
+
 }

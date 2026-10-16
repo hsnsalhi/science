@@ -1,0 +1,312 @@
+{
+  "chapter": "svt-universite-biologie-cellulaire",
+  "lessons": [
+    {
+      "id": "compartimenter",
+      "title": "Compartimenter",
+      "subtitle": "Ce qu'une membrane permet.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La première invention",
+          "body": "Une membrane sépare un intérieur d'un extérieur. C'est peu de chose, et c'est la condition de tout le reste.\n\nSans elle, aucune concentration ne se maintient, aucun gradient ne se construit, et il n'y a pas de métabolisme à proprement parler."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Les compartiments",
+          "body": "Touche un constituant pour lire son rôle. Bascule entre cellule animale et végétale.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Procaryotes et eucaryotes",
+          "body": "Une cellule procaryote n'a qu'un compartiment : son ADN baigne dans le cytoplasme.\n\nUne cellule eucaryote en a plusieurs, dont le noyau. Chaque compartiment peut maintenir sa composition propre, et donc abriter des réactions incompatibles entre elles."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Séparer la transcription de la traduction, c'est précisément ce que le noyau permet, et c'est ce qui rend possible la maturation des ARN chez les eucaryotes."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui distingue une cellule eucaryote d'une procaryote ?",
+          "hint": "Combien de compartiments ?",
+          "explanation": "La présence d'un noyau et d'autres compartiments internes. Le procaryote n'en a qu'un.",
+          "figureId": "cellule",
+          "options": [
+            { "text": "Des compartiments internes, dont un noyau", "correct": true },
+            { "text": "La présence d'ADN" },
+            { "text": "La présence d'une membrane" },
+            { "text": "La taille, uniquement" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces constituants : propres aux végétaux, ou communs ?",
+          "hint": "Lesquels sont absents d'une cellule animale ?",
+          "explanation": "La paroi, la vacuole et les chloroplastes sont propres aux végétaux. Le noyau et les mitochondries sont dans les deux.",
+          "categories": ["Propre aux végétaux", "Commun aux deux"],
+          "items": [
+            { "text": "Paroi", "category": 0 },
+            { "text": "Chloroplaste", "category": 0 },
+            { "text": "Noyau", "category": 1 },
+            { "text": "Mitochondrie", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Sans membrane, une cellule pourrait quand même maintenir des concentrations différentes de son milieu.",
+          "answer": false,
+          "explanation": "Non : la diffusion égaliserait tout. La membrane est ce qui rend un intérieur possible."
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-si-petites",
+      "title": "Pourquoi les cellules sont petites",
+      "subtitle": "Surface, volume, et diffusion.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Le rapport qui décide",
+          "formula": "surface / volume = 3 / rayon",
+          "body": "pour une sphère. Il diminue quand la cellule grossit."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Ce que cela coûte",
+          "body": "Les échanges se font à travers la surface ; les besoins croissent avec le volume.\n\nDoubler le rayon multiplie la surface par 4 et le volume par 8. La cellule a deux fois plus de besoins par unité de surface disponible."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Le temps de diffusion",
+          "formula": "durée = distance² / (2 × D)",
+          "body": "avec D voisin de 500 micromètres carrés par seconde pour une petite molécule dans le cytoplasme."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Les ordres de grandeur",
+          "body": "Traverser 10 micromètres : un dixième de seconde.\n\nEn traverser 100 : dix secondes, car la distance intervient au carré.\n\nEn traverser 1 000, soit un millimètre : mille secondes, près de vingt minutes. Aucune cellule ne peut compter sur la diffusion seule à cette échelle."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le rapport surface sur volume d'une cellule sphérique de 10 micromètres de rayon, en micromètres puissance moins un ?",
+          "answer": 0.3,
+          "tolerance": 0.01,
+          "hint": "3 divisé par le rayon.",
+          "explanation": "0,3. Une cellule de rayon 100 micromètres aurait dix fois moins de surface par unité de volume."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Si le rayon double, par combien le volume est-il multiplié ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "hint": "Le volume suit le cube.",
+          "explanation": "Par 8, alors que la surface n'est multipliée que par 4. C'est tout le problème."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de secondes pour diffuser sur 100 micromètres ?",
+          "answer": 10,
+          "tolerance": 0.5,
+          "unit": "s",
+          "hint": "La distance au carré, divisée par 1 000.",
+          "explanation": "10 secondes. Sur 10 micromètres, il n'en fallait qu'un dixième : cent fois moins pour dix fois moins de distance."
+        },
+        {
+          "id": "q4",
+          "kind": "estimation",
+          "prompt": "Et pour diffuser sur un millimètre, soit 1 000 micromètres ?",
+          "answer": 1000,
+          "min": 10,
+          "max": 5000,
+          "unit": "s",
+          "explanation": "1 000 secondes, près de vingt minutes. C'est pourquoi les grands organismes ont des systèmes de transport actifs."
+        }
+      ]
+    },
+    {
+      "id": "origine-endosymbiotique",
+      "title": "L'origine des mitochondries",
+      "subtitle": "Une bactérie avalée, et gardée.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une hypothèse devenue certitude",
+          "body": "Les mitochondries et les chloroplastes descendent de bactéries libres, entrées dans une cellule hôte et jamais ressorties.\n\nL'idée date du début du vingtième siècle ; les preuves moléculaires l'ont établie dans les années 1970."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les quatre indices",
+          "body": "Ces organites ont leur propre ADN, circulaire comme celui des bactéries.\n\nIls ont deux membranes, dont l'externe vient de la cellule hôte.\n\nIls se divisent par eux-mêmes, et non avec la cellule.\n\nLeurs ribosomes sont de type bactérien, et répondent aux antibiotiques qui visent les bactéries."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Et le code",
+          "body": "Le code génétique de ces organites est quasi identique à celui de la cellule et à celui des bactéries.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Que certains antibiotiques antibactériens soient toxiques pour les mitochondries n'est pas un effet secondaire étrange : c'est une conséquence directe de leur origine."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces caractères : appuient-ils l'origine bactérienne des mitochondries ?",
+          "hint": "Qu'est-ce qu'une bactérie possède en propre ?",
+          "explanation": "ADN circulaire propre et ribosomes bactériens sont des héritages. La présence dans les cellules végétales et la taille ne disent rien de l'origine.",
+          "categories": ["Appuie l'hypothèse", "N'apporte rien"],
+          "items": [
+            { "text": "un ADN circulaire propre", "category": 0 },
+            { "text": "des ribosomes de type bactérien", "category": 0 },
+            { "text": "la présence dans les cellules végétales", "category": 1 },
+            { "text": "une forme allongée", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de membranes entourent une mitochondrie ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "membranes",
+          "hint": "Une vient de l'hôte.",
+          "explanation": "2 : celle de la bactérie d'origine, et celle de la vésicule de la cellule hôte qui l'a englobée."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi certains antibiotiques sont-ils toxiques pour nos mitochondries ?",
+          "hint": "Que visent ces antibiotiques ?",
+          "explanation": "Parce qu'ils visent les ribosomes bactériens, et que ceux des mitochondries en sont. C'est une conséquence de leur origine.",
+          "figureId": "code-genetique",
+          "options": [
+            { "text": "Leurs ribosomes sont de type bactérien", "correct": true },
+            { "text": "Les mitochondries sont des bactéries actives" },
+            { "text": "Elles contiennent des antibiotiques" },
+            { "text": "C'est une coïncidence chimique" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Les mitochondries se divisent en même temps que la cellule qui les contient.",
+          "answer": false,
+          "explanation": "Non : elles se divisent par elles-mêmes, indépendamment du cycle cellulaire. C'est l'un des quatre indices de leur origine."
+        }
+      ]
+    },
+    {
+      "id": "defi-biologie-cellulaire",
+      "title": "Défi : la cellule",
+      "subtitle": "Six questions, de la membrane à l'endosymbiose.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Garde en tête les deux contraintes physiques : la surface croît moins vite que le volume, et la diffusion est lente."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Rapport surface sur volume d'une sphère de 5 micromètres de rayon, en micromètres puissance moins un ?",
+          "answer": 0.6,
+          "tolerance": 0.01,
+          "hint": "3 divisé par 5.",
+          "explanation": "0,6, soit deux fois plus qu'une cellule de rayon 10. Les petites cellules échangent mieux."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Si le rayon est multiplié par 3, par combien le rapport surface sur volume est-il divisé ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "Le rapport vaut 3 sur le rayon.",
+          "explanation": "Par 3 : le rapport est inversement proportionnel au rayon."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de secondes pour diffuser sur 10 micromètres ?",
+          "answer": 0.1,
+          "tolerance": 0.01,
+          "unit": "s",
+          "hint": "100 divisé par 1 000.",
+          "explanation": "0,1 seconde. À l'échelle d'une cellule, la diffusion est un moyen de transport parfaitement efficace."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Doubler la distance double le temps de diffusion.",
+          "answer": false,
+          "explanation": "Non : il le quadruple, puisque la distance intervient au carré. C'est ce qui condamne les très grandes cellules."
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque constituant à son rôle.",
+          "explanation": "Quatre compartiments, quatre fonctions distinctes — et c'est la séparation qui les rend compatibles entre elles.",
+          "pairs": [
+            { "left": "la membrane", "right": "contrôle les échanges" },
+            { "left": "le noyau", "right": "contient l'ADN" },
+            { "left": "la mitochondrie", "right": "libère l'énergie" },
+            { "left": "le chloroplaste", "right": "capte la lumière" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que permet la compartimentation des eucaryotes ?",
+          "hint": "Des réactions qui ne vont pas ensemble.",
+          "explanation": "D'abriter des réactions incompatibles, chacune dans son compartiment à la composition propre.",
+          "figureId": "cellule",
+          "options": [
+            { "text": "D'abriter des réactions incompatibles entre elles", "correct": true },
+            { "text": "De grandir sans limite" },
+            { "text": "De se passer de membrane" },
+            { "text": "D'accélérer la diffusion" }
+          ]
+        }
+      ]
+    }
+  ]
+}

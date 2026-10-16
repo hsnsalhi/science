@@ -1,8 +1,8 @@
 # Feuille de route
 
-Le socle technique est posé, et cinquante-cinq chapitres sont jouables — au
+Le socle technique est posé, et cinquante-six chapitres sont jouables — au
 moins un par matière et par niveau. La répartition est désormais la vraie
-question : 21 chapitres au collège contre 14 au primaire, 15 au lycée et 5 à
+question : 21 chapitres au collège contre 14 au primaire, 15 au lycée et 6 à
 l'université. La suite se joue surtout sur le **contenu**, et sur un petit
 nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 étoffé.
@@ -20,8 +20,8 @@ L'ordre proposé suit l'utilité pour un élève, pas la facilité d'écriture.
    plus de manipulation.
 2. **Les matières les plus maigres** : la technologie et l'histoire
    des sciences en ont quatre chacune, contre douze aux mathématiques.
-3. **L'université**, qui n'a que cinq chapitres. La chimie, la
-   biologie et la technologie du supérieur restent entières.
+3. **L'université**, qui n'a que six chapitres. La chimie et la
+   technologie du supérieur restent entières.
 
 Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 
