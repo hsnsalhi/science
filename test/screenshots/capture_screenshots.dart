@@ -829,6 +829,22 @@ void main() {
         await shoot(tester, '$device-35-angles');
       });
 
+      // Le tir à 45°, celui qui porte le plus loin. Les points sont
+      // espacés d'intervalles de temps égaux : c'est là que se lit
+      // l'indépendance des deux mouvements.
+      testWidgets('lycée : le projectile', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Physique-chimie');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Mouvement et interactions');
+        await tapText(tester, 'La chute et le projectile');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-36-projectile');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

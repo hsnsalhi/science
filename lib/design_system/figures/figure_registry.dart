@@ -21,6 +21,7 @@ import 'moon_phases_figure.dart';
 import 'number_line_figure.dart';
 import 'orbits_figure.dart';
 import 'parabola_figure.dart';
+import 'projectile_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'retrograde_figure.dart';
 import 'right_triangle_figure.dart';
@@ -104,6 +105,9 @@ abstract final class FigureRegistry {
     // Deux angles réglables, et le troisième qui suit.
     'angles-triangle': (BuildContext context, Color accent) =>
         TriangleAnglesFigure(accent: accent),
+    // Un projectile lancé, dont on règle l'angle et la vitesse.
+    'projectile': (BuildContext context, Color accent) =>
+        ProjectileFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

@@ -21,6 +21,7 @@ import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
+import 'package:eureka/design_system/figures/projectile_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
 import 'package:eureka/design_system/figures/sensor_chain_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
@@ -3386,6 +3387,101 @@ void main() {
       expect(possible(<double>[5, 8, minimum - 1]), isFalse);
       // Et le cas du défi.
       expect(possible(<double>[7, 9, 15]), isTrue);
+    });
+  });
+
+  group('Chapitre complet : mouvement et interactions', () {
+    late Chapter mouvement;
+
+    setUpAll(() {
+      mouvement = catalog.chapterById(
+        'physique-chimie-lycee-mouvement-et-interactions',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (mouvement.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(mouvement.isPlayable, isTrue);
+      expect(mouvement.lessons.length, 4);
+    });
+
+    test('les portées annoncées sortent du calcul', () {
+      expect(
+        ProjectileFigure.portee(20, 45),
+        closeTo(reponseNum('chute-et-projectile', 'q3'), 0.1),
+      );
+      expect(
+        ProjectileFigure.portee(25, 45),
+        closeTo(reponseNum('defi-mouvement', 'q3'), 0.1),
+      );
+    });
+
+    test('45° porte le plus loin, et aucun autre angle', () {
+      // Le chapitre l'affirme : on balaie les angles plutôt que de s'en
+      // remettre à la formule recopiée.
+      double meilleure = 0;
+      double meilleurAngle = 0;
+      for (double a = 1; a < 90; a += 0.25) {
+        final double d = ProjectileFigure.portee(20, a);
+        if (d > meilleure) {
+          meilleure = d;
+          meilleurAngle = a;
+        }
+      }
+      expect(meilleurAngle, closeTo(ProjectileFigure.angleOptimal, 0.3));
+      expect(
+        ProjectileFigure.angleOptimal,
+        reponseNum('chute-et-projectile', 'q2'),
+      );
+    });
+
+    test('deux angles complémentaires portent à la même distance', () {
+      final double autre = reponseNum('chute-et-projectile', 'q4');
+      expect(30 + autre, 90);
+      for (final double a in <double>[20, 30, 35, 40]) {
+        expect(
+          ProjectileFigure.portee(20, a),
+          closeTo(ProjectileFigure.portee(20, 90 - a), 1e-9),
+          reason: '$a° et ${90 - a}°',
+        );
+        // Mais les trajectoires diffèrent : le tir incliné monte plus
+        // haut, comme le dit la leçon.
+        expect(
+          ProjectileFigure.hauteurMax(20, 90 - a),
+          greaterThan(ProjectileFigure.hauteurMax(20, a)),
+        );
+      }
+    });
+
+    test('la chute libre annoncée est recalculée', () {
+      // t = racine(2h/g), puis v = g t. La masse n'intervient nulle part.
+      const double hauteur = 20;
+      final double t = math.sqrt(2 * hauteur / ProjectileFigure.g);
+      expect(t, closeTo(reponseNum('defi-mouvement', 'q1'), 0.05));
+      expect(
+        ProjectileFigure.g * t,
+        closeTo(reponseNum('defi-mouvement', 'q2'), 0.1),
+      );
+    });
+
+    test('le temps de vol ne dépend que de la composante verticale', () {
+      // C'est l'indépendance des deux mouvements : à vitesse verticale
+      // égale, deux tirs durent autant.
+      final double vy = 20 * math.sin(45 * math.pi / 180);
+      for (final double v in <double>[20, 25, 30]) {
+        final double angle = math.asin(vy / v) * 180 / math.pi;
+        expect(
+          ProjectileFigure.duree(v, angle),
+          closeTo(ProjectileFigure.duree(20, 45), 1e-9),
+          reason: 'v = $v',
+        );
+      }
     });
   });
 }
