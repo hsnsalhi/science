@@ -31,6 +31,7 @@ import 'package:eureka/design_system/figures/sensor_chain_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/design_system/figures/triangle_angles_figure.dart';
 import 'package:eureka/design_system/figures/triangle_test_figure.dart';
+import 'package:eureka/design_system/figures/turing_figure.dart';
 import 'package:eureka/design_system/figures/states_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
@@ -4945,6 +4946,112 @@ void main() {
       }
       expect(reponseNum('par-l-absurde', 'q3'), 2 * 3 * 5 * 7 + 1);
       expect(reponseNum('defi-demonstrations', 'q5'), 2 * 3 * 5 + 1);
+    });
+  });
+
+
+  group('Chapitre complet : Turing et la naissance de l’informatique', () {
+    late Chapter turing;
+
+    setUpAll(() {
+      turing = catalog.chapterById(
+        'histoire-sciences-lycee-turing-et-l-informatique',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = turing.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Le nombre de pas que met la machine à s'arrêter sur [ruban].
+    int pasJusquALArret(String ruban, {int maxPas = 100}) {
+      EtatMachine courant = TuringFigure.depart(ruban);
+      int pas = 0;
+      while (!courant.termine && pas < maxPas) {
+        courant = TuringFigure.pas(courant);
+        pas++;
+      }
+      return pas;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(turing.isPlayable, isTrue);
+      expect(turing.lessons.length, 4);
+    });
+
+    test('la machine calcule bien une addition', () {
+      // Le programme n'est pas à croire sur parole : son ruban final est
+      // confronté à l'arithmétique, pour toutes les valeurs que huit cases
+      // peuvent porter sans déborder.
+      for (int valeur = 0; valeur < 255; valeur++) {
+        final EtatMachine fin = TuringFigure.executer(
+          TuringFigure.ruban(valeur),
+        );
+        expect(fin.termine, isTrue, reason: 'valeur $valeur');
+        expect(
+          TuringFigure.valeur(fin.ruban),
+          valeur + 1,
+          reason: 'ruban ${TuringFigure.ruban(valeur)}',
+        );
+      }
+    });
+
+    test('les nombres de pas annoncés sont ceux de la machine', () {
+      expect(
+        pasJusquALArret(TuringFigure.rubanInitial),
+        reponseNum('la-machine-de-turing', 'q3'),
+      );
+      expect(pasJusquALArret('00000111'), reponseNum('defi-turing', 'q1'));
+      expect(pasJusquALArret('00000110'), reponseNum('defi-turing', 'q2'));
+      // Le ruban de départ vaut bien 11, et la machine en fait 12.
+      expect(TuringFigure.valeur(TuringFigure.rubanInitial), 11);
+      expect(
+        TuringFigure.valeur(
+          TuringFigure.executer(TuringFigure.rubanInitial).ruban,
+        ),
+        reponseNum('la-machine-de-turing', 'q2'),
+      );
+    });
+
+    test('le nombre de pas est celui des 1 de droite, plus un', () {
+      // L'explication de la leçon, éprouvée sur toute la plage.
+      for (int valeur = 0; valeur < 255; valeur++) {
+        final String ruban = TuringFigure.ruban(valeur);
+        int uns = 0;
+        for (int i = ruban.length - 1; i >= 0 && ruban[i] == '1'; i--) {
+          uns++;
+        }
+        expect(pasJusquALArret(ruban), uns + 1, reason: ruban);
+      }
+    });
+
+    test('un pas ne change qu’une case et déplace la tête d’un cran', () {
+      // La définition même de la machine : pas de mémoire cachée, pas de
+      // saut. C'est ce que la figure doit montrer, et donc respecter.
+      for (int valeur = 0; valeur < 64; valeur++) {
+        EtatMachine courant = TuringFigure.depart(TuringFigure.ruban(valeur));
+        while (!courant.termine && courant.tete >= 0) {
+          final EtatMachine suivant = TuringFigure.pas(courant);
+          expect(suivant.tete, courant.tete - 1);
+          int differences = 0;
+          for (int i = 0; i < courant.ruban.length; i++) {
+            if (courant.ruban[i] != suivant.ruban[i]) differences++;
+          }
+          expect(differences, lessThanOrEqualTo(1), reason: courant.ruban);
+          courant = suivant;
+        }
+      }
+    });
+
+    test('une machine arrêtée le reste', () {
+      final EtatMachine fin = TuringFigure.executer('00000110');
+      expect(fin.termine, isTrue);
+      expect(TuringFigure.pas(fin), fin);
     });
   });
 

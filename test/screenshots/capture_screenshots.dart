@@ -933,6 +933,25 @@ void main() {
         await shoot(tester, '$device-41-avertissement');
       });
 
+      // La machine de Turing après quelques pas : le ruban a changé, la
+      // tête a reculé. C'est l'écran qui remplace le tableau de règles.
+      testWidgets('lycée : la machine de Turing', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Histoire des sciences');
+        await tapText(tester, 'Lycée');
+        await tapText(tester, 'Turing et la naissance de l\'informatique');
+        await tapText(tester, 'La machine de Turing');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Un pas'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Un pas'));
+        await tester.pumpAndSettle();
+        await shoot(tester, '$device-42-turing');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

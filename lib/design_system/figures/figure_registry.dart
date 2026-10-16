@@ -37,6 +37,7 @@ import 'states_figure.dart';
 import 'thales_figure.dart';
 import 'truth_table_figure.dart';
 import 'triangle_angles_figure.dart';
+import 'turing_figure.dart';
 import 'triangle_test_figure.dart';
 
 /// Fabrique une figure à partir de son identifiant de contenu.
@@ -66,6 +67,9 @@ abstract final class FigureRegistry {
     // Trois suites de motifs, et la case suivante à trouver.
     'suite-motifs': (BuildContext context, Color accent) =>
         PatternFigure(accent: accent),
+    // Une machine de Turing qui ajoute 1, pas à pas.
+    'machine-turing': (BuildContext context, Color accent) =>
+        TuringFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

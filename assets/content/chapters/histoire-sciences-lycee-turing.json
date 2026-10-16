@@ -1,0 +1,324 @@
+{
+  "chapter": "histoire-sciences-lycee-turing-et-l-informatique",
+  "lessons": [
+    {
+      "id": "la-question-de-hilbert",
+      "title": "La question de Hilbert",
+      "subtitle": "Tout est-il calculable ?",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un programme pour les mathématiques",
+          "body": "En 1928, David Hilbert pose une question précise : existe-t-il une procédure mécanique qui, donnée une affirmation mathématique, décide en un temps fini si elle est démontrable ?\n\nIl s'attendait à oui. La réponse serait non, et il faudrait d'abord inventer ce que « procédure mécanique » veut dire."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Définir avant de répondre",
+          "body": "Pour prouver qu'aucune procédure n'existe, il ne suffit pas de n'en trouver aucune. Il faut dire exactement ce qu'est une procédure, et raisonner sur toutes à la fois.\n\nC'est le vrai travail de Turing en 1936 : non pas répondre à Hilbert, mais rendre la question assez nette pour qu'on puisse y répondre."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Alonzo Church avait atteint le même résultat quelques mois plus tôt, par un autre chemin. Les deux définitions se sont révélées équivalentes — un indice sérieux qu'elles capturaient bien la bonne notion."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Hilbert demande une procédure de décision universelle.",
+            "Turing commence par définir ce qu'est une procédure.",
+            "La réponse sera négative, et démontrée."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que demandait Hilbert en 1928 ?",
+          "hint": "Une procédure, pour toutes les affirmations.",
+          "explanation": "Une procédure mécanique décidant si une affirmation mathématique est démontrable. C'est le problème de la décision.",
+          "options": [
+            { "text": "Une procédure décidant si un énoncé est démontrable", "correct": true },
+            { "text": "Une démonstration de tous les théorèmes connus" },
+            { "text": "Une machine capable de jouer aux échecs" },
+            { "text": "Un langage de programmation universel" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Pour montrer qu'aucune procédure ne résout un problème, il suffit de n'en trouver aucune.",
+          "answer": false,
+          "explanation": "Non : il faut définir ce qu'est une procédure, puis raisonner sur toutes à la fois. C'est ce qui a imposé d'inventer la machine de Turing."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'a dû faire Turing avant de répondre à Hilbert ?",
+          "hint": "Rendre la question traitable.",
+          "explanation": "Définir précisément ce qu'est un calcul mécanique. Sans cette définition, la question n'a pas de réponse démontrable.",
+          "options": [
+            { "text": "Définir précisément ce qu'est un calcul", "correct": true },
+            { "text": "Construire un ordinateur" },
+            { "text": "Démontrer le théorème de Gödel" },
+            { "text": "Inventer le transistor" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-machine-de-turing",
+      "title": "La machine de Turing",
+      "subtitle": "Un ruban, une tête, quelques règles.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trois éléments, et c'est tout",
+          "body": "Un ruban divisé en cases, chacune portant un symbole.\n\nUne tête qui lit la case où elle se trouve, peut y écrire, et se déplace d'une case à gauche ou à droite.\n\nUn état interne, choisi dans une liste finie. Aucune autre mémoire n'existe."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Fais-la tourner",
+          "body": "Cette machine ajoute 1 au nombre binaire écrit sur le ruban. Avance pas à pas, ou touche une case pour changer le nombre de départ.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Un programme est une table",
+          "body": "Le programme se résume à : selon l'état et le symbole lu, écrire ceci, se déplacer par là, passer à cet état.\n\nCelui de la figure tient en deux lignes. Lire 1 : écrire 0, aller à gauche, continuer — c'est la retenue. Lire 0 : écrire 1, aller à gauche, s'arrêter."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "La machine universelle",
+          "body": "Turing montre ensuite qu'une machine peut recevoir sur son ruban la description d'une autre machine, et l'imiter fidèlement.\n\nC'est l'idée de l'ordinateur : une seule machine, et des programmes écrits sur le même support que les données."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "De quelle mémoire dispose une machine de Turing, en dehors du ruban ?",
+          "hint": "Combien d'états peut-elle distinguer ?",
+          "explanation": "Un état interne pris dans une liste finie, et rien d'autre. Toute la mémoire de travail est sur le ruban.",
+          "figureId": "machine-turing",
+          "options": [
+            { "text": "Un état interne, pris dans une liste finie", "correct": true },
+            { "text": "Une mémoire vive illimitée" },
+            { "text": "Un registre de nombres entiers" },
+            { "text": "Aucune : tout est sur le ruban, l'état compris" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le ruban porte 00001011, soit 11. Que vaudra le nombre après exécution ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "hint": "La machine ajoute 1.",
+          "explanation": "12. Le programme propage la retenue de droite à gauche, exactement comme une addition posée.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de pas faut-il à la machine pour ajouter 1 à 00001011 ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "pas",
+          "hint": "Compte les cases lues jusqu'au premier 0.",
+          "explanation": "3 pas : elle lit 1, puis 1, puis 0. Le nombre de pas est celui des 1 de droite, plus un.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'une machine universelle ?",
+          "hint": "Que reçoit-elle sur son ruban ?",
+          "explanation": "Une machine qui lit sur son ruban la description d'une autre machine et l'imite. C'est l'idée même de l'ordinateur à programme enregistré.",
+          "figureId": "machine-turing",
+          "options": [
+            { "text": "Une machine qui lit la description d'une autre et l'imite", "correct": true },
+            { "text": "Une machine qui résout tous les problèmes" },
+            { "text": "Une machine dont le ruban est infini" },
+            { "text": "Une machine qui ne s'arrête jamais" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-probleme-de-l-arret",
+      "title": "Le problème de l'arrêt",
+      "subtitle": "Ce qu'aucun programme ne saura faire.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une question raisonnable",
+          "body": "Peut-on écrire un programme qui, donnés un programme et son entrée, répond en un temps fini : « il s'arrêtera » ou « il tournera indéfiniment » ?\n\nCe serait utile. Turing démontre que c'est impossible."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "La démonstration, par l'absurde",
+          "body": "Supposons qu'un tel programme existe ; appelons-le Arrête.\n\nConstruisons Diagonal : donné un programme P, Diagonal demande à Arrête ce que fait P appliqué à lui-même. Si la réponse est « il s'arrête », Diagonal boucle sans fin. Sinon, Diagonal s'arrête aussitôt."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "La contradiction",
+          "body": "Que fait Diagonal appliqué à lui-même ?\n\nS'il s'arrête, c'est qu'Arrête a répondu « il ne s'arrête pas ». S'il ne s'arrête pas, c'est qu'Arrête a répondu « il s'arrête ».\n\nLes deux cas sont impossibles. Arrête ne peut donc pas exister."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Ce n'est pas une limite de nos ordinateurs ni de notre astuce. C'est une limite de la notion même de calcul : aucune machine, quelle que soit sa puissance, ne décidera l'arrêt."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle méthode de démonstration Turing emploie-t-il ?",
+          "hint": "Il suppose d'abord que le programme existe.",
+          "explanation": "Le raisonnement par l'absurde : il suppose que le programme existe, et en tire une contradiction.",
+          "options": [
+            { "text": "Le raisonnement par l'absurde", "correct": true },
+            { "text": "La récurrence" },
+            { "text": "La contraposée" },
+            { "text": "Un contre-exemple" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Avec un ordinateur assez puissant, on finira par résoudre le problème de l'arrêt.",
+          "answer": false,
+          "explanation": "Non. L'impossibilité ne tient pas à la puissance : elle est démontrée pour toute machine, quelle qu'elle soit."
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la démonstration dans l'ordre.",
+          "explanation": "On suppose Arrête, on construit Diagonal à partir de lui, on l'applique à lui-même, la contradiction tombe.",
+          "items": [
+            "supposer qu'un programme Arrête existe",
+            "construire Diagonal, qui fait le contraire de ce qu'Arrête prédit",
+            "appliquer Diagonal à lui-même",
+            "constater que les deux réponses sont impossibles"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour un programme donné, on ne peut jamais savoir s'il s'arrête.",
+          "answer": false,
+          "explanation": "Attention : pour beaucoup de programmes, on le sait très bien. Ce qui est impossible, c'est une méthode unique qui tranche pour tous."
+        }
+      ]
+    },
+    {
+      "id": "defi-turing",
+      "title": "Défi : Turing",
+      "subtitle": "Six questions, de 1936 à aujourd'hui.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Après 1936",
+          "body": "Pendant la guerre, Turing dirige à Bletchley Park le décryptage des messages de la marine allemande. Après, il pose la question de l'intelligence des machines.\n\nCondamné en 1952 pour son homosexualité, il meurt en 1954. Les excuses officielles du Royaume-Uni datent de 2009, et le pardon royal de 2013."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Le ruban porte 00000111, soit 7. Combien de pas la machine fera-t-elle ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "pas",
+          "hint": "Trois 1 à droite, puis un 0.",
+          "explanation": "4 pas : trois retenues, puis l'écriture du 1 final. Le ruban porte alors 00001000, soit 8.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le ruban porte 00000110, soit 6. Combien de pas la machine fera-t-elle ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "unit": "pas",
+          "hint": "Que lit-elle en premier ?",
+          "explanation": "1 seul pas : elle lit 0, écrit 1 et s'arrête. Il n'y a aucune retenue à propager.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces éléments : font-ils partie d'une machine de Turing ?",
+          "hint": "Trois éléments seulement.",
+          "explanation": "Le ruban, la tête et l'état interne suffisent. Ni écran ni horloge n'entrent dans la définition.",
+          "categories": ["Fait partie de la machine", "N'en fait pas partie"],
+          "items": [
+            { "text": "le ruban", "category": 0 },
+            { "text": "l'état interne", "category": 0 },
+            { "text": "un écran", "category": 1 },
+            { "text": "une horloge", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la machine universelle annonce-t-elle l'ordinateur ?",
+          "hint": "Où est écrit le programme ?",
+          "explanation": "Parce que le programme est écrit sur le ruban, au même titre que les données : une seule machine suffit pour tous les programmes.",
+          "figureId": "machine-turing",
+          "options": [
+            { "text": "Le programme est une donnée parmi les autres", "correct": true },
+            { "text": "Elle calcule plus vite que les autres" },
+            { "text": "Elle possède un écran" },
+            { "text": "Elle ne s'arrête jamais" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Le résultat de Turing a répondu par la négative à la question de Hilbert.",
+          "answer": true,
+          "explanation": "Oui : aucune procédure mécanique ne décide la démontrabilité. Le problème de l'arrêt en est le cœur."
+        },
+        {
+          "id": "q6",
+          "kind": "appariement",
+          "prompt": "Associe chaque date à ce qui s'est passé.",
+          "explanation": "Quatre dates qui résument une vie : la machine, la guerre, la question de l'intelligence, et la mort.",
+          "pairs": [
+            { "left": "1936", "right": "la machine de Turing" },
+            { "left": "1940", "right": "Bletchley Park" },
+            { "left": "1950", "right": "la question de l'intelligence des machines" },
+            { "left": "1954", "right": "sa mort" }
+          ]
+        }
+      ]
+    }
+  ]
+}
