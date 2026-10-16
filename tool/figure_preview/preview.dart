@@ -20,6 +20,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 /// Les figures à rendre, et sous quel thème.
 const List<String> _figures = <String>[
+  'volcan',
   'canon-newton',
   'poids-astres',
   'eclipses',

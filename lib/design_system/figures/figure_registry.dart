@@ -53,6 +53,7 @@ import 'thales_figure.dart';
 import 'truth_table_figure.dart';
 import 'triangle_angles_figure.dart';
 import 'turing_figure.dart';
+import 'volcano_figure.dart';
 import 'weight_figure.dart';
 import 'triangle_test_figure.dart';
 
@@ -95,6 +96,9 @@ abstract final class FigureRegistry {
     // Le canon de Newton : tirer assez fort pour rater la Terre.
     'canon-newton': (BuildContext context, Color accent) =>
         NewtonCannonFigure(accent: accent),
+    // Un volcan en coupe : chambre, cheminée, couches et éruptions.
+    'volcan': (BuildContext context, Color accent) =>
+        VolcanoFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
