@@ -1,0 +1,418 @@
+{
+  "chapter": "physique-chimie-college-forces-et-interactions",
+  "lessons": [
+    {
+      "id": "les-interactions",
+      "title": "Rien ne pousse tout seul",
+      "subtitle": "Deux corps, toujours.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Chercher le partenaire",
+          "body": "Une force n'existe jamais seule. Elle est la part visible d'une interaction entre deux corps.\n\nLa pomme tombe : Terre et pomme. Le ballon part : pied et ballon. L'aimant attire : aimant et trombone. À chaque fois, deux acteurs — et si tu n'en trouves qu'un, c'est que tu as oublié de chercher."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Deux familles",
+          "body": "Interaction de contact : les deux corps se touchent. Le pied et le ballon, la main et la poignée, l'air et le parachute.\n\nInteraction à distance : rien entre les deux. La Terre et la Lune, l'aimant et le clou, un corps chargé et un autre."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Une force a trois caractéristiques",
+          "formula": "direction, sens, valeur",
+          "body": "Et un point d'application. On la dessine par une flèche : sa longueur donne la valeur, sa pointe donne le sens."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Le newton",
+          "body": "Une force se mesure en newtons, de symbole N. Un dynamomètre en mesure la valeur.\n\nUn newton, c'est à peu près le poids d'une tablette de chocolat de 100 g. L'ordre de grandeur est utile : un résultat de 3 000 N pour un stylo doit faire tiquer."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Le poids n'est pas la masse",
+          "body": "La masse se mesure en kilogrammes, elle ne change pas quand tu voyages.\n\nLe poids est une force, en newtons : c'est l'attraction de l'astre sur lequel tu te trouves. Sur la Lune, ta masse est la même et ton poids est six fois plus faible.\n\nLa balance de la salle de bain affiche des kilogrammes mais mesure une force. C'est elle qui entretient la confusion."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Combien de corps faut-il au minimum pour qu'il y ait une interaction ?",
+          "explanation": "Deux. Une force est toujours exercée par un corps sur un autre.",
+          "options": [
+            {
+              "text": "deux",
+              "correct": true
+            },
+            {
+              "text": "un seul"
+            },
+            {
+              "text": "trois"
+            },
+            {
+              "text": "cela dépend de la force"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces interactions selon qu'elles se font par contact ou à distance.",
+          "explanation": "Contact quand les corps se touchent. À distance quand rien ne les relie : gravitation, aimants, électricité.",
+          "items": [
+            {
+              "text": "un pied frappe un ballon",
+              "category": 0
+            },
+            {
+              "text": "la Terre attire la Lune",
+              "category": 1
+            },
+            {
+              "text": "un aimant attire un trombone",
+              "category": 1
+            },
+            {
+              "text": "l'air freine un parachute",
+              "category": 0
+            },
+            {
+              "text": "une main tire une corde",
+              "category": 0
+            },
+            {
+              "text": "le Soleil retient la Terre",
+              "category": 1
+            }
+          ],
+          "categories": [
+            "par contact",
+            "à distance"
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un astronaute en orbite n'a plus de masse.",
+          "explanation": "Faux. Sa masse ne change pas. Il flotte parce qu'il tombe en même temps que sa station, pas parce qu'il a perdu sa matière.",
+          "answer": false
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Dans quelle unité mesure-t-on une force ?",
+          "explanation": "Le newton, de symbole N. Le kilogramme mesure une masse.",
+          "options": [
+            {
+              "text": "le newton (N)",
+              "correct": true
+            },
+            {
+              "text": "le kilogramme (kg)"
+            },
+            {
+              "text": "le joule (J)"
+            },
+            {
+              "text": "le watt (W)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-poids",
+      "title": "Le poids",
+      "subtitle": "Une force proportionnelle à la masse.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "La même masse, trois astres",
+          "body": "Change l'astre : la masse ne bouge pas, la flèche du poids si.",
+          "figureId": "poids-astres"
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "La relation",
+          "formula": "P = m × g",
+          "body": "P le poids en newtons, m la masse en kilogrammes, g l'intensité de la pesanteur en newtons par kilogramme."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Quelques valeurs de g",
+          "body": "Terre : environ 9,8 N/kg.\n\nLune : environ 1,6 N/kg.\n\nMars : environ 3,7 N/kg.\n\nJupiter : environ 24,8 N/kg.\n\nAu collège on arrondit souvent g à 10 N/kg sur Terre : un kilogramme pèse alors 10 newtons, ce qui se calcule de tête."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Un sac de 4 kg",
+          "body": "Sur Terre : P = 4 × 9,8 = 39,2 N.\n\nSur la Lune : P = 4 × 1,6 = 6,4 N.\n\nLe sac contient toujours la même chose. Seule l'attraction a changé."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "title": "Vérifier qu'on n'a pas inversé",
+          "body": "Le poids en newtons est toujours plus grand que la masse en kilogrammes sur Terre, puisque g vaut environ 10 N/kg.\n\nSi ton résultat est plus petit que la masse, tu as divisé au lieu de multiplier."
+        },
+        {
+          "id": "c6",
+          "kind": "texte",
+          "title": "Pourquoi c'est une proportionnalité",
+          "body": "Double la masse, le poids double. Triple-la, il triple. Le rapport P/m reste g, quelle que soit la masse.\n\nC'est exactement une situation de proportionnalité, avec g pour coefficient — et un graphique P en fonction de m donne une droite passant par l'origine."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le poids, en newtons, d'un sac de 4 kg sur Terre ? Prends g = 9,8 N/kg.",
+          "hint": "P = m × g.",
+          "explanation": "P = 4 × 9,8 = 39,2 N.",
+          "answer": 39.2,
+          "tolerance": 0.05
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le même sac de 4 kg, sur la Lune, où g = 1,6 N/kg. Son poids en newtons ?",
+          "explanation": "P = 4 × 1,6 = 6,4 N. La masse n'a pas changé, l'astre oui.",
+          "answer": 6.4,
+          "tolerance": 0.05
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Sur Terre, un objet pèse 50 N. Quelle est sa masse, en kilogrammes ? Prends g = 10 N/kg.",
+          "hint": "Il faut remonter de P à m.",
+          "explanation": "m = P ÷ g = 50 ÷ 10 = 5 kg.",
+          "answer": 5
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Si on double la masse d'un objet, son poids double aussi.",
+          "explanation": "Vrai, à astre constant : P = m × g est une proportionnalité, de coefficient g.",
+          "answer": true
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque astre à son intensité de pesanteur.",
+          "explanation": "La pesanteur dépend de la masse de l'astre et de son rayon : Jupiter écrase, la Lune laisse flotter.",
+          "pairs": [
+            {
+              "left": "Lune",
+              "right": "1,6 N/kg"
+            },
+            {
+              "left": "Mars",
+              "right": "3,7 N/kg"
+            },
+            {
+              "left": "Terre",
+              "right": "9,8 N/kg"
+            },
+            {
+              "left": "Jupiter",
+              "right": "24,8 N/kg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "representer-et-equilibrer",
+      "title": "Représenter et équilibrer",
+      "subtitle": "Des flèches, et ce qui se compense.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Dessiner une force",
+          "body": "1. choisir une échelle, par exemple 1 cm pour 10 N\n2. placer l'origine de la flèche au point d'application\n3. donner la bonne direction et le bon sens\n4. mesurer la longueur : 35 N donnent 3,5 cm"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Un livre posé sur une table",
+          "body": "Deux forces s'appliquent sur lui. Son poids, vers le bas. La réaction de la table, vers le haut.\n\nLe livre ne bouge pas : les deux se compensent exactement. Même direction, sens opposés, même valeur."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "L'équilibre de deux forces",
+          "formula": "même droite, sens opposés, même valeur",
+          "body": "Les trois conditions à la fois. Deux forces égales mais pas sur la même droite font tourner l'objet au lieu de l'immobiliser."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Immobile n'est pas sans force",
+          "body": "Un objet posé subit bien son poids. S'il ne tombe pas, ce n'est pas que le poids a disparu : c'est qu'une autre force le compense.\n\nEnlève la table, le poids est toujours là — et il se voit aussitôt."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Échelle : 1 cm pour 10 N. Quelle longueur, en centimètres, pour représenter une force de 35 N ?",
+          "explanation": "On divise la valeur par l'échelle : 35 ÷ 10 = 3,5 cm. Une flèche deux fois plus longue vaudrait deux fois plus de newtons.",
+          "answer": 3.5,
+          "tolerance": 0.05
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un livre de 0,5 kg est posé sur une table. Quelle est la valeur, en newtons, de la réaction de la table ? Prends g = 10 N/kg.",
+          "hint": "Elle compense exactement le poids.",
+          "explanation": "Le poids vaut 0,5 × 10 = 5 N. À l'équilibre, la table exerce une force de même valeur : 5 N.",
+          "answer": 5
+        },
+        {
+          "id": "q3",
+          "kind": "choixMultiple",
+          "prompt": "Quelles conditions deux forces doivent-elles remplir pour qu'un objet soit en équilibre ?",
+          "explanation": "Les trois à la fois. Deux forces égales et opposées mais décalées feraient tourner l'objet.",
+          "options": [
+            {
+              "text": "être portées par la même droite",
+              "correct": true
+            },
+            {
+              "text": "avoir des sens opposés",
+              "correct": true
+            },
+            {
+              "text": "avoir la même valeur",
+              "correct": true
+            },
+            {
+              "text": "être toutes deux des forces de contact"
+            },
+            {
+              "text": "s'appliquer au même instant seulement"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Un objet immobile ne subit aucune force.",
+          "explanation": "Faux. Il en subit, mais elles se compensent. Un livre sur une table a son poids et la réaction de la table.",
+          "answer": false
+        },
+        {
+          "id": "q5",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes pour représenter une force par une flèche.",
+          "explanation": "On fixe l'échelle, on place l'origine au point d'application, on oriente, puis on reporte la longueur.",
+          "items": [
+            "choisir une échelle",
+            "placer l'origine au point d'application",
+            "donner direction et sens",
+            "reporter la longueur correspondant à la valeur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-forces",
+      "title": "Défi : poids, masse et bon sens",
+      "subtitle": "Des situations où l'intuition se trompe.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Pourquoi l'astronaute flotte",
+          "body": "Une station en orbite basse est à 400 km d'altitude. La Terre y attire encore presque autant qu'au sol : g y vaut environ 8,7 N/kg contre 9,8 au niveau de la mer.\n\nL'astronaute flotte donc en pleine pesanteur. Ce qu'il ressent n'est pas l'absence de poids, c'est la chute libre : lui et la station tombent ensemble, et une chute partagée ne se sent pas. On parle d'impesanteur : le mot dit l'absence de sensation, pas l'absence de pesanteur."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une personne de 70 kg se pèse sur Mars, où g = 3,7 N/kg. Quel poids, en newtons ?",
+          "explanation": "P = 70 × 3,7 = 259 N. Sur Terre elle pèserait 686 N.",
+          "answer": 259,
+          "tolerance": 1
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "À 400 km d'altitude, l'attraction de la Terre a pratiquement disparu.",
+          "explanation": "Faux. Elle vaut encore environ 8,7 N/kg, soit près de 90 % de sa valeur au sol. L'astronaute flotte parce qu'il tombe, pas parce que la Terre a lâché.",
+          "answer": false
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un objet pèse 24 N sur la Lune (g = 1,6 N/kg). Combien pèserait-il sur Terre, en newtons, avec g = 10 N/kg ?",
+          "hint": "Trouve d'abord la masse.",
+          "explanation": "m = 24 ÷ 1,6 = 15 kg. Sur Terre : P = 15 × 10 = 150 N.",
+          "answer": 150
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Tu emportes une balance de cuisine et un dynamomètre sur la Lune. Lequel affichera la même chose que sur Terre pour le même objet ?",
+          "hint": "L'un mesure une masse, l'autre une force.",
+          "explanation": "Une balance à fléau compare des masses : son verdict ne change pas. Le dynamomètre mesure une force, donc il affichera six fois moins. Une balance électronique, elle, mesure en réalité une force et se tromperait.",
+          "options": [
+            {
+              "text": "la balance à fléau, qui compare des masses",
+              "correct": true
+            },
+            {
+              "text": "le dynamomètre, qui mesure en newtons"
+            },
+            {
+              "text": "les deux"
+            },
+            {
+              "text": "aucun des deux"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "estimation",
+          "prompt": "Estime le poids, en newtons, d'un élève de 50 kg sur Terre.",
+          "explanation": "Avec g = 9,8 N/kg : environ 490 N. En arrondissant g à 10, on trouve 500 N — assez pour toute estimation.",
+          "answer": 490,
+          "unit": "N",
+          "tolerance": 60,
+          "min": 100,
+          "max": 1200
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Deux objets de masses différentes, lâchés ensemble sans air, touchent le sol en même temps.",
+          "explanation": "Vrai. Le plus lourd subit une force plus grande, mais il a aussi plus de matière à mettre en mouvement : les deux effets se compensent exactement. Galilée l'avait vu, Apollo 15 l'a filmé sur la Lune avec un marteau et une plume.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}

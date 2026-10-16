@@ -48,6 +48,7 @@ import 'thales_figure.dart';
 import 'truth_table_figure.dart';
 import 'triangle_angles_figure.dart';
 import 'turing_figure.dart';
+import 'weight_figure.dart';
 import 'triangle_test_figure.dart';
 
 /// Fabrique une figure à partir de son identifiant de contenu.
@@ -71,6 +72,9 @@ abstract final class FigureRegistry {
     // Le rectangle k(a + b) coupé en deux : la distributivité comme aire.
     'distributivite': (BuildContext context, Color accent) =>
         DistributivityFigure(accent: accent),
+    // La même masse sur quatre astres, et la flèche du poids qui change.
+    'poids-astres': (BuildContext context, Color accent) =>
+        WeightFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
