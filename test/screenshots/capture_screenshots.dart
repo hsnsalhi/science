@@ -678,6 +678,27 @@ void main() {
         await shoot(tester, '$device-27-multiplication');
       });
 
+      // Le réseau alimentaire, l'herbe retirée : c'est l'état qui montre
+      // l'effondrement en chaîne, et le seul où la figure grise quatre
+      // espèces d'un coup.
+      testWidgets('primaire : le réseau alimentaire', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'SVT');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'Les écosystèmes');
+        await tapText(tester, 'Qui mange qui');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await tester.tap(find.text('Herbe'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-28-reseau');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

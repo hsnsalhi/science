@@ -1,0 +1,347 @@
+{
+  "chapter": "svt-primaire-les-ecosystemes",
+  "lessons": [
+    {
+      "id": "qui-mange-qui",
+      "title": "Qui mange qui",
+      "subtitle": "Suivre la nourriture de proche en proche.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Tout commence par les plantes",
+          "body": "Les plantes n'ont besoin de manger personne. Avec la lumière du Soleil, l'eau et l'air, elles fabriquent elles-mêmes leur nourriture.\n\nOn les appelle les producteurs. Toute la nourriture d'un pré vient d'elles."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Le pré",
+          "body": "Les flèches vont de la proie vers celui qui la mange. Touche une espèce pour la retirer.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Le sens des flèches",
+          "body": "Une flèche part de ce qui est mangé et pointe vers celui qui mange.\n\nHerbe → Lapin se lit « l'herbe est mangée par le lapin ». La flèche suit la nourriture, pas l'appétit."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une suite de flèches est une chaîne alimentaire : herbe, lapin, renard. Quand plusieurs chaînes se croisent, on parle d'un réseau."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Les plantes produisent leur propre nourriture.",
+            "La flèche va de la proie vers le prédateur.",
+            "Les chaînes qui se croisent forment un réseau."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que veut dire la flèche « Herbe → Lapin » ?",
+          "hint": "La flèche suit la nourriture.",
+          "explanation": "Que l'herbe est mangée par le lapin. La flèche part toujours de ce qui est mangé.",
+          "figureId": "chaine-alimentaire",
+          "options": [
+            { "text": "L'herbe est mangée par le lapin", "correct": true },
+            { "text": "Le lapin est mangé par l'herbe" },
+            { "text": "Le lapin se cache dans l'herbe" },
+            { "text": "L'herbe pousse grâce au lapin" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces êtres vivants.",
+          "hint": "Lesquels fabriquent eux-mêmes leur nourriture ?",
+          "explanation": "L'herbe et le trèfle sont des plantes : ils produisent leur nourriture avec la lumière. Le lapin et le renard doivent manger d'autres êtres vivants.",
+          "categories": ["Produit sa nourriture", "Doit manger"],
+          "items": [
+            { "text": "L'herbe", "category": 0 },
+            { "text": "Le trèfle", "category": 0 },
+            { "text": "Le lapin", "category": 1 },
+            { "text": "Le renard", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets cette chaîne alimentaire dans l'ordre, en partant du producteur.",
+          "explanation": "L'herbe est mangée par le criquet, qui est mangé par l'oiseau. On part toujours de la plante.",
+          "items": ["Herbe", "Criquet", "Oiseau"]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Dans le pré de la figure, le renard mange l'herbe.",
+          "answer": false,
+          "explanation": "Non. Le renard mange le lapin, qui lui mange l'herbe. Le renard profite donc de l'herbe, mais à travers le lapin.",
+          "figureId": "chaine-alimentaire"
+        }
+      ]
+    },
+    {
+      "id": "retirer-une-espece",
+      "title": "Retirer une espèce",
+      "subtitle": "Ce qui arrive au reste du pré.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Essaie de retirer l'herbe",
+          "body": "Puis essaie de retirer le renard. Les deux ne font pas du tout la même chose.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Retirer une plante vide le pré",
+          "body": "Sans herbe, le lapin et le criquet n'ont plus rien à manger. Et sans eux, le renard et l'oiseau non plus.\n\nUne seule disparition en entraîne quatre autres : c'est pour cela qu'on protège d'abord les plantes d'un milieu."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Retirer un prédateur ne vide rien… tout de suite",
+          "body": "Sans renard, personne ne meurt de faim. La figure ne grise donc aucune espèce.\n\nMais les lapins ne sont plus chassés : ils deviennent de plus en plus nombreux, mangent toute l'herbe, et finissent par manquer de nourriture. Cela prend plus de temps, et la figure ne sait pas le montrer."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un prédateur n'est pas le méchant de l'histoire : il garde le nombre de ses proies à un niveau que le milieu peut nourrir."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Retirer un producteur fait tout s'effondrer.",
+            "Retirer un prédateur fait proliférer ses proies.",
+            "Dans les deux cas, le milieu est déséquilibré."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans le pré de la figure, si l'herbe disparaît, combien d'espèces n'ont plus rien à manger ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "unit": "espèces",
+          "hint": "Suis les flèches jusqu'au bout.",
+          "explanation": "4 : le lapin et le criquet d'abord, puis le renard et l'oiseau qui les mangeaient.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et si c'est le renard qui disparaît, combien d'espèces n'ont plus rien à manger ?",
+          "answer": 0,
+          "tolerance": 0.01,
+          "unit": "espèces",
+          "hint": "Qui mangeait le renard ?",
+          "explanation": "Aucune : personne ne mangeait le renard. En revanche, les lapins vont se multiplier.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Si le lapin disparaît du pré, qui n'a plus rien à manger ?",
+          "hint": "Regarde qui mange le lapin.",
+          "explanation": "Le renard, car le lapin est sa seule nourriture dans ce pré. Le criquet et l'oiseau, eux, ne sont pas touchés.",
+          "figureId": "chaine-alimentaire",
+          "options": [
+            { "text": "Le renard", "correct": true },
+            { "text": "L'oiseau" },
+            { "text": "Le criquet" },
+            { "text": "Personne" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Faire disparaître les renards serait une bonne nouvelle pour l'herbe.",
+          "answer": false,
+          "explanation": "Non. Sans renards, les lapins se multiplieraient et mangeraient bien plus d'herbe. Le prédateur protège indirectement la plante."
+        }
+      ]
+    },
+    {
+      "id": "les-milieux",
+      "title": "Chaque milieu, ses habitants",
+      "subtitle": "Mare, forêt, prairie.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Un milieu de vie",
+          "body": "Un milieu, c'est un endroit avec ses conditions : l'eau, la lumière, la température, les abris.\n\nChaque espèce vit là où elle trouve ce qu'il lui faut. Une grenouille a besoin d'eau pour ses œufs ; un écureuil a besoin d'arbres."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les saisons changent tout",
+          "body": "En hiver, beaucoup de plantes arrêtent de pousser. Les animaux s'adaptent : certains partent, d'autres dorment, d'autres changent de nourriture."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Rien ne se perd",
+          "body": "Les feuilles mortes et les animaux morts sont mangés par de petits êtres vivants du sol : vers de terre, champignons, bactéries.\n\nIls transforment tout cela en terre riche, qui nourrit à nouveau les plantes. La boucle est bouclée."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un sol vivant est plein de ces décomposeurs. Une poignée de terre de forêt en contient plus qu'il n'y a d'habitants sur Terre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque animal à son milieu.",
+          "explanation": "La grenouille pond dans la mare, l'écureuil vit dans les arbres de la forêt, et la taupe creuse ses galeries sous la prairie.",
+          "pairs": [
+            { "left": "Grenouille", "right": "La mare" },
+            { "left": "Écureuil", "right": "La forêt" },
+            { "left": "Taupe", "right": "Sous la prairie" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Que deviennent les feuilles mortes tombées au sol ?",
+          "hint": "Pense aux vers de terre.",
+          "explanation": "Elles sont mangées par les décomposeurs, qui les transforment en terre riche. Cette terre nourrit ensuite les plantes.",
+          "options": [
+            { "text": "Elles sont transformées en terre par les décomposeurs", "correct": true },
+            { "text": "Elles disparaissent toutes seules" },
+            { "text": "Elles s'envolent" },
+            { "text": "Elles empoisonnent le sol" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces êtres vivants selon leur rôle.",
+          "hint": "Qui mange les restes ?",
+          "explanation": "Le ver de terre et le champignon décomposent les restes. Le lapin et le criquet mangent des plantes vivantes.",
+          "categories": ["Décomposeur", "Mangeur de plantes"],
+          "items": [
+            { "text": "Le ver de terre", "category": 0 },
+            { "text": "Le champignon", "category": 0 },
+            { "text": "Le lapin", "category": 1 },
+            { "text": "Le criquet", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "En hiver, certains animaux dorment presque tout le temps pour dépenser moins d'énergie.",
+          "answer": true,
+          "explanation": "Oui, c'est l'hibernation. Le hérisson et la marmotte ralentissent tout leur corps pour traverser la saison où la nourriture manque."
+        }
+      ]
+    },
+    {
+      "id": "defi-ecosystemes",
+      "title": "Défi : le pré",
+      "subtitle": "Six questions sur le réseau.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à suivre les flèches avant de répondre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans le pré de la figure, si le criquet disparaît, combien d'espèces n'ont plus rien à manger ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "unit": "espèce",
+          "hint": "Qui mangeait le criquet ?",
+          "explanation": "1 : l'oiseau, qui ne mangeait que le criquet dans ce pré.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle espèce du pré est un producteur ?",
+          "hint": "Qui n'a besoin de manger personne ?",
+          "explanation": "L'herbe. C'est la seule qui fabrique sa nourriture avec la lumière du Soleil.",
+          "figureId": "chaine-alimentaire",
+          "options": [
+            { "text": "L'herbe", "correct": true },
+            { "text": "Le lapin" },
+            { "text": "Le renard" },
+            { "text": "L'oiseau" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets cette chaîne dans l'ordre, du producteur au dernier prédateur.",
+          "explanation": "Herbe, lapin, renard : chaque maillon mange le précédent.",
+          "items": ["Herbe", "Lapin", "Renard"]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces disparitions selon ce qu'elles provoquent dans le pré.",
+          "hint": "Suis les flèches à partir de l'espèce retirée.",
+          "explanation": "Sans herbe ou sans lapin, au moins une espèce se retrouve sans nourriture. Sans renard ni sans oiseau, personne n'est affamé : ils ne sont mangés par personne.",
+          "categories": ["Des espèces sont affamées", "Personne n'est affamé"],
+          "items": [
+            { "text": "Herbe", "category": 0 },
+            { "text": "Lapin", "category": 0 },
+            { "text": "Renard", "category": 1 },
+            { "text": "Oiseau", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Toute la nourriture du pré vient d'abord des plantes.",
+          "answer": true,
+          "explanation": "Oui. Même le renard, qui ne mange jamais d'herbe, se nourrit d'un animal qui en a mangé."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un sol plein de vers de terre est-il un bon sol ?",
+          "hint": "Que font les vers des feuilles mortes ?",
+          "explanation": "Parce que les vers transforment les restes en terre riche, qui nourrit les plantes. Sans eux, les feuilles mortes s'accumuleraient sans profiter à personne.",
+          "options": [
+            { "text": "Les vers transforment les restes en terre riche", "correct": true },
+            { "text": "Les vers mangent les plantes malades" },
+            { "text": "Les vers font fuir les prédateurs" },
+            { "text": "Les vers fabriquent de l'eau" }
+          ]
+        }
+      ]
+    }
+  ]
+}

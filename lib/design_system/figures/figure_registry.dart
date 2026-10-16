@@ -11,6 +11,7 @@ import 'cross_figure.dart';
 import 'derivative_figure.dart';
 import 'eratosthene_figure.dart';
 import 'fraction_bar_figure.dart';
+import 'food_web_figure.dart';
 import 'gears_figure.dart';
 import 'loop_robot_figure.dart';
 import 'moon_phases_figure.dart';
@@ -72,6 +73,9 @@ abstract final class FigureRegistry {
     // Des jetons en rectangle : une multiplication qu'on peut compter.
     'jetons-multiplication': (BuildContext context, Color accent) =>
         ArrayFigure(accent: accent),
+    // Un réseau alimentaire dont on peut retirer une espèce.
+    'chaine-alimentaire': (BuildContext context, Color accent) =>
+        FoodWebFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

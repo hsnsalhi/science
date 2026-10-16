@@ -11,6 +11,7 @@ import 'package:eureka/design_system/figures/derivative_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
+import 'package:eureka/design_system/figures/food_web_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
 import 'package:eureka/design_system/figures/moon_phases_figure.dart';
@@ -1839,6 +1840,113 @@ void main() {
             .reduce((int a, int b) => a + b);
         expect(somme, ArrayFigure.produit(lignes, colonnes));
       }
+    });
+  });
+
+  group('Chapitre complet : les écosystèmes', () {
+    late Chapter ecosystemes;
+
+    setUpAll(() {
+      ecosystemes = catalog.chapterById('svt-primaire-les-ecosystemes')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (ecosystemes.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(ecosystemes.isPlayable, isTrue);
+      expect(ecosystemes.lessons.length, 4);
+    });
+
+    test('les comptages d’espèces affamées sont refaits sur le réseau', () {
+      expect(
+        FoodWebFigure.affectees('Herbe').length,
+        reponseNum('retirer-une-espece', 'q1'),
+      );
+      expect(
+        FoodWebFigure.affectees('Renard').length,
+        reponseNum('retirer-une-espece', 'q2'),
+      );
+      expect(
+        FoodWebFigure.affectees('Criquet').length,
+        reponseNum('defi-ecosystemes', 'q1'),
+      );
+    });
+
+    test('la disparition se propage bien le long des chaînes', () {
+      // Retirer l'herbe doit affamer les quatre autres, et pas
+      // seulement ceux qui la mangeaient directement : c'est ce que le
+      // chapitre appelle l'effondrement.
+      expect(
+        FoodWebFigure.affectees('Herbe'),
+        <String>{'Lapin', 'Criquet', 'Renard', 'Oiseau'},
+      );
+      expect(FoodWebFigure.affectees('Lapin'), <String>{'Renard'});
+      expect(FoodWebFigure.affectees('Criquet'), <String>{'Oiseau'});
+      expect(FoodWebFigure.affectees('Oiseau'), isEmpty);
+    });
+
+    test('le tri des disparitions suit le réseau', () {
+      final ClassifyQuestion q =
+          ecosystemes.lessonById('defi-ecosystemes')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        expect(
+          item.category == 0,
+          FoodWebFigure.affectees(item.text).isNotEmpty,
+          reason: '${item.text} est mal rangé',
+        );
+      }
+    });
+
+    test('les chaînes à remettre en ordre existent dans le réseau', () {
+      // Chaque maillon doit vraiment manger le précédent : une chaîne
+      // inventée passerait inaperçue à la relecture.
+      for (final String question in <String>[
+        'qui-mange-qui/q3',
+        'defi-ecosystemes/q3',
+      ]) {
+        final List<String> parts = question.split('/');
+        final OrderingQuestion q =
+            ecosystemes.lessonById(parts[0])!.questions.firstWhere(
+                  (Question x) => x.id == parts[1],
+                )
+                as OrderingQuestion;
+        for (int i = 1; i < q.items.length; i++) {
+          final Espece predateur = FoodWebFigure.reseau.firstWhere(
+            (Espece e) => e.nom == q.items[i],
+          );
+          expect(
+            predateur.mange,
+            contains(q.items[i - 1]),
+            reason: '${q.items[i]} ne mange pas ${q.items[i - 1]}',
+          );
+        }
+        // Et la chaîne commence par un producteur.
+        final Espece premier = FoodWebFigure.reseau.firstWhere(
+          (Espece e) => e.nom == q.items.first,
+        );
+        expect(premier.estProducteur, isTrue);
+      }
+    });
+
+    test('le réseau n’a qu’un producteur, et il nourrit tout le monde', () {
+      final List<Espece> producteurs = FoodWebFigure.reseau
+          .where((Espece e) => e.estProducteur)
+          .toList();
+      expect(producteurs.length, 1);
+      // « Toute la nourriture du pré vient des plantes » : le retrait du
+      // seul producteur doit affamer toutes les autres espèces.
+      expect(
+        FoodWebFigure.affectees(producteurs.single.nom).length,
+        FoodWebFigure.reseau.length - 1,
+      );
     });
   });
 }
