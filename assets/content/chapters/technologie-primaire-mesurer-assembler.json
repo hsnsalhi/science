@@ -1,0 +1,441 @@
+{
+  "chapter": "technologie-primaire-imaginer-et-fabriquer",
+  "lessons": [
+    {
+      "id": "mesurer",
+      "title": "Mesurer juste",
+      "subtitle": "Le millimètre, et pourquoi il compte.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Lire une règle correctement",
+          "body": "On place le zéro de la règle sur le bord de l'objet, pas le bout de la règle : sur beaucoup de règles, le zéro est en retrait de deux ou trois millimètres.\n\nOn lit en regardant bien en face. De biais, le trait semble décalé — c'est l'erreur de parallaxe, et elle fait perdre un bon millimètre.\n\nEntre deux traits de centimètre, il y a dix intervalles. Chacun vaut un millimètre, donc un dixième de centimètre."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Mesurer deux fois, couper une fois",
+          "body": "On mesure, on marque d'un trait fin au crayon.\n\nOn remesure depuis l'autre bord : si on retombe sur le même trait, c'est bon.\n\nOn coupe à côté du trait, du côté du déchet, pas dessus : la lame a elle-même une épaisseur, et elle mange toujours un peu de matière.\n\nUn menuisier qui scie pile sur son trait obtient une pièce trop courte de l'épaisseur de sa lame."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les erreurs s'additionnent",
+          "body": "Si tu coupes dix planchettes en mesurant chacune à partir de la précédente, et que tu te trompes d'un millimètre à chaque fois, la dixième est décalée de dix millimètres — un centimètre.\n\nD'où la règle de l'atelier : mesurer toutes les pièces depuis la même origine, jamais en chaîne."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Tracer un angle droit sans équerre",
+          "body": "Mesure 30 cm sur un bord, 40 cm sur l'autre, et ajuste jusqu'à ce que la diagonale entre les deux extrémités fasse exactement 50 cm.\n\nC'est le triangle 3-4-5, utilisé par les maçons sur tous les chantiers du monde, parce que 30² + 40² = 900 + 1 600 = 2 500 = 50². Si la diagonale fait 50, l'angle est droit, et il n'y a pas de discussion possible."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de millimètres dans 7 cm ?",
+          "explanation": "7 × 10 = 70 millimètres.",
+          "answer": 70
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Tu coupes 10 planchettes en chaîne, en te trompant d'1 mm chaque fois. De combien de millimètres la dernière est-elle décalée ?",
+          "explanation": "10 × 1 = 10 mm, soit un centimètre. Les erreurs en chaîne s'additionnent : c'est pourquoi on mesure tout depuis la même origine.",
+          "answer": 10
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "De quel côté du trait faut-il scier ?",
+          "explanation": "Du côté du déchet. La lame a une épaisseur, et scier pile sur le trait raccourcit la pièce de cette épaisseur.",
+          "options": [
+            {
+              "text": "du côté du déchet",
+              "correct": true
+            },
+            {
+              "text": "exactement sur le trait"
+            },
+            {
+              "text": "du côté de la pièce"
+            },
+            {
+              "text": "cela n'a aucune importance"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Dans le triangle du maçon, les côtés font 30 et 40 cm. Combien doit mesurer la diagonale pour que l'angle soit droit ?",
+          "hint": "30² + 40² = ?",
+          "explanation": "900 + 1 600 = 2 500, et la racine de 2 500 est 50. La diagonale doit faire 50 cm.",
+          "answer": 50,
+          "unit": "cm"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce que l'erreur de parallaxe ?",
+          "explanation": "C'est le décalage apparent du trait quand on lit la règle de biais au lieu de bien en face.",
+          "options": [
+            {
+              "text": "le décalage dû à une lecture de biais",
+              "correct": true
+            },
+            {
+              "text": "une règle mal graduée"
+            },
+            {
+              "text": "un crayon trop épais"
+            },
+            {
+              "text": "une erreur de calcul mental"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assembler",
+      "title": "Assembler",
+      "subtitle": "Coller, visser, clouer, articuler.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Quatre façons de réunir deux pièces",
+          "body": "La colle : invisible, répartit l'effort sur toute la surface, mais définitive et lente à sécher.\n\nLe clou : rapide, tient bien en traction le long de la planche, mais se retire mal et fend le bois près du bord.\n\nLa vis : tient beaucoup plus fort qu'un clou, se démonte, mais demande un avant-trou dans le bois dur.\n\nLa charnière, le boulon, l'axe : ce sont des assemblages qui laissent une liberté — ils réunissent sans immobiliser."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Démontable ou non, c'est un choix",
+          "body": "Un meuble collé est plus rigide qu'un meuble vissé, parce que la colle travaille sur toute la surface du joint.\n\nMais il ne se démonte plus, ni pour déménager, ni pour remplacer une pièce cassée, ni pour recycler les matériaux séparément.\n\nBeaucoup d'appareils modernes sont collés exprès, ce qui les rend fins et irréparables. Ce n'est pas une fatalité technique : c'est une décision."
+        },
+        {
+          "id": "c3",
+          "kind": "avertissement",
+          "title": "Les outils qui coupent",
+          "body": "Une scie, un cutter et une perceuse ne pardonnent pas l'inattention. Trois règles, toujours les mêmes :\n\nLa pièce est maintenue par un serre-joint, jamais par la main qui pourrait se trouver sur la trajectoire.\n\nLa main libre reste derrière la lame, jamais devant.\n\nOn coupe en éloignant l'outil de soi, et on range la lame rentrée."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "L'avant-trou",
+          "body": "Une vis dans du bois dur sans avant-trou fend la planche : la vis écarte la matière au lieu de s'y tailler un chemin.\n\nOn perce donc d'abord un trou légèrement plus petit que la vis — un peu plus fin que son diamètre, filet compris. La vis mord, et le bois ne fend pas."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque assemblage à sa qualité principale.",
+          "explanation": "La colle répartit l'effort, le clou est rapide, la vis se démonte, la charnière laisse une liberté.",
+          "pairs": [
+            {
+              "left": "la colle",
+              "right": "répartit l'effort sur la surface"
+            },
+            {
+              "left": "le clou",
+              "right": "rapide à poser"
+            },
+            {
+              "left": "la vis",
+              "right": "se démonte"
+            },
+            {
+              "left": "la charnière",
+              "right": "laisse une liberté de mouvement"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi percer un avant-trou avant de visser dans du bois dur ?",
+          "explanation": "Sans avant-trou, la vis écarte la matière et fend la planche. Le trou lui laisse la place de se tailler un chemin.",
+          "options": [
+            {
+              "text": "pour que le bois ne fende pas",
+              "correct": true
+            },
+            {
+              "text": "pour que la vis tienne moins fort"
+            },
+            {
+              "text": "pour gagner du temps"
+            },
+            {
+              "text": "pour cacher la tête de vis"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Un appareil entièrement collé : quel inconvénient majeur ?",
+          "explanation": "Il ne se démonte pas : impossible de remplacer une pièce cassée ou de séparer les matériaux pour les recycler.",
+          "options": [
+            {
+              "text": "il n'est ni réparable ni facile à recycler",
+              "correct": true
+            },
+            {
+              "text": "il est moins rigide"
+            },
+            {
+              "text": "il est plus lourd"
+            },
+            {
+              "text": "il coûte plus cher à fabriquer"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixMultiple",
+          "prompt": "Quelles règles respecter avec une scie ou un cutter ?",
+          "explanation": "Maintenir la pièce au serre-joint, garder la main libre derrière la lame, couper en éloignant l'outil de soi.",
+          "options": [
+            {
+              "text": "maintenir la pièce avec un serre-joint",
+              "correct": true
+            },
+            {
+              "text": "garder la main libre derrière la lame",
+              "correct": true
+            },
+            {
+              "text": "couper en éloignant l'outil de soi",
+              "correct": true
+            },
+            {
+              "text": "tenir la pièce avec la main pour mieux sentir"
+            },
+            {
+              "text": "poser la lame ouverte sur le bord de la table"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un assemblage collé est moins rigide qu'un assemblage vissé.",
+          "explanation": "Faux. La colle travaille sur toute la surface du joint, ce qui la rend plus rigide — mais définitive.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "du-croquis",
+      "title": "Du croquis à la pièce",
+      "subtitle": "Dessiner pour être compris.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un dessin coté, pas un joli dessin",
+          "body": "Un croquis technique n'a pas à être beau : il doit permettre à quelqu'un d'autre de fabriquer la pièce sans poser de question.\n\nIl porte donc des cotes — des mesures écrites, avec leur unité — et il montre l'objet vu de face, de dessus et de côté, parce qu'une seule vue laisse toujours une ambiguïté.\n\nUn cylindre et un prisme à base carrée donnent la même vue de face. Il faut la vue de dessus pour les distinguer."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "L'échelle",
+          "body": "On ne dessine pas un meuble en vraie grandeur sur une feuille. On choisit une échelle.\n\nÀ l'échelle 1/10, un centimètre sur le dessin représente dix centimètres sur l'objet.\n\nÀ l'échelle 2/1, un objet minuscule est dessiné deux fois plus grand que nature.\n\nL'échelle s'écrit toujours sur le dessin. Un croquis sans échelle et sans cote n'est qu'une intention."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Le prototype sert à se tromper",
+          "body": "On fabrique une première version en carton ou en bois tendre, exprès bon marché, pour découvrir ce qu'on n'avait pas prévu : la main qui ne passe pas, la porte qui tape, le pied trop court.\n\nUn prototype qui marche du premier coup n'a rien appris. Celui qui révèle trois défauts a fait son travail."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un meuble de 180 cm de haut, dessiné à l'échelle 1/10. Combien de centimètres sur le dessin ?",
+          "explanation": "180 ÷ 10 = 18 cm sur le dessin. À l'échelle 1/10, chaque centimètre du papier vaut dix centimètres de meuble.",
+          "answer": 18,
+          "unit": "cm"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Sur ce dessin à l'échelle 1/10, un tiroir mesure 4,5 cm. Quelle est sa largeur réelle en centimètres ?",
+          "explanation": "4,5 × 10 = 45 cm. On remonte de la mesure du dessin à la grandeur réelle en multipliant par le dénominateur de l'échelle.",
+          "answer": 45,
+          "unit": "cm"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une vis de 8 mm dessinée à l'échelle 5/1. Combien de millimètres sur le dessin ?",
+          "explanation": "8 × 5 = 40 mm. Une échelle d'agrandissement sert pour les petites pièces.",
+          "answer": 40
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une seule vue ne suffit-elle pas ?",
+          "explanation": "Parce que des objets différents peuvent donner la même vue : un cylindre et un prisme à base carrée se ressemblent de face.",
+          "options": [
+            {
+              "text": "deux objets différents peuvent donner la même vue",
+              "correct": true
+            },
+            {
+              "text": "parce que c'est plus joli en trois vues"
+            },
+            {
+              "text": "parce que la règle l'impose"
+            },
+            {
+              "text": "parce qu'une vue est trop petite"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "À quoi sert un prototype ?",
+          "explanation": "À découvrir les défauts qu'on n'avait pas prévus, à bas prix. Un prototype qui révèle trois défauts a fait son travail.",
+          "options": [
+            {
+              "text": "à découvrir les défauts imprévus, à bas prix",
+              "correct": true
+            },
+            {
+              "text": "à montrer l'objet fini au client"
+            },
+            {
+              "text": "à prouver que le dessin était bon"
+            },
+            {
+              "text": "à remplacer le croquis coté"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "texteATrous",
+          "prompt": "Complète.",
+          "explanation": "Un croquis technique porte des cotes et une échelle ; sans elles, ce n'est qu'une intention.",
+          "template": "Un croquis technique porte des ___ et une ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "cotes",
+                "cote",
+                "mesures"
+              ]
+            },
+            {
+              "accepted": [
+                "échelle"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-atelier",
+      "title": "Défi : l'étagère mal mesurée",
+      "subtitle": "Trouver où la cote a été perdue.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le problème du menuisier débutant",
+          "body": "Il veut une étagère de 120 cm de large, avec deux montants de 2 cm d'épaisseur de chaque côté.\n\nIl coupe trois planches de 120 cm, visse les montants dessus — et son meuble mesure 124 cm. Il ne rentre plus dans le renfoncement de 122 cm prévu pour lui.\n\nSon erreur n'est pas dans la scie : elle est dans ce qu'il a mesuré. La largeur extérieure et la largeur intérieure ne sont pas la même chose."
+        },
+        {
+          "id": "c2",
+          "kind": "astuce",
+          "title": "Dedans ou dehors",
+          "body": "Avant de couper, il faut écrire sur le croquis si la cote est intérieure ou extérieure.\n\nC'est la source d'erreur numéro un de l'atelier, et elle ne se voit qu'à la fin, quand tout est vissé."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Étagères de 120 cm, plus deux montants de 2 cm. Quelle largeur extérieure totale, en centimètres ?",
+          "explanation": "120 + 2 + 2 = 124 cm. C'est exactement ce que le menuisier a obtenu.",
+          "answer": 124
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour que l'extérieur fasse 122 cm avec deux montants de 2 cm, combien doivent mesurer les étagères, en centimètres ?",
+          "explanation": "122 − 2 − 2 = 118 cm. Il faut retirer les deux montants de la cote extérieure.",
+          "answer": 118
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "De combien de centimètres s'est-il trompé sur chaque étagère ?",
+          "explanation": "120 − 118 = 2 cm de trop par étagère, soit un montant de chaque côté.",
+          "answer": 2
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Le meuble fait 180 cm de haut, 4 étagères réparties à égale distance entre le sol et le haut. Quel espace libre entre deux étagères, si chacune a 2 cm d'épaisseur ?",
+          "hint": "Retire d'abord l'épaisseur des quatre étagères, puis partage en cinq.",
+          "explanation": "4 × 2 = 8 cm d'épaisseur. 180 − 8 = 172 cm à partager en 5 intervalles, soit 172 ÷ 5 = 34,4 cm.",
+          "answer": 34.4,
+          "tolerance": 0.1,
+          "unit": "cm"
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une scie dont la lame fait 2 mm d'épaisseur découpe 6 morceaux dans une planche. Combien de millimètres partent en sciure ?",
+          "hint": "Combien de coups de scie pour 6 morceaux ?",
+          "explanation": "Six morceaux demandent cinq coupes, donc 5 × 2 = 10 mm de sciure. L'erreur classique est de compter six coupes.",
+          "answer": 10
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quelle précaution aurait évité toute l'affaire ?",
+          "explanation": "Écrire sur le croquis si chaque cote est intérieure ou extérieure. C'est la première source d'erreur de l'atelier.",
+          "options": [
+            {
+              "text": "noter sur le croquis si la cote est intérieure ou extérieure",
+              "correct": true
+            },
+            {
+              "text": "utiliser une scie plus fine"
+            },
+            {
+              "text": "coller au lieu de visser"
+            },
+            {
+              "text": "mesurer en millimètres plutôt qu'en centimètres"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

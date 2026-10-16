@@ -1,0 +1,354 @@
+{
+  "chapter": "technologie-primaire-programmer-un-objet-technique",
+  "lessons": [
+    {
+      "id": "cycle",
+      "title": "Un objet qui tourne en rond",
+      "subtitle": "Le programme d'un feu tricolore.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Personne ne pilote le feu",
+          "body": "Il n'y a pas d'employé derrière le feu tricolore du carrefour. Il suit un programme écrit une fois pour toutes, et il le répète indéfiniment.\n\nCe programme n'est pas compliqué : c'est une liste d'états, chacun avec sa durée. Vert pendant tant de secondes, puis orange pendant tant, puis rouge pendant tant, puis on recommence au début.\n\nUne liste qui revient à son début s'appelle un cycle."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le cycle d'un carrefour, dans l'ordre",
+          "body": "Pendant 24 secondes : vert pour la rue A, rouge pour la rue B.\n\nPendant 4 secondes : orange pour A, rouge pour B.\n\nPendant 2 secondes : rouge pour tout le monde.\n\nPendant 24 secondes : rouge pour A, vert pour B.\n\nPendant 4 secondes : rouge pour A, orange pour B.\n\nPendant 2 secondes : rouge pour tout le monde. Puis retour à la première ligne."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les deux secondes tout rouge",
+          "body": "Elles ne servent à personne, et elles sont indispensables : elles laissent le temps à la voiture qui a passé l'orange de dégager le carrefour avant que l'autre rue ne démarre.\n\nUn programme d'objet technique contient presque toujours un temps mort de ce genre. Ce n'est pas une maladresse de programmeur : c'est la sécurité."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "La condition qui ne doit jamais être vraie",
+          "body": "Dans tout le cycle, il n'existe aucun instant où A et B sont vertes en même temps.\n\nC'est ce qu'on appelle une condition interdite, et un programme de feu est vérifié état par état pour s'assurer qu'elle n'arrive jamais. Une seule seconde d'oubli, et le carrefour devient un accident.\n\nC'est pour cela qu'un feu en panne passe à l'orange clignotant partout, et non au vert partout."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Additionne les six durées du cycle. Combien de secondes en tout ?",
+          "hint": "24 + 4 + 2, deux fois.",
+          "explanation": "24 + 4 + 2 + 24 + 4 + 2 = 60 secondes. Le cycle dure exactement une minute.",
+          "answer": 60
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de secondes la rue A reste-t-elle au rouge dans un cycle ?",
+          "explanation": "60 − 24 − 4 = 32 secondes de rouge : les 24 s de vert de B, ses 4 s d'orange, et les deux temps morts de 2 s.",
+          "answer": 32
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "À quoi servent les 2 secondes de rouge partout ?",
+          "explanation": "À laisser la voiture qui a passé l'orange dégager le carrefour avant que l'autre rue ne démarre.",
+          "options": [
+            { "text": "laisser le carrefour se vider avant le démarrage suivant", "correct": true },
+            { "text": "économiser de l'électricité" },
+            { "text": "laisser passer les piétons" },
+            { "text": "rien, c'est un défaut du programme" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un feu en panne passe-t-il à l'orange clignotant et non au vert ?",
+          "explanation": "Parce que deux verts en même temps est la condition interdite. En cas de panne, on choisit l'état qui ne peut provoquer aucune collision.",
+          "options": [
+            { "text": "deux verts en même temps est la condition interdite", "correct": true },
+            { "text": "l'orange consomme moins" },
+            { "text": "le vert est plus difficile à allumer" },
+            { "text": "pour signaler le dépanneur" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un feu tricolore est piloté en direct par un agent de la ville.",
+          "explanation": "Faux. Il suit un programme écrit une fois pour toutes : une liste d'états avec leurs durées, répétée en cycle.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "capteurs",
+      "title": "Quand l'objet attend un signal",
+      "subtitle": "La porte qui s'ouvre seule.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un cycle ne suffit pas toujours",
+          "body": "Une porte de magasin qui s'ouvrirait toutes les minutes, qu'il y ait quelqu'un ou non, serait absurde.\n\nSon programme attend donc un signal : « tant que personne n'est détecté, ne rien faire ». Quand le capteur voit quelqu'un, le programme démarre.\n\nAttendre un signal plutôt que compter le temps, c'est la deuxième façon de programmer un objet — et presque tous les objets mélangent les deux."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le programme de la porte",
+          "body": "Attendre que le capteur détecte quelqu'un.\n\nOuvrir le vantail.\n\nAttendre 4 secondes, et recommencer à compter ces 4 secondes chaque fois que le capteur détecte encore quelqu'un.\n\nQuand 4 secondes se sont écoulées sans aucune détection, refermer.\n\nRevenir à la première ligne."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Pourquoi le compteur repart à zéro",
+          "body": "Sans cette remise à zéro, la porte se refermerait 4 secondes après la première personne, sur le nez de la deuxième.\n\nUn détail d'une ligne, qui fait toute la différence entre un objet utilisable et un objet dangereux. C'est souvent là que se joue la qualité d'un programme : pas dans ce qu'il fait, mais dans ce qu'il fait quand les choses arrivent en même temps."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le lave-linge, les deux à la fois",
+          "body": "Son programme compte le temps — tant de minutes de lavage, tant de rinçage — et attend des signaux : que le tambour soit plein, que l'eau soit à la bonne température, que la porte soit verrouillée.\n\nSi la porte s'ouvre, il s'arrête, où qu'il en soit dans son cycle. Une condition de sécurité l'emporte toujours sur le déroulement normal."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le programme de la porte dans l'ordre.",
+          "explanation": "Attendre une détection, ouvrir, attendre 4 s sans détection, refermer, recommencer.",
+          "items": [
+            "attendre une détection",
+            "ouvrir le vantail",
+            "attendre 4 secondes sans aucune détection",
+            "refermer",
+            "revenir au début"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le compteur de 4 secondes repart-il à zéro à chaque détection ?",
+          "explanation": "Sinon la porte se refermerait sur la deuxième personne, 4 secondes après la première.",
+          "options": [
+            { "text": "sinon la porte se refermerait sur la personne suivante", "correct": true },
+            { "text": "pour économiser le moteur" },
+            { "text": "pour aller plus vite" },
+            { "text": "pour que la porte reste ouverte toute la journée" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Un lave-linge en pleine essorage, dont on ouvre la porte. Que fait son programme ?",
+          "explanation": "Il s'arrête immédiatement. Une condition de sécurité l'emporte toujours sur le déroulement normal du cycle.",
+          "options": [
+            { "text": "il s'arrête immédiatement", "correct": true },
+            { "text": "il finit son cycle puis s'arrête" },
+            { "text": "il recommence au début" },
+            { "text": "il continue, la porte n'est pas surveillée" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Ces objets comptent-ils le temps, ou attendent-ils un signal ?",
+          "explanation": "Le four à minuteur et le feu tricolore comptent le temps ; la porte automatique, la lampe à détection et le portail à obstacle attendent un signal.",
+          "categories": ["compte le temps", "attend un signal"],
+          "items": [
+            { "text": "un four à minuteur", "category": 0 },
+            { "text": "un feu tricolore", "category": 0 },
+            { "text": "une porte automatique", "category": 1 },
+            { "text": "une lampe à détection", "category": 1 },
+            { "text": "un portail qui s'arrête sur un obstacle", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Un objet technique utilise soit le temps, soit des signaux, jamais les deux.",
+          "explanation": "Faux. Presque tous mélangent les deux : un lave-linge compte ses minutes de lavage et surveille en même temps la porte et la température.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "deboguer",
+      "title": "Quand le programme a un défaut",
+      "subtitle": "Trouver la ligne fautive.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Dérouler plutôt que deviner",
+          "body": "Pour trouver pourquoi un objet se comporte mal, on ne réfléchit pas au programme : on le déroule, ligne par ligne, en notant à chaque fois dans quel état on se trouve et combien de temps s'est écoulé.\n\nNeuf fois sur dix, le défaut apparaît sur une ligne précise, et il est bête. C'est la méthode des professionnels, et elle marche aussi sur un programme de quatre lignes."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les trois défauts les plus fréquents",
+          "body": "L'ordre inversé : l'objet agit avant d'avoir vérifié la condition.\n\nLa durée oubliée : l'état passe si vite que personne ne le voit, ou dure indéfiniment.\n\nLe retour au mauvais endroit : le cycle recommence au milieu plutôt qu'au début, et saute une étape à chaque tour."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "L'arrosage qui noie les plantes",
+          "body": "Programme : « Toutes les 6 heures, arroser pendant 10 minutes. »\n\nIl manque la condition. En plein hiver, sous la pluie, il arrose quatre fois par jour quand même.\n\nUne ligne à ajouter : « si la terre est déjà humide, ne pas arroser ». Un capteur d'humidité à deux euros, et le programme devient correct."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "« Toutes les 6 heures, arroser 10 minutes. » Combien de fois par jour ?",
+          "explanation": "24 ÷ 6 = 4 fois par jour.",
+          "answer": 4
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Cela fait combien de minutes d'arrosage par jour ?",
+          "explanation": "4 × 10 = 40 minutes par jour, même sous la pluie tant que la condition manque.",
+          "answer": 40
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que manque-t-il au programme d'arrosage ?",
+          "explanation": "Une condition : ne pas arroser si la terre est déjà humide. Sans elle, le programme compte le temps sans jamais regarder le monde.",
+          "options": [
+            { "text": "une condition sur l'humidité de la terre", "correct": true },
+            { "text": "une durée plus courte" },
+            { "text": "un deuxième arrosage" },
+            { "text": "une pompe plus puissante" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Un feu reste vert 2 secondes seulement. Quel type de défaut ?",
+          "explanation": "Une durée mal réglée : l'état existe bien, mais il passe trop vite pour servir à quoi que ce soit.",
+          "options": [
+            { "text": "une durée mal réglée", "correct": true },
+            { "text": "un ordre inversé" },
+            { "text": "un retour au mauvais endroit" },
+            { "text": "une condition interdite" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Une barrière de parking qui se lève avant d'avoir lu le ticket. Quel défaut ?",
+          "explanation": "Un ordre inversé : elle agit avant de vérifier la condition. Les deux lignes sont dans le mauvais sens.",
+          "options": [
+            { "text": "un ordre inversé", "correct": true },
+            { "text": "une durée oubliée" },
+            { "text": "une condition interdite" },
+            { "text": "un capteur en panne" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Quelle est la bonne méthode pour trouver un défaut de programme ?",
+          "explanation": "Le dérouler ligne par ligne en notant l'état et le temps écoulé. Réfléchir sans dérouler fait tourner en rond.",
+          "options": [
+            { "text": "le dérouler ligne par ligne en notant l'état", "correct": true },
+            { "text": "le relire en entier plusieurs fois" },
+            { "text": "le réécrire depuis le début" },
+            { "text": "changer le capteur d'abord" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-feux",
+      "title": "Défi : l'onde verte",
+      "subtitle": "Synchroniser deux carrefours.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le problème de l'ingénieur de la ville",
+          "body": "Deux carrefours se suivent sur la même avenue, séparés de 420 mètres. Les voitures y roulent à 50 km/h, soit environ 14 mètres par seconde.\n\nSi les deux feux passent au vert exactement en même temps, le peloton parti du premier arrive au second alors qu'il est déjà repassé au rouge. Tout le monde s'arrête deux fois.\n\nL'ingénieur va donc décaler le deuxième feu : il passera au vert juste au moment où le peloton arrive. C'est ce qu'on appelle une onde verte, et c'est un simple calcul de durée."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Le décalage à appliquer",
+          "formula": "décalage = distance ÷ vitesse",
+          "body": "C'est le temps que met une voiture pour aller d'un feu à l'autre. Le deuxième feu doit verdir exactement ce temps-là après le premier."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "420 mètres à 14 mètres par seconde. Combien de secondes de trajet ?",
+          "explanation": "420 ÷ 14 = 30 secondes. Le deuxième feu doit passer au vert 30 secondes après le premier.",
+          "answer": 30,
+          "unit": "s"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le cycle dure 60 s. Le décalage de 30 s correspond à quelle fraction du cycle ? Écris le dénominateur.",
+          "explanation": "30 ÷ 60 = un demi : le deuxième feu est décalé d'exactement une demi-période.",
+          "answer": 2
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un troisième carrefour est 420 m après le deuxième. Combien de secondes de décalage par rapport au premier ?",
+          "explanation": "30 + 30 = 60 secondes, soit un cycle complet : le troisième feu peut donc verdir en même temps que le premier.",
+          "answer": 60
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de cycles de 60 s dans une heure ?",
+          "explanation": "3 600 ÷ 60 = 60 cycles par heure.",
+          "answer": 60
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture passe toutes les 2 s pendant les 24 s de vert. Combien de voitures par cycle, puis par heure ? Donne le nombre par heure.",
+          "hint": "D'abord par cycle, puis multiplie par le nombre de cycles.",
+          "explanation": "24 ÷ 2 = 12 voitures par cycle, et 12 × 60 = 720 voitures par heure dans cette rue.",
+          "answer": 720
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Si l'avenue était limitée à 30 km/h au lieu de 50, que faudrait-il changer ?",
+          "explanation": "Augmenter le décalage : à vitesse plus faible, le trajet prend plus longtemps. Une onde verte n'est valable que pour une vitesse donnée — c'est aussi un moyen de faire respecter la limitation.",
+          "options": [
+            { "text": "augmenter le décalage, le trajet étant plus long", "correct": true },
+            { "text": "diminuer le décalage" },
+            { "text": "rien, le décalage ne dépend pas de la vitesse" },
+            { "text": "raccourcir le cycle de moitié" }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "Dans une onde verte bien réglée, une voiture qui roule plus vite que la limite arrive au vert.",
+          "explanation": "Faux. Elle arrive trop tôt, avant le passage au vert, et s'arrête. L'onde verte récompense exactement la vitesse pour laquelle elle a été calculée.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
