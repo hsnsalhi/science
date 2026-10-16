@@ -1,8 +1,9 @@
 # Feuille de route
 
-Le socle technique est posé et un chapitre complet sert de modèle. La suite se
-joue surtout sur le **contenu**, et sur un petit nombre de briques techniques
-qui ne sont utiles qu'une fois le contenu étoffé.
+Le socle technique est posé, et dix-sept chapitres sont jouables — au moins un
+par matière et par niveau. La suite se joue surtout sur le **contenu**, et sur
+un petit nombre de briques techniques qui ne sont utiles qu'une fois le contenu
+étoffé.
 
 ---
 
@@ -10,13 +11,14 @@ qui ne sont utiles qu'une fois le contenu étoffé.
 
 L'ordre proposé suit l'utilité pour un élève, pas la facilité d'écriture.
 
-1. **Compléter le collège en mathématiques** (6 chapitres) : c'est le niveau où
-   l'application a déjà son chapitre modèle, et le public le plus large.
-2. **Un chapitre complet par matière**, pour que les quatre tuiles de l'accueil
-   mènent quelque part : circuits électriques (physique-chimie, collège),
-   variables et boucles (informatique, collège), la cellule (SVT, collège).
-3. **Le primaire**, qui demande une écriture différente : phrases plus courtes,
-   figures plus présentes, moins de texte.
+1. **Épaissir chaque niveau jusqu'à une progression suivie.** Un chapitre par
+   matière suffit à montrer ce que l'application sait faire ; il n'enchaîne
+   personne. Le collège en mathématiques et le primaire sont les deux endroits
+   où une suite de cinq ou six chapitres changerait l'usage.
+2. **Les matières les plus maigres** : technologie, logique et histoire des
+   sciences n'ont qu'un chapitre chacune.
+3. **Le lycée et l'université**, où chaque chapitre demande plus de travail
+   d'écriture et souvent une figure neuve.
 
 Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 

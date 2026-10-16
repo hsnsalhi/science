@@ -4,8 +4,9 @@
 > **Gratuit, sans publicité, sans compte, hors-ligne.**
 
 Application mobile Flutter (iOS et Android, téléphone et tablette) couvrant
-les **mathématiques**, la **physique-chimie**, l'**informatique** et la **SVT**,
-pour quatre niveaux : primaire, collège, lycée, université.
+huit matières — **mathématiques**, **physique-chimie**, **informatique**,
+**SVT**, **technologie**, **astronomie**, **logique et énigmes**, **histoire
+des sciences** — pour quatre niveaux : primaire, collège, lycée, université.
 
 ---
 
@@ -17,20 +18,28 @@ pour quatre niveaux : primaire, collège, lycée, université.
 | Design system complet (couleurs, typographie, composants, thème sombre) | ✅ |
 | Navigation, onboarding, accueil, catalogue, profil, réglages | ✅ |
 | Moteur de leçon : cartes d'apprentissage + figures interactives | ✅ |
-| Moteur de quiz : **7 types d'exercices**, correction expliquée | ✅ |
+| Moteur de quiz : **9 types d'exercices**, correction expliquée | ✅ |
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
-| Catalogue des **85 chapitres** annoncés sur 4 matières × 4 niveaux | ✅ |
-| Contenu rédigé de bout en bout | **1 chapitre** (Pythagore, 4 leçons, 19 questions) |
-| 75 tests (domaine, contenu, parcours d'interface) | ✅ |
+| Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
+| Contenu rédigé de bout en bout | **17 chapitres** : 68 leçons, 264 cartes, 311 questions |
+| **21 figures interactives**, plusieurs animées | ✅ |
+| 259 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 
-Le chapitre **« Le théorème de Pythagore »** (maths, collège) est le modèle de
-référence : il est entièrement jouable et exerce les sept types d'exercices.
-Les 84 autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
+Les dix-sept chapitres rédigés couvrent les huit matières et les quatre
+niveaux : un élève de CM1 comme un étudiant de licence trouve de quoi jouer.
+Les autres chapitres sont annoncés au catalogue avec le statut « bientôt »,
 afin que l'élève voie tout de suite l'étendue du programme. Écrire un nouveau
 chapitre ne demande pas de toucher au code Dart : voir
 [docs/CONTENT_AUTHORING.md](docs/CONTENT_AUTHORING.md).
+
+Les corrigés ne sont pas relus mais **recalculés** par les tests : les
+proportions d'un croisement génétique sont rejouées sur la figure qui les
+produit, les racines d'un trinôme sont relues dans l'énoncé puis résolues, le
+chemin d'un robot est exécuté. Une faute d'arithmétique dans un corrigé fait
+échouer la suite avant d'atteindre un élève — c'est ainsi qu'a été trouvée,
+entre autres, une erreur de comptage sur la recherche dichotomique.
 
 ## Les quatre promesses du produit
 
@@ -67,7 +76,7 @@ build**, et produit les valeurs des secrets GitHub.
 ```bash
 flutter pub get
 flutter run              # appareil ou émulateur connecté
-flutter test             # 75 tests
+flutter test             # 259 tests
 flutter analyze          # analyse statique stricte
 ```
 
