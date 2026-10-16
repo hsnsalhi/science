@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'array_figure.dart';
+import 'balance_figure.dart';
 import 'binary_figure.dart';
 import 'cell_figure.dart';
 import 'circuit_figure.dart';
@@ -75,6 +76,9 @@ abstract final class FigureRegistry {
     // La même masse sur quatre astres, et la flèche du poids qui change.
     'poids-astres': (BuildContext context, Color accent) =>
         WeightFigure(accent: accent),
+    // Une balance à deux plateaux : résoudre ax + b = c par gestes.
+    'balance-equation': (BuildContext context, Color accent) =>
+        BalanceFigure(accent: accent),
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),

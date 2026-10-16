@@ -1,0 +1,374 @@
+{
+  "chapter": "maths-college-equations-et-problemes",
+  "lessons": [
+    {
+      "id": "qu-est-ce-qu-une-equation",
+      "title": "Une balance",
+      "subtitle": "Ce qu'on fait d'un côté, on le fait de l'autre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "L'égalité comme équilibre",
+          "body": "Enlève ou ajoute la même chose des deux côtés : la balance reste équilibrée.",
+          "figureId": "balance-equation"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Une équation pose une question",
+          "body": "3x + 5 = 20 n'affirme rien. Elle demande : pour quelle valeur de x cette égalité est-elle vraie ?\n\nUne égalité comme 2(x + 3) = 2x + 6 est différente : elle est vraie pour tout x. C'est une identité, pas une équation à résoudre."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Les deux gestes autorisés",
+          "formula": "ajouter le même nombre des deux côtés ; multiplier les deux côtés par le même nombre non nul",
+          "body": "Tout le reste s'en déduit. Soustraire, c'est ajouter un négatif ; diviser, c'est multiplier par l'inverse."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Résoudre 3x + 5 = 20",
+          "body": "1. retirer 5 des deux côtés : 3x = 15\n\n2. diviser les deux côtés par 3 : x = 5\n\n3. vérifier dans l'équation de départ : 3 × 5 + 5 = 20. C'est bien 20."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Multiplier par zéro n'est pas permis",
+          "body": "Multiplier les deux côtés par 0 donne 0 = 0 : vrai, mais on a perdu toute l'information.\n\nC'est pour cela que la règle dit « non nul ». La même prudence vaut quand on multiplie par une expression contenant x : elle pourrait valoir zéro."
+        },
+        {
+          "id": "c6",
+          "kind": "astuce",
+          "title": "Toujours vérifier",
+          "body": "Une solution se contrôle en trois secondes : remplace et compare.\n\nC'est le seul chapitre de mathématiques où la réponse se vérifie entièrement toute seule. Il serait dommage de s'en priver."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Résous 3x + 5 = 20.",
+          "hint": "Commence par retirer 5 des deux côtés.",
+          "explanation": "3x = 15, donc x = 5. Vérification : 3 × 5 + 5 = 20.",
+          "answer": 5
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Résous 4x − 7 = 13.",
+          "explanation": "4x = 20, donc x = 5. Vérification : 4 × 5 − 7 = 13.",
+          "answer": 5
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Résous 2x + 1 = x + 9.",
+          "hint": "Rassemble les x d'un côté.",
+          "explanation": "Retire x des deux côtés : x + 1 = 9, donc x = 8. Vérification : 17 = 17.",
+          "answer": 8
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Lequel de ces gestes ne conserve pas l'égalité ?",
+          "explanation": "Multiplier par zéro donne 0 = 0, qui est vrai mais ne dit plus rien sur x : l'information a disparu.",
+          "options": [
+            {
+              "text": "multiplier les deux côtés par 0",
+              "correct": true
+            },
+            {
+              "text": "ajouter 7 des deux côtés"
+            },
+            {
+              "text": "retirer 2x des deux côtés"
+            },
+            {
+              "text": "diviser les deux côtés par 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "traduire-un-enonce",
+      "title": "Traduire un énoncé",
+      "subtitle": "La partie difficile n'est pas le calcul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le vrai obstacle",
+          "body": "Résoudre 3x + 5 = 20 s'apprend en une heure. Transformer « j'ai pensé à un nombre, je l'ai triplé, j'ai ajouté 5, j'obtiens 20 » en cette équation, c'est autre chose.\n\nLa méthode tient en une question : qu'est-ce que je cherche ? C'est cela qu'on appelle x."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Quatre temps",
+          "body": "1. nommer l'inconnue, avec son unité : « soit x le prix d'un stylo, en euros »\n\n2. traduire chaque phrase de l'énoncé en écriture mathématique\n\n3. résoudre\n\n4. revenir à la question posée, et répondre par une phrase"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Un problème d'âges",
+          "body": "« Dans 5 ans, j'aurai le double de l'âge que j'avais il y a 4 ans. Quel âge ai-je ? »\n\nSoit x mon âge aujourd'hui. Dans 5 ans : x + 5. Il y a 4 ans : x − 4.\n\nÉquation : x + 5 = 2(x − 4), soit x + 5 = 2x − 8, donc 13 = x.\n\nVérification : dans 5 ans, 18 ans ; il y a 4 ans, 9 ans. 18 est bien le double de 9."
+        },
+        {
+          "id": "c4",
+          "kind": "exemple",
+          "title": "Un périmètre",
+          "body": "« Un rectangle a un périmètre de 34 cm, et sa longueur dépasse sa largeur de 5 cm. »\n\nSoit L la largeur en centimètres. La longueur vaut L + 5.\n\nPérimètre : 2(L + L + 5) = 34, donc 2(2L + 5) = 34, puis 4L + 10 = 34, donc L = 6 et la longueur vaut 11.\n\nVérification : 2 × (6 + 11) = 34."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "Répondre à la question, pas à l'équation",
+          "body": "Trouver x = 6 n'est pas une réponse si la question demandait la longueur.\n\nC'est l'erreur la plus coûteuse en contrôle : le calcul est juste, la réponse est fausse. Relis toujours la question après avoir résolu."
+        },
+        {
+          "id": "c6",
+          "kind": "aRetenir",
+          "title": "Le vocabulaire qui piège",
+          "body": "« de plus que » : on ajoute. « de moins que » : on retire.\n\n« fois plus » : on multiplie. « fois moins » : on divise.\n\n« la différence entre a et b » : a − b, dans cet ordre.\n\nEt un piège qui coûte cher : le carré de la somme n'est pas la somme des carrés. (2 + 3)² vaut 25, pas 4 + 9."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Dans 5 ans, j'aurai le double de l'âge que j'avais il y a 4 ans. Quel est mon âge aujourd'hui ?",
+          "hint": "Appelle x ton âge aujourd'hui, puis écris les deux situations.",
+          "explanation": "x + 5 = 2(x − 4) donne x + 5 = 2x − 8, donc x = 13. Dans 5 ans : 18 ans, soit le double de 9.",
+          "answer": 13
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle a un périmètre de 34 cm et sa longueur dépasse sa largeur de 5 cm. Quelle est sa longueur, en centimètres ?",
+          "hint": "Attention : la question porte sur la longueur, pas la largeur.",
+          "explanation": "4L + 10 = 34 donne L = 6 pour la largeur, donc une longueur de 11 cm.",
+          "answer": 11
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Trois stylos et un cahier coûtent 11 euros. Le cahier coûte 3 euros de plus qu'un stylo. Combien coûte un stylo, en euros ?",
+          "explanation": "Soit x le prix d'un stylo : 3x + (x + 3) = 11, donc 4x = 8 et x = 2 euros. Le cahier coûte 5 euros, et 3 × 2 + 5 = 11.",
+          "answer": 2,
+          "hint": "Appelle x le prix d'un stylo, et exprime le cahier avec x."
+        },
+        {
+          "id": "q4",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes de la résolution d'un problème.",
+          "explanation": "On nomme l'inconnue, on traduit, on résout, puis on répond à la question posée.",
+          "items": [
+            "nommer l'inconnue et son unité",
+            "traduire l'énoncé en équation",
+            "résoudre l'équation",
+            "répondre à la question posée par une phrase"
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque expression française à son écriture.",
+          "explanation": "Le vocabulaire fixe l'opération. « Fois moins » divise, « de plus que » ajoute.",
+          "pairs": [
+            {
+              "left": "5 de plus que x",
+              "right": "x + 5"
+            },
+            {
+              "left": "5 fois plus que x",
+              "right": "5x"
+            },
+            {
+              "left": "5 de moins que x",
+              "right": "x − 5"
+            },
+            {
+              "left": "le double de x, plus 3",
+              "right": "2x + 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entrainement-equations",
+      "title": "Résoudre sans trembler",
+      "subtitle": "Parenthèses, fractions, deux membres.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "L'ordre qui marche toujours",
+          "body": "1. développer les parenthèses\n\n2. rassembler les x à gauche, les nombres à droite\n\n3. diviser par le coefficient de x\n\n4. vérifier"
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Avec des parenthèses",
+          "body": "5(x − 2) = 3x + 4\n\n5x − 10 = 3x + 4\n\n2x = 14\n\nx = 7. Vérification : 5 × 5 = 25 et 3 × 7 + 4 = 25."
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Avec une fraction",
+          "body": "x/3 + 2 = 5\n\nx/3 = 3\n\nx = 9. Vérification : 9/3 + 2 = 5.\n\nOn peut aussi multiplier tout par 3 d'abord : x + 6 = 15, donc x = 9. Les deux chemins mènent au même endroit."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Quand x disparaît",
+          "body": "Si tous les x s'annulent et qu'il reste 5 = 5, l'équation est vraie pour tout x.\n\nS'il reste 5 = 7, elle n'a aucune solution.\n\nCe n'est pas une erreur de calcul : c'est un résultat, et il faut le dire comme tel."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Résous 5(x − 2) = 3x + 4.",
+          "explanation": "5x − 10 = 3x + 4, donc 2x = 14 et x = 7. Vérification : 25 = 25.",
+          "answer": 7
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Résous x/3 + 2 = 5.",
+          "hint": "Retire 2, puis multiplie par 3.",
+          "explanation": "x/3 = 3, donc x = 9. Vérification : 9/3 + 2 = 5.",
+          "answer": 9
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Combien de solutions a l'équation 2(x + 3) = 2x + 6 ?",
+          "hint": "Développe, et regarde ce qu'il reste quand les x s'annulent.",
+          "explanation": "On obtient 2x + 6 = 2x + 6, soit 0 = 0 : l'égalité est vraie quel que soit x. Ce n'est pas une équation à résoudre mais une identité.",
+          "options": [
+            {
+              "text": "une infinité : tout x convient",
+              "correct": true
+            },
+            {
+              "text": "une seule"
+            },
+            {
+              "text": "aucune"
+            },
+            {
+              "text": "deux"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "En résolvant une équation, tu arrives à 5 = 7. Que conclure ?",
+          "explanation": "Que l'équation n'a aucune solution. Aucune valeur de x ne peut rendre l'égalité vraie, puisque x n'y figure plus.",
+          "options": [
+            {
+              "text": "l'équation n'a aucune solution",
+              "correct": true
+            },
+            {
+              "text": "x = 0"
+            },
+            {
+              "text": "x peut valoir n'importe quoi"
+            },
+            {
+              "text": "il y a une erreur, forcément"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Résous 7 − 2x = 1.",
+          "hint": "Le coefficient de x est négatif.",
+          "explanation": "−2x = −6, donc x = 3. Vérification : 7 − 6 = 1.",
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "defi-equations",
+      "title": "Défi : les problèmes classiques",
+      "subtitle": "Ceux qui reviennent, et un piège.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "La bouteille et le bouchon",
+          "body": "« Une bouteille et son bouchon coûtent 11 euros. La bouteille coûte 10 euros de plus que le bouchon. Combien coûte le bouchon ? »\n\nPresque tout le monde répond 1 euro. Essaie : la bouteille coûterait alors 10 euros, et la différence ne serait que de 9.\n\nSoit x le prix du bouchon : x + (x + 10) = 11, donc 2x = 1 et x = 0,50 euro. La bouteille coûte 10,50 euros, et la différence fait bien 10.\n\nLe calcul est trivial. Ce qui trompe, c'est de ne pas l'avoir fait."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une bouteille et son bouchon coûtent 11 euros. La bouteille coûte 10 euros de plus que le bouchon. Combien coûte le bouchon, en euros ?",
+          "hint": "Pose l'équation, ne devine pas.",
+          "explanation": "x + (x + 10) = 11, donc 2x = 1 et x = 0,50 euro. La bouteille coûte 10,50 euros : la différence fait bien 10.",
+          "answer": 0.5,
+          "tolerance": 0.01
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La somme de trois entiers consécutifs vaut 108. Quel est le plus petit ?",
+          "hint": "Appelle-les n, n + 1 et n + 2.",
+          "explanation": "3n + 3 = 108, donc n = 35. Les trois entiers sont 35, 36 et 37.",
+          "answer": 35
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un père a 38 ans, son fils 10 ans. Dans combien d'années le père aura-t-il exactement le double de l'âge du fils ?",
+          "hint": "Dans x années, ils auront 38 + x et 10 + x.",
+          "explanation": "38 + x = 2(10 + x) donne 38 + x = 20 + 2x, donc x = 18. Le père aura 56 ans et le fils 28 : c'est bien le double.",
+          "answer": 18
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un nombre augmenté de son tiers vaut 48. Quel est ce nombre ?",
+          "explanation": "x + x/3 = 48, soit 4x/3 = 48, donc x = 36. Vérification : 36 + 12 = 48.",
+          "answer": 36
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "J'ai 23 pièces, des pièces de 1 euro et de 2 euros, pour un total de 37 euros. Combien ai-je de pièces de 2 euros ?",
+          "hint": "Si x est le nombre de pièces de 2 euros, il y a 23 − x pièces de 1 euro.",
+          "explanation": "2x + (23 − x) = 37 donne x + 23 = 37, donc x = 14. Quatorze pièces de 2 euros et neuf de 1 euro : 28 + 9 = 37.",
+          "answer": 14
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Une équation du type ax + b = c a toujours exactement une solution.",
+          "explanation": "Faux. Si a = 0, il n'y en a aucune (0 = 5) ou une infinité (0 = 0). La solution unique x = (c − b)/a suppose a non nul.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
