@@ -986,6 +986,21 @@ void main() {
         await shoot(tester, '$device-44-chaine-energie');
       });
 
+      // La matrice : le carré unité en pointillé, son image en plein, et
+      // le déterminant lu comme une aire.
+      testWidgets('université : la matrice', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Université');
+        await tapText(tester, 'Algèbre linéaire');
+        await tapText(tester, 'Le déterminant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-45-matrice');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

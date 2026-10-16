@@ -20,6 +20,7 @@ import 'food_web_figure.dart';
 import 'gears_figure.dart';
 import 'implication_figure.dart';
 import 'loop_robot_figure.dart';
+import 'matrix_figure.dart';
 import 'moon_phases_figure.dart';
 import 'number_line_figure.dart';
 import 'orbits_figure.dart';
@@ -78,6 +79,9 @@ abstract final class FigureRegistry {
     // Quatre étages de conversion, et le rendement qui en sort.
     'chaine-energie': (BuildContext context, Color accent) =>
         EnergyChainFigure(accent: accent),
+    // Une matrice 2 × 2, et le carré unité qu'elle transforme.
+    'matrice': (BuildContext context, Color accent) =>
+        MatrixFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

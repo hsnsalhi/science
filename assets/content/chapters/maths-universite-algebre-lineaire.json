@@ -1,0 +1,325 @@
+{
+  "chapter": "maths-universite-algebre-lineaire",
+  "lessons": [
+    {
+      "id": "une-matrice-est-une-application",
+      "title": "Une matrice est une application",
+      "subtitle": "Les colonnes sont les images de la base.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Un tableau de nombres, vraiment ?",
+          "body": "Une matrice 2 × 2 se présente comme quatre nombres rangés. Ce rangement n'a d'intérêt que parce qu'il code une transformation du plan.\n\nÀ chaque vecteur, la matrice en associe un autre. C'est une application, et elle est linéaire."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "L'action sur un vecteur",
+          "formula": "M(x, y) = (ax + by, cx + dy)",
+          "body": "avec M la matrice de coefficients a, b sur la première ligne, c, d sur la seconde."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Lire les colonnes",
+          "body": "Appliquons M au premier vecteur de base, (1, 0) : on obtient (a, c), soit la première colonne.\n\nAu second, (0, 1) : on obtient (b, d), la seconde colonne.\n\nUne matrice n'est donc rien d'autre que la liste des images des vecteurs de base. Tout le reste s'en déduit par linéarité."
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Transforme le carré",
+          "body": "Règle les quatre coefficients et regarde le carré unité devenir un parallélogramme.",
+          "figureId": "matrice"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Que représente la première colonne d'une matrice 2 × 2 ?",
+          "hint": "Applique la matrice à (1, 0).",
+          "explanation": "L'image du premier vecteur de base. C'est la lecture la plus utile d'une matrice, et elle rend le calcul inutile dans bien des cas.",
+          "figureId": "matrice",
+          "options": [
+            { "text": "L'image du vecteur (1, 0)", "correct": true },
+            { "text": "L'image du vecteur (0, 1)" },
+            { "text": "Les valeurs propres" },
+            { "text": "Le noyau de l'application" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la matrice de coefficients a = 2, b = 1, c = 0, d = 3, quelle est la première coordonnée de l'image de (1, 1) ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "hint": "ax + by, avec x = y = 1.",
+          "explanation": "3 : 2 × 1 + 1 × 1. La seconde coordonnée vaut 0 × 1 + 3 × 1, soit 3 également.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Connaître les images des vecteurs de base suffit à connaître toute l'application.",
+          "answer": true,
+          "explanation": "Oui : tout vecteur s'écrit comme combinaison des vecteurs de base, et la linéarité fait le reste."
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Pour la même matrice, quelle est la seconde coordonnée de l'image de (2, 0) ?",
+          "answer": 0,
+          "tolerance": 0.01,
+          "hint": "cx + dy, avec y = 0.",
+          "explanation": "0 : 0 × 2 + 3 × 0. Le coefficient c vaut zéro, donc l'axe horizontal reste sur lui-même.",
+          "figureId": "matrice"
+        }
+      ]
+    },
+    {
+      "id": "le-determinant",
+      "title": "Le déterminant",
+      "subtitle": "Une aire, et un signe.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La formule, et ce qu'elle mesure",
+          "formula": "det M = ad − bc",
+          "body": "c'est l'aire algébrique du parallélogramme construit sur les deux colonnes."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Regarde l'aire changer",
+          "body": "Le carré de départ a une aire de 1. Celle du parallélogramme est la valeur absolue du déterminant.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Trois lectures d'un même nombre",
+          "body": "Sa valeur absolue : le facteur par lequel toutes les aires sont multipliées.\n\nSon signe : négatif quand l'application retourne le plan, c'est-à-dire quand elle échange le sens de rotation des deux vecteurs.\n\nSon annulation : le carré s'écrase sur une droite. Une surface entière devient une ligne."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Pourquoi l'annulation interdit l'inverse",
+          "body": "Si le déterminant est nul, deux vecteurs distincts ont la même image : toute la direction écrasée se confond en un point de la droite.\n\nAucune application ne peut défaire cela. Il faudrait rendre à chaque point de la droite l'ensemble dont il provient, et une application ne rend qu'une valeur."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut le déterminant de la matrice a = 2, b = 0, c = 0, d = 3 ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "hint": "ad − bc.",
+          "explanation": "6 : 2 × 3 − 0 × 0. L'application étire d'un facteur 2 horizontalement et 3 verticalement, donc les aires sont multipliées par 6.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut le déterminant de la matrice a = 1, b = 2, c = 2, d = 4 ?",
+          "answer": 0,
+          "tolerance": 0.01,
+          "hint": "Les deux colonnes sont-elles indépendantes ?",
+          "explanation": "0 : 1 × 4 − 2 × 2. La seconde colonne est le double de la première, et le carré s'écrase sur une droite.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut le déterminant de la matrice a = 0, b = 1, c = 1, d = 0 ?",
+          "answer": -1,
+          "tolerance": 0.01,
+          "hint": "Cette application échange les deux axes.",
+          "explanation": "−1. L'aire est conservée, mais le signe indique que le plan a été retourné : c'est une symétrie.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que signifie un déterminant nul ?",
+          "hint": "Que devient le carré unité ?",
+          "explanation": "Que l'image est contenue dans une droite, et que l'application n'est pas inversible : une surface a été écrasée.",
+          "figureId": "matrice",
+          "options": [
+            { "text": "L'image est écrasée sur une droite", "correct": true },
+            { "text": "L'application est une rotation" },
+            { "text": "L'application conserve les aires" },
+            { "text": "Les deux colonnes sont orthogonales" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systemes-et-inversibilite",
+      "title": "Systèmes et inversibilité",
+      "subtitle": "Une solution, aucune, ou une infinité.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Un système est une question sur les images",
+          "body": "Résoudre « M(x, y) = (p, q) », c'est demander quels vecteurs ont pour image (p, q).\n\nSi M est inversible, il y en a exactement un. Sinon, il y en a une infinité ou aucun — selon que (p, q) est sur la droite image ou non."
+        },
+        {
+          "id": "c2",
+          "kind": "formule",
+          "title": "Les formules de Cramer",
+          "formula": "x = (pd − bq) / det     y = (aq − pc) / det",
+          "body": "elles n'ont de sens que si le déterminant est non nul, ce qui est exactement la condition d'inversibilité."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le déterminant multiplie",
+          "body": "Appliquer deux matrices à la suite multiplie les aires deux fois : det(MN) = det(M) × det(N).\n\nIl en découle qu'une matrice inversible a un déterminant non nul, puisque le produit avec son inverse vaut 1. La réciproque est vraie aussi."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Un déterminant très petit sans être nul est presque aussi gênant : l'inverse existe, mais il amplifie énormément la moindre erreur sur les données."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "La matrice a = 2, b = 1, c = 1, d = 1 a pour déterminant 1. Résous M(x, y) = (3, 2) : que vaut x ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "x = (pd − bq) / det.",
+          "explanation": "1 : (3 × 1 − 1 × 2) / 1. On vérifie : 2 × 1 + 1 × 1 = 3, et 1 × 1 + 1 × 1 = 2.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Même matrice, même second membre : que vaut y ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "y = (aq − pc) / det.",
+          "explanation": "1 : (2 × 2 − 3 × 1) / 1. La solution est donc le vecteur (1, 1), et elle est unique.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Deux matrices de déterminants 3 et −2. Que vaut le déterminant de leur produit ?",
+          "answer": -6,
+          "tolerance": 0.01,
+          "hint": "Les déterminants se multiplient.",
+          "explanation": "−6. Les aires sont multipliées par 3, puis par 2 avec un retournement : le signe suit.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces systèmes selon leur nombre de solutions.",
+          "hint": "Calcule le déterminant d'abord.",
+          "explanation": "Un déterminant non nul donne toujours une solution unique. Un déterminant nul donne zéro ou une infinité de solutions, selon le second membre.",
+          "categories": ["Une seule solution", "Zéro ou une infinité"],
+          "items": [
+            { "text": "a = 2, b = 0, c = 0, d = 3", "category": 0 },
+            { "text": "a = 1, b = 1, c = 0, d = 1", "category": 0 },
+            { "text": "a = 1, b = 2, c = 2, d = 4", "category": 1 },
+            { "text": "a = 3, b = 3, c = 1, d = 1", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-algebre-lineaire",
+      "title": "Défi : matrices et déterminants",
+      "subtitle": "Six questions, de la colonne au système.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Devant une matrice, commence toujours par regarder ses deux colonnes : sont-elles indépendantes ?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Déterminant de la matrice a = 3, b = 1, c = 2, d = 4 ?",
+          "answer": 10,
+          "tolerance": 0.01,
+          "hint": "3 × 4 − 1 × 2.",
+          "explanation": "10. Les aires sont multipliées par 10, et le signe positif indique que l'orientation est conservée.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Déterminant de la matrice a = 1, b = 0, c = 0, d = 1 ?",
+          "answer": 1,
+          "tolerance": 0.01,
+          "hint": "C'est l'identité.",
+          "explanation": "1 : l'identité ne change rien, donc elle ne change pas les aires.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Une matrice dont les deux colonnes sont proportionnelles a un déterminant nul.",
+          "answer": true,
+          "explanation": "Oui : les deux images sont alignées, le parallélogramme est aplati, son aire est nulle.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que signifie un déterminant négatif ?",
+          "hint": "Pense à la main droite devenue main gauche.",
+          "explanation": "Que l'orientation est inversée : les deux vecteurs images ont échangé leur sens de rotation.",
+          "figureId": "matrice",
+          "options": [
+            { "text": "L'orientation du plan est inversée", "correct": true },
+            { "text": "Les aires sont réduites" },
+            { "text": "La matrice n'est pas inversible" },
+            { "text": "Le système n'a pas de solution" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque déterminant à ce qu'il dit de l'application.",
+          "explanation": "Un déterminant de 1 conserve les aires, 0 les annule, −1 les conserve en retournant le plan, et 4 les quadruple.",
+          "pairs": [
+            { "left": "det = 1", "right": "conserve les aires" },
+            { "left": "det = 0", "right": "écrase sur une droite" },
+            { "left": "det = −1", "right": "conserve l'aire et retourne le plan" },
+            { "left": "det = 4", "right": "quadruple les aires" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un système à déterminant nul n'a jamais de solution.",
+          "answer": false,
+          "explanation": "Faux : il peut en avoir une infinité, lorsque le second membre se trouve sur la droite image. Ce qu'il n'a jamais, c'est une solution unique."
+        }
+      ]
+    }
+  ]
+}

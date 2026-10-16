@@ -21,6 +21,7 @@ import 'package:eureka/design_system/figures/food_web_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/implication_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
+import 'package:eureka/design_system/figures/matrix_figure.dart';
 import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
@@ -5663,6 +5664,196 @@ void main() {
       expect(SensorChainFigure.chauffe(18, 20), isTrue);
       expect(SensorChainFigure.chauffe(18, 16), isFalse);
       expect(SensorChainFigure.chauffe(20, 20), isFalse);
+    });
+  });
+
+
+  group('Chapitre complet : algèbre linéaire', () {
+    late Chapter algebre;
+
+    setUpAll(() {
+      algebre = catalog.chapterById('maths-universite-algebre-lineaire')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = algebre.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    /// Lit « a = 1, b = 2, c = 2, d = 4 ».
+    List<double> lireMatrice(String texte) => <double>[
+      for (final RegExpMatch m
+          in RegExp(r'[abcd] = (-?\d+(?:,\d+)?)').allMatches(texte))
+        double.parse(m.group(1)!.replaceAll(',', '.')),
+    ];
+
+    test('est jouable de bout en bout', () {
+      expect(algebre.isPlayable, isTrue);
+      expect(algebre.lessons.length, 4);
+    });
+
+    test('les déterminants annoncés sont ceux de la figure', () {
+      expect(
+        MatrixFigure.determinant(2, 0, 0, 3),
+        reponseNum('le-determinant', 'q1'),
+      );
+      expect(
+        MatrixFigure.determinant(1, 2, 2, 4),
+        reponseNum('le-determinant', 'q2'),
+      );
+      expect(
+        MatrixFigure.determinant(0, 1, 1, 0),
+        reponseNum('le-determinant', 'q3'),
+      );
+      expect(
+        MatrixFigure.determinant(3, 1, 2, 4),
+        reponseNum('defi-algebre-lineaire', 'q1'),
+      );
+      expect(
+        MatrixFigure.determinant(1, 0, 0, 1),
+        reponseNum('defi-algebre-lineaire', 'q2'),
+      );
+    });
+
+    test('le déterminant est bien l’aire du parallélogramme', () {
+      // L'affirmation centrale du chapitre. L'aire algébrique se calcule
+      // indépendamment, par le produit vectoriel des deux images.
+      final math.Random hasard = math.Random(31);
+      for (int essai = 0; essai < 400; essai++) {
+        double tirage() => (hasard.nextInt(17) - 8) / 4;
+        final double a = tirage();
+        final double b = tirage();
+        final double c = tirage();
+        final double d = tirage();
+        final ({double x, double y}) e1 = MatrixFigure.applique(
+          a,
+          b,
+          c,
+          d,
+          1,
+          0,
+        );
+        final ({double x, double y}) e2 = MatrixFigure.applique(
+          a,
+          b,
+          c,
+          d,
+          0,
+          1,
+        );
+        expect(
+          e1.x * e2.y - e1.y * e2.x,
+          closeTo(MatrixFigure.determinant(a, b, c, d), 1e-9),
+          reason: 'a=$a b=$b c=$c d=$d',
+        );
+      }
+    });
+
+    test('les colonnes sont bien les images de la base', () {
+      final math.Random hasard = math.Random(37);
+      for (int essai = 0; essai < 200; essai++) {
+        double tirage() => (hasard.nextInt(17) - 8) / 4;
+        final double a = tirage();
+        final double b = tirage();
+        final double c = tirage();
+        final double d = tirage();
+        expect(MatrixFigure.applique(a, b, c, d, 1, 0), (x: a, y: c));
+        expect(MatrixFigure.applique(a, b, c, d, 0, 1), (x: b, y: d));
+      }
+      // L'image de (1, 1) annoncée dans l'énoncé.
+      expect(
+        MatrixFigure.applique(2, 1, 0, 3, 1, 1).x,
+        reponseNum('une-matrice-est-une-application', 'q2'),
+      );
+      expect(
+        MatrixFigure.applique(2, 1, 0, 3, 2, 0).y,
+        reponseNum('une-matrice-est-une-application', 'q4'),
+      );
+    });
+
+    test('déterminant nul équivaut à des images colinéaires', () {
+      final math.Random hasard = math.Random(41);
+      for (int essai = 0; essai < 400; essai++) {
+        double tirage() => (hasard.nextInt(9) - 4).toDouble();
+        final double a = tirage();
+        final double b = tirage();
+        final double c = tirage();
+        final double d = tirage();
+        final ({double x, double y}) e1 = MatrixFigure.applique(
+          a,
+          b,
+          c,
+          d,
+          1,
+          0,
+        );
+        final ({double x, double y}) e2 = MatrixFigure.applique(
+          a,
+          b,
+          c,
+          d,
+          0,
+          1,
+        );
+        final bool colineaires = (e1.x * e2.y - e1.y * e2.x).abs() < 1e-9;
+        expect(
+          MatrixFigure.inversible(a, b, c, d),
+          !colineaires,
+          reason: 'a=$a b=$b c=$c d=$d',
+        );
+      }
+    });
+
+    test('les déterminants se multiplient', () {
+      // det(MN) = det(M) × det(N), vérifié sur des produits réels.
+      final math.Random hasard = math.Random(43);
+      for (int essai = 0; essai < 300; essai++) {
+        double tirage() => (hasard.nextInt(9) - 4).toDouble();
+        final List<double> m = <double>[tirage(), tirage(), tirage(), tirage()];
+        final List<double> n = <double>[tirage(), tirage(), tirage(), tirage()];
+        final List<double> produit = <double>[
+          m[0] * n[0] + m[1] * n[2],
+          m[0] * n[1] + m[1] * n[3],
+          m[2] * n[0] + m[3] * n[2],
+          m[2] * n[1] + m[3] * n[3],
+        ];
+        expect(
+          MatrixFigure.determinant(produit[0], produit[1], produit[2],
+              produit[3]),
+          closeTo(
+            MatrixFigure.determinant(m[0], m[1], m[2], m[3]) *
+                MatrixFigure.determinant(n[0], n[1], n[2], n[3]),
+            1e-9,
+          ),
+        );
+      }
+      expect(reponseNum('systemes-et-inversibilite', 'q3'), 3 * -2);
+    });
+
+    test('la solution annoncée par Cramer est la bonne', () {
+      final double x = reponseNum('systemes-et-inversibilite', 'q1');
+      final double y = reponseNum('systemes-et-inversibilite', 'q2');
+      // On ne vérifie pas la formule : on vérifie que le couple trouvé a
+      // bien pour image le second membre de l'énoncé.
+      expect(MatrixFigure.applique(2, 1, 1, 1, x, y), (x: 3.0, y: 2.0));
+    });
+
+    test('le tri des systèmes suit le déterminant', () {
+      final ClassifyQuestion q =
+          algebre.lessonById('systemes-et-inversibilite')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<double> m = lireMatrice(item.text);
+        expect(m, hasLength(4), reason: item.text);
+        final bool unique = MatrixFigure.inversible(m[0], m[1], m[2], m[3]);
+        expect(item.category == 0, unique, reason: item.text);
+      }
     });
   });
 

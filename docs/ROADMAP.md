@@ -1,8 +1,8 @@
 # Feuille de route
 
-Le socle technique est posé, et quarante-neuf chapitres sont jouables — au
+Le socle technique est posé, et cinquante chapitres sont jouables — au
 moins un par matière et par niveau. La répartition est désormais la vraie
-question : 21 chapitres au collège contre 13 au primaire, 13 au lycée et 2 à
+question : 21 chapitres au collège contre 13 au primaire, 13 au lycée et 3 à
 l'université. La suite se joue surtout sur le **contenu**, et sur un petit
 nombre de briques techniques qui ne sont utiles qu'une fois le contenu
 étoffé.
@@ -20,9 +20,8 @@ L'ordre proposé suit l'utilité pour un élève, pas la facilité d'écriture.
    plus de manipulation.
 2. **Les matières les plus maigres** : la technologie et l'histoire
    des sciences en ont quatre chacune, contre douze aux mathématiques.
-3. **L'université**, qui n'a que deux chapitres, tous deux en logique
-   et informatique. Les mathématiques, la physique et la biologie du
-   supérieur restent entières.
+3. **L'université**, qui n'a que trois chapitres. La physique, la
+   chimie et la biologie du supérieur restent entières.
 
 Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 
@@ -34,7 +33,7 @@ Chaque chapitre écrit doit passer `flutter test test/data/content_test.dart`.
 | **Rendu LaTeX** | Les formules Unicode suffisent jusqu'au lycée. Le supérieur (intégrales, matrices, sommes) en aura besoin : à faire en même temps que les premiers chapitres universitaires. |
 | **Éditeur de code embarqué** | Pour l'informatique au lycée : exécuter un petit programme Python dans l'application. Techniquement le plus gros morceau restant. |
 | **Sons** | Un retour sonore court sur bonne réponse, désactivable. Volontairement repoussé : mal fait, c'est pire que rien. |
-| **Plus de figures interactives** | Trente-six existent ; le circuit, la cellule et la parabole sont faits. Restent la balance chimique, le repère orthonormé et une figure de géométrie dans l'espace. Chaque figure sert plusieurs chapitres. |
+| **Plus de figures interactives** | Trente-sept existent ; le circuit, la cellule et la parabole sont faits. Restent la balance chimique, le repère orthonormé et une figure de géométrie dans l'espace. Chaque figure sert plusieurs chapitres. |
 | **Icône et écran de lancement** | À produire avant toute mise en ligne sur les stores. |
 
 ## Long terme — ce qui demande une décision
