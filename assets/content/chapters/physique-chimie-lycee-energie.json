@@ -1,0 +1,326 @@
+{
+  "chapter": "physique-chimie-lycee-energie-travail-et-puissance",
+  "lessons": [
+    {
+      "id": "le-travail-d-une-force",
+      "title": "Le travail d'une force",
+      "subtitle": "Ce qu'une force transfère.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Travail d'une force constante",
+          "formula": "W = F × d × cos(angle)",
+          "body": "avec F en newtons, d en mètres, et l'angle entre la force et le déplacement. Le résultat est en joules."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Pourquoi un cosinus",
+          "body": "Seule la part de la force dirigée le long du déplacement travaille.\n\nUne force perpendiculaire ne transfère aucune énergie : son travail est nul, quel que soit le déplacement. C'est le cas de la force qui maintient un satellite sur une orbite circulaire."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Moteur ou résistant",
+          "body": "Si l'angle est inférieur à 90 degrés, le travail est positif : la force fournit de l'énergie au système.\n\nAu-delà, il est négatif : la force en retire. Les frottements travaillent toujours négativement."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Porter une valise sur un trajet horizontal, c'est fatigant mais le travail du poids est nul : le poids est vertical, le déplacement horizontal."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une force de 50 N tire un objet sur 4 m, dans le sens du déplacement. Quel travail, en joules ?",
+          "answer": 200,
+          "tolerance": 0.5,
+          "unit": "J",
+          "hint": "L'angle est nul, donc le cosinus vaut 1.",
+          "explanation": "200 J : 50 × 4 × 1. Quand la force est alignée sur le déplacement, le cosinus disparaît du calcul."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "La même force, mais inclinée de 60 degrés. Quel travail, en joules ?",
+          "answer": 100,
+          "tolerance": 0.5,
+          "unit": "J",
+          "hint": "Le cosinus de 60 degrés vaut 0,5.",
+          "explanation": "100 J : 50 × 4 × 0,5. La moitié de la force seulement agit le long du déplacement."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quel est le travail d'une force perpendiculaire au déplacement ?",
+          "hint": "Que vaut le cosinus de 90 degrés ?",
+          "explanation": "Nul : le cosinus de 90 degrés vaut zéro. Aucune énergie n'est transférée, quelle que soit l'intensité de la force.",
+          "options": [
+            { "text": "Nul", "correct": true },
+            { "text": "Maximal" },
+            { "text": "Négatif" },
+            { "text": "Égal au produit F × d" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces travaux selon leur signe.",
+          "hint": "La force aide-t-elle, ou s'oppose-t-elle ?",
+          "explanation": "Une force dans le sens du mouvement fournit de l'énergie ; une force qui s'y oppose en retire.",
+          "categories": ["Travail positif", "Travail négatif"],
+          "items": [
+            { "text": "la poussée d'un moteur qui accélère", "category": 0 },
+            { "text": "le poids d'un objet qui descend", "category": 0 },
+            { "text": "les frottements de l'air", "category": 1 },
+            { "text": "le poids d'un objet qu'on monte", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cinetique-et-potentielle",
+      "title": "Cinétique et potentielle",
+      "subtitle": "Deux formes, une somme.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "Les deux énergies mécaniques",
+          "formula": "Ec = ½ m v²     Epp = m g h",
+          "body": "la première dépend de la vitesse, la seconde de l'altitude."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Suis le projectile",
+          "body": "Au sommet, la vitesse verticale est nulle mais l'horizontale demeure. L'énergie cinétique n'est donc pas nulle.",
+          "figureId": "projectile"
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "La somme se conserve",
+          "body": "Sans frottements, la somme Ec + Epp reste constante pendant tout le vol.\n\nEn montant, le projectile échange de la vitesse contre de l'altitude ; en descendant, l'inverse. Rien ne se perd, tout se convertit."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Une erreur fréquente : croire qu'au sommet toute l'énergie est potentielle. C'est vrai pour un lancer vertical, faux pour un tir incliné — la vitesse horizontale ne s'annule jamais."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un objet de 2 kg se déplace à 10 m/s. Quelle est son énergie cinétique, en joules ?",
+          "answer": 100,
+          "tolerance": 0.5,
+          "unit": "J",
+          "hint": "La moitié de m fois v au carré.",
+          "explanation": "100 J : 0,5 × 2 × 100. Doubler la vitesse quadruplerait cette énergie.",
+          "figureId": "projectile"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Le même objet est monté à 5 m de haut. Quelle énergie potentielle de pesanteur, en joules ?",
+          "answer": 98,
+          "tolerance": 1,
+          "unit": "J",
+          "hint": "m × g × h, avec g valant 9,81.",
+          "explanation": "Environ 98 J : 2 × 9,81 × 5. C'est presque l'énergie cinétique de la question précédente.",
+          "figureId": "projectile"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Au sommet d'un tir incliné, que vaut l'énergie cinétique ?",
+          "hint": "La vitesse horizontale s'annule-t-elle ?",
+          "explanation": "Elle n'est pas nulle : la vitesse verticale s'annule, mais l'horizontale est inchangée depuis le départ.",
+          "figureId": "projectile",
+          "options": [
+            { "text": "Elle n'est pas nulle", "correct": true },
+            { "text": "Elle est nulle" },
+            { "text": "Elle est maximale" },
+            { "text": "Elle est négative" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Doubler la vitesse d'un objet multiplie son énergie cinétique par combien ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "La vitesse intervient au carré.",
+          "explanation": "Par 4. C'est pourquoi la distance de freinage d'une voiture quadruple quand sa vitesse double.",
+          "figureId": "projectile"
+        }
+      ]
+    },
+    {
+      "id": "puissance-et-rendement",
+      "title": "Puissance et rendement",
+      "subtitle": "Le temps, et ce qui se perd.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La puissance",
+          "formula": "P = W / t",
+          "body": "en watts : un joule par seconde. Elle ne dit pas combien d'énergie, mais à quelle cadence."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Monter un étage",
+          "body": "Une personne de 70 kg monte de 3 m. Le travail contre le poids vaut 70 × 9,81 × 3, soit environ 2 060 J.\n\nEn 5 secondes : 412 W. En 20 secondes : 103 W. La même énergie, quatre fois moins de puissance."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Ce qui arrive au bout",
+          "body": "Entre l'énergie fournie et l'énergie utile, chaque étage prélève sa part.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Le rendement",
+          "body": "C'est le rapport entre l'énergie utile et l'énergie fournie. Il est toujours inférieur à 1.\n\nLe reste n'est pas détruit : il est dissipé, essentiellement en chaleur. L'énergie se conserve toujours, mais elle ne reste pas toujours utilisable."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un appareil fournit 600 J en 30 s. Quelle puissance, en watts ?",
+          "answer": 20,
+          "tolerance": 0.1,
+          "unit": "W",
+          "hint": "Divise l'énergie par la durée.",
+          "explanation": "20 W : 600 divisé par 30. Un watt, c'est un joule par seconde."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une personne de 70 kg monte de 3 m en 5 s. Quelle puissance développe-t-elle, en watts ?",
+          "answer": 412,
+          "tolerance": 10,
+          "unit": "W",
+          "hint": "Calcule d'abord le travail contre le poids.",
+          "explanation": "Environ 412 W : 2 060 J en 5 s. La même montée en 20 s ne demanderait que 103 W."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Un moteur reçoit 1 000 J et en restitue 400 d'énergie utile. Quel rendement, en pour-cent ?",
+          "answer": 40,
+          "tolerance": 0.5,
+          "unit": "%",
+          "hint": "Utile divisé par fourni.",
+          "explanation": "40 %. Les 600 J restants partent en chaleur : ils ne sont pas détruits, seulement devenus inutilisables.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Deux appareils de puissances différentes peuvent fournir la même énergie.",
+          "answer": true,
+          "explanation": "Oui : il suffit que le moins puissant fonctionne plus longtemps. La puissance est une cadence, pas une quantité."
+        }
+      ]
+    },
+    {
+      "id": "defi-energie",
+      "title": "Défi : énergie et puissance",
+      "subtitle": "Six questions, du joule au watt.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Attention aux unités : une énergie est en joules, une puissance en watts."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture de 1 000 kg roule à 20 m/s. Quelle énergie cinétique, en kilojoules ?",
+          "answer": 200,
+          "tolerance": 1,
+          "unit": "kJ",
+          "hint": "0,5 × 1 000 × 400, puis convertis.",
+          "explanation": "200 kJ, soit 200 000 J. À 40 m/s, ce serait 800 kJ : quatre fois plus."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une ampoule de 10 W fonctionne 1 heure. Quelle énergie consommée, en joules ?",
+          "answer": 36000,
+          "tolerance": 100,
+          "unit": "J",
+          "hint": "Une heure fait 3 600 secondes.",
+          "explanation": "36 000 J : 10 × 3 600. C'est aussi 0,01 kWh, l'unité des factures."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Que devient l'énergie perdue par un moteur de rendement 40 % ?",
+          "hint": "L'énergie se conserve.",
+          "explanation": "Elle est dissipée en chaleur. Elle existe toujours, mais sous une forme qu'on ne peut plus utiliser pour ce travail.",
+          "figureId": "chaine-energie",
+          "options": [
+            { "text": "Elle est dissipée en chaleur", "correct": true },
+            { "text": "Elle est détruite" },
+            { "text": "Elle retourne à la source" },
+            { "text": "Elle est stockée dans le moteur" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à son unité.",
+          "explanation": "Quatre grandeurs, quatre unités : les confondre est l'erreur la plus coûteuse de tout le chapitre.",
+          "pairs": [
+            { "left": "un travail", "right": "le joule" },
+            { "left": "une puissance", "right": "le watt" },
+            { "left": "une force", "right": "le newton" },
+            { "left": "un rendement", "right": "aucune unité" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Le travail du poids est nul quand on porte une valise sur un trajet horizontal.",
+          "answer": true,
+          "explanation": "Oui : le poids est vertical, le déplacement horizontal, et le cosinus de 90 degrés vaut zéro. Cela reste fatigant, mais la physique ne mesure pas la fatigue."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Au sommet d'un tir incliné, toute l'énergie mécanique est potentielle.",
+          "answer": false,
+          "explanation": "Non : seule la vitesse verticale s'annule. La vitesse horizontale subsiste, et avec elle une énergie cinétique.",
+          "figureId": "projectile"
+        }
+      ]
+    }
+  ]
+}

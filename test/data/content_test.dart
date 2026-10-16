@@ -5982,4 +5982,137 @@ void main() {
     });
   });
 
+
+  group('Chapitre complet : énergie, travail et puissance', () {
+    late Chapter energie;
+
+    setUpAll(() {
+      energie = catalog.chapterById(
+        'physique-chimie-lycee-energie-travail-et-puissance',
+      )!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = energie.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    double travail(double force, double distance, double angleDegres) =>
+        force * distance * math.cos(angleDegres * math.pi / 180);
+
+    test('est jouable de bout en bout', () {
+      expect(energie.isPlayable, isTrue);
+      expect(energie.lessons.length, 4);
+    });
+
+    test('les travaux annoncés sont ceux de la formule', () {
+      expect(
+        travail(50, 4, 0),
+        closeTo(reponseNum('le-travail-d-une-force', 'q1'), 0.5),
+      );
+      expect(
+        travail(50, 4, 60),
+        closeTo(reponseNum('le-travail-d-une-force', 'q2'), 0.5),
+      );
+      // Une force perpendiculaire ne travaille pas, quelle que soit son
+      // intensité : c'est l'affirmation de la question suivante.
+      for (final double force in <double>[1, 50, 1000]) {
+        expect(travail(force, 4, 90).abs(), lessThan(1e-12));
+      }
+    });
+
+    test('le signe du travail suit l’angle', () {
+      for (double angle = 0; angle < 90; angle += 5) {
+        expect(travail(10, 2, angle), greaterThan(0), reason: '$angle°');
+      }
+      for (double angle = 95; angle <= 180; angle += 5) {
+        expect(travail(10, 2, angle), lessThan(0), reason: '$angle°');
+      }
+    });
+
+    test('les énergies annoncées se recalculent', () {
+      double cinetique(double masse, double vitesse) =>
+          0.5 * masse * vitesse * vitesse;
+      double potentielle(double masse, double hauteur) =>
+          masse * ProjectileFigure.g * hauteur;
+
+      expect(
+        cinetique(2, 10),
+        closeTo(reponseNum('cinetique-et-potentielle', 'q1'), 0.5),
+      );
+      expect(
+        potentielle(2, 5),
+        closeTo(reponseNum('cinetique-et-potentielle', 'q2'), 1),
+      );
+      expect(
+        cinetique(1000, 20) / 1000,
+        closeTo(reponseNum('defi-energie', 'q1'), 1),
+      );
+      // Doubler la vitesse quadruple l'énergie cinétique.
+      expect(
+        cinetique(2, 20) / cinetique(2, 10),
+        closeTo(reponseNum('cinetique-et-potentielle', 'q4'), 1e-9),
+      );
+    });
+
+    test('l’énergie mécanique se conserve sur toute la trajectoire', () {
+      // L'affirmation de la leçon, rejouée sur la figure du projectile :
+      // au sommet, la vitesse verticale est nulle, et la somme de
+      // l'énergie cinétique restante et de l'énergie potentielle doit
+      // valoir l'énergie cinétique du départ.
+      for (final double vitesse in <double>[5, 10, 20, 40]) {
+        for (double angle = 10; angle <= 80; angle += 5) {
+          final double horizontale =
+              vitesse * math.cos(angle * math.pi / 180);
+          final double hauteur = ProjectileFigure.hauteurMax(vitesse, angle);
+          expect(
+            0.5 * horizontale * horizontale + ProjectileFigure.g * hauteur,
+            closeTo(0.5 * vitesse * vitesse, 1e-9),
+            reason: 'v = $vitesse, angle = $angle',
+          );
+        }
+      }
+    });
+
+    test('l’énergie cinétique au sommet n’est jamais nulle', () {
+      // Le piège que la carte « astuce » dénonce : seul un tir vertical
+      // annule la vitesse au sommet.
+      for (double angle = 5; angle < 90; angle += 5) {
+        final double horizontale = 20 * math.cos(angle * math.pi / 180);
+        expect(0.5 * horizontale * horizontale, greaterThan(0.1),
+            reason: '$angle°');
+      }
+      expect(math.cos(90 * math.pi / 180).abs(), lessThan(1e-12));
+    });
+
+    test('les puissances annoncées sont justes', () {
+      expect(600 / 30, closeTo(reponseNum('puissance-et-rendement', 'q1'), 0.1));
+      const double montee = 70 * ProjectileFigure.g * 3;
+      expect(
+        montee / 5,
+        closeTo(reponseNum('puissance-et-rendement', 'q2'), 10),
+      );
+      // La même énergie en quatre fois plus de temps : quatre fois moins
+      // de puissance, comme le dit l'exemple.
+      expect(montee / 20, closeTo(montee / 5 / 4, 1e-9));
+      expect(10 * 3600, reponseNum('defi-energie', 'q2'));
+    });
+
+    test('le rendement annoncé est le rapport de l’utile au fourni', () {
+      expect(
+        400 / 1000 * 100,
+        closeTo(reponseNum('puissance-et-rendement', 'q3'), 0.5),
+      );
+      // Et il se lit aussi sur la figure de la chaîne d'énergie.
+      expect(
+        EnergyChainFigure.rendementGlobal(<double>[40]),
+        closeTo(reponseNum('puissance-et-rendement', 'q3'), 0.5),
+      );
+    });
+  });
+
 }
