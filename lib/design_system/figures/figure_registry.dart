@@ -31,6 +31,7 @@ import 'speed_figure.dart';
 import 'states_figure.dart';
 import 'thales_figure.dart';
 import 'truth_table_figure.dart';
+import 'triangle_angles_figure.dart';
 import 'triangle_test_figure.dart';
 
 /// Fabrique une figure à partir de son identifiant de contenu.
@@ -100,6 +101,9 @@ abstract final class FigureRegistry {
     // Capteur, traitement, actionneur : un thermostat complet.
     'chaine-information': (BuildContext context, Color accent) =>
         SensorChainFigure(accent: accent),
+    // Deux angles réglables, et le troisième qui suit.
+    'angles-triangle': (BuildContext context, Color accent) =>
+        TriangleAnglesFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

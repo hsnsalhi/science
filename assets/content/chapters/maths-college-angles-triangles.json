@@ -1,0 +1,344 @@
+{
+  "chapter": "maths-college-angles-et-triangles",
+  "lessons": [
+    {
+      "id": "somme-des-angles",
+      "title": "La somme des angles",
+      "subtitle": "Toujours 180°, sans exception.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La règle",
+          "formula": "Â + B̂ + Ĉ = 180°",
+          "body": "dans n'importe quel triangle."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Essaie de la mettre en défaut",
+          "body": "Règle deux angles : le troisième n'est pas réglable, il se déduit.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Deux angles suffisent",
+          "body": "Connaître deux angles d'un triangle, c'est connaître le troisième : il vaut 180° moins leur somme.\n\nC'est pour cela qu'on ne demande jamais trois mesures dans un exercice."
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Quelques conséquences immédiates",
+          "body": "Un triangle ne peut pas avoir deux angles droits : il resterait 0° pour le troisième.\n\nIl ne peut pas non plus avoir deux angles obtus, ni un angle de 180°."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "La somme des trois angles vaut toujours 180°.",
+            "Deux angles connus donnent le troisième.",
+            "Un seul angle peut dépasser 90°."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle a deux angles de 60° et 70°. Combien mesure le troisième ?",
+          "answer": 50,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "180 − 60 − 70.",
+          "explanation": "50°. Les deux premiers angles font 130°, et il reste 50° pour le troisième.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un triangle rectangle, un angle vaut 90° et un autre 35°. Combien mesure le troisième ?",
+          "answer": 55,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "180 − 90 − 35.",
+          "explanation": "55°. Dans un triangle rectangle, les deux angles non droits font toujours 90° à eux deux.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un triangle peut avoir deux angles droits.",
+          "answer": false,
+          "explanation": "Non : les deux feraient déjà 180°, et il ne resterait rien pour le troisième. Or un angle de 0° n'existe pas dans un triangle.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien mesure chaque angle d'un triangle équilatéral ?",
+          "answer": 60,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "180 partagé en trois angles égaux.",
+          "explanation": "60°, car 180 ÷ 3 = 60. Un triangle équilatéral est donc aussi équiangle.",
+          "figureId": "angles-triangle"
+        }
+      ]
+    },
+    {
+      "id": "nature-des-triangles",
+      "title": "Reconnaître un triangle",
+      "subtitle": "Par ses côtés, ou par ses angles.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Par les côtés",
+          "body": "Équilatéral : trois côtés égaux.\n\nIsocèle : au moins deux côtés égaux.\n\nScalène : trois côtés différents."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Par les angles",
+          "body": "Rectangle : un angle droit.\n\nObtusangle : un angle supérieur à 90°.\n\nAcutangle : les trois angles inférieurs à 90°."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Change la nature",
+          "body": "Mets un angle à 90°, puis au-delà : le nom affiché change.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "c4",
+          "kind": "texte",
+          "title": "Les deux classements se combinent",
+          "body": "Un triangle peut être isocèle et rectangle à la fois : ses angles valent alors 90°, 45° et 45°.\n\nEn revanche, un triangle équilatéral ne peut être ni rectangle ni obtusangle : ses trois angles valent 60°."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Côtés égaux : équilatéral, isocèle, scalène.",
+            "Angles : rectangle, obtusangle, acutangle.",
+            "Un seul angle peut valoir 90° ou plus."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle isocèle rectangle a un angle droit. Combien mesure chacun des deux autres ?",
+          "answer": 45,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "Il reste 90° à partager en deux angles égaux.",
+          "explanation": "45° chacun : 90 ÷ 2. C'est la moitié d'un carré coupé par sa diagonale.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces triangles d'après leur plus grand angle.",
+          "hint": "Compare le plus grand angle à 90°.",
+          "explanation": "Un angle de 90° donne un triangle rectangle ; au-delà, il est obtusangle. En dessous pour les trois, il est acutangle.",
+          "categories": ["Rectangle", "Obtusangle"],
+          "items": [
+            { "text": "90°, 60°, 30°", "category": 0 },
+            { "text": "90°, 45°, 45°", "category": 0 },
+            { "text": "120°, 40°, 20°", "category": 1 },
+            { "text": "100°, 50°, 30°", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Un triangle équilatéral peut être rectangle.",
+          "answer": false,
+          "explanation": "Non : ses trois angles valent 60°, aucun ne peut valoir 90°.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q4",
+          "kind": "appariement",
+          "prompt": "Associe chaque triangle à sa nature.",
+          "explanation": "Trois angles de 60° : équilatéral. Un angle droit et deux de 45° : isocèle rectangle. Un angle de 120° : obtusangle.",
+          "pairs": [
+            { "left": "60°, 60°, 60°", "right": "Équilatéral" },
+            { "left": "90°, 45°, 45°", "right": "Isocèle rectangle" },
+            { "left": "120°, 35°, 25°", "right": "Obtusangle" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inegalite-triangulaire",
+      "title": "Trois longueurs font-elles un triangle ?",
+      "subtitle": "Le détour n'est jamais plus court.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "L'inégalité triangulaire",
+          "formula": "le plus grand côté < somme des deux autres",
+          "body": "sinon, les deux petits côtés ne se rejoignent pas."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Pourquoi cela se comprend",
+          "body": "Aller de A à B directement, ou passer par C : le détour est toujours plus long, ou égal si C est sur le segment.\n\nAvec des côtés de 2, 3 et 9, les deux petits bouts n'atteignent jamais l'autre extrémité : 2 + 3 = 5, c'est moins que 9."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Le cas d'égalité",
+          "body": "Si le plus grand côté vaut exactement la somme des deux autres, les trois points sont alignés.\n\nIl n'y a plus de triangle, mais un segment : on parle de triangle aplati."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Il suffit de tester le plus grand côté : s'il est plus petit que la somme des deux autres, les deux autres inégalités sont automatiquement vraies."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "tri",
+          "prompt": "Range ces triplets selon qu'ils forment un triangle.",
+          "hint": "Compare le plus grand côté à la somme des deux autres.",
+          "explanation": "3-4-5 et 6-7-10 forment des triangles. Pour 2-3-9, les deux petits côtés font 5 et n'atteignent pas 9. Pour 1-2-3, la somme vaut exactement 3 : les points sont alignés.",
+          "categories": ["Forme un triangle", "N'en forme pas"],
+          "items": [
+            { "text": "3-4-5", "category": 0 },
+            { "text": "6-7-10", "category": 0 },
+            { "text": "2-3-9", "category": 1 },
+            { "text": "1-2-3", "category": 1 }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Deux côtés mesurent 5 et 8. Quelle est la plus grande valeur entière possible pour le troisième ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "hint": "Il doit rester strictement inférieur à 13.",
+          "explanation": "12. À 13, le triangle serait aplati ; au-delà, il n'existerait pas."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Deux côtés mesurent 5 et 8. Quelle est la plus petite valeur entière possible pour le troisième ?",
+          "answer": 4,
+          "tolerance": 0.01,
+          "hint": "Il doit être strictement supérieur à 3.",
+          "explanation": "4. À 3, on aurait 3 + 5 = 8 : un triangle aplati. Le troisième côté doit dépasser la différence des deux autres."
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Des côtés de 4, 4 et 8 forment un triangle.",
+          "answer": false,
+          "explanation": "Non : 4 + 4 = 8 exactement. Les trois points sont alignés, le triangle est aplati."
+        }
+      ]
+    },
+    {
+      "id": "defi-angles",
+      "title": "Défi : angles et triangles",
+      "subtitle": "Six questions à 180°.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Rappelle-toi : deux angles suffisent pour connaître le troisième."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle a deux angles de 45° et 65°. Combien mesure le troisième ?",
+          "answer": 70,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "180 − 110.",
+          "explanation": "70°. Les trois angles font bien 180°.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle isocèle a un angle au sommet de 40°. Combien mesure chacun des deux angles à la base ?",
+          "answer": 70,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "Il reste 140° à partager en deux.",
+          "explanation": "70° chacun : (180 − 40) ÷ 2. Dans un triangle isocèle, les deux angles à la base sont égaux.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces triplets d'angles selon qu'ils sont possibles.",
+          "explanation": "Un triplet d'angles est possible si et seulement si sa somme vaut 180°. 100 + 50 + 30 et 60 + 60 + 60 conviennent ; les deux autres non.",
+          "categories": ["Possible", "Impossible"],
+          "items": [
+            { "text": "100°, 50°, 30°", "category": 0 },
+            { "text": "60°, 60°, 60°", "category": 0 },
+            { "text": "90°, 90°, 10°", "category": 1 },
+            { "text": "80°, 70°, 40°", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Des côtés de 7, 9 et 15 forment un triangle.",
+          "answer": true,
+          "explanation": "Oui : 7 + 9 = 16, et 16 est bien plus grand que 15. L'inégalité triangulaire est vérifiée."
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Dans un triangle rectangle, un angle non droit vaut 28°. Combien mesure l'autre angle non droit ?",
+          "answer": 62,
+          "tolerance": 0.01,
+          "unit": "degrés",
+          "hint": "Les deux angles non droits font 90° ensemble.",
+          "explanation": "62°, car 90 − 28. L'angle droit occupe déjà la moitié des 180°."
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Un triangle a un angle de 120°. Que peut-on dire des deux autres ?",
+          "hint": "Que reste-t-il à partager ?",
+          "explanation": "Ils font 60° à eux deux, donc chacun est inférieur à 90°. Un triangle n'a jamais deux angles obtus.",
+          "figureId": "angles-triangle",
+          "options": [
+            { "text": "Ils font 60° à eux deux", "correct": true },
+            { "text": "L'un des deux peut être droit" },
+            { "text": "Ils font 120° à eux deux" },
+            { "text": "On ne peut rien en dire" }
+          ]
+        }
+      ]
+    }
+  ]
+}

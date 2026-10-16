@@ -24,6 +24,7 @@ import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/seasons_figure.dart';
 import 'package:eureka/design_system/figures/sensor_chain_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
+import 'package:eureka/design_system/figures/triangle_angles_figure.dart';
 import 'package:eureka/design_system/figures/triangle_test_figure.dart';
 import 'package:eureka/design_system/figures/states_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
@@ -3254,6 +3255,137 @@ void main() {
       final ({int x, int y}) apresTournerPuisAvancer =
           chemin[LoopRobotFigure.pas * 2];
       expect(apresAvancer, isNot(apresTournerPuisAvancer));
+    });
+  });
+
+  group('Chapitre complet : angles et triangles', () {
+    late Chapter angles;
+
+    setUpAll(() {
+      angles = catalog.chapterById('maths-college-angles-et-triangles')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (angles.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    /// Lit « 90°, 45°, 45° » ou « 3-4-5 ».
+    List<double> nombres(String texte) => RegExp(r'\d+(?:[.,]\d+)?')
+        .allMatches(texte)
+        .map((RegExpMatch m) => double.parse(m.group(0)!.replaceAll(',', '.')))
+        .toList();
+
+    test('est jouable de bout en bout', () {
+      expect(angles.isPlayable, isTrue);
+      expect(angles.lessons.length, 4);
+    });
+
+    test('les troisièmes angles annoncés sont calculés', () {
+      expect(
+        TriangleAnglesFigure.troisieme(60, 70),
+        reponseNum('somme-des-angles', 'q1'),
+      );
+      expect(
+        TriangleAnglesFigure.troisieme(90, 35),
+        reponseNum('somme-des-angles', 'q2'),
+      );
+      expect(
+        TriangleAnglesFigure.troisieme(45, 65),
+        reponseNum('defi-angles', 'q1'),
+      );
+      expect(
+        TriangleAnglesFigure.troisieme(90, 28),
+        reponseNum('defi-angles', 'q5'),
+      );
+      // Équilatéral et isocèle rectangle : deux partages égaux.
+      expect(
+        TriangleAnglesFigure.somme / 3,
+        reponseNum('somme-des-angles', 'q4'),
+      );
+      expect(
+        (TriangleAnglesFigure.somme - 90) / 2,
+        reponseNum('nature-des-triangles', 'q1'),
+      );
+      expect(
+        (TriangleAnglesFigure.somme - 40) / 2,
+        reponseNum('defi-angles', 'q2'),
+      );
+    });
+
+    test('les triplets d’angles possibles font bien 180°', () {
+      final ClassifyQuestion q =
+          angles.lessonById('defi-angles')!.questions.firstWhere(
+                (Question x) => x.id == 'q3',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<double> trois = nombres(item.text);
+        expect(trois.length, 3, reason: item.text);
+        final double somme = trois.reduce((double a, double b) => a + b);
+        expect(
+          item.category == 0,
+          somme == TriangleAnglesFigure.somme,
+          reason: '${item.text} : somme $somme',
+        );
+      }
+    });
+
+    test('la nature annoncée est celle que la figure calcule', () {
+      // Rectangle ou obtusangle : c'est le plus grand angle qui décide,
+      // et la figure porte cette règle.
+      final ClassifyQuestion q =
+          angles.lessonById('nature-des-triangles')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        final List<double> trois = nombres(item.text);
+        expect(
+          trois.reduce((double a, double b) => a + b),
+          TriangleAnglesFigure.somme,
+          reason: '${item.text} ne fait pas 180°',
+        );
+        final String nature =
+            TriangleAnglesFigure.nature(trois[0], trois[1]);
+        expect(
+          item.category == 0,
+          nature == 'rectangle',
+          reason: '${item.text} est $nature',
+        );
+      }
+    });
+
+    test('l’inégalité triangulaire est appliquée, bornes comprises', () {
+      bool possible(List<double> cotes) {
+        final List<double> tries = <double>[...cotes]..sort();
+        return tries[2] < tries[0] + tries[1];
+      }
+
+      final ClassifyQuestion q =
+          angles.lessonById('inegalite-triangulaire')!.questions.firstWhere(
+                (Question x) => x.id == 'q1',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        expect(
+          item.category == 0,
+          possible(nombres(item.text)),
+          reason: item.text,
+        );
+      }
+
+      // Les bornes entières du troisième côté, avec 5 et 8.
+      final double maximum = reponseNum('inegalite-triangulaire', 'q2');
+      final double minimum = reponseNum('inegalite-triangulaire', 'q3');
+      expect(possible(<double>[5, 8, maximum]), isTrue);
+      expect(possible(<double>[5, 8, maximum + 1]), isFalse);
+      expect(possible(<double>[5, 8, minimum]), isTrue);
+      expect(possible(<double>[5, 8, minimum - 1]), isFalse);
+      // Et le cas du défi.
+      expect(possible(<double>[7, 9, 15]), isTrue);
     });
   });
 }

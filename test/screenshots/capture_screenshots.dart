@@ -815,6 +815,20 @@ void main() {
         await shoot(tester, '$device-34-capteurs');
       });
 
+      // Le triangle dont on règle deux angles : le troisième n'est pas
+      // réglable, et c'est ce que la règle des 180° veut dire.
+      testWidgets('collège : la somme des angles', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Angles et triangles');
+        await tapText(tester, 'La somme des angles');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-35-angles');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
