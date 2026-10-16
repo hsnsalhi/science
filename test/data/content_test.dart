@@ -21,6 +21,7 @@ import 'package:eureka/design_system/figures/expansion_figure.dart';
 import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/reference_functions_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
+import 'package:eureka/design_system/figures/feedback_figure.dart';
 import 'package:eureka/design_system/figures/food_web_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/implication_figure.dart';
@@ -6924,6 +6925,148 @@ void main() {
             if (!ImplicationFigure.implique(a, b)) '$a-$b',
       ];
       expect(faux, hasLength(1));
+    });
+  });
+
+
+  group('Chapitre complet : automatique et systèmes asservis', () {
+    late Chapter asservi;
+
+    setUpAll(() {
+      asservi = catalog.chapterById('technologie-universite-automatique')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) {
+      final Question q = asservi.lessonById(lessonId)!.questions.firstWhere(
+            (Question x) => x.id == questionId,
+          );
+      return q is EstimateQuestion
+          ? q.expected
+          : (q as NumericQuestion).expected;
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(asservi.isPlayable, isTrue);
+      expect(asservi.lessons.length, 4);
+    });
+
+    test('la formule de l’erreur statique est celle de la simulation', () {
+      // La leçon annonce consigne × gain / (1 + gain). On ne la croit pas
+      // sur parole : on laisse la boucle tourner et on regarde où elle
+      // s'arrête, pour les gains où elle est stable.
+      for (final double gain in <double>[0.25, 0.5, 1, 2, 3, 4, 5]) {
+        if (!FeedbackFigure.stable(gain)) continue;
+        double y = 0;
+        for (int i = 0; i < 4000; i++) {
+          y = (1 - FeedbackFigure.rapidite) * y +
+              FeedbackFigure.rapidite * gain * (FeedbackFigure.consigne - y);
+        }
+        expect(
+          y,
+          closeTo(FeedbackFigure.regimePermanent(gain), 1e-9),
+          reason: 'gain $gain',
+        );
+      }
+      expect(
+        FeedbackFigure.regimePermanent(1),
+        closeTo(reponseNum('regler-le-gain', 'q1'), 0.01),
+      );
+      expect(
+        FeedbackFigure.regimePermanent(4),
+        closeTo(reponseNum('regler-le-gain', 'q2'), 0.01),
+      );
+      expect(
+        FeedbackFigure.regimePermanent(9),
+        closeTo(reponseNum('defi-automatique', 'q1'), 0.01),
+      );
+      expect(
+        FeedbackFigure.regimePermanent(reponseNum('defi-automatique', 'q2')),
+        closeTo(0.9, 0.01),
+      );
+    });
+
+    test('l’erreur statique ne s’annule jamais', () {
+      // L'affirmation la plus forte du chapitre : aucun gain ne l'annule.
+      for (double gain = 0.25; gain <= 50; gain += 0.25) {
+        final double atteint = FeedbackFigure.regimePermanent(gain);
+        expect(atteint, lessThan(FeedbackFigure.consigne), reason: 'gain $gain');
+        expect(atteint, greaterThan(0));
+      }
+      // Et elle décroît bien quand le gain augmente.
+      double precedent = 0;
+      for (double gain = 0.25; gain <= 20; gain += 0.25) {
+        final double atteint = FeedbackFigure.regimePermanent(gain);
+        expect(atteint, greaterThan(precedent), reason: 'gain $gain');
+        precedent = atteint;
+      }
+    });
+
+    test('les trois régimes se succèdent dans l’ordre annoncé', () {
+      // Gain faible : réponse monotone. Gain moyen : oscillante mais
+      // stable. Gain fort : divergente. Les seuils doivent exister et
+      // être dans cet ordre.
+      double? seuilOscillation;
+      double? seuilInstabilite;
+      for (double gain = 0.25; gain <= 12; gain += 0.25) {
+        if (seuilOscillation == null && FeedbackFigure.oscillant(gain)) {
+          seuilOscillation = gain;
+        }
+        if (seuilInstabilite == null && !FeedbackFigure.stable(gain)) {
+          seuilInstabilite = gain;
+        }
+      }
+      expect(seuilOscillation, isNotNull);
+      expect(seuilInstabilite, isNotNull);
+      expect(seuilOscillation!, lessThan(seuilInstabilite!));
+      // En dessous du premier seuil, la réponse ne dépasse jamais la
+      // consigne ; au-dessus, elle la dépasse.
+      for (double gain = 0.25; gain < seuilOscillation; gain += 0.25) {
+        final double maximum = FeedbackFigure.reponse(gain).reduce(math.max);
+        expect(
+          maximum,
+          lessThanOrEqualTo(FeedbackFigure.consigne + 1e-9),
+          reason: 'gain $gain',
+        );
+      }
+      final double maximumOscillant =
+          FeedbackFigure.reponse(seuilInstabilite - 0.5).reduce(math.max);
+      expect(maximumOscillant, greaterThan(FeedbackFigure.consigne));
+    });
+
+    test('une boucle instable diverge vraiment', () {
+      final List<double> reponse = FeedbackFigure.reponse(7);
+      expect(FeedbackFigure.stable(7), isFalse);
+      expect(reponse.last.abs(), greaterThan(10));
+      // Et une boucle stable converge.
+      final List<double> sage = FeedbackFigure.reponse(1);
+      expect(
+        (sage.last - FeedbackFigure.regimePermanent(1)).abs(),
+        lessThan(1e-6),
+      );
+    });
+
+    test('le tri des conséquences d’un gain plus fort est exact', () {
+      // Les deux colonnes du défi se vérifient sur le modèle : l'erreur
+      // baisse et la réponse accélère d'un côté, le dépassement et
+      // l'instabilité apparaissent de l'autre.
+      expect(
+        FeedbackFigure.regimePermanent(4),
+        greaterThan(FeedbackFigure.regimePermanent(1)),
+      );
+      int pasPourApprocher(double gain) {
+        final List<double> reponse = FeedbackFigure.reponse(gain);
+        final double cible = 0.9 * FeedbackFigure.regimePermanent(gain);
+        for (int i = 0; i < reponse.length; i++) {
+          if (reponse[i] >= cible) return i;
+        }
+        return reponse.length;
+      }
+
+      expect(pasPourApprocher(3), lessThan(pasPourApprocher(0.5)));
+      expect(FeedbackFigure.oscillant(0.5), isFalse);
+      expect(FeedbackFigure.oscillant(4), isTrue);
+      expect(FeedbackFigure.stable(4), isTrue);
+      expect(FeedbackFigure.stable(7), isFalse);
     });
   });
 

@@ -1,0 +1,315 @@
+{
+  "chapter": "technologie-universite-automatique",
+  "lessons": [
+    {
+      "id": "boucle-ouverte-boucle-fermee",
+      "title": "Boucle ouverte, boucle fermée",
+      "subtitle": "Mesurer ce qu'on obtient.",
+      "kind": "cours",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "En boucle ouverte",
+          "body": "On applique une commande calculée d'avance, et on espère.\n\nSi le système change — une charge plus lourde, une pièce usée, un vent de face — rien ne le corrige. La commande ignore le résultat."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "En boucle fermée",
+          "body": "On mesure la sortie, on la compare à la consigne, et la commande se calcule à partir de l'écart.\n\nC'est ce retour de mesure qui fait tout. Sans lui, aucune correction n'est possible ; avec lui, le système se rattrape de lui-même."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "La commande proportionnelle",
+          "formula": "commande = gain × (consigne − mesure)",
+          "body": "la commande est proportionnelle à l'écart restant."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Le thermostat du chapitre de technologie au collège est un asservissement en tout ou rien. La commande proportionnelle en est la version continue : au lieu d'allumer ou d'éteindre, elle dose."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui distingue une boucle fermée d'une boucle ouverte ?",
+          "hint": "Que fait-on de la sortie ?",
+          "explanation": "La mesure de la sortie, réinjectée dans le calcul de la commande. C'est le seul ajout, et il change tout.",
+          "options": [
+            { "text": "La sortie est mesurée et réinjectée", "correct": true },
+            { "text": "La commande est plus puissante" },
+            { "text": "Le système est plus rapide par nature" },
+            { "text": "Il n'y a pas de capteur" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "En boucle ouverte, une perturbation imprévue est corrigée.",
+          "answer": false,
+          "explanation": "Non : rien ne la mesure, donc rien ne la corrige. C'est exactement ce que la boucle fermée apporte."
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la boucle d'asservissement dans l'ordre.",
+          "explanation": "On mesure, on compare à la consigne, on calcule la commande à partir de l'écart, et on agit — puis on recommence.",
+          "items": [
+            "mesurer la sortie",
+            "comparer à la consigne",
+            "calculer la commande à partir de l'écart",
+            "agir sur le système"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regler-le-gain",
+      "title": "Régler le gain",
+      "subtitle": "Trois régimes, et deux bouts mauvais.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Fais varier le gain",
+          "body": "La consigne est la ligne en pointillé. Regarde la réponse du système.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Gain faible",
+          "body": "Le système monte lentement et s'arrête nettement en dessous de la consigne.\n\nCe n'est pas un défaut de réglage : avec une commande proportionnelle, une commande nulle demande un écart nul, et un écart nul ne commande rien. L'équilibre est donc forcément en dessous."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "L'erreur statique",
+          "formula": "valeur atteinte = consigne × gain / (1 + gain)",
+          "body": "elle approche la consigne quand le gain grandit, sans jamais l'atteindre."
+        },
+        {
+          "id": "c4",
+          "kind": "etape",
+          "title": "Gain fort, puis trop fort",
+          "body": "Au-delà d'un seuil, la correction dépasse la cible à chaque pas : la réponse oscille autour de la consigne avant de se poser.\n\nPlus loin encore, chaque oscillation est plus grande que la précédente : le système diverge. Le gain n'est pas un curseur de qualité."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avec un gain de 1 et une consigne de 1, quelle valeur le système atteint-il ?",
+          "answer": 0.5,
+          "tolerance": 0.01,
+          "hint": "Gain divisé par gain plus un.",
+          "explanation": "0,5 : la moitié de la consigne. Un gain de 1 laisse la moitié de l'écart.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Et avec un gain de 4 ?",
+          "answer": 0.8,
+          "tolerance": 0.01,
+          "hint": "4 divisé par 5.",
+          "explanation": "0,8. L'erreur statique tombe à 20 %, mais la réponse oscille désormais avant de se poser.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une commande proportionnelle laisse-t-elle toujours une erreur ?",
+          "hint": "Que commande un écart nul ?",
+          "explanation": "Parce qu'un écart nul donne une commande nulle : il faut donc un écart résiduel pour maintenir la commande.",
+          "figureId": "asservissement",
+          "options": [
+            { "text": "Un écart nul donnerait une commande nulle", "correct": true },
+            { "text": "Le capteur est imprécis" },
+            { "text": "Le gain est mal réglé" },
+            { "text": "Le système est trop lent" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Augmenter le gain améliore toujours la réponse.",
+          "answer": false,
+          "explanation": "Non : l'erreur statique diminue, mais la réponse se met à osciller, puis diverge. C'est un compromis, pas un curseur de qualité.",
+          "figureId": "asservissement"
+        }
+      ]
+    },
+    {
+      "id": "au-dela-du-proportionnel",
+      "title": "Au-delà du proportionnel",
+      "subtitle": "Intégrer, et anticiper.",
+      "kind": "entrainement",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Le terme intégral",
+          "body": "On ajoute à la commande une part proportionnelle à la somme des écarts passés.\n\nTant qu'un écart subsiste, cette somme grandit et pousse la commande. Elle ne s'arrête que lorsque l'écart est nul : l'erreur statique disparaît."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Le terme dérivé",
+          "body": "On ajoute une part proportionnelle à la vitesse de variation de l'écart.\n\nQuand le système approche vite de la consigne, ce terme freine à l'avance. Il réduit le dépassement, au prix d'une sensibilité au bruit de mesure."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Le correcteur PID",
+          "formula": "commande = Kp × écart + Ki × somme + Kd × variation",
+          "body": "trois termes, trois rôles, et un réglage qui reste un compromis."
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Le proportionnel seul",
+          "body": "La figure n'a que le terme proportionnel : l'erreur statique y est donc indépassable.",
+          "figureId": "asservissement"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quel terme supprime l'erreur statique ?",
+          "hint": "Lequel accumule les écarts passés ?",
+          "explanation": "L'intégral : il accumule les écarts, et ne cesse de pousser que lorsque l'écart s'annule.",
+          "options": [
+            { "text": "L'intégral", "correct": true },
+            { "text": "Le proportionnel" },
+            { "text": "Le dérivé" },
+            { "text": "Aucun des trois" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quel terme réduit le dépassement ?",
+          "hint": "Lequel regarde la vitesse ?",
+          "explanation": "Le dérivé : il freine quand l'écart diminue vite, donc avant l'arrivée.",
+          "options": [
+            { "text": "Le dérivé", "correct": true },
+            { "text": "L'intégral" },
+            { "text": "Le proportionnel" },
+            { "text": "Les trois également" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque terme à ce qu'il regarde.",
+          "explanation": "Trois termes, trois informations tirées du même écart : sa valeur, son histoire, sa tendance.",
+          "pairs": [
+            { "left": "proportionnel", "right": "l'écart actuel" },
+            { "left": "intégral", "right": "la somme des écarts passés" },
+            { "left": "dérivé", "right": "la vitesse de variation de l'écart" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Le terme dérivé est sensible au bruit de mesure.",
+          "answer": true,
+          "explanation": "Oui : il regarde des variations, et un bruit en produit beaucoup. C'est pourquoi on le filtre, ou on s'en passe."
+        }
+      ]
+    },
+    {
+      "id": "defi-automatique",
+      "title": "Défi : asservissement",
+      "subtitle": "Six questions, de la boucle au réglage.",
+      "kind": "defi",
+      "xp": 45,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Garde en tête les deux bouts mauvais : trop peu de gain laisse une erreur, trop de gain fait osciller."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Avec un gain de 9 et une consigne de 1, quelle serait la valeur atteinte en régime permanent ?",
+          "answer": 0.9,
+          "tolerance": 0.01,
+          "hint": "9 divisé par 10.",
+          "explanation": "0,9 — si la boucle était stable à ce gain, ce qu'elle n'est pas dans la figure. L'erreur statique et la stabilité sont deux contraintes distinctes.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Quel gain faudrait-il pour une erreur statique de 10 %, avec une consigne de 1 ?",
+          "answer": 9,
+          "tolerance": 0.1,
+          "hint": "On veut atteindre 0,9.",
+          "explanation": "9 : la valeur atteinte vaut gain sur gain plus un, soit 0,9. Diviser l'erreur par deux demande à peu près de doubler le gain.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces conséquences d'une augmentation du gain.",
+          "hint": "Qu'est-ce qui s'améliore, qu'est-ce qui se dégrade ?",
+          "explanation": "Le gain réduit l'erreur et accélère la réponse ; il fait aussi apparaître le dépassement et finit par déstabiliser.",
+          "categories": ["Ce qui s'améliore", "Ce qui se dégrade"],
+          "items": [
+            { "text": "l'erreur statique diminue", "category": 0 },
+            { "text": "la réponse devient plus rapide", "category": 0 },
+            { "text": "le dépassement apparaît", "category": 1 },
+            { "text": "la stabilité se perd", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Une boucle fermée peut être moins stable que le système seul.",
+          "answer": true,
+          "explanation": "Oui, et c'est le danger de l'asservissement : un système parfaitement stable peut diverger une fois bouclé avec un gain trop grand.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Que mesure-t-on dans une boucle fermée ?",
+          "hint": "Pas la commande.",
+          "explanation": "La sortie du système, pour la comparer à la consigne. Mesurer la commande n'apprendrait rien sur le résultat.",
+          "options": [
+            { "text": "La sortie du système", "correct": true },
+            { "text": "La commande envoyée" },
+            { "text": "La consigne" },
+            { "text": "Le gain" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Un correcteur purement proportionnel peut annuler l'erreur statique.",
+          "answer": false,
+          "explanation": "Non, jamais : un écart nul donnerait une commande nulle. Seul un terme intégral y parvient."
+        }
+      ]
+    }
+  ]
+}

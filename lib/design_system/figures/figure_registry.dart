@@ -20,6 +20,7 @@ import 'entropy_figure.dart';
 import 'eratosthene_figure.dart';
 import 'expansion_figure.dart';
 import 'fraction_bar_figure.dart';
+import 'feedback_figure.dart';
 import 'food_web_figure.dart';
 import 'gears_figure.dart';
 import 'implication_figure.dart';
@@ -102,6 +103,9 @@ abstract final class FigureRegistry {
     // Unités, dixièmes, centièmes, et la retenue qui passe.
     'decimaux': (BuildContext context, Color accent) =>
         DecimalsFigure(accent: accent),
+    // Un asservissement proportionnel, et le réglage de son gain.
+    'asservissement': (BuildContext context, Color accent) =>
+        FeedbackFigure(accent: accent),
     // Une parabole dont on règle a, b et c.
     'parabole': (BuildContext context, Color accent) =>
         ParabolaFigure(accent: accent),

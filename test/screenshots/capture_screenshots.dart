@@ -1087,6 +1087,20 @@ void main() {
         await shoot(tester, '$device-50-decimaux');
       });
 
+      // L'asservissement au gain par défaut : réponse monotone, qui
+      // s'arrête sous la consigne. C'est l'erreur statique, visible.
+      testWidgets('université : l\'asservissement', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Technologie');
+        await tapText(tester, 'Université');
+        await tapText(tester, 'Automatique et systèmes asservis');
+        await tapText(tester, 'Régler le gain');
+        await shoot(tester, '$device-51-asservissement');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');
