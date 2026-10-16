@@ -1,0 +1,330 @@
+{
+  "chapter": "maths-primaire-les-fractions",
+  "lessons": [
+    {
+      "id": "partager-en-parts-egales",
+      "title": "Partager en parts égales",
+      "subtitle": "Ce que veut dire 3/4.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une fraction, c'est un partage",
+          "body": "Quand on partage une barre en 4 parts égales et qu'on en prend 3, on a pris trois quarts. On l'écrit 3/4."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Les deux nombres",
+          "body": "Le nombre du bas dit en combien de parts on a partagé.\n\nLe nombre du haut dit combien de parts on prend.\n\nDans 3/4 : 4 parts en tout, on en prend 3."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Essaie",
+          "body": "Change le nombre de parts, puis le nombre de parts coloriées.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Les parts doivent être égales. Si on coupe une barre en deux morceaux dont l'un est plus grand, le petit morceau n'est pas une moitié."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Le nombre du bas : en combien de parts on partage.",
+            "Le nombre du haut : combien de parts on prend.",
+            "Les parts doivent toujours être égales."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "texteATrous",
+          "prompt": "Complète avec les bons nombres.",
+          "template": "Dans la fraction 3/5, la barre est partagée en ___ parts et on en prend ___.",
+          "blanks": [
+            { "accepted": ["5", "cinq"] },
+            { "accepted": ["3", "trois"] }
+          ],
+          "hint": "Le nombre du bas dit le nombre de parts.",
+          "explanation": "5 parts en tout, et on en prend 3. Le nombre du bas partage, le nombre du haut compte.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une tablette de chocolat a 12 carrés. Tu en manges le quart. Combien de carrés as-tu mangés ?",
+          "answer": 3,
+          "tolerance": 0.01,
+          "unit": "carrés",
+          "hint": "Partage 12 en 4 parts égales.",
+          "explanation": "3 carrés : 12 partagé en 4 parts égales donne 3 par part, et on en prend une."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une barre est partagée en 6 parts égales. On en colorie 4. Combien de parts ne sont pas coloriées ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "6 parts en tout.",
+          "explanation": "2 parts : 6 − 4 = 2. Les parts coloriées font 4/6, les autres 2/6, et ensemble elles font la barre entière.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Pour avoir des quarts, il faut couper en 4 morceaux, même s'ils ne sont pas tous pareils.",
+          "answer": false,
+          "explanation": "Non : les parts doivent être égales. Quatre morceaux de tailles différentes ne sont pas des quarts."
+        }
+      ]
+    },
+    {
+      "id": "comparer",
+      "title": "Comparer des fractions",
+      "subtitle": "Plus de parts ne veut pas dire plus gros.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le piège",
+          "body": "8 est plus grand que 4. Pourtant 1/8 est plus petit que 1/4.\n\nPlus on partage, plus les parts sont petites : c'est aussi simple que cela, et c'est toujours vrai."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Vérifie-le",
+          "body": "Mets 4 parts et colorie-en 1. Puis mets 8 parts et colorie-en 1. Compare les longueurs.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Se repérer avec la moitié",
+          "body": "Pour savoir si une fraction dépasse la moitié, compare le nombre du haut à la moitié du nombre du bas.\n\nDans 3/8 : la moitié de 8 est 4, et 3 est plus petit que 4. Donc 3/8 est plus petit qu'une moitié."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Quand le nombre du haut est égal au nombre du bas, la barre est entièrement coloriée : 5/5 fait un entier."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Quelle part est la plus grande ?",
+          "hint": "Plus on partage, plus les parts sont petites.",
+          "explanation": "1/4 est plus grand que 1/8 : partager en 4 donne des parts plus grosses que partager en 8.",
+          "figureId": "fraction-barre",
+          "options": [
+            { "text": "1/4", "correct": true },
+            { "text": "1/8" },
+            { "text": "Elles sont égales" },
+            { "text": "On ne peut pas savoir" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces fractions par rapport à une moitié.",
+          "hint": "Compare le nombre du haut à la moitié du nombre du bas.",
+          "explanation": "1/3 et 2/5 sont plus petites qu'une moitié ; 3/4 et 5/8 sont plus grandes. On compare toujours le haut à la moitié du bas.",
+          "categories": ["Plus petit que 1/2", "Plus grand que 1/2"],
+          "items": [
+            { "text": "1/3", "category": 0 },
+            { "text": "2/5", "category": 0 },
+            { "text": "3/4", "category": 1 },
+            { "text": "5/8", "category": 1 }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Une barre est partagée en 10 parts. Combien faut-il en colorier pour avoir exactement la moitié ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "hint": "La moitié de 10.",
+          "explanation": "5 parts : 5/10 est exactement une moitié, puisque 5 est la moitié de 10.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "7/7 colorie la barre en entier.",
+          "answer": true,
+          "explanation": "Oui. On prend les 7 parts sur 7 : il ne reste rien à colorier, cela fait un entier."
+        }
+      ]
+    },
+    {
+      "id": "fractions-egales",
+      "title": "Des fractions qui se valent",
+      "subtitle": "2/4, c'est la même chose que 1/2.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La même part, écrite autrement",
+          "body": "Partage une barre en 2 et colorie 1 part : tu as colorié la moitié.\n\nPartage la même barre en 4 et colorie 2 parts : tu as colorié exactement la même longueur. 2/4 et 1/2, c'est pareil."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Couper chaque part en deux",
+          "body": "Quand on coupe chaque part en deux, il y a deux fois plus de parts, et on en colorie deux fois plus. La fraction change d'écriture, pas de valeur."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Trouve-les",
+          "body": "Cherche toutes les façons de colorier exactement la moitié.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour simplifier une fraction, on regroupe les parts : dans 4/6, on peut grouper les parts deux par deux, ce qui donne 2/3."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "appariement",
+          "prompt": "Associe chaque fraction à son écriture la plus simple.",
+          "explanation": "5/10 et 2/4 valent une moitié, 2/6 vaut un tiers, 4/6 vaut deux tiers. Ce sont les mêmes parts, groupées autrement.",
+          "pairs": [
+            { "left": "5/10", "right": "1/2" },
+            { "left": "2/6", "right": "1/3" },
+            { "left": "4/6", "right": "2/3" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Une barre est partagée en 8 parts. Combien faut-il en colorier pour avoir la même part que 1/4 ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "hint": "Chaque quart contient deux huitièmes.",
+          "explanation": "2 parts : 2/8 est la même longueur que 1/4, car chaque quart a été coupé en deux.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces fractions selon qu'elles valent une moitié ou non.",
+          "explanation": "3/6 et 6/12 valent exactement une moitié : le nombre du haut est la moitié du nombre du bas. Ce n'est pas le cas de 3/7 ni de 5/12.",
+          "categories": ["Vaut 1/2", "Ne vaut pas 1/2"],
+          "items": [
+            { "text": "3/6", "category": 0 },
+            { "text": "6/12", "category": 0 },
+            { "text": "3/7", "category": 1 },
+            { "text": "5/12", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Si on coupe chaque part en deux, la part coloriée devient plus grande.",
+          "answer": false,
+          "explanation": "Non, elle reste exactement la même. Il y a deux fois plus de parts, mais elles sont deux fois plus petites."
+        }
+      ]
+    },
+    {
+      "id": "defi-fractions",
+      "title": "Défi : les fractions",
+      "subtitle": "Six questions pour vérifier.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions. Pense à la barre coloriée avant de répondre."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un gâteau est partagé en 8 parts égales. Trois enfants en prennent chacun une. Combien de parts reste-t-il ?",
+          "answer": 5,
+          "tolerance": 0.01,
+          "unit": "parts",
+          "hint": "8 moins 3.",
+          "explanation": "5 parts : il en reste 5/8, un peu plus de la moitié du gâteau."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quelle fraction est la plus grande ?",
+          "hint": "Compare chacune à une moitié.",
+          "explanation": "5/8 dépasse la moitié, puisque 5 est plus grand que 4. Les trois autres restent en dessous.",
+          "figureId": "fraction-barre",
+          "options": [
+            { "text": "5/8", "correct": true },
+            { "text": "3/8" },
+            { "text": "1/3" },
+            { "text": "2/5" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Dans une classe de 24 élèves, un tiers part à la bibliothèque. Combien d'élèves partent ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "unit": "élèves",
+          "hint": "Partage 24 en 3 parts égales.",
+          "explanation": "8 élèves : 24 partagé en 3 donne 8 par part."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces fractions.",
+          "explanation": "4/4 et 6/6 colorient toute la barre : elles valent un entier. 3/4 et 5/6 en laissent une part de côté.",
+          "categories": ["Vaut un entier", "Moins qu'un entier"],
+          "items": [
+            { "text": "4/4", "category": 0 },
+            { "text": "6/6", "category": 0 },
+            { "text": "3/4", "category": 1 },
+            { "text": "5/6", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de douzièmes faut-il pour faire exactement une moitié ?",
+          "answer": 6,
+          "tolerance": 0.01,
+          "hint": "La moitié de 12.",
+          "explanation": "6 douzièmes : 6/12 est la même part que 1/2."
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "1/5 est plus petit que 1/3.",
+          "answer": true,
+          "explanation": "Oui. Partager en 5 donne des parts plus petites que partager en 3, même si 5 est le plus grand nombre."
+        }
+      ]
+    }
+  ]
+}

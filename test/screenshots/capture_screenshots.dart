@@ -547,6 +547,46 @@ void main() {
         await shoot(tester, '$device-20-retrogradation');
       });
 
+      // Les deux chapitres du primaire : il faut passer par le sélecteur
+      // de niveau, puisque l'élève de ces captures est au collège.
+      testWidgets('primaire : les phases de la Lune', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Astronomie');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'La Lune et ses phases');
+        await tapText(tester, 'La Lune tourne autour de nous');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        // Un quart de lunaison : le premier quartier, la phase la plus
+        // parlante, moitié sombre et moitié claire.
+        final Rect piste = tester.getRect(find.byType(Slider));
+        await tester.tapAt(
+          Offset(piste.left + piste.width * 0.25, piste.center.dy),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-21-lune');
+      });
+
+      testWidgets('primaire : les fractions', (WidgetTester tester) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Mathématiques');
+        await tapText(tester, 'Primaire');
+        await tapText(tester, 'Les fractions');
+        await tapText(tester, 'Partager en parts égales');
+        await tapText(tester, 'Suivant');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        await shoot(tester, '$device-22-fractions');
+      });
+
       testWidgets('profil', (WidgetTester tester) async {
         await boot(tester, logical, ratio);
         await tapText(tester, 'Profil');

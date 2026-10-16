@@ -1,0 +1,346 @@
+{
+  "chapter": "astronomie-primaire-la-lune-et-ses-phases",
+  "lessons": [
+    {
+      "id": "la-lune-tourne",
+      "title": "La Lune tourne autour de nous",
+      "subtitle": "Un tour en un peu moins d'un mois.",
+      "kind": "cours",
+      "xp": 20,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Notre voisine",
+          "body": "La Lune tourne autour de la Terre. Elle met environ 29 jours et demi pour revenir au même endroit par rapport au Soleil. C'est presque un mois : le mot « mois » vient d'ailleurs de là."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Elle ne brille pas toute seule",
+          "body": "La Lune n'a pas de lumière à elle. Elle est éclairée par le Soleil, comme un ballon posé dans la cour. Ce qu'on voit briller, c'est la lumière du Soleil renvoyée vers nous."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Regarde-la tourner",
+          "body": "En haut, la Lune autour de la Terre. En bas, ce qu'on voit depuis chez nous.",
+          "figureId": "phases-lune"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "La moitié de la Lune éclairée par le Soleil ne change jamais : c'est toujours celle qui regarde le Soleil. Ce qui change, c'est la part de cette moitié qu'on voit d'ici."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "La Lune tourne autour de la Terre.",
+            "Un tour complet dure environ 29 jours et demi.",
+            "Elle ne fait pas de lumière : le Soleil l'éclaire."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Environ combien de jours s'écoulent entre deux pleines lunes ?",
+          "answer": 29.5,
+          "tolerance": 1,
+          "unit": "jours",
+          "hint": "C'est presque un mois.",
+          "explanation": "Environ 29 jours et demi. C'est pour cela qu'il y a à peu près une pleine lune par mois.",
+          "figureId": "phases-lune"
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "La Lune fabrique sa propre lumière.",
+          "answer": false,
+          "explanation": "Non. C'est le Soleil qui l'éclaire, et elle nous renvoie un peu de cette lumière."
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quelle partie de la Lune est éclairée par le Soleil ?",
+          "hint": "Pense à un ballon éclairé par une lampe.",
+          "explanation": "Toujours la moitié tournée vers le Soleil. Cette moitié ne change pas : c'est notre point de vue qui change.",
+          "figureId": "phases-lune",
+          "options": [
+            { "text": "La moitié tournée vers le Soleil", "correct": true },
+            { "text": "La moitié tournée vers la Terre" },
+            { "text": "Toute la Lune" },
+            { "text": "Cela change chaque nuit" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "On peut parfois voir la Lune en plein jour.",
+          "answer": true,
+          "explanation": "Oui, c'est fréquent. La Lune est souvent au-dessus de l'horizon pendant la journée : il suffit de lever les yeux au bon moment."
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-elle-change",
+      "title": "Pourquoi sa forme change",
+      "subtitle": "Ce n'est pas l'ombre de la Terre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Une question de point de vue",
+          "body": "Quand la Lune est du côté du Soleil, on regarde son côté sombre : on ne la voit pas. C'est la nouvelle lune.\n\nQuand elle est de l'autre côté de la Terre, on voit toute sa moitié éclairée : c'est la pleine lune."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Fais le tour",
+          "body": "Avance jour après jour : la moitié éclairée reste la même, le disque visible change.",
+          "figureId": "phases-lune"
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Attention à une erreur courante",
+          "body": "La forme de la Lune ne vient pas de l'ombre de la Terre. Si c'était le cas, il y aurait une ombre chaque nuit !\n\nL'ombre de la Terre tombe sur la Lune seulement une ou deux fois par an. On appelle cela une éclipse de Lune, et c'est un spectacle rare."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour essayer chez toi : prends une balle, une lampe de poche, et tourne lentement sur toi-même en tenant la balle à bout de bras. La balle changera de forme exactement comme la Lune."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "À retenir",
+          "bullets": [
+            "Nouvelle lune : on regarde le côté sombre.",
+            "Pleine lune : on voit toute la moitié éclairée.",
+            "Les phases ne sont pas l'ombre de la Terre."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "vraiFaux",
+          "prompt": "Les phases de la Lune sont dues à l'ombre de la Terre.",
+          "answer": false,
+          "explanation": "Non, c'est l'erreur la plus répandue. Les phases viennent de notre point de vue sur la moitié éclairée. L'ombre de la Terre sur la Lune, c'est l'éclipse, et elle est rare."
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pendant la nouvelle lune, où se trouve la Lune ?",
+          "hint": "Regarde le dessin du haut quand la Lune disparaît.",
+          "explanation": "Du même côté que le Soleil. Sa moitié éclairée est tournée à l'opposé de nous, et nous ne voyons que son côté sombre.",
+          "figureId": "phases-lune",
+          "options": [
+            { "text": "Du même côté que le Soleil", "correct": true },
+            { "text": "De l'autre côté de la Terre que le Soleil" },
+            { "text": "Dans l'ombre de la Terre" },
+            { "text": "Très loin derrière les étoiles" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Après la nouvelle lune, au bout d'environ combien de jours la Lune est-elle pleine ?",
+          "answer": 15,
+          "tolerance": 1,
+          "unit": "jours",
+          "hint": "C'est la moitié du tour.",
+          "explanation": "Environ 15 jours, soit la moitié des 29 jours et demi du tour complet.",
+          "figureId": "phases-lune"
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces phrases.",
+          "hint": "Relis la carte sur l'erreur courante.",
+          "explanation": "La Lune est éclairée par le Soleil et sa forme change selon notre point de vue : c'est vrai. Elle ne brille pas toute seule, et son ombre n'est pas celle de la Terre.",
+          "categories": ["C'est vrai", "C'est faux"],
+          "items": [
+            { "text": "Le Soleil éclaire la Lune", "category": 0 },
+            { "text": "Sa forme change selon notre point de vue", "category": 0 },
+            { "text": "La Lune brille toute seule", "category": 1 },
+            { "text": "L'ombre de la Terre cache la Lune chaque nuit", "category": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "les-noms-des-phases",
+      "title": "Les noms des phases",
+      "subtitle": "Croissant, quartier, pleine, gibbeuse.",
+      "kind": "entrainement",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Les quatre repères",
+          "body": "Nouvelle lune : on ne la voit pas.\nPremier quartier : on voit la moitié du disque.\nPleine lune : on voit tout le disque.\nDernier quartier : on revoit la moitié, de l'autre côté."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Entre les repères",
+          "body": "Juste après la nouvelle lune, on voit un fin croissant.\n\nEntre le quartier et la pleine lune, le disque est plus qu'à moitié éclairé : on dit qu'il est gibbeux."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "La Lune est menteuse : quand elle a la forme d'un D, elle grandit (elle croît) ; quand elle a la forme d'un C, elle diminue (elle décroît). C'est exactement l'inverse de ce que les lettres racontent."
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Retrouve chaque phase",
+          "body": "Arrête-toi sur une phase et lis son nom sous le dessin.",
+          "figureId": "phases-lune"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les phases dans l'ordre, en partant de la nouvelle lune.",
+          "explanation": "Nouvelle lune, premier croissant, premier quartier, gibbeuse croissante, pleine lune : la Lune grandit jusqu'à la moitié du tour, puis diminue.",
+          "items": [
+            "Nouvelle Lune",
+            "Premier croissant",
+            "Premier quartier",
+            "Gibbeuse croissante",
+            "Pleine Lune"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "appariement",
+          "prompt": "Associe chaque phase à ce qu'on voit.",
+          "explanation": "Au premier quartier on voit la moitié du disque, à la pleine lune tout le disque, à la nouvelle lune rien du tout.",
+          "pairs": [
+            { "left": "Premier quartier", "right": "La moitié du disque" },
+            { "left": "Pleine Lune", "right": "Tout le disque" },
+            { "left": "Nouvelle Lune", "right": "Rien du tout" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "La Lune a la forme d'un D bien net. Que fait-elle ?",
+          "hint": "Souviens-toi : la Lune est menteuse.",
+          "explanation": "Elle grandit. Le D ressemble au début de « diminuer », et c'est bien le piège : en forme de D, la Lune croît.",
+          "options": [
+            { "text": "Elle grandit", "correct": true },
+            { "text": "Elle diminue" },
+            { "text": "Elle ne change plus" },
+            { "text": "Elle disparaît demain" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de phases la Lune montre-t-elle entre deux nouvelles lunes, si on compte les quatre repères et les quatre formes intermédiaires ?",
+          "answer": 8,
+          "tolerance": 0.01,
+          "hint": "Quatre repères, et une forme entre chaque paire.",
+          "explanation": "Huit : quatre repères (nouvelle, premier quartier, pleine, dernier quartier) et, entre chacun, un croissant ou une gibbeuse."
+        }
+      ]
+    },
+    {
+      "id": "defi-lune",
+      "title": "Défi : la Lune",
+      "subtitle": "Six questions pour vérifier.",
+      "kind": "defi",
+      "xp": 30,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions sur la Lune. Prends le temps de te rappeler le dessin."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "On voit un très fin croissant juste après la nouvelle lune. Que va-t-il se passer les soirs suivants ?",
+          "hint": "La Lune vient de commencer son tour.",
+          "explanation": "Le croissant va grossir soir après soir, jusqu'au premier quartier puis à la pleine lune.",
+          "figureId": "phases-lune",
+          "options": [
+            { "text": "Le croissant va grossir", "correct": true },
+            { "text": "Le croissant va disparaître" },
+            { "text": "La Lune va rester pareille" },
+            { "text": "La Lune va devenir rouge" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "La moitié de la Lune éclairée par le Soleil change de place sur la Lune au fil du mois.",
+          "answer": false,
+          "explanation": "Non : c'est toujours la moitié tournée vers le Soleil qui est éclairée. Ce qui change, c'est l'angle sous lequel nous la regardons."
+        },
+        {
+          "id": "q3",
+          "kind": "saisieNumerique",
+          "prompt": "Il y a eu une pleine lune aujourd'hui. Dans environ combien de jours sera-t-elle nouvelle ?",
+          "answer": 15,
+          "tolerance": 1,
+          "unit": "jours",
+          "hint": "C'est encore une demi-lunaison.",
+          "explanation": "Environ 15 jours : la moitié d'un tour complet sépare toujours la pleine lune de la nouvelle lune."
+        },
+        {
+          "id": "q4",
+          "kind": "tri",
+          "prompt": "Range ces phases selon que la Lune grandit ou diminue.",
+          "explanation": "Après la nouvelle lune, la Lune grandit : premier croissant, premier quartier. Après la pleine lune, elle diminue : dernier quartier, dernier croissant.",
+          "categories": ["Elle grandit", "Elle diminue"],
+          "items": [
+            { "text": "Premier croissant", "category": 0 },
+            { "text": "Premier quartier", "category": 0 },
+            { "text": "Dernier quartier", "category": 1 },
+            { "text": "Dernier croissant", "category": 1 }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qu'une éclipse de Lune ?",
+          "hint": "Qui cache la lumière du Soleil ?",
+          "explanation": "C'est l'ombre de la Terre qui tombe sur la Lune. Cela n'arrive qu'une ou deux fois par an, et ne doit pas être confondu avec les phases.",
+          "options": [
+            { "text": "L'ombre de la Terre tombe sur la Lune", "correct": true },
+            { "text": "La Lune s'éteint" },
+            { "text": "La Lune passe derrière le Soleil" },
+            { "text": "La Lune change de couleur toute seule" }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Depuis la Terre, on voit toujours la même face de la Lune.",
+          "answer": true,
+          "explanation": "Oui. La Lune tourne sur elle-même exactement au même rythme qu'elle tourne autour de nous : sa face cachée est restée inconnue jusqu'aux premières sondes spatiales, en 1959."
+        }
+      ]
+    }
+  ]
+}

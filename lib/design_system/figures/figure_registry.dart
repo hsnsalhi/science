@@ -7,8 +7,10 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import 'cross_figure.dart';
 import 'eratosthene_figure.dart';
+import 'fraction_bar_figure.dart';
 import 'gears_figure.dart';
 import 'loop_robot_figure.dart';
+import 'moon_phases_figure.dart';
 import 'orbits_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'retrograde_figure.dart';
@@ -40,10 +42,16 @@ abstract final class FigureRegistry {
     // Un robot qui répète « avancer, tourner » sur une grille.
     'boucle-robot': (BuildContext context, Color accent) =>
         LoopRobotFigure(accent: accent),
+    // La Lune autour de la Terre, et ce qu'on en voit d'ici.
+    'phases-lune': (BuildContext context, Color accent) =>
+        MoonPhasesFigure(accent: accent),
     // Mars vue depuis la Terre : la boucle qui a fait tomber le
     // géocentrisme.
     'retrogradation': (BuildContext context, Color accent) =>
         RetrogradeFigure(accent: accent),
+    // Une barre partagée et coloriée, comparée à une demie.
+    'fraction-barre': (BuildContext context, Color accent) =>
+        FractionBarFigure(accent: accent),
     // Deux villes, deux ombres : la Terre mesurée au sol.
     'eratosthene': (BuildContext context, Color accent) =>
         EratostheneFigure(accent: accent),

@@ -6,9 +6,11 @@ import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:eureka/design_system/figures/cross_figure.dart';
 import 'package:eureka/design_system/figures/eratosthene_figure.dart';
+import 'package:eureka/design_system/figures/fraction_bar_figure.dart';
 import 'package:eureka/design_system/figures/retrograde_figure.dart';
 import 'package:eureka/design_system/figures/gears_figure.dart';
 import 'package:eureka/design_system/figures/loop_robot_figure.dart';
+import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
 import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
@@ -932,6 +934,266 @@ void main() {
 
     test('l’écart entre Copernic et Galilée est le bon', () {
       expect(1610 - 1543, reponseNum('le-soleil-au-centre', 'q4'));
+    });
+  });
+
+  group('Chapitre complet : la Lune et ses phases', () {
+    late Chapter lune;
+
+    setUpAll(() {
+      lune = catalog.chapterById('astronomie-primaire-la-lune-et-ses-phases')!;
+    });
+
+    double reponseNum(String lessonId, String questionId) =>
+        (lune.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    test('est jouable de bout en bout', () {
+      expect(lune.isPlayable, isTrue);
+      expect(lune.lessons.length, 4);
+    });
+
+    test('les durées annoncées sont celles de la figure', () {
+      expect(
+        reponseNum('la-lune-tourne', 'q1'),
+        closeTo(MoonPhasesFigure.periode, 0.1),
+      );
+      // Une demi-lunaison sépare la nouvelle lune de la pleine lune, et
+      // la pleine lune de la suivante nouvelle lune.
+      const double demie = MoonPhasesFigure.periode / 2;
+      for (final double annonce in <double>[
+        reponseNum('pourquoi-elle-change', 'q3'),
+        reponseNum('defi-lune', 'q3'),
+      ]) {
+        expect(annonce, closeTo(demie, 1));
+      }
+    });
+
+    test('les phases remarquables tombent sur la bonne fraction', () {
+      // Le nom affiché et la part éclairée doivent s'accorder : c'est ce
+      // que l'élève lit sous le dessin, les deux en même temps.
+      expect(MoonPhasesFigure.fractionEclairee(0), closeTo(0, 0.001));
+      expect(
+        MoonPhasesFigure.fractionEclairee(MoonPhasesFigure.periode / 4),
+        closeTo(0.5, 0.001),
+      );
+      expect(
+        MoonPhasesFigure.fractionEclairee(MoonPhasesFigure.periode / 2),
+        closeTo(1, 0.001),
+      );
+      expect(MoonPhasesFigure.nomDePhase(0), 'Nouvelle Lune');
+      expect(
+        MoonPhasesFigure.nomDePhase(MoonPhasesFigure.periode / 4),
+        'Premier quartier',
+      );
+      expect(
+        MoonPhasesFigure.nomDePhase(MoonPhasesFigure.periode / 2),
+        'Pleine Lune',
+      );
+      expect(
+        MoonPhasesFigure.nomDePhase(MoonPhasesFigure.periode * 3 / 4),
+        'Dernier quartier',
+      );
+    });
+
+    test('un quartier annoncé montre bien la moitié du disque', () {
+      // Partout où la figure annonce « quartier », le disque doit être
+      // éclairé à peu près de moitié ; partout où elle annonce « pleine »
+      // ou « nouvelle », presque tout ou presque rien.
+      for (int i = 0; i < 300; i++) {
+        final double jour = MoonPhasesFigure.periode * i / 300;
+        final String nom = MoonPhasesFigure.nomDePhase(jour);
+        final double f = MoonPhasesFigure.fractionEclairee(jour);
+        if (nom.contains('quartier')) {
+          expect(f, inInclusiveRange(0.4, 0.6), reason: 'jour $jour');
+        } else if (nom == 'Pleine Lune') {
+          expect(f, greaterThan(0.97), reason: 'jour $jour');
+        } else if (nom == 'Nouvelle Lune') {
+          expect(f, lessThan(0.03), reason: 'jour $jour');
+        }
+      }
+    });
+
+    test('la remise en ordre des phases suit la lunaison', () {
+      final OrderingQuestion q =
+          lune.lessonById('les-noms-des-phases')!.questions.firstWhere(
+                (Question x) => x.id == 'q1',
+              )
+              as OrderingQuestion;
+      // L'ordre attendu par l'exercice doit être celui que la figure
+      // fait défiler, et non un ordre recopié à la main.
+      final List<String> attendu = MoonPhasesFigure.phases.sublist(
+        0,
+        q.items.length,
+      );
+      expect(q.items, attendu);
+    });
+
+    test('le tri croissant / décroissant suit la lunaison', () {
+      final ClassifyQuestion q =
+          lune.lessonById('defi-lune')!.questions.firstWhere(
+                (Question x) => x.id == 'q4',
+              )
+              as ClassifyQuestion;
+      for (final ClassifyItem item in q.items) {
+        // On retrouve le jour où la figure donne ce nom, et on vérifie
+        // qu'elle grandit bien à ce moment-là.
+        double? jourTrouve;
+        for (int i = 0; i < 600; i++) {
+          final double jour = MoonPhasesFigure.periode * i / 600;
+          if (MoonPhasesFigure.nomDePhase(jour) == item.text) {
+            jourTrouve = jour;
+            break;
+          }
+        }
+        expect(jourTrouve, isNotNull, reason: '${item.text} inconnue');
+        expect(
+          item.category == 0,
+          MoonPhasesFigure.croissante(jourTrouve!),
+          reason: '${item.text} est mal rangée',
+        );
+      }
+    });
+  });
+
+  group('Chapitre complet : les fractions', () {
+    late Chapter fractions;
+
+    setUpAll(() {
+      fractions = catalog.chapterById('maths-primaire-les-fractions')!;
+    });
+
+    /// Lit une fraction écrite « 3/8 » dans un énoncé du chapitre.
+    ({int haut, int bas}) lire(String texte) {
+      final List<String> morceaux = texte.split('/');
+      return (haut: int.parse(morceaux[0]), bas: int.parse(morceaux[1]));
+    }
+
+    double reponseNum(String lessonId, String questionId) =>
+        (fractions.lessonById(lessonId)!.questions.firstWhere(
+                  (Question q) => q.id == questionId,
+                )
+                as NumericQuestion)
+            .expected;
+
+    ClassifyQuestion tri(String lessonId, String questionId) =>
+        fractions.lessonById(lessonId)!.questions.firstWhere(
+              (Question q) => q.id == questionId,
+            )
+            as ClassifyQuestion;
+
+    test('est jouable de bout en bout', () {
+      expect(fractions.isPlayable, isTrue);
+      expect(fractions.lessons.length, 4);
+    });
+
+    test('le tri par rapport à une moitié est juste, fraction par fraction', () {
+      final ClassifyQuestion q = tri('comparer', 'q2');
+      for (final ClassifyItem item in q.items) {
+        final ({int haut, int bas}) f = lire(item.text);
+        final int signe = FractionBarFigure.comparer(f.haut, f.bas, 1, 2);
+        expect(signe, isNot(0), reason: '${item.text} vaut pile une moitié');
+        expect(
+          item.category == 0,
+          signe < 0,
+          reason: '${item.text} est mal rangée',
+        );
+      }
+    });
+
+    test('les fractions annoncées égales à une moitié le sont', () {
+      for (final ClassifyItem item in tri('fractions-egales', 'q3').items) {
+        final ({int haut, int bas}) f = lire(item.text);
+        expect(
+          item.category == 0,
+          FractionBarFigure.comparer(f.haut, f.bas, 1, 2) == 0,
+          reason: '${item.text} est mal rangée',
+        );
+      }
+    });
+
+    test('les fractions annoncées entières le sont', () {
+      for (final ClassifyItem item in tri('defi-fractions', 'q4').items) {
+        final ({int haut, int bas}) f = lire(item.text);
+        expect(
+          item.category == 0,
+          FractionBarFigure.comparer(f.haut, f.bas, 1, 1) == 0,
+          reason: '${item.text} est mal rangée',
+        );
+      }
+    });
+
+    test('les simplifications proposées sont les bonnes', () {
+      final MatchingQuestion q =
+          fractions.lessonById('fractions-egales')!.questions.firstWhere(
+                (Question x) => x.id == 'q1',
+              )
+              as MatchingQuestion;
+      for (final MatchPair paire in q.pairs) {
+        final ({int haut, int bas}) depart = lire(paire.left);
+        final ({int haut, int bas}) arrivee = lire(paire.right);
+        final ({int denominateur, int numerateur}) reduite =
+            FractionBarFigure.simplifier(depart.haut, depart.bas);
+        expect(
+          <int>[reduite.numerateur, reduite.denominateur],
+          <int>[arrivee.haut, arrivee.bas],
+          reason: '${paire.left} ne se simplifie pas en ${paire.right}',
+        );
+      }
+    });
+
+    test('la plus grande fraction proposée est bien la bonne réponse', () {
+      final SingleChoiceQuestion q =
+          fractions.lessonById('defi-fractions')!.questions.firstWhere(
+                (Question x) => x.id == 'q2',
+              )
+              as SingleChoiceQuestion;
+      final ({int haut, int bas}) gagnante = lire(
+        q.options.firstWhere((AnswerOption o) => o.isCorrect).text,
+      );
+      for (final AnswerOption option in q.options) {
+        if (option.isCorrect) continue;
+        final ({int haut, int bas}) autre = lire(option.text);
+        expect(
+          FractionBarFigure.comparer(
+            gagnante.haut,
+            gagnante.bas,
+            autre.haut,
+            autre.bas,
+          ),
+          greaterThan(0),
+          reason: '${option.text} n’est pas plus petite que la bonne réponse',
+        );
+      }
+    });
+
+    test('les partages annoncés dans les énoncés tombent juste', () {
+      // Un quart de douze carrés, un tiers de vingt-quatre élèves : on
+      // refait la division plutôt que de relire le corrigé.
+      expect(12 * FractionBarFigure.valeur(1, 4), reponseNum('partager-en-parts-egales', 'q2'));
+      expect(24 * FractionBarFigure.valeur(1, 3), reponseNum('defi-fractions', 'q3'));
+      // Et les moitiés : cinq dixièmes, six douzièmes.
+      expect(
+        FractionBarFigure.comparer(
+          reponseNum('comparer', 'q3').round(),
+          10,
+          1,
+          2,
+        ),
+        0,
+      );
+      expect(
+        FractionBarFigure.comparer(
+          reponseNum('defi-fractions', 'q5').round(),
+          12,
+          1,
+          2,
+        ),
+        0,
+      );
     });
   });
 }
