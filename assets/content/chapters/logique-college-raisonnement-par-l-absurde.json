@@ -1,0 +1,336 @@
+{
+  "chapter": "logique-college-raisonnement-par-l-absurde",
+  "lessons": [
+    {
+      "id": "supposer-le-contraire",
+      "title": "Supposer le contraire",
+      "subtitle": "Et regarder ce qui casse.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Le détective",
+          "body": "« Ce n'est pas le jardinier. S'il avait fait le coup, il aurait été au jardin à 14 h. Or à 14 h il était en ville, et dix personnes l'ont vu. »\n\nLe détective n'a pas montré qui a fait le coup. Il a supposé le contraire de ce qu'il voulait prouver, et il a attendu que la supposition se contredise elle-même."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Trois temps",
+          "body": "1. On veut démontrer que P est vraie.\n\n2. On suppose que P est fausse.\n\n3. On en tire une conséquence impossible — une contradiction.\n\nConclusion : la supposition ne tenait pas, donc P est vraie."
+        },
+        {
+          "id": "c3",
+          "kind": "formule",
+          "title": "Ce qu'une contradiction prouve",
+          "formula": "si « non P » mène à l'impossible, alors P",
+          "body": "Un énoncé est vrai ou faux. Si « faux » est impossible, il ne reste que « vrai »."
+        },
+        {
+          "id": "c4",
+          "kind": "avertissement",
+          "title": "Une contradiction, pas une surprise",
+          "body": "Arriver à un résultat bizarre ne suffit pas. Il faut arriver à quelque chose d'impossible : un nombre à la fois pair et impair, un entier strictement entre 3 et 4, un objet plus grand que lui-même.\n\n« Ça me paraît étrange » n'est pas une contradiction. C'est un avis."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "title": "Repérer le bon « contraire »",
+          "body": "Le contraire de « tous les élèves sont présents » n'est pas « aucun élève n'est présent ». C'est « au moins un élève est absent ».\n\nSe tromper de contraire est l'erreur qui ruine le plus souvent une démonstration par l'absurde : on réfute autre chose que ce qu'on visait."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes d'un raisonnement par l'absurde.",
+          "explanation": "On énonce ce qu'on veut prouver, on suppose le contraire, on en déduit une impossibilité, puis on conclut.",
+          "items": [
+            "énoncer la propriété à démontrer",
+            "supposer qu'elle est fausse",
+            "en déduire une impossibilité",
+            "conclure qu'elle est donc vraie"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Quel est le contraire de « tous les élèves sont présents » ?",
+          "hint": "Il suffit d'une exception pour que « tous » tombe.",
+          "explanation": "« Au moins un élève est absent. » Il n'est pas nécessaire que tous le soient : une seule absence rend l'affirmation fausse.",
+          "options": [
+            { "text": "au moins un élève est absent", "correct": true },
+            { "text": "aucun élève n'est présent" },
+            { "text": "tous les élèves sont absents" },
+            { "text": "la moitié des élèves sont absents" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces conclusions : laquelle est une vraie contradiction ?",
+          "explanation": "Une contradiction est impossible, pas seulement surprenante. « 7 est pair » et « n est à la fois pair et impair » sont impossibles ; « le résultat est très grand » ne l'est pas.",
+          "categories": ["contradiction", "simple surprise"],
+          "items": [
+            { "text": "n est à la fois pair et impair", "category": 0 },
+            { "text": "il existe un entier strictement entre 3 et 4", "category": 0 },
+            { "text": "le résultat est négatif, je ne m'y attendais pas", "category": 1 },
+            { "text": "7 est un nombre pair", "category": 0 },
+            { "text": "le nombre trouvé est très grand", "category": 1 }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "vraiFaux",
+          "prompt": "Obtenir un résultat surprenant suffit à conclure par l'absurde.",
+          "explanation": "Non. Il faut une impossibilité, pas un étonnement. Beaucoup de vrais résultats sont surprenants.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "des-preuves-celebres",
+      "title": "Trois preuves célèbres",
+      "subtitle": "Les plus belles sont par l'absurde.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Les nombres premiers ne s'arrêtent jamais",
+          "body": "Supposons qu'il y en ait un dernier. Alors la liste complète tient sur une feuille : 2, 3, 5, 7, … jusqu'au dernier.\n\nMultiplie-les tous, et ajoute 1. Le nombre obtenu n'est divisible par aucun de la liste — il reste toujours 1. Pourtant tout entier plus grand que 1 a un diviseur premier.\n\nIl y a donc un nombre premier hors de la liste, alors qu'elle était complète. Impossible : la liste ne peut pas être finie."
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Essayons sur une petite liste",
+          "body": "Prends 2, 3, 5. Produit : 30, plus 1 : 31.\n\n31 n'est divisible ni par 2, ni par 3, ni par 5 — et c'est même un nombre premier, absent de la liste.\n\nAvec 2, 3, 5, 7 : 210 + 1 = 211, premier lui aussi. Avec 2, 3, 5, 7, 11, 13 : 30 031, qui n'est pas premier mais vaut 59 × 509 — et 59 n'était pas dans la liste. Dans les deux cas, un premier nouveau apparaît."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Racine de 2 n'est pas une fraction",
+          "body": "Les Grecs l'ont découvert, et cela les a bouleversés. Supposons que √2 s'écrive a/b, une fraction déjà réduite au maximum.\n\nAlors a² = 2b², donc a² est pair, donc a est pair : a = 2k. En remplaçant : 4k² = 2b², donc b² = 2k², donc b est pair aussi.\n\nMais a et b pairs tous les deux, dans une fraction déjà réduite ? On aurait encore pu simplifier par 2. Contradiction."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Pourquoi carré pair donne nombre pair",
+          "body": "Si a était impair, a² serait impair : impair × impair = impair.\n\nDonc un carré pair ne peut venir que d'un nombre pair. C'est le petit lemme sans lequel la preuve ne tient pas."
+        },
+        {
+          "id": "c5",
+          "kind": "texte",
+          "title": "Les chaussettes dans le tiroir",
+          "body": "Trois paires de chaussettes mélangées dans un tiroir noir : des bleues, des rouges, des vertes. Tu en tires quatre au hasard.\n\nAffirmation : deux au moins ont la même couleur. Supposons le contraire — les quatre sont de couleurs différentes. Il faudrait quatre couleurs. Or il n'y en a que trois. Impossible."
+        },
+        {
+          "id": "c6",
+          "kind": "astuce",
+          "body": "Ce dernier raisonnement porte un nom : le principe des tiroirs. Plus d'objets que de tiroirs, donc un tiroir contient au moins deux objets. C'est du raisonnement par l'absurde réduit à sa plus simple expression."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Prends la liste 2, 3, 5. Multiplie-les et ajoute 1. Quel nombre obtiens-tu ?",
+          "explanation": "2 × 3 × 5 = 30, puis 30 + 1 = 31. Et 31 n'est divisible par aucun des trois.",
+          "answer": 31
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Même chose avec 2, 3, 5, 7.",
+          "explanation": "2 × 3 × 5 × 7 = 210, donc 211. Il est premier, et absent de la liste de départ.",
+          "answer": 211
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Dans la preuve que √2 n'est pas une fraction, où est la contradiction ?",
+          "explanation": "On part d'une fraction réduite, et on démontre que les deux termes sont pairs : elle était donc encore simplifiable. Les deux ne peuvent pas être vrais à la fois.",
+          "options": [
+            { "text": "la fraction était réduite, mais ses deux termes sont pairs", "correct": true },
+            { "text": "a² est pair alors que a est impair" },
+            { "text": "√2 est plus grand que 1" },
+            { "text": "2b² est toujours impair" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Il y a trois couleurs de chaussettes dans le tiroir. Combien faut-il en tirer au minimum pour être certain d'en avoir deux de la même couleur ?",
+          "hint": "Combien peux-tu en tirer en restant toutes différentes ?",
+          "explanation": "Quatre. Avec trois, elles peuvent être bleue, rouge et verte — toutes différentes. À la quatrième, une couleur se répète forcément.",
+          "answer": 4
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Si a² est pair, alors a est pair.",
+          "explanation": "Vrai. Un nombre impair a un carré impair, donc un carré pair ne peut venir que d'un nombre pair. C'est le lemme qui rend possible la preuve sur √2.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "entrainement-absurde",
+      "title": "À toi de contredire",
+      "subtitle": "Des énoncés à faire tomber.",
+      "kind": "entrainement",
+      "xp": 35,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "La méthode, à appliquer",
+          "body": "1. écrire exactement le contraire de l'énoncé\n\n2. en tirer des conséquences, sans rien ajouter\n\n3. chercher le moment où deux conséquences s'excluent\n\n4. nommer la contradiction, puis conclure"
+        },
+        {
+          "id": "c2",
+          "kind": "exemple",
+          "title": "Treize personnes, douze mois",
+          "body": "Affirmation : dans un groupe de treize personnes, deux au moins sont nées le même mois.\n\nSuppose le contraire : toutes les treize ont un mois de naissance différent. Il faudrait treize mois. L'année en a douze. Impossible."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "title": "Le contraire d'une égalité",
+          "body": "Le contraire de « a = b » est « a ≠ b », pas « a > b ». Oublier le cas a < b laisse un trou dans la démonstration, et un trou suffit à la rendre fausse."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de personnes faut-il réunir au minimum pour être certain que deux soient nées le même mois ?",
+          "explanation": "Treize. Douze personnes peuvent avoir douze mois différents ; la treizième doit en répéter un.",
+          "answer": 13
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Dans une classe de 30 élèves, quel est le nombre minimal d'élèves nés le même mois dont on soit certain ?",
+          "hint": "Répartis-les le plus équitablement possible entre les douze mois.",
+          "explanation": "Trois. Deux par mois ne logeraient que 24 élèves ; il en reste 6, donc au moins un mois en compte trois. Avec 30 élèves et 12 mois, on ne peut pas garantir plus.",
+          "answer": 3
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Quel est le contraire de « a = b » ?",
+          "explanation": "« a ≠ b », qui couvre à la fois a < b et a > b. Supposer seulement a > b laisserait la moitié des cas de côté.",
+          "options": [
+            { "text": "a ≠ b", "correct": true },
+            { "text": "a > b" },
+            { "text": "a < b" },
+            { "text": "a = −b" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Dans un groupe de 400 personnes, deux au moins sont nées le même jour de l'année. Quel est le raisonnement ?",
+          "explanation": "L'année compte au plus 366 jours. Si les 400 avaient des dates différentes, il faudrait 400 jours : impossible.",
+          "options": [
+            { "text": "400 est plus grand que 366, donc une date se répète", "correct": true },
+            { "text": "les naissances sont réparties au hasard" },
+            { "text": "il y a plus de naissances certains mois" },
+            { "text": "400 est divisible par 4" }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "vraiFaux",
+          "prompt": "Pour démontrer qu'un nombre n'est pas premier, le raisonnement par l'absurde est indispensable.",
+          "explanation": "Faux. Il suffit d'exhiber un diviseur : 91 = 7 × 13 règle la question directement. L'absurde sert quand on ne peut rien exhiber.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "defi-absurde",
+      "title": "Défi : les menteurs et les autres",
+      "subtitle": "Des énigmes qui ne cèdent qu'à l'absurde.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "L'île des chevaliers et des fripons",
+          "body": "Sur cette île, les chevaliers disent toujours la vérité et les fripons mentent toujours. Chaque habitant est l'un ou l'autre.\n\nTu rencontres quelqu'un qui te dit : « Je suis un fripon. »\n\nS'il est chevalier, il dit vrai, donc il est fripon : contradiction. S'il est fripon, il mentirait en se disant fripon, donc il serait chevalier : contradiction aussi.\n\nAucune des deux hypothèses ne tient. La conclusion n'est pas qu'il est l'un ou l'autre : c'est que personne sur cette île ne peut prononcer cette phrase."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Un habitant déclare : « Je suis un fripon. » Qu'en conclure ?",
+          "hint": "Teste les deux hypothèses, l'une après l'autre.",
+          "explanation": "Les deux hypothèses mènent à une contradiction. Aucun habitant de l'île ne peut dire cette phrase : l'énoncé est impossible, pas ambigu.",
+          "options": [
+            { "text": "aucun habitant ne peut dire cette phrase", "correct": true },
+            { "text": "c'est un fripon" },
+            { "text": "c'est un chevalier" },
+            { "text": "il peut être l'un ou l'autre" }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Un habitant dit : « Je suis un chevalier. » Qu'en conclure ?",
+          "explanation": "Rien. Un chevalier dirait vrai, un fripon mentirait en se disant chevalier — les deux sont possibles. La phrase ne contient aucune information.",
+          "options": [
+            { "text": "rien : les deux cas sont possibles", "correct": true },
+            { "text": "c'est un chevalier" },
+            { "text": "c'est un fripon" },
+            { "text": "la phrase est impossible" }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Deux habitants, A et B. A dit : « Nous sommes tous les deux des fripons. » Que sont-ils ?",
+          "hint": "Commence par supposer A chevalier.",
+          "explanation": "Si A était chevalier, sa phrase serait vraie, donc il serait fripon : impossible. Donc A est fripon, et sa phrase est fausse. « Tous les deux fripons » étant faux alors que A l'est, c'est B qui ne l'est pas : B est chevalier.",
+          "options": [
+            { "text": "A est fripon, B est chevalier", "correct": true },
+            { "text": "les deux sont fripons" },
+            { "text": "les deux sont chevaliers" },
+            { "text": "A est chevalier, B est fripon" }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de chaussettes faut-il tirer d'un tiroir contenant cinq couleurs mélangées pour être sûr d'avoir une paire de la même couleur ?",
+          "explanation": "Six. Cinq peuvent être toutes différentes ; la sixième répète forcément une couleur.",
+          "answer": 6
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "On choisit 6 nombres parmi 1, 2, 3, …, 10. Combien de paires au minimum ont une somme égale à 11 ?",
+          "hint": "Range les dix nombres en paires qui font 11.",
+          "explanation": "Une. Les dix nombres forment cinq paires de somme 11 : (1,10), (2,9), (3,8), (4,7), (5,6). Choisir 6 nombres dans 5 paires force à en prendre deux dans une même paire.",
+          "answer": 1
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "Le raisonnement par l'absurde donne toujours un exemple concret de ce qu'il démontre.",
+          "explanation": "Faux, et c'est ce qui dérange. La preuve qu'il existe une infinité de nombres premiers ne fournit pas de liste. Elle montre seulement qu'aucune liste finie ne peut être complète.",
+          "answer": false
+        }
+      ]
+    }
+  ]
+}
