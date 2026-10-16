@@ -280,6 +280,27 @@ void main() {
         await shoot(tester, '$device-6-astronomie');
       });
 
+      // La piste de vitesse s'anime : la capture fige le mobile en route,
+      // avec ses positions passées également espacées.
+      testWidgets('physique : vitesse sur une piste', (
+        WidgetTester tester,
+      ) async {
+        await boot(tester, logical, ratio);
+        await tapText(tester, 'Matières');
+        await tapText(tester, 'Physique-chimie');
+        await tapText(tester, 'Mouvements et vitesse');
+        await tapText(tester, 'La vitesse');
+        await tester.tap(find.text('Suivant').first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
+        // Sous « réduire les animations » le mobile reste au départ :
+        // on le lance à la main.
+        await tester.tap(find.byIcon(Icons.replay_rounded));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 2600));
+        await shoot(tester, '$device-15-vitesse');
+      });
+
       // La table de vérité : c'est en basculant A et B qu'on voit « ou »
       // rester vrai quand les deux le sont.
       testWidgets('logique : table de vérité', (WidgetTester tester) async {

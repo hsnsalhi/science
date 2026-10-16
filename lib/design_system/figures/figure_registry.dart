@@ -9,6 +9,7 @@ import 'orbits_figure.dart';
 import 'pythagore_proof_figure.dart';
 import 'right_triangle_figure.dart';
 import 'solar_system_figure.dart';
+import 'speed_figure.dart';
 import 'thales_figure.dart';
 import 'truth_table_figure.dart';
 import 'triangle_test_figure.dart';
@@ -31,6 +32,9 @@ abstract final class FigureRegistry {
     // Même triangle, avec les carrés construits sur les côtés.
     'pythagore-carres': (BuildContext context, Color accent) =>
         RightTriangleFigure(accent: accent, showSquares: true),
+    // Un mobile sur une piste graduée, dont on règle la vitesse.
+    'vitesse': (BuildContext context, Color accent) =>
+        SpeedFigure(accent: accent),
     // Deux affirmations à basculer, et ce que valent et, ou, non.
     'table-de-verite': (BuildContext context, Color accent) =>
         TruthTableFigure(accent: accent),

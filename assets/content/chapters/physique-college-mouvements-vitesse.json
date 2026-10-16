@@ -1,0 +1,439 @@
+{
+  "chapter": "physique-chimie-college-mouvements-et-vitesse",
+  "lessons": [
+    {
+      "id": "decrire",
+      "title": "Décrire un mouvement",
+      "subtitle": "Par rapport à quoi, et selon quelle trajectoire.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "Rien ne bouge tout seul",
+          "body": "Un mouvement se décrit toujours par rapport à quelque chose. Assis dans un train, tu es immobile par rapport au wagon et lancé à 300 km/h par rapport au quai."
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "La trajectoire",
+          "body": "C'est le chemin suivi par l'objet. Elle peut être rectiligne, circulaire, ou quelconque."
+        },
+        {
+          "id": "c3",
+          "kind": "figure",
+          "title": "Un mouvement uniforme",
+          "body": "Les points laissés derrière le mobile sont également espacés : sa vitesse ne change pas.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Avant de dire qu'un objet bouge, demande-toi : par rapport à quoi ? Sans cette précision, la phrase ne veut rien dire."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Décrire un mouvement",
+          "bullets": [
+            "Toujours préciser le référentiel : par rapport à quoi.",
+            "La trajectoire est le chemin suivi.",
+            "Uniforme : la vitesse ne change pas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Un passager assis dans un train qui roule. Par rapport à quoi est-il immobile ?",
+          "hint": "Cherche ce qui se déplace exactement comme lui.",
+          "explanation": "Par rapport au wagon. Par rapport au quai, au sol ou à un arbre, il se déplace à la vitesse du train.",
+          "options": [
+            {
+              "text": "Au wagon",
+              "correct": true
+            },
+            {
+              "text": "Au quai de la gare"
+            },
+            {
+              "text": "Au sol"
+            },
+            {
+              "text": "À un arbre au bord de la voie"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "tri",
+          "prompt": "Range ces trajectoires selon leur forme.",
+          "hint": "Une trajectoire rectiligne est une ligne droite.",
+          "explanation": "Une bille qui roule droit et une chute libre verticale suivent des lignes droites. Un tour de grande roue et la Lune autour de la Terre décrivent des cercles.",
+          "categories": [
+            "Rectiligne",
+            "Circulaire"
+          ],
+          "items": [
+            {
+              "text": "Une bille qui roule droit",
+              "category": 0
+            },
+            {
+              "text": "Une pierre qu'on lâche",
+              "category": 0
+            },
+            {
+              "text": "Une nacelle de grande roue",
+              "category": 1
+            },
+            {
+              "text": "La Lune autour de la Terre",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "vraiFaux",
+          "prompt": "Dire « la voiture roule » suffit à décrire son mouvement.",
+          "answer": false,
+          "explanation": "Non. Il manque le référentiel : par rapport à quoi ? Pour un passager de cette voiture, elle est immobile."
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Sur la figure, les points laissés derrière le mobile sont également espacés. Que peut-on en déduire ?",
+          "hint": "Même distance pendant des durées égales.",
+          "explanation": "Le mouvement est uniforme : la vitesse ne change pas. Si les points se resserraient, le mobile ralentirait.",
+          "figureId": "vitesse",
+          "options": [
+            {
+              "text": "Sa vitesse ne change pas",
+              "correct": true
+            },
+            {
+              "text": "Il accélère"
+            },
+            {
+              "text": "Il ralentit"
+            },
+            {
+              "text": "Il s'arrête"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la-vitesse",
+      "title": "La vitesse",
+      "subtitle": "Une distance divisée par une durée.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "formule",
+          "title": "La relation",
+          "formula": "v = d ÷ t",
+          "body": "la vitesse est la distance parcourue divisée par la durée du parcours."
+        },
+        {
+          "id": "c2",
+          "kind": "figure",
+          "title": "Règle la vitesse",
+          "body": "Double la vitesse : le mobile met deux fois moins de temps.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c3",
+          "kind": "exemple",
+          "title": "Avec des nombres",
+          "body": "Un coureur parcourt 100 m en 10 s.\n\nv = 100 ÷ 10 = 10 m/s\n\nSoit 36 km/h : on multiplie les mètres par seconde par 3,6."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "body": "Pour passer des m/s aux km/h, multiplie par 3,6. Dans l'autre sens, divise. Un piéton marche à 1,4 m/s, soit 5 km/h."
+        },
+        {
+          "id": "c5",
+          "kind": "aRetenir",
+          "title": "Calculer une vitesse",
+          "formula": "v = d ÷ t   et   d = v × t",
+          "bullets": [
+            "La vitesse se mesure en m/s ou en km/h.",
+            "Des m/s aux km/h : multiplier par 3,6.",
+            "À vitesse doublée, durée divisée par deux."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un cycliste parcourt 240 m en 20 s. Quelle est sa vitesse ?",
+          "answer": 12,
+          "tolerance": 0.01,
+          "unit": "m/s",
+          "hint": "Divise la distance par la durée.",
+          "explanation": "v = 240 ÷ 20 = 12 m/s, soit environ 43 km/h."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien font 10 m/s en kilomètres par heure ?",
+          "answer": 36,
+          "tolerance": 0.01,
+          "unit": "km/h",
+          "hint": "Multiplie par 3,6.",
+          "explanation": "10 × 3,6 = 36 km/h. C'est la vitesse d'un très bon sprinteur."
+        },
+        {
+          "id": "q3",
+          "kind": "texteATrous",
+          "prompt": "Complète la relation.",
+          "template": "v = d ÷ ___ , et donc d = v × ___",
+          "blanks": [
+            {
+              "accepted": [
+                "t",
+                "temps",
+                "durée",
+                "duree"
+              ]
+            },
+            {
+              "accepted": [
+                "t",
+                "temps",
+                "durée",
+                "duree"
+              ]
+            }
+          ],
+          "hint": "La même grandeur dans les deux trous.",
+          "explanation": "v = d ÷ t. En multipliant les deux membres par t, on obtient d = v × t."
+        },
+        {
+          "id": "q4",
+          "kind": "estimation",
+          "prompt": "À ton avis, à quelle vitesse marche un piéton ?",
+          "hint": "Un peu plus d'un mètre par seconde.",
+          "explanation": "Environ 1,4 m/s, soit 5 km/h. Un coureur de fond tient 5 m/s, un sprinteur atteint 10 m/s.",
+          "min": 0.2,
+          "max": 12,
+          "answer": 1.4,
+          "tolerance": 0.8,
+          "unit": "m/s"
+        }
+      ]
+    },
+    {
+      "id": "calculer-vitesse",
+      "title": "Calculer, convertir",
+      "subtitle": "Les trois formes de la relation, et les unités.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "etape",
+          "title": "Trouver une distance",
+          "body": "d = v × t\n\nUne voiture roule à 25 m/s pendant 40 s.\n\nd = 25 × 40 = 1 000 m, soit 1 km."
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Trouver une durée",
+          "body": "t = d ÷ v\n\nParcourir 300 m à 15 m/s.\n\nt = 300 ÷ 15 = 20 s."
+        },
+        {
+          "id": "c3",
+          "kind": "astuce",
+          "body": "Vérifie toujours les unités avant de calculer. Des mètres avec des heures ne donnent rien de bon : convertis d'abord."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Une voiture roule à 25 m/s pendant 40 s. Quelle distance parcourt-elle ?",
+          "answer": 1000,
+          "tolerance": 0.5,
+          "unit": "m",
+          "hint": "d = v × t",
+          "explanation": "d = 25 × 40 = 1 000 m, soit un kilomètre."
+        },
+        {
+          "id": "q2",
+          "kind": "saisieNumerique",
+          "prompt": "Combien de temps faut-il pour parcourir 300 m à 15 m/s ?",
+          "answer": 20,
+          "tolerance": 0.01,
+          "unit": "s",
+          "hint": "t = d ÷ v",
+          "explanation": "t = d ÷ v = 300 ÷ 15 = 20 s. L'inconnue étant la durée, c'est la distance qu'on divise par la vitesse."
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l'ordre les étapes d'un calcul de vitesse.",
+          "explanation": "On relève les données, on vérifie qu'elles sont dans des unités compatibles, on choisit la forme de la relation, on calcule, puis on contrôle la vraisemblance.",
+          "items": [
+            "Relever la distance et la durée",
+            "Vérifier que les unités sont compatibles",
+            "Choisir la bonne forme de la relation",
+            "Faire le calcul",
+            "Vérifier que le résultat est vraisemblable"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Un escargot avance de 3 m en 1 heure. Quelle est sa vitesse en m/s ?",
+          "hint": "Une heure fait 3 600 secondes.",
+          "explanation": "3 ÷ 3 600 ≈ 0,0008 m/s. C'est l'exemple type où il faut convertir l'heure en secondes avant de diviser.",
+          "options": [
+            {
+              "text": "Environ 0,0008 m/s",
+              "correct": true
+            },
+            {
+              "text": "3 m/s"
+            },
+            {
+              "text": "Environ 0,05 m/s"
+            },
+            {
+              "text": "180 m/s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-vitesse",
+      "title": "Défi : mouvements et vitesse",
+      "subtitle": "Tout le chapitre, chronomètre en marche.",
+      "kind": "defi",
+      "xp": 35,
+      "minutes": 7,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "texte",
+          "title": "À toi de jouer",
+          "body": "Six questions qui mélangent référentiel, trajectoire et calculs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Un TGV parcourt 180 km en 1 heure. Quelle est sa vitesse en m/s ?",
+          "answer": 50,
+          "tolerance": 0.5,
+          "unit": "m/s",
+          "hint": "Divise les km/h par 3,6.",
+          "explanation": "180 km/h ÷ 3,6 = 50 m/s. Autrement : 180 000 m ÷ 3 600 s = 50 m/s."
+        },
+        {
+          "id": "q2",
+          "kind": "vraiFaux",
+          "prompt": "Deux objets peuvent être immobiles l'un par rapport à l'autre tout en se déplaçant très vite par rapport au sol.",
+          "answer": true,
+          "explanation": "Oui : deux passagers du même train, ou deux satellites sur la même orbite. L'immobilité dépend toujours du référentiel choisi."
+        },
+        {
+          "id": "q3",
+          "kind": "tri",
+          "prompt": "Range ces vitesses selon qu'elles sont plutôt lentes ou rapides pour un humain à pied.",
+          "hint": "Un piéton marche à environ 1,4 m/s.",
+          "explanation": "0,5 et 1,4 m/s sont des allures de marche. 7 et 10 m/s sont des allures de course rapide, voire de sprint.",
+          "categories": [
+            "Allure de marche",
+            "Allure de course"
+          ],
+          "items": [
+            {
+              "text": "0,5 m/s",
+              "category": 0
+            },
+            {
+              "text": "1,4 m/s",
+              "category": 0
+            },
+            {
+              "text": "7 m/s",
+              "category": 1
+            },
+            {
+              "text": "10 m/s",
+              "category": 1
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Un nageur couvre 50 m en 25 s. Quelle est sa vitesse ?",
+          "answer": 2,
+          "tolerance": 0.01,
+          "unit": "m/s",
+          "hint": "v = d ÷ t",
+          "explanation": "v = 50 ÷ 25 = 2 m/s, soit 7,2 km/h."
+        },
+        {
+          "id": "q5",
+          "kind": "appariement",
+          "prompt": "Associe chaque mot à sa définition.",
+          "explanation": "Le référentiel est ce par rapport à quoi on observe, la trajectoire est le chemin suivi, la vitesse le rapport distance sur durée.",
+          "pairs": [
+            {
+              "left": "Référentiel",
+              "right": "Ce par rapport à quoi on décrit le mouvement"
+            },
+            {
+              "left": "Trajectoire",
+              "right": "Le chemin suivi par l'objet"
+            },
+            {
+              "left": "Vitesse",
+              "right": "La distance divisée par la durée"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Sur un enregistrement, les positions successives se resserrent. Que fait le mobile ?",
+          "hint": "Moins de distance pendant la même durée.",
+          "explanation": "Il ralentit : il parcourt des distances de plus en plus courtes pendant des durées égales.",
+          "figureId": "vitesse",
+          "options": [
+            {
+              "text": "Il ralentit",
+              "correct": true
+            },
+            {
+              "text": "Il accélère"
+            },
+            {
+              "text": "Sa vitesse est constante"
+            },
+            {
+              "text": "Il change de direction"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

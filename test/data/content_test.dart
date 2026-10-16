@@ -506,4 +506,56 @@ void main() {
       expect(attendu('ou', 'q2'), compter((bool a, bool b) => a || b));
     });
   });
+
+  // Physique : les vitesses, distances et durées du chapitre se
+  // recalculent les unes à partir des autres. Un corrigé faux y enseigne
+  // une relation fausse, ce qui est pire que de ne rien enseigner.
+  group('Chapitre complet : mouvements et vitesse', () {
+    late Chapter vitesse;
+
+    setUpAll(() {
+      vitesse = catalog.chapterById(
+        'physique-chimie-college-mouvements-et-vitesse',
+      )!;
+    });
+
+    double reponse(String lessonId, String questionId) {
+      final Question q = vitesse
+          .lessonById(lessonId)!
+          .questions
+          .firstWhere((Question x) => x.id == questionId);
+      return switch (q) {
+        NumericQuestion(:final double expected) => expected,
+        EstimateQuestion(:final double expected) => expected,
+        _ => throw StateError('$questionId n\'est pas numérique'),
+      };
+    }
+
+    test('est jouable de bout en bout', () {
+      expect(vitesse.isPlayable, isTrue);
+      expect(vitesse.lessons.length, 4);
+    });
+
+    test('les vitesses se déduisent des distances et des durées', () {
+      expect(reponse('la-vitesse', 'q1'), closeTo(240 / 20, 1e-9));
+      expect(reponse('defi-vitesse', 'q4'), closeTo(50 / 25, 1e-9));
+    });
+
+    test('les distances et durées suivent la même relation', () {
+      expect(reponse('calculer-vitesse', 'q1'), closeTo(25 * 40, 1e-9));
+      expect(reponse('calculer-vitesse', 'q2'), closeTo(300 / 15, 1e-9));
+    });
+
+    test('les conversions valent bien un facteur 3,6', () {
+      // 10 m/s en km/h.
+      expect(reponse('la-vitesse', 'q2'), closeTo(10 * 3.6, 1e-9));
+      // 180 km/h en m/s.
+      expect(reponse('defi-vitesse', 'q1'), closeTo(180 / 3.6, 1e-9));
+    });
+
+    test('l\'allure du piéton estimée reste plausible', () {
+      final double marche = reponse('la-vitesse', 'q4');
+      expect(marche * 3.6, closeTo(5, 1));
+    });
+  });
 }
