@@ -1,0 +1,559 @@
+{
+  "chapter": "physique-chimie-lycee-constitution-de-la-matiere",
+  "lessons": [
+    {
+      "id": "l-atome",
+      "title": "L’atome, et le vide qu’il contient",
+      "subtitle": "Presque toute la masse dans presque aucun volume.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre modèles, et celui qui a tenu",
+          "body": "Passe d’un modèle à l’autre, puis fais varier la taille du noyau avec le curseur : l’échelle est logarithmique, sinon le noyau serait invisible. C’est précisément le résultat à retenir — l’atome est surtout du vide.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois constituants",
+          "body": "Le proton : charge positive, masse d’environ 1,67 fois dix puissance moins 27 kilogramme. Dans le noyau.\n\nLe neutron : aucune charge, masse presque identique à celle du proton. Dans le noyau aussi.\n\nL’électron : charge négative, de même valeur absolue que celle du proton, mais une masse 1 836 fois plus petite. Autour du noyau.\n\nUn atome neutre a autant d’électrons que de protons. Ce nombre, noté Z, suffit à dire de quel élément il s’agit.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les ordres de grandeur, et ce qu’ils impliquent",
+          "body": "Un atome mesure environ un dixième de nanomètre, soit dix puissance moins 10 mètre.\n\nSon noyau mesure environ dix puissance moins 15 mètre : cent mille fois plus petit.\n\nSi le noyau avait la taille d’une bille d’un centimètre, le premier électron tournerait à un kilomètre. Et presque toute la masse resterait dans la bille.\n\nLa matière solide la plus dense est donc, à l’échelle atomique, essentiellement du vide.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Isotopes : même élément, masse différente",
+          "body": "Le carbone a toujours 6 protons. Mais il peut avoir 6, 7 ou 8 neutrons : on parle de carbone 12, 13 ou 14.\n\nCe sont des isotopes : même comportement chimique, puisque la chimie ne dépend que des électrons, donc de Z.\n\nMais des masses différentes, et des stabilités différentes : le carbone 14 est radioactif, ce qui permet de dater des restes organiques jusqu’à environ 50 000 ans.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les électrons ne tournent pas comme des planètes",
+          "body": "Le modèle de Rutherford, avec ses orbites, est commode pour compter mais faux dans son principe : une charge en orbite rayonnerait et tomberait sur le noyau en une fraction de seconde.\n\nLa mécanique quantique remplace l’orbite par une probabilité de présence, répartie dans un volume.\n\nOn garde le dessin parce qu’il aide à compter les électrons, et on sait qu’il est faux. C’est un cas typique de modèle qu’on utilise en connaissant sa limite.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce constituant est-il dans le noyau, ou autour ?",
+          "explanation": "Protons et neutrons forment le noyau et portent presque toute la masse. Les électrons occupent le volume autour.",
+          "categories": [
+            "dans le noyau",
+            "autour du noyau"
+          ],
+          "items": [
+            {
+              "text": "le proton",
+              "category": 0
+            },
+            {
+              "text": "le neutron",
+              "category": 0
+            },
+            {
+              "text": "l’électron",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fois le noyau est-il plus petit qu’un atome, en puissances de dix ?",
+          "explanation": "Dix puissance moins 10 contre dix puissance moins 15 : un facteur cent mille, soit dix puissance 5.",
+          "answer": 5,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui définit l’élément chimique d’un atome ?",
+          "explanation": "Son nombre de protons, noté Z. Le nombre de neutrons distingue les isotopes d’un même élément.",
+          "options": [
+            {
+              "text": "son nombre de protons",
+              "correct": true
+            },
+            {
+              "text": "son nombre de neutrons"
+            },
+            {
+              "text": "sa masse totale"
+            },
+            {
+              "text": "son nombre de nucléons"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux isotopes d’un même élément ont des comportements chimiques différents.",
+          "explanation": "Faux. La chimie ne dépend que des électrons, donc de Z. Ils diffèrent par la masse et parfois par la stabilité du noyau.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le modèle des électrons en orbite est-il faux ?",
+          "explanation": "Une charge en orbite rayonnerait de l’énergie et tomberait sur le noyau. La mécanique quantique remplace l’orbite par une probabilité de présence.",
+          "options": [
+            {
+              "text": "une charge en orbite rayonnerait et tomberait",
+              "correct": true
+            },
+            {
+              "text": "les électrons sont trop lourds"
+            },
+            {
+              "text": "le noyau est trop petit"
+            },
+            {
+              "text": "il n’y a pas assez d’électrons"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de neutrons contient un noyau de carbone 14 ?",
+          "explanation": "14 nucléons moins 6 protons, soit 8 neutrons. C’est cet excès qui le rend radioactif.",
+          "answer": 8,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-experience-qui-a-tranche",
+      "title": "L’expérience qui a tranché",
+      "subtitle": "Une poignée de particules rebroussant chemin a détruit un modèle.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Viser plus ou moins près du noyau",
+          "body": "Fais glisser le paramètre d’impact : plus la particule passe près du noyau, plus elle est déviée, jusqu’à repartir en arrière. Essaie un passage lointain : la déviation devient imperceptible. C’est cette dépendance qui a révélé le noyau.",
+          "figureId": "rutherford",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’expérience de 1909, telle qu’elle s’est passée",
+          "body": "On bombarde une feuille d’or très mince avec des particules alpha, qui sont des noyaux d’hélium chargés positivement.\n\nLe modèle de Thomson, où la charge positive est répartie dans tout l’atome, prévoit de petites déviations : la feuille est trop diluée pour renvoyer quoi que ce soit.\n\nOr environ une particule sur 8 000 revient vers l’arrière.\n\nRutherford dira que c’était « aussi incroyable qu’un obus de quinze pouces rebondissant sur une feuille de papier de soie ».",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que le résultat impose",
+          "body": "Pour renvoyer une particule en arrière, il faut une charge positive concentrée en un point très petit, et massive.\n\nLa rareté de l’événement donne même la taille : si le noyau était plus gros, les rebonds seraient plus fréquents. Compter les rebonds mesure donc le noyau.\n\nC’est un exemple parfait de mesure indirecte : personne n’a vu de noyau, et on en connaît la taille à partir d’un comptage.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation entre visée et déviation",
+          "body": "Pour une trajectoire hyperbolique autour d’une charge ponctuelle :\n\ntangente de la moitié de l’angle de déviation = d / (2b)\n\noù b est le paramètre d’impact — la distance à laquelle la particule passerait sans déviation — et d une longueur fixée par l’énergie et les charges.\n\nQuand b tend vers zéro, l’angle tend vers 180 degrés : la particule revient. Quand b est grand, l’angle tend vers zéro.",
+          "formula": "tan(angle/2) = d / (2b)",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un modèle n’est pas réfuté par un argument, mais par une mesure",
+          "body": "Thomson n’avait rien d’absurde : son modèle expliquait correctement la neutralité de l’atome et l’existence des électrons.\n\nCe qui l’a éliminé, c’est une prédiction chiffrée mise en défaut par un comptage, et non une objection de principe.\n\nC’est ce qui distingue un changement de modèle en science d’un changement d’opinion : il y a un chiffre qui ne colle pas, et on peut dire lequel.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que prévoyait le modèle de Thomson pour cette expérience ?",
+          "explanation": "De petites déviations seulement : avec une charge positive diluée dans tout l’atome, rien ne peut renvoyer une particule en arrière.",
+          "options": [
+            {
+              "text": "seulement de petites déviations",
+              "correct": true
+            },
+            {
+              "text": "de nombreux rebonds vers l’arrière"
+            },
+            {
+              "text": "aucune déviation du tout"
+            },
+            {
+              "text": "une absorption complète"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’impose le fait qu’une particule sur 8 000 revienne en arrière ?",
+          "explanation": "Une charge positive concentrée, massive et très petite : un noyau. Et la rareté de l’événement en donne la taille.",
+          "options": [
+            {
+              "text": "une charge positive concentrée et massive",
+              "correct": true
+            },
+            {
+              "text": "des électrons très lourds"
+            },
+            {
+              "text": "une feuille d’or trop épaisse"
+            },
+            {
+              "text": "un défaut de l’appareil"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Plus la particule passe loin du noyau, plus elle est déviée.",
+          "explanation": "Faux, c’est l’inverse : la déviation croît quand le paramètre d’impact diminue, jusqu’au retour en arrière.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment a-t-on mesuré la taille du noyau, sans le voir ?",
+          "explanation": "En comptant la fréquence des rebonds : un noyau plus gros en produirait davantage. C’est une mesure indirecte.",
+          "options": [
+            {
+              "text": "en comptant la fréquence des rebonds",
+              "correct": true
+            },
+            {
+              "text": "au microscope électronique"
+            },
+            {
+              "text": "en pesant la feuille d’or"
+            },
+            {
+              "text": "par le calcul seul"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui a éliminé le modèle de Thomson ?",
+          "explanation": "Une prédiction chiffrée mise en défaut par un comptage, et non une objection de principe. C’est ce qui distingue la science de l’opinion.",
+          "options": [
+            {
+              "text": "une prédiction chiffrée démentie par la mesure",
+              "correct": true
+            },
+            {
+              "text": "une objection logique"
+            },
+            {
+              "text": "un vote de la communauté"
+            },
+            {
+              "text": "l’autorité de Rutherford"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "compter-l-invisible",
+      "title": "Compter l’invisible",
+      "subtitle": "La mole est un paquet, et c’est tout ce qu’elle est.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compter sans énumérer",
+          "body": "Monte le nombre d’objets bien au-dessus du nombre de tiroirs : la figure conclut sans que tu aies à regarder chaque objet. Compter des atomes demande la même ruse — on ne les énumère pas, on pèse et on divise.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi un paquet était nécessaire",
+          "body": "Un atome de carbone pèse environ 2 fois dix puissance moins 26 kilogramme. Travailler avec de tels nombres à chaque calcul est intenable.\n\nOn définit donc un paquet contenant 6,022 fois dix puissance 23 entités : c’est la mole, et ce nombre s’appelle la constante d’Avogadro.\n\nLe paquet a été choisi pour qu’une mole d’atomes de carbone 12 pèse exactement 12 grammes. C’est le seul intérêt de sa valeur : faire coïncider l’échelle du laboratoire et celle de l’atome.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois relations à savoir",
+          "body": "n = m / M : la quantité de matière, en moles, est la masse divisée par la masse molaire.\n\nN = n fois la constante d’Avogadro : le nombre d’entités.\n\nPour une solution, n = C fois V : la concentration multipliée par le volume.\n\nToute la chimie quantitative du lycée consiste à passer d’une de ces grandeurs à une autre, et à vérifier les unités en chemin.",
+          "formula": "n = m / M",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Combien de molécules dans un verre d’eau",
+          "body": "Un verre contient environ 200 grammes d’eau. La masse molaire de l’eau vaut 18 grammes par mole.\n\nn = 200 / 18, soit environ 11 moles.\n\nN = 11 fois 6 fois dix puissance 23, soit environ 7 fois dix puissance 24 molécules.\n\nSept millions de milliards de milliards. Si l’on comptait un milliard de molécules par seconde, il faudrait deux cents millions d’années.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le réflexe de contrôle des unités",
+          "body": "Une masse divisée par une masse molaire donne des grammes divisés par des grammes par mole, donc des moles. L’unité tombe juste.\n\nSi un calcul donne des grammes là où on attend des moles, c’est qu’on a multiplié au lieu de diviser.\n\nCe contrôle attrape presque toutes les erreurs de formule, et il ne demande aucune mémoire : seulement de traîner les unités dans le calcul au lieu de les écrire à la fin.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la masse molaire de l’eau, en grammes par mole ?",
+          "explanation": "Deux hydrogènes à 1 et un oxygène à 16, soit 18 grammes par mole.",
+          "answer": 18,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de moles d’eau dans un verre de 200 grammes ?",
+          "explanation": "n = m / M = 200 / 18, soit environ 11 moles.",
+          "min": 0,
+          "max": 100,
+          "answer": 11,
+          "tolerance": 1.5,
+          "unit": "mol",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la constante d’Avogadro vaut-elle 6,022 fois dix puissance 23 ?",
+          "explanation": "Pour qu’une mole de carbone 12 pèse exactement 12 grammes, et faire ainsi coïncider l’échelle du laboratoire et celle de l’atome.",
+          "options": [
+            {
+              "text": "pour qu’une mole de carbone 12 pèse 12 grammes",
+              "correct": true
+            },
+            {
+              "text": "c’est le nombre d’atomes dans l’univers"
+            },
+            {
+              "text": "c’est une valeur arbitraire sans raison"
+            },
+            {
+              "text": "c’est le nombre d’atomes dans un gramme"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à sa formule.",
+          "explanation": "La quantité de matière vient de la masse et de la masse molaire ; le nombre d’entités de la constante d’Avogadro ; et en solution, de la concentration et du volume.",
+          "pairs": [
+            {
+              "left": "quantité de matière à partir d’une masse",
+              "right": "n = m / M"
+            },
+            {
+              "left": "nombre d’entités",
+              "right": "N = n × constante d’Avogadro"
+            },
+            {
+              "left": "quantité en solution",
+              "right": "n = C × V"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un calcul de quantité de matière qui donne un résultat en grammes est correct.",
+          "explanation": "Faux. Une quantité de matière s’exprime en moles : un résultat en grammes signale qu’on a multiplié au lieu de diviser.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel contrôle attrape le plus d’erreurs de formule en chimie ?",
+          "explanation": "Traîner les unités dans le calcul. Si l’unité finale n’est pas celle attendue, la formule a été employée à l’envers.",
+          "options": [
+            {
+              "text": "vérifier les unités en cours de calcul",
+              "correct": true
+            },
+            {
+              "text": "refaire le calcul à la calculatrice"
+            },
+            {
+              "text": "vérifier l’ordre de grandeur seul"
+            },
+            {
+              "text": "relire l’énoncé"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ions-et-molecules",
+      "title": "Défi : ions, molécules et tableau périodique",
+      "subtitle": "La place dans le tableau annonce la charge de l’ion.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les électrons, et ceux qui comptent",
+          "body": "Reviens au modèle de Rutherford et regarde la couche la plus externe : ce sont ces électrons-là, et eux seuls, qui font la chimie. Les autres restent enfouis et ne participent à rien.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi un atome devient un ion",
+          "body": "Les couches électroniques se remplissent par paliers : 2 électrons sur la première, 8 sur la deuxième, 8 sur la troisième dans les cas usuels.\n\nUne couche externe complète correspond à une grande stabilité : c’est le cas des gaz nobles, qui ne réagissent presque pas.\n\nLes autres atomes gagnent ou perdent des électrons pour s’en approcher. Le sodium, avec un électron de trop, le perd et donne Na+. Le chlore, à un électron du compte, le prend et donne Cl−.\n\nLa charge de l’ion est donc dictée par la place dans le tableau.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Lire le tableau périodique",
+          "body": "La colonne donne le nombre d’électrons de la couche externe, donc le comportement chimique. Les éléments d’une même colonne se ressemblent : c’est tout l’intérêt du tableau.\n\nLa ligne donne le nombre de couches occupées, donc la taille de l’atome.\n\nMendeleïev a construit ce tableau en 1869 en laissant des cases vides, et en prédisant les propriétés des éléments manquants. Trois d’entre eux ont été découverts dans les vingt ans, avec les propriétés annoncées.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Prévoir une formule sans la connaître",
+          "body": "Le magnésium est en deuxième colonne : il perd deux électrons et donne Mg2+.\n\nLe chlore est en avant-dernière : il en prend un et donne Cl−.\n\nPour un composé électriquement neutre, il faut donc deux chlorures par magnésium : la formule est MgCl2.\n\nOn a déduit une formule chimique de deux positions dans un tableau, sans aucune expérience. C’est exactement ce qui a rendu le tableau périodique indispensable.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Molécule et ion ne se lisent pas pareil",
+          "body": "Dans une molécule, les atomes partagent des électrons : la liaison est covalente, et l’ensemble est neutre.\n\nDans un composé ionique, les électrons sont transférés : il y a des ions, et la formule écrite n’est qu’un rapport de proportions. NaCl ne désigne pas une molécule de deux atomes mais un cristal où chaque sodium est entouré de six chlorures.\n\nConfondre les deux conduit à parler de « molécule de sel », expression qui n’a pas de sens.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque atome à l’ion qu’il forme.",
+          "explanation": "Le sodium perd un électron, le magnésium deux, le chlore en gagne un, l’oxygène deux : tout est dicté par la couche externe.",
+          "pairs": [
+            {
+              "left": "le sodium",
+              "right": "Na+"
+            },
+            {
+              "left": "le magnésium",
+              "right": "Mg2+"
+            },
+            {
+              "left": "le chlore",
+              "right": "Cl−"
+            },
+            {
+              "left": "l’oxygène",
+              "right": "O2−"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la formule du composé formé par le magnésium et le chlore ?",
+          "explanation": "Mg2+ et Cl− : il faut deux chlorures par magnésium pour la neutralité, soit MgCl2.",
+          "options": [
+            {
+              "text": "MgCl2",
+              "correct": true
+            },
+            {
+              "text": "MgCl"
+            },
+            {
+              "text": "Mg2Cl"
+            },
+            {
+              "text": "MgCl3"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que donne la colonne d’un élément dans le tableau périodique ?",
+          "explanation": "Le nombre d’électrons de la couche externe, donc le comportement chimique. C’est pour cela qu’une colonne se ressemble.",
+          "options": [
+            {
+              "text": "le nombre d’électrons externes",
+              "correct": true
+            },
+            {
+              "text": "le nombre de couches"
+            },
+            {
+              "text": "la masse de l’atome"
+            },
+            {
+              "text": "le nombre de neutrons"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "NaCl désigne une molécule formée d’un atome de sodium et d’un atome de chlore.",
+          "explanation": "Faux. C’est un cristal ionique, où chaque sodium est entouré de six chlorures. La formule n’est qu’un rapport de proportions.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les gaz nobles ne réagissent-ils presque pas ?",
+          "explanation": "Leur couche externe est déjà complète : ils n’ont rien à gagner ni à perdre pour se stabiliser.",
+          "options": [
+            {
+              "text": "leur couche externe est complète",
+              "correct": true
+            },
+            {
+              "text": "ils sont trop légers"
+            },
+            {
+              "text": "ils n’ont pas de noyau"
+            },
+            {
+              "text": "ils sont trop rares"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a fait Mendeleïev de remarquable en 1869 ?",
+          "explanation": "Il a laissé des cases vides et prédit les propriétés des éléments manquants. Trois ont été découverts dans les vingt ans, comme annoncé.",
+          "options": [
+            {
+              "text": "il a prédit les propriétés d’éléments inconnus",
+              "correct": true
+            },
+            {
+              "text": "il a découvert l’électron"
+            },
+            {
+              "text": "il a mesuré la constante d’Avogadro"
+            },
+            {
+              "text": "il a inventé la notion d’isotope"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

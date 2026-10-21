@@ -1,0 +1,528 @@
+{
+  "chapter": "physique-chimie-lycee-transformations-chimiques",
+  "lessons": [
+    {
+      "id": "conserver-les-atomes",
+      "title": "Conserver les atomes",
+      "subtitle": "Rien ne disparaît : on ne fait que redistribuer.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’on fait d’un côté, on le fait de l’autre",
+          "body": "Déroule les étapes : à chaque opération, les deux plateaux restent en équilibre, et la solution ne change pas. La figure résout une équation de mathématiques, et la règle de la chimie est exactement celle-là : les deux côtés d’une flèche portent les mêmes atomes, en mêmes nombres.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment équilibrer, dans l’ordre",
+          "body": "On écrit les formules correctes des réactifs et des produits. On n’y touchera plus : changer une formule change la substance.\n\nOn compte les atomes de chaque élément des deux côtés.\n\nOn ajuste uniquement les nombres placés devant les formules, appelés coefficients stœchiométriques.\n\nOn commence par l’élément qui n’apparaît qu’une fois de chaque côté, et on garde l’oxygène et l’hydrogène pour la fin : ils sont presque toujours dans plusieurs espèces.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La combustion du méthane, pas à pas",
+          "body": "CH4 + O2 donne CO2 + H2O, qui n’est pas équilibrée.\n\nCarbone : 1 à gauche, 1 à droite. Rien à faire.\n\nHydrogène : 4 à gauche, 2 à droite. On met 2 devant H2O.\n\nOxygène : 2 à gauche, et maintenant 2 + 2 = 4 à droite. On met 2 devant O2.\n\nCH4 + 2 O2 donne CO2 + 2 H2O. On recompte tout : 1 carbone, 4 hydrogènes, 4 oxygènes de chaque côté.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "On ne modifie jamais une formule pour équilibrer",
+          "body": "Écrire CH4 + O4 donne CO2 + H4O2 équilibre les comptes et ne veut rien dire : O4 et H4O2 n’existent pas.\n\nLa formule d’une espèce est une donnée de la nature ; le coefficient devant est un choix de proportion.\n\nC’est l’erreur la plus fréquente du chapitre, et elle est facile à repérer : une formule inhabituelle dans une équation équilibrée est presque toujours le signe qu’on a triché.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la conservation entraîne",
+          "body": "La masse totale est conservée : la somme des masses des réactifs consommés égale celle des produits formés.\n\nLavoisier l’a établi vers 1780 en pesant des récipients fermés, et c’est ce qui a ruiné l’idée qu’un métal « gagnait » quelque chose en rouillant sans que rien ne le fournisse.\n\nLa charge électrique est conservée aussi : dans une équation avec des ions, la somme des charges doit être la même des deux côtés.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes de l’équilibrage dans l’ordre.",
+          "explanation": "Écrire les bonnes formules, compter les atomes, ajuster les coefficients en commençant par les éléments les plus simples, puis recompter.",
+          "items": [
+            "écrire les formules correctes",
+            "compter les atomes de chaque côté",
+            "ajuster les coefficients devant les formules",
+            "recompter tout pour vérifier"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans CH4 + a O2 donne CO2 + 2 H2O, que vaut a ?",
+          "explanation": "À droite il y a 2 + 2 = 4 oxygènes, donc a = 2 pour en apporter 4 à gauche.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On peut modifier une formule chimique pour équilibrer une équation.",
+          "explanation": "Faux. La formule est une donnée de la nature ; seuls les coefficients devant les formules se choisissent.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui est conservé dans une transformation chimique ?",
+          "explanation": "Le nombre d’atomes de chaque élément, la masse totale et la charge électrique globale. Le nombre de molécules, non.",
+          "options": [
+            {
+              "text": "le nombre d’atomes de chaque élément",
+              "correct": true
+            },
+            {
+              "text": "la masse totale",
+              "correct": true
+            },
+            {
+              "text": "la charge électrique globale",
+              "correct": true
+            },
+            {
+              "text": "le nombre de molécules"
+            },
+            {
+              "text": "le volume total"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Par quel élément vaut-il mieux commencer un équilibrage ?",
+          "explanation": "Par celui qui n’apparaît que dans une espèce de chaque côté. On garde l’oxygène et l’hydrogène pour la fin.",
+          "options": [
+            {
+              "text": "celui qui n’apparaît qu’une fois de chaque côté",
+              "correct": true
+            },
+            {
+              "text": "l’oxygène"
+            },
+            {
+              "text": "l’hydrogène"
+            },
+            {
+              "text": "le plus lourd"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment Lavoisier a-t-il établi la conservation de la masse ?",
+          "explanation": "En pesant des récipients fermés avant et après réaction. Cela a ruiné l’idée qu’un métal gagnait quelque chose venu de nulle part.",
+          "options": [
+            {
+              "text": "en pesant des récipients fermés",
+              "correct": true
+            },
+            {
+              "text": "par le calcul"
+            },
+            {
+              "text": "en mesurant des volumes de gaz"
+            },
+            {
+              "text": "en comptant des atomes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-reactif-limitant",
+      "title": "Le réactif limitant",
+      "subtitle": "Ce n’est pas celui qu’il y a en plus petite quantité.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un tableau d’avancement qui se recalcule",
+          "body": "Touche une cellule et change la quantité initiale : les totaux suivent. C’est exactement un tableau d’avancement — une ligne pour l’état initial, une pour l’état intermédiaire, une pour l’état final, et des soustractions qui s’enchaînent.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment trouver le limitant",
+          "body": "On écrit l’équation équilibrée, et on relève les coefficients.\n\nPour chaque réactif, on calcule la quantité initiale divisée par son coefficient.\n\nLe plus petit de ces quotients désigne le réactif limitant, et sa valeur est l’avancement maximal.\n\nCe n’est donc pas le réactif le moins abondant : c’est celui dont le rapport à son besoin est le plus faible.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas qui surprend",
+          "body": "Pour CH4 + 2 O2, on dispose de 3 moles de méthane et de 4 moles de dioxygène.\n\nMéthane : 3 divisé par 1 égale 3. Dioxygène : 4 divisé par 2 égale 2.\n\nLe limitant est le dioxygène, bien qu’il y en ait plus en quantité : il en faut deux fois plus par réaction.\n\nAvancement maximal : 2 moles. Il restera 1 mole de méthane inutilisée, et il se formera 2 moles de dioxyde de carbone et 4 moles d’eau.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le tableau d’avancement, ligne par ligne",
+          "body": "État initial : les quantités de départ, et zéro pour les produits.\n\nEn cours : la quantité initiale moins le coefficient multiplié par l’avancement, pour chaque réactif ; plus le coefficient multiplié par l’avancement, pour chaque produit.\n\nÉtat final : on remplace l’avancement par sa valeur maximale.\n\nLe contrôle qui ne trompe pas : dans l’état final, aucune quantité ne doit être négative. Une quantité négative signifie qu’on s’est trompé de limitant.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Mélange stœchiométrique : le cas particulier",
+          "body": "Quand tous les quotients sont égaux, tous les réactifs disparaissent en même temps : le mélange est dit stœchiométrique.\n\nC’est le réglage recherché dans un moteur ou un brûleur, parce qu’il ne laisse ni carburant imbrûlé ni air inutile.\n\nEt c’est ce que la sonde lambda d’une voiture mesure en permanence pour ajuster l’injection.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment identifie-t-on le réactif limitant ?",
+          "explanation": "En divisant chaque quantité initiale par son coefficient : le plus petit quotient désigne le limitant.",
+          "options": [
+            {
+              "text": "par le plus petit quotient quantité sur coefficient",
+              "correct": true
+            },
+            {
+              "text": "c’est le réactif le moins abondant"
+            },
+            {
+              "text": "c’est le réactif le plus lourd"
+            },
+            {
+              "text": "c’est toujours le dioxygène"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pour CH4 + 2 O2, avec 3 mol de méthane et 4 mol de dioxygène, quel est le limitant ?",
+          "explanation": "3/1 = 3 contre 4/2 = 2 : le dioxygène limite, bien qu’il y en ait davantage en quantité.",
+          "options": [
+            {
+              "text": "le dioxygène",
+              "correct": true
+            },
+            {
+              "text": "le méthane"
+            },
+            {
+              "text": "aucun, le mélange est stœchiométrique"
+            },
+            {
+              "text": "les deux à la fois"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans ce cas, combien de moles de dioxyde de carbone se forment ?",
+          "explanation": "L’avancement maximal vaut 2 moles, et le coefficient du dioxyde de carbone vaut 1 : il s’en forme 2 moles.",
+          "answer": 2,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et combien de moles de méthane restent inutilisées ?",
+          "explanation": "3 moles au départ moins 2 consommées : il en reste 1 mole.",
+          "answer": 1,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’indique une quantité négative dans un état final ?",
+          "explanation": "Qu’on s’est trompé de réactif limitant. C’est le contrôle le plus simple d’un tableau d’avancement.",
+          "options": [
+            {
+              "text": "une erreur sur le réactif limitant",
+              "correct": true
+            },
+            {
+              "text": "que la réaction est impossible"
+            },
+            {
+              "text": "que le mélange est stœchiométrique"
+            },
+            {
+              "text": "que la réaction est réversible"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un mélange stœchiométrique ?",
+          "explanation": "Un mélange où tous les réactifs disparaissent ensemble. C’est le réglage recherché dans un moteur, que la sonde lambda ajuste.",
+          "options": [
+            {
+              "text": "tous les réactifs disparaissent en même temps",
+              "correct": true
+            },
+            {
+              "text": "un mélange en quantités égales"
+            },
+            {
+              "text": "un mélange sans réactif limitant au sens strict"
+            },
+            {
+              "text": "un mélange de masses égales"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-energie-d-une-reaction",
+      "title": "L’énergie d’une réaction",
+      "subtitle": "Casser des liaisons coûte, en former rapporte, et le bilan décide.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui entre, ce qui sort, ce qui se perd",
+          "body": "Touche chaque bloc de la chaîne et fais varier le curseur : le rendement global change et la part perdue en chaleur avec lui. Une réaction chimique est un maillon de cette chaîne, et elle obéit à la même comptabilité.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux temps de toute réaction",
+          "body": "D’abord, il faut casser des liaisons dans les réactifs. Cela demande toujours de l’énergie, sans exception.\n\nEnsuite, de nouvelles liaisons se forment dans les produits. Cela libère toujours de l’énergie.\n\nSi la seconde libération dépasse le premier coût, la réaction libère de l’énergie au total : elle est exothermique, et le milieu s’échauffe.\n\nDans le cas contraire, elle est endothermique, et le milieu se refroidit.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux réactions qu’on peut tenir dans la main",
+          "body": "La combustion : du bois, du gaz, de l’essence. Très exothermique, et c’est toute la raison pour laquelle on s’en sert.\n\nLa dissolution du nitrate d’ammonium dans l’eau : endothermique, et le bécher devient froid au toucher. C’est le principe des poches de froid instantané qu’on trouve dans les trousses de secours.\n\nDans les deux cas, personne n’a fourni ou retiré de chaleur de l’extérieur : le bilan des liaisons a suffi.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Exothermique ne veut pas dire spontané",
+          "body": "Un mélange d’air et de méthane est très exothermique et peut rester stable des années : il faut une étincelle.\n\nCette énergie d’amorçage s’appelle l’énergie d’activation. Elle ne change rien au bilan — elle est rendue ensuite — mais elle décide si la réaction démarre.\n\nUn catalyseur est précisément une substance qui abaisse cette barrière sans être consommée, et sans modifier le bilan énergétique d’un joule.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la chimie partage avec la physique",
+          "body": "L’énergie n’est ni créée ni détruite : une réaction la transfère, de la forme chimique vers la chaleur, la lumière ou le travail.\n\nLa chaîne d’énergie de la figure et l’équation chimique décrivent donc le même événement, avec deux vocabulaires.\n\nC’est pourquoi un chimiste et un ingénieur énergéticien s’entendent sur les chiffres : ils comptent la même chose.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette étape coûte-t-elle ou rapporte-t-elle de l’énergie ?",
+          "explanation": "Casser une liaison coûte toujours de l’énergie, en former en libère toujours. Le bilan des deux décide du sens global.",
+          "categories": [
+            "coûte de l’énergie",
+            "libère de l’énergie"
+          ],
+          "items": [
+            {
+              "text": "casser une liaison des réactifs",
+              "category": 0
+            },
+            {
+              "text": "former une liaison des produits",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’arrive-t-il au milieu lors d’une réaction exothermique ?",
+          "explanation": "Il s’échauffe : la réaction lui cède de l’énergie, parce que les liaisons formées en libèrent plus que les liaisons cassées n’en ont coûté.",
+          "options": [
+            {
+              "text": "il s’échauffe",
+              "correct": true
+            },
+            {
+              "text": "il se refroidit"
+            },
+            {
+              "text": "sa température ne change pas"
+            },
+            {
+              "text": "il change d’état"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un mélange d’air et de méthane peut-il rester stable des années ?",
+          "explanation": "Il manque l’énergie d’activation. Le bilan est très favorable, mais la barrière d’amorçage n’est pas franchie.",
+          "options": [
+            {
+              "text": "il manque l’énergie d’activation",
+              "correct": true
+            },
+            {
+              "text": "la réaction est endothermique"
+            },
+            {
+              "text": "il n’y a pas assez de dioxygène"
+            },
+            {
+              "text": "le méthane est inerte"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait un catalyseur ?",
+          "explanation": "Il abaisse l’énergie d’activation sans être consommé et sans modifier le bilan énergétique de la réaction.",
+          "options": [
+            {
+              "text": "il abaisse la barrière d’activation",
+              "correct": true
+            },
+            {
+              "text": "il augmente l’énergie libérée"
+            },
+            {
+              "text": "il est consommé par la réaction"
+            },
+            {
+              "text": "il rend la réaction exothermique"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une poche de froid instantané contient de la glace.",
+          "explanation": "Faux. Elle contient un sel dont la dissolution est endothermique : le froid vient de la réaction, pas d’une réserve de froid.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une réaction exothermique est forcément spontanée.",
+          "explanation": "Faux. Le bilan dit combien d’énergie est libérée, pas si la réaction démarre : cela dépend de l’énergie d’activation.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-une-transformation-complete",
+      "title": "Défi : une transformation de bout en bout",
+      "subtitle": "De la masse pesée à la masse formée, sans sauter d’étape.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les deux côtés doivent se correspondre",
+          "body": "Reprends la figure et déroule les étapes : l’équilibre est maintenu à chaque opération. C’est le contrôle qu’on refait à la fin d’un exercice de chimie — autant d’atomes de chaque côté, et une masse totale inchangée.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La chaîne complète, dans l’ordre",
+          "body": "On pèse, ou on mesure un volume et une concentration.\n\nOn convertit en quantité de matière, avec n = m / M ou n = C × V.\n\nOn équilibre l’équation, et on relève les coefficients.\n\nOn cherche le limitant, et on dresse le tableau d’avancement.\n\nOn convertit la quantité de produit en masse ou en volume, avec la même formule employée à l’envers.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un calcul complet, avec contrôle",
+          "body": "On brûle 16 grammes de méthane. Masse molaire du méthane : 16 grammes par mole, donc 1 mole.\n\nCH4 + 2 O2 donne CO2 + 2 H2O. Avec du dioxygène en excès, le méthane est limitant : avancement 1 mole.\n\nIl se forme 1 mole de dioxyde de carbone, soit 44 grammes, et 2 moles d’eau, soit 36 grammes.\n\nContrôle de masse : 16 grammes de méthane plus 2 moles de dioxygène, soit 64 grammes, font 80 grammes. Et 44 plus 36 font 80. La conservation est vérifiée, donc le calcul tient.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le contrôle de masse est gratuit, et il attrape tout",
+          "body": "Additionne les masses des réactifs consommés, additionne celles des produits formés, et compare.\n\nSi les deux totaux diffèrent, il y a une erreur quelque part : un coefficient, une masse molaire, ou une conversion.\n\nCe contrôle ne dit pas où est l’erreur, mais il dit qu’il y en a une — ce qui est déjà l’essentiel, et ce qu’aucune relecture ne garantit.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les volumes de gaz ne se conservent pas",
+          "body": "La masse se conserve toujours. Le volume, non : dans la combustion du méthane, 3 moles de gaz au départ donnent 3 moles de gaz à l’arrivée, mais l’eau peut être liquide et le compte change.\n\nEt un même nombre de moles n’occupe pas le même volume à des températures différentes.\n\nRaisonner en moles et convertir en volume à la fin évite tous ces pièges. Raisonner directement en volumes en crée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne de calcul d’une transformation dans l’ordre.",
+          "explanation": "Mesurer, convertir en moles, équilibrer, chercher le limitant et dresser le tableau, puis reconvertir en masse ou en volume.",
+          "items": [
+            "peser ou mesurer",
+            "convertir en quantité de matière",
+            "équilibrer l’équation",
+            "trouver le limitant et l’avancement",
+            "reconvertir en masse ou en volume"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On brûle 16 g de méthane. Combien de grammes de dioxyde de carbone se forment ?",
+          "explanation": "16 g font 1 mole, donc 1 mole de dioxyde de carbone, soit 44 grammes.",
+          "answer": 44,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et combien de grammes d’eau se forment ?",
+          "explanation": "2 moles d’eau à 18 grammes par mole, soit 36 grammes.",
+          "answer": 36,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la masse totale des produits, en grammes ?",
+          "explanation": "44 + 36 = 80 grammes, et les réactifs pesaient 16 + 64 = 80 grammes. La conservation est vérifiée.",
+          "answer": 80,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que garantit le contrôle de masse ?",
+          "explanation": "Il révèle l’existence d’une erreur sans dire laquelle — ce qui est déjà l’essentiel, et ce qu’aucune relecture ne garantit.",
+          "options": [
+            {
+              "text": "qu’il y a une erreur, sans dire laquelle",
+              "correct": true
+            },
+            {
+              "text": "où se trouve l’erreur"
+            },
+            {
+              "text": "que la réaction est possible"
+            },
+            {
+              "text": "que l’équation est équilibrée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le volume total des gaz se conserve dans une transformation chimique.",
+          "explanation": "Faux. Seule la masse se conserve. Mieux vaut raisonner en moles et convertir en volume à la fin.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

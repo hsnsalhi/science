@@ -1,0 +1,574 @@
+{
+  "chapter": "physique-chimie-lycee-acides-bases-et-titrages",
+  "lessons": [
+    {
+      "id": "l-echelle-de-ph",
+      "title": "L’échelle de pH",
+      "subtitle": "Un pas sur l’axe, et la concentration est multipliée par dix.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un pas, et puis un autre",
+          "body": "Règle le départ et le déplacement : tu avances d’un nombre entier de pas sur un axe. L’échelle de pH est un axe de ce type, de 0 à 14 — à ceci près qu’un pas n’ajoute pas une unité de concentration, il la divise par dix.",
+          "figureId": "droite-graduee",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que mesure le pH",
+          "body": "Dans l’eau, il existe toujours des ions hydrogène, notés H+, en très petite quantité.\n\nLe pH est l’opposé du logarithme décimal de leur concentration, exprimée en moles par litre.\n\nUn pH de 3 correspond donc à une concentration de dix puissance moins 3, soit un millième de mole par litre. Un pH de 7 correspond à dix puissance moins 7.\n\nLe logarithme sert uniquement à écrire commodément des nombres qui vont de 1 à dix puissance moins 14.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux relations, dans les deux sens",
+          "body": "pH = −log(concentration en H+)\n\nconcentration en H+ = 10 puissance (−pH)\n\nConséquence immédiate : passer d’un pH de 5 à un pH de 3 multiplie la concentration par 100, et non par deux. L’intuition additive est systématiquement fausse ici.",
+          "formula": "pH = −log[H+]",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Des pH qu’on rencontre",
+          "body": "Jus de citron : environ 2. Vinaigre : environ 3. Café : environ 5.\n\nEau pure à 25 degrés : 7, exactement neutre.\n\nEau de mer : environ 8. Eau savonneuse : environ 10. Déboucheur de canalisation : environ 14.\n\nLe citron est donc cent mille fois plus acide que l’eau pure, et non « cinq fois ». C’est ce facteur que l’échelle logarithmique cache, et qu’il faut se rappeler à chaque lecture.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La neutralité n’est à 7 que dans certaines conditions",
+          "body": "Le pH neutre vaut 7 pour l’eau à 25 degrés. À 50 degrés, il vaut environ 6,6, et l’eau n’en est pas devenue acide.\n\nLa neutralité se définit par l’égalité des concentrations en ions H+ et en ions hydroxyde HO−, pas par le chiffre 7.\n\nC’est le genre de détail qui ne change rien en pratique au lycée, et qui évite de retenir une fausse définition.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un pH de 3 correspond à une concentration de dix puissance combien, en moles par litre ?",
+          "explanation": "La concentration vaut 10 puissance (−pH), soit 10 puissance −3. La réponse est donc −3.",
+          "answer": -3,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De combien est multipliée la concentration en H+ quand le pH passe de 5 à 3 ?",
+          "explanation": "Deux pas sur l’échelle, donc un facteur 10 × 10 = 100. L’intuition additive se trompe ici.",
+          "answer": 100,
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette solution est-elle acide, neutre ou basique ?",
+          "explanation": "En dessous de 7 c’est acide, à 7 neutre, au-dessus basique. Le citron est à 2, l’eau de mer à 8.",
+          "categories": [
+            "acide",
+            "neutre",
+            "basique"
+          ],
+          "items": [
+            {
+              "text": "le jus de citron, pH 2",
+              "category": 0
+            },
+            {
+              "text": "le vinaigre, pH 3",
+              "category": 0
+            },
+            {
+              "text": "l’eau pure à 25 °C, pH 7",
+              "category": 1
+            },
+            {
+              "text": "l’eau de mer, pH 8",
+              "category": 2
+            },
+            {
+              "text": "l’eau savonneuse, pH 10",
+              "category": 2
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de fois le jus de citron est-il plus acide que l’eau pure ?",
+          "explanation": "Cinq pas d’échelle, soit cent mille fois. Dire « cinq fois » est l’erreur que l’échelle logarithmique encourage.",
+          "options": [
+            {
+              "text": "cent mille fois",
+              "correct": true
+            },
+            {
+              "text": "cinq fois"
+            },
+            {
+              "text": "dix fois"
+            },
+            {
+              "text": "mille fois"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une eau dont le pH vaut 6,6 à 50 degrés est acide.",
+          "explanation": "Faux. La neutralité se définit par l’égalité des concentrations en H+ et HO−, et elle correspond à 6,6 à cette température.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le logarithme dans la définition du pH ?",
+          "explanation": "À écrire commodément des nombres qui s’étalent de 1 à dix puissance moins 14. Il n’ajoute aucune physique.",
+          "options": [
+            {
+              "text": "à écrire commodément des nombres très petits",
+              "correct": true
+            },
+            {
+              "text": "à rendre la mesure plus précise"
+            },
+            {
+              "text": "à tenir compte de la température"
+            },
+            {
+              "text": "à additionner les concentrations"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "acide-ou-base",
+      "title": "Acide ou base",
+      "subtitle": "Deux rôles définis par ce qui s’échange, pas par un goût.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui part d’un côté arrive de l’autre",
+          "body": "Déroule les étapes : l’équilibre se maintient à chaque opération. Une réaction acide-base est de la même nature — ce que l’acide cède, la base le prend, et la comptabilité est exacte.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La définition de Brønsted",
+          "body": "Un acide est une espèce capable de céder un ion hydrogène H+.\n\nUne base est une espèce capable d’en capter un.\n\nUne réaction acide-base est donc un transfert : l’acide donne, la base reçoit. Il n’y a jamais d’acide sans base en face, et réciproquement.\n\nCette définition remplace celle d’Arrhenius, plus ancienne, qui ne marchait qu’en solution aqueuse.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les couples acide-base",
+          "body": "À chaque acide correspond la base qu’il devient en cédant son H+ : on parle de couple.\n\nL’acide éthanoïque CH3COOH et l’ion éthanoate CH3COO− forment un couple. L’ion ammonium NH4+ et l’ammoniac NH3 en forment un autre.\n\nL’eau appartient à deux couples à la fois : elle peut céder un H+ et devenir HO−, ou en capter un et devenir H3O+. On dit qu’elle est amphotère, et c’est ce qui lui permet de servir de solvant à toute la chimie acide-base.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le vinaigre attaque le calcaire",
+          "body": "Le calcaire est du carbonate de calcium. L’ion carbonate est une base : il capte des ions H+.\n\nLe vinaigre apporte un acide, qui les cède. Le carbonate les prend et se transforme en dioxyde de carbone et en eau.\n\nLes bulles qu’on observe sont ce dioxyde de carbone qui s’échappe. Le calcaire ne s’est pas « dissous » : il a réagi, et une partie est partie en gaz.\n\nC’est pourquoi le détartrage au vinaigre fonctionne, et pourquoi il ne faut pas le faire sur du marbre, qui est aussi du carbonate de calcium.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Fort et concentré ne sont pas la même chose",
+          "body": "Un acide fort cède la totalité de ses H+ en solution. Un acide faible n’en cède qu’une partie.\n\nConcentré signifie seulement qu’il y en a beaucoup par litre.\n\nUn acide faible très concentré peut donc être plus corrosif qu’un acide fort très dilué. Les deux mots décrivent des choses différentes, et les confondre conduit à sous-estimer un danger.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un acide, au sens de Brønsted ?",
+          "explanation": "Une espèce capable de céder un ion hydrogène H+. La base est celle qui en capte un.",
+          "options": [
+            {
+              "text": "une espèce qui peut céder un H+",
+              "correct": true
+            },
+            {
+              "text": "une espèce qui peut capter un H+"
+            },
+            {
+              "text": "une espèce de pH inférieur à 7"
+            },
+            {
+              "text": "une espèce qui attaque les métaux"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque acide à sa base conjuguée.",
+          "explanation": "La base conjuguée est ce que devient l’acide après avoir cédé son H+.",
+          "pairs": [
+            {
+              "left": "CH3COOH",
+              "right": "CH3COO−"
+            },
+            {
+              "left": "NH4+",
+              "right": "NH3"
+            },
+            {
+              "left": "H3O+",
+              "right": "H2O"
+            },
+            {
+              "left": "H2O",
+              "right": "HO−"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi dit-on que l’eau est amphotère ?",
+          "explanation": "Parce qu’elle appartient à deux couples : elle peut céder un H+ et devenir HO−, ou en capter un et devenir H3O+.",
+          "options": [
+            {
+              "text": "elle peut céder ou capter un H+",
+              "correct": true
+            },
+            {
+              "text": "elle est neutre"
+            },
+            {
+              "text": "elle dissout tout"
+            },
+            {
+              "text": "son pH vaut 7"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un acide fort est toujours plus dangereux qu’un acide faible.",
+          "explanation": "Faux. Fort désigne la proportion de H+ cédés, concentré la quantité par litre. Un acide faible concentré peut être plus corrosif.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où viennent les bulles quand on verse du vinaigre sur du calcaire ?",
+          "explanation": "Du dioxyde de carbone formé : le carbonate capte des H+ et se transforme en CO2 et en eau. Le calcaire a réagi, pas fondu.",
+          "options": [
+            {
+              "text": "du dioxyde de carbone formé par la réaction",
+              "correct": true
+            },
+            {
+              "text": "de l’air emprisonné dans le calcaire"
+            },
+            {
+              "text": "de la vapeur d’eau"
+            },
+            {
+              "text": "du dihydrogène"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne faut-il pas détartrer du marbre au vinaigre ?",
+          "explanation": "Parce que le marbre est lui aussi du carbonate de calcium : la même réaction l’attaquerait.",
+          "options": [
+            {
+              "text": "le marbre est aussi du carbonate de calcium",
+              "correct": true
+            },
+            {
+              "text": "le vinaigre tache le marbre"
+            },
+            {
+              "text": "le marbre est basique"
+            },
+            {
+              "text": "le marbre ne réagit pas assez vite"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-titrage",
+      "title": "Le titrage",
+      "subtitle": "Une concentration inconnue, lue sur un volume versé.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les quantités qui s’égalisent",
+          "body": "Touche une cellule et change le volume versé : les totaux se recalculent. Un titrage consiste à chercher le volume pour lequel deux quantités de matière deviennent exactement égales, et ce tableau est l’outil du calcul.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment on procède",
+          "body": "On place dans un bécher un volume connu de la solution dont on cherche la concentration.\n\nOn verse, depuis une burette graduée, une solution de concentration connue : le réactif titrant.\n\nOn repère l’équivalence : le moment où les réactifs ont été introduits dans les proportions exactes de l’équation. Avant, le titré est en excès ; après, le titrant.\n\nOn lit le volume versé à l’équivalence, et on en déduit la concentration cherchée.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation à l’équivalence",
+          "body": "Pour une réaction un pour un :\n\nC1 × V1 = C2 × V2\n\noù l’indice 1 désigne la solution titrée et l’indice 2 le titrant à l’équivalence.\n\nSi les coefficients de l’équation ne sont pas égaux, la relation devient le quotient des quantités égal au quotient des coefficients. Oublier ce détail est l’erreur la plus coûteuse du chapitre.",
+          "formula": "C1 × V1 = C2 × V2",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Doser le vinaigre du commerce",
+          "body": "On titre 10 millilitres de vinaigre dilué par une solution de soude à 0,1 mole par litre. L’équivalence arrive à 12,5 millilitres.\n\nLa réaction est un pour un, donc C1 × 10 = 0,1 × 12,5.\n\nC1 = 1,25 / 10 = 0,125 mole par litre.\n\nEn multipliant par la masse molaire de l’acide éthanoïque, 60 grammes par mole, cela fait 7,5 grammes par litre — et il reste à remonter la dilution pour comparer au degré affiché sur la bouteille.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Comment on repère l’équivalence",
+          "body": "Par un indicateur coloré, qui change de teinte dans une plage de pH donnée. Il faut choisir celui dont la plage contient le pH à l’équivalence.\n\nOu par un pH-mètre : on trace le pH en fonction du volume versé, et l’équivalence est au point où la courbe est la plus raide.\n\nLa seconde méthode est plus précise, et surtout elle ne demande pas de connaître d’avance le pH à l’équivalence. C’est pour cela qu’on la préfère dès qu’on a l’appareil.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes d’un titrage dans l’ordre.",
+          "explanation": "Prélever un volume connu, verser le titrant, repérer l’équivalence, lire le volume versé, puis calculer la concentration.",
+          "items": [
+            "prélever un volume connu de la solution titrée",
+            "verser le titrant depuis la burette",
+            "repérer l’équivalence",
+            "lire le volume versé",
+            "calculer la concentration cherchée"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "On titre 10 mL de vinaigre par de la soude à 0,1 mol/L ; l’équivalence est à 12,5 mL. Quelle concentration, en mol/L ?",
+          "explanation": "C1 × 10 = 0,1 × 12,5, donc C1 = 1,25/10 = 0,125 mole par litre.",
+          "min": 0,
+          "max": 1,
+          "answer": 0.125,
+          "tolerance": 0.01,
+          "unit": "mol/L",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’équivalence d’un titrage ?",
+          "explanation": "Le moment où les réactifs ont été introduits dans les proportions exactes de l’équation : avant, le titré est en excès ; après, le titrant.",
+          "options": [
+            {
+              "text": "le moment des proportions exactes de l’équation",
+              "correct": true
+            },
+            {
+              "text": "le moment où le pH vaut 7"
+            },
+            {
+              "text": "le moment où la couleur apparaît"
+            },
+            {
+              "text": "le moment où la burette est vide"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi préfère-t-on le pH-mètre à l’indicateur coloré ?",
+          "explanation": "Parce qu’il ne demande pas de connaître d’avance le pH à l’équivalence : on le lit sur le point le plus raide de la courbe.",
+          "options": [
+            {
+              "text": "il ne demande pas de connaître le pH à l’équivalence",
+              "correct": true
+            },
+            {
+              "text": "il est moins cher"
+            },
+            {
+              "text": "il est plus rapide"
+            },
+            {
+              "text": "il ne consomme pas de réactif"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La relation C1 × V1 = C2 × V2 s’applique à tous les titrages.",
+          "explanation": "Faux. Elle suppose une réaction un pour un. Avec des coefficients différents, il faut les faire intervenir, et l’oubli coûte cher.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment choisit-on un indicateur coloré ?",
+          "explanation": "On prend celui dont la plage de virage contient le pH à l’équivalence, sinon le changement de teinte arrive au mauvais moment.",
+          "options": [
+            {
+              "text": "sa plage de virage doit contenir le pH à l’équivalence",
+              "correct": true
+            },
+            {
+              "text": "au hasard, ils sont équivalents"
+            },
+            {
+              "text": "le plus coloré possible"
+            },
+            {
+              "text": "celui qui vire à pH 7"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-dilution-et-securite",
+      "title": "Défi : diluer, et dans quel ordre",
+      "subtitle": "La quantité de matière ne change pas ; tout le reste change.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une part sur dix, puis une part sur cent",
+          "body": "Règle la barre sur 10 parts et colorie-en 1 : voilà une dilution au dixième. Passe à 100 parts et colorie-en 1 : la même quantité de solution de départ, dans dix fois plus d’eau. La part se raccourcit, la matière reste la même.",
+          "figureId": "fraction-barre",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation de dilution",
+          "body": "Lors d’une dilution, la quantité de matière de soluté ne change pas : on n’ajoute que du solvant.\n\nDonc C_mère × V_prélevé = C_fille × V_final.\n\nLe facteur de dilution est le rapport du volume final au volume prélevé. Diluer dix fois signifie prélever un volume et compléter jusqu’à dix fois ce volume — et non ajouter dix volumes d’eau.",
+          "formula": "C1 × V1 = C2 × V2",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le mode opératoire, dans l’ordre",
+          "body": "On choisit la fiole jaugée du volume final voulu.\n\nOn prélève le volume calculé à la pipette jaugée, qui est bien plus précise qu’une éprouvette.\n\nOn verse dans la fiole, on ajoute du solvant jusqu’à la moitié environ, on homogénéise.\n\nOn complète jusqu’au trait de jauge, goutte à goutte à la fin, et on homogénéise de nouveau en retournant la fiole plusieurs fois.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’acide dans l’eau, jamais l’inverse",
+          "body": "La dilution d’un acide concentré libère beaucoup de chaleur.\n\nSi l’on verse de l’eau dans l’acide, les premières gouttes reçoivent toute cette chaleur d’un coup : elles peuvent bouillir et projeter de l’acide concentré hors du récipient.\n\nEn versant l’acide dans un grand volume d’eau, la chaleur se répartit dans toute la masse d’eau et la température monte lentement.\n\nLa règle se retient ainsi : on ne fait jamais tomber l’eau dans l’acide. Ce n’est pas une convention de laboratoire, c’est un calcul de capacité thermique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la dilution change, et ce qu’elle ne change pas",
+          "body": "Elle ne change pas la quantité de matière de soluté, ni sa nature, ni le fait qu’un acide soit fort ou faible.\n\nElle change la concentration, donc le pH — d’une unité pour une dilution par dix, dans le cas d’un acide fort.\n\nElle ne rend donc pas un produit inoffensif : elle rend sa concentration plus faible, ce qui n’est pas la même chose. L’étiquette de danger suit la concentration, et il faut la relire après dilution comme avant.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Pour préparer 100 mL d’une solution dix fois moins concentrée, quel volume de solution mère prélever, en millilitres ?",
+          "explanation": "C1 × V1 = C2 × V2 donne V1 = V2 / 10 = 10 millilitres, qu’on complète jusqu’à 100.",
+          "answer": 10,
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Diluer dix fois consiste à ajouter dix volumes d’eau au volume prélevé.",
+          "explanation": "Faux. Il faut compléter jusqu’à dix fois le volume prélevé, soit neuf volumes d’eau ajoutés. L’erreur donne une dilution par onze.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi verse-t-on l’acide dans l’eau et jamais l’inverse ?",
+          "explanation": "Parce que la chaleur libérée se répartit dans un grand volume d’eau. Dans l’autre sens, les premières gouttes peuvent bouillir et projeter de l’acide.",
+          "options": [
+            {
+              "text": "pour répartir la chaleur libérée dans toute l’eau",
+              "correct": true
+            },
+            {
+              "text": "pour mieux mélanger"
+            },
+            {
+              "text": "parce que l’acide est plus dense"
+            },
+            {
+              "text": "par convention de laboratoire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que la dilution ne change pas ?",
+          "explanation": "La quantité de matière de soluté, sa nature, et le caractère fort ou faible de l’acide. La concentration et le pH changent.",
+          "options": [
+            {
+              "text": "la quantité de matière de soluté",
+              "correct": true
+            },
+            {
+              "text": "la nature du soluté",
+              "correct": true
+            },
+            {
+              "text": "le caractère fort ou faible de l’acide",
+              "correct": true
+            },
+            {
+              "text": "la concentration"
+            },
+            {
+              "text": "le pH"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De combien d’unités le pH d’un acide fort monte-t-il quand on le dilue dix fois ?",
+          "explanation": "D’une unité : la concentration est divisée par dix, donc son logarithme décimal diminue de 1.",
+          "answer": 1,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel instrument prélève le plus précisément un volume donné ?",
+          "explanation": "La pipette jaugée, nettement plus précise qu’une éprouvette graduée pour un volume déterminé.",
+          "options": [
+            {
+              "text": "la pipette jaugée",
+              "correct": true
+            },
+            {
+              "text": "l’éprouvette graduée"
+            },
+            {
+              "text": "le bécher"
+            },
+            {
+              "text": "l’erlenmeyer"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
