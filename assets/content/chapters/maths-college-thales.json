@@ -53,10 +53,19 @@
           "explanation": "Elles doivent être parallèles. Sans cette condition, les rapports ne sont plus égaux et le théorème ne s'applique pas.",
           "figureId": "thales",
           "options": [
-            { "text": "Elles sont parallèles", "correct": true },
-            { "text": "Elles sont perpendiculaires" },
-            { "text": "Elles ont la même longueur" },
-            { "text": "Elles se coupent en leur milieu" }
+            {
+              "text": "Elles sont parallèles",
+              "correct": true
+            },
+            {
+              "text": "Elles sont perpendiculaires"
+            },
+            {
+              "text": "Elles ont la même longueur"
+            },
+            {
+              "text": "Elles se coupent en leur milieu"
+            }
           ]
         },
         {
@@ -65,13 +74,31 @@
           "prompt": "Range ces couples de longueurs selon qu'ils forment ou non un rapport du théorème.",
           "hint": "Chaque rapport compare un segment du petit triangle au segment correspondant du grand, depuis le même sommet.",
           "explanation": "Les trois rapports sont AD/AB, AE/AC et DE/BC : à chaque fois, le petit segment sur le grand, vus du sommet A. AD/AC mélange deux côtés différents, et DB/AB part d'un autre point.",
-          "categories": ["Un rapport du théorème", "Pas un rapport"],
+          "categories": [
+            "Un rapport du théorème",
+            "Pas un rapport"
+          ],
           "items": [
-            { "text": "AD sur AB", "category": 0 },
-            { "text": "DE sur BC", "category": 0 },
-            { "text": "AE sur AC", "category": 0 },
-            { "text": "AD sur AC", "category": 1 },
-            { "text": "DB sur AB", "category": 1 }
+            {
+              "text": "AD sur AB",
+              "category": 0
+            },
+            {
+              "text": "DE sur BC",
+              "category": 0
+            },
+            {
+              "text": "AE sur AC",
+              "category": 0
+            },
+            {
+              "text": "AD sur AC",
+              "category": 1
+            },
+            {
+              "text": "DB sur AB",
+              "category": 1
+            }
           ]
         },
         {
@@ -88,9 +115,18 @@
           "prompt": "Associe chaque point à sa position.",
           "explanation": "A est le sommet commun, D et E sont les points de la parallèle, B et C ceux du grand triangle.",
           "pairs": [
-            { "left": "A", "right": "Le sommet commun aux deux triangles" },
-            { "left": "D", "right": "Sur le segment [AB]" },
-            { "left": "E", "right": "Sur le segment [AC]" }
+            {
+              "left": "A",
+              "right": "Le sommet commun aux deux triangles"
+            },
+            {
+              "left": "D",
+              "right": "Sur le segment [AB]"
+            },
+            {
+              "left": "E",
+              "right": "Sur le segment [AC]"
+            }
           ]
         }
       ]
@@ -148,8 +184,18 @@
           "prompt": "Complète l'égalité du théorème.",
           "template": "AD/AB = AE/___ = DE/___",
           "blanks": [
-            { "accepted": ["AC", "ac"] },
-            { "accepted": ["BC", "bc"] }
+            {
+              "accepted": [
+                "AC",
+                "ac"
+              ]
+            },
+            {
+              "accepted": [
+                "BC",
+                "bc"
+              ]
+            }
           ],
           "hint": "Chaque fraction compare le petit triangle au grand.",
           "explanation": "AD/AB = AE/AC = DE/BC. Les dénominateurs sont toujours les longueurs du grand triangle."
@@ -171,10 +217,19 @@
           "hint": "Un rapport de 0,5, c'est une multiplication par un demi.",
           "explanation": "Toutes ses longueurs sont la moitié de celles du grand triangle. Attention : son aire, elle, est quatre fois plus petite.",
           "options": [
-            { "text": "Ses longueurs sont deux fois plus petites", "correct": true },
-            { "text": "Ses longueurs sont deux fois plus grandes" },
-            { "text": "Son aire est deux fois plus petite" },
-            { "text": "Il est identique au grand" }
+            {
+              "text": "Ses longueurs sont deux fois plus petites",
+              "correct": true
+            },
+            {
+              "text": "Ses longueurs sont deux fois plus grandes"
+            },
+            {
+              "text": "Son aire est deux fois plus petite"
+            },
+            {
+              "text": "Il est identique au grand"
+            }
           ]
         },
         {
@@ -196,25 +251,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les longueurs se divisent toutes par le même nombre",
+          "body": "Fais glisser la parallèle : le petit triangle garde la forme du grand. Toutes ses longueurs sont divisées par un même rapport, et c’est lui qu’on cherche.",
+          "figureId": "thales"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Vérifier la configuration",
           "body": "Repère le sommet commun, les deux droites sécantes et les deux parallèles. Sans ces trois éléments, on n'écrit rien."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Écrire l'égalité complète",
           "body": "AD/AB = AE/AC = DE/BC\n\nÉcris les trois rapports même si tu n'en utiliseras que deux : c'est ce qui évite de mélanger les côtés."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Isoler l'inconnue",
           "body": "Garde les deux rapports qui contiennent trois longueurs connues et l'inconnue.\n\nAD/AB = AE/AC\n4/10 = AE/15\nAE = 4 × 15 ÷ 10 = 6",
           "formula": "produit en croix : AE = AD × AC ÷ AB"
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Contrôle ton résultat : le petit triangle est plus petit. Si tu trouves une longueur du petit plus grande que celle du grand, tu as inversé un rapport."
         }
@@ -261,10 +323,19 @@
           "hint": "Compare les deux longueurs : D est-il bien entre A et B ?",
           "explanation": "C'est impossible : D est sur le segment [AB], donc AD ne peut pas dépasser AB. L'énoncé contient une erreur, ou les points ne sont pas placés comme on le croit.",
           "options": [
-            { "text": "L'énoncé est impossible", "correct": true },
-            { "text": "Le rapport vaut 1,5" },
-            { "text": "Le petit triangle est plus grand" },
-            { "text": "Les droites ne sont pas parallèles" }
+            {
+              "text": "L'énoncé est impossible",
+              "correct": true
+            },
+            {
+              "text": "Le rapport vaut 1,5"
+            },
+            {
+              "text": "Le petit triangle est plus grand"
+            },
+            {
+              "text": "Les droites ne sont pas parallèles"
+            }
           ]
         }
       ]
@@ -279,6 +350,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Reconnaître la configuration",
+          "body": "Déplace la parallèle jusqu’aux cas extrêmes. Thalès ne s’applique que si les droites sont bien parallèles : le défi commence par cette vérification.",
+          "figureId": "thales"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions qui mélangent les trois leçons."
@@ -301,8 +379,20 @@
           "prompt": "Complète ce raisonnement.",
           "template": "AD/AB = 6/15 = ___ , donc DE = ___ × BC.",
           "blanks": [
-            { "accepted": ["0,4", "0.4", "2/5"] },
-            { "accepted": ["0,4", "0.4", "2/5"] }
+            {
+              "accepted": [
+                "0,4",
+                "0.4",
+                "2/5"
+              ]
+            },
+            {
+              "accepted": [
+                "0,4",
+                "0.4",
+                "2/5"
+              ]
+            }
           ],
           "hint": "6 divisé par 15.",
           "explanation": "6/15 = 0,4. Ce rapport vaut pour les trois fractions, donc DE = 0,4 × BC."
@@ -319,12 +409,27 @@
           "kind": "tri",
           "prompt": "Range ces situations selon qu'on peut ou non appliquer le théorème.",
           "explanation": "Le théorème exige un sommet commun, deux droites sécantes issues de ce sommet, et deux parallèles qui les coupent. Deux droites perpendiculaires ou un quadrilatère quelconque ne suffisent pas.",
-          "categories": ["Thalès s'applique", "Thalès ne s'applique pas"],
+          "categories": [
+            "Thalès s'applique",
+            "Thalès ne s'applique pas"
+          ],
           "items": [
-            { "text": "Un triangle coupé par une parallèle à un côté", "category": 0 },
-            { "text": "Deux droites sécantes coupées par deux parallèles", "category": 0 },
-            { "text": "Un triangle coupé par une perpendiculaire", "category": 1 },
-            { "text": "Un quadrilatère sans côtés parallèles", "category": 1 }
+            {
+              "text": "Un triangle coupé par une parallèle à un côté",
+              "category": 0
+            },
+            {
+              "text": "Deux droites sécantes coupées par deux parallèles",
+              "category": 0
+            },
+            {
+              "text": "Un triangle coupé par une perpendiculaire",
+              "category": 1
+            },
+            {
+              "text": "Un quadrilatère sans côtés parallèles",
+              "category": 1
+            }
           ]
         },
         {
@@ -334,10 +439,19 @@
           "hint": "Une aire dépend de deux longueurs, pas d'une.",
           "explanation": "Par 16. Quand les longueurs sont divisées par 4, les aires le sont par 4 × 4 = 16. C'est l'erreur la plus fréquente du chapitre.",
           "options": [
-            { "text": "16", "correct": true },
-            { "text": "4" },
-            { "text": "8" },
-            { "text": "0,25" }
+            {
+              "text": "16",
+              "correct": true
+            },
+            {
+              "text": "4"
+            },
+            {
+              "text": "8"
+            },
+            {
+              "text": "0,25"
+            }
           ]
         },
         {

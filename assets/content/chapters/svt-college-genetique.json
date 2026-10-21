@@ -11,29 +11,36 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Où l’information est écrite",
+          "body": "Change une base de la séquence et regarde la protéine changer avec elle. L’information génétique est un texte — et c’est l’ordre des lettres qui dit tout.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Trois emboîtements",
           "body": "Chaque cellule a un noyau. Le noyau contient des chromosomes. Un chromosome est une longue molécule d'ADN, et un gène en est un morceau."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Quarante-six, par paires",
           "body": "Les cellules humaines portent 46 chromosomes, soit 23 paires. Dans chaque paire, un chromosome vient du père et l'autre de la mère."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Deux versions d'un même gène",
           "body": "Un gène occupe la même place sur les deux chromosomes d'une paire, mais les deux exemplaires peuvent différer. Ces versions s'appellent des allèles."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Ne confonds pas gène et allèle. Le gène est l'emplacement et la fonction ; l'allèle est la version précise qu'on y trouve."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "Les emboîtements",
           "bullets": [
@@ -72,9 +79,18 @@
           "prompt": "Associe chaque mot à sa définition.",
           "explanation": "Le chromosome porte les gènes, le gène occupe une place précise, l'allèle est la version qu'on y trouve.",
           "pairs": [
-            { "left": "Chromosome", "right": "Une longue molécule d'ADN portant de nombreux gènes" },
-            { "left": "Gène", "right": "Un morceau d'ADN responsable d'un caractère" },
-            { "left": "Allèle", "right": "Une version possible d'un gène" }
+            {
+              "left": "Chromosome",
+              "right": "Une longue molécule d'ADN portant de nombreux gènes"
+            },
+            {
+              "left": "Gène",
+              "right": "Un morceau d'ADN responsable d'un caractère"
+            },
+            {
+              "left": "Allèle",
+              "right": "Une version possible d'un gène"
+            }
           ]
         },
         {
@@ -138,10 +154,19 @@
           "explanation": "Jaune. L'allèle dominant J s'exprime dès qu'il est présent ; le v reste masqué, mais il est bien là et sera transmis.",
           "figureId": "croisement",
           "options": [
-            { "text": "Jaune", "correct": true },
-            { "text": "Verte" },
-            { "text": "Mi-jaune mi-verte" },
-            { "text": "On ne peut pas savoir" }
+            {
+              "text": "Jaune",
+              "correct": true
+            },
+            {
+              "text": "Verte"
+            },
+            {
+              "text": "Mi-jaune mi-verte"
+            },
+            {
+              "text": "On ne peut pas savoir"
+            }
           ]
         },
         {
@@ -150,12 +175,27 @@
           "prompt": "Range ces combinaisons d'allèles selon la couleur de la graine.",
           "hint": "Le vert ne sort qu'en double.",
           "explanation": "JJ et Jv donnent du jaune, puisque J suffit à s'exprimer. Seule la combinaison vv donne du vert.",
-          "categories": ["Graine jaune", "Graine verte"],
+          "categories": [
+            "Graine jaune",
+            "Graine verte"
+          ],
           "items": [
-            { "text": "JJ", "category": 0 },
-            { "text": "Jv", "category": 0 },
-            { "text": "vJ", "category": 0 },
-            { "text": "vv", "category": 1 }
+            {
+              "text": "JJ",
+              "category": 0
+            },
+            {
+              "text": "Jv",
+              "category": 0
+            },
+            {
+              "text": "vJ",
+              "category": 0
+            },
+            {
+              "text": "vv",
+              "category": 1
+            }
           ]
         },
         {
@@ -240,10 +280,19 @@
           "explanation": "Toutes jaunes. Chaque enfant est Jv : il reçoit forcément le J du premier parent et le v du second, et le J l'emporte.",
           "figureId": "croisement",
           "options": [
-            { "text": "Toutes jaunes", "correct": true },
-            { "text": "Toutes vertes" },
-            { "text": "La moitié de chaque" },
-            { "text": "Trois jaunes pour une verte" }
+            {
+              "text": "Toutes jaunes",
+              "correct": true
+            },
+            {
+              "text": "Toutes vertes"
+            },
+            {
+              "text": "La moitié de chaque"
+            },
+            {
+              "text": "Trois jaunes pour une verte"
+            }
           ]
         },
         {
@@ -252,8 +301,19 @@
           "prompt": "Complète ce bilan.",
           "template": "Une cellule reproductrice porte ___ allèle de chaque gène. Après la fécondation, l'enfant en porte ___ .",
           "blanks": [
-            { "accepted": ["1", "un", "un seul"] },
-            { "accepted": ["2", "deux"] }
+            {
+              "accepted": [
+                "1",
+                "un",
+                "un seul"
+              ]
+            },
+            {
+              "accepted": [
+                "2",
+                "deux"
+              ]
+            }
           ],
           "hint": "Un de chaque parent.",
           "explanation": "Un seul dans la cellule reproductrice, deux après la fécondation : un du père, un de la mère."
@@ -270,6 +330,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux parents, quatre possibilités",
+          "body": "Choisis les versions portées par chaque parent et regarde les descendants possibles. Les proportions du défi sortent de ce tableau, et de rien d’autre.",
+          "figureId": "croisement"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense à distinguer ce qu'on voit de ce qui est porté."
@@ -290,12 +357,27 @@
           "kind": "tri",
           "prompt": "Range ces affirmations selon qu'elles sont exactes ou non.",
           "explanation": "Un allèle est bien une version d'un gène, et un récessif peut rester caché. En revanche le dominant n'est pas le plus fréquent, et deux parents jaunes peuvent donner du vert.",
-          "categories": ["Exact", "Faux"],
+          "categories": [
+            "Exact",
+            "Faux"
+          ],
           "items": [
-            { "text": "Un allèle est une version d'un gène", "category": 0 },
-            { "text": "Un allèle récessif peut rester invisible", "category": 0 },
-            { "text": "L'allèle dominant est toujours le plus fréquent", "category": 1 },
-            { "text": "Deux parents jaunes donnent toujours du jaune", "category": 1 }
+            {
+              "text": "Un allèle est une version d'un gène",
+              "category": 0
+            },
+            {
+              "text": "Un allèle récessif peut rester invisible",
+              "category": 0
+            },
+            {
+              "text": "L'allèle dominant est toujours le plus fréquent",
+              "category": 1
+            },
+            {
+              "text": "Deux parents jaunes donnent toujours du jaune",
+              "category": 1
+            }
           ]
         },
         {
@@ -313,10 +395,19 @@
           "explanation": "Jv croisé avec vv : les quatre combinaisons sont Jv, Jv, vv, vv, soit la moitié de vertes. Deux Jv n'en donneraient qu'un quart.",
           "figureId": "croisement",
           "options": [
-            { "text": "Jv et vv", "correct": true },
-            { "text": "Jv et Jv" },
-            { "text": "JJ et vv" },
-            { "text": "JJ et Jv" }
+            {
+              "text": "Jv et vv",
+              "correct": true
+            },
+            {
+              "text": "Jv et Jv"
+            },
+            {
+              "text": "JJ et vv"
+            },
+            {
+              "text": "JJ et Jv"
+            }
           ]
         },
         {
@@ -325,9 +416,18 @@
           "prompt": "Associe chaque combinaison à ce qu'elle produit.",
           "explanation": "Deux dominants donnent toujours le caractère dominant ; un de chaque aussi, mais en portant le récessif ; deux récessifs le font apparaître.",
           "pairs": [
-            { "left": "JJ", "right": "Jaune, ne transmet que du J" },
-            { "left": "Jv", "right": "Jaune, mais porte le v" },
-            { "left": "vv", "right": "Verte" }
+            {
+              "left": "JJ",
+              "right": "Jaune, ne transmet que du J"
+            },
+            {
+              "left": "Jv",
+              "right": "Jaune, mais porte le v"
+            },
+            {
+              "left": "vv",
+              "right": "Verte"
+            }
           ]
         },
         {

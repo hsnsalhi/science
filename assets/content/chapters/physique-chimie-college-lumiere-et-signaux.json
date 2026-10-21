@@ -47,14 +47,35 @@
           "kind": "tri",
           "prompt": "Range ces objets selon qu'ils produisent ou renvoient la lumière.",
           "explanation": "Une source primaire produit sa lumière. Une source secondaire ne fait que renvoyer celle qu'elle reçoit — c'est le cas de la Lune.",
-          "categories": ["source primaire", "source secondaire"],
+          "categories": [
+            "source primaire",
+            "source secondaire"
+          ],
           "items": [
-            { "text": "le Soleil", "category": 0 },
-            { "text": "une bougie", "category": 0 },
-            { "text": "une étoile", "category": 0 },
-            { "text": "la Lune", "category": 1 },
-            { "text": "un miroir", "category": 1 },
-            { "text": "une page blanche", "category": 1 }
+            {
+              "text": "le Soleil",
+              "category": 0
+            },
+            {
+              "text": "une bougie",
+              "category": 0
+            },
+            {
+              "text": "une étoile",
+              "category": 0
+            },
+            {
+              "text": "la Lune",
+              "category": 1
+            },
+            {
+              "text": "un miroir",
+              "category": 1
+            },
+            {
+              "text": "une page blanche",
+              "category": 1
+            }
           ]
         },
         {
@@ -63,10 +84,19 @@
           "prompt": "Dans une pièce parfaitement noire, que vois-tu d'un objet blanc ?",
           "explanation": "Rien. Sans lumière à renvoyer, un objet blanc est aussi invisible qu'un objet noir.",
           "options": [
-            { "text": "rien du tout", "correct": true },
-            { "text": "sa silhouette" },
-            { "text": "une lueur blanche" },
-            { "text": "sa couleur, en plus sombre" }
+            {
+              "text": "rien du tout",
+              "correct": true
+            },
+            {
+              "text": "sa silhouette"
+            },
+            {
+              "text": "une lueur blanche"
+            },
+            {
+              "text": "sa couleur, en plus sombre"
+            }
           ]
         },
         {
@@ -83,10 +113,19 @@
           "hint": "Trace les rayons qui frôlent les bords de l'objet.",
           "explanation": "Les rayons qui frôlent l'objet s'écartent davantage quand la source est proche : le cône d'ombre s'évase donc plus vite.",
           "options": [
-            { "text": "les rayons qui frôlent l'objet s'écartent davantage", "correct": true },
-            { "text": "la lampe chauffe l'objet" },
-            { "text": "l'objet devient plus opaque" },
-            { "text": "la lumière ralentit" }
+            {
+              "text": "les rayons qui frôlent l'objet s'écartent davantage",
+              "correct": true
+            },
+            {
+              "text": "la lampe chauffe l'objet"
+            },
+            {
+              "text": "l'objet devient plus opaque"
+            },
+            {
+              "text": "la lumière ralentit"
+            }
           ]
         }
       ]
@@ -101,32 +140,39 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La lumière va droit",
+          "body": "Déplace la lampe et regarde l’ombre suivre instantanément. À notre échelle, la lumière paraît arriver sans délai — il faut des distances astronomiques pour que son retard devienne visible.",
+          "figureId": "ombre-lumiere"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Dans le vide",
           "formula": "c = 300 000 km/s",
           "body": "Sept fois et demie le tour de la Terre en une seconde. C'est la vitesse maximale de l'univers : rien ne va plus vite."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Quelques trajets",
           "body": "De la Lune à nous : 1,3 seconde.\n\nDu Soleil à nous : 8 minutes et 20 secondes.\n\nDe l'étoile la plus proche : 4,2 ans.\n\nRegarder loin, c'est donc regarder dans le passé. Le Soleil que tu vois a émis cette lumière il y a huit minutes."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "L'année-lumière",
           "formula": "1 al = distance parcourue en un an",
           "body": "Environ 9 500 milliards de kilomètres. C'est une unité de distance, pas de temps — le piège du chapitre."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Le son, lui, est lent",
           "body": "340 mètres par seconde dans l'air, soit près d'un million de fois moins vite que la lumière.\n\nD'où l'orage : l'éclair arrive tout de suite, le tonnerre met trois secondes par kilomètre. Compte les secondes, divise par trois, tu as la distance en kilomètres."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "avertissement",
           "title": "Le son a besoin de matière",
           "body": "La lumière traverse le vide. Le son, non : il a besoin d'air, d'eau ou de solide pour se propager, car il est une vibration de la matière.\n\nDans l'espace, aucune explosion ne fait de bruit. C'est une des libertés que prennent tous les films."
@@ -155,10 +201,19 @@
           "prompt": "Qu'est-ce qu'une année-lumière ?",
           "explanation": "Une distance : celle que la lumière parcourt en un an, environ 9 500 milliards de kilomètres. Jamais une durée.",
           "options": [
-            { "text": "une distance", "correct": true },
-            { "text": "une durée" },
-            { "text": "une vitesse" },
-            { "text": "une quantité de lumière" }
+            {
+              "text": "une distance",
+              "correct": true
+            },
+            {
+              "text": "une durée"
+            },
+            {
+              "text": "une vitesse"
+            },
+            {
+              "text": "une quantité de lumière"
+            }
           ]
         },
         {
@@ -187,24 +242,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Capter, traiter, agir",
+          "body": "Règle le seuil : une grandeur est mesurée, comparée, et déclenche une action. Transmettre un signal, c’est faire voyager cette information entre les deux bouts de la chaîne.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Un signal porte une information",
           "body": "Un signal de fumée, un coup de sifflet, un éclair de phare, une impulsion dans un câble : tous transportent un message d'un endroit à un autre.\n\nCe qui compte n'est pas la matière qui voyage, mais ce qu'on a convenu de lui faire dire."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Trois familles",
           "body": "Signal lumineux : phare, feu tricolore, fibre optique. Très rapide, en ligne droite, arrêté par les obstacles.\n\nSignal sonore : sirène, voix, sonar. Lent, mais contourne les obstacles et traverse les murs.\n\nSignal électrique : câble, antenne. Rapide, et guidé là où on veut."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "La fibre optique",
           "body": "Un fil de verre si pur qu'on verrait à travers plusieurs kilomètres de son épaisseur. La lumière y rebondit sur les parois sans en sortir, et suit donc les virages.\n\nC'est ainsi qu'un message traverse un océan en quelques centièmes de seconde — la quasi-totalité du trafic internet mondial passe par des câbles sous-marins, pas par des satellites."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Numérique veut dire compté",
           "body": "Un signal numérique ne prend que deux valeurs : allumé ou éteint, 0 ou 1. Un signal analogique varie continûment, comme la pression de l'air dans une onde sonore.\n\nL'avantage du numérique : un petit bruit n'empêche pas de distinguer 0 de 1, donc la copie reste parfaite. C'est pourquoi un fichier recopié mille fois ne se dégrade pas, contrairement à une cassette."
@@ -217,10 +279,22 @@
           "prompt": "Associe chaque signal à sa nature.",
           "explanation": "La fibre et le phare portent de la lumière, la sirène et le sonar du son, le câble de l'électricité.",
           "pairs": [
-            { "left": "fibre optique", "right": "signal lumineux" },
-            { "left": "sirène", "right": "signal sonore" },
-            { "left": "sonar", "right": "signal sonore" },
-            { "left": "câble réseau", "right": "signal électrique" }
+            {
+              "left": "fibre optique",
+              "right": "signal lumineux"
+            },
+            {
+              "left": "sirène",
+              "right": "signal sonore"
+            },
+            {
+              "left": "sonar",
+              "right": "signal sonore"
+            },
+            {
+              "left": "câble réseau",
+              "right": "signal électrique"
+            }
           ]
         },
         {
@@ -230,10 +304,19 @@
           "hint": "Les deux signaux ne se comportent pas pareil face à un obstacle.",
           "explanation": "Le son contourne les obstacles, la lumière non. C'est pourquoi les avertisseurs sont sonores et non lumineux.",
           "options": [
-            { "text": "le son contourne les obstacles, pas la lumière", "correct": true },
-            { "text": "le son traverse le béton sans perte" },
-            { "text": "la lumière est trop rapide" },
-            { "text": "les sirènes sont très puissantes" }
+            {
+              "text": "le son contourne les obstacles, pas la lumière",
+              "correct": true
+            },
+            {
+              "text": "le son traverse le béton sans perte"
+            },
+            {
+              "text": "la lumière est trop rapide"
+            },
+            {
+              "text": "les sirènes sont très puissantes"
+            }
           ]
         },
         {
@@ -249,10 +332,19 @@
           "prompt": "Pourquoi un fichier copié mille fois reste-t-il identique ?",
           "explanation": "Parce qu'il est numérique : un petit bruit n'empêche pas de distinguer 0 de 1, donc chaque copie est exacte. Un signal analogique, lui, se dégrade à chaque reprise.",
           "options": [
-            { "text": "parce qu'un 0 reste un 0 malgré le bruit", "correct": true },
-            { "text": "parce que les copies sont vérifiées à l'œil" },
-            { "text": "parce que les fichiers sont petits" },
-            { "text": "parce que l'ordinateur ne fait jamais d'erreur" }
+            {
+              "text": "parce qu'un 0 reste un 0 malgré le bruit",
+              "correct": true
+            },
+            {
+              "text": "parce que les copies sont vérifiées à l'œil"
+            },
+            {
+              "text": "parce que les fichiers sont petits"
+            },
+            {
+              "text": "parce que l'ordinateur ne fait jamais d'erreur"
+            }
           ]
         },
         {
@@ -275,6 +367,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Regarder loin, c’est regarder avant",
+          "body": "Observe les distances du Système solaire à l’échelle. La lumière de Neptune met quatre heures à nous parvenir : on ne la voit jamais où elle est, mais où elle était.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le ciel est une machine à remonter le temps",
           "body": "La lumière met du temps à arriver. Donc tu ne vois jamais les choses telles qu'elles sont maintenant, mais telles qu'elles étaient quand la lumière est partie.\n\nPour un objet dans la pièce, c'est quelques milliardièmes de seconde — autant dire maintenant. Pour le Soleil, huit minutes. Pour l'étoile Proxima, quatre ans. Pour la galaxie d'Andromède, deux millions et demi d'années : tu la vois telle qu'elle était avant l'apparition de l'humanité.\n\nSi le Soleil s'éteignait à l'instant, nous continuerions à le voir briller pendant huit minutes."
@@ -295,10 +394,19 @@
           "prompt": "Tu observes une étoile à 100 années-lumière. Quand sa lumière est-elle partie ?",
           "explanation": "Il y a 100 ans. Une année-lumière étant la distance parcourue en un an, 100 al correspondent à 100 ans de trajet.",
           "options": [
-            { "text": "il y a 100 ans", "correct": true },
-            { "text": "il y a 100 jours" },
-            { "text": "à l'instant" },
-            { "text": "impossible à savoir" }
+            {
+              "text": "il y a 100 ans",
+              "correct": true
+            },
+            {
+              "text": "il y a 100 jours"
+            },
+            {
+              "text": "à l'instant"
+            },
+            {
+              "text": "impossible à savoir"
+            }
           ]
         },
         {

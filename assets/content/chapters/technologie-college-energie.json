@@ -147,25 +147,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les rendements se multiplient",
+          "body": "Touche chaque étage et regarde le rendement global descendre. Quatre maillons à 80 % ne donnent pas 80 % mais 41 % : c’est un produit, pas une moyenne.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La règle de la chaîne",
           "formula": "rendement total = r₁ × r₂ × r₃ × …",
           "body": "Les rendements ne s'additionnent pas et ne se moyennent pas : ils se multiplient. Trois maillons à 0,9 donnent 0,9 × 0,9 × 0,9 = 0,73, et non 0,9."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Pourquoi les longues chaînes sont coûteuses",
           "body": "Chaque maillon ne retire qu'un peu, et pourtant le total s'effondre.\n\nUne chaîne de cinq maillons à 0,9 chacun donne 0,59 : on a perdu plus de 40 % alors qu'aucun maillon n'était mauvais.\n\nC'est la raison technique pour laquelle on cherche à raccourcir les chaînes plutôt qu'à améliorer un maillon. Supprimer une conversion gagne plus que perfectionner celle qui reste."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Du charbon à la roue",
           "body": "Centrale thermique : 0,40. Réseau électrique : 0,95. Chargeur : 0,90. Batterie : 0,95. Moteur électrique : 0,90.\n\nProduit : 0,40 × 0,95 × 0,90 × 0,95 × 0,90 ≈ 0,29.\n\nSur cent unités d'énergie du charbon, vingt-neuf arrivent à la roue. Et le maillon le plus coûteux est le premier, de loin : il retire à lui seul 60 % du total, là où les quatre autres réunis n'en retirent que 27 %."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Chercher le maillon faible",
           "body": "Un maillon de rendement r ne peut jamais rapporter plus qu'un facteur 1 ÷ r, puisqu'il ne peut pas dépasser 1.\n\nUn maillon à 0,95 a donc au mieux 5 % à donner. Un maillon à 0,99, au mieux 1 %. Un maillon à 0,40, jusqu'à 150 %.\n\nToute la marge est dans le maillon faible, et cette borne se calcule avant d'avoir engagé le moindre travail. C'est elle qui dit où chercher."
@@ -264,19 +271,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un débit n’est pas une quantité",
+          "body": "Lis la puissance à chaque étage. Le watt dit à quelle cadence l’énergie passe ; le wattheure dit combien il en est passé en tout. Les confondre est l’erreur la plus répandue.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "avertissement",
           "title": "Le watt n'est pas le wattheure",
           "body": "Le watt est une puissance : un débit d'énergie, à un instant donné.\n\nLe wattheure est une énergie : une quantité, accumulée dans le temps.\n\nUn appareil de 2 000 W allumé pendant une demi-heure consomme 1 000 Wh, soit 1 kWh. Une ampoule de 10 W allumée cent heures consomme la même chose.\n\nConfondre les deux rend tout calcul de consommation impossible, et c'est la confusion la plus répandue sur le sujet."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La relation",
           "formula": "énergie (Wh) = puissance (W) × durée (h)",
           "body": "Et inversement : la durée de fonctionnement d'une batterie vaut sa capacité en wattheures divisée par la puissance consommée."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Les milliampèreheures des batteries",
           "body": "Une batterie de téléphone est annoncée en milliampèreheures, par exemple 4 000 mAh. Ce chiffre ne dit rien à lui seul : il faut la tension.\n\nÀ 3,7 volts, 4 000 mAh font 4 × 3,7 = 14,8 wattheures.\n\nComparer deux batteries par leurs mAh seuls n'a donc de sens que si elles ont la même tension — ce qui est souvent le cas entre téléphones, et presque jamais entre un téléphone et un ordinateur."
@@ -368,6 +382,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Chercher le maillon faible",
+          "body": "Touche les étages un par un et repère celui qui perd le plus. Améliorer un maillon déjà bon ne change presque rien ; améliorer le pire change tout, et c’est le calcul du défi.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le rendement d'une ampoule",
           "body": "Une ampoule à filament convertit environ 5 % de l'électricité reçue en lumière. Les 95 % restants partent en chaleur.\n\nUne LED en convertit environ 40 %. C'est huit fois mieux, et c'est pour cette raison que les ampoules à filament ont été retirées du marché.\n\nUn détail amusant, et qui se calcule : en hiver, dans une pièce chauffée à l'électricité, la chaleur de l'ampoule à filament n'est pas perdue — elle remplace exactement autant de chauffage. L'argument tombe dès qu'on chauffe autrement, ou qu'on est en été et qu'on climatise : là, chaque watt de chaleur se paie deux fois."

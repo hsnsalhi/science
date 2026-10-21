@@ -63,10 +63,19 @@
           "explanation": "Quatre. À chaque tour, le robot trace un côté puis pivote d'un quart de tour ; après quatre quarts de tour il a fait un tour complet et revient à son point de départ.",
           "figureId": "boucle-robot",
           "options": [
-            { "text": "4", "correct": true },
-            { "text": "3" },
-            { "text": "5" },
-            { "text": "8" }
+            {
+              "text": "4",
+              "correct": true
+            },
+            {
+              "text": "3"
+            },
+            {
+              "text": "5"
+            },
+            {
+              "text": "8"
+            }
           ]
         },
         {
@@ -82,12 +91,27 @@
           "prompt": "Range ces tâches selon qu'une boucle est utile ou non.",
           "hint": "Une boucle sert quand la même chose revient.",
           "explanation": "Dessiner dix carrés identiques ou saluer trente élèves, c'est la même action répétée : la boucle s'impose. Allumer la lumière une fois, ou calculer une seule somme, ne se répète pas.",
-          "categories": ["Une boucle est utile", "Une boucle est inutile"],
+          "categories": [
+            "Une boucle est utile",
+            "Une boucle est inutile"
+          ],
           "items": [
-            { "text": "Dessiner dix carrés identiques", "category": 0 },
-            { "text": "Saluer les trente élèves", "category": 0 },
-            { "text": "Allumer la lumière", "category": 1 },
-            { "text": "Calculer une seule somme", "category": 1 }
+            {
+              "text": "Dessiner dix carrés identiques",
+              "category": 0
+            },
+            {
+              "text": "Saluer les trente élèves",
+              "category": 0
+            },
+            {
+              "text": "Allumer la lumière",
+              "category": 1
+            },
+            {
+              "text": "Calculer une seule somme",
+              "category": 1
+            }
           ]
         }
       ]
@@ -102,30 +126,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Vrai ou faux, rien d’autre",
+          "body": "Touche A et B pour parcourir les quatre cas, et regarde les résultats changer. Une condition ne connaît que deux réponses, et c’est elle qui choisit la branche.",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Si… alors… sinon",
           "formula": "si (condition) alors A sinon B",
           "body": "la machine évalue la condition, puis fait A ou B — jamais les deux."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Un exemple",
           "body": "si (le mur est devant) alors\n    tourner à droite\nsinon\n    avancer\n\nÀ chaque passage, une seule des deux branches est exécutée."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Le « sinon » est facultatif",
           "body": "On peut écrire « si (condition) alors A » sans suite. Quand la condition est fausse, il ne se passe simplement rien."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Une condition est une question dont la réponse est vrai ou faux. « Le mur est devant » en est une ; « avancer » n'en est pas une."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "La condition",
           "bullets": [
@@ -142,12 +173,27 @@
           "prompt": "Range ces phrases selon qu'elles peuvent servir de condition.",
           "hint": "Une condition se répond par vrai ou faux.",
           "explanation": "« Le score dépasse 10 » et « la case est vide » se répondent par vrai ou faux : ce sont des conditions. « Avancer » et « ajouter 1 au score » sont des actions.",
-          "categories": ["C'est une condition", "C'est une action"],
+          "categories": [
+            "C'est une condition",
+            "C'est une action"
+          ],
           "items": [
-            { "text": "Le score dépasse 10", "category": 0 },
-            { "text": "La case est vide", "category": 0 },
-            { "text": "Avancer de 3", "category": 1 },
-            { "text": "Ajouter 1 au score", "category": 1 }
+            {
+              "text": "Le score dépasse 10",
+              "category": 0
+            },
+            {
+              "text": "La case est vide",
+              "category": 0
+            },
+            {
+              "text": "Avancer de 3",
+              "category": 1
+            },
+            {
+              "text": "Ajouter 1 au score",
+              "category": 1
+            }
           ]
         },
         {
@@ -157,10 +203,19 @@
           "hint": "5 est-il strictement supérieur à 5 ?",
           "explanation": "B s'affiche. La condition x > 5 est fausse pour x = 5, puisque l'inégalité est stricte. C'est le piège classique du cas limite.",
           "options": [
-            { "text": "B s'affiche", "correct": true },
-            { "text": "A s'affiche" },
-            { "text": "Les deux s'affichent" },
-            { "text": "Rien ne s'affiche" }
+            {
+              "text": "B s'affiche",
+              "correct": true
+            },
+            {
+              "text": "A s'affiche"
+            },
+            {
+              "text": "Les deux s'affichent"
+            },
+            {
+              "text": "Rien ne s'affiche"
+            }
           ]
         },
         {
@@ -195,18 +250,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une condition dans une boucle",
+          "body": "Règle les tours et exécute. À chaque passage, le programme refait les mêmes vérifications — c’est ce qui permet de compter, de chercher, et de s’arrêter au bon moment.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Une condition dans une boucle",
           "body": "répéter 10 fois\n    si (la case est vide) alors\n        avancer\n    sinon\n        tourner à droite\n\nÀ chaque tour, la condition est réévaluée : la réponse peut changer d'un tour à l'autre."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Compter avec une variable",
           "body": "score <- 0\nrépéter 5 fois\n    score <- score + 2\n\nÀ la fin, score vaut 10. La flèche signifie « reçoit la valeur »."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "Pour prévoir ce que fait un programme, déroule-le à la main sur deux ou trois tours. C'est plus sûr que de le deviner d'un coup d'œil."
         }
@@ -236,8 +298,18 @@
           "prompt": "Complète ce programme pour qu'il affiche « gagné » à partir de 10 points.",
           "template": "si (score ___ 10) alors afficher « gagné » ___ afficher « perdu »",
           "blanks": [
-            { "accepted": [">=", "≥", "supérieur ou égal à"] },
-            { "accepted": ["sinon"] }
+            {
+              "accepted": [
+                ">=",
+                "≥",
+                "supérieur ou égal à"
+              ]
+            },
+            {
+              "accepted": [
+                "sinon"
+              ]
+            }
           ],
           "hint": "« À partir de 10 » inclut 10.",
           "explanation": "score ≥ 10, parce que « à partir de 10 » comprend 10 lui-même. Avec « > 10 », un score de 10 pile serait perdant."
@@ -249,10 +321,19 @@
           "hint": "La condition est vraie à chaque passage.",
           "explanation": "Trois fois. La condition est réévaluée à chaque tour et reste vraie, donc la branche est prise à chaque fois.",
           "options": [
-            { "text": "3", "correct": true },
-            { "text": "1" },
-            { "text": "0" },
-            { "text": "9" }
+            {
+              "text": "3",
+              "correct": true
+            },
+            {
+              "text": "1"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "9"
+            }
           ]
         }
       ]
@@ -267,6 +348,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Composer deux conditions",
+          "body": "Compare « A et B » à « A ou B » sur les quatre cas. Les deux ne sont vraies ensemble que dans un seul, et c’est là que les programmes se trompent le plus souvent.",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chacune, déroule le programme sur deux tours avant de répondre."
@@ -290,10 +378,19 @@
           "explanation": "Un carré de 3 cases de côté. Quatre côtés égaux séparés par quatre quarts de tour referment le chemin.",
           "figureId": "boucle-robot",
           "options": [
-            { "text": "Un carré", "correct": true },
-            { "text": "Un triangle" },
-            { "text": "Une ligne droite" },
-            { "text": "Un cercle" }
+            {
+              "text": "Un carré",
+              "correct": true
+            },
+            {
+              "text": "Un triangle"
+            },
+            {
+              "text": "Une ligne droite"
+            },
+            {
+              "text": "Un cercle"
+            }
           ]
         },
         {
@@ -301,12 +398,27 @@
           "kind": "tri",
           "prompt": "Range ces éléments de programme.",
           "explanation": "« répéter 5 fois » et « tant que la case est vide » commandent des répétitions. « si le score dépasse 10 » et « si la case est rouge » commandent un choix.",
-          "categories": ["Répétition", "Choix"],
+          "categories": [
+            "Répétition",
+            "Choix"
+          ],
           "items": [
-            { "text": "répéter 5 fois", "category": 0 },
-            { "text": "tant que la case est vide", "category": 0 },
-            { "text": "si le score dépasse 10", "category": 1 },
-            { "text": "si la case est rouge", "category": 1 }
+            {
+              "text": "répéter 5 fois",
+              "category": 0
+            },
+            {
+              "text": "tant que la case est vide",
+              "category": 0
+            },
+            {
+              "text": "si le score dépasse 10",
+              "category": 1
+            },
+            {
+              "text": "si la case est rouge",
+              "category": 1
+            }
           ]
         },
         {
@@ -322,9 +434,18 @@
           "prompt": "Associe chaque mot à son rôle.",
           "explanation": "La boucle répète, la condition choisit, la variable retient une valeur, l'instruction est l'action élémentaire.",
           "pairs": [
-            { "left": "Boucle", "right": "Répète un bloc d'instructions" },
-            { "left": "Condition", "right": "Choisit entre deux chemins" },
-            { "left": "Variable", "right": "Retient une valeur qui peut changer" }
+            {
+              "left": "Boucle",
+              "right": "Répète un bloc d'instructions"
+            },
+            {
+              "left": "Condition",
+              "right": "Choisit entre deux chemins"
+            },
+            {
+              "left": "Variable",
+              "right": "Retient une valeur qui peut changer"
+            }
           ]
         },
         {

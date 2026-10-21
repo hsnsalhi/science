@@ -86,12 +86,27 @@
           "prompt": "Range ces faits selon qu'ils prouvent ou non la rotondité de la Terre.",
           "hint": "Demande-toi si le fait s'expliquerait aussi sur une Terre plate.",
           "explanation": "La coque qui disparaît avant les voiles et l'ombre toujours circulaire ne s'expliquent que sur une sphère. Un horizon qui paraît plat et un sol plat sous nos pieds s'expliqueraient dans les deux cas : la Terre est simplement très grande devant nous.",
-          "categories": ["Prouve la rotondité", "Ne prouve rien"],
+          "categories": [
+            "Prouve la rotondité",
+            "Ne prouve rien"
+          ],
           "items": [
-            { "text": "La coque du navire disparaît avant les voiles", "category": 0 },
-            { "text": "L'ombre sur la Lune est toujours un arc de cercle", "category": 0 },
-            { "text": "L'horizon paraît plat", "category": 1 },
-            { "text": "Le sol est plat sous nos pieds", "category": 1 }
+            {
+              "text": "La coque du navire disparaît avant les voiles",
+              "category": 0
+            },
+            {
+              "text": "L'ombre sur la Lune est toujours un arc de cercle",
+              "category": 0
+            },
+            {
+              "text": "L'horizon paraît plat",
+              "category": 1
+            },
+            {
+              "text": "Le sol est plat sous nos pieds",
+              "category": 1
+            }
           ]
         }
       ]
@@ -155,10 +170,19 @@
           "explanation": "C'est le recul apparent d'une planète dans le ciel pendant quelques semaines. Elle ne fait pas demi-tour sur son orbite : c'est la Terre qui la dépasse.",
           "figureId": "retrogradation",
           "options": [
-            { "text": "Elle semble reculer dans le ciel pendant quelques semaines", "correct": true },
-            { "text": "Elle s'éloigne définitivement du Soleil" },
-            { "text": "Elle cesse de tourner autour du Soleil" },
-            { "text": "Elle disparaît derrière le Soleil" }
+            {
+              "text": "Elle semble reculer dans le ciel pendant quelques semaines",
+              "correct": true
+            },
+            {
+              "text": "Elle s'éloigne définitivement du Soleil"
+            },
+            {
+              "text": "Elle cesse de tourner autour du Soleil"
+            },
+            {
+              "text": "Elle disparaît derrière le Soleil"
+            }
           ]
         },
         {
@@ -175,10 +199,19 @@
           "hint": "Pense à un arbre proche devant un paysage lointain.",
           "explanation": "Parce qu'un observateur qui se déplace devrait voir les objets proches bouger devant les lointains. On ne voyait rien : les étoiles sont bien plus loin qu'on ne l'imaginait, et ce minuscule déplacement n'a été mesuré qu'en 1838.",
           "options": [
-            { "text": "Un observateur qui se déplace devrait voir les étoiles proches bouger", "correct": true },
-            { "text": "Les étoiles auraient dû s'éteindre" },
-            { "text": "Les étoiles auraient dû tomber" },
-            { "text": "On aurait dû sentir le vent du mouvement" }
+            {
+              "text": "Un observateur qui se déplace devrait voir les étoiles proches bouger",
+              "correct": true
+            },
+            {
+              "text": "Les étoiles auraient dû s'éteindre"
+            },
+            {
+              "text": "Les étoiles auraient dû tomber"
+            },
+            {
+              "text": "On aurait dû sentir le vent du mouvement"
+            }
           ]
         },
         {
@@ -255,10 +288,19 @@
           "explanation": "Parce que la Terre, plus proche du Soleil et plus rapide, dépasse Mars par l'intérieur. Pendant le dépassement, Mars paraît revenir en arrière — exactement comme une voiture doublée.",
           "figureId": "retrogradation",
           "options": [
-            { "text": "La Terre la dépasse sur son orbite intérieure", "correct": true },
-            { "text": "Mars fait demi-tour sur son orbite" },
-            { "text": "Mars tourne autour de la Terre" },
-            { "text": "Mars ralentit puis s'arrête réellement" }
+            {
+              "text": "La Terre la dépasse sur son orbite intérieure",
+              "correct": true
+            },
+            {
+              "text": "Mars fait demi-tour sur son orbite"
+            },
+            {
+              "text": "Mars tourne autour de la Terre"
+            },
+            {
+              "text": "Mars ralentit puis s'arrête réellement"
+            }
           ]
         },
         {
@@ -267,10 +309,22 @@
           "prompt": "Associe chaque savant à son apport.",
           "explanation": "Ératosthène mesure la Terre, Ptolémée installe le géocentrisme pour quatorze siècles, Copernic met le Soleil au centre, Kepler remplace les cercles par des ellipses.",
           "pairs": [
-            { "left": "Ératosthène", "right": "Mesure le tour de la Terre" },
-            { "left": "Ptolémée", "right": "Modèle géocentrique à épicycles" },
-            { "left": "Copernic", "right": "Place le Soleil au centre" },
-            { "left": "Kepler", "right": "Remplace les cercles par des ellipses" }
+            {
+              "left": "Ératosthène",
+              "right": "Mesure le tour de la Terre"
+            },
+            {
+              "left": "Ptolémée",
+              "right": "Modèle géocentrique à épicycles"
+            },
+            {
+              "left": "Copernic",
+              "right": "Place le Soleil au centre"
+            },
+            {
+              "left": "Kepler",
+              "right": "Remplace les cercles par des ellipses"
+            }
           ]
         },
         {
@@ -302,6 +356,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La boucle que le géocentrisme n’expliquait pas",
+          "body": "Suis Mars sur plusieurs mois : elle avance, recule, puis repart. Il a fallu empiler des cercles pour la sauver — ou bien mettre le Soleil au centre, et tout devenir simple.",
+          "figureId": "retrogradation"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chacune, demande-toi ce qui a été observé, et ce qui en a été déduit."
@@ -324,12 +385,27 @@
           "kind": "tri",
           "prompt": "Range ces énoncés.",
           "explanation": "Le recul de Mars dans le ciel et les phases de Vénus se voient : ce sont des observations. Les épicycles et le Soleil au centre sont des modèles construits pour rendre compte de ce qu'on voit.",
-          "categories": ["Observation", "Modèle"],
+          "categories": [
+            "Observation",
+            "Modèle"
+          ],
           "items": [
-            { "text": "Mars recule dans le ciel", "category": 0 },
-            { "text": "Vénus montre toutes les phases", "category": 0 },
-            { "text": "Les planètes tournent sur des épicycles", "category": 1 },
-            { "text": "Le Soleil est au centre", "category": 1 }
+            {
+              "text": "Mars recule dans le ciel",
+              "category": 0
+            },
+            {
+              "text": "Vénus montre toutes les phases",
+              "category": 0
+            },
+            {
+              "text": "Les planètes tournent sur des épicycles",
+              "category": 1
+            },
+            {
+              "text": "Le Soleil est au centre",
+              "category": 1
+            }
           ]
         },
         {
@@ -339,10 +415,19 @@
           "hint": "Que tournent-elles autour de quoi ?",
           "explanation": "Que tout ne tourne pas autour de la Terre : voilà au moins quatre objets qui tournent autour d'autre chose. Cela ne prouvait pas l'héliocentrisme, mais cela ruinait un principe du géocentrisme.",
           "options": [
-            { "text": "Que tout ne tourne pas autour de la Terre", "correct": true },
-            { "text": "Que Jupiter tourne autour de la Terre" },
-            { "text": "Que la Terre est ronde" },
-            { "text": "Que le Soleil est immobile" }
+            {
+              "text": "Que tout ne tourne pas autour de la Terre",
+              "correct": true
+            },
+            {
+              "text": "Que Jupiter tourne autour de la Terre"
+            },
+            {
+              "text": "Que la Terre est ronde"
+            },
+            {
+              "text": "Que le Soleil est immobile"
+            }
           ]
         },
         {
@@ -373,10 +458,19 @@
           "hint": "Plus un objet est loin, moins il semble se déplacer.",
           "explanation": "Parce que les étoiles sont bien plus éloignées qu'on ne l'imaginait : leur déplacement apparent est si petit qu'il a fallu attendre 1838 pour le mesurer.",
           "options": [
-            { "text": "Les étoiles sont bien trop lointaines pour que l'effet soit visible", "correct": true },
-            { "text": "Les étoiles ne se déplacent jamais" },
-            { "text": "Les instruments étaient interdits" },
-            { "text": "Personne n'avait pensé à regarder" }
+            {
+              "text": "Les étoiles sont bien trop lointaines pour que l'effet soit visible",
+              "correct": true
+            },
+            {
+              "text": "Les étoiles ne se déplacent jamais"
+            },
+            {
+              "text": "Les instruments étaient interdits"
+            },
+            {
+              "text": "Personne n'avait pensé à regarder"
+            }
           ]
         }
       ]

@@ -11,31 +11,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une règle, une infinité de cas",
+          "body": "Règle le premier terme et la raison : la même règle produit chaque fois une suite différente. Une lettre, c’est cela — un nombre qu’on n’a pas encore choisi, dans une règle qui, elle, ne change pas.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le même calcul, mille fois",
           "body": "Un carré de côté 4 a pour périmètre 4 × 4. De côté 7, c'est 4 × 7. De côté 12,5, c'est 4 × 12,5.\n\nOn refait le même geste à chaque fois. La lettre sert à l'écrire une seule fois : périmètre = 4 × c."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Une lettre est un nombre qu'on n'a pas encore choisi",
           "formula": "P = 4 × c",
           "body": "c n'est pas un mystère : c'est une case vide. Choisis 7, la formule rend 28."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Remplacer, c'est tout",
           "body": "Pour calculer 3a + 5 quand a = 4 :\n\n1. recopier en laissant un trou : 3 × ___ + 5\n2. poser la valeur : 3 × 4 + 5\n3. calculer en respectant les priorités : 12 + 5 = 17"
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Le signe × disparaît, pas la multiplication",
           "body": "3a veut dire 3 × a. ab veut dire a × b. a² veut dire a × a.\n\nMais 35 ne veut pas dire 3 × 5 : entre deux chiffres, on garde le signe. C'est pour cela qu'on l'efface seulement devant une lettre."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "astuce",
           "body": "Quand une lettre te gêne, remplace-la par un nombre au brouillon. Si le calcul marche avec 2, avec 5 et avec 10, tu es sans doute sur la bonne piste — sans preuve, mais rarement perdu."
         }
@@ -213,30 +220,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le même dessin, lu dans l’autre sens",
+          "body": "Le rectangle coupé en deux se lit de deux façons : une aire totale, ou la somme de deux aires. Développer va dans un sens, factoriser dans l’autre — c’est le même trait.",
+          "figureId": "distributivite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le même égal, dans l'autre sens",
           "body": "Développer va de k(a + b) vers ka + kb. Factoriser revient en arrière.\n\nRien de nouveau à apprendre : c'est la même égalité, lue de droite à gauche. Ce qui change, c'est ce qu'il faut chercher — le facteur commun."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Trouver le facteur commun",
           "body": "Pour factoriser 6x + 9 :\n\n1. regarder ce qui apparaît dans les deux termes : 6 = 3 × 2 et 9 = 3 × 3, donc 3\n2. l'écrire devant la parenthèse : 3( … )\n3. remplir : 6x ÷ 3 = 2x et 9 ÷ 3 = 3\n4. résultat : 3(2x + 3)"
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Quand le facteur est une lettre",
           "body": "x² + 7x = x(x + 7)\n\n5a − a² = a(5 − a)\n\n4y² + 6y = 2y(2y + 3)"
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Vérifier en redéveloppant",
           "body": "Une factorisation se contrôle toute seule : redéveloppe, tu dois retomber sur le départ.\n\n3(2x + 3) = 6x + 9. C'est bien ce qu'on avait. Deux secondes de contrôle contre une erreur recopiée sur six lignes."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "Prendre le plus grand facteur",
           "body": "6x + 9 = 3(2x + 3) est complet. On pourrait écrire 6x + 9 sans facteur commun au-delà de 3, car 2 et 3 n'en ont plus.\n\nEn revanche 4x + 8 = 2(2x + 4) n'est pas terminé : 2x + 4 se factorise encore. La réponse attendue est 4(x + 2)."
@@ -334,6 +348,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une égalité vraie pour tous les nombres",
+          "body": "Déplace le trait : l’égalité tient quelle que soit la position. C’est ce qu’une lettre permet de dire — non pas un cas, mais tous les cas à la fois.",
+          "figureId": "distributivite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À quoi ça sert, vraiment",
           "body": "« La somme de deux nombres impairs est paire. » Tu peux vérifier : 3 + 5 = 8, 7 + 11 = 18, 101 + 203 = 304.\n\nMille exemples ne font pas une preuve — il reste une infinité de cas. Une lettre, si : un impair s'écrit 2n + 1, et la somme de deux impairs vaut 2n + 1 + 2m + 1 = 2(n + m + 1). Un double, donc un nombre pair. Tous les cas, d'un coup."

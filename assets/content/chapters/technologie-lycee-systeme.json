@@ -43,10 +43,19 @@
           "explanation": "Le traitement : il compare la mesure au seuil. Le capteur ne fait que mesurer, l'actionneur ne fait qu'exécuter.",
           "figureId": "chaine-information",
           "options": [
-            { "text": "Le traitement", "correct": true },
-            { "text": "Le capteur" },
-            { "text": "L'actionneur" },
-            { "text": "L'alimentation" }
+            {
+              "text": "Le traitement",
+              "correct": true
+            },
+            {
+              "text": "Le capteur"
+            },
+            {
+              "text": "L'actionneur"
+            },
+            {
+              "text": "L'alimentation"
+            }
           ]
         },
         {
@@ -55,12 +64,27 @@
           "prompt": "Range ces éléments dans la bonne chaîne.",
           "hint": "L'un transporte une information, l'autre de la puissance.",
           "explanation": "Le capteur et le microcontrôleur manipulent de l'information. Le transformateur et le moteur manipulent de l'énergie.",
-          "categories": ["Chaîne d'information", "Chaîne d'énergie"],
+          "categories": [
+            "Chaîne d'information",
+            "Chaîne d'énergie"
+          ],
           "items": [
-            { "text": "un capteur de température", "category": 0 },
-            { "text": "un microcontrôleur", "category": 0 },
-            { "text": "un transformateur", "category": 1 },
-            { "text": "un moteur électrique", "category": 1 }
+            {
+              "text": "un capteur de température",
+              "category": 0
+            },
+            {
+              "text": "un microcontrôleur",
+              "category": 0
+            },
+            {
+              "text": "un transformateur",
+              "category": 1
+            },
+            {
+              "text": "un moteur électrique",
+              "category": 1
+            }
           ]
         },
         {
@@ -150,10 +174,19 @@
           "explanation": "Essentiellement de la chaleur. L'énergie se conserve : ce qui n'arrive pas au bout est dissipé en route.",
           "figureId": "chaine-energie",
           "options": [
-            { "text": "De la chaleur dissipée", "correct": true },
-            { "text": "Ils sont détruits" },
-            { "text": "Ils reviennent à la source" },
-            { "text": "Ils sont stockés dans le système" }
+            {
+              "text": "De la chaleur dissipée",
+              "correct": true
+            },
+            {
+              "text": "Ils sont détruits"
+            },
+            {
+              "text": "Ils reviennent à la source"
+            },
+            {
+              "text": "Ils sont stockés dans le système"
+            }
           ]
         },
         {
@@ -180,25 +213,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le pire maillon domine",
+          "body": "Touche chaque étage et note son rendement. Doubler l’efficacité du meilleur ne gagne presque rien ; la même amélioration sur le pire change le résultat global — et c’est là qu’il faut dépenser.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "exemple",
           "title": "Une chaîne réelle",
           "body": "Alimenter 90 %, distribuer 95 %, convertir 40 %, transmettre 85 %.\n\nLe rendement global vaut 29 %. Le moteur, à 40 %, est de loin le plus mauvais étage."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Deux améliorations possibles",
           "body": "Porter la distribution de 95 % à 100 % — un étage déjà presque parfait — fait passer le global de 29 % à 31 %.\n\nPorter la conversion de 40 % à 80 % le fait passer à 58 %. Le même effort n'a pas le même effet selon l'étage.",
           "figureId": "chaine-energie"
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Pourquoi le pire domine",
           "body": "Le rendement global est inférieur ou égal à celui du plus mauvais étage. Toujours.\n\nAucune amélioration des autres ne peut franchir ce plafond. C'est la raison pour laquelle on commence toujours par identifier le maillon faible."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "La même règle vaut pour la vitesse d'un programme, le débit d'un réseau ou la cadence d'une ligne de production. On l'appelle le goulot d'étranglement."
         }
@@ -234,10 +274,19 @@
           "explanation": "Sur le plus mauvais. Le global ne dépassera jamais son rendement, quoi qu'on fasse ailleurs.",
           "figureId": "chaine-energie",
           "options": [
-            { "text": "Sur celui dont le rendement est le plus faible", "correct": true },
-            { "text": "Sur celui dont le rendement est le plus élevé" },
-            { "text": "Sur le premier de la chaîne" },
-            { "text": "Sur le dernier de la chaîne" }
+            {
+              "text": "Sur celui dont le rendement est le plus faible",
+              "correct": true
+            },
+            {
+              "text": "Sur celui dont le rendement est le plus élevé"
+            },
+            {
+              "text": "Sur le premier de la chaîne"
+            },
+            {
+              "text": "Sur le dernier de la chaîne"
+            }
           ]
         },
         {
@@ -259,6 +308,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les deux chaînes d’un système",
+          "body": "Règle le seuil : la chaîne d’information décide, la chaîne d’énergie exécute. Analyser un système, c’est séparer ces deux-là avant toute chose.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque question, demande-toi d'abord de quelle chaîne il s'agit."
@@ -293,10 +349,22 @@
           "prompt": "Associe chaque composant à sa fonction.",
           "explanation": "Quatre composants, quatre fonctions de la chaîne d'énergie : chacun occupe un étage précis.",
           "pairs": [
-            { "left": "une batterie", "right": "alimenter" },
-            { "left": "un relais", "right": "distribuer" },
-            { "left": "un moteur", "right": "convertir" },
-            { "left": "un engrenage", "right": "transmettre" }
+            {
+              "left": "une batterie",
+              "right": "alimenter"
+            },
+            {
+              "left": "un relais",
+              "right": "distribuer"
+            },
+            {
+              "left": "un moteur",
+              "right": "convertir"
+            },
+            {
+              "left": "un engrenage",
+              "right": "transmettre"
+            }
           ]
         },
         {
@@ -312,12 +380,27 @@
           "prompt": "Range ces grandeurs : information, ou énergie ?",
           "hint": "Qu'est-ce qui se mesure, qu'est-ce qui se consomme ?",
           "explanation": "Une mesure et un ordre sont des informations. Une puissance et un couple sont des grandeurs énergétiques.",
-          "categories": ["Information", "Énergie"],
+          "categories": [
+            "Information",
+            "Énergie"
+          ],
           "items": [
-            { "text": "une température mesurée", "category": 0 },
-            { "text": "un ordre de démarrage", "category": 0 },
-            { "text": "une puissance en watts", "category": 1 },
-            { "text": "un couple en newtons-mètres", "category": 1 }
+            {
+              "text": "une température mesurée",
+              "category": 0
+            },
+            {
+              "text": "un ordre de démarrage",
+              "category": 0
+            },
+            {
+              "text": "une puissance en watts",
+              "category": 1
+            },
+            {
+              "text": "un couple en newtons-mètres",
+              "category": 1
+            }
           ]
         },
         {
@@ -327,10 +410,19 @@
           "hint": "On en parle aussi pour un réseau ou un programme.",
           "explanation": "Le goulot d'étranglement. La notion dépasse largement la technologie : elle vaut pour tout système en série.",
           "options": [
-            { "text": "Le goulot d'étranglement", "correct": true },
-            { "text": "Le point de consigne" },
-            { "text": "L'actionneur" },
-            { "text": "Le rendement nominal" }
+            {
+              "text": "Le goulot d'étranglement",
+              "correct": true
+            },
+            {
+              "text": "Le point de consigne"
+            },
+            {
+              "text": "L'actionneur"
+            },
+            {
+              "text": "Le rendement nominal"
+            }
           ]
         }
       ]

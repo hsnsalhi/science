@@ -43,10 +43,19 @@
           "explanation": "La présence d'un noyau et d'autres compartiments internes. Le procaryote n'en a qu'un.",
           "figureId": "cellule",
           "options": [
-            { "text": "Des compartiments internes, dont un noyau", "correct": true },
-            { "text": "La présence d'ADN" },
-            { "text": "La présence d'une membrane" },
-            { "text": "La taille, uniquement" }
+            {
+              "text": "Des compartiments internes, dont un noyau",
+              "correct": true
+            },
+            {
+              "text": "La présence d'ADN"
+            },
+            {
+              "text": "La présence d'une membrane"
+            },
+            {
+              "text": "La taille, uniquement"
+            }
           ]
         },
         {
@@ -55,12 +64,27 @@
           "prompt": "Range ces constituants : propres aux végétaux, ou communs ?",
           "hint": "Lesquels sont absents d'une cellule animale ?",
           "explanation": "La paroi, la vacuole et les chloroplastes sont propres aux végétaux. Le noyau et les mitochondries sont dans les deux.",
-          "categories": ["Propre aux végétaux", "Commun aux deux"],
+          "categories": [
+            "Propre aux végétaux",
+            "Commun aux deux"
+          ],
           "items": [
-            { "text": "Paroi", "category": 0 },
-            { "text": "Chloroplaste", "category": 0 },
-            { "text": "Noyau", "category": 1 },
-            { "text": "Mitochondrie", "category": 1 }
+            {
+              "text": "Paroi",
+              "category": 0
+            },
+            {
+              "text": "Chloroplaste",
+              "category": 0
+            },
+            {
+              "text": "Noyau",
+              "category": 1
+            },
+            {
+              "text": "Mitochondrie",
+              "category": 1
+            }
           ]
         },
         {
@@ -82,26 +106,33 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une membrane, et tout ce qui la traverse",
+          "body": "Explore la cellule et sa membrane. Tout ce qui entre et sort passe par cette surface, alors que les besoins croissent avec le volume — et c’est ce rapport qui impose une taille maximale.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Le rapport qui décide",
           "formula": "surface / volume = 3 / rayon",
           "body": "pour une sphère. Il diminue quand la cellule grossit."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Ce que cela coûte",
           "body": "Les échanges se font à travers la surface ; les besoins croissent avec le volume.\n\nDoubler le rayon multiplie la surface par 4 et le volume par 8. La cellule a deux fois plus de besoins par unité de surface disponible."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "Le temps de diffusion",
           "formula": "durée = distance² / (2 × D)",
           "body": "avec D voisin de 500 micromètres carrés par seconde pour une petite molécule dans le cytoplasme."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "texte",
           "title": "Les ordres de grandeur",
           "body": "Traverser 10 micromètres : un dixième de seconde.\n\nEn traverser 100 : dix secondes, car la distance intervient au carré.\n\nEn traverser 1 000, soit un millimètre : mille secondes, près de vingt minutes. Aucune cellule ne peut compter sur la diffusion seule à cette échelle."
@@ -188,12 +219,27 @@
           "prompt": "Range ces caractères : appuient-ils l'origine bactérienne des mitochondries ?",
           "hint": "Qu'est-ce qu'une bactérie possède en propre ?",
           "explanation": "ADN circulaire propre et ribosomes bactériens sont des héritages. La présence dans les cellules végétales et la taille ne disent rien de l'origine.",
-          "categories": ["Appuie l'hypothèse", "N'apporte rien"],
+          "categories": [
+            "Appuie l'hypothèse",
+            "N'apporte rien"
+          ],
           "items": [
-            { "text": "un ADN circulaire propre", "category": 0 },
-            { "text": "des ribosomes de type bactérien", "category": 0 },
-            { "text": "la présence dans les cellules végétales", "category": 1 },
-            { "text": "une forme allongée", "category": 1 }
+            {
+              "text": "un ADN circulaire propre",
+              "category": 0
+            },
+            {
+              "text": "des ribosomes de type bactérien",
+              "category": 0
+            },
+            {
+              "text": "la présence dans les cellules végétales",
+              "category": 1
+            },
+            {
+              "text": "une forme allongée",
+              "category": 1
+            }
           ]
         },
         {
@@ -214,10 +260,19 @@
           "explanation": "Parce qu'ils visent les ribosomes bactériens, et que ceux des mitochondries en sont. C'est une conséquence de leur origine.",
           "figureId": "code-genetique",
           "options": [
-            { "text": "Leurs ribosomes sont de type bactérien", "correct": true },
-            { "text": "Les mitochondries sont des bactéries actives" },
-            { "text": "Elles contiennent des antibiotiques" },
-            { "text": "C'est une coïncidence chimique" }
+            {
+              "text": "Leurs ribosomes sont de type bactérien",
+              "correct": true
+            },
+            {
+              "text": "Les mitochondries sont des bactéries actives"
+            },
+            {
+              "text": "Elles contiennent des antibiotiques"
+            },
+            {
+              "text": "C'est une coïncidence chimique"
+            }
           ]
         },
         {
@@ -239,6 +294,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les compartiments et leur rôle",
+          "body": "Touche chaque organite et lis sa fonction. Une cellule eucaryote règle le problème de la taille en se compartimentant, et le défi en chiffre le gain.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Garde en tête les deux contraintes physiques : la surface croît moins vite que le volume, et la diffusion est lente."
@@ -286,10 +348,22 @@
           "prompt": "Associe chaque constituant à son rôle.",
           "explanation": "Quatre compartiments, quatre fonctions distinctes — et c'est la séparation qui les rend compatibles entre elles.",
           "pairs": [
-            { "left": "la membrane", "right": "contrôle les échanges" },
-            { "left": "le noyau", "right": "contient l'ADN" },
-            { "left": "la mitochondrie", "right": "libère l'énergie" },
-            { "left": "le chloroplaste", "right": "capte la lumière" }
+            {
+              "left": "la membrane",
+              "right": "contrôle les échanges"
+            },
+            {
+              "left": "le noyau",
+              "right": "contient l'ADN"
+            },
+            {
+              "left": "la mitochondrie",
+              "right": "libère l'énergie"
+            },
+            {
+              "left": "le chloroplaste",
+              "right": "capte la lumière"
+            }
           ]
         },
         {
@@ -300,10 +374,19 @@
           "explanation": "D'abriter des réactions incompatibles, chacune dans son compartiment à la composition propre.",
           "figureId": "cellule",
           "options": [
-            { "text": "D'abriter des réactions incompatibles entre elles", "correct": true },
-            { "text": "De grandir sans limite" },
-            { "text": "De se passer de membrane" },
-            { "text": "D'accélérer la diffusion" }
+            {
+              "text": "D'abriter des réactions incompatibles entre elles",
+              "correct": true
+            },
+            {
+              "text": "De grandir sans limite"
+            },
+            {
+              "text": "De se passer de membrane"
+            },
+            {
+              "text": "D'accélérer la diffusion"
+            }
           ]
         }
       ]

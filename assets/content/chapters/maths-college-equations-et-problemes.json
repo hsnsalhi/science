@@ -105,36 +105,43 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un énoncé devient deux plateaux",
+          "body": "Les deux plateaux portent la même chose, écrite autrement. Traduire un énoncé, c’est trouver ce que l’on peut poser de part et d’autre — et tout le reste n’est que des gestes.",
+          "figureId": "balance-equation"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le vrai obstacle",
           "body": "Résoudre 3x + 5 = 20 s'apprend en une heure. Transformer « j'ai pensé à un nombre, je l'ai triplé, j'ai ajouté 5, j'obtiens 20 » en cette équation, c'est autre chose.\n\nLa méthode tient en une question : qu'est-ce que je cherche ? C'est cela qu'on appelle x."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Quatre temps",
           "body": "1. nommer l'inconnue, avec son unité : « soit x le prix d'un stylo, en euros »\n\n2. traduire chaque phrase de l'énoncé en écriture mathématique\n\n3. résoudre\n\n4. revenir à la question posée, et répondre par une phrase"
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Un problème d'âges",
           "body": "« Dans 5 ans, j'aurai le double de l'âge que j'avais il y a 4 ans. Quel âge ai-je ? »\n\nSoit x mon âge aujourd'hui. Dans 5 ans : x + 5. Il y a 4 ans : x − 4.\n\nÉquation : x + 5 = 2(x − 4), soit x + 5 = 2x − 8, donc 13 = x.\n\nVérification : dans 5 ans, 18 ans ; il y a 4 ans, 9 ans. 18 est bien le double de 9."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "exemple",
           "title": "Un périmètre",
           "body": "« Un rectangle a un périmètre de 34 cm, et sa longueur dépasse sa largeur de 5 cm. »\n\nSoit L la largeur en centimètres. La longueur vaut L + 5.\n\nPérimètre : 2(L + L + 5) = 34, donc 2(2L + 5) = 34, puis 4L + 10 = 34, donc L = 6 et la longueur vaut 11.\n\nVérification : 2 × (6 + 11) = 34."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "avertissement",
           "title": "Répondre à la question, pas à l'équation",
           "body": "Trouver x = 6 n'est pas une réponse si la question demandait la longueur.\n\nC'est l'erreur la plus coûteuse en contrôle : le calcul est juste, la réponse est fausse. Relis toujours la question après avoir résolu."
         },
         {
-          "id": "c6",
+          "id": "c7",
           "kind": "aRetenir",
           "title": "Le vocabulaire qui piège",
           "body": "« de plus que » : on ajoute. « de moins que » : on retire.\n\n« fois plus » : on multiplie. « fois moins » : on divise.\n\n« la différence entre a et b » : a − b, dans cet ordre.\n\nEt un piège qui coûte cher : le carré de la somme n'est pas la somme des carrés. (2 + 3)² vaut 25, pas 4 + 9."
@@ -213,24 +220,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les gestes permis",
+          "body": "Les boutons n’autorisent que ce qu’on fait des deux côtés à la fois. Enchaîne-les jusqu’à ce qu’il ne reste qu’un x d’un côté : c’est exactement la méthode écrite.",
+          "figureId": "balance-equation"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "L'ordre qui marche toujours",
           "body": "1. développer les parenthèses\n\n2. rassembler les x à gauche, les nombres à droite\n\n3. diviser par le coefficient de x\n\n4. vérifier"
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Avec des parenthèses",
           "body": "5(x − 2) = 3x + 4\n\n5x − 10 = 3x + 4\n\n2x = 14\n\nx = 7. Vérification : 5 × 5 = 25 et 3 × 7 + 4 = 25."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Avec une fraction",
           "body": "x/3 + 2 = 5\n\nx/3 = 3\n\nx = 9. Vérification : 9/3 + 2 = 5.\n\nOn peut aussi multiplier tout par 3 d'abord : x + 6 = 15, donc x = 9. Les deux chemins mènent au même endroit."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Quand x disparaît",
           "body": "Si tous les x s'annulent et qu'il reste 5 = 5, l'équation est vraie pour tout x.\n\nS'il reste 5 = 7, elle n'a aucune solution.\n\nCe n'est pas une erreur de calcul : c'est un résultat, et il faut le dire comme tel."
@@ -315,6 +329,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La bouteille et le bouchon",
+          "body": "Pose le problème sur les deux plateaux avant de calculer. La plupart des erreurs de ce défi viennent d’une mise en équation, pas d’un calcul.",
+          "figureId": "balance-equation"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "La bouteille et le bouchon",
           "body": "« Une bouteille et son bouchon coûtent 11 euros. La bouteille coûte 10 euros de plus que le bouchon. Combien coûte le bouchon ? »\n\nPresque tout le monde répond 1 euro. Essaie : la bouteille coûterait alors 10 euros, et la différence ne serait que de 9.\n\nSoit x le prix du bouchon : x + (x + 10) = 11, donc 2x = 1 et x = 0,50 euro. La bouteille coûte 10,50 euros, et la différence fait bien 10.\n\nLe calcul est trivial. Ce qui trompe, c'est de ne pas l'avoir fait."

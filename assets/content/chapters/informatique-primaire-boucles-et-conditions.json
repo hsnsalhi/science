@@ -71,10 +71,19 @@
           "prompt": "Quel est le principal avantage d'une boucle ?",
           "explanation": "Il n'y a qu'un seul endroit à corriger quand on change d'avis — ce qui évite les oublis.",
           "options": [
-            { "text": "un seul endroit à corriger si l'on change", "correct": true },
-            { "text": "le programme va plus vite" },
-            { "text": "le robot se fatigue moins" },
-            { "text": "cela rend le dessin plus joli" }
+            {
+              "text": "un seul endroit à corriger si l'on change",
+              "correct": true
+            },
+            {
+              "text": "le programme va plus vite"
+            },
+            {
+              "text": "le robot se fatigue moins"
+            },
+            {
+              "text": "cela rend le dessin plus joli"
+            }
           ]
         },
         {
@@ -96,25 +105,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une condition qui décide",
+          "body": "Règle le seuil : tant qu’on reste au-dessus, rien ne part ; en dessous, l’action se déclenche. C’est exactement un « si… alors », et la réponse est toujours vrai ou faux, jamais entre les deux.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Décider pendant l'exécution",
           "body": "Jusqu'ici, le robot faisait toujours la même chose. Avec une condition, il peut choisir.\n\n« Si un mur est devant toi, alors tourne à droite. Sinon, avance. »\n\nLe même programme donne des parcours différents selon ce que le robot rencontre."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La condition",
           "formula": "si (quelque chose est vrai) alors (faire ceci) sinon (faire cela)",
           "body": "Le « sinon » est facultatif. Sans lui, le robot ne fait simplement rien de particulier quand la condition est fausse."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Vrai ou faux, rien d'autre",
           "body": "Une condition n'a que deux réponses possibles : vrai ou faux.\n\n« Y a-t-il un mur ? » : oui ou non.\n\n« Le score dépasse-t-il 10 ? » : oui ou non.\n\nIl n'y a pas de « peut-être » dans un programme."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "L'ordre des conditions compte",
           "body": "« Si le score dépasse 5, dire bravo. Si le score dépasse 10, dire excellent. »\n\nAvec un score de 12, le robot dit bravo puis excellent : les deux conditions sont vraies.\n\nSi on voulait un seul message, il fallait commencer par la plus exigeante, ou employer un « sinon »."
@@ -127,10 +143,19 @@
           "prompt": "Combien de réponses possibles une condition a-t-elle ?",
           "explanation": "Deux : vrai ou faux. Il n'y a pas de « peut-être » dans un programme.",
           "options": [
-            { "text": "deux : vrai ou faux", "correct": true },
-            { "text": "trois, avec peut-être" },
-            { "text": "autant qu'on veut" },
-            { "text": "une seule" }
+            {
+              "text": "deux : vrai ou faux",
+              "correct": true
+            },
+            {
+              "text": "trois, avec peut-être"
+            },
+            {
+              "text": "autant qu'on veut"
+            },
+            {
+              "text": "une seule"
+            }
           ]
         },
         {
@@ -174,18 +199,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Répéter, puis vérifier",
+          "body": "Règle le nombre de tours et exécute : la même suite d’instructions est refaite à chaque passage. Une boucle n’est rien d’autre que cela.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Une boucle qui contient une condition",
           "body": "« Répéter 10 fois : si un mur est devant, tourner à droite, sinon avancer. »\n\nÀ chaque tour, le robot regarde puis décide. Dix décisions, qui ne sont pas forcément les mêmes.\n\nC'est avec ces deux outils seulement qu'on écrit déjà des programmes utiles."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Compter",
           "body": "« Mettre le compteur à 0. Répéter 6 fois : ajouter 1 au compteur. »\n\nÀ la fin, le compteur vaut 6.\n\nUne variable est une boîte qui retient une valeur entre deux tours de boucle."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Dérouler à la main",
           "body": "Quand un programme ne fait pas ce qu'on attend, le meilleur outil est une feuille.\n\nOn écrit ce que vaut chaque variable à chaque tour. L'erreur saute aux yeux au tour où le tableau cesse d'être ce qu'on croyait."
@@ -245,6 +277,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Dérouler plutôt que deviner",
+          "body": "Fais varier les tours un par un et regarde où le robot arrive. L’ordinateur n’interprète pas : pour savoir ce qu’un programme fait, il faut le dérouler.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'ordinateur n'interprète pas",
           "body": "Si tu demandes à un ami d'« avancer de trois pas », il comprendra, même sans précision.\n\nUn ordinateur, lui, fait exactement ce qui est écrit, dans l'ordre écrit, sans jamais deviner ce que tu voulais dire.\n\nC'est à la fois sa force — il ne se trompe jamais sur l'intention — et sa faiblesse : la moindre erreur dans tes instructions devient une erreur dans son travail."

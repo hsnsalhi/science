@@ -83,10 +83,19 @@
           "hint": "Que se passe-t-il en présence de parasites ?",
           "explanation": "Parce que dix niveaux se confondraient au moindre parasite. Deux états bien séparés résistent au bruit, et c'est ce qui rend le calcul fiable.",
           "options": [
-            { "text": "Dix niveaux se confondraient au moindre parasite", "correct": true },
-            { "text": "Ce serait trop lent" },
-            { "text": "Les mathématiques l'interdisent" },
-            { "text": "Personne n'y a pensé" }
+            {
+              "text": "Dix niveaux se confondraient au moindre parasite",
+              "correct": true
+            },
+            {
+              "text": "Ce serait trop lent"
+            },
+            {
+              "text": "Les mathématiques l'interdisent"
+            },
+            {
+              "text": "Personne n'y a pensé"
+            }
           ]
         }
       ]
@@ -174,12 +183,27 @@
           "prompt": "Range ces écritures binaires selon la valeur qu'elles représentent.",
           "hint": "Additionne les poids des bits allumés.",
           "explanation": "0000 1010 et 0000 1010 valent 10 ; 0001 0000 vaut 16 et 0000 1111 vaut 15. Il suffit d'additionner les poids allumés.",
-          "categories": ["Vaut moins de 16", "Vaut 16 ou plus"],
+          "categories": [
+            "Vaut moins de 16",
+            "Vaut 16 ou plus"
+          ],
           "items": [
-            { "text": "0000 1010", "category": 0 },
-            { "text": "0000 1111", "category": 0 },
-            { "text": "0001 0000", "category": 1 },
-            { "text": "0010 0000", "category": 1 }
+            {
+              "text": "0000 1010",
+              "category": 0
+            },
+            {
+              "text": "0000 1111",
+              "category": 0
+            },
+            {
+              "text": "0001 0000",
+              "category": 1
+            },
+            {
+              "text": "0010 0000",
+              "category": 1
+            }
           ]
         }
       ]
@@ -258,10 +282,19 @@
           "explanation": "255. FF vaut 15 × 16 + 15 = 255, c'est-à-dire tous les bits de l'octet allumés.",
           "figureId": "binaire",
           "options": [
-            { "text": "255", "correct": true },
-            { "text": "128" },
-            { "text": "0" },
-            { "text": "160" }
+            {
+              "text": "255",
+              "correct": true
+            },
+            {
+              "text": "128"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "160"
+            }
           ]
         }
       ]
@@ -276,6 +309,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Tout tient dans des bits",
+          "body": "Bascule les bits et lis le nombre. Un texte, une image, un son : tout finit en suites de zéros et de uns, et le défi demande combien il en faut.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense à additionner les poids des bits allumés."
@@ -308,12 +348,27 @@
           "kind": "tri",
           "prompt": "Range ces affirmations.",
           "explanation": "Un octet vaut huit bits et code 256 valeurs : c'est exact. En revanche un octet ne va pas jusqu'à 256, et un chiffre hexadécimal vaut quatre bits, pas huit.",
-          "categories": ["Vrai", "Faux"],
+          "categories": [
+            "Vrai",
+            "Faux"
+          ],
           "items": [
-            { "text": "Un octet contient 8 bits", "category": 0 },
-            { "text": "Un octet code 256 valeurs différentes", "category": 0 },
-            { "text": "Un octet peut écrire le nombre 256", "category": 1 },
-            { "text": "Un chiffre hexadécimal vaut 8 bits", "category": 1 }
+            {
+              "text": "Un octet contient 8 bits",
+              "category": 0
+            },
+            {
+              "text": "Un octet code 256 valeurs différentes",
+              "category": 0
+            },
+            {
+              "text": "Un octet peut écrire le nombre 256",
+              "category": 1
+            },
+            {
+              "text": "Un chiffre hexadécimal vaut 8 bits",
+              "category": 1
+            }
           ]
         },
         {
@@ -340,10 +395,19 @@
           "hint": "Combien de caractères couvre-t-il ?",
           "explanation": "Parce qu'il ne couvre que 128 caractères, sans accents. Unicode les a ajoutés, et UTF-8 les code sur un à quatre octets.",
           "options": [
-            { "text": "Il ne contient pas les lettres accentuées", "correct": true },
-            { "text": "Il est trop lent" },
-            { "text": "Il ne contient pas les chiffres" },
-            { "text": "Il est réservé aux images" }
+            {
+              "text": "Il ne contient pas les lettres accentuées",
+              "correct": true
+            },
+            {
+              "text": "Il est trop lent"
+            },
+            {
+              "text": "Il ne contient pas les chiffres"
+            },
+            {
+              "text": "Il est réservé aux images"
+            }
           ]
         }
       ]

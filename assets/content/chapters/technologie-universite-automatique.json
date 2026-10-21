@@ -11,25 +11,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Avec ou sans retour",
+          "body": "Augmente le gain et regarde la réponse rejoindre la consigne. En boucle ouverte, rien ne mesure l’écart et rien ne le corrige ; ici, l’écart est mesuré à chaque instant, et c’est lui qui commande.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "En boucle ouverte",
           "body": "On applique une commande calculée d'avance, et on espère.\n\nSi le système change — une charge plus lourde, une pièce usée, un vent de face — rien ne le corrige. La commande ignore le résultat."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "En boucle fermée",
           "body": "On mesure la sortie, on la compare à la consigne, et la commande se calcule à partir de l'écart.\n\nC'est ce retour de mesure qui fait tout. Sans lui, aucune correction n'est possible ; avec lui, le système se rattrape de lui-même."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "La commande proportionnelle",
           "formula": "commande = gain × (consigne − mesure)",
           "body": "la commande est proportionnelle à l'écart restant."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Le thermostat du chapitre de technologie au collège est un asservissement en tout ou rien. La commande proportionnelle en est la version continue : au lieu d'allumer ou d'éteindre, elle dose."
         }
@@ -42,10 +49,19 @@
           "hint": "Que fait-on de la sortie ?",
           "explanation": "La mesure de la sortie, réinjectée dans le calcul de la commande. C'est le seul ajout, et il change tout.",
           "options": [
-            { "text": "La sortie est mesurée et réinjectée", "correct": true },
-            { "text": "La commande est plus puissante" },
-            { "text": "Le système est plus rapide par nature" },
-            { "text": "Il n'y a pas de capteur" }
+            {
+              "text": "La sortie est mesurée et réinjectée",
+              "correct": true
+            },
+            {
+              "text": "La commande est plus puissante"
+            },
+            {
+              "text": "Le système est plus rapide par nature"
+            },
+            {
+              "text": "Il n'y a pas de capteur"
+            }
           ]
         },
         {
@@ -133,10 +149,19 @@
           "explanation": "Parce qu'un écart nul donne une commande nulle : il faut donc un écart résiduel pour maintenir la commande.",
           "figureId": "asservissement",
           "options": [
-            { "text": "Un écart nul donnerait une commande nulle", "correct": true },
-            { "text": "Le capteur est imprécis" },
-            { "text": "Le gain est mal réglé" },
-            { "text": "Le système est trop lent" }
+            {
+              "text": "Un écart nul donnerait une commande nulle",
+              "correct": true
+            },
+            {
+              "text": "Le capteur est imprécis"
+            },
+            {
+              "text": "Le gain est mal réglé"
+            },
+            {
+              "text": "Le système est trop lent"
+            }
           ]
         },
         {
@@ -192,10 +217,19 @@
           "hint": "Lequel accumule les écarts passés ?",
           "explanation": "L'intégral : il accumule les écarts, et ne cesse de pousser que lorsque l'écart s'annule.",
           "options": [
-            { "text": "L'intégral", "correct": true },
-            { "text": "Le proportionnel" },
-            { "text": "Le dérivé" },
-            { "text": "Aucun des trois" }
+            {
+              "text": "L'intégral",
+              "correct": true
+            },
+            {
+              "text": "Le proportionnel"
+            },
+            {
+              "text": "Le dérivé"
+            },
+            {
+              "text": "Aucun des trois"
+            }
           ]
         },
         {
@@ -205,10 +239,19 @@
           "hint": "Lequel regarde la vitesse ?",
           "explanation": "Le dérivé : il freine quand l'écart diminue vite, donc avant l'arrivée.",
           "options": [
-            { "text": "Le dérivé", "correct": true },
-            { "text": "L'intégral" },
-            { "text": "Le proportionnel" },
-            { "text": "Les trois également" }
+            {
+              "text": "Le dérivé",
+              "correct": true
+            },
+            {
+              "text": "L'intégral"
+            },
+            {
+              "text": "Le proportionnel"
+            },
+            {
+              "text": "Les trois également"
+            }
           ]
         },
         {
@@ -217,9 +260,18 @@
           "prompt": "Associe chaque terme à ce qu'il regarde.",
           "explanation": "Trois termes, trois informations tirées du même écart : sa valeur, son histoire, sa tendance.",
           "pairs": [
-            { "left": "proportionnel", "right": "l'écart actuel" },
-            { "left": "intégral", "right": "la somme des écarts passés" },
-            { "left": "dérivé", "right": "la vitesse de variation de l'écart" }
+            {
+              "left": "proportionnel",
+              "right": "l'écart actuel"
+            },
+            {
+              "left": "intégral",
+              "right": "la somme des écarts passés"
+            },
+            {
+              "left": "dérivé",
+              "right": "la vitesse de variation de l'écart"
+            }
           ]
         },
         {
@@ -241,6 +293,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Trop de gain, et ça diverge",
+          "body": "Pousse le gain au maximum : la réponse se met à osciller, puis part. Corriger plus fort n’est pas corriger mieux, et le défi demande où s’arrête le raisonnable.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Garde en tête les deux bouts mauvais : trop peu de gain laisse une erreur, trop de gain fait osciller."
@@ -273,12 +332,27 @@
           "prompt": "Range ces conséquences d'une augmentation du gain.",
           "hint": "Qu'est-ce qui s'améliore, qu'est-ce qui se dégrade ?",
           "explanation": "Le gain réduit l'erreur et accélère la réponse ; il fait aussi apparaître le dépassement et finit par déstabiliser.",
-          "categories": ["Ce qui s'améliore", "Ce qui se dégrade"],
+          "categories": [
+            "Ce qui s'améliore",
+            "Ce qui se dégrade"
+          ],
           "items": [
-            { "text": "l'erreur statique diminue", "category": 0 },
-            { "text": "la réponse devient plus rapide", "category": 0 },
-            { "text": "le dépassement apparaît", "category": 1 },
-            { "text": "la stabilité se perd", "category": 1 }
+            {
+              "text": "l'erreur statique diminue",
+              "category": 0
+            },
+            {
+              "text": "la réponse devient plus rapide",
+              "category": 0
+            },
+            {
+              "text": "le dépassement apparaît",
+              "category": 1
+            },
+            {
+              "text": "la stabilité se perd",
+              "category": 1
+            }
           ]
         },
         {
@@ -296,10 +370,19 @@
           "hint": "Pas la commande.",
           "explanation": "La sortie du système, pour la comparer à la consigne. Mesurer la commande n'apprendrait rien sur le résultat.",
           "options": [
-            { "text": "La sortie du système", "correct": true },
-            { "text": "La commande envoyée" },
-            { "text": "La consigne" },
-            { "text": "Le gain" }
+            {
+              "text": "La sortie du système",
+              "correct": true
+            },
+            {
+              "text": "La commande envoyée"
+            },
+            {
+              "text": "La consigne"
+            },
+            {
+              "text": "Le gain"
+            }
           ]
         },
         {

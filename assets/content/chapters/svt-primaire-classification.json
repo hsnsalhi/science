@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qu’un être partage avec les autres",
+          "body": "Touche un animal : la figure annonce ce qu’il possède — des vertèbres, des poils, des plumes. Classer, c’est chercher ce qu’on a en commun, jamais ce qui se ressemble de loin.",
+          "figureId": "classification"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une question moins simple qu'elle n'en a l'air",
           "body": "Un chat est vivant, un caillou non. Mais un arbre ? Une graine ? Une bougie qui consomme de la cire et produit de la chaleur ?\n\nIl faut des critères, pas des impressions."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Les trois critères",
           "body": "Un être vivant se nourrit : il prend dans son milieu ce dont il a besoin.\n\nIl grandit et se développe.\n\nIl se reproduit : il donne naissance à d'autres êtres de son espèce."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "La bougie consomme et produit de la chaleur, mais elle ne grandit pas et ne fait pas d'autres bougies. Les trois critères doivent être réunis."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -44,12 +51,27 @@
           "prompt": "Range ces objets : sont-ils vivants ?",
           "hint": "Grandissent-ils ? Se reproduisent-ils ?",
           "explanation": "L'arbre et la fourmi se nourrissent, grandissent et se reproduisent. La bougie et le cristal de sel grandissent parfois, mais ne se reproduisent pas.",
-          "categories": ["Vivant", "Non vivant"],
+          "categories": [
+            "Vivant",
+            "Non vivant"
+          ],
           "items": [
-            { "text": "un arbre", "category": 0 },
-            { "text": "une fourmi", "category": 0 },
-            { "text": "une bougie allumée", "category": 1 },
-            { "text": "un cristal de sel", "category": 1 }
+            {
+              "text": "un arbre",
+              "category": 0
+            },
+            {
+              "text": "une fourmi",
+              "category": 0
+            },
+            {
+              "text": "une bougie allumée",
+              "category": 1
+            },
+            {
+              "text": "un cristal de sel",
+              "category": 1
+            }
           ]
         },
         {
@@ -59,10 +81,19 @@
           "hint": "Elle consomme, mais ensuite ?",
           "explanation": "Parce qu'elle ne se reproduit pas : elle ne donne jamais naissance à d'autres bougies.",
           "options": [
-            { "text": "Elle ne se reproduit pas", "correct": true },
-            { "text": "Elle ne consomme rien" },
-            { "text": "Elle ne produit pas de chaleur" },
-            { "text": "Elle est trop petite" }
+            {
+              "text": "Elle ne se reproduit pas",
+              "correct": true
+            },
+            {
+              "text": "Elle ne consomme rien"
+            },
+            {
+              "text": "Elle ne produit pas de chaleur"
+            },
+            {
+              "text": "Elle est trop petite"
+            }
           ]
         },
         {
@@ -116,10 +147,19 @@
           "explanation": "Parce que ses membres ne partagent rien : ils sont seulement réunis par ce qui leur manque, ce qui ne dit rien de leur parenté.",
           "figureId": "classification",
           "options": [
-            { "text": "Ses membres ne partagent rien", "correct": true },
-            { "text": "Il contient trop d'animaux" },
-            { "text": "Il contient trop peu d'animaux" },
-            { "text": "Les vertèbres sont difficiles à voir" }
+            {
+              "text": "Ses membres ne partagent rien",
+              "correct": true
+            },
+            {
+              "text": "Il contient trop d'animaux"
+            },
+            {
+              "text": "Il contient trop peu d'animaux"
+            },
+            {
+              "text": "Les vertèbres sont difficiles à voir"
+            }
           ]
         },
         {
@@ -128,12 +168,27 @@
           "prompt": "Range ces animaux : ont-ils des poils ?",
           "hint": "Touche-les sur la figure si tu hésites.",
           "explanation": "Le chat et la souris ont des poils ; le pigeon a des plumes et le lézard des écailles. Les trois ont pourtant quatre membres.",
-          "categories": ["A des poils", "N'a pas de poils"],
+          "categories": [
+            "A des poils",
+            "N'a pas de poils"
+          ],
           "items": [
-            { "text": "le chat", "category": 0 },
-            { "text": "la souris", "category": 0 },
-            { "text": "le pigeon", "category": 1 },
-            { "text": "le lézard", "category": 1 }
+            {
+              "text": "le chat",
+              "category": 0
+            },
+            {
+              "text": "la souris",
+              "category": 0
+            },
+            {
+              "text": "le pigeon",
+              "category": 1
+            },
+            {
+              "text": "le lézard",
+              "category": 1
+            }
           ]
         },
         {
@@ -196,10 +251,19 @@
           "explanation": "La souris : ils partagent la boîte des poils, la plus petite qui les contienne tous les deux.",
           "figureId": "classification",
           "options": [
-            { "text": "La souris", "correct": true },
-            { "text": "Le pigeon" },
-            { "text": "La truite" },
-            { "text": "L'escargot" }
+            {
+              "text": "La souris",
+              "correct": true
+            },
+            {
+              "text": "Le pigeon"
+            },
+            {
+              "text": "La truite"
+            },
+            {
+              "text": "L'escargot"
+            }
           ]
         },
         {
@@ -210,10 +274,19 @@
           "explanation": "Des vertèbres et quatre membres. En revanche l'un a des poils, l'autre des plumes : ils sont dans deux boîtes différentes à ce niveau.",
           "figureId": "classification",
           "options": [
-            { "text": "Des vertèbres et quatre membres", "correct": true },
-            { "text": "Des poils" },
-            { "text": "Des plumes" },
-            { "text": "Rien du tout" }
+            {
+              "text": "Des vertèbres et quatre membres",
+              "correct": true
+            },
+            {
+              "text": "Des poils"
+            },
+            {
+              "text": "Des plumes"
+            },
+            {
+              "text": "Rien du tout"
+            }
           ]
         },
         {
@@ -250,6 +323,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les groupes sont emboîtés",
+          "body": "Parcours les animaux et regarde les groupes se cocher. Chacun appartient à plusieurs à la fois, du plus large au plus étroit — et jamais à deux groupes côte à côte.",
+          "figureId": "classification"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Souviens-toi : on range par ce qu'un animal possède, jamais par ce qui lui manque."
@@ -300,12 +380,27 @@
           "prompt": "Range ces critères : servent-ils à reconnaître un vivant ?",
           "hint": "Trois critères, et seulement trois.",
           "explanation": "Se nourrir, grandir et se reproduire définissent le vivant. Bouger et faire du bruit ne suffisent pas : une voiture fait les deux.",
-          "categories": ["Critère du vivant", "Ne suffit pas"],
+          "categories": [
+            "Critère du vivant",
+            "Ne suffit pas"
+          ],
           "items": [
-            { "text": "se nourrir", "category": 0 },
-            { "text": "se reproduire", "category": 0 },
-            { "text": "bouger", "category": 1 },
-            { "text": "faire du bruit", "category": 1 }
+            {
+              "text": "se nourrir",
+              "category": 0
+            },
+            {
+              "text": "se reproduire",
+              "category": 0
+            },
+            {
+              "text": "bouger",
+              "category": 1
+            },
+            {
+              "text": "faire du bruit",
+              "category": 1
+            }
           ]
         },
         {
@@ -316,10 +411,19 @@
           "explanation": "Parce que les animaux d'une même boîte descendent d'un ancêtre commun qui possédait déjà cet attribut.",
           "figureId": "classification",
           "options": [
-            { "text": "Parce qu'ils ont un ancêtre commun", "correct": true },
-            { "text": "Parce que c'est plus pratique à dessiner" },
-            { "text": "Parce que les savants l'ont décidé" },
-            { "text": "C'est un hasard" }
+            {
+              "text": "Parce qu'ils ont un ancêtre commun",
+              "correct": true
+            },
+            {
+              "text": "Parce que c'est plus pratique à dessiner"
+            },
+            {
+              "text": "Parce que les savants l'ont décidé"
+            },
+            {
+              "text": "C'est un hasard"
+            }
           ]
         }
       ]

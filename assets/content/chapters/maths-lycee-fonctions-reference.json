@@ -61,12 +61,27 @@
           "prompt": "Range ces nombres selon que la fonction racine carrée y est définie.",
           "hint": "Un carré n'est jamais négatif.",
           "explanation": "La racine carrée n'est définie que sur les nombres positifs ou nuls : aucun carré ne vaut un nombre négatif.",
-          "categories": ["Racine définie", "Racine non définie"],
+          "categories": [
+            "Racine définie",
+            "Racine non définie"
+          ],
           "items": [
-            { "text": "0", "category": 0 },
-            { "text": "4", "category": 0 },
-            { "text": "−1", "category": 1 },
-            { "text": "−9", "category": 1 }
+            {
+              "text": "0",
+              "category": 0
+            },
+            {
+              "text": "4",
+              "category": 0
+            },
+            {
+              "text": "−1",
+              "category": 1
+            },
+            {
+              "text": "−9",
+              "category": 1
+            }
           ]
         },
         {
@@ -77,10 +92,19 @@
           "explanation": "En 0 : la division par zéro n'a pas de sens. La courbe se sépare en deux branches qui ne se rejoignent jamais.",
           "figureId": "fonctions-reference",
           "options": [
-            { "text": "En 0", "correct": true },
-            { "text": "En 1" },
-            { "text": "En −1" },
-            { "text": "Elle est définie partout" }
+            {
+              "text": "En 0",
+              "correct": true
+            },
+            {
+              "text": "En 1"
+            },
+            {
+              "text": "En −1"
+            },
+            {
+              "text": "Elle est définie partout"
+            }
           ]
         }
       ]
@@ -126,12 +150,27 @@
           "prompt": "Range ces fonctions selon leur symétrie.",
           "hint": "Compare f(2) et f(−2).",
           "explanation": "Le carré et la valeur absolue donnent la même image en x et en −x. Le cube et l'inverse donnent des images opposées.",
-          "categories": ["Paire", "Impaire"],
+          "categories": [
+            "Paire",
+            "Impaire"
+          ],
           "items": [
-            { "text": "le carré", "category": 0 },
-            { "text": "la valeur absolue", "category": 0 },
-            { "text": "le cube", "category": 1 },
-            { "text": "l'inverse", "category": 1 }
+            {
+              "text": "le carré",
+              "category": 0
+            },
+            {
+              "text": "la valeur absolue",
+              "category": 0
+            },
+            {
+              "text": "le cube",
+              "category": 1
+            },
+            {
+              "text": "l'inverse",
+              "category": 1
+            }
           ]
         },
         {
@@ -152,10 +191,19 @@
           "explanation": "Parce qu'elle n'est pas définie sur les négatifs : comparer f(x) et f(−x) n'a tout simplement pas de sens.",
           "figureId": "fonctions-reference",
           "options": [
-            { "text": "Son domaine ne contient pas les négatifs", "correct": true },
-            { "text": "Parce qu'elle croît trop lentement" },
-            { "text": "Parce qu'elle vaut 0 en 0" },
-            { "text": "Parce qu'elle n'est pas définie en 1" }
+            {
+              "text": "Son domaine ne contient pas les négatifs",
+              "correct": true
+            },
+            {
+              "text": "Parce qu'elle croît trop lentement"
+            },
+            {
+              "text": "Parce qu'elle vaut 0 en 0"
+            },
+            {
+              "text": "Parce qu'elle n'est pas définie en 1"
+            }
           ]
         },
         {
@@ -219,10 +267,19 @@
           "explanation": "La racine carrée. Sur cet intervalle, l'ordre habituel est renversé : la racine dépasse x, qui dépasse le carré.",
           "figureId": "fonctions-reference",
           "options": [
-            { "text": "La racine carrée", "correct": true },
-            { "text": "Le carré" },
-            { "text": "Le cube" },
-            { "text": "Elles sont confondues" }
+            {
+              "text": "La racine carrée",
+              "correct": true
+            },
+            {
+              "text": "Le carré"
+            },
+            {
+              "text": "Le cube"
+            },
+            {
+              "text": "Elles sont confondues"
+            }
           ]
         },
         {
@@ -259,6 +316,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les cinq, sur le même repère",
+          "body": "Compare les courbes sur un seul dessin. Reconnaître une fonction de référence à sa forme est bien plus rapide que la calculer, et c’est ce que le défi demande.",
+          "figureId": "fonctions-reference"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Avant de calculer, demande-toi toujours : la fonction est-elle définie là ?"
@@ -291,10 +355,22 @@
           "prompt": "Associe chaque fonction à sa particularité.",
           "explanation": "Chacune a une singularité propre : un domaine restreint, une valeur interdite, une symétrie, un angle.",
           "pairs": [
-            { "left": "la racine carrée", "right": "non définie sur les négatifs" },
-            { "left": "l'inverse", "right": "non définie en 0" },
-            { "left": "le cube", "right": "impaire et croissante partout" },
-            { "left": "la valeur absolue", "right": "un angle en 0" }
+            {
+              "left": "la racine carrée",
+              "right": "non définie sur les négatifs"
+            },
+            {
+              "left": "l'inverse",
+              "right": "non définie en 0"
+            },
+            {
+              "left": "le cube",
+              "right": "impaire et croissante partout"
+            },
+            {
+              "left": "la valeur absolue",
+              "right": "un angle en 0"
+            }
           ]
         },
         {
@@ -320,10 +396,19 @@
           "explanation": "Son image se rapproche de 0 sans jamais l'atteindre. La courbe longe l'axe sans le toucher.",
           "figureId": "fonctions-reference",
           "options": [
-            { "text": "Son image se rapproche de 0 sans l'atteindre", "correct": true },
-            { "text": "Son image devient négative" },
-            { "text": "Son image atteint 0" },
-            { "text": "Son image devient très grande" }
+            {
+              "text": "Son image se rapproche de 0 sans l'atteindre",
+              "correct": true
+            },
+            {
+              "text": "Son image devient négative"
+            },
+            {
+              "text": "Son image atteint 0"
+            },
+            {
+              "text": "Son image devient très grande"
+            }
           ]
         }
       ]

@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une étoile, et tout le reste autour",
+          "body": "Observe les distances à l’échelle. Le Soleil contient à lui seul presque toute la matière du système — les planètes ne sont que des miettes en orbite autour de lui.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une étoile, pas une planète",
           "body": "Le Soleil brille de sa propre lumière : c'est une étoile.\n\nLes planètes, elles, ne brillent pas toutes seules. Quand tu vois Vénus le soir, tu vois la lumière du Soleil qui rebondit dessus."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Si loin, et pourtant",
           "body": "Le Soleil est à 150 millions de kilomètres de nous.\n\nSa lumière voyage très vite, et pourtant elle met environ 8 minutes pour arriver jusqu'à toi. La lumière que tu vois est partie il y a 8 minutes."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "Les autres étoiles du ciel ne sont pas plus petites que le Soleil : elles sont beaucoup, beaucoup plus loin."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -45,10 +52,19 @@
           "hint": "D'où vient leur lumière ?",
           "explanation": "Elles renvoient la lumière du Soleil. Contrairement aux étoiles, elles n'en produisent aucune.",
           "options": [
-            { "text": "Elles renvoient la lumière du Soleil", "correct": true },
-            { "text": "Elles produisent leur propre lumière" },
-            { "text": "Elles reflètent la lumière de la Terre" },
-            { "text": "Elles sont en feu" }
+            {
+              "text": "Elles renvoient la lumière du Soleil",
+              "correct": true
+            },
+            {
+              "text": "Elles produisent leur propre lumière"
+            },
+            {
+              "text": "Elles reflètent la lumière de la Terre"
+            },
+            {
+              "text": "Elles sont en feu"
+            }
           ]
         },
         {
@@ -135,12 +151,27 @@
           "prompt": "Range ces planètes dans leur famille.",
           "hint": "Les petites sont les plus proches du Soleil.",
           "explanation": "Les quatre planètes rocheuses sont les plus proches du Soleil ; les quatre géantes de gaz sont au-delà de Mars.",
-          "categories": ["Rocheuse", "Géante de gaz"],
+          "categories": [
+            "Rocheuse",
+            "Géante de gaz"
+          ],
           "items": [
-            { "text": "Mercure", "category": 0 },
-            { "text": "Mars", "category": 0 },
-            { "text": "Jupiter", "category": 1 },
-            { "text": "Neptune", "category": 1 }
+            {
+              "text": "Mercure",
+              "category": 0
+            },
+            {
+              "text": "Mars",
+              "category": 0
+            },
+            {
+              "text": "Jupiter",
+              "category": 1
+            },
+            {
+              "text": "Neptune",
+              "category": 1
+            }
           ]
         },
         {
@@ -226,10 +257,19 @@
           "hint": "Pense à ce que traverse une sonde spatiale.",
           "explanation": "Presque rien : du vide. C'est pour cela qu'un voyage vers une autre planète dure des mois ou des années.",
           "options": [
-            { "text": "Presque rien : du vide", "correct": true },
-            { "text": "De l'air, comme sur Terre" },
-            { "text": "Des nuages" },
-            { "text": "D'autres petites planètes, partout" }
+            {
+              "text": "Presque rien : du vide",
+              "correct": true
+            },
+            {
+              "text": "De l'air, comme sur Terre"
+            },
+            {
+              "text": "Des nuages"
+            },
+            {
+              "text": "D'autres petites planètes, partout"
+            }
           ]
         }
       ]
@@ -244,6 +284,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Surtout du vide",
+          "body": "Compare les distances entre planètes. Les schémas de manuel les collent les unes aux autres ; à l’échelle, le Système solaire est presque entièrement vide.",
+          "figureId": "systeme-solaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Tu peux revenir à la figure si tu hésites sur une distance."
@@ -268,10 +315,19 @@
           "explanation": "Mercure, à 58 millions de kilomètres. C'est aussi la plus petite des huit.",
           "figureId": "systeme-solaire",
           "options": [
-            { "text": "Mercure", "correct": true },
-            { "text": "Vénus" },
-            { "text": "la Terre" },
-            { "text": "Mars" }
+            {
+              "text": "Mercure",
+              "correct": true
+            },
+            {
+              "text": "Vénus"
+            },
+            {
+              "text": "la Terre"
+            },
+            {
+              "text": "Mars"
+            }
           ]
         },
         {
@@ -282,10 +338,19 @@
           "explanation": "Jupiter : son diamètre vaut environ onze fois celui de la Terre. Toutes les autres planètes réunies tiendraient à l'intérieur.",
           "figureId": "systeme-solaire",
           "options": [
-            { "text": "Jupiter", "correct": true },
-            { "text": "Saturne" },
-            { "text": "Neptune" },
-            { "text": "la Terre" }
+            {
+              "text": "Jupiter",
+              "correct": true
+            },
+            {
+              "text": "Saturne"
+            },
+            {
+              "text": "Neptune"
+            },
+            {
+              "text": "la Terre"
+            }
           ]
         },
         {
@@ -294,8 +359,14 @@
           "prompt": "Associe chaque planète à sa famille.",
           "explanation": "Les quatre planètes proches du Soleil sont rocheuses ; les quatre lointaines sont des géantes de gaz.",
           "pairs": [
-            { "left": "Mars", "right": "rocheuse" },
-            { "left": "Saturne", "right": "géante de gaz" }
+            {
+              "left": "Mars",
+              "right": "rocheuse"
+            },
+            {
+              "left": "Saturne",
+              "right": "géante de gaz"
+            }
           ]
         },
         {

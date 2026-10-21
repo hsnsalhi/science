@@ -71,10 +71,19 @@
           "explanation": "Toujours la moitié tournée vers le Soleil. Cette moitié ne change pas : c'est notre point de vue qui change.",
           "figureId": "phases-lune",
           "options": [
-            { "text": "La moitié tournée vers le Soleil", "correct": true },
-            { "text": "La moitié tournée vers la Terre" },
-            { "text": "Toute la Lune" },
-            { "text": "Cela change chaque nuit" }
+            {
+              "text": "La moitié tournée vers le Soleil",
+              "correct": true
+            },
+            {
+              "text": "La moitié tournée vers la Terre"
+            },
+            {
+              "text": "Toute la Lune"
+            },
+            {
+              "text": "Cela change chaque nuit"
+            }
           ]
         },
         {
@@ -145,10 +154,19 @@
           "explanation": "Du même côté que le Soleil. Sa moitié éclairée est tournée à l'opposé de nous, et nous ne voyons que son côté sombre.",
           "figureId": "phases-lune",
           "options": [
-            { "text": "Du même côté que le Soleil", "correct": true },
-            { "text": "De l'autre côté de la Terre que le Soleil" },
-            { "text": "Dans l'ombre de la Terre" },
-            { "text": "Très loin derrière les étoiles" }
+            {
+              "text": "Du même côté que le Soleil",
+              "correct": true
+            },
+            {
+              "text": "De l'autre côté de la Terre que le Soleil"
+            },
+            {
+              "text": "Dans l'ombre de la Terre"
+            },
+            {
+              "text": "Très loin derrière les étoiles"
+            }
           ]
         },
         {
@@ -168,12 +186,27 @@
           "prompt": "Range ces phrases.",
           "hint": "Relis la carte sur l'erreur courante.",
           "explanation": "La Lune est éclairée par le Soleil et sa forme change selon notre point de vue : c'est vrai. Elle ne brille pas toute seule, et son ombre n'est pas celle de la Terre.",
-          "categories": ["C'est vrai", "C'est faux"],
+          "categories": [
+            "C'est vrai",
+            "C'est faux"
+          ],
           "items": [
-            { "text": "Le Soleil éclaire la Lune", "category": 0 },
-            { "text": "Sa forme change selon notre point de vue", "category": 0 },
-            { "text": "La Lune brille toute seule", "category": 1 },
-            { "text": "L'ombre de la Terre cache la Lune chaque nuit", "category": 1 }
+            {
+              "text": "Le Soleil éclaire la Lune",
+              "category": 0
+            },
+            {
+              "text": "Sa forme change selon notre point de vue",
+              "category": 0
+            },
+            {
+              "text": "La Lune brille toute seule",
+              "category": 1
+            },
+            {
+              "text": "L'ombre de la Terre cache la Lune chaque nuit",
+              "category": 1
+            }
           ]
         }
       ]
@@ -231,9 +264,18 @@
           "prompt": "Associe chaque phase à ce qu'on voit.",
           "explanation": "Au premier quartier on voit la moitié du disque, à la pleine lune tout le disque, à la nouvelle lune rien du tout.",
           "pairs": [
-            { "left": "Premier quartier", "right": "La moitié du disque" },
-            { "left": "Pleine Lune", "right": "Tout le disque" },
-            { "left": "Nouvelle Lune", "right": "Rien du tout" }
+            {
+              "left": "Premier quartier",
+              "right": "La moitié du disque"
+            },
+            {
+              "left": "Pleine Lune",
+              "right": "Tout le disque"
+            },
+            {
+              "left": "Nouvelle Lune",
+              "right": "Rien du tout"
+            }
           ]
         },
         {
@@ -243,10 +285,19 @@
           "hint": "Souviens-toi : la Lune est menteuse.",
           "explanation": "Elle grandit. Le D ressemble au début de « diminuer », et c'est bien le piège : en forme de D, la Lune croît.",
           "options": [
-            { "text": "Elle grandit", "correct": true },
-            { "text": "Elle diminue" },
-            { "text": "Elle ne change plus" },
-            { "text": "Elle disparaît demain" }
+            {
+              "text": "Elle grandit",
+              "correct": true
+            },
+            {
+              "text": "Elle diminue"
+            },
+            {
+              "text": "Elle ne change plus"
+            },
+            {
+              "text": "Elle disparaît demain"
+            }
           ]
         },
         {
@@ -270,6 +321,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Vue d’en haut, vue d’ici",
+          "body": "Fais avancer la Lune sur son orbite et compare les deux vues. La moitié éclairée ne change jamais : c’est notre point de vue qui tourne autour d’elle.",
+          "figureId": "phases-lune"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions sur la Lune. Prends le temps de te rappeler le dessin."
@@ -284,10 +342,19 @@
           "explanation": "Le croissant va grossir soir après soir, jusqu'au premier quartier puis à la pleine lune.",
           "figureId": "phases-lune",
           "options": [
-            { "text": "Le croissant va grossir", "correct": true },
-            { "text": "Le croissant va disparaître" },
-            { "text": "La Lune va rester pareille" },
-            { "text": "La Lune va devenir rouge" }
+            {
+              "text": "Le croissant va grossir",
+              "correct": true
+            },
+            {
+              "text": "Le croissant va disparaître"
+            },
+            {
+              "text": "La Lune va rester pareille"
+            },
+            {
+              "text": "La Lune va devenir rouge"
+            }
           ]
         },
         {
@@ -312,12 +379,27 @@
           "kind": "tri",
           "prompt": "Range ces phases selon que la Lune grandit ou diminue.",
           "explanation": "Après la nouvelle lune, la Lune grandit : premier croissant, premier quartier. Après la pleine lune, elle diminue : dernier quartier, dernier croissant.",
-          "categories": ["Elle grandit", "Elle diminue"],
+          "categories": [
+            "Elle grandit",
+            "Elle diminue"
+          ],
           "items": [
-            { "text": "Premier croissant", "category": 0 },
-            { "text": "Premier quartier", "category": 0 },
-            { "text": "Dernier quartier", "category": 1 },
-            { "text": "Dernier croissant", "category": 1 }
+            {
+              "text": "Premier croissant",
+              "category": 0
+            },
+            {
+              "text": "Premier quartier",
+              "category": 0
+            },
+            {
+              "text": "Dernier quartier",
+              "category": 1
+            },
+            {
+              "text": "Dernier croissant",
+              "category": 1
+            }
           ]
         },
         {
@@ -327,10 +409,19 @@
           "hint": "Qui cache la lumière du Soleil ?",
           "explanation": "C'est l'ombre de la Terre qui tombe sur la Lune. Cela n'arrive qu'une ou deux fois par an, et ne doit pas être confondu avec les phases.",
           "options": [
-            { "text": "L'ombre de la Terre tombe sur la Lune", "correct": true },
-            { "text": "La Lune s'éteint" },
-            { "text": "La Lune passe derrière le Soleil" },
-            { "text": "La Lune change de couleur toute seule" }
+            {
+              "text": "L'ombre de la Terre tombe sur la Lune",
+              "correct": true
+            },
+            {
+              "text": "La Lune s'éteint"
+            },
+            {
+              "text": "La Lune passe derrière le Soleil"
+            },
+            {
+              "text": "La Lune change de couleur toute seule"
+            }
           ]
         },
         {

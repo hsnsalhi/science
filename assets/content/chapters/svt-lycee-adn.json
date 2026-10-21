@@ -11,29 +11,36 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un texte à quatre lettres",
+          "body": "Mute une base et regarde la protéine produite. Les deux brins s’apparient toujours de la même façon, et c’est cet appariement qui permet de recopier l’information sans la perdre.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une double hélice",
           "body": "L'ADN est formé de deux brins enroulés l'un autour de l'autre. Chaque brin est une suite de nucléotides, portant l'une des quatre bases : A, T, G ou C.\n\nLa structure a été établie en 1953 par Watson et Crick, à partir des clichés de diffraction de Rosalind Franklin."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "L'appariement des bases",
           "body": "En face d'un A se trouve toujours un T, en face d'un G toujours un C.\n\nChaque brin porte donc toute l'information : connaître l'un, c'est connaître l'autre. C'est ce qui rend la copie possible avant chaque division cellulaire."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Gène et génome",
           "body": "Un gène est un segment d'ADN porteur de l'information d'une protéine.\n\nLe génome humain compte environ trois milliards de paires de bases, pour à peu près vingt mille gènes — qui n'occupent qu'une faible part de l'ensemble."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Toutes les cellules d'un organisme portent le même ADN. Ce qui distingue un neurone d'une cellule de peau n'est pas le texte, mais les pages qui y sont lues."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -60,8 +67,14 @@
           "prompt": "Associe chaque base à celle qui lui fait face.",
           "explanation": "A s'apparie toujours avec T, et G avec C. Cette règle suffit à reconstituer un brin à partir de l'autre.",
           "pairs": [
-            { "left": "A", "right": "T" },
-            { "left": "G", "right": "C" }
+            {
+              "left": "A",
+              "right": "T"
+            },
+            {
+              "left": "G",
+              "right": "C"
+            }
           ]
         },
         {
@@ -70,8 +83,16 @@
           "prompt": "Un brin porte la séquence A T G C. Complète le brin complémentaire.",
           "template": "T ___ C ___",
           "blanks": [
-            { "accepted": ["A"] },
-            { "accepted": ["G"] }
+            {
+              "accepted": [
+                "A"
+              ]
+            },
+            {
+              "accepted": [
+                "G"
+              ]
+            }
           ],
           "hint": "A face à T, G face à C.",
           "explanation": "T A C G. Chaque base impose celle qui lui fait face, ce qui rend la copie fidèle."
@@ -170,10 +191,19 @@
           "hint": "Une seule lettre change.",
           "explanation": "La thymine, remplacée par l'uracile. Les trois autres bases sont identiques.",
           "options": [
-            { "text": "La thymine, remplacée par l'uracile", "correct": true },
-            { "text": "L'adénine, remplacée par l'uracile" },
-            { "text": "La guanine, remplacée par la cytosine" },
-            { "text": "Aucune : la séquence est identique" }
+            {
+              "text": "La thymine, remplacée par l'uracile",
+              "correct": true
+            },
+            {
+              "text": "L'adénine, remplacée par l'uracile"
+            },
+            {
+              "text": "La guanine, remplacée par la cytosine"
+            },
+            {
+              "text": "Aucune : la séquence est identique"
+            }
           ]
         }
       ]
@@ -226,10 +256,19 @@
           "explanation": "Elle est inchangée : UUC et UUU désignent tous deux la phénylalanine. La mutation est silencieuse.",
           "figureId": "code-genetique",
           "options": [
-            { "text": "Elle est inchangée", "correct": true },
-            { "text": "Elle change d'un acide aminé" },
-            { "text": "Elle est tronquée" },
-            { "text": "Elle n'est pas produite" }
+            {
+              "text": "Elle est inchangée",
+              "correct": true
+            },
+            {
+              "text": "Elle change d'un acide aminé"
+            },
+            {
+              "text": "Elle est tronquée"
+            },
+            {
+              "text": "Elle n'est pas produite"
+            }
           ]
         },
         {
@@ -240,10 +279,19 @@
           "explanation": "Elle est tronquée : UAA est un signal d'arrêt, et la traduction s'interrompt. C'est une mutation non-sens.",
           "figureId": "code-genetique",
           "options": [
-            { "text": "Elle est tronquée", "correct": true },
-            { "text": "Elle est inchangée" },
-            { "text": "Elle change d'un acide aminé" },
-            { "text": "Elle devient plus longue" }
+            {
+              "text": "Elle est tronquée",
+              "correct": true
+            },
+            {
+              "text": "Elle est inchangée"
+            },
+            {
+              "text": "Elle change d'un acide aminé"
+            },
+            {
+              "text": "Elle devient plus longue"
+            }
           ]
         },
         {
@@ -252,12 +300,27 @@
           "prompt": "Range ces mutations selon leur effet sur la protéine.",
           "hint": "Compare les acides aminés désignés par les deux codons.",
           "explanation": "UUC vers UUU et GGA vers GGG ne changent pas l'acide aminé : elles sont silencieuses. UUC vers UUA donne une leucine à la place d'une phénylalanine, et UGU vers UGA crée un signal d'arrêt.",
-          "categories": ["Protéine inchangée", "Protéine modifiée"],
+          "categories": [
+            "Protéine inchangée",
+            "Protéine modifiée"
+          ],
           "items": [
-            { "text": "UUC vers UUU", "category": 0 },
-            { "text": "GGA vers GGG", "category": 0 },
-            { "text": "UUC vers UUA", "category": 1 },
-            { "text": "UGU vers UGA", "category": 1 }
+            {
+              "text": "UUC vers UUU",
+              "category": 0
+            },
+            {
+              "text": "GGA vers GGG",
+              "category": 0
+            },
+            {
+              "text": "UUC vers UUA",
+              "category": 1
+            },
+            {
+              "text": "UGU vers UGA",
+              "category": 1
+            }
           ]
         },
         {
@@ -280,6 +343,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une lettre qui change tout, ou rien",
+          "body": "Change une base, puis une autre. Certaines mutations ne modifient pas la protéine, d’autres la coupent net. Le code est redondant, et le défi demande pourquoi.",
+          "figureId": "code-genetique"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chaque mutation, compare les acides aminés avant et après."
@@ -314,8 +384,16 @@
           "prompt": "Complète les deux étapes de l'expression d'un gène.",
           "template": "Dans le noyau, le gène est ___ en ARN messager ; dans le cytoplasme, l'ARN est ___ en protéine.",
           "blanks": [
-            { "accepted": ["transcrit"] },
-            { "accepted": ["traduit"] }
+            {
+              "accepted": [
+                "transcrit"
+              ]
+            },
+            {
+              "accepted": [
+                "traduit"
+              ]
+            }
           ],
           "hint": "Deux verbes, dans l'ordre.",
           "explanation": "Transcrit, puis traduit. La transcription change de support, la traduction change de langage."
@@ -327,10 +405,19 @@
           "hint": "Qu'est-ce qu'un héritage partagé ?",
           "explanation": "Parce qu'il s'explique le plus simplement par une origine commune : le code a été hérité d'un ancêtre partagé, et non réinventé.",
           "options": [
-            { "text": "Il s'explique par une origine commune", "correct": true },
-            { "text": "Il prouve que les bactéries sont humaines" },
-            { "text": "Il montre que le code est le seul possible" },
-            { "text": "C'est une coïncidence sans portée" }
+            {
+              "text": "Il s'explique par une origine commune",
+              "correct": true
+            },
+            {
+              "text": "Il prouve que les bactéries sont humaines"
+            },
+            {
+              "text": "Il montre que le code est le seul possible"
+            },
+            {
+              "text": "C'est une coïncidence sans portée"
+            }
           ]
         },
         {
@@ -348,10 +435,19 @@
           "hint": "Leur ADN est le même.",
           "explanation": "Les gènes qui y sont exprimés. Le texte est identique, seules les pages lues diffèrent.",
           "options": [
-            { "text": "Les gènes qui y sont exprimés", "correct": true },
-            { "text": "Leur ADN" },
-            { "text": "Leur code génétique" },
-            { "text": "Le nombre de leurs chromosomes" }
+            {
+              "text": "Les gènes qui y sont exprimés",
+              "correct": true
+            },
+            {
+              "text": "Leur ADN"
+            },
+            {
+              "text": "Leur code génétique"
+            },
+            {
+              "text": "Le nombre de leurs chromosomes"
+            }
           ]
         }
       ]

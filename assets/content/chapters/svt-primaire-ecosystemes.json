@@ -53,10 +53,19 @@
           "explanation": "Que l'herbe est mangée par le lapin. La flèche part toujours de ce qui est mangé.",
           "figureId": "chaine-alimentaire",
           "options": [
-            { "text": "L'herbe est mangée par le lapin", "correct": true },
-            { "text": "Le lapin est mangé par l'herbe" },
-            { "text": "Le lapin se cache dans l'herbe" },
-            { "text": "L'herbe pousse grâce au lapin" }
+            {
+              "text": "L'herbe est mangée par le lapin",
+              "correct": true
+            },
+            {
+              "text": "Le lapin est mangé par l'herbe"
+            },
+            {
+              "text": "Le lapin se cache dans l'herbe"
+            },
+            {
+              "text": "L'herbe pousse grâce au lapin"
+            }
           ]
         },
         {
@@ -65,12 +74,27 @@
           "prompt": "Range ces êtres vivants.",
           "hint": "Lesquels fabriquent eux-mêmes leur nourriture ?",
           "explanation": "L'herbe et le trèfle sont des plantes : ils produisent leur nourriture avec la lumière. Le lapin et le renard doivent manger d'autres êtres vivants.",
-          "categories": ["Produit sa nourriture", "Doit manger"],
+          "categories": [
+            "Produit sa nourriture",
+            "Doit manger"
+          ],
           "items": [
-            { "text": "L'herbe", "category": 0 },
-            { "text": "Le trèfle", "category": 0 },
-            { "text": "Le lapin", "category": 1 },
-            { "text": "Le renard", "category": 1 }
+            {
+              "text": "L'herbe",
+              "category": 0
+            },
+            {
+              "text": "Le trèfle",
+              "category": 0
+            },
+            {
+              "text": "Le lapin",
+              "category": 1
+            },
+            {
+              "text": "Le renard",
+              "category": 1
+            }
           ]
         },
         {
@@ -78,7 +102,11 @@
           "kind": "remiseEnOrdre",
           "prompt": "Remets cette chaîne alimentaire dans l'ordre, en partant du producteur.",
           "explanation": "L'herbe est mangée par le criquet, qui est mangé par l'oiseau. On part toujours de la plante.",
-          "items": ["Herbe", "Criquet", "Oiseau"]
+          "items": [
+            "Herbe",
+            "Criquet",
+            "Oiseau"
+          ]
         },
         {
           "id": "q4",
@@ -164,10 +192,19 @@
           "explanation": "Le renard, car le lapin est sa seule nourriture dans ce pré. Le criquet et l'oiseau, eux, ne sont pas touchés.",
           "figureId": "chaine-alimentaire",
           "options": [
-            { "text": "Le renard", "correct": true },
-            { "text": "L'oiseau" },
-            { "text": "Le criquet" },
-            { "text": "Personne" }
+            {
+              "text": "Le renard",
+              "correct": true
+            },
+            {
+              "text": "L'oiseau"
+            },
+            {
+              "text": "Le criquet"
+            },
+            {
+              "text": "Personne"
+            }
           ]
         },
         {
@@ -189,24 +226,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Tout le monde dépend de quelqu’un",
+          "body": "Enlève une espèce et observe les conséquences remonter le réseau. Un milieu de vie n’est pas une collection d’habitants : c’est un ensemble de dépendances.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Un milieu de vie",
           "body": "Un milieu, c'est un endroit avec ses conditions : l'eau, la lumière, la température, les abris.\n\nChaque espèce vit là où elle trouve ce qu'il lui faut. Une grenouille a besoin d'eau pour ses œufs ; un écureuil a besoin d'arbres."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Les saisons changent tout",
           "body": "En hiver, beaucoup de plantes arrêtent de pousser. Les animaux s'adaptent : certains partent, d'autres dorment, d'autres changent de nourriture."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Rien ne se perd",
           "body": "Les feuilles mortes et les animaux morts sont mangés par de petits êtres vivants du sol : vers de terre, champignons, bactéries.\n\nIls transforment tout cela en terre riche, qui nourrit à nouveau les plantes. La boucle est bouclée."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Un sol vivant est plein de ces décomposeurs. Une poignée de terre de forêt en contient plus qu'il n'y a d'habitants sur Terre."
         }
@@ -218,9 +262,18 @@
           "prompt": "Associe chaque animal à son milieu.",
           "explanation": "La grenouille pond dans la mare, l'écureuil vit dans les arbres de la forêt, et la taupe creuse ses galeries sous la prairie.",
           "pairs": [
-            { "left": "Grenouille", "right": "La mare" },
-            { "left": "Écureuil", "right": "La forêt" },
-            { "left": "Taupe", "right": "Sous la prairie" }
+            {
+              "left": "Grenouille",
+              "right": "La mare"
+            },
+            {
+              "left": "Écureuil",
+              "right": "La forêt"
+            },
+            {
+              "left": "Taupe",
+              "right": "Sous la prairie"
+            }
           ]
         },
         {
@@ -230,10 +283,19 @@
           "hint": "Pense aux vers de terre.",
           "explanation": "Elles sont mangées par les décomposeurs, qui les transforment en terre riche. Cette terre nourrit ensuite les plantes.",
           "options": [
-            { "text": "Elles sont transformées en terre par les décomposeurs", "correct": true },
-            { "text": "Elles disparaissent toutes seules" },
-            { "text": "Elles s'envolent" },
-            { "text": "Elles empoisonnent le sol" }
+            {
+              "text": "Elles sont transformées en terre par les décomposeurs",
+              "correct": true
+            },
+            {
+              "text": "Elles disparaissent toutes seules"
+            },
+            {
+              "text": "Elles s'envolent"
+            },
+            {
+              "text": "Elles empoisonnent le sol"
+            }
           ]
         },
         {
@@ -242,12 +304,27 @@
           "prompt": "Range ces êtres vivants selon leur rôle.",
           "hint": "Qui mange les restes ?",
           "explanation": "Le ver de terre et le champignon décomposent les restes. Le lapin et le criquet mangent des plantes vivantes.",
-          "categories": ["Décomposeur", "Mangeur de plantes"],
+          "categories": [
+            "Décomposeur",
+            "Mangeur de plantes"
+          ],
           "items": [
-            { "text": "Le ver de terre", "category": 0 },
-            { "text": "Le champignon", "category": 0 },
-            { "text": "Le lapin", "category": 1 },
-            { "text": "Le criquet", "category": 1 }
+            {
+              "text": "Le ver de terre",
+              "category": 0
+            },
+            {
+              "text": "Le champignon",
+              "category": 0
+            },
+            {
+              "text": "Le lapin",
+              "category": 1
+            },
+            {
+              "text": "Le criquet",
+              "category": 1
+            }
           ]
         },
         {
@@ -269,6 +346,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Enlève un maillon",
+          "body": "Retire une espèce, puis une autre. Certaines disparitions ne changent presque rien, d’autres font tout basculer — et c’est la question du défi.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense à suivre les flèches avant de répondre."
@@ -294,10 +378,19 @@
           "explanation": "L'herbe. C'est la seule qui fabrique sa nourriture avec la lumière du Soleil.",
           "figureId": "chaine-alimentaire",
           "options": [
-            { "text": "L'herbe", "correct": true },
-            { "text": "Le lapin" },
-            { "text": "Le renard" },
-            { "text": "L'oiseau" }
+            {
+              "text": "L'herbe",
+              "correct": true
+            },
+            {
+              "text": "Le lapin"
+            },
+            {
+              "text": "Le renard"
+            },
+            {
+              "text": "L'oiseau"
+            }
           ]
         },
         {
@@ -305,7 +398,11 @@
           "kind": "remiseEnOrdre",
           "prompt": "Remets cette chaîne dans l'ordre, du producteur au dernier prédateur.",
           "explanation": "Herbe, lapin, renard : chaque maillon mange le précédent.",
-          "items": ["Herbe", "Lapin", "Renard"]
+          "items": [
+            "Herbe",
+            "Lapin",
+            "Renard"
+          ]
         },
         {
           "id": "q4",
@@ -313,12 +410,27 @@
           "prompt": "Range ces disparitions selon ce qu'elles provoquent dans le pré.",
           "hint": "Suis les flèches à partir de l'espèce retirée.",
           "explanation": "Sans herbe ou sans lapin, au moins une espèce se retrouve sans nourriture. Sans renard ni sans oiseau, personne n'est affamé : ils ne sont mangés par personne.",
-          "categories": ["Des espèces sont affamées", "Personne n'est affamé"],
+          "categories": [
+            "Des espèces sont affamées",
+            "Personne n'est affamé"
+          ],
           "items": [
-            { "text": "Herbe", "category": 0 },
-            { "text": "Lapin", "category": 0 },
-            { "text": "Renard", "category": 1 },
-            { "text": "Oiseau", "category": 1 }
+            {
+              "text": "Herbe",
+              "category": 0
+            },
+            {
+              "text": "Lapin",
+              "category": 0
+            },
+            {
+              "text": "Renard",
+              "category": 1
+            },
+            {
+              "text": "Oiseau",
+              "category": 1
+            }
           ]
         },
         {
@@ -335,10 +447,19 @@
           "hint": "Que font les vers des feuilles mortes ?",
           "explanation": "Parce que les vers transforment les restes en terre riche, qui nourrit les plantes. Sans eux, les feuilles mortes s'accumuleraient sans profiter à personne.",
           "options": [
-            { "text": "Les vers transforment les restes en terre riche", "correct": true },
-            { "text": "Les vers mangent les plantes malades" },
-            { "text": "Les vers font fuir les prédateurs" },
-            { "text": "Les vers fabriquent de l'eau" }
+            {
+              "text": "Les vers transforment les restes en terre riche",
+              "correct": true
+            },
+            {
+              "text": "Les vers mangent les plantes malades"
+            },
+            {
+              "text": "Les vers font fuir les prédateurs"
+            },
+            {
+              "text": "Les vers fabriquent de l'eau"
+            }
           ]
         }
       ]

@@ -61,7 +61,7 @@ void main() {
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.16;
+  const double partMinimale = 0.24;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;
@@ -82,20 +82,25 @@ void main() {
     };
   });
 
-  test('aucun chapitre jouable n’est sans figure', () {
-    // Tout le catalogue est passé au standard. Un chapitre ajouté sans
-    // dessin échoue ici, sans qu’on ait à l’inscrire nulle part — et
-    // c’est la garantie qui compte le plus dans ce fichier.
+  test('aucune leçon jouable n’est sans figure', () {
+    // La garantie porte sur la leçon, pas sur le chapitre : un chapitre
+    // peut avoir une belle figure en première leçon et trois leçons de
+    // texte derrière. C’est précisément ce qui était arrivé, et c’est ce
+    // que ce test rend impossible.
     final List<String> sansFigure = <String>[];
     for (final Map<String, dynamic> c in chapitres) {
       final String id = c['id'] as String;
-      final Iterable<String> genres = (contenus[id]!['lessons'] as List<dynamic>)
-          .expand((dynamic l) => (l as Map<String, dynamic>)['cards'] as List<dynamic>)
-          .map((dynamic x) => (x as Map<String, dynamic>)['kind'] as String);
-      if (!genres.contains('figure')) sansFigure.add(id);
+      for (final dynamic brute in contenus[id]!['lessons'] as List<dynamic>) {
+        final Map<String, dynamic> lecon = brute as Map<String, dynamic>;
+        final Iterable<String> genres = (lecon['cards'] as List<dynamic>)
+            .map((dynamic x) => (x as Map<String, dynamic>)['kind'] as String);
+        if (!genres.contains('figure')) {
+          sansFigure.add('$id/${lecon['id']}');
+        }
+      }
     }
     expect(sansFigure, isEmpty,
-        reason: 'ces chapitres n’ont aucune figure : $sansFigure');
+        reason: 'ces leçons n’ont aucune figure : $sansFigure');
   });
 
   test('chaque leçon d’un chapitre repris ouvre sur une figure', () {

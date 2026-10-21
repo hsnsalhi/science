@@ -54,10 +54,19 @@
           "explanation": "Vers la gauche. Au point de contact, une dent de la menante pousse une dent de la menée : les deux roues ne peuvent pas tourner dans le même sens.",
           "figureId": "engrenages",
           "options": [
-            { "text": "Vers la gauche", "correct": true },
-            { "text": "Vers la droite" },
-            { "text": "Elle ne tourne pas" },
-            { "text": "Cela dépend du nombre de dents" }
+            {
+              "text": "Vers la gauche",
+              "correct": true
+            },
+            {
+              "text": "Vers la droite"
+            },
+            {
+              "text": "Elle ne tourne pas"
+            },
+            {
+              "text": "Cela dépend du nombre de dents"
+            }
           ]
         },
         {
@@ -82,9 +91,18 @@
           "prompt": "Associe chaque pièce à son rôle.",
           "explanation": "La roue menante reçoit le mouvement, la menée le reçoit d'elle, la chaîne le porte à distance, et la roue intermédiaire ne sert qu'à rétablir le sens.",
           "pairs": [
-            { "left": "Roue menante", "right": "Reçoit le mouvement du moteur" },
-            { "left": "Roue menée", "right": "Entraînée par la précédente" },
-            { "left": "Chaîne", "right": "Transmet entre deux axes éloignés" }
+            {
+              "left": "Roue menante",
+              "right": "Reçoit le mouvement du moteur"
+            },
+            {
+              "left": "Roue menée",
+              "right": "Entraînée par la précédente"
+            },
+            {
+              "left": "Chaîne",
+              "right": "Transmet entre deux axes éloignés"
+            }
           ]
         }
       ]
@@ -160,10 +178,19 @@
           "hint": "Plus elle a de dents, plus elle met de temps à faire un tour.",
           "explanation": "Une roue menée plus grande que la menante. Elle fait moins de tours, et transmet en échange davantage de force.",
           "options": [
-            { "text": "Une roue avec plus de dents que la menante", "correct": true },
-            { "text": "Une roue avec moins de dents que la menante" },
-            { "text": "Une roue du même nombre de dents" },
-            { "text": "Le nombre de dents ne change rien" }
+            {
+              "text": "Une roue avec plus de dents que la menante",
+              "correct": true
+            },
+            {
+              "text": "Une roue avec moins de dents que la menante"
+            },
+            {
+              "text": "Une roue du même nombre de dents"
+            },
+            {
+              "text": "Le nombre de dents ne change rien"
+            }
           ]
         },
         {
@@ -172,12 +199,27 @@
           "prompt": "La roue menante a 20 dents. Range les roues menées selon leur effet.",
           "hint": "Compare chaque nombre à 20.",
           "explanation": "Moins de 20 dents : la menée tourne plus vite que la menante. Plus de 20 : elle tourne moins vite. Seul le nombre de dents décide.",
-          "categories": ["Tourne plus vite", "Tourne moins vite"],
+          "categories": [
+            "Tourne plus vite",
+            "Tourne moins vite"
+          ],
           "items": [
-            { "text": "10 dents", "category": 0 },
-            { "text": "5 dents", "category": 0 },
-            { "text": "40 dents", "category": 1 },
-            { "text": "60 dents", "category": 1 }
+            {
+              "text": "10 dents",
+              "category": 0
+            },
+            {
+              "text": "5 dents",
+              "category": 0
+            },
+            {
+              "text": "40 dents",
+              "category": 1
+            },
+            {
+              "text": "60 dents",
+              "category": 1
+            }
           ]
         }
       ]
@@ -192,30 +234,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Transmettre n’est pas transformer",
+          "body": "Lance les roues : le mouvement passe de l’une à l’autre, et il reste une rotation. Transformer, c’est en changer la nature — faire d’une rotation une translation, par exemple.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Transmettre n'est pas transformer",
           "body": "Transmettre, c'est porter le mouvement ailleurs sans en changer la nature : une rotation reste une rotation. Transformer, c'est en changer la nature : une rotation devient un déplacement en ligne droite."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Pignon et crémaillère",
           "body": "Une roue dentée roule sur une barre dentée : la roue tourne, la barre avance. C'est le mécanisme d'un portail coulissant ou d'une direction de voiture."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Vis et écrou",
           "body": "La vis tourne, l'écrou ne peut pas tourner : il avance le long de la vis. Chaque tour le fait avancer d'un pas, toujours le même — c'est ce qui rend l'étau et le cric si précis."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "etape",
           "title": "Bielle et manivelle",
           "body": "La manivelle tourne, la bielle pousse et tire une pièce qui va et vient. Le mouvement obtenu est alternatif : il change de sens à chaque demi-tour. C'est celui des pistons d'un moteur."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "astuce",
           "body": "Pour reconnaître un mécanisme, regarde l'entrée et la sortie : même nature, c'est une transmission ; nature différente, c'est une transformation."
         }
@@ -227,12 +276,27 @@
           "prompt": "Range ces mécanismes.",
           "hint": "La sortie est-elle encore une rotation ?",
           "explanation": "Engrenage et poulie-courroie gardent une rotation en sortie : ils transmettent. Pignon-crémaillère et vis-écrou donnent un déplacement en ligne droite : ils transforment.",
-          "categories": ["Transmet", "Transforme"],
+          "categories": [
+            "Transmet",
+            "Transforme"
+          ],
           "items": [
-            { "text": "Engrenage", "category": 0 },
-            { "text": "Poulie et courroie", "category": 0 },
-            { "text": "Pignon et crémaillère", "category": 1 },
-            { "text": "Vis et écrou", "category": 1 }
+            {
+              "text": "Engrenage",
+              "category": 0
+            },
+            {
+              "text": "Poulie et courroie",
+              "category": 0
+            },
+            {
+              "text": "Pignon et crémaillère",
+              "category": 1
+            },
+            {
+              "text": "Vis et écrou",
+              "category": 1
+            }
           ]
         },
         {
@@ -251,9 +315,18 @@
           "prompt": "Associe chaque mécanisme à un objet qui l'utilise.",
           "explanation": "Le pignon-crémaillère ouvre un portail coulissant, la vis-écrou serre un étau, la bielle-manivelle anime les pistons d'un moteur.",
           "pairs": [
-            { "left": "Pignon et crémaillère", "right": "Portail coulissant" },
-            { "left": "Vis et écrou", "right": "Étau d'établi" },
-            { "left": "Bielle et manivelle", "right": "Piston de moteur" }
+            {
+              "left": "Pignon et crémaillère",
+              "right": "Portail coulissant"
+            },
+            {
+              "left": "Vis et écrou",
+              "right": "Étau d'établi"
+            },
+            {
+              "left": "Bielle et manivelle",
+              "right": "Piston de moteur"
+            }
           ]
         },
         {
@@ -275,6 +348,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le rapport décide de tout",
+          "body": "Change le nombre de dents et lis le rapport. Vitesse et force s’échangent exactement dans ce rapport, et aucun mécanisme n’y échappe.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chaque calcul, pose le rapport des dents avant de chercher le résultat."
@@ -306,10 +386,19 @@
           "hint": "Compte les contacts : trois.",
           "explanation": "Non, en sens inverse. Il y a trois contacts, donc trois inversions : le sens est rétabli après un nombre pair d'inversions seulement.",
           "options": [
-            { "text": "Non, en sens inverse", "correct": true },
-            { "text": "Oui, dans le même sens" },
-            { "text": "Cela dépend des nombres de dents" },
-            { "text": "Elle ne tourne pas" }
+            {
+              "text": "Non, en sens inverse",
+              "correct": true
+            },
+            {
+              "text": "Oui, dans le même sens"
+            },
+            {
+              "text": "Cela dépend des nombres de dents"
+            },
+            {
+              "text": "Elle ne tourne pas"
+            }
           ]
         },
         {
@@ -317,12 +406,27 @@
           "kind": "tri",
           "prompt": "Range ces besoins selon la roue menée à choisir, la menante ayant toujours 20 dents.",
           "explanation": "Pour aller plus vite, il faut une menée plus petite que 20 dents. Pour gagner en force, il faut une menée plus grande, qui tourne moins vite.",
-          "categories": ["Menée plus petite", "Menée plus grande"],
+          "categories": [
+            "Menée plus petite",
+            "Menée plus grande"
+          ],
           "items": [
-            { "text": "Faire tourner une hélice très vite", "category": 0 },
-            { "text": "Accélérer un ventilateur", "category": 0 },
-            { "text": "Soulever une charge lourde", "category": 1 },
-            { "text": "Monter une côte à vélo", "category": 1 }
+            {
+              "text": "Faire tourner une hélice très vite",
+              "category": 0
+            },
+            {
+              "text": "Accélérer un ventilateur",
+              "category": 0
+            },
+            {
+              "text": "Soulever une charge lourde",
+              "category": 1
+            },
+            {
+              "text": "Monter une côte à vélo",
+              "category": 1
+            }
           ]
         },
         {
@@ -331,8 +435,17 @@
           "prompt": "Complète ces deux phrases.",
           "template": "Un engrenage ___ le mouvement ; un pignon-crémaillère le ___ en déplacement rectiligne.",
           "blanks": [
-            { "accepted": ["transmet"] },
-            { "accepted": ["transforme", "change"] }
+            {
+              "accepted": [
+                "transmet"
+              ]
+            },
+            {
+              "accepted": [
+                "transforme",
+                "change"
+              ]
+            }
           ],
           "hint": "L'un garde une rotation en sortie, l'autre non.",
           "explanation": "Un engrenage transmet : la sortie est encore une rotation. Un pignon-crémaillère transforme : la sortie est un déplacement en ligne droite."

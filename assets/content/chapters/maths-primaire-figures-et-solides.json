@@ -94,24 +94,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le carré est un rectangle particulier",
+          "body": "Règle les lignes et les colonnes : tu obtiens un rectangle. Mets-en autant des deux côtés : c’est un carré. Le carré n’est pas à côté du rectangle, il est dedans.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Les cinq noms, du plus large au plus serré",
           "body": "Un trapèze a au moins deux côtés parallèles.\n\nUn parallélogramme a ses côtés parallèles deux à deux.\n\nUn rectangle est un parallélogramme à quatre angles droits.\n\nUn losange est un parallélogramme à quatre côtés égaux.\n\nUn carré a les deux : quatre angles droits et quatre côtés égaux."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Le piège à éviter",
           "body": "La question « est-ce un carré ou un rectangle ? » n'a pas de réponse, parce qu'elle suppose qu'il faut choisir.\n\nUn carré est un rectangle. Il a bien quatre angles droits, donc il remplit la définition. Il est aussi un losange, et un parallélogramme, et un trapèze.\n\nLes familles s'emboîtent comme des poupées russes : un carré est le cas le plus spécial, celui qui appartient à toutes les familles en même temps."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Le carré est l'intersection",
           "body": "Un rectangle qui a ses quatre côtés égaux est un carré.\n\nUn losange qui a ses quatre angles droits est un carré.\n\nLe carré est exactement ce qui est à la fois rectangle et losange — rien de plus, rien de moins."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Reconnaître sans se tromper",
           "body": "Mesure les quatre côtés, puis vérifie les quatre angles à l'équerre.\n\nQuatre côtés égaux et quatre angles droits : carré.\n\nQuatre angles droits seulement : rectangle.\n\nQuatre côtés égaux seulement : losange.\n\nNi l'un ni l'autre, mais côtés parallèles deux à deux : parallélogramme."
@@ -229,19 +236,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Compter avant de nommer",
+          "body": "Règle deux angles et regarde le troisième s’ajuster : une figure obéit à des comptes. Les solides aussi — faces, arêtes et sommets sont liés par une relation qu’on va vérifier.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Trois choses à compter",
           "body": "Une face est une surface plate du solide.\n\nUne arête est le trait où deux faces se rencontrent.\n\nUn sommet est le point où plusieurs arêtes se rejoignent.\n\nSur un cube : 6 faces, 12 arêtes, 8 sommets. Compte-les sur un dé, en le faisant tourner."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La relation d'Euler",
           "formula": "faces + sommets − arêtes = 2",
           "body": "Pour le cube : 6 + 8 − 12 = 2. Pour une pyramide à base carrée : 5 + 5 − 8 = 2. Pour un tétraèdre : 4 + 4 − 6 = 2. Essaie avec n'importe quel solide à faces plates : le résultat est toujours 2."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Les solides qui n'ont pas d'arête",
           "body": "La sphère n'a aucune face plate, aucune arête, aucun sommet.\n\nLe cylindre a deux disques plats et une surface courbe ; le cône a un disque et une pointe.\n\nLa relation d'Euler ne s'applique pas à eux : elle vaut pour les solides entièrement faits de faces plates, qu'on appelle polyèdres."
@@ -334,18 +348,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Six carrés, pas n’importe comment",
+          "body": "Pose six jetons en lignes et en colonnes. Un patron de cube en contient toujours six — mais six carrés ne font pas forcément un patron, et c’est tout le défi.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Déplier un cube",
           "body": "Prends une boîte cubique, coupe le long de certaines arêtes et aplatis-la : tu obtiens six carrés tenant les uns aux autres. C'est un patron.\n\nTout patron de cube a exactement six carrés — c'est le nombre de faces, et aucun carré ne peut manquer ni se répéter.\n\nMais l'inverse est faux : six carrés assemblés ne se replient pas forcément en cube. Il y a une infinité de façons d'en coller six, et seulement onze donnent un cube."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "astuce",
           "title": "Le test du pliage mental",
           "body": "Choisis un carré comme fond. Replie ses voisins directs : ils forment les murs.\n\nS'il reste un carré sans place, ou si deux carrés viennent se superposer au même endroit, le patron ne marche pas.\n\nLe cas qui échoue le plus souvent est celui de quatre carrés en carré 2 × 2 : deux se recouvrent dès le pliage."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Les faces opposées",
           "body": "Dans un dé, les faces opposées font toujours 7 : 1 avec 6, 2 avec 5, 3 avec 4.\n\nSur un patron, deux carrés séparés par exactement un carré dans une même ligne se retrouvent opposés après pliage. Deux carrés voisins, jamais."

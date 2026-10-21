@@ -245,25 +245,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le même cas interdit",
+          "body": "Trouve le seul cas qui met « si P alors M » en défaut : P vrai et M faux. La contraposée interdit exactement ce cas-là — c’est pourquoi elle dit la même chose.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La contraposée",
           "formula": "« si P alors M »  équivaut à  « si non M alors non P »",
           "body": "on échange et on nie les deux parties."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Sur la pluie",
           "body": "« S'il pleut, alors le sol est mouillé. »\n\nContraposée : « si le sol est sec, alors il ne pleut pas. »\n\nLes deux disent exactement la même chose, et l'une est parfois plus facile à vérifier que l'autre."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Ne pas la confondre avec la réciproque",
           "body": "La réciproque échange sans nier : elle peut être fausse.\n\nLa contraposée échange et nie : elle est toujours vraie en même temps que l'implication de départ. C'est ce qui en fait un outil de démonstration."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Pour montrer qu'un nombre dont le carré est impair est lui-même impair, on passe par la contraposée : si le nombre était pair, son carré le serait aussi. C'est bien plus court que la voie directe."
         }
@@ -350,6 +357,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Réciproque ou contraposée",
+          "body": "Compare « si P alors M » et sa réciproque sur les quatre cas : elles ne se mettent pas en défaut au même endroit. C’est toute la différence que le défi demande de voir.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Repère à chaque fois ce qui est la condition et ce qui est la conclusion."

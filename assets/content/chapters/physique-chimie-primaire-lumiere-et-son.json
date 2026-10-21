@@ -48,10 +48,19 @@
           "prompt": "Que fait l'œil pour voir un objet ?",
           "explanation": "Il reçoit la lumière que l'objet renvoie. L'œil n'envoie rien.",
           "options": [
-            { "text": "il reçoit la lumière venant de l'objet", "correct": true },
-            { "text": "il envoie un rayon vers l'objet" },
-            { "text": "il touche l'objet à distance" },
-            { "text": "il éclaire l'objet" }
+            {
+              "text": "il reçoit la lumière venant de l'objet",
+              "correct": true
+            },
+            {
+              "text": "il envoie un rayon vers l'objet"
+            },
+            {
+              "text": "il touche l'objet à distance"
+            },
+            {
+              "text": "il éclaire l'objet"
+            }
           ]
         },
         {
@@ -60,10 +69,19 @@
           "prompt": "Pourquoi ne voit-on rien dans une pièce totalement noire ?",
           "explanation": "Parce qu'aucune lumière ne part des objets vers l'œil. Sans lumière, il n'y a rien à recevoir.",
           "options": [
-            { "text": "aucune lumière ne parvient à l'œil", "correct": true },
-            { "text": "les objets disparaissent" },
-            { "text": "l'œil se ferme tout seul" },
-            { "text": "il faut attendre plus longtemps" }
+            {
+              "text": "aucune lumière ne parvient à l'œil",
+              "correct": true
+            },
+            {
+              "text": "les objets disparaissent"
+            },
+            {
+              "text": "l'œil se ferme tout seul"
+            },
+            {
+              "text": "il faut attendre plus longtemps"
+            }
           ]
         },
         {
@@ -72,10 +90,19 @@
           "prompt": "Qu'est-ce qu'une ombre ?",
           "explanation": "L'endroit où la lumière n'arrive pas, parce qu'un objet lui barre le passage. Ce n'est pas une substance.",
           "options": [
-            { "text": "l'endroit où la lumière n'arrive pas", "correct": true },
-            { "text": "une matière noire collée à l'objet" },
-            { "text": "le reflet de l'objet" },
-            { "text": "de la lumière sombre" }
+            {
+              "text": "l'endroit où la lumière n'arrive pas",
+              "correct": true
+            },
+            {
+              "text": "une matière noire collée à l'objet"
+            },
+            {
+              "text": "le reflet de l'objet"
+            },
+            {
+              "text": "de la lumière sombre"
+            }
           ]
         },
         {
@@ -97,24 +124,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La lumière va droit, le son contourne",
+          "body": "Déplace la lampe et regarde l’ombre se former : la lumière ne tourne pas les coins. Le son, lui, les contourne — c’est pourquoi on entend quelqu’un sans le voir.",
+          "figureId": "ombre-lumiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Tout son vient d'une vibration",
           "body": "Pose un doigt sur ta gorge et parle : ça vibre.\n\nPince une corde de guitare : elle tremble, et on la voit trembler.\n\nArrête la vibration en posant la main dessus : le son s'arrête aussitôt. Pas de vibration, pas de son."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le trajet du son",
           "body": "1. Un objet vibre.\n\n2. Il fait vibrer l'air autour de lui, de proche en proche.\n\n3. Cette vibration atteint le tympan, qui vibre à son tour.\n\nLe son a besoin de matière pour voyager : dans le vide, il ne se propage pas du tout."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Le son est lent",
           "body": "340 mètres par seconde dans l'air — un million de fois moins vite que la lumière.\n\nÀ l'orage, l'éclair arrive tout de suite et le tonnerre met trois secondes par kilomètre. Compte les secondes et divise par trois : tu as la distance."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Le bruit abîme l'oreille",
           "body": "Contrairement à l'œil, l'oreille ne prévient pas non plus. Un casque trop fort détruit peu à peu des cellules qui ne repoussent jamais.\n\nLa règle simple : si quelqu'un à côté de toi entend ta musique, c'est trop fort."
@@ -127,10 +161,19 @@
           "prompt": "D'où vient un son ?",
           "explanation": "D'un objet qui vibre. Arrête la vibration, le son s'arrête.",
           "options": [
-            { "text": "d'un objet qui vibre", "correct": true },
-            { "text": "de l'air qui se déplace en bloc" },
-            { "text": "de l'oreille qui s'ouvre" },
-            { "text": "de la lumière transformée" }
+            {
+              "text": "d'un objet qui vibre",
+              "correct": true
+            },
+            {
+              "text": "de l'air qui se déplace en bloc"
+            },
+            {
+              "text": "de l'oreille qui s'ouvre"
+            },
+            {
+              "text": "de la lumière transformée"
+            }
           ]
         },
         {
@@ -180,18 +223,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Plus près, plus grande",
+          "body": "Rapproche la lampe de l’objet : l’ombre grandit. Un son suit une règle voisine — plus la source est proche, plus il est fort. Les deux s’affaiblissent avec la distance.",
+          "figureId": "ombre-lumiere"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Ce qui les distingue",
           "body": "La lumière traverse le vide, le son non.\n\nLa lumière va tout droit, le son contourne les obstacles.\n\nLa lumière est un million de fois plus rapide.\n\nC'est pourquoi une sirène s'entend derrière un bâtiment qu'on ne voit pas."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "aRetenir",
           "title": "Grave ou aigu",
           "body": "Une vibration lente donne un son grave. Une vibration rapide donne un son aigu.\n\nUne grosse corde vibre lentement : grave. Une corde fine et tendue vibre vite : aigu. C'est tout le secret des instruments."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Fort ou faible",
           "body": "L'intensité ne dépend pas de la vitesse de vibration mais de son ampleur.\n\nUne corde qu'on pince fort vibre plus largement : le son est plus fort, mais la note reste la même."
@@ -203,12 +253,27 @@
           "kind": "tri",
           "prompt": "Range ces affirmations : vraies pour la lumière, ou pour le son ?",
           "explanation": "La lumière traverse le vide et va tout droit ; le son a besoin de matière et contourne les obstacles.",
-          "categories": ["la lumière", "le son"],
+          "categories": [
+            "la lumière",
+            "le son"
+          ],
           "items": [
-            { "text": "traverse le vide", "category": 0 },
-            { "text": "va en ligne droite et s'arrête aux murs", "category": 0 },
-            { "text": "a besoin d'air pour voyager", "category": 1 },
-            { "text": "contourne les obstacles", "category": 1 }
+            {
+              "text": "traverse le vide",
+              "category": 0
+            },
+            {
+              "text": "va en ligne droite et s'arrête aux murs",
+              "category": 0
+            },
+            {
+              "text": "a besoin d'air pour voyager",
+              "category": 1
+            },
+            {
+              "text": "contourne les obstacles",
+              "category": 1
+            }
           ]
         },
         {
@@ -217,10 +282,19 @@
           "prompt": "Pourquoi entend-on une sirène derrière un immeuble sans la voir ?",
           "explanation": "Le son contourne les obstacles, la lumière non.",
           "options": [
-            { "text": "le son contourne les obstacles", "correct": true },
-            { "text": "le son traverse le béton" },
-            { "text": "la lumière est trop rapide" },
-            { "text": "les sirènes sont très fortes" }
+            {
+              "text": "le son contourne les obstacles",
+              "correct": true
+            },
+            {
+              "text": "le son traverse le béton"
+            },
+            {
+              "text": "la lumière est trop rapide"
+            },
+            {
+              "text": "les sirènes sont très fortes"
+            }
           ]
         },
         {
@@ -229,9 +303,18 @@
           "prompt": "Associe chaque vibration au son produit.",
           "explanation": "Vibration lente, son grave. Vibration rapide, son aigu. Et c'est l'ampleur qui fait l'intensité.",
           "pairs": [
-            { "left": "une vibration lente", "right": "un son grave" },
-            { "left": "une vibration rapide", "right": "un son aigu" },
-            { "left": "une vibration de grande ampleur", "right": "un son fort" }
+            {
+              "left": "une vibration lente",
+              "right": "un son grave"
+            },
+            {
+              "left": "une vibration rapide",
+              "right": "un son aigu"
+            },
+            {
+              "left": "une vibration de grande ampleur",
+              "right": "un son fort"
+            }
           ]
         },
         {
@@ -260,6 +343,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Il faut quelque chose entre les deux",
+          "body": "Recule la lampe au maximum : l’ombre rétrécit et ses bords s’adoucissent. La lumière a besoin d’un obstacle pour faire une ombre, et le son a besoin de matière pour voyager — le téléphone à ficelle du défi exploite exactement cela.",
+          "figureId": "ombre-lumiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le téléphone à ficelle",
           "body": "Deux gobelets reliés par une ficelle tendue. On parle dans l'un, on entend dans l'autre.\n\nLe fond du gobelet vibre, la ficelle transmet la vibration, le second fond vibre à son tour.\n\nSi la ficelle est molle, cela ne marche plus : la vibration ne se transmet pas. Et si quelqu'un la pince, le son s'arrête net — ce qui prouve que c'est bien elle qui porte le son, et non l'air."
@@ -272,10 +362,19 @@
           "prompt": "Pourquoi un téléphone à ficelle cesse-t-il de marcher si on pince la ficelle ?",
           "explanation": "Parce que c'est la ficelle qui transmet la vibration. La pincer l'arrête, donc le son ne passe plus.",
           "options": [
-            { "text": "la ficelle transmet la vibration, et on l'arrête", "correct": true },
-            { "text": "le gobelet se bouche" },
-            { "text": "l'air ne circule plus" },
-            { "text": "la ficelle se détend" }
+            {
+              "text": "la ficelle transmet la vibration, et on l'arrête",
+              "correct": true
+            },
+            {
+              "text": "le gobelet se bouche"
+            },
+            {
+              "text": "l'air ne circule plus"
+            },
+            {
+              "text": "la ficelle se détend"
+            }
           ]
         },
         {
@@ -299,10 +398,19 @@
           "prompt": "Pourquoi voit-on l'éclair avant d'entendre le tonnerre ?",
           "explanation": "Parce que la lumière est environ un million de fois plus rapide que le son : elle arrive quasi instantanément.",
           "options": [
-            { "text": "la lumière est bien plus rapide que le son", "correct": true },
-            { "text": "l'éclair se produit avant le tonnerre" },
-            { "text": "l'œil réagit plus vite que l'oreille" },
-            { "text": "le tonnerre part plus tard" }
+            {
+              "text": "la lumière est bien plus rapide que le son",
+              "correct": true
+            },
+            {
+              "text": "l'éclair se produit avant le tonnerre"
+            },
+            {
+              "text": "l'œil réagit plus vite que l'oreille"
+            },
+            {
+              "text": "le tonnerre part plus tard"
+            }
           ]
         },
         {

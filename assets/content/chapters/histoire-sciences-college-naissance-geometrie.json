@@ -73,10 +73,19 @@
           "hint": "Deux mots grecs.",
           "explanation": "Mesure de la terre. Le nom garde la trace de l'usage qui l'a fait naître : arpenter les champs.",
           "options": [
-            { "text": "Mesure de la terre", "correct": true },
-            { "text": "Science des formes" },
-            { "text": "Art du dessin" },
-            { "text": "Calcul des nombres" }
+            {
+              "text": "Mesure de la terre",
+              "correct": true
+            },
+            {
+              "text": "Science des formes"
+            },
+            {
+              "text": "Art du dessin"
+            },
+            {
+              "text": "Calcul des nombres"
+            }
           ]
         },
         {
@@ -140,10 +149,19 @@
           "hint": "Pense au nombre de cas couverts.",
           "explanation": "La certitude pour tous les cas, y compris ceux qu'on n'a pas essayés. Un exemple ne garantit que lui-même.",
           "options": [
-            { "text": "La certitude pour tous les cas", "correct": true },
-            { "text": "Un résultat plus précis" },
-            { "text": "Un calcul plus rapide" },
-            { "text": "Un dessin plus beau" }
+            {
+              "text": "La certitude pour tous les cas",
+              "correct": true
+            },
+            {
+              "text": "Un résultat plus précis"
+            },
+            {
+              "text": "Un calcul plus rapide"
+            },
+            {
+              "text": "Un dessin plus beau"
+            }
           ]
         },
         {
@@ -223,10 +241,19 @@
           "hint": "Que fait-on de cet énoncé ?",
           "explanation": "Un énoncé admis sans démonstration, qui sert de point de départ. Sans lui, on ne pourrait jamais commencer : toute preuve s'appuie sur quelque chose.",
           "options": [
-            { "text": "Un énoncé admis sans démonstration", "correct": true },
-            { "text": "Un théorème très difficile" },
-            { "text": "Un résultat faux" },
-            { "text": "Une recette de calcul" }
+            {
+              "text": "Un énoncé admis sans démonstration",
+              "correct": true
+            },
+            {
+              "text": "Un théorème très difficile"
+            },
+            {
+              "text": "Un résultat faux"
+            },
+            {
+              "text": "Une recette de calcul"
+            }
           ]
         },
         {
@@ -247,12 +274,27 @@
           "prompt": "Range ces énoncés selon qu'ils se démontrent ou qu'ils se posent.",
           "hint": "Lequel ne découle de rien d'autre ?",
           "explanation": "Les deux théorèmes se démontrent à partir des axiomes. Les deux postulats sont posés d'emblée : ils sont le point de départ.",
-          "categories": ["Se démontre", "Se pose"],
+          "categories": [
+            "Se démontre",
+            "Se pose"
+          ],
           "items": [
-            { "text": "a² + b² = c² dans un triangle rectangle", "category": 0 },
-            { "text": "La somme des angles d'un triangle vaut 180°", "category": 0 },
-            { "text": "Par deux points passe une seule droite", "category": 1 },
-            { "text": "Tous les angles droits sont égaux entre eux", "category": 1 }
+            {
+              "text": "a² + b² = c² dans un triangle rectangle",
+              "category": 0
+            },
+            {
+              "text": "La somme des angles d'un triangle vaut 180°",
+              "category": 0
+            },
+            {
+              "text": "Par deux points passe une seule droite",
+              "category": 1
+            },
+            {
+              "text": "Tous les angles droits sont égaux entre eux",
+              "category": 1
+            }
           ]
         },
         {
@@ -274,6 +316,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une preuve qu’on regarde",
+          "body": "Lance le réarrangement : les mêmes pièces remplissent d’abord les deux petits carrés, puis le grand. C’est une démonstration, et elle se voit — c’est ce que les Grecs ont inventé.",
+          "figureId": "pythagore-preuve"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Demande-toi chaque fois s'il s'agit d'une recette ou d'une preuve."
@@ -285,12 +334,27 @@
           "kind": "tri",
           "prompt": "Range ces pratiques.",
           "explanation": "Mesurer un champ et retracer des limites après une crue sont des besoins pratiques. Démontrer un théorème et poser des axiomes relèvent de la démarche grecque.",
-          "categories": ["Besoin pratique", "Démarche de preuve"],
+          "categories": [
+            "Besoin pratique",
+            "Démarche de preuve"
+          ],
           "items": [
-            { "text": "Mesurer l'aire d'un champ", "category": 0 },
-            { "text": "Retracer des limites après une crue", "category": 0 },
-            { "text": "Démontrer un théorème", "category": 1 },
-            { "text": "Poser des axiomes", "category": 1 }
+            {
+              "text": "Mesurer l'aire d'un champ",
+              "category": 0
+            },
+            {
+              "text": "Retracer des limites après une crue",
+              "category": 0
+            },
+            {
+              "text": "Démontrer un théorème",
+              "category": 1
+            },
+            {
+              "text": "Poser des axiomes",
+              "category": 1
+            }
           ]
         },
         {
@@ -320,9 +384,18 @@
           "prompt": "Associe chaque apport à son origine.",
           "explanation": "Les recettes de calcul d'aire viennent d'Égypte, la démonstration de la Grèce, et l'organisation en axiomes des Éléments d'Euclide.",
           "pairs": [
-            { "left": "Recettes de calcul d'aire", "right": "Scribes égyptiens" },
-            { "left": "L'idée de démonstration", "right": "Les Grecs" },
-            { "left": "Tout déduire d'axiomes", "right": "Euclide" }
+            {
+              "left": "Recettes de calcul d'aire",
+              "right": "Scribes égyptiens"
+            },
+            {
+              "left": "L'idée de démonstration",
+              "right": "Les Grecs"
+            },
+            {
+              "left": "Tout déduire d'axiomes",
+              "right": "Euclide"
+            }
           ]
         },
         {
@@ -339,10 +412,19 @@
           "hint": "Ils ne sont pas démontrés.",
           "explanation": "Parce qu'ils sont admis sans preuve : tout l'édifice repose dessus. Moins ils supposent, moins on risque d'y cacher une erreur.",
           "options": [
-            { "text": "Parce que tout l'édifice repose dessus sans preuve", "correct": true },
-            { "text": "Parce qu'ils sont plus faciles à retenir" },
-            { "text": "Parce qu'ils sont plus anciens" },
-            { "text": "Parce qu'ils se démontrent plus vite" }
+            {
+              "text": "Parce que tout l'édifice repose dessus sans preuve",
+              "correct": true
+            },
+            {
+              "text": "Parce qu'ils sont plus faciles à retenir"
+            },
+            {
+              "text": "Parce qu'ils sont plus anciens"
+            },
+            {
+              "text": "Parce qu'ils se démontrent plus vite"
+            }
           ]
         }
       ]

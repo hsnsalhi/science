@@ -11,25 +11,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un bilan, pas un contenu",
+          "body": "Touche chaque étage : à chacun, une part passe en chaleur. L’énergie n’est jamais perdue, elle change de forme — et c’est exactement ce que le premier principe comptabilise.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Bilan sur un système fermé",
           "formula": "ΔU = W + Q",
           "body": "la variation d'énergie interne est la somme du travail et de la chaleur reçus."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Ce que le principe dit, et ce qu'il ne dit pas",
           "body": "Il dit que l'énergie ne se crée ni ne se perd : tout bilan doit se refermer.\n\nIl ne dit rien du sens des transformations. Un gaz qui se rassemblerait spontanément dans une moitié de récipient respecterait parfaitement le premier principe."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Travail et chaleur ne sont pas des contenus",
           "body": "Un système ne « contient » ni travail ni chaleur : ce sont deux modes de transfert.\n\nL'énergie interne, elle, est une fonction d'état : sa variation ne dépend que des états de départ et d'arrivée, jamais du chemin suivi."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "C'est pourquoi on écrit ΔU et non ΔW : la première est une différence entre deux états, les secondes sont des quantités échangées le long d'un trajet."
         }
@@ -52,10 +59,19 @@
           "hint": "Laquelle ne dépend pas du chemin ?",
           "explanation": "L'énergie interne. Le travail et la chaleur dépendent du chemin suivi, et un système n'en contient pas.",
           "options": [
-            { "text": "L'énergie interne", "correct": true },
-            { "text": "Le travail" },
-            { "text": "La chaleur" },
-            { "text": "Les trois également" }
+            {
+              "text": "L'énergie interne",
+              "correct": true
+            },
+            {
+              "text": "Le travail"
+            },
+            {
+              "text": "La chaleur"
+            },
+            {
+              "text": "Les trois également"
+            }
           ]
         },
         {
@@ -133,10 +149,19 @@
           "explanation": "Parce que les configurations équilibrées sont écrasantes en nombre. Rien ne l'interdit : le retour est seulement d'une improbabilité démesurée.",
           "figureId": "entropie",
           "options": [
-            { "text": "Les configurations équilibrées sont bien plus nombreuses", "correct": true },
-            { "text": "Les lois du mouvement l'interdisent" },
-            { "text": "Les particules se repoussent" },
-            { "text": "L'énergie ne le permet pas" }
+            {
+              "text": "Les configurations équilibrées sont bien plus nombreuses",
+              "correct": true
+            },
+            {
+              "text": "Les lois du mouvement l'interdisent"
+            },
+            {
+              "text": "Les particules se repoussent"
+            },
+            {
+              "text": "L'énergie ne le permet pas"
+            }
           ]
         },
         {
@@ -213,10 +238,19 @@
           "hint": "Que vaut alors le rendement de Carnot ?",
           "explanation": "La machine ne pourrait pas fonctionner en cycle : le rendement maximal serait nul. La source froide est une condition, pas une perte.",
           "options": [
-            { "text": "La machine ne pourrait pas fonctionner en cycle", "correct": true },
-            { "text": "Le rendement atteindrait 100 %" },
-            { "text": "La machine irait deux fois plus vite" },
-            { "text": "Rien ne changerait" }
+            {
+              "text": "La machine ne pourrait pas fonctionner en cycle",
+              "correct": true
+            },
+            {
+              "text": "Le rendement atteindrait 100 %"
+            },
+            {
+              "text": "La machine irait deux fois plus vite"
+            },
+            {
+              "text": "Rien ne changerait"
+            }
           ]
         },
         {
@@ -225,12 +259,27 @@
           "prompt": "Range ces affirmations : relèvent-elles du premier ou du second principe ?",
           "hint": "Bilan, ou sens d'évolution ?",
           "explanation": "Le premier principe fait les bilans. Le second décide du sens des transformations et impose les plafonds.",
-          "categories": ["Premier principe", "Second principe"],
+          "categories": [
+            "Premier principe",
+            "Second principe"
+          ],
           "items": [
-            { "text": "l'énergie d'un système isolé ne change pas", "category": 0 },
-            { "text": "tout bilan énergétique doit se refermer", "category": 0 },
-            { "text": "la chaleur va spontanément du chaud vers le froid", "category": 1 },
-            { "text": "aucun moteur ne dépasse le rendement de Carnot", "category": 1 }
+            {
+              "text": "l'énergie d'un système isolé ne change pas",
+              "category": 0
+            },
+            {
+              "text": "tout bilan énergétique doit se refermer",
+              "category": 0
+            },
+            {
+              "text": "la chaleur va spontanément du chaud vers le froid",
+              "category": 1
+            },
+            {
+              "text": "aucun moteur ne dépasse le rendement de Carnot",
+              "category": 1
+            }
           ]
         }
       ]
@@ -245,6 +294,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Pourquoi cela ne revient jamais en arrière",
+          "body": "Mets tout à gauche, puis laisse le temps passer. Rien n’interdit aux grains de se rassembler, et pourtant ils ne le font jamais. Le premier principe l’autoriserait ; le second explique pourquoi on ne l’observe pas.",
+          "figureId": "entropie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque énoncé, demande-toi lequel des deux principes est en jeu."
@@ -288,10 +344,19 @@
           "explanation": "Le nombre de configurations microscopiques compatibles avec l'état observé. Plus il est grand, plus l'état est probable.",
           "figureId": "entropie",
           "options": [
-            { "text": "Le nombre de configurations microscopiques", "correct": true },
-            { "text": "La quantité de chaleur contenue" },
-            { "text": "Le désordre visible à l'œil" },
-            { "text": "La température du système" }
+            {
+              "text": "Le nombre de configurations microscopiques",
+              "correct": true
+            },
+            {
+              "text": "La quantité de chaleur contenue"
+            },
+            {
+              "text": "Le désordre visible à l'œil"
+            },
+            {
+              "text": "La température du système"
+            }
           ]
         },
         {
@@ -307,10 +372,22 @@
           "prompt": "Associe chaque grandeur à ce qu'elle est.",
           "explanation": "Deux fonctions d'état, deux modes de transfert : la distinction commande toute l'écriture des bilans.",
           "pairs": [
-            { "left": "l'énergie interne", "right": "une fonction d'état" },
-            { "left": "l'entropie", "right": "une fonction d'état" },
-            { "left": "le travail", "right": "un mode de transfert" },
-            { "left": "la chaleur", "right": "un mode de transfert" }
+            {
+              "left": "l'énergie interne",
+              "right": "une fonction d'état"
+            },
+            {
+              "left": "l'entropie",
+              "right": "une fonction d'état"
+            },
+            {
+              "left": "le travail",
+              "right": "un mode de transfert"
+            },
+            {
+              "left": "la chaleur",
+              "right": "un mode de transfert"
+            }
           ]
         }
       ]

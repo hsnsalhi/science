@@ -47,21 +47,46 @@
           "kind": "remiseEnOrdre",
           "prompt": "Remets dans l'ordre les trois étapes d'une chaîne d'information.",
           "explanation": "On capte d'abord, on décide ensuite, on agit enfin.",
-          "items": ["un capteur détecte", "l'appareil décide", "un actionneur agit"]
+          "items": [
+            "un capteur détecte",
+            "l'appareil décide",
+            "un actionneur agit"
+          ]
         },
         {
           "id": "q2",
           "kind": "tri",
           "prompt": "Range ces éléments : capteurs ou actionneurs ?",
           "explanation": "Le capteur reçoit une information du monde ; l'actionneur agit sur le monde.",
-          "categories": ["capteur", "actionneur"],
+          "categories": [
+            "capteur",
+            "actionneur"
+          ],
           "items": [
-            { "text": "un thermomètre électronique", "category": 0 },
-            { "text": "un détecteur de mouvement", "category": 0 },
-            { "text": "un bouton poussoir", "category": 0 },
-            { "text": "un moteur", "category": 1 },
-            { "text": "une lampe", "category": 1 },
-            { "text": "une sonnerie", "category": 1 }
+            {
+              "text": "un thermomètre électronique",
+              "category": 0
+            },
+            {
+              "text": "un détecteur de mouvement",
+              "category": 0
+            },
+            {
+              "text": "un bouton poussoir",
+              "category": 0
+            },
+            {
+              "text": "un moteur",
+              "category": 1
+            },
+            {
+              "text": "une lampe",
+              "category": 1
+            },
+            {
+              "text": "une sonnerie",
+              "category": 1
+            }
           ]
         },
         {
@@ -70,10 +95,19 @@
           "prompt": "Pourquoi les portes automatiques s'ouvrent-elles parfois pour rien ?",
           "explanation": "Parce que le capteur détecte un mouvement ou une chaleur sans savoir ce que c'est. Il réagit, il ne comprend pas.",
           "options": [
-            { "text": "le capteur détecte sans comprendre ce qu'il détecte", "correct": true },
-            { "text": "elles sont mal réglées en usine" },
-            { "text": "le moteur se déclenche au hasard" },
-            { "text": "elles s'ouvrent toutes les minutes" }
+            {
+              "text": "le capteur détecte sans comprendre ce qu'il détecte",
+              "correct": true
+            },
+            {
+              "text": "elles sont mal réglées en usine"
+            },
+            {
+              "text": "le moteur se déclenche au hasard"
+            },
+            {
+              "text": "elles s'ouvrent toutes les minutes"
+            }
           ]
         },
         {
@@ -95,24 +129,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Alimenter, convertir, transmettre",
+          "body": "Touche chaque étage de la chaîne et lis le rendement global. Rien ne marche tout seul : il faut une source, et à chaque passage une part s’échappe en chaleur.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Rien ne marche tout seul",
           "body": "Une lampe a besoin d'électricité. Une voiture, d'essence ou de batterie. Un vélo, de tes jambes.\n\nUn appareil ne crée pas d'énergie : il en reçoit, et la transforme en quelque chose d'utile.\n\nDébranche-le, il s'arrête. C'est la preuve la plus simple qu'il en consommait."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "La chaîne d'énergie",
           "body": "Une source fournit l'énergie : prise, pile, carburant, muscle.\n\nUn élément la transforme : moteur, résistance, ampoule.\n\nQuelque chose d'utile en sort : mouvement, chaleur, lumière.\n\nEt toujours une part qui se perd, le plus souvent en chaleur."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Une part se perd toujours",
           "body": "Un chargeur de téléphone chauffe : cette chaleur est de l'énergie perdue.\n\nUne ampoule à filament dégageait plus de chaleur que de lumière — c'est pour cela qu'on les a remplacées.\n\nAucun appareil ne transforme tout ce qu'il reçoit en ce qu'on veut."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Veille ne veut pas dire éteint",
           "body": "Un appareil en veille consomme encore. Une box internet, une télévision, un chargeur branché à vide.\n\nMis bout à bout, cela représente dans un foyer l'équivalent de plusieurs ampoules allumées en permanence."
@@ -125,10 +166,22 @@
           "prompt": "Associe chaque appareil à ce qu'il produit d'utile.",
           "explanation": "Chaque appareil transforme de l'énergie en une forme utile, plus une part perdue.",
           "pairs": [
-            { "left": "une lampe", "right": "de la lumière" },
-            { "left": "un ventilateur", "right": "du mouvement d'air" },
-            { "left": "un radiateur", "right": "de la chaleur" },
-            { "left": "un haut-parleur", "right": "du son" }
+            {
+              "left": "une lampe",
+              "right": "de la lumière"
+            },
+            {
+              "left": "un ventilateur",
+              "right": "du mouvement d'air"
+            },
+            {
+              "left": "un radiateur",
+              "right": "de la chaleur"
+            },
+            {
+              "left": "un haut-parleur",
+              "right": "du son"
+            }
           ]
         },
         {
@@ -137,10 +190,19 @@
           "prompt": "Pourquoi un chargeur de téléphone chauffe-t-il ?",
           "explanation": "Parce qu'une part de l'énergie qu'il reçoit est perdue en chaleur au lieu d'aller dans la batterie.",
           "options": [
-            { "text": "une part de l'énergie se perd en chaleur", "correct": true },
-            { "text": "il stocke la chaleur pour plus tard" },
-            { "text": "c'est un signe qu'il est cassé" },
-            { "text": "la batterie renvoie de la chaleur" }
+            {
+              "text": "une part de l'énergie se perd en chaleur",
+              "correct": true
+            },
+            {
+              "text": "il stocke la chaleur pour plus tard"
+            },
+            {
+              "text": "c'est un signe qu'il est cassé"
+            },
+            {
+              "text": "la batterie renvoie de la chaleur"
+            }
           ]
         },
         {
@@ -174,18 +236,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les trois rôles, à retrouver",
+          "body": "Règle le seuil : capteur, traitement, actionneur. Dans n’importe quel appareil, cherche ces trois rôles — ils y sont presque toujours, même quand ils ne sont pas visibles.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "exemple",
           "title": "Une lampe de poche",
           "body": "Source : les piles.\n\nInterrupteur : il décide si le courant passe.\n\nActionneur : l'ampoule, qui transforme l'électricité en lumière.\n\nTrois éléments seulement, et pourtant toute la chaîne y est."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Un lave-linge",
           "body": "Capteurs : niveau d'eau, température, vitesse.\n\nDécision : le programme choisi.\n\nActionneurs : la vanne d'eau, la résistance chauffante, le moteur du tambour, la pompe de vidange.\n\nPlus l'appareil est complexe, plus il a de capteurs et d'actionneurs — mais la structure ne change pas."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Chercher les trois rôles",
           "body": "Devant n'importe quel appareil, demande-toi : qu'est-ce qui capte, qu'est-ce qui décide, qu'est-ce qui agit ?\n\nC'est le même squelette dans un grille-pain et dans un avion."
@@ -197,13 +266,31 @@
           "kind": "tri",
           "prompt": "Dans un lave-linge, range ces éléments.",
           "explanation": "Les capteurs mesurent, les actionneurs agissent sur le linge et l'eau.",
-          "categories": ["capteur", "actionneur"],
+          "categories": [
+            "capteur",
+            "actionneur"
+          ],
           "items": [
-            { "text": "le capteur de niveau d'eau", "category": 0 },
-            { "text": "le capteur de température", "category": 0 },
-            { "text": "le moteur du tambour", "category": 1 },
-            { "text": "la pompe de vidange", "category": 1 },
-            { "text": "la résistance chauffante", "category": 1 }
+            {
+              "text": "le capteur de niveau d'eau",
+              "category": 0
+            },
+            {
+              "text": "le capteur de température",
+              "category": 0
+            },
+            {
+              "text": "le moteur du tambour",
+              "category": 1
+            },
+            {
+              "text": "la pompe de vidange",
+              "category": 1
+            },
+            {
+              "text": "la résistance chauffante",
+              "category": 1
+            }
           ]
         },
         {
@@ -212,10 +299,19 @@
           "prompt": "Dans une lampe de poche, quel est le rôle de l'interrupteur ?",
           "explanation": "Il décide si le courant passe ou non. C'est l'étape « décider » de la chaîne.",
           "options": [
-            { "text": "décider si le courant passe", "correct": true },
-            { "text": "produire la lumière" },
-            { "text": "fournir l'énergie" },
-            { "text": "mesurer la luminosité" }
+            {
+              "text": "décider si le courant passe",
+              "correct": true
+            },
+            {
+              "text": "produire la lumière"
+            },
+            {
+              "text": "fournir l'énergie"
+            },
+            {
+              "text": "mesurer la luminosité"
+            }
           ]
         },
         {
@@ -252,6 +348,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Rien ne se fabrique, tout se déplace",
+          "body": "Suis l’énergie d’un bout à l’autre de la chaîne. Un réfrigérateur ne fabrique pas de froid : il déplace de la chaleur, et le défi te fera trouver où elle part.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le réfrigérateur ne fabrique pas de froid",
           "body": "On croit qu'il produit du froid. En réalité il transporte la chaleur : il la prend à l'intérieur et la rejette derrière, dans la pièce.\n\nTouche la grille à l'arrière : elle est tiède. C'est la chaleur de tes aliments qui sort par là.\n\nC'est pourquoi laisser la porte du réfrigérateur ouverte ne refroidit pas une cuisine : cela la réchauffe, puisque le moteur travaille et que toute la chaleur reste dans la pièce."
@@ -264,10 +367,19 @@
           "prompt": "Que fait vraiment un réfrigérateur ?",
           "explanation": "Il transporte la chaleur de l'intérieur vers l'extérieur. Il ne fabrique pas de froid : le froid est l'absence de chaleur.",
           "options": [
-            { "text": "il déplace la chaleur vers l'extérieur", "correct": true },
-            { "text": "il fabrique du froid" },
-            { "text": "il détruit la chaleur" },
-            { "text": "il ralentit le temps" }
+            {
+              "text": "il déplace la chaleur vers l'extérieur",
+              "correct": true
+            },
+            {
+              "text": "il fabrique du froid"
+            },
+            {
+              "text": "il détruit la chaleur"
+            },
+            {
+              "text": "il ralentit le temps"
+            }
           ]
         },
         {
@@ -284,10 +396,19 @@
           "hint": "Certains feux changent quand une voiture arrive.",
           "explanation": "Une boucle enfouie dans la chaussée détecte la masse métallique du véhicule. C'est elle qui informe le feu qu'une voiture attend.",
           "options": [
-            { "text": "une boucle dans la chaussée qui détecte le métal", "correct": true },
-            { "text": "l'ampoule rouge" },
-            { "text": "le poteau" },
-            { "text": "le passage piéton" }
+            {
+              "text": "une boucle dans la chaussée qui détecte le métal",
+              "correct": true
+            },
+            {
+              "text": "l'ampoule rouge"
+            },
+            {
+              "text": "le poteau"
+            },
+            {
+              "text": "le passage piéton"
+            }
           ]
         },
         {
@@ -296,10 +417,22 @@
           "prompt": "Associe chaque appareil à son capteur principal.",
           "explanation": "Chaque appareil mesure ce dont sa décision dépend.",
           "pairs": [
-            { "left": "un thermostat", "right": "la température" },
-            { "left": "un détecteur de fumée", "right": "les particules dans l'air" },
-            { "left": "une lampe de jardin automatique", "right": "la luminosité" },
-            { "left": "un portail automatique", "right": "la présence d'un véhicule" }
+            {
+              "left": "un thermostat",
+              "right": "la température"
+            },
+            {
+              "left": "un détecteur de fumée",
+              "right": "les particules dans l'air"
+            },
+            {
+              "left": "une lampe de jardin automatique",
+              "right": "la luminosité"
+            },
+            {
+              "left": "un portail automatique",
+              "right": "la présence d'un véhicule"
+            }
           ]
         },
         {

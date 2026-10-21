@@ -260,19 +260,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Quel carré manque",
+          "body": "Touche la figure pour nommer les côtés. Le carré de l’hypoténuse vaut la somme des deux autres : chercher un côté de l’angle droit, c’est donc soustraire, et non additionner.",
+          "figureId": "pythagore-carres"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Identifier ce qu'on cherche",
           "body": "Deux cas seulement. Si l'inconnue est l'hypoténuse, on additionne. Si l'inconnue est un côté de l'angle droit, on soustrait."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Chercher un côté de l'angle droit",
           "body": "Si l'hypoténuse mesure 13 et qu'un côté mesure 5 :\n\n13² = 5² + x²\n169 = 25 + x²\nx² = 169 − 25 = 144\nx = 12",
           "formula": "x² = hypoténuse² − côté²"
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "Un côté de l'angle droit est toujours plus petit que l'hypoténuse. Tu trouves plus grand ? Tu as additionné au lieu de soustraire."
         }

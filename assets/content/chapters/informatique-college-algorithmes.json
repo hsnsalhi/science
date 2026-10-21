@@ -51,12 +51,27 @@
           "prompt": "Range ces consignes selon qu'une machine peut les exécuter.",
           "hint": "Y a-t-il un nombre, une quantité précise ?",
           "explanation": "« Avance de 3 cases » et « tourne à droite » sont exécutables telles quelles. « Avance un peu » et « va par là » demandent une interprétation qu'une machine ne sait pas faire.",
-          "categories": ["Exécutable", "Trop vague"],
+          "categories": [
+            "Exécutable",
+            "Trop vague"
+          ],
           "items": [
-            { "text": "Avance de 3 cases", "category": 0 },
-            { "text": "Tourne à droite", "category": 0 },
-            { "text": "Avance un peu", "category": 1 },
-            { "text": "Va par là", "category": 1 }
+            {
+              "text": "Avance de 3 cases",
+              "category": 0
+            },
+            {
+              "text": "Tourne à droite",
+              "category": 0
+            },
+            {
+              "text": "Avance un peu",
+              "category": 1
+            },
+            {
+              "text": "Va par là",
+              "category": 1
+            }
           ]
         },
         {
@@ -77,10 +92,19 @@
           "hint": "Ce n'est pas forcément de l'informatique.",
           "explanation": "Une suite d'instructions précises qui résout un problème. Une recette de cuisine en est un, même sans ordinateur.",
           "options": [
-            { "text": "Une suite d'instructions précises", "correct": true },
-            { "text": "Un programme écrit en anglais" },
-            { "text": "Un calcul très compliqué" },
-            { "text": "Une machine" }
+            {
+              "text": "Une suite d'instructions précises",
+              "correct": true
+            },
+            {
+              "text": "Un programme écrit en anglais"
+            },
+            {
+              "text": "Un calcul très compliqué"
+            },
+            {
+              "text": "Une machine"
+            }
           ]
         },
         {
@@ -169,10 +193,19 @@
           "hint": "La lecture ne suffit pas.",
           "explanation": "En le déroulant à la main, instruction par instruction. Deux programmes aux mêmes mots se lisent pareil et ne font pas la même chose.",
           "options": [
-            { "text": "En le déroulant à la main", "correct": true },
-            { "text": "En comptant les instructions" },
-            { "text": "En le relisant plus attentivement" },
-            { "text": "On ne peut pas les repérer" }
+            {
+              "text": "En le déroulant à la main",
+              "correct": true
+            },
+            {
+              "text": "En comptant les instructions"
+            },
+            {
+              "text": "En le relisant plus attentivement"
+            },
+            {
+              "text": "On ne peut pas les repérer"
+            }
           ]
         }
       ]
@@ -187,24 +220,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Aucune place pour l’interprétation",
+          "body": "Exécute le programme : le robot suit la lettre, pas l’intention. Un algorithme mal écrit ne produit pas une erreur — il produit un résultat faux, calmement.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Un exemple raté",
           "body": "« Prends le pain, mets-le dans le grille-pain, attends. »\n\nAttends combien de temps ? Une machine s'arrêterait là, ou attendrait indéfiniment."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le même, corrigé",
           "body": "« Prends une tranche de pain. Place-la dans le grille-pain. Règle la minuterie sur 2 minutes. Attends la fin de la minuterie. Retire la tranche. »\n\nChaque phrase est exécutable sans décision à prendre."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Un algorithme doit s'arrêter",
           "body": "« Répète : avancer d'une case » ne s'arrête jamais.\n\nUn bon algorithme doit se terminer, et donner un résultat. C'est l'une des conditions pour mériter ce nom."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Teste une consigne en te demandant : deux personnes qui la suivent obtiendraient-elles exactement le même résultat ? Si non, elle est encore ambiguë."
         }
@@ -216,12 +256,27 @@
           "prompt": "Range ces instructions.",
           "hint": "Deux personnes obtiendraient-elles le même résultat ?",
           "explanation": "« Règle la minuterie sur 2 minutes » et « avance de 5 cases » donnent toujours le même résultat. « Attends un moment » et « fais cuire un peu » dépendent de celui qui les lit.",
-          "categories": ["Sans ambiguïté", "Ambiguë"],
+          "categories": [
+            "Sans ambiguïté",
+            "Ambiguë"
+          ],
           "items": [
-            { "text": "Règle la minuterie sur 2 minutes", "category": 0 },
-            { "text": "Avance de 5 cases", "category": 0 },
-            { "text": "Attends un moment", "category": 1 },
-            { "text": "Fais cuire un peu", "category": 1 }
+            {
+              "text": "Règle la minuterie sur 2 minutes",
+              "category": 0
+            },
+            {
+              "text": "Avance de 5 cases",
+              "category": 0
+            },
+            {
+              "text": "Attends un moment",
+              "category": 1
+            },
+            {
+              "text": "Fais cuire un peu",
+              "category": 1
+            }
           ]
         },
         {
@@ -232,10 +287,19 @@
           "explanation": "Parce qu'il ne s'arrête jamais. Un algorithme doit se terminer et produire un résultat.",
           "figureId": "boucle-robot",
           "options": [
-            { "text": "Il ne s'arrête jamais", "correct": true },
-            { "text": "Il est trop court" },
-            { "text": "Il est ambigu" },
-            { "text": "Il avance trop vite" }
+            {
+              "text": "Il ne s'arrête jamais",
+              "correct": true
+            },
+            {
+              "text": "Il est trop court"
+            },
+            {
+              "text": "Il est ambigu"
+            },
+            {
+              "text": "Il avance trop vite"
+            }
           ]
         },
         {
@@ -268,6 +332,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Et il doit s’arrêter",
+          "body": "Change le nombre de tours : le programme finit toujours, parce que ce nombre est fixé d’avance. Un algorithme qui ne garantit pas son arrêt n’est pas un algorithme.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Déroule chaque programme à la main avant de répondre."
@@ -290,12 +361,27 @@
           "kind": "tri",
           "prompt": "Range ces suites d'actions selon qu'elles sont des algorithmes.",
           "explanation": "Une recette et un itinéraire détaillé sont des suites d'instructions précises. Un souhait et une opinion ne s'exécutent pas.",
-          "categories": ["C'est un algorithme", "Ce n'en est pas un"],
+          "categories": [
+            "C'est un algorithme",
+            "Ce n'en est pas un"
+          ],
           "items": [
-            { "text": "Une recette de gâteau", "category": 0 },
-            { "text": "Un itinéraire étape par étape", "category": 0 },
-            { "text": "« J'aimerais être à Paris »", "category": 1 },
-            { "text": "« Ce film est intéressant »", "category": 1 }
+            {
+              "text": "Une recette de gâteau",
+              "category": 0
+            },
+            {
+              "text": "Un itinéraire étape par étape",
+              "category": 0
+            },
+            {
+              "text": "« J'aimerais être à Paris »",
+              "category": 1
+            },
+            {
+              "text": "« Ce film est intéressant »",
+              "category": 1
+            }
           ]
         },
         {
@@ -336,10 +422,19 @@
           "hint": "Elle ne devine pas.",
           "explanation": "Ce qu'on écrit. C'est la source de la plupart des erreurs de programmation : l'intention était bonne, l'écriture ne l'était pas.",
           "options": [
-            { "text": "Ce qu'on écrit", "correct": true },
-            { "text": "Ce qu'on veut" },
-            { "text": "Ce qui est le plus logique" },
-            { "text": "Ce qui est le plus rapide" }
+            {
+              "text": "Ce qu'on écrit",
+              "correct": true
+            },
+            {
+              "text": "Ce qu'on veut"
+            },
+            {
+              "text": "Ce qui est le plus logique"
+            },
+            {
+              "text": "Ce qui est le plus rapide"
+            }
           ]
         }
       ]

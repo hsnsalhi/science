@@ -82,10 +82,19 @@
           "explanation": "Vers le bas, car a = −2 est négatif. Le sommet est alors un maximum.",
           "figureId": "parabole",
           "options": [
-            { "text": "Vers le bas", "correct": true },
-            { "text": "Vers le haut" },
-            { "text": "Vers la droite" },
-            { "text": "Cela dépend de c" }
+            {
+              "text": "Vers le bas",
+              "correct": true
+            },
+            {
+              "text": "Vers le haut"
+            },
+            {
+              "text": "Vers la droite"
+            },
+            {
+              "text": "Cela dépend de c"
+            }
           ]
         },
         {
@@ -168,12 +177,27 @@
           "prompt": "Range ces trinômes selon leur nombre de racines réelles.",
           "hint": "Calcule Δ pour chacun.",
           "explanation": "x² − 5x + 6 et 2x² + 3x − 2 ont un discriminant positif, donc deux racines. x² + x + 1 a Δ = −3 et x² + 4 a Δ = −16 : aucune racine.",
-          "categories": ["Deux racines", "Aucune racine"],
+          "categories": [
+            "Deux racines",
+            "Aucune racine"
+          ],
           "items": [
-            { "text": "x² − 5x + 6", "category": 0 },
-            { "text": "2x² + 3x − 2", "category": 0 },
-            { "text": "x² + x + 1", "category": 1 },
-            { "text": "x² + 4", "category": 1 }
+            {
+              "text": "x² − 5x + 6",
+              "category": 0
+            },
+            {
+              "text": "2x² + 3x − 2",
+              "category": 0
+            },
+            {
+              "text": "x² + x + 1",
+              "category": 1
+            },
+            {
+              "text": "x² + 4",
+              "category": 1
+            }
           ]
         },
         {
@@ -184,10 +208,19 @@
           "explanation": "Δ = 0. Il y a un unique point commun, et c'est le sommet : les deux racines se confondent.",
           "figureId": "parabole",
           "options": [
-            { "text": "Δ = 0", "correct": true },
-            { "text": "Δ > 0" },
-            { "text": "Δ < 0" },
-            { "text": "On ne peut pas savoir" }
+            {
+              "text": "Δ = 0",
+              "correct": true
+            },
+            {
+              "text": "Δ > 0"
+            },
+            {
+              "text": "Δ < 0"
+            },
+            {
+              "text": "On ne peut pas savoir"
+            }
           ]
         }
       ]
@@ -202,32 +235,39 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les racines sont là où la courbe coupe",
+          "body": "Règle les trois coefficients et regarde la parabole croiser l’axe, ou ne pas le croiser. Zéro, une ou deux racines : le discriminant ne fait que nommer ce qu’on voit.",
+          "figureId": "parabole"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Les racines",
           "formula": "x = (−b ± √Δ) / (2a)",
           "body": "valable dès que Δ ≥ 0."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Un exemple complet",
           "body": "2x² − 3x − 2 = 0\n\nΔ = 9 + 16 = 25, donc √Δ = 5.\n\nx = (3 − 5)/4 = −0,5 et x = (3 + 5)/4 = 2."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "La forme factorisée",
           "formula": "ax² + bx + c = a(x − x₁)(x − x₂)",
           "body": "quand les deux racines existent."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "texte",
           "title": "Le signe du trinôme",
           "body": "Entre les racines, le trinôme est du signe contraire à a. Partout ailleurs, il est du signe de a.\n\nC'est lisible sur la courbe : la portion comprise entre les deux racines est celle qui passe du mauvais côté de l'axe."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "astuce",
           "body": "Avant de dérouler la formule, cherche une racine évidente : pour x² − 5x + 6, les nombres 2 et 3 sautent aux yeux puisque leur somme fait 5 et leur produit 6."
         }
@@ -259,8 +299,16 @@
           "prompt": "Complète la forme factorisée de x² − 5x + 6.",
           "template": "x² − 5x + 6 = (x − ___)(x − ___)",
           "blanks": [
-            { "accepted": ["2"] },
-            { "accepted": ["3"] }
+            {
+              "accepted": [
+                "2"
+              ]
+            },
+            {
+              "accepted": [
+                "3"
+              ]
+            }
           ],
           "hint": "Les deux racines, dans l'ordre croissant.",
           "explanation": "(x − 2)(x − 3). En développant, on retrouve x² − 5x + 6, ce qui est la meilleure vérification."
@@ -273,10 +321,19 @@
           "explanation": "Pour x strictement entre 2 et 3. Comme a > 0, le trinôme n'est du signe contraire à a qu'entre ses racines.",
           "figureId": "parabole",
           "options": [
-            { "text": "Entre 2 et 3", "correct": true },
-            { "text": "Avant 2 et après 3" },
-            { "text": "Pour tout x" },
-            { "text": "Pour aucun x" }
+            {
+              "text": "Entre 2 et 3",
+              "correct": true
+            },
+            {
+              "text": "Avant 2 et après 3"
+            },
+            {
+              "text": "Pour tout x"
+            },
+            {
+              "text": "Pour aucun x"
+            }
           ]
         }
       ]
@@ -291,6 +348,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce que chaque coefficient fait",
+          "body": "Fais varier a, puis b, puis c, un à la fois. Chacun déforme la courbe à sa façon, et le défi demande de le lire à l’envers.",
+          "figureId": "parabole"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Calcule Δ avant toute chose : il décide de la suite."
@@ -321,12 +385,27 @@
           "kind": "tri",
           "prompt": "Range ces trinômes selon le sens d'ouverture de leur parabole.",
           "explanation": "Le signe de a décide seul : x² − 3x + 1 et 3x² + 2 s'ouvrent vers le haut, −x² + 4 et −2x² + x s'ouvrent vers le bas.",
-          "categories": ["Ouverte vers le haut", "Ouverte vers le bas"],
+          "categories": [
+            "Ouverte vers le haut",
+            "Ouverte vers le bas"
+          ],
           "items": [
-            { "text": "x² − 3x + 1", "category": 0 },
-            { "text": "3x² + 2", "category": 0 },
-            { "text": "−x² + 4", "category": 1 },
-            { "text": "−2x² + x", "category": 1 }
+            {
+              "text": "x² − 3x + 1",
+              "category": 0
+            },
+            {
+              "text": "3x² + 2",
+              "category": 0
+            },
+            {
+              "text": "−x² + 4",
+              "category": 1
+            },
+            {
+              "text": "−2x² + x",
+              "category": 1
+            }
           ]
         },
         {
@@ -352,9 +431,18 @@
           "prompt": "Associe chaque trinôme à son discriminant.",
           "explanation": "x² − 5x + 6 donne 1, x² − 4x + 4 donne 0, et x² + x + 1 donne −3.",
           "pairs": [
-            { "left": "x² − 5x + 6", "right": "Δ = 1" },
-            { "left": "x² − 4x + 4", "right": "Δ = 0" },
-            { "left": "x² + x + 1", "right": "Δ = −3" }
+            {
+              "left": "x² − 5x + 6",
+              "right": "Δ = 1"
+            },
+            {
+              "left": "x² − 4x + 4",
+              "right": "Δ = 0"
+            },
+            {
+              "left": "x² + x + 1",
+              "right": "Δ = −3"
+            }
           ]
         }
       ]

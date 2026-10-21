@@ -163,12 +163,27 @@
           "prompt": "Range ces questions selon le calcul qui les résout.",
           "hint": "Combien font 18 ÷ 3 ? Et 24 ÷ 4 ?",
           "explanation": "Partager 18 en 3, et compter les paquets de 3 dans 18, donnent tous deux 6. Partager 24 en 4, et compter les paquets de 4 dans 24, donnent 6 aussi — mais ce sont bien quatre questions différentes.",
-          "categories": ["Se résout par 18 ÷ 3", "Se résout par 24 ÷ 4"],
+          "categories": [
+            "Se résout par 18 ÷ 3",
+            "Se résout par 24 ÷ 4"
+          ],
           "items": [
-            { "text": "Partager 18 billes entre 3 enfants", "category": 0 },
-            { "text": "Compter les paquets de 3 dans 18", "category": 0 },
-            { "text": "Partager 24 crayons entre 4 enfants", "category": 1 },
-            { "text": "Compter les paquets de 4 dans 24", "category": 1 }
+            {
+              "text": "Partager 18 billes entre 3 enfants",
+              "category": 0
+            },
+            {
+              "text": "Compter les paquets de 3 dans 18",
+              "category": 0
+            },
+            {
+              "text": "Partager 24 crayons entre 4 enfants",
+              "category": 1
+            },
+            {
+              "text": "Compter les paquets de 4 dans 24",
+              "category": 1
+            }
           ]
         }
       ]
@@ -256,6 +271,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Diviser, c’est faire des lignes égales",
+          "body": "Règle les colonnes sur le nombre de parts, et vois combien de lignes complètes tu obtiens. Ce qui ne remplit pas une ligne entière est le reste.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense à vérifier chaque division par une multiplication."
@@ -298,12 +320,27 @@
           "prompt": "Range ces divisions selon qu'elles tombent juste ou non.",
           "hint": "Y a-t-il un reste ?",
           "explanation": "20 ÷ 5 et 36 ÷ 6 tombent juste. 17 ÷ 5 laisse 2, et 20 ÷ 6 laisse 2 également.",
-          "categories": ["Tombe juste", "Laisse un reste"],
+          "categories": [
+            "Tombe juste",
+            "Laisse un reste"
+          ],
           "items": [
-            { "text": "20 ÷ 5", "category": 0 },
-            { "text": "36 ÷ 6", "category": 0 },
-            { "text": "17 ÷ 5", "category": 1 },
-            { "text": "20 ÷ 6", "category": 1 }
+            {
+              "text": "20 ÷ 5",
+              "category": 0
+            },
+            {
+              "text": "36 ÷ 6",
+              "category": 0
+            },
+            {
+              "text": "17 ÷ 5",
+              "category": 1
+            },
+            {
+              "text": "20 ÷ 6",
+              "category": 1
+            }
           ]
         },
         {

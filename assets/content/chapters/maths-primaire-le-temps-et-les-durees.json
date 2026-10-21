@@ -57,10 +57,22 @@
           "prompt": "Associe chaque heure à son autre écriture.",
           "explanation": "Après midi, on ajoute 12 heures. Et « moins le quart » veut dire 45 minutes de l'heure précédente.",
           "pairs": [
-            { "left": "2 h de l'après-midi", "right": "14 h" },
-            { "left": "3 h moins le quart, l'après-midi", "right": "14 h 45" },
-            { "left": "midi et demi", "right": "12 h 30" },
-            { "left": "8 h du soir", "right": "20 h" }
+            {
+              "left": "2 h de l'après-midi",
+              "right": "14 h"
+            },
+            {
+              "left": "3 h moins le quart, l'après-midi",
+              "right": "14 h 45"
+            },
+            {
+              "left": "midi et demi",
+              "right": "12 h 30"
+            },
+            {
+              "left": "8 h du soir",
+              "right": "20 h"
+            }
           ]
         },
         {
@@ -89,25 +101,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les minutes se comptent par soixante",
+          "body": "Règle les aiguilles sur l’heure de départ, puis sur celle d’arrivée. Entre les deux, les minutes avancent par soixante et non par cent — c’est tout le piège du calcul de durée.",
+          "figureId": "horloge"
+        },
+        {
+          "id": "c2",
           "kind": "avertissement",
           "title": "Le piège du temps",
           "body": "Une heure ne fait pas 100 minutes mais 60.\n\nDonc 1 h 45 + 30 min ne fait pas 1 h 75 : les 75 minutes valent 1 h 15, et le total est 2 h 15.\n\nC'est la seule chose vraiment difficile de ce chapitre, et c'est là que presque toutes les erreurs se font."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Les conversions",
           "formula": "1 h = 60 min ; 1 min = 60 s ; 1 jour = 24 h",
           "body": "Une semaine fait 7 jours. Une année en fait 365, ou 366 les années bissextiles."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Durée entre deux heures",
           "body": "De 9 h 40 à 11 h 15 :\n\n1. de 9 h 40 à 10 h : 20 minutes\n\n2. de 10 h à 11 h : 1 heure\n\n3. de 11 h à 11 h 15 : 15 minutes\n\nTotal : 1 h 35. On passe par les heures rondes, c'est bien plus sûr qu'une soustraction."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Les durées utiles à connaître",
           "body": "Un quart d'heure : 15 minutes. Une demi-heure : 30. Trois quarts d'heure : 45.\n\nUn film dure une heure et demie à deux heures. Une nuit de sommeil, huit à dix heures pour un enfant."
@@ -164,18 +183,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Lire l’heure, vraiment",
+          "body": "Règle les heures et les minutes, et observe la petite aiguille : elle n’est presque jamais pile sur un chiffre. C’est son retrait qui donne l’heure en cours.",
+          "figureId": "horloge"
+        },
+        {
+          "id": "c2",
           "kind": "exemple",
           "title": "Lire un horaire",
           "body": "Le train part à 8 h 25 et arrive à 10 h 10.\n\nDe 8 h 25 à 9 h : 35 minutes. De 9 h à 10 h : 1 heure. De 10 h à 10 h 10 : 10 minutes.\n\nTotal : 1 h 45."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "astuce",
           "title": "Remonter dans le temps",
           "body": "« Le film finit à 16 h 20 et dure 1 h 50. À quelle heure commence-t-il ? »\n\nOn recule : 16 h 20 moins 1 h donne 15 h 20. Moins 50 minutes : 15 h 20 moins 20 donne 15 h, moins 30 encore donne 14 h 30."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Avant ou après midi",
           "body": "Les horaires officiels vont de 0 h à 23 h 59.\n\nPour passer de l'après-midi à l'heure officielle, on ajoute 12 : 5 h de l'après-midi devient 17 h."
@@ -216,12 +242,27 @@
           "kind": "tri",
           "prompt": "Range ces durées : plus courtes ou plus longues qu'une heure ?",
           "explanation": "Une heure fait 60 minutes. Tout ce qui est en dessous est plus court.",
-          "categories": ["plus court qu'une heure", "plus long qu'une heure"],
+          "categories": [
+            "plus court qu'une heure",
+            "plus long qu'une heure"
+          ],
           "items": [
-            { "text": "un quart d'heure", "category": 0 },
-            { "text": "45 minutes", "category": 0 },
-            { "text": "90 minutes", "category": 1 },
-            { "text": "une matinée d'école", "category": 1 }
+            {
+              "text": "un quart d'heure",
+              "category": 0
+            },
+            {
+              "text": "45 minutes",
+              "category": 0
+            },
+            {
+              "text": "90 minutes",
+              "category": 1
+            },
+            {
+              "text": "une matinée d'école",
+              "category": 1
+            }
           ]
         }
       ]
@@ -236,6 +277,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Passer minuit",
+          "body": "Avance les aiguilles au-delà de midi, puis encore. Le cadran repart à zéro deux fois par jour, et c’est exactement ce qui piège les calculs d’horaires de nuit.",
+          "figureId": "horloge"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Passer minuit",
           "body": "Un train part à 23 h 40 et arrive à 1 h 20. Combien de temps dure le trajet ?\n\nOn ne peut pas faire 1 h 20 moins 23 h 40 : l'arrivée semble avant le départ. Il faut passer par minuit.\n\nDe 23 h 40 à minuit : 20 minutes. De minuit à 1 h 20 : 1 h 20. Total : 1 h 40.\n\nC'est le même procédé que les heures rondes, avec minuit comme étape."

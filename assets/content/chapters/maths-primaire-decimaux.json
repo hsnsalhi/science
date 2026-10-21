@@ -68,9 +68,21 @@
           "prompt": "Complète : dans 3,47, quel chiffre occupe chaque colonne ?",
           "template": "Le chiffre des unités est ___, celui des dixièmes est ___, celui des centièmes est ___.",
           "blanks": [
-            { "accepted": ["3"] },
-            { "accepted": ["4"] },
-            { "accepted": ["7"] }
+            {
+              "accepted": [
+                "3"
+              ]
+            },
+            {
+              "accepted": [
+                "4"
+              ]
+            },
+            {
+              "accepted": [
+                "7"
+              ]
+            }
           ],
           "hint": "Dans l'ordre, de gauche à droite.",
           "explanation": "3 unités, 4 dixièmes, 7 centièmes. Chaque chiffre a sa colonne, exactement comme pour les entiers."
@@ -119,10 +131,19 @@
           "explanation": "0,9. Il a 9 dixièmes contre 2, et les dixièmes se comparent avant les centièmes.",
           "figureId": "decimaux",
           "options": [
-            { "text": "0,9", "correct": true },
-            { "text": "0,25" },
-            { "text": "Ils sont égaux" },
-            { "text": "On ne peut pas comparer" }
+            {
+              "text": "0,9",
+              "correct": true
+            },
+            {
+              "text": "0,25"
+            },
+            {
+              "text": "Ils sont égaux"
+            },
+            {
+              "text": "On ne peut pas comparer"
+            }
           ]
         },
         {
@@ -139,12 +160,27 @@
           "prompt": "Range ces nombres par rapport à 0,5.",
           "hint": "Compare les dixièmes à 5.",
           "explanation": "0,7 et 0,62 ont plus de 5 dixièmes. 0,45 et 0,09 en ont moins.",
-          "categories": ["Plus grand que 0,5", "Plus petit que 0,5"],
+          "categories": [
+            "Plus grand que 0,5",
+            "Plus petit que 0,5"
+          ],
           "items": [
-            { "text": "0,7", "category": 0 },
-            { "text": "0,62", "category": 0 },
-            { "text": "0,45", "category": 1 },
-            { "text": "0,09", "category": 1 }
+            {
+              "text": "0,7",
+              "category": 0
+            },
+            {
+              "text": "0,62",
+              "category": 0
+            },
+            {
+              "text": "0,45",
+              "category": 1
+            },
+            {
+              "text": "0,09",
+              "category": 1
+            }
           ]
         },
         {
@@ -244,6 +280,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Chaque colonne à sa place",
+          "body": "Change les chiffres colonne par colonne. Un dixième n’est pas un centième, et c’est la place — pas le chiffre — qui le décide.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Devant deux décimaux, compare toujours les unités d'abord, puis les dixièmes."
@@ -268,10 +311,19 @@
           "explanation": "1,7 : il a 7 dixièmes contre 0. Le nombre de chiffres après la virgule ne décide de rien.",
           "figureId": "decimaux",
           "options": [
-            { "text": "1,7", "correct": true },
-            { "text": "1,07" },
-            { "text": "Ils sont égaux" },
-            { "text": "1,07, car il a plus de chiffres" }
+            {
+              "text": "1,7",
+              "correct": true
+            },
+            {
+              "text": "1,07"
+            },
+            {
+              "text": "Ils sont égaux"
+            },
+            {
+              "text": "1,07, car il a plus de chiffres"
+            }
           ]
         },
         {
@@ -298,9 +350,18 @@
           "prompt": "Associe chaque nombre à son écriture en centièmes.",
           "explanation": "Pour convertir en centièmes, on complète par un zéro si besoin : chaque dixième vaut dix centièmes.",
           "pairs": [
-            { "left": "0,3", "right": "30 centièmes" },
-            { "left": "0,03", "right": "3 centièmes" },
-            { "left": "1,5", "right": "150 centièmes" }
+            {
+              "left": "0,3",
+              "right": "30 centièmes"
+            },
+            {
+              "left": "0,03",
+              "right": "3 centièmes"
+            },
+            {
+              "left": "1,5",
+              "right": "150 centièmes"
+            }
           ]
         },
         {

@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "n contre log n",
+          "body": "Fais grossir la taille des données et compare la droite n à la courbe log n. Sur un million d’éléments, la première demande un million d’essais, la seconde une vingtaine.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "La recherche séquentielle",
           "body": "On parcourt les cases une à une jusqu'à trouver la valeur, ou jusqu'au bout.\n\nElle marche toujours, sur n'importe quel tableau. Au pire, elle lit les n cases."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "La recherche dichotomique",
           "body": "Si le tableau est trié, on compare à la case du milieu : la valeur cherchée est avant, après, ou c'est elle.\n\nÀ chaque comparaison, la moitié du tableau disparaît. Au pire, il faut la partie entière de log₂ n, plus 1, comparaisons."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Sur un million d'éléments",
           "body": "Séquentielle : jusqu'à un million de lectures.\n\nDichotomique : 20 comparaisons. Pas 20 000, ni 2 000. Vingt."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "body": "La dichotomie exige un tableau trié. Appliquée à un tableau quelconque, elle ne ralentit pas : elle répond faux, sans prévenir."
         }
@@ -63,10 +70,19 @@
           "hint": "Sur quoi repose l'élimination d'une moitié ?",
           "explanation": "Elle peut répondre faux sans rien signaler : éliminer une moitié n'a de sens que si le tableau est trié.",
           "options": [
-            { "text": "Elle peut répondre faux sans rien signaler", "correct": true },
-            { "text": "Elle devient aussi lente qu'une recherche séquentielle" },
-            { "text": "Elle trie le tableau au passage" },
-            { "text": "Elle provoque une erreur d'exécution" }
+            {
+              "text": "Elle peut répondre faux sans rien signaler",
+              "correct": true
+            },
+            {
+              "text": "Elle devient aussi lente qu'une recherche séquentielle"
+            },
+            {
+              "text": "Elle trie le tableau au passage"
+            },
+            {
+              "text": "Elle provoque une erreur d'exécution"
+            }
           ]
         },
         {
@@ -88,24 +104,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Quand le carré décolle",
+          "body": "Pousse la taille et regarde n² s’envoler. Un tri naïf reste acceptable sur mille éléments et devient impraticable sur un million — et la figure dit exactement où bascule la frontière.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Le tri par sélection",
           "body": "On cherche le plus petit élément et on le met en première place. Puis le plus petit du reste, en deuxième place. Et ainsi de suite.\n\nLe nombre de comparaisons ne dépend pas du tableau : toujours n(n−1)/2."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le tri par insertion",
           "body": "On prend les éléments un par un et on les glisse à leur place parmi ceux déjà rangés, comme on trie des cartes en main.\n\nSur un tableau déjà trié, il ne fait que n−1 comparaisons. Sur un tableau rangé à l'envers, il en fait n(n−1)/2."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Sur 1 000 éléments",
           "body": "n(n−1)/2 vaut 499 500 comparaisons.\n\nSur 10 000 éléments, près de 50 millions. Multiplier la taille par 10 multiplie le travail par 100 : c'est ce que veut dire « quadratique »."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "L'insertion garde un intérêt : sur un tableau presque trié, elle est imbattable. Les bibliothèques réelles s'en servent pour les petits morceaux."
         }
@@ -141,10 +164,19 @@
           "explanation": "Par 100 : le coût suit le carré de la taille. C'est ce que mesure le mot « quadratique ».",
           "figureId": "complexite",
           "options": [
-            { "text": "Par 100", "correct": true },
-            { "text": "Par 10" },
-            { "text": "Par 20" },
-            { "text": "Par 1 000" }
+            {
+              "text": "Par 100",
+              "correct": true
+            },
+            {
+              "text": "Par 10"
+            },
+            {
+              "text": "Par 20"
+            },
+            {
+              "text": "Par 1 000"
+            }
           ]
         },
         {
@@ -153,12 +185,27 @@
           "prompt": "Range ces affirmations selon le tri qu'elles décrivent.",
           "hint": "L'un est insensible au contenu, l'autre non.",
           "explanation": "La sélection fait toujours le même nombre de comparaisons. L'insertion profite d'un tableau déjà presque trié.",
-          "categories": ["Tri par sélection", "Tri par insertion"],
+          "categories": [
+            "Tri par sélection",
+            "Tri par insertion"
+          ],
           "items": [
-            { "text": "le nombre de comparaisons ne dépend pas du tableau", "category": 0 },
-            { "text": "il cherche le minimum du reste à chaque tour", "category": 0 },
-            { "text": "il est très rapide sur un tableau presque trié", "category": 1 },
-            { "text": "il glisse chaque élément à sa place, comme des cartes", "category": 1 }
+            {
+              "text": "le nombre de comparaisons ne dépend pas du tableau",
+              "category": 0
+            },
+            {
+              "text": "il cherche le minimum du reste à chaque tour",
+              "category": 0
+            },
+            {
+              "text": "il est très rapide sur un tableau presque trié",
+              "category": 1
+            },
+            {
+              "text": "il glisse chaque élément à sa place, comme des cartes",
+              "category": 1
+            }
           ]
         }
       ]
@@ -217,10 +264,19 @@
           "explanation": "Parce qu'il y a log n niveaux de découpage, et que chaque niveau coûte de l'ordre de n comparaisons pour fusionner.",
           "figureId": "complexite",
           "options": [
-            { "text": "log n niveaux, coûtant chacun de l'ordre de n", "correct": true },
-            { "text": "n niveaux, coûtant chacun log n" },
-            { "text": "Il compare chaque élément à tous les autres" },
-            { "text": "Il trie par comptage, sans comparaison" }
+            {
+              "text": "log n niveaux, coûtant chacun de l'ordre de n",
+              "correct": true
+            },
+            {
+              "text": "n niveaux, coûtant chacun log n"
+            },
+            {
+              "text": "Il compare chaque élément à tous les autres"
+            },
+            {
+              "text": "Il trie par comptage, sans comparaison"
+            }
           ]
         },
         {
@@ -254,6 +310,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Lire un coût avant de coder",
+          "body": "Compare les cinq courbes sur la même échelle. Savoir à laquelle appartient un algorithme suffit à prédire s’il tiendra, sans écrire une ligne.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque question, demande-toi d'abord : quel est le pire cas, et quelle hypothèse l'algorithme exige-t-il ?"
@@ -288,10 +351,22 @@
           "prompt": "Associe chaque algorithme à son coût dans le pire cas.",
           "explanation": "La dichotomie est logarithmique, la recherche séquentielle linéaire, le tri fusion quasi-linéaire, la sélection quadratique.",
           "pairs": [
-            { "left": "recherche dichotomique", "right": "log n" },
-            { "left": "recherche séquentielle", "right": "n" },
-            { "left": "tri fusion", "right": "n log n" },
-            { "left": "tri par sélection", "right": "n²" }
+            {
+              "left": "recherche dichotomique",
+              "right": "log n"
+            },
+            {
+              "left": "recherche séquentielle",
+              "right": "n"
+            },
+            {
+              "left": "tri fusion",
+              "right": "n log n"
+            },
+            {
+              "left": "tri par sélection",
+              "right": "n²"
+            }
           ]
         },
         {
@@ -302,10 +377,19 @@
           "explanation": "Le tri par insertion : chaque élément se révèle presque toujours déjà bien placé, et une comparaison suffit.",
           "figureId": "complexite",
           "options": [
-            { "text": "Le tri par insertion", "correct": true },
-            { "text": "Le tri par sélection" },
-            { "text": "Le tri fusion" },
-            { "text": "Aucun : le contenu ne change jamais rien" }
+            {
+              "text": "Le tri par insertion",
+              "correct": true
+            },
+            {
+              "text": "Le tri par sélection"
+            },
+            {
+              "text": "Le tri fusion"
+            },
+            {
+              "text": "Aucun : le contenu ne change jamais rien"
+            }
           ]
         },
         {

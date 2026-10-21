@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La trajectoire dépend d’où l’on regarde",
+          "body": "Lance le projectile et suis sa courbe. Cette parabole est celle que voit un observateur au sol ; pour quelqu’un qui se déplacerait avec le projectile, il ne bougerait pas du tout.",
+          "figureId": "projectile"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Aucun mouvement n'est absolu",
           "body": "Un passager assis dans un train est immobile pour son voisin, et file à 300 km/h pour quelqu'un posté sur le quai.\n\nLes deux descriptions sont justes. Décrire un mouvement exige donc de préciser par rapport à quoi on l'observe : c'est le référentiel."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "La bille lâchée dans le train",
           "body": "Un passager lâche une bille. Pour lui, elle tombe droit.\n\nPour un observateur sur le quai, elle décrit une parabole : elle tombe tout en continuant d'avancer à la vitesse du train.\n\nMême bille, même chute, deux trajectoires."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Trajectoire et vitesse",
           "body": "La trajectoire est l'ensemble des positions successives du mobile dans le référentiel choisi.\n\nLe vecteur vitesse est toujours tangent à la trajectoire, et sa longueur donne la vitesse instantanée."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -46,10 +53,19 @@
           "hint": "La bille garde la vitesse du train.",
           "explanation": "Une parabole : la bille tombe tout en continuant d'avancer horizontalement. Pour le passager, en revanche, elle tombe droit.",
           "options": [
-            { "text": "Une parabole", "correct": true },
-            { "text": "Une droite verticale" },
-            { "text": "Une droite horizontale" },
-            { "text": "Un cercle" }
+            {
+              "text": "Une parabole",
+              "correct": true
+            },
+            {
+              "text": "Une droite verticale"
+            },
+            {
+              "text": "Une droite horizontale"
+            },
+            {
+              "text": "Un cercle"
+            }
           ]
         },
         {
@@ -65,12 +81,27 @@
           "prompt": "Range ces descriptions selon le référentiel adopté.",
           "hint": "Qui observe, et depuis où ?",
           "explanation": "« Le passager est immobile » et « la bille tombe droit » valent dans le référentiel du train. « Le passager file à 300 km/h » et « la bille décrit une parabole » valent dans celui du quai.",
-          "categories": ["Référentiel du train", "Référentiel du quai"],
+          "categories": [
+            "Référentiel du train",
+            "Référentiel du quai"
+          ],
           "items": [
-            { "text": "Le passager est immobile", "category": 0 },
-            { "text": "La bille tombe tout droit", "category": 0 },
-            { "text": "Le passager file à 300 km/h", "category": 1 },
-            { "text": "La bille décrit une parabole", "category": 1 }
+            {
+              "text": "Le passager est immobile",
+              "category": 0
+            },
+            {
+              "text": "La bille tombe tout droit",
+              "category": 0
+            },
+            {
+              "text": "Le passager file à 300 km/h",
+              "category": 1
+            },
+            {
+              "text": "La bille décrit une parabole",
+              "category": 1
+            }
           ]
         },
         {
@@ -80,10 +111,19 @@
           "hint": "Il suit la direction du déplacement à cet instant.",
           "explanation": "Il est tangent à la trajectoire. C'est pourquoi un objet lâché en rotation part en ligne droite, dans la direction de la tangente.",
           "options": [
-            { "text": "Tangent à la trajectoire", "correct": true },
-            { "text": "Perpendiculaire à la trajectoire" },
-            { "text": "Toujours vertical" },
-            { "text": "Toujours dirigé vers le centre" }
+            {
+              "text": "Tangent à la trajectoire",
+              "correct": true
+            },
+            {
+              "text": "Perpendiculaire à la trajectoire"
+            },
+            {
+              "text": "Toujours vertical"
+            },
+            {
+              "text": "Toujours dirigé vers le centre"
+            }
           ]
         }
       ]
@@ -98,30 +138,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Tirer assez fort pour rater la Terre",
+          "body": "Augmente la vitesse du boulet jusqu’à ce qu’il ne retombe plus. Rien ne le pousse en orbite : il tombe sans arrêt, et manque la Terre à chaque fois. C’est l’inertie, montrée par Newton lui-même.",
+          "figureId": "canon-newton"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Première loi de Newton",
           "formula": "ΣF = 0 équivaut à un mouvement rectiligne uniforme (ou au repos)",
           "body": "dans un référentiel galiléen."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Ce que la loi corrige",
           "body": "L'intuition dit qu'il faut une force pour entretenir un mouvement : une voiture s'arrête quand on coupe le moteur.\n\nC'est faux. Elle s'arrête à cause des frottements. Sans eux, elle continuerait indéfiniment, en ligne droite et à vitesse constante."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "L'équivalence va dans les deux sens",
           "body": "Si les forces se compensent, le mouvement est rectiligne uniforme.\n\nEt si le mouvement est rectiligne uniforme, c'est que les forces se compensent. On peut donc conclure sur les forces en regardant seulement la trajectoire."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Un mouvement circulaire, même à vitesse constante, n'est pas uniforme au sens de cette loi : la direction change, donc le vecteur vitesse change, donc une force agit."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -139,10 +186,19 @@
           "hint": "Lis la loi dans le sens réciproque.",
           "explanation": "Elles se compensent. Le poids est exactement équilibré par la force du coussin d'air, et les frottements sont négligeables.",
           "options": [
-            { "text": "Elles se compensent", "correct": true },
-            { "text": "Aucune force ne s'exerce" },
-            { "text": "Une force le pousse en avant" },
-            { "text": "On ne peut rien dire" }
+            {
+              "text": "Elles se compensent",
+              "correct": true
+            },
+            {
+              "text": "Aucune force ne s'exerce"
+            },
+            {
+              "text": "Une force le pousse en avant"
+            },
+            {
+              "text": "On ne peut rien dire"
+            }
           ]
         },
         {
@@ -158,12 +214,27 @@
           "prompt": "Range ces situations selon ce qu'on peut en conclure.",
           "hint": "Vitesse et direction sont-elles constantes ?",
           "explanation": "Mouvement rectiligne uniforme et immobilité impliquent des forces compensées. Une accélération ou un virage impliquent une force résultante non nulle.",
-          "categories": ["Forces compensées", "Force résultante non nulle"],
+          "categories": [
+            "Forces compensées",
+            "Force résultante non nulle"
+          ],
           "items": [
-            { "text": "Un palet glisse droit à vitesse constante", "category": 0 },
-            { "text": "Un livre posé sur une table", "category": 0 },
-            { "text": "Une voiture accélère en ligne droite", "category": 1 },
-            { "text": "Une bille tourne au bout d'un fil", "category": 1 }
+            {
+              "text": "Un palet glisse droit à vitesse constante",
+              "category": 0
+            },
+            {
+              "text": "Un livre posé sur une table",
+              "category": 0
+            },
+            {
+              "text": "Une voiture accélère en ligne droite",
+              "category": 1
+            },
+            {
+              "text": "Une bille tourne au bout d'un fil",
+              "category": 1
+            }
           ]
         },
         {
@@ -224,10 +295,19 @@
           "explanation": "Elles arrivent ensemble. Le mouvement horizontal n'influence pas la chute : c'est l'indépendance des deux mouvements.",
           "figureId": "projectile",
           "options": [
-            { "text": "Elles arrivent en même temps", "correct": true },
-            { "text": "Celle qui est lâchée" },
-            { "text": "Celle qui est lancée" },
-            { "text": "Cela dépend de la vitesse de lancement" }
+            {
+              "text": "Elles arrivent en même temps",
+              "correct": true
+            },
+            {
+              "text": "Celle qui est lâchée"
+            },
+            {
+              "text": "Celle qui est lancée"
+            },
+            {
+              "text": "Cela dépend de la vitesse de lancement"
+            }
           ]
         },
         {
@@ -275,6 +355,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "L’angle qui porte le plus loin",
+          "body": "Fais varier l’angle de tir et cherche la portée maximale. Elle tombe à 45°, et la figure permet de le vérifier plutôt que de le croire.",
+          "figureId": "projectile"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Demande-toi chaque fois dans quel référentiel on se place."
@@ -317,12 +404,27 @@
           "kind": "tri",
           "prompt": "Range ces affirmations.",
           "explanation": "L'indépendance des mouvements et l'égalité des portées pour deux angles complémentaires sont vraies. En revanche l'objet le plus lourd ne tombe pas plus vite dans le vide, et l'angle optimal n'est 45° qu'en négligeant l'air.",
-          "categories": ["Vrai dans ce modèle", "Faux"],
+          "categories": [
+            "Vrai dans ce modèle",
+            "Faux"
+          ],
           "items": [
-            { "text": "Les mouvements horizontal et vertical sont indépendants", "category": 0 },
-            { "text": "30° et 60° donnent la même portée", "category": 0 },
-            { "text": "Un objet plus lourd tombe plus vite", "category": 1 },
-            { "text": "La trajectoire ne dépend pas du référentiel", "category": 1 }
+            {
+              "text": "Les mouvements horizontal et vertical sont indépendants",
+              "category": 0
+            },
+            {
+              "text": "30° et 60° donnent la même portée",
+              "category": 0
+            },
+            {
+              "text": "Un objet plus lourd tombe plus vite",
+              "category": 1
+            },
+            {
+              "text": "La trajectoire ne dépend pas du référentiel",
+              "category": 1
+            }
           ]
         },
         {
@@ -339,10 +441,19 @@
           "hint": "Qu'est-ce que le modèle néglige ?",
           "explanation": "À cause de la résistance de l'air, qui pénalise les trajectoires longues et hautes. Le modèle sans frottements reste une bonne première approximation, pas une description exacte.",
           "options": [
-            { "text": "À cause de la résistance de l'air", "correct": true },
-            { "text": "Parce que le boulet est lourd" },
-            { "text": "Parce que la pesanteur varie" },
-            { "text": "Parce que la Terre tourne" }
+            {
+              "text": "À cause de la résistance de l'air",
+              "correct": true
+            },
+            {
+              "text": "Parce que le boulet est lourd"
+            },
+            {
+              "text": "Parce que la pesanteur varie"
+            },
+            {
+              "text": "Parce que la Terre tourne"
+            }
           ]
         }
       ]

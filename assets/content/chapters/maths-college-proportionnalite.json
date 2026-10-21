@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Double les lignes, double le total",
+          "body": "Mets 2 lignes, compte. Puis 4 : il y a exactement deux fois plus de jetons. C’est le test, et le seul.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le test, et un seul",
           "body": "Deux grandeurs sont proportionnelles si le quotient de l'une par l'autre est le même partout.\n\n3 kg pour 6 €, 5 kg pour 10 €, 8 kg pour 16 € : les quotients valent 2, 2 et 2. C'est proportionnel, et le coefficient est 2 euros par kilogramme.\n\nIl ne suffit pas que les deux grandeurs augmentent ensemble. Il faut que le rapport ne bouge pas, et c'est beaucoup plus exigeant."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "avertissement",
           "title": "Ce qui augmente ensemble sans être proportionnel",
           "body": "L'âge et la taille d'un enfant augmentent tous deux, et ne sont pas proportionnels : un enfant de 10 ans ne fait pas le double d'un enfant de 5 ans.\n\nLe côté d'un carré et son aire augmentent ensemble : doubler le côté quadruple l'aire.\n\nLe prix d'un abonnement avec frais d'inscription : 20 € puis 5 € par mois. Trois mois coûtent 35 €, six mois coûtent 50 € — pas le double. C'est le cas le plus fréquent dans la vie courante, et le plus souvent mal traité."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Trois façons de compléter un tableau",
           "body": "Par le coefficient : on le calcule une fois, puis on multiplie. Toujours la plus sûre.\n\nPar linéarité : 8 kg = 5 kg + 3 kg, donc le prix de 8 kg est la somme des deux prix. Valable seulement en proportionnalité.\n\nPar le produit en croix : utile quand on cherche une valeur isolée, et source d'erreurs quand on le pose de travers. Le coefficient reste préférable quand on a plusieurs valeurs à trouver."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Le graphique trahit tout",
           "body": "Une situation proportionnelle donne des points alignés sur une droite qui passe par l'origine.\n\nL'abonnement à frais d'inscription donne une droite aussi — mais qui ne passe pas par l'origine, puisqu'à zéro mois on paie déjà 20 €.\n\nL'aire du carré donne une courbe. Un seul coup d'œil au graphique suffit donc, et il attrape le piège de l'abonnement que les tableaux laissent passer."
@@ -132,25 +139,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un pourcentage est une part",
+          "body": "Règle les parts et les coloriées. Un pourcentage fixe simplement le tout à cent : 20 %, ce sont 20 parts sur 100.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Augmenter ou diminuer, en une multiplication",
           "formula": "augmenter de 20 % : × 1,20     diminuer de 20 % : × 0,80",
           "body": "C'est la seule méthode à retenir : un pourcentage de variation devient un coefficient multiplicateur. Elle évite tous les pièges, et elle permet d'enchaîner les variations."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "avertissement",
           "title": "Plus 20 % puis moins 20 % ne revient pas au point de départ",
           "body": "Un prix de 100 € augmente de 20 % : il passe à 120 €.\n\nIl baisse ensuite de 20 % : 120 × 0,80 = 96 €.\n\nOn a perdu 4 €. La raison : le premier 20 % se calculait sur 100, le second sur 120. Un pourcentage s'applique toujours à ce qui précède, et jamais à une valeur fixe.\n\nL'ordre, lui, n'y change rien : 100 × 0,80 × 1,20 donne aussi 96."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Annuler une augmentation de 20 %",
           "body": "Il faut un coefficient qui ramène 1,20 à 1, soit 1 ÷ 1,20 ≈ 0,8333.\n\nC'est donc une baisse d'environ 16,67 %, et non de 20 %.\n\nEt pour annuler une hausse de 100 %, il faut une baisse de 50 %. Plus la hausse est forte, plus l'écart est frappant — un prix doublé ne se défait pas en retirant 100 %, qui le mettrait à zéro."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Point de pourcentage, ou pourcentage",
           "body": "Un taux passe de 4 % à 6 %. On peut dire deux choses, toutes deux vraies :\n\nIl a augmenté de 2 points de pourcentage.\n\nIl a augmenté de 50 %, puisque 6 ÷ 4 = 1,5.\n\nLes deux formulations décrivent le même fait et donnent des impressions opposées. C'est le levier rhétorique le plus simple qui existe sur des chiffres, et il est parfaitement honnête des deux côtés — à condition de dire lequel on emploie."
@@ -311,18 +325,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Plus vite, moins longtemps",
+          "body": "Règle la vitesse et regarde le temps de parcours. Une vitesse moyenne ne se calcule pas en moyennant deux vitesses : il faut repasser par les temps, et la figure montre pourquoi.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'aller et le retour",
           "body": "Une voiture fait 60 km à 30 km/h, puis 60 km à 60 km/h.\n\nQuelle est sa vitesse moyenne sur les 120 km ?\n\nTout le monde répond 45, la moyenne de 30 et 60. C'est faux, et l'écart n'est pas petit.\n\nIl faut repasser par la définition : la vitesse moyenne est la distance totale divisée par le temps total. Pas la moyenne des vitesses."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le calcul juste",
           "body": "Les 60 premiers kilomètres à 30 km/h prennent 60 ÷ 30 = 2 heures.\n\nLes 60 suivants à 60 km/h prennent 60 ÷ 60 = 1 heure.\n\nTotal : 120 km en 3 heures.\n\nVitesse moyenne : 120 ÷ 3 = 40 km/h. Et non 45.\n\nLa raison est intuitive une fois vue : on passe deux fois plus de temps à la vitesse lente, donc elle compte double dans la moyenne."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Quand la moyenne simple serait juste",
           "body": "Si l'on roulait 1 heure à 30 puis 1 heure à 60, la moyenne serait bien 45 : 90 km en 2 heures.\n\nLa moyenne simple des vitesses est correcte quand les durées sont égales, jamais quand les distances le sont.\n\nC'est le même piège que la moyenne des moyennes : il faut pondérer par ce qui est réellement partagé — ici, le temps."

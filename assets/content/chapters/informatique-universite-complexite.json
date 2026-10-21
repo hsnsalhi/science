@@ -11,30 +11,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Pourquoi on ne chronomètre pas",
+          "body": "Fais grossir la taille des données : ce qui distingue les courbes n’est pas leur hauteur de départ mais leur forme. La notation O garde la forme et jette le reste.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Pourquoi ne pas chronométrer",
           "body": "Chronométrer un programme mesure autant la machine que l'algorithme : un processeur deux fois plus rapide halve le temps sans rien changer à la méthode.\n\nOn compte donc les opérations élémentaires en fonction de la taille n des données."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La notation O",
           "formula": "f(n) = O(g(n)) s'il existe c > 0 et n₀ tels que f(n) ≤ c·g(n) pour tout n ≥ n₀",
           "body": "à partir d'un certain rang, f ne dépasse pas g à une constante près."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Ce qu'on jette, et pourquoi",
           "body": "3n² + 50n + 1000 est O(n²).\n\nLe terme 50n finit par être négligeable devant n², et la constante 3 dépend du langage, du compilateur, de la machine. Ce qui reste est ce qui ne dépend que de l'algorithme.\n\nLa contrepartie est franche : pour de petites entrées, un O(n²) avec de bonnes constantes bat souvent un O(n log n)."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "On raisonne d'ordinaire au pire cas. C'est une garantie, pas une prédiction : le cas moyen peut être bien meilleur, et c'est précisément l'écart entre les deux qui fait l'intérêt du tri rapide."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -52,10 +59,19 @@
           "hint": "Quel terme l'emporte quand n devient grand ?",
           "explanation": "O(n²). Les constantes et les termes dominés disparaissent : seul le terme de plus haut degré décide du comportement asymptotique.",
           "options": [
-            { "text": "O(n²)", "correct": true },
-            { "text": "O(n)" },
-            { "text": "O(3n²)" },
-            { "text": "O(n² + n)" }
+            {
+              "text": "O(n²)",
+              "correct": true
+            },
+            {
+              "text": "O(n)"
+            },
+            {
+              "text": "O(3n²)"
+            },
+            {
+              "text": "O(n² + n)"
+            }
           ]
         },
         {
@@ -71,12 +87,27 @@
           "prompt": "Range ces expressions selon leur classe de complexité.",
           "hint": "Ne garde que le terme dominant.",
           "explanation": "n + 1000 et 5n sont linéaires. n²/2 et 2n² + n sont quadratiques : la constante devant n² ne change pas la classe.",
-          "categories": ["O(n)", "O(n²)"],
+          "categories": [
+            "O(n)",
+            "O(n²)"
+          ],
           "items": [
-            { "text": "n + 1000", "category": 0 },
-            { "text": "5n", "category": 0 },
-            { "text": "n²/2", "category": 1 },
-            { "text": "2n² + n", "category": 1 }
+            {
+              "text": "n + 1000",
+              "category": 0
+            },
+            {
+              "text": "5n",
+              "category": 0
+            },
+            {
+              "text": "n²/2",
+              "category": 1
+            },
+            {
+              "text": "2n² + n",
+              "category": 1
+            }
           ]
         },
         {
@@ -148,12 +179,27 @@
           "kind": "tri",
           "prompt": "Range ces classes selon qu'elles restent praticables sur de grandes données.",
           "explanation": "log n, n et n log n passent à l'échelle sans difficulté. n² devient lourd au-delà de quelques centaines de milliers d'éléments, et 2^n est hors d'atteinte dès quelques dizaines.",
-          "categories": ["Praticable sur de grandes données", "Impraticable"],
+          "categories": [
+            "Praticable sur de grandes données",
+            "Impraticable"
+          ],
           "items": [
-            { "text": "log n", "category": 0 },
-            { "text": "n log n", "category": 0 },
-            { "text": "n²", "category": 1 },
-            { "text": "2^n", "category": 1 }
+            {
+              "text": "log n",
+              "category": 0
+            },
+            {
+              "text": "n log n",
+              "category": 0
+            },
+            {
+              "text": "n²",
+              "category": 1
+            },
+            {
+              "text": "2^n",
+              "category": 1
+            }
           ]
         },
         {
@@ -164,10 +210,19 @@
           "explanation": "Celle de 2^n. Son logarithme est proportionnel à n : la courbe devient une droite, et c'est la signature d'une croissance exponentielle.",
           "figureId": "complexite",
           "options": [
-            { "text": "2^n", "correct": true },
-            { "text": "n" },
-            { "text": "n²" },
-            { "text": "log n" }
+            {
+              "text": "2^n",
+              "correct": true
+            },
+            {
+              "text": "n"
+            },
+            {
+              "text": "n²"
+            },
+            {
+              "text": "log n"
+            }
           ]
         },
         {
@@ -195,24 +250,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les classes qui reviennent partout",
+          "body": "Compare log n, n, n log n et n². Presque tous les algorithmes de recherche et de tri tombent dans l’une de ces quatre familles.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Recherche séquentielle",
           "body": "On parcourt le tableau du début à la fin. Au pire, n comparaisons : la valeur cherchée est la dernière, ou absente.\n\nAucune hypothèse sur les données : c'est son seul avantage, et il n'est pas mince."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Recherche dichotomique",
           "body": "Sur un tableau trié, on compare au milieu et on élimine la moitié restante.\n\nChaque comparaison divise l'espace par deux : au pire la partie entière supérieure de log₂(n+1) comparaisons. Pour un million d'éléments, vingt suffisent."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Trier",
           "body": "Le tri par sélection compare chaque élément à tous les autres : O(n²).\n\nLe tri fusion découpe en deux, trie chaque moitié, puis fusionne : O(n log n). C'est l'optimum pour un tri par comparaisons, et on sait le démontrer."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Trier pour pouvoir chercher n'est rentable que si l'on cherche souvent : un tri en n log n suivi de k recherches en log n bat k recherches linéaires dès que k dépasse l'ordre de log n."
         }
@@ -234,10 +296,22 @@
           "prompt": "Associe chaque algorithme à sa complexité au pire cas.",
           "explanation": "La recherche séquentielle parcourt tout : O(n). La dichotomie divise par deux : O(log n). Le tri par sélection compare par paires : O(n²). Le tri fusion atteint O(n log n).",
           "pairs": [
-            { "left": "Recherche séquentielle", "right": "O(n)" },
-            { "left": "Recherche dichotomique", "right": "O(log n)" },
-            { "left": "Tri par sélection", "right": "O(n²)" },
-            { "left": "Tri fusion", "right": "O(n log n)" }
+            {
+              "left": "Recherche séquentielle",
+              "right": "O(n)"
+            },
+            {
+              "left": "Recherche dichotomique",
+              "right": "O(log n)"
+            },
+            {
+              "left": "Tri par sélection",
+              "right": "O(n²)"
+            },
+            {
+              "left": "Tri fusion",
+              "right": "O(n log n)"
+            }
           ]
         },
         {
@@ -269,6 +343,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Jusqu’où ça tient",
+          "body": "Pousse la taille au maximum et lis les durées annoncées. Certaines courbes franchissent l’âge de l’Univers avant d’avoir fini — et c’est ce que le défi demande de repérer.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chaque algorithme, demande-toi comment le coût réagit quand n double."
@@ -282,10 +363,19 @@
           "hint": "Chaque tour de la boucle externe déclenche n tours de l'interne.",
           "explanation": "O(n²) : n tours externes, n internes à chaque fois.",
           "options": [
-            { "text": "O(n²)", "correct": true },
-            { "text": "O(n)" },
-            { "text": "O(n log n)" },
-            { "text": "O(log n)" }
+            {
+              "text": "O(n²)",
+              "correct": true
+            },
+            {
+              "text": "O(n)"
+            },
+            {
+              "text": "O(n log n)"
+            },
+            {
+              "text": "O(log n)"
+            }
           ]
         },
         {
@@ -303,12 +393,27 @@
           "kind": "tri",
           "prompt": "Range ces complexités.",
           "explanation": "log n et n log n croissent lentement ; n² et 2^n explosent. La frontière du praticable passe entre les deux groupes bien avant le million d'éléments.",
-          "categories": ["Croissance lente", "Croissance rapide"],
+          "categories": [
+            "Croissance lente",
+            "Croissance rapide"
+          ],
           "items": [
-            { "text": "log n", "category": 0 },
-            { "text": "n log n", "category": 0 },
-            { "text": "n²", "category": 1 },
-            { "text": "2^n", "category": 1 }
+            {
+              "text": "log n",
+              "category": 0
+            },
+            {
+              "text": "n log n",
+              "category": 0
+            },
+            {
+              "text": "n²",
+              "category": 1
+            },
+            {
+              "text": "2^n",
+              "category": 1
+            }
           ]
         },
         {
@@ -336,10 +441,19 @@
           "explanation": "Parce qu'elle ne permet de traiter qu'un seul élément de plus : doubler la vitesse revient à gagner un facteur 2, soit exactement un pas de 2^n.",
           "figureId": "complexite",
           "options": [
-            { "text": "Elle ne fait gagner qu'une unité sur n", "correct": true },
-            { "text": "Elle ne change rien du tout" },
-            { "text": "Elle double la taille traitable" },
-            { "text": "Elle change la classe de complexité" }
+            {
+              "text": "Elle ne fait gagner qu'une unité sur n",
+              "correct": true
+            },
+            {
+              "text": "Elle ne change rien du tout"
+            },
+            {
+              "text": "Elle double la taille traitable"
+            },
+            {
+              "text": "Elle change la classe de complexité"
+            }
           ]
         }
       ]

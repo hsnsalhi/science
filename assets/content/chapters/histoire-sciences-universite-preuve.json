@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La géométrie où tout se démontre",
+          "body": "Fais glisser la parallèle et observe les rapports se conserver. Euclide déduisait tout cela de cinq postulats — et c’est le cinquième, celui des parallèles, qui a résisté deux mille ans.",
+          "figureId": "thales"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le modèle euclidien",
           "body": "Vers 300 avant notre ère, Euclide pose des définitions, des axiomes, et déduit tout le reste.\n\nCe geste fixe pour deux millénaires ce qu'est une démonstration : une chaîne de déductions partant de propositions admises."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Le cinquième postulat",
           "body": "Un axiome gênait : par un point extérieur à une droite, il passe exactement une parallèle.\n\nMoins évident que les autres, il semblait démontrable. Des générations s'y sont essayées. Au dix-neuvième siècle, Lobatchevski et Bolyai ont montré qu'en le remplaçant, on obtient une géométrie parfaitement cohérente."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Ce que cela change",
           "body": "Les axiomes cessent d'être des vérités évidentes sur le monde. Ils deviennent des règles du jeu qu'on choisit.\n\nUne démonstration ne dit plus ce qui est vrai : elle dit ce qui suit des axiomes qu'on s'est donnés."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "La géométrie de la relativité générale n'est pas euclidienne. L'axiome qu'on croyait imposé par l'évidence se révèle faux pour l'espace réel."
         }
@@ -41,10 +48,19 @@
           "hint": "Ils n'ont pas démontré le postulat.",
           "explanation": "Qu'en remplaçant le cinquième postulat, on obtient une géométrie cohérente. Il n'était donc pas déductible des autres.",
           "options": [
-            { "text": "Qu'une géométrie sans ce postulat est cohérente", "correct": true },
-            { "text": "Que le postulat est démontrable" },
-            { "text": "Que la géométrie d'Euclide est fausse" },
-            { "text": "Que les axiomes sont inutiles" }
+            {
+              "text": "Qu'une géométrie sans ce postulat est cohérente",
+              "correct": true
+            },
+            {
+              "text": "Que le postulat est démontrable"
+            },
+            {
+              "text": "Que la géométrie d'Euclide est fausse"
+            },
+            {
+              "text": "Que les axiomes sont inutiles"
+            }
           ]
         },
         {
@@ -61,10 +77,19 @@
           "hint": "Elle est relative à quelque chose.",
           "explanation": "Ce qui suit des axiomes qu'on s'est donnés. La vérité absolue n'est plus ce qu'elle établit.",
           "options": [
-            { "text": "Ce qui suit des axiomes choisis", "correct": true },
-            { "text": "Ce qui est vrai dans le monde" },
-            { "text": "Ce qui est évident" },
-            { "text": "Ce que la majorité des savants accepte" }
+            {
+              "text": "Ce qui suit des axiomes choisis",
+              "correct": true
+            },
+            {
+              "text": "Ce qui est vrai dans le monde"
+            },
+            {
+              "text": "Ce qui est évident"
+            },
+            {
+              "text": "Ce que la majorité des savants accepte"
+            }
           ]
         }
       ]
@@ -79,24 +104,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Quand un énoncé se retourne contre lui-même",
+          "body": "Cherche le cas qui met la règle en défaut. Le paradoxe de Russell fabrique un énoncé dont chaque réponse impose son contraire — il ne tombe dans aucun des quatre cas.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Le paradoxe de Russell",
           "body": "En 1901, Russell considère l'ensemble de tous les ensembles qui ne se contiennent pas eux-mêmes.\n\nSe contient-il ? S'il se contient, il ne devrait pas. S'il ne se contient pas, il devrait. La théorie des ensembles de l'époque est contradictoire."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "La même forme, en plus familier",
           "body": "Un barbier rase exactement les habitants du village qui ne se rasent pas eux-mêmes. Qui rase le barbier ?\n\nLa question n'a pas de réponse, et ce n'est pas une énigme : c'est la preuve qu'un tel barbier ne peut pas exister."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Le programme de Hilbert",
           "body": "Hilbert propose de refonder : un système d'axiomes dont on démontrerait, par des moyens finitaires, qu'il est cohérent et complet.\n\nComplet veut dire : tout énoncé vrai y est démontrable."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "texte",
           "title": "Ce que Gödel établit en 1931",
           "body": "Tout système d'axiomes cohérent et assez riche pour l'arithmétique contient des énoncés vrais qu'il ne démontre pas.\n\nEt un tel système ne peut pas démontrer sa propre cohérence. Le programme de Hilbert est hors d'atteinte, non par manque d'astuce, mais par nécessité."
@@ -110,10 +142,19 @@
           "hint": "C'est une démonstration, pas une énigme.",
           "explanation": "Qu'aucun barbier de ce type ne peut exister. La contradiction élimine l'hypothèse, elle ne demande pas de réponse.",
           "options": [
-            { "text": "Qu'un tel barbier ne peut pas exister", "correct": true },
-            { "text": "Que le barbier se rase lui-même" },
-            { "text": "Que le barbier ne se rase pas" },
-            { "text": "Qu'il manque une information dans l'énoncé" }
+            {
+              "text": "Qu'un tel barbier ne peut pas exister",
+              "correct": true
+            },
+            {
+              "text": "Que le barbier se rase lui-même"
+            },
+            {
+              "text": "Que le barbier ne se rase pas"
+            },
+            {
+              "text": "Qu'il manque une information dans l'énoncé"
+            }
           ]
         },
         {
@@ -123,10 +164,19 @@
           "hint": "Vrai et démontrable.",
           "explanation": "Que tout énoncé vrai du système y est démontrable. C'est précisément ce que Gödel a rendu impossible.",
           "options": [
-            { "text": "Tout énoncé vrai y est démontrable", "correct": true },
-            { "text": "Le système contient tous les axiomes possibles" },
-            { "text": "Les démonstrations y sont courtes" },
-            { "text": "Le système est cohérent" }
+            {
+              "text": "Tout énoncé vrai y est démontrable",
+              "correct": true
+            },
+            {
+              "text": "Le système contient tous les axiomes possibles"
+            },
+            {
+              "text": "Les démonstrations y sont courtes"
+            },
+            {
+              "text": "Le système est cohérent"
+            }
           ]
         },
         {
@@ -155,24 +205,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Vérifier tous les cas",
+          "body": "Parcours les quatre cas un par un : ici, la vérification exhaustive tient en une figure. La preuve des quatre couleurs en demande quinze cents, et c’est ce qui a fait scandale.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le théorème des quatre couleurs",
           "body": "Toute carte plane se colorie avec quatre couleurs sans que deux régions voisines partagent la même.\n\nConjecturé en 1852, démontré en 1976 par Appel et Haken — en réduisant le problème à 1 936 configurations, vérifiées une à une par ordinateur."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Pourquoi quatre, et pas trois",
           "body": "Quatre pays qui se touchent tous deux à deux suffisent à montrer que trois couleurs ne peuvent pas suffire.\n\nQue cinq ne soient jamais nécessaires est, lui, un théorème difficile — et c'est celui-là que l'ordinateur a établi."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Une preuve qu'on ne peut pas lire",
           "body": "Aucun humain ne vérifiera les 1 936 cas à la main. La communauté a dû décider si cela restait une démonstration.\n\nLa réponse a mis des années à se stabiliser : oui, à condition que le programme soit lui-même vérifié. En 2005, Gonthier en a produit une version entièrement contrôlée par un assistant de preuve."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Un assistant de preuve ne trouve pas la démonstration : il vérifie chaque pas d'une démonstration qu'on lui donne. La confiance se déplace alors sur son noyau, quelques milliers de lignes relues par beaucoup de monde."
         }
@@ -205,10 +262,19 @@
           "hint": "Il ne cherche pas.",
           "explanation": "Il vérifie chaque pas d'une démonstration fournie. Il ne la découvre pas à votre place.",
           "options": [
-            { "text": "Il vérifie chaque pas d'une démonstration fournie", "correct": true },
-            { "text": "Il trouve la démonstration tout seul" },
-            { "text": "Il teste l'énoncé sur beaucoup d'exemples" },
-            { "text": "Il remplace les axiomes" }
+            {
+              "text": "Il vérifie chaque pas d'une démonstration fournie",
+              "correct": true
+            },
+            {
+              "text": "Il trouve la démonstration tout seul"
+            },
+            {
+              "text": "Il teste l'énoncé sur beaucoup d'exemples"
+            },
+            {
+              "text": "Il remplace les axiomes"
+            }
           ]
         },
         {
@@ -217,12 +283,27 @@
           "prompt": "Range ces procédés : démontrent-ils un énoncé général ?",
           "hint": "Un cas vérifié n'est pas une démonstration.",
           "explanation": "Une déduction et une vérification exhaustive des cas démontrent. Des essais, même nombreux, et une simulation ne démontrent rien.",
-          "categories": ["Démontre", "Ne démontre pas"],
+          "categories": [
+            "Démontre",
+            "Ne démontre pas"
+          ],
           "items": [
-            { "text": "une déduction depuis les axiomes", "category": 0 },
-            { "text": "l'examen exhaustif de tous les cas possibles", "category": 0 },
-            { "text": "un million d'exemples vérifiés", "category": 1 },
-            { "text": "une simulation numérique concluante", "category": 1 }
+            {
+              "text": "une déduction depuis les axiomes",
+              "category": 0
+            },
+            {
+              "text": "l'examen exhaustif de tous les cas possibles",
+              "category": 0
+            },
+            {
+              "text": "un million d'exemples vérifiés",
+              "category": 1
+            },
+            {
+              "text": "une simulation numérique concluante",
+              "category": 1
+            }
           ]
         }
       ]
@@ -264,10 +345,19 @@
           "hint": "Démontrable et vrai ne sont pas la même chose.",
           "explanation": "Non : Gödel exhibe des énoncés vrais et non démontrables. Démontrable est relatif à un système, vrai ne l'est pas.",
           "options": [
-            { "text": "Non : il peut être vrai sans être démontrable", "correct": true },
-            { "text": "Oui, par définition" },
-            { "text": "Oui, s'il est indémontrable dans tous les systèmes" },
-            { "text": "La question n'a pas de sens" }
+            {
+              "text": "Non : il peut être vrai sans être démontrable",
+              "correct": true
+            },
+            {
+              "text": "Oui, par définition"
+            },
+            {
+              "text": "Oui, s'il est indémontrable dans tous les systèmes"
+            },
+            {
+              "text": "La question n'a pas de sens"
+            }
           ]
         },
         {
@@ -283,10 +373,22 @@
           "prompt": "Associe chaque nom à son apport.",
           "explanation": "Cinq moments, cinq déplacements de ce qu'on appelle une preuve.",
           "pairs": [
-            { "left": "Euclide", "right": "la méthode axiomatique" },
-            { "left": "Lobatchevski", "right": "une géométrie non euclidienne" },
-            { "left": "Russell", "right": "un paradoxe des ensembles" },
-            { "left": "Gödel", "right": "les limites de la démonstration" }
+            {
+              "left": "Euclide",
+              "right": "la méthode axiomatique"
+            },
+            {
+              "left": "Lobatchevski",
+              "right": "une géométrie non euclidienne"
+            },
+            {
+              "left": "Russell",
+              "right": "un paradoxe des ensembles"
+            },
+            {
+              "left": "Gödel",
+              "right": "les limites de la démonstration"
+            }
           ]
         },
         {
@@ -304,10 +406,19 @@
           "explanation": "La démonstration couvre tous les cas d'un coup, y compris ceux qu'on ne peut pas énumérer. Les exemples n'en couvrent qu'un nombre fini.",
           "figureId": "implication",
           "options": [
-            { "text": "Elle couvre tous les cas, même non énumérables", "correct": true },
-            { "text": "Elle est plus courte" },
-            { "text": "Elle est écrite par un mathématicien" },
-            { "text": "Elle utilise des symboles" }
+            {
+              "text": "Elle couvre tous les cas, même non énumérables",
+              "correct": true
+            },
+            {
+              "text": "Elle est plus courte"
+            },
+            {
+              "text": "Elle est écrite par un mathématicien"
+            },
+            {
+              "text": "Elle utilise des symboles"
+            }
           ]
         }
       ]

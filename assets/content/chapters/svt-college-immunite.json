@@ -42,10 +42,19 @@
           "prompt": "Pourquoi un antibiotique ne marche-t-il pas contre un virus ?",
           "explanation": "Parce qu'il attaque des mécanismes de cellule bactérienne, et qu'un virus n'en possède aucun : il n'y a rien à attaquer.",
           "options": [
-            { "text": "un virus n'a aucun mécanisme de cellule à attaquer", "correct": true },
-            { "text": "les virus sont trop petits pour être atteints" },
-            { "text": "les virus se cachent dans le sang" },
-            { "text": "les antibiotiques sont trop faibles" }
+            {
+              "text": "un virus n'a aucun mécanisme de cellule à attaquer",
+              "correct": true
+            },
+            {
+              "text": "les virus sont trop petits pour être atteints"
+            },
+            {
+              "text": "les virus se cachent dans le sang"
+            },
+            {
+              "text": "les antibiotiques sont trop faibles"
+            }
           ]
         },
         {
@@ -53,14 +62,35 @@
           "kind": "tri",
           "prompt": "Bactérie ou virus ?",
           "explanation": "La bactérie est une cellule autonome, le virus une information enveloppée qui a besoin d'une cellule hôte.",
-          "categories": ["bactérie", "virus"],
+          "categories": [
+            "bactérie",
+            "virus"
+          ],
           "items": [
-            { "text": "c'est une cellule complète", "category": 0 },
-            { "text": "se divise toute seule", "category": 0 },
-            { "text": "sensible aux antibiotiques", "category": 0 },
-            { "text": "cent fois plus petit", "category": 1 },
-            { "text": "a besoin d'une cellule hôte", "category": 1 },
-            { "text": "ne se nourrit pas", "category": 1 }
+            {
+              "text": "c'est une cellule complète",
+              "category": 0
+            },
+            {
+              "text": "se divise toute seule",
+              "category": 0
+            },
+            {
+              "text": "sensible aux antibiotiques",
+              "category": 0
+            },
+            {
+              "text": "cent fois plus petit",
+              "category": 1
+            },
+            {
+              "text": "a besoin d'une cellule hôte",
+              "category": 1
+            },
+            {
+              "text": "ne se nourrit pas",
+              "category": 1
+            }
           ]
         },
         {
@@ -69,11 +99,25 @@
           "prompt": "Quelles sont les barrières naturelles du corps ?",
           "explanation": "La peau, les muqueuses et leur mucus, l'acidité de l'estomac, les larmes et la salive agissent avant toute réponse immunitaire.",
           "options": [
-            { "text": "la peau intacte", "correct": true },
-            { "text": "le mucus des muqueuses", "correct": true },
-            { "text": "l'acidité de l'estomac", "correct": true },
-            { "text": "les larmes et la salive", "correct": true },
-            { "text": "les cheveux" }
+            {
+              "text": "la peau intacte",
+              "correct": true
+            },
+            {
+              "text": "le mucus des muqueuses",
+              "correct": true
+            },
+            {
+              "text": "l'acidité de l'estomac",
+              "correct": true
+            },
+            {
+              "text": "les larmes et la salive",
+              "correct": true
+            },
+            {
+              "text": "les cheveux"
+            }
           ]
         },
         {
@@ -82,10 +126,19 @@
           "prompt": "Un intestin sans aucune bactérie serait-il plus sain ?",
           "explanation": "Non, il serait sans défense : les bactéries utiles digèrent des fibres, fabriquent des vitamines et occupent la place que prendraient sinon des espèces dangereuses.",
           "options": [
-            { "text": "non, il serait sans défense", "correct": true },
-            { "text": "oui, plus aucune infection" },
-            { "text": "oui, la digestion serait plus rapide" },
-            { "text": "cela ne changerait rien" }
+            {
+              "text": "non, il serait sans défense",
+              "correct": true
+            },
+            {
+              "text": "oui, plus aucune infection"
+            },
+            {
+              "text": "oui, la digestion serait plus rapide"
+            },
+            {
+              "text": "cela ne changerait rien"
+            }
           ]
         },
         {
@@ -107,24 +160,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Qui combat, exactement",
+          "body": "Explore les pièces d’une cellule. Les défenses du corps sont des cellules comme celle-ci, spécialisées : certaines avalent, d’autres fabriquent des anticorps, d’autres se souviennent.",
+          "figureId": "cellule"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "La réponse immédiate",
           "body": "Dès qu'un microbe franchit une barrière, des cellules nommées phagocytes l'avalent et le digèrent. C'est brutal et non spécifique : elles traitent tout intrus de la même façon.\n\nEn même temps, le vaisseau se dilate et laisse passer plus de sang et de cellules : c'est l'inflammation. La rougeur, la chaleur, le gonflement et la douleur ne sont pas la maladie, ce sont les signes de la défense qui travaille.\n\nCette première ligne agit en quelques minutes, et suffit la plupart du temps."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "La réponse spécifique",
           "body": "Si cela ne suffit pas, des lymphocytes entrent en jeu. Chacun reconnaît une seule forme précise — un seul fragment de microbe, appelé antigène.\n\nCelui qui reconnaît l'intrus se multiplie, et sa descendance produit des anticorps par milliards. Un anticorps se fixe sur l'antigène et le neutralise ou le signale aux phagocytes.\n\nCette réponse est redoutablement efficace, et lente à démarrer : il faut plusieurs jours pour la première fois."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "La mémoire change tout",
           "body": "Après l'infection, une partie des lymphocytes qui ont servi survit pendant des années.\n\nAu second contact avec le même microbe, la réponse ne prend plus des jours mais des heures, et elle est bien plus forte. Le plus souvent, on ne tombe même pas malade.\n\nC'est pour cela qu'on n'a la rougeole qu'une fois — et c'est exactement ce que la vaccination exploite."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Pourquoi la grippe revient chaque année",
           "body": "La mémoire reconnaît une forme précise. Or le virus de la grippe change de surface d'une année sur l'autre.\n\nLes anticorps de l'an dernier ne s'y fixent plus : pour le système immunitaire, c'est un nouveau microbe. D'où un vaccin reformulé chaque année, là qu'un vaccin contre la rougeole dure toute la vie."
@@ -136,14 +196,35 @@
           "kind": "tri",
           "prompt": "Range ces caractères selon la ligne de défense.",
           "explanation": "La réponse immédiate est rapide et non spécifique ; la réponse spécifique est lente la première fois, précise, et laisse une mémoire.",
-          "categories": ["réponse immédiate", "réponse spécifique"],
+          "categories": [
+            "réponse immédiate",
+            "réponse spécifique"
+          ],
           "items": [
-            { "text": "agit en quelques minutes", "category": 0 },
-            { "text": "traite tous les intrus pareil", "category": 0 },
-            { "text": "la phagocytose", "category": 0 },
-            { "text": "reconnaît un antigène précis", "category": 1 },
-            { "text": "produit des anticorps", "category": 1 },
-            { "text": "laisse une mémoire", "category": 1 }
+            {
+              "text": "agit en quelques minutes",
+              "category": 0
+            },
+            {
+              "text": "traite tous les intrus pareil",
+              "category": 0
+            },
+            {
+              "text": "la phagocytose",
+              "category": 0
+            },
+            {
+              "text": "reconnaît un antigène précis",
+              "category": 1
+            },
+            {
+              "text": "produit des anticorps",
+              "category": 1
+            },
+            {
+              "text": "laisse une mémoire",
+              "category": 1
+            }
           ]
         },
         {
@@ -152,10 +233,19 @@
           "prompt": "La rougeur et le gonflement autour d'une plaie, c'est quoi ?",
           "explanation": "L'inflammation : le vaisseau se dilate pour amener plus de sang et de cellules de défense. Ce sont les signes du travail immunitaire, pas de la maladie.",
           "options": [
-            { "text": "les signes de la défense qui travaille", "correct": true },
-            { "text": "l'infection qui gagne" },
-            { "text": "une allergie" },
-            { "text": "une réaction inutile" }
+            {
+              "text": "les signes de la défense qui travaille",
+              "correct": true
+            },
+            {
+              "text": "l'infection qui gagne"
+            },
+            {
+              "text": "une allergie"
+            },
+            {
+              "text": "une réaction inutile"
+            }
           ]
         },
         {
@@ -164,10 +254,19 @@
           "prompt": "Pourquoi la seconde rencontre avec un microbe est-elle sans conséquence ?",
           "explanation": "Parce que des lymphocytes mémoire survivent : la réponse démarre en heures au lieu de jours, et bien plus fort.",
           "options": [
-            { "text": "des lymphocytes mémoire accélèrent la réponse", "correct": true },
-            { "text": "le microbe est devenu plus faible" },
-            { "text": "les barrières se sont renforcées" },
-            { "text": "le corps a produit des antibiotiques" }
+            {
+              "text": "des lymphocytes mémoire accélèrent la réponse",
+              "correct": true
+            },
+            {
+              "text": "le microbe est devenu plus faible"
+            },
+            {
+              "text": "les barrières se sont renforcées"
+            },
+            {
+              "text": "le corps a produit des antibiotiques"
+            }
           ]
         },
         {
@@ -176,10 +275,19 @@
           "prompt": "Pourquoi faut-il un nouveau vaccin contre la grippe chaque année ?",
           "explanation": "Parce que le virus change de surface : les anticorps de l'an dernier ne s'y fixent plus, et le système immunitaire voit un nouveau microbe.",
           "options": [
-            { "text": "le virus change de surface chaque année", "correct": true },
-            { "text": "le vaccin s'épuise en un an" },
-            { "text": "la mémoire immunitaire ne dure qu'un an" },
-            { "text": "le vaccin est mal fabriqué" }
+            {
+              "text": "le virus change de surface chaque année",
+              "correct": true
+            },
+            {
+              "text": "le vaccin s'épuise en un an"
+            },
+            {
+              "text": "la mémoire immunitaire ne dure qu'un an"
+            },
+            {
+              "text": "le vaccin est mal fabriqué"
+            }
           ]
         },
         {
@@ -214,18 +322,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une population qui change de composition",
+          "body": "Fais défiler les générations avec un avantage. Un vaccin agit sur une population de cellules de la même façon : il fait grandir d’avance celles qui savent reconnaître l’intrus.",
+          "figureId": "selection"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le principe en une phrase",
           "body": "Un vaccin présente au système immunitaire la forme du microbe, sans le microbe capable de rendre malade.\n\nSelon le vaccin, c'est un microbe tué, un microbe affaibli, un fragment de sa surface, ou la recette pour que nos propres cellules fabriquent ce fragment.\n\nDans tous les cas, la réponse spécifique se déclenche et laisse une mémoire. Le jour où le vrai microbe arrive, il tombe sur une défense déjà prête."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Pourquoi plusieurs doses",
           "body": "La première dose crée une mémoire, souvent modeste.\n\nUn rappel, quelques semaines ou quelques mois plus tard, retrouve cette mémoire et la renforce considérablement — bien plus que ne le ferait une première dose plus grosse.\n\nC'est le même mécanisme que les révisions espacées : la deuxième présentation vaut beaucoup plus que la première, et c'est pour cela que l'espacement est prescrit."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Ce qu'un vaccin ne fait pas",
           "body": "Il ne soigne pas une maladie déjà installée : il prépare avant.\n\nIl ne garantit pas toujours de ne pas être infecté. Beaucoup de vaccins réduisent fortement les formes graves sans empêcher complètement la contamination — et c'est déjà considérable.\n\nDire qu'un vaccin « ne marche pas » parce qu'une personne vaccinée a été infectée confond deux objectifs différents."
@@ -238,10 +353,19 @@
           "prompt": "Qu'est-ce qu'un vaccin apporte au système immunitaire ?",
           "explanation": "La forme du microbe, sans sa capacité à rendre malade. Cela suffit à déclencher la réponse spécifique et à laisser une mémoire.",
           "options": [
-            { "text": "la forme du microbe, sans le pouvoir de rendre malade", "correct": true },
-            { "text": "des anticorps tout faits" },
-            { "text": "des antibiotiques" },
-            { "text": "des lymphocytes d'un donneur" }
+            {
+              "text": "la forme du microbe, sans le pouvoir de rendre malade",
+              "correct": true
+            },
+            {
+              "text": "des anticorps tout faits"
+            },
+            {
+              "text": "des antibiotiques"
+            },
+            {
+              "text": "des lymphocytes d'un donneur"
+            }
           ]
         },
         {
@@ -250,10 +374,19 @@
           "prompt": "Pourquoi un rappel plutôt qu'une première dose plus grosse ?",
           "explanation": "Parce que la seconde présentation retrouve la mémoire créée et la renforce bien plus qu'une dose unique, même importante. L'espacement fait l'effet.",
           "options": [
-            { "text": "la seconde présentation renforce bien plus la mémoire", "correct": true },
-            { "text": "pour économiser le produit" },
-            { "text": "pour éviter la douleur" },
-            { "text": "parce que la première ne sert à rien" }
+            {
+              "text": "la seconde présentation renforce bien plus la mémoire",
+              "correct": true
+            },
+            {
+              "text": "pour économiser le produit"
+            },
+            {
+              "text": "pour éviter la douleur"
+            },
+            {
+              "text": "parce que la première ne sert à rien"
+            }
           ]
         },
         {
@@ -262,10 +395,19 @@
           "prompt": "Une personne vaccinée est infectée quand même. Le vaccin a-t-il échoué ?",
           "explanation": "Pas nécessairement : beaucoup de vaccins visent à éviter les formes graves plus qu'à bloquer toute contamination. Juger sur le mauvais critère fausse la conclusion.",
           "options": [
-            { "text": "pas nécessairement, son objectif peut être d'éviter les formes graves", "correct": true },
-            { "text": "oui, un vaccin doit tout empêcher" },
-            { "text": "oui, le lot était défectueux" },
-            { "text": "oui, la personne n'avait pas d'immunité" }
+            {
+              "text": "pas nécessairement, son objectif peut être d'éviter les formes graves",
+              "correct": true
+            },
+            {
+              "text": "oui, un vaccin doit tout empêcher"
+            },
+            {
+              "text": "oui, le lot était défectueux"
+            },
+            {
+              "text": "oui, la personne n'avait pas d'immunité"
+            }
           ]
         },
         {
@@ -274,10 +416,19 @@
           "prompt": "Un vaccin soigne-t-il une maladie déjà installée ?",
           "explanation": "Non. Il prépare la mémoire avant la rencontre. Une fois la maladie en cours, c'est le traitement qui agit, pas le vaccin.",
           "options": [
-            { "text": "non, il prépare avant la rencontre", "correct": true },
-            { "text": "oui, en quelques jours" },
-            { "text": "oui, si la dose est doublée" },
-            { "text": "oui, pour les maladies virales seulement" }
+            {
+              "text": "non, il prépare avant la rencontre",
+              "correct": true
+            },
+            {
+              "text": "oui, en quelques jours"
+            },
+            {
+              "text": "oui, si la dose est doublée"
+            },
+            {
+              "text": "oui, pour les maladies virales seulement"
+            }
           ]
         },
         {
@@ -286,11 +437,25 @@
           "prompt": "Que peut contenir un vaccin ?",
           "explanation": "Un microbe tué, un microbe affaibli, un fragment de sa surface, ou la recette permettant à nos cellules de fabriquer ce fragment.",
           "options": [
-            { "text": "un microbe tué", "correct": true },
-            { "text": "un microbe affaibli", "correct": true },
-            { "text": "un fragment de sa surface", "correct": true },
-            { "text": "la recette de ce fragment", "correct": true },
-            { "text": "un antibiotique à libération lente" }
+            {
+              "text": "un microbe tué",
+              "correct": true
+            },
+            {
+              "text": "un microbe affaibli",
+              "correct": true
+            },
+            {
+              "text": "un fragment de sa surface",
+              "correct": true
+            },
+            {
+              "text": "la recette de ce fragment",
+              "correct": true
+            },
+            {
+              "text": "un antibiotique à libération lente"
+            }
           ]
         }
       ]
@@ -305,19 +470,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui se propage, et ce qui s’arrête",
+          "body": "Pousse l’avantage à zéro : la proportion ne bouge plus. Une épidémie s’arrête quand elle ne trouve plus assez de terrain — et le défi en donne le seuil exact.",
+          "figureId": "selection"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le nombre qui gouverne une épidémie",
           "body": "On appelle R₀ le nombre moyen de personnes qu'un malade contamine dans une population entièrement non protégée.\n\nSi R₀ vaut 3, chaque malade en fait trois, qui en font neuf, puis vingt-sept : l'épidémie croît. Si R₀ est inférieur à 1, chaque malade en fait moins d'un, et l'épidémie s'éteint toute seule.\n\nTout l'objectif est donc de ramener le nombre effectif de contaminations en dessous de 1."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Le seuil d'immunité collective",
           "formula": "seuil = 1 − 1 ÷ R₀",
           "body": "Si une proportion p de la population est immunisée, un malade ne contamine plus que R₀ × (1 − p) personnes. Pour que ce nombre tombe sous 1, il faut p supérieur à 1 − 1 ÷ R₀."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Pourquoi cela concerne ceux qui ne sont pas vaccinés",
           "body": "Au-delà du seuil, la transmission s'éteint d'elle-même. Les nouveau-nés trop jeunes pour être vaccinés, les personnes immunodéprimées et celles pour qui le vaccin est contre-indiqué cessent d'être exposées.\n\nLa vaccination n'est donc pas qu'une protection individuelle : au-delà du seuil, elle protège des gens qui ne peuvent pas se protéger eux-mêmes. Et sous le seuil, elle ne les protège plus."
@@ -371,10 +543,19 @@
           "prompt": "Avec R₀ égal à 4, quelle couverture faut-il pour éteindre l'épidémie ?",
           "explanation": "1 − 1/4 = 0,75, soit plus de 75 %. À 50 % on est encore très loin.",
           "options": [
-            { "text": "plus de 75 %", "correct": true },
-            { "text": "plus de 50 %" },
-            { "text": "plus de 25 %" },
-            { "text": "100 %, sans exception" }
+            {
+              "text": "plus de 75 %",
+              "correct": true
+            },
+            {
+              "text": "plus de 50 %"
+            },
+            {
+              "text": "plus de 25 %"
+            },
+            {
+              "text": "100 %, sans exception"
+            }
           ]
         },
         {
@@ -383,10 +564,19 @@
           "prompt": "Que se passe-t-il pour un nouveau-né trop jeune pour être vacciné si la couverture passe sous le seuil ?",
           "explanation": "Il redevient exposé. Au-delà du seuil la transmission s'éteint et le protège sans qu'il soit vacciné ; en dessous, cette protection disparaît.",
           "options": [
-            { "text": "il redevient exposé à la maladie", "correct": true },
-            { "text": "rien ne change pour lui" },
-            { "text": "il devient immunisé naturellement" },
-            { "text": "il est protégé par sa jeunesse" }
+            {
+              "text": "il redevient exposé à la maladie",
+              "correct": true
+            },
+            {
+              "text": "rien ne change pour lui"
+            },
+            {
+              "text": "il devient immunisé naturellement"
+            },
+            {
+              "text": "il est protégé par sa jeunesse"
+            }
           ]
         }
       ]

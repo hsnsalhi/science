@@ -60,12 +60,27 @@
           "prompt": "Range ces matériaux.",
           "hint": "Les métaux ont un point commun.",
           "explanation": "Le cuivre et l'aluminium sont des métaux : ils conduisent. Le plastique et le verre sont des isolants, et c'est pour cela qu'on les met autour des fils.",
-          "categories": ["Conducteur", "Isolant"],
+          "categories": [
+            "Conducteur",
+            "Isolant"
+          ],
           "items": [
-            { "text": "Le cuivre", "category": 0 },
-            { "text": "L'aluminium", "category": 0 },
-            { "text": "Le plastique", "category": 1 },
-            { "text": "Le verre", "category": 1 }
+            {
+              "text": "Le cuivre",
+              "category": 0
+            },
+            {
+              "text": "L'aluminium",
+              "category": 0
+            },
+            {
+              "text": "Le plastique",
+              "category": 1
+            },
+            {
+              "text": "Le verre",
+              "category": 1
+            }
           ]
         },
         {
@@ -75,10 +90,19 @@
           "hint": "Le courant choisit le chemin le plus facile.",
           "explanation": "L'intensité devient très forte et les fils chauffent. La pile se décharge en quelques instants, et le montage peut prendre feu.",
           "options": [
-            { "text": "L'intensité devient très forte et les fils chauffent", "correct": true },
-            { "text": "Le courant s'arrête complètement" },
-            { "text": "Les lampes brillent davantage" },
-            { "text": "La pile se recharge" }
+            {
+              "text": "L'intensité devient très forte et les fils chauffent",
+              "correct": true
+            },
+            {
+              "text": "Le courant s'arrête complètement"
+            },
+            {
+              "text": "Les lampes brillent davantage"
+            },
+            {
+              "text": "La pile se recharge"
+            }
           ]
         },
         {
@@ -88,10 +112,19 @@
           "hint": "Que fait le plastique au courant ?",
           "explanation": "Parce que le plastique est isolant : il empêche le courant de passer ailleurs que dans le cuivre, et protège celui qui manipule le fil.",
           "options": [
-            { "text": "Parce que le plastique est isolant", "correct": true },
-            { "text": "Parce que le plastique conduit mieux" },
-            { "text": "Pour rendre le fil plus joli" },
-            { "text": "Pour alourdir le fil" }
+            {
+              "text": "Parce que le plastique est isolant",
+              "correct": true
+            },
+            {
+              "text": "Parce que le plastique conduit mieux"
+            },
+            {
+              "text": "Pour rendre le fil plus joli"
+            },
+            {
+              "text": "Pour alourdir le fil"
+            }
           ]
         }
       ]
@@ -149,10 +182,19 @@
           "explanation": "Elle s'éteint. Le seul chemin du courant est coupé : il n'y a plus de boucle fermée.",
           "figureId": "circuit",
           "options": [
-            { "text": "Elle s'éteint", "correct": true },
-            { "text": "Elle reste allumée" },
-            { "text": "Elle brille plus fort" },
-            { "text": "Elle clignote" }
+            {
+              "text": "Elle s'éteint",
+              "correct": true
+            },
+            {
+              "text": "Elle reste allumée"
+            },
+            {
+              "text": "Elle brille plus fort"
+            },
+            {
+              "text": "Elle clignote"
+            }
           ]
         },
         {
@@ -163,10 +205,19 @@
           "explanation": "Elle reste allumée, et brille même comme avant : sa branche n'a pas été touchée.",
           "figureId": "circuit",
           "options": [
-            { "text": "Elle reste allumée", "correct": true },
-            { "text": "Elle s'éteint" },
-            { "text": "Elle s'éteint une seconde puis revient" },
-            { "text": "Elle brille deux fois moins" }
+            {
+              "text": "Elle reste allumée",
+              "correct": true
+            },
+            {
+              "text": "Elle s'éteint"
+            },
+            {
+              "text": "Elle s'éteint une seconde puis revient"
+            },
+            {
+              "text": "Elle brille deux fois moins"
+            }
           ]
         },
         {
@@ -175,12 +226,27 @@
           "prompt": "Range ces affirmations selon le montage qu'elles décrivent.",
           "hint": "Un seul chemin, ou plusieurs ?",
           "explanation": "Un seul chemin et une panne qui arrête tout caractérisent la série. Des branches séparées et des appareils indépendants caractérisent la dérivation.",
-          "categories": ["En série", "En dérivation"],
+          "categories": [
+            "En série",
+            "En dérivation"
+          ],
           "items": [
-            { "text": "Un seul chemin pour le courant", "category": 0 },
-            { "text": "Une lampe retirée arrête tout", "category": 0 },
-            { "text": "Chaque appareil a sa branche", "category": 1 },
-            { "text": "Les appareils fonctionnent indépendamment", "category": 1 }
+            {
+              "text": "Un seul chemin pour le courant",
+              "category": 0
+            },
+            {
+              "text": "Une lampe retirée arrête tout",
+              "category": 0
+            },
+            {
+              "text": "Chaque appareil a sa branche",
+              "category": 1
+            },
+            {
+              "text": "Les appareils fonctionnent indépendamment",
+              "category": 1
+            }
           ]
         },
         {
@@ -202,33 +268,40 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Série ou dérivation, pas les mêmes lois",
+          "body": "Bascule entre les deux montages. En série, le courant est le même partout et les tensions s’ajoutent ; en dérivation, c’est l’inverse. Les lois du cours ne font que décrire ce que la figure montre.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Deux grandeurs à ne pas confondre",
           "body": "L'intensité I mesure le débit du courant, en ampères (A). On la mesure avec un ampèremètre, branché en série : il doit être traversé par le courant.\n\nLa tension U mesure l'écart électrique entre deux points, en volts (V). On la mesure avec un voltmètre, branché en dérivation aux bornes du dipôle."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Les lois en série",
           "formula": "I est la même partout  ·  U se partage : U = U₁ + U₂",
           "body": "un seul chemin, donc un seul débit."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "Les lois en dérivation",
           "formula": "U est la même partout  ·  I se partage : I = I₁ + I₂",
           "body": "chaque branche reçoit toute la tension."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "formule",
           "title": "La loi d'Ohm",
           "formula": "U = R × I",
           "body": "pour un conducteur ohmique, R en ohms (Ω)."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "astuce",
           "body": "Pour ne pas confondre les branchements : l'ampèremètre doit être traversé, donc en série ; le voltmètre compare deux points, donc en dérivation."
         }
@@ -286,6 +359,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui s’éteint, et ce qui reste",
+          "body": "Dévisse une lampe dans chaque montage et compare. Les guirlandes d’autrefois s’éteignaient entièrement pour une ampoule grillée : elles étaient en série.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Demande-toi chaque fois s'il y a un chemin ou plusieurs."
@@ -318,9 +398,18 @@
           "prompt": "Associe chaque appareil à son branchement et à son unité.",
           "explanation": "L'ampèremètre se branche en série et lit des ampères ; le voltmètre se branche en dérivation et lit des volts. La résistance se mesure en ohms.",
           "pairs": [
-            { "left": "Ampèremètre", "right": "En série, en ampères" },
-            { "left": "Voltmètre", "right": "En dérivation, en volts" },
-            { "left": "Résistance", "right": "En ohms" }
+            {
+              "left": "Ampèremètre",
+              "right": "En série, en ampères"
+            },
+            {
+              "left": "Voltmètre",
+              "right": "En dérivation, en volts"
+            },
+            {
+              "left": "Résistance",
+              "right": "En ohms"
+            }
           ]
         },
         {
@@ -338,12 +427,27 @@
           "kind": "tri",
           "prompt": "Range ces grandeurs selon ce qu'elles valent dans un circuit en série.",
           "explanation": "En série, l'intensité est la même partout ; la tension, elle, se partage entre les dipôles. En dérivation, c'est exactement l'inverse.",
-          "categories": ["La même partout", "Se partage"],
+          "categories": [
+            "La même partout",
+            "Se partage"
+          ],
           "items": [
-            { "text": "L'intensité en série", "category": 0 },
-            { "text": "La tension en dérivation", "category": 0 },
-            { "text": "La tension en série", "category": 1 },
-            { "text": "L'intensité en dérivation", "category": 1 }
+            {
+              "text": "L'intensité en série",
+              "category": 0
+            },
+            {
+              "text": "La tension en dérivation",
+              "category": 0
+            },
+            {
+              "text": "La tension en série",
+              "category": 1
+            },
+            {
+              "text": "L'intensité en dérivation",
+              "category": 1
+            }
           ]
         },
         {

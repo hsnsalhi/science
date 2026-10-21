@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ouvre l’interrupteur, et plus rien",
+          "body": "Ferme l’interrupteur : la lampe s’allume. Ouvre-le : elle s’éteint, où que soit la coupure. Le courant a besoin d’une boucle entière, pas d’un bout de fil.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Trois choses, et un chemin",
           "body": "Pour allumer une lampe il faut une pile, des fils et la lampe.\n\nMais cela ne suffit pas : il faut que le chemin fasse une boucle complète, de la pile à la lampe et de la lampe à la pile."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Un seul fil ne suffit pas",
           "body": "Relie la lampe à la pile par un seul fil : rien ne s'allume.\n\nIl en faut deux, un de chaque côté. Le courant doit pouvoir partir et revenir."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "avertissement",
           "body": "Tout ceci se fait avec une pile plate, jamais avec une prise murale. Le courant de la maison est dangereux : on ne fait aucune expérience avec."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -45,10 +52,19 @@
           "hint": "Le courant doit faire un aller-retour.",
           "explanation": "Parce que le courant doit faire une boucle complète : un fil pour aller, un fil pour revenir.",
           "options": [
-            { "text": "Le courant doit faire une boucle complète", "correct": true },
-            { "text": "Le fil est trop court" },
-            { "text": "La pile est trop faible" },
-            { "text": "Il faut toujours trois fils" }
+            {
+              "text": "Le courant doit faire une boucle complète",
+              "correct": true
+            },
+            {
+              "text": "Le fil est trop court"
+            },
+            {
+              "text": "La pile est trop faible"
+            },
+            {
+              "text": "Il faut toujours trois fils"
+            }
           ]
         },
         {
@@ -64,12 +80,27 @@
           "prompt": "De quoi a-t-on besoin pour allumer une lampe ?",
           "hint": "Qu'est-ce qui fournit, qu'est-ce qui relie ?",
           "explanation": "La pile fournit, les fils relient, la lampe consomme. La règle et le crayon n'ont aucun rôle dans le circuit.",
-          "categories": ["Nécessaire", "Inutile ici"],
+          "categories": [
+            "Nécessaire",
+            "Inutile ici"
+          ],
           "items": [
-            { "text": "une pile", "category": 0 },
-            { "text": "deux fils", "category": 0 },
-            { "text": "une règle", "category": 1 },
-            { "text": "un crayon", "category": 1 }
+            {
+              "text": "une pile",
+              "category": 0
+            },
+            {
+              "text": "deux fils",
+              "category": 0
+            },
+            {
+              "text": "une règle",
+              "category": 1
+            },
+            {
+              "text": "un crayon",
+              "category": 1
+            }
           ]
         }
       ]
@@ -116,10 +147,19 @@
           "explanation": "Quand le circuit est fermé : la boucle est complète et le courant peut passer.",
           "figureId": "circuit",
           "options": [
-            { "text": "Quand le circuit est fermé", "correct": true },
-            { "text": "Quand le circuit est ouvert" },
-            { "text": "Toujours, dès qu'il y a une pile" },
-            { "text": "Quand on retire un fil" }
+            {
+              "text": "Quand le circuit est fermé",
+              "correct": true
+            },
+            {
+              "text": "Quand le circuit est ouvert"
+            },
+            {
+              "text": "Toujours, dès qu'il y a une pile"
+            },
+            {
+              "text": "Quand on retire un fil"
+            }
           ]
         },
         {
@@ -138,10 +178,19 @@
           "explanation": "Elle coupe la boucle, comme un interrupteur ouvert : son fil intérieur est rompu.",
           "figureId": "circuit",
           "options": [
-            { "text": "Elle coupe la boucle, comme un interrupteur ouvert", "correct": true },
-            { "text": "Elle laisse passer le courant quand même" },
-            { "text": "Elle fait briller les autres lampes plus fort" },
-            { "text": "Elle vide la pile d'un coup" }
+            {
+              "text": "Elle coupe la boucle, comme un interrupteur ouvert",
+              "correct": true
+            },
+            {
+              "text": "Elle laisse passer le courant quand même"
+            },
+            {
+              "text": "Elle fait briller les autres lampes plus fort"
+            },
+            {
+              "text": "Elle vide la pile d'un coup"
+            }
           ]
         },
         {
@@ -200,10 +249,19 @@
           "explanation": "Elle s'éteint : en série il n'y a qu'une seule boucle, et retirer une lampe la coupe.",
           "figureId": "circuit",
           "options": [
-            { "text": "Elle s'éteint", "correct": true },
-            { "text": "Elle reste allumée" },
-            { "text": "Elle brille plus fort" },
-            { "text": "Elle grille à son tour" }
+            {
+              "text": "Elle s'éteint",
+              "correct": true
+            },
+            {
+              "text": "Elle reste allumée"
+            },
+            {
+              "text": "Elle brille plus fort"
+            },
+            {
+              "text": "Elle grille à son tour"
+            }
           ]
         },
         {
@@ -214,10 +272,19 @@
           "explanation": "Elle reste allumée : chaque branche forme sa propre boucle, indépendante de l'autre.",
           "figureId": "circuit",
           "options": [
-            { "text": "Elle reste allumée", "correct": true },
-            { "text": "Elle s'éteint" },
-            { "text": "Elle clignote" },
-            { "text": "Elle s'éteint puis se rallume" }
+            {
+              "text": "Elle reste allumée",
+              "correct": true
+            },
+            {
+              "text": "Elle s'éteint"
+            },
+            {
+              "text": "Elle clignote"
+            },
+            {
+              "text": "Elle s'éteint puis se rallume"
+            }
           ]
         },
         {
@@ -228,10 +295,19 @@
           "explanation": "Pour qu'une ampoule grillée n'éteigne pas toutes les autres. En série, une seule panne suffirait à tout éteindre.",
           "figureId": "circuit",
           "options": [
-            { "text": "Pour qu'une ampoule grillée n'éteigne pas les autres", "correct": true },
-            { "text": "Parce que cela coûte moins cher" },
-            { "text": "Pour qu'elles brillent moins" },
-            { "text": "Pour utiliser moins de fils" }
+            {
+              "text": "Pour qu'une ampoule grillée n'éteigne pas les autres",
+              "correct": true
+            },
+            {
+              "text": "Parce que cela coûte moins cher"
+            },
+            {
+              "text": "Pour qu'elles brillent moins"
+            },
+            {
+              "text": "Pour utiliser moins de fils"
+            }
           ]
         },
         {
@@ -254,6 +330,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Dévisse une lampe et regarde l’autre",
+          "body": "Passe en série, dévisse une lampe : l’autre s’éteint aussi. Passe en dérivation, recommence : l’autre reste allumée. Tout le défi tient dans cette différence.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque question, demande-toi d'abord : la boucle est-elle complète ?"
@@ -290,12 +373,27 @@
           "prompt": "Range ces situations : la lampe est-elle allumée ?",
           "hint": "Vérifie que la boucle est complète jusqu'au bout.",
           "explanation": "Il faut à la fois l'interrupteur fermé et un chemin complet. En série, l'autre lampe fait partie de ce chemin.",
-          "categories": ["Allumée", "Éteinte"],
+          "categories": [
+            "Allumée",
+            "Éteinte"
+          ],
           "items": [
-            { "text": "fermé, en dérivation, les deux lampes en place", "category": 0 },
-            { "text": "fermé, en série, les deux lampes en place", "category": 0 },
-            { "text": "ouvert, en série, les deux lampes en place", "category": 1 },
-            { "text": "fermé, en série, une lampe retirée", "category": 1 }
+            {
+              "text": "fermé, en dérivation, les deux lampes en place",
+              "category": 0
+            },
+            {
+              "text": "fermé, en série, les deux lampes en place",
+              "category": 0
+            },
+            {
+              "text": "ouvert, en série, les deux lampes en place",
+              "category": 1
+            },
+            {
+              "text": "fermé, en série, une lampe retirée",
+              "category": 1
+            }
           ]
         },
         {
@@ -306,10 +404,19 @@
           "explanation": "En dérivation : chaque lampe a sa propre boucle, et ce qui arrive à l'une ne change rien à l'autre.",
           "figureId": "circuit",
           "options": [
-            { "text": "En dérivation", "correct": true },
-            { "text": "En série" },
-            { "text": "Dans les deux" },
-            { "text": "Dans aucun des deux" }
+            {
+              "text": "En dérivation",
+              "correct": true
+            },
+            {
+              "text": "En série"
+            },
+            {
+              "text": "Dans les deux"
+            },
+            {
+              "text": "Dans aucun des deux"
+            }
           ]
         },
         {
@@ -320,10 +427,19 @@
           "explanation": "La boucle est complète et le courant passe. Le mot « fermé » décrit la boucle, pas un passage bloqué.",
           "figureId": "circuit",
           "options": [
-            { "text": "La boucle est complète et le courant passe", "correct": true },
-            { "text": "Le courant est bloqué" },
-            { "text": "La pile est vide" },
-            { "text": "L'interrupteur est ouvert" }
+            {
+              "text": "La boucle est complète et le courant passe",
+              "correct": true
+            },
+            {
+              "text": "Le courant est bloqué"
+            },
+            {
+              "text": "La pile est vide"
+            },
+            {
+              "text": "L'interrupteur est ouvert"
+            }
           ]
         }
       ]

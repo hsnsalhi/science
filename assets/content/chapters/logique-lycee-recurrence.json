@@ -11,25 +11,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Chaque terme se déduit du précédent",
+          "body": "Règle le premier terme et la raison : tout le reste en découle, un pas après l’autre. Une récurrence démontre de la même façon — on établit le premier, puis le passage de n à n plus un.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Prouver une infinité d'énoncés",
           "body": "« Pour tout entier n, la somme des n premiers entiers vaut n(n+1)/2. »\n\nIl y a une infinité d'énoncés à vérifier, un par valeur de n. On ne peut pas les faire un par un. La récurrence les attrape tous d'un coup."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Les deux conditions",
           "formula": "P(0) vraie, et P(n) donne P(n+1)",
           "body": "alors P(n) est vraie pour tout entier n."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "L'image des dominos",
           "body": "Initialisation : on fait tomber le premier domino.\n\nHérédité : on a placé les dominos assez près pour que chacun fasse tomber le suivant.\n\nSi les deux sont vraies, toute la rangée tombe — et il n'a pas fallu la pousser domino par domino."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "L'hérédité ne dit jamais que P(n) est vraie. Elle dit seulement : si elle l'était, alors P(n+1) le serait. C'est une promesse de transmission, pas une affirmation."
         }
@@ -42,10 +49,19 @@
           "hint": "C'est une implication, pas une affirmation.",
           "explanation": "Que si P(n) est vraie, alors P(n+1) l'est. Elle ne dit rien de la vérité de P(n) elle-même.",
           "options": [
-            { "text": "Si P(n) est vraie, alors P(n+1) l'est", "correct": true },
-            { "text": "P(n) est vraie pour tout n" },
-            { "text": "P(n) est vraie pour un n au moins" },
-            { "text": "P(n+1) est vraie, donc P(n) aussi" }
+            {
+              "text": "Si P(n) est vraie, alors P(n+1) l'est",
+              "correct": true
+            },
+            {
+              "text": "P(n) est vraie pour tout n"
+            },
+            {
+              "text": "P(n) est vraie pour un n au moins"
+            },
+            {
+              "text": "P(n+1) est vraie, donc P(n) aussi"
+            }
           ]
         },
         {
@@ -79,31 +95,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Initialisation, puis hérédité",
+          "body": "Change le premier terme sans toucher à la raison : toute la suite se décale. L’initialisation n’est pas une formalité — sans elle, l’hérédité ne démarre nulle part.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Ce qu'on veut prouver",
           "formula": "1 + 2 + … + n = n(n+1)/2",
           "body": "pour tout entier n supérieur ou égal à 1."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Initialisation",
           "body": "Pour n = 1, le membre de gauche vaut 1.\n\nLe membre de droite vaut 1 × 2 / 2, soit 1. La propriété est vraie au rang 1."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Hérédité",
           "body": "Supposons la formule vraie au rang n. Alors la somme jusqu'à n+1 vaut n(n+1)/2 + (n+1).\n\nEn mettant (n+1) en facteur : (n+1)(n/2 + 1), soit (n+1)(n+2)/2.\n\nC'est exactement la formule au rang n+1."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "exemple",
           "title": "Pour vérifier",
           "body": "n = 100 : la formule donne 100 × 101 / 2, soit 5 050.\n\nC'est la somme que Gauss, enfant, aurait trouvée en quelques secondes en appariant 1 avec 100, 2 avec 99, et ainsi de suite."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "astuce",
           "body": "Dans l'hérédité, on part toujours du membre qu'on connaît — la somme jusqu'à n+1 — pour y faire apparaître l'hypothèse. Partir de ce qu'on veut prouver est le défaut de rédaction le plus courant."
         }
@@ -134,10 +157,19 @@
           "hint": "Du côté qu'on sait manipuler.",
           "explanation": "De la somme jusqu'à n+1, pour y faire apparaître l'hypothèse de récurrence. Partir de la conclusion est un défaut de rédaction classique.",
           "options": [
-            { "text": "De la somme jusqu'à n+1", "correct": true },
-            { "text": "De la formule au rang n+1, qu'on veut prouver" },
-            { "text": "De la valeur n = 1" },
-            { "text": "De la conclusion générale" }
+            {
+              "text": "De la somme jusqu'à n+1",
+              "correct": true
+            },
+            {
+              "text": "De la formule au rang n+1, qu'on veut prouver"
+            },
+            {
+              "text": "De la valeur n = 1"
+            },
+            {
+              "text": "De la conclusion générale"
+            }
           ]
         },
         {
@@ -146,8 +178,17 @@
           "prompt": "Complète les deux étapes de la démonstration.",
           "template": "On vérifie d'abord la propriété au rang 1 : c'est l'___. On suppose ensuite P(n) pour en déduire P(n+1) : c'est l'___.",
           "blanks": [
-            { "accepted": ["initialisation"] },
-            { "accepted": ["hérédité", "heredite"] }
+            {
+              "accepted": [
+                "initialisation"
+              ]
+            },
+            {
+              "accepted": [
+                "hérédité",
+                "heredite"
+              ]
+            }
           ],
           "hint": "Deux mots, dans l'ordre.",
           "explanation": "Initialisation, puis hérédité. Les deux sont indispensables, et l'ordre de rédaction est toujours celui-là."
@@ -164,24 +205,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une règle juste, un départ faux",
+          "body": "Garde la raison et donne un premier terme absurde : les termes suivants restent cohérents entre eux, et tous sont faux. C’est exactement le piège de la leçon.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une hérédité parfaite, et un énoncé faux",
           "body": "Soit P(n) : « n² + n est impair ».\n\nSupposons P(n). Alors (n+1)² + (n+1) vaut n² + n + 2n + 2 : on ajoute un nombre pair à un nombre impair, donc le résultat est impair. L'hérédité est démontrée, sans faute."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Et pourtant",
           "body": "Pour n = 1, n² + n vaut 2, qui est pair. P(1) est fausse.\n\nEn fait n² + n = n(n+1) est le produit de deux entiers consécutifs : il est pair pour tout n. La propriété est fausse partout.\n\nL'hérédité toute seule ne prouve rien : aucun domino n'est tombé."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "L'erreur symétrique",
           "body": "Vérifier P(0), P(1), P(2) et conclure ne vaut pas mieux.\n\nP(n) : « n² + n + 41 est premier » est vraie pour n allant de 0 à 39, et fausse pour n = 40 — où elle vaut 41², donc 1 681.\n\nQuarante vérifications ne font pas une démonstration."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Retiens les deux échecs : une hérédité sans initialisation ne démarre jamais ; une initialisation sans hérédité s'arrête au premier cas vérifié."
         }
@@ -203,10 +251,19 @@
           "hint": "Factorise.",
           "explanation": "Parce que n² + n = n(n+1) est le produit de deux entiers consécutifs : l'un des deux est forcément pair, donc le produit l'est.",
           "options": [
-            { "text": "n(n+1) est le produit de deux entiers consécutifs", "correct": true },
-            { "text": "L'hérédité est fausse" },
-            { "text": "n² est toujours pair" },
-            { "text": "La récurrence ne s'applique pas aux carrés" }
+            {
+              "text": "n(n+1) est le produit de deux entiers consécutifs",
+              "correct": true
+            },
+            {
+              "text": "L'hérédité est fausse"
+            },
+            {
+              "text": "n² est toujours pair"
+            },
+            {
+              "text": "La récurrence ne s'applique pas aux carrés"
+            }
           ]
         },
         {
@@ -224,12 +281,27 @@
           "prompt": "Range ces démonstrations : sont-elles valides ?",
           "hint": "Les deux étapes sont-elles présentes ?",
           "explanation": "Il faut l'initialisation et l'hérédité. L'une sans l'autre ne démontre rien, quel que soit le nombre de cas vérifiés.",
-          "categories": ["Démonstration valide", "Démonstration invalide"],
+          "categories": [
+            "Démonstration valide",
+            "Démonstration invalide"
+          ],
           "items": [
-            { "text": "P(0) vérifiée et hérédité démontrée", "category": 0 },
-            { "text": "P(1) vérifiée et hérédité démontrée", "category": 0 },
-            { "text": "hérédité démontrée, aucun cas vérifié", "category": 1 },
-            { "text": "quarante cas vérifiés, pas d'hérédité", "category": 1 }
+            {
+              "text": "P(0) vérifiée et hérédité démontrée",
+              "category": 0
+            },
+            {
+              "text": "P(1) vérifiée et hérédité démontrée",
+              "category": 0
+            },
+            {
+              "text": "hérédité démontrée, aucun cas vérifié",
+              "category": 1
+            },
+            {
+              "text": "quarante cas vérifiés, pas d'hérédité",
+              "category": 1
+            }
           ]
         }
       ]
@@ -277,10 +349,19 @@
           "hint": "Le premier domino est-il tombé ?",
           "explanation": "Rien du tout. Sans premier domino qui tombe, la chaîne d'implications ne démarre jamais.",
           "options": [
-            { "text": "Rien : la chaîne ne démarre pas", "correct": true },
-            { "text": "Que P(n) est vraie pour tout n" },
-            { "text": "Que P(n) est vraie à partir d'un certain rang" },
-            { "text": "Que P(n) est fausse pour tout n" }
+            {
+              "text": "Rien : la chaîne ne démarre pas",
+              "correct": true
+            },
+            {
+              "text": "Que P(n) est vraie pour tout n"
+            },
+            {
+              "text": "Que P(n) est vraie à partir d'un certain rang"
+            },
+            {
+              "text": "Que P(n) est fausse pour tout n"
+            }
           ]
         },
         {
@@ -297,10 +378,19 @@
           "hint": "Qu'est-ce que l'initialisation fixe exactement ?",
           "explanation": "Oui : on initialise au rang voulu, et la conclusion vaut à partir de ce rang. C'est le cas de 2^n > n², vraie seulement à partir de 5.",
           "options": [
-            { "text": "Oui, et la conclusion vaut à partir de ce rang", "correct": true },
-            { "text": "Non, elle doit toujours partir de 0" },
-            { "text": "Non, elle doit toujours partir de 1" },
-            { "text": "Oui, mais la conclusion vaut quand même pour tout n" }
+            {
+              "text": "Oui, et la conclusion vaut à partir de ce rang",
+              "correct": true
+            },
+            {
+              "text": "Non, elle doit toujours partir de 0"
+            },
+            {
+              "text": "Non, elle doit toujours partir de 1"
+            },
+            {
+              "text": "Oui, mais la conclusion vaut quand même pour tout n"
+            }
           ]
         },
         {

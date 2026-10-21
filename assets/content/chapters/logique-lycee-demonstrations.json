@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Partir du vrai, arriver au vrai",
+          "body": "Parcours les cas où la condition est vraie : la règle impose alors la conclusion. Une démonstration directe suit ce chemin, sans détour.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le chemin le plus court",
           "body": "On part de ce qu'on suppose, on enchaîne des pas justifiés, on arrive à ce qu'on veut prouver.\n\nChaque pas doit s'appuyer sur une définition, un théorème ou une hypothèse. Aucun ne peut s'appuyer sur l'évidence."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "La somme de deux nombres pairs est paire",
           "body": "Soient a et b pairs. Par définition, a = 2k et b = 2m avec k et m entiers.\n\nAlors a + b = 2k + 2m = 2(k + m). Comme k + m est un entier, a + b est pair."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "La phrase « par définition » fait le vrai travail. Une démonstration directe consiste presque toujours à remplacer les mots par ce qu'ils signifient."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -45,10 +52,19 @@
           "hint": "Pas de ce qu'on veut prouver.",
           "explanation": "Des hypothèses. Partir de la conclusion pour retomber sur les hypothèses est une erreur de rédaction fréquente, et parfois une faute de logique.",
           "options": [
-            { "text": "Des hypothèses", "correct": true },
-            { "text": "De la conclusion" },
-            { "text": "D'un contre-exemple" },
-            { "text": "De la négation de la conclusion" }
+            {
+              "text": "Des hypothèses",
+              "correct": true
+            },
+            {
+              "text": "De la conclusion"
+            },
+            {
+              "text": "D'un contre-exemple"
+            },
+            {
+              "text": "De la négation de la conclusion"
+            }
           ]
         },
         {
@@ -57,8 +73,20 @@
           "prompt": "Complète le début de la preuve que la somme de deux nombres pairs est paire.",
           "template": "Soient a et b pairs. Par définition, a = 2k et b = ___. Alors a + b = 2(___).",
           "blanks": [
-            { "accepted": ["2m", "2 m"] },
-            { "accepted": ["k + m", "k+m", "m + k", "m+k"] }
+            {
+              "accepted": [
+                "2m",
+                "2 m"
+              ]
+            },
+            {
+              "accepted": [
+                "k + m",
+                "k+m",
+                "m + k",
+                "m+k"
+              ]
+            }
           ],
           "hint": "Écris la définition, puis factorise par 2.",
           "explanation": "a + b = 2k + 2m = 2(k + m). Il suffit alors de remarquer que k + m est un entier."
@@ -115,10 +143,19 @@
           "explanation": "« Si n est impair, alors n n'est pas un multiple de 4. » On nie les deux membres et on les échange.",
           "figureId": "implication",
           "options": [
-            { "text": "Si n est impair, alors n n'est pas un multiple de 4", "correct": true },
-            { "text": "Si n est pair, alors n est un multiple de 4" },
-            { "text": "Si n n'est pas un multiple de 4, alors n est impair" },
-            { "text": "Si n est un multiple de 4, alors n est impair" }
+            {
+              "text": "Si n est impair, alors n n'est pas un multiple de 4",
+              "correct": true
+            },
+            {
+              "text": "Si n est pair, alors n est un multiple de 4"
+            },
+            {
+              "text": "Si n n'est pas un multiple de 4, alors n est impair"
+            },
+            {
+              "text": "Si n est un multiple de 4, alors n est impair"
+            }
           ]
         },
         {
@@ -143,9 +180,18 @@
           "prompt": "Associe chaque transformation de « si A alors B » à son nom.",
           "explanation": "La réciproque échange sans nier, la contraposée nie et échange, la négation décrit le seul cas où l'implication est fausse.",
           "pairs": [
-            { "left": "si B alors A", "right": "la réciproque" },
-            { "left": "si non B alors non A", "right": "la contraposée" },
-            { "left": "A et non B", "right": "la négation" }
+            {
+              "left": "si B alors A",
+              "right": "la réciproque"
+            },
+            {
+              "left": "si non B alors non A",
+              "right": "la contraposée"
+            },
+            {
+              "left": "A et non B",
+              "right": "la négation"
+            }
           ]
         }
       ]
@@ -160,24 +206,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Essayer ne prouvera jamais rien",
+          "body": "Pousse le dénominateur aussi loin que tu veux : l’écart diminue et ne s’annule jamais. Aucun nombre d’essais ne démontre cela — il faut supposer le contraire et le faire s’effondrer.",
+          "figureId": "racine-de-deux"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Le principe",
           "body": "On suppose que la conclusion est fausse, en gardant toutes les hypothèses.\n\nOn raisonne jusqu'à une contradiction : une affirmation et son contraire, ou un énoncé manifestement faux.\n\nLa supposition était donc intenable : la conclusion est vraie."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "La racine de 2 n'est pas une fraction",
           "body": "Supposons le contraire : racine de 2 = p/q, fraction irréductible. Alors p² = 2q², donc p² est pair, donc p est pair — par la contraposée vue plus haut.\n\nÉcrivons p = 2r : 4r² = 2q², donc q² = 2r², donc q est pair lui aussi.\n\nMais p et q pairs contredit l'irréductibilité. La supposition tombe."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Il y a une infinité de nombres premiers",
           "body": "Supposons qu'il n'y en ait qu'un nombre fini, et dressons-en la liste complète : p₁, p₂, et ainsi de suite jusqu'au dernier.\n\nFormons N : le produit de tous les nombres de la liste, plus 1. Aucun d'eux ne divise N, puisque chacun laisse le reste 1.\n\nN a pourtant un diviseur premier. Il n'est pas dans la liste : la liste n'était pas complète."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "L'absurde a un coût : la preuve ne montre pas pourquoi l'énoncé est vrai, seulement qu'il ne peut pas être faux. Quand une preuve directe existe, elle apprend davantage."
         }
@@ -190,10 +243,19 @@
           "hint": "On garde les hypothèses.",
           "explanation": "Les hypothèses, et la négation de la conclusion. C'est de ce couple qu'on tire une contradiction.",
           "options": [
-            { "text": "Les hypothèses, et la négation de la conclusion", "correct": true },
-            { "text": "La négation des hypothèses" },
-            { "text": "La conclusion elle-même" },
-            { "text": "Rien du tout" }
+            {
+              "text": "Les hypothèses, et la négation de la conclusion",
+              "correct": true
+            },
+            {
+              "text": "La négation des hypothèses"
+            },
+            {
+              "text": "La conclusion elle-même"
+            },
+            {
+              "text": "Rien du tout"
+            }
           ]
         },
         {
@@ -203,10 +265,19 @@
           "hint": "Que supposait-on sur la fraction ?",
           "explanation": "p et q sont tous deux pairs, alors que la fraction était supposée irréductible. Les deux ne peuvent pas tenir ensemble.",
           "options": [
-            { "text": "p et q sont pairs alors que la fraction était irréductible", "correct": true },
-            { "text": "p² n'est pas pair" },
-            { "text": "q est nul" },
-            { "text": "racine de 2 est plus grande que 2" }
+            {
+              "text": "p et q sont pairs alors que la fraction était irréductible",
+              "correct": true
+            },
+            {
+              "text": "p² n'est pas pair"
+            },
+            {
+              "text": "q est nul"
+            },
+            {
+              "text": "racine de 2 est plus grande que 2"
+            }
           ]
         },
         {
@@ -224,12 +295,27 @@
           "prompt": "Range ces débuts de preuve selon la méthode employée.",
           "hint": "Que suppose-t-on en première ligne ?",
           "explanation": "Partir des hypothèses, c'est le direct. Nier et échanger, c'est la contraposée. Supposer la conclusion fausse, c'est l'absurde.",
-          "categories": ["Contraposée", "Par l'absurde"],
+          "categories": [
+            "Contraposée",
+            "Par l'absurde"
+          ],
           "items": [
-            { "text": "Supposons n impair, montrons que n² est impair", "category": 0 },
-            { "text": "Supposons que n ne soit pas premier, montrons que n est pair", "category": 0 },
-            { "text": "Supposons que racine de 2 soit une fraction", "category": 1 },
-            { "text": "Supposons qu'il n'existe qu'un nombre fini de premiers", "category": 1 }
+            {
+              "text": "Supposons n impair, montrons que n² est impair",
+              "category": 0
+            },
+            {
+              "text": "Supposons que n ne soit pas premier, montrons que n est pair",
+              "category": 0
+            },
+            {
+              "text": "Supposons que racine de 2 soit une fraction",
+              "category": 1
+            },
+            {
+              "text": "Supposons qu'il n'existe qu'un nombre fini de premiers",
+              "category": 1
+            }
           ]
         }
       ]
@@ -244,6 +330,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Choisir sa méthode",
+          "body": "Reviens aux quatre cas. Selon celui qu’on sait atteindre le plus facilement, on démontre directement, par contraposée, ou par l’absurde — et le défi demande lequel choisir.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Devant un énoncé, la première question n'est pas « est-ce vrai ? » mais « par quel bout le prendre ? »."
@@ -258,10 +351,19 @@
           "explanation": "Quand A est vraie et B fausse : promettre et ne pas tenir. Les trois autres cas la laissent debout.",
           "figureId": "implication",
           "options": [
-            { "text": "Quand A est vraie et B fausse", "correct": true },
-            { "text": "Quand A est fausse et B vraie" },
-            { "text": "Quand A et B sont fausses" },
-            { "text": "Quand A et B sont vraies" }
+            {
+              "text": "Quand A est vraie et B fausse",
+              "correct": true
+            },
+            {
+              "text": "Quand A est fausse et B vraie"
+            },
+            {
+              "text": "Quand A et B sont fausses"
+            },
+            {
+              "text": "Quand A et B sont vraies"
+            }
           ]
         },
         {
@@ -271,10 +373,19 @@
           "hint": "Nie la conclusion, nie l'hypothèse, échange.",
           "explanation": "« Si un entier est pair, alors il n'est pas premier ou il ne dépasse pas 2. » La négation d'un « et » est un « ou ».",
           "options": [
-            { "text": "Si un entier est pair, alors il n'est pas premier ou ne dépasse pas 2", "correct": true },
-            { "text": "Si un entier est impair, alors il est premier et dépasse 2" },
-            { "text": "Si un entier n'est pas premier, alors il est pair" },
-            { "text": "Si un entier est pair, alors il est premier" }
+            {
+              "text": "Si un entier est pair, alors il n'est pas premier ou ne dépasse pas 2",
+              "correct": true
+            },
+            {
+              "text": "Si un entier est impair, alors il est premier et dépasse 2"
+            },
+            {
+              "text": "Si un entier n'est pas premier, alors il est pair"
+            },
+            {
+              "text": "Si un entier est pair, alors il est premier"
+            }
           ]
         },
         {

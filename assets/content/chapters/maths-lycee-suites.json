@@ -72,12 +72,27 @@
           "prompt": "Range ces définitions.",
           "hint": "Le terme dépend-il du rang, ou du terme précédent ?",
           "explanation": "u(n) = 2n − 1 et u(n) = n² sont explicites : le rang suffit. Les deux autres font intervenir le terme précédent : elles sont récurrentes.",
-          "categories": ["Explicite", "Par récurrence"],
+          "categories": [
+            "Explicite",
+            "Par récurrence"
+          ],
           "items": [
-            { "text": "u(n) = 2n − 1", "category": 0 },
-            { "text": "u(n) = n²", "category": 0 },
-            { "text": "u(n+1) = u(n) + 5", "category": 1 },
-            { "text": "u(n+1) = 2 × u(n)", "category": 1 }
+            {
+              "text": "u(n) = 2n − 1",
+              "category": 0
+            },
+            {
+              "text": "u(n) = n²",
+              "category": 0
+            },
+            {
+              "text": "u(n+1) = u(n) + 5",
+              "category": 1
+            },
+            {
+              "text": "u(n+1) = 2 × u(n)",
+              "category": 1
+            }
           ]
         },
         {
@@ -174,10 +189,19 @@
           "explanation": "4 : la différence est la même entre chaque paire de termes consécutifs, ce qui confirme qu'elle est arithmétique.",
           "figureId": "suite",
           "options": [
-            { "text": "4", "correct": true },
-            { "text": "7" },
-            { "text": "11" },
-            { "text": "Elle n'est pas arithmétique" }
+            {
+              "text": "4",
+              "correct": true
+            },
+            {
+              "text": "7"
+            },
+            {
+              "text": "11"
+            },
+            {
+              "text": "Elle n'est pas arithmétique"
+            }
           ]
         }
       ]
@@ -251,10 +275,19 @@
           "explanation": "4 : 12 ÷ 3 = 4, 48 ÷ 12 = 4, 192 ÷ 48 = 4. Le quotient est constant, la suite est géométrique.",
           "figureId": "suite",
           "options": [
-            { "text": "4", "correct": true },
-            { "text": "9" },
-            { "text": "3" },
-            { "text": "Elle n'est pas géométrique" }
+            {
+              "text": "4",
+              "correct": true
+            },
+            {
+              "text": "9"
+            },
+            {
+              "text": "3"
+            },
+            {
+              "text": "Elle n'est pas géométrique"
+            }
           ]
         },
         {
@@ -263,12 +296,27 @@
           "prompt": "Range ces suites selon leur nature.",
           "hint": "Différence constante, ou quotient constant ?",
           "explanation": "2, 5, 8, 11 et 10, 7, 4, 1 ont une différence constante : elles sont arithmétiques. 3, 6, 12, 24 et 81, 27, 9, 3 ont un quotient constant : elles sont géométriques.",
-          "categories": ["Arithmétique", "Géométrique"],
+          "categories": [
+            "Arithmétique",
+            "Géométrique"
+          ],
           "items": [
-            { "text": "2, 5, 8, 11", "category": 0 },
-            { "text": "10, 7, 4, 1", "category": 0 },
-            { "text": "3, 6, 12, 24", "category": 1 },
-            { "text": "81, 27, 9, 3", "category": 1 }
+            {
+              "text": "2, 5, 8, 11",
+              "category": 0
+            },
+            {
+              "text": "10, 7, 4, 1",
+              "category": 0
+            },
+            {
+              "text": "3, 6, 12, 24",
+              "category": 1
+            },
+            {
+              "text": "81, 27, 9, 3",
+              "category": 1
+            }
           ]
         }
       ]
@@ -283,6 +331,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Arithmétique ou géométrique",
+          "body": "Bascule d’un type à l’autre et compare les bâtons. L’une monte par marches égales, l’autre s’emballe — et on les distingue d’un coup d’œil, sans calculer un seul terme.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Demande-toi chaque fois si l'on ajoute ou si l'on multiplie."
@@ -346,10 +401,19 @@
           "hint": "Différence, ou quotient ?",
           "explanation": "En divisant chaque terme par le précédent : si le quotient est constant, c'est une suite géométrique, et ce quotient est la raison.",
           "options": [
-            { "text": "Le quotient de deux termes consécutifs est constant", "correct": true },
-            { "text": "La différence de deux termes consécutifs est constante" },
-            { "text": "Les termes sont tous positifs" },
-            { "text": "Les termes augmentent" }
+            {
+              "text": "Le quotient de deux termes consécutifs est constant",
+              "correct": true
+            },
+            {
+              "text": "La différence de deux termes consécutifs est constante"
+            },
+            {
+              "text": "Les termes sont tous positifs"
+            },
+            {
+              "text": "Les termes augmentent"
+            }
           ]
         }
       ]

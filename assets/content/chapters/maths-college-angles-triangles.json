@@ -152,12 +152,27 @@
           "prompt": "Range ces triangles d'après leur plus grand angle.",
           "hint": "Compare le plus grand angle à 90°.",
           "explanation": "Un angle de 90° donne un triangle rectangle ; au-delà, il est obtusangle. En dessous pour les trois, il est acutangle.",
-          "categories": ["Rectangle", "Obtusangle"],
+          "categories": [
+            "Rectangle",
+            "Obtusangle"
+          ],
           "items": [
-            { "text": "90°, 60°, 30°", "category": 0 },
-            { "text": "90°, 45°, 45°", "category": 0 },
-            { "text": "120°, 40°, 20°", "category": 1 },
-            { "text": "100°, 50°, 30°", "category": 1 }
+            {
+              "text": "90°, 60°, 30°",
+              "category": 0
+            },
+            {
+              "text": "90°, 45°, 45°",
+              "category": 0
+            },
+            {
+              "text": "120°, 40°, 20°",
+              "category": 1
+            },
+            {
+              "text": "100°, 50°, 30°",
+              "category": 1
+            }
           ]
         },
         {
@@ -174,9 +189,18 @@
           "prompt": "Associe chaque triangle à sa nature.",
           "explanation": "Trois angles de 60° : équilatéral. Un angle droit et deux de 45° : isocèle rectangle. Un angle de 120° : obtusangle.",
           "pairs": [
-            { "left": "60°, 60°, 60°", "right": "Équilatéral" },
-            { "left": "90°, 45°, 45°", "right": "Isocèle rectangle" },
-            { "left": "120°, 35°, 25°", "right": "Obtusangle" }
+            {
+              "left": "60°, 60°, 60°",
+              "right": "Équilatéral"
+            },
+            {
+              "left": "90°, 45°, 45°",
+              "right": "Isocèle rectangle"
+            },
+            {
+              "left": "120°, 35°, 25°",
+              "right": "Obtusangle"
+            }
           ]
         }
       ]
@@ -191,25 +215,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un triangle ne prend pas tout",
+          "body": "Choisis deux angles : le troisième est imposé. Un triangle refuse certaines combinaisons d’angles, et il en refuse aussi de longueurs — c’est ce que la leçon va chiffrer.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "L'inégalité triangulaire",
           "formula": "le plus grand côté < somme des deux autres",
           "body": "sinon, les deux petits côtés ne se rejoignent pas."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Pourquoi cela se comprend",
           "body": "Aller de A à B directement, ou passer par C : le détour est toujours plus long, ou égal si C est sur le segment.\n\nAvec des côtés de 2, 3 et 9, les deux petits bouts n'atteignent jamais l'autre extrémité : 2 + 3 = 5, c'est moins que 9."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Le cas d'égalité",
           "body": "Si le plus grand côté vaut exactement la somme des deux autres, les trois points sont alignés.\n\nIl n'y a plus de triangle, mais un segment : on parle de triangle aplati."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Il suffit de tester le plus grand côté : s'il est plus petit que la somme des deux autres, les deux autres inégalités sont automatiquement vraies."
         }
@@ -221,12 +252,27 @@
           "prompt": "Range ces triplets selon qu'ils forment un triangle.",
           "hint": "Compare le plus grand côté à la somme des deux autres.",
           "explanation": "3-4-5 et 6-7-10 forment des triangles. Pour 2-3-9, les deux petits côtés font 5 et n'atteignent pas 9. Pour 1-2-3, la somme vaut exactement 3 : les points sont alignés.",
-          "categories": ["Forme un triangle", "N'en forme pas"],
+          "categories": [
+            "Forme un triangle",
+            "N'en forme pas"
+          ],
           "items": [
-            { "text": "3-4-5", "category": 0 },
-            { "text": "6-7-10", "category": 0 },
-            { "text": "2-3-9", "category": 1 },
-            { "text": "1-2-3", "category": 1 }
+            {
+              "text": "3-4-5",
+              "category": 0
+            },
+            {
+              "text": "6-7-10",
+              "category": 0
+            },
+            {
+              "text": "2-3-9",
+              "category": 1
+            },
+            {
+              "text": "1-2-3",
+              "category": 1
+            }
           ]
         },
         {
@@ -266,6 +312,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La somme ne bouge jamais",
+          "body": "Fais varier les deux angles autant que tu veux : le troisième compense toujours, et le total reste 180°. Toutes les questions du défi en découlent.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Rappelle-toi : deux angles suffisent pour connaître le troisième."
@@ -299,12 +352,27 @@
           "kind": "tri",
           "prompt": "Range ces triplets d'angles selon qu'ils sont possibles.",
           "explanation": "Un triplet d'angles est possible si et seulement si sa somme vaut 180°. 100 + 50 + 30 et 60 + 60 + 60 conviennent ; les deux autres non.",
-          "categories": ["Possible", "Impossible"],
+          "categories": [
+            "Possible",
+            "Impossible"
+          ],
           "items": [
-            { "text": "100°, 50°, 30°", "category": 0 },
-            { "text": "60°, 60°, 60°", "category": 0 },
-            { "text": "90°, 90°, 10°", "category": 1 },
-            { "text": "80°, 70°, 40°", "category": 1 }
+            {
+              "text": "100°, 50°, 30°",
+              "category": 0
+            },
+            {
+              "text": "60°, 60°, 60°",
+              "category": 0
+            },
+            {
+              "text": "90°, 90°, 10°",
+              "category": 1
+            },
+            {
+              "text": "80°, 70°, 40°",
+              "category": 1
+            }
           ]
         },
         {
@@ -332,10 +400,19 @@
           "explanation": "Ils font 60° à eux deux, donc chacun est inférieur à 90°. Un triangle n'a jamais deux angles obtus.",
           "figureId": "angles-triangle",
           "options": [
-            { "text": "Ils font 60° à eux deux", "correct": true },
-            { "text": "L'un des deux peut être droit" },
-            { "text": "Ils font 120° à eux deux" },
-            { "text": "On ne peut rien en dire" }
+            {
+              "text": "Ils font 60° à eux deux",
+              "correct": true
+            },
+            {
+              "text": "L'un des deux peut être droit"
+            },
+            {
+              "text": "Ils font 120° à eux deux"
+            },
+            {
+              "text": "On ne peut rien en dire"
+            }
           ]
         }
       ]

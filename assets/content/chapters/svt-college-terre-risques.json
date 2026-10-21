@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le magma dépend de la frontière",
+          "body": "Compare l’éruption rouge et l’éruption grise. La différence vient du magma lui-même, et le magma dépend du type de frontière de plaques où il se forme : une dorsale ne produit pas ce que produit une zone de subduction.",
+          "figureId": "volcan"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'indice que personne n'a voulu croire",
           "body": "En 1912, Alfred Wegener remarque que les côtes de l'Afrique et de l'Amérique du Sud s'emboîtent, que les mêmes fossiles se trouvent de part et d'autre, et que les mêmes chaînes de montagnes se prolongent.\n\nIl en déduit que les continents ont été réunis et se sont séparés. On se moque de lui pendant cinquante ans, pour une bonne raison : il n'avait aucun moteur à proposer.\n\nLe moteur a été trouvé dans les années 1960, au fond des océans."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Trois sortes de frontières",
           "body": "Les dorsales, où deux plaques s'écartent : du magma monte, refroidit, et fabrique de la croûte océanique neuve. L'Atlantique s'élargit ainsi d'environ 2 cm par an.\n\nLes zones de subduction, où une plaque océanique plonge sous une autre. Elle entraîne de l'eau en profondeur, ce qui produit du magma : c'est là que se trouvent les volcans les plus explosifs et les séismes les plus profonds.\n\nLes failles coulissantes, où deux plaques frottent latéralement sans se détruire. La faille de San Andreas en est une."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "La croûte est recyclée",
           "body": "La croûte océanique se fabrique aux dorsales et disparaît en subduction. Son âge maximal est d'environ 200 millions d'années, nulle part davantage.\n\nLes continents, eux, sont trop légers pour plonger : certaines roches continentales ont 4 milliards d'années. C'est pourquoi l'histoire ancienne de la Terre se lit sur les continents et jamais au fond des océans."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Deux centimètres par an, c'est énorme",
           "body": "Deux centimètres paraissent dérisoires. Multiplie par un million d'années : 20 kilomètres. Par cent millions : 2 000 kilomètres.\n\nL'Atlantique a 4 000 km de large environ au niveau de l'équateur. À 2 cm par an, il a fallu de l'ordre de 200 millions d'années pour l'ouvrir — ce qui est exactement l'âge de ses roches les plus vieilles. La mesure et la datation se répondent."
@@ -64,13 +71,32 @@
           "kind": "tri",
           "prompt": "Range ces phénomènes selon le type de frontière.",
           "explanation": "Aux dorsales la croûte se crée, en subduction elle disparaît avec volcanisme explosif, aux failles coulissantes les plaques frottent.",
-          "categories": ["dorsale", "subduction", "faille coulissante"],
+          "categories": [
+            "dorsale",
+            "subduction",
+            "faille coulissante"
+          ],
           "items": [
-            { "text": "création de croûte océanique", "category": 0 },
-            { "text": "l'Atlantique qui s'élargit", "category": 0 },
-            { "text": "volcans explosifs", "category": 1 },
-            { "text": "séismes très profonds", "category": 1 },
-            { "text": "la faille de San Andreas", "category": 2 }
+            {
+              "text": "création de croûte océanique",
+              "category": 0
+            },
+            {
+              "text": "l'Atlantique qui s'élargit",
+              "category": 0
+            },
+            {
+              "text": "volcans explosifs",
+              "category": 1
+            },
+            {
+              "text": "séismes très profonds",
+              "category": 1
+            },
+            {
+              "text": "la faille de San Andreas",
+              "category": 2
+            }
           ]
         },
         {
@@ -79,10 +105,19 @@
           "prompt": "Pourquoi aucune roche océanique n'a plus de 200 millions d'années ?",
           "explanation": "Parce que la croûte océanique est recyclée : créée aux dorsales, elle replonge en subduction. Les continents, trop légers pour plonger, conservent des roches de 4 milliards d'années.",
           "options": [
-            { "text": "la croûte océanique est recyclée en subduction", "correct": true },
-            { "text": "l'eau de mer dissout les roches anciennes" },
-            { "text": "les océans sont récents" },
-            { "text": "on n'a pas encore foré assez profond" }
+            {
+              "text": "la croûte océanique est recyclée en subduction",
+              "correct": true
+            },
+            {
+              "text": "l'eau de mer dissout les roches anciennes"
+            },
+            {
+              "text": "les océans sont récents"
+            },
+            {
+              "text": "on n'a pas encore foré assez profond"
+            }
           ]
         },
         {
@@ -91,10 +126,19 @@
           "prompt": "Pourquoi l'idée de Wegener a-t-elle été rejetée cinquante ans ?",
           "explanation": "Parce qu'il n'avait aucun moteur à proposer. Les indices étaient bons, mais une explication sans mécanisme ne convainc pas — et c'est une exigence légitime.",
           "options": [
-            { "text": "il ne proposait aucun mécanisme", "correct": true },
-            { "text": "ses fossiles étaient des faux" },
-            { "text": "les cartes de l'époque étaient fausses" },
-            { "text": "il n'était pas géologue" }
+            {
+              "text": "il ne proposait aucun mécanisme",
+              "correct": true
+            },
+            {
+              "text": "ses fossiles étaient des faux"
+            },
+            {
+              "text": "les cartes de l'époque étaient fausses"
+            },
+            {
+              "text": "il n'était pas géologue"
+            }
           ]
         }
       ]
@@ -109,25 +153,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La contrainte s’accumule, puis lâche",
+          "body": "Mets le volcan sous pression : la roche se fissure, puis cède. Un séisme suit le même scénario — une contrainte accumulée pendant des années, relâchée en quelques secondes.",
+          "figureId": "volcan"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Ce qui casse",
           "body": "Les plaques ne glissent pas régulièrement : elles accrochent. La contrainte s'accumule pendant des années ou des siècles, la roche se déforme élastiquement, puis elle cède brusquement.\n\nL'énergie accumulée part alors en ondes dans toutes les directions. Le point de rupture s'appelle le foyer, et le point de la surface juste au-dessus l'épicentre.\n\nUn séisme n'est donc pas un événement imprévisible par nature : c'est la libération d'une contrainte qu'on peut mesurer. Ce qu'on ne sait pas prédire, c'est l'instant."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Une échelle logarithmique",
           "formula": "+1 de magnitude = 10 fois l'amplitude = environ 32 fois l'énergie",
           "body": "Un séisme de magnitude 7 n'est pas « un peu plus fort » qu'un de magnitude 5 : il secoue 100 fois plus, et il a libéré environ 1 000 fois plus d'énergie."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "avertissement",
           "title": "Ce qui tue n'est pas le séisme",
           "body": "Un séisme de magnitude 7 dans une région aux constructions parasismiques fait quelques blessés. Le même sous des bâtiments non conçus pour cela en tue des dizaines de milliers.\n\nLa magnitude mesure l'énergie libérée. Le nombre de victimes mesure l'état du bâti. Les deux n'ont presque aucun rapport, et c'est une bonne nouvelle : le second se change, le premier non."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "etape",
           "title": "Localiser un épicentre avec trois stations",
           "body": "Les ondes P vont plus vite que les ondes S. L'écart entre leurs arrivées donne la distance à l'épicentre.\n\nChaque station connaît donc sa distance, mais pas la direction : l'épicentre est quelque part sur un cercle autour d'elle.\n\nAvec trois stations, trois cercles. Ils se coupent en un seul point : l'épicentre. C'est de la géométrie de collège, et c'est exactement ce que font les sismologues."
@@ -164,10 +215,19 @@
           "prompt": "Qu'est-ce qui détermine le nombre de victimes d'un séisme ?",
           "explanation": "L'état du bâti, bien plus que la magnitude. Le même séisme tue très peu ou énormément selon les constructions — et c'est ce facteur-là qu'on peut changer.",
           "options": [
-            { "text": "l'état des constructions", "correct": true },
-            { "text": "la magnitude seule" },
-            { "text": "la profondeur du foyer seule" },
-            { "text": "l'heure de la journée seule" }
+            {
+              "text": "l'état des constructions",
+              "correct": true
+            },
+            {
+              "text": "la magnitude seule"
+            },
+            {
+              "text": "la profondeur du foyer seule"
+            },
+            {
+              "text": "l'heure de la journée seule"
+            }
           ]
         },
         {
@@ -176,10 +236,19 @@
           "prompt": "Comment une station estime-t-elle sa distance à l'épicentre ?",
           "explanation": "Par l'écart entre l'arrivée des ondes P, plus rapides, et des ondes S. Plus l'écart est grand, plus l'épicentre est loin.",
           "options": [
-            { "text": "par l'écart entre l'arrivée des ondes P et S", "correct": true },
-            { "text": "par l'amplitude des secousses" },
-            { "text": "par la direction du premier mouvement" },
-            { "text": "par la durée totale du séisme" }
+            {
+              "text": "par l'écart entre l'arrivée des ondes P et S",
+              "correct": true
+            },
+            {
+              "text": "par l'amplitude des secousses"
+            },
+            {
+              "text": "par la direction du premier mouvement"
+            },
+            {
+              "text": "par la durée totale du séisme"
+            }
           ]
         },
         {
@@ -225,14 +294,35 @@
           "kind": "tri",
           "prompt": "Range ces caractéristiques selon le type d'éruption.",
           "explanation": "Magma fluide et pauvre en silice donne des coulées ; magma visqueux et riche en silice donne des explosions et des nuées ardentes.",
-          "categories": ["effusive", "explosive"],
+          "categories": [
+            "effusive",
+            "explosive"
+          ],
           "items": [
-            { "text": "magma fluide", "category": 0 },
-            { "text": "coulées de lave", "category": 0 },
-            { "text": "pauvre en silice", "category": 0 },
-            { "text": "magma visqueux", "category": 1 },
-            { "text": "nuées ardentes", "category": 1 },
-            { "text": "riche en silice", "category": 1 }
+            {
+              "text": "magma fluide",
+              "category": 0
+            },
+            {
+              "text": "coulées de lave",
+              "category": 0
+            },
+            {
+              "text": "pauvre en silice",
+              "category": 0
+            },
+            {
+              "text": "magma visqueux",
+              "category": 1
+            },
+            {
+              "text": "nuées ardentes",
+              "category": 1
+            },
+            {
+              "text": "riche en silice",
+              "category": 1
+            }
           ]
         },
         {
@@ -241,10 +331,19 @@
           "prompt": "Qu'est-ce qui décide du caractère explosif d'une éruption ?",
           "explanation": "La viscosité du magma : un magma visqueux retient ses gaz jusqu'à l'éclatement. La quantité de magma n'y est pour rien.",
           "options": [
-            { "text": "la viscosité du magma, qui retient les gaz", "correct": true },
-            { "text": "la quantité de magma disponible" },
-            { "text": "la hauteur du volcan" },
-            { "text": "la température extérieure" }
+            {
+              "text": "la viscosité du magma, qui retient les gaz",
+              "correct": true
+            },
+            {
+              "text": "la quantité de magma disponible"
+            },
+            {
+              "text": "la hauteur du volcan"
+            },
+            {
+              "text": "la température extérieure"
+            }
           ]
         },
         {
@@ -253,10 +352,19 @@
           "prompt": "Quel est le principal danger d'un volcan explosif ?",
           "explanation": "La nuée ardente : gaz brûlants et débris descendant les pentes à plusieurs centaines de kilomètres par heure. On ne la fuit pas, on part avant.",
           "options": [
-            { "text": "la nuée ardente", "correct": true },
-            { "text": "la coulée de lave" },
-            { "text": "le bruit de l'explosion" },
-            { "text": "les retombées de cendres seules" }
+            {
+              "text": "la nuée ardente",
+              "correct": true
+            },
+            {
+              "text": "la coulée de lave"
+            },
+            {
+              "text": "le bruit de l'explosion"
+            },
+            {
+              "text": "les retombées de cendres seules"
+            }
           ]
         },
         {
@@ -297,13 +405,20 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le même volcan, deux dangers",
+          "body": "Bascule entre l’éruption rouge et la grise : la nature peut faire les deux. C’est l’aléa. Le risque, lui, dépend aussi de qui habite au pied et de comment c’est construit.",
+          "figureId": "volcan"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La définition du risque",
           "formula": "risque = aléa × vulnérabilité",
           "body": "L'aléa est la probabilité du phénomène : il dépend de la géologie et ne se change pas. La vulnérabilité est ce qu'on perd s'il arrive : elle dépend du bâti, de l'organisation, de l'information — et elle se change."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Deux villes, un même séisme",
           "body": "Deux villes de 500 000 habitants sont sur la même faille, donc exposées au même aléa.\n\nL'une applique des normes parasismiques depuis trente ans et organise des exercices dans les écoles. L'autre a construit sans contrainte.\n\nUn séisme de magnitude 7 frappe les deux. La première compte quelques dizaines de morts, la seconde des dizaines de milliers.\n\nL'aléa était identique. Toute la différence est dans la vulnérabilité, qui est un choix politique et budgétaire, pas une fatalité géologique."
@@ -316,10 +431,19 @@
           "prompt": "Lequel des deux termes du risque peut-on diminuer ?",
           "explanation": "La vulnérabilité. L'aléa dépend de la géologie et ne se négocie pas ; le bâti, l'organisation et l'information se changent.",
           "options": [
-            { "text": "la vulnérabilité", "correct": true },
-            { "text": "l'aléa" },
-            { "text": "les deux également" },
-            { "text": "aucun des deux" }
+            {
+              "text": "la vulnérabilité",
+              "correct": true
+            },
+            {
+              "text": "l'aléa"
+            },
+            {
+              "text": "les deux également"
+            },
+            {
+              "text": "aucun des deux"
+            }
           ]
         },
         {
@@ -328,10 +452,19 @@
           "prompt": "Une zone à fort aléa mais à vulnérabilité très faible : le risque est-il élevé ?",
           "explanation": "Non. Le risque est le produit des deux : si l'un des facteurs est très faible, le produit l'est aussi. C'est toute la stratégie du Japon.",
           "options": [
-            { "text": "non, le produit reste faible", "correct": true },
-            { "text": "oui, l'aléa suffit" },
-            { "text": "oui, toujours" },
-            { "text": "impossible à dire" }
+            {
+              "text": "non, le produit reste faible",
+              "correct": true
+            },
+            {
+              "text": "oui, l'aléa suffit"
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "impossible à dire"
+            }
           ]
         },
         {
@@ -361,10 +494,19 @@
           "prompt": "Une faille en retard de 80 ans va-t-elle casser bientôt ?",
           "explanation": "On ne peut pas le savoir. Les intervalles sont irréguliers : la moyenne décrit le passé, elle ne fixe aucune date. Le retard justifie la prévention, pas une prédiction.",
           "options": [
-            { "text": "on ne peut pas le savoir, les intervalles sont irréguliers", "correct": true },
-            { "text": "oui, dans les prochains mois" },
-            { "text": "non, elle a déjà passé son tour" },
-            { "text": "oui, exactement dans 20 ans" }
+            {
+              "text": "on ne peut pas le savoir, les intervalles sont irréguliers",
+              "correct": true
+            },
+            {
+              "text": "oui, dans les prochains mois"
+            },
+            {
+              "text": "non, elle a déjà passé son tour"
+            },
+            {
+              "text": "oui, exactement dans 20 ans"
+            }
           ]
         },
         {
@@ -373,11 +515,25 @@
           "prompt": "Que peut faire une ville pour réduire sa vulnérabilité ?",
           "explanation": "Normes parasismiques, exercices d'évacuation, cartographie des zones à risque et système d'alerte réduisent tous la vulnérabilité. L'aléa, lui, ne se réduit pas.",
           "options": [
-            { "text": "imposer des normes parasismiques", "correct": true },
-            { "text": "organiser des exercices d'évacuation", "correct": true },
-            { "text": "cartographier les zones à risque", "correct": true },
-            { "text": "installer un système d'alerte", "correct": true },
-            { "text": "réduire la fréquence des séismes" }
+            {
+              "text": "imposer des normes parasismiques",
+              "correct": true
+            },
+            {
+              "text": "organiser des exercices d'évacuation",
+              "correct": true
+            },
+            {
+              "text": "cartographier les zones à risque",
+              "correct": true
+            },
+            {
+              "text": "installer un système d'alerte",
+              "correct": true
+            },
+            {
+              "text": "réduire la fréquence des séismes"
+            }
           ]
         }
       ]

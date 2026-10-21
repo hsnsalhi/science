@@ -43,10 +43,19 @@
           "hint": "Pour toute entrée, sans exception.",
           "explanation": "Qu'il s'arrête sur toute entrée et donne la bonne réponse. Un algorithme qui ne s'arrête parfois pas ne décide rien.",
           "options": [
-            { "text": "Qu'il s'arrête sur toute entrée avec la bonne réponse", "correct": true },
-            { "text": "Qu'il réponde oui quand la réponse est oui" },
-            { "text": "Qu'il soit rapide" },
-            { "text": "Qu'il tienne en moins de mille lignes" }
+            {
+              "text": "Qu'il s'arrête sur toute entrée avec la bonne réponse",
+              "correct": true
+            },
+            {
+              "text": "Qu'il réponde oui quand la réponse est oui"
+            },
+            {
+              "text": "Qu'il soit rapide"
+            },
+            {
+              "text": "Qu'il tienne en moins de mille lignes"
+            }
           ]
         },
         {
@@ -63,10 +72,19 @@
           "hint": "Lance les deux en parallèle.",
           "explanation": "Qu'il est décidable : les deux semi-algorithmes lancés en parallèle garantissent qu'une réponse arrive.",
           "options": [
-            { "text": "Qu'il est décidable", "correct": true },
-            { "text": "Qu'il est indécidable" },
-            { "text": "Qu'il est seulement semi-décidable" },
-            { "text": "On ne peut rien en conclure" }
+            {
+              "text": "Qu'il est décidable",
+              "correct": true
+            },
+            {
+              "text": "Qu'il est indécidable"
+            },
+            {
+              "text": "Qu'il est seulement semi-décidable"
+            },
+            {
+              "text": "On ne peut rien en conclure"
+            }
           ]
         },
         {
@@ -75,12 +93,27 @@
           "prompt": "Range ces problèmes selon leur statut.",
           "hint": "Peut-on toujours s'arrêter avec une réponse ?",
           "explanation": "La primalité et la divisibilité se décident par un calcul borné. L'arrêt et son complémentaire ne le sont pas : le premier est semi-décidable, le second ne l'est même pas.",
-          "categories": ["Décidable", "Indécidable"],
+          "categories": [
+            "Décidable",
+            "Indécidable"
+          ],
           "items": [
-            { "text": "ce nombre est-il premier ?", "category": 0 },
-            { "text": "ce nombre est-il divisible par 7 ?", "category": 0 },
-            { "text": "ce programme s'arrête-t-il ?", "category": 1 },
-            { "text": "ce programme boucle-t-il indéfiniment ?", "category": 1 }
+            {
+              "text": "ce nombre est-il premier ?",
+              "category": 0
+            },
+            {
+              "text": "ce nombre est-il divisible par 7 ?",
+              "category": 0
+            },
+            {
+              "text": "ce programme s'arrête-t-il ?",
+              "category": 1
+            },
+            {
+              "text": "ce programme boucle-t-il indéfiniment ?",
+              "category": 1
+            }
           ]
         }
       ]
@@ -95,24 +128,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un programme est un texte fini",
+          "body": "Fais avancer la machine pas à pas : son programme tient en quelques règles, écrites. Les programmes se comptent donc comme des textes — et c’est de là que vient l’argument de la leçon.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Les programmes se comptent",
           "body": "Un programme est une suite finie de symboles pris dans un alphabet fini.\n\nOn peut donc les ranger : d'abord ceux de longueur 1, puis de longueur 2, et ainsi de suite. L'ensemble des programmes est dénombrable."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Les fonctions, non",
           "body": "Considérons les fonctions des entiers vers {0, 1}. Supposons-les rangées en une liste : la fonction numéro 0, la fonction numéro 1, et ainsi de suite.\n\nDéfinissons g par : g(n) vaut 1 si la fonction numéro n donne 0 en n, et 0 sinon. Alors g diffère de la fonction numéro n au point n, et cela pour tout n : g n'est dans la liste à aucune place.\n\nAucune liste ne les contient toutes : elles ne sont pas dénombrables."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "La conclusion",
           "body": "Il y a strictement plus de fonctions que de programmes.\n\nPresque toutes les fonctions ne sont donc calculables par aucun programme — et cela sans exhiber la moindre fonction précise. Le problème de l'arrêt, lui, en donne une explicite."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "C'est le même argument diagonal que chez Cantor pour les réels, et que chez Turing pour l'arrêt. Trois résultats, une seule idée."
         }
@@ -125,10 +165,19 @@
           "hint": "De quoi un programme est-il fait ?",
           "explanation": "Parce qu'un programme est une suite finie de symboles d'un alphabet fini : on peut les énumérer par longueur croissante.",
           "options": [
-            { "text": "Ce sont des suites finies sur un alphabet fini", "correct": true },
-            { "text": "Parce qu'il y en a un nombre fini" },
-            { "text": "Parce qu'ils s'arrêtent tous" },
-            { "text": "Parce qu'on peut les compiler" }
+            {
+              "text": "Ce sont des suites finies sur un alphabet fini",
+              "correct": true
+            },
+            {
+              "text": "Parce qu'il y en a un nombre fini"
+            },
+            {
+              "text": "Parce qu'ils s'arrêtent tous"
+            },
+            {
+              "text": "Parce qu'on peut les compiler"
+            }
           ]
         },
         {
@@ -138,10 +187,19 @@
           "hint": "On regarde la diagonale de la liste.",
           "explanation": "En prenant, pour chaque n, le contraire de ce que la fonction numéro n donne en n. La fonction g diffère alors de la fonction numéro n au point n, et cela pour tout n.",
           "options": [
-            { "text": "En prenant le contraire de ce que donne la n-ième fonction en n", "correct": true },
-            { "text": "En additionnant toutes les fonctions de la liste" },
-            { "text": "En prenant la limite de la liste" },
-            { "text": "En choisissant la première fonction non calculable de la liste" }
+            {
+              "text": "En prenant le contraire de ce que donne la n-ième fonction en n",
+              "correct": true
+            },
+            {
+              "text": "En additionnant toutes les fonctions de la liste"
+            },
+            {
+              "text": "En prenant la limite de la liste"
+            },
+            {
+              "text": "En choisissant la première fonction non calculable de la liste"
+            }
           ]
         },
         {
@@ -170,24 +228,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Faire exécuter autre chose",
+          "body": "Exécute la machine jusqu’au bout. Réduire un problème à un autre, c’est construire une machine qui, pour répondre au premier, en fait tourner une seconde.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Le principe de réduction",
           "body": "Réduire A à B, c'est transformer toute instance de A en une instance de B dont la réponse est la même, par un calcul qui s'arrête.\n\nSi B était décidable, A le serait. Donc si A est indécidable, B l'est aussi."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Le problème du vide",
           "body": "« Ce programme refuse-t-il toutes les entrées ? » est indécidable.\n\nOn y réduit l'arrêt : à partir de P et de son entrée e, on fabrique un programme qui ignore son entrée, exécute P sur e, puis accepte. Ce programme refuse tout si et seulement si P ne s'arrête pas sur e."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Le théorème de Rice",
           "body": "Toute propriété non triviale de la fonction calculée par un programme est indécidable.\n\nNon triviale veut dire : vraie pour certains programmes et fausse pour d'autres. Autrement dit, aucune question intéressante sur ce que fait un programme ne se décide automatiquement."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "texte",
           "title": "Le castor affairé",
           "body": "Parmi les machines à n états qui s'arrêtent, combien de 1 la plus productive laisse-t-elle au maximum ?\n\n1, 4, 6, puis 13 pour quatre états. Le cas de cinq états a été réglé en 2024 : 4 098. Au-delà, la suite croît plus vite que toute fonction calculable — la connaître reviendrait à décider l'arrêt."
@@ -201,10 +266,19 @@
           "hint": "Que se passerait-il si B était décidable ?",
           "explanation": "Que B est indécidable. Si B se décidait, la réduction donnerait un algorithme pour A, ce qui est exclu.",
           "options": [
-            { "text": "B est indécidable", "correct": true },
-            { "text": "B est décidable" },
-            { "text": "B est semi-décidable" },
-            { "text": "On ne peut rien conclure sur B" }
+            {
+              "text": "B est indécidable",
+              "correct": true
+            },
+            {
+              "text": "B est décidable"
+            },
+            {
+              "text": "B est semi-décidable"
+            },
+            {
+              "text": "On ne peut rien conclure sur B"
+            }
           ]
         },
         {
@@ -214,10 +288,19 @@
           "hint": "Que veut dire « non triviale » ?",
           "explanation": "Seulement les propriétés triviales : celles vraies pour tous les programmes, ou fausses pour tous. Toutes les autres sont indécidables.",
           "options": [
-            { "text": "Uniquement les propriétés triviales", "correct": true },
-            { "text": "Toutes les propriétés, mais lentement" },
-            { "text": "Les propriétés de sa syntaxe" },
-            { "text": "Les propriétés de son temps d'exécution" }
+            {
+              "text": "Uniquement les propriétés triviales",
+              "correct": true
+            },
+            {
+              "text": "Toutes les propriétés, mais lentement"
+            },
+            {
+              "text": "Les propriétés de sa syntaxe"
+            },
+            {
+              "text": "Les propriétés de son temps d'exécution"
+            }
           ]
         },
         {
@@ -250,6 +333,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Et si elle ne s’arrêtait pas",
+          "body": "Lance la machine : celle-ci s’arrête, et on peut l’observer. Rien ne permet en général de savoir à l’avance si une machine s’arrêtera — c’est tout le sujet du défi.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque énoncé, demande-toi : la question porte-t-elle sur la syntaxe du programme, ou sur ce qu'il calcule ?"
@@ -262,12 +352,27 @@
           "prompt": "Range ces questions selon qu'elles sont décidables.",
           "hint": "Syntaxe ou comportement ?",
           "explanation": "Les deux premières se lisent dans le code source. Les deux autres portent sur la fonction calculée : Rice les interdit.",
-          "categories": ["Décidable", "Indécidable"],
+          "categories": [
+            "Décidable",
+            "Indécidable"
+          ],
           "items": [
-            { "text": "ce programme fait-il plus de 100 lignes ?", "category": 0 },
-            { "text": "ce programme contient-il le mot « while » ?", "category": 0 },
-            { "text": "ce programme calcule-t-il la fonction nulle ?", "category": 1 },
-            { "text": "ces deux programmes calculent-ils la même fonction ?", "category": 1 }
+            {
+              "text": "ce programme fait-il plus de 100 lignes ?",
+              "category": 0
+            },
+            {
+              "text": "ce programme contient-il le mot « while » ?",
+              "category": 0
+            },
+            {
+              "text": "ce programme calcule-t-il la fonction nulle ?",
+              "category": 1
+            },
+            {
+              "text": "ces deux programmes calculent-ils la même fonction ?",
+              "category": 1
+            }
           ]
         },
         {
@@ -295,10 +400,19 @@
           "hint": "Que permettrait de faire sa connaissance ?",
           "explanation": "Parce que la connaître permettrait de décider l'arrêt : il suffirait de simuler une machine à n états pendant le nombre de pas correspondant.",
           "options": [
-            { "text": "La connaître permettrait de décider l'arrêt", "correct": true },
-            { "text": "Parce qu'elle croît trop lentement" },
-            { "text": "Parce que ses termes sont irrationnels" },
-            { "text": "Parce qu'il y a une infinité de machines" }
+            {
+              "text": "La connaître permettrait de décider l'arrêt",
+              "correct": true
+            },
+            {
+              "text": "Parce qu'elle croît trop lentement"
+            },
+            {
+              "text": "Parce que ses termes sont irrationnels"
+            },
+            {
+              "text": "Parce qu'il y a une infinité de machines"
+            }
           ]
         },
         {
@@ -319,10 +433,22 @@
           "prompt": "Associe chaque notion à sa définition.",
           "explanation": "Quatre notions à ne pas confondre : décider, semi-décider, réduire, et le périmètre du théorème de Rice.",
           "pairs": [
-            { "left": "décidable", "right": "un algorithme répond toujours" },
-            { "left": "semi-décidable", "right": "un algorithme répond quand c'est oui" },
-            { "left": "réduction", "right": "transformer A en B sans changer la réponse" },
-            { "left": "théorème de Rice", "right": "aucune propriété non triviale du calculé" }
+            {
+              "left": "décidable",
+              "right": "un algorithme répond toujours"
+            },
+            {
+              "left": "semi-décidable",
+              "right": "un algorithme répond quand c'est oui"
+            },
+            {
+              "left": "réduction",
+              "right": "transformer A en B sans changer la réponse"
+            },
+            {
+              "left": "théorème de Rice",
+              "right": "aucune propriété non triviale du calculé"
+            }
           ]
         }
       ]

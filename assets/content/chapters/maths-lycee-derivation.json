@@ -82,10 +82,19 @@
           "explanation": "2a + h. En effet (a + h)² − a² = 2ah + h², et la division par h donne 2a + h. Tout le reste du chapitre tient dans cette ligne.",
           "figureId": "secante-tangente",
           "options": [
-            { "text": "2a + h", "correct": true },
-            { "text": "2a" },
-            { "text": "a² + h" },
-            { "text": "2ah" }
+            {
+              "text": "2a + h",
+              "correct": true
+            },
+            {
+              "text": "2a"
+            },
+            {
+              "text": "a² + h"
+            },
+            {
+              "text": "2ah"
+            }
           ]
         }
       ]
@@ -163,8 +172,16 @@
           "prompt": "Complète l'équation de la tangente à la courbe de f(x) = x² au point d'abscisse 2.",
           "template": "y = ___ x − ___",
           "blanks": [
-            { "accepted": ["4"] },
-            { "accepted": ["4"] }
+            {
+              "accepted": [
+                "4"
+              ]
+            },
+            {
+              "accepted": [
+                "4"
+              ]
+            }
           ],
           "hint": "f'(2) = 4 et f(2) = 4.",
           "explanation": "y = 4x − 4. En développant 4(x − 2) + 4, on obtient 4x − 8 + 4, soit 4x − 4."
@@ -188,25 +205,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La pente en un point",
+          "body": "Rapproche les deux points : la sécante devient tangente. Le nombre dérivé est la pente de cette limite, et la fonction dérivée donne cette pente en chaque point.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Les dérivées usuelles",
           "formula": "(x^n)' = n·x^(n−1),   (k)' = 0,   (k·u)' = k·u',   (u + v)' = u' + v'",
           "body": "de quoi dériver tout polynôme."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Un exemple",
           "body": "f(x) = 3x² − 5x + 2\n\nf'(x) = 3 × 2x − 5 × 1 + 0 = 6x − 5\n\nf'(1) = 1."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Le signe de f' donne les variations",
           "body": "Si f' est positive sur un intervalle, f y est croissante.\n\nSi f' est négative, f y est décroissante.\n\nLà où f' s'annule en changeant de signe, f admet un extremum."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Une dérivée qui s'annule ne suffit pas à donner un extremum : pour f(x) = x³, f'(0) = 0 alors que f ne cesse de croître. C'est le changement de signe qui compte, pas l'annulation."
         }
@@ -245,12 +269,27 @@
           "prompt": "Pour f(x) = x² − 4x, range ces intervalles selon le sens de variation.",
           "hint": "Étudie le signe de 2x − 4.",
           "explanation": "Avant 2, la dérivée 2x − 4 est négative et la fonction décroît. Après 2, elle est positive et la fonction croît.",
-          "categories": ["f décroît", "f croît"],
+          "categories": [
+            "f décroît",
+            "f croît"
+          ],
           "items": [
-            { "text": "x = 0", "category": 0 },
-            { "text": "x = 1", "category": 0 },
-            { "text": "x = 3", "category": 1 },
-            { "text": "x = 5", "category": 1 }
+            {
+              "text": "x = 0",
+              "category": 0
+            },
+            {
+              "text": "x = 1",
+              "category": 0
+            },
+            {
+              "text": "x = 3",
+              "category": 1
+            },
+            {
+              "text": "x = 5",
+              "category": 1
+            }
           ]
         }
       ]
@@ -265,6 +304,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le signe de la pente",
+          "body": "Déplace le point le long de la courbe et regarde la tangente pencher. Quand elle monte, la fonction croît ; quand elle descend, elle décroît. Tout le tableau de variations est là.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chacune, demande-toi si l'on parle d'une moyenne ou d'une pente ponctuelle."
@@ -296,10 +342,22 @@
           "prompt": "Associe chaque fonction à sa dérivée.",
           "explanation": "La dérivée de x² est 2x, celle de x³ est 3x², celle d'une constante est nulle, et celle de 5x vaut 5.",
           "pairs": [
-            { "left": "x²", "right": "2x" },
-            { "left": "x³", "right": "3x²" },
-            { "left": "7", "right": "0" },
-            { "left": "5x", "right": "5" }
+            {
+              "left": "x²",
+              "right": "2x"
+            },
+            {
+              "left": "x³",
+              "right": "3x²"
+            },
+            {
+              "left": "7",
+              "right": "0"
+            },
+            {
+              "left": "5x",
+              "right": "5"
+            }
           ]
         },
         {
@@ -326,10 +384,19 @@
           "hint": "Une pente négative descend.",
           "explanation": "Elle décroît. Le signe de la dérivée donne le sens de variation, point par point.",
           "options": [
-            { "text": "Elle décroît", "correct": true },
-            { "text": "Elle croît" },
-            { "text": "Elle est constante" },
-            { "text": "Elle est négative" }
+            {
+              "text": "Elle décroît",
+              "correct": true
+            },
+            {
+              "text": "Elle croît"
+            },
+            {
+              "text": "Elle est constante"
+            },
+            {
+              "text": "Elle est négative"
+            }
           ]
         }
       ]

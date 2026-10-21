@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Définir « calculer » avant de répondre",
+          "body": "Fais avancer la machine pas à pas : un ruban, une tête, quelques règles. Turing a dû inventer cet objet avant de pouvoir répondre à Hilbert — on ne démontre pas qu’une chose est impossible sans l’avoir définie.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Un programme pour les mathématiques",
           "body": "En 1928, David Hilbert pose une question précise : existe-t-il une procédure mécanique qui, donnée une affirmation mathématique, décide en un temps fini si elle est démontrable ?\n\nIl s'attendait à oui. La réponse serait non, et il faudrait d'abord inventer ce que « procédure mécanique » veut dire."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Définir avant de répondre",
           "body": "Pour prouver qu'aucune procédure n'existe, il ne suffit pas de n'en trouver aucune. Il faut dire exactement ce qu'est une procédure, et raisonner sur toutes à la fois.\n\nC'est le vrai travail de Turing en 1936 : non pas répondre à Hilbert, mais rendre la question assez nette pour qu'on puisse y répondre."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "Alonzo Church avait atteint le même résultat quelques mois plus tôt, par un autre chemin. Les deux définitions se sont révélées équivalentes — un indice sérieux qu'elles capturaient bien la bonne notion."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -45,10 +52,19 @@
           "hint": "Une procédure, pour toutes les affirmations.",
           "explanation": "Une procédure mécanique décidant si une affirmation mathématique est démontrable. C'est le problème de la décision.",
           "options": [
-            { "text": "Une procédure décidant si un énoncé est démontrable", "correct": true },
-            { "text": "Une démonstration de tous les théorèmes connus" },
-            { "text": "Une machine capable de jouer aux échecs" },
-            { "text": "Un langage de programmation universel" }
+            {
+              "text": "Une procédure décidant si un énoncé est démontrable",
+              "correct": true
+            },
+            {
+              "text": "Une démonstration de tous les théorèmes connus"
+            },
+            {
+              "text": "Une machine capable de jouer aux échecs"
+            },
+            {
+              "text": "Un langage de programmation universel"
+            }
           ]
         },
         {
@@ -65,10 +81,19 @@
           "hint": "Rendre la question traitable.",
           "explanation": "Définir précisément ce qu'est un calcul mécanique. Sans cette définition, la question n'a pas de réponse démontrable.",
           "options": [
-            { "text": "Définir précisément ce qu'est un calcul", "correct": true },
-            { "text": "Construire un ordinateur" },
-            { "text": "Démontrer le théorème de Gödel" },
-            { "text": "Inventer le transistor" }
+            {
+              "text": "Définir précisément ce qu'est un calcul",
+              "correct": true
+            },
+            {
+              "text": "Construire un ordinateur"
+            },
+            {
+              "text": "Démontrer le théorème de Gödel"
+            },
+            {
+              "text": "Inventer le transistor"
+            }
           ]
         }
       ]
@@ -116,10 +141,19 @@
           "explanation": "Un état interne pris dans une liste finie, et rien d'autre. Toute la mémoire de travail est sur le ruban.",
           "figureId": "machine-turing",
           "options": [
-            { "text": "Un état interne, pris dans une liste finie", "correct": true },
-            { "text": "Une mémoire vive illimitée" },
-            { "text": "Un registre de nombres entiers" },
-            { "text": "Aucune : tout est sur le ruban, l'état compris" }
+            {
+              "text": "Un état interne, pris dans une liste finie",
+              "correct": true
+            },
+            {
+              "text": "Une mémoire vive illimitée"
+            },
+            {
+              "text": "Un registre de nombres entiers"
+            },
+            {
+              "text": "Aucune : tout est sur le ruban, l'état compris"
+            }
           ]
         },
         {
@@ -151,10 +185,19 @@
           "explanation": "Une machine qui lit sur son ruban la description d'une autre machine et l'imite. C'est l'idée même de l'ordinateur à programme enregistré.",
           "figureId": "machine-turing",
           "options": [
-            { "text": "Une machine qui lit la description d'une autre et l'imite", "correct": true },
-            { "text": "Une machine qui résout tous les problèmes" },
-            { "text": "Une machine dont le ruban est infini" },
-            { "text": "Une machine qui ne s'arrête jamais" }
+            {
+              "text": "Une machine qui lit la description d'une autre et l'imite",
+              "correct": true
+            },
+            {
+              "text": "Une machine qui résout tous les problèmes"
+            },
+            {
+              "text": "Une machine dont le ruban est infini"
+            },
+            {
+              "text": "Une machine qui ne s'arrête jamais"
+            }
           ]
         }
       ]
@@ -169,24 +212,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Celle-ci s’arrête. Et les autres ?",
+          "body": "Lance la machine jusqu’au bout : elle termine, et on le constate. La question est de savoir si un programme peut prédire cela pour n’importe quelle machine — et la réponse est non.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une question raisonnable",
           "body": "Peut-on écrire un programme qui, donnés un programme et son entrée, répond en un temps fini : « il s'arrêtera » ou « il tournera indéfiniment » ?\n\nCe serait utile. Turing démontre que c'est impossible."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "La démonstration, par l'absurde",
           "body": "Supposons qu'un tel programme existe ; appelons-le Arrête.\n\nConstruisons Diagonal : donné un programme P, Diagonal demande à Arrête ce que fait P appliqué à lui-même. Si la réponse est « il s'arrête », Diagonal boucle sans fin. Sinon, Diagonal s'arrête aussitôt."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "La contradiction",
           "body": "Que fait Diagonal appliqué à lui-même ?\n\nS'il s'arrête, c'est qu'Arrête a répondu « il ne s'arrête pas ». S'il ne s'arrête pas, c'est qu'Arrête a répondu « il s'arrête ».\n\nLes deux cas sont impossibles. Arrête ne peut donc pas exister."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Ce n'est pas une limite de nos ordinateurs ni de notre astuce. C'est une limite de la notion même de calcul : aucune machine, quelle que soit sa puissance, ne décidera l'arrêt."
         }
@@ -199,10 +249,19 @@
           "hint": "Il suppose d'abord que le programme existe.",
           "explanation": "Le raisonnement par l'absurde : il suppose que le programme existe, et en tire une contradiction.",
           "options": [
-            { "text": "Le raisonnement par l'absurde", "correct": true },
-            { "text": "La récurrence" },
-            { "text": "La contraposée" },
-            { "text": "Un contre-exemple" }
+            {
+              "text": "Le raisonnement par l'absurde",
+              "correct": true
+            },
+            {
+              "text": "La récurrence"
+            },
+            {
+              "text": "La contraposée"
+            },
+            {
+              "text": "Un contre-exemple"
+            }
           ]
         },
         {
@@ -243,6 +302,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La machine avant la machine",
+          "body": "Regarde ce qu’il faut pour calculer : un ruban, une tête, un état. Turing a décrit cela en 1936, dix ans avant le premier ordinateur, et le défi raconte ce qui a suivi.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Après 1936",
           "body": "Pendant la guerre, Turing dirige à Bletchley Park le décryptage des messages de la marine allemande. Après, il pose la question de l'intelligence des machines.\n\nCondamné en 1952 pour son homosexualité, il meurt en 1954. Les excuses officielles du Royaume-Uni datent de 2009, et le pardon royal de 2013."
@@ -277,12 +343,27 @@
           "prompt": "Range ces éléments : font-ils partie d'une machine de Turing ?",
           "hint": "Trois éléments seulement.",
           "explanation": "Le ruban, la tête et l'état interne suffisent. Ni écran ni horloge n'entrent dans la définition.",
-          "categories": ["Fait partie de la machine", "N'en fait pas partie"],
+          "categories": [
+            "Fait partie de la machine",
+            "N'en fait pas partie"
+          ],
           "items": [
-            { "text": "le ruban", "category": 0 },
-            { "text": "l'état interne", "category": 0 },
-            { "text": "un écran", "category": 1 },
-            { "text": "une horloge", "category": 1 }
+            {
+              "text": "le ruban",
+              "category": 0
+            },
+            {
+              "text": "l'état interne",
+              "category": 0
+            },
+            {
+              "text": "un écran",
+              "category": 1
+            },
+            {
+              "text": "une horloge",
+              "category": 1
+            }
           ]
         },
         {
@@ -293,10 +374,19 @@
           "explanation": "Parce que le programme est écrit sur le ruban, au même titre que les données : une seule machine suffit pour tous les programmes.",
           "figureId": "machine-turing",
           "options": [
-            { "text": "Le programme est une donnée parmi les autres", "correct": true },
-            { "text": "Elle calcule plus vite que les autres" },
-            { "text": "Elle possède un écran" },
-            { "text": "Elle ne s'arrête jamais" }
+            {
+              "text": "Le programme est une donnée parmi les autres",
+              "correct": true
+            },
+            {
+              "text": "Elle calcule plus vite que les autres"
+            },
+            {
+              "text": "Elle possède un écran"
+            },
+            {
+              "text": "Elle ne s'arrête jamais"
+            }
           ]
         },
         {
@@ -312,10 +402,22 @@
           "prompt": "Associe chaque date à ce qui s'est passé.",
           "explanation": "Quatre dates qui résument une vie : la machine, la guerre, la question de l'intelligence, et la mort.",
           "pairs": [
-            { "left": "1936", "right": "la machine de Turing" },
-            { "left": "1940", "right": "Bletchley Park" },
-            { "left": "1950", "right": "la question de l'intelligence des machines" },
-            { "left": "1954", "right": "sa mort" }
+            {
+              "left": "1936",
+              "right": "la machine de Turing"
+            },
+            {
+              "left": "1940",
+              "right": "Bletchley Park"
+            },
+            {
+              "left": "1950",
+              "right": "la question de l'intelligence des machines"
+            },
+            {
+              "left": "1954",
+              "right": "sa mort"
+            }
           ]
         }
       ]

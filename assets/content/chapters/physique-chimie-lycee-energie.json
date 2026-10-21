@@ -11,25 +11,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La composante qui travaille",
+          "body": "Change l’angle de lancement : seule la part verticale de la vitesse lutte contre le poids. Une force ne travaille que par sa composante dans le sens du déplacement, et c’est de là que vient le cosinus.",
+          "figureId": "projectile"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Travail d'une force constante",
           "formula": "W = F × d × cos(angle)",
           "body": "avec F en newtons, d en mètres, et l'angle entre la force et le déplacement. Le résultat est en joules."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Pourquoi un cosinus",
           "body": "Seule la part de la force dirigée le long du déplacement travaille.\n\nUne force perpendiculaire ne transfère aucune énergie : son travail est nul, quel que soit le déplacement. C'est le cas de la force qui maintient un satellite sur une orbite circulaire."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Moteur ou résistant",
           "body": "Si l'angle est inférieur à 90 degrés, le travail est positif : la force fournit de l'énergie au système.\n\nAu-delà, il est négatif : la force en retire. Les frottements travaillent toujours négativement."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Porter une valise sur un trajet horizontal, c'est fatigant mais le travail du poids est nul : le poids est vertical, le déplacement horizontal."
         }
@@ -62,10 +69,19 @@
           "hint": "Que vaut le cosinus de 90 degrés ?",
           "explanation": "Nul : le cosinus de 90 degrés vaut zéro. Aucune énergie n'est transférée, quelle que soit l'intensité de la force.",
           "options": [
-            { "text": "Nul", "correct": true },
-            { "text": "Maximal" },
-            { "text": "Négatif" },
-            { "text": "Égal au produit F × d" }
+            {
+              "text": "Nul",
+              "correct": true
+            },
+            {
+              "text": "Maximal"
+            },
+            {
+              "text": "Négatif"
+            },
+            {
+              "text": "Égal au produit F × d"
+            }
           ]
         },
         {
@@ -74,12 +90,27 @@
           "prompt": "Range ces travaux selon leur signe.",
           "hint": "La force aide-t-elle, ou s'oppose-t-elle ?",
           "explanation": "Une force dans le sens du mouvement fournit de l'énergie ; une force qui s'y oppose en retire.",
-          "categories": ["Travail positif", "Travail négatif"],
+          "categories": [
+            "Travail positif",
+            "Travail négatif"
+          ],
           "items": [
-            { "text": "la poussée d'un moteur qui accélère", "category": 0 },
-            { "text": "le poids d'un objet qui descend", "category": 0 },
-            { "text": "les frottements de l'air", "category": 1 },
-            { "text": "le poids d'un objet qu'on monte", "category": 1 }
+            {
+              "text": "la poussée d'un moteur qui accélère",
+              "category": 0
+            },
+            {
+              "text": "le poids d'un objet qui descend",
+              "category": 0
+            },
+            {
+              "text": "les frottements de l'air",
+              "category": 1
+            },
+            {
+              "text": "le poids d'un objet qu'on monte",
+              "category": 1
+            }
           ]
         }
       ]
@@ -149,10 +180,19 @@
           "explanation": "Elle n'est pas nulle : la vitesse verticale s'annule, mais l'horizontale est inchangée depuis le départ.",
           "figureId": "projectile",
           "options": [
-            { "text": "Elle n'est pas nulle", "correct": true },
-            { "text": "Elle est nulle" },
-            { "text": "Elle est maximale" },
-            { "text": "Elle est négative" }
+            {
+              "text": "Elle n'est pas nulle",
+              "correct": true
+            },
+            {
+              "text": "Elle est nulle"
+            },
+            {
+              "text": "Elle est maximale"
+            },
+            {
+              "text": "Elle est négative"
+            }
           ]
         },
         {
@@ -253,6 +293,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui se perd à chaque étage",
+          "body": "Touche chaque maillon et lis le rendement global. Aucune conversion n’est gratuite, et le produit des rendements descend bien plus vite qu’on ne l’imagine.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Attention aux unités : une énergie est en joules, une puissance en watts."
@@ -287,10 +334,19 @@
           "explanation": "Elle est dissipée en chaleur. Elle existe toujours, mais sous une forme qu'on ne peut plus utiliser pour ce travail.",
           "figureId": "chaine-energie",
           "options": [
-            { "text": "Elle est dissipée en chaleur", "correct": true },
-            { "text": "Elle est détruite" },
-            { "text": "Elle retourne à la source" },
-            { "text": "Elle est stockée dans le moteur" }
+            {
+              "text": "Elle est dissipée en chaleur",
+              "correct": true
+            },
+            {
+              "text": "Elle est détruite"
+            },
+            {
+              "text": "Elle retourne à la source"
+            },
+            {
+              "text": "Elle est stockée dans le moteur"
+            }
           ]
         },
         {
@@ -299,10 +355,22 @@
           "prompt": "Associe chaque grandeur à son unité.",
           "explanation": "Quatre grandeurs, quatre unités : les confondre est l'erreur la plus coûteuse de tout le chapitre.",
           "pairs": [
-            { "left": "un travail", "right": "le joule" },
-            { "left": "une puissance", "right": "le watt" },
-            { "left": "une force", "right": "le newton" },
-            { "left": "un rendement", "right": "aucune unité" }
+            {
+              "left": "un travail",
+              "right": "le joule"
+            },
+            {
+              "left": "une puissance",
+              "right": "le watt"
+            },
+            {
+              "left": "une force",
+              "right": "le newton"
+            },
+            {
+              "left": "un rendement",
+              "right": "aucune unité"
+            }
           ]
         },
         {

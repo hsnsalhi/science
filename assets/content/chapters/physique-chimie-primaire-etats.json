@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce que font les particules",
+          "body": "Fais varier la température et regarde les particules : rangées et serrées dans la glace, libres mais en contact dans l’eau, dispersées dans tout le volume en vapeur. Les trois états, c’est cela.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Reconnaître sans toucher",
           "body": "Un solide garde sa forme : un glaçon reste un glaçon, qu'il soit dans ta main ou dans un bol.\n\nUn liquide prend la forme de ce qui le contient, mais garde son niveau : l'eau d'un verre versée dans une assiette s'étale sans disparaître."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Le gaz remplit tout",
           "body": "Un gaz, lui, occupe tout l'espace disponible. Ouvre un flacon de parfum dans un coin de la pièce : au bout d'un moment, ça sent partout.\n\nIl n'a ni forme propre, ni niveau."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "Pour reconnaître l'état d'une matière, pose-toi deux questions : garde-t-elle sa forme ? A-t-elle une surface plate quand elle est au repos ?"
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -44,12 +51,27 @@
           "prompt": "Range ces matières dans leur état.",
           "hint": "Gardent-elles leur forme ?",
           "explanation": "Le caillou et le glaçon gardent leur forme ; l'eau et l'huile prennent celle du récipient.",
-          "categories": ["Solide", "Liquide"],
+          "categories": [
+            "Solide",
+            "Liquide"
+          ],
           "items": [
-            { "text": "un caillou", "category": 0 },
-            { "text": "un glaçon", "category": 0 },
-            { "text": "de l'eau", "category": 1 },
-            { "text": "de l'huile", "category": 1 }
+            {
+              "text": "un caillou",
+              "category": 0
+            },
+            {
+              "text": "un glaçon",
+              "category": 0
+            },
+            {
+              "text": "de l'eau",
+              "category": 1
+            },
+            {
+              "text": "de l'huile",
+              "category": 1
+            }
           ]
         },
         {
@@ -59,10 +81,19 @@
           "hint": "Pense au flacon de parfum.",
           "explanation": "Le gaz occupe tout l'espace disponible, alors que le liquide se pose au fond et garde une surface plate.",
           "options": [
-            { "text": "Le gaz remplit tout l'espace disponible", "correct": true },
-            { "text": "Le gaz garde sa forme" },
-            { "text": "Le liquide est toujours transparent" },
-            { "text": "Le gaz ne pèse rien" }
+            {
+              "text": "Le gaz remplit tout l'espace disponible",
+              "correct": true
+            },
+            {
+              "text": "Le gaz garde sa forme"
+            },
+            {
+              "text": "Le liquide est toujours transparent"
+            },
+            {
+              "text": "Le gaz ne pèse rien"
+            }
           ]
         },
         {
@@ -138,10 +169,19 @@
           "explanation": "Liquide : 20 degrés est au-dessus de 0 et en dessous de 100.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "Liquide", "correct": true },
-            { "text": "Solide" },
-            { "text": "Gaz" },
-            { "text": "Cela dépend du récipient" }
+            {
+              "text": "Liquide",
+              "correct": true
+            },
+            {
+              "text": "Solide"
+            },
+            {
+              "text": "Gaz"
+            },
+            {
+              "text": "Cela dépend du récipient"
+            }
           ]
         },
         {
@@ -150,9 +190,18 @@
           "prompt": "Associe chaque changement à son nom.",
           "explanation": "Chaque passage d'un état à l'autre porte un nom précis, et chacun a son retour.",
           "pairs": [
-            { "left": "la glace devient eau", "right": "fusion" },
-            { "left": "l'eau devient glace", "right": "solidification" },
-            { "left": "l'eau devient vapeur", "right": "ébullition" }
+            {
+              "left": "la glace devient eau",
+              "right": "fusion"
+            },
+            {
+              "left": "l'eau devient glace",
+              "right": "solidification"
+            },
+            {
+              "left": "l'eau devient vapeur",
+              "right": "ébullition"
+            }
           ]
         }
       ]
@@ -199,10 +248,19 @@
           "explanation": "Exactement la même chose qu'avant : rien n'est entré, rien n'est sorti, donc la masse ne change pas.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "La même chose qu'avant", "correct": true },
-            { "text": "Moins qu'avant" },
-            { "text": "Plus qu'avant" },
-            { "text": "Elle ne peut plus peser" }
+            {
+              "text": "La même chose qu'avant",
+              "correct": true
+            },
+            {
+              "text": "Moins qu'avant"
+            },
+            {
+              "text": "Plus qu'avant"
+            },
+            {
+              "text": "Elle ne peut plus peser"
+            }
           ]
         },
         {
@@ -212,10 +270,19 @@
           "hint": "Elle ne disparaît pas.",
           "explanation": "Dans l'air, sous forme de vapeur invisible. C'est de là qu'elle redescendra un jour en pluie.",
           "options": [
-            { "text": "Dans l'air, sous forme de vapeur", "correct": true },
-            { "text": "Elle est détruite par le Soleil" },
-            { "text": "Elle rentre dans le sol et disparaît" },
-            { "text": "Elle devient de la lumière" }
+            {
+              "text": "Dans l'air, sous forme de vapeur",
+              "correct": true
+            },
+            {
+              "text": "Elle est détruite par le Soleil"
+            },
+            {
+              "text": "Elle rentre dans le sol et disparaît"
+            },
+            {
+              "text": "Elle devient de la lumière"
+            }
           ]
         },
         {
@@ -231,12 +298,27 @@
           "prompt": "Quand un glaçon fond, qu'est-ce qui change ?",
           "hint": "Pense à ce qu'une balance mesure.",
           "explanation": "La forme et l'état changent ; la masse et la quantité de matière restent les mêmes.",
-          "categories": ["Change", "Ne change pas"],
+          "categories": [
+            "Change",
+            "Ne change pas"
+          ],
           "items": [
-            { "text": "la forme", "category": 0 },
-            { "text": "l'état", "category": 0 },
-            { "text": "la masse", "category": 1 },
-            { "text": "la quantité de matière", "category": 1 }
+            {
+              "text": "la forme",
+              "category": 0
+            },
+            {
+              "text": "l'état",
+              "category": 0
+            },
+            {
+              "text": "la masse",
+              "category": 1
+            },
+            {
+              "text": "la quantité de matière",
+              "category": 1
+            }
           ]
         }
       ]
@@ -251,6 +333,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les deux passages de l’eau",
+          "body": "Monte jusqu’à 0 °C, puis jusqu’à 100 °C. Ce sont les deux seules températures où quelque chose change d’état — partout ailleurs, l’eau se contente de chauffer.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Tu peux revenir au thermomètre de la figure si tu hésites sur un état."
@@ -265,10 +354,19 @@
           "explanation": "Solide : en dessous de 0 degré, l'eau est de la glace.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "Solide", "correct": true },
-            { "text": "Liquide" },
-            { "text": "Gaz" },
-            { "text": "Elle n'existe plus" }
+            {
+              "text": "Solide",
+              "correct": true
+            },
+            {
+              "text": "Liquide"
+            },
+            {
+              "text": "Gaz"
+            },
+            {
+              "text": "Elle n'existe plus"
+            }
           ]
         },
         {
@@ -279,10 +377,19 @@
           "explanation": "Gaz : au-dessus de 100 degrés, toute l'eau est passée en vapeur.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "Gaz", "correct": true },
-            { "text": "Liquide" },
-            { "text": "Solide" },
-            { "text": "Moitié liquide, moitié solide" }
+            {
+              "text": "Gaz",
+              "correct": true
+            },
+            {
+              "text": "Liquide"
+            },
+            {
+              "text": "Solide"
+            },
+            {
+              "text": "Moitié liquide, moitié solide"
+            }
           ]
         },
         {
@@ -321,10 +428,19 @@
           "hint": "Qu'est-ce qui change entre les trois ?",
           "explanation": "Oui : la même eau, dans trois états différents. Seule la température décide lequel.",
           "options": [
-            { "text": "Oui, la même eau dans trois états", "correct": true },
-            { "text": "Non, ce sont trois matières différentes" },
-            { "text": "Seules la glace et l'eau sont les mêmes" },
-            { "text": "Seules l'eau et la vapeur sont les mêmes" }
+            {
+              "text": "Oui, la même eau dans trois états",
+              "correct": true
+            },
+            {
+              "text": "Non, ce sont trois matières différentes"
+            },
+            {
+              "text": "Seules la glace et l'eau sont les mêmes"
+            },
+            {
+              "text": "Seules l'eau et la vapeur sont les mêmes"
+            }
           ]
         }
       ]

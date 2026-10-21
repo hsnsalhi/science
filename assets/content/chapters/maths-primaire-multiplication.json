@@ -73,10 +73,19 @@
           "hint": "Cinq fois le nombre 3.",
           "explanation": "3 + 3 + 3 + 3 + 3. Il y a cinq paquets, et chaque paquet contient trois.",
           "options": [
-            { "text": "3 + 3 + 3 + 3 + 3", "correct": true },
-            { "text": "5 + 3" },
-            { "text": "5 + 5 + 5 + 5 + 5" },
-            { "text": "3 + 3 + 3" }
+            {
+              "text": "3 + 3 + 3 + 3 + 3",
+              "correct": true
+            },
+            {
+              "text": "5 + 3"
+            },
+            {
+              "text": "5 + 5 + 5 + 5 + 5"
+            },
+            {
+              "text": "3 + 3 + 3"
+            }
           ]
         },
         {
@@ -152,12 +161,27 @@
           "prompt": "Range ces calculs selon leur résultat.",
           "hint": "L'ordre des deux nombres ne change rien.",
           "explanation": "2 × 6 et 6 × 2 font 12. 3 × 5 et 5 × 3 font 15. Dans chaque paire, c'est le même rectangle tourné.",
-          "categories": ["Fait 12", "Fait 15"],
+          "categories": [
+            "Fait 12",
+            "Fait 15"
+          ],
           "items": [
-            { "text": "2 × 6", "category": 0 },
-            { "text": "6 × 2", "category": 0 },
-            { "text": "3 × 5", "category": 1 },
-            { "text": "5 × 3", "category": 1 }
+            {
+              "text": "2 × 6",
+              "category": 0
+            },
+            {
+              "text": "6 × 2",
+              "category": 0
+            },
+            {
+              "text": "3 × 5",
+              "category": 1
+            },
+            {
+              "text": "5 × 3",
+              "category": 1
+            }
           ]
         },
         {
@@ -179,24 +203,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Parcourir une table",
+          "body": "Règle les lignes sur 2, puis fais varier les colonnes : 2, 4, 6, 8… Tu parcours la table de 2, et chaque colonne ajoute exactement deux jetons.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "La table de 2",
           "body": "Multiplier par 2, c'est doubler. 7 × 2, c'est 7 + 7 = 14."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "La table de 10, puis celle de 5",
           "body": "Multiplier par 10, c'est ajouter un zéro : 6 × 10 = 60.\n\nPour multiplier par 5, multiplie par 10 puis prends la moitié : 6 × 5, c'est la moitié de 60, soit 30."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "La table de 9",
           "body": "Dans la table de 9, les deux chiffres du résultat s'additionnent toujours pour faire 9.\n\n9 × 3 = 27, et 2 + 7 = 9. 9 × 7 = 63, et 6 + 3 = 9. Cela permet de vérifier tout seul."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Quand un calcul résiste, décompose-le : 7 × 6, c'est 7 × 5 (soit 35) plus 7, donc 42."
         }
@@ -238,12 +269,27 @@
           "prompt": "Range ces résultats selon qu'ils sont dans la table de 5 ou non.",
           "hint": "Les résultats de la table de 5 finissent par 0 ou par 5.",
           "explanation": "35 et 40 sont dans la table de 5 : ce sont 7 × 5 et 8 × 5. 27 et 36 n'y sont pas.",
-          "categories": ["Dans la table de 5", "Pas dans la table de 5"],
+          "categories": [
+            "Dans la table de 5",
+            "Pas dans la table de 5"
+          ],
           "items": [
-            { "text": "35", "category": 0 },
-            { "text": "40", "category": 0 },
-            { "text": "27", "category": 1 },
-            { "text": "36", "category": 1 }
+            {
+              "text": "35",
+              "category": 0
+            },
+            {
+              "text": "40",
+              "category": 0
+            },
+            {
+              "text": "27",
+              "category": 1
+            },
+            {
+              "text": "36",
+              "category": 1
+            }
           ]
         }
       ]
@@ -258,6 +304,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le rectangle qui ne ment pas",
+          "body": "Pose les deux nombres de ta multiplication en lignes et en colonnes, puis compte les jetons. C’est long, et c’est la vérification qui ne se trompe jamais.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Si un calcul résiste, pense au rectangle de jetons."
@@ -300,12 +353,27 @@
           "kind": "tri",
           "prompt": "Range ces calculs selon leur résultat.",
           "explanation": "4 × 6 et 8 × 3 font 24. 5 × 6 et 3 × 10 font 30.",
-          "categories": ["Fait 24", "Fait 30"],
+          "categories": [
+            "Fait 24",
+            "Fait 30"
+          ],
           "items": [
-            { "text": "4 × 6", "category": 0 },
-            { "text": "8 × 3", "category": 0 },
-            { "text": "5 × 6", "category": 1 },
-            { "text": "3 × 10", "category": 1 }
+            {
+              "text": "4 × 6",
+              "category": 0
+            },
+            {
+              "text": "8 × 3",
+              "category": 0
+            },
+            {
+              "text": "5 × 6",
+              "category": 1
+            },
+            {
+              "text": "3 × 10",
+              "category": 1
+            }
           ]
         },
         {

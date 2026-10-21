@@ -54,10 +54,19 @@
           "explanation": "−7, car il est plus à gauche sur la droite graduée. L'ordre des négatifs est inversé par rapport à celui des positifs.",
           "figureId": "droite-graduee",
           "options": [
-            { "text": "−7", "correct": true },
-            { "text": "−3" },
-            { "text": "Ils sont égaux" },
-            { "text": "On ne peut pas comparer" }
+            {
+              "text": "−7",
+              "correct": true
+            },
+            {
+              "text": "−3"
+            },
+            {
+              "text": "Ils sont égaux"
+            },
+            {
+              "text": "On ne peut pas comparer"
+            }
           ]
         },
         {
@@ -75,12 +84,27 @@
           "prompt": "Range ces températures.",
           "hint": "Zéro sépare les deux groupes.",
           "explanation": "−5 °C et −12 °C sont sous zéro, 3 °C et 8 °C au-dessus. Attention : −12 est plus froid que −5.",
-          "categories": ["Sous zéro", "Au-dessus de zéro"],
+          "categories": [
+            "Sous zéro",
+            "Au-dessus de zéro"
+          ],
           "items": [
-            { "text": "−5 °C", "category": 0 },
-            { "text": "−12 °C", "category": 0 },
-            { "text": "3 °C", "category": 1 },
-            { "text": "8 °C", "category": 1 }
+            {
+              "text": "−5 °C",
+              "category": 0
+            },
+            {
+              "text": "−12 °C",
+              "category": 0
+            },
+            {
+              "text": "3 °C",
+              "category": 1
+            },
+            {
+              "text": "8 °C",
+              "category": 1
+            }
           ]
         },
         {
@@ -88,7 +112,13 @@
           "kind": "remiseEnOrdre",
           "prompt": "Range ces nombres du plus petit au plus grand.",
           "explanation": "−9, −4, 0, 2, 6 : sur la droite graduée, on les lit de gauche à droite.",
-          "items": ["−9", "−4", "0", "2", "6"]
+          "items": [
+            "−9",
+            "−4",
+            "0",
+            "2",
+            "6"
+          ]
         }
       ]
     },
@@ -174,12 +204,27 @@
           "prompt": "Range ces calculs selon le signe de leur résultat.",
           "hint": "Lequel des deux déplacements l'emporte ?",
           "explanation": "4 + (−9) et (−3) + (−2) donnent un résultat négatif. (−6) + 10 et (−1) − (−5) donnent un résultat positif.",
-          "categories": ["Résultat négatif", "Résultat positif"],
+          "categories": [
+            "Résultat négatif",
+            "Résultat positif"
+          ],
           "items": [
-            { "text": "4 + (−9)", "category": 0 },
-            { "text": "(−3) + (−2)", "category": 0 },
-            { "text": "(−6) + 10", "category": 1 },
-            { "text": "(−1) − (−5)", "category": 1 }
+            {
+              "text": "4 + (−9)",
+              "category": 0
+            },
+            {
+              "text": "(−3) + (−2)",
+              "category": 0
+            },
+            {
+              "text": "(−6) + 10",
+              "category": 1
+            },
+            {
+              "text": "(−1) − (−5)",
+              "category": 1
+            }
           ]
         }
       ]
@@ -194,30 +239,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qu’on groupe décide du résultat",
+          "body": "Déplace le trait qui coupe le rectangle : l’aire ne change pas, mais son écriture si. Dans un calcul, ce sont les parenthèses qui disent ce qu’on regroupe — et elles ne sont jamais décoratives.",
+          "figureId": "distributivite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Trois règles, dans cet ordre",
           "body": "1. Ce qui est entre parenthèses se calcule en premier.\n\n2. Puis les multiplications et les divisions.\n\n3. Puis les additions et les soustractions.\n\nÀ égalité, on calcule de gauche à droite."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Pourquoi cela compte",
           "body": "3 + 4 × 5 ne vaut pas 35 mais 23 : la multiplication passe avant.\n\nPour obtenir 35, il faut écrire (3 + 4) × 5. Les parenthèses ne décorent pas, elles changent le résultat."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "À égalité, de gauche à droite",
           "body": "20 − 8 − 3 vaut 9, et non 15 : on calcule 20 − 8 d'abord.\n\nDe même 24 ÷ 4 × 2 vaut 12, et non 3."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "texte",
           "title": "Le produit de deux négatifs",
           "body": "Observe cette suite : 3 × (−2) = −6, puis 2 × (−2) = −4, puis 1 × (−2) = −2, puis 0 × (−2) = 0.\n\nÀ chaque pas, le résultat augmente de 2. En continuant : (−1) × (−2) = 2, et (−2) × (−2) = 4. Le produit de deux négatifs est positif, et c'est la seule suite qui reste cohérente."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -276,6 +328,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Avancer, reculer",
+          "body": "Pose un départ négatif et ajoute un nombre positif. Additionner un relatif, c’est se déplacer : vers la droite s’il est positif, vers la gauche s’il est négatif.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Repère d'abord l'opération prioritaire, puis calcule."
@@ -325,12 +384,27 @@
           "kind": "tri",
           "prompt": "Range ces calculs selon leur résultat.",
           "explanation": "3 + 2 × 4 et (−1) + 12 font 11 ; 2 × (3 + 2) et 4 + 3 × 2 font 10. Dans chaque cas, c'est la priorité qui décide : lue de gauche à droite sans règle, la première expression donnerait 20.",
-          "categories": ["Fait 11", "Fait 10"],
+          "categories": [
+            "Fait 11",
+            "Fait 10"
+          ],
           "items": [
-            { "text": "3 + 2 × 4", "category": 0 },
-            { "text": "(−1) + 12", "category": 0 },
-            { "text": "2 × (3 + 2)", "category": 1 },
-            { "text": "4 + 3 × 2", "category": 1 }
+            {
+              "text": "3 + 2 × 4",
+              "category": 0
+            },
+            {
+              "text": "(−1) + 12",
+              "category": 0
+            },
+            {
+              "text": "2 × (3 + 2)",
+              "category": 1
+            },
+            {
+              "text": "4 + 3 × 2",
+              "category": 1
+            }
           ]
         },
         {

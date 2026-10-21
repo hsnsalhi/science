@@ -48,10 +48,20 @@
           "prompt": "De quoi une cellule a-t-elle besoin pour produire son énergie ?",
           "explanation": "Du glucose et du dioxygène. Le dioxyde de carbone et l'eau sont les déchets, pas les ingrédients.",
           "options": [
-            { "text": "du glucose", "correct": true },
-            { "text": "du dioxygène", "correct": true },
-            { "text": "du dioxyde de carbone" },
-            { "text": "de l'azote" }
+            {
+              "text": "du glucose",
+              "correct": true
+            },
+            {
+              "text": "du dioxygène",
+              "correct": true
+            },
+            {
+              "text": "du dioxyde de carbone"
+            },
+            {
+              "text": "de l'azote"
+            }
           ]
         },
         {
@@ -60,9 +70,18 @@
           "prompt": "Associe chaque appareil à son rôle.",
           "explanation": "Le digestif et le respiratoire font entrer, le circulatoire transporte.",
           "pairs": [
-            { "left": "appareil digestif", "right": "fait entrer le glucose" },
-            { "left": "appareil respiratoire", "right": "fait entrer le dioxygène" },
-            { "left": "appareil circulatoire", "right": "transporte jusqu'aux cellules" }
+            {
+              "left": "appareil digestif",
+              "right": "fait entrer le glucose"
+            },
+            {
+              "left": "appareil respiratoire",
+              "right": "fait entrer le dioxygène"
+            },
+            {
+              "left": "appareil circulatoire",
+              "right": "transporte jusqu'aux cellules"
+            }
           ]
         },
         {
@@ -71,10 +90,19 @@
           "prompt": "Pourquoi survit-on des semaines sans manger mais quelques minutes sans respirer ?",
           "explanation": "Le corps stocke du glucose, sous forme de glycogène et de graisses, mais il ne stocke presque pas de dioxygène.",
           "options": [
-            { "text": "le corps stocke du glucose, mais pas le dioxygène", "correct": true },
-            { "text": "le dioxygène est plus rare que la nourriture" },
-            { "text": "la digestion est plus rapide que la respiration" },
-            { "text": "les cellules peuvent se passer de glucose" }
+            {
+              "text": "le corps stocke du glucose, mais pas le dioxygène",
+              "correct": true
+            },
+            {
+              "text": "le dioxygène est plus rare que la nourriture"
+            },
+            {
+              "text": "la digestion est plus rapide que la respiration"
+            },
+            {
+              "text": "les cellules peuvent se passer de glucose"
+            }
           ]
         },
         {
@@ -96,37 +124,44 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le trajet du glucose",
+          "body": "Suis le glucose depuis l’intestin jusqu’à la cellule. Il ne traverse la paroi qu’une fois découpé assez petit — et tout le travail de la digestion est là.",
+          "figureId": "approvisionnement"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Trop gros pour passer",
           "body": "Un morceau de pain ne peut pas entrer dans le sang : ses molécules sont bien trop grandes. L'amidon du pain est une chaîne de centaines de glucoses accrochés.\n\nDigérer, c'est défaire la chaîne. Le but n'est pas de faire disparaître l'aliment : c'est de le réduire à des molécules assez petites pour traverser une paroi."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Deux actions, pas une",
           "body": "Action mécanique : les dents broient, l'estomac brasse. Cela augmente la surface sur laquelle les enzymes peuvent agir.\n\nAction chimique : les enzymes des sucs digestifs coupent les grandes molécules. C'est elle qui fait le travail décisif ; la mécanique ne fait que l'aider."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "Le trajet",
           "formula": "bouche, œsophage, estomac, intestin grêle, gros intestin",
           "body": "Environ neuf mètres en tout, et de 24 à 48 heures de voyage."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "L'intestin grêle, l'organe clé",
           "body": "C'est là que presque tout est absorbé. Sa paroi porte des millions de replis minuscules — les villosités — qui multiplient la surface d'échange.\n\nDéplié, cet intestin couvrirait plusieurs dizaines de mètres carrés. Un tuyau lisse de la même longueur n'en offrirait qu'un demi. La surface est tout le secret."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "avertissement",
           "title": "L'estomac ne digère pas tout",
           "body": "On imagine souvent l'estomac comme le lieu de la digestion. Il n'en fait qu'une partie — surtout les protéines — et il n'absorbe presque rien.\n\nL'absorption se passe dans l'intestin grêle, pas dans l'estomac. Confondre les deux, c'est manquer le rôle de la surface."
         },
         {
-          "id": "c6",
+          "id": "c7",
           "kind": "exemple",
           "title": "Les enzymes sont spécialisées",
           "body": "L'amylase coupe l'amidon. Les protéases coupent les protéines. Les lipases coupent les graisses.\n\nChaque enzyme ne reconnaît qu'une sorte de liaison. C'est pour cela qu'il en faut plusieurs, et qu'une seule ne suffirait pas."
@@ -139,10 +174,19 @@
           "prompt": "À quoi sert la digestion ?",
           "explanation": "À réduire les grandes molécules des aliments en molécules assez petites pour traverser la paroi intestinale.",
           "options": [
-            { "text": "réduire les aliments en molécules assez petites pour passer dans le sang", "correct": true },
-            { "text": "faire disparaître les aliments" },
-            { "text": "réchauffer les aliments" },
-            { "text": "produire directement de l'énergie" }
+            {
+              "text": "réduire les aliments en molécules assez petites pour passer dans le sang",
+              "correct": true
+            },
+            {
+              "text": "faire disparaître les aliments"
+            },
+            {
+              "text": "réchauffer les aliments"
+            },
+            {
+              "text": "produire directement de l'énergie"
+            }
           ]
         },
         {
@@ -165,10 +209,19 @@
           "hint": "Celui dont la paroi est couverte de replis.",
           "explanation": "L'intestin grêle. Ses villosités multiplient la surface d'échange ; l'estomac, lui, n'absorbe presque rien.",
           "options": [
-            { "text": "l'intestin grêle", "correct": true },
-            { "text": "l'estomac" },
-            { "text": "le gros intestin" },
-            { "text": "l'œsophage" }
+            {
+              "text": "l'intestin grêle",
+              "correct": true
+            },
+            {
+              "text": "l'estomac"
+            },
+            {
+              "text": "le gros intestin"
+            },
+            {
+              "text": "l'œsophage"
+            }
           ]
         },
         {
@@ -177,9 +230,18 @@
           "prompt": "Associe chaque enzyme à ce qu'elle coupe.",
           "explanation": "Chaque enzyme ne reconnaît qu'une sorte de liaison : c'est pourquoi il en faut plusieurs.",
           "pairs": [
-            { "left": "amylase", "right": "l'amidon" },
-            { "left": "protéase", "right": "les protéines" },
-            { "left": "lipase", "right": "les graisses" }
+            {
+              "left": "amylase",
+              "right": "l'amidon"
+            },
+            {
+              "left": "protéase",
+              "right": "les protéines"
+            },
+            {
+              "left": "lipase",
+              "right": "les graisses"
+            }
           ]
         },
         {
@@ -201,31 +263,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le trajet du dioxygène",
+          "body": "Suis maintenant le dioxygène : il entre par les alvéoles, se fixe sur l’hémoglobine, et voyage jusqu’à la même cellule. Les deux chemins convergent au même endroit.",
+          "figureId": "approvisionnement"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Les alvéoles",
           "body": "L'air descend par la trachée, puis par des bronches qui se divisent une vingtaine de fois, jusqu'à des sacs minuscules : les alvéoles.\n\nIl y en a environ 300 millions. Mises à plat, elles couvriraient environ 70 mètres carrés — la moitié d'un court de tennis, dans le volume de deux poumons.\n\nC'est la même astuce que les villosités intestinales : quand il faut échanger beaucoup, il faut de la surface."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Le double circuit",
           "formula": "cœur, poumons, cœur, organes, cœur",
           "body": "Le sang passe par le cœur deux fois à chaque tour complet : une fois pour aller se charger en dioxygène, une fois pour le distribuer."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Les trois sortes de vaisseaux",
           "body": "Artères : partent du cœur, paroi épaisse et élastique pour encaisser la pression.\n\nCapillaires : si fins qu'une seule cellule y passe à la fois. C'est là, et seulement là, que les échanges se font.\n\nVeines : reviennent au cœur, paroi mince, avec des valvules pour empêcher le sang de redescendre."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Artère ne veut pas dire sang riche en dioxygène",
           "body": "La définition d'une artère est qu'elle part du cœur, pas qu'elle transporte du sang oxygéné.\n\nL'artère pulmonaire va du cœur aux poumons : elle transporte du sang pauvre en dioxygène. La veine pulmonaire, elle, en rapporte du riche.\n\nC'est l'exception qui fait rater beaucoup de contrôles."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "Où se font les échanges",
           "body": "Jamais dans les artères, jamais dans les veines. Toujours dans les capillaires.\n\nUne paroi d'une seule cellule d'épaisseur, et un débit assez lent pour que les molécules aient le temps de traverser."
@@ -238,10 +307,19 @@
           "prompt": "Dans quels vaisseaux les échanges avec les cellules se font-ils ?",
           "explanation": "Dans les capillaires. Leur paroi n'a qu'une cellule d'épaisseur et le sang y circule lentement.",
           "options": [
-            { "text": "les capillaires", "correct": true },
-            { "text": "les artères" },
-            { "text": "les veines" },
-            { "text": "dans les trois également" }
+            {
+              "text": "les capillaires",
+              "correct": true
+            },
+            {
+              "text": "les artères"
+            },
+            {
+              "text": "les veines"
+            },
+            {
+              "text": "dans les trois également"
+            }
           ]
         },
         {
@@ -256,12 +334,27 @@
           "kind": "tri",
           "prompt": "Range ces vaisseaux selon leur sens par rapport au cœur.",
           "explanation": "Les artères partent du cœur, les veines y reviennent — quel que soit le sang qu'elles transportent.",
-          "categories": ["part du cœur", "revient au cœur"],
+          "categories": [
+            "part du cœur",
+            "revient au cœur"
+          ],
           "items": [
-            { "text": "artère pulmonaire", "category": 0 },
-            { "text": "artère aorte", "category": 0 },
-            { "text": "veine pulmonaire", "category": 1 },
-            { "text": "veine cave", "category": 1 }
+            {
+              "text": "artère pulmonaire",
+              "category": 0
+            },
+            {
+              "text": "artère aorte",
+              "category": 0
+            },
+            {
+              "text": "veine pulmonaire",
+              "category": 1
+            },
+            {
+              "text": "veine cave",
+              "category": 1
+            }
           ]
         },
         {
@@ -289,10 +382,19 @@
           "prompt": "Qu'ont en commun les villosités intestinales et les alvéoles pulmonaires ?",
           "explanation": "Les deux multiplient la surface d'échange dans un volume réduit. C'est la même solution au même problème.",
           "options": [
-            { "text": "elles augmentent énormément la surface d'échange", "correct": true },
-            { "text": "elles filtrent les déchets" },
-            { "text": "elles produisent des enzymes" },
-            { "text": "elles stockent du dioxygène" }
+            {
+              "text": "elles augmentent énormément la surface d'échange",
+              "correct": true
+            },
+            {
+              "text": "elles filtrent les déchets"
+            },
+            {
+              "text": "elles produisent des enzymes"
+            },
+            {
+              "text": "elles stockent du dioxygène"
+            }
           ]
         }
       ]
@@ -307,6 +409,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux apports, une rencontre",
+          "body": "Fais passer d’un trajet à l’autre. C’est dans la cellule que le glucose et le dioxygène se rencontrent et libèrent l’énergie — et le défi en compte les débits.",
+          "figureId": "approvisionnement"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Un cœur qui ne s'arrête pas",
           "body": "Au repos, un cœur bat environ 70 fois par minute et envoie à peu près 70 millilitres de sang à chaque battement. Cela fait près de cinq litres par minute — tout le sang du corps, qui passe donc entièrement par le cœur chaque minute.\n\nSur une journée, cela représente environ 7 000 litres. Sur une vie de 80 ans, plus de 200 millions de litres, et environ 3 milliards de battements, sans une seule pause."
@@ -354,10 +463,19 @@
           "hint": "Pense à ce qui transporte le dioxygène dans le sang.",
           "explanation": "Il se fixe sur l'hémoglobine à la place du dioxygène, et bien plus solidement. Le sang circule normalement mais ne transporte plus rien : les cellules étouffent dans un corps qui respire.",
           "options": [
-            { "text": "il prend la place du dioxygène sur l'hémoglobine", "correct": true },
-            { "text": "il bouche les alvéoles" },
-            { "text": "il arrête le cœur directement" },
-            { "text": "il détruit les capillaires" }
+            {
+              "text": "il prend la place du dioxygène sur l'hémoglobine",
+              "correct": true
+            },
+            {
+              "text": "il bouche les alvéoles"
+            },
+            {
+              "text": "il arrête le cœur directement"
+            },
+            {
+              "text": "il détruit les capillaires"
+            }
           ]
         },
         {

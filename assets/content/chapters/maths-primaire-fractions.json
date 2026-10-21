@@ -51,8 +51,18 @@
           "prompt": "Complète avec les bons nombres.",
           "template": "Dans la fraction 3/5, la barre est partagée en ___ parts et on en prend ___.",
           "blanks": [
-            { "accepted": ["5", "cinq"] },
-            { "accepted": ["3", "trois"] }
+            {
+              "accepted": [
+                "5",
+                "cinq"
+              ]
+            },
+            {
+              "accepted": [
+                "3",
+                "trois"
+              ]
+            }
           ],
           "hint": "Le nombre du bas dit le nombre de parts.",
           "explanation": "5 parts en tout, et on en prend 3. Le nombre du bas partage, le nombre du haut compte.",
@@ -129,10 +139,19 @@
           "explanation": "1/4 est plus grand que 1/8 : partager en 4 donne des parts plus grosses que partager en 8.",
           "figureId": "fraction-barre",
           "options": [
-            { "text": "1/4", "correct": true },
-            { "text": "1/8" },
-            { "text": "Elles sont égales" },
-            { "text": "On ne peut pas savoir" }
+            {
+              "text": "1/4",
+              "correct": true
+            },
+            {
+              "text": "1/8"
+            },
+            {
+              "text": "Elles sont égales"
+            },
+            {
+              "text": "On ne peut pas savoir"
+            }
           ]
         },
         {
@@ -141,12 +160,27 @@
           "prompt": "Range ces fractions par rapport à une moitié.",
           "hint": "Compare le nombre du haut à la moitié du nombre du bas.",
           "explanation": "1/3 et 2/5 sont plus petites qu'une moitié ; 3/4 et 5/8 sont plus grandes. On compare toujours le haut à la moitié du bas.",
-          "categories": ["Plus petit que 1/2", "Plus grand que 1/2"],
+          "categories": [
+            "Plus petit que 1/2",
+            "Plus grand que 1/2"
+          ],
           "items": [
-            { "text": "1/3", "category": 0 },
-            { "text": "2/5", "category": 0 },
-            { "text": "3/4", "category": 1 },
-            { "text": "5/8", "category": 1 }
+            {
+              "text": "1/3",
+              "category": 0
+            },
+            {
+              "text": "2/5",
+              "category": 0
+            },
+            {
+              "text": "3/4",
+              "category": 1
+            },
+            {
+              "text": "5/8",
+              "category": 1
+            }
           ]
         },
         {
@@ -208,9 +242,18 @@
           "prompt": "Associe chaque fraction à son écriture la plus simple.",
           "explanation": "5/10 et 2/4 valent une moitié, 2/6 vaut un tiers, 4/6 vaut deux tiers. Ce sont les mêmes parts, groupées autrement.",
           "pairs": [
-            { "left": "5/10", "right": "1/2" },
-            { "left": "2/6", "right": "1/3" },
-            { "left": "4/6", "right": "2/3" }
+            {
+              "left": "5/10",
+              "right": "1/2"
+            },
+            {
+              "left": "2/6",
+              "right": "1/3"
+            },
+            {
+              "left": "4/6",
+              "right": "2/3"
+            }
           ]
         },
         {
@@ -228,12 +271,27 @@
           "kind": "tri",
           "prompt": "Range ces fractions selon qu'elles valent une moitié ou non.",
           "explanation": "3/6 et 6/12 valent exactement une moitié : le nombre du haut est la moitié du nombre du bas. Ce n'est pas le cas de 3/7 ni de 5/12.",
-          "categories": ["Vaut 1/2", "Ne vaut pas 1/2"],
+          "categories": [
+            "Vaut 1/2",
+            "Ne vaut pas 1/2"
+          ],
           "items": [
-            { "text": "3/6", "category": 0 },
-            { "text": "6/12", "category": 0 },
-            { "text": "3/7", "category": 1 },
-            { "text": "5/12", "category": 1 }
+            {
+              "text": "3/6",
+              "category": 0
+            },
+            {
+              "text": "6/12",
+              "category": 0
+            },
+            {
+              "text": "3/7",
+              "category": 1
+            },
+            {
+              "text": "5/12",
+              "category": 1
+            }
           ]
         },
         {
@@ -255,6 +313,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux barres, deux découpes",
+          "body": "Règle le nombre de parts et le nombre de coloriées, et compare les deux barres. Deux fractions d’écritures différentes peuvent recouvrir exactement la même longueur.",
+          "figureId": "fraction-barre"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense à la barre coloriée avant de répondre."
@@ -279,10 +344,19 @@
           "explanation": "5/8 dépasse la moitié, puisque 5 est plus grand que 4. Les trois autres restent en dessous.",
           "figureId": "fraction-barre",
           "options": [
-            { "text": "5/8", "correct": true },
-            { "text": "3/8" },
-            { "text": "1/3" },
-            { "text": "2/5" }
+            {
+              "text": "5/8",
+              "correct": true
+            },
+            {
+              "text": "3/8"
+            },
+            {
+              "text": "1/3"
+            },
+            {
+              "text": "2/5"
+            }
           ]
         },
         {
@@ -300,12 +374,27 @@
           "kind": "tri",
           "prompt": "Range ces fractions.",
           "explanation": "4/4 et 6/6 colorient toute la barre : elles valent un entier. 3/4 et 5/6 en laissent une part de côté.",
-          "categories": ["Vaut un entier", "Moins qu'un entier"],
+          "categories": [
+            "Vaut un entier",
+            "Moins qu'un entier"
+          ],
           "items": [
-            { "text": "4/4", "category": 0 },
-            { "text": "6/6", "category": 0 },
-            { "text": "3/4", "category": 1 },
-            { "text": "5/6", "category": 1 }
+            {
+              "text": "4/4",
+              "category": 0
+            },
+            {
+              "text": "6/6",
+              "category": 0
+            },
+            {
+              "text": "3/4",
+              "category": 1
+            },
+            {
+              "text": "5/6",
+              "category": 1
+            }
           ]
         },
         {

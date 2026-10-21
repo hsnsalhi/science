@@ -45,10 +45,19 @@
           "explanation": "L'image du premier vecteur de base. C'est la lecture la plus utile d'une matrice, et elle rend le calcul inutile dans bien des cas.",
           "figureId": "matrice",
           "options": [
-            { "text": "L'image du vecteur (1, 0)", "correct": true },
-            { "text": "L'image du vecteur (0, 1)" },
-            { "text": "Les valeurs propres" },
-            { "text": "Le noyau de l'application" }
+            {
+              "text": "L'image du vecteur (1, 0)",
+              "correct": true
+            },
+            {
+              "text": "L'image du vecteur (0, 1)"
+            },
+            {
+              "text": "Les valeurs propres"
+            },
+            {
+              "text": "Le noyau de l'application"
+            }
           ]
         },
         {
@@ -154,10 +163,19 @@
           "explanation": "Que l'image est contenue dans une droite, et que l'application n'est pas inversible : une surface a été écrasée.",
           "figureId": "matrice",
           "options": [
-            { "text": "L'image est écrasée sur une droite", "correct": true },
-            { "text": "L'application est une rotation" },
-            { "text": "L'application conserve les aires" },
-            { "text": "Les deux colonnes sont orthogonales" }
+            {
+              "text": "L'image est écrasée sur une droite",
+              "correct": true
+            },
+            {
+              "text": "L'application est une rotation"
+            },
+            {
+              "text": "L'application conserve les aires"
+            },
+            {
+              "text": "Les deux colonnes sont orthogonales"
+            }
           ]
         }
       ]
@@ -172,25 +190,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce que la matrice fait au plan",
+          "body": "Modifie les coefficients et regarde le plan se déformer. Un système a une solution unique exactement quand cette transformation n’écrase rien — et le déterminant mesure cet écrasement.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Un système est une question sur les images",
           "body": "Résoudre « M(x, y) = (p, q) », c'est demander quels vecteurs ont pour image (p, q).\n\nSi M est inversible, il y en a exactement un. Sinon, il y en a une infinité ou aucun — selon que (p, q) est sur la droite image ou non."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Les formules de Cramer",
           "formula": "x = (pd − bq) / det     y = (aq − pc) / det",
           "body": "elles n'ont de sens que si le déterminant est non nul, ce qui est exactement la condition d'inversibilité."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Le déterminant multiplie",
           "body": "Appliquer deux matrices à la suite multiplie les aires deux fois : det(MN) = det(M) × det(N).\n\nIl en découle qu'une matrice inversible a un déterminant non nul, puisque le produit avec son inverse vaut 1. La réciproque est vraie aussi."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Un déterminant très petit sans être nul est presque aussi gênant : l'inverse existe, mais il amplifie énormément la moindre erreur sur les données."
         }
@@ -232,12 +257,27 @@
           "prompt": "Range ces systèmes selon leur nombre de solutions.",
           "hint": "Calcule le déterminant d'abord.",
           "explanation": "Un déterminant non nul donne toujours une solution unique. Un déterminant nul donne zéro ou une infinité de solutions, selon le second membre.",
-          "categories": ["Une seule solution", "Zéro ou une infinité"],
+          "categories": [
+            "Une seule solution",
+            "Zéro ou une infinité"
+          ],
           "items": [
-            { "text": "a = 2, b = 0, c = 0, d = 3", "category": 0 },
-            { "text": "a = 1, b = 1, c = 0, d = 1", "category": 0 },
-            { "text": "a = 1, b = 2, c = 2, d = 4", "category": 1 },
-            { "text": "a = 3, b = 3, c = 1, d = 1", "category": 1 }
+            {
+              "text": "a = 2, b = 0, c = 0, d = 3",
+              "category": 0
+            },
+            {
+              "text": "a = 1, b = 1, c = 0, d = 1",
+              "category": 0
+            },
+            {
+              "text": "a = 1, b = 2, c = 2, d = 4",
+              "category": 1
+            },
+            {
+              "text": "a = 3, b = 3, c = 1, d = 1",
+              "category": 1
+            }
           ]
         }
       ]
@@ -252,6 +292,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le déterminant, en aire",
+          "body": "Fais varier les coefficients et observe l’aire de l’image du carré unité. C’est cela, le déterminant : un facteur d’aire, qui s’annule quand tout s’aplatit.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Devant une matrice, commence toujours par regarder ses deux colonnes : sont-elles indépendantes ?"
@@ -294,10 +341,19 @@
           "explanation": "Que l'orientation est inversée : les deux vecteurs images ont échangé leur sens de rotation.",
           "figureId": "matrice",
           "options": [
-            { "text": "L'orientation du plan est inversée", "correct": true },
-            { "text": "Les aires sont réduites" },
-            { "text": "La matrice n'est pas inversible" },
-            { "text": "Le système n'a pas de solution" }
+            {
+              "text": "L'orientation du plan est inversée",
+              "correct": true
+            },
+            {
+              "text": "Les aires sont réduites"
+            },
+            {
+              "text": "La matrice n'est pas inversible"
+            },
+            {
+              "text": "Le système n'a pas de solution"
+            }
           ]
         },
         {
@@ -306,10 +362,22 @@
           "prompt": "Associe chaque déterminant à ce qu'il dit de l'application.",
           "explanation": "Un déterminant de 1 conserve les aires, 0 les annule, −1 les conserve en retournant le plan, et 4 les quadruple.",
           "pairs": [
-            { "left": "det = 1", "right": "conserve les aires" },
-            { "left": "det = 0", "right": "écrase sur une droite" },
-            { "left": "det = −1", "right": "conserve l'aire et retourne le plan" },
-            { "left": "det = 4", "right": "quadruple les aires" }
+            {
+              "left": "det = 1",
+              "right": "conserve les aires"
+            },
+            {
+              "left": "det = 0",
+              "right": "écrase sur une droite"
+            },
+            {
+              "left": "det = −1",
+              "right": "conserve l'aire et retourne le plan"
+            },
+            {
+              "left": "det = 4",
+              "right": "quadruple les aires"
+            }
           ]
         },
         {

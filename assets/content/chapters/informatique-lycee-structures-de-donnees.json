@@ -55,10 +55,19 @@
           "prompt": "On empile 1, 2, 3 dans une pile. Qu'obtient-on en dépilant trois fois ?",
           "explanation": "3, 2, 1. Le dernier empilé sort le premier : c'est la règle LIFO.",
           "options": [
-            { "text": "3, 2, 1", "correct": true },
-            { "text": "1, 2, 3" },
-            { "text": "2, 1, 3" },
-            { "text": "1, 3, 2" }
+            {
+              "text": "3, 2, 1",
+              "correct": true
+            },
+            {
+              "text": "1, 2, 3"
+            },
+            {
+              "text": "2, 1, 3"
+            },
+            {
+              "text": "1, 3, 2"
+            }
           ]
         },
         {
@@ -67,10 +76,19 @@
           "prompt": "On enfile 1, 2, 3 dans une file. Qu'obtient-on en défilant trois fois ?",
           "explanation": "1, 2, 3. Le premier arrivé sort le premier : c'est la règle FIFO, et l'ordre est préservé.",
           "options": [
-            { "text": "1, 2, 3", "correct": true },
-            { "text": "3, 2, 1" },
-            { "text": "2, 3, 1" },
-            { "text": "l'ordre est imprévisible" }
+            {
+              "text": "1, 2, 3",
+              "correct": true
+            },
+            {
+              "text": "3, 2, 1"
+            },
+            {
+              "text": "2, 3, 1"
+            },
+            {
+              "text": "l'ordre est imprévisible"
+            }
           ]
         },
         {
@@ -79,10 +97,22 @@
           "prompt": "Associe chaque usage à la structure qui lui convient.",
           "explanation": "Le retour arrière et l'annulation défont le dernier geste : ce sont des piles. L'impression et les messages respectent l'ordre d'arrivée : ce sont des files.",
           "pairs": [
-            { "left": "bouton retour d'un navigateur", "right": "pile" },
-            { "left": "annuler dans un éditeur", "right": "pile" },
-            { "left": "file d'impression", "right": "file" },
-            { "left": "messages d'un serveur", "right": "file" }
+            {
+              "left": "bouton retour d'un navigateur",
+              "right": "pile"
+            },
+            {
+              "left": "annuler dans un éditeur",
+              "right": "pile"
+            },
+            {
+              "left": "file d'impression",
+              "right": "file"
+            },
+            {
+              "left": "messages d'un serveur",
+              "right": "file"
+            }
           ]
         },
         {
@@ -112,31 +142,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "L’ordre d’entrée n’est pas l’ordre de sortie",
+          "body": "Nourris la pile et la file des mêmes éléments, puis retire-les. Chaque structure impose sa discipline d’accès — et un dictionnaire en impose une troisième, où l’ordre ne compte plus du tout.",
+          "figureId": "pile-file"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le problème du répertoire",
           "body": "Dans une liste de 10 000 noms, chercher « Dupont » demande jusqu'à 10 000 comparaisons.\n\nDans un dictionnaire, on y accède directement. Pas en parcourant : en calculant où l'information doit se trouver."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Comment ça marche",
           "body": "1. une fonction de hachage transforme la clé en un nombre\n\n2. ce nombre désigne une case du tableau interne\n\n3. on va lire directement cette case\n\nAucun parcours : le temps d'accès ne dépend pas du nombre d'éléments."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "Le coût d'un accès",
           "formula": "liste : jusqu'à n comparaisons ; dictionnaire : une, en moyenne",
           "body": "C'est la différence entre chercher dans un tas de papiers et ouvrir le bon tiroir."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Le prix à payer",
           "body": "Un dictionnaire ne garde aucun ordre utile : il n'y a pas de « troisième élément ».\n\nDeux clés différentes peuvent tomber sur la même case — une collision. La structure sait les gérer, mais si elles sont trop nombreuses, l'accès redevient un parcours.\n\nEt une clé doit être immuable : si elle change après l'insertion, le calcul ne la retrouvera plus."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "exemple",
           "title": "Compter des mots",
           "body": "Pour compter les occurrences dans un texte, le dictionnaire est imbattable : pour chaque mot, on lit son compteur et on l'incrémente.\n\nAvec une liste, il faudrait reparcourir toute la liste des mots déjà vus à chaque mot du texte. Sur un livre entier, l'un prend une seconde et l'autre des heures."
@@ -149,10 +186,19 @@
           "prompt": "Dans un dictionnaire, combien de comparaisons faut-il en moyenne pour trouver une clé ?",
           "explanation": "Une seule, en moyenne. La fonction de hachage calcule directement la case, sans parcours.",
           "options": [
-            { "text": "une, en moyenne", "correct": true },
-            { "text": "n, où n est le nombre d'éléments" },
-            { "text": "n divisé par 2" },
-            { "text": "le logarithme de n" }
+            {
+              "text": "une, en moyenne",
+              "correct": true
+            },
+            {
+              "text": "n, où n est le nombre d'éléments"
+            },
+            {
+              "text": "n divisé par 2"
+            },
+            {
+              "text": "le logarithme de n"
+            }
           ]
         },
         {
@@ -168,11 +214,24 @@
           "prompt": "Quels inconvénients un dictionnaire a-t-il par rapport à une liste ?",
           "explanation": "Il ne conserve pas d'ordre utilisable et ses clés doivent être immuables. En revanche il accepte sans problème des valeurs de types différents, comme une liste.",
           "options": [
-            { "text": "il ne garde pas d'ordre utilisable", "correct": true },
-            { "text": "ses clés doivent être immuables", "correct": true },
-            { "text": "des collisions peuvent dégrader l'accès", "correct": true },
-            { "text": "il ne peut contenir que des nombres" },
-            { "text": "il est limité à 256 éléments" }
+            {
+              "text": "il ne garde pas d'ordre utilisable",
+              "correct": true
+            },
+            {
+              "text": "ses clés doivent être immuables",
+              "correct": true
+            },
+            {
+              "text": "des collisions peuvent dégrader l'accès",
+              "correct": true
+            },
+            {
+              "text": "il ne peut contenir que des nombres"
+            },
+            {
+              "text": "il est limité à 256 éléments"
+            }
           ]
         },
         {
@@ -194,31 +253,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui décide du parcours",
+          "body": "Compare les deux sorties. Un parcours en profondeur se fait avec une pile, un parcours en largeur avec une file : la structure choisie décide de l’ordre dans lequel on visite un arbre ou un graphe.",
+          "figureId": "pile-file"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'arbre",
           "body": "Une racine, des branches, des feuilles. Chaque nœud a un parent sauf la racine, et aucun chemin ne revient sur lui-même.\n\nLes dossiers d'un disque, le plan d'un livre, un arbre généalogique descendant : tous sont des arbres."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Hauteur et nombre de nœuds",
           "formula": "un arbre binaire de hauteur h a au plus 2^(h+1) − 1 nœuds",
           "body": "Une hauteur de 10 suffit pour plus de deux mille nœuds, et de 20 pour plus d'un million. C'est pourquoi chercher dans un arbre équilibré est si rapide."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Le graphe",
           "body": "Des sommets, et des arêtes entre eux. Pas de racine, pas de hiérarchie, et les cycles sont permis.\n\nUn réseau social, un plan de métro, les routes entre des villes : des graphes. Un arbre n'est qu'un graphe particulier — connexe et sans cycle."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "etape",
           "title": "Les deux parcours",
           "body": "En profondeur : on s'enfonce aussi loin que possible avant de revenir. Il se programme avec une pile — ou par récursivité, qui en utilise une sans le dire.\n\nEn largeur : on visite tous les voisins avant d'aller plus loin. Il se programme avec une file, et c'est lui qui donne le plus court chemin en nombre d'étapes."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "La structure choisit le parcours",
           "body": "Pile donne la profondeur, file donne la largeur. Le reste du code est identique.\n\nC'est l'un des plus jolis faits de l'algorithmique : changer une seule structure change la stratégie entière."
@@ -246,8 +312,14 @@
           "prompt": "Associe chaque parcours à la structure qui le produit.",
           "explanation": "La pile fait repartir du plus récent, donc on s'enfonce. La file fait repartir du plus ancien, donc on avance par couches.",
           "pairs": [
-            { "left": "parcours en profondeur", "right": "pile" },
-            { "left": "parcours en largeur", "right": "file" }
+            {
+              "left": "parcours en profondeur",
+              "right": "pile"
+            },
+            {
+              "left": "parcours en largeur",
+              "right": "file"
+            }
           ]
         },
         {
@@ -256,10 +328,19 @@
           "prompt": "Lequel des deux parcours donne le plus court chemin en nombre d'étapes ?",
           "explanation": "Le parcours en largeur. Il visite les sommets par distance croissante, donc le premier chemin trouvé est le plus court.",
           "options": [
-            { "text": "le parcours en largeur", "correct": true },
-            { "text": "le parcours en profondeur" },
-            { "text": "les deux, indifféremment" },
-            { "text": "aucun : il faut un autre algorithme" }
+            {
+              "text": "le parcours en largeur",
+              "correct": true
+            },
+            {
+              "text": "le parcours en profondeur"
+            },
+            {
+              "text": "les deux, indifféremment"
+            },
+            {
+              "text": "aucun : il faut un autre algorithme"
+            }
           ]
         },
         {
@@ -274,12 +355,27 @@
           "kind": "tri",
           "prompt": "Range ces objets : arbre ou graphe sans être un arbre ?",
           "explanation": "Les dossiers et le plan d'un livre ont une racine et aucun cycle. Un plan de métro et un réseau social ont des cycles.",
-          "categories": ["arbre", "graphe, pas un arbre"],
+          "categories": [
+            "arbre",
+            "graphe, pas un arbre"
+          ],
           "items": [
-            { "text": "les dossiers d'un disque dur", "category": 0 },
-            { "text": "le plan d'un livre", "category": 0 },
-            { "text": "un plan de métro", "category": 1 },
-            { "text": "un réseau social", "category": 1 }
+            {
+              "text": "les dossiers d'un disque dur",
+              "category": 0
+            },
+            {
+              "text": "le plan d'un livre",
+              "category": 0
+            },
+            {
+              "text": "un plan de métro",
+              "category": 1
+            },
+            {
+              "text": "un réseau social",
+              "category": 1
+            }
           ]
         }
       ]
@@ -294,6 +390,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le coût décide",
+          "body": "Fais grossir la taille des données et compare les courbes. Choisir une structure, c’est choisir laquelle de ces courbes on va suivre — et c’est le vrai métier.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le vrai métier",
           "body": "Toutes ces structures savent stocker des données. Le travail d'un programmeur n'est pas de savoir laquelle existe, mais laquelle coûte le moins cher pour ce qu'il va en faire.\n\nUn dictionnaire est imbattable pour chercher par clé, et inutile pour garder un ordre. Une liste est parfaite pour parcourir, médiocre pour chercher. Une file préserve l'équité, une pile l'inverse.\n\nLa question n'est jamais « quelle est la meilleure structure ». Elle est « que vais-je demander le plus souvent ».\n\nUn exemple qui tranche : les parenthèses d'une expression. Pile un signe ouvrant à chaque fois que tu en vois un, dépile à chaque signe fermant en vérifiant qu'il correspond. À la fin, la pile doit être vide. Aucune autre structure ne rend ce problème aussi simple."
@@ -306,10 +409,19 @@
           "prompt": "Tu dois vérifier qu'une expression a ses parenthèses bien fermées. Quelle structure ?",
           "explanation": "Une pile. Chaque parenthèse fermante doit correspondre à la dernière ouvrante encore en attente : c'est exactement du LIFO.",
           "options": [
-            { "text": "une pile", "correct": true },
-            { "text": "une file" },
-            { "text": "un dictionnaire" },
-            { "text": "un graphe" }
+            {
+              "text": "une pile",
+              "correct": true
+            },
+            {
+              "text": "une file"
+            },
+            {
+              "text": "un dictionnaire"
+            },
+            {
+              "text": "un graphe"
+            }
           ]
         },
         {
@@ -318,10 +430,19 @@
           "prompt": "Tu dois trouver le plus court trajet en métro, en nombre de stations. Quoi ?",
           "explanation": "Un parcours en largeur sur le graphe du réseau : il visite les stations par distance croissante, donc la première arrivée est la plus proche.",
           "options": [
-            { "text": "un parcours en largeur sur un graphe", "correct": true },
-            { "text": "un parcours en profondeur sur un graphe" },
-            { "text": "un tri de la liste des stations" },
-            { "text": "un dictionnaire des stations" }
+            {
+              "text": "un parcours en largeur sur un graphe",
+              "correct": true
+            },
+            {
+              "text": "un parcours en profondeur sur un graphe"
+            },
+            {
+              "text": "un tri de la liste des stations"
+            },
+            {
+              "text": "un dictionnaire des stations"
+            }
           ]
         },
         {
@@ -330,10 +451,19 @@
           "prompt": "Tu veux savoir si un mot figure parmi 500 000 mots, le plus vite possible. Quoi ?",
           "explanation": "Un dictionnaire — ou un ensemble, qui en est la version sans valeurs. L'accès ne dépend pas du nombre de mots.",
           "options": [
-            { "text": "un dictionnaire ou un ensemble", "correct": true },
-            { "text": "une liste parcourue du début" },
-            { "text": "une pile" },
-            { "text": "une file" }
+            {
+              "text": "un dictionnaire ou un ensemble",
+              "correct": true
+            },
+            {
+              "text": "une liste parcourue du début"
+            },
+            {
+              "text": "une pile"
+            },
+            {
+              "text": "une file"
+            }
           ]
         },
         {

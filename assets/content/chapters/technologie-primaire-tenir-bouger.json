@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le triangle ne se déforme pas",
+          "body": "Choisis deux angles : le troisième est imposé, et la forme est fixée. C’est pour cela qu’on met des diagonales dans les charpentes — un triangle ne peut pas se déformer sans casser.",
+          "figureId": "angles-triangle"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Pourquoi ça tombe",
           "body": "Pose une bouteille sur la table : elle tient. Pose-la sur son bouchon : elle tombe.\n\nC'est la même bouteille. Ce qui change, c'est la largeur de ce qui touche la table."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Deux règles simples",
           "body": "Plus la base est large, mieux l'objet tient.\n\nPlus le poids est bas, mieux il tient aussi. Une tour de cubes avec les gros cubes en bas tient bien mieux que l'inverse."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Le triangle ne se déforme pas",
           "body": "Fabrique un carré avec quatre baguettes attachées aux coins : il se tord, il s'aplatit.\n\nFais un triangle avec trois baguettes : impossible de le déformer. C'est pour cela qu'on voit des triangles dans les grues, les ponts et les charpentes."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -46,10 +53,19 @@
           "hint": "Où mettre les gros cubes ?",
           "explanation": "Les gros cubes en bas : la base est large et le poids est bas, les deux conditions sont réunies.",
           "options": [
-            { "text": "Les gros cubes en bas, les petits en haut", "correct": true },
-            { "text": "Les petits cubes en bas, les gros en haut" },
-            { "text": "Les cubes en alternance" },
-            { "text": "Cela ne change rien" }
+            {
+              "text": "Les gros cubes en bas, les petits en haut",
+              "correct": true
+            },
+            {
+              "text": "Les petits cubes en bas, les gros en haut"
+            },
+            {
+              "text": "Les cubes en alternance"
+            },
+            {
+              "text": "Cela ne change rien"
+            }
           ]
         },
         {
@@ -59,10 +75,19 @@
           "hint": "Essaie de déformer un triangle en papier.",
           "explanation": "Parce qu'un triangle ne se déforme pas. Un carré, lui, s'aplatit en losange si on pousse sur un coin.",
           "options": [
-            { "text": "Parce qu'un triangle ne se déforme pas", "correct": true },
-            { "text": "Parce que c'est plus joli" },
-            { "text": "Parce que cela coûte moins cher" },
-            { "text": "Pour laisser passer le vent" }
+            {
+              "text": "Parce qu'un triangle ne se déforme pas",
+              "correct": true
+            },
+            {
+              "text": "Parce que c'est plus joli"
+            },
+            {
+              "text": "Parce que cela coûte moins cher"
+            },
+            {
+              "text": "Pour laisser passer le vent"
+            }
           ]
         },
         {
@@ -71,12 +96,27 @@
           "prompt": "Range ces objets selon leur stabilité.",
           "hint": "Regarde la largeur de la base.",
           "explanation": "Une pyramide et une pile de gros cubes ont une base large. Un bâton planté et un verre sur son bord ont une base minuscule.",
-          "categories": ["Tient bien", "Tombe facilement"],
+          "categories": [
+            "Tient bien",
+            "Tombe facilement"
+          ],
           "items": [
-            { "text": "une pyramide", "category": 0 },
-            { "text": "une pile de gros cubes", "category": 0 },
-            { "text": "un bâton planté droit", "category": 1 },
-            { "text": "un verre posé sur son bord", "category": 1 }
+            {
+              "text": "une pyramide",
+              "category": 0
+            },
+            {
+              "text": "une pile de gros cubes",
+              "category": 0
+            },
+            {
+              "text": "un bâton planté droit",
+              "category": 1
+            },
+            {
+              "text": "un verre posé sur son bord",
+              "category": 1
+            }
           ]
         },
         {
@@ -138,10 +178,19 @@
           "explanation": "Oui : le sens s'inverse deux fois, et deux inversions ramènent au sens de départ.",
           "figureId": "engrenages",
           "options": [
-            { "text": "Oui, dans le même sens", "correct": true },
-            { "text": "Non, en sens contraire" },
-            { "text": "Elle ne tourne pas" },
-            { "text": "Cela dépend de sa taille" }
+            {
+              "text": "Oui, dans le même sens",
+              "correct": true
+            },
+            {
+              "text": "Non, en sens contraire"
+            },
+            {
+              "text": "Elle ne tourne pas"
+            },
+            {
+              "text": "Cela dépend de sa taille"
+            }
           ]
         },
         {
@@ -152,10 +201,19 @@
           "explanation": "Non : avec quatre roues, il y a trois inversions, et la dernière tourne à l'envers de la première.",
           "figureId": "engrenages",
           "options": [
-            { "text": "Non, en sens contraire", "correct": true },
-            { "text": "Oui, dans le même sens" },
-            { "text": "Elle tourne deux fois plus vite" },
-            { "text": "Elle ne tourne pas" }
+            {
+              "text": "Non, en sens contraire",
+              "correct": true
+            },
+            {
+              "text": "Oui, dans le même sens"
+            },
+            {
+              "text": "Elle tourne deux fois plus vite"
+            },
+            {
+              "text": "Elle ne tourne pas"
+            }
           ]
         },
         {
@@ -164,12 +222,27 @@
           "prompt": "Dans ces objets, qu'est-ce qui transmet le mouvement ?",
           "hint": "Cherche ce qui relie la source au reste.",
           "explanation": "La chaîne du vélo et les roues dentées de l'horloge transportent le mouvement. La selle et le cadran ne bougent pas.",
-          "categories": ["Transmet le mouvement", "Ne transmet rien"],
+          "categories": [
+            "Transmet le mouvement",
+            "Ne transmet rien"
+          ],
           "items": [
-            { "text": "la chaîne d'un vélo", "category": 0 },
-            { "text": "les roues dentées d'une horloge", "category": 0 },
-            { "text": "la selle du vélo", "category": 1 },
-            { "text": "le cadran de l'horloge", "category": 1 }
+            {
+              "text": "la chaîne d'un vélo",
+              "category": 0
+            },
+            {
+              "text": "les roues dentées d'une horloge",
+              "category": 0
+            },
+            {
+              "text": "la selle du vélo",
+              "category": 1
+            },
+            {
+              "text": "le cadran de l'horloge",
+              "category": 1
+            }
           ]
         }
       ]
@@ -237,10 +310,19 @@
           "hint": "Tu acceptes d'aller moins vite.",
           "explanation": "Pédaler vite pour avancer lentement : on échange de la vitesse contre de la force, et c'est le seul échange possible.",
           "options": [
-            { "text": "Pédaler vite et avancer lentement", "correct": true },
-            { "text": "Pédaler lentement et avancer vite" },
-            { "text": "Pédaler vite et avancer vite" },
-            { "text": "Cela ne change rien" }
+            {
+              "text": "Pédaler vite et avancer lentement",
+              "correct": true
+            },
+            {
+              "text": "Pédaler lentement et avancer vite"
+            },
+            {
+              "text": "Pédaler vite et avancer vite"
+            },
+            {
+              "text": "Cela ne change rien"
+            }
           ]
         },
         {
@@ -262,6 +344,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Tenir, ou laisser bouger",
+          "body": "Lance les roues : elles sont liées et pourtant chacune tourne. Une structure doit tenir, un mécanisme doit bouger — et le défi demande de dire, pièce par pièce, lequel des deux rôles chacune joue.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pense à des objets que tu connais : un vélo, une horloge, une grue."
@@ -287,10 +376,19 @@
           "explanation": "Oui : avec cinq roues il y a quatre inversions, et un nombre pair d'inversions ramène au sens de départ.",
           "figureId": "engrenages",
           "options": [
-            { "text": "Oui, dans le même sens", "correct": true },
-            { "text": "Non, en sens contraire" },
-            { "text": "Elle ne tourne pas" },
-            { "text": "Elle tourne cinq fois plus vite" }
+            {
+              "text": "Oui, dans le même sens",
+              "correct": true
+            },
+            {
+              "text": "Non, en sens contraire"
+            },
+            {
+              "text": "Elle ne tourne pas"
+            },
+            {
+              "text": "Elle tourne cinq fois plus vite"
+            }
           ]
         },
         {
@@ -300,10 +398,19 @@
           "hint": "Elle soulève des charges très haut.",
           "explanation": "Pour ne pas basculer : elle porte des charges très haut, donc il lui faut une base d'autant plus large.",
           "options": [
-            { "text": "Pour ne pas basculer", "correct": true },
-            { "text": "Pour aller plus vite" },
-            { "text": "Pour être plus légère" },
-            { "text": "Pour tourner plus facilement" }
+            {
+              "text": "Pour ne pas basculer",
+              "correct": true
+            },
+            {
+              "text": "Pour aller plus vite"
+            },
+            {
+              "text": "Pour être plus légère"
+            },
+            {
+              "text": "Pour tourner plus facilement"
+            }
           ]
         },
         {
@@ -312,8 +419,14 @@
           "prompt": "Associe chaque forme à ce qu'elle fait.",
           "explanation": "Le triangle garde sa forme quoi qu'il arrive ; le carré s'aplatit en losange dès qu'on pousse sur un coin.",
           "pairs": [
-            { "left": "le triangle", "right": "ne se déforme pas" },
-            { "left": "le carré", "right": "s'aplatit en losange" }
+            {
+              "left": "le triangle",
+              "right": "ne se déforme pas"
+            },
+            {
+              "left": "le carré",
+              "right": "s'aplatit en losange"
+            }
           ]
         },
         {

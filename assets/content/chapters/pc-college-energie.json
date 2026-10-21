@@ -131,25 +131,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Doubler la vitesse ne double pas tout",
+          "body": "Double la vitesse du mobile. Son énergie, elle, est multipliée par quatre, parce qu’elle dépend du carré — et c’est ce carré qui rend un choc à 70 sans commune mesure avec un choc à 50.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La formule, et le carré",
           "formula": "Ec = ½ × m × v × v",
           "body": "La masse intervient une fois, la vitesse deux fois. Doubler la masse double l'énergie ; doubler la vitesse la multiplie par quatre. Ce n'est pas un détail d'écriture : c'est la clé de tout le chapitre."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Une voiture de mille kilogrammes",
           "body": "À 50 km/h, soit environ 14 m/s : Ec = ½ × 1 000 × 14 × 14 ≈ 98 000 joules.\n\nÀ 100 km/h, soit 28 m/s : Ec = ½ × 1 000 × 28 × 28 ≈ 392 000 joules.\n\nQuatre fois plus, pour une vitesse deux fois plus grande. Et toute cette énergie devra être dissipée par les freins, ou par la déformation de la carrosserie."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "avertissement",
           "title": "La distance d'arrêt suit le carré",
           "body": "Les freins dissipent une énergie à peu près proportionnelle à la distance parcourue. Si l'énergie quadruple, la distance de freinage quadruple.\n\nLa règle enseignée en auto-école : la distance d'arrêt sur route sèche vaut à peu près le carré du chiffre des dizaines, en mètres. À 50 km/h, 5² = 25 m. À 90, 9² = 81 m. À 130, 13² = 169 m.\n\nEntre 90 et 130 km/h, la vitesse augmente de moins de la moitié et la distance d'arrêt double."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Pourquoi un choc à 70 n'est pas « un peu pire » qu'à 50",
           "body": "70 ÷ 50 vaut 1,4. Mais 1,4 × 1,4 vaut presque 2 : l'énergie à dissiper est le double.\n\nLes structures d'une voiture sont conçues pour absorber une énergie donnée. Doubler cette énergie ne double pas les dégâts : cela dépasse ce que la structure sait encaisser.\n\nC'est le raisonnement physique derrière les limitations de vitesse, et il n'a rien d'arbitraire."
@@ -225,19 +232,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui entre, ce qui sert",
+          "body": "Touche chaque étage et lis le rendement global. La puissance dit à quelle cadence l’énergie traverse la chaîne ; le rendement dit combien il en reste à la fin.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La puissance",
           "formula": "P = E ÷ t",
           "body": "En watts, soit des joules par seconde. La puissance est un débit d'énergie : elle dit à quelle vitesse l'énergie est transférée, pas combien il y en a."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Des ordres de grandeur utiles",
           "body": "Une ampoule LED : 8 W. Un ordinateur portable : 50 W. Un téléviseur : 100 W.\n\nUn réfrigérateur : 150 W en marche, mais il s'arrête souvent.\n\nUn four : 2 000 W. Une plaque à induction : 2 000 W. Un radiateur électrique : 1 500 W.\n\nUn humain au repos : environ 100 W, soit une ampoule à filament. En effort intense : 400 W pendant quelques minutes."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Le kilowattheure, et pourquoi on le préfère",
           "body": "Un joule est minuscule : un radiateur en consomme cinq millions quand il tourne une heure. On utilise donc le kilowattheure, c'est-à-dire mille watts pendant une heure.\n\n1 kWh vaut 3 600 000 joules. Ce n'est pas une unité plus savante : c'est seulement une unité de la bonne taille pour une facture.\n\nUne maison française consomme de l'ordre de 10 à 15 kWh par jour hors chauffage."
@@ -329,12 +343,19 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le temps de réaction, puis le freinage",
+          "body": "Règle une vitesse et regarde la distance parcourue. Pendant la seconde de réaction, le véhicule avance à pleine vitesse sans que rien ne freine : c’est la première part de la distance d’arrêt.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "La distance d'arrêt se décompose",
           "body": "La distance de réaction : ce qu'on parcourt avant que la pédale ne bouge. Avec un temps de réaction de 1 seconde, elle vaut simplement la vitesse en mètres par seconde. Elle est proportionnelle à la vitesse.\n\nLa distance de freinage : ce qu'on parcourt pédale enfoncée. Elle suit le carré de la vitesse.\n\nC'est la somme des deux qui compte, et la seconde finit toujours par dominer la première."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Le calcul à trois vitesses",
           "body": "À 50 km/h, soit 14 m/s : 14 m de réaction, et environ 14 m de freinage. Total 28 m.\n\nÀ 100 km/h, soit 28 m/s : 28 m de réaction, et environ 56 m de freinage. Total 84 m.\n\nLa vitesse a doublé. La réaction a doublé, le freinage a quadruplé, et le total a triplé.\n\nC'est exactement pourquoi un piéton qui serait évité à 50 km/h est heurté à 100 : la voiture n'a même pas commencé à ralentir au point où l'autre se serait arrêtée."

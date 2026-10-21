@@ -45,10 +45,19 @@
           "explanation": "Depuis n'importe laquelle. C'est exactement ce qui interdit de désigner un centre à l'expansion.",
           "figureId": "expansion",
           "options": [
-            { "text": "Depuis n'importe laquelle", "correct": true },
-            { "text": "Depuis la nôtre seulement" },
-            { "text": "Depuis celle du centre" },
-            { "text": "Depuis celles du bord" }
+            {
+              "text": "Depuis n'importe laquelle",
+              "correct": true
+            },
+            {
+              "text": "Depuis la nôtre seulement"
+            },
+            {
+              "text": "Depuis celle du centre"
+            },
+            {
+              "text": "Depuis celles du bord"
+            }
           ]
         },
         {
@@ -77,10 +86,19 @@
           "explanation": "L'uniformité de l'expansion : toutes les distances sont multipliées par le même facteur, donc les écarts croissent proportionnellement à leur taille.",
           "figureId": "expansion",
           "options": [
-            { "text": "Toutes les distances sont multipliées par le même facteur", "correct": true },
-            { "text": "Les galaxies lointaines sont plus massives" },
-            { "text": "La gravitation diminue avec la distance" },
-            { "text": "La lumière met plus de temps à nous parvenir" }
+            {
+              "text": "Toutes les distances sont multipliées par le même facteur",
+              "correct": true
+            },
+            {
+              "text": "Les galaxies lointaines sont plus massives"
+            },
+            {
+              "text": "La gravitation diminue avec la distance"
+            },
+            {
+              "text": "La lumière met plus de temps à nous parvenir"
+            }
           ]
         }
       ]
@@ -95,24 +113,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Remonter l’expansion donne un âge",
+          "body": "Fais reculer l’expansion : tout se rapproche. En divisant la distance des galaxies par leur vitesse de fuite, on obtient un temps — et ce temps est l’âge de l’Univers, au premier ordre.",
+          "figureId": "expansion"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Un âge, par un calcul grossier",
           "body": "Si l'expansion s'était faite à vitesse constante, le temps écoulé depuis que tout était concentré vaudrait l'inverse de la constante de Hubble.\n\nCe temps de Hubble donne environ 14 milliards d'années. L'expansion n'a pas été constante, mais le hasard des corrections fait que l'ordre de grandeur tient."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Le fond diffus cosmologique",
           "body": "En remontant, l'Univers était plus dense et plus chaud. Avant 380 000 ans, il était ionisé et opaque à la lumière.\n\nAu moment où les électrons se sont liés aux noyaux, il est devenu transparent, et la lumière alors libérée voyage encore. C'est le fond diffus, découvert par hasard en 1965."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Pourquoi il est si froid",
           "body": "Ce rayonnement avait la température d'un plasma, environ 3 000 kelvins.\n\nL'expansion a étiré ses longueurs d'onde d'un facteur voisin de mille cent depuis. Il nous arrive à 2,7 kelvins, dans le domaine des micro-ondes, et il est d'une uniformité remarquable."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Ses minuscules irrégularités, un cent-millième de la température moyenne, sont les germes des galaxies actuelles. L'image la plus ancienne qu'on puisse obtenir est aussi le plan de ce qui a suivi."
         }
@@ -155,10 +180,19 @@
           "hint": "Qu'est-ce qui diffuse la lumière ?",
           "explanation": "Parce que la matière était ionisée : les électrons libres diffusaient sans cesse les photons, qui ne pouvaient pas se propager.",
           "options": [
-            { "text": "La matière était ionisée et diffusait la lumière", "correct": true },
-            { "text": "Il n'y avait pas encore de lumière" },
-            { "text": "Les galaxies bloquaient le passage" },
-            { "text": "La poussière absorbait tout" }
+            {
+              "text": "La matière était ionisée et diffusait la lumière",
+              "correct": true
+            },
+            {
+              "text": "Il n'y avait pas encore de lumière"
+            },
+            {
+              "text": "Les galaxies bloquaient le passage"
+            },
+            {
+              "text": "La poussière absorbait tout"
+            }
           ]
         }
       ]
@@ -173,24 +207,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui fait fuir les galaxies",
+          "body": "Observe la fuite s’accélérer avec la distance. Rien de ce qu’on voit ne suffit à expliquer ce comportement : c’est ce manque qu’on appelle matière noire et énergie noire.",
+          "figureId": "expansion"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "La matière noire",
           "body": "Les étoiles des galaxies spirales tournent bien plus vite que la masse visible ne le permettrait : loin du centre, leur vitesse ne décroît pas.\n\nLa même anomalie apparaît dans les amas, et dans les effets de lentille gravitationnelle. Quelque chose de massif et de non lumineux est présent."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "L'énergie noire",
           "body": "En 1998, deux équipes mesurent les supernovas lointaines et trouvent l'expansion plus rapide aujourd'hui qu'il y a cinq milliards d'années.\n\nElle accélère, alors que la gravitation devrait la freiner. On nomme énergie noire ce qui produit cet effet, sans savoir ce que c'est."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Le bilan",
           "body": "Environ 5 % de matière ordinaire, 27 % de matière noire, 68 % d'énergie noire.\n\nAutrement dit, tout ce que l'astronomie observait avant le vingtième siècle représente un vingtième du contenu, et les deux autres termes portent des noms qui disent surtout notre ignorance."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "« Noire » ne veut pas dire mystérieuse par nature. Cela veut dire : nous en mesurons les effets gravitationnels avec précision, et nous ignorons sa composition."
         }
@@ -223,10 +264,19 @@
           "hint": "Une vitesse qui ne décroît pas.",
           "explanation": "Les courbes de rotation : loin du centre, les étoiles tournent trop vite pour la masse visible.",
           "options": [
-            { "text": "Les courbes de rotation des galaxies", "correct": true },
-            { "text": "La couleur des étoiles" },
-            { "text": "Le fond diffus cosmologique" },
-            { "text": "Les supernovas lointaines" }
+            {
+              "text": "Les courbes de rotation des galaxies",
+              "correct": true
+            },
+            {
+              "text": "La couleur des étoiles"
+            },
+            {
+              "text": "Le fond diffus cosmologique"
+            },
+            {
+              "text": "Les supernovas lointaines"
+            }
           ]
         },
         {
@@ -235,12 +285,27 @@
           "prompt": "Range ces observations selon ce qu'elles ont révélé.",
           "hint": "Rotation et lentilles d'un côté, supernovas de l'autre.",
           "explanation": "Les courbes de rotation et les lentilles pèsent la masse manquante. Les supernovas lointaines ont montré l'accélération de l'expansion.",
-          "categories": ["Matière noire", "Énergie noire"],
+          "categories": [
+            "Matière noire",
+            "Énergie noire"
+          ],
           "items": [
-            { "text": "les courbes de rotation des spirales", "category": 0 },
-            { "text": "les lentilles gravitationnelles des amas", "category": 0 },
-            { "text": "les supernovas lointaines de 1998", "category": 1 },
-            { "text": "l'accélération de l'expansion", "category": 1 }
+            {
+              "text": "les courbes de rotation des spirales",
+              "category": 0
+            },
+            {
+              "text": "les lentilles gravitationnelles des amas",
+              "category": 0
+            },
+            {
+              "text": "les supernovas lointaines de 1998",
+              "category": 1
+            },
+            {
+              "text": "l'accélération de l'expansion",
+              "category": 1
+            }
           ]
         }
       ]
@@ -255,6 +320,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Aucun centre",
+          "body": "Change de galaxie de référence : toutes les autres s’éloignent, quelle que soit celle qu’on choisit. L’Univers n’a pas de centre, et c’est la première chose que le défi met à l’épreuve.",
+          "figureId": "expansion"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Distingue bien ce qui est mesuré de ce qui est nommé faute de mieux."
@@ -297,10 +369,19 @@
           "hint": "Ce n'est pas une qualité intrinsèque.",
           "explanation": "Qu'elle n'émet ni n'absorbe de lumière : on ne la détecte que par ses effets gravitationnels.",
           "options": [
-            { "text": "Qu'elle n'émet ni n'absorbe de lumière", "correct": true },
-            { "text": "Qu'elle est de couleur noire" },
-            { "text": "Qu'elle absorbe toute la lumière" },
-            { "text": "Qu'elle est inconnaissable par principe" }
+            {
+              "text": "Qu'elle n'émet ni n'absorbe de lumière",
+              "correct": true
+            },
+            {
+              "text": "Qu'elle est de couleur noire"
+            },
+            {
+              "text": "Qu'elle absorbe toute la lumière"
+            },
+            {
+              "text": "Qu'elle est inconnaissable par principe"
+            }
           ]
         },
         {
@@ -316,10 +397,22 @@
           "prompt": "Associe chaque observation à ce qu'elle établit.",
           "explanation": "Quatre observations, quatre conclusions, chacune indépendante des autres — c'est leur convergence qui fait la solidité du modèle.",
           "pairs": [
-            { "left": "la loi de Hubble", "right": "l'Univers est en expansion" },
-            { "left": "le fond diffus", "right": "il a été chaud et dense" },
-            { "left": "les courbes de rotation", "right": "il contient de la masse invisible" },
-            { "left": "les supernovas lointaines", "right": "l'expansion accélère" }
+            {
+              "left": "la loi de Hubble",
+              "right": "l'Univers est en expansion"
+            },
+            {
+              "left": "le fond diffus",
+              "right": "il a été chaud et dense"
+            },
+            {
+              "left": "les courbes de rotation",
+              "right": "il contient de la masse invisible"
+            },
+            {
+              "left": "les supernovas lointaines",
+              "right": "l'expansion accélère"
+            }
           ]
         }
       ]

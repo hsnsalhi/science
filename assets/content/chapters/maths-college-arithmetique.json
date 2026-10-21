@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un rectangle complet, ou un reste",
+          "body": "Règle les lignes sur 3 et cherche un nombre de colonnes qui tombe juste. Un nombre est divisible par 3 quand il remplit exactement un rectangle de trois lignes.",
+          "figureId": "jetons-multiplication"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Les six critères utiles",
           "body": "Par 2 : le chiffre des unités est 0, 2, 4, 6 ou 8.\n\nPar 5 : le chiffre des unités est 0 ou 5.\n\nPar 10 : le chiffre des unités est 0.\n\nPar 4 : le nombre formé par les deux derniers chiffres est divisible par 4.\n\nPar 3 : la somme des chiffres est divisible par 3.\n\nPar 9 : la somme des chiffres est divisible par 9."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Pourquoi le critère de 3 marche",
           "body": "Prends 237. On peut l'écrire 2 × 100 + 3 × 10 + 7.\n\nOr 100 = 99 + 1 et 10 = 9 + 1. Donc 237 = 2 × 99 + 3 × 9 + (2 + 3 + 7).\n\nLes deux premiers morceaux sont des multiples de 3, puisque 99 et 9 le sont. Il ne reste donc que la somme des chiffres à tester.\n\nCe n'est pas une astuce : c'est une démonstration, et elle marche pour n'importe quel nombre de chiffres."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Pourquoi il n'y a pas de critère simple pour 7",
           "body": "Le critère de 3 et celui de 9 marchent parce que 10 vaut 1 de plus qu'un multiple de 9.\n\nPour 7, 10 ne vaut pas 1 de plus qu'un multiple de 7 : il vaut 3 de plus. Les chiffres se retrouvent alors multipliés par 1, 3, 2, 6, 4, 5, puis ça recommence — une suite trop pénible pour servir.\n\nIl est plus rapide de diviser. Savoir pourquoi un outil n'existe pas évite de le chercher."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Divisible par 6, par 12, par 15",
           "body": "Par 6 : il faut être divisible par 2 ET par 3, puisque 6 = 2 × 3 et que 2 et 3 n'ont aucun diviseur commun.\n\nPar 15 : par 3 et par 5.\n\nAttention : par 12 il ne suffit pas d'être divisible par 2 et par 6 — il faut par 4 et par 3. On décompose toujours en facteurs sans diviseur commun. 36 le montre : divisible par 2 et par 6, et bien divisible par 12 ; mais 18 l'est aussi par 2 et par 6, et ne l'est pas par 12."
@@ -295,19 +302,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Quand les deux roues se retrouvent",
+          "body": "Lance les roues et règle le nombre de dents de la menée, puis regarde les deux compteurs. Elles ne repassent ensemble par leur position de départ qu’au bout d’un nombre de dents qui est leur plus petit multiple commun.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Deux bus qui repartent ensemble",
           "body": "Un bus passe toutes les 12 minutes, un autre toutes les 18. Ils partent ensemble à 8 h. Quand repartiront-ils ensemble ?\n\nLes multiples de 12 : 12, 24, 36, 48…\n\nLes multiples de 18 : 18, 36, 54…\n\nLe premier commun est 36. Ils repartiront ensemble à 8 h 36, puis toutes les 36 minutes."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La relation avec le PGCD",
           "formula": "PGCD × PPCM = a × b",
           "body": "Pour 12 et 18 : le PGCD vaut 6, donc le PPCM vaut 12 × 18 ÷ 6 = 36. On obtient l'un dès qu'on a l'autre, sans chercher de multiple commun."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Le PPCM pour additionner des fractions",
           "body": "Pour additionner 1/12 et 1/18, on cherche un dénominateur commun. Le produit 216 marche, mais le PPCM 36 est bien plus commode.\n\n1/12 = 3/36 et 1/18 = 2/36, donc la somme vaut 5/36 — déjà irréductible.\n\nPasser par le produit aurait donné 30/216, qu'il aurait fallu simplifier ensuite. Le PPCM fait gagner cette étape à chaque fois."
@@ -376,12 +390,19 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux roues dentées",
+          "body": "Règle le nombre de dents de chaque roue et observe le rapport. Le défi demande au bout de combien de tours elles se retrouvent — et la réponse est un PPCM.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le premier : deux roues dentées",
           "body": "Une roue de 24 dents entraîne une roue de 18 dents. On marque une dent sur chacune, face à face au départ.\n\nAprès combien de dents engrenées les deux marques se retrouveront-elles face à face ?\n\nIl faut un nombre de dents qui soit à la fois un multiple de 24 et de 18 : c'est le PPCM, soit 72. La grande roue aura fait 3 tours et la petite 4."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Le second : carreler sans couper",
           "body": "Une pièce mesure 180 cm sur 144 cm. On veut la carreler avec des carreaux carrés, tous identiques, le plus grands possible, sans en couper aucun.\n\nIl faut un côté qui divise à la fois 180 et 144 : c'est le PGCD, soit 36 cm.\n\nUn PPCM quand on cherche un rendez-vous, un PGCD quand on cherche un découpage. Reconnaître lequel est le vrai travail — le calcul vient après."

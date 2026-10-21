@@ -53,10 +53,19 @@
           "explanation": "14 est pair, et 14 dépasse 10 : les deux conditions sont vraies. 8 est pair mais ne dépasse pas 10 ; 15 dépasse 10 mais n'est pas pair ; 9 n'est ni l'un ni l'autre.",
           "figureId": "table-de-verite",
           "options": [
-            { "text": "14", "correct": true },
-            { "text": "8" },
-            { "text": "15" },
-            { "text": "9" }
+            {
+              "text": "14",
+              "correct": true
+            },
+            {
+              "text": "8"
+            },
+            {
+              "text": "15"
+            },
+            {
+              "text": "9"
+            }
           ]
         },
         {
@@ -65,13 +74,31 @@
           "prompt": "« Le nombre est pair et plus grand que 10 ». Range ces nombres.",
           "hint": "Les deux conditions à la fois.",
           "explanation": "12 et 20 sont pairs et dépassent 10. 6 est pair mais trop petit, 11 et 13 dépassent 10 mais sont impairs.",
-          "categories": ["L'affirmation est vraie", "L'affirmation est fausse"],
+          "categories": [
+            "L'affirmation est vraie",
+            "L'affirmation est fausse"
+          ],
           "items": [
-            { "text": "12", "category": 0 },
-            { "text": "20", "category": 0 },
-            { "text": "6", "category": 1 },
-            { "text": "11", "category": 1 },
-            { "text": "13", "category": 1 }
+            {
+              "text": "12",
+              "category": 0
+            },
+            {
+              "text": "20",
+              "category": 0
+            },
+            {
+              "text": "6",
+              "category": 1
+            },
+            {
+              "text": "11",
+              "category": 1
+            },
+            {
+              "text": "13",
+              "category": 1
+            }
           ]
         },
         {
@@ -159,13 +186,31 @@
           "prompt": "« Le nombre est pair ou plus grand que 10 ». Range ces nombres.",
           "hint": "Il suffit qu'une seule condition tienne.",
           "explanation": "4 est pair, 11 et 13 dépassent 10, 12 fait les deux : tous rendent l'affirmation vraie. Seuls 7 et 9 échouent sur les deux conditions.",
-          "categories": ["L'affirmation est vraie", "L'affirmation est fausse"],
+          "categories": [
+            "L'affirmation est vraie",
+            "L'affirmation est fausse"
+          ],
           "items": [
-            { "text": "4", "category": 0 },
-            { "text": "12", "category": 0 },
-            { "text": "11", "category": 0 },
-            { "text": "7", "category": 1 },
-            { "text": "9", "category": 1 }
+            {
+              "text": "4",
+              "category": 0
+            },
+            {
+              "text": "12",
+              "category": 0
+            },
+            {
+              "text": "11",
+              "category": 0
+            },
+            {
+              "text": "7",
+              "category": 1
+            },
+            {
+              "text": "9",
+              "category": 1
+            }
           ]
         },
         {
@@ -174,9 +219,18 @@
           "prompt": "Associe chaque phrase au connecteur qu'elle utilise vraiment.",
           "explanation": "Le « ou » des mathématiques autorise les deux ; celui du menu les exclut, et on le signale alors par « ou bien ».",
           "pairs": [
-            { "left": "n est pair ou n > 10", "right": "Ou inclusif : les deux sont permis" },
-            { "left": "Fromage ou dessert", "right": "Ou exclusif : l'un des deux seulement" },
-            { "left": "n est pair et n > 10", "right": "Les deux conditions exigées" }
+            {
+              "left": "n est pair ou n > 10",
+              "right": "Ou inclusif : les deux sont permis"
+            },
+            {
+              "left": "Fromage ou dessert",
+              "right": "Ou exclusif : l'un des deux seulement"
+            },
+            {
+              "left": "n est pair et n > 10",
+              "right": "Les deux conditions exigées"
+            }
           ]
         }
       ]
@@ -191,30 +245,37 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La colonne exactement inverse",
+          "body": "Compare « A » et « non A » sur les quatre cas : là où l’une dit vrai, l’autre dit faux, sans exception. Nier juste, c’est obtenir cette colonne-là et pas une autre.",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le contraire exact",
           "body": "La négation d'une affirmation est vraie précisément quand l'affirmation est fausse. Rien de plus, rien de moins."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Nier une comparaison",
           "body": "Le contraire de « x > 3 » n'est pas « x < 3 ».\n\nIl reste le cas x = 3, où ni l'un ni l'autre ne serait vrai.\n\nLe contraire de « x > 3 » est « x ≤ 3 ».",
           "formula": "non (x > 3) équivaut à x ≤ 3"
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Nier un « tous »",
           "body": "Le contraire de « tous les élèves sont présents » n'est pas « aucun élève n'est présent ».\n\nIl suffit d'un seul absent pour que le « tous » tombe.\n\nLe contraire est : « au moins un élève est absent »."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Pour nier, demande-toi : dans quel cas exactement l'affirmation serait-elle en défaut ? La réponse est la négation."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "aRetenir",
           "title": "Nier juste",
           "bullets": [
@@ -232,10 +293,19 @@
           "hint": "N'oublie pas le cas x = 3.",
           "explanation": "x ≤ 3. Si on écrivait x < 3, le cas x = 3 ne serait couvert ni par l'affirmation ni par sa négation — ce qui est impossible.",
           "options": [
-            { "text": "x ≤ 3", "correct": true },
-            { "text": "x < 3" },
-            { "text": "x ≥ 3" },
-            { "text": "x = 3" }
+            {
+              "text": "x ≤ 3",
+              "correct": true
+            },
+            {
+              "text": "x < 3"
+            },
+            {
+              "text": "x ≥ 3"
+            },
+            {
+              "text": "x = 3"
+            }
           ]
         },
         {
@@ -245,10 +315,19 @@
           "hint": "Qu'est-ce qui suffit à faire tomber un « tous » ?",
           "explanation": "Il suffit d'un seul nombre impair pour que l'affirmation soit fausse. Sa négation est donc « au moins un nombre de la liste est impair », et non « aucun n'est pair ».",
           "options": [
-            { "text": "Au moins un nombre est impair", "correct": true },
-            { "text": "Aucun nombre n'est pair" },
-            { "text": "Tous les nombres sont impairs" },
-            { "text": "La moitié des nombres sont impairs" }
+            {
+              "text": "Au moins un nombre est impair",
+              "correct": true
+            },
+            {
+              "text": "Aucun nombre n'est pair"
+            },
+            {
+              "text": "Tous les nombres sont impairs"
+            },
+            {
+              "text": "La moitié des nombres sont impairs"
+            }
           ]
         },
         {
@@ -257,8 +336,19 @@
           "prompt": "Complète ces négations.",
           "template": "La négation de « x ≥ 5 » est « x ___ 5 ». La négation de « il existe un carré rouge » est « ___ carré n'est rouge ».",
           "blanks": [
-            { "accepted": ["<", "inférieur à", "plus petit que"] },
-            { "accepted": ["aucun", "nul"] }
+            {
+              "accepted": [
+                "<",
+                "inférieur à",
+                "plus petit que"
+              ]
+            },
+            {
+              "accepted": [
+                "aucun",
+                "nul"
+              ]
+            }
           ],
           "hint": "Le contraire de « au moins un », c'est « pas un seul ».",
           "explanation": "non (x ≥ 5) donne x < 5. Et le contraire de « il existe » est « aucun »."
@@ -283,6 +373,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Et, ou, non sur les quatre cas",
+          "body": "Fais varier A et B et lis les trois résultats ensemble. « Et » n’est vrai qu’une fois sur quatre, « ou » trois fois — et tout le défi se lit dans ce tableau.",
+          "figureId": "table-de-verite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Les pièges de ce chapitre sont tous des pièges de vocabulaire courant : lis chaque phrase deux fois."
@@ -295,13 +392,31 @@
           "prompt": "« n est impair ou n est plus petit que 5 ». Range ces nombres.",
           "hint": "Le « ou » suffit avec une seule condition.",
           "explanation": "3 est impair et petit, 7 et 9 sont impairs, 2 et 4 sont plus petits que 5. Seuls 6 et 8 échouent : pairs et au-dessus de 5.",
-          "categories": ["Vrai", "Faux"],
+          "categories": [
+            "Vrai",
+            "Faux"
+          ],
           "items": [
-            { "text": "3", "category": 0 },
-            { "text": "7", "category": 0 },
-            { "text": "4", "category": 0 },
-            { "text": "6", "category": 1 },
-            { "text": "8", "category": 1 }
+            {
+              "text": "3",
+              "category": 0
+            },
+            {
+              "text": "7",
+              "category": 0
+            },
+            {
+              "text": "4",
+              "category": 0
+            },
+            {
+              "text": "6",
+              "category": 1
+            },
+            {
+              "text": "8",
+              "category": 1
+            }
           ]
         },
         {
@@ -311,10 +426,19 @@
           "hint": "Pour que « ou » soit faux, il faut que les deux tombent.",
           "explanation": "« non A et non B ». Un « ou » n'est faux que si aucune de ses deux parties n'est vraie.",
           "options": [
-            { "text": "non A et non B", "correct": true },
-            { "text": "non A ou non B" },
-            { "text": "A et non B" },
-            { "text": "non A seulement" }
+            {
+              "text": "non A et non B",
+              "correct": true
+            },
+            {
+              "text": "non A ou non B"
+            },
+            {
+              "text": "A et non B"
+            },
+            {
+              "text": "non A seulement"
+            }
           ]
         },
         {
@@ -343,8 +467,18 @@
           "prompt": "Complète ce raisonnement sur une liste de nombres.",
           "template": "« Tous sont positifs » est fausse dès qu'___ nombre est négatif ou nul. Sa négation est « ___ moins un n'est pas positif ».",
           "blanks": [
-            { "accepted": ["un", "un seul", "au moins un"] },
-            { "accepted": ["au"] }
+            {
+              "accepted": [
+                "un",
+                "un seul",
+                "au moins un"
+              ]
+            },
+            {
+              "accepted": [
+                "au"
+              ]
+            }
           ],
           "hint": "Un seul contre-exemple suffit.",
           "explanation": "Un seul contre-exemple fait tomber un « tous ». La négation est donc « au moins un n'est pas positif »."
@@ -356,10 +490,19 @@
           "hint": "Un nombre peut-il être les deux à la fois ?",
           "explanation": "Aucun. Un nombre est pair ou impair, jamais les deux : les deux conditions ne peuvent pas être vraies en même temps. L'affirmation est fausse pour tout nombre.",
           "options": [
-            { "text": "Aucun", "correct": true },
-            { "text": "Tous les nombres pairs" },
-            { "text": "Le nombre 0 seulement" },
-            { "text": "Tous les nombres" }
+            {
+              "text": "Aucun",
+              "correct": true
+            },
+            {
+              "text": "Tous les nombres pairs"
+            },
+            {
+              "text": "Le nombre 0 seulement"
+            },
+            {
+              "text": "Tous les nombres"
+            }
           ]
         }
       ]

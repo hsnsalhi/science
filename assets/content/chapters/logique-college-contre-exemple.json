@@ -63,10 +63,19 @@
           "explanation": "Il doit vérifier P et contredire M. C'est le seul cas où la promesse n'est pas tenue.",
           "figureId": "implication",
           "options": [
-            { "text": "P vrai et M faux", "correct": true },
-            { "text": "P faux et M vrai" },
-            { "text": "P faux et M faux" },
-            { "text": "P vrai et M vrai" }
+            {
+              "text": "P vrai et M faux",
+              "correct": true
+            },
+            {
+              "text": "P faux et M vrai"
+            },
+            {
+              "text": "P faux et M faux"
+            },
+            {
+              "text": "P vrai et M vrai"
+            }
           ]
         },
         {
@@ -128,10 +137,19 @@
           "hint": "Quatre côtés égaux, mais pas d'angle droit.",
           "explanation": "Un losange non carré. Il vérifie la condition — quatre côtés égaux — et contredit la conclusion.",
           "options": [
-            { "text": "Un losange qui n'est pas un carré", "correct": true },
-            { "text": "Un rectangle" },
-            { "text": "Un carré" },
-            { "text": "Un triangle équilatéral" }
+            {
+              "text": "Un losange qui n'est pas un carré",
+              "correct": true
+            },
+            {
+              "text": "Un rectangle"
+            },
+            {
+              "text": "Un carré"
+            },
+            {
+              "text": "Un triangle équilatéral"
+            }
           ]
         },
         {
@@ -150,12 +168,27 @@
           "prompt": "Range ces figures selon qu'elles réfutent ou non « tout rectangle est un carré ».",
           "hint": "Il faut un rectangle qui ne soit pas un carré.",
           "explanation": "Un rectangle de 3 sur 5 et un rectangle de 2 sur 7 réfutent la règle. Un carré de côté 4 la vérifie, et un losange n'est même pas un rectangle : il ne prouve rien.",
-          "categories": ["Réfute la règle", "Ne la réfute pas"],
+          "categories": [
+            "Réfute la règle",
+            "Ne la réfute pas"
+          ],
           "items": [
-            { "text": "Un rectangle de 3 sur 5", "category": 0 },
-            { "text": "Un rectangle de 2 sur 7", "category": 0 },
-            { "text": "Un carré de côté 4", "category": 1 },
-            { "text": "Un losange sans angle droit", "category": 1 }
+            {
+              "text": "Un rectangle de 3 sur 5",
+              "category": 0
+            },
+            {
+              "text": "Un rectangle de 2 sur 7",
+              "category": 0
+            },
+            {
+              "text": "Un carré de côté 4",
+              "category": 1
+            },
+            {
+              "text": "Un losange sans angle droit",
+              "category": 1
+            }
           ]
         },
         {
@@ -177,24 +210,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un seul cas suffit",
+          "body": "Cherche le cas où la condition est remplie et la conclusion fausse. Fabriquer un contre-exemple, c’est construire ce cas-là — un seul, et l’énoncé tombe.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "1. Repérer la condition",
           "body": "Dans « tout nombre divisible par 3 est divisible par 9 », la condition est « divisible par 3 ».\n\nLe contre-exemple devra la vérifier."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "2. Repérer la conclusion",
           "body": "Ici, c'est « divisible par 9 ».\n\nLe contre-exemple devra la contredire."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "3. Chercher aux extrêmes",
           "body": "Les contre-exemples se cachent souvent dans les petits nombres, le zéro, les cas limites ou les figures dégénérées.\n\nIci, 3 suffit : il est divisible par 3 et pas par 9."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Quand tu ne trouves pas de contre-exemple après avoir cherché sérieusement, cela ne prouve pas que l'affirmation est vraie — mais c'est souvent le signe qu'il faut maintenant essayer de la démontrer."
         }
@@ -236,12 +276,27 @@
           "prompt": "Pour réfuter « tout multiple de 4 est multiple de 8 », range ces nombres.",
           "hint": "Il faut être multiple de 4 sans être multiple de 8.",
           "explanation": "4 et 12 sont multiples de 4 sans l'être de 8 : chacun réfute la règle. 8 et 16 la vérifient, et vérifier ne prouve rien.",
-          "categories": ["Réfute la règle", "Ne la réfute pas"],
+          "categories": [
+            "Réfute la règle",
+            "Ne la réfute pas"
+          ],
           "items": [
-            { "text": "4", "category": 0 },
-            { "text": "12", "category": 0 },
-            { "text": "8", "category": 1 },
-            { "text": "16", "category": 1 }
+            {
+              "text": "4",
+              "category": 0
+            },
+            {
+              "text": "12",
+              "category": 0
+            },
+            {
+              "text": "8",
+              "category": 1
+            },
+            {
+              "text": "16",
+              "category": 1
+            }
           ]
         }
       ]
@@ -256,6 +311,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Vérifier plutôt que croire",
+          "body": "Fais varier les trois côtés et regarde si le triangle est rectangle. Un énoncé qui tient sur trois exemples peut tomber au quatrième, et le défi en donne plusieurs.",
+          "figureId": "triangle-reciproque"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chaque affirmation, demande-toi d'abord quelle est sa condition."
@@ -276,12 +338,27 @@
           "kind": "tri",
           "prompt": "Range ces affirmations selon qu'elles sont vraies ou qu'elles ont un contre-exemple.",
           "explanation": "Tout multiple de 10 est multiple de 5, et tout carré est un rectangle : ces deux-là tiennent. En revanche 9 est impair sans être premier, et un rectangle de 3 sur 5 n'est pas un carré.",
-          "categories": ["Vraie", "A un contre-exemple"],
+          "categories": [
+            "Vraie",
+            "A un contre-exemple"
+          ],
           "items": [
-            { "text": "Tout multiple de 10 est multiple de 5", "category": 0 },
-            { "text": "Tout carré est un rectangle", "category": 0 },
-            { "text": "Tout nombre impair est premier", "category": 1 },
-            { "text": "Tout rectangle est un carré", "category": 1 }
+            {
+              "text": "Tout multiple de 10 est multiple de 5",
+              "category": 0
+            },
+            {
+              "text": "Tout carré est un rectangle",
+              "category": 0
+            },
+            {
+              "text": "Tout nombre impair est premier",
+              "category": 1
+            },
+            {
+              "text": "Tout rectangle est un carré",
+              "category": 1
+            }
           ]
         },
         {
@@ -291,10 +368,19 @@
           "hint": "Condition d'abord, conclusion ensuite.",
           "explanation": "Un nombre divisible par 6 qui ne l'est pas par 4 : 6 lui-même convient. Chercher un nombre non divisible par 6 ne prouverait rien.",
           "options": [
-            { "text": "Un nombre divisible par 6 mais pas par 4", "correct": true },
-            { "text": "Un nombre divisible par 4 mais pas par 6" },
-            { "text": "Un nombre divisible par les deux" },
-            { "text": "Un nombre divisible par aucun des deux" }
+            {
+              "text": "Un nombre divisible par 6 mais pas par 4",
+              "correct": true
+            },
+            {
+              "text": "Un nombre divisible par 4 mais pas par 6"
+            },
+            {
+              "text": "Un nombre divisible par les deux"
+            },
+            {
+              "text": "Un nombre divisible par aucun des deux"
+            }
           ]
         },
         {
@@ -320,10 +406,19 @@
           "hint": "Pense aux cas que l'on néglige.",
           "explanation": "Dans les cas limites : zéro, un, les petits nombres, les figures aplaties. Ce sont ceux auxquels on pense le moins en formulant une règle.",
           "options": [
-            { "text": "Dans les cas limites et les petits nombres", "correct": true },
-            { "text": "Dans les très grands nombres seulement" },
-            { "text": "Dans les cas les plus ordinaires" },
-            { "text": "Il n'y a pas de méthode" }
+            {
+              "text": "Dans les cas limites et les petits nombres",
+              "correct": true
+            },
+            {
+              "text": "Dans les très grands nombres seulement"
+            },
+            {
+              "text": "Dans les cas les plus ordinaires"
+            },
+            {
+              "text": "Il n'y a pas de méthode"
+            }
           ]
         }
       ]

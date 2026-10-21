@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux nombres pour une case",
+          "body": "Exécute le programme et suis le robot case par case. Pour dire où il est, « à gauche » ne suffit pas : il faut une colonne et une ligne.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "« À gauche » ne suffit pas",
           "body": "Si tu dis « le trésor est à gauche de l'arbre », tout dépend d'où on regarde. Ta gauche n'est pas celle de quelqu'un qui te fait face.\n\nPour que l'information soit utile, il faut un repère que tout le monde partage."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le quadrillage",
           "body": "On numérote les colonnes avec des lettres, les lignes avec des chiffres.\n\nChaque case a alors un nom unique : B3, D5.\n\nOn dit toujours la colonne puis la ligne. C'est une convention, mais si chacun la respecte, personne ne se trompe."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Les quatre directions",
           "body": "Sur une carte, le nord est en haut, le sud en bas, l'est à droite, l'ouest à gauche.\n\nContrairement à « gauche » et « droite », ces mots ne changent pas selon où l'on se tient. C'est pour cela qu'on les a inventés."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Case ou nœud ?",
           "body": "Sur un quadrillage, on peut désigner une case — la surface — ou un nœud — le point où deux traits se croisent.\n\nLes deux se repèrent pareil, mais ce ne sont pas les mêmes objets. Au jeu de bataille navale on vise des cases ; sur une carte au trésor, souvent des points."
@@ -41,10 +48,19 @@
           "prompt": "Pourquoi « à gauche de l'arbre » est-il une mauvaise indication ?",
           "explanation": "Parce que la gauche dépend d'où l'on regarde. Deux personnes face à face n'ont pas la même gauche.",
           "options": [
-            { "text": "la gauche dépend d'où l'on se tient", "correct": true },
-            { "text": "les arbres bougent" },
-            { "text": "c'est trop vague en distance" },
-            { "text": "il faut toujours dire le nord" }
+            {
+              "text": "la gauche dépend d'où l'on se tient",
+              "correct": true
+            },
+            {
+              "text": "les arbres bougent"
+            },
+            {
+              "text": "c'est trop vague en distance"
+            },
+            {
+              "text": "il faut toujours dire le nord"
+            }
           ]
         },
         {
@@ -53,10 +69,19 @@
           "prompt": "Sur une carte, où se trouve le nord ?",
           "explanation": "En haut, par convention. L'est est alors à droite et l'ouest à gauche.",
           "options": [
-            { "text": "en haut", "correct": true },
-            { "text": "en bas" },
-            { "text": "à droite" },
-            { "text": "cela dépend de la carte" }
+            {
+              "text": "en haut",
+              "correct": true
+            },
+            {
+              "text": "en bas"
+            },
+            {
+              "text": "à droite"
+            },
+            {
+              "text": "cela dépend de la carte"
+            }
           ]
         },
         {
@@ -65,10 +90,22 @@
           "prompt": "Associe chaque direction à sa position sur une carte.",
           "explanation": "Nord en haut, sud en bas, est à droite, ouest à gauche.",
           "pairs": [
-            { "left": "nord", "right": "en haut" },
-            { "left": "sud", "right": "en bas" },
-            { "left": "est", "right": "à droite" },
-            { "left": "ouest", "right": "à gauche" }
+            {
+              "left": "nord",
+              "right": "en haut"
+            },
+            {
+              "left": "sud",
+              "right": "en bas"
+            },
+            {
+              "left": "est",
+              "right": "à droite"
+            },
+            {
+              "left": "ouest",
+              "right": "à gauche"
+            }
           ]
         },
         {
@@ -176,18 +213,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Suivre un itinéraire",
+          "body": "Change le nombre de tours et exécute. Un itinéraire est une suite d’instructions, et le même point d’arrivée peut s’atteindre par plusieurs chemins.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "exemple",
           "title": "Suivre un itinéraire",
           "body": "Départ en A1. Trois cases vers l'est, puis deux vers le nord.\n\nVers l'est, on change de lettre : A devient D après trois cases.\n\nVers le nord, on monte dans les chiffres : 1 devient 3 après deux cases.\n\nArrivée : D3."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "astuce",
           "title": "Le chemin le plus court sur un quadrillage",
           "body": "Si on ne se déplace qu'horizontalement et verticalement, la longueur du plus court chemin est la somme des deux écarts.\n\nDe A1 à D3 : 3 cases d'écart en colonnes, 2 en lignes. Donc 5 cases, quel que soit le chemin choisi.\n\nTous les chemins sans détour font la même longueur. C'est surprenant, et c'est vrai."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Lire une échelle",
           "body": "Sur un plan, une légende indique ce que vaut une distance. « 1 cm pour 50 m » : deux centimètres sur le papier font cent mètres en vrai."
@@ -200,10 +244,19 @@
           "prompt": "Départ en A1. Trois cases vers l'est, deux vers le nord. Où arrive-t-on ?",
           "explanation": "D3. Trois colonnes après A vient D, et deux lignes après 1 vient 3.",
           "options": [
-            { "text": "D3", "correct": true },
-            { "text": "C3" },
-            { "text": "D2" },
-            { "text": "A3" }
+            {
+              "text": "D3",
+              "correct": true
+            },
+            {
+              "text": "C3"
+            },
+            {
+              "text": "D2"
+            },
+            {
+              "text": "A3"
+            }
           ]
         },
         {
@@ -247,6 +300,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Revenir au point de départ",
+          "body": "Règle les tours pour que le chemin se referme. S’il ne se referme pas, la figure te le dit — et c’est exactement la question du défi.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Revenir au point de départ",
           "body": "Un robot avance de 4 cases, tourne à droite, avance de 4, tourne à droite, avance de 4, tourne à droite, avance de 4.\n\nIl a dessiné un carré et il est revenu exactement d'où il partait.\n\nMais il n'est pas tourné dans le même sens qu'au début : il a fait trois quarts de tour, pas quatre. Il faudrait une rotation de plus."

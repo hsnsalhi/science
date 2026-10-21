@@ -11,31 +11,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Multiplier à chaque pas",
+          "body": "Choisis la suite géométrique et pousse la raison : chaque terme est un multiple du précédent, et les derniers bâtons écrasent tous les autres. L’exponentielle est la version continue de ce comportement.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Deux façons de grandir",
           "body": "Une plante qui pousse de 2 cm par semaine grandit de la même quantité chaque semaine : c'est linéaire.\n\nUne population de bactéries qui double toutes les vingt minutes grandit d'autant plus vite qu'elle est déjà nombreuse. Son accroissement est proportionnel à sa taille.\n\nCette seconde loi est partout : intérêts composés, épidémies, désintégration radioactive, refroidissement d'un café."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La définition",
           "formula": "exp' = exp et exp(0) = 1",
           "body": "C'est la seule fonction qui soit égale à sa propre dérivée et vaille 1 en zéro. Tout le reste s'en déduit."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "La propriété fondamentale",
           "body": "exp(a + b) = exp(a) × exp(b)\n\nUne somme devient un produit. C'est d'elle que viennent toutes les autres règles : exp(−a) = 1/exp(a), et exp(a + a + a) = exp(a) × exp(a) × exp(a).\n\nL'exponentielle transforme l'addition en multiplication. Le logarithme fera l'inverse."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Elle ne s'annule jamais",
           "body": "exp(x) est strictement positive pour tout x réel. Même exp(−1000), qui est minuscule, reste strictement supérieure à zéro.\n\nUne équation comme exp(x) = 0 n'a donc aucune solution, et il ne sert à rien de la chercher."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "exemple",
           "title": "Elle écrase tout",
           "body": "exp(10) vaut environ 22 000. exp(20) environ 485 millions. exp(50) dépasse 5 × 10²¹.\n\nAucune puissance de x ne la rattrape : exp(x) divisé par n'importe quelle puissance de x tend vers l'infini. C'est ce qu'on appelle la croissance exponentielle, et c'est pourquoi le mot est devenu une image."
@@ -48,10 +55,19 @@
           "prompt": "Quelle propriété définit la fonction exponentielle ?",
           "explanation": "Elle est égale à sa propre dérivée et vaut 1 en zéro. C'est la seule fonction à vérifier les deux.",
           "options": [
-            { "text": "elle est sa propre dérivée et vaut 1 en 0", "correct": true },
-            { "text": "elle est toujours croissante" },
-            { "text": "elle est positive" },
-            { "text": "elle tend vers l'infini" }
+            {
+              "text": "elle est sa propre dérivée et vaut 1 en 0",
+              "correct": true
+            },
+            {
+              "text": "elle est toujours croissante"
+            },
+            {
+              "text": "elle est positive"
+            },
+            {
+              "text": "elle tend vers l'infini"
+            }
           ]
         },
         {
@@ -60,10 +76,19 @@
           "prompt": "Que vaut exp(a + b) ?",
           "explanation": "exp(a) × exp(b). L'exponentielle transforme une somme en produit.",
           "options": [
-            { "text": "exp(a) × exp(b)", "correct": true },
-            { "text": "exp(a) + exp(b)" },
-            { "text": "exp(a × b)" },
-            { "text": "exp(a) ÷ exp(b)" }
+            {
+              "text": "exp(a) × exp(b)",
+              "correct": true
+            },
+            {
+              "text": "exp(a) + exp(b)"
+            },
+            {
+              "text": "exp(a × b)"
+            },
+            {
+              "text": "exp(a) ÷ exp(b)"
+            }
           ]
         },
         {
@@ -92,31 +117,38 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La courbe qui s’aplatit",
+          "body": "Fais grossir la taille des données et regarde la courbe en log n : elle monte de moins en moins. Un logarithme compte les multiplications, pas les additions, et c’est pour cela qu’il écrase les grands nombres.",
+          "figureId": "complexite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une question, pas un objet mystérieux",
           "body": "L'exponentielle répond à : « je pars de 1 et je grandis pendant un temps x, où j'arrive ? »\n\nLe logarithme répond à la question inverse : « je veux arriver à y, combien de temps faut-il ? »\n\nln(y) est donc l'exposant qu'il faut donner à e pour obtenir y. Rien de plus."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Les deux se défont",
           "formula": "ln(exp(x)) = x et exp(ln(y)) = y",
           "body": "Pour tout réel x, et pour tout y strictement positif. L'un annule l'autre."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Il transforme les produits en sommes",
           "body": "ln(a × b) = ln(a) + ln(b)\n\nC'est l'inverse exact de la propriété de l'exponentielle. Avant les calculatrices, c'est ce qui servait à multiplier de grands nombres : on cherchait deux logarithmes dans une table, on les additionnait, et on remontait.\n\nLa règle à calcul, qui a conçu les fusées Apollo, ne fait rien d'autre que cela."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Il n'existe que pour les nombres strictement positifs",
           "body": "ln(0) et ln(−3) n'ont pas de sens : aucun exposant ne permet d'atteindre zéro ou un nombre négatif à partir de e.\n\nAvant d'écrire ln(quelque chose), il faut toujours vérifier que ce quelque chose est strictement positif. C'est la première source d'erreurs du chapitre."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "exemple",
           "title": "Résoudre une équation",
           "body": "2^x = 1000\n\nOn applique ln aux deux membres : x × ln(2) = ln(1000).\n\nDonc x = ln(1000) ÷ ln(2) ≈ 6,908 ÷ 0,693 ≈ 9,97.\n\nIl faut un peu moins de dix doublements pour atteindre mille — ce qui est la version calculée de « 2¹⁰ = 1024 »."
@@ -136,10 +168,19 @@
           "prompt": "Que vaut ln(a × b) ?",
           "explanation": "ln(a) + ln(b). Le logarithme transforme un produit en somme — c'est ce qui faisait l'intérêt des tables.",
           "options": [
-            { "text": "ln(a) + ln(b)", "correct": true },
-            { "text": "ln(a) × ln(b)" },
-            { "text": "ln(a + b)" },
-            { "text": "ln(a) − ln(b)" }
+            {
+              "text": "ln(a) + ln(b)",
+              "correct": true
+            },
+            {
+              "text": "ln(a) × ln(b)"
+            },
+            {
+              "text": "ln(a + b)"
+            },
+            {
+              "text": "ln(a) − ln(b)"
+            }
           ]
         },
         {
@@ -156,12 +197,27 @@
           "kind": "tri",
           "prompt": "Range ces expressions : lesquelles ont un sens ?",
           "explanation": "Le logarithme n'existe que pour les nombres strictement positifs. ln(0) et ln d'un négatif n'ont pas de sens.",
-          "categories": ["a un sens", "n'a pas de sens"],
+          "categories": [
+            "a un sens",
+            "n'a pas de sens"
+          ],
           "items": [
-            { "text": "ln(2)", "category": 0 },
-            { "text": "ln(0,001)", "category": 0 },
-            { "text": "ln(0)", "category": 1 },
-            { "text": "ln(−3)", "category": 1 }
+            {
+              "text": "ln(2)",
+              "category": 0
+            },
+            {
+              "text": "ln(0,001)",
+              "category": 0
+            },
+            {
+              "text": "ln(0)",
+              "category": 1
+            },
+            {
+              "text": "ln(−3)",
+              "category": 1
+            }
           ]
         },
         {
@@ -251,10 +307,19 @@
           "hint": "Que sait un noyau de son passé ?",
           "explanation": "Parce qu'un noyau n'a pas de mémoire : sa probabilité de se désintégrer ne dépend pas de son âge. Le nombre de désintégrations est donc proportionnel au nombre de noyaux restants.",
           "options": [
-            { "text": "chaque noyau a la même chance à chaque instant, quel que soit son âge", "correct": true },
-            { "text": "les noyaux vieillissent et deviennent fragiles" },
-            { "text": "les désintégrations se déclenchent entre elles" },
-            { "text": "la température baisse avec le temps" }
+            {
+              "text": "chaque noyau a la même chance à chaque instant, quel que soit son âge",
+              "correct": true
+            },
+            {
+              "text": "les noyaux vieillissent et deviennent fragiles"
+            },
+            {
+              "text": "les désintégrations se déclenchent entre elles"
+            },
+            {
+              "text": "la température baisse avec le temps"
+            }
           ]
         }
       ]
@@ -269,6 +334,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le nénuphar qui double",
+          "body": "Mets la raison sur 2 et regarde les derniers bâtons. Une croissance qui double paraît lente très longtemps, puis devient énorme en deux pas — c’est tout le piège du défi.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le nénuphar",
           "body": "Un nénuphar double de surface chaque jour. En trente jours, il couvre tout l'étang.\n\nQuand couvrait-il la moitié ?\n\nLe vingt-neuvième jour. Pas le quinzième. Pendant vingt-huit jours, le problème paraît lointain ; il devient visible la veille du désastre.\n\nC'est pourquoi les croissances exponentielles sont si mal anticipées — épidémies, dettes, extinctions. L'intuition humaine est linéaire, et le monde ne l'est pas toujours."
@@ -314,10 +386,19 @@
           "prompt": "Pourquoi les croissances exponentielles surprennent-elles ?",
           "explanation": "Parce qu'elles restent longtemps imperceptibles puis explosent. L'intuition humaine extrapole linéairement, ce qui sous-estime massivement la suite.",
           "options": [
-            { "text": "elles restent longtemps petites puis explosent", "correct": true },
-            { "text": "elles sont irrégulières" },
-            { "text": "elles ne suivent pas de loi" },
-            { "text": "elles s'arrêtent brutalement" }
+            {
+              "text": "elles restent longtemps petites puis explosent",
+              "correct": true
+            },
+            {
+              "text": "elles sont irrégulières"
+            },
+            {
+              "text": "elles ne suivent pas de loi"
+            },
+            {
+              "text": "elles s'arrêtent brutalement"
+            }
           ]
         },
         {

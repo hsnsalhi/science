@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Des cercles qui ont tenu deux mille ans",
+          "body": "Lance le temps et regarde les quatre planètes tourner. Elles sont dessinées en cercles — et c’est exactement ainsi qu’on les a crues pendant deux mille ans, parce que leurs ellipses sont si peu allongées que l’œil ne les distingue pas d’un cercle.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Deux mille ans de cercles",
           "body": "De Platon à Copernic, une orbite devait être un cercle, ou une combinaison de cercles. C'était un principe, pas un résultat de mesure.\n\nKepler a passé des années sur les relevés de Mars de Tycho Brahe. Les cercles laissaient un écart de huit minutes d'arc. Il a choisi de croire les mesures plutôt que le principe."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Première loi",
           "body": "Chaque planète décrit une ellipse dont le Soleil occupe l'un des deux foyers.\n\nLe second foyer est vide : rien ne s'y trouve, et c'est pourtant lui qui fixe la forme de l'orbite."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Des ellipses très peu allongées",
           "body": "Attention à l'image : les schémas de manuel dessinent des ovales très marqués, mais l'orbite terrestre est presque un cercle.\n\nCe qui n'est pas au centre, en revanche, c'est le Soleil. C'est ce décentrement, et non l'allongement, qui change tout."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Huit minutes d'arc, c'est un quart du diamètre apparent de la Lune. Kepler aurait pu les attribuer à l'erreur de mesure et garder ses cercles. Toute la suite tient à ce refus."
         }
@@ -41,10 +48,19 @@
           "hint": "Pas au centre.",
           "explanation": "À l'un des deux foyers de l'ellipse. Le centre géométrique de l'ellipse, lui, est vide.",
           "options": [
-            { "text": "À l'un des foyers de l'ellipse", "correct": true },
-            { "text": "Au centre de l'ellipse" },
-            { "text": "Sur l'ellipse elle-même" },
-            { "text": "À l'extérieur de l'ellipse" }
+            {
+              "text": "À l'un des foyers de l'ellipse",
+              "correct": true
+            },
+            {
+              "text": "Au centre de l'ellipse"
+            },
+            {
+              "text": "Sur l'ellipse elle-même"
+            },
+            {
+              "text": "À l'extérieur de l'ellipse"
+            }
           ]
         },
         {
@@ -61,10 +77,19 @@
           "hint": "Un écart qu'il a refusé de négliger.",
           "explanation": "Un écart de huit minutes d'arc entre les positions calculées et les mesures de Tycho Brahe. Il a préféré douter du cercle que des mesures.",
           "options": [
-            { "text": "Un écart de huit minutes d'arc sur Mars", "correct": true },
-            { "text": "Une observation au télescope" },
-            { "text": "Un calcul de Newton" },
-            { "text": "Une décision de l'Église" }
+            {
+              "text": "Un écart de huit minutes d'arc sur Mars",
+              "correct": true
+            },
+            {
+              "text": "Une observation au télescope"
+            },
+            {
+              "text": "Un calcul de Newton"
+            },
+            {
+              "text": "Une décision de l'Église"
+            }
           ]
         }
       ]
@@ -79,25 +104,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Plus près du Soleil, plus vite",
+          "body": "Lance le temps et compare les compteurs de tours. Mercure boucle son orbite en 88 jours, Mars en 687 : plus une planète est proche, plus elle va vite. La deuxième loi dit la même chose à l’intérieur d’une seule orbite.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Deuxième loi",
           "formula": "aire balayée / durée = constante",
           "body": "le segment qui joint le Soleil à la planète balaie des aires égales en des durées égales."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Ce que cela impose",
           "body": "Près du Soleil, le segment est court : pour balayer la même aire, la planète doit parcourir un grand arc. Elle va donc vite.\n\nLoin du Soleil, le segment est long : un petit arc suffit à balayer la même aire. Elle va lentement."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Pour la Terre",
           "body": "La Terre est au plus près du Soleil début janvier, et au plus loin début juillet.\n\nElle va donc légèrement plus vite en hiver boréal. C'est pour cela que l'automne et l'hiver de l'hémisphère nord sont un peu plus courts que le printemps et l'été."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Cette loi n'a rien d'une coïncidence : c'est la conservation du moment cinétique, pour une force toujours dirigée vers le Soleil. Kepler l'a trouvée avant qu'on sache l'énoncer ainsi."
         }
@@ -110,10 +142,19 @@
           "hint": "Là où le segment Soleil-planète est le plus court.",
           "explanation": "Au plus près du Soleil : le segment est court, donc il faut parcourir un grand arc pour balayer la même aire.",
           "options": [
-            { "text": "Au plus près du Soleil", "correct": true },
-            { "text": "Au plus loin du Soleil" },
-            { "text": "À mi-distance" },
-            { "text": "Sa vitesse ne change jamais" }
+            {
+              "text": "Au plus près du Soleil",
+              "correct": true
+            },
+            {
+              "text": "Au plus loin du Soleil"
+            },
+            {
+              "text": "À mi-distance"
+            },
+            {
+              "text": "Sa vitesse ne change jamais"
+            }
           ]
         },
         {
@@ -130,10 +171,19 @@
           "hint": "À quel moment la Terre est-elle au plus près du Soleil ?",
           "explanation": "Parce que la Terre passe au plus près du Soleil en janvier et va donc plus vite à ce moment-là. Elle franchit ce quartier d'orbite en moins de jours.",
           "options": [
-            { "text": "La Terre va plus vite quand elle est près du Soleil", "correct": true },
-            { "text": "La Terre est plus petite en hiver" },
-            { "text": "L'axe de la Terre se redresse en hiver" },
-            { "text": "Le Soleil ralentit en hiver" }
+            {
+              "text": "La Terre va plus vite quand elle est près du Soleil",
+              "correct": true
+            },
+            {
+              "text": "La Terre est plus petite en hiver"
+            },
+            {
+              "text": "L'axe de la Terre se redresse en hiver"
+            },
+            {
+              "text": "Le Soleil ralentit en hiver"
+            }
           ]
         },
         {
@@ -142,12 +192,27 @@
           "prompt": "Range ces affirmations selon qu'elles décrivent le point le plus proche ou le plus lointain.",
           "hint": "Aire égale en temps égal.",
           "explanation": "Près du Soleil : segment court, grand arc, grande vitesse. Loin : segment long, petit arc, faible vitesse.",
-          "categories": ["Au plus près du Soleil", "Au plus loin du Soleil"],
+          "categories": [
+            "Au plus près du Soleil",
+            "Au plus loin du Soleil"
+          ],
           "items": [
-            { "text": "la vitesse est maximale", "category": 0 },
-            { "text": "l'arc parcouru en un jour est le plus long", "category": 0 },
-            { "text": "la vitesse est minimale", "category": 1 },
-            { "text": "l'arc parcouru en un jour est le plus court", "category": 1 }
+            {
+              "text": "la vitesse est maximale",
+              "category": 0
+            },
+            {
+              "text": "l'arc parcouru en un jour est le plus long",
+              "category": 0
+            },
+            {
+              "text": "la vitesse est minimale",
+              "category": 1
+            },
+            {
+              "text": "l'arc parcouru en un jour est le plus court",
+              "category": 1
+            }
           ]
         }
       ]
@@ -244,6 +309,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les compteurs disent la troisième loi",
+          "body": "Laisse tourner et compare : quand la Terre a fait un tour, Mercure en a fait environ quatre. Le lien entre la distance et la durée d’un tour est ce que la troisième loi chiffre, et le défi demande de le retrouver.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque question, demande-toi d'abord laquelle des trois lois est en jeu."
@@ -256,9 +328,18 @@
           "prompt": "Associe chaque énoncé à sa loi.",
           "explanation": "La première décrit la forme de l'orbite, la deuxième la façon dont la planète la parcourt, la troisième le lien entre toutes les planètes.",
           "pairs": [
-            { "left": "l'orbite est une ellipse", "right": "première loi" },
-            { "left": "aires égales en temps égaux", "right": "deuxième loi" },
-            { "left": "T² proportionnel à a³", "right": "troisième loi" }
+            {
+              "left": "l'orbite est une ellipse",
+              "right": "première loi"
+            },
+            {
+              "left": "aires égales en temps égaux",
+              "right": "deuxième loi"
+            },
+            {
+              "left": "T² proportionnel à a³",
+              "right": "troisième loi"
+            }
           ]
         },
         {
@@ -279,10 +360,19 @@
           "hint": "Les deux autres décrivent une orbite isolée.",
           "explanation": "La troisième : elle énonce un rapport valable pour toutes les planètes à la fois. Les deux premières ne parlent que d'une orbite.",
           "options": [
-            { "text": "La troisième", "correct": true },
-            { "text": "La première" },
-            { "text": "La deuxième" },
-            { "text": "Aucune : elles décrivent chacune une seule orbite" }
+            {
+              "text": "La troisième",
+              "correct": true
+            },
+            {
+              "text": "La première"
+            },
+            {
+              "text": "La deuxième"
+            },
+            {
+              "text": "Aucune : elles décrivent chacune une seule orbite"
+            }
           ]
         },
         {

@@ -11,24 +11,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Faire tourner plutôt que traîner",
+          "body": "Lance les roues dentées : elles s’entraînent en roulant l’une sur l’autre, sans frotter à plat. C’est toute l’idée de la roue — remplacer un glissement par un roulement.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Ce qui freine",
           "body": "Pousse une caisse en bois sur le sol : elle résiste. Ce qui résiste s'appelle le frottement, et il naît du contact entre deux surfaces qui glissent l'une sur l'autre.\n\nPlus les surfaces sont rugueuses, plus il faut forcer. Plus la caisse est lourde, aussi.\n\nPour déplacer une caisse de 100 kg en la faisant glisser sur du bois, il faut tirer avec une force d'environ 30 kilogrammes-force. Sur de la glace, environ 2."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Les trois idées, dans l'ordre où on les a eues",
           "body": "Faire glisser : on tire la charge à même le sol. Simple, épuisant.\n\nPoser sur des rondins : la charge ne glisse plus, elle roule sur des troncs qu'il faut sans cesse ramasser derrière et remettre devant. Les pyramides et les menhirs ont été déplacés ainsi.\n\nFixer la roue à un essieu : la roue reste avec la charge. Plus rien à ramasser. C'est l'invention qui a mis quatre mille ans à venir après le rondin, parce qu'elle demande un trou bien rond et un axe bien droit."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Une roue a besoin d'une route",
           "body": "Dans le sable ou la boue, une roue s'enfonce et devient pire qu'un traîneau. C'est pourquoi les peuples du Grand Nord et du désert n'ont longtemps pas utilisé de roues : ils avaient des traîneaux et des chameaux.\n\nLa roue et la route sont une seule invention en deux morceaux. L'une sans l'autre ne sert pas à grand-chose."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "Les billes, la roue de la roue",
           "body": "Même une roue frotte : à l'endroit où elle tourne autour de son axe.\n\nOn y a donc glissé des billes d'acier qui roulent entre l'axe et la roue : le roulement à billes. Un vélo moderne tient ses vingt kilomètres à l'heure sur un coup de pédale en partie grâce à cela."
@@ -53,10 +60,19 @@
           "prompt": "Quel est le défaut du rondin par rapport à la roue ?",
           "explanation": "Le rondin reste en arrière : il faut le ramasser derrière la charge et le remettre devant, sans cesse. La roue, elle, voyage avec la charge.",
           "options": [
-            { "text": "il faut le ramasser derrière et le remettre devant", "correct": true },
-            { "text": "il frotte davantage qu'un traîneau" },
-            { "text": "il casse trop vite" },
-            { "text": "il n'existe pas en bois dur" }
+            {
+              "text": "il faut le ramasser derrière et le remettre devant",
+              "correct": true
+            },
+            {
+              "text": "il frotte davantage qu'un traîneau"
+            },
+            {
+              "text": "il casse trop vite"
+            },
+            {
+              "text": "il n'existe pas en bois dur"
+            }
           ]
         },
         {
@@ -65,10 +81,19 @@
           "prompt": "Pourquoi les peuples du Grand Nord ont-ils longtemps préféré le traîneau ?",
           "explanation": "Parce qu'une roue s'enfonce dans la neige molle. La roue n'est utile qu'avec une surface dure : la roue et la route vont ensemble.",
           "options": [
-            { "text": "une roue s'enfonce dans la neige", "correct": true },
-            { "text": "ils ne connaissaient pas le cercle" },
-            { "text": "le bois y est trop rare" },
-            { "text": "le traîneau va plus vite partout" }
+            {
+              "text": "une roue s'enfonce dans la neige",
+              "correct": true
+            },
+            {
+              "text": "ils ne connaissaient pas le cercle"
+            },
+            {
+              "text": "le bois y est trop rare"
+            },
+            {
+              "text": "le traîneau va plus vite partout"
+            }
           ]
         },
         {
@@ -97,24 +122,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qu’on gagne, on le paie ailleurs",
+          "body": "Change le nombre de dents : la roue menée tourne moins vite, mais avec plus de force. Une poulie mobile fait le même échange — on tire deux fois moins fort sur deux fois plus de corde.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une poulie fixe ne divise rien",
           "body": "Accroche une poulie au plafond, passe une corde dessus, attache la charge d'un côté et tire de l'autre.\n\nTu tires maintenant vers le bas pour faire monter la charge, ce qui est bien plus commode : tu peux t'aider de ton poids. Mais la force n'a pas changé d'un gramme. Pour lever 20 kg, tu tires 20 kg.\n\nUne poulie fixe change la direction de l'effort, pas sa valeur."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Une poulie mobile divise par deux",
           "body": "Accroche maintenant la poulie à la charge elle-même, et fixe un bout de la corde au plafond. Tire l'autre bout.\n\nLa charge pend désormais sur deux brins de corde, qui se partagent le poids : chacun en porte la moitié. Pour lever 20 kg, tu ne tires plus que 10.\n\nMais pour monter la charge d'un mètre, il faut tirer deux mètres de corde. Moitié de force, double de longueur."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "La règle qui ne pardonne jamais",
           "body": "Force × distance ne change pas.\n\nTu peux diviser la force par deux, par quatre, par dix — il faudra tirer deux fois, quatre fois, dix fois plus de corde. C'est exactement la même règle que pour les engrenages : plus vite ou plus fort, jamais les deux.\n\nUne machine ne crée pas d'énergie. Elle la fait seulement arriver sous une forme plus commode."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "etape",
           "title": "Compter les brins",
           "body": "Regarde combien de brins de corde partent du bloc qui monte.\n\nUn brin : pas de gain, tu tires le poids entier.\n\nDeux brins : la moitié.\n\nQuatre brins : le quart — et quatre mètres de corde pour un mètre de charge.\n\nLa grue de chantier et le palan du garagiste ne font rien d'autre que ce comptage."
@@ -155,10 +187,19 @@
           "prompt": "Que gagne-t-on avec une poulie fixe, alors ?",
           "explanation": "La direction : on tire vers le bas, donc on peut s'aider de son poids et travailler les bras en dessous plutôt qu'au-dessus.",
           "options": [
-            { "text": "on tire vers le bas, et on peut s'aider de son poids", "correct": true },
-            { "text": "on divise la force par deux" },
-            { "text": "on gagne de la longueur de corde" },
-            { "text": "rien du tout, elle est inutile" }
+            {
+              "text": "on tire vers le bas, et on peut s'aider de son poids",
+              "correct": true
+            },
+            {
+              "text": "on divise la force par deux"
+            },
+            {
+              "text": "on gagne de la longueur de corde"
+            },
+            {
+              "text": "rien du tout, elle est inutile"
+            }
           ]
         },
         {
@@ -218,10 +259,19 @@
           "prompt": "Quel avantage décisif la vapeur avait-elle sur le moulin à eau ?",
           "explanation": "On peut l'emmener. Un moulin est fixé à sa rivière ; une machine à vapeur tient dans un bateau ou sur des rails.",
           "options": [
-            { "text": "on peut l'installer où l'on veut", "correct": true },
-            { "text": "elle était toujours plus puissante" },
-            { "text": "elle ne coûtait rien" },
-            { "text": "elle ne faisait pas de bruit" }
+            {
+              "text": "on peut l'installer où l'on veut",
+              "correct": true
+            },
+            {
+              "text": "elle était toujours plus puissante"
+            },
+            {
+              "text": "elle ne coûtait rien"
+            },
+            {
+              "text": "elle ne faisait pas de bruit"
+            }
           ]
         },
         {
@@ -229,13 +279,31 @@
           "kind": "tri",
           "prompt": "Range ces sources selon qu'elles dépendent ou non de la météo.",
           "explanation": "Le vent et l'eau de rivière dépendent du temps ; le muscle, la vapeur et l'électricité du réseau non.",
-          "categories": ["dépend de la météo", "ne dépend pas de la météo"],
+          "categories": [
+            "dépend de la météo",
+            "ne dépend pas de la météo"
+          ],
           "items": [
-            { "text": "le vent dans une voile", "category": 0 },
-            { "text": "l'eau d'un torrent", "category": 0 },
-            { "text": "le muscle d'un cheval", "category": 1 },
-            { "text": "la vapeur d'une chaudière", "category": 1 },
-            { "text": "l'électricité du réseau", "category": 1 }
+            {
+              "text": "le vent dans une voile",
+              "category": 0
+            },
+            {
+              "text": "l'eau d'un torrent",
+              "category": 0
+            },
+            {
+              "text": "le muscle d'un cheval",
+              "category": 1
+            },
+            {
+              "text": "la vapeur d'une chaudière",
+              "category": 1
+            },
+            {
+              "text": "l'électricité du réseau",
+              "category": 1
+            }
           ]
         },
         {
@@ -252,8 +320,18 @@
           "explanation": "On gagne en force ce que l'on perd en vitesse, ou en longueur : le produit ne change pas.",
           "template": "Ce qu'on gagne en ___ se paie en ___.",
           "blanks": [
-            { "accepted": ["force"] },
-            { "accepted": ["distance", "longueur", "vitesse"] }
+            {
+              "accepted": [
+                "force"
+              ]
+            },
+            {
+              "accepted": [
+                "distance",
+                "longueur",
+                "vitesse"
+              ]
+            }
           ]
         }
       ]
@@ -268,6 +346,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un petit moteur, une charge énorme",
+          "body": "Mets un grand écart entre les deux roues et lis le rapport. Une grue fait exactement cela : elle échange de la vitesse contre de la force, et le défi en calcule le facteur.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Un moteur de rien, une charge énorme",
           "body": "Une grue de chantier soulève des blocs de béton de plusieurs tonnes avec un moteur qui tiendrait dans un coffre de voiture.\n\nElle y arrive avec deux outils seulement, et aucun n'est magique : un palan à plusieurs brins, qui divise la force autant de fois qu'il y a de brins, et un réducteur à engrenages, qui échange la vitesse de rotation du moteur contre du couple.\n\nLe prix est toujours le même : la charge monte lentement. Très lentement."
@@ -301,10 +386,19 @@
           "prompt": "Le câble file à 3 m/s. À quelle vitesse monte la charge ?",
           "explanation": "Six fois moins vite, soit 0,5 m/s. Le palan divise la force par six et la vitesse par six : c'est la même division.",
           "options": [
-            { "text": "six fois moins vite, soit 0,5 m/s", "correct": true },
-            { "text": "à la même vitesse, 3 m/s" },
-            { "text": "six fois plus vite, 18 m/s" },
-            { "text": "deux fois moins vite, 1,5 m/s" }
+            {
+              "text": "six fois moins vite, soit 0,5 m/s",
+              "correct": true
+            },
+            {
+              "text": "à la même vitesse, 3 m/s"
+            },
+            {
+              "text": "six fois plus vite, 18 m/s"
+            },
+            {
+              "text": "deux fois moins vite, 1,5 m/s"
+            }
           ]
         },
         {
@@ -320,10 +414,19 @@
           "prompt": "Pourquoi une grue ne lève-t-elle pas vite ?",
           "explanation": "Parce que toute la force gagnée par le palan et le réducteur est payée en vitesse. La lenteur n'est pas un défaut de la grue : c'est la contrepartie exacte de sa force.",
           "options": [
-            { "text": "la force gagnée est payée en vitesse", "correct": true },
-            { "text": "son moteur est trop vieux" },
-            { "text": "le câble casserait" },
-            { "text": "c'est une règle de sécurité du chantier" }
+            {
+              "text": "la force gagnée est payée en vitesse",
+              "correct": true
+            },
+            {
+              "text": "son moteur est trop vieux"
+            },
+            {
+              "text": "le câble casserait"
+            },
+            {
+              "text": "c'est une règle de sécurité du chantier"
+            }
           ]
         }
       ]

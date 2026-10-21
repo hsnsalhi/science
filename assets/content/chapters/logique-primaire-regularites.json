@@ -81,10 +81,19 @@
           "hint": "Cherche celle où rien ne se répète.",
           "explanation": "« rouge, bleu, vert, jaune » : chaque couleur est nouvelle, rien ne revient. Les trois autres répètent un motif.",
           "options": [
-            { "text": "rouge, bleu, vert, jaune", "correct": true },
-            { "text": "rouge, bleu, rouge, bleu" },
-            { "text": "vert, vert, orange, vert, vert, orange" },
-            { "text": "rond, carré, rond, carré" }
+            {
+              "text": "rouge, bleu, vert, jaune",
+              "correct": true
+            },
+            {
+              "text": "rouge, bleu, rouge, bleu"
+            },
+            {
+              "text": "vert, vert, orange, vert, vert, orange"
+            },
+            {
+              "text": "rond, carré, rond, carré"
+            }
           ]
         }
       ]
@@ -99,24 +108,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le motif se répète, donc il se prévoit",
+          "body": "Continue la suite de motifs. Une fois la règle trouvée, on peut dire ce qu’il y aura à la centième place sans rien dessiner entre les deux.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Trop long à dessiner",
           "body": "On te demande la 20e perle du collier rouge, bleu, rouge, bleu…\n\nTu peux les dessiner toutes les vingt. Mais il y a plus rapide, et c'est ce qui rend les régularités utiles."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Avec un motif de deux",
           "body": "Les perles impaires (1, 3, 5, 7…) sont rouges.\n\nLes perles paires (2, 4, 6, 8…) sont bleues.\n\n20 est pair, donc la 20e perle est bleue. Sans rien dessiner."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Avec un motif de trois",
           "body": "Le motif « vert, vert, orange » fait trois cases. On divise le numéro par 3 et on regarde le reste.\n\nReste 1 : vert. Reste 2 : vert. Reste 0 : orange.\n\nPour la 12e case : 12 divisé par 3 fait 4, reste 0. C'est orange."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Le reste de la division dit où l'on tombe dans le motif. C'est la même idée que les jours de la semaine : sept jours, et on recommence."
         }
@@ -130,10 +146,19 @@
           "explanation": "Bleue. Les perles paires sont bleues, et 10 est pair.",
           "figureId": "suite-motifs",
           "options": [
-            { "text": "Bleue", "correct": true },
-            { "text": "Rouge" },
-            { "text": "On ne peut pas le savoir" },
-            { "text": "Verte" }
+            {
+              "text": "Bleue",
+              "correct": true
+            },
+            {
+              "text": "Rouge"
+            },
+            {
+              "text": "On ne peut pas le savoir"
+            },
+            {
+              "text": "Verte"
+            }
           ]
         },
         {
@@ -144,10 +169,19 @@
           "explanation": "Verte. 10 divisé par 3 fait 3, reste 1 : on tombe sur la première case du motif, qui est verte.",
           "figureId": "suite-motifs",
           "options": [
-            { "text": "Verte", "correct": true },
-            { "text": "Orange" },
-            { "text": "Rouge" },
-            { "text": "On ne peut pas le savoir" }
+            {
+              "text": "Verte",
+              "correct": true
+            },
+            {
+              "text": "Orange"
+            },
+            {
+              "text": "Rouge"
+            },
+            {
+              "text": "On ne peut pas le savoir"
+            }
           ]
         },
         {
@@ -167,12 +201,27 @@
           "prompt": "Collier rouge, bleu, rouge, bleu… Range ces numéros de perles.",
           "hint": "Les impairs d'un côté, les pairs de l'autre.",
           "explanation": "Les perles impaires sont rouges, les paires sont bleues. Il suffit de regarder si le numéro est pair.",
-          "categories": ["Perle rouge", "Perle bleue"],
+          "categories": [
+            "Perle rouge",
+            "Perle bleue"
+          ],
           "items": [
-            { "text": "la 7e", "category": 0 },
-            { "text": "la 15e", "category": 0 },
-            { "text": "la 8e", "category": 1 },
-            { "text": "la 20e", "category": 1 }
+            {
+              "text": "la 7e",
+              "category": 0
+            },
+            {
+              "text": "la 15e",
+              "category": 0
+            },
+            {
+              "text": "la 8e",
+              "category": 1
+            },
+            {
+              "text": "la 20e",
+              "category": 1
+            }
           ]
         }
       ]
@@ -252,10 +301,19 @@
           "hint": "Regarde ce qu'on ajoute à chaque fois.",
           "explanation": "On ajoute 2 à chaque fois. Ce sont les nombres pairs, dans l'ordre.",
           "options": [
-            { "text": "On ajoute 2 à chaque fois", "correct": true },
-            { "text": "On double à chaque fois" },
-            { "text": "On ajoute 1 à chaque fois" },
-            { "text": "Il n'y a pas de règle" }
+            {
+              "text": "On ajoute 2 à chaque fois",
+              "correct": true
+            },
+            {
+              "text": "On double à chaque fois"
+            },
+            {
+              "text": "On ajoute 1 à chaque fois"
+            },
+            {
+              "text": "Il n'y a pas de règle"
+            }
           ]
         }
       ]
@@ -270,6 +328,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Trouver la règle, pas la suite",
+          "body": "Essaie plusieurs suites. Ce qu’on cherche n’est jamais le dessin suivant : c’est la règle qui les produit tous.",
+          "figureId": "suite-motifs"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Pour chaque suite, demande-toi d'abord : est-ce qu'elle se répète, ou est-ce qu'elle grandit ?"
@@ -282,12 +347,27 @@
           "prompt": "Range ces suites selon leur sorte.",
           "hint": "Est-ce que les mêmes cases reviennent ?",
           "explanation": "Les deux premières reviennent toujours aux mêmes cases. Les deux autres ne repassent jamais par la même : elles grandissent.",
-          "categories": ["Elle se répète", "Elle grandit"],
+          "categories": [
+            "Elle se répète",
+            "Elle grandit"
+          ],
           "items": [
-            { "text": "rouge, bleu, rouge, bleu", "category": 0 },
-            { "text": "rond, rond, carré, rond, rond, carré", "category": 0 },
-            { "text": "1, 2, 3, 4, 5", "category": 1 },
-            { "text": "2, 4, 6, 8, 10", "category": 1 }
+            {
+              "text": "rouge, bleu, rouge, bleu",
+              "category": 0
+            },
+            {
+              "text": "rond, rond, carré, rond, rond, carré",
+              "category": 0
+            },
+            {
+              "text": "1, 2, 3, 4, 5",
+              "category": 1
+            },
+            {
+              "text": "2, 4, 6, 8, 10",
+              "category": 1
+            }
           ]
         },
         {
@@ -298,10 +378,19 @@
           "explanation": "Rouge. Les perles impaires sont rouges, et 21 est impair.",
           "figureId": "suite-motifs",
           "options": [
-            { "text": "Rouge", "correct": true },
-            { "text": "Bleue" },
-            { "text": "Verte" },
-            { "text": "On ne peut pas le savoir" }
+            {
+              "text": "Rouge",
+              "correct": true
+            },
+            {
+              "text": "Bleue"
+            },
+            {
+              "text": "Verte"
+            },
+            {
+              "text": "On ne peut pas le savoir"
+            }
           ]
         },
         {
@@ -312,10 +401,19 @@
           "explanation": "Orange. 15 divisé par 3 fait 5, reste 0 : on tombe sur la dernière case du motif, qui est orange.",
           "figureId": "suite-motifs",
           "options": [
-            { "text": "Orange", "correct": true },
-            { "text": "Verte" },
-            { "text": "Rouge" },
-            { "text": "Bleue" }
+            {
+              "text": "Orange",
+              "correct": true
+            },
+            {
+              "text": "Verte"
+            },
+            {
+              "text": "Rouge"
+            },
+            {
+              "text": "Bleue"
+            }
           ]
         },
         {

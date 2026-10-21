@@ -51,12 +51,27 @@
           "prompt": "Range ces éléments dans la chaîne d'information.",
           "hint": "Lequel mesure, lequel agit ?",
           "explanation": "Le thermomètre et le détecteur de présence mesurent : ce sont des capteurs. Le radiateur et le moteur agissent sur le monde : ce sont des actionneurs.",
-          "categories": ["Capteur", "Actionneur"],
+          "categories": [
+            "Capteur",
+            "Actionneur"
+          ],
           "items": [
-            { "text": "Thermomètre", "category": 0 },
-            { "text": "Détecteur de présence", "category": 0 },
-            { "text": "Radiateur", "category": 1 },
-            { "text": "Moteur", "category": 1 }
+            {
+              "text": "Thermomètre",
+              "category": 0
+            },
+            {
+              "text": "Détecteur de présence",
+              "category": 0
+            },
+            {
+              "text": "Radiateur",
+              "category": 1
+            },
+            {
+              "text": "Moteur",
+              "category": 1
+            }
           ]
         },
         {
@@ -67,10 +82,19 @@
           "explanation": "Le programme. Le capteur se contente de mesurer ; c'est la comparaison au seuil qui déclenche l'action.",
           "figureId": "chaine-information",
           "options": [
-            { "text": "Le programme", "correct": true },
-            { "text": "Le thermomètre" },
-            { "text": "Le radiateur" },
-            { "text": "L'utilisateur, à chaque fois" }
+            {
+              "text": "Le programme",
+              "correct": true
+            },
+            {
+              "text": "Le thermomètre"
+            },
+            {
+              "text": "Le radiateur"
+            },
+            {
+              "text": "L'utilisateur, à chaque fois"
+            }
           ]
         },
         {
@@ -146,12 +170,27 @@
           "prompt": "Range ces capteurs selon ce qu'ils renvoient.",
           "hint": "Lequel ne peut répondre que par oui ou non ?",
           "explanation": "L'interrupteur de porte et le détecteur de présence ne renvoient que deux états. Le thermomètre et le capteur de luminosité donnent une valeur sur une échelle.",
-          "categories": ["Tout ou rien", "Analogique"],
+          "categories": [
+            "Tout ou rien",
+            "Analogique"
+          ],
           "items": [
-            { "text": "Interrupteur de porte", "category": 0 },
-            { "text": "Détecteur de présence", "category": 0 },
-            { "text": "Thermomètre", "category": 1 },
-            { "text": "Capteur de luminosité", "category": 1 }
+            {
+              "text": "Interrupteur de porte",
+              "category": 0
+            },
+            {
+              "text": "Détecteur de présence",
+              "category": 0
+            },
+            {
+              "text": "Thermomètre",
+              "category": 1
+            },
+            {
+              "text": "Capteur de luminosité",
+              "category": 1
+            }
           ]
         },
         {
@@ -160,9 +199,18 @@
           "prompt": "Associe chaque capteur à la grandeur qu'il mesure.",
           "explanation": "Chaque capteur traduit une grandeur physique précise en signal électrique.",
           "pairs": [
-            { "left": "Thermomètre", "right": "Une température" },
-            { "left": "Photorésistance", "right": "Une luminosité" },
-            { "left": "Capteur à ultrasons", "right": "Une distance" }
+            {
+              "left": "Thermomètre",
+              "right": "Une température"
+            },
+            {
+              "left": "Photorésistance",
+              "right": "Une luminosité"
+            },
+            {
+              "left": "Capteur à ultrasons",
+              "right": "Une distance"
+            }
           ]
         },
         {
@@ -172,10 +220,19 @@
           "hint": "Un capteur détecte quelque chose de proche.",
           "explanation": "Un capteur de proximité détecte un objet tout près, et le programme éteint l'écran. Cela évite les touches involontaires et économise la batterie.",
           "options": [
-            { "text": "Un capteur de proximité détecte l'oreille", "correct": true },
-            { "text": "L'écran chauffe trop" },
-            { "text": "Le micro coupe l'écran" },
-            { "text": "C'est l'utilisateur qui l'éteint" }
+            {
+              "text": "Un capteur de proximité détecte l'oreille",
+              "correct": true
+            },
+            {
+              "text": "L'écran chauffe trop"
+            },
+            {
+              "text": "Le micro coupe l'écran"
+            },
+            {
+              "text": "C'est l'utilisateur qui l'éteint"
+            }
           ]
         },
         {
@@ -237,10 +294,19 @@
           "explanation": "Il reste éteint : 19 n'est pas strictement inférieur à 19. C'est le cas limite, et il ne se devine pas — il s'essaie.",
           "figureId": "chaine-information",
           "options": [
-            { "text": "Il reste éteint", "correct": true },
-            { "text": "Il s'allume" },
-            { "text": "Il clignote" },
-            { "text": "Cela dépend du capteur" }
+            {
+              "text": "Il reste éteint",
+              "correct": true
+            },
+            {
+              "text": "Il s'allume"
+            },
+            {
+              "text": "Il clignote"
+            },
+            {
+              "text": "Cela dépend du capteur"
+            }
           ]
         },
         {
@@ -259,8 +325,16 @@
           "prompt": "Complète le programme d'un éclairage automatique de couloir.",
           "template": "si (présence ___ luminosité < 50) alors allumer ___ éteindre",
           "blanks": [
-            { "accepted": ["et"] },
-            { "accepted": ["sinon"] }
+            {
+              "accepted": [
+                "et"
+              ]
+            },
+            {
+              "accepted": [
+                "sinon"
+              ]
+            }
           ],
           "hint": "Les deux conditions doivent être réunies.",
           "explanation": "« et », puis « sinon ». Avec « ou », la lumière s'allumerait en plein jour dès qu'un passant arrive — et resterait allumée toute la nuit sans personne."
@@ -284,6 +358,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le seuil, et ce qu’il déclenche",
+          "body": "Règle le seuil et observe le moment où l’actionneur part. Tout le défi consiste à placer ce nombre au bon endroit, et à dire ce qui se passe juste au-dessus et juste en dessous.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pour chaque objet, repère ce qui mesure, ce qui décide et ce qui agit."
@@ -295,12 +376,27 @@
           "kind": "tri",
           "prompt": "Dans un portail automatique, range ces éléments.",
           "explanation": "La télécommande et la cellule de sécurité renseignent le programme : ce sont des capteurs. Le moteur et le gyrophare agissent : ce sont des actionneurs.",
-          "categories": ["Capteur", "Actionneur"],
+          "categories": [
+            "Capteur",
+            "Actionneur"
+          ],
           "items": [
-            { "text": "Récepteur de télécommande", "category": 0 },
-            { "text": "Cellule de sécurité", "category": 0 },
-            { "text": "Moteur du portail", "category": 1 },
-            { "text": "Gyrophare", "category": 1 }
+            {
+              "text": "Récepteur de télécommande",
+              "category": 0
+            },
+            {
+              "text": "Cellule de sécurité",
+              "category": 0
+            },
+            {
+              "text": "Moteur du portail",
+              "category": 1
+            },
+            {
+              "text": "Gyrophare",
+              "category": 1
+            }
           ]
         },
         {
@@ -310,10 +406,19 @@
           "hint": "La sécurité passe avant la consigne.",
           "explanation": "Arrêter le portail, et le rouvrir. Le programme doit donner la priorité à cette information sur l'ordre de fermeture.",
           "options": [
-            { "text": "Arrêter et rouvrir le portail", "correct": true },
-            { "text": "Continuer la fermeture" },
-            { "text": "Ignorer la cellule" },
-            { "text": "Couper l'alimentation" }
+            {
+              "text": "Arrêter et rouvrir le portail",
+              "correct": true
+            },
+            {
+              "text": "Continuer la fermeture"
+            },
+            {
+              "text": "Ignorer la cellule"
+            },
+            {
+              "text": "Couper l'alimentation"
+            }
           ]
         },
         {
@@ -333,9 +438,18 @@
           "prompt": "Associe chaque objet à son actionneur.",
           "explanation": "Chaque objet technique agit sur le monde par un actionneur précis.",
           "pairs": [
-            { "left": "Volet roulant", "right": "Un moteur" },
-            { "left": "Chauffage", "right": "Une résistance chauffante" },
-            { "left": "Éclairage automatique", "right": "Une lampe" }
+            {
+              "left": "Volet roulant",
+              "right": "Un moteur"
+            },
+            {
+              "left": "Chauffage",
+              "right": "Une résistance chauffante"
+            },
+            {
+              "left": "Éclairage automatique",
+              "right": "Une lampe"
+            }
           ]
         },
         {
@@ -352,10 +466,19 @@
           "hint": "Que se passerait-il juste autour d'un seuil unique ?",
           "explanation": "Pour éviter que le radiateur s'allume et s'éteigne sans arrêt autour de la valeur du seuil, ce qui l'userait et consommerait inutilement.",
           "options": [
-            { "text": "Pour éviter que le radiateur clignote sans arrêt", "correct": true },
-            { "text": "Pour mesurer plus précisément" },
-            { "text": "Pour économiser le capteur" },
-            { "text": "Parce que la loi l'impose" }
+            {
+              "text": "Pour éviter que le radiateur clignote sans arrêt",
+              "correct": true
+            },
+            {
+              "text": "Pour mesurer plus précisément"
+            },
+            {
+              "text": "Pour économiser le capteur"
+            },
+            {
+              "text": "Parce que la loi l'impose"
+            }
           ]
         }
       ]

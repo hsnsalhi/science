@@ -46,7 +46,11 @@
           "kind": "remiseEnOrdre",
           "prompt": "Range les couches de la Terre, de la surface vers le centre.",
           "explanation": "La croûte, puis le manteau, puis le noyau. La croûte est la plus mince des trois.",
-          "items": ["la croûte", "le manteau", "le noyau"]
+          "items": [
+            "la croûte",
+            "le manteau",
+            "le noyau"
+          ]
         },
         {
           "id": "q2",
@@ -68,10 +72,19 @@
           "prompt": "À quoi peut-on comparer la vitesse des plaques ?",
           "explanation": "À la pousse des ongles : quelques centimètres par an. Invisible au quotidien, énorme sur des millions d'années.",
           "options": [
-            { "text": "à la pousse des ongles", "correct": true },
-            { "text": "à la marche d'un enfant" },
-            { "text": "à un escargot" },
-            { "text": "à une voiture" }
+            {
+              "text": "à la pousse des ongles",
+              "correct": true
+            },
+            {
+              "text": "à la marche d'un enfant"
+            },
+            {
+              "text": "à un escargot"
+            },
+            {
+              "text": "à une voiture"
+            }
           ]
         }
       ]
@@ -86,24 +99,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux éruptions, deux dangers",
+          "body": "Fais passer le volcan du repos à la mise sous pression, puis à l’éruption. Compare les deux : la lave rouge est fluide, elle coule et on peut fuir ; la grise est visqueuse, elle bouche la cheminée et tout part d’un coup.",
+          "figureId": "volcan"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "D'où vient la lave",
           "body": "En profondeur, certaines roches fondent. Cette roche fondue s'appelle le magma. Comme elle est plus légère que les roches autour, elle monte.\n\nElle s'accumule dans une poche sous le volcan — la chambre magmatique. Quand la pression devient trop forte, elle se fraie un chemin et sort. Dehors, on ne dit plus magma mais lave."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Deux sortes de volcans",
           "body": "Les volcans rouges : la lave est fluide, elle coule en rivières. On peut souvent les approcher. Le Piton de la Fournaise à La Réunion, les volcans d'Hawaï.\n\nLes volcans gris : la lave est épaisse et bouche la cheminée. La pression monte jusqu'à l'explosion, qui projette cendres et blocs. La Montagne Pelée, le Vésuve."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "avertissement",
           "title": "Les gris sont les dangereux",
           "body": "Une coulée de lave avance lentement : on a le temps de partir. Elle détruit des maisons, rarement des vies.\n\nUne explosion de volcan gris projette un nuage de cendres brûlantes qui dévale la pente à plus de 300 km/h. En 1902, la Montagne Pelée a détruit la ville de Saint-Pierre en quelques minutes."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Les volcans ne sont pas n'importe où",
           "body": "Presque tous se trouvent aux frontières des plaques. La « ceinture de feu » du Pacifique en rassemble les trois quarts.\n\nLà où les plaques se touchent, la roche fond plus facilement. C'est pourquoi l'Islande et le Japon tremblent et fument, et pas la Belgique."
@@ -116,10 +136,19 @@
           "prompt": "Comment appelle-t-on la roche fondue tant qu'elle est sous terre ?",
           "explanation": "Le magma. Une fois sortie à l'air libre, on l'appelle lave.",
           "options": [
-            { "text": "le magma", "correct": true },
-            { "text": "la lave" },
-            { "text": "la cendre" },
-            { "text": "le basalte" }
+            {
+              "text": "le magma",
+              "correct": true
+            },
+            {
+              "text": "la lave"
+            },
+            {
+              "text": "la cendre"
+            },
+            {
+              "text": "le basalte"
+            }
           ]
         },
         {
@@ -127,12 +156,27 @@
           "kind": "tri",
           "prompt": "Range ces volcans selon leur type.",
           "explanation": "Rouges : lave fluide qui coule. Gris : lave épaisse qui bouche et finit par exploser.",
-          "categories": ["volcan rouge", "volcan gris"],
+          "categories": [
+            "volcan rouge",
+            "volcan gris"
+          ],
           "items": [
-            { "text": "Piton de la Fournaise", "category": 0 },
-            { "text": "volcans d'Hawaï", "category": 0 },
-            { "text": "Montagne Pelée", "category": 1 },
-            { "text": "Vésuve", "category": 1 }
+            {
+              "text": "Piton de la Fournaise",
+              "category": 0
+            },
+            {
+              "text": "volcans d'Hawaï",
+              "category": 0
+            },
+            {
+              "text": "Montagne Pelée",
+              "category": 1
+            },
+            {
+              "text": "Vésuve",
+              "category": 1
+            }
           ]
         },
         {
@@ -142,10 +186,19 @@
           "hint": "Lequel ne laisse pas le temps de fuir ?",
           "explanation": "Le volcan gris. Son nuage de cendres brûlantes dévale la pente à plus de 300 km/h ; une coulée de lave, elle, avance lentement.",
           "options": [
-            { "text": "le volcan gris, qui explose", "correct": true },
-            { "text": "le volcan rouge, qui coule" },
-            { "text": "les deux autant" },
-            { "text": "aucun : ils sont prévisibles" }
+            {
+              "text": "le volcan gris, qui explose",
+              "correct": true
+            },
+            {
+              "text": "le volcan rouge, qui coule"
+            },
+            {
+              "text": "les deux autant"
+            },
+            {
+              "text": "aucun : ils sont prévisibles"
+            }
           ]
         },
         {
@@ -180,24 +233,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La roche qui cède d’un coup",
+          "body": "Mets le volcan sous pression : le sol se bombe et la roche se fissure avant de lâcher. Un séisme est ce moment-là, à l’échelle d’une plaque entière au lieu d’une montagne.",
+          "figureId": "volcan"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Comme une règle qu'on plie",
           "body": "Prends une règle en plastique et plie-la doucement. Elle résiste, elle se déforme, elle accumule de la tension. Puis d'un coup, elle casse ou se détend brutalement.\n\nLes plaques font pareil. Elles poussent l'une contre l'autre pendant des années sans bouger, parce qu'elles sont coincées. Puis elles cèdent d'un coup : c'est le séisme."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le vocabulaire",
           "body": "Le foyer : l'endroit en profondeur où la roche a cédé.\n\nL'épicentre : le point à la surface juste au-dessus du foyer. C'est là que les dégâts sont les plus forts.\n\nLes ondes sismiques : les vibrations qui partent du foyer dans toutes les directions, comme des ronds dans l'eau."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Ce qui tue, ce sont les bâtiments",
           "body": "Un séisme en plein désert ne fait aucune victime. Le même en ville en fait des milliers.\n\nC'est pourquoi les pays qui construisent aux normes parasismiques — le Japon, le Chili — ont bien moins de morts que ceux qui n'en ont pas les moyens, à secousse égale."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "On ne sait pas prévoir",
           "body": "On sait très bien où les séismes auront lieu : le long des failles connues. On ne sait pas quand.\n\nAucune méthode fiable n'existe à ce jour, malgré un siècle de recherches. On se prépare donc, au lieu d'attendre une alerte."
@@ -210,9 +270,18 @@
           "prompt": "Associe chaque mot à sa définition.",
           "explanation": "Le foyer est en profondeur, l'épicentre juste au-dessus en surface, et les ondes voyagent depuis le foyer.",
           "pairs": [
-            { "left": "foyer", "right": "le point de rupture, en profondeur" },
-            { "left": "épicentre", "right": "le point en surface au-dessus du foyer" },
-            { "left": "ondes sismiques", "right": "les vibrations qui se propagent" }
+            {
+              "left": "foyer",
+              "right": "le point de rupture, en profondeur"
+            },
+            {
+              "left": "épicentre",
+              "right": "le point en surface au-dessus du foyer"
+            },
+            {
+              "left": "ondes sismiques",
+              "right": "les vibrations qui se propagent"
+            }
           ]
         },
         {
@@ -221,10 +290,19 @@
           "prompt": "Pourquoi les plaques ne glissent-elles pas en douceur tout le temps ?",
           "explanation": "Parce qu'elles se coincent. La tension s'accumule pendant des années, puis se libère d'un coup : c'est le séisme.",
           "options": [
-            { "text": "elles se coincent, puis cèdent d'un coup", "correct": true },
-            { "text": "elles ne bougent qu'une fois par siècle" },
-            { "text": "le magma les bloque" },
-            { "text": "elles glissent en douceur, en réalité" }
+            {
+              "text": "elles se coincent, puis cèdent d'un coup",
+              "correct": true
+            },
+            {
+              "text": "elles ne bougent qu'une fois par siècle"
+            },
+            {
+              "text": "le magma les bloque"
+            },
+            {
+              "text": "elles glissent en douceur, en réalité"
+            }
           ]
         },
         {
@@ -241,10 +319,19 @@
           "hint": "Ce n'est pas la secousse qui tue directement.",
           "explanation": "À secousse égale, ce sont les bâtiments qui font la différence. Les constructions parasismiques sauvent des milliers de vies.",
           "options": [
-            { "text": "parce que les bâtiments y résistent moins", "correct": true },
-            { "text": "parce que les secousses y sont plus fortes" },
-            { "text": "parce que le sol y est plus dur" },
-            { "text": "parce qu'il y fait plus chaud" }
+            {
+              "text": "parce que les bâtiments y résistent moins",
+              "correct": true
+            },
+            {
+              "text": "parce que les secousses y sont plus fortes"
+            },
+            {
+              "text": "parce que le sol y est plus dur"
+            },
+            {
+              "text": "parce qu'il y fait plus chaud"
+            }
           ]
         },
         {
@@ -267,6 +354,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Toute cette agitation vient d’en bas",
+          "body": "Passe en revue les quatre états. Ce qui les produit est la chaleur interne de la Terre, et c’est la même chaleur qui fabrique les continents — le défi explique pourquoi c’est une chance.",
+          "figureId": "volcan"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Heureusement qu'elle bouge",
           "body": "Volcans et séismes font peur, mais une Terre immobile serait une Terre morte.\n\nLes volcans ont fabriqué l'atmosphère et une grande partie de l'eau des océans, en recrachant les gaz piégés dans les roches. Ils créent des terres neuves et des sols très fertiles — c'est pourquoi tant de gens vivent à leur pied malgré le risque.\n\nEt le noyau métallique liquide, en tournant, engendre le champ magnétique qui nous protège du vent solaire. Mars a perdu le sien il y a des milliards d'années ; elle a perdu son air dans la foulée."
@@ -279,11 +373,25 @@
           "prompt": "Qu'est-ce que l'activité de la Terre nous apporte ?",
           "explanation": "Les volcans ont fourni l'atmosphère, l'eau et des sols fertiles. Le noyau liquide engendre le champ magnétique protecteur.",
           "options": [
-            { "text": "une grande partie de l'atmosphère", "correct": true },
-            { "text": "une grande partie de l'eau des océans", "correct": true },
-            { "text": "des sols très fertiles", "correct": true },
-            { "text": "le champ magnétique qui nous protège", "correct": true },
-            { "text": "la lumière du jour" }
+            {
+              "text": "une grande partie de l'atmosphère",
+              "correct": true
+            },
+            {
+              "text": "une grande partie de l'eau des océans",
+              "correct": true
+            },
+            {
+              "text": "des sols très fertiles",
+              "correct": true
+            },
+            {
+              "text": "le champ magnétique qui nous protège",
+              "correct": true
+            },
+            {
+              "text": "la lumière du jour"
+            }
           ]
         },
         {
@@ -293,10 +401,19 @@
           "hint": "Qu'est-ce qui protège la nôtre ?",
           "explanation": "Son noyau s'est refroidi, son champ magnétique a disparu, et le vent solaire a emporté son air peu à peu.",
           "options": [
-            { "text": "son champ magnétique a disparu", "correct": true },
-            { "text": "elle est trop petite pour avoir de l'air" },
-            { "text": "elle est trop loin du Soleil" },
-            { "text": "ses volcans l'ont brûlée" }
+            {
+              "text": "son champ magnétique a disparu",
+              "correct": true
+            },
+            {
+              "text": "elle est trop petite pour avoir de l'air"
+            },
+            {
+              "text": "elle est trop loin du Soleil"
+            },
+            {
+              "text": "ses volcans l'ont brûlée"
+            }
           ]
         },
         {

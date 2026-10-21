@@ -51,12 +51,27 @@
           "prompt": "Range ces propriétés selon l'état qu'elles décrivent.",
           "hint": "Pense au récipient : la matière en prend-elle la forme ?",
           "explanation": "Un solide garde sa forme et ses particules sont rangées. Un gaz occupe tout le volume disponible, et ses particules sont très éloignées les unes des autres.",
-          "categories": ["Solide", "Gaz"],
+          "categories": [
+            "Solide",
+            "Gaz"
+          ],
           "items": [
-            { "text": "Garde sa forme", "category": 0 },
-            { "text": "Particules rangées et serrées", "category": 0 },
-            { "text": "Occupe tout le volume disponible", "category": 1 },
-            { "text": "Particules très éloignées", "category": 1 }
+            {
+              "text": "Garde sa forme",
+              "category": 0
+            },
+            {
+              "text": "Particules rangées et serrées",
+              "category": 0
+            },
+            {
+              "text": "Occupe tout le volume disponible",
+              "category": 1
+            },
+            {
+              "text": "Particules très éloignées",
+              "category": 1
+            }
           ]
         },
         {
@@ -67,10 +82,19 @@
           "explanation": "Le liquide a un volume propre : un litre d'eau reste un litre quel que soit le récipient. Un gaz, lui, se répand dans tout l'espace offert.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "Le liquide a un volume propre, pas le gaz", "correct": true },
-            { "text": "Le liquide a une forme propre, pas le gaz" },
-            { "text": "Le gaz n'est pas fait de particules" },
-            { "text": "Le gaz ne pèse rien" }
+            {
+              "text": "Le liquide a un volume propre, pas le gaz",
+              "correct": true
+            },
+            {
+              "text": "Le liquide a une forme propre, pas le gaz"
+            },
+            {
+              "text": "Le gaz n'est pas fait de particules"
+            },
+            {
+              "text": "Le gaz ne pèse rien"
+            }
           ]
         },
         {
@@ -140,10 +164,22 @@
           "prompt": "Associe chaque changement d'état à son nom.",
           "explanation": "Du solide au liquide, c'est la fusion. Du liquide au gaz, la vaporisation. Du gaz au liquide, la liquéfaction. Du liquide au solide, la solidification.",
           "pairs": [
-            { "left": "Solide vers liquide", "right": "Fusion" },
-            { "left": "Liquide vers gaz", "right": "Vaporisation" },
-            { "left": "Gaz vers liquide", "right": "Liquéfaction" },
-            { "left": "Liquide vers solide", "right": "Solidification" }
+            {
+              "left": "Solide vers liquide",
+              "right": "Fusion"
+            },
+            {
+              "left": "Liquide vers gaz",
+              "right": "Vaporisation"
+            },
+            {
+              "left": "Gaz vers liquide",
+              "right": "Liquéfaction"
+            },
+            {
+              "left": "Liquide vers solide",
+              "right": "Solidification"
+            }
           ]
         },
         {
@@ -165,10 +201,19 @@
           "explanation": "Il reste à 0 °C. L'énergie sert à faire fondre la glace, pas à élever la température : c'est ce qui rend les glaçons si efficaces dans une boisson.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "Il reste à 0 °C", "correct": true },
-            { "text": "Il monte régulièrement" },
-            { "text": "Il descend" },
-            { "text": "Il monte puis redescend" }
+            {
+              "text": "Il reste à 0 °C",
+              "correct": true
+            },
+            {
+              "text": "Il monte régulièrement"
+            },
+            {
+              "text": "Il descend"
+            },
+            {
+              "text": "Il monte puis redescend"
+            }
           ]
         },
         {
@@ -190,25 +235,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La masse ne bouge pas, le volume si",
+          "body": "Fais varier la température : la même eau passe d’un petit volume serré à tout le récipient. Pas un atome n’a disparu — seule la place occupée a changé.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "La masse se conserve",
           "body": "On pèse une bouteille fermée contenant de l'eau liquide, on la met au congélateur, on la repèse une fois l'eau gelée : la balance affiche la même masse.\n\nLes particules sont les mêmes, en même nombre."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le volume, lui, change",
           "body": "L'eau est une exception remarquable : en gelant, elle occupe environ 9 % de place en plus. C'est pour cela qu'une bouteille pleine et fermée peut éclater au congélateur, et que la glace flotte.\n\nPour presque toutes les autres substances, le solide est plus compact que le liquide."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "Masse volumique",
           "formula": "masse volumique = m / V",
           "body": "pour l'eau liquide, 1 g par cm³, soit 1 kg par litre."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "body": "Un corps flotte s'il est moins dense que le liquide. La glace flotte sur l'eau parce qu'elle est plus légère à volume égal — conséquence directe des 9 % gagnés en gelant."
         }
@@ -239,12 +291,27 @@
           "kind": "tri",
           "prompt": "Range ces grandeurs selon qu'elles changent ou non quand l'eau gèle.",
           "explanation": "La masse et le nombre de particules ne changent pas. Le volume augmente d'environ 9 %, et la masse volumique diminue d'autant : c'est pourquoi la glace flotte.",
-          "categories": ["Ne change pas", "Change"],
+          "categories": [
+            "Ne change pas",
+            "Change"
+          ],
           "items": [
-            { "text": "La masse", "category": 0 },
-            { "text": "Le nombre de particules", "category": 0 },
-            { "text": "Le volume", "category": 1 },
-            { "text": "La masse volumique", "category": 1 }
+            {
+              "text": "La masse",
+              "category": 0
+            },
+            {
+              "text": "Le nombre de particules",
+              "category": 0
+            },
+            {
+              "text": "Le volume",
+              "category": 1
+            },
+            {
+              "text": "La masse volumique",
+              "category": 1
+            }
           ]
         },
         {
@@ -269,6 +336,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux repères, et rien entre eux",
+          "body": "Balaie toute la plage de température. L’eau ne change d’état qu’à deux endroits précis ; partout ailleurs, elle ne fait que chauffer ou refroidir.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense chaque fois à ce que font les particules."
@@ -283,10 +357,19 @@
           "explanation": "Dans un gaz. C'est précisément pour cela qu'il occupe tout le volume offert : rien ne retient ses particules les unes aux autres.",
           "figureId": "etats-matiere",
           "options": [
-            { "text": "Gaz", "correct": true },
-            { "text": "Liquide" },
-            { "text": "Solide" },
-            { "text": "Elles sont aussi proches dans les trois" }
+            {
+              "text": "Gaz",
+              "correct": true
+            },
+            {
+              "text": "Liquide"
+            },
+            {
+              "text": "Solide"
+            },
+            {
+              "text": "Elles sont aussi proches dans les trois"
+            }
           ]
         },
         {
@@ -305,12 +388,27 @@
           "kind": "tri",
           "prompt": "Range ces changements d'état.",
           "explanation": "La fusion et la vaporisation demandent de chauffer. La solidification et la liquéfaction se produisent en refroidissant.",
-          "categories": ["On chauffe", "On refroidit"],
+          "categories": [
+            "On chauffe",
+            "On refroidit"
+          ],
           "items": [
-            { "text": "Fusion", "category": 0 },
-            { "text": "Vaporisation", "category": 0 },
-            { "text": "Solidification", "category": 1 },
-            { "text": "Liquéfaction", "category": 1 }
+            {
+              "text": "Fusion",
+              "category": 0
+            },
+            {
+              "text": "Vaporisation",
+              "category": 0
+            },
+            {
+              "text": "Solidification",
+              "category": 1
+            },
+            {
+              "text": "Liquéfaction",
+              "category": 1
+            }
           ]
         },
         {

@@ -11,25 +11,32 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Écarte, et la force s’effondre",
+          "body": "Éloigne les deux corps et regarde les flèches. Doubler la distance ne divise pas la force par deux mais par quatre : c’est le carré qui décide.",
+          "figureId": "attraction-distance"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'idée qui a tout changé",
           "body": "Avant Newton, on pensait que le ciel obéissait à d'autres lois que la Terre. En bas, les choses tombent. En haut, les astres tournent éternellement. Deux mondes.\n\nNewton a proposé qu'il n'y en ait qu'un. La pomme tombe parce que la Terre l'attire ; la Lune tourne parce que la Terre l'attire aussi. La même force, la même loi."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Deux masses s'attirent",
           "formula": "F = G × m₁ × m₂ ÷ d²",
           "body": "Deux fois plus de masse, deux fois plus de force. Deux fois plus loin, quatre fois moins de force — c'est le carré qui fait toute la différence."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Elle est partout, et réciproque",
           "body": "Toutes les masses s'attirent, sans exception. Toi et ton stylo vous attirez — mais vos masses sont si petites que la force est indétectable.\n\nEt elle est réciproque : la Terre attire la Lune exactement autant que la Lune attire la Terre. C'est la Terre, bien plus massive, qui bouge le moins."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Le carré, pas le double",
           "body": "Si tu éloignes deux corps de 3 fois, la force ne devient pas 3 fois plus faible mais 9 fois.\n\nC'est pourquoi la gravité décroît si vite, et pourquoi elle reste pourtant sensible sur des distances énormes : elle ne s'annule jamais tout à fait."
@@ -64,10 +71,19 @@
           "prompt": "Quelle a été l'idée nouvelle de Newton ?",
           "explanation": "Que la chute d'une pomme et la ronde de la Lune relèvent de la même force. Avant lui, ciel et Terre obéissaient à des lois séparées.",
           "options": [
-            { "text": "la pomme et la Lune obéissent à la même force", "correct": true },
-            { "text": "la Terre tourne autour du Soleil" },
-            { "text": "les objets lourds tombent plus vite" },
-            { "text": "le ciel est immuable" }
+            {
+              "text": "la pomme et la Lune obéissent à la même force",
+              "correct": true
+            },
+            {
+              "text": "la Terre tourne autour du Soleil"
+            },
+            {
+              "text": "les objets lourds tombent plus vite"
+            },
+            {
+              "text": "le ciel est immuable"
+            }
           ]
         }
       ]
@@ -126,10 +142,19 @@
           "prompt": "Pourquoi la Lune ne tombe-t-elle pas sur la Terre ?",
           "explanation": "Elle tombe, en permanence. Mais elle avance assez vite de côté pour que la Terre se dérobe sous elle à chaque instant.",
           "options": [
-            { "text": "elle tombe, mais elle avance assez vite pour rater la Terre", "correct": true },
-            { "text": "elle est trop loin pour être attirée" },
-            { "text": "elle n'a pas de masse" },
-            { "text": "le Soleil la retient" }
+            {
+              "text": "elle tombe, mais elle avance assez vite pour rater la Terre",
+              "correct": true
+            },
+            {
+              "text": "elle est trop loin pour être attirée"
+            },
+            {
+              "text": "elle n'a pas de masse"
+            },
+            {
+              "text": "le Soleil la retient"
+            }
           ]
         },
         {
@@ -154,10 +179,19 @@
           "hint": "Pense à ce que fait le boulet de Newton.",
           "explanation": "Sa vitesse horizontale. L'altitude ne sert qu'à sortir de l'atmosphère ; sans vitesse de côté, l'objet retombe.",
           "options": [
-            { "text": "sa vitesse horizontale", "correct": true },
-            { "text": "son altitude" },
-            { "text": "sa légèreté" },
-            { "text": "l'absence de gravité en haut" }
+            {
+              "text": "sa vitesse horizontale",
+              "correct": true
+            },
+            {
+              "text": "son altitude"
+            },
+            {
+              "text": "sa légèreté"
+            },
+            {
+              "text": "l'absence de gravité en haut"
+            }
           ]
         },
         {
@@ -183,24 +217,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "L’orbite trahit la masse",
+          "body": "Observe les planètes parcourir leurs orbites. La durée d’un tour et la distance au Soleil suffisent à calculer la masse du Soleil : on n’a jamais eu besoin d’une balance.",
+          "figureId": "orbites"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "On n'a jamais posé la Terre sur une balance",
           "body": "Et pourtant on connaît sa masse : 6 × 10²⁴ kg, à moins de 1 % près.\n\nLa gravitation suffit. En mesurant comment un objet tombe, ou combien de temps la Lune met à faire son tour, on remonte à la masse de ce qui attire. C'est l'outil le plus puissant de l'astronomie."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le raisonnement",
           "body": "1. observer la période et la distance d'un satellite\n\n2. la force de gravitation doit valoir exactement ce qu'il faut pour courber sa trajectoire\n\n3. une seule valeur de masse rend l'égalité vraie\n\nC'est ainsi qu'on a pesé le Soleil, Jupiter, et même des trous noirs qu'on ne voit pas."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Ce qu'on voit n'est pas tout",
           "body": "Dans les galaxies, les étoiles du bord tournent bien trop vite pour la matière visible. Il faudrait beaucoup plus de masse pour les retenir.\n\nCette masse manquante, qu'on ne voit pas mais dont on mesure l'attraction, on l'appelle matière noire. On ignore encore ce qu'elle est."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "astuce",
           "title": "La gravité ne se bloque pas",
           "body": "Aucun matériau ne fait écran à la gravitation. On peut arrêter la lumière avec un mur, le son avec du silence, un champ électrique avec une cage métallique — mais rien n'arrête l'attraction.\n\nC'est pourquoi on sent la Lune à travers toute l'épaisseur de la Terre, deux fois par jour, sous forme de marées."
@@ -220,10 +261,19 @@
           "prompt": "Comment a-t-on mesuré la masse de la Terre ?",
           "explanation": "Par la gravitation : en observant comment les corps tombent et comment la Lune orbite, une seule masse rend les équations vraies.",
           "options": [
-            { "text": "en mesurant des effets gravitationnels", "correct": true },
-            { "text": "en la posant sur une balance géante" },
-            { "text": "en comptant ses atomes" },
-            { "text": "en la comparant au Soleil" }
+            {
+              "text": "en mesurant des effets gravitationnels",
+              "correct": true
+            },
+            {
+              "text": "en la posant sur une balance géante"
+            },
+            {
+              "text": "en comptant ses atomes"
+            },
+            {
+              "text": "en la comparant au Soleil"
+            }
           ]
         },
         {
@@ -233,10 +283,19 @@
           "hint": "Que manque-t-il pour expliquer les observations ?",
           "explanation": "Les étoiles du bord des galaxies tournent trop vite pour la masse visible. Il faut une masse supplémentaire, qu'on détecte par son attraction mais qu'on ne voit pas.",
           "options": [
-            { "text": "les galaxies tournent trop vite pour leur masse visible", "correct": true },
-            { "text": "certaines étoiles sont éteintes" },
-            { "text": "l'espace est noir" },
-            { "text": "les trous noirs sont invisibles" }
+            {
+              "text": "les galaxies tournent trop vite pour leur masse visible",
+              "correct": true
+            },
+            {
+              "text": "certaines étoiles sont éteintes"
+            },
+            {
+              "text": "l'espace est noir"
+            },
+            {
+              "text": "les trous noirs sont invisibles"
+            }
           ]
         },
         {
@@ -252,13 +311,31 @@
           "kind": "tri",
           "prompt": "Range : qu'est-ce que la gravitation explique ?",
           "explanation": "Marées, orbites et chute viennent toutes de la gravitation. La couleur du ciel vient de la diffusion de la lumière, et l'aimant d'une autre force.",
-          "categories": ["la gravitation", "autre chose"],
+          "categories": [
+            "la gravitation",
+            "autre chose"
+          ],
           "items": [
-            { "text": "les marées", "category": 0 },
-            { "text": "l'orbite de la Station spatiale", "category": 0 },
-            { "text": "la chute d'une pomme", "category": 0 },
-            { "text": "le bleu du ciel", "category": 1 },
-            { "text": "un aimant qui attire un clou", "category": 1 }
+            {
+              "text": "les marées",
+              "category": 0
+            },
+            {
+              "text": "l'orbite de la Station spatiale",
+              "category": 0
+            },
+            {
+              "text": "la chute d'une pomme",
+              "category": 0
+            },
+            {
+              "text": "le bleu du ciel",
+              "category": 1
+            },
+            {
+              "text": "un aimant qui attire un clou",
+              "category": 1
+            }
           ]
         }
       ]
@@ -273,6 +350,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Tomber sans jamais arriver",
+          "body": "Augmente la vitesse du boulet jusqu’à ce qu’il ne retombe plus. Il n’est pas sorti de la gravité : il tombe en permanence, et manque la Terre à chaque fois.",
+          "figureId": "canon-newton"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'ascenseur d'Einstein",
           "body": "Enfermé dans une cabine sans fenêtre, tu flottes. Deux explications possibles : tu es loin de toute masse, ou bien tu es en chute libre.\n\nEinstein a remarqué qu'aucune expérience menée à l'intérieur ne peut les distinguer. Être en chute libre et être sans pesanteur sont indiscernables.\n\nDe cette remarque est née la relativité générale, et l'idée que la gravitation n'est pas vraiment une force : c'est la forme de l'espace et du temps autour des masses."
@@ -285,10 +369,19 @@
           "prompt": "Dans une cabine fermée où l'on flotte, que peut-on conclure ?",
           "explanation": "Rien : chute libre et absence de masse alentour produisent exactement les mêmes effets. C'est le principe d'équivalence.",
           "options": [
-            { "text": "rien : les deux situations sont indiscernables", "correct": true },
-            { "text": "qu'il n'y a aucune masse alentour" },
-            { "text": "qu'on est en chute libre" },
-            { "text": "que la cabine tourne" }
+            {
+              "text": "rien : les deux situations sont indiscernables",
+              "correct": true
+            },
+            {
+              "text": "qu'il n'y a aucune masse alentour"
+            },
+            {
+              "text": "qu'on est en chute libre"
+            },
+            {
+              "text": "que la cabine tourne"
+            }
           ]
         },
         {
@@ -324,10 +417,19 @@
           "prompt": "Selon Einstein, qu'est-ce que la gravitation ?",
           "explanation": "La courbure de l'espace et du temps par les masses. Les corps ne sont pas tirés : ils suivent le chemin le plus droit dans un espace déformé.",
           "options": [
-            { "text": "la forme que les masses donnent à l'espace et au temps", "correct": true },
-            { "text": "une attraction magnétique" },
-            { "text": "une propriété de l'air" },
-            { "text": "une illusion d'optique" }
+            {
+              "text": "la forme que les masses donnent à l'espace et au temps",
+              "correct": true
+            },
+            {
+              "text": "une attraction magnétique"
+            },
+            {
+              "text": "une propriété de l'air"
+            },
+            {
+              "text": "une illusion d'optique"
+            }
           ]
         },
         {

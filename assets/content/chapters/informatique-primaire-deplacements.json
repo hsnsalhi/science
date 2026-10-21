@@ -11,23 +11,30 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le robot fait exactement ce qu’on dit",
+          "body": "Règle le nombre de tours et exécute. Le robot n’ajoute rien, n’enlève rien, ne devine rien : il fait la liste, dans l’ordre.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Un robot ne devine pas",
           "body": "Si tu dis à un camarade « va vers la fenêtre », il y va.\n\nUn robot, lui, ne sait pas ce qu'est une fenêtre. Il faut lui dire : avance de trois cases, tourne à droite, avance de deux cases."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Un programme",
           "body": "Une liste d'ordres écrits dans l'ordre, voilà ce qu'est un programme.\n\nLe robot les exécute un par un, du premier au dernier, sans en sauter aucun et sans en inventer."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "body": "L'ordre compte. « Avance puis tourne » et « tourne puis avance » n'amènent pas au même endroit, même avec les mêmes mots."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "aRetenir",
           "title": "À retenir",
           "bullets": [
@@ -45,10 +52,19 @@
           "hint": "Lequel ne demande aucune interprétation ?",
           "explanation": "« Avance de 3 cases » : c'est précis et mesurable. Les autres demandent de comprendre ce qu'est une porte, le rangement ou la bonne direction.",
           "options": [
-            { "text": "Avance de 3 cases", "correct": true },
-            { "text": "Va jusqu'à la porte" },
-            { "text": "Range la pièce" },
-            { "text": "Prends le bon chemin" }
+            {
+              "text": "Avance de 3 cases",
+              "correct": true
+            },
+            {
+              "text": "Va jusqu'à la porte"
+            },
+            {
+              "text": "Range la pièce"
+            },
+            {
+              "text": "Prends le bon chemin"
+            }
           ]
         },
         {
@@ -75,12 +91,27 @@
           "prompt": "Range ces phrases : un robot peut-il les exécuter telles quelles ?",
           "hint": "Demande-toi si la phrase laisse un choix.",
           "explanation": "Un ordre exécutable ne laisse aucun choix au robot. « Fais attention » et « avance un peu » en laissent un, donc ce ne sont pas des ordres.",
-          "categories": ["Ordre exécutable", "Trop vague"],
+          "categories": [
+            "Ordre exécutable",
+            "Trop vague"
+          ],
           "items": [
-            { "text": "Tourne à gauche", "category": 0 },
-            { "text": "Avance de 5 cases", "category": 0 },
-            { "text": "Avance un peu", "category": 1 },
-            { "text": "Fais attention", "category": 1 }
+            {
+              "text": "Tourne à gauche",
+              "category": 0
+            },
+            {
+              "text": "Avance de 5 cases",
+              "category": 0
+            },
+            {
+              "text": "Avance un peu",
+              "category": 1
+            },
+            {
+              "text": "Fais attention",
+              "category": 1
+            }
           ]
         }
       ]
@@ -157,10 +188,19 @@
           "explanation": "Vers le bas : deux quarts de tour font un demi-tour, donc il regarde à l'opposé du départ.",
           "figureId": "boucle-robot",
           "options": [
-            { "text": "Vers le bas", "correct": true },
-            { "text": "Vers le haut" },
-            { "text": "Vers la droite" },
-            { "text": "Vers la gauche" }
+            {
+              "text": "Vers le bas",
+              "correct": true
+            },
+            {
+              "text": "Vers le haut"
+            },
+            {
+              "text": "Vers la droite"
+            },
+            {
+              "text": "Vers la gauche"
+            }
           ]
         }
       ]
@@ -229,10 +269,19 @@
           "explanation": "Le robot repasse sur un côté déjà parcouru : le carré était terminé au quatrième tour, le cinquième recommence le premier côté.",
           "figureId": "boucle-robot",
           "options": [
-            { "text": "Il repasse sur un côté déjà parcouru", "correct": true },
-            { "text": "Il dessine un plus grand carré" },
-            { "text": "Il s'arrête tout de suite" },
-            { "text": "Il dessine un triangle" }
+            {
+              "text": "Il repasse sur un côté déjà parcouru",
+              "correct": true
+            },
+            {
+              "text": "Il dessine un plus grand carré"
+            },
+            {
+              "text": "Il s'arrête tout de suite"
+            },
+            {
+              "text": "Il dessine un triangle"
+            }
           ]
         },
         {
@@ -254,6 +303,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Refermer le chemin",
+          "body": "Change le nombre de tours jusqu’à ce que le robot revienne à son point de départ. S’il ne se referme pas, la figure le dit — et c’est justement ce qu’il faut corriger.",
+          "figureId": "boucle-robot"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Le robot avance toujours de 2 cases et tourne toujours à droite. Suis-le du doigt si tu hésites."
@@ -279,10 +335,19 @@
           "explanation": "Sur sa case de départ. Le quatrième côté ramène exactement au point de départ : c'est ce qui fait un carré.",
           "figureId": "boucle-robot",
           "options": [
-            { "text": "Sur sa case de départ", "correct": true },
-            { "text": "Deux cases plus haut" },
-            { "text": "Deux cases à droite" },
-            { "text": "Au centre de la grille" }
+            {
+              "text": "Sur sa case de départ",
+              "correct": true
+            },
+            {
+              "text": "Deux cases plus haut"
+            },
+            {
+              "text": "Deux cases à droite"
+            },
+            {
+              "text": "Au centre de la grille"
+            }
           ]
         },
         {
@@ -314,12 +379,27 @@
           "prompt": "Range ces ordres : déplacent-ils le robot, ou non ?",
           "hint": "Change-t-il de case ?",
           "explanation": "Seul « avancer » change la case du robot. Tourner et attendre le laissent où il est.",
-          "categories": ["Il change de case", "Il reste sur place"],
+          "categories": [
+            "Il change de case",
+            "Il reste sur place"
+          ],
           "items": [
-            { "text": "Avance de 2 cases", "category": 0 },
-            { "text": "Avance de 1 case", "category": 0 },
-            { "text": "Tourne à droite", "category": 1 },
-            { "text": "Attends", "category": 1 }
+            {
+              "text": "Avance de 2 cases",
+              "category": 0
+            },
+            {
+              "text": "Avance de 1 case",
+              "category": 0
+            },
+            {
+              "text": "Tourne à droite",
+              "category": 1
+            },
+            {
+              "text": "Attends",
+              "category": 1
+            }
           ]
         },
         {

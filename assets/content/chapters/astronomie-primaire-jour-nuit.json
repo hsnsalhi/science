@@ -70,10 +70,19 @@
           "explanation": "La moitié. L'autre moitié est dans le noir : c'est la nuit.",
           "figureId": "saisons",
           "options": [
-            { "text": "La moitié", "correct": true },
-            { "text": "La Terre entière" },
-            { "text": "Un quart" },
-            { "text": "Cela change chaque jour" }
+            {
+              "text": "La moitié",
+              "correct": true
+            },
+            {
+              "text": "La Terre entière"
+            },
+            {
+              "text": "Un quart"
+            },
+            {
+              "text": "Cela change chaque jour"
+            }
           ]
         },
         {
@@ -150,9 +159,18 @@
           "prompt": "Associe chaque mouvement à ce qu'il produit.",
           "explanation": "La Terre qui tourne sur elle-même fait le jour et la nuit ; la Terre qui tourne autour du Soleil fait l'année ; la Lune qui tourne autour de la Terre fait le mois.",
           "pairs": [
-            { "left": "La Terre tourne sur elle-même", "right": "Le jour et la nuit" },
-            { "left": "La Terre tourne autour du Soleil", "right": "L'année" },
-            { "left": "La Lune tourne autour de la Terre", "right": "Le mois" }
+            {
+              "left": "La Terre tourne sur elle-même",
+              "right": "Le jour et la nuit"
+            },
+            {
+              "left": "La Terre tourne autour du Soleil",
+              "right": "L'année"
+            },
+            {
+              "left": "La Lune tourne autour de la Terre",
+              "right": "Le mois"
+            }
           ]
         },
         {
@@ -213,7 +231,12 @@
           "kind": "remiseEnOrdre",
           "prompt": "Remets les saisons dans l'ordre, en commençant par le printemps.",
           "explanation": "Printemps, été, automne, hiver : elles se suivent toujours dans cet ordre, année après année.",
-          "items": ["Printemps", "Été", "Automne", "Hiver"]
+          "items": [
+            "Printemps",
+            "Été",
+            "Automne",
+            "Hiver"
+          ]
         },
         {
           "id": "q3",
@@ -223,10 +246,19 @@
           "explanation": "Parce que le Soleil monte plus haut et que les journées sont plus longues. Ce n'est pas une question de distance.",
           "figureId": "saisons",
           "options": [
-            { "text": "Le Soleil monte plus haut et les jours sont plus longs", "correct": true },
-            { "text": "La Terre est bien plus proche du Soleil" },
-            { "text": "Le Soleil chauffe davantage en été" },
-            { "text": "L'air est plus épais" }
+            {
+              "text": "Le Soleil monte plus haut et les jours sont plus longs",
+              "correct": true
+            },
+            {
+              "text": "La Terre est bien plus proche du Soleil"
+            },
+            {
+              "text": "Le Soleil chauffe davantage en été"
+            },
+            {
+              "text": "L'air est plus épais"
+            }
           ]
         },
         {
@@ -235,12 +267,27 @@
           "prompt": "Range ces mois selon la saison en France.",
           "hint": "Juillet est au milieu de l'été.",
           "explanation": "Juillet et août sont en été ; janvier et février en hiver. En Australie, ce serait exactement l'inverse.",
-          "categories": ["En été", "En hiver"],
+          "categories": [
+            "En été",
+            "En hiver"
+          ],
           "items": [
-            { "text": "juillet", "category": 0 },
-            { "text": "août", "category": 0 },
-            { "text": "janvier", "category": 1 },
-            { "text": "février", "category": 1 }
+            {
+              "text": "juillet",
+              "category": 0
+            },
+            {
+              "text": "août",
+              "category": 0
+            },
+            {
+              "text": "janvier",
+              "category": 1
+            },
+            {
+              "text": "février",
+              "category": 1
+            }
           ]
         }
       ]
@@ -255,6 +302,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "L’axe penché, et tout s’explique",
+          "body": "Fais tourner la Terre sur son orbite et observe l’inclinaison de son axe. Le jour et la nuit viennent de sa rotation ; les saisons, de cette inclinaison. Deux mouvements, deux effets.",
+          "figureId": "saisons"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "À toi de jouer",
           "body": "Six questions. Pense à la balle et à la lampe."
@@ -269,10 +323,19 @@
           "explanation": "La Terre qui tourne sur elle-même. Elle présente tour à tour chaque côté au Soleil.",
           "figureId": "saisons",
           "options": [
-            { "text": "La Terre tourne sur elle-même", "correct": true },
-            { "text": "Le Soleil s'éteint la nuit" },
-            { "text": "La Lune cache le Soleil" },
-            { "text": "Les nuages cachent le Soleil" }
+            {
+              "text": "La Terre tourne sur elle-même",
+              "correct": true
+            },
+            {
+              "text": "Le Soleil s'éteint la nuit"
+            },
+            {
+              "text": "La Lune cache le Soleil"
+            },
+            {
+              "text": "Les nuages cachent le Soleil"
+            }
           ]
         },
         {
@@ -317,10 +380,19 @@
           "hint": "Un mois gagne un jour.",
           "explanation": "Février compte 29 jours au lieu de 28. On rattrape ainsi les six heures mises de côté chaque année.",
           "options": [
-            { "text": "Février a un jour de plus", "correct": true },
-            { "text": "L'année a un mois de plus" },
-            { "text": "Il y a une saison de plus" },
-            { "text": "Le jour dure 25 heures" }
+            {
+              "text": "Février a un jour de plus",
+              "correct": true
+            },
+            {
+              "text": "L'année a un mois de plus"
+            },
+            {
+              "text": "Il y a une saison de plus"
+            },
+            {
+              "text": "Le jour dure 25 heures"
+            }
           ]
         }
       ]

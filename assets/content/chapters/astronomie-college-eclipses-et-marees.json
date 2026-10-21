@@ -48,10 +48,19 @@
           "prompt": "Lors d'une éclipse de Soleil, quel astre est au milieu ?",
           "explanation": "La Lune. Elle passe entre le Soleil et nous, et son ombre balaie la Terre.",
           "options": [
-            { "text": "la Lune", "correct": true },
-            { "text": "la Terre" },
-            { "text": "le Soleil" },
-            { "text": "aucun : ils sont côte à côte" }
+            {
+              "text": "la Lune",
+              "correct": true
+            },
+            {
+              "text": "la Terre"
+            },
+            {
+              "text": "le Soleil"
+            },
+            {
+              "text": "aucun : ils sont côte à côte"
+            }
           ]
         },
         {
@@ -60,8 +69,14 @@
           "prompt": "Associe chaque éclipse à la phase de Lune qui la rend possible.",
           "explanation": "L'éclipse de Soleil demande la Lune entre nous et le Soleil : c'est la nouvelle lune. L'éclipse de Lune demande la Terre au milieu : c'est la pleine lune.",
           "pairs": [
-            { "left": "Éclipse de Soleil", "right": "nouvelle lune" },
-            { "left": "Éclipse de Lune", "right": "pleine lune" }
+            {
+              "left": "Éclipse de Soleil",
+              "right": "nouvelle lune"
+            },
+            {
+              "left": "Éclipse de Lune",
+              "right": "pleine lune"
+            }
           ]
         },
         {
@@ -71,10 +86,19 @@
           "hint": "Pense à la forme de l'orbite lunaire dans l'espace.",
           "explanation": "L'orbite de la Lune est inclinée d'environ 5 degrés : la plupart des mois, la Lune passe trop haut ou trop bas et l'ombre rate sa cible.",
           "options": [
-            { "text": "l'orbite de la Lune est inclinée d'environ 5 degrés", "correct": true },
-            { "text": "la Lune est parfois trop petite" },
-            { "text": "le Soleil change de place dans le ciel" },
-            { "text": "la Terre tourne trop vite" }
+            {
+              "text": "l'orbite de la Lune est inclinée d'environ 5 degrés",
+              "correct": true
+            },
+            {
+              "text": "la Lune est parfois trop petite"
+            },
+            {
+              "text": "le Soleil change de place dans le ciel"
+            },
+            {
+              "text": "la Terre tourne trop vite"
+            }
           ]
         },
         {
@@ -105,36 +129,43 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Trois corps, et leurs alignements",
+          "body": "Déplace la Lune autour de la Terre et regarde les alignements se former et se défaire. Les marées suivent les mêmes positions : les plus fortes arrivent quand Soleil, Terre et Lune sont alignés.",
+          "figureId": "eclipses"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le fait à expliquer",
           "body": "Dans la plupart des ports, la mer monte et descend deux fois par jour. Deux pleines mers, deux basses mers, environ toutes les 6 h 12.\n\nLa Lune, elle, ne passe au-dessus d'un lieu qu'une fois par jour. Il y a donc quelque chose à expliquer : pourquoi deux bosses et non une ?"
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "L'attraction n'est pas la même partout",
           "body": "La Lune attire l'eau du côté qui lui fait face plus fort que le centre de la Terre, parce que cette eau est plus proche.\n\nElle attire l'eau du côté opposé moins fort que le centre, parce que cette eau est plus loin.\n\nRésultat : une bosse côté Lune, et une bosse du côté opposé. Deux bosses, donc deux marées quand la Terre tourne dessous."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Ce qui compte, c'est l'écart",
           "body": "Les marées ne sont pas dues à l'attraction de la Lune, mais à sa différence d'un bout à l'autre de la Terre.\n\nC'est pour cela que le Soleil, bien plus massif, a un effet deux fois plus faible que la Lune : il est tellement loin que son attraction est presque identique partout sur la Terre."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "texte",
           "title": "Vives-eaux et mortes-eaux",
           "body": "Quand Soleil, Terre et Lune sont alignés — nouvelle lune ou pleine lune —, les deux effets s'ajoutent : les marées sont fortes. On parle de vives-eaux.\n\nQuand la Lune est au premier ou au dernier quartier, les deux effets se contrarient : les marées sont faibles. Ce sont les mortes-eaux."
         },
         {
-          "id": "c5",
+          "id": "c6",
           "kind": "exemple",
           "title": "Pourquoi 6 h 12 et non 6 h",
           "body": "Si la Lune était immobile, la Terre repasserait sous la même bosse en exactement 12 h.\n\nMais la Lune avance sur son orbite pendant ce temps : il faut environ 50 minutes de plus par jour pour la rattraper. Le cycle complet dure 24 h 50, donc 12 h 25 entre deux pleines mers, et 6 h 12 entre une pleine mer et une basse mer."
         },
         {
-          "id": "c6",
+          "id": "c7",
           "kind": "astuce",
           "body": "La marée la plus spectaculaire du monde est dans la baie de Fundy, au Canada : jusqu'à 16 mètres d'amplitude. En Méditerranée, elle dépasse rarement 30 centimètres. La forme des côtes compte autant que les astres."
         }
@@ -154,10 +185,19 @@
           "hint": "Compare l'attraction subie par cette eau et par le centre de la Terre.",
           "explanation": "Cette eau est plus loin que le centre de la Terre : elle est donc moins attirée, et reste en arrière. Vu de la Terre, cela forme une bosse.",
           "options": [
-            { "text": "elle est moins attirée que le centre de la Terre", "correct": true },
-            { "text": "la Lune la repousse" },
-            { "text": "le Soleil l'attire de ce côté" },
-            { "text": "la rotation de la Terre la projette" }
+            {
+              "text": "elle est moins attirée que le centre de la Terre",
+              "correct": true
+            },
+            {
+              "text": "la Lune la repousse"
+            },
+            {
+              "text": "le Soleil l'attire de ce côté"
+            },
+            {
+              "text": "la rotation de la Terre la projette"
+            }
           ]
         },
         {
@@ -166,10 +206,19 @@
           "prompt": "Le Soleil est bien plus massif que la Lune. Pourquoi son effet sur les marées est-il plus faible ?",
           "explanation": "Parce que les marées viennent de l'écart d'attraction entre les deux faces de la Terre. Le Soleil est si loin que son attraction est presque la même partout.",
           "options": [
-            { "text": "il est si loin que son attraction varie peu d'un bout à l'autre de la Terre", "correct": true },
-            { "text": "il n'attire pas l'eau, seulement les roches" },
-            { "text": "il est trop chaud" },
-            { "text": "il n'est visible que le jour" }
+            {
+              "text": "il est si loin que son attraction varie peu d'un bout à l'autre de la Terre",
+              "correct": true
+            },
+            {
+              "text": "il n'attire pas l'eau, seulement les roches"
+            },
+            {
+              "text": "il est trop chaud"
+            },
+            {
+              "text": "il n'est visible que le jour"
+            }
           ]
         },
         {
@@ -177,12 +226,27 @@
           "kind": "tri",
           "prompt": "Range ces configurations selon la force des marées.",
           "explanation": "Alignement — nouvelle ou pleine lune — : les effets s'ajoutent, ce sont les vives-eaux. Quartiers : ils se contrarient, ce sont les mortes-eaux.",
-          "categories": ["vives-eaux", "mortes-eaux"],
+          "categories": [
+            "vives-eaux",
+            "mortes-eaux"
+          ],
           "items": [
-            { "text": "nouvelle lune", "category": 0 },
-            { "text": "pleine lune", "category": 0 },
-            { "text": "premier quartier", "category": 1 },
-            { "text": "dernier quartier", "category": 1 }
+            {
+              "text": "nouvelle lune",
+              "category": 0
+            },
+            {
+              "text": "pleine lune",
+              "category": 0
+            },
+            {
+              "text": "premier quartier",
+              "category": 1
+            },
+            {
+              "text": "dernier quartier",
+              "category": 1
+            }
           ]
         },
         {
@@ -206,19 +270,26 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Pourquoi une éclipse est si rare",
+          "body": "Cherche la position qui produit une éclipse. L’orbite de la Lune est inclinée, et l’alignement parfait n’arrive que deux fois par an — pas une fois par mois.",
+          "figureId": "eclipses"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La taille apparente",
           "formula": "taille apparente = diamètre ÷ distance",
           "body": "Deux astres de même rapport diamètre sur distance paraissent de la même taille, quelle que soit leur taille réelle."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Le Soleil et la Lune",
           "body": "Soleil : diamètre 1 392 000 km, distance 150 000 000 km. Rapport : environ 0,0093.\n\nLune : diamètre 3 475 km, distance 384 400 km. Rapport : environ 0,0090.\n\nLes deux valeurs sont presque égales — à 3 % près. D'où les éclipses totales, tout juste."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "Et les éclipses annulaires",
           "body": "L'orbite de la Lune n'est pas un cercle parfait. Quand elle est au plus loin, sa taille apparente devient légèrement inférieure à celle du Soleil.\n\nElle ne le couvre alors pas tout à fait : il reste un anneau de lumière. C'est une éclipse annulaire, et elle est due à ces 3 % d'écart."
@@ -248,10 +319,19 @@
           "prompt": "Pourquoi certaines éclipses de Soleil laissent-elles un anneau de lumière ?",
           "explanation": "L'orbite lunaire n'est pas circulaire. Quand la Lune est au plus loin, sa taille apparente passe sous celle du Soleil et elle ne le couvre plus entièrement.",
           "options": [
-            { "text": "la Lune est alors au plus loin, donc un peu trop petite", "correct": true },
-            { "text": "le Soleil grossit à ce moment-là" },
-            { "text": "l'atmosphère déforme l'image" },
-            { "text": "la Lune tourne sur elle-même" }
+            {
+              "text": "la Lune est alors au plus loin, donc un peu trop petite",
+              "correct": true
+            },
+            {
+              "text": "le Soleil grossit à ce moment-là"
+            },
+            {
+              "text": "l'atmosphère déforme l'image"
+            },
+            {
+              "text": "la Lune tourne sur elle-même"
+            }
           ]
         },
         {
@@ -284,6 +364,13 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le hasard qui rend tout possible",
+          "body": "Compare les tailles apparentes du Soleil et de la Lune. Elles coïncident presque exactement, et c’est une coïncidence : la Lune s’éloigne, et ce spectacle a une date de péremption.",
+          "figureId": "eclipses"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "La Lune s'éloigne",
           "body": "Les marées freinent la rotation de la Terre, et par un échange d'élan, repoussent la Lune. Elle s'éloigne d'environ 3,8 centimètres par an — mesuré au laser, sur les réflecteurs posés par les missions Apollo.\n\nConséquence : dans quelques centaines de millions d'années, la Lune sera trop loin pour couvrir le Soleil. Il n'y aura plus d'éclipses totales, seulement des annulaires.\n\nNous vivons dans la fenêtre où elles existent. Les dinosaures en voyaient de plus longues ; nos lointains descendants n'en verront aucune."
@@ -330,10 +417,19 @@
           "hint": "Ce n'est pas qu'elle ne tourne pas sur elle-même.",
           "explanation": "Les marées qu'elle subit de la Terre ont ralenti sa rotation jusqu'à ce qu'elle dure exactement autant que son orbite. On parle de rotation synchrone. Elle tourne bien sur elle-même — une fois par mois.",
           "options": [
-            { "text": "sa rotation dure exactement autant que son orbite", "correct": true },
-            { "text": "elle ne tourne pas sur elle-même" },
-            { "text": "sa face cachée est noire" },
-            { "text": "la Terre l'empêche de tourner" }
+            {
+              "text": "sa rotation dure exactement autant que son orbite",
+              "correct": true
+            },
+            {
+              "text": "elle ne tourne pas sur elle-même"
+            },
+            {
+              "text": "sa face cachée est noire"
+            },
+            {
+              "text": "la Terre l'empêche de tourner"
+            }
           ]
         },
         {

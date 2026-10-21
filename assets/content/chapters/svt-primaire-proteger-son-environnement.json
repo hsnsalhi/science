@@ -42,10 +42,19 @@
           "prompt": "Pourquoi les abeilles comptent-elles pour notre alimentation ?",
           "explanation": "Elles transportent le pollen d'une fleur à l'autre. Sans pollinisation, pas de fruits — et un tiers de ce que nous mangeons en dépend.",
           "options": [
-            { "text": "elles pollinisent les fleurs, qui donnent les fruits", "correct": true },
-            { "text": "elles produisent beaucoup de miel" },
-            { "text": "elles mangent les pucerons" },
-            { "text": "elles aèrent la terre" }
+            {
+              "text": "elles pollinisent les fleurs, qui donnent les fruits",
+              "correct": true
+            },
+            {
+              "text": "elles produisent beaucoup de miel"
+            },
+            {
+              "text": "elles mangent les pucerons"
+            },
+            {
+              "text": "elles aèrent la terre"
+            }
           ]
         },
         {
@@ -54,11 +63,25 @@
           "prompt": "Qu'est-ce qui peut faire disparaître une espèce ?",
           "explanation": "La destruction de son milieu, la pollution, la chasse excessive, l'arrivée d'une espèce étrangère et le réchauffement.",
           "options": [
-            { "text": "la destruction de son milieu", "correct": true },
-            { "text": "la pollution", "correct": true },
-            { "text": "la chasse excessive", "correct": true },
-            { "text": "le réchauffement du climat", "correct": true },
-            { "text": "le fait qu'elle soit petite" }
+            {
+              "text": "la destruction de son milieu",
+              "correct": true
+            },
+            {
+              "text": "la pollution",
+              "correct": true
+            },
+            {
+              "text": "la chasse excessive",
+              "correct": true
+            },
+            {
+              "text": "le réchauffement du climat",
+              "correct": true
+            },
+            {
+              "text": "le fait qu'elle soit petite"
+            }
           ]
         },
         {
@@ -67,10 +90,19 @@
           "prompt": "Pourquoi une prairie de cinquante plantes résiste-t-elle mieux qu'un champ d'une seule ?",
           "explanation": "Une maladie qui touche une espèce n'emporte pas les quarante-neuf autres. La diversité amortit les accidents.",
           "options": [
-            { "text": "une maladie n'emporte qu'une espèce sur cinquante", "correct": true },
-            { "text": "les plantes y poussent plus vite" },
-            { "text": "il y pleut davantage" },
-            { "text": "la terre y est plus riche au départ" }
+            {
+              "text": "une maladie n'emporte qu'une espèce sur cinquante",
+              "correct": true
+            },
+            {
+              "text": "les plantes y poussent plus vite"
+            },
+            {
+              "text": "il y pleut davantage"
+            },
+            {
+              "text": "la terre y est plus riche au départ"
+            }
           ]
         },
         {
@@ -93,24 +125,31 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qui est répandu ne se rassemble pas",
+          "body": "Mets tout à gauche, puis laisse passer vingt instants. Les grains se répandent et ne reviennent jamais d’eux-mêmes. Jeter, c’est cela : disperser une matière qu’il faudra de l’énergie pour rassembler.",
+          "figureId": "entropie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Jeter n'est pas faire disparaître",
           "body": "Un objet jeté va quelque part : une décharge, un incinérateur, un centre de tri, ou la nature.\n\nUn trognon de pomme laissé dans un bois est mangé par des vers, des champignons et des bactéries : en quelques semaines il est redevenu de la terre.\n\nUn sac plastique, non. Aucun être vivant ne sait le digérer. Il se déchire en morceaux de plus en plus petits, pendant des centaines d'années, et finit en poussière de plastique dans l'eau et dans les poissons."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Combien de temps dans la nature",
           "body": "Un trognon de pomme : quelques semaines.\n\nUne feuille de papier : quelques mois.\n\nUn mégot de cigarette : un à deux ans — et il pollue à lui seul des centaines de litres d'eau.\n\nUne canette en aluminium : environ deux cents ans.\n\nUne bouteille en plastique : quatre cents ans et plus.\n\nUn morceau de verre : des milliers d'années."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "astuce",
           "title": "L'ordre qui compte",
           "body": "Le meilleur déchet est celui qu'on ne produit pas : refuser l'emballage inutile vient avant tout le reste.\n\nEnsuite réutiliser : une gourde remplace des centaines de bouteilles.\n\nEnsuite seulement recycler. Le recyclage coûte de l'énergie et perd de la matière à chaque tour : ce n'est pas une solution, c'est un pis-aller utile."
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "Les piles et les écrans",
           "body": "Une pile jetée à la poubelle finit broyée, et ses métaux partent dans le sol et l'eau. Une seule pile bouton peut polluer durablement une grande quantité d'eau.\n\nLes piles, les ampoules, les téléphones et les écrans se rapportent en magasin ou en déchetterie. Ce n'est pas une recommandation : en France, c'est une obligation légale pour le vendeur de les reprendre."
@@ -136,7 +175,11 @@
           "kind": "remiseEnOrdre",
           "prompt": "Remets les trois gestes dans le bon ordre de priorité.",
           "explanation": "Réduire d'abord, réutiliser ensuite, recycler en dernier : le recyclage coûte de l'énergie et perd de la matière à chaque tour.",
-          "items": ["réduire", "réutiliser", "recycler"]
+          "items": [
+            "réduire",
+            "réutiliser",
+            "recycler"
+          ]
         },
         {
           "id": "q3",
@@ -144,10 +187,19 @@
           "prompt": "Où se rapporte une pile usée ?",
           "explanation": "En magasin ou en déchetterie. Les vendeurs ont l'obligation légale de les reprendre.",
           "options": [
-            { "text": "en magasin ou en déchetterie", "correct": true },
-            { "text": "dans la poubelle jaune" },
-            { "text": "dans la poubelle ordinaire" },
-            { "text": "au compost" }
+            {
+              "text": "en magasin ou en déchetterie",
+              "correct": true
+            },
+            {
+              "text": "dans la poubelle jaune"
+            },
+            {
+              "text": "dans la poubelle ordinaire"
+            },
+            {
+              "text": "au compost"
+            }
           ]
         },
         {
@@ -156,10 +208,19 @@
           "prompt": "Pourquoi un sac plastique ne pourrit-il pas comme un trognon de pomme ?",
           "explanation": "Parce qu'aucun être vivant ne sait le digérer. Il se déchire en morceaux toujours plus petits sans jamais redevenir de la terre.",
           "options": [
-            { "text": "aucun être vivant ne sait le digérer", "correct": true },
-            { "text": "il est trop léger" },
-            { "text": "il flotte sur l'eau" },
-            { "text": "il est trop fin" }
+            {
+              "text": "aucun être vivant ne sait le digérer",
+              "correct": true
+            },
+            {
+              "text": "il est trop léger"
+            },
+            {
+              "text": "il flotte sur l'eau"
+            },
+            {
+              "text": "il est trop fin"
+            }
           ]
         },
         {
@@ -181,18 +242,25 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Tous les gestes ne pèsent pas pareil",
+          "body": "Touche chaque étage et regarde le rendement global. Agir sur le maillon qui perd le plus change tout ; agir sur un maillon déjà efficace ne change presque rien.",
+          "figureId": "chaine-energie"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Tous les gestes ne pèsent pas pareil",
           "body": "Éteindre la lumière en sortant d'une pièce est un bon réflexe, mais une ampoule moderne consomme très peu.\n\nLe chauffage, lui, représente environ les deux tiers de l'énergie d'un logement. Baisser le thermostat d'un seul degré fait économiser à peu près 7 % de cette consommation : c'est plus que toutes les ampoules de la maison réunies.\n\nSavoir où est le gros poste évite de s'épuiser sur les petits."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Les postes qui comptent",
           "body": "Le chauffage et l'eau chaude : le plus gros poste d'un logement.\n\nLes transports : la voiture et surtout l'avion. Un aller-retour long-courrier pèse plus qu'une année de tri.\n\nL'alimentation : la viande de bœuf coûte très cher en eau, en terre et en gaz à effet de serre.\n\nLe reste — veilles, ampoules, sacs — compte, mais après."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Et l'eau",
           "body": "Une douche de cinq minutes utilise environ 60 litres ; un bain, de 150 à 200.\n\nUn robinet qui goutte perd jusqu'à 100 litres par jour, soit plus qu'une douche quotidienne — et personne ne le remarque, parce que ça ne fait pas de bruit."
@@ -219,10 +287,19 @@
           "prompt": "Quel est le plus gros poste d'énergie dans un logement ?",
           "explanation": "Le chauffage et l'eau chaude, environ les deux tiers du total.",
           "options": [
-            { "text": "le chauffage et l'eau chaude", "correct": true },
-            { "text": "l'éclairage" },
-            { "text": "les appareils en veille" },
-            { "text": "la télévision" }
+            {
+              "text": "le chauffage et l'eau chaude",
+              "correct": true
+            },
+            {
+              "text": "l'éclairage"
+            },
+            {
+              "text": "les appareils en veille"
+            },
+            {
+              "text": "la télévision"
+            }
           ]
         },
         {
@@ -255,12 +332,19 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "L’île aux chèvres",
+          "body": "Enlève une espèce du réseau et suis les conséquences. Introduire ou retirer un animal n’a jamais un seul effet — c’est toute la leçon du défi.",
+          "figureId": "chaine-alimentaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une histoire vraie, racontée vingt fois",
           "body": "Des marins déposent quelques chèvres sur une île déserte, pour avoir de la viande fraîche à leur prochain passage.\n\nL'île n'a aucun prédateur de chèvre. Le troupeau grossit, broute toute la végétation, y compris les jeunes arbres. Sans racines, la terre part à la première grosse pluie. La forêt ne repousse pas.\n\nLes oiseaux qui nichaient dans ces arbres disparaissent. Puis les chèvres elles-mêmes meurent de faim sur un caillou nu.\n\nCe scénario s'est joué sur Sainte-Hélène, aux Galápagos, et sur des dizaines d'autres îles."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "astuce",
           "title": "Ce qui manquait",
           "body": "Sur le continent, le nombre de chèvres est limité par les prédateurs, les maladies et la concurrence des autres herbivores.\n\nUne île n'a rien de tout cela. L'espèce introduite n'est pas plus vorace qu'ailleurs : c'est le frein qui manque."
@@ -287,10 +371,19 @@
           "prompt": "Qu'est-ce qui manquait sur l'île pour limiter les chèvres ?",
           "explanation": "Des prédateurs, des maladies et des concurrents. Une chèvre n'est pas plus vorace sur une île : c'est le frein qui manque.",
           "options": [
-            { "text": "des prédateurs et des concurrents", "correct": true },
-            { "text": "de l'eau douce" },
-            { "text": "des chèvres mâles" },
-            { "text": "du soleil" }
+            {
+              "text": "des prédateurs et des concurrents",
+              "correct": true
+            },
+            {
+              "text": "de l'eau douce"
+            },
+            {
+              "text": "des chèvres mâles"
+            },
+            {
+              "text": "du soleil"
+            }
           ]
         },
         {
@@ -314,10 +407,19 @@
           "prompt": "Pourquoi les oiseaux ont-ils disparu alors qu'aucune chèvre n'en a mangé un seul ?",
           "explanation": "Parce que les chèvres ont détruit les arbres où les oiseaux nichaient. Dans un milieu, on peut tuer une espèce sans la toucher.",
           "options": [
-            { "text": "leurs arbres de nidification ont été détruits", "correct": true },
-            { "text": "les chèvres faisaient trop de bruit" },
-            { "text": "les oiseaux ont suivi les marins" },
-            { "text": "il a trop plu" }
+            {
+              "text": "leurs arbres de nidification ont été détruits",
+              "correct": true
+            },
+            {
+              "text": "les chèvres faisaient trop de bruit"
+            },
+            {
+              "text": "les oiseaux ont suivi les marins"
+            },
+            {
+              "text": "il a trop plu"
+            }
           ]
         },
         {
