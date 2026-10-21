@@ -302,7 +302,7 @@ void main() {
         await tapText(tester, 'Physique-chimie');
         await tapText(tester, 'Mouvements et vitesse');
         await tapText(tester, 'La vitesse');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
         // Sous « réduire les animations » le mobile reste au départ :
@@ -321,7 +321,7 @@ void main() {
         await tapText(tester, 'Logique et énigmes');
         await tapText(tester, 'Et, ou, non');
         await tapText(tester, 'Ou');
-        await tapText(tester, 'Suivant');
+        // La figure ouvre la leçon : plus aucune carte à passer.
         // Tap direct : la carte d'une figure n'est pas dans une zone
         // défilante, et ensureVisible y cherche un Scrollable en vain.
         await tester.tap(find.text('Le nombre dépasse 10'));
@@ -407,8 +407,7 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Le théorème de Pythagore');
         await tapText(tester, 'Le théorème');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-10-preuve-depart');
@@ -435,11 +434,11 @@ void main() {
         await tapText(tester, 'Le Système solaire');
         // Le titre d'une leçon l'ouvre directement : pas de « Commencer »
         // à passer.
+        // Depuis que chaque leçon ouvre sur sa figure, il n'y a plus de
+        // carte à passer : elle est là d'emblée. On ne fait donc que
+        // laisser tourner — sans pumpAndSettle, puisque cette figure
+        // s'anime en continu et que l'attente n'aurait pas de fin.
         await tapText(tester, 'Tourner sans tomber');
-        await tapText(tester, 'Suivant');
-        // Dernier pas sans pumpAndSettle : la figure qui suit tourne en
-        // continu, et attendre la fin des animations n'aurait pas de fin.
-        await tester.tap(find.text('Suivant').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
         // Les captures tournent avec « réduire les animations » : la
@@ -466,9 +465,8 @@ void main() {
         await tapText(tester, 'Matières');
         await tapText(tester, 'Informatique');
         await tapText(tester, 'Boucles et conditions');
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tapText(tester, 'La boucle');
-        // La figure est sur la deuxième carte.
-        await tester.tap(find.text('Suivant').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         // Captures en mode « animations réduites » : le tracé ne part pas
@@ -489,7 +487,7 @@ void main() {
         await tapText(tester, 'Technologie');
         await tapText(tester, 'Transmettre et transformer le mouvement');
         await tapText(tester, 'Transmettre le mouvement');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         final Rect piste = tester.getRect(find.byType(Slider));
@@ -516,9 +514,7 @@ void main() {
         await tapText(tester, 'Histoire des sciences');
         await tapText(tester, 'De la Terre plate au Système solaire');
         await tapText(tester, 'Mesurer la Terre');
-        await tapText(tester, 'Suivant');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-19-eratosthene');
@@ -532,10 +528,8 @@ void main() {
         await tapText(tester, 'Matières');
         await tapText(tester, 'Histoire des sciences');
         await tapText(tester, 'De la Terre plate au Système solaire');
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tapText(tester, 'La Terre au centre');
-        await tapText(tester, 'Suivant');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         final Rect piste = tester.getRect(find.byType(Slider));
@@ -558,8 +552,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'La Lune et ses phases');
         await tapText(tester, 'La Lune tourne autour de nous');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         // Un quart de lunaison : le premier quartier, la phase la plus
@@ -580,8 +573,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'Les fractions');
         await tapText(tester, 'Partager en parts égales');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-22-fractions');
@@ -597,7 +589,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'Le second degré');
         await tapText(tester, 'La parabole');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-23-parabole');
@@ -635,7 +627,7 @@ void main() {
         await tapText(tester, 'Physique-chimie');
         await tapText(tester, 'États et constitution de la matière');
         await tapText(tester, 'Trois états, une seule matière');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-25-etats');
@@ -650,8 +642,8 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Lycée');
         await tapText(tester, 'La dérivation');
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tapText(tester, "Le taux d'accroissement");
-        await tester.tap(find.text('Suivant').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         final Rect ecart = tester.getRect(find.byType(Slider).last);
@@ -672,7 +664,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'Multiplier et les tables');
         await tapText(tester, 'Des paquets égaux');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-27-multiplication');
@@ -690,7 +682,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'Les écosystèmes');
         await tapText(tester, 'Qui mange qui');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.text('Herbe'));
@@ -708,7 +700,7 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Priorités et nombres relatifs');
         await tapText(tester, 'Les nombres relatifs');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-29-relatifs');
@@ -722,8 +714,8 @@ void main() {
         await tapText(tester, 'Matières');
         await tapText(tester, 'Logique et énigmes');
         await tapText(tester, 'Si… alors : l\'implication');
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tapText(tester, 'Ce que promet « si… alors »');
-        await tester.tap(find.text('Suivant').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.text('il pleut'));
@@ -743,8 +735,7 @@ void main() {
         await tapText(tester, 'Physique-chimie');
         await tapText(tester, 'Électricité : circuits et lois');
         await tapText(tester, 'Série et dérivation');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         // Taps directs : les boutons de la figure ne sont pas dans une
@@ -765,8 +756,7 @@ void main() {
         await tapText(tester, 'Astronomie');
         await tapText(tester, 'Les saisons et l\'inclinaison de l\'axe');
         await tapText(tester, 'Ce n\'est pas une question de distance');
-        await tapText(tester, 'Suivant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-32-saisons');
@@ -809,7 +799,7 @@ void main() {
         await tapText(tester, 'Technologie');
         await tapText(tester, 'Capteurs et actionneurs');
         await tapText(tester, 'La chaîne d\'information');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-34-capteurs');
@@ -823,7 +813,7 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Angles et triangles');
         await tapText(tester, 'La somme des angles');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-35-angles');
@@ -839,7 +829,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'Mouvement et interactions');
         await tapText(tester, 'La chute et le projectile');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-36-projectile');
@@ -855,7 +845,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'La représentation des données');
         await tapText(tester, 'Compter en binaire');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-37-binaire');
@@ -871,7 +861,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'Les suites numériques');
         await tapText(tester, 'Les suites géométriques');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.text('Voir une suite géométrique'));
@@ -889,7 +879,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'ADN, gènes et expression génétique');
         await tapText(tester, 'Du gène à la protéine');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.text('Suivant').first);
@@ -910,7 +900,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'Suites et régularités');
         await tapText(tester, 'Voir la régularité');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-40-suite-motifs');
@@ -942,7 +932,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'Turing et la naissance de l\'informatique');
         await tapText(tester, 'La machine de Turing');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.text('Un pas'));
@@ -962,8 +952,8 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Lycée');
         await tapText(tester, 'Les fonctions de référence');
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tapText(tester, 'Lire une courbe');
-        await tester.tap(find.text('Suivant').first);
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.text('1/x'));
@@ -980,7 +970,7 @@ void main() {
         await tapText(tester, 'Lycée');
         await tapText(tester, 'Analyser un système pluritechnologique');
         await tapText(tester, 'La chaîne d\'énergie');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-44-chaine-energie');
@@ -995,7 +985,7 @@ void main() {
         await tapText(tester, 'Université');
         await tapText(tester, 'Algèbre linéaire');
         await tapText(tester, 'Le déterminant');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await shoot(tester, '$device-45-matrice');
@@ -1046,7 +1036,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'L\'unité et la diversité du vivant');
         await tapText(tester, 'Ranger les animaux');
-        await tester.tap(find.text('Suivant').first);
+        // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
         await tester.tap(find.widgetWithText(ActionChip, 'chat'));

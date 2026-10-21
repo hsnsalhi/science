@@ -11,17 +11,17 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La pente entre deux points",
+          "body": "Déplace A sur la courbe, puis rapproche B de A. La pente affichée est l’écart des ordonnées divisé par l’écart des abscisses — rien de plus qu’une pente de sécante.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Pente d'une sécante",
           "formula": "taux = (f(a + h) − f(a)) / h",
           "body": "l'écart des ordonnées divisé par l'écart des abscisses."
-        },
-        {
-          "id": "c2",
-          "kind": "figure",
-          "title": "Resserre l'écart",
-          "body": "Déplace A sur la courbe, puis rapproche B de A et regarde la pente.",
-          "figureId": "secante-tangente"
         },
         {
           "id": "c3",
@@ -109,23 +109,23 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Vois la limite se former",
+          "body": "Mets a = 1, puis fais glisser h vers la gauche : la pente se stabilise sur 2 bien avant que l’écart ne soit nul. On ne pose jamais h = 0 — on regarde vers quoi le quotient tend.",
+          "figureId": "secante-tangente"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Le nombre dérivé",
           "formula": "f'(a) = lim (h vers 0) (f(a + h) − f(a)) / h",
           "body": "quand cette limite existe, f est dérivable en a."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Pourquoi une limite",
           "body": "Pour h = 0, le quotient n'a aucun sens : on diviserait par zéro.\n\nOn ne pose donc jamais h = 0 ; on regarde vers quoi le quotient se dirige quand h s'approche de 0. Pour f(x) = x², ce quotient vaut 2a + h et se dirige vers 2a."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Vois la limite",
-          "body": "Mets a = 1, puis fais glisser h vers la gauche : la pente affichée se stabilise sur 2.",
-          "figureId": "secante-tangente"
         },
         {
           "id": "c4",

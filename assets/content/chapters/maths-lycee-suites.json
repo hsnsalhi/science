@@ -11,28 +11,28 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les dix premiers termes",
+          "body": "Règle le premier terme et la raison, puis bascule d’un type de suite à l’autre. Une suite associe un nombre à chaque rang, et deux façons de la définir donnent les mêmes bâtons.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une liste numérotée",
           "body": "Une suite associe un nombre à chaque rang : u₀, u₁, u₂, et ainsi de suite.\n\nLe rang est un entier, et u(n) se lit « u indice n ». Ce n'est pas un produit : c'est le terme de rang n."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Définition explicite",
           "body": "u(n) = 3n + 2 donne chaque terme directement à partir de son rang.\n\nPour obtenir u(100), on remplace n par 100 : aucun calcul intermédiaire."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "texte",
           "title": "Définition par récurrence",
           "body": "u₀ = 2 et u(n+1) = u(n) + 3 donne chaque terme à partir du précédent.\n\nPour obtenir u(100), il faut passer par les cent premiers. En revanche, la relation dit immédiatement comment la suite progresse."
-        },
-        {
-          "id": "c4",
-          "kind": "figure",
-          "title": "Les dix premiers termes",
-          "body": "Règle le premier terme et la raison, puis bascule d'un type de suite à l'autre.",
-          "figureId": "suite"
         },
         {
           "id": "c5",
@@ -114,17 +114,17 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Des marches régulières",
+          "body": "Mets le mode arithmétique et fais varier la raison : les bâtons montent d’une hauteur constante. C’est cette hauteur-là qu’on appelle la raison.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Définition et terme général",
           "formula": "u(n+1) = u(n) + r   et   u(n) = u₀ + n × r",
           "body": "r est la raison, constante d'un terme au suivant."
-        },
-        {
-          "id": "c2",
-          "kind": "figure",
-          "title": "Des marches régulières",
-          "body": "En mode arithmétique, les bâtons montent d'une hauteur constante.",
-          "figureId": "suite"
         },
         {
           "id": "c3",
@@ -216,17 +216,17 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Même réglage, autre croissance",
+          "body": "Garde les mêmes valeurs et bascule en géométrique : la différence d’allure ne tient qu’au mode de croissance. On ne rajoute plus, on multiplie.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Définition et terme général",
           "formula": "u(n+1) = q × u(n)   et   u(n) = u₀ × q^n",
           "body": "q est la raison, multiplicative cette fois."
-        },
-        {
-          "id": "c2",
-          "kind": "figure",
-          "title": "Compare les deux croissances",
-          "body": "Garde les mêmes réglages et bascule : la différence d'allure ne tient qu'au mode de croissance.",
-          "figureId": "suite"
         },
         {
           "id": "c3",

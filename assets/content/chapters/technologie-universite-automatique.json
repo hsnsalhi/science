@@ -184,29 +184,29 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Ce qu’un proportionnel seul ne peut pas faire",
+          "body": "Augmente le gain autant que tu veux : un écart résiduel subsiste toujours, et pousser trop fort fait osciller. Cette figure n’a que le terme proportionnel — c’est pour cela qu’on lui en ajoute deux autres.",
+          "figureId": "asservissement"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Le terme intégral",
           "body": "On ajoute à la commande une part proportionnelle à la somme des écarts passés.\n\nTant qu'un écart subsiste, cette somme grandit et pousse la commande. Elle ne s'arrête que lorsque l'écart est nul : l'erreur statique disparaît."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Le terme dérivé",
           "body": "On ajoute une part proportionnelle à la vitesse de variation de l'écart.\n\nQuand le système approche vite de la consigne, ce terme freine à l'avance. Il réduit le dépassement, au prix d'une sensibilité au bruit de mesure."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "formule",
           "title": "Le correcteur PID",
           "formula": "commande = Kp × écart + Ki × somme + Kd × variation",
           "body": "trois termes, trois rôles, et un réglage qui reste un compromis."
-        },
-        {
-          "id": "c4",
-          "kind": "figure",
-          "title": "Le proportionnel seul",
-          "body": "La figure n'a que le terme proportionnel : l'erreur statique y est donc indépassable.",
-          "figureId": "asservissement"
         }
       ],
       "questions": [

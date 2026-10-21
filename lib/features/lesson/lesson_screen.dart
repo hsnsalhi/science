@@ -315,11 +315,19 @@ class LessonCardView extends StatelessWidget {
           // est limité par la largeur, l'étirer en hauteur n'ajoutait que
           // du blanc à l'intérieur. Le vide restant va à la page, qui le
           // répartit au-dessus et au-dessous.
+          //
+          // Le défilement n'est pas une précaution de principe : une
+          // figure pilotable porte ses commandes sous le dessin, et sur un
+          // écran court ce sont elles qui sortaient du cadre. L'élève
+          // voyait la figure sans pouvoir la manipuler, ce qui est pire
+          // que pas de figure du tout.
           Expanded(
             child: Center(
-              child: AppCard(
-                padding: const EdgeInsets.all(AppSpacing.md),
-                child: FigureRegistry.build(context, card.figureId!, accent),
+              child: SingleChildScrollView(
+                child: AppCard(
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  child: FigureRegistry.build(context, card.figureId!, accent),
+                ),
               ),
             ),
           ),

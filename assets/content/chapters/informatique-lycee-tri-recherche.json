@@ -220,16 +220,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Le tri fusion",
-          "body": "On coupe le tableau en deux, on trie chaque moitié de la même façon, puis on fusionne les deux moitiés triées.\n\nLa fusion coûte n comparaisons au plus, et il y a log₂ n niveaux de découpage. Au total : de l'ordre de n log n."
+          "kind": "figure",
+          "title": "L’écart se creuse",
+          "body": "Pousse le curseur de taille et regarde l’espace grandir entre la courbe n log n et la courbe n². C’est tout ce qui sépare un tri utilisable d’un tri impraticable.",
+          "figureId": "complexite"
         },
         {
           "id": "c2",
-          "kind": "figure",
-          "title": "Compare les coûts",
-          "body": "Pousse le curseur et regarde l'écart se creuser entre n log n et n².",
-          "figureId": "complexite"
+          "kind": "etape",
+          "title": "Le tri fusion",
+          "body": "On coupe le tableau en deux, on trie chaque moitié de la même façon, puis on fusionne les deux moitiés triées.\n\nLa fusion coûte n comparaisons au plus, et il y a log₂ n niveaux de découpage. Au total : de l'ordre de n log n."
         },
         {
           "id": "c3",

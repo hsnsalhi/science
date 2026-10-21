@@ -11,22 +11,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Celle-ci s’arrête, et on le démontre",
+          "body": "Lance la machine : elle termine sur toute entrée, et on sait le prouver. L’indécidabilité ne porte jamais sur un programme donné, mais sur la question posée pour tous les programmes à la fois.",
+          "figureId": "machine-turing"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Un problème de décision",
           "body": "On se donne un ensemble d'entrées et une question à réponse oui ou non.\n\nLe problème est décidable s'il existe un algorithme qui, pour toute entrée, s'arrête et donne la bonne réponse."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "etape",
           "title": "Semi-décidable",
           "body": "Un problème est semi-décidable s'il existe un algorithme qui s'arrête et répond oui quand la réponse est oui — mais qui peut tourner indéfiniment quand elle est non.\n\nC'est le cas de l'arrêt : on lance le programme et on attend. S'il s'arrête, on le voit. S'il ne s'arrête pas, on ne le saura jamais."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Une machine qui, elle, s'arrête",
-          "body": "Ce programme-ci s'arrête sur toute entrée, et on sait le démontrer. L'indécidabilité ne porte pas sur un programme donné.",
-          "figureId": "machine-turing"
         },
         {
           "id": "c4",

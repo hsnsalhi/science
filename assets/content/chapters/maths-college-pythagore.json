@@ -11,15 +11,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Un triangle pas comme les autres",
-          "body": "Un triangle rectangle a un angle droit : 90°. C'est le seul triangle où le théorème de Pythagore fonctionne."
+          "kind": "figure",
+          "title": "Nomme les trois côtés",
+          "figureId": "triangle-sides",
+          "body": "Touche la figure pour faire apparaître les noms. L’hypoténuse est le côté opposé à l’angle droit, et c’est toujours le plus long : c’est le vocabulaire sans lequel le théorème ne s’énonce pas."
         },
         {
           "id": "c2",
-          "kind": "figure",
-          "title": "Manipule le triangle",
-          "figureId": "triangle-sides"
+          "kind": "texte",
+          "title": "Un triangle pas comme les autres",
+          "body": "Un triangle rectangle a un angle droit : 90°. C'est le seul triangle où le théorème de Pythagore fonctionne."
         },
         {
           "id": "c3",
@@ -129,23 +130,23 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Pourquoi ça marche",
+          "body": "Les mêmes quatre triangles, dans le même carré. Fais-les glisser : l’aire laissée libre ne change pas, et elle s’écrit d’abord a² + b², puis c². La démonstration tient dans ce mouvement.",
+          "figureId": "pythagore-preuve"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une relation entre les trois côtés",
           "body": "Dans un triangle rectangle, deux longueurs suffisent : la troisième est déjà jouée."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "L'énoncé",
           "formula": "a² + b² = c²",
           "body": "où c est la longueur de l'hypoténuse, a et b celles des deux côtés de l'angle droit."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Pourquoi ça marche",
-          "body": "Les mêmes quatre triangles, dans le même carré. Fais-les glisser : l'aire libre ne change pas.",
-          "figureId": "pythagore-preuve"
         },
         {
           "id": "c4",
@@ -357,23 +358,23 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Teste par toi-même",
+          "body": "Deux côtés valent 6 et 8. Fais varier le troisième : l’angle devient droit exactement à 10, c’est-à-dire pile quand 6² + 8² = c². On part des longueurs pour conclure sur l’angle.",
+          "figureId": "triangle-reciproque"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Lire le théorème à l'envers",
           "body": "On partait du triangle pour trouver une longueur. La réciproque part des longueurs pour prouver l'angle droit."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "La réciproque",
           "formula": "si a² + b² = c²  alors le triangle est rectangle",
           "body": "à condition que c soit le plus grand des trois côtés."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Teste par toi-même",
-          "body": "Deux côtés valent 6 et 8. Fais varier le troisième : l'angle devient droit à c = 10, pile quand 6² + 8² = c².",
-          "figureId": "triangle-reciproque"
         },
         {
           "id": "c4",

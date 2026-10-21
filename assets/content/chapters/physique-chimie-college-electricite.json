@@ -11,16 +11,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "La boucle",
-          "body": "Le courant ne circule que si le chemin forme une boucle complète, du générateur jusqu'à lui-même.\n\nUne seule coupure suffit à tout arrêter : c'est exactement ce que fait un interrupteur ouvert."
+          "kind": "figure",
+          "title": "Ouvre, et tout s’arrête",
+          "body": "Ouvre l’interrupteur, puis referme-le, puis dévisse une lampe. Le courant ne circule que si le chemin forme une boucle complète : une seule coupure suffit à tout éteindre.",
+          "figureId": "circuit"
         },
         {
           "id": "c2",
-          "kind": "figure",
-          "title": "Ouvre et ferme",
-          "body": "Ouvre l'interrupteur, puis dévisse une lampe.",
-          "figureId": "circuit"
+          "kind": "texte",
+          "title": "La boucle",
+          "body": "Le courant ne circule que si le chemin forme une boucle complète, du générateur jusqu'à lui-même.\n\nUne seule coupure suffit à tout arrêter : c'est exactement ce que fait un interrupteur ouvert."
         },
         {
           "id": "c3",
@@ -139,22 +139,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Dévisse une lampe dans chaque montage",
+          "body": "En série, les dipôles sont sur un seul chemin ; en dérivation, chacun a le sien. Retire une lampe dans l’un puis dans l’autre : c’est là que toute la différence se voit.",
+          "figureId": "circuit"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "En série",
           "body": "Les dipôles sont placés à la suite, sur un seul chemin. Le courant les traverse tous, l'un après l'autre.\n\nSi l'un est retiré, le chemin est coupé et tout s'arrête."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "En dérivation",
           "body": "Les dipôles sont placés sur des branches séparées. Chacun a son propre chemin.\n\nSi l'un est retiré, les autres continuent de fonctionner."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Dévisse une lampe",
-          "body": "Essaie dans les deux montages : c'est là que la différence se voit.",
-          "figureId": "circuit"
         },
         {
           "id": "c4",

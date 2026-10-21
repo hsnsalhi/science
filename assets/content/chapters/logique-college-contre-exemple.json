@@ -11,22 +11,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le seul cas interdit",
+          "body": "Cherche le cas où la condition est remplie et la conclusion fausse. Un contre-exemple est exactement cela — et il en suffit d’un pour faire tomber une affirmation qui parlait de tous les cas.",
+          "figureId": "implication"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "L'asymétrie fondamentale",
           "body": "Pour démontrer qu'une affirmation générale est vraie, il faut traiter tous les cas — parfois une infinité.\n\nPour montrer qu'elle est fausse, un seul cas suffit. Ce cas s'appelle un contre-exemple."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Tous les nombres premiers sont impairs ?",
           "body": "C'est faux : 2 est premier et pair.\n\nUn seul nombre a suffi. Aucun calcul, aucune théorie : il fallait simplement y penser."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Ce qu'un contre-exemple doit faire",
-          "body": "Il doit vérifier la condition et contredire la conclusion : c'est le seul cas interdit.",
-          "figureId": "implication"
         },
         {
           "id": "c4",
@@ -106,16 +106,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Les quadrilatères",
-          "body": "« Un quadrilatère à quatre côtés égaux est un carré. »\n\nFaux : le losange a quatre côtés égaux sans avoir d'angle droit. Une seule figure suffit."
+          "kind": "figure",
+          "title": "La plupart ne sont pas rectangles",
+          "body": "Fais varier le troisième côté : presque toutes les valeurs donnent un triangle qui n’a pas d’angle droit. Trouver celle qui marche demande un calcul ; trouver une qui ne marche pas demande un essai.",
+          "figureId": "triangle-reciproque"
         },
         {
           "id": "c2",
-          "kind": "figure",
-          "title": "Triangle rectangle ou non",
-          "body": "Fais varier le troisième côté : la plupart des valeurs donnent un triangle qui n'est pas rectangle.",
-          "figureId": "triangle-reciproque"
+          "kind": "texte",
+          "title": "Les quadrilatères",
+          "body": "« Un quadrilatère à quatre côtés égaux est un carré. »\n\nFaux : le losange a quatre côtés égaux sans avoir d'angle droit. Une seule figure suffit."
         },
         {
           "id": "c3",

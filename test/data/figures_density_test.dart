@@ -15,46 +15,7 @@ void main() {
   /// Les chapitres repris au standard « figure d'abord ». Chaque leçon y
   /// ouvre sur une figure pilotable. La liste s'allonge à chaque lot ; elle
   /// ne se raccourcit jamais.
-  const Set<String> repris = <String>{
-    'physique-chimie-college-gravitation-et-systeme-solaire',
-    'histoire-sciences-college-les-nombres-qui-ont-fait-peur',
-    'histoire-sciences-college-l-atome-2500-ans-d-hypotheses',
-    'histoire-sciences-college-pasteur-darwin-et-le-vivant',
-    'logique-college-raisonnement-par-l-absurde',
-    'logique-college-enigmes-de-logique-pure',
-    'logique-college-denombrer-sans-se-tromper',
-    'maths-college-puissances-et-racine-carree',
-    'maths-college-statistiques-et-probabilites',
-    'physique-chimie-college-atomes-molecules-et-reactions',
-    'informatique-college-variables-et-expressions',
-    'informatique-college-programmer-par-blocs',
-    'informatique-college-le-tableur',
-    'informatique-college-reseaux-et-internet',
-    'svt-college-meteo-climat-et-changement-climatique',
-    'technologie-college-besoin-fonction-cahier-des-charges',
-    'technologie-college-materiaux-choisir-et-justifier',
-    'technologie-college-ecoconception-et-cycle-de-vie',
-    'maths-primaire-les-nombres-jusqu-a-10-000',
-    'maths-primaire-additionner-et-soustraire',
-    'maths-primaire-la-proportionnalite',
-    'maths-primaire-geometrie-droites-cercles-polygones',
-    'maths-primaire-perimetres-aires-et-angles',
-    'maths-primaire-longueurs-masses-et-contenances',
-    'maths-primaire-tableaux-graphiques-et-hasard',
-    'svt-primaire-naitre-grandir-se-reproduire',
-    'svt-primaire-alimentation-et-sante',
-    'svt-primaire-le-cerveau-et-la-puberte',
-    'physique-chimie-primaire-melanges-et-solutions',
-    'physique-chimie-primaire-masses-volumes-et-temperatures',
-    'histoire-sciences-primaire-compter-avant-les-chiffres',
-    'histoire-sciences-primaire-les-grandes-inventions',
-    'histoire-sciences-primaire-des-savants-et-des-savantes',
-    'informatique-primaire-les-objets-techniques',
-    'informatique-primaire-concevoir-un-objet',
-    'technologie-primaire-imaginer-et-fabriquer',
-    'technologie-primaire-de-quoi-est-il-fait',
-    'technologie-primaire-programmer-un-objet-technique',
-  };
+
 
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
@@ -103,22 +64,24 @@ void main() {
         reason: 'ces leçons n’ont aucune figure : $sansFigure');
   });
 
-  test('chaque leçon d’un chapitre repris ouvre sur une figure', () {
-    for (final String id in repris) {
-      final Map<String, dynamic>? contenu = contenus[id];
-      expect(contenu, isNotNull, reason: '$id est introuvable ou non jouable');
-      for (final dynamic brute in contenu!['lessons'] as List<dynamic>) {
+  test('chaque leçon ouvre sur une figure', () {
+    // La règle du chapitre 3 de CONTENT_AUTHORING : montrer, puis dire.
+    // Une leçon qui commence par un paragraphe demande à l’élève de lire
+    // avant d’avoir rien vu, et c’est exactement ce qu’on a corrigé.
+    final List<String> parDuTexte = <String>[];
+    for (final Map<String, dynamic> c in chapitres) {
+      final String id = c['id'] as String;
+      for (final dynamic brute in contenus[id]!['lessons'] as List<dynamic>) {
         final Map<String, dynamic> lecon = brute as Map<String, dynamic>;
         final List<dynamic> cartes = lecon['cards'] as List<dynamic>;
-        final Iterable<String> genres = cartes.map(
-          (dynamic c) => (c as Map<String, dynamic>)['kind'] as String,
-        );
-        expect(genres, contains('figure'),
-            reason: '$id / ${lecon['id']} n’a aucune figure');
-        expect(genres.first, 'figure',
-            reason: '$id / ${lecon['id']} commence par du texte');
+        if (cartes.isEmpty) continue;
+        final String premier =
+            (cartes.first as Map<String, dynamic>)['kind'] as String;
+        if (premier != 'figure') parDuTexte.add('$id/${lecon['id']}');
       }
     }
+    expect(parDuTexte, isEmpty,
+        reason: 'ces leçons commencent par du texte : $parDuTexte');
   });
 
   test('la part de cartes figure ne recule pas', () {

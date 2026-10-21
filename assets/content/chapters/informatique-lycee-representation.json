@@ -11,22 +11,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Huit bits, un nombre",
+          "body": "Bascule les bits et lis le nombre qu’ils écrivent, puis essaie « tout allumer ». Un composant électronique distingue facilement deux états — c’est une contrainte physique, pas un choix esthétique.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Une contrainte physique, pas un choix esthétique",
           "body": "Un composant électronique distingue facilement deux états : courant ou pas de courant, aimantation dans un sens ou dans l'autre.\n\nDistinguer dix niveaux de tension serait possible mais fragile : le moindre parasite ferait confondre un 6 et un 7. Deux états tolèrent le bruit."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Bit et octet",
           "body": "Un bit est une information à deux valeurs, notées 0 et 1.\n\nHuit bits forment un octet. Avec n bits, on distingue 2^n valeurs différentes : 2 avec un bit, 4 avec deux, et 256 avec huit."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Un octet",
-          "body": "Huit bits, et le nombre qu'ils écrivent. Essaie « tout allumer ».",
-          "figureId": "binaire"
         },
         {
           "id": "c4",
@@ -110,17 +110,17 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Les poids sont écrits au-dessus",
+          "body": "Allume un bit : son poids s’ajoute au total. Chaque bit vaut deux fois le précédent, exactement comme chaque colonne de notre écriture vaut dix fois la suivante.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "Écriture positionnelle",
           "formula": "b₇×128 + b₆×64 + b₅×32 + b₄×16 + b₃×8 + b₂×4 + b₁×2 + b₀×1",
           "body": "chaque bit vaut deux fois le précédent."
-        },
-        {
-          "id": "c2",
-          "kind": "figure",
-          "title": "Lis le nombre",
-          "body": "Les poids sont écrits au-dessus des bits : allumer un bit ajoute son poids.",
-          "figureId": "binaire"
         },
         {
           "id": "c3",
@@ -218,22 +218,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une composante de couleur",
+          "body": "Règle les huit bits d’une composante : 255 donne le rouge le plus vif, 0 son absence. Un pixel en porte trois, et un caractère de texte tient dans un nombre du même genre.",
+          "figureId": "binaire"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Coder un texte",
           "body": "Une table associe à chaque caractère un nombre. Dans la table ASCII, « A » vaut 65, « B » 66, et ainsi de suite.\n\nASCII n'utilise que 7 bits et ne couvre que 128 caractères : ni accents, ni alphabets non latins. Unicode les a tous, et UTF-8 les code sur un à quatre octets."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Coder une image",
           "body": "Une image est une grille de pixels. Chaque pixel porte trois octets : un pour le rouge, un pour le vert, un pour le bleu.\n\nChaque composante va de 0 à 255, ce qui fait 256³ couleurs, soit 16 777 216 — le fameux « 16 millions de couleurs »."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Une composante de couleur",
-          "body": "Les huit bits d'une composante : 255 donne le rouge le plus vif, 0 l'absence de rouge.",
-          "figureId": "binaire"
         },
         {
           "id": "c4",

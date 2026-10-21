@@ -11,16 +11,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une roue en entraîne une autre",
-          "body": "Le moteur, ou la pédale, fait tourner une première roue : la roue menante. Elle en entraîne une seconde, la roue menée, qui fait tourner ce qu'on veut mettre en mouvement."
+          "kind": "figure",
+          "title": "Deux roues en prise",
+          "body": "Change le nombre de dents de la roue menée et regarde les deux compteurs. Le moteur fait tourner la première, elle entraîne la seconde — et les deux ne tournent pas à la même allure.",
+          "figureId": "engrenages"
         },
         {
           "id": "c2",
-          "kind": "figure",
-          "title": "Deux roues en prise",
-          "body": "Change le nombre de dents de la roue menée et regarde les deux compteurs.",
-          "figureId": "engrenages"
+          "kind": "texte",
+          "title": "Une roue en entraîne une autre",
+          "body": "Le moteur, ou la pédale, fait tourner une première roue : la roue menante. Elle en entraîne une seconde, la roue menée, qui fait tourner ce qu'on veut mettre en mouvement."
         },
         {
           "id": "c3",
@@ -117,23 +117,23 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Six dents, puis vingt-quatre",
+          "body": "Mets la roue menée à 6 dents, puis à 24, et compare les compteurs. Autant de dents passent d’un côté que de l’autre du contact : le rapport ne dépend que de ces deux nombres.",
+          "figureId": "engrenages"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Les dents se comptent",
           "body": "À chaque instant, autant de dents passent d'un côté que de l'autre du contact : les deux roues ne peuvent pas avancer à des rythmes différents. Une roue deux fois plus petite fait donc deux fois plus de tours."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "Rapport de transmission",
           "formula": "tours de la menée = tours de la menante × (dents menante ÷ dents menée)",
           "body": "le rapport ne dépend que des nombres de dents."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Vérifie-le",
-          "body": "Mets la roue menée à 6 dents, puis à 24 : les compteurs changent, le rapport se lit directement.",
-          "figureId": "engrenages"
         },
         {
           "id": "c4",

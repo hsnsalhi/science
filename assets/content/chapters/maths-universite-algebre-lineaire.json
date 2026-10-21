@@ -11,29 +11,29 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Transforme le carré unité",
+          "body": "Règle les quatre coefficients et regarde le carré devenir un parallélogramme. Le rangement en tableau n’a d’intérêt que parce qu’il code cette transformation — et les colonnes sont les images des vecteurs de base.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Un tableau de nombres, vraiment ?",
           "body": "Une matrice 2 × 2 se présente comme quatre nombres rangés. Ce rangement n'a d'intérêt que parce qu'il code une transformation du plan.\n\nÀ chaque vecteur, la matrice en associe un autre. C'est une application, et elle est linéaire."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "formule",
           "title": "L'action sur un vecteur",
           "formula": "M(x, y) = (ax + by, cx + dy)",
           "body": "avec M la matrice de coefficients a, b sur la première ligne, c, d sur la seconde."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "etape",
           "title": "Lire les colonnes",
           "body": "Appliquons M au premier vecteur de base, (1, 0) : on obtient (a, c), soit la première colonne.\n\nAu second, (0, 1) : on obtient (b, d), la seconde colonne.\n\nUne matrice n'est donc rien d'autre que la liste des images des vecteurs de base. Tout le reste s'en déduit par linéarité."
-        },
-        {
-          "id": "c4",
-          "kind": "figure",
-          "title": "Transforme le carré",
-          "body": "Règle les quatre coefficients et regarde le carré unité devenir un parallélogramme.",
-          "figureId": "matrice"
         }
       ],
       "questions": [
@@ -99,17 +99,17 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Regarde l’aire changer",
+          "body": "Le carré de départ a une aire de 1. Celle du parallélogramme obtenu est la valeur absolue du déterminant — et quand elle tombe à zéro, tout s’est aplati sur une droite.",
+          "figureId": "matrice"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La formule, et ce qu'elle mesure",
           "formula": "det M = ad − bc",
           "body": "c'est l'aire algébrique du parallélogramme construit sur les deux colonnes."
-        },
-        {
-          "id": "c2",
-          "kind": "figure",
-          "title": "Regarde l'aire changer",
-          "body": "Le carré de départ a une aire de 1. Celle du parallélogramme est la valeur absolue du déterminant.",
-          "figureId": "matrice"
         },
         {
           "id": "c3",

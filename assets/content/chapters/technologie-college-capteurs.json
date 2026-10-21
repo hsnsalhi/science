@@ -11,16 +11,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Trois maillons",
-          "body": "Un capteur mesure quelque chose du monde : une température, une lumière, une présence.\n\nUn programme décide à partir de cette mesure.\n\nUn actionneur agit : il chauffe, allume, ouvre, tourne."
+          "kind": "figure",
+          "title": "Où la décision se prend",
+          "body": "Règle la température mesurée, puis le seuil. Un capteur mesure, un programme compare, un actionneur agit — et c’est au milieu que tout se joue.",
+          "figureId": "chaine-information"
         },
         {
           "id": "c2",
-          "kind": "figure",
-          "title": "Un thermostat complet",
-          "body": "Règle la température mesurée, puis le seuil : regarde où la décision se prend.",
-          "figureId": "chaine-information"
+          "kind": "texte",
+          "title": "Trois maillons",
+          "body": "Un capteur mesure quelque chose du monde : une température, une lumière, une présence.\n\nUn programme décide à partir de cette mesure.\n\nUn actionneur agit : il chauffe, allume, ouvre, tourne."
         },
         {
           "id": "c3",
@@ -129,22 +129,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Toute une échelle, pas deux réponses",
+          "body": "Fais varier la température mesurée : le capteur donne une valeur continue, et pas seulement « chaud » ou « froid ». C’est ce qui distingue un capteur analogique d’un capteur tout ou rien.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Deux familles",
           "body": "Un capteur tout ou rien ne répond que par oui ou non : un interrupteur de porte, un détecteur de présence.\n\nUn capteur analogique donne une valeur sur toute une échelle : une température, une luminosité, une distance."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "texte",
           "title": "Toujours une grandeur physique",
           "body": "Un capteur transforme une grandeur du monde — chaleur, lumière, force, distance — en un signal électrique que le programme peut lire.\n\nC'est pour cela qu'un objet technique peut réagir à son environnement sans que personne ne surveille."
-        },
-        {
-          "id": "c3",
-          "kind": "figure",
-          "title": "Un capteur analogique",
-          "body": "Le thermomètre donne toute une échelle de valeurs, pas seulement « chaud » ou « froid ».",
-          "figureId": "chaine-information"
         },
         {
           "id": "c4",
@@ -255,17 +255,17 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Le cas limite",
+          "body": "Mets la température exactement au seuil : le radiateur s’allume-t-il ? C’est ce genre de détail qui sépare un programme correct d’un programme qui clignote toute la journée.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "formule",
           "title": "La décision du thermostat",
           "formula": "si (température < seuil) alors chauffer sinon arrêter",
           "body": "une comparaison, et deux issues."
-        },
-        {
-          "id": "c2",
-          "kind": "figure",
-          "title": "Le cas limite",
-          "body": "Mets la température exactement au seuil : le radiateur s'allume-t-il ?",
-          "figureId": "chaine-information"
         },
         {
           "id": "c3",
