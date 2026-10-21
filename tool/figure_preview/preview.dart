@@ -27,6 +27,7 @@ const List<String> _figures = <String>[
   'modeles-atome',
   'racine-de-deux',
   'frise-nombres',
+  'tiroirs',
   'selection',
   'droite-graduee',
   'horloge',

@@ -33,6 +33,7 @@ import 'implication_figure.dart';
 import 'atom_models_figure.dart';
 import 'inverse_square_figure.dart';
 import 'number_timeline_figure.dart';
+import 'pigeonhole_figure.dart';
 import 'root_two_figure.dart';
 import 'rutherford_figure.dart';
 import 'swan_neck_figure.dart';
@@ -113,6 +114,9 @@ abstract final class FigureRegistry {
     // tard.
     'frise-nombres': (BuildContext context, Color accent) =>
         NumberTimelineFigure(accent: accent),
+    // Des objets, des tiroirs, et le débordement qu'on ne peut pas éviter.
+    'tiroirs': (BuildContext context, Color accent) =>
+        PigeonholeFigure(accent: accent),
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),

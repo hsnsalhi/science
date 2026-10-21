@@ -11,28 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "formule",
-          "title": "La règle de base",
-          "formula": "nombre total = n₁ × n₂ × n₃ × …",
-          "body": "Si une décision se prend en plusieurs choix successifs et indépendants, on multiplie le nombre de possibilités de chaque choix. Deux chemises et trois pantalons donnent six tenues, pas cinq."
+          "kind": "figure",
+          "title": "Deux chemises, trois pantalons",
+          "body": "Règle les lignes sur 2 et les colonnes sur 3 : compte les jetons. Six, pas cinq. Chaque jeton est une tenue, et le rectangle est la raison pour laquelle on multiplie.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
-          "kind": "avertissement",
-          "title": "Multiplier ou additionner",
-          "body": "On multiplie quand les choix s'enchaînent : « un plat ET un dessert ».\n\nOn additionne quand ils s'excluent : « un plat OU un dessert ».\n\nTrois plats et quatre desserts donnent douze menus complets, et sept options si l'on ne prend qu'une seule chose.\n\nLe mot qui relie les choix dit l'opération. « Et » multiplie, « ou » additionne."
+          "kind": "formule",
+          "title": "La règle de base",
+          "body": "Si une décision se prend en plusieurs choix successifs et indépendants, on multiplie le nombre de possibilités de chaque choix.",
+          "formula": "nombre total = n₁ × n₂ × n₃ × …"
         },
         {
           "id": "c3",
-          "kind": "exemple",
-          "title": "Un code et une plaque",
-          "body": "Un code à quatre chiffres : dix possibilités par position, donc 10 × 10 × 10 × 10 = 10 000 codes. Pas 40, et pas 10⁴ ⁄ 4.\n\nUne plaque de la forme deux lettres, trois chiffres, deux lettres : 26 × 26 × 10 × 10 × 10 × 26 × 26, soit près de 457 millions. Le vrai système français en offre moins, parce que certaines lettres sont écartées pour éviter les confusions.\n\nLe calcul brut donne donc une borne supérieure, et c'est déjà très utile."
+          "kind": "avertissement",
+          "title": "Multiplier ou additionner",
+          "body": "On multiplie quand les choix s’enchaînent : « un plat ET un dessert ». On additionne quand ils s’excluent : « un plat OU un dessert ».\n\nTrois plats et quatre desserts donnent douze menus complets, et sept options si l’on ne prend qu’une seule chose. Le mot qui relie les choix dit l’opération."
         },
         {
           "id": "c4",
+          "kind": "exemple",
+          "title": "Un code et une plaque",
+          "body": "Un code à quatre chiffres : 10 × 10 × 10 × 10 = 10 000. Pas 40.\n\nUne plaque deux lettres, trois chiffres, deux lettres : 26 × 26 × 10 × 10 × 10 × 26 × 26, soit près de 457 millions. Le vrai système français en offre moins, certaines lettres étant écartées pour éviter les confusions — le calcul brut donne une borne supérieure."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
-          "title": "L'ordre compte-t-il, et peut-on répéter",
-          "body": "Ce sont les deux questions à se poser avant tout calcul, et elles déterminent la formule.\n\nUn code à quatre chiffres : l'ordre compte, et on peut répéter. 10⁴.\n\nUn podium parmi huit coureurs : l'ordre compte, on ne peut pas répéter. 8 × 7 × 6.\n\nUne main de trois cartes : l'ordre ne compte pas, on ne peut pas répéter. C'est le cas qui demande une division, et le seul."
+          "title": "Les deux questions à se poser",
+          "body": "L’ordre compte-t-il ? Peut-on répéter ? Elles déterminent la formule.\n\nCode à quatre chiffres : l’ordre compte, on peut répéter. 10⁴.\n\nPodium parmi huit coureurs : l’ordre compte, pas de répétition. 8 × 7 × 6.\n\nMain de trois cartes : l’ordre ne compte pas. C’est le seul cas qui demande une division."
         }
       ],
       "questions": [
@@ -105,28 +112,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Le même ensemble, plusieurs ordres",
-          "body": "Pour choisir trois élèves parmi dix pour un groupe, l'ordre ne compte pas : les choisir Alice, Bruno, Chloé ou Chloé, Alice, Bruno donne le même groupe.\n\nSi l'on compte 10 × 9 × 8 = 720, on a compté chaque groupe plusieurs fois : exactement autant de fois qu'il y a de façons d'ordonner trois personnes, soit 3 × 2 × 1 = 6.\n\nIl faut donc diviser : 720 ÷ 6 = 120 groupes différents."
+          "kind": "figure",
+          "title": "Appuie sur « Tourner »",
+          "body": "Trois lignes de quatre, puis quatre lignes de trois : les mêmes jetons, l’autre sens. Quand l’ordre cesse de compter, deux comptes différents désignent la même chose — et il faut diviser.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "La combinaison",
-          "formula": "nombre de groupes = (n × (n−1) × … ) ÷ (k × (k−1) × … )",
-          "body": "On prend k facteurs décroissants au numérateur et les k premiers entiers au dénominateur. Pour 3 parmi 10 : (10 × 9 × 8) ÷ (3 × 2 × 1) = 120."
+          "kind": "texte",
+          "title": "Le même ensemble, plusieurs ordres",
+          "body": "Choisir trois élèves parmi dix : Alice, Bruno, Chloé ou Chloé, Alice, Bruno donnent le même groupe.\n\nCompter 10 × 9 × 8 = 720 compte chaque groupe autant de fois qu’il y a de façons d’ordonner trois personnes, soit 3 × 2 × 1 = 6. Donc 720 ÷ 6 = 120 groupes."
         },
         {
           "id": "c3",
-          "kind": "astuce",
-          "title": "La symétrie qui fait gagner du temps",
-          "body": "Choisir 3 élèves parmi 10 pour partir revient à en choisir 7 pour rester. Les deux comptes sont donc égaux : 120 dans les deux cas.\n\nD'où une règle de calcul : pour 8 parmi 10, on calcule plutôt 2 parmi 10, soit (10 × 9) ÷ 2 = 45. Deux multiplications au lieu de huit.\n\nOn choisit toujours le plus petit des deux nombres."
+          "kind": "formule",
+          "title": "La combinaison",
+          "body": "On prend k facteurs décroissants au numérateur et les k premiers entiers au dénominateur. Pour 3 parmi 10 : (10 × 9 × 8) ÷ (3 × 2 × 1) = 120.",
+          "formula": "nombre de groupes = (n × (n−1) × … ) ÷ (k × (k−1) × … )"
         },
         {
           "id": "c4",
+          "kind": "astuce",
+          "title": "La symétrie qui fait gagner du temps",
+          "body": "Choisir 3 élèves parmi 10 pour partir revient à en choisir 7 pour rester : 120 dans les deux cas.\n\nDonc pour 8 parmi 10, on calcule 2 parmi 10 : (10 × 9) ÷ 2 = 45. On choisit toujours le plus petit des deux nombres."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Les poignées de main",
-          "body": "Dans un groupe de n personnes qui se serrent toutes la main une fois, le nombre de poignées est le nombre de paires : n × (n−1) ÷ 2.\n\nPour 10 personnes : 10 × 9 ÷ 2 = 45.\n\nLa division par deux est la part essentielle du raisonnement : chaque poignée est comptée deux fois si l'on compte « chacun serre la main de neuf autres »."
+          "body": "Dans un groupe de n personnes qui se serrent toutes la main une fois, le nombre de poignées est le nombre de paires : n × (n−1) ÷ 2. Pour 10 personnes : 45.\n\nLa division par deux est l’essentiel : chaque poignée est comptée deux fois si l’on dit « chacun serre la main de neuf autres »."
         }
       ],
       "questions": [
@@ -206,21 +220,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "aRetenir",
-          "title": "L'énoncé",
-          "body": "Si l'on range n objets dans moins de n tiroirs, au moins un tiroir contient au moins deux objets.\n\nC'est évident, et c'est un outil de démonstration redoutable, parce qu'il conclut sans rien construire : il affirme qu'une chose existe sans dire laquelle.\n\nTreize personnes dans une pièce : deux au moins sont nées le même mois. Il n'y a que douze mois, donc douze tiroirs."
+          "kind": "figure",
+          "title": "Essaie de mettre le principe en défaut",
+          "body": "Règle les objets et les tiroirs comme tu veux, puis redistribue autant de fois que tu veux. Dès qu’il y a plus d’objets que de tiroirs, la figure annonce combien un tiroir contiendra au moins — et elle ne se trompe jamais.",
+          "figureId": "tiroirs"
         },
         {
           "id": "c2",
-          "kind": "exemple",
-          "title": "Deux conclusions surprenantes",
-          "body": "Dans Paris, au moins deux personnes ont exactement le même nombre de cheveux. Un humain en a au plus environ 150 000, et Paris compte deux millions d'habitants : il y a treize fois plus de personnes que de nombres possibles.\n\nParmi cinq points quelconques dans un carré de côté 2, deux au moins sont à moins de 1,5 de distance. On découpe le carré en quatre carrés de côté 1 : avec cinq points et quatre cases, deux points partagent une case, et la diagonale d'une case vaut environ 1,41.\n\nAucune des deux conclusions ne nomme les personnes ni les points, et les deux sont certaines."
+          "kind": "aRetenir",
+          "title": "L’énoncé",
+          "body": "Si l’on range n objets dans moins de n tiroirs, au moins un tiroir contient au moins deux objets.\n\nC’est évident, et c’est un outil redoutable : il conclut sans rien construire. Il affirme qu’une chose existe sans dire laquelle."
         },
         {
           "id": "c3",
+          "kind": "exemple",
+          "title": "Deux conclusions surprenantes",
+          "body": "Dans Paris, au moins deux personnes ont exactement le même nombre de cheveux : un humain en a au plus environ 150 000, et Paris compte deux millions d’habitants.\n\nParmi cinq points quelconques dans un carré de côté 2, deux au moins sont à moins de 1,5 l’un de l’autre : on découpe en quatre carrés de côté 1, deux points partagent une case, et la diagonale d’une case vaut environ 1,41.\n\nAucune des deux ne nomme les personnes ni les points, et les deux sont certaines."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "La version renforcée",
-          "body": "Si l'on range n objets dans t tiroirs, un tiroir contient au moins n ÷ t objets, arrondi au-dessus.\n\nTrente élèves et douze mois : un mois contient au moins 30 ÷ 12 = 2,5, donc au moins 3 élèves.\n\nCette version donne bien plus que « au moins deux », et elle se calcule aussi vite."
+          "body": "Avec n objets dans t tiroirs, un tiroir en contient au moins n ÷ t, arrondi au-dessus. C’est le nombre que la figure affiche.\n\nTrente élèves et douze mois : au moins 3 élèves nés le même mois. Bien plus que « au moins deux », et aussi rapide à calculer."
         }
       ],
       "questions": [
@@ -307,21 +328,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Deux questions qu'on confond",
-          "body": "Combien de personnes faut-il pour être certain que deux partagent un anniversaire ? 366, par le principe des tiroirs.\n\nCombien pour que ce soit plus probable qu'improbable ? Vingt-trois.\n\nL'écart entre les deux réponses est énorme, et il surprend tout le monde. Il vient de ce que l'on compte des paires, et non des personnes."
+          "kind": "figure",
+          "title": "La certitude, puis la probabilité",
+          "body": "Mets 13 objets et 12 tiroirs : la coïncidence est certaine. Le principe des tiroirs ne sait dire que cela. La question du défi est différente et bien plus surprenante : à partir de combien devient-elle seulement probable ?",
+          "figureId": "tiroirs"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Le calcul, par le contraire",
-          "body": "On calcule la probabilité que tous les anniversaires soient différents, ce qui est bien plus facile.\n\nLa deuxième personne doit éviter 1 jour sur 365 : 364 ÷ 365.\n\nLa troisième doit en éviter 2 : 363 ÷ 365.\n\nOn multiplie tous ces facteurs. À 23 personnes, le produit tombe à 0,493 — donc la probabilité d'une coïncidence vaut 1 − 0,493 = 0,507, soit un peu plus d'une chance sur deux."
+          "kind": "texte",
+          "title": "Deux questions qu’on confond",
+          "body": "Combien faut-il de personnes pour être certain que deux partagent un anniversaire ? 366, par le principe des tiroirs.\n\nCombien pour que ce soit plus probable qu’improbable ? Vingt-trois. L’écart surprend tout le monde : il vient de ce que l’on compte des paires, et non des personnes."
         },
         {
           "id": "c3",
+          "kind": "etape",
+          "title": "Le calcul, par le contraire",
+          "body": "On calcule la probabilité que tous les anniversaires soient différents, bien plus facile.\n\nLa deuxième personne doit éviter 1 jour sur 365 : 364 ÷ 365.\n\nLa troisième doit en éviter 2 : 363 ÷ 365.\n\nOn multiplie tous ces facteurs. À 23 personnes le produit tombe à 0,493, donc la probabilité d’une coïncidence vaut 0,507."
+        },
+        {
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Pourquoi si peu de monde suffit",
-          "body": "Avec 23 personnes, il y a 23 × 22 ÷ 2 = 253 paires. Chacune a une chance sur 365 de coïncider.\n\nOn n'a pas 23 occasions de coïncidence, on en a 253. C'est là que l'intuition se trompe : elle compte les personnes, et ce sont les paires qui comptent.\n\nLe même piège gouverne les collisions en informatique, où il décide de la longueur des identifiants. Doubler la longueur d'un identifiant ne double pas la sécurité contre les collisions : il faut raisonner sur les paires."
+          "body": "Avec 23 personnes, il y a 23 × 22 ÷ 2 = 253 paires, chacune avec une chance sur 365 de coïncider.\n\nOn n’a pas 23 occasions, on en a 253. L’intuition compte les personnes, et ce sont les paires qui comptent.\n\nLe même piège gouverne les collisions en informatique, où il décide de la longueur des identifiants."
         }
       ],
       "questions": [

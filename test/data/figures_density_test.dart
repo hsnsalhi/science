@@ -20,13 +20,17 @@ void main() {
     'histoire-sciences-college-les-nombres-qui-ont-fait-peur',
     'histoire-sciences-college-l-atome-2500-ans-d-hypotheses',
     'histoire-sciences-college-pasteur-darwin-et-le-vivant',
+    'logique-college-raisonnement-par-l-absurde',
+    'logique-college-enigmes-de-logique-pure',
+    'logique-college-denombrer-sans-se-tromper',
+    'maths-college-puissances-et-racine-carree',
   };
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.096;
+  const double partMinimale = 0.105;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;

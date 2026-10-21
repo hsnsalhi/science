@@ -11,28 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une notation, pas une opération nouvelle",
-          "body": "2⁵ veut dire 2 × 2 × 2 × 2 × 2, soit 32. L'exposant compte les facteurs, pas les multiplications : il y a cinq 2 et quatre signes ×.\n\nC'est de l'abréviation. Mais écrire 10¹⁵ au lieu d'un 1 suivi de quinze zéros change la façon dont on pense : on peut comparer 10¹⁵ et 10¹⁸ d'un coup d'œil, là où compter des zéros échoue."
+          "kind": "figure",
+          "title": "Mets la raison sur 2 et regarde",
+          "body": "Choisis la suite géométrique, premier terme 1, raison 2. Chaque bâton double le précédent : 1, 2, 4, 8, 16… Au dixième tu es à 1 024. Une puissance, c’est ce compteur-là.",
+          "figureId": "suite"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Les trois règles qui suffisent",
-          "formula": "a^m × a^n = a^(m+n)     a^m ÷ a^n = a^(m−n)     (a^m)^n = a^(m×n)",
-          "body": "Elles ne sont pas à retenir par cœur : elles se retrouvent en comptant les facteurs. 2³ × 2² met trois 2 à côté de deux 2, donc cinq 2 en tout."
+          "kind": "texte",
+          "title": "Une notation, pas une opération nouvelle",
+          "body": "2⁵ veut dire 2 × 2 × 2 × 2 × 2, soit 32. L’exposant compte les facteurs, pas les multiplications : cinq 2 et quatre signes ×.\n\nC’est de l’abréviation, mais écrire 10¹⁵ au lieu d’un 1 suivi de quinze zéros change la façon de penser : on compare 10¹⁵ et 10¹⁸ d’un coup d’œil, là où compter des zéros échoue."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Pourquoi a⁰ vaut 1",
-          "body": "La règle de la division donne a^n ÷ a^n = a^(n−n) = a^0.\n\nOr un nombre divisé par lui-même vaut 1. Donc a^0 = 1, pour tout a non nul.\n\nCe n'est pas une convention arbitraire : c'est la seule valeur qui laisse la règle vraie. Et le même raisonnement donne a^(−n) = 1 ÷ a^n."
+          "kind": "formule",
+          "title": "Les trois règles qui suffisent",
+          "body": "Elles ne sont pas à retenir par cœur : elles se retrouvent en comptant les facteurs. 2³ × 2² met trois 2 à côté de deux 2, donc cinq 2.",
+          "formula": "a^m × a^n = a^(m+n)     a^m ÷ a^n = a^(m−n)     (a^m)^n = a^(m×n)"
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Pourquoi a⁰ vaut 1",
+          "body": "La règle de la division donne a^n ÷ a^n = a^(n−n) = a^0. Or un nombre divisé par lui-même vaut 1.\n\nCe n’est pas une convention arbitraire : c’est la seule valeur qui laisse la règle vraie. Le même raisonnement donne a^(−n) = 1 ÷ a^n."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
-          "title": "L'erreur qui ne s'oublie plus une fois vue",
-          "body": "(2 + 3)² ne vaut pas 2² + 3².\n\nÀ gauche : 5² = 25. À droite : 4 + 9 = 13. Douze d'écart.\n\nUne puissance ne se distribue pas sur une somme. Elle se distribue sur un produit : (2 × 3)² = 2² × 3² = 36, et c'est vrai. Produit oui, somme non."
+          "title": "L’erreur qui ne s’oublie plus une fois vue",
+          "body": "(2 + 3)² ne vaut pas 2² + 3². À gauche 5² = 25, à droite 4 + 9 = 13. Douze d’écart.\n\nUne puissance se distribue sur un produit, jamais sur une somme : (2 × 3)² = 2² × 3² = 36. Produit oui, somme non."
         }
       ],
       "questions": [
@@ -97,35 +104,36 @@
       "minutes": 9,
       "cards": [
         {
-          "id": "c0",
-          "kind": "astuce",
-          "title": "Deux façons d'écrire un exposant",
-          "body": "Dans ce chapitre tu verras 10⁴ avec l'exposant en petit, et 10^−4 avec un chapeau.\n\nC'est la même chose. Le chapeau s'utilise quand l'exposant est négatif ou qu'il contient une lettre, parce que tous les petits caractères n'existent pas dans toutes les écritures.\n\nC'est aussi ce que fait ta calculatrice : elle affiche 2^5 ou 2E5, jamais 2⁵. Les deux notations se lisent « dix puissance moins quatre »."
-        },
-        {
           "id": "c1",
-          "kind": "formule",
-          "title": "La forme imposée",
-          "formula": "a × 10^n, avec 1 ≤ a < 10",
-          "body": "Un seul chiffre avant la virgule, et il n'est pas zéro. 42 000 s'écrit 4,2 × 10⁴ et jamais 42 × 10³, qui est juste mais pas en écriture scientifique."
+          "kind": "figure",
+          "title": "Pourquoi personne n’écrit ces nombres en entier",
+          "body": "Le Système solaire à l’échelle de ses distances. La Terre est à 1,5 × 10¹¹ mètres du Soleil, Neptune à 4,5 × 10¹². Essaie d’écrire le second en chiffres, et tu auras la réponse.",
+          "figureId": "systeme-solaire"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "La méthode, dans les deux sens",
-          "body": "Pour un grand nombre : on place la virgule après le premier chiffre, et l'exposant est le nombre de rangs qu'elle a reculé. 42 000 devient 4,2 et la virgule a reculé de 4 rangs : 4,2 × 10⁴.\n\nPour un petit nombre : la virgule avance, et l'exposant est négatif. 0,00057 devient 5,7 et la virgule a avancé de 4 rangs : 5,7 × 10^−4.\n\nLe signe de l'exposant dit donc simplement si le nombre est grand ou petit, et rien d'autre."
+          "kind": "formule",
+          "title": "La forme imposée",
+          "body": "Un seul chiffre avant la virgule, et il n’est pas zéro. 42 000 s’écrit 4,2 × 10⁴ et jamais 42 × 10³, qui est juste mais pas en écriture scientifique.",
+          "formula": "a × 10^n, avec 1 ≤ a < 10"
         },
         {
           "id": "c3",
-          "kind": "astuce",
-          "title": "Pourquoi cette forme sert vraiment",
-          "body": "Comparer 0,000042 et 0,0000091 demande de compter des zéros, et tout le monde se trompe.\n\nComparer 4,2 × 10^−5 et 9,1 × 10^−6 est immédiat : l'exposant −5 est plus grand que −6, donc le premier nombre est le plus grand, quoi que valent les 4,2 et les 9,1.\n\nOn ne regarde le nombre devant que si les exposants sont égaux."
+          "kind": "etape",
+          "title": "La méthode, dans les deux sens",
+          "body": "Grand nombre : on place la virgule après le premier chiffre, et l’exposant est le nombre de rangs reculés. 42 000 donne 4,2 × 10⁴.\n\nPetit nombre : la virgule avance, et l’exposant est négatif. 0,00057 donne 5,7 × 10^−4.\n\nLe signe de l’exposant dit simplement si le nombre est grand ou petit."
         },
         {
           "id": "c4",
+          "kind": "astuce",
+          "title": "Deux façons d’écrire un exposant",
+          "body": "Tu verras 10⁴ avec l’exposant en petit, et 10^−4 avec un chapeau. C’est la même chose.\n\nLe chapeau s’utilise quand l’exposant est négatif ou contient une lettre, parce que tous les petits caractères n’existent pas. C’est aussi ce que fait ta calculatrice : 2^5 ou 2E5, jamais 2⁵."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
-          "title": "Multiplier devient facile",
-          "body": "(3 × 10⁸) × (2 × 10⁵) = 6 × 10¹³. On multiplie les nombres devant, on additionne les exposants.\n\nSi le nombre devant dépasse 10, on rectifie : (5 × 10⁸) × (4 × 10⁵) = 20 × 10¹³ = 2 × 10¹⁴.\n\nC'est exactement ce que fait une calculatrice quand elle affiche 2e14."
+          "title": "Comparer et multiplier deviennent faciles",
+          "body": "Comparer 0,000042 et 0,0000091 demande de compter des zéros. Comparer 4,2 × 10^−5 et 9,1 × 10^−6 est immédiat : −5 est plus grand que −6. On ne regarde le nombre devant que si les exposants sont égaux.\n\n(3 × 10⁸) × (2 × 10⁵) = 6 × 10¹³ : on multiplie devant, on additionne les exposants. Si le devant dépasse 10, on rectifie : 20 × 10¹³ devient 2 × 10¹⁴."
         }
       ],
       "questions": [
@@ -219,21 +227,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "La définition, et sa précision",
-          "body": "√a est le nombre positif dont le carré vaut a.\n\nLe mot positif n'est pas décoratif. L'équation x² = 9 a deux solutions, 3 et −3. Mais √9 désigne un seul nombre, et c'est 3. Les deux énoncés sont différents, et les confondre fait perdre ou inventer des solutions.\n\nEt √a n'existe que pour a positif ou nul : aucun carré ne vaut −4."
+          "kind": "figure",
+          "title": "La racine, dessinée",
+          "body": "Les carrés construits sur les côtés : celui de l’hypoténuse vaut la somme des deux autres. Règle les côtés sur 1 et 1 : l’hypoténuse est alors le nombre dont le carré vaut 2. C’est la définition même d’une racine.",
+          "figureId": "pythagore-carres"
         },
         {
           "id": "c2",
-          "kind": "avertissement",
-          "title": "La racine ne se distribue pas sur une somme",
-          "body": "√(9 + 16) vaut √25, soit 5.\n\n√9 + √16 vaut 3 + 4, soit 7.\n\nDeux d'écart, et c'est l'erreur la plus fréquente du chapitre. Comme pour les puissances : la racine passe sur un produit, jamais sur une somme.\n\n√(4 × 25) = √4 × √25 = 2 × 5 = 10, et c'est bien √100. Produit oui, somme non."
+          "kind": "texte",
+          "title": "La définition, et sa précision",
+          "body": "√a est le nombre positif dont le carré vaut a.\n\nLe mot positif n’est pas décoratif. L’équation x² = 9 a deux solutions, 3 et −3, mais √9 désigne un seul nombre, et c’est 3. Les confondre fait perdre ou inventer des solutions.\n\nEt √a n’existe que pour a positif ou nul : aucun carré ne vaut −4."
         },
         {
           "id": "c3",
+          "kind": "avertissement",
+          "title": "La racine ne se distribue pas sur une somme",
+          "body": "√(9 + 16) vaut √25, soit 5. √9 + √16 vaut 3 + 4, soit 7. Deux d’écart.\n\nComme pour les puissances, la racine passe sur un produit : √(4 × 25) = 2 × 5 = 10, et c’est bien √100. Produit oui, somme non."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "Les carrés parfaits à reconnaître",
-          "body": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, puis 121, 144, 169, 196, 225.\n\nLes connaître permet de simplifier : √72 = √(36 × 2) = 6√2. On cherche le plus grand carré parfait qui divise.\n\nEt √2 ne vaut aucune fraction : son écriture décimale ne s'arrête jamais et ne se répète jamais. 1,414 n'est qu'une approximation, et 1,414² vaut 1,999396 — pas 2."
+          "body": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, puis 121, 144, 169, 196, 225.\n\nLes connaître permet de simplifier : √72 = √(36 × 2) = 6√2. On cherche le plus grand carré parfait qui divise.\n\nEt √2 ne vaut aucune fraction : 1,414 n’est qu’une approximation, et 1,414² vaut 1,999396 — pas 2."
         }
       ],
       "questions": [
@@ -299,15 +314,22 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Quarante-cinq puissances de dix",
-          "body": "Un noyau d'atome mesure environ 10^−15 mètre. Notre galaxie mesure environ 10²¹ mètres.\n\nEntre les deux, trente-six puissances de dix. Autrement dit : il y a autant de rapport entre un noyau et nous qu'entre nous et une galaxie — à peu près, et c'est une coïncidence qui vaut d'être remarquée.\n\nL'écriture scientifique est le seul outil qui permette de manier ces nombres sans se noyer. Essaie d'écrire 10²¹ en chiffres, et tu verras pourquoi."
+          "kind": "figure",
+          "title": "Trente-six puissances de dix",
+          "body": "Les huit planètes à l’échelle de leurs distances. Neptune est trente fois plus loin que la Terre, et cette figure a déjà du mal à le montrer. Le rapport du défi est un milliard de milliards de fois plus grand.",
+          "figureId": "systeme-solaire"
         },
         {
           "id": "c2",
+          "kind": "texte",
+          "title": "Du noyau à la galaxie",
+          "body": "Un noyau d’atome mesure environ 10^−15 mètre. Notre galaxie mesure environ 10²¹ mètres.\n\nEntre les deux, trente-six puissances de dix. L’écriture scientifique est le seul outil qui permette de manier ces nombres sans se noyer : essaie d’écrire 10²¹ en chiffres."
+        },
+        {
+          "id": "c3",
           "kind": "etape",
-          "title": "Comparer, c'est soustraire les exposants",
-          "body": "Le rapport entre 10²¹ et 10^−15 s'obtient en soustrayant : 21 − (−15) = 36. Donc un facteur 10³⁶.\n\nUn humain fait environ 1 mètre, soit 10⁰. Le rapport humain / noyau est donc 10¹⁵, et le rapport galaxie / humain est 10²¹.\n\nLes deux rapports ne sont pas égaux, mais ils sont du même genre d'énormité — et c'est ce que l'écriture scientifique rend visible d'un coup d'œil."
+          "title": "Comparer, c’est soustraire les exposants",
+          "body": "Le rapport entre 10²¹ et 10^−15 s’obtient en soustrayant : 21 − (−15) = 36. Donc un facteur 10³⁶.\n\nUn humain fait environ 1 mètre, soit 10⁰. Le rapport humain sur noyau vaut donc 10¹⁵, et le rapport galaxie sur humain vaut 10²¹.\n\nLes deux ne sont pas égaux, mais ils sont du même genre d’énormité — et c’est ce que l’écriture scientifique rend visible d’un coup d’œil."
         }
       ],
       "questions": [
