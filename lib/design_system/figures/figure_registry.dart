@@ -8,6 +8,7 @@ import '../../core/theme/app_tokens.dart';
 import 'array_figure.dart';
 import 'balance_figure.dart';
 import 'binary_figure.dart';
+import 'breaking_thread_figure.dart';
 import 'cell_figure.dart';
 import 'circuit_figure.dart';
 import 'clock_figure.dart';
@@ -29,6 +30,7 @@ import 'food_web_figure.dart';
 import 'gears_figure.dart';
 import 'half_life_figure.dart';
 import 'implication_figure.dart';
+import 'inverse_square_figure.dart';
 import 'loop_robot_figure.dart';
 import 'matrix_figure.dart';
 import 'moon_phases_figure.dart';
@@ -84,6 +86,12 @@ abstract final class FigureRegistry {
     // La même masse sur quatre astres, et la flèche du poids qui change.
     'poids-astres': (BuildContext context, Color accent) =>
         WeightFigure(accent: accent),
+    // Un objet pendu à un fil : on règle la masse jusqu'à la rupture.
+    'fil-qui-casse': (BuildContext context, Color accent) =>
+        BreakingThreadFigure(accent: accent),
+    // Deux corps qu'on écarte : la force s'effondre comme le carré.
+    'attraction-distance': (BuildContext context, Color accent) =>
+        InverseSquareFigure(accent: accent),
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),

@@ -167,10 +167,50 @@ singulier/pluriel).
 
 ## 3. Les figures interactives
 
+### La règle qui passe avant les autres : montrer, puis seulement dire
+
+Trois niveaux, du moins bon au meilleur. On monte aussi haut que la notion
+le permet, et on ne s'arrête au niveau inférieur que faute de mieux :
+
+1. **Un paragraphe.** Le dernier recours. Une notion qu'on ne sait pas
+   dessiner est une notion qu'on n'a pas encore comprise assez pour
+   l'enseigner.
+2. **Un dessin.** Mieux : l'élève voit la chose au lieu de la reconstruire
+   dans sa tête.
+3. **Une animation.** Mieux encore : il voit la chose *changer*, et un
+   changement porte la cause.
+4. **Une animation qu'il pilote.** Le but. Il pose la question, l'appareil
+   répond, et la règle est ce qui reste quand il a fini de jouer.
+
+L'exemple qui a fixé cette règle, et qui est en place dans
+`gravitation-et-systeme-solaire` : pour la pesanteur, un objet pendu à un
+fil et un curseur de masse. Le fil s'allonge, la flèche du poids grandit, la
+jauge rougit, puis le fil casse et l'objet tombe — d'une chute accélérée, pas
+linéaire. Aucune phrase sur « P = m × g » n'apprend cela ; après, la formule
+ne fait que nommer ce que l'élève vient de mesurer. La figure est
+`fil-qui-casse`, le chapitre ouvre dessus, et la formule arrive en deuxième
+carte.
+
+Conséquences pratiques :
+
+- **Chaque leçon ouvre sur une figure.** Pas une carte de texte qui prépare
+  la figure : la figure, d'abord, avec une consigne d'action dans son `body`
+  (« Pousse le curseur », « Écarte les deux corps »). L'élève manipule avant
+  de lire.
+- **Le texte devient une légende.** Ce qui restait de l'ancien paragraphe
+  tient en deux phrases après la figure, pour nommer ce qui vient d'être vu.
+- **Une figure sans commande est un brouillon.** Les 57 figures du registre
+  offrent toutes au moins un curseur, un choix ou une zone à manipuler, et
+  `test/data/figures_density_test.dart` refuse qu'on en ajoute une qui n'en
+  ait pas.
+- **La part de cartes `figure` ne redescend pas.** Le même fichier de test
+  tient un plancher, qu'on relève à chaque lot repris. Un chapitre ajouté
+  sans figure fait tomber la moyenne, et le test le dit avant la revue.
+
 Une figure se cite par une clé, jamais par un nom de fichier :
 
 La liste complète fait foi dans
-`lib/design_system/figures/figure_registry.dart` — il y en a 55
+`lib/design_system/figures/figure_registry.dart` — il y en a 57
 aujourd'hui, et la recopier ici la rendrait fausse dès la figure suivante.
 Pour la relire en une commande :
 

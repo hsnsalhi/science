@@ -12,28 +12,29 @@
         {
           "id": "c1",
           "kind": "figure",
-          "title": "Le même corps, quatre astres",
-          "figureId": "poids-astres",
-          "body": "Change d'astre. La masse affichée ne bouge pas ; le poids, lui, change du tout au tout."
+          "title": "Charge-le jusqu'à ce que ça casse",
+          "figureId": "fil-qui-casse",
+          "body": "Pousse le curseur. Le fil s'allonge, la flèche grandit, la jauge rougit. À quelle masse cède-t-il ?"
         },
         {
           "id": "c2",
-          "kind": "texte",
-          "title": "Ce que chacune mesure",
-          "body": "La masse est une quantité de matière. Elle se mesure en kilogrammes, et elle est la même partout dans l'univers : sur Terre, sur la Lune, en orbite, dans le vide.\n\nLe poids est une force : l'attraction qu'un astre exerce sur ce corps. Il se mesure en newtons, et il dépend de l'astre.\n\nUne balance de cuisine mesure en réalité un poids, et affiche une masse en supposant qu'on est sur Terre. Sur la Lune, elle afficherait un sixième de la vérité."
+          "kind": "formule",
+          "title": "Ce que tu viens de mesurer",
+          "formula": "P = m × g",
+          "body": "Le fil tenait 50 N et a lâché vers 5,1 kg. C'est que 5,1 × 9,8 dépasse 50. Le poids est une force, en newtons ; la masse est une quantité de matière, en kilogrammes."
         },
         {
           "id": "c3",
-          "kind": "formule",
-          "title": "La relation",
-          "formula": "P = m × g",
-          "body": "P en newtons, m en kilogrammes, g en newtons par kilogramme. Sur Terre g vaut environ 9,8 — souvent arrondi à 10 pour les calculs de tête, ce qui donne 2 % d'erreur."
+          "kind": "figure",
+          "title": "Le même sac, quatre mondes",
+          "figureId": "poids-astres",
+          "body": "Change d'astre sans toucher au curseur de masse. Le nombre de kilogrammes ne bouge pas. La flèche, si."
         },
         {
           "id": "c4",
           "kind": "aRetenir",
-          "title": "Quelques valeurs de g",
-          "body": "La Terre : 9,8 N/kg. La Lune : 1,6. Mars : 3,7.\n\nJupiter : 24,8. Le Soleil : 274.\n\nUn humain de 60 kg pèse 588 N sur Terre, 96 N sur la Lune et 1 488 N sur Jupiter — où il ne pourrait pas se tenir debout. Sa masse reste 60 kg dans les trois cas."
+          "title": "La masse est à l'objet, le poids est au lieu",
+          "body": "Une balance de cuisine mesure un poids et affiche une masse, en supposant qu'on est sur Terre. Sur la Lune, elle afficherait un sixième de la vérité."
         }
       ],
       "questions": [
@@ -113,28 +114,29 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Ce que Newton a vraiment compris",
-          "body": "Avant lui, on pensait que la chute d'une pomme et le mouvement de la Lune relevaient de deux physiques différentes : l'une terrestre, l'autre céleste.\n\nSon idée est qu'il n'y en a qu'une. La Lune tombe, elle aussi — en permanence. Mais elle avance assez vite de côté pour que sa chute l'amène toujours à côté de la Terre plutôt que dessus.\n\nUne orbite n'est donc pas un équilibre entre deux forces : c'est une chute qui n'en finit pas."
+          "kind": "figure",
+          "title": "Écarte-les et regarde la flèche",
+          "figureId": "attraction-distance",
+          "body": "Tire le petit corps vers la droite. Le repère gris garde la force de départ pour comparer. À distance double, de combien la flèche a-t-elle fondu ?"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "De quoi dépend l'attraction",
-          "body": "Des deux masses : plus elles sont grandes, plus la force est grande. Et elle est proportionnelle à chacune.\n\nDe la distance : plus les corps sont éloignés, plus la force est faible — mais pas proportionnellement. Elle décroît comme le carré de la distance.\n\nDoubler la distance divise donc la force par quatre. Tripler la divise par neuf. C'est ce carré qui donne aux orbites leur forme."
+          "kind": "aRetenir",
+          "title": "Elle n'est pas divisée par deux",
+          "body": "Elle est divisée par quatre. Et par neuf à distance triple. C'est le carré de la distance qui commande, et c'est ce que l'intuition refuse spontanément."
         },
         {
           "id": "c3",
           "kind": "figure",
-          "title": "Le Système solaire",
-          "figureId": "systeme-solaire",
-          "body": "Les planètes lointaines tournent plus lentement : à grande distance, l'attraction est faible, et il suffit d'aller doucement pour rester en orbite."
+          "title": "Pourquoi la Lune ne tombe pas",
+          "figureId": "canon-newton",
+          "body": "Augmente la vitesse du boulet. Trop lent, il retombe. Assez vite, il manque la Terre indéfiniment. Une orbite est une chute qui n'en finit pas."
         },
         {
           "id": "c4",
-          "kind": "aRetenir",
-          "title": "Pourquoi les astronautes flottent",
-          "body": "Pas parce qu'il n'y a plus de gravité. À 400 km d'altitude, g vaut encore environ 8,7 N/kg, soit près de 90 % de sa valeur au sol.\n\nIls flottent parce qu'ils tombent, et que la station tombe avec eux, à la même vitesse. Rien ne les presse contre le plancher, et c'est tout ce que signifie « flotter ».\n\nL'expression « absence de gravité » est donc fausse. Le mot exact est chute libre, et un ascenseur dont le câble casse donnerait la même sensation."
+          "kind": "astuce",
+          "title": "Les astronautes tombent aussi",
+          "body": "À 400 km, g vaut encore 8,7 : presque autant qu'au sol. Ils flottent parce qu'ils tombent avec leur station, pas parce que la gravité a disparu."
         }
       ],
       "questions": [
@@ -241,21 +243,23 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Deux familles bien séparées",
-          "body": "Les quatre rocheuses, proches du Soleil : Mercure, Vénus, la Terre, Mars. Petites, denses, peu ou pas de lune, pas d'anneau.\n\nLes quatre géantes, lointaines : Jupiter, Saturne, Uranus, Neptune. Énormes, peu denses, beaucoup de lunes, toutes avec des anneaux.\n\nLa séparation n'est pas un hasard : près du Soleil, la chaleur du jeune système a chassé les gaz légers, et seuls les matériaux résistants ont pu s'agglomérer."
+          "kind": "figure",
+          "title": "Plus loin, plus lent",
+          "figureId": "orbites",
+          "body": "Déplace la planète. Loin du Soleil l'attraction est faible, et une petite vitesse suffit à tenir en orbite. Aller plus vite l'éjecterait."
         },
         {
           "id": "c2",
-          "kind": "astuce",
-          "title": "Saturne flotterait",
-          "body": "Sa masse volumique moyenne vaut environ 0,7 g/cm³, soit moins que l'eau.\n\nUne Saturne posée dans un océan assez grand flotterait. Ce n'est pas une anecdote : c'est ce que « géante gazeuse » veut dire concrètement.\n\nLa Terre, elle, fait 5,5 g/cm³ — huit fois plus dense que Saturne."
+          "kind": "figure",
+          "title": "Huit planètes, deux familles",
+          "figureId": "systeme-solaire",
+          "body": "Les quatre proches sont petites et denses. Les quatre lointaines sont énormes et légères — Saturne flotterait sur l'eau."
         },
         {
           "id": "c3",
           "kind": "aRetenir",
-          "title": "Plus loin, plus lent",
-          "body": "La Terre fait son tour en 1 an. Jupiter en 12 ans. Saturne en 29. Neptune en 165.\n\nDeux raisons se cumulent : l'orbite est plus longue, et la vitesse est plus faible.\n\nUne année neptunienne dépasse donc deux vies humaines. Depuis sa découverte en 1846, Neptune n'a bouclé qu'un seul tour — achevé en 2011."
+          "title": "La frontière n'est pas un hasard",
+          "body": "Près du Soleil, la chaleur du jeune système a chassé les gaz légers. Seuls les matériaux résistants ont pu s'agglomérer : d'où des planètes rocheuses d'un côté, gazeuses de l'autre."
         }
       ],
       "questions": [
@@ -396,15 +400,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Un sac de 20 kg en voyage",
-          "body": "Un sac de 20 kg est transporté sur plusieurs astres. Sa masse reste 20 kg partout ; c'est son poids qui change.\n\nSur Terre, avec g = 9,8 : 196 N. Il faut cette force pour le soulever.\n\nSur la Lune, avec g = 1,6 : 32 N. Un enfant le soulèverait d'une main.\n\nSur Jupiter, avec g = 24,8 : 496 N. Il faudrait une poulie.\n\nEt en orbite, en chute libre : il ne presse sur rien, mais il garde ses 20 kg — le pousser demande toujours autant d'effort pour le mettre en mouvement."
+          "kind": "figure",
+          "title": "Pèse le même sac partout",
+          "figureId": "poids-astres",
+          "body": "Règle la masse sur 20 kg et fais le tour des quatre astres. Note les quatre poids : ce sont les réponses des trois premières questions."
         },
         {
           "id": "c2",
           "kind": "aRetenir",
-          "title": "La masse résiste même sans poids",
-          "body": "C'est la distinction la plus utile du chapitre. En orbite, un sac de 20 kg ne pèse rien et reste difficile à lancer, et difficile à arrêter.\n\nUn astronaute qui pousse une caisse de 200 kg dans la station la met en mouvement lentement, et prend autant de peine à l'arrêter. S'il s'interpose mal, elle l'écrase contre la cloison.\n\nL'apesanteur supprime le poids. Elle ne supprime pas l'inertie, et c'est une source réelle d'accidents."
+          "title": "L'apesanteur ne supprime pas l'inertie",
+          "body": "En orbite, une caisse de 200 kg ne pèse rien et reste aussi difficile à lancer qu'à arrêter. Mal s'interposer peut blesser. Le poids disparaît, la masse jamais."
         }
       ],
       "questions": [

@@ -22,7 +22,7 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
 | Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
 | Contenu rédigé de bout en bout | **129 chapitres** : 516 leçons, 1 784 cartes, 2 627 questions |
-| **55 figures interactives**, dessinées d'après le réel | ✅ |
+| **57 figures interactives**, dessinées d'après le réel | ✅ |
 | 1 380 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
