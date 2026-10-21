@@ -11,27 +11,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Le message est découpé",
-          "body": "Quand tu envoies une photo, elle n'est pas transmise d'un bloc. Elle est découpée en milliers de paquets, chacun portant l'adresse de destination et son numéro d'ordre.\n\nChaque paquet voyage indépendamment, et deux paquets de la même photo peuvent emprunter des chemins différents. Ils arrivent dans le désordre, et la machine réceptrice les remet en ordre grâce à leurs numéros.\n\nCe n'est pas une complication gratuite : c'est ce qui rend le réseau robuste."
+          "kind": "figure",
+          "title": "Coupe un câble et regarde le paquet passer ailleurs",
+          "body": "Touche un câble : il se coupe. Le paquet repart aussitôt par une autre route, et le compte de sauts change. Coupe-en un deuxième, un troisième : il faut en couper beaucoup pour isoler le serveur, et c’est exactement ce pour quoi le réseau a été conçu.",
+          "figureId": "reseau-paquet"
         },
         {
           "id": "c2",
-          "kind": "aRetenir",
-          "title": "Pourquoi le découpage protège",
-          "body": "Si un câble est coupé, les paquets suivants passent par un autre chemin. Aucun routeur ne connaît la route entière : chacun ne sait que vers quel voisin faire avancer un paquet.\n\nSi un paquet est perdu, il est redemandé — un seul paquet, pas la photo entière.\n\nInternet a été conçu pour continuer de fonctionner avec des morceaux détruits, et c'est exactement ce que fait ce découpage."
+          "kind": "texte",
+          "title": "Le message est découpé",
+          "body": "Quand tu envoies une photo, elle n’est pas transmise d’un bloc. Elle est découpée en milliers de paquets, chacun portant l’adresse de destination et son numéro d’ordre.\n\nChaque paquet voyage indépendamment, et deux paquets de la même photo peuvent emprunter des chemins différents. Ils arrivent dans le désordre, et la machine réceptrice les remet en ordre grâce à leurs numéros."
         },
         {
           "id": "c3",
-          "kind": "etape",
-          "title": "Le trajet d'une requête",
-          "body": "Ton appareil envoie le paquet à la box.\n\nLa box le passe au réseau du fournisseur d'accès.\n\nCelui-ci le fait avancer de routeur en routeur, chacun choisissant le voisin qui le rapproche de la destination.\n\nLe paquet atteint le serveur, qui répond par ses propres paquets.\n\nUne vingtaine de sauts suffisent généralement à traverser la planète, et cela prend moins d'un dixième de seconde."
+          "kind": "aRetenir",
+          "title": "Pourquoi le découpage protège",
+          "body": "Si un câble est coupé, les paquets suivants passent ailleurs. Aucun routeur ne connaît la route entière : chacun ne sait que vers quel voisin faire avancer un paquet.\n\nSi un paquet est perdu, il est redemandé — un seul paquet, pas la photo entière."
         },
         {
           "id": "c4",
+          "kind": "etape",
+          "title": "Le trajet d’une requête",
+          "body": "Ton appareil envoie le paquet à la box.\n\nLa box le passe au réseau du fournisseur d’accès.\n\nCelui-ci le fait avancer de routeur en routeur, chacun choisissant le voisin qui le rapproche de la destination.\n\nLe paquet atteint le serveur, qui répond par ses propres paquets. Une vingtaine de sauts suffisent à traverser la planète."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
-          "title": "La limite n'est pas la vitesse de la lumière seule",
-          "body": "Dans une fibre, la lumière avance à environ 200 000 km/s — un tiers de moins que dans le vide, à cause du verre. Franchir 6 000 km y prend donc environ 30 millisecondes.\n\nL'aller-retour en fait 60. Le reste du délai qu'on observe vient des routeurs, de la mise en file d'attente et du traitement aux extrémités.\n\nAucun progrès technique ne descendra sous le temps de trajet physique : c'est pourquoi les grands sites installent des serveurs près des utilisateurs plutôt que d'accélérer les câbles."
+          "title": "La limite n’est pas la vitesse de la lumière seule",
+          "body": "Dans une fibre, la lumière avance à environ 200 000 km/s — un tiers de moins que dans le vide, à cause du verre. Franchir 6 000 km y prend environ 30 millisecondes, et l’aller-retour 60.\n\nLe reste du délai vient des routeurs, des files d’attente et du traitement aux extrémités.\n\nAucun progrès technique ne descendra sous le temps de trajet physique : c’est pourquoi les grands sites installent des serveurs près des utilisateurs."
         }
       ],
       "questions": [
@@ -160,27 +167,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une adresse IP",
-          "body": "Chaque machine connectée porte une adresse numérique. Dans l'ancienne version, encore majoritaire, elle s'écrit en quatre nombres de 0 à 255 : 192.168.1.14 par exemple.\n\nQuatre nombres de 256 valeurs donnent 256 × 256 × 256 × 256 adresses possibles, soit un peu plus de quatre milliards. C'est beaucoup, et ce n'est plus assez : il y a plus d'objets connectés que cela.\n\nD'où une nouvelle version, bien plus longue, qui en offre un nombre que personne n'épuisera."
+          "kind": "figure",
+          "title": "Chaque machine a un nom sur le dessin",
+          "body": "Regarde les boîtes : chacune porte une étiquette, et le paquet est adressé à l’une d’elles. Sur le vrai réseau, cette étiquette est un nombre — et c’est pour cela qu’il a fallu inventer un annuaire.",
+          "figureId": "reseau-paquet"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Le rôle du DNS",
-          "body": "Personne ne retient des nombres. On tape un nom de domaine.\n\nL'appareil demande donc à un serveur DNS : « quelle est l'adresse de ce nom ? »\n\nLe serveur répond par l'adresse numérique.\n\nSeulement alors, la connexion s'établit vers cette adresse.\n\nLe DNS est donc un annuaire, et rien de plus. Il ne transporte aucune page : il traduit des noms en adresses."
+          "kind": "texte",
+          "title": "Une adresse IP",
+          "body": "Chaque machine connectée porte une adresse numérique. Dans l’ancienne version, encore majoritaire, elle s’écrit en quatre nombres de 0 à 255.\n\nQuatre nombres de 256 valeurs donnent un peu plus de quatre milliards d’adresses. C’est beaucoup, et ce n’est plus assez : il y a plus d’objets connectés que cela.\n\nD’où une nouvelle version, bien plus longue, qui en offre un nombre que personne n’épuisera."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Client et serveur",
-          "body": "Le client demande, le serveur répond. Ton téléphone est un client ; la machine qui héberge le site est un serveur.\n\nCe ne sont pas des types de machines mais des rôles dans un échange : un même ordinateur peut être client d'un service et serveur d'un autre, en même temps."
+          "kind": "etape",
+          "title": "Le rôle du DNS",
+          "body": "Personne ne retient des nombres. On tape un nom de domaine.\n\nL’appareil demande à un serveur DNS : « quelle est l’adresse de ce nom ? »\n\nLe serveur répond par l’adresse numérique.\n\nSeulement alors, la connexion s’établit. Le DNS est un annuaire, et rien de plus : il ne transporte aucune page."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Client et serveur",
+          "body": "Le client demande, le serveur répond. Ton téléphone est un client ; la machine qui héberge le site est un serveur.\n\nCe ne sont pas des types de machines mais des rôles dans un échange : un même ordinateur peut être client d’un service et serveur d’un autre, en même temps."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
           "title": "Le s de https",
-          "body": "En http, tout circule en clair : n'importe qui sur le trajet peut lire ce que tu envoies, mot de passe compris.\n\nEn https, le contenu est chiffré entre ton appareil et le serveur. Un intermédiaire voit qu'il y a un échange, avec quel site, et sa taille — mais pas son contenu.\n\nLe chiffrement ne cache donc pas tout. Il protège le contenu, pas le fait que tu aies visité ce site."
+          "body": "En http, tout circule en clair : n’importe qui sur le trajet peut lire ce que tu envoies, mot de passe compris.\n\nEn https, le contenu est chiffré entre ton appareil et le serveur. Un intermédiaire voit qu’il y a un échange, avec quel site, et sa taille — mais pas son contenu.\n\nLe chiffrement protège le contenu, pas le fait que tu aies visité ce site."
         }
       ],
       "questions": [
@@ -274,22 +288,29 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "avertissement",
-          "title": "Un octet vaut huit bits",
-          "body": "Les fichiers se mesurent en octets : mégaoctets, gigaoctets. Les débits se mesurent en bits par seconde : mégabits par seconde.\n\nUn facteur huit sépare les deux, et il est la source de presque tous les malentendus sur le temps de téléchargement.\n\nLa notation est cruelle : Mo pour mégaoctet, Mb ou Mbit pour mégabit. Une majuscule de différence, et un facteur huit."
+          "kind": "figure",
+          "title": "Le maillon le plus faible décide",
+          "body": "Coupe des câbles jusqu’à ne laisser qu’une route. Tout le trafic passe alors par elle, et c’est elle qui fixe le débit. Sur ton réseau, c’est pareil : changer d’offre n’y change rien si le goulot est ailleurs.",
+          "figureId": "reseau-paquet"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Le calcul juste",
-          "formula": "durée = taille en bits ÷ débit en bits par seconde",
-          "body": "Pour une taille en mégaoctets et un débit en mégabits par seconde : on multiplie d'abord la taille par 8, puis on divise. Omettre ce 8 donne une durée huit fois trop courte, et la déception qui va avec."
+          "kind": "avertissement",
+          "title": "Un octet vaut huit bits",
+          "body": "Les fichiers se mesurent en octets : mégaoctets, gigaoctets. Les débits se mesurent en bits par seconde.\n\nUn facteur huit sépare les deux, et il est la source de presque tous les malentendus sur le temps de téléchargement.\n\nLa notation est cruelle : Mo pour mégaoctet, Mb pour mégabit. Une majuscule de différence, et un facteur huit."
         },
         {
           "id": "c3",
+          "kind": "formule",
+          "title": "Le calcul juste",
+          "body": "Pour une taille en mégaoctets et un débit en mégabits par seconde : on multiplie d’abord la taille par 8, puis on divise. Omettre ce 8 donne une durée huit fois trop courte.",
+          "formula": "durée = taille en bits ÷ débit en bits par seconde"
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "Le débit annoncé est un maximum",
-          "body": "Une offre à 100 mégabits par seconde ne garantit pas 100. C'est le débit théorique maximal, atteint rarement.\n\nIl se partage entre les appareils de la maison, il dépend de la qualité du signal, et le serveur distant peut lui-même être lent.\n\nLe maillon le plus faible de toute la chaîne fixe le débit réel. Changer d'offre n'y change rien si le goulot est ailleurs."
+          "body": "Une offre à 100 mégabits par seconde ne garantit pas 100. C’est le débit théorique maximal, atteint rarement.\n\nIl se partage entre les appareils de la maison, il dépend de la qualité du signal, et le serveur distant peut lui-même être lent."
         }
       ],
       "questions": [
@@ -373,15 +394,22 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Trois observateurs, trois vues",
-          "body": "Tu consultes un site en https depuis chez toi. Trois acteurs voient trois choses différentes, et les confondre conduit à des conclusions fausses dans les deux sens.\n\nTon fournisseur d'accès voit quel site tu consultes, à quelle heure, et combien de données circulent. Il ne voit pas quelle page tu lis ni ce que tu écris.\n\nLe site voit ton adresse IP, donc approximativement ta région, ton type d'appareil et de navigateur, et tout ce que tu fais sur ses pages.\n\nUn voisin qui écoute le wifi chiffré ne voit presque rien d'utilisable."
+          "kind": "figure",
+          "title": "Qui voit quoi sur le trajet",
+          "body": "Suis le paquet de machine en machine. Chacune de ces boîtes voit passer quelque chose — et pas la même chose selon l’endroit où elle se trouve. C’est tout le défi.",
+          "figureId": "reseau-paquet"
         },
         {
           "id": "c2",
+          "kind": "texte",
+          "title": "Trois observateurs, trois vues",
+          "body": "Tu consultes un site en https depuis chez toi. Trois acteurs voient trois choses différentes.\n\nTon fournisseur d’accès voit quel site tu consultes, à quelle heure, et combien de données circulent. Il ne voit pas quelle page tu lis ni ce que tu écris.\n\nLe site voit ton adresse IP, donc approximativement ta région, ton type d’appareil, et tout ce que tu fais sur ses pages.\n\nUn voisin qui écoute le wifi chiffré ne voit presque rien d’utilisable."
+        },
+        {
+          "id": "c3",
           "kind": "aRetenir",
           "title": "Le mode privé ne rend pas anonyme",
-          "body": "Le mode privé du navigateur efface l'historique local et les cookies à la fermeture. C'est tout ce qu'il fait.\n\nLe fournisseur d'accès, le site visité, l'employeur sur son propre réseau et l'administrateur du wifi voient exactement la même chose qu'en mode normal.\n\nIl protège de quelqu'un qui ouvrirait ton navigateur après toi. Il ne protège de personne d'autre, et beaucoup de gens croient le contraire."
+          "body": "Le mode privé efface l’historique local et les cookies à la fermeture. C’est tout ce qu’il fait.\n\nLe fournisseur d’accès, le site visité, l’employeur sur son propre réseau et l’administrateur du wifi voient exactement la même chose qu’en mode normal.\n\nIl protège de quelqu’un qui ouvrirait ton navigateur après toi. Il ne protège de personne d’autre, et beaucoup croient le contraire."
         }
       ],
       "questions": [

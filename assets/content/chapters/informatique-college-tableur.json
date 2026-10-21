@@ -11,27 +11,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Ce qui distingue un tableur d'un tableau de papier",
-          "body": "Chaque cellule porte une adresse : la lettre de sa colonne et le numéro de sa ligne. B3 est la cellule de la colonne B, ligne 3.\n\nUne cellule peut contenir une valeur, ou une formule qui commence par le signe égal. Une formule ne stocke pas un résultat : elle stocke un calcul, refait chaque fois qu'une cellule dont elle dépend change.\n\nC'est toute la différence. Sur papier, corriger une donnée oblige à refaire tous les calculs qui en dépendaient. Dans un tableur, ils se refont seuls."
+          "kind": "figure",
+          "title": "Change une case, regarde la colonne grise",
+          "body": "Touche une case blanche et règle-la. La colonne des totaux se refait aussitôt, et le total général avec elle. Passe en « Formules » : ces cases ne contiennent pas des nombres, elles contiennent un calcul.",
+          "figureId": "tableur"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Écrire une formule",
-          "body": "On commence par le signe égal. Sans lui, le tableur comprend du texte et affiche la formule au lieu de la calculer.\n\nOn désigne les cellules par leur adresse, jamais par leur valeur. Écrire `=5*2` donne bien 10, mais ce 10 ne se mettra jamais à jour.\n\nOn valide, et la cellule affiche le résultat tout en gardant la formule. La barre de formule la montre quand on sélectionne la cellule."
+          "kind": "texte",
+          "title": "Ce qui distingue un tableur d’un tableau de papier",
+          "body": "Chaque cellule porte une adresse : la lettre de sa colonne et le numéro de sa ligne.\n\nUne cellule peut contenir une valeur, ou une formule qui commence par le signe égal. Une formule ne stocke pas un résultat : elle stocke un calcul, refait chaque fois qu’une cellule dont elle dépend change.\n\nSur papier, corriger une donnée oblige à refaire tous les calculs qui en dépendaient. Dans un tableur, ils se refont seuls."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Jamais de nombre en dur dans une formule",
-          "body": "Si le taux de TVA vaut 20 %, on le met dans une cellule et on y fait référence, plutôt que d'écrire 1,2 dans trente formules.\n\nLe jour où le taux change, il y a une cellule à modifier au lieu de trente formules à retrouver. Et on ne risque pas d'en oublier une, ce qui est le vrai danger.\n\nC'est la même règle qu'en programmation : une valeur qui peut changer vit dans une variable."
+          "kind": "etape",
+          "title": "Écrire une formule",
+          "body": "On commence par le signe égal. Sans lui, le tableur comprend du texte et affiche la formule au lieu de la calculer.\n\nOn désigne les cellules par leur adresse, jamais par leur valeur. Écrire `=5*2` donne bien 10, mais ce 10 ne se mettra jamais à jour.\n\nOn valide, et la cellule affiche le résultat tout en gardant la formule."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Jamais de nombre en dur dans une formule",
+          "body": "Si le taux de TVA vaut 20 %, on le met dans une cellule et on y fait référence, plutôt que d’écrire 1,2 dans trente formules.\n\nLe jour où le taux change, il y a une cellule à modifier au lieu de trente formules à retrouver — et on ne risque pas d’en oublier une, ce qui est le vrai danger.\n\nC’est la même règle qu’en programmation : une valeur qui peut changer vit dans une variable."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
           "title": "La référence circulaire",
-          "body": "Écrire en B2 la formule `=B2+1` demande au tableur de calculer B2 à partir de B2. Il n'y a aucune réponse, et le tableur refuse en signalant une référence circulaire.\n\nCe n'est pas un défaut du logiciel : la demande n'a pas de sens. C'est une différence réelle avec `x = x + 1` en programmation, où l'instruction s'exécute une fois, dans le temps. Une formule de tableur, elle, décrit un état permanent."
+          "body": "Écrire en B2 la formule `=B2+1` demande au tableur de calculer B2 à partir de B2. Il n’y a aucune réponse, et le tableur refuse.\n\nCe n’est pas un défaut du logiciel : la demande n’a pas de sens. C’est une vraie différence avec `x = x + 1` en programmation, où l’instruction s’exécute une fois, dans le temps. Une formule de tableur décrit un état permanent."
         }
       ],
       "questions": [
@@ -131,27 +138,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une référence relative suit la recopie",
-          "body": "En B2, la formule `=A2*2`. Recopie-la vers le bas : B3 contient `=A3*2`, B4 contient `=A4*2`.\n\nLe tableur n'a pas copié le texte de la formule : il a compris « la cellule à ma gauche », et l'a réinterprété à chaque ligne.\n\nC'est ce qui permet de remplir mille lignes en un geste, et c'est la fonctionnalité qui a fait le succès du tableur en 1979."
+          "kind": "figure",
+          "title": "La même formule, répétée ligne par ligne",
+          "body": "Passe en « Formules » : chaque ligne de la colonne Total porte la même formule, avec son propre numéro de ligne. Le tableur ne copie pas du texte, il réinterprète « la case à ma gauche » à chaque ligne.",
+          "figureId": "tableur"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Le dollar fige",
-          "body": "`A2` : la colonne et la ligne bougent toutes les deux à la recopie.\n\n`$A2` : la colonne A est figée, la ligne bouge.\n\n`A$2` : la ligne 2 est figée, la colonne bouge.\n\n`$A$2` : rien ne bouge, la formule pointera toujours A2 où qu'on la copie.\n\nLe dollar se lit « ne change pas ce qui suit »."
+          "kind": "texte",
+          "title": "Une référence relative suit la recopie",
+          "body": "En B2, la formule `=A2*2`. Recopie-la vers le bas : B3 contient `=A3*2`, B4 contient `=A4*2`.\n\nC’est ce qui permet de remplir mille lignes en un geste, et c’est la fonctionnalité qui a fait le succès du tableur en 1979."
         },
         {
           "id": "c3",
-          "kind": "exemple",
-          "title": "Le cas qui impose le dollar",
-          "body": "En D1 se trouve le taux de TVA. En C2, on veut `=B2*D1`.\n\nRecopiée vers le bas, cette formule devient `=B3*D2` en ligne 3 — et D2 est vide. Toutes les lignes suivantes donnent zéro.\n\nIl faut écrire `=B2*$D$1`. Recopiée, elle devient `=B3*$D$1` : la colonne de prix suit, le taux reste. Ce bug est le plus courant du tableur, et il se voit tout de suite parce qu'il donne des zéros."
+          "kind": "etape",
+          "title": "Le dollar fige",
+          "body": "`A2` : la colonne et la ligne bougent toutes les deux.\n\n`$A2` : la colonne A est figée, la ligne bouge.\n\n`A$2` : la ligne 2 est figée, la colonne bouge.\n\n`$A$2` : rien ne bouge. Le dollar se lit « ne change pas ce qui suit »."
         },
         {
           "id": "c4",
+          "kind": "exemple",
+          "title": "Le cas qui impose le dollar",
+          "body": "En D1 se trouve le taux de TVA. En C2, on veut `=B2*D1`.\n\nRecopiée vers le bas, cette formule devient `=B3*D2` en ligne 3 — et D2 est vide. Toutes les lignes suivantes donnent zéro.\n\nIl faut écrire `=B2*$D$1`. Ce bug est le plus courant du tableur, et il se voit tout de suite parce qu’il donne des zéros."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
           "title": "Reconnaître le besoin de dollar",
-          "body": "Pose-toi une question par référence : « quand je recopie, est-ce que je veux que celle-ci suive ? »\n\nSi oui, laisse-la relative. Si non, mets des dollars. Une formule bien pensée mélange souvent les deux, et c'est normal.\n\nLa table de multiplication complète en est le cas d'école : `=$A2*B$1` remplit la grille entière d'un seul geste, parce que la colonne de gauche est figée en colonne et la ligne du haut figée en ligne."
+          "body": "Une question par référence : « quand je recopie, est-ce que je veux que celle-ci suive ? »\n\nSi oui, laisse-la relative. Si non, mets des dollars. Une formule bien pensée mélange souvent les deux.\n\nLa table de multiplication en est le cas d’école : `=$A2*B$1` remplit la grille entière d’un seul geste."
         }
       ],
       "questions": [
@@ -296,22 +310,29 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Les cinq qui servent tout le temps",
-          "body": "`=SOMME(A1:A10)` additionne une plage. Les deux-points se lisent « de … à ».\n\n`=MOYENNE(A1:A10)` en fait la moyenne, en ignorant les cellules vides — ce qui n'est pas anodin.\n\n`=MIN(…)` et `=MAX(…)` donnent le plus petit et le plus grand.\n\n`=NB.SI(A1:A10;\">10\")` compte les cellules qui remplissent une condition."
+          "kind": "figure",
+          "title": "Une somme qui se refait toute seule",
+          "body": "Le total affiché sous la grille est une somme de toute la colonne. Change n’importe quelle case : il suit. C’est ce que fait SOMME sur une plage, et c’est la fonction que tu écriras le plus souvent.",
+          "figureId": "tableur"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Le test",
-          "formula": "=SI(condition ; valeur si vrai ; valeur si faux)",
-          "body": "`=SI(B2>=10;\"admis\";\"recalé\")` affiche admis quand la note atteint 10, et recalé sinon. C'est exactement le « si … alors … sinon » de la programmation, écrit sur une ligne."
+          "kind": "etape",
+          "title": "Les cinq qui servent tout le temps",
+          "body": "`=SOMME(A1:A10)` additionne une plage. Les deux-points se lisent « de … à ».\n\n`=MOYENNE(A1:A10)` en fait la moyenne, en ignorant les cellules vides — ce qui n’est pas anodin.\n\n`=MIN(…)` et `=MAX(…)` donnent le plus petit et le plus grand.\n\n`=NB.SI(A1:A10;\">10\")` compte les cellules qui remplissent une condition."
         },
         {
           "id": "c3",
+          "kind": "formule",
+          "title": "Le test",
+          "body": "`=SI(B2>=10;\"admis\";\"recalé\")` affiche admis quand la note atteint 10, et recalé sinon. C’est le « si … alors … sinon » de la programmation, écrit sur une ligne.",
+          "formula": "=SI(condition ; valeur si vrai ; valeur si faux)"
+        },
+        {
+          "id": "c4",
           "kind": "avertissement",
           "title": "Les cellules vides ne sont pas des zéros",
-          "body": "`MOYENNE` ignore les cellules vides, et c'est généralement ce qu'on veut : une absence n'est pas un zéro.\n\nMais si un élève absent doit compter zéro, il faut écrire le zéro. Sinon sa moyenne de classe sera calculée sur un élève de moins, et elle sera plus haute qu'elle ne devrait.\n\nLa même feuille donne donc deux résultats différents selon qu'on a saisi des vides ou des zéros, sans aucune erreur visible."
+          "body": "`MOYENNE` ignore les cellules vides, et c’est généralement ce qu’on veut : une absence n’est pas un zéro.\n\nMais si un élève absent doit compter zéro, il faut écrire le zéro. Sinon la moyenne est calculée sur un élève de moins, et elle est plus haute qu’elle ne devrait.\n\nLa même feuille donne deux résultats différents selon qu’on a saisi des vides ou des zéros, sans aucune erreur visible."
         }
       ],
       "questions": [
@@ -393,15 +414,22 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Deux classes, deux moyennes",
-          "body": "La classe A compte 10 élèves, de moyenne 12. La classe B compte 30 élèves, de moyenne 16.\n\nQuelle est la moyenne des 40 élèves ?\n\nLa réponse qui vient spontanément est (12 + 16) ÷ 2 = 14. Elle est fausse.\n\nIl faut repasser par les totaux : 10 × 12 = 120 points, et 30 × 16 = 480 points, soit 600 points pour 40 élèves. 600 ÷ 40 = 15.\n\nUn point d'écart, parce que la classe B est trois fois plus nombreuse et tire la moyenne vers elle."
+          "kind": "figure",
+          "title": "Repasser par les totaux",
+          "body": "Remarque comment le total se calcule : il additionne les totaux de ligne, jamais les prix. Pour une moyenne c’est pareil — on repasse par les totaux, et le défi va te montrer ce qu’il en coûte de l’oublier.",
+          "figureId": "tableur"
         },
         {
           "id": "c2",
+          "kind": "texte",
+          "title": "Deux classes, deux moyennes",
+          "body": "La classe A compte 10 élèves, de moyenne 12. La classe B compte 30 élèves, de moyenne 16. Quelle est la moyenne des 40 élèves ?\n\nLa réponse qui vient spontanément est (12 + 16) ÷ 2 = 14. Elle est fausse.\n\nIl faut repasser par les totaux : 10 × 12 = 120 points, et 30 × 16 = 480 points, soit 600 points pour 40 élèves. 600 ÷ 40 = 15."
+        },
+        {
+          "id": "c3",
           "kind": "aRetenir",
-          "title": "Pourquoi 14 serait juste",
-          "body": "La moyenne des moyennes est correcte dans un seul cas : quand les groupes ont le même effectif.\n\nDès que les effectifs diffèrent, il faut une moyenne pondérée — c'est-à-dire repasser par les totaux. C'est la raison d'être de la formule `=SOMMEPROD(effectifs;moyennes)/SOMME(effectifs)`.\n\nCe piège se retrouve partout : dans les taux de réussite nationaux, dans les prix moyens, dans les rendements financiers. Il est si fréquent qu'il a coûté des millions à des entreprises qui ont moyenné des pourcentages."
+          "title": "Quand 14 serait juste",
+          "body": "La moyenne des moyennes est correcte dans un seul cas : quand les groupes ont le même effectif.\n\nDès que les effectifs diffèrent, il faut une moyenne pondérée. C’est la raison d’être de `=SOMMEPROD(effectifs;moyennes)/SOMME(effectifs)`.\n\nCe piège se retrouve dans les taux de réussite nationaux, les prix moyens et les rendements financiers."
         }
       ],
       "questions": [

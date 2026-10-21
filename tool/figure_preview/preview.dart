@@ -28,6 +28,8 @@ const List<String> _figures = <String>[
   'racine-de-deux',
   'frise-nombres',
   'tiroirs',
+  'reseau-paquet',
+  'tableur',
   'selection',
   'droite-graduee',
   'horloge',

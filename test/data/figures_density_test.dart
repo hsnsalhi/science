@@ -44,13 +44,15 @@ void main() {
     'technologie-primaire-imaginer-et-fabriquer',
     'technologie-primaire-de-quoi-est-il-fait',
     'technologie-primaire-programmer-un-objet-technique',
+    'informatique-college-le-tableur',
+    'informatique-college-reseaux-et-internet',
   };
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.143;
+  const double partMinimale = 0.146;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;
