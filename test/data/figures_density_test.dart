@@ -31,13 +31,18 @@ void main() {
     'maths-primaire-perimetres-aires-et-angles',
     'maths-primaire-longueurs-masses-et-contenances',
     'maths-primaire-tableaux-graphiques-et-hasard',
+    'svt-primaire-naitre-grandir-se-reproduire',
+    'svt-primaire-alimentation-et-sante',
+    'svt-primaire-le-cerveau-et-la-puberte',
+    'physique-chimie-primaire-melanges-et-solutions',
+    'physique-chimie-primaire-masses-volumes-et-temperatures',
   };
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.118;
+  const double partMinimale = 0.128;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;

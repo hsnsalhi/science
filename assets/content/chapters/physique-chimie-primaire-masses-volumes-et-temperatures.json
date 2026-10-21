@@ -11,28 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "La question piège",
-          "body": "Qu'est-ce qui est le plus lourd : un kilo de plumes ou un kilo de plomb ?\n\nNi l'un ni l'autre : ils font tous les deux un kilo. Ce qui change, c'est la place qu'ils prennent. Les plumes rempliraient une pièce, le plomb tiendrait dans la main.\n\nLa masse dit combien il y a de matière. Le volume dit combien de place elle occupe."
+          "kind": "figure",
+          "title": "La masse se règle, et le poids suit",
+          "body": "Pousse le curseur de masse : la flèche du poids grandit avec elle. La masse dit combien il y a de matière, et rien de plus — elle ne dit pas la place que cette matière occupe.",
+          "figureId": "fil-qui-casse"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Deux grandeurs, deux instruments",
-          "formula": "masse : la balance, en grammes. Volume : le verre gradué, en litres.",
-          "body": "On ne mesure pas l'une avec l'instrument de l'autre."
+          "kind": "texte",
+          "title": "La question piège",
+          "body": "Qu’est-ce qui est le plus lourd : un kilo de plumes ou un kilo de plomb ?\n\nNi l’un ni l’autre : ils font tous les deux un kilo. Ce qui change, c’est la place qu’ils prennent. Les plumes rempliraient une pièce, le plomb tiendrait dans la main."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Certaines matières sont plus tassées",
-          "body": "Un litre d'eau pèse un kilogramme. Un litre d'huile pèse un peu moins. Un litre de miel pèse environ un kilo et demi.\n\nC'est pourquoi l'huile flotte sur l'eau et le miel coule au fond : à volume égal, elle n'ont pas la même masse."
+          "kind": "formule",
+          "title": "Deux grandeurs, deux instruments",
+          "body": "On ne mesure pas l’une avec l’instrument de l’autre.",
+          "formula": "masse : la balance, en grammes. Volume : le verre gradué, en litres."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Certaines matières sont plus tassées",
+          "body": "Un litre d’eau pèse un kilogramme. Un litre d’huile pèse un peu moins. Un litre de miel pèse environ un kilo et demi.\n\nC’est pourquoi l’huile flotte sur l’eau et le miel coule au fond : à volume égal, elles n’ont pas la même masse."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
           "title": "Le volume ne se perd pas en changeant de forme",
-          "body": "Verse un litre d'eau d'un verre large dans un verre étroit : le niveau monte beaucoup plus haut.\n\nIl y a pourtant toujours un litre. Croire qu'un verre haut contient davantage est une erreur que presque tous les jeunes enfants font, et dont on ne guérit qu'en versant soi-même."
+          "body": "Verse un litre d’eau d’un verre large dans un verre étroit : le niveau monte beaucoup plus haut. Il y a pourtant toujours un litre.\n\nCroire qu’un verre haut contient davantage est une erreur que presque tous les jeunes enfants font, et dont on ne guérit qu’en versant soi-même."
         }
       ],
       "questions": [
@@ -42,10 +49,19 @@
           "prompt": "Un kilo de plumes ou un kilo de plomb : lequel est le plus lourd ?",
           "explanation": "Aucun des deux : ils ont la même masse. Ce qui diffère est le volume, c'est-à-dire la place occupée.",
           "options": [
-            { "text": "ils pèsent pareil", "correct": true },
-            { "text": "le plomb" },
-            { "text": "les plumes" },
-            { "text": "cela dépend de la balance" }
+            {
+              "text": "ils pèsent pareil",
+              "correct": true
+            },
+            {
+              "text": "le plomb"
+            },
+            {
+              "text": "les plumes"
+            },
+            {
+              "text": "cela dépend de la balance"
+            }
           ]
         },
         {
@@ -54,9 +70,18 @@
           "prompt": "Associe chaque grandeur à son instrument.",
           "explanation": "La balance mesure la matière, le verre gradué mesure la place occupée.",
           "pairs": [
-            { "left": "la masse", "right": "la balance" },
-            { "left": "le volume", "right": "le verre gradué" },
-            { "left": "la température", "right": "le thermomètre" }
+            {
+              "left": "la masse",
+              "right": "la balance"
+            },
+            {
+              "left": "le volume",
+              "right": "le verre gradué"
+            },
+            {
+              "left": "la température",
+              "right": "le thermomètre"
+            }
           ]
         },
         {
@@ -85,16 +110,16 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Les mains se trompent",
-          "body": "Plonge une main dans l'eau chaude et l'autre dans l'eau froide. Puis mets les deux dans de l'eau tiède.\n\nUne main la trouve froide, l'autre la trouve chaude. C'est pourtant la même eau.\n\nNos sensations comparent, elles ne mesurent pas. D'où le thermomètre."
+          "kind": "figure",
+          "title": "Zéro degré, cent degrés",
+          "body": "Fais varier la température et regarde : à 0 °C la glace fond, à 100 °C l’eau bout et ses particules se dispersent dans tout le volume. Ce sont ces deux repères, faciles à retrouver partout, qui ont servi à construire l’échelle Celsius.",
+          "figureId": "etats-matiere"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Les deux repères de l'eau",
-          "formula": "0 °C : la glace fond. 100 °C : l'eau bout.",
-          "body": "L'échelle Celsius a été construite sur ces deux points, qui sont faciles à retrouver partout."
+          "kind": "texte",
+          "title": "Les mains se trompent",
+          "body": "Plonge une main dans l’eau chaude et l’autre dans l’eau froide. Puis mets les deux dans de l’eau tiède.\n\nUne main la trouve froide, l’autre la trouve chaude. C’est pourtant la même eau.\n\nNos sensations comparent, elles ne mesurent pas. D’où le thermomètre."
         },
         {
           "id": "c3",
@@ -105,8 +130,8 @@
         {
           "id": "c4",
           "kind": "avertissement",
-          "title": "Sous zéro, les nombres s'inversent",
-          "body": "−10 °C est plus froid que −5 °C, alors que 10 est plus grand que 5.\n\nC'est le premier endroit où l'on rencontre des nombres négatifs, et le thermomètre est le meilleur dessin pour les comprendre : plus on descend, plus il fait froid."
+          "title": "Sous zéro, les nombres s’inversent",
+          "body": "−10 °C est plus froid que −5 °C, alors que 10 est plus grand que 5.\n\nC’est le premier endroit où l’on rencontre des nombres négatifs, et le thermomètre est le meilleur dessin pour les comprendre : plus on descend, plus il fait froid."
         }
       ],
       "questions": [
@@ -131,10 +156,19 @@
           "hint": "Plus on descend sur le thermomètre, plus il fait froid.",
           "explanation": "−10 °C. Sous zéro, plus le nombre est grand, plus il fait froid.",
           "options": [
-            { "text": "−10 °C", "correct": true },
-            { "text": "−5 °C" },
-            { "text": "c'est pareil" },
-            { "text": "on ne peut pas comparer" }
+            {
+              "text": "−10 °C",
+              "correct": true
+            },
+            {
+              "text": "−5 °C"
+            },
+            {
+              "text": "c'est pareil"
+            },
+            {
+              "text": "on ne peut pas comparer"
+            }
           ]
         },
         {
@@ -142,7 +176,13 @@
           "kind": "remiseEnOrdre",
           "prompt": "Range ces températures de la plus froide à la plus chaude.",
           "explanation": "Les négatives d'abord, et parmi elles la plus grande en valeur est la plus froide.",
-          "items": ["−18 °C", "4 °C", "20 °C", "37 °C", "180 °C"]
+          "items": [
+            "−18 °C",
+            "4 °C",
+            "20 °C",
+            "37 °C",
+            "180 °C"
+          ]
         },
         {
           "id": "q5",
@@ -164,21 +204,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Peser un liquide",
-          "body": "1. Pose le récipient vide sur la balance et note sa masse.\n\n2. Verse le liquide et note la nouvelle masse.\n\n3. Soustrais : tu as la masse du liquide seul.\n\nOublier de peser le récipient vide est l'erreur numéro un."
+          "kind": "figure",
+          "title": "Lire une graduation, pas un à-peu-près",
+          "body": "Pose un point sur la droite graduée : il tombe sur un trait précis. Un verre gradué, une balance et un thermomètre se lisent de la même façon — sur le trait, et pas entre deux.",
+          "figureId": "droite-graduee"
         },
         {
           "id": "c2",
           "kind": "etape",
-          "title": "Mesurer le volume d'un caillou",
-          "body": "1. Mets de l'eau dans un verre gradué et note le niveau.\n\n2. Plonge le caillou et note le nouveau niveau.\n\n3. La différence est le volume du caillou.\n\nOn mesure ainsi le volume d'objets de forme compliquée, qu'aucune règle ne permettrait de calculer."
+          "title": "Peser un liquide",
+          "body": "1. Pose le récipient vide sur la balance et note sa masse.\n\n2. Verse le liquide et note la nouvelle masse.\n\n3. Soustrais : tu as la masse du liquide seul.\n\nOublier de peser le récipient vide est l’erreur numéro un."
         },
         {
           "id": "c3",
+          "kind": "etape",
+          "title": "Mesurer le volume d’un caillou",
+          "body": "1. Mets de l’eau dans un verre gradué et note le niveau.\n\n2. Plonge le caillou et note le nouveau niveau.\n\n3. La différence est le volume du caillou.\n\nOn mesure ainsi le volume d’objets de forme compliquée, qu’aucune règle ne permettrait de calculer."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "Lire un verre gradué",
-          "body": "L'œil doit être à la hauteur du liquide, pas au-dessus ni en dessous.\n\nEt on lit le bas du creux que forme la surface, pas les bords qui remontent le long du verre."
+          "body": "L’œil doit être à la hauteur du liquide, pas au-dessus ni en dessous.\n\nEt on lit le bas du creux que forme la surface, pas les bords qui remontent le long du verre."
         }
       ],
       "questions": [
@@ -235,9 +282,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Combien de matière pour combien de place",
+          "body": "Fais varier la température : la même eau tient serrée quand elle est liquide et se répand dans tout le volume en vapeur. Flotter ou couler se joue exactement là — pas sur la masse seule, pas sur le volume seul, mais sur les deux ensemble.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
-          "title": "Ce n'est pas le poids",
-          "body": "Un trombone coule, un bateau de plusieurs milliers de tonnes flotte.\n\nCe qui décide n'est donc ni la masse ni le volume pris séparément, mais les deux ensemble : pour un même volume, l'objet est-il plus lourd ou plus léger que l'eau ?\n\nUn litre d'eau pèse un kilo. Un objet d'un litre qui pèse moins d'un kilo flotte ; s'il pèse plus, il coule.\n\nUn bateau est énorme mais surtout creux : il contient beaucoup d'air, ce qui le rend léger pour sa taille."
+          "title": "Ce n’est pas le poids",
+          "body": "Un trombone coule, un bateau de plusieurs milliers de tonnes flotte.\n\nCe qui décide n’est ni la masse ni le volume pris séparément : pour un même volume, l’objet est-il plus lourd ou plus léger que l’eau ?\n\nUn litre d’eau pèse un kilo. Un objet d’un litre qui pèse moins d’un kilo flotte ; s’il pèse plus, il coule.\n\nUn bateau est énorme mais surtout creux : il contient beaucoup d’air, ce qui le rend léger pour sa taille."
         }
       ],
       "questions": [
@@ -247,10 +301,19 @@
           "prompt": "Qu'est-ce qui décide si un objet flotte ?",
           "explanation": "La comparaison entre sa masse et celle du même volume d'eau. Un objet d'un litre pesant moins d'un kilo flotte.",
           "options": [
-            { "text": "sa masse comparée à celle du même volume d'eau", "correct": true },
-            { "text": "sa masse seule" },
-            { "text": "son volume seul" },
-            { "text": "sa couleur" }
+            {
+              "text": "sa masse comparée à celle du même volume d'eau",
+              "correct": true
+            },
+            {
+              "text": "sa masse seule"
+            },
+            {
+              "text": "son volume seul"
+            },
+            {
+              "text": "sa couleur"
+            }
           ]
         },
         {
@@ -265,12 +328,27 @@
           "kind": "tri",
           "prompt": "Range ces objets : flottent ou coulent dans l'eau ?",
           "explanation": "Le bois et l'huile sont plus légers que l'eau à volume égal. Le fer et le miel sont plus lourds.",
-          "categories": ["flotte", "coule"],
+          "categories": [
+            "flotte",
+            "coule"
+          ],
           "items": [
-            { "text": "un morceau de bois", "category": 0 },
-            { "text": "de l'huile", "category": 0 },
-            { "text": "un clou en fer", "category": 1 },
-            { "text": "du miel", "category": 1 }
+            {
+              "text": "un morceau de bois",
+              "category": 0
+            },
+            {
+              "text": "de l'huile",
+              "category": 0
+            },
+            {
+              "text": "un clou en fer",
+              "category": 1
+            },
+            {
+              "text": "du miel",
+              "category": 1
+            }
           ]
         },
         {
@@ -287,10 +365,19 @@
           "hint": "Qu'y a-t-il à l'intérieur du bateau ?",
           "explanation": "Parce qu'il est creux : il contient beaucoup d'air, donc il est léger pour son volume. Le clou est plein d'acier.",
           "options": [
-            { "text": "il est creux et contient beaucoup d'air", "correct": true },
-            { "text": "l'acier des bateaux est plus léger" },
-            { "text": "il avance, donc il flotte" },
-            { "text": "l'eau de mer porte mieux" }
+            {
+              "text": "il est creux et contient beaucoup d'air",
+              "correct": true
+            },
+            {
+              "text": "l'acier des bateaux est plus léger"
+            },
+            {
+              "text": "il avance, donc il flotte"
+            },
+            {
+              "text": "l'eau de mer porte mieux"
+            }
           ]
         },
         {

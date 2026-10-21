@@ -11,28 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Le sel et le sable",
-          "body": "Verse du sel dans l'eau et remue : il disparaît. L'eau reste transparente.\n\nVerse du sable et remue : il tourbillonne puis retombe au fond. On le voit toujours.\n\nDans les deux cas on a mélangé. Mais le résultat n'est pas du même genre."
+          "kind": "figure",
+          "title": "Des grains qui se répartissent",
+          "body": "Mets tout à gauche, puis laisse passer un instant, puis vingt. Les grains se répandent partout et ne reviennent jamais se rassembler. Un sel qui se dissout fait exactement cela : il se disperse, il ne disparaît pas.",
+          "figureId": "entropie"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Les deux mots",
-          "formula": "homogène : on ne distingue plus rien. Hétérogène : on distingue encore.",
-          "body": "L'eau salée est homogène. L'eau sablée est hétérogène."
+          "kind": "texte",
+          "title": "Le sel et le sable",
+          "body": "Verse du sel dans l’eau et remue : il disparaît, et l’eau reste transparente.\n\nVerse du sable et remue : il tourbillonne puis retombe au fond. On le voit toujours.\n\nDans les deux cas on a mélangé. Mais le résultat n’est pas du même genre."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Disparu ne veut pas dire détruit",
-          "body": "Le sel dissous est toujours là : l'eau a un goût salé, et sa masse a augmenté.\n\nSi on laisse l'eau s'évaporer, le sel réapparaît au fond du récipient. Il s'était seulement dispersé en morceaux trop petits pour être vus."
+          "kind": "formule",
+          "title": "Les deux mots",
+          "body": "L’eau salée est homogène. L’eau sablée est hétérogène.",
+          "formula": "homogène : on ne distingue plus rien. Hétérogène : on distingue encore."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Disparu ne veut pas dire détruit",
+          "body": "Le sel dissous est toujours là : l’eau a un goût salé, et sa masse a augmenté.\n\nSi on laisse l’eau s’évaporer, le sel réapparaît au fond. Il s’était seulement dispersé en morceaux trop petits pour être vus."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
-          "title": "Transparent n'est pas pur",
-          "body": "Un verre d'eau salée est parfaitement transparent, et pourtant ce n'est pas de l'eau pure.\n\nOn ne peut pas juger de la pureté d'un liquide à son apparence. C'est pourquoi on ne boit pas l'eau d'une source inconnue sous prétexte qu'elle est claire."
+          "title": "Transparent n’est pas pur",
+          "body": "Un verre d’eau salée est parfaitement transparent, et pourtant ce n’est pas de l’eau pure.\n\nOn ne peut pas juger de la pureté d’un liquide à son apparence. C’est pourquoi on ne boit pas l’eau d’une source inconnue sous prétexte qu’elle est claire."
         }
       ],
       "questions": [
@@ -41,13 +48,31 @@
           "kind": "tri",
           "prompt": "Range ces mélanges : homogènes ou hétérogènes ?",
           "explanation": "Homogène quand on ne distingue plus les composants ; hétérogène quand on les voit encore.",
-          "categories": ["homogène", "hétérogène"],
+          "categories": [
+            "homogène",
+            "hétérogène"
+          ],
           "items": [
-            { "text": "eau et sel", "category": 0 },
-            { "text": "eau et sirop", "category": 0 },
-            { "text": "eau et sable", "category": 1 },
-            { "text": "eau et huile", "category": 1 },
-            { "text": "jus d'orange avec pulpe", "category": 1 }
+            {
+              "text": "eau et sel",
+              "category": 0
+            },
+            {
+              "text": "eau et sirop",
+              "category": 0
+            },
+            {
+              "text": "eau et sable",
+              "category": 1
+            },
+            {
+              "text": "eau et huile",
+              "category": 1
+            },
+            {
+              "text": "jus d'orange avec pulpe",
+              "category": 1
+            }
           ]
         },
         {
@@ -84,27 +109,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "La décantation",
-          "body": "On laisse reposer. Le plus lourd tombe au fond, le plus léger reste au-dessus.\n\nL'eau sableuse se clarifie toute seule en quelques minutes. On peut ensuite verser doucement le liquide clair.\n\nGratuit, mais lent, et jamais parfait."
+          "kind": "figure",
+          "title": "Chauffe, et l’eau s’en va",
+          "body": "Fais monter la température : l’eau liquide se disperse dans tout le volume sous forme de vapeur. Le sel, lui, ne part pas avec elle — et c’est toute la méthode.",
+          "figureId": "etats-matiere"
         },
         {
           "id": "c2",
           "kind": "etape",
-          "title": "La filtration",
-          "body": "On fait passer le mélange à travers un filtre percé de trous minuscules.\n\nL'eau passe, le sable reste. Ce qui est retenu s'appelle le résidu, ce qui passe le filtrat.\n\nUn filtre ne retient que ce qui est plus gros que ses trous : il n'enlève donc pas le sel."
+          "title": "La décantation",
+          "body": "On laisse reposer. Le plus lourd tombe au fond, le plus léger reste au-dessus.\n\nL’eau sableuse se clarifie toute seule en quelques minutes. On peut ensuite verser doucement le liquide clair. Gratuit, mais lent, et jamais parfait."
         },
         {
           "id": "c3",
           "kind": "etape",
-          "title": "L'évaporation",
-          "body": "On chauffe doucement. L'eau part en vapeur, le sel reste.\n\nC'est la seule des trois méthodes qui sépare un mélange homogène.\n\nC'est ainsi qu'on récolte le sel dans les marais salants, sans chauffer : le soleil et le vent suffisent."
+          "title": "La filtration",
+          "body": "On fait passer le mélange à travers un filtre percé de trous minuscules. L’eau passe, le sable reste.\n\nCe qui est retenu s’appelle le résidu, ce qui passe le filtrat.\n\nUn filtre ne retient que ce qui est plus gros que ses trous : il n’enlève donc pas le sel."
         },
         {
           "id": "c4",
+          "kind": "etape",
+          "title": "L’évaporation",
+          "body": "On chauffe doucement : l’eau part en vapeur, le sel reste.\n\nC’est la seule des trois méthodes qui sépare un mélange homogène.\n\nC’est ainsi qu’on récolte le sel dans les marais salants, sans chauffer : le soleil et le vent suffisent."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
           "title": "Chaque méthode a sa limite",
-          "body": "La filtration ne sert à rien sur de l'eau salée : le sel passe avec l'eau.\n\nL'évaporation sur de l'eau sableuse laisserait le sable, mais c'était beaucoup d'efforts pour ce qu'un filtre fait en dix secondes.\n\nChoisir la méthode demande d'abord de savoir quel genre de mélange on a."
+          "body": "La filtration ne sert à rien sur de l’eau salée : le sel passe avec l’eau.\n\nL’évaporation sur de l’eau sableuse laisserait le sable, mais c’était beaucoup d’efforts pour ce qu’un filtre fait en dix secondes.\n\nChoisir la méthode demande d’abord de savoir quel genre de mélange on a."
         }
       ],
       "questions": [
@@ -114,9 +146,18 @@
           "prompt": "Associe chaque mélange à la méthode qui le sépare.",
           "explanation": "Filtre pour ce qu'on voit, évaporation pour ce qui est dissous, décantation quand on peut attendre.",
           "pairs": [
-            { "left": "eau et sable", "right": "filtration" },
-            { "left": "eau et sel", "right": "évaporation" },
-            { "left": "eau boueuse qu'on laisse reposer", "right": "décantation" }
+            {
+              "left": "eau et sable",
+              "right": "filtration"
+            },
+            {
+              "left": "eau et sel",
+              "right": "évaporation"
+            },
+            {
+              "left": "eau boueuse qu'on laisse reposer",
+              "right": "décantation"
+            }
           ]
         },
         {
@@ -125,10 +166,19 @@
           "prompt": "Pourquoi un filtre ne sépare-t-il pas l'eau salée ?",
           "explanation": "Parce que le sel dissous est fait de morceaux bien plus petits que les trous du filtre : il passe avec l'eau.",
           "options": [
-            { "text": "le sel dissous passe à travers les trous", "correct": true },
-            { "text": "le sel attaque le papier filtre" },
-            { "text": "le filtre est trop fin" },
-            { "text": "l'eau salée ne coule pas" }
+            {
+              "text": "le sel dissous passe à travers les trous",
+              "correct": true
+            },
+            {
+              "text": "le sel attaque le papier filtre"
+            },
+            {
+              "text": "le filtre est trop fin"
+            },
+            {
+              "text": "l'eau salée ne coule pas"
+            }
           ]
         },
         {
@@ -137,10 +187,19 @@
           "prompt": "Comment récolte-t-on le sel dans les marais salants ?",
           "explanation": "Par évaporation naturelle : le soleil et le vent font partir l'eau de mer, et le sel reste.",
           "options": [
-            { "text": "en laissant l'eau de mer s'évaporer", "correct": true },
-            { "text": "en filtrant l'eau de mer" },
-            { "text": "en creusant le sol" },
-            { "text": "en congelant l'eau" }
+            {
+              "text": "en laissant l'eau de mer s'évaporer",
+              "correct": true
+            },
+            {
+              "text": "en filtrant l'eau de mer"
+            },
+            {
+              "text": "en creusant le sol"
+            },
+            {
+              "text": "en congelant l'eau"
+            }
           ]
         },
         {
@@ -174,27 +233,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "La saturation",
-          "body": "Mets une cuillère de sel dans un verre d'eau : elle disparaît. Une deuxième, une troisième aussi.\n\nAu bout d'un moment, le sel ne disparaît plus : il reste au fond quoi qu'on remue. L'eau est saturée.\n\nDans un verre d'eau froide, on peut dissoudre environ 70 grammes de sel. Pas davantage."
+          "kind": "figure",
+          "title": "La place finit par manquer",
+          "body": "Regarde les grains se répartir dans tout l’espace disponible. Quand il n’y a plus de place entre les particules d’eau, le sel suivant reste au fond : l’eau est saturée.",
+          "figureId": "entropie"
         },
         {
           "id": "c2",
-          "kind": "aRetenir",
-          "title": "La chaleur aide",
-          "body": "L'eau chaude dissout davantage que l'eau froide — très nettement pour le sucre, un peu seulement pour le sel.\n\nC'est pourquoi on fait fondre le sucre dans le thé chaud, et pourquoi le sirop se prépare à chaud."
+          "kind": "texte",
+          "title": "La saturation",
+          "body": "Mets une cuillère de sel dans un verre d’eau : elle disparaît. Une deuxième, une troisième aussi.\n\nAu bout d’un moment, le sel ne disparaît plus : il reste au fond quoi qu’on remue.\n\nDans un verre d’eau froide, on peut dissoudre environ 70 grammes de sel. Pas davantage."
         },
         {
           "id": "c3",
-          "kind": "astuce",
-          "title": "Remuer ne change pas la limite",
-          "body": "Remuer accélère la dissolution, mais ne permet pas d'en dissoudre plus.\n\nUne eau saturée reste saturée, même après une heure de cuillère. La limite dépend de la température, pas de l'effort."
+          "kind": "aRetenir",
+          "title": "La chaleur aide",
+          "body": "L’eau chaude dissout davantage que l’eau froide — très nettement pour le sucre, un peu seulement pour le sel.\n\nC’est pourquoi on fait fondre le sucre dans le thé chaud, et pourquoi le sirop se prépare à chaud."
         },
         {
           "id": "c4",
+          "kind": "astuce",
+          "title": "Remuer ne change pas la limite",
+          "body": "Remuer accélère la dissolution, mais ne permet pas d’en dissoudre plus.\n\nUne eau saturée reste saturée, même après une heure de cuillère. La limite dépend de la température, pas de l’effort."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
-          "title": "Tout ne se dissout pas dans l'eau",
-          "body": "L'huile ne se dissout pas : elle forme des gouttes qui finissent par se rassembler en surface.\n\nLe sable non plus. La craie non plus.\n\nSe dissoudre n'est pas une propriété du liquide seul ni du solide seul : c'est une affaire de couple."
+          "title": "Tout ne se dissout pas dans l’eau",
+          "body": "L’huile ne se dissout pas : elle forme des gouttes qui finissent par se rassembler en surface. Le sable non plus, la craie non plus.\n\nSe dissoudre n’est pas une propriété du liquide seul ni du solide seul : c’est une affaire de couple."
         }
       ],
       "questions": [
@@ -204,10 +270,19 @@
           "prompt": "Que se passe-t-il quand on ajoute du sel à une eau déjà saturée ?",
           "explanation": "Il reste au fond. L'eau ne peut plus en dissoudre, quelle que soit la durée du mélange.",
           "options": [
-            { "text": "il reste au fond sans se dissoudre", "correct": true },
-            { "text": "il se dissout plus lentement" },
-            { "text": "l'eau devient trouble" },
-            { "text": "le sel remonte à la surface" }
+            {
+              "text": "il reste au fond sans se dissoudre",
+              "correct": true
+            },
+            {
+              "text": "il se dissout plus lentement"
+            },
+            {
+              "text": "l'eau devient trouble"
+            },
+            {
+              "text": "le sel remonte à la surface"
+            }
           ]
         },
         {
@@ -223,10 +298,19 @@
           "prompt": "Pourquoi fait-on fondre le sucre dans un thé chaud plutôt que froid ?",
           "explanation": "Parce que l'eau chaude en dissout beaucoup plus, et plus vite.",
           "options": [
-            { "text": "l'eau chaude en dissout davantage et plus vite", "correct": true },
-            { "text": "le sucre n'existe pas à froid" },
-            { "text": "le froid détruit le sucre" },
-            { "text": "c'est seulement une habitude" }
+            {
+              "text": "l'eau chaude en dissout davantage et plus vite",
+              "correct": true
+            },
+            {
+              "text": "le sucre n'existe pas à froid"
+            },
+            {
+              "text": "le froid détruit le sucre"
+            },
+            {
+              "text": "c'est seulement une habitude"
+            }
           ]
         },
         {
@@ -234,13 +318,31 @@
           "kind": "tri",
           "prompt": "Range ces substances : se dissolvent-elles dans l'eau ?",
           "explanation": "Le sel et le sucre se dissolvent. L'huile, le sable et la craie non.",
-          "categories": ["se dissout", "ne se dissout pas"],
+          "categories": [
+            "se dissout",
+            "ne se dissout pas"
+          ],
           "items": [
-            { "text": "le sel", "category": 0 },
-            { "text": "le sucre", "category": 0 },
-            { "text": "l'huile", "category": 1 },
-            { "text": "le sable", "category": 1 },
-            { "text": "la craie", "category": 1 }
+            {
+              "text": "le sel",
+              "category": 0
+            },
+            {
+              "text": "le sucre",
+              "category": 0
+            },
+            {
+              "text": "l'huile",
+              "category": 1
+            },
+            {
+              "text": "le sable",
+              "category": 1
+            },
+            {
+              "text": "la craie",
+              "category": 1
+            }
           ]
         },
         {
@@ -262,9 +364,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Seule la vapeur laisse le sel derrière",
+          "body": "Remonte la température jusqu’à la vapeur. C’est le seul passage qui sépare l’eau de ce qui y est dissous — et c’est pour cela que dessaler l’eau de mer coûte si cher.",
+          "figureId": "etats-matiere"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Rendre une eau potable",
-          "body": "L'eau d'une rivière contient du sable, des feuilles, des bactéries et des substances dissoutes.\n\nDans une station de traitement, on la fait d'abord décanter, puis on la filtre à travers du sable fin, puis à travers du charbon actif qui retient les odeurs et certains produits. Enfin on la désinfecte.\n\nAucune étape ne suffit seule : chacune attrape ce que la précédente a laissé passer. Et aucune n'enlève le sel, ce qui est pourquoi dessaler l'eau de mer coûte si cher."
+          "body": "L’eau d’une rivière contient du sable, des feuilles, des bactéries et des substances dissoutes.\n\nDans une station de traitement, on la fait d’abord décanter, puis on la filtre à travers du sable fin, puis à travers du charbon actif qui retient les odeurs et certains produits. Enfin on la désinfecte.\n\nAucune étape ne suffit seule : chacune attrape ce que la précédente a laissé passer."
         }
       ],
       "questions": [
@@ -287,10 +396,19 @@
           "hint": "Quelle méthode faut-il employer ?",
           "explanation": "Parce qu'aucun filtre n'enlève le sel dissous : il faut évaporer l'eau ou la pousser à travers des membranes spéciales, ce qui demande beaucoup d'énergie.",
           "options": [
-            { "text": "aucun filtre simple n'enlève le sel dissous", "correct": true },
-            { "text": "l'eau de mer est trop sale" },
-            { "text": "il n'y a pas assez d'eau de mer" },
-            { "text": "le sel abîme les tuyaux" }
+            {
+              "text": "aucun filtre simple n'enlève le sel dissous",
+              "correct": true
+            },
+            {
+              "text": "l'eau de mer est trop sale"
+            },
+            {
+              "text": "il n'y a pas assez d'eau de mer"
+            },
+            {
+              "text": "le sel abîme les tuyaux"
+            }
           ]
         },
         {
@@ -313,10 +431,19 @@
           "prompt": "Pourquoi enchaîne-t-on plusieurs étapes au lieu d'une seule ?",
           "explanation": "Parce que chaque méthode a sa limite : chacune attrape ce que la précédente a laissé passer.",
           "options": [
-            { "text": "chaque méthode attrape ce que la précédente a laissé", "correct": true },
-            { "text": "pour aller plus vite" },
-            { "text": "pour utiliser moins d'eau" },
-            { "text": "par habitude industrielle" }
+            {
+              "text": "chaque méthode attrape ce que la précédente a laissé",
+              "correct": true
+            },
+            {
+              "text": "pour aller plus vite"
+            },
+            {
+              "text": "pour utiliser moins d'eau"
+            },
+            {
+              "text": "par habitude industrielle"
+            }
           ]
         },
         {
