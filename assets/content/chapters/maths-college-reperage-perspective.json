@@ -1,0 +1,444 @@
+{
+  "chapter": "maths-college-reperage-et-perspective",
+  "lessons": [
+    {
+      "id": "le-repere",
+      "title": "Le repère",
+      "subtitle": "Deux nombres, dans un ordre qui n’est pas négociable.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux nombres pour une case",
+          "body": "Lance le robot et suis-le case par case. Pour dire où il se trouve, il faut deux nombres : de combien il s’est déplacé horizontalement, puis verticalement. L’un sans l’autre ne désigne rien.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment on lit un point",
+          "body": "On part de l’origine, le point où les deux axes se croisent.\n\nOn lit d’abord le déplacement horizontal : c’est l’abscisse.\n\nPuis le déplacement vertical : c’est l’ordonnée.\n\nOn écrit le couple dans cet ordre, entre parenthèses : A(3 ; 2).",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’ordre n’est pas une convention de confort",
+          "body": "A(3 ; 2) et B(2 ; 3) sont deux points différents, et ils ne sont même pas voisins.\n\nÉcrire les coordonnées dans le désordre ne produit pas une imprécision : cela produit un autre point. C’est l’erreur la plus fréquente, et elle ne se voit pas sur le papier.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les quatre quadrants",
+          "body": "À droite et au-dessus de l’origine, les deux coordonnées sont positives.\n\nÀ gauche, l’abscisse devient négative. En dessous, l’ordonnée.\n\nUn point peut donc avoir une coordonnée positive et l’autre négative, et cela ne pose aucun problème.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le moyen mnémotechnique qui tient",
+          "body": "On marche d’abord, on grimpe ensuite. L’abscisse avant l’ordonnée.\n\nC’est aussi l’ordre alphabétique : a avant o.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans le couple (3 ; 2), que désigne le 3 ?",
+          "explanation": "L’abscisse, c’est-à-dire le déplacement horizontal depuis l’origine. L’ordonnée vient en second.",
+          "options": [
+            {
+              "text": "l’abscisse",
+              "correct": true
+            },
+            {
+              "text": "l’ordonnée"
+            },
+            {
+              "text": "la distance à l’origine"
+            },
+            {
+              "text": "le quadrant"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les points A(3 ; 2) et B(2 ; 3) sont confondus.",
+          "explanation": "Faux. Échanger les deux coordonnées donne un autre point : A est plus à droite, B est plus haut.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un point a pour abscisse −4 et pour ordonnée 0. À quelle distance de l’origine se trouve-t-il ?",
+          "explanation": "4 unités. Il est sur l’axe horizontal, à gauche de l’origine : son ordonnée nulle le place sur l’axe.",
+          "answer": 4,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un point d’abscisse négative et d’ordonnée positive se trouve où ?",
+          "explanation": "En haut à gauche de l’origine. L’abscisse négative le pousse à gauche, l’ordonnée positive le monte.",
+          "options": [
+            {
+              "text": "en haut à gauche",
+              "correct": true
+            },
+            {
+              "text": "en haut à droite"
+            },
+            {
+              "text": "en bas à gauche"
+            },
+            {
+              "text": "sur l’axe vertical"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète : on lit toujours l’abscisse avant l’ordonnée.",
+          "template": "On marche d’abord, on ___ ensuite.",
+          "blanks": [
+            {
+              "accepted": [
+                "grimpe",
+                "monte"
+              ]
+            }
+          ],
+          "hint": "Le déplacement horizontal précède le vertical.",
+          "explanation": "On marche puis on grimpe : l’abscisse d’abord, l’ordonnée ensuite. C’est aussi l’ordre alphabétique.",
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "sur-la-sphere",
+      "title": "Se repérer sur la Terre",
+      "subtitle": "Deux angles, et non deux distances.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un angle, et une position",
+          "body": "Règle l’angle de l’ombre et la distance entre les deux villes. Ératosthène se sert d’un angle pour situer un lieu sur la courbure de la Terre — et c’est exactement ce que font latitude et longitude.",
+          "figureId": "eratosthene",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi des angles et pas des mètres",
+          "body": "Sur une feuille, on repère par deux longueurs. Sur une sphère, les longueurs ne servent pas : un degré de longitude ne vaut pas la même distance à l’équateur et près du pôle.\n\nOn repère donc par deux angles, mesurés depuis le centre de la Terre.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux coordonnées",
+          "body": "La latitude : l’angle depuis l’équateur, de 0° à 90° vers le nord ou vers le sud.\n\nLa longitude : l’angle depuis le méridien de Greenwich, de 0° à 180° vers l’est ou vers l’ouest.\n\nOn donne toujours la latitude en premier, comme l’abscisse.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un degré de latitude vaut toujours la même chose",
+          "body": "Le tour de la Terre par les pôles fait environ 40 000 km, soit 360 degrés.\n\nUn degré de latitude vaut donc environ 111 km, partout.\n\nUn degré de longitude, lui, vaut 111 km à l’équateur et presque rien près du pôle, où tous les méridiens se rejoignent.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "La hauteur de l’étoile Polaire",
+          "body": "La hauteur de l’étoile Polaire au-dessus de l’horizon donne directement la latitude du lieu.\n\nÀ Paris, elle est à 49° au-dessus de l’horizon, et Paris est à 49° de latitude nord. Les marins ont navigué des siècles avec cette seule observation.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi repère-t-on par des angles sur la Terre ?",
+          "explanation": "Parce qu’un degré de longitude ne correspond pas à la même distance partout : il vaut 111 km à l’équateur et presque rien près du pôle.",
+          "options": [
+            {
+              "text": "parce qu’une distance n’y a pas la même valeur partout",
+              "correct": true
+            },
+            {
+              "text": "parce que c’est plus précis"
+            },
+            {
+              "text": "parce que les mètres n’existaient pas"
+            },
+            {
+              "text": "parce que la Terre est plate"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Le tour de la Terre fait environ 40 000 km. Combien de kilomètres pour un degré de latitude ?",
+          "explanation": "Environ 111 km. On divise 40 000 par 360, ce qui donne 111,1.",
+          "answer": 111,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un degré de longitude vaut la même distance partout.",
+          "explanation": "Faux. Il vaut environ 111 km à l’équateur et tend vers zéro près des pôles, où les méridiens se rejoignent.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "L’étoile Polaire est à 49° au-dessus de l’horizon. Quelle est la latitude du lieu, en degrés nord ?",
+          "explanation": "49° nord. La hauteur de la Polaire donne directement la latitude, et c’est ainsi qu’on naviguait.",
+          "answer": 49,
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque coordonnée à sa référence.",
+          "explanation": "La latitude se mesure depuis l’équateur, la longitude depuis le méridien de Greenwich.",
+          "pairs": [
+            {
+              "left": "latitude",
+              "right": "l’angle depuis l’équateur"
+            },
+            {
+              "left": "longitude",
+              "right": "l’angle depuis Greenwich"
+            },
+            {
+              "left": "méridien",
+              "right": "une demi-circonférence d’un pôle à l’autre"
+            },
+            {
+              "left": "parallèle",
+              "right": "un cercle parallèle à l’équateur"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "perspective",
+      "title": "La perspective cavalière",
+      "subtitle": "Une convention de dessin, pas une image ressemblante.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Change la fuyante, change le dessin",
+          "body": "Fais varier l’angle de fuite et le coefficient de réduction. Le même cube donne des dessins très différents, et tous sont justes : la perspective cavalière est une convention, pas une photographie.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois règles",
+          "body": "La face avant se dessine en vraie grandeur, sans déformation.\n\nLes arêtes fuyantes partent toutes dans la même direction, selon un angle qu’on choisit.\n\nElles sont toutes réduites par le même coefficient. Deux arêtes parallèles dans l’espace restent parallèles sur le dessin.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la perspective cavalière ne fait pas",
+          "body": "Elle ne rend pas l’éloignement : deux segments de même longueur dans la profondeur se dessinent de la même taille, qu’ils soient devant ou derrière.\n\nUn dessin en perspective cavalière n’est donc pas ce que l’œil verrait. C’est un dessin technique, fait pour qu’on puisse y mesurer — et c’est pour cela qu’on l’emploie en atelier.",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Les arêtes cachées se pointillent",
+          "body": "Une arête qui passe derrière le solide se trace en pointillé.\n\nCe n’est pas une décoration : c’est elle qui dit si l’on regarde le cube d’en haut ou d’en bas. Sans pointillés, un même dessin admet deux lectures.",
+          "id": "c4"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans une perspective cavalière, comment se dessine la face avant ?",
+          "explanation": "En vraie grandeur, sans aucune déformation. C’est la première des trois règles.",
+          "options": [
+            {
+              "text": "en vraie grandeur",
+              "correct": true
+            },
+            {
+              "text": "réduite de moitié"
+            },
+            {
+              "text": "déformée en losange"
+            },
+            {
+              "text": "cela dépend de l’angle"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux dessins du même cube avec des fuyantes différentes sont tous les deux justes.",
+          "explanation": "Vrai. L’angle de fuite et le coefficient sont des choix : la perspective cavalière est une convention, pas une image unique.",
+          "answer": true,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi trace-t-on les arêtes cachées en pointillé ?",
+          "explanation": "Pour lever l’ambiguïté : sans elles, un même dessin peut se lire vu d’en haut ou vu d’en bas.",
+          "options": [
+            {
+              "text": "pour dire comment on regarde le solide",
+              "correct": true
+            },
+            {
+              "text": "pour faire joli"
+            },
+            {
+              "text": "parce qu’elles sont plus courtes"
+            },
+            {
+              "text": "pour marquer les erreurs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La perspective cavalière montre ce que l’œil verrait vraiment.",
+          "explanation": "Faux. Elle ne réduit pas les objets éloignés : c’est un dessin technique où l’on peut mesurer, pas une image réaliste.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui est conservé par une perspective cavalière ?",
+          "explanation": "Le parallélisme et les longueurs de la face avant. En revanche les angles de la profondeur et les longueurs fuyantes sont modifiés.",
+          "options": [
+            {
+              "text": "le parallélisme des arêtes",
+              "correct": true
+            },
+            {
+              "text": "les longueurs de la face avant",
+              "correct": true
+            },
+            {
+              "text": "tous les angles"
+            },
+            {
+              "text": "toutes les longueurs"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-euler",
+      "title": "Défi : la relation d’Euler",
+      "subtitle": "Un résultat qu’on vérifie soi-même sur quatre solides.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compte sur les quatre solides",
+          "body": "Passe du cube au pavé, puis à la pyramide, puis au prisme. Note à chaque fois les faces, les arêtes et les sommets. La ligne verte affiche faces moins arêtes plus sommets — et elle ne change jamais.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation",
+          "body": "Elle vaut pour tout solide convexe, quel que soit le nombre de faces. Euler l’a établie en 1752.",
+          "formula": "F − A + S = 2",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Vérifier sur les quatre",
+          "body": "Cube : 6 faces, 12 arêtes, 8 sommets. 6 − 12 + 8 = 2.\n\nPavé droit : les mêmes comptes, puisque c’est la même forme étirée. 2 aussi.\n\nPyramide à base carrée : 5 faces, 8 arêtes, 5 sommets. 5 − 8 + 5 = 2.\n\nPrisme à base triangulaire : 5 faces, 9 arêtes, 6 sommets. 5 − 9 + 6 = 2.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’un tel résultat a de remarquable",
+          "body": "Les quatre solides n’ont ni le même nombre de faces, ni la même forme, ni le même volume. Et la même combinaison de leurs comptes donne toujours 2.\n\nC’est le genre d’énoncé qu’on croit sur parole jusqu’à l’avoir vérifié soi-même — et qu’on ne discute plus après.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Convexe, et pas n’importe quel solide",
+          "body": "La relation tombe si le solide est percé. Un solide en forme d’anneau donne 0 au lieu de 2.\n\nLe nombre obtenu dépend en réalité du nombre de trous, et c’est le début d’une branche entière des mathématiques.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un cube a 6 faces et 12 arêtes. Combien de sommets ?",
+          "explanation": "8. La relation d’Euler impose F − A + S = 2, donc S = 2 − 6 + 12 = 8.",
+          "answer": 8,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une pyramide à base carrée : combien d’arêtes ?",
+          "explanation": "8 : les quatre côtés de la base, plus les quatre arêtes qui montent au sommet.",
+          "answer": 8,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un prisme droit à base triangulaire a 5 faces et 6 sommets. Combien d’arêtes ?",
+          "explanation": "9. On applique F − A + S = 2 : A = F + S − 2 = 5 + 6 − 2 = 9.",
+          "answer": 9,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut F − A + S pour un solide convexe ?",
+          "explanation": "2, toujours. C’est la relation d’Euler, et elle ne dépend ni de la taille ni du nombre de faces.",
+          "answer": 2,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pour quel solide la relation ne donne-t-elle pas 2 ?",
+          "explanation": "Un solide percé, en forme d’anneau : il donne 0. Le résultat dépend du nombre de trous.",
+          "options": [
+            {
+              "text": "un solide en forme d’anneau",
+              "correct": true
+            },
+            {
+              "text": "un cube très grand"
+            },
+            {
+              "text": "une pyramide à base hexagonale"
+            },
+            {
+              "text": "un prisme à vingt faces"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un pavé droit et un cube ont les mêmes comptes de faces, arêtes et sommets.",
+          "explanation": "Vrai. Un pavé droit est un cube étiré : seules les longueurs changent, pas la façon dont les pièces s’assemblent.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

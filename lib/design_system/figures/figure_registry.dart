@@ -36,6 +36,7 @@ import 'network_figure.dart';
 import 'number_timeline_figure.dart';
 import 'pigeonhole_figure.dart';
 import 'root_two_figure.dart';
+import 'solid_figure.dart';
 import 'spreadsheet_figure.dart';
 import 'rutherford_figure.dart';
 import 'swan_neck_figure.dart';
@@ -125,6 +126,9 @@ abstract final class FigureRegistry {
     // Un tableur où changer une case refait toute une colonne.
     'tableur': (BuildContext context, Color accent) =>
         SpreadsheetFigure(accent: accent),
+    // Quatre solides en perspective cavalière, et la relation d'Euler.
+    'solides-perspective': (BuildContext context, Color accent) =>
+        SolidFigure(accent: accent),
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),

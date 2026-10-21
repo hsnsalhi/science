@@ -30,6 +30,7 @@ const List<String> _figures = <String>[
   'tiroirs',
   'reseau-paquet',
   'tableur',
+  'solides-perspective',
   'selection',
   'droite-graduee',
   'horloge',

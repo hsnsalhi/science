@@ -22,7 +22,7 @@ void main() {
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.24;
+  const double partMinimale = 0.235;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;

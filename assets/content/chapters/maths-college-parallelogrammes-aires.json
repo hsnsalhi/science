@@ -1,0 +1,459 @@
+{
+  "chapter": "maths-college-parallelogrammes-et-aires",
+  "lessons": [
+    {
+      "id": "le-parallelogramme",
+      "title": "Le parallélogramme",
+      "subtitle": "Deux paires de côtés parallèles, et tout le reste en découle.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un rectangle, découpé",
+          "body": "Déplace le trait qui coupe le rectangle : l’aire totale ne change pas, seule son écriture change. Un parallélogramme se ramène au rectangle exactement de cette façon — on découpe, on déplace, on recolle.",
+          "figureId": "distributivite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La définition, et ce qui en découle",
+          "body": "Un parallélogramme a ses côtés opposés parallèles. C’est la définition, et elle suffit.\n\nIl s’ensuit que les côtés opposés sont de même longueur.\n\nEt que les angles opposés sont égaux.\n\nEt que les diagonales se coupent en leur milieu. Trois propriétés gratuites, qu’on démontre au lieu de les apprendre.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La famille, du plus large au plus serré",
+          "body": "Parallélogramme : côtés opposés parallèles.\n\nRectangle : un parallélogramme avec un angle droit.\n\nLosange : un parallélogramme avec deux côtés consécutifs égaux.\n\nCarré : les deux à la fois. Il est donc rectangle et losange, et non pas à côté d’eux.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un quadrilatère quelconque n’en est pas un",
+          "body": "Quatre côtés ne suffisent pas. Un trapèze n’a qu’une paire de côtés parallèles : ses diagonales ne se coupent pas en leur milieu, et ses côtés opposés n’ont aucune raison d’être égaux.\n\nAppliquer les propriétés du parallélogramme à un trapèze est l’erreur qui fait perdre le plus de points.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Trois façons de prouver qu’on en a un",
+          "body": "Les côtés opposés sont parallèles deux à deux.\n\nOu bien les diagonales se coupent en leur milieu.\n\nOu bien deux côtés opposés sont à la fois parallèles et de même longueur — et cette troisième est souvent la plus rapide.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle propriété définit un parallélogramme ?",
+          "explanation": "Les côtés opposés sont parallèles deux à deux. Tout le reste — longueurs égales, diagonales qui se coupent en leur milieu — s’en déduit.",
+          "options": [
+            {
+              "text": "les côtés opposés sont parallèles",
+              "correct": true
+            },
+            {
+              "text": "les quatre côtés sont égaux"
+            },
+            {
+              "text": "les angles sont droits"
+            },
+            {
+              "text": "les diagonales sont égales"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un carré est un losange.",
+          "explanation": "Vrai. Un losange est un parallélogramme à côtés consécutifs égaux, et le carré vérifie cela. Il est aussi rectangle.",
+          "answer": true,
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Dans un parallélogramme, qu’est-ce qui est toujours vrai ?",
+          "explanation": "Côtés opposés égaux, angles opposés égaux, diagonales qui se coupent en leur milieu. En revanche les diagonales ne sont égales que dans un rectangle.",
+          "options": [
+            {
+              "text": "les côtés opposés sont égaux",
+              "correct": true
+            },
+            {
+              "text": "les angles opposés sont égaux",
+              "correct": true
+            },
+            {
+              "text": "les diagonales se coupent en leur milieu",
+              "correct": true
+            },
+            {
+              "text": "les diagonales sont de même longueur"
+            },
+            {
+              "text": "les quatre angles sont droits"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque quadrilatère à ce qui le caractérise.",
+          "explanation": "Chaque nom ajoute une contrainte au parallélogramme : un angle droit pour le rectangle, deux côtés consécutifs égaux pour le losange, les deux pour le carré.",
+          "pairs": [
+            {
+              "left": "rectangle",
+              "right": "un parallélogramme avec un angle droit"
+            },
+            {
+              "left": "losange",
+              "right": "un parallélogramme à côtés consécutifs égaux"
+            },
+            {
+              "left": "carré",
+              "right": "rectangle et losange à la fois"
+            },
+            {
+              "left": "trapèze",
+              "right": "une seule paire de côtés parallèles"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Dans un trapèze, les diagonales se coupent en leur milieu.",
+          "explanation": "Faux. C’est une propriété du parallélogramme, et un trapèze n’a qu’une paire de côtés parallèles.",
+          "answer": false,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "aires",
+      "title": "Les aires",
+      "subtitle": "Toutes se ramènent au rectangle, et c’est pour cela qu’on les retient.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Découper ne change pas l’aire",
+          "body": "Déplace le trait : les deux morceaux font toujours ensemble l’aire du tout. C’est le seul principe dont on a besoin — toutes les formules d’aire viennent d’un découpage et d’un recollage.",
+          "figureId": "distributivite",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les quatre formules",
+          "body": "La hauteur est toujours perpendiculaire à la base, et ce n’est presque jamais un côté.",
+          "formula": "rectangle = L × l     parallélogramme = b × h     triangle = (b × h) ÷ 2     trapèze = (B + b) × h ÷ 2",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi le parallélogramme vaut base × hauteur",
+          "body": "Coupe le parallélogramme par la hauteur issue d’un sommet : tu obtiens un triangle rectangle et un trapèze.\n\nDéplace ce triangle de l’autre côté : il comble exactement le manque.\n\nTu as un rectangle de même base et même hauteur. Aucune matière n’a été ajoutée, donc l’aire n’a pas changé.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La hauteur n’est pas le côté",
+          "body": "Dans un parallélogramme penché, le côté oblique est plus long que la hauteur.\n\nMultiplier la base par ce côté donne un résultat trop grand, et c’est l’erreur la plus fréquente du chapitre.\n\nLa hauteur est la distance entre les deux côtés parallèles, mesurée perpendiculairement.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le triangle est une moitié",
+          "body": "Trace le parallélogramme qui entoure ton triangle : le triangle en occupe exactement la moitié.\n\nC’est de là que vient la division par deux, et c’est plus sûr que de retenir la formule seule.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un parallélogramme de base 8 cm et de hauteur 5 cm : quelle aire en cm² ?",
+          "explanation": "40 cm². Base × hauteur, exactement comme un rectangle de mêmes dimensions.",
+          "answer": 40,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un triangle de base 8 cm et de hauteur 5 cm : quelle aire en cm² ?",
+          "explanation": "20 cm². C’est la moitié du parallélogramme de même base et même hauteur.",
+          "answer": 20,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans un parallélogramme penché, que faut-il multiplier par la base ?",
+          "explanation": "La hauteur, mesurée perpendiculairement entre les deux côtés parallèles. Le côté oblique est plus long et donnerait un résultat trop grand.",
+          "options": [
+            {
+              "text": "la hauteur",
+              "correct": true
+            },
+            {
+              "text": "le côté oblique"
+            },
+            {
+              "text": "la diagonale"
+            },
+            {
+              "text": "le périmètre"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un trapèze de bases 10 cm et 6 cm, de hauteur 4 cm : quelle aire en cm² ?",
+          "explanation": "32 cm². (10 + 6) × 4 ÷ 2 = 16 × 4 ÷ 2 = 32.",
+          "answer": 32,
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre la démonstration de l’aire du parallélogramme.",
+          "explanation": "On coupe par la hauteur, on déplace le morceau, on obtient un rectangle, et l’aire n’a pas bougé puisque rien n’a été ajouté.",
+          "items": [
+            "couper par la hauteur issue d’un sommet",
+            "déplacer le triangle obtenu de l’autre côté",
+            "constater qu’il comble exactement le manque",
+            "lire l’aire du rectangle obtenu"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux parallélogrammes de même base et même hauteur ont la même aire.",
+          "explanation": "Vrai, même s’ils sont penchés différemment. L’aire ne dépend que de la base et de la hauteur.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "aire-et-perimetre",
+      "title": "Aire et périmètre ne vont pas ensemble",
+      "subtitle": "Deux mesures indépendantes, et l’intuition se trompe sur les deux.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Même tour, pas la même place",
+          "body": "Mets 1 ligne et 9 colonnes, puis 3 lignes et 3 colonnes. Compte les jetons : 9 dans les deux cas. Maintenant compare le tour des deux rectangles — il n’est pas le même.",
+          "figureId": "jetons-multiplication",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Deux questions différentes",
+          "body": "Le périmètre mesure la longueur du contour : il s’exprime en centimètres.\n\nL’aire mesure la place à l’intérieur : elle s’exprime en centimètres carrés.\n\nConnaître l’une ne dit rien de l’autre, et c’est ce qui surprend.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Même aire, périmètres très différents",
+          "body": "Un rectangle 1 × 9 a une aire de 9 cm² et un périmètre de 20 cm.\n\nUn carré 3 × 3 a la même aire de 9 cm², et un périmètre de 12 cm.\n\nPresque deux fois moins de contour pour la même surface.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "À périmètre fixé, le carré gagne",
+          "body": "Parmi tous les rectangles de périmètre donné, c’est le carré qui enferme la plus grande aire.\n\nPlus le rectangle s’allonge, plus son aire diminue, jusqu’à devenir presque nulle pour un rectangle très fin.\n\nSi l’on s’autorise toutes les formes, le champion devient le disque.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Les unités préviennent",
+          "body": "Une aire en centimètres et un périmètre en centimètres carrés : l’une des deux réponses est fausse, et l’unité le dit avant tout calcul.\n\nÉcrire l’unité n’est pas une formalité de présentation : c’est un contrôle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un rectangle 1 cm sur 9 cm : quel périmètre en cm ?",
+          "explanation": "20 cm. Le tour vaut 2 × (1 + 9) = 20, alors que son aire ne fait que 9 cm².",
+          "answer": 20,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un carré de 3 cm de côté : quel périmètre en cm ?",
+          "explanation": "12 cm. Il a pourtant la même aire que le rectangle 1 × 9, qui mesure 20 cm de tour.",
+          "answer": 12,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux figures de même aire ont le même périmètre.",
+          "explanation": "Faux. Le rectangle 1 × 9 et le carré 3 × 3 ont tous deux 9 cm² d’aire, et des périmètres de 20 et 12 cm.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À périmètre fixé, quel rectangle enferme la plus grande aire ?",
+          "explanation": "Le carré. Plus le rectangle s’allonge, plus son aire diminue à périmètre constant.",
+          "options": [
+            {
+              "text": "le carré",
+              "correct": true
+            },
+            {
+              "text": "le plus allongé"
+            },
+            {
+              "text": "cela ne dépend pas de la forme"
+            },
+            {
+              "text": "celui de hauteur 1"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ces grandeurs sont-elles des aires ou des longueurs ?",
+          "explanation": "Une aire se mesure en unités carrées, une longueur en unités simples. L’unité suffit à trancher.",
+          "categories": [
+            "une aire",
+            "une longueur"
+          ],
+          "items": [
+            {
+              "text": "24 cm²",
+              "category": 0
+            },
+            {
+              "text": "3 m²",
+              "category": 0
+            },
+            {
+              "text": "18 cm",
+              "category": 1
+            },
+            {
+              "text": "2,5 km",
+              "category": 1
+            },
+            {
+              "text": "le périmètre d’un champ",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-aires",
+      "title": "Défi : le champ et la clôture",
+      "subtitle": "Même budget de grillage, et presque deux fois la surface.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cherche le meilleur rectangle",
+          "body": "Essaie toutes les paires de lignes et de colonnes dont la somme fait 12 : 1 et 11, 2 et 10, jusqu’à 6 et 6. Compte les jetons à chaque fois. Un seul de ces rectangles est le bon.",
+          "figureId": "jetons-multiplication",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Vingt-quatre mètres de grillage",
+          "body": "Un agriculteur dispose de 24 mètres de grillage et veut enclore un rectangle le plus grand possible.\n\nLe périmètre étant fixé à 24, la somme de la longueur et de la largeur vaut 12.\n\nIl lui reste à choisir comment répartir ces 12 mètres entre les deux dimensions.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Toutes les possibilités, en entiers",
+          "body": "1 et 11 : aire 11 m².\n\n2 et 10 : aire 20 m². 3 et 9 : aire 27 m².\n\n4 et 8 : aire 32 m². 5 et 7 : aire 35 m².\n\n6 et 6 : aire 36 m². C’est le carré, et il gagne.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le carré",
+          "body": "Plus les deux dimensions se rapprochent, plus l’aire augmente. L’écart entre elles est exactement ce qui fait perdre de la surface.\n\nEt si le champ s’appuie sur un mur existant, le calcul change : il ne reste que trois côtés à clôturer, et la meilleure forme n’est plus un carré mais un rectangle deux fois plus large que profond.",
+          "id": "c4"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Avec 24 m de grillage, combien vaut la somme de la longueur et de la largeur, en mètres ?",
+          "explanation": "12. Le périmètre vaut deux fois cette somme, donc 24 ÷ 2 = 12.",
+          "answer": 12,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est l’aire maximale, en m² ?",
+          "explanation": "36 m², obtenue avec le carré de 6 m de côté. Toute autre répartition donne moins.",
+          "answer": 36,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et l’aire du rectangle 1 m sur 11 m, en m² ?",
+          "explanation": "11 m². Même grillage, et plus de trois fois moins de place pour les bêtes.",
+          "answer": 11,
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces rectangles de la plus petite aire à la plus grande.",
+          "explanation": "11, 20, 27, 32, 35 puis 36 m². Plus les dimensions se rapprochent, plus l’aire monte.",
+          "items": [
+            "1 sur 11",
+            "2 sur 10",
+            "3 sur 9",
+            "4 sur 8",
+            "5 sur 7",
+            "6 sur 6"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Le champ s’appuie maintenant sur un mur : seuls trois côtés sont à clôturer. La meilleure forme est-elle encore un carré ?",
+          "explanation": "Non. Avec un seul côté en profondeur et deux en largeur, le meilleur rectangle est deux fois plus large que profond.",
+          "options": [
+            {
+              "text": "non, un rectangle deux fois plus large que profond",
+              "correct": true
+            },
+            {
+              "text": "oui, toujours le carré"
+            },
+            {
+              "text": "oui, mais deux fois plus grand"
+            },
+            {
+              "text": "cela ne change rien"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Avec 24 m de grillage et un mur sur un côté, quelle aire maximale en m² ?",
+          "explanation": "72 m². On prend 12 m de large et 6 m de profondeur : 12 + 6 + 6 = 24 m de grillage, et 12 × 6 = 72 m².",
+          "min": 20,
+          "max": 150,
+          "answer": 72,
+          "tolerance": 8,
+          "unit": "m²",
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

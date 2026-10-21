@@ -1,0 +1,474 @@
+{
+  "chapter": "maths-college-nombres-entiers-et-decimaux",
+  "lessons": [
+    {
+      "id": "ecrire",
+      "title": "Écrire un décimal",
+      "subtitle": "Chaque chiffre a une place, et sa place lui donne sa valeur.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Chaque colonne vaut dix fois sa voisine",
+          "body": "Change les chiffres colonne par colonne et regarde la barre suivre. Unités, dixièmes, centièmes : chaque rang vaut dix fois le suivant, et la virgule ne sépare pas deux mondes — elle marque seulement où sont les unités.",
+          "figureId": "decimaux",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les rangs décimaux",
+          "body": "Dans 3,472 : 3 unités, 4 dixièmes, 7 centièmes, 2 millièmes.",
+          "formula": "unités , dixièmes centièmes millièmes",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Décomposer",
+          "body": "3,472 = 3 + 0,4 + 0,07 + 0,002\n\nOu encore : 3 + 4/10 + 7/100 + 2/1000. Les deux écritures disent la même chose, et la seconde explique le nom des rangs.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les zéros inutiles, et les autres",
+          "body": "3,40 et 3,4 sont le même nombre : le zéro final n’ajoute aucune quantité.\n\nMais 3,04 et 3,4 sont deux nombres différents : ici le zéro tient une place, celle des dixièmes. On ne peut pas l’enlever.\n\nUn zéro final s’efface, un zéro intercalé jamais.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Lire à voix haute",
+          "body": "3,472 se lit « trois unités et quatre cent soixante-douze millièmes », ou plus simplement « trois virgule quatre cent soixante-douze ».\n\nDire « trois virgule quatre sept deux » est permis et moins risqué : on ne se trompe pas de rang.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans 3,472, quel chiffre occupe le rang des centièmes ?",
+          "explanation": "Le 7. Après la virgule viennent les dixièmes (4), puis les centièmes (7), puis les millièmes (2).",
+          "answer": 7,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle écriture désigne le même nombre que 5,60 ?",
+          "explanation": "5,6. Un zéro en fin d’écriture décimale n’ajoute aucune quantité : il ne change pas la valeur.",
+          "options": [
+            {
+              "text": "5,6",
+              "correct": true
+            },
+            {
+              "text": "5,06"
+            },
+            {
+              "text": "56"
+            },
+            {
+              "text": "0,56"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "3,04 et 3,4 sont deux écritures du même nombre.",
+          "explanation": "Faux. Dans 3,04 le zéro tient le rang des dixièmes : ce nombre vaut 3 unités et 4 centièmes, bien moins que 3,4.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 2 + 0,3 + 0,05 ? Donne le résultat.",
+          "explanation": "2,35. Chaque terme occupe un rang différent : les unités, les dixièmes, les centièmes.",
+          "answer": 2.35,
+          "id": "q4"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète la décomposition de 7,208.",
+          "template": "7 + 0,2 + 0,00___",
+          "blanks": [
+            {
+              "accepted": [
+                "8"
+              ]
+            }
+          ],
+          "hint": "Le rang des millièmes est le troisième après la virgule.",
+          "explanation": "7,208 = 7 + 0,2 + 0,008. Le rang des centièmes est vide, et c’est le zéro qui le tient.",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi écrit-on un zéro dans 3,04 ?",
+          "explanation": "Pour tenir le rang des dixièmes, qui est vide. Sans lui, le 4 glisserait aux dixièmes et le nombre changerait.",
+          "options": [
+            {
+              "text": "pour tenir un rang vide",
+              "correct": true
+            },
+            {
+              "text": "pour faire joli"
+            },
+            {
+              "text": "parce que c’est plus précis"
+            },
+            {
+              "text": "pour séparer les chiffres"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "comparer",
+      "title": "Comparer et ranger",
+      "subtitle": "Le nombre de chiffres ne dit rien, les rangs disent tout.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compare les deux barres",
+          "body": "Règle 0,9 et regarde la barre. Puis 0,25. La première est nettement plus longue, alors que 25 est plus grand que 9 — et c’est exactement là que presque tout le monde se trompe.",
+          "figureId": "decimaux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comparer, rang par rang",
+          "body": "1. Comparer d’abord les parties entières.\n\n2. À égalité, comparer les dixièmes.\n\n3. Puis les centièmes, et ainsi de suite jusqu’au premier rang qui diffère.\n\n0,9 contre 0,25 : au rang des dixièmes, 9 bat 2. C’est fini, on ne regarde pas plus loin.",
+          "id": "c2"
+        },
+        {
+          "kind": "astuce",
+          "title": "Compléter par des zéros",
+          "body": "Pour comparer 0,9 et 0,25, on peut écrire 0,90 et 0,25.\n\nLes deux ont alors autant de chiffres, et on compare 90 contre 25 comme des entiers. C’est la méthode la plus sûre quand on hésite.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Plus de chiffres ne veut pas dire plus grand",
+          "body": "0,25 a plus de chiffres que 0,9, et il est plus petit.\n\nChez les entiers, compter les chiffres marche toujours. Chez les décimaux, jamais. C’est l’habitude des entiers qui produit l’erreur, pas l’étourderie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Entre deux décimaux, il y en a toujours un autre",
+          "body": "Entre 1,2 et 1,3, il y a 1,25. Entre 1,2 et 1,25, il y a 1,22.\n\nOn peut continuer sans fin. C’est une différence majeure avec les entiers, où 7 et 8 n’ont rien entre eux.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Lequel est le plus grand : 0,9 ou 0,25 ?",
+          "explanation": "0,9. Au rang des dixièmes, 9 bat 2. Le nombre de chiffres écrits n’intervient jamais.",
+          "options": [
+            {
+              "text": "0,9",
+              "correct": true
+            },
+            {
+              "text": "0,25"
+            },
+            {
+              "text": "ils sont égaux"
+            },
+            {
+              "text": "on ne peut pas savoir"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Range ces nombres du plus petit au plus grand.",
+          "explanation": "0,089 puis 0,2 puis 0,25 puis 0,9. On compare les dixièmes d’abord : 0, 2, 2, 9.",
+          "items": [
+            "0,089",
+            "0,2",
+            "0,25",
+            "0,9"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un décimal avec plus de chiffres est plus grand.",
+          "explanation": "Faux. 0,25 a plus de chiffres que 0,9 et vaut moins. Cette règle ne vaut que pour les entiers.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Donne un nombre compris strictement entre 1,2 et 1,3, écrit avec deux décimales.",
+          "explanation": "1,25 convient, et bien d’autres : 1,21, 1,29… Entre deux décimaux il y en a toujours une infinité.",
+          "answer": 1.25,
+          "id": "q4"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète pour comparer 0,7 et 0,68 en égalisant les rangs.",
+          "template": "0,7 s’écrit aussi 0,7___ , et 70 est plus grand que 68.",
+          "blanks": [
+            {
+              "accepted": [
+                "0"
+              ]
+            }
+          ],
+          "hint": "On ajoute un zéro final, qui ne change pas la valeur.",
+          "explanation": "0,70 contre 0,68 : on compare alors 70 et 68 comme des entiers, et 0,7 l’emporte.",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de décimaux y a-t-il entre 2,4 et 2,5 ?",
+          "explanation": "Une infinité : 2,41, 2,45, 2,449, 2,4999… On peut toujours en intercaler un de plus.",
+          "options": [
+            {
+              "text": "une infinité",
+              "correct": true
+            },
+            {
+              "text": "aucun"
+            },
+            {
+              "text": "neuf"
+            },
+            {
+              "text": "dix"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "arrondir",
+      "title": "Arrondir",
+      "subtitle": "Un arrondi perd de l’information, et il faut savoir laquelle.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le trait le plus proche",
+          "body": "Pose un point entre deux graduations. Arrondir, c’est choisir le trait dont on est le plus près — et quand on tombe pile au milieu, il faut une règle, parce que la distance ne tranche plus.",
+          "figureId": "droite-graduee",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode",
+          "body": "1. Repérer le rang auquel on arrondit.\n\n2. Regarder le chiffre juste à sa droite.\n\n3. S’il vaut au moins 5, on monte d’une unité à ce rang. Sinon, on garde.\n\n4. On supprime tout ce qui suit.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Arrondir 3,472",
+          "body": "Au dixième : le chiffre suivant est 7, au moins 5, donc on monte. 3,5.\n\nAu centième : le chiffre suivant est 2, moins que 5, donc on garde. 3,47.\n\nÀ l’unité : le chiffre suivant est 4, donc on garde. 3.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Arrondir deux fois donne parfois autre chose",
+          "body": "Arrondis 2,449 au centième : 2,45. Puis au dixième : 2,5.\n\nMais arrondir 2,449 directement au dixième donne 2,4.\n\nOn arrondit donc toujours en une seule fois, depuis le nombre de départ. Arrondir en chaîne est une erreur qui se propage.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Arrondir sert à vérifier",
+          "body": "Avant de poser 4,8 × 19,6, estime : à peu près 5 × 20 = 100.\n\nSi la calculatrice affiche 9,4 ou 940, c’est qu’une virgule s’est perdue. L’estimation ne donne pas le résultat, elle en donne l’ordre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Arrondis 3,472 au dixième.",
+          "explanation": "3,5. Le chiffre après le rang des dixièmes est 7, qui atteint 5 : on monte.",
+          "answer": 3.5,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Arrondis 3,472 au centième.",
+          "explanation": "3,47. Le chiffre après le rang des centièmes est 2, inférieur à 5 : on garde.",
+          "answer": 3.47,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne faut-il pas arrondir en deux fois ?",
+          "explanation": "Parce que le résultat peut changer. 2,449 arrondi au centième donne 2,45, puis au dixième 2,5 — alors que l’arrondi direct au dixième donne 2,4.",
+          "options": [
+            {
+              "text": "le résultat peut changer",
+              "correct": true
+            },
+            {
+              "text": "c’est plus long"
+            },
+            {
+              "text": "c’est interdit par la calculatrice"
+            },
+            {
+              "text": "cela ne change rien"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Estime 4,8 × 19,6 en arrondissant chaque facteur à l’unité. Quel ordre de grandeur ?",
+          "explanation": "5 × 20 = 100. Le résultat exact vaut 94,08, donc l’estimation donne bien le bon ordre.",
+          "answer": 100,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’arrondi d’un nombre est toujours plus petit que lui.",
+          "explanation": "Faux. Il peut être plus grand : 3,472 arrondi au dixième donne 3,5, qui dépasse le nombre de départ.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ces arrondis de 7,348 sont-ils justes ?",
+          "explanation": "Au dixième : 7,3 car le chiffre suivant est 4. Au centième : 7,35 car le chiffre suivant est 8. À l’unité : 7.",
+          "categories": [
+            "juste",
+            "faux"
+          ],
+          "items": [
+            {
+              "text": "au dixième : 7,3",
+              "category": 0
+            },
+            {
+              "text": "au centième : 7,35",
+              "category": 0
+            },
+            {
+              "text": "à l’unité : 7",
+              "category": 0
+            },
+            {
+              "text": "au dixième : 7,4",
+              "category": 1
+            },
+            {
+              "text": "au centième : 7,34",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-decimaux-college",
+      "title": "Défi : la virgule perdue",
+      "subtitle": "Un seul rang de décalage, et la facture change de monde.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Décale d’un rang, et regarde",
+          "body": "Prends un nombre, puis déplace son chiffre d’une colonne vers la droite. La valeur est divisée par dix. Une virgule mal placée ne fait jamais une petite erreur : elle en fait une d’un facteur dix au minimum.",
+          "figureId": "decimaux",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "La facture du menuisier",
+          "body": "Un menuisier facture 18,50 € de l’heure. Il note 7,5 heures de travail.\n\nIl tape 18,50 × 7,5 et lit 138,75 €. Son client conteste : il attendait environ 140 €.\n\nLes deux ont raison. Mais si le menuisier avait tapé 18,50 × 75, il aurait lu 1 387,50 € — et rien dans le nombre affiché ne l’aurait averti.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le contrôle qui prend deux secondes",
+          "body": "Arrondir chaque facteur : 20 × 8 = 160.\n\nLe résultat attendu est donc de l’ordre de 160 €, pas de 16 € ni de 1 600 €.\n\n138,75 tombe dans le bon ordre. 1 387,50 non, et c’est visible sans refaire le calcul.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cette erreur est la plus coûteuse",
+          "body": "Une erreur de calcul donne un résultat un peu faux. Une virgule perdue donne un résultat dix, cent ou mille fois faux.\n\nC’est pour cela qu’on estime avant de calculer, et non après : après, on a déjà le nombre sous les yeux et il paraît raisonnable.",
+          "id": "c4"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 18,50 × 7,5 ?",
+          "explanation": "138,75. On peut vérifier par l’estimation : 20 × 8 = 160, du bon ordre de grandeur.",
+          "answer": 138.75,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et 18,50 × 75 ?",
+          "explanation": "1 387,50. Le facteur 10 sur la durée se retrouve exactement sur le total.",
+          "answer": 1387.5,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Par combien le second résultat est-il plus grand que le premier ?",
+          "explanation": "Par 10. Multiplier un facteur par 10 multiplie le produit par 10, exactement.",
+          "answer": 10,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel contrôle aurait repéré l’erreur ?",
+          "explanation": "Estimer avant de calculer : 20 × 8 fait environ 160, donc un résultat à 1 387 est hors de l’ordre attendu.",
+          "options": [
+            {
+              "text": "estimer l’ordre de grandeur avant",
+              "correct": true
+            },
+            {
+              "text": "refaire le calcul à l’identique"
+            },
+            {
+              "text": "changer de calculatrice"
+            },
+            {
+              "text": "arrondir le résultat"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Un trajet de 2,4 litres aux 100 km sur 450 km : combien de litres environ ?",
+          "explanation": "Environ 11 litres. On estime par 2,5 × 4,5, soit un peu plus de 11 — et le calcul exact donne 10,8.",
+          "min": 1,
+          "max": 100,
+          "answer": 11,
+          "tolerance": 3,
+          "unit": "litres",
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Estimer après avoir calculé protège aussi bien qu’estimer avant.",
+          "explanation": "Faux. Une fois le nombre sous les yeux, il paraît raisonnable : c’est l’estimation faite d’avance qui sert de garde-fou.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
