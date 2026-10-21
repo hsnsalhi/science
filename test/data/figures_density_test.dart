@@ -36,13 +36,21 @@ void main() {
     'svt-primaire-le-cerveau-et-la-puberte',
     'physique-chimie-primaire-melanges-et-solutions',
     'physique-chimie-primaire-masses-volumes-et-temperatures',
+    'histoire-sciences-primaire-compter-avant-les-chiffres',
+    'histoire-sciences-primaire-les-grandes-inventions',
+    'histoire-sciences-primaire-des-savants-et-des-savantes',
+    'informatique-primaire-les-objets-techniques',
+    'informatique-primaire-concevoir-un-objet',
+    'technologie-primaire-imaginer-et-fabriquer',
+    'technologie-primaire-de-quoi-est-il-fait',
+    'technologie-primaire-programmer-un-objet-technique',
   };
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.128;
+  const double partMinimale = 0.143;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;
@@ -61,6 +69,19 @@ void main() {
           File('assets/content/${c['content']}').readAsStringSync(),
         ) as Map<String, dynamic>,
     };
+  });
+
+  test('aucun chapitre du primaire n’est sans figure', () {
+    // Le niveau entier est passé au standard. Un chapitre primaire ajouté
+    // sans figure doit échouer ici, sans qu’on ait à l’inscrire nulle part.
+    for (final Map<String, dynamic> c in chapitres) {
+      final String id = c['id'] as String;
+      if (!id.contains('primaire')) continue;
+      final Iterable<String> genres = (contenus[id]!['lessons'] as List<dynamic>)
+          .expand((dynamic l) => (l as Map<String, dynamic>)['cards'] as List<dynamic>)
+          .map((dynamic x) => (x as Map<String, dynamic>)['kind'] as String);
+      expect(genres, contains('figure'), reason: '$id n’a aucune figure');
+    }
   });
 
   test('chaque leçon d’un chapitre repris ouvre sur une figure', () {

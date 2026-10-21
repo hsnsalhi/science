@@ -11,27 +11,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Rien n'existe par hasard",
-          "body": "Un parapluie existe parce qu'on voulait rester sec. Une chaise, parce qu'on voulait s'asseoir sans se fatiguer.\n\nUn objet technique est fabriqué exprès, pour répondre à un besoin. Un caillou n'est pas un objet technique. Un marteau l'est, même s'il est fait d'un caillou attaché à un bâton."
+          "kind": "figure",
+          "title": "Un objet qui fait un travail",
+          "body": "Règle le seuil, et regarde : le capteur mesure, le traitement compare, l’actionneur allume le radiateur. Voilà un objet technique au complet — il existe pour un besoin, il est fait de pièces, et chaque pièce a un rôle.",
+          "figureId": "chaine-information"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Trois questions à se poser",
-          "body": "À quoi sert-il ? C'est sa fonction d'usage.\n\nDe quoi est-il fait ? Ce sont ses matériaux.\n\nComment marche-t-il ? C'est son fonctionnement.\n\nAvec ces trois questions, on peut décrire n'importe quel objet."
+          "kind": "texte",
+          "title": "Rien n’existe par hasard",
+          "body": "Un parapluie existe parce qu’on voulait rester sec. Une chaise, parce qu’on voulait s’asseoir sans se fatiguer.\n\nUn objet technique est fabriqué exprès, pour répondre à un besoin. Un caillou n’est pas un objet technique. Un marteau l’est, même s’il est fait d’un caillou attaché à un bâton."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Naturel ou fabriqué",
-          "body": "Naturel : la pierre, le bois sur l'arbre, l'eau de pluie, la laine sur le mouton.\n\nFabriqué : la brique, la planche, la bouteille, le pull.\n\nBeaucoup d'objets fabriqués partent d'une matière naturelle qu'on a transformée. Le pull vient du mouton, mais le mouton n'est pas un pull."
+          "kind": "etape",
+          "title": "Trois questions à se poser",
+          "body": "À quoi sert-il ? C’est sa fonction d’usage.\n\nDe quoi est-il fait ? Ce sont ses matériaux.\n\nComment marche-t-il ? C’est son fonctionnement.\n\nAvec ces trois questions, on peut décrire n’importe quel objet."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Naturel ou fabriqué",
+          "body": "Naturel : la pierre, le bois sur l’arbre, l’eau de pluie, la laine sur le mouton.\n\nFabriqué : la brique, la planche, la bouteille, le pull.\n\nBeaucoup d’objets fabriqués partent d’une matière naturelle transformée. Le pull vient du mouton, mais le mouton n’est pas un pull."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
-          "title": "Joli n'est pas utile",
-          "body": "Un objet peut être beau sans mieux fonctionner. Et un objet très efficace peut être laid.\n\nLa fonction d'usage — à quoi ça sert — et la fonction d'estime — est-ce que ça plaît — sont deux choses différentes, et les fabricants le savent très bien."
+          "title": "Joli n’est pas utile",
+          "body": "Un objet peut être beau sans mieux fonctionner, et un objet très efficace peut être laid.\n\nLa fonction d’usage — à quoi ça sert — et la fonction d’estime — est-ce que ça plaît — sont deux choses différentes, et les fabricants le savent très bien."
         }
       ],
       "questions": [
@@ -40,13 +47,31 @@
           "kind": "tri",
           "prompt": "Range ces choses : naturelles ou fabriquées ?",
           "explanation": "Fabriqué veut dire transformé exprès par quelqu'un. Le bois sur l'arbre est naturel ; la planche ne l'est plus.",
-          "categories": ["naturel", "fabriqué"],
+          "categories": [
+            "naturel",
+            "fabriqué"
+          ],
           "items": [
-            { "text": "une pierre dans un champ", "category": 0 },
-            { "text": "la laine sur le mouton", "category": 0 },
-            { "text": "une brique", "category": 1 },
-            { "text": "un pull", "category": 1 },
-            { "text": "une bouteille", "category": 1 }
+            {
+              "text": "une pierre dans un champ",
+              "category": 0
+            },
+            {
+              "text": "la laine sur le mouton",
+              "category": 0
+            },
+            {
+              "text": "une brique",
+              "category": 1
+            },
+            {
+              "text": "un pull",
+              "category": 1
+            },
+            {
+              "text": "une bouteille",
+              "category": 1
+            }
           ]
         },
         {
@@ -55,10 +80,19 @@
           "prompt": "Qu'appelle-t-on la fonction d'usage d'un objet ?",
           "explanation": "Ce à quoi il sert. Un parapluie a pour fonction d'usage de protéger de la pluie.",
           "options": [
-            { "text": "ce à quoi il sert", "correct": true },
-            { "text": "ce dont il est fait" },
-            { "text": "son prix" },
-            { "text": "son apparence" }
+            {
+              "text": "ce à quoi il sert",
+              "correct": true
+            },
+            {
+              "text": "ce dont il est fait"
+            },
+            {
+              "text": "son prix"
+            },
+            {
+              "text": "son apparence"
+            }
           ]
         },
         {
@@ -67,10 +101,22 @@
           "prompt": "Associe chaque objet à son besoin.",
           "explanation": "Chaque objet technique répond à un besoin que quelqu'un a identifié avant de le fabriquer.",
           "pairs": [
-            { "left": "le parapluie", "right": "rester sec" },
-            { "left": "la chaise", "right": "s'asseoir confortablement" },
-            { "left": "le réfrigérateur", "right": "conserver les aliments" },
-            { "left": "la lampe", "right": "voir la nuit" }
+            {
+              "left": "le parapluie",
+              "right": "rester sec"
+            },
+            {
+              "left": "la chaise",
+              "right": "s'asseoir confortablement"
+            },
+            {
+              "left": "le réfrigérateur",
+              "right": "conserver les aliments"
+            },
+            {
+              "left": "la lampe",
+              "right": "voir la nuit"
+            }
           ]
         },
         {
@@ -92,27 +138,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Les grandes familles",
-          "body": "Les métaux : solides, conduisent l'électricité et la chaleur, mais lourds et ils rouillent.\n\nLes plastiques : légers, imperméables, faciles à mouler, mais ils vieillissent mal et polluent.\n\nLe bois : solide, agréable, renouvelable, mais il brûle et absorbe l'eau.\n\nLe verre : transparent, ne donne pas de goût, mais il casse."
+          "kind": "figure",
+          "title": "Le métal conduit, la gaine non",
+          "body": "Ferme l’interrupteur, dévisse une lampe, passe en dérivation. Le courant ne circule que dans le métal des fils ; la gaine de plastique autour est là pour qu’il n’en sorte pas. Chaque matériau est choisi pour ce qu’il sait faire.",
+          "figureId": "circuit"
         },
         {
           "id": "c2",
-          "kind": "aRetenir",
-          "title": "On choisit selon l'usage",
-          "body": "Une casserole est en métal parce qu'elle doit conduire la chaleur.\n\nSon manche est souvent en plastique ou en bois, parce qu'il ne doit justement pas la conduire.\n\nLe même objet mélange plusieurs matériaux, chacun choisi pour ce qu'il sait faire."
+          "kind": "etape",
+          "title": "Les grandes familles",
+          "body": "Les métaux : solides, conduisent l’électricité et la chaleur, mais lourds et ils rouillent.\n\nLes plastiques : légers, imperméables, faciles à mouler, mais ils vieillissent mal et polluent.\n\nLe bois : solide, agréable, renouvelable, mais il brûle et absorbe l’eau.\n\nLe verre : transparent, ne donne pas de goût, mais il casse."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "Aucun matériau n'est parfait",
-          "body": "Le verre ne donne aucun goût mais casse. Le plastique ne casse pas mais vieillit mal.\n\nChoisir, c'est toujours accepter un défaut en échange d'une qualité. C'est vrai pour les matériaux comme pour le reste."
+          "kind": "aRetenir",
+          "title": "On choisit selon l’usage",
+          "body": "Une casserole est en métal parce qu’elle doit conduire la chaleur. Son manche est en plastique ou en bois, parce qu’il ne doit justement pas la conduire.\n\nLe même objet mélange plusieurs matériaux, chacun choisi pour ce qu’il sait faire."
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "Aucun matériau n’est parfait",
+          "body": "Le verre ne donne aucun goût mais casse. Le plastique ne casse pas mais vieillit mal.\n\nChoisir, c’est toujours accepter un défaut en échange d’une qualité."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
           "title": "Reconnaître en touchant",
-          "body": "Le métal est froid au toucher parce qu'il emporte vite la chaleur de ta main.\n\nLe bois et le plastique paraissent tièdes à la même température, parce qu'ils la conduisent mal. Ta main ne mesure pas la température : elle mesure la vitesse à laquelle elle perd sa chaleur."
+          "body": "Le métal est froid au toucher parce qu’il emporte vite la chaleur de ta main.\n\nLe bois et le plastique paraissent tièdes à la même température, parce qu’ils la conduisent mal. Ta main ne mesure pas la température : elle mesure la vitesse à laquelle elle perd sa chaleur."
         }
       ],
       "questions": [
@@ -122,10 +175,22 @@
           "prompt": "Associe chaque matériau à sa qualité principale.",
           "explanation": "Chaque famille a une propriété qui décide de son emploi.",
           "pairs": [
-            { "left": "le métal", "right": "conduit la chaleur" },
-            { "left": "le verre", "right": "est transparent" },
-            { "left": "le plastique", "right": "est léger et imperméable" },
-            { "left": "le bois", "right": "est renouvelable" }
+            {
+              "left": "le métal",
+              "right": "conduit la chaleur"
+            },
+            {
+              "left": "le verre",
+              "right": "est transparent"
+            },
+            {
+              "left": "le plastique",
+              "right": "est léger et imperméable"
+            },
+            {
+              "left": "le bois",
+              "right": "est renouvelable"
+            }
           ]
         },
         {
@@ -134,10 +199,19 @@
           "prompt": "Pourquoi le manche d'une casserole n'est-il pas en métal ?",
           "explanation": "Parce que le métal conduit la chaleur : le manche brûlerait la main. On choisit un matériau qui la conduit mal.",
           "options": [
-            { "text": "pour ne pas conduire la chaleur jusqu'à la main", "correct": true },
-            { "text": "pour que ce soit moins cher" },
-            { "text": "pour que ce soit plus joli" },
-            { "text": "pour que la casserole flotte" }
+            {
+              "text": "pour ne pas conduire la chaleur jusqu'à la main",
+              "correct": true
+            },
+            {
+              "text": "pour que ce soit moins cher"
+            },
+            {
+              "text": "pour que ce soit plus joli"
+            },
+            {
+              "text": "pour que la casserole flotte"
+            }
           ]
         },
         {
@@ -147,10 +221,19 @@
           "hint": "Que mesure vraiment ta main ?",
           "explanation": "Parce qu'il emporte plus vite la chaleur de la main. La main ne mesure pas la température mais la vitesse à laquelle elle se refroidit.",
           "options": [
-            { "text": "il emporte plus vite la chaleur de la main", "correct": true },
-            { "text": "il est vraiment plus froid" },
-            { "text": "il est plus lisse" },
-            { "text": "il est plus lourd" }
+            {
+              "text": "il emporte plus vite la chaleur de la main",
+              "correct": true
+            },
+            {
+              "text": "il est vraiment plus froid"
+            },
+            {
+              "text": "il est plus lisse"
+            },
+            {
+              "text": "il est plus lourd"
+            }
           ]
         },
         {
@@ -172,21 +255,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "exemple",
-          "title": "Décrire un vélo",
-          "body": "Fonction d'usage : se déplacer sans moteur.\n\nMatériaux : métal pour le cadre, caoutchouc pour les pneus, plastique pour la selle.\n\nFonctionnement : les pédales font tourner un pignon, une chaîne transmet le mouvement à la roue arrière."
+          "kind": "figure",
+          "title": "La transmission d’un vélo",
+          "body": "Lance les roues dentées et change leur nombre de dents. Un vélo fonctionne ainsi : les pédales font tourner un pignon, et le rapport des dents décide de ce que vaut un tour de pédale.",
+          "figureId": "engrenages"
         },
         {
           "id": "c2",
-          "kind": "aRetenir",
-          "title": "Les objets ont une histoire",
-          "body": "Le vélo d'il y a 150 ans n'avait ni chaîne ni pneus : on poussait avec les pieds.\n\nChaque amélioration répond à un problème rencontré. Les objets se transforment parce que des gens ont cherché à faire mieux, pas parce qu'ils évoluent tout seuls."
+          "kind": "exemple",
+          "title": "Décrire un vélo",
+          "body": "Fonction d’usage : se déplacer sans moteur.\n\nMatériaux : métal pour le cadre, caoutchouc pour les pneus, plastique pour la selle.\n\nFonctionnement : les pédales font tourner un pignon, une chaîne transmet le mouvement à la roue arrière."
         },
         {
           "id": "c3",
+          "kind": "aRetenir",
+          "title": "Les objets ont une histoire",
+          "body": "Le vélo d’il y a 150 ans n’avait ni chaîne ni pneus : on poussait avec les pieds.\n\nChaque amélioration répond à un problème rencontré. Les objets se transforment parce que des gens ont cherché à faire mieux, pas parce qu’ils évoluent tout seuls."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "Démonter pour comprendre",
-          "body": "Un vieux stylo, une lampe de poche cassée : les démonter apprend davantage qu'un schéma.\n\nÀ condition de ne jamais démonter ce qui se branche sur une prise électrique."
+          "body": "Un vieux stylo, une lampe de poche cassée : les démonter apprend davantage qu’un schéma.\n\nÀ condition de ne jamais démonter ce qui se branche sur une prise électrique."
         }
       ],
       "questions": [
@@ -196,9 +286,18 @@
           "prompt": "Associe chaque partie du vélo à son matériau habituel.",
           "explanation": "Chaque matériau est choisi pour ce qu'il sait faire : le métal résiste, le caoutchouc adhère et amortit.",
           "pairs": [
-            { "left": "le cadre", "right": "métal" },
-            { "left": "les pneus", "right": "caoutchouc" },
-            { "left": "la selle", "right": "plastique et mousse" }
+            {
+              "left": "le cadre",
+              "right": "métal"
+            },
+            {
+              "left": "les pneus",
+              "right": "caoutchouc"
+            },
+            {
+              "left": "la selle",
+              "right": "plastique et mousse"
+            }
           ]
         },
         {
@@ -219,10 +318,19 @@
           "prompt": "Pourquoi les objets techniques se transforment-ils au fil du temps ?",
           "explanation": "Parce que des gens cherchent à résoudre les problèmes rencontrés. Les objets n'évoluent pas tout seuls.",
           "options": [
-            { "text": "parce que des gens cherchent à faire mieux", "correct": true },
-            { "text": "parce qu'ils s'améliorent tout seuls" },
-            { "text": "parce que les matériaux changent de nature" },
-            { "text": "parce que la mode change" }
+            {
+              "text": "parce que des gens cherchent à faire mieux",
+              "correct": true
+            },
+            {
+              "text": "parce qu'ils s'améliorent tout seuls"
+            },
+            {
+              "text": "parce que les matériaux changent de nature"
+            },
+            {
+              "text": "parce que la mode change"
+            }
           ]
         },
         {
@@ -244,9 +352,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Chaque pièce a un rôle qu’on ne devine pas",
+          "body": "Reviens à la chaîne et touche chaque étage. Aucun ne se devine en regardant l’objet de l’extérieur. Le défi te montre une pièce dont presque personne ne soupçonne la vraie fonction.",
+          "figureId": "chaine-information"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le trou du capuchon de stylo",
-          "body": "Le capuchon des stylos à bille les plus courants a un petit trou au bout. Beaucoup pensent qu'il sert à laisser respirer l'encre.\n\nEn réalité il est là pour que l'air passe si un enfant avale le capuchon — ce qui arrive plusieurs milliers de fois par an dans le monde.\n\nUn objet peut avoir une fonction qu'on ne soupçonne pas, et qui n'a rien à voir avec son usage principal."
+          "body": "Le capuchon des stylos à bille les plus courants a un petit trou au bout. Beaucoup pensent qu’il sert à laisser respirer l’encre.\n\nEn réalité il est là pour que l’air passe si un enfant avale le capuchon — ce qui arrive plusieurs milliers de fois par an dans le monde.\n\nUn objet peut avoir une fonction qu’on ne soupçonne pas, et qui n’a rien à voir avec son usage principal."
         }
       ],
       "questions": [
@@ -256,10 +371,19 @@
           "prompt": "À quoi sert le trou dans le capuchon d'un stylo à bille ?",
           "explanation": "À laisser passer l'air si quelqu'un l'avale. C'est une fonction de sécurité, sans rapport avec l'écriture.",
           "options": [
-            { "text": "à laisser passer l'air si on l'avale", "correct": true },
-            { "text": "à faire respirer l'encre" },
-            { "text": "à accrocher le stylo" },
-            { "text": "à économiser du plastique" }
+            {
+              "text": "à laisser passer l'air si on l'avale",
+              "correct": true
+            },
+            {
+              "text": "à faire respirer l'encre"
+            },
+            {
+              "text": "à accrocher le stylo"
+            },
+            {
+              "text": "à économiser du plastique"
+            }
           ]
         },
         {
@@ -269,10 +393,19 @@
           "hint": "Qu'est-ce qui les rend solides sans ajouter de matière ?",
           "explanation": "Pour renforcer la bouteille sans ajouter de plastique. Une paroi ondulée résiste bien mieux qu'une paroi lisse de même épaisseur.",
           "options": [
-            { "text": "pour la renforcer sans ajouter de matière", "correct": true },
-            { "text": "pour la décorer" },
-            { "text": "pour qu'elle glisse moins" },
-            { "text": "pour contenir plus d'eau" }
+            {
+              "text": "pour la renforcer sans ajouter de matière",
+              "correct": true
+            },
+            {
+              "text": "pour la décorer"
+            },
+            {
+              "text": "pour qu'elle glisse moins"
+            },
+            {
+              "text": "pour contenir plus d'eau"
+            }
           ]
         },
         {
@@ -281,10 +414,19 @@
           "prompt": "Pourquoi les poignées de casserole sont-elles creuses ou ajourées ?",
           "explanation": "Pour limiter la chaleur qui remonte : moins de matière et de l'air signifient moins de conduction.",
           "options": [
-            { "text": "pour laisser passer moins de chaleur", "correct": true },
-            { "text": "pour économiser du métal seulement" },
-            { "text": "pour mieux les accrocher" },
-            { "text": "pour les rendre plus jolies" }
+            {
+              "text": "pour laisser passer moins de chaleur",
+              "correct": true
+            },
+            {
+              "text": "pour économiser du métal seulement"
+            },
+            {
+              "text": "pour mieux les accrocher"
+            },
+            {
+              "text": "pour les rendre plus jolies"
+            }
           ]
         },
         {
@@ -292,12 +434,27 @@
           "kind": "tri",
           "prompt": "Range ces caractéristiques : fonction d'usage ou fonction d'estime ?",
           "explanation": "L'usage est ce à quoi l'objet sert ; l'estime est ce qui plaît sans changer l'efficacité.",
-          "categories": ["fonction d'usage", "fonction d'estime"],
+          "categories": [
+            "fonction d'usage",
+            "fonction d'estime"
+          ],
           "items": [
-            { "text": "un parapluie protège de la pluie", "category": 0 },
-            { "text": "une lampe éclaire", "category": 0 },
-            { "text": "le vélo est rouge vif", "category": 1 },
-            { "text": "le téléphone a un dos brillant", "category": 1 }
+            {
+              "text": "un parapluie protège de la pluie",
+              "category": 0
+            },
+            {
+              "text": "une lampe éclaire",
+              "category": 0
+            },
+            {
+              "text": "le vélo est rouge vif",
+              "category": 1
+            },
+            {
+              "text": "le téléphone a un dos brillant",
+              "category": 1
+            }
           ]
         },
         {
