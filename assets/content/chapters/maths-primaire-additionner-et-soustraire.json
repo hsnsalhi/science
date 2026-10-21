@@ -11,27 +11,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Additionner, c'est réunir",
-          "body": "J'ai 8 billes, on m'en donne 5. J'en ai 13.\n\nOn met ensemble, on compte le tout. C'est l'addition."
+          "kind": "figure",
+          "title": "Avancer ou reculer sur la droite",
+          "body": "Pose le départ, puis le déplacement. Vers la droite, on ajoute ; vers la gauche, on enlève. Les deux opérations sont le même geste dans deux sens, et c’est pour cela qu’elles se défont.",
+          "figureId": "droite-graduee"
         },
         {
           "id": "c2",
           "kind": "texte",
-          "title": "Soustraire, c'est trois choses",
-          "body": "Enlever : j'avais 13 billes, j'en perds 5, il m'en reste 8.\n\nComparer : Léa a 13 billes, Tom en a 5. Léa en a 8 de plus.\n\nChercher ce qui manque : j'ai 5 billes, j'en veux 13. Il m'en manque 8.\n\nTrois questions différentes, un seul calcul : 13 − 5."
+          "title": "Soustraire, c’est trois choses",
+          "body": "Enlever : j’avais 13 billes, j’en perds 5, il m’en reste 8.\n\nComparer : Léa a 13 billes, Tom en a 5. Léa en a 8 de plus.\n\nChercher ce qui manque : j’ai 5 billes, j’en veux 13. Il m’en manque 8.\n\nTrois questions différentes, un seul calcul : 13 − 5."
         },
         {
           "id": "c3",
           "kind": "aRetenir",
           "title": "Les deux se défont",
-          "body": "8 + 5 = 13, et 13 − 5 = 8.\n\nSoustraire annule ce qu'on a ajouté. C'est pourquoi on peut toujours vérifier une soustraction en additionnant."
+          "body": "8 + 5 = 13, et 13 − 5 = 8. Soustraire annule ce qu’on a ajouté.\n\nC’est pourquoi on peut toujours vérifier une soustraction en additionnant."
         },
         {
           "id": "c4",
           "kind": "avertissement",
-          "title": "L'ordre compte pour l'une, pas pour l'autre",
-          "body": "8 + 5 et 5 + 8 font pareil : 13.\n\nMais 13 − 5 fait 8, alors que 5 − 13 ne se calcule pas encore à ton niveau. La soustraction n'aime pas qu'on l'inverse."
+          "title": "L’ordre compte pour l’une, pas pour l’autre",
+          "body": "8 + 5 et 5 + 8 font pareil : 13.\n\nMais 13 − 5 fait 8, alors que 5 − 13 ne se calcule pas encore à ton niveau. La soustraction n’aime pas qu’on l’inverse."
         }
       ],
       "questions": [
@@ -76,27 +77,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Passer par dix",
-          "body": "8 + 5 : il manque 2 à 8 pour faire 10.\n\nOn coupe le 5 en 2 + 3.\n\n8 + 2 = 10, puis 10 + 3 = 13.\n\nC'est plus rapide que de compter sur ses doigts, et ça marche toujours."
+          "kind": "figure",
+          "title": "Passer par dix, en deux sauts",
+          "body": "Fais un premier déplacement jusqu’à 10, puis un second. Deux petits sauts valent mieux qu’un grand : c’est toute l’astuce du calcul mental.",
+          "figureId": "droite-graduee"
         },
         {
           "id": "c2",
-          "kind": "exemple",
-          "title": "Ajouter presque dix",
-          "body": "27 + 9 : ajouter 10, puis retirer 1.\n\n27 + 10 = 37, puis 37 − 1 = 36.\n\nMême idée pour +19, +29, +99."
+          "kind": "etape",
+          "title": "Passer par dix",
+          "body": "8 + 5 : il manque 2 à 8 pour faire 10. On coupe le 5 en 2 + 3.\n\n8 + 2 = 10, puis 10 + 3 = 13.\n\nPlus rapide que de compter sur ses doigts, et ça marche toujours."
         },
         {
           "id": "c3",
           "kind": "aRetenir",
           "title": "Les doubles, à connaître par cœur",
-          "body": "3 + 3 = 6, 4 + 4 = 8, 5 + 5 = 10, 6 + 6 = 12, 7 + 7 = 14, 8 + 8 = 16, 9 + 9 = 18.\n\nIls servent partout : 7 + 8, c'est le double de 7, plus 1, donc 15."
+          "body": "3 + 3 = 6, 4 + 4 = 8, 5 + 5 = 10, 6 + 6 = 12, 7 + 7 = 14, 8 + 8 = 16, 9 + 9 = 18.\n\nIls servent partout : 7 + 8, c’est le double de 7 plus 1, donc 15."
         },
         {
           "id": "c4",
           "kind": "astuce",
-          "title": "Soustraire en avançant",
-          "body": "52 − 48 : au lieu d'enlever, demande-toi combien il faut ajouter à 48 pour atteindre 52.\n\n48 + 2 = 50, puis 50 + 2 = 52. Donc 4.\n\nQuand les deux nombres sont proches, avancer est bien plus facile que reculer."
+          "title": "Deux raccourcis qui servent tous les jours",
+          "body": "27 + 9 : ajouter 10, puis retirer 1. Donc 37 − 1 = 36. Même idée pour +19, +29, +99.\n\n52 − 48 : au lieu d’enlever, demande-toi combien il faut ajouter à 48 pour atteindre 52. Quand les deux nombres sont proches, avancer est bien plus facile que reculer."
         }
       ],
       "questions": [
@@ -150,27 +152,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "L'addition posée",
-          "body": "1. Aligne les unités sous les unités, les dizaines sous les dizaines.\n\n2. Commence par la colonne de droite.\n\n3. Si le total d'une colonne dépasse 9, écris le chiffre des unités et retiens la dizaine.\n\n4. Ajoute la retenue à la colonne suivante."
+          "kind": "figure",
+          "title": "Chaque rang sous son pareil",
+          "body": "Regarde les colonnes : unités, dixièmes, centièmes. Poser une opération, c’est exactement cela — mettre chaque rang sous son pareil, et jamais sous un autre.",
+          "figureId": "decimaux"
         },
         {
           "id": "c2",
-          "kind": "exemple",
-          "title": "47 + 38",
-          "body": "Unités : 7 + 8 = 15. J'écris 5, je retiens 1.\n\nDizaines : 4 + 3 = 7, plus la retenue 1 = 8.\n\nRésultat : 85."
+          "kind": "etape",
+          "title": "L’addition posée",
+          "body": "1. Aligne les unités sous les unités, les dizaines sous les dizaines.\n\n2. Commence par la colonne de droite.\n\n3. Si le total d’une colonne dépasse 9, écris le chiffre des unités et retiens la dizaine.\n\n4. Ajoute la retenue à la colonne suivante."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "Aligner, toujours",
-          "body": "La faute la plus fréquente n'est pas de mal calculer : c'est de mal aligner.\n\n47 + 8 posé de travers donne 127 au lieu de 55. Les unités vont sous les unités, même quand un nombre est plus court."
+          "kind": "exemple",
+          "title": "47 + 38",
+          "body": "Unités : 7 + 8 = 15. J’écris 5, je retiens 1.\n\nDizaines : 4 + 3 = 7, plus la retenue 1 = 8.\n\nRésultat : 85."
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "Aligner, toujours",
+          "body": "La faute la plus fréquente n’est pas de mal calculer : c’est de mal aligner.\n\n47 + 8 posé de travers donne 127 au lieu de 55. Les unités vont sous les unités, même quand un nombre est plus court."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
           "title": "Vérifier",
-          "body": "Après une soustraction, additionne le résultat et ce que tu as enlevé : tu dois retrouver le départ.\n\n85 − 38 = 47 ? Alors 47 + 38 doit faire 85. C'est le cas."
+          "body": "Après une soustraction, additionne le résultat et ce que tu as enlevé : tu dois retrouver le départ.\n\n85 − 38 = 47 ? Alors 47 + 38 doit faire 85. C’est le cas."
         }
       ],
       "questions": [
@@ -227,9 +236,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Deux déplacements, dans l’ordre",
+          "body": "Fais un premier déplacement, puis un second. L’ordre dans lequel tu les fais change où tu arrives. C’est exactement le piège du problème qui suit.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Lire avant de calculer",
-          "body": "« Dans le bus il y a 23 personnes. À l'arrêt, 7 descendent et 12 montent. Combien y a-t-il de personnes maintenant ? »\n\nIl y a deux opérations, dans l'ordre : 23 − 7 = 16, puis 16 + 12 = 28.\n\nCalculer 23 + 7 − 12 donnerait 18, et ce serait faux. L'erreur n'est pas dans le calcul : elle est dans la lecture."
+          "body": "« Dans le bus il y a 23 personnes. À l’arrêt, 7 descendent et 12 montent. Combien y a-t-il de personnes maintenant ? »\n\nDeux opérations, dans l’ordre : 23 − 7 = 16, puis 16 + 12 = 28.\n\nCalculer 23 + 7 − 12 donnerait 18, et ce serait faux. L’erreur n’est pas dans le calcul : elle est dans la lecture."
         }
       ],
       "questions": [

@@ -11,26 +11,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une recette",
-          "body": "Pour 4 personnes : 200 g de farine.\n\nPour 8 personnes, soit deux fois plus de monde, il faut deux fois plus de farine : 400 g.\n\nPour 2 personnes, deux fois moins : 100 g.\n\nQuand les deux quantités augmentent et diminuent ensemble, dans le même rapport, elles sont proportionnelles."
+          "kind": "figure",
+          "title": "Double les lignes, double les jetons",
+          "body": "Mets 2 lignes et compte. Puis 4 lignes : il y a exactement deux fois plus de jetons. Quand les deux quantités grandissent ensemble dans le même rapport, elles sont proportionnelles.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
-          "kind": "avertissement",
-          "title": "Tout n'est pas proportionnel",
-          "body": "L'âge et la taille ne le sont pas : un enfant de 10 ans ne mesure pas deux fois plus qu'à 5 ans.\n\nLe temps de cuisson d'un gâteau non plus : deux gâteaux ne cuisent pas en deux fois plus de temps.\n\nAvant d'appliquer une règle, il faut se demander si la situation s'y prête."
+          "kind": "texte",
+          "title": "Une recette",
+          "body": "Pour 4 personnes : 200 g de farine. Pour 8 personnes, deux fois plus de monde, donc deux fois plus de farine : 400 g. Pour 2 personnes, deux fois moins : 100 g."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Le test du zéro",
-          "body": "Dans une situation proportionnelle, zéro va avec zéro.\n\nZéro personne, zéro farine. C'est cohérent.\n\nZéro an, zéro centimètre ? Non : un nouveau-né mesure cinquante centimètres. Donc l'âge et la taille ne sont pas proportionnels, et ce test suffit à le voir."
+          "kind": "avertissement",
+          "title": "Tout n’est pas proportionnel",
+          "body": "L’âge et la taille ne le sont pas : un enfant de 10 ans ne mesure pas deux fois plus qu’à 5 ans.\n\nLe temps de cuisson d’un gâteau non plus : deux gâteaux ne cuisent pas en deux fois plus de temps."
         },
         {
           "id": "c4",
-          "kind": "astuce",
-          "body": "Un taxi qui compte 3 euros de prise en charge plus 2 euros par kilomètre n'est pas proportionnel : à zéro kilomètre, on paie déjà 3 euros. C'est le même test."
+          "kind": "aRetenir",
+          "title": "Le test du zéro",
+          "body": "Dans une situation proportionnelle, zéro va avec zéro. Zéro personne, zéro farine : cohérent.\n\nZéro an, zéro centimètre ? Non, un nouveau-né mesure cinquante centimètres. Ce test suffit à voir que l’âge et la taille ne sont pas proportionnels.\n\nUn taxi à 3 euros de prise en charge plus 2 euros par kilomètre : à zéro kilomètre on paie déjà 3 euros. Même test, même conclusion."
         }
       ],
       "questions": [
@@ -53,12 +55,27 @@
           "kind": "tri",
           "prompt": "Range ces situations : proportionnelles ou non ?",
           "explanation": "Le test du zéro tranche : zéro litre coûte zéro euro, mais zéro an ne donne pas zéro centimètre.",
-          "categories": ["proportionnel", "pas proportionnel"],
+          "categories": [
+            "proportionnel",
+            "pas proportionnel"
+          ],
           "items": [
-            { "text": "le prix de l'essence et le nombre de litres", "category": 0 },
-            { "text": "la distance parcourue et le temps, à vitesse constante", "category": 0 },
-            { "text": "l'âge et la taille d'un enfant", "category": 1 },
-            { "text": "le temps de cuisson et le nombre de gâteaux", "category": 1 }
+            {
+              "text": "le prix de l'essence et le nombre de litres",
+              "category": 0
+            },
+            {
+              "text": "la distance parcourue et le temps, à vitesse constante",
+              "category": 0
+            },
+            {
+              "text": "l'âge et la taille d'un enfant",
+              "category": 1
+            },
+            {
+              "text": "le temps de cuisson et le nombre de gâteaux",
+              "category": 1
+            }
           ]
         },
         {
@@ -80,27 +97,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Le passage par l'unité",
-          "body": "6 croissants coûtent 9 euros. Combien coûtent 10 croissants ?\n\n1. Un croissant : 9 ÷ 6 = 1,50 euro\n\n2. Dix croissants : 1,50 × 10 = 15 euros\n\nC'est la méthode la plus sûre, et elle marche toujours."
+          "kind": "figure",
+          "title": "Le paquet qui ne change pas",
+          "body": "Règle les colonnes sur 3 et compte une ligne : trois jetons. Ajoute des lignes : chaque ligne ajoute le même paquet de trois. Ce paquet est le coefficient, et c’est lui qu’on cherche en passant par l’unité.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
           "kind": "etape",
-          "title": "Le coefficient",
-          "body": "Dans le tableau, on passe des croissants au prix en multipliant par 1,5.\n\n6 × 1,5 = 9. Et 10 × 1,5 = 15.\n\nCe nombre s'appelle le coefficient de proportionnalité. Il ne change jamais dans une même situation."
+          "title": "Le passage par l’unité",
+          "body": "6 croissants coûtent 9 euros. Combien coûtent 10 croissants ?\n\n1. Un croissant : 9 ÷ 6 = 1,50 euro\n\n2. Dix croissants : 1,50 × 10 = 15 euros\n\nC’est la méthode la plus sûre, et elle marche toujours."
         },
         {
           "id": "c3",
           "kind": "etape",
-          "title": "Les produits en croix",
-          "body": "6 croissants pour 9 euros, 10 croissants pour x euros.\n\n6 × x = 9 × 10, donc 6x = 90, donc x = 15.\n\nPlus rapide, mais il faut bien placer les nombres — une erreur de position donne un résultat qui a l'air normal."
+          "title": "Le coefficient et les produits en croix",
+          "body": "On passe des croissants au prix en multipliant par 1,5 : 6 × 1,5 = 9 et 10 × 1,5 = 15. Ce nombre ne change jamais dans une même situation.\n\nLes produits en croix donnent la même chose : 6 × x = 9 × 10, donc x = 15. Plus rapide, mais il faut bien placer les nombres."
         },
         {
           "id": "c4",
           "kind": "astuce",
           "title": "Vérifier par le bon sens",
-          "body": "Dix croissants coûtent plus cher que six. Si ton résultat est plus petit que 9, tu t'es trompé de sens.\n\nCe réflexe attrape la plupart des erreurs avant qu'elles ne soient écrites."
+          "body": "Dix croissants coûtent plus cher que six. Si ton résultat est plus petit que 9, tu t’es trompé de sens.\n\nCe réflexe attrape la plupart des erreurs avant qu’elles ne soient écrites."
         }
       ],
       "questions": [
@@ -154,28 +172,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "formule",
-          "title": "Un pourcentage est une proportion sur cent",
-          "formula": "25 % de 80 = 80 × 25 ÷ 100",
-          "body": "Soit 20. Prendre 25 % c'est prendre 25 parts sur 100, donc multiplier par 0,25."
+          "kind": "figure",
+          "title": "Une part d’un tout",
+          "body": "Règle le nombre de parts, puis le nombre de parts coloriées. Un pourcentage est exactement cela, avec le tout fixé à cent : 25 % veut dire 25 parts sur 100.",
+          "figureId": "fraction-barre"
         },
         {
           "id": "c2",
-          "kind": "aRetenir",
-          "title": "Les pourcentages de tête",
-          "body": "50 % : la moitié. 25 % : le quart. 10 % : on divise par 10.\n\n20 % : deux fois 10 %. 75 % : trois quarts, soit la moitié plus le quart.\n\n1 % : on divise par 100. Avec 10 % et 1 %, on reconstruit presque tout."
+          "kind": "formule",
+          "title": "Un pourcentage est une proportion sur cent",
+          "body": "Prendre 25 % c’est prendre 25 parts sur 100, donc multiplier par 0,25.",
+          "formula": "25 % de 80 = 80 × 25 ÷ 100"
         },
         {
           "id": "c3",
-          "kind": "texte",
-          "title": "Une échelle",
-          "body": "Sur une carte au 1/25 000, un centimètre sur le papier représente 25 000 centimètres en vrai, soit 250 mètres.\n\nPour convertir : on multiplie la longueur mesurée par le nombre de l'échelle, puis on convertit l'unité."
+          "kind": "aRetenir",
+          "title": "Les pourcentages de tête",
+          "body": "50 % : la moitié. 25 % : le quart. 10 % : on divise par 10.\n\n20 % : deux fois 10 %. 75 % : la moitié plus le quart. 1 % : on divise par 100.\n\nAvec 10 % et 1 %, on reconstruit presque tout."
         },
         {
           "id": "c4",
+          "kind": "texte",
+          "title": "Une échelle",
+          "body": "Sur une carte au 1/25 000, un centimètre sur le papier représente 25 000 centimètres en vrai, soit 250 mètres.\n\nPour convertir : on multiplie la longueur mesurée par le nombre de l’échelle, puis on convertit l’unité."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
-          "title": "Les pourcentages ne s'additionnent pas toujours",
-          "body": "Une hausse de 10 % suivie d'une baisse de 10 % ne ramène pas au prix de départ.\n\n100 euros, plus 10 % : 110. Moins 10 % de 110 : on enlève 11, donc 99.\n\nOn a perdu un euro, parce que les deux pourcentages ne portaient pas sur la même somme."
+          "title": "Les pourcentages ne s’additionnent pas toujours",
+          "body": "Une hausse de 10 % suivie d’une baisse de 10 % ne ramène pas au prix de départ.\n\n100 euros, plus 10 % : 110. Moins 10 % de 110 : on enlève 11, donc 99. On a perdu un euro, parce que les deux pourcentages ne portaient pas sur la même somme."
         }
       ],
       "questions": [
@@ -229,9 +254,22 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Plus vite, moins longtemps",
+          "body": "Augmente la vitesse et regarde le temps de parcours. Deux fois plus vite, deux fois moins de temps : les deux quantités vont en sens contraire. C’est le piège du problème qui suit.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Les ouvriers et le mur",
-          "body": "« Trois ouvriers construisent un mur en six jours. Combien de jours pour six ouvriers ? »\n\nLa règle de trois donnerait douze jours, et ce serait absurde : plus d'ouvriers ne peut pas prendre plus de temps.\n\nIci, quand l'un double, l'autre est divisé par deux : six ouvriers mettent trois jours. On parle de proportions inverses.\n\nLa leçon n'est pas qu'il faut une autre formule. Elle est qu'il faut regarder dans quel sens va la situation avant de calculer."
+          "body": "« Trois ouvriers construisent un mur en six jours. Combien de jours pour six ouvriers ? »\n\nLa règle de trois donnerait douze jours, et ce serait absurde : plus d’ouvriers ne peut pas prendre plus de temps.\n\nIci, quand l’un double, l’autre est divisé par deux : six ouvriers mettent trois jours. On parle de proportions inverses."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Regarder le sens avant de calculer",
+          "body": "La leçon n’est pas qu’il faut une autre formule. Elle est qu’il faut regarder dans quel sens va la situation.\n\nProportion directe : l’un double, l’autre double. Proportion inverse : l’un double, l’autre est divisé par deux."
         }
       ],
       "questions": [
@@ -271,10 +309,19 @@
           "prompt": "Pourquoi la règle de trois échoue-t-elle sur les ouvriers et le mur ?",
           "explanation": "Parce que les deux grandeurs varient en sens contraire : plus d'ouvriers, moins de temps. La proportionnalité directe suppose qu'elles varient dans le même sens.",
           "options": [
-            { "text": "les deux grandeurs varient en sens contraire", "correct": true },
-            { "text": "les nombres sont trop grands" },
-            { "text": "il manque une donnée" },
-            { "text": "les ouvriers ne travaillent pas pareil" }
+            {
+              "text": "les deux grandeurs varient en sens contraire",
+              "correct": true
+            },
+            {
+              "text": "les nombres sont trop grands"
+            },
+            {
+              "text": "il manque une donnée"
+            },
+            {
+              "text": "les ouvriers ne travaillent pas pareil"
+            }
           ]
         },
         {

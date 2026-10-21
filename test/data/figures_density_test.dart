@@ -24,13 +24,20 @@ void main() {
     'logique-college-enigmes-de-logique-pure',
     'logique-college-denombrer-sans-se-tromper',
     'maths-college-puissances-et-racine-carree',
+    'maths-primaire-les-nombres-jusqu-a-10-000',
+    'maths-primaire-additionner-et-soustraire',
+    'maths-primaire-la-proportionnalite',
+    'maths-primaire-geometrie-droites-cercles-polygones',
+    'maths-primaire-perimetres-aires-et-angles',
+    'maths-primaire-longueurs-masses-et-contenances',
+    'maths-primaire-tableaux-graphiques-et-hasard',
   };
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.105;
+  const double partMinimale = 0.118;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;

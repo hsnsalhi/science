@@ -11,16 +11,17 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "La même idée, en plus grand",
-          "body": "Dix unités font une dizaine. Dix dizaines font une centaine. Dix centaines font un millier.\n\nÀ chaque fois, on groupe par dix. C'est la seule règle, et elle ne change jamais — c'est ce qui rend notre numération si pratique."
+          "kind": "figure",
+          "title": "Chaque colonne vaut dix fois sa voisine",
+          "body": "Change les chiffres colonne par colonne et regarde le nombre se refaire. Unités, dixièmes, centièmes : chaque rang vaut dix fois le suivant. La même règle continue de l’autre côté, vers les dizaines, les centaines et les milliers.",
+          "figureId": "decimaux"
         },
         {
           "id": "c2",
           "kind": "formule",
           "title": "Les quatre rangs",
-          "formula": "milliers, centaines, dizaines, unités",
-          "body": "Dans 3 472 : 3 milliers, 4 centaines, 7 dizaines, 2 unités."
+          "body": "Dans 3 472 : 3 milliers, 4 centaines, 7 dizaines, 2 unités.",
+          "formula": "milliers, centaines, dizaines, unités"
         },
         {
           "id": "c3",
@@ -30,15 +31,15 @@
         },
         {
           "id": "c4",
-          "kind": "aRetenir",
-          "title": "L'espace des milliers",
-          "body": "On écrit 3 472 avec une espace, pas 3472 ni 3.472.\n\nCette espace sépare les milliers et rend le nombre lisible d'un coup d'œil. Pour les nombres à quatre chiffres elle est facultative, mais c'est une bonne habitude."
+          "kind": "avertissement",
+          "title": "Le zéro tient la place",
+          "body": "Dans 3 072, il n’y a aucune centaine. Mais on ne peut pas écrire 372 : ce serait un autre nombre.\n\nLe zéro ne vaut rien, et pourtant on ne peut pas l’enlever. Son travail est de tenir la place."
         },
         {
           "id": "c5",
-          "kind": "avertissement",
-          "title": "Le zéro tient la place",
-          "body": "Dans 3 072, il n'y a aucune centaine. Mais on ne peut pas écrire 372 : ce serait un autre nombre.\n\nLe zéro ne vaut rien, et pourtant on ne peut pas l'enlever. Son travail est de tenir la place."
+          "kind": "astuce",
+          "title": "L’espace des milliers",
+          "body": "On écrit 3 472 avec une espace, pas 3472 ni 3.472. Elle sépare les milliers et rend le nombre lisible d’un coup d’œil."
         }
       ],
       "questions": [
@@ -70,10 +71,19 @@
           "prompt": "À quoi sert le zéro dans 3 072 ?",
           "explanation": "À tenir la place des centaines. Sans lui, le 3 glisserait au rang des centaines et le nombre deviendrait 372.",
           "options": [
-            { "text": "à tenir la place des centaines", "correct": true },
-            { "text": "à rien, on peut l'enlever" },
-            { "text": "à séparer les milliers" },
-            { "text": "à indiquer que le nombre est pair" }
+            {
+              "text": "à tenir la place des centaines",
+              "correct": true
+            },
+            {
+              "text": "à rien, on peut l'enlever"
+            },
+            {
+              "text": "à séparer les milliers"
+            },
+            {
+              "text": "à indiquer que le nombre est pair"
+            }
           ]
         },
         {
@@ -95,26 +105,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Comparer deux nombres",
-          "body": "1. Compte les chiffres. Celui qui en a le plus est le plus grand.\n\n2. S'ils en ont autant, compare les chiffres de gauche à droite, au premier qui diffère.\n\n3 472 et 3 429 : mêmes milliers, mêmes centaines. Au rang des dizaines, 7 bat 2. Donc 3 472 gagne."
+          "kind": "figure",
+          "title": "Le plus grand est le plus à droite",
+          "body": "Pose un départ sur la droite graduée, puis un déplacement. Comparer deux nombres, c’est toujours regarder lequel tombe le plus à droite — et cela ne change pas quand ils deviennent grands.",
+          "figureId": "droite-graduee"
         },
         {
           "id": "c2",
-          "kind": "avertissement",
-          "title": "Plus de chiffres, plus grand — toujours",
-          "body": "999 est plus petit que 1 000, même si ses chiffres sont tous des 9.\n\nTrois chiffres ne peuvent jamais battre quatre chiffres. C'est une règle sans exception, et elle évite beaucoup d'hésitations."
+          "kind": "etape",
+          "title": "Comparer deux nombres",
+          "body": "1. Compte les chiffres. Celui qui en a le plus est le plus grand.\n\n2. S’ils en ont autant, compare de gauche à droite, au premier qui diffère.\n\n3 472 et 3 429 : mêmes milliers, mêmes centaines. Au rang des dizaines, 7 bat 2."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Encadrer et arrondir",
-          "body": "3 472 est entre 3 000 et 4 000. À la centaine près, il est entre 3 400 et 3 500.\n\nArrondir à la centaine : on regarde le chiffre des dizaines. 7 est au moins 5, donc on monte : 3 500."
+          "kind": "avertissement",
+          "title": "Plus de chiffres, plus grand — toujours",
+          "body": "999 est plus petit que 1 000, même si ses chiffres sont tous des 9.\n\nTrois chiffres ne peuvent jamais battre quatre chiffres. Règle sans exception."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "Encadrer et arrondir",
+          "body": "3 472 est entre 3 000 et 4 000. À la centaine près, entre 3 400 et 3 500.\n\nArrondir à la centaine : on regarde le chiffre des dizaines. 7 est au moins 5, donc on monte : 3 500."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
-          "body": "Arrondir sert à vérifier. 3 472 + 2 891 doit faire à peu près 3 500 + 2 900, soit 6 400. Si tu trouves 1 263, c'est que quelque chose a mal tourné."
+          "title": "Arrondir sert à vérifier",
+          "body": "3 472 + 2 891 doit faire à peu près 3 500 + 2 900, soit 6 400. Si tu trouves 1 263, c’est que quelque chose a mal tourné."
         }
       ],
       "questions": [
@@ -124,10 +142,19 @@
           "prompt": "Quel nombre est le plus grand : 999 ou 1 000 ?",
           "explanation": "1 000. Quatre chiffres battent toujours trois chiffres, même des 9.",
           "options": [
-            { "text": "1 000", "correct": true },
-            { "text": "999" },
-            { "text": "ils sont égaux" },
-            { "text": "cela dépend" }
+            {
+              "text": "1 000",
+              "correct": true
+            },
+            {
+              "text": "999"
+            },
+            {
+              "text": "ils sont égaux"
+            },
+            {
+              "text": "cela dépend"
+            }
           ]
         },
         {
@@ -150,7 +177,13 @@
           "kind": "remiseEnOrdre",
           "prompt": "Range ces nombres du plus petit au plus grand.",
           "explanation": "On compte d'abord les chiffres, puis on compare de gauche à droite.",
-          "items": ["987", "1 203", "3 429", "3 472", "9 999"]
+          "items": [
+            "987",
+            "1 203",
+            "3 429",
+            "3 472",
+            "9 999"
+          ]
         },
         {
           "id": "q5",
@@ -171,21 +204,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "exemple",
-          "title": "Lire à voix haute",
-          "body": "3 472 se lit « trois mille quatre cent soixante-douze ».\n\nOn dit d'abord les milliers, puis le reste comme un nombre ordinaire.\n\n5 008 se lit « cinq mille huit » — on ne prononce pas les zéros."
+          "kind": "figure",
+          "title": "Ajouter rang par rang",
+          "body": "Reviens aux colonnes. Pour ajouter deux nombres, on ajoute les unités entre elles, les dizaines entre elles — chaque rang avec son pareil, et jamais avec un autre.",
+          "figureId": "decimaux"
         },
         {
           "id": "c2",
           "kind": "etape",
           "title": "Ajouter des milliers",
-          "body": "2 300 + 1 500 : on ajoute les milliers entre eux, les centaines entre elles.\n\n2 + 1 = 3 milliers, 3 + 5 = 8 centaines. Résultat : 3 800.\n\nC'est la même méthode qu'avec les petits nombres, un rang plus loin."
+          "body": "2 300 + 1 500 : 2 + 1 = 3 milliers, 3 + 5 = 8 centaines. Résultat : 3 800.\n\nC’est la même méthode qu’avec les petits nombres, un rang plus loin."
         },
         {
           "id": "c3",
+          "kind": "exemple",
+          "title": "Lire à voix haute",
+          "body": "3 472 se lit « trois mille quatre cent soixante-douze » : d’abord les milliers, puis le reste comme un nombre ordinaire.\n\n5 008 se lit « cinq mille huit » — on ne prononce pas les zéros."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "Compter de mille en mille",
-          "body": "1 472, 2 472, 3 472, 4 472…\n\nSeul le chiffre des milliers change. Comme pour les dizaines, c'est une des choses les plus utiles à faire de tête."
+          "body": "1 472, 2 472, 3 472, 4 472… Seul le chiffre des milliers change.\n\nComme pour les dizaines, c’est une des choses les plus utiles à faire de tête."
         }
       ],
       "questions": [
@@ -238,9 +278,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Trois heures pour compter jusqu’à dix mille",
+          "body": "Règle les aiguilles sur trois heures et regarde l’écart qu’elles parcourent. Un nombre par seconde, sans jamais s’arrêter, pendant tout ce temps : voilà ce que vaut dix mille.",
+          "figureId": "horloge"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Se représenter dix mille",
-          "body": "Dix mille, c'est beaucoup plus qu'on ne croit.\n\nCompter jusqu'à dix mille à raison d'un nombre par seconde prend près de trois heures.\n\nDix mille pas, c'est environ sept kilomètres de marche.\n\nUne salle de classe contient environ trente élèves. Il en faudrait plus de trois cents pour faire dix mille enfants."
+          "body": "Dix mille pas, c’est environ sept kilomètres de marche.\n\nUne salle de classe contient environ trente élèves. Il en faudrait plus de trois cents pour faire dix mille enfants."
         }
       ],
       "questions": [

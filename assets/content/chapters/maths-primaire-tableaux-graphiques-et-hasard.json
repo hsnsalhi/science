@@ -11,27 +11,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Pourquoi ranger les nombres",
-          "body": "« Lundi 12 élèves à la cantine, mardi 18, jeudi 15, vendredi 9. »\n\nEn phrase, il faut tout relire pour répondre à la moindre question. Dans un tableau, on trouve la réponse en un coup d'œil.\n\nRanger les données n'ajoute aucune information : cela rend seulement celle qui existe utilisable."
+          "kind": "figure",
+          "title": "Croiser une ligne et une colonne",
+          "body": "Règle les lignes et les colonnes, puis cherche un jeton précis : tu croises une ligne et une colonne. C’est exactement ainsi qu’on lit un tableau à double entrée.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Lire un tableau à double entrée",
-          "body": "1. Trouve la ligne qui t'intéresse.\n\n2. Trouve la colonne.\n\n3. La réponse est à leur croisement.\n\nSe tromper de ligne ou de colonne donne un nombre qui a l'air normal — c'est pourquoi il faut pointer du doigt."
+          "kind": "texte",
+          "title": "Pourquoi ranger les nombres",
+          "body": "« Lundi 12 élèves à la cantine, mardi 18, jeudi 15, vendredi 9. »\n\nEn phrase, il faut tout relire pour répondre à la moindre question. Dans un tableau, on trouve la réponse d’un coup d’œil.\n\nRanger les données n’ajoute aucune information : cela rend seulement celle qui existe utilisable."
         },
         {
           "id": "c3",
           "kind": "aRetenir",
           "title": "Trois questions utiles",
-          "body": "Le total : on additionne tout.\n\nLe maximum : la plus grande valeur.\n\nL'écart : la différence entre la plus grande et la plus petite.\n\nAvec 12, 18, 15 et 9 : total 54, maximum 18, écart 18 − 9 = 9."
+          "body": "Le total : on additionne tout. Le maximum : la plus grande valeur. L’écart : la différence entre la plus grande et la plus petite.\n\nAvec 12, 18, 15 et 9 : total 54, maximum 18, écart 9."
         },
         {
           "id": "c4",
           "kind": "avertissement",
           "title": "Un tableau ne dit pas pourquoi",
-          "body": "Le tableau montre que le vendredi est creux. Il n'explique pas pourquoi.\n\nConfondre ce qu'on observe et ce qu'on en déduit est l'erreur la plus courante quand on lit des données — y compris chez les adultes."
+          "body": "Le tableau montre que le vendredi est creux. Il n’explique pas pourquoi.\n\nConfondre ce qu’on observe et ce qu’on en déduit est l’erreur la plus courante quand on lit des données — y compris chez les adultes."
         }
       ],
       "questions": [
@@ -77,27 +78,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Trois façons de montrer",
-          "body": "Le diagramme en barres : pour comparer des quantités. La hauteur se compare d'un coup d'œil.\n\nLa courbe : pour montrer une évolution dans le temps.\n\nLe diagramme circulaire : pour montrer des parts d'un tout."
+          "kind": "figure",
+          "title": "Des bâtons qu’on compare du regard",
+          "body": "Règle le premier terme et la raison : les dix bâtons changent de hauteur. C’est un diagramme en barres, et c’est pour cela qu’on s’en sert — comparer des hauteurs demande un coup d’œil, comparer des nombres demande un effort.",
+          "figureId": "suite"
         },
         {
           "id": "c2",
-          "kind": "avertissement",
-          "title": "L'axe qui ment",
-          "body": "Si l'axe des hauteurs ne part pas de zéro, les différences paraissent énormes.\n\nUne barre de 102 à côté d'une de 100 semblera deux fois plus haute si l'axe commence à 99. Les deux valeurs sont pourtant presque égales.\n\nC'est le truc le plus employé pour faire dire à un graphique ce qu'il ne dit pas."
+          "kind": "etape",
+          "title": "Trois façons de montrer",
+          "body": "Le diagramme en barres : pour comparer des quantités.\n\nLa courbe : pour montrer une évolution dans le temps.\n\nLe diagramme circulaire : pour montrer des parts d’un tout."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "Ce qu'un graphique doit porter",
-          "body": "Un titre, le nom de chaque axe, et l'unité.\n\nSans eux, les barres ne veulent rien dire : on ne sait ni de quoi on parle ni dans quelle unité."
+          "kind": "avertissement",
+          "title": "L’axe qui ment",
+          "body": "Si l’axe des hauteurs ne part pas de zéro, les différences paraissent énormes.\n\nUne barre de 102 à côté d’une de 100 semblera deux fois plus haute si l’axe commence à 99. Les deux valeurs sont pourtant presque égales.\n\nC’est le truc le plus employé pour faire dire à un graphique ce qu’il ne dit pas."
         },
         {
           "id": "c4",
-          "kind": "astuce",
-          "title": "Le diagramme circulaire",
-          "body": "Le disque entier vaut le total, c'est-à-dire 100 %.\n\nLa moitié du disque vaut 50 %, le quart 25 %. Si une part occupe visiblement plus de la moitié, elle dépasse 50 % — on peut souvent répondre sans calcul."
+          "kind": "aRetenir",
+          "title": "Ce qu’un graphique doit porter",
+          "body": "Un titre, le nom de chaque axe, et l’unité.\n\nSans eux, les barres ne veulent rien dire : on ne sait ni de quoi on parle ni dans quelle unité.\n\nSur un diagramme circulaire, le disque entier vaut le total. Si une part occupe visiblement plus de la moitié, elle dépasse 50 % — on peut souvent répondre sans calcul."
         }
       ],
       "questions": [
@@ -107,9 +109,18 @@
           "prompt": "Associe chaque situation au bon graphique.",
           "explanation": "Barres pour comparer, courbe pour une évolution, disque pour des parts d'un tout.",
           "pairs": [
-            { "left": "comparer les ventes de 5 magasins", "right": "diagramme en barres" },
-            { "left": "la température heure par heure", "right": "courbe" },
-            { "left": "la répartition des sports pratiqués", "right": "diagramme circulaire" }
+            {
+              "left": "comparer les ventes de 5 magasins",
+              "right": "diagramme en barres"
+            },
+            {
+              "left": "la température heure par heure",
+              "right": "courbe"
+            },
+            {
+              "left": "la répartition des sports pratiqués",
+              "right": "diagramme circulaire"
+            }
           ]
         },
         {
@@ -118,10 +129,19 @@
           "prompt": "Pourquoi un axe qui ne part pas de zéro est-il trompeur ?",
           "explanation": "Parce qu'il exagère les différences : deux valeurs proches semblent très éloignées.",
           "options": [
-            { "text": "il exagère les écarts entre les barres", "correct": true },
-            { "text": "il rend le graphique illisible" },
-            { "text": "il change les valeurs" },
-            { "text": "il efface le titre" }
+            {
+              "text": "il exagère les écarts entre les barres",
+              "correct": true
+            },
+            {
+              "text": "il rend le graphique illisible"
+            },
+            {
+              "text": "il change les valeurs"
+            },
+            {
+              "text": "il efface le titre"
+            }
           ]
         },
         {
@@ -137,11 +157,24 @@
           "prompt": "Que doit porter tout graphique ?",
           "explanation": "Un titre, le nom des axes et l'unité. Sans eux, les barres ne veulent rien dire.",
           "options": [
-            { "text": "un titre", "correct": true },
-            { "text": "le nom de chaque axe", "correct": true },
-            { "text": "l'unité", "correct": true },
-            { "text": "des couleurs vives" },
-            { "text": "le nom de son auteur" }
+            {
+              "text": "un titre",
+              "correct": true
+            },
+            {
+              "text": "le nom de chaque axe",
+              "correct": true
+            },
+            {
+              "text": "l'unité",
+              "correct": true
+            },
+            {
+              "text": "des couleurs vives"
+            },
+            {
+              "text": "le nom de son auteur"
+            }
           ]
         }
       ]
@@ -156,28 +189,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Impossible, possible, certain",
-          "body": "En lançant un dé à six faces :\n\nObtenir 7 est impossible.\n\nObtenir 4 est possible.\n\nObtenir un nombre entre 1 et 6 est certain.\n\nEntre l'impossible et le certain, il y a toutes les nuances — et c'est là que vivent les probabilités."
+          "kind": "figure",
+          "title": "Imprévisible un par un, très régulier en nombre",
+          "body": "Fais avancer le temps : les noyaux disparaissent un par un, et rien ne permet de dire lequel partira. Pourtant le total suit une règle très sûre. C’est toute la différence entre un tirage et une proportion.",
+          "figureId": "demi-vie"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Compter les chances",
-          "formula": "chances = cas favorables ÷ cas possibles",
-          "body": "Sur un dé, obtenir un nombre pair : 3 cas favorables (2, 4, 6) sur 6 possibles. Soit une chance sur deux."
+          "kind": "texte",
+          "title": "Impossible, possible, certain",
+          "body": "En lançant un dé à six faces : obtenir 7 est impossible, obtenir 4 est possible, obtenir un nombre entre 1 et 6 est certain.\n\nEntre l’impossible et le certain, il y a toutes les nuances — et c’est là que vivent les probabilités."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "Le dé n'a pas de mémoire",
-          "body": "Si tu as fait cinq fois 6 d'affilée, la probabilité de refaire 6 reste une sur six.\n\nLe dé ne sait pas ce qui s'est passé avant. Croire le contraire porte un nom — l'erreur du joueur — et elle ruine des gens tous les jours."
+          "kind": "formule",
+          "title": "Compter les chances",
+          "body": "Sur un dé, obtenir un nombre pair : 3 cas favorables sur 6 possibles. Soit une chance sur deux.",
+          "formula": "chances = cas favorables ÷ cas possibles"
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "Le dé n’a pas de mémoire",
+          "body": "Si tu as fait cinq fois 6 d’affilée, la probabilité de refaire 6 reste une sur six.\n\nLe dé ne sait pas ce qui s’est passé avant. Croire le contraire porte un nom — l’erreur du joueur — et elle ruine des gens tous les jours."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
           "title": "Beaucoup de lancers, pas peu",
-          "body": "Sur 6 lancers, obtenir six fois le même chiffre n'a rien d'extraordinaire.\n\nSur 600 lancers, chaque chiffre sort environ 100 fois. Les proportions ne deviennent fiables qu'avec beaucoup d'essais."
+          "body": "Sur 6 lancers, obtenir six fois le même chiffre n’a rien d’extraordinaire.\n\nSur 600 lancers, chaque chiffre sort environ 100 fois. Les proportions ne deviennent fiables qu’avec beaucoup d’essais."
         }
       ],
       "questions": [
@@ -186,13 +226,32 @@
           "kind": "tri",
           "prompt": "Avec un dé à six faces, range ces événements.",
           "explanation": "Rien au-dessus de 6 n'est possible, et tout résultat est forcément entre 1 et 6.",
-          "categories": ["impossible", "possible", "certain"],
+          "categories": [
+            "impossible",
+            "possible",
+            "certain"
+          ],
           "items": [
-            { "text": "obtenir 7", "category": 0 },
-            { "text": "obtenir 0", "category": 0 },
-            { "text": "obtenir 4", "category": 1 },
-            { "text": "obtenir un nombre pair", "category": 1 },
-            { "text": "obtenir un nombre entre 1 et 6", "category": 2 }
+            {
+              "text": "obtenir 7",
+              "category": 0
+            },
+            {
+              "text": "obtenir 0",
+              "category": 0
+            },
+            {
+              "text": "obtenir 4",
+              "category": 1
+            },
+            {
+              "text": "obtenir un nombre pair",
+              "category": 1
+            },
+            {
+              "text": "obtenir un nombre entre 1 et 6",
+              "category": 2
+            }
           ]
         },
         {
@@ -236,9 +295,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "La hauteur se lit depuis le bas",
+          "body": "Reviens aux bâtons et compare-les. Leur hauteur se lit depuis le bas du dessin. Le défi te montre ce qui arrive quand quelqu’un déplace ce bas.",
+          "figureId": "suite"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Deux barres, deux histoires",
-          "body": "Un magasin a vendu 100 articles en janvier et 102 en février.\n\nAvec un axe partant de zéro, les deux barres sont presque identiques : la hausse est de 2 %.\n\nAvec un axe partant de 99, la seconde barre fait trois fois la hauteur de la première. Rien n'est faux dans les chiffres — c'est le dessin qui ment.\n\nRegarder d'où part l'axe est le premier réflexe à prendre devant un graphique."
+          "body": "Un magasin a vendu 100 articles en janvier et 102 en février.\n\nAvec un axe partant de zéro, les deux barres sont presque identiques : la hausse est de 2 %.\n\nAvec un axe partant de 99, la seconde barre fait trois fois la hauteur de la première. Rien n’est faux dans les chiffres — c’est le dessin qui ment.\n\nRegarder d’où part l’axe est le premier réflexe à prendre devant un graphique."
         }
       ],
       "questions": [

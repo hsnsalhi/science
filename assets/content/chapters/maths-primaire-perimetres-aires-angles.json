@@ -11,29 +11,29 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Ce qu'on mesure, exactement",
-          "body": "Le périmètre d'une figure est la longueur de son contour : ce qu'il faudrait de ficelle pour en faire le tour, ou de grillage pour clôturer un terrain.\n\nC'est une longueur. Elle se mesure en centimètres, en mètres, en kilomètres — jamais en centimètres carrés."
+          "kind": "figure",
+          "title": "Le tour du rectangle",
+          "body": "Règle les lignes et les colonnes : tu dessines un rectangle. Le périmètre, c’est la longueur de son tour — deux longueurs et deux largeurs, et rien d’autre.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Le rectangle",
-          "formula": "P = 2 × (L + l)",
-          "body": "Un rectangle de 7 cm sur 3 cm : L + l = 10, et P = 2 × 10 = 20 cm. On fait le tour en passant deux fois par une longueur et deux fois par une largeur."
+          "kind": "texte",
+          "title": "Ce qu’on mesure, exactement",
+          "body": "Le périmètre est la longueur du contour : ce qu’il faudrait de ficelle pour en faire le tour, ou de grillage pour clôturer un terrain.\n\nC’est une longueur. Elle se mesure en centimètres, en mètres, en kilomètres — jamais en centimètres carrés."
         },
         {
           "id": "c3",
           "kind": "formule",
-          "title": "Le carré",
-          "formula": "P = 4 × côté",
-          "body": "Un carré de 6 cm de côté a un périmètre de 4 × 6 = 24 cm. C'est le cas particulier du rectangle où les quatre côtés sont égaux."
+          "title": "Le rectangle et le carré",
+          "body": "Un rectangle de 7 cm sur 3 cm : L + l = 10, donc P = 20 cm. Un carré de 6 cm de côté : P = 4 × 6 = 24 cm.",
+          "formula": "P = 2 × (L + l)     P = 4 × côté"
         },
         {
           "id": "c4",
           "kind": "astuce",
           "title": "Les figures tordues aussi",
-          "body": "Pour une figure quelconque, il n'y a pas de formule : on mesure chaque côté et on additionne. C'est tout.\n\nLes formules du rectangle et du carré ne sont que des raccourcis pour éviter d'écrire quatre nombres."
+          "body": "Pour une figure quelconque, il n’y a pas de formule : on mesure chaque côté et on additionne.\n\nLes formules du rectangle et du carré ne sont que des raccourcis pour éviter d’écrire quatre nombres."
         }
       ],
       "questions": [
@@ -103,28 +103,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Compter des carrés",
-          "body": "L'aire d'une figure est le nombre de carrés unité qu'elle contient. Si le carré unité mesure 1 cm de côté, l'aire s'exprime en centimètres carrés, notés cm².\n\nUn rectangle de 7 cm sur 3 cm contient 7 carrés par rangée et 3 rangées : 21 carrés, donc 21 cm². C'est de là que vient la formule — ce n'est pas une règle à apprendre, c'est un comptage."
+          "kind": "figure",
+          "title": "Une aire se découpe",
+          "body": "Déplace le trait qui coupe le rectangle. Les deux morceaux font toujours ensemble l’aire du tout, où que soit le trait. Une aire est un nombre de carrés, et c’est pour cela qu’elle se compte en centimètres carrés.",
+          "figureId": "distributivite"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Les trois formules utiles",
-          "formula": "rectangle = L × l     carré = c × c     triangle = (b × h) ÷ 2",
-          "body": "Un triangle est toujours la moitié d'un rectangle de même base et même hauteur : trace le rectangle autour du triangle et tu verras les deux moitiés se compléter."
+          "kind": "texte",
+          "title": "Compter des carrés",
+          "body": "Un rectangle de 7 cm sur 3 cm contient 7 carrés par rangée et 3 rangées : 21 carrés, donc 21 cm².\n\nC’est de là que vient la formule. Ce n’est pas une règle à apprendre, c’est un comptage."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "Le piège des conversions",
-          "body": "1 m fait 100 cm, mais 1 m² ne fait pas 100 cm².\n\nUn mètre carré est un carré de 100 cm de côté : il contient 100 × 100 = 10 000 cm².\n\nPour les aires, le facteur de conversion est toujours le carré de celui des longueurs. C'est l'erreur la plus fréquente du chapitre, chez les élèves comme chez les adultes."
+          "kind": "formule",
+          "title": "Les trois formules utiles",
+          "body": "Un triangle est toujours la moitié d’un rectangle de même base et même hauteur : trace le rectangle autour du triangle et tu verras les deux moitiés se compléter.",
+          "formula": "rectangle = L × l     carré = c × c     triangle = (b × h) ÷ 2"
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "Le piège des conversions",
+          "body": "1 m fait 100 cm, mais 1 m² ne fait pas 100 cm².\n\nUn mètre carré est un carré de 100 cm de côté : il contient 100 × 100 = 10 000 cm².\n\nPour les aires, le facteur de conversion est toujours le carré de celui des longueurs. C’est l’erreur la plus fréquente du chapitre, chez les élèves comme chez les adultes."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Aire et périmètre ne vont pas ensemble",
-          "body": "Deux figures de même périmètre peuvent avoir des aires très différentes. Deux figures de même aire peuvent avoir des périmètres très différents.\n\nCe sont deux mesures indépendantes : l'une dit la longueur du tour, l'autre la place à l'intérieur. Connaître l'une ne dit rien de l'autre."
+          "body": "Deux figures de même périmètre peuvent avoir des aires très différentes, et inversement.\n\nCe sont deux mesures indépendantes : l’une dit la longueur du tour, l’autre la place à l’intérieur."
         }
       ],
       "questions": [
@@ -183,21 +190,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Un angle n'a pas de longueur",
-          "body": "Un angle mesure l'écartement entre deux demi-droites parties du même point, pas la longueur de ces demi-droites.\n\nDeux angles identiques dessinés avec des traits courts et des traits longs mesurent la même chose. Allonger les côtés ne change rien à l'angle — c'est le point le plus souvent mal compris.\n\nL'unité est le degré. Un tour complet fait 360°."
+          "kind": "figure",
+          "title": "Choisis deux angles, le troisième suit",
+          "body": "Règle deux angles du triangle et regarde le troisième s’ajuster tout seul. Un angle mesure un écartement, pas une longueur : allonger les côtés n’y change rien.",
+          "figureId": "angles-triangle"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Les quatre angles à reconnaître d'un coup d'œil",
-          "body": "L'angle droit : 90°, le quart de tour, celui de l'équerre et du coin d'une feuille.\n\nL'angle aigu : plus petit que l'angle droit, il pique.\n\nL'angle obtus : plus grand que l'angle droit mais plus petit que l'angle plat.\n\nL'angle plat : 180°, le demi-tour. Les deux demi-droites sont dans le prolongement l'une de l'autre."
+          "kind": "texte",
+          "title": "Un angle n’a pas de longueur",
+          "body": "Un angle mesure l’écartement entre deux demi-droites parties du même point, pas la longueur de ces demi-droites.\n\nDeux angles identiques dessinés avec des traits courts et des traits longs mesurent la même chose. C’est le point le plus souvent mal compris.\n\nL’unité est le degré, et un tour complet fait 360°."
         },
         {
           "id": "c3",
+          "kind": "etape",
+          "title": "Les quatre angles à reconnaître d’un coup d’œil",
+          "body": "L’angle droit : 90°, le quart de tour, celui de l’équerre.\n\nL’angle aigu : plus petit que l’angle droit, il pique.\n\nL’angle obtus : plus grand que l’angle droit, plus petit que l’angle plat.\n\nL’angle plat : 180°, le demi-tour."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "Lire un rapporteur sans se tromper",
-          "body": "Un rapporteur porte deux graduations qui vont en sens inverse : 40° et 140° sont marqués sur le même trait.\n\nPour choisir, regarde d'abord si l'angle est aigu ou obtus. Aigu, prends le nombre plus petit que 90. Obtus, prends le plus grand.\n\nCe réflexe évite l'erreur de lecture la plus courante, et il demande une seconde."
+          "body": "Un rapporteur porte deux graduations en sens inverse : 40° et 140° sont marqués sur le même trait.\n\nRegarde d’abord si l’angle est aigu ou obtus. Aigu, prends le nombre plus petit que 90. Obtus, prends le plus grand."
         }
       ],
       "questions": [
@@ -290,15 +304,22 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Vingt mètres de grillage",
-          "body": "Un fermier a exactement 20 mètres de grillage et veut enclore un rectangle. Il hésite entre plusieurs formes.\n\nS'il fait 1 m sur 9 m, il utilise bien ses 20 m de grillage, et ses moutons disposent de 9 m².\n\nS'il fait 5 m sur 5 m, il utilise les mêmes 20 m de grillage — et ses moutons disposent de 25 m².\n\nMême dépense, presque trois fois la place. Il vaut la peine de calculer avant de poser les piquets."
+          "kind": "figure",
+          "title": "Même tour, pas la même place",
+          "body": "Mets 1 ligne et 9 colonnes, puis 5 lignes et 5 colonnes. Dans les deux cas le tour vaut 20. Compte les jetons : 9 d’un côté, 25 de l’autre.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
+          "kind": "texte",
+          "title": "Vingt mètres de grillage",
+          "body": "Un fermier a exactement 20 mètres de grillage et veut enclore un rectangle.\n\n1 m sur 9 m : 20 m de grillage, et 9 m² pour ses moutons.\n\n5 m sur 5 m : les mêmes 20 m de grillage, et 25 m².\n\nMême dépense, presque trois fois la place."
+        },
+        {
+          "id": "c3",
           "kind": "aRetenir",
           "title": "Le carré est le meilleur rectangle",
-          "body": "À périmètre fixé, c'est le carré qui enferme la plus grande aire. Plus le rectangle s'allonge, plus son aire diminue, jusqu'à devenir presque nulle pour un rectangle très fin.\n\nSi l'on s'autorise toutes les formes et pas seulement les rectangles, le champion devient le cercle. C'est pour cela qu'une bulle de savon est ronde : la tension de sa paroi lui fait enfermer le plus d'air possible avec le moins de surface."
+          "body": "À périmètre fixé, c’est le carré qui enferme la plus grande aire. Plus le rectangle s’allonge, plus son aire diminue.\n\nSi l’on s’autorise toutes les formes, le champion devient le cercle. C’est pour cela qu’une bulle de savon est ronde : sa paroi lui fait enfermer le plus d’air possible avec le moins de surface."
         }
       ],
       "questions": [

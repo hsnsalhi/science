@@ -11,35 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Avant le mètre",
-          "body": "On mesurait en pieds, en coudées, en pouces. Le problème : le pied du roi n'est pas celui du voisin.\n\nÀ la Révolution, on a décidé une unité valable pour tout le monde : le mètre. Depuis, « deux mètres » veut dire la même chose à Paris, à Tokyo et sur la Lune."
+          "kind": "figure",
+          "title": "Mesurer, c’est repérer sur une graduation",
+          "body": "Pose un départ, puis un déplacement. La longueur du trajet se lit sur les graduations. Une règle, un mètre ruban, une balance : tous font cela, comparer à des graduations toujours pareilles.",
+          "figureId": "droite-graduee"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "Les longueurs",
-          "formula": "1 km = 1 000 m ; 1 m = 100 cm ; 1 cm = 10 mm",
-          "body": "Toujours des paquets de dix, comme pour les nombres. C'est ce qui rend les conversions faciles."
+          "kind": "texte",
+          "title": "Avant le mètre",
+          "body": "On mesurait en pieds, en coudées, en pouces. Le problème : le pied du roi n’est pas celui du voisin.\n\nÀ la Révolution, on a décidé une unité valable pour tout le monde. Depuis, « deux mètres » veut dire la même chose à Paris, à Tokyo et sur la Lune."
         },
         {
           "id": "c3",
           "kind": "formule",
-          "title": "Les masses et les contenances",
-          "formula": "1 kg = 1 000 g ; 1 L = 100 cL = 1 000 mL",
-          "body": "Le préfixe kilo veut toujours dire mille, et milli toujours un millième. Un kilomètre, un kilogramme : même mot, même sens."
+          "title": "Toujours des paquets de dix",
+          "body": "Le préfixe kilo veut toujours dire mille, et milli toujours un millième. Un kilomètre, un kilogramme : même mot, même sens.",
+          "formula": "1 km = 1 000 m ; 1 m = 100 cm ; 1 kg = 1 000 g ; 1 L = 1 000 mL"
         },
         {
           "id": "c4",
           "kind": "aRetenir",
           "title": "Des repères pour estimer",
-          "body": "Un pas d'adulte : environ 70 cm. Une porte : 2 m. Un étage : 3 m.\n\nUne pomme : 150 g. Un paquet de sucre : 1 kg. Une bouteille d'eau : 1,5 L.\n\nSavoir estimer vaut mieux que savoir convertir : cela permet de repérer un résultat absurde."
+          "body": "Un pas d’adulte : environ 70 cm. Une porte : 2 m. Un étage : 3 m.\n\nUne pomme : 150 g. Un paquet de sucre : 1 kg. Une bouteille d’eau : 1,5 L.\n\nSavoir estimer vaut mieux que savoir convertir : cela permet de repérer un résultat absurde."
         },
         {
           "id": "c5",
           "kind": "avertissement",
           "title": "Comparer demande la même unité",
-          "body": "Qu'est-ce qui est le plus long : 250 cm ou 3 m ?\n\nOn ne peut pas comparer tant qu'on n'a pas converti. 3 m font 300 cm, donc 3 m est plus long.\n\nComparer des nombres sans regarder les unités est l'erreur la plus fréquente du chapitre."
+          "body": "Qu’est-ce qui est le plus long : 250 cm ou 3 m ?\n\nOn ne peut pas comparer tant qu’on n’a pas converti. 3 m font 300 cm, donc 3 m est plus long.\n\nComparer des nombres sans regarder les unités est l’erreur la plus fréquente du chapitre."
         }
       ],
       "questions": [
@@ -64,10 +64,19 @@
           "hint": "Convertis avant de comparer.",
           "explanation": "3 m, car cela fait 300 cm. On ne peut pas comparer des nombres d'unités différentes.",
           "options": [
-            { "text": "3 m", "correct": true },
-            { "text": "250 cm" },
-            { "text": "c'est pareil" },
-            { "text": "on ne peut pas savoir" }
+            {
+              "text": "3 m",
+              "correct": true
+            },
+            {
+              "text": "250 cm"
+            },
+            {
+              "text": "c'est pareil"
+            },
+            {
+              "text": "on ne peut pas savoir"
+            }
           ]
         },
         {
@@ -76,10 +85,22 @@
           "prompt": "Associe chaque objet à son ordre de grandeur.",
           "explanation": "Ces repères servent à estimer, et surtout à repérer un résultat absurde.",
           "pairs": [
-            { "left": "une porte", "right": "2 m" },
-            { "left": "une pomme", "right": "150 g" },
-            { "left": "un paquet de sucre", "right": "1 kg" },
-            { "left": "une bouteille d'eau", "right": "1,5 L" }
+            {
+              "left": "une porte",
+              "right": "2 m"
+            },
+            {
+              "left": "une pomme",
+              "right": "150 g"
+            },
+            {
+              "left": "un paquet de sucre",
+              "right": "1 kg"
+            },
+            {
+              "left": "une bouteille d'eau",
+              "right": "1,5 L"
+            }
           ]
         },
         {
@@ -101,27 +122,34 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Changer d’unité, c’est changer de colonne",
+          "body": "Regarde les colonnes : chacune vaut dix fois sa voisine. Convertir, c’est glisser d’une colonne à l’autre, et le nombre change de taille sans changer de valeur.",
+          "figureId": "decimaux"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "Le sens de la conversion",
           "body": "Vers une unité plus petite : on multiplie, le nombre grandit.\n\nVers une unité plus grande : on divise, le nombre diminue.\n\n5 m en centimètres : le centimètre est plus petit, donc 5 × 100 = 500 cm."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "astuce",
           "title": "Le contrôle de bon sens",
-          "body": "Quand on passe à une unité plus petite, il en faut plus pour mesurer la même chose.\n\nUn mètre, c'est beaucoup de millimètres. Si ta conversion rend un nombre plus petit, tu as divisé au lieu de multiplier."
+          "body": "Quand on passe à une unité plus petite, il en faut plus pour mesurer la même chose. Un mètre, c’est beaucoup de millimètres.\n\nSi ta conversion rend un nombre plus petit, tu as divisé au lieu de multiplier."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "exemple",
           "title": "Des conversions courantes",
           "body": "2,5 km = 2 500 m\n\n750 g = 0,75 kg\n\n30 cm = 300 mm\n\n1,5 L = 1 500 mL"
         },
         {
-          "id": "c4",
+          "id": "c5",
           "kind": "avertissement",
           "title": "La virgule ne se déplace pas au hasard",
-          "body": "De mètres en centimètres, on multiplie par 100 : la virgule avance de deux rangs.\n\nDe mètres en millimètres, par 1 000 : trois rangs.\n\nCompter les zéros de la conversion donne le nombre de rangs."
+          "body": "De mètres en centimètres, on multiplie par 100 : la virgule avance de deux rangs. De mètres en millimètres, par 1 000 : trois rangs.\n\nCompter les zéros de la conversion donne le nombre de rangs."
         }
       ],
       "questions": [
@@ -174,20 +202,27 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Additionner des mesures",
-          "body": "1 m 40 + 85 cm ?\n\n1. Tout convertir dans la même unité : 140 cm + 85 cm.\n\n2. Additionner : 225 cm.\n\n3. Reconvertir si on veut : 2 m 25.\n\nOn ne peut jamais additionner des nombres d'unités différentes sans les convertir d'abord."
+          "kind": "figure",
+          "title": "Deux mesures bout à bout",
+          "body": "Fais un déplacement, puis un second. Les deux longueurs s’ajoutent — à condition qu’elles se lisent sur la même graduation, ce qui est tout le problème des unités.",
+          "figureId": "droite-graduee"
         },
         {
           "id": "c2",
-          "kind": "exemple",
-          "title": "Une recette",
-          "body": "Il faut 250 g de farine, 125 g de sucre et 500 g de pommes.\n\nTotal : 875 g, soit moins d'un kilogramme.\n\nEstimer d'abord — « à peu près un kilo » — permet de repérer une erreur de calcul."
+          "kind": "etape",
+          "title": "Additionner des mesures",
+          "body": "1 m 40 + 85 cm ?\n\n1. Tout convertir dans la même unité : 140 cm + 85 cm.\n\n2. Additionner : 225 cm.\n\n3. Reconvertir si on veut : 2 m 25."
         },
         {
           "id": "c3",
+          "kind": "exemple",
+          "title": "Une recette",
+          "body": "Il faut 250 g de farine, 125 g de sucre et 500 g de pommes. Total : 875 g, soit moins d’un kilogramme.\n\nEstimer d’abord — « à peu près un kilo » — permet de repérer une erreur de calcul."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
-          "title": "Le périmètre, c'est le tour",
+          "title": "Le périmètre, c’est le tour",
           "body": "Un rectangle de 8 cm sur 5 cm : on fait le tour en additionnant les quatre côtés.\n\n8 + 5 + 8 + 5 = 26 cm. Ou plus vite : (8 + 5) × 2."
         }
       ],
@@ -245,9 +280,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Un repère attrape l’erreur",
+          "body": "Règle la vitesse et regarde le temps de parcours changer. Un piéton met des heures là où une voiture met des minutes : c’est ce genre de repère qui fait dire « impossible » avant même de refaire le calcul.",
+          "figureId": "vitesse"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le réflexe qui sauve",
-          "body": "Un élève calcule la longueur de sa classe et trouve 7 millimètres. Un autre trouve 70 kilomètres.\n\nAucun des deux n'a besoin de refaire le calcul pour savoir qu'il s'est trompé : une classe fait quelques mètres, pas la taille d'un ongle ni celle d'un trajet en voiture.\n\nAvoir des repères en tête vaut mieux que savoir convertir, parce que cela attrape les erreurs que la conversion produit."
+          "body": "Un élève calcule la longueur de sa classe et trouve 7 millimètres. Un autre trouve 70 kilomètres.\n\nAucun des deux n’a besoin de refaire le calcul : une classe fait quelques mètres, pas la taille d’un ongle ni celle d’un trajet en voiture.\n\nAvoir des repères en tête vaut mieux que savoir convertir, parce que cela attrape les erreurs que la conversion produit."
         }
       ],
       "questions": [
@@ -256,14 +298,35 @@
           "kind": "tri",
           "prompt": "Range ces mesures : plausibles ou absurdes ?",
           "explanation": "Les repères du chapitre suffisent à trancher sans rien calculer.",
-          "categories": ["plausible", "absurde"],
+          "categories": [
+            "plausible",
+            "absurde"
+          ],
           "items": [
-            { "text": "une classe de 7 m de long", "category": 0 },
-            { "text": "un adulte de 1,75 m", "category": 0 },
-            { "text": "une pomme de 150 g", "category": 0 },
-            { "text": "une classe de 7 mm de long", "category": 1 },
-            { "text": "un adulte de 175 kg en moyenne", "category": 1 },
-            { "text": "une pomme de 150 kg", "category": 1 }
+            {
+              "text": "une classe de 7 m de long",
+              "category": 0
+            },
+            {
+              "text": "un adulte de 1,75 m",
+              "category": 0
+            },
+            {
+              "text": "une pomme de 150 g",
+              "category": 0
+            },
+            {
+              "text": "une classe de 7 mm de long",
+              "category": 1
+            },
+            {
+              "text": "un adulte de 175 kg en moyenne",
+              "category": 1
+            },
+            {
+              "text": "une pomme de 150 kg",
+              "category": 1
+            }
           ]
         },
         {
