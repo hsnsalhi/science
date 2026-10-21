@@ -11,28 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Deux chiffres pour une même réalité",
-          "body": "L'effectif est un nombre d'individus : 12 élèves ont choisi le volley.\n\nLa fréquence est ce même effectif rapporté au total : 12 sur 30, soit 0,4, soit 40 %.\n\nL'effectif dit combien. La fréquence dit quelle part. Et seule la fréquence permet de comparer deux groupes de tailles différentes : 12 amateurs de volley sur 30 et 12 sur 300, ce n'est pas la même chose du tout."
+          "kind": "figure",
+          "title": "Combien, et quelle part",
+          "body": "Règle le nombre de parts, puis le nombre de parts coloriées. Le second nombre est un effectif ; le rapport des deux est une fréquence. Change le total sans changer les coloriées : l’effectif ne bouge pas, la part si.",
+          "figureId": "fraction-barre"
         },
         {
           "id": "c2",
-          "kind": "formule",
-          "title": "La fréquence",
-          "formula": "fréquence = effectif ÷ effectif total",
-          "body": "Elle vaut toujours entre 0 et 1. Multipliée par 100, elle donne un pourcentage. Et la somme de toutes les fréquences d'un tableau vaut exactement 1, soit 100 % — c'est le contrôle qui attrape les erreurs de saisie."
+          "kind": "texte",
+          "title": "Deux chiffres pour une même réalité",
+          "body": "L’effectif est un nombre d’individus : 12 élèves ont choisi le volley.\n\nLa fréquence est ce même effectif rapporté au total : 12 sur 30, soit 0,4, soit 40 %.\n\nSeule la fréquence permet de comparer deux groupes de tailles différentes : 12 sur 30 et 12 sur 300, ce n’est pas la même chose du tout."
         },
         {
           "id": "c3",
-          "kind": "astuce",
-          "title": "Le contrôle qui ne coûte rien",
-          "body": "Additionne tes fréquences. Si tu n'obtiens pas 1, il y a une erreur quelque part : un effectif mal reporté, un total faux, ou une catégorie oubliée.\n\nEn pourcentages, la somme doit faire 100. Un tableau qui totalise 97 % ou 103 % contient une faute, sauf arrondis explicitement signalés.\n\nC'est la première chose à vérifier devant n'importe quel tableau de statistiques, y compris ceux publiés dans la presse."
+          "kind": "formule",
+          "title": "La fréquence",
+          "body": "Elle vaut toujours entre 0 et 1. Multipliée par 100, elle donne un pourcentage. Et la somme de toutes les fréquences d’un tableau vaut exactement 1.",
+          "formula": "fréquence = effectif ÷ effectif total"
         },
         {
           "id": "c4",
+          "kind": "astuce",
+          "title": "Le contrôle qui ne coûte rien",
+          "body": "Additionne tes fréquences. Si tu n’obtiens pas 1, il y a une erreur : un effectif mal reporté, un total faux, ou une catégorie oubliée.\n\nEn pourcentages, la somme doit faire 100. Un tableau qui totalise 97 % contient une faute, sauf arrondis explicitement signalés.\n\nC’est la première chose à vérifier devant n’importe quel tableau, y compris publié dans la presse."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
           "title": "Un pourcentage sans son effectif ne vaut rien",
-          "body": "« 100 % des personnes interrogées recommandent ce produit » peut vouloir dire deux personnes sur deux.\n\n« Deux fois plus de cas » peut signifier qu'on est passé de 1 à 2.\n\nUn pourcentage se lit toujours avec l'effectif total à côté. Quand il manque, ce n'est presque jamais un oubli."
+          "body": "« 100 % des personnes interrogées recommandent ce produit » peut vouloir dire deux personnes sur deux.\n\n« Deux fois plus de cas » peut signifier qu’on est passé de 1 à 2.\n\nUn pourcentage se lit toujours avec l’effectif total à côté. Quand il manque, ce n’est presque jamais un oubli."
         }
       ],
       "questions": [
@@ -118,27 +125,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Les trois indicateurs",
-          "body": "La moyenne : on additionne tout et on divise par l'effectif.\n\nLa médiane : on range les valeurs dans l'ordre et on prend celle du milieu. Autant de valeurs en dessous qu'au-dessus.\n\nL'étendue : la plus grande valeur moins la plus petite. Elle ne dit rien du centre, seulement de la dispersion."
+          "kind": "figure",
+          "title": "Un bâton qui écrase tous les autres",
+          "body": "Choisis la suite géométrique et pousse la raison. Le dernier bâton finit par rendre tous les autres invisibles. Une moyenne calculée sur une série pareille ne dit presque rien de la série.",
+          "figureId": "suite"
         },
         {
           "id": "c2",
-          "kind": "exemple",
-          "title": "Cinq salaires",
-          "body": "1 500, 1 600, 1 700, 1 800 et 10 000 euros.\n\nLa moyenne : 16 600 ÷ 5 = 3 320 euros.\n\nLa médiane : la valeur du milieu de la liste rangée, soit 1 700 euros.\n\nPresque deux fois l'écart. Et quatre personnes sur cinq gagnent moins que la moyenne — ce qui est tout sauf une exception statistique."
+          "kind": "etape",
+          "title": "Les trois indicateurs",
+          "body": "La moyenne : on additionne tout et on divise par l’effectif.\n\nLa médiane : on range les valeurs dans l’ordre et on prend celle du milieu. Autant de valeurs en dessous qu’au-dessus.\n\nL’étendue : la plus grande valeur moins la plus petite. Elle ne dit rien du centre, seulement de la dispersion."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "La médiane résiste aux valeurs extrêmes",
-          "body": "Remplace les 10 000 par 100 000 : la moyenne bondit à 21 320 euros, la médiane ne bouge pas d'un centime.\n\nC'est pour cela que les salaires et les prix de l'immobilier se publient en médiane, et que lire une moyenne dans ces domaines est trompeur.\n\nLa moyenne n'est pas fausse : elle répond à une autre question. Elle dit combien chacun aurait si l'on partageait tout également, ce qui n'est presque jamais la question posée."
+          "kind": "exemple",
+          "title": "Cinq salaires",
+          "body": "1 500, 1 600, 1 700, 1 800 et 10 000 euros.\n\nLa moyenne : 16 600 ÷ 5 = 3 320 euros. La médiane : 1 700 euros.\n\nPresque deux fois l’écart. Et quatre personnes sur cinq gagnent moins que la moyenne — ce qui est tout sauf une exception statistique."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "La médiane résiste aux valeurs extrêmes",
+          "body": "Remplace les 10 000 par 100 000 : la moyenne bondit à 21 320 euros, la médiane ne bouge pas d’un centime.\n\nC’est pour cela que les salaires et les prix de l’immobilier se publient en médiane.\n\nLa moyenne n’est pas fausse : elle répond à une autre question. Elle dit combien chacun aurait si l’on partageait tout également."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
           "title": "Quand la médiane tombe entre deux valeurs",
-          "body": "Avec un effectif pair, il n'y a pas de valeur du milieu : il y en a deux.\n\nOn prend alors leur moyenne. Pour 1, 2, 8, 9 la médiane vaut (2 + 8) ÷ 2 = 5, qui ne figure pas dans la liste — et c'est normal.\n\nAvec un effectif impair, la médiane est toujours une valeur de la série."
+          "body": "Avec un effectif pair, il n’y a pas de valeur du milieu : il y en a deux. On prend alors leur moyenne.\n\nPour 1, 2, 8, 9 la médiane vaut 5, qui ne figure pas dans la liste — et c’est normal. Avec un effectif impair, la médiane est toujours une valeur de la série."
         }
       ],
       "questions": [
@@ -222,22 +236,29 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "formule",
-          "title": "Dans un cas équiprobable",
-          "formula": "P = nombre de cas favorables ÷ nombre de cas possibles",
-          "body": "Le mot équiprobable est essentiel : la formule n'est valable que si tous les cas ont la même chance. Elle marche pour un dé équilibré et pas pour un dé pipé, ni pour « il pleut ou il ne pleut pas »."
+          "kind": "figure",
+          "title": "Imprévisible un par un, sûr en nombre",
+          "body": "Fais avancer le temps : les noyaux disparaissent, et rien ne permet de dire lequel partira. Pourtant le total suit une règle très précise. Tout le calcul des probabilités vit dans cet écart.",
+          "figureId": "demi-vie"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Trois propriétés à connaître",
-          "body": "Une probabilité est toujours entre 0 et 1. Un résultat hors de cet intervalle signale une erreur de calcul, pas un évènement très probable.\n\nLa somme des probabilités de tous les résultats possibles vaut 1.\n\nLa probabilité du contraire vaut 1 moins celle de l'évènement. Calculer « au moins un » est souvent bien plus facile en passant par « aucun »."
+          "kind": "formule",
+          "title": "Dans un cas équiprobable",
+          "body": "Le mot équiprobable est essentiel : la formule n’est valable que si tous les cas ont la même chance. Elle marche pour un dé équilibré et pas pour « il pleut ou il ne pleut pas ».",
+          "formula": "P = nombre de cas favorables ÷ nombre de cas possibles"
         },
         {
           "id": "c3",
+          "kind": "etape",
+          "title": "Trois propriétés à connaître",
+          "body": "Une probabilité est toujours entre 0 et 1. Un résultat hors de cet intervalle signale une erreur de calcul.\n\nLa somme des probabilités de tous les résultats possibles vaut 1.\n\nLa probabilité du contraire vaut 1 moins celle de l’évènement. Calculer « au moins un » est souvent bien plus facile en passant par « aucun »."
+        },
+        {
+          "id": "c4",
           "kind": "avertissement",
-          "title": "Le dé n'a pas de mémoire",
-          "body": "Après cinq 6 d'affilée, la probabilité d'un 6 au tirage suivant est toujours 1 sur 6.\n\nLe dé ne sait pas ce qu'il a fait, et rien ne « doit » se rééquilibrer. Croire le contraire s'appelle l'erreur du joueur, et c'est le socle économique de tous les casinos du monde.\n\nCe qui est vrai : sur dix mille lancers, la fréquence des 6 approchera 1/6. Mais cela ne contraint aucun lancer en particulier."
+          "title": "Le dé n’a pas de mémoire",
+          "body": "Après cinq 6 d’affilée, la probabilité d’un 6 au tirage suivant est toujours 1 sur 6.\n\nLe dé ne sait pas ce qu’il a fait, et rien ne « doit » se rééquilibrer. Croire le contraire s’appelle l’erreur du joueur, et c’est le socle économique de tous les casinos du monde.\n\nCe qui est vrai : sur dix mille lancers, la fréquence des 6 approchera 1/6. Mais cela ne contraint aucun lancer en particulier."
         }
       ],
       "questions": [
@@ -345,21 +366,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Onze sommes, pas équiprobables",
-          "body": "On lance deux dés et on additionne. Les sommes vont de 2 à 12, soit onze résultats possibles.\n\nBeaucoup de joueurs en concluent que chaque somme a une chance sur onze. C'est faux, et c'est ce qui a longtemps fait vivre les tenanciers de jeux.\n\nLa bonne façon de compter : il y a 6 × 6 = 36 lancers possibles, et c'est eux qui sont équiprobables, pas les sommes. Il faut donc compter combien de lancers donnent chaque somme."
+          "kind": "figure",
+          "title": "Les trente-six lancers, en un rectangle",
+          "body": "Mets 6 lignes et 6 colonnes : chaque jeton est un lancer possible de deux dés, et il y en a 36. Ce sont eux qui ont la même chance, pas les onze sommes — et c’est toute la question du défi.",
+          "figureId": "jetons-multiplication"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Le décompte",
-          "body": "La somme 2 : seulement 1 et 1. Un seul lancer.\n\nLa somme 7 : 1-6, 2-5, 3-4, 4-3, 5-2, 6-1. Six lancers.\n\nLa somme 12 : seulement 6 et 6. Un seul lancer.\n\nLe 7 est donc six fois plus probable que le 2. Et il est le plus probable de tous, parce que c'est la seule somme qu'aucune face ne peut rendre impossible."
+          "kind": "texte",
+          "title": "Onze sommes, pas équiprobables",
+          "body": "On lance deux dés et on additionne. Les sommes vont de 2 à 12, soit onze résultats possibles.\n\nBeaucoup de joueurs en concluent que chaque somme a une chance sur onze. C’est faux, et c’est ce qui a longtemps fait vivre les tenanciers de jeux.\n\nIl faut compter combien de lancers donnent chaque somme."
         },
         {
           "id": "c3",
+          "kind": "etape",
+          "title": "Le décompte",
+          "body": "La somme 2 : seulement 1 et 1. Un seul lancer.\n\nLa somme 7 : 1-6, 2-5, 3-4, 4-3, 5-2, 6-1. Six lancers.\n\nLa somme 12 : seulement 6 et 6. Un seul lancer.\n\nLe 7 est donc six fois plus probable que le 2."
+        },
+        {
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Pourquoi le 7 précisément",
-          "body": "Pour obtenir 7, quel que soit le résultat du premier dé, il existe exactement une valeur du second qui convient — et elle est toujours entre 1 et 6.\n\nPour obtenir 12, il n'y a qu'un seul premier dé possible : le 6.\n\nC'est la seule somme à avoir cette propriété, et c'est pour cela qu'elle est unique dans le tableau."
+          "body": "Pour obtenir 7, quel que soit le résultat du premier dé, il existe exactement une valeur du second qui convient — et elle est toujours entre 1 et 6.\n\nPour obtenir 12, il n’y a qu’un seul premier dé possible : le 6.\n\nC’est la seule somme à avoir cette propriété."
         }
       ],
       "questions": [

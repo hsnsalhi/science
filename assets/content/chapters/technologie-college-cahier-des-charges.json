@@ -11,27 +11,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Le problème des énoncés flous",
-          "body": "« Je veux un support de téléphone pratique. » Personne ne peut fabriquer cela, parce que personne ne peut dire si l'objet livré est pratique ou non.\n\nUn cahier des charges remplace chaque adjectif par une grandeur mesurable. Pratique devient : tient un téléphone de 150 à 220 g, s'incline de 30° à 70°, se pose d'une seule main, tient dans une poche de 15 cm.\n\nMaintenant l'objet livré peut être accepté ou refusé, et par n'importe qui, sans discussion."
+          "kind": "figure",
+          "title": "Un nombre, pas un adjectif",
+          "body": "Règle le seuil : 19 °C, c’est vérifiable par n’importe qui avec un thermomètre. « Il doit faire bon » ne se fabrique pas et ne se contrôle pas. Un cahier des charges remplace chaque adjectif par une grandeur mesurable.",
+          "figureId": "chaine-information"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "La structure d'une exigence utile",
-          "body": "Ce qu'on veut, exprimé par une fonction : « maintenir le téléphone incliné ».\n\nLe critère qui la mesure : « l'angle d'inclinaison ».\n\nLe niveau attendu : « entre 30 et 70 degrés ».\n\nLa flexibilité : « impératif » ou « souhaité, négociable ».\n\nUne exigence sans critère mesurable n'est pas une exigence : c'est un vœu."
+          "kind": "texte",
+          "title": "Le problème des énoncés flous",
+          "body": "« Je veux un support de téléphone pratique. » Personne ne peut fabriquer cela, parce que personne ne peut dire si l’objet livré est pratique ou non.\n\nPratique devient : tient un téléphone de 150 à 220 g, s’incline de 30° à 70°, se pose d’une seule main, tient dans une poche de 15 cm.\n\nMaintenant l’objet livré peut être accepté ou refusé, et par n’importe qui, sans discussion."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "Dire ce qu'il faut faire, pas comment",
-          "body": "Écrire « le support doit avoir une charnière métallique » est une erreur de cahier des charges : c'est déjà une solution, et elle interdit toutes les autres.\n\nIl faut écrire « le support doit permettre de régler l'inclinaison entre 30 et 70 degrés ». Une charnière, un cran, une forme pliée ou un contrepoids peuvent y répondre — et l'un d'eux sera moins cher.\n\nUn cahier des charges qui décrit la solution a déjà renoncé à chercher la meilleure."
+          "kind": "etape",
+          "title": "La structure d’une exigence utile",
+          "body": "Ce qu’on veut, exprimé par une fonction : « maintenir le téléphone incliné ».\n\nLe critère qui la mesure : « l’angle d’inclinaison ».\n\nLe niveau attendu : « entre 30 et 70 degrés ».\n\nLa flexibilité : « impératif » ou « souhaité, négociable ». Une exigence sans critère mesurable n’est pas une exigence : c’est un vœu."
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "Dire ce qu’il faut faire, pas comment",
+          "body": "Écrire « le support doit avoir une charnière métallique » est une erreur : c’est déjà une solution, et elle interdit toutes les autres.\n\nIl faut écrire « le support doit permettre de régler l’inclinaison entre 30 et 70 degrés ». Une charnière, un cran, une forme pliée ou un contrepoids peuvent y répondre — et l’un d’eux sera moins cher."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
-          "title": "Les contraintes qu'on oublie toujours",
-          "body": "Le coût maximal, sans lequel toute solution est acceptable.\n\nLa sécurité : pas d'arête coupante, pas de petite pièce détachable pour un objet destiné à un enfant.\n\nLa fin de vie : démontable, recyclable, réparable.\n\nLa durée de vie attendue, qui change complètement le choix des matériaux.\n\nCes quatre-là arrivent toujours en dernier, et ce sont celles qui coûtent le plus cher à ajouter après coup."
+          "title": "Les contraintes qu’on oublie toujours",
+          "body": "Le coût maximal, sans lequel toute solution est acceptable.\n\nLa sécurité : pas d’arête coupante, pas de petite pièce détachable pour un objet destiné à un enfant.\n\nLa fin de vie : démontable, recyclable, réparable.\n\nLa durée de vie attendue. Ces quatre-là arrivent toujours en dernier, et ce sont celles qui coûtent le plus cher à ajouter après coup."
         }
       ],
       "questions": [
@@ -40,14 +47,35 @@
           "kind": "tri",
           "prompt": "Ces exigences sont-elles vérifiables ou non ?",
           "explanation": "Une exigence vérifiable porte une grandeur et un niveau mesurables. Un adjectif seul ne se vérifie pas.",
-          "categories": ["vérifiable", "non vérifiable"],
+          "categories": [
+            "vérifiable",
+            "non vérifiable"
+          ],
           "items": [
-            { "text": "supporte une masse de 220 g", "category": 0 },
-            { "text": "s'incline entre 30° et 70°", "category": 0 },
-            { "text": "tient dans un volume de 15 × 8 × 3 cm", "category": 0 },
-            { "text": "doit être pratique", "category": 1 },
-            { "text": "doit être joli", "category": 1 },
-            { "text": "doit être moderne", "category": 1 }
+            {
+              "text": "supporte une masse de 220 g",
+              "category": 0
+            },
+            {
+              "text": "s'incline entre 30° et 70°",
+              "category": 0
+            },
+            {
+              "text": "tient dans un volume de 15 × 8 × 3 cm",
+              "category": 0
+            },
+            {
+              "text": "doit être pratique",
+              "category": 1
+            },
+            {
+              "text": "doit être joli",
+              "category": 1
+            },
+            {
+              "text": "doit être moderne",
+              "category": 1
+            }
           ]
         },
         {
@@ -56,10 +84,19 @@
           "prompt": "Pourquoi ne pas écrire « doit avoir une charnière métallique » ?",
           "explanation": "Parce que c'est une solution, pas un besoin. L'écrire interdit toutes les autres solutions, dont certaines seraient meilleures ou moins chères.",
           "options": [
-            { "text": "c'est une solution imposée, qui interdit les autres", "correct": true },
-            { "text": "le métal est trop cher" },
-            { "text": "les charnières cassent" },
-            { "text": "c'est trop précis pour un cahier des charges" }
+            {
+              "text": "c'est une solution imposée, qui interdit les autres",
+              "correct": true
+            },
+            {
+              "text": "le métal est trop cher"
+            },
+            {
+              "text": "les charnières cassent"
+            },
+            {
+              "text": "c'est trop précis pour un cahier des charges"
+            }
           ]
         },
         {
@@ -80,11 +117,25 @@
           "prompt": "Quelles contraintes sont le plus souvent oubliées ?",
           "explanation": "Le coût maximal, la sécurité, la fin de vie et la durée de vie attendue : ce sont celles qui coûtent le plus cher à ajouter après coup.",
           "options": [
-            { "text": "le coût maximal", "correct": true },
-            { "text": "la sécurité d'usage", "correct": true },
-            { "text": "la fin de vie et le recyclage", "correct": true },
-            { "text": "la durée de vie attendue", "correct": true },
-            { "text": "la couleur du produit" }
+            {
+              "text": "le coût maximal",
+              "correct": true
+            },
+            {
+              "text": "la sécurité d'usage",
+              "correct": true
+            },
+            {
+              "text": "la fin de vie et le recyclage",
+              "correct": true
+            },
+            {
+              "text": "la durée de vie attendue",
+              "correct": true
+            },
+            {
+              "text": "la couleur du produit"
+            }
           ]
         },
         {
@@ -106,27 +157,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Trois sortes de fonctions",
-          "body": "La fonction d'usage : ce que l'objet fait. Une lampe de bureau éclaire une surface de travail.\n\nLes fonctions de contrainte : ce que l'objet doit respecter sans que ce soit son but. Tenir sur un bureau, se brancher sur le secteur, ne pas chauffer au toucher.\n\nLa fonction d'estime : ce qui fait qu'on la choisit plutôt qu'une autre à performances égales. Son allure, sa marque, sa couleur.\n\nLes trois comptent, et les confondre fait rater des contraintes importantes."
+          "kind": "figure",
+          "title": "Découper jusqu’à ce que ça se mesure",
+          "body": "Touche chaque étage : la chaîne est découpée en fonctions, et chacune se teste séparément. C’est ce qu’on fait d’un besoin trop gros — on le découpe jusqu’à ce que chaque morceau porte une grandeur qu’un instrument sait lire.",
+          "figureId": "chaine-energie"
         },
         {
           "id": "c2",
-          "kind": "texte",
-          "title": "Décomposer jusqu'au vérifiable",
-          "body": "« Éclairer une surface de travail » est encore trop gros. On descend d'un cran : fournir un flux lumineux suffisant, l'orienter, éviter l'éblouissement, ne pas projeter l'ombre de la main.\n\nChacune de ces fonctions reçoit alors un critère : le flux en lumens, l'angle de réglage en degrés, la position de la source par rapport au plan de travail.\n\nOn arrête de décomposer quand chaque feuille porte une grandeur qu'on peut mesurer avec un instrument."
+          "kind": "etape",
+          "title": "Trois sortes de fonctions",
+          "body": "La fonction d’usage : ce que l’objet fait. Une lampe de bureau éclaire une surface de travail.\n\nLes fonctions de contrainte : ce que l’objet doit respecter sans que ce soit son but. Tenir sur un bureau, se brancher sur le secteur, ne pas chauffer au toucher.\n\nLa fonction d’estime : ce qui fait qu’on la choisit plutôt qu’une autre à performances égales."
         },
         {
           "id": "c3",
-          "kind": "astuce",
-          "title": "La fonction cachée qui fait tout rater",
-          "body": "« Ne pas projeter l'ombre de la main » semble secondaire. C'est pourtant elle qui décide de la position du bras et de l'orientation de la lampe, donc de presque toute la forme de l'objet.\n\nLes fonctions qui paraissent mineures dictent souvent la géométrie. C'est pourquoi on les liste toutes avant de dessiner quoi que ce soit."
+          "kind": "texte",
+          "title": "Décomposer jusqu’au vérifiable",
+          "body": "« Éclairer une surface de travail » est encore trop gros. On descend d’un cran : fournir un flux lumineux suffisant, l’orienter, éviter l’éblouissement, ne pas projeter l’ombre de la main.\n\nChacune reçoit alors un critère : le flux en lumens, l’angle de réglage en degrés, la position de la source.\n\nOn arrête de décomposer quand chaque feuille porte une grandeur qu’on peut mesurer avec un instrument."
         },
         {
           "id": "c4",
+          "kind": "astuce",
+          "title": "La fonction cachée qui fait tout rater",
+          "body": "« Ne pas projeter l’ombre de la main » semble secondaire. C’est pourtant elle qui décide de la position du bras et de l’orientation de la lampe, donc de presque toute la forme de l’objet.\n\nLes fonctions qui paraissent mineures dictent souvent la géométrie. C’est pourquoi on les liste toutes avant de dessiner quoi que ce soit."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Pourquoi cette décomposition paye",
-          "body": "Elle rend le travail partageable : chacun peut s'occuper d'une fonction.\n\nElle rend l'essai possible : on teste fonction par fonction, et on sait laquelle échoue.\n\nEt elle évite la pire situation du projet : un objet fini qui ne convient pas sans qu'on puisse dire pourquoi."
+          "body": "Elle rend le travail partageable : chacun peut s’occuper d’une fonction.\n\nElle rend l’essai possible : on teste fonction par fonction, et on sait laquelle échoue.\n\nEt elle évite la pire situation du projet : un objet fini qui ne convient pas sans qu’on puisse dire pourquoi."
         }
       ],
       "questions": [
@@ -135,13 +193,32 @@
           "kind": "tri",
           "prompt": "Range ces fonctions d'une lampe de bureau.",
           "explanation": "L'usage est ce qu'elle fait ; les contraintes sont ce qu'elle doit respecter ; l'estime est ce qui la fait préférer.",
-          "categories": ["fonction d'usage", "fonction de contrainte", "fonction d'estime"],
+          "categories": [
+            "fonction d'usage",
+            "fonction de contrainte",
+            "fonction d'estime"
+          ],
           "items": [
-            { "text": "éclairer le plan de travail", "category": 0 },
-            { "text": "tenir sur un bureau", "category": 1 },
-            { "text": "se brancher sur le secteur", "category": 1 },
-            { "text": "ne pas chauffer au toucher", "category": 1 },
-            { "text": "avoir une allure soignée", "category": 2 }
+            {
+              "text": "éclairer le plan de travail",
+              "category": 0
+            },
+            {
+              "text": "tenir sur un bureau",
+              "category": 1
+            },
+            {
+              "text": "se brancher sur le secteur",
+              "category": 1
+            },
+            {
+              "text": "ne pas chauffer au toucher",
+              "category": 1
+            },
+            {
+              "text": "avoir une allure soignée",
+              "category": 2
+            }
           ]
         },
         {
@@ -150,10 +227,19 @@
           "prompt": "Quand faut-il arrêter de décomposer une fonction ?",
           "explanation": "Quand chaque sous-fonction porte une grandeur qu'on peut mesurer avec un instrument. Avant, elle reste discutable.",
           "options": [
-            { "text": "quand chacune porte une grandeur mesurable", "correct": true },
-            { "text": "après trois niveaux" },
-            { "text": "quand le tableau est plein" },
-            { "text": "quand tout le monde est d'accord" }
+            {
+              "text": "quand chacune porte une grandeur mesurable",
+              "correct": true
+            },
+            {
+              "text": "après trois niveaux"
+            },
+            {
+              "text": "quand le tableau est plein"
+            },
+            {
+              "text": "quand tout le monde est d'accord"
+            }
           ]
         },
         {
@@ -162,10 +248,22 @@
           "prompt": "Associe chaque fonction à son critère de mesure.",
           "explanation": "Chaque fonction se mesure avec une grandeur et un instrument : le flux en lumens, l'angle en degrés, la température en degrés Celsius.",
           "pairs": [
-            { "left": "fournir assez de lumière", "right": "le flux en lumens" },
-            { "left": "orienter le faisceau", "right": "l'angle de réglage" },
-            { "left": "ne pas brûler les doigts", "right": "la température de surface" },
-            { "left": "tenir dans un sac", "right": "l'encombrement plié" }
+            {
+              "left": "fournir assez de lumière",
+              "right": "le flux en lumens"
+            },
+            {
+              "left": "orienter le faisceau",
+              "right": "l'angle de réglage"
+            },
+            {
+              "left": "ne pas brûler les doigts",
+              "right": "la température de surface"
+            },
+            {
+              "left": "tenir dans un sac",
+              "right": "l'encombrement plié"
+            }
           ]
         },
         {
@@ -174,10 +272,19 @@
           "prompt": "Pourquoi lister les fonctions mineures avant de dessiner ?",
           "explanation": "Parce qu'elles dictent souvent la géométrie : « ne pas projeter l'ombre de la main » décide de la position du bras et de l'orientation.",
           "options": [
-            { "text": "elles dictent souvent la forme de l'objet", "correct": true },
-            { "text": "pour faire plus sérieux" },
-            { "text": "parce que le professeur le demande" },
-            { "text": "pour remplir le tableau" }
+            {
+              "text": "elles dictent souvent la forme de l'objet",
+              "correct": true
+            },
+            {
+              "text": "pour faire plus sérieux"
+            },
+            {
+              "text": "parce que le professeur le demande"
+            },
+            {
+              "text": "pour remplir le tableau"
+            }
           ]
         },
         {
@@ -186,10 +293,19 @@
           "prompt": "Quel est l'avantage principal de la décomposition en fonctions ?",
           "explanation": "On peut tester fonction par fonction et savoir laquelle échoue. Sans cela, on obtient un objet qui ne convient pas sans qu'on puisse dire pourquoi.",
           "options": [
-            { "text": "on peut tester fonction par fonction", "correct": true },
-            { "text": "le projet coûte moins cher d'emblée" },
-            { "text": "le dessin est plus joli" },
-            { "text": "on évite les réunions" }
+            {
+              "text": "on peut tester fonction par fonction",
+              "correct": true
+            },
+            {
+              "text": "le projet coûte moins cher d'emblée"
+            },
+            {
+              "text": "le dessin est plus joli"
+            },
+            {
+              "text": "on évite les réunions"
+            }
           ]
         }
       ]
@@ -204,21 +320,28 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Des lignes, des colonnes, un total qui suit",
+          "body": "Change une case et regarde la colonne calculée se refaire. Une matrice de choix est exactement cette grille-là : des critères en lignes, des solutions en colonnes, et un total qu’on ne saisit jamais à la main.",
+          "figureId": "tableur"
+        },
+        {
+          "id": "c2",
           "kind": "etape",
           "title": "La matrice de choix",
           "body": "On met les critères en lignes et les solutions en colonnes.\n\nOn note chaque solution sur chaque critère, de 1 à 5.\n\nOn donne un poids à chaque critère, selon son importance dans le cahier des charges.\n\nOn multiplie note par poids, on additionne par colonne, et la plus haute somme désigne la solution à retenir."
         },
         {
-          "id": "c2",
+          "id": "c3",
           "kind": "exemple",
           "title": "Un exemple chiffré",
-          "body": "Trois critères : résistance de poids 3, coût de poids 2, masse de poids 1.\n\nSolution A : résistance 5, coût 2, masse 3. Total : 5×3 + 2×2 + 3×1 = 15 + 4 + 3 = 22.\n\nSolution B : résistance 3, coût 5, masse 4. Total : 9 + 10 + 4 = 23.\n\nB gagne d'un point, ce qui doit rendre prudent : un écart d'un point sur 30 ne tranche rien."
+          "body": "Trois critères : résistance de poids 3, coût de poids 2, masse de poids 1.\n\nSolution A : résistance 5, coût 2, masse 3. Total : 15 + 4 + 3 = 22.\n\nSolution B : résistance 3, coût 5, masse 4. Total : 9 + 10 + 4 = 23.\n\nB gagne d’un point, ce qui doit rendre prudent : un écart d’un point sur 30 ne tranche rien."
         },
         {
-          "id": "c3",
+          "id": "c4",
           "kind": "avertissement",
           "title": "Ce que la matrice ne sait pas faire",
-          "body": "Elle ne gère pas les critères éliminatoires. Si une solution dépasse le budget maximal, aucun total ne la rattrape : il faut l'écarter avant de noter.\n\nElle donne aussi une fausse impression de rigueur. Les poids sont choisis, donc discutables, et changer un poids de 1 peut inverser le classement.\n\nLa bonne pratique : écarter d'abord les solutions qui violent une contrainte impérative, puis utiliser la matrice pour trancher entre celles qui restent — et refaire le calcul avec d'autres poids pour voir si le résultat tient."
+          "body": "Elle ne gère pas les critères éliminatoires. Si une solution dépasse le budget maximal, aucun total ne la rattrape : il faut l’écarter avant de noter.\n\nElle donne aussi une fausse impression de rigueur. Les poids sont choisis, donc discutables, et changer un poids de 1 peut inverser le classement.\n\nLa bonne pratique : écarter d’abord ce qui viole une contrainte impérative, puis refaire le calcul avec d’autres poids pour voir si le résultat tient."
         }
       ],
       "questions": [
@@ -263,10 +386,19 @@
           "prompt": "Que montre cette inversion ?",
           "explanation": "Que le résultat dépend des poids, qui sont choisis et discutables. Une matrice donne l'apparence de la rigueur, pas la rigueur.",
           "options": [
-            { "text": "le résultat dépend de poids choisis, donc discutables", "correct": true },
-            { "text": "que la méthode est inutile" },
-            { "text": "qu'il faut toujours quatre critères" },
-            { "text": "qu'une erreur de calcul a été faite" }
+            {
+              "text": "le résultat dépend de poids choisis, donc discutables",
+              "correct": true
+            },
+            {
+              "text": "que la méthode est inutile"
+            },
+            {
+              "text": "qu'il faut toujours quatre critères"
+            },
+            {
+              "text": "qu'une erreur de calcul a été faite"
+            }
           ]
         },
         {
@@ -275,10 +407,19 @@
           "prompt": "Une solution dépasse le budget maximal mais obtient le meilleur total. Que faire ?",
           "explanation": "L'écarter. Un critère impératif s'applique avant la notation : aucun total ne rattrape une contrainte violée.",
           "options": [
-            { "text": "l'écarter : un critère impératif passe avant la notation", "correct": true },
-            { "text": "la retenir, le total la désigne" },
-            { "text": "augmenter le budget" },
-            { "text": "baisser le poids du coût" }
+            {
+              "text": "l'écarter : un critère impératif passe avant la notation",
+              "correct": true
+            },
+            {
+              "text": "la retenir, le total la désigne"
+            },
+            {
+              "text": "augmenter le budget"
+            },
+            {
+              "text": "baisser le poids du coût"
+            }
           ]
         }
       ]
@@ -293,9 +434,16 @@
       "cards": [
         {
           "id": "c1",
+          "kind": "figure",
+          "title": "Une limite, ça se chiffre",
+          "body": "Pousse la masse : le fil tient jusqu’à une valeur précise, puis il cède. « Pas trop lourd » ne veut rien dire ; « au plus 4 kilogrammes » se vérifie sur une balance, et c’est ce que le défi va te demander d’écrire.",
+          "figureId": "fil-qui-casse"
+        },
+        {
+          "id": "c2",
           "kind": "texte",
           "title": "Le dossier à reprendre",
-          "body": "Un groupe doit concevoir un cartable pour un élève de sixième. Voici ce qu'il a écrit.\n\n« Le cartable doit être léger. Il doit être solide. Il doit être en toile bleue. Il doit contenir les affaires. Il ne doit pas faire mal au dos. »\n\nCinq lignes, et aucune n'est exploitable en l'état. Deux sont des vœux, une est une solution imposée, et deux demandent d'être chiffrées.\n\nL'organisme français de normalisation recommande qu'un cartable chargé ne dépasse pas 10 % du poids de l'élève. Un sixième pèse en moyenne 40 kg."
+          "body": "Un groupe doit concevoir un cartable pour un élève de sixième. Voici ce qu’il a écrit.\n\n« Le cartable doit être léger. Il doit être solide. Il doit être en toile bleue. Il doit contenir les affaires. Il ne doit pas faire mal au dos. »\n\nCinq lignes, et aucune n’est exploitable. Deux sont des vœux, une est une solution imposée, et deux demandent d’être chiffrées.\n\nL’organisme français de normalisation recommande qu’un cartable chargé ne dépasse pas 10 % du poids de l’élève. Un sixième pèse en moyenne 40 kg."
         }
       ],
       "questions": [
@@ -330,13 +478,32 @@
           "kind": "tri",
           "prompt": "Range les cinq lignes du groupe selon leur défaut.",
           "explanation": "« Léger » et « solide » demandent un chiffre ; « en toile bleue » impose une solution ; « contenir les affaires » et « pas mal au dos » sont des vœux à traduire en grandeurs.",
-          "categories": ["à chiffrer", "solution imposée", "vœu à traduire"],
+          "categories": [
+            "à chiffrer",
+            "solution imposée",
+            "vœu à traduire"
+          ],
           "items": [
-            { "text": "doit être léger", "category": 0 },
-            { "text": "doit être solide", "category": 0 },
-            { "text": "doit être en toile bleue", "category": 1 },
-            { "text": "doit contenir les affaires", "category": 2 },
-            { "text": "ne doit pas faire mal au dos", "category": 2 }
+            {
+              "text": "doit être léger",
+              "category": 0
+            },
+            {
+              "text": "doit être solide",
+              "category": 0
+            },
+            {
+              "text": "doit être en toile bleue",
+              "category": 1
+            },
+            {
+              "text": "doit contenir les affaires",
+              "category": 2
+            },
+            {
+              "text": "ne doit pas faire mal au dos",
+              "category": 2
+            }
           ]
         },
         {
@@ -345,10 +512,19 @@
           "prompt": "Comment traduire « ne doit pas faire mal au dos » en exigence vérifiable ?",
           "explanation": "En grandeurs mesurables : masse maximale rapportée au poids de l'élève, largeur minimale des bretelles, hauteur du centre de gravité par rapport au dos.",
           "options": [
-            { "text": "masse maximale, largeur des bretelles, position du centre de gravité", "correct": true },
-            { "text": "demander l'avis d'un médecin" },
-            { "text": "ajouter de la mousse" },
-            { "text": "c'est impossible à chiffrer" }
+            {
+              "text": "masse maximale, largeur des bretelles, position du centre de gravité",
+              "correct": true
+            },
+            {
+              "text": "demander l'avis d'un médecin"
+            },
+            {
+              "text": "ajouter de la mousse"
+            },
+            {
+              "text": "c'est impossible à chiffrer"
+            }
           ]
         },
         {
@@ -357,10 +533,19 @@
           "prompt": "Comment réécrire « doit être solide » ?",
           "explanation": "En définissant l'épreuve et le niveau : par exemple supporter 8 kg suspendus aux bretelles pendant 24 h sans déformation permanente. Une exigence dit toujours comment on vérifie.",
           "options": [
-            { "text": "supporter une charge donnée pendant une durée donnée sans déformation", "correct": true },
-            { "text": "être en tissu épais" },
-            { "text": "durer longtemps" },
-            { "text": "ne pas se déchirer" }
+            {
+              "text": "supporter une charge donnée pendant une durée donnée sans déformation",
+              "correct": true
+            },
+            {
+              "text": "être en tissu épais"
+            },
+            {
+              "text": "durer longtemps"
+            },
+            {
+              "text": "ne pas se déchirer"
+            }
           ]
         },
         {

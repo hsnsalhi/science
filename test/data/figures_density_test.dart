@@ -24,6 +24,16 @@ void main() {
     'logique-college-enigmes-de-logique-pure',
     'logique-college-denombrer-sans-se-tromper',
     'maths-college-puissances-et-racine-carree',
+    'maths-college-statistiques-et-probabilites',
+    'physique-chimie-college-atomes-molecules-et-reactions',
+    'informatique-college-variables-et-expressions',
+    'informatique-college-programmer-par-blocs',
+    'informatique-college-le-tableur',
+    'informatique-college-reseaux-et-internet',
+    'svt-college-meteo-climat-et-changement-climatique',
+    'technologie-college-besoin-fonction-cahier-des-charges',
+    'technologie-college-materiaux-choisir-et-justifier',
+    'technologie-college-ecoconception-et-cycle-de-vie',
     'maths-primaire-les-nombres-jusqu-a-10-000',
     'maths-primaire-additionner-et-soustraire',
     'maths-primaire-la-proportionnalite',
@@ -44,15 +54,14 @@ void main() {
     'technologie-primaire-imaginer-et-fabriquer',
     'technologie-primaire-de-quoi-est-il-fait',
     'technologie-primaire-programmer-un-objet-technique',
-    'informatique-college-le-tableur',
-    'informatique-college-reseaux-et-internet',
   };
+
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.146;
+  const double partMinimale = 0.16;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;
@@ -73,17 +82,20 @@ void main() {
     };
   });
 
-  test('aucun chapitre du primaire n’est sans figure', () {
-    // Le niveau entier est passé au standard. Un chapitre primaire ajouté
-    // sans figure doit échouer ici, sans qu’on ait à l’inscrire nulle part.
+  test('aucun chapitre jouable n’est sans figure', () {
+    // Tout le catalogue est passé au standard. Un chapitre ajouté sans
+    // dessin échoue ici, sans qu’on ait à l’inscrire nulle part — et
+    // c’est la garantie qui compte le plus dans ce fichier.
+    final List<String> sansFigure = <String>[];
     for (final Map<String, dynamic> c in chapitres) {
       final String id = c['id'] as String;
-      if (!id.contains('primaire')) continue;
       final Iterable<String> genres = (contenus[id]!['lessons'] as List<dynamic>)
           .expand((dynamic l) => (l as Map<String, dynamic>)['cards'] as List<dynamic>)
           .map((dynamic x) => (x as Map<String, dynamic>)['kind'] as String);
-      expect(genres, contains('figure'), reason: '$id n’a aucune figure');
+      if (!genres.contains('figure')) sansFigure.add(id);
     }
+    expect(sansFigure, isEmpty,
+        reason: 'ces chapitres n’ont aucune figure : $sansFigure');
   });
 
   test('chaque leçon d’un chapitre repris ouvre sur une figure', () {

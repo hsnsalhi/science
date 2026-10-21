@@ -203,6 +203,9 @@ Conséquences pratiques :
   offrent toutes au moins un curseur, un choix ou une zone à manipuler, et
   `test/data/figures_density_test.dart` refuse qu'on en ajoute une qui n'en
   ait pas.
+- **Aucun chapitre jouable n'est sans figure.** C'est vérifié sur tout le
+  catalogue, pas chapitre par chapitre : un chapitre ajouté sans dessin
+  échoue sans qu'on ait à l'inscrire nulle part.
 - **La part de cartes `figure` ne redescend pas.** Le même fichier de test
   tient un plancher, qu'on relève à chaque lot repris. Un chapitre ajouté
   sans figure fait tomber la moyenne, et le test le dit avant la revue.

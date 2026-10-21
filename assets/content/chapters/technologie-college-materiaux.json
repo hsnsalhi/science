@@ -11,28 +11,35 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "Les grandeurs qui servent à choisir",
-          "body": "La résistance : la contrainte qu'un matériau supporte avant de céder, en mégapascals. L'acier doux tient environ 400 MPa en traction.\n\nLa masse volumique, en grammes par centimètre cube. L'acier fait 7,9 ; l'aluminium 2,7 ; le pin 0,5.\n\nLa rigidité : de combien il se déforme sous une charge donnée, avant toute rupture.\n\nLe coût au kilogramme, et l'énergie qu'il a fallu pour le produire.\n\nAucune de ces grandeurs ne suffit seule, et c'est tout le problème."
+          "kind": "figure",
+          "title": "La charge à laquelle ça cède",
+          "body": "Pousse la masse jusqu’à la rupture : le fil tient, puis il lâche à une valeur précise. C’est cette valeur qu’on appelle la résistance, et c’est elle qu’un concepteur compare — pas une impression de solidité.",
+          "figureId": "fil-qui-casse"
         },
         {
           "id": "c2",
-          "kind": "avertissement",
-          "title": "Résistance et rigidité sont deux choses",
-          "body": "Un élastique est très peu rigide — il s'allonge énormément — et pourtant il ne casse pas facilement.\n\nUn biscuit sec est rigide — il ne plie pas du tout — et il casse au moindre effort.\n\nConfondre les deux conduit à choisir un matériau qui ne plie pas pour une pièce qui ne doit pas casser, ou l'inverse. Ce sont deux exigences différentes, et un cahier des charges doit dire laquelle compte."
+          "kind": "etape",
+          "title": "Les grandeurs qui servent à choisir",
+          "body": "La résistance : la contrainte qu’un matériau supporte avant de céder, en mégapascals. L’acier doux tient environ 400 MPa en traction.\n\nLa masse volumique, en grammes par centimètre cube. L’acier fait 7,9 ; l’aluminium 2,7 ; le pin 0,5.\n\nLa rigidité : de combien il se déforme sous une charge donnée, avant toute rupture.\n\nLe coût au kilogramme, et l’énergie qu’il a fallu pour le produire."
         },
         {
           "id": "c3",
-          "kind": "formule",
-          "title": "La résistance spécifique",
-          "formula": "résistance spécifique = résistance ÷ masse volumique",
-          "body": "C'est la grandeur à comparer quand la masse compte : elle dit combien de résistance on obtient par kilogramme embarqué. Et son classement n'est pas celui auquel on s'attend."
+          "kind": "avertissement",
+          "title": "Résistance et rigidité sont deux choses",
+          "body": "Un élastique est très peu rigide — il s’allonge énormément — et pourtant il ne casse pas facilement.\n\nUn biscuit sec est rigide — il ne plie pas du tout — et il casse au moindre effort.\n\nCe sont deux exigences différentes, et un cahier des charges doit dire laquelle compte."
         },
         {
           "id": "c4",
+          "kind": "formule",
+          "title": "La résistance spécifique",
+          "body": "C’est la grandeur à comparer quand la masse compte : elle dit combien de résistance on obtient par kilogramme embarqué.",
+          "formula": "résistance spécifique = résistance ÷ masse volumique"
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
-          "title": "Le bois bat l'acier, à masse égale",
-          "body": "Acier : 400 ÷ 7,9 ≈ 51. Aluminium d'alliage : 300 ÷ 2,7 ≈ 111. Pin, dans le sens des fibres : 50 ÷ 0,5 = 100.\n\nÀ masse égale, le pin tient donc presque deux fois mieux que l'acier, et presque aussi bien qu'un alliage d'aluminium.\n\nCe n'est pas une curiosité : c'est pourquoi les avions ont été en bois pendant quarante ans, pourquoi les planeurs de compétition l'ont été longtemps, et pourquoi on construit à nouveau des immeubles en bois."
+          "title": "Le bois bat l’acier, à masse égale",
+          "body": "Acier : 400 ÷ 7,9 ≈ 51. Aluminium d’alliage : 300 ÷ 2,7 ≈ 111. Pin, dans le sens des fibres : 50 ÷ 0,5 = 100.\n\nÀ masse égale, le pin tient donc presque deux fois mieux que l’acier.\n\nCe n’est pas une curiosité : c’est pourquoi les avions ont été en bois pendant quarante ans, et pourquoi on construit à nouveau des immeubles en bois."
         }
       ],
       "questions": [
@@ -110,27 +117,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Le bois a aussi ses défauts",
-          "body": "Sa résistance dépend du sens : excellente dans le sens des fibres, cinq à dix fois moindre en travers. Une pièce mal orientée casse à une charge qu'elle aurait dû tenir sans peine.\n\nIl travaille avec l'humidité : il gonfle, il se tord, il fend.\n\nIl brûle, et ses propriétés varient d'une planche à l'autre — là où une tôle d'acier est identique d'un bout à l'autre du monde.\n\nCette régularité est un avantage qu'on oublie, et c'est elle qui permet de calculer une structure avec confiance."
+          "kind": "figure",
+          "title": "Chaque transformation a son prix",
+          "body": "Touche chaque étage de la chaîne : à chacun, une part de l’énergie disparaît en chaleur. Produire un matériau suit la même loi, et c’est ce coût caché qui sépare un métal neuf d’un métal refondu.",
+          "figureId": "chaine-energie"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Les quatre questions à poser",
-          "body": "La pièce est-elle sollicitée en traction, en compression, en flexion ou en torsion ? Les matériaux ne se classent pas pareil selon le cas — la fonte est excellente en compression et mauvaise en traction.\n\nLa masse compte-t-elle ? Si oui, on compare les résistances spécifiques.\n\nQuel est le milieu ? Humidité, sel, soleil, température.\n\nQuelle fin de vie ? Un matériau recyclable à l'infini comme l'acier et l'aluminium n'est pas dans la même catégorie qu'un composite collé, qu'on ne sait pas séparer."
+          "kind": "texte",
+          "title": "Le bois a aussi ses défauts",
+          "body": "Sa résistance dépend du sens : excellente dans le sens des fibres, cinq à dix fois moindre en travers.\n\nIl travaille avec l’humidité : il gonfle, il se tord, il fend. Il brûle, et ses propriétés varient d’une planche à l’autre — là où une tôle d’acier est identique d’un bout à l’autre du monde.\n\nCette régularité est un avantage qu’on oublie, et c’est elle qui permet de calculer une structure avec confiance."
         },
         {
           "id": "c3",
-          "kind": "aRetenir",
-          "title": "L'énergie contenue",
-          "body": "Produire un kilogramme d'aluminium depuis le minerai demande environ 15 fois plus d'énergie que le refondre à partir de déchets.\n\nL'acier recyclé coûte environ 3 à 4 fois moins d'énergie que l'acier neuf.\n\nUn matériau n'a donc pas un coût énergétique, il en a deux : neuf et recyclé. Et le choix du concepteur décide lequel s'appliquera à la fin de la vie de l'objet."
+          "kind": "etape",
+          "title": "Les quatre questions à poser",
+          "body": "La pièce est-elle sollicitée en traction, en compression, en flexion ou en torsion ? La fonte est excellente en compression et mauvaise en traction.\n\nLa masse compte-t-elle ? Si oui, on compare les résistances spécifiques.\n\nQuel est le milieu ? Humidité, sel, soleil, température.\n\nQuelle fin de vie ? Un matériau recyclable à l’infini n’est pas dans la même catégorie qu’un composite collé."
         },
         {
           "id": "c4",
+          "kind": "aRetenir",
+          "title": "L’énergie contenue",
+          "body": "Produire un kilogramme d’aluminium depuis le minerai demande environ 15 fois plus d’énergie que le refondre à partir de déchets.\n\nL’acier recyclé coûte environ 3 à 4 fois moins d’énergie que l’acier neuf.\n\nUn matériau n’a donc pas un coût énergétique, il en a deux. Et le choix du concepteur décide lequel s’appliquera à la fin de la vie de l’objet."
+        },
+        {
+          "id": "c5",
           "kind": "avertissement",
           "title": "Les composites, et le prix de leur performance",
-          "body": "Un composite de fibres de carbone a une résistance spécifique excellente, bien supérieure à l'aluminium.\n\nMais il est fait de fibres noyées dans une résine, et personne ne sait séparer proprement les deux. Un cadre de vélo en carbone n'est donc pas recyclable au sens où l'acier l'est : il finit broyé, ou brûlé.\n\nC'est un compromis réel, pas un détail : le gain de performance est payé en fin de vie."
+          "body": "Un composite de fibres de carbone a une résistance spécifique excellente, bien supérieure à l’aluminium.\n\nMais il est fait de fibres noyées dans une résine, et personne ne sait séparer proprement les deux. Un cadre de vélo en carbone finit broyé, ou brûlé.\n\nC’est un compromis réel : le gain de performance est payé en fin de vie."
         }
       ],
       "questions": [
@@ -251,21 +265,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "La méthode, pour une pièce donnée",
-          "body": "On écarte d'abord les matériaux qui violent une contrainte impérative : milieu, sécurité, budget.\n\nOn calcule ensuite, pour chaque candidat restant, la grandeur qui correspond vraiment à la sollicitation — la résistance spécifique si la masse compte, la résistance brute sinon.\n\nOn chiffre la masse et le coût de la pièce réelle, pas d'un kilogramme abstrait.\n\nEt on vérifie la fin de vie. Un choix justifié tient en quatre lignes chiffrées."
+          "kind": "figure",
+          "title": "Noter, pondérer, totaliser",
+          "body": "Change une case et regarde la colonne calculée se refaire. Justifier un choix de matériau, c’est remplir une grille comme celle-ci — et laisser le total se faire plutôt que de l’écrire à l’avance.",
+          "figureId": "tableur"
         },
         {
           "id": "c2",
-          "kind": "exemple",
-          "title": "Un cadre de vélo",
-          "body": "La pièce doit tenir une charge donnée, et la masse compte beaucoup.\n\nAcier : résistance spécifique 51, coût faible, recyclable, réparable par soudure. Cadre d'environ 2,5 kg.\n\nAluminium : 111, coût moyen, recyclable, mal réparable. Cadre d'environ 1,4 kg.\n\nCarbone : supérieur, coût élevé, non recyclable, non réparable. Cadre d'environ 0,9 kg.\n\nAucun ne gagne sur tout. Le choix dépend du cahier des charges, et il se justifie — il ne se devine pas."
+          "kind": "etape",
+          "title": "La méthode, pour une pièce donnée",
+          "body": "On écarte d’abord les matériaux qui violent une contrainte impérative : milieu, sécurité, budget.\n\nOn calcule ensuite, pour chaque candidat restant, la grandeur qui correspond vraiment à la sollicitation.\n\nOn chiffre la masse et le coût de la pièce réelle, pas d’un kilogramme abstrait.\n\nEt on vérifie la fin de vie. Un choix justifié tient en quatre lignes chiffrées."
         },
         {
           "id": "c3",
+          "kind": "exemple",
+          "title": "Un cadre de vélo",
+          "body": "Acier : résistance spécifique 51, coût faible, recyclable, réparable par soudure. Cadre d’environ 2,5 kg.\n\nAluminium : 111, coût moyen, recyclable, mal réparable. Cadre d’environ 1,4 kg.\n\nCarbone : supérieur, coût élevé, non recyclable, non réparable. Cadre d’environ 0,9 kg.\n\nAucun ne gagne sur tout. Le choix dépend du cahier des charges, et il se justifie — il ne se devine pas."
+        },
+        {
+          "id": "c4",
           "kind": "astuce",
           "title": "La forme rattrape souvent le matériau",
-          "body": "Un tube d'acier bien dimensionné est plus rigide qu'une barre pleine de même masse, parce que la matière est placée loin de l'axe.\n\nAvant de changer de matériau, il vaut souvent mieux changer la section : c'est gratuit, et le gain peut dépasser celui qu'apporterait un matériau trois fois plus cher.\n\nC'est pourquoi les cadres de vélo sont des tubes et non des barres, depuis toujours."
+          "body": "Un tube d’acier bien dimensionné est plus rigide qu’une barre pleine de même masse, parce que la matière est placée loin de l’axe.\n\nAvant de changer de matériau, il vaut souvent mieux changer la section : c’est gratuit, et le gain peut dépasser celui qu’apporterait un matériau trois fois plus cher.\n\nC’est pourquoi les cadres de vélo sont des tubes et non des barres."
         }
       ],
       "questions": [
@@ -359,15 +380,22 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Le support qui a cédé",
-          "body": "Un groupe conçoit un support d'étagère en pin. Il doit tenir 30 kg.\n\nLa pièce a une section de 2 cm sur 1 cm, soit 200 mm², et le pin tient 50 MPa dans le sens des fibres.\n\nUn mégapascal vaut un newton par millimètre carré. La pièce devrait donc tenir 200 × 50 = 10 000 newtons, soit environ une tonne.\n\nElle a cassé à 25 kg. L'écart est tel que la cause ne peut pas être une marge de calcul : il y a une erreur de conception."
+          "kind": "figure",
+          "title": "Le fil cède à une charge, pas à une opinion",
+          "body": "Charge le fil et note la masse exacte de rupture. Toute la question du défi est là : une pièce a cédé bien avant ce que le calcul annonçait, et il faut trouver pourquoi.",
+          "figureId": "fil-qui-casse"
         },
         {
           "id": "c2",
+          "kind": "texte",
+          "title": "Le support qui a cédé",
+          "body": "Un groupe conçoit un support d’étagère en pin. Il doit tenir 30 kg.\n\nLa pièce a une section de 2 cm sur 1 cm, soit 200 mm², et le pin tient 50 MPa dans le sens des fibres.\n\nUn mégapascal vaut un newton par millimètre carré. La pièce devrait donc tenir 200 × 50 = 10 000 newtons, soit environ une tonne.\n\nElle a cassé à 25 kg. L’écart est tel que la cause ne peut pas être une marge de calcul."
+        },
+        {
+          "id": "c3",
           "kind": "astuce",
           "title": "La vraie raison",
-          "body": "Le groupe avait découpé la pièce en travers du fil, pour économiser de la planche.\n\nEn travers, le pin ne tient plus 50 MPa mais environ 6 MPa. La pièce ne pouvait donc tenir que 200 × 6 = 1 200 newtons, soit environ 120 kg — et encore, en traction pure.\n\nLe support travaillait en flexion sur un porte-à-faux, ce qui divise encore largement la charge admissible. Les deux erreurs combinées expliquent la rupture à 25 kg."
+          "body": "Le groupe avait découpé la pièce en travers du fil, pour économiser de la planche.\n\nEn travers, le pin ne tient plus 50 MPa mais environ 6 MPa. La pièce ne pouvait donc tenir que 1 200 newtons, soit environ 120 kg — et encore, en traction pure.\n\nLe support travaillait en flexion sur un porte-à-faux, ce qui divise encore largement la charge admissible."
         }
       ],
       "questions": [

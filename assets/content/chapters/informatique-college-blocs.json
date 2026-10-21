@@ -11,27 +11,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Plusieurs scripts à la fois",
-          "body": "Dans un langage à blocs, un projet n'a pas un programme unique qui se déroule du haut vers le bas. Il a plusieurs scripts, chacun accroché à un événement : le drapeau cliqué, une touche pressée, un personnage touché.\n\nPlusieurs scripts peuvent donc tourner en même temps, et c'est voulu : le vaisseau se déplace pendant que les astéroïdes tombent et que le score se met à jour.\n\nC'est une façon de programmer très différente de la liste d'instructions, et plus proche de la réalité d'une application."
+          "kind": "figure",
+          "title": "Un script attend, puis démarre",
+          "body": "Règle le seuil : rien ne se passe tant que la limite n’est pas franchie, puis l’action part toute seule. Programmer par événements, c’est exactement cela — des scripts qui attendent, et qui se déclenchent sans qu’on les appelle.",
+          "figureId": "chaine-information"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Les quatre événements qu'on utilise vraiment",
-          "body": "Le drapeau vert cliqué : tout ce qui doit démarrer avec le projet.\n\nUne touche pressée : les commandes du joueur.\n\nCe personnage cliqué : les boutons et les objets interactifs.\n\nUn message reçu : c'est celui qu'on sous-estime. Un script envoie un message, et tous les scripts qui l'attendent démarrent ensemble. C'est ainsi qu'on coordonne plusieurs personnages sans qu'aucun ne connaisse les autres."
+          "kind": "texte",
+          "title": "Plusieurs scripts à la fois",
+          "body": "Dans un langage à blocs, un projet n’a pas un programme unique qui se déroule du haut vers le bas. Il a plusieurs scripts, chacun accroché à un événement.\n\nPlusieurs scripts peuvent donc tourner en même temps, et c’est voulu : le vaisseau se déplace pendant que les astéroïdes tombent et que le score se met à jour."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "Le bug numéro un : l'état de départ",
-          "body": "Tu déplaces ton personnage pendant les essais, puis tu cliques sur le drapeau. Il repart de là où tu l'avais laissé, pas de son point de départ.\n\nLe projet marche chez toi et pas chez les autres, ou marche une fois sur deux. Ce n'est pas un hasard : la position, la taille, la direction, le score et les costumes gardent la valeur de la dernière exécution.\n\nTout script de démarrage doit donc remettre explicitement chaque chose dans son état initial. C'est fastidieux, et ce n'est pas facultatif."
+          "kind": "etape",
+          "title": "Les quatre événements qu’on utilise vraiment",
+          "body": "Le drapeau vert cliqué : tout ce qui doit démarrer avec le projet.\n\nUne touche pressée : les commandes du joueur.\n\nCe personnage cliqué : les boutons et les objets interactifs.\n\nUn message reçu : celui qu’on sous-estime. Un script envoie un message, et tous ceux qui l’attendent démarrent ensemble — c’est ainsi qu’on coordonne plusieurs personnages sans qu’aucun ne connaisse les autres."
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "Le bug numéro un : l’état de départ",
+          "body": "Tu déplaces ton personnage pendant les essais, puis tu cliques sur le drapeau. Il repart de là où tu l’avais laissé.\n\nLe projet marche chez toi et pas chez les autres. La position, la taille, la direction, le score et les costumes gardent la valeur de la dernière exécution.\n\nTout script de démarrage doit remettre explicitement chaque chose dans son état initial. C’est fastidieux, et ce n’est pas facultatif."
+        },
+        {
+          "id": "c5",
           "kind": "aRetenir",
           "title": "Ce qui survit entre deux exécutions",
-          "body": "La position et la direction du personnage. Sa taille, sa couleur, son costume. Les variables. Les clones déjà créés, parfois.\n\nAutrement dit : presque tout. Le drapeau vert ne réinitialise rien par lui-même — il lance seulement les scripts qui l'écoutent."
+          "body": "La position et la direction du personnage. Sa taille, sa couleur, son costume. Les variables. Les clones déjà créés, parfois.\n\nAutrement dit : presque tout. Le drapeau vert ne réinitialise rien par lui-même — il lance seulement les scripts qui l’écoutent."
         }
       ],
       "questions": [
@@ -41,10 +48,19 @@
           "prompt": "Plusieurs scripts peuvent-ils s'exécuter en même temps ?",
           "explanation": "Oui, et c'est le principe : chacun est accroché à un événement, et plusieurs peuvent tourner simultanément.",
           "options": [
-            { "text": "oui, chacun accroché à son événement", "correct": true },
-            { "text": "non, un seul à la fois" },
-            { "text": "oui, mais seulement deux" },
-            { "text": "seulement s'ils sont sur le même personnage" }
+            {
+              "text": "oui, chacun accroché à son événement",
+              "correct": true
+            },
+            {
+              "text": "non, un seul à la fois"
+            },
+            {
+              "text": "oui, mais seulement deux"
+            },
+            {
+              "text": "seulement s'ils sont sur le même personnage"
+            }
           ]
         },
         {
@@ -53,10 +69,19 @@
           "prompt": "Pourquoi un projet repart-il parfois d'un état bizarre ?",
           "explanation": "Parce que la position, la taille, la direction et les variables gardent la valeur de la dernière exécution. Le drapeau vert ne réinitialise rien.",
           "options": [
-            { "text": "l'état précédent a survécu, le drapeau ne réinitialise rien", "correct": true },
-            { "text": "le logiciel a un bug" },
-            { "text": "les scripts sont dans le mauvais ordre" },
-            { "text": "il manque une boucle" }
+            {
+              "text": "l'état précédent a survécu, le drapeau ne réinitialise rien",
+              "correct": true
+            },
+            {
+              "text": "le logiciel a un bug"
+            },
+            {
+              "text": "les scripts sont dans le mauvais ordre"
+            },
+            {
+              "text": "il manque une boucle"
+            }
           ]
         },
         {
@@ -65,10 +90,19 @@
           "prompt": "Comment faire démarrer plusieurs personnages en même temps ?",
           "explanation": "En envoyant un message : tous les scripts qui l'attendent démarrent ensemble, sans qu'aucun personnage ait besoin de connaître les autres.",
           "options": [
-            { "text": "envoyer un message qu'ils attendent tous", "correct": true },
-            { "text": "les mettre dans le même script" },
-            { "text": "cliquer sur chacun" },
-            { "text": "c'est impossible" }
+            {
+              "text": "envoyer un message qu'ils attendent tous",
+              "correct": true
+            },
+            {
+              "text": "les mettre dans le même script"
+            },
+            {
+              "text": "cliquer sur chacun"
+            },
+            {
+              "text": "c'est impossible"
+            }
           ]
         },
         {
@@ -77,11 +111,25 @@
           "prompt": "Qu'un script de démarrage doit-il réinitialiser ?",
           "explanation": "La position, la direction, la taille, le costume et les variables : tout ce qui a survécu à l'exécution précédente.",
           "options": [
-            { "text": "la position du personnage", "correct": true },
-            { "text": "sa direction", "correct": true },
-            { "text": "sa taille", "correct": true },
-            { "text": "les variables du projet", "correct": true },
-            { "text": "la version du logiciel" }
+            {
+              "text": "la position du personnage",
+              "correct": true
+            },
+            {
+              "text": "sa direction",
+              "correct": true
+            },
+            {
+              "text": "sa taille",
+              "correct": true
+            },
+            {
+              "text": "les variables du projet",
+              "correct": true
+            },
+            {
+              "text": "la version du logiciel"
+            }
           ]
         }
       ]
@@ -96,27 +144,34 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une scène de 480 sur 360",
-          "body": "La scène mesure 480 pas de large et 360 de haut, et son centre est le point (0 ; 0).\n\nDonc x va de −240 à +240, et y de −180 à +180. Le coin en haut à droite est (240 ; 180), celui en bas à gauche (−240 ; −180).\n\nC'est exactement le repère du cours de mathématiques, avec un y qui monte. Un personnage placé en (100 ; 50) est à droite et en haut du centre."
+          "kind": "figure",
+          "title": "Se déplacer sur une grille",
+          "body": "Règle le nombre de tours et exécute : le robot avance case par case, et sa position change à chaque pas. Une scène de langage à blocs est la même chose, en plus fin — un repère où chaque point a deux nombres.",
+          "figureId": "boucle-robot"
         },
         {
           "id": "c2",
-          "kind": "etape",
-          "title": "Deux façons de bouger",
-          "body": "« Aller à x : 100 y : 50 » place le personnage à cet endroit précis, d'où qu'il vienne.\n\n« Ajouter 10 à x » le décale de 10 vers la droite depuis sa position actuelle.\n\n« Avancer de 10 pas » le déplace de 10 dans la direction où il pointe, qui n'est pas forcément la droite.\n\nLes trois sont utiles, et les confondre produit des mouvements incompréhensibles."
+          "kind": "texte",
+          "title": "Une scène de 480 sur 360",
+          "body": "La scène mesure 480 pas de large et 360 de haut, et son centre est le point (0 ; 0).\n\nDonc x va de −240 à +240, et y de −180 à +180. Le coin en haut à droite est (240 ; 180).\n\nC’est exactement le repère du cours de mathématiques, avec un y qui monte."
         },
         {
           "id": "c3",
-          "kind": "avertissement",
-          "title": "La direction n'est pas l'angle du cours",
-          "body": "Dans ces langages, la direction 0 pointe vers le haut, et les angles tournent dans le sens des aiguilles d'une montre. La direction 90 pointe donc vers la droite.\n\nEn mathématiques, l'angle 0 pointe vers la droite et tourne dans l'autre sens.\n\nC'est une convention différente, pas une erreur, et il faut la connaître : demander « tourner de 90 degrés » ne donne pas le même résultat selon l'outil."
+          "kind": "etape",
+          "title": "Deux façons de bouger",
+          "body": "« Aller à x : 100 y : 50 » place le personnage à cet endroit précis, d’où qu’il vienne.\n\n« Ajouter 10 à x » le décale de 10 vers la droite depuis sa position actuelle.\n\n« Avancer de 10 pas » le déplace de 10 dans la direction où il pointe, qui n’est pas forcément la droite."
         },
         {
           "id": "c4",
+          "kind": "avertissement",
+          "title": "La direction n’est pas l’angle du cours",
+          "body": "Dans ces langages, la direction 0 pointe vers le haut, et les angles tournent dans le sens des aiguilles d’une montre. La direction 90 pointe donc vers la droite.\n\nEn mathématiques, l’angle 0 pointe vers la droite et tourne dans l’autre sens.\n\nC’est une convention différente, pas une erreur, et il faut la connaître."
+        },
+        {
+          "id": "c5",
           "kind": "astuce",
           "title": "Le rebond sur les bords",
-          "body": "Un personnage qui sort de la scène y reste accroché par un bord : les coordonnées sont bornées.\n\nPour un rebond propre, on teste si x dépasse 240 ou descend sous −240, et on inverse le sens du déplacement. C'est la même idée qu'un signe qu'on change.\n\nLe bloc « rebondir si le bord est atteint » le fait tout seul, mais comprendre le test permet de rebondir sur autre chose que le bord."
+          "body": "Un personnage qui sort de la scène y reste accroché par un bord : les coordonnées sont bornées.\n\nPour un rebond propre, on teste si x dépasse 240 ou descend sous −240, et on inverse le sens du déplacement. C’est la même idée qu’un signe qu’on change."
         }
       ],
       "questions": [
@@ -154,10 +209,19 @@
           "prompt": "Quelle direction fait pointer vers le bas ?",
           "explanation": "180 : un demi-tour depuis le haut. Et −90, ou 270, pointe vers la gauche.",
           "options": [
-            { "text": "180", "correct": true },
-            { "text": "0" },
-            { "text": "90" },
-            { "text": "270" }
+            {
+              "text": "180",
+              "correct": true
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "90"
+            },
+            {
+              "text": "270"
+            }
           ]
         },
         {
@@ -166,10 +230,19 @@
           "prompt": "Quelle est la différence entre « ajouter 10 à x » et « avancer de 10 pas » ?",
           "explanation": "Le premier déplace toujours vers la droite ; le second déplace dans la direction où le personnage pointe, qui peut être n'importe laquelle.",
           "options": [
-            { "text": "le second suit la direction du personnage", "correct": true },
-            { "text": "aucune, c'est la même chose" },
-            { "text": "le premier est plus rapide" },
-            { "text": "le second ne marche qu'horizontalement" }
+            {
+              "text": "le second suit la direction du personnage",
+              "correct": true
+            },
+            {
+              "text": "aucune, c'est la même chose"
+            },
+            {
+              "text": "le premier est plus rapide"
+            },
+            {
+              "text": "le second ne marche qu'horizontalement"
+            }
           ]
         },
         {
@@ -191,21 +264,28 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "etape",
-          "title": "L'ordre dans lequel on construit",
-          "body": "D'abord le déplacement du joueur, et rien d'autre. On le teste.\n\nEnsuite un obstacle qui bouge. On teste.\n\nEnsuite la détection du contact et ce qu'elle déclenche. On teste.\n\nEnsuite le score. Enfin l'écran de fin.\n\nConstruire tout d'un bloc puis chercher pourquoi rien ne marche est la façon la plus lente d'y arriver. Ajouter une chose, la tester, recommencer est la plus rapide — contre-intuitivement."
+          "kind": "figure",
+          "title": "Ce qui reste plat et ce qui décolle",
+          "body": "Fais grossir la taille des données : certaines courbes ne bougent presque pas, d’autres partent à la verticale. Vingt clones à l’écran ne coûtent rien ; des milliers oubliés finissent par tout arrêter.",
+          "figureId": "complexite"
         },
         {
           "id": "c2",
-          "kind": "astuce",
-          "title": "Les clones",
-          "body": "Pour vingt astéroïdes, on ne dessine pas vingt personnages : on en fait un, et on le clone.\n\nChaque clone exécute son propre script « quand je commence comme un clone », avec ses propres variables locales. Vingt clones, vingt trajectoires indépendantes, un seul script à écrire et à corriger.\n\nIl faut penser à supprimer le clone quand il sort de l'écran : des milliers de clones oubliés finissent par tout ralentir."
+          "kind": "etape",
+          "title": "L’ordre dans lequel on construit",
+          "body": "D’abord le déplacement du joueur, et rien d’autre. On le teste.\n\nEnsuite un obstacle qui bouge. On teste.\n\nEnsuite la détection du contact et ce qu’elle déclenche. On teste.\n\nEnsuite le score, enfin l’écran de fin. Construire tout d’un bloc puis chercher pourquoi rien ne marche est la façon la plus lente d’y arriver."
         },
         {
           "id": "c3",
+          "kind": "astuce",
+          "title": "Les clones",
+          "body": "Pour vingt astéroïdes, on ne dessine pas vingt personnages : on en fait un, et on le clone.\n\nChaque clone exécute son propre script, avec ses propres variables locales. Vingt clones, vingt trajectoires indépendantes, un seul script à écrire et à corriger.\n\nIl faut penser à supprimer le clone quand il sort de l’écran."
+        },
+        {
+          "id": "c4",
           "kind": "aRetenir",
           "title": "Variables globales et locales",
-          "body": "Une variable « pour tous les personnages » est partagée : le score en est l'exemple typique.\n\nUne variable « pour ce personnage seulement » existe en un exemplaire par clone : la vitesse propre de chaque astéroïde en est l'exemple.\n\nSe tromper donne un bug caractéristique : tous les astéroïdes vont à la même vitesse, celle du dernier créé, parce qu'ils partagent une variable qui aurait dû être locale."
+          "body": "Une variable « pour tous les personnages » est partagée : le score en est l’exemple typique.\n\nUne variable « pour ce personnage seulement » existe en un exemplaire par clone : la vitesse propre de chaque astéroïde.\n\nSe tromper donne un bug caractéristique : tous les astéroïdes vont à la même vitesse, celle du dernier créé."
         }
       ],
       "questions": [
@@ -235,10 +315,19 @@
           "prompt": "Tous les astéroïdes vont à la même vitesse alors qu'on voulait des vitesses différentes. Quelle est la cause ?",
           "explanation": "La variable de vitesse a été déclarée pour tous les personnages au lieu de pour ce personnage seulement : les clones la partagent.",
           "options": [
-            { "text": "la vitesse est une variable globale au lieu de locale", "correct": true },
-            { "text": "les clones ne peuvent pas avoir de vitesses différentes" },
-            { "text": "il manque une boucle" },
-            { "text": "les astéroïdes sont trop nombreux" }
+            {
+              "text": "la vitesse est une variable globale au lieu de locale",
+              "correct": true
+            },
+            {
+              "text": "les clones ne peuvent pas avoir de vitesses différentes"
+            },
+            {
+              "text": "il manque une boucle"
+            },
+            {
+              "text": "les astéroïdes sont trop nombreux"
+            }
           ]
         },
         {
@@ -247,10 +336,19 @@
           "prompt": "Pourquoi supprimer un clone sorti de l'écran ?",
           "explanation": "Parce que les clones oubliés s'accumulent et finissent par tout ralentir, même invisibles.",
           "options": [
-            { "text": "les clones oubliés s'accumulent et ralentissent tout", "correct": true },
-            { "text": "ils reviennent par l'autre bord" },
-            { "text": "ils effacent le score" },
-            { "text": "ce n'est pas nécessaire" }
+            {
+              "text": "les clones oubliés s'accumulent et ralentissent tout",
+              "correct": true
+            },
+            {
+              "text": "ils reviennent par l'autre bord"
+            },
+            {
+              "text": "ils effacent le score"
+            },
+            {
+              "text": "ce n'est pas nécessaire"
+            }
           ]
         },
         {
@@ -258,12 +356,27 @@
           "kind": "tri",
           "prompt": "Cette variable doit-elle être globale ou locale au clone ?",
           "explanation": "Ce qui est commun au projet est global ; ce qui est propre à chaque clone est local.",
-          "categories": ["globale", "locale au clone"],
+          "categories": [
+            "globale",
+            "locale au clone"
+          ],
           "items": [
-            { "text": "le score du joueur", "category": 0 },
-            { "text": "le niveau en cours", "category": 0 },
-            { "text": "la vitesse d'un astéroïde", "category": 1 },
-            { "text": "les points de vie d'un ennemi", "category": 1 }
+            {
+              "text": "le score du joueur",
+              "category": 0
+            },
+            {
+              "text": "le niveau en cours",
+              "category": 0
+            },
+            {
+              "text": "la vitesse d'un astéroïde",
+              "category": 1
+            },
+            {
+              "text": "les points de vie d'un ennemi",
+              "category": 1
+            }
           ]
         },
         {
@@ -272,10 +385,19 @@
           "prompt": "Pourquoi tester après chaque ajout plutôt qu'à la fin ?",
           "explanation": "Parce qu'un bug trouvé juste après son ajout est localisé : on sait quelle chose l'a causé. Trouvé à la fin, il peut venir de n'importe où.",
           "options": [
-            { "text": "le bug est localisé dans ce qu'on vient d'ajouter", "correct": true },
-            { "text": "pour aller plus vite à écrire" },
-            { "text": "parce que le logiciel l'exige" },
-            { "text": "pour sauvegarder plus souvent" }
+            {
+              "text": "le bug est localisé dans ce qu'on vient d'ajouter",
+              "correct": true
+            },
+            {
+              "text": "pour aller plus vite à écrire"
+            },
+            {
+              "text": "parce que le logiciel l'exige"
+            },
+            {
+              "text": "pour sauvegarder plus souvent"
+            }
           ]
         }
       ]
@@ -290,15 +412,22 @@
       "cards": [
         {
           "id": "c1",
-          "kind": "texte",
-          "title": "Une suite de blocs",
-          "body": "Le personnage part de (0 ; 0), direction 90, c'est-à-dire vers la droite.\n\nAller à x : 0 y : 0\n\nRépéter 4 fois : avancer de 60 pas, tourner de 90 degrés vers la droite\n\nOù se trouve-t-il à la fin, et dans quelle direction pointe-t-il ?\n\nLa réponse surprend ceux qui ne déroulent pas : il est revenu exactement à son point de départ, et il pointe à nouveau vers la droite."
+          "kind": "figure",
+          "title": "Quatre tours, et le chemin se referme",
+          "body": "Règle le nombre de tours sur 4, puis exécute. Le robot revient à son point de départ. Mets 3 tours : la figure te dira que le chemin ne se referme pas. C’est exactement la question du défi.",
+          "figureId": "boucle-robot"
         },
         {
           "id": "c2",
+          "kind": "texte",
+          "title": "Une suite de blocs",
+          "body": "Le personnage part de (0 ; 0), direction 90, c’est-à-dire vers la droite.\n\nAller à x : 0 y : 0\n\nRépéter 4 fois : avancer de 60 pas, tourner de 90 degrés vers la droite\n\nOù se trouve-t-il à la fin, et dans quelle direction pointe-t-il ?"
+        },
+        {
+          "id": "c3",
           "kind": "etape",
           "title": "Le déroulé, tour par tour",
-          "body": "Tour 1 : avance de 60 vers la droite, arrive en (60 ; 0). Tourne, direction 180, vers le bas.\n\nTour 2 : avance de 60 vers le bas, arrive en (60 ; −60). Tourne, direction 270, vers la gauche.\n\nTour 3 : arrive en (0 ; −60). Tourne, direction 0, vers le haut.\n\nTour 4 : arrive en (0 ; 0). Tourne, direction 90.\n\nIl a dessiné un carré de 60 de côté et refermé la boucle."
+          "body": "Tour 1 : avance de 60 vers la droite, arrive en (60 ; 0). Tourne, direction 180, vers le bas.\n\nTour 2 : arrive en (60 ; −60). Tourne, direction 270, vers la gauche.\n\nTour 3 : arrive en (0 ; −60). Tourne, direction 0, vers le haut.\n\nTour 4 : arrive en (0 ; 0). Tourne, direction 90. Il a dessiné un carré de 60 de côté et refermé la boucle."
         }
       ],
       "questions": [
