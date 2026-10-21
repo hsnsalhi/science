@@ -22,6 +22,13 @@ import 'package:flutter_test/flutter_test.dart';
 const List<String> _figures = <String>[
   'fil-qui-casse',
   'attraction-distance',
+  'col-de-cygne',
+  'rutherford',
+  'modeles-atome',
+  'racine-de-deux',
+  'frise-nombres',
+  'selection',
+  'droite-graduee',
   'horloge',
   'demi-vie',
   'ombre-lumiere',

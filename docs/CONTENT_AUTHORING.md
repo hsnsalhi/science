@@ -199,7 +199,7 @@ Conséquences pratiques :
   de lire.
 - **Le texte devient une légende.** Ce qui restait de l'ancien paragraphe
   tient en deux phrases après la figure, pour nommer ce qui vient d'être vu.
-- **Une figure sans commande est un brouillon.** Les 57 figures du registre
+- **Une figure sans commande est un brouillon.** Les 62 figures du registre
   offrent toutes au moins un curseur, un choix ou une zone à manipuler, et
   `test/data/figures_density_test.dart` refuse qu'on en ajoute une qui n'en
   ait pas.
@@ -210,7 +210,7 @@ Conséquences pratiques :
 Une figure se cite par une clé, jamais par un nom de fichier :
 
 La liste complète fait foi dans
-`lib/design_system/figures/figure_registry.dart` — il y en a 57
+`lib/design_system/figures/figure_registry.dart` — il y en a 62
 aujourd'hui, et la recopier ici la rendrait fausse dès la figure suivante.
 Pour la relire en une commande :
 

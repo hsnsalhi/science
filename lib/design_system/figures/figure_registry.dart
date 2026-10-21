@@ -30,7 +30,12 @@ import 'food_web_figure.dart';
 import 'gears_figure.dart';
 import 'half_life_figure.dart';
 import 'implication_figure.dart';
+import 'atom_models_figure.dart';
 import 'inverse_square_figure.dart';
+import 'number_timeline_figure.dart';
+import 'root_two_figure.dart';
+import 'rutherford_figure.dart';
+import 'swan_neck_figure.dart';
 import 'loop_robot_figure.dart';
 import 'matrix_figure.dart';
 import 'moon_phases_figure.dart';
@@ -92,6 +97,22 @@ abstract final class FigureRegistry {
     // Deux corps qu'on écarte : la force s'effondre comme le carré.
     'attraction-distance': (BuildContext context, Color accent) =>
         InverseSquareFigure(accent: accent),
+    // Le ballon à col de cygne : trois montages, et la poussière accusée.
+    'col-de-cygne': (BuildContext context, Color accent) =>
+        SwanNeckFigure(accent: accent),
+    // La feuille d'or : viser le noyau, et voir la particule revenir.
+    'rutherford': (BuildContext context, Color accent) =>
+        RutherfordFigure(accent: accent),
+    // Quatre modèles de l'atome, et l'échelle qu'on remet à l'honnêteté.
+    'modeles-atome': (BuildContext context, Color accent) =>
+        AtomModelsFigure(accent: accent),
+    // La fraction qui court après la diagonale et ne l'atteint pas.
+    'racine-de-deux': (BuildContext context, Color accent) =>
+        RootTwoFigure(accent: accent),
+    // La frise des nombres : servir d'abord, être admis vingt siècles plus
+    // tard.
+    'frise-nombres': (BuildContext context, Color accent) =>
+        NumberTimelineFigure(accent: accent),
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),

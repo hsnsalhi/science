@@ -17,13 +17,16 @@ void main() {
   /// ne se raccourcit jamais.
   const Set<String> repris = <String>{
     'physique-chimie-college-gravitation-et-systeme-solaire',
+    'histoire-sciences-college-les-nombres-qui-ont-fait-peur',
+    'histoire-sciences-college-l-atome-2500-ans-d-hypotheses',
+    'histoire-sciences-college-pasteur-darwin-et-le-vivant',
   };
 
   /// Part minimale de cartes « figure » sur l'ensemble du contenu.
   ///
   /// On la relève à chaque lot converti. Elle ne descend pas : un chapitre
   /// qu'on ajoute sans figure fait tomber la moyenne, et le test le dit.
-  const double partMinimale = 0.09;
+  const double partMinimale = 0.096;
 
   late List<Map<String, dynamic>> chapitres;
   late Map<String, Map<String, dynamic>> contenus;

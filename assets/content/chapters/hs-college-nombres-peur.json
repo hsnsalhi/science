@@ -1,0 +1,534 @@
+{
+  "chapter": "histoire-sciences-college-les-nombres-qui-ont-fait-peur",
+  "lessons": [
+    {
+      "id": "irrationnels",
+      "title": "Le scandale de la racine de deux",
+      "subtitle": "Une longueur qu'aucune fraction ne mesure.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Trouve la fraction qui vaut la diagonale",
+          "body": "Le carré a un côté de 1. Sa diagonale, combien mesure-t-elle ? Pousse le dénominateur et compare les deux barres. Surveille surtout les deux nombres du milieu : ils s’approchent, ils ne se rejoignent jamais.",
+          "figureId": "racine-de-deux"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Ce que cherchaient les pythagoriciens",
+          "body": "Pour l’école de Pythagore, tout dans l’univers s’exprimait par des rapports d’entiers : les accords musicaux, les orbites, les longueurs. Ce n’était pas une opinion, c’était une doctrine.\n\nDeux longueurs qui se mesurent avec la même unité sont dites commensurables : elles ont une mesure commune. Le côté du carré et sa diagonale n’en ont aucune, et c’est cela qu’on vient de voir échouer."
+        },
+        {
+          "id": "c3",
+          "kind": "etape",
+          "title": "Pourquoi tu ne la trouveras pas",
+          "body": "Supposons qu’une fraction a sur b, réduite au maximum, vaille la racine de deux.\n\nAlors a² = 2b², donc a² est pair, donc a est pair — le carré d’un impair est impair.\n\nÉcrivons a = 2k. Alors 4k² = 2b², donc b² = 2k², donc b est pair aussi.\n\nMais a et b tous deux pairs contredit « réduite au maximum ». La supposition est donc fausse."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Ce que cette preuve a d’extraordinaire",
+          "body": "Elle n’essaie aucune fraction, et il y en a une infinité. Un ordinateur qui en testerait des milliards ne démontrerait rien : il resterait toutes les autres.\n\nElle suppose le contraire et le fait s’effondrer. C’est le raisonnement par l’absurde, l’un des premiers de l’histoire écrite."
+        },
+        {
+          "id": "c5",
+          "kind": "avertissement",
+          "title": "La légende du noyé",
+          "body": "On raconte que les pythagoriciens ont noyé celui qui a divulgué la découverte. Aucune source contemporaine ne l’atteste : le récit apparaît des siècles plus tard.\n\nLe désarroi, lui, est documenté. Ils ont appelé ces longueurs « alogos » : sans rapport, et aussi sans parole."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Si √2 = a/b alors a² = 2b². Que vaut 7² ?",
+          "hint": "Le carré d'un nombre impair.",
+          "explanation": "49, qui est impair. C'est le point clé : le carré d'un impair est toujours impair, donc a² pair force a pair.",
+          "answer": 49
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi a² pair entraîne-t-il a pair ?",
+          "explanation": "Parce que le carré d'un nombre impair est toujours impair. Si a était impair, a² le serait aussi.",
+          "options": [
+            {
+              "text": "le carré d'un impair est toujours impair",
+              "correct": true
+            },
+            {
+              "text": "parce que 2 divise tous les carrés"
+            },
+            {
+              "text": "par convention"
+            },
+            {
+              "text": "ce n'est vrai que pour les petits nombres"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la démonstration dans l'ordre.",
+          "explanation": "On suppose la fraction réduite, on en déduit a pair, puis b pair, et la contradiction avec « réduite » conclut.",
+          "items": [
+            "supposer que √2 s'écrit a/b, réduite au maximum",
+            "en déduire que a² = 2b², donc a est pair",
+            "écrire a = 2k et en déduire que b est pair",
+            "constater la contradiction avec « réduite au maximum »"
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que signifie le mot « incommensurable » ?",
+          "explanation": "Qu'on ne peut pas mesurer les deux longueurs avec une même unité, aussi petite soit-elle. Le mot dit l'échec des pythagoriciens.",
+          "options": [
+            {
+              "text": "qu'aucune unité commune ne mesure les deux longueurs",
+              "correct": true
+            },
+            {
+              "text": "qu'on ne peut pas calculer la longueur"
+            },
+            {
+              "text": "que la longueur est infinie"
+            },
+            {
+              "text": "que la mesure est trop difficile"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Un ordinateur testant des milliards de fractions démontrerait-il l'irrationalité ?",
+          "explanation": "Non : il y en a une infinité. Seule une démonstration établit une impossibilité, et c'est ce qui la rend irremplaçable.",
+          "options": [
+            {
+              "text": "non, il y en a une infinité à tester",
+              "correct": true
+            },
+            {
+              "text": "oui, s'il en teste assez"
+            },
+            {
+              "text": "oui, c'est la méthode moderne"
+            },
+            {
+              "text": "oui, à condition d'aller jusqu'à mille milliards"
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "kind": "vraiFaux",
+          "prompt": "On sait que les pythagoriciens ont noyé le divulgateur de la découverte.",
+          "explanation": "Faux. Aucune source contemporaine ne l'atteste ; le récit apparaît des siècles plus tard. Le désarroi, lui, est documenté par le mot « incommensurable ».",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "zero",
+      "title": "Le zéro et les négatifs",
+      "subtitle": "Deux nombres qu'on a refusés longtemps.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Recule plus loin que zéro",
+          "body": "Pose le point sur la droite, puis fais-le reculer au-delà du zéro. À droite, des quantités qu’on peut montrer du doigt. À gauche, quoi ? C’est la question qui a bloqué les mathématiciens pendant deux mille ans.",
+          "figureId": "droite-graduee"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "Pourquoi le zéro dérangeait",
+          "body": "Un nombre compte des choses ; zéro ne compte rien. Les Grecs, excellents géomètres, n’en ont jamais eu besoin : un carré de côté zéro n’existe pas, et toute leur arithmétique était une géométrie.\n\nIl apparaît en Inde vers le cinquième siècle, comme chiffre d’abord — une case vide dans l’écriture des nombres — puis comme nombre à part entière, avec lequel on calcule."
+        },
+        {
+          "id": "c3",
+          "kind": "texte",
+          "title": "Les négatifs, refusés jusqu’au dix-huitième siècle",
+          "body": "On ne trace pas un segment de longueur moins trois. Diophante, au troisième siècle, écarte les solutions négatives : il les dit « absurdes ».\n\nCe sont les comptables qui les imposent : une dette se note, qu’elle plaise ou non aux savants. L’usage a gagné avant la théorie."
+        },
+        {
+          "id": "c4",
+          "kind": "aRetenir",
+          "title": "Pourquoi moins par moins fait plus",
+          "body": "Ce n’est pas une convention arbitraire, c’est la seule règle qui laisse la distributivité vraie.\n\n(−1) × (−1 + 1) vaut (−1) × 0, donc 0. En développant : (−1) × (−1) + (−1) × 1, c’est-à-dire (−1) × (−1) − 1.\n\nCe total doit faire 0, donc (−1) × (−1) = 1."
+        },
+        {
+          "id": "c5",
+          "kind": "astuce",
+          "title": "Et les imaginaires, troisième épisode",
+          "body": "Même histoire au seizième siècle avec les racines de nombres négatifs. Descartes les appelle « imaginaires » par moquerie, pour dire qu’elles n’existent que dans la tête.\n\nLe nom est resté. Elles servent aujourd’hui à calculer les circuits électriques et les ondes, ce qui est peu imaginaire."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les Grecs n'avaient-ils pas besoin du zéro ?",
+          "explanation": "Parce qu'ils faisaient de la géométrie : une longueur nulle n'est pas une longueur, et un carré de côté zéro n'existe pas.",
+          "options": [
+            {
+              "text": "leur mathématique était géométrique",
+              "correct": true
+            },
+            {
+              "text": "ils ne savaient pas compter"
+            },
+            {
+              "text": "ils le trouvaient trop difficile"
+            },
+            {
+              "text": "il était interdit par la religion"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Sous quelle forme le zéro apparaît-il d'abord en Inde ?",
+          "explanation": "Comme une position vide dans l'écriture des nombres. Son statut de quantité à part entière vient après.",
+          "options": [
+            {
+              "text": "comme une position vide dans l'écriture",
+              "correct": true
+            },
+            {
+              "text": "comme une quantité à part entière"
+            },
+            {
+              "text": "comme un symbole religieux"
+            },
+            {
+              "text": "comme une unité de mesure"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Qu'est-ce qui a fait accepter les nombres négatifs ?",
+          "explanation": "La comptabilité. Une dette est un nombre négatif, et les marchands en calculaient bien avant que les savants ne les admettent.",
+          "options": [
+            {
+              "text": "la comptabilité et les dettes",
+              "correct": true
+            },
+            {
+              "text": "une démonstration décisive"
+            },
+            {
+              "text": "une décision d'académie"
+            },
+            {
+              "text": "la géométrie"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut (−1) × (−1 + 1) ?",
+          "explanation": "(−1) × 0 = 0. C'est le point de départ de la démonstration de la règle des signes.",
+          "answer": 0
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "En développant, on obtient (−1) × (−1) − 1 = 0. Combien vaut donc (−1) × (−1) ?",
+          "explanation": "1. C'est la seule valeur qui laisse la distributivité vraie — la règle des signes n'est donc pas une convention.",
+          "answer": 1
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les nombres imaginaires portent-ils ce nom ?",
+          "explanation": "Descartes le leur a donné pour s'en moquer. Un nom méprisant qui reste est la trace d'une résistance qui a perdu.",
+          "options": [
+            {
+              "text": "c'était un terme de moquerie qui est resté",
+              "correct": true
+            },
+            {
+              "text": "parce qu'ils sont difficiles à imaginer"
+            },
+            {
+              "text": "parce qu'ils n'existent pas vraiment"
+            },
+            {
+              "text": "parce qu'ils servent en littérature"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schema",
+      "title": "Le schéma de la résistance",
+      "subtitle": "Toujours la même histoire.",
+      "kind": "entrainement",
+      "xp": 30,
+      "minutes": 9,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Combien de temps avant d’être admis ?",
+          "body": "Fais glisser l’année. La barre orange est le temps passé à se servir d’un nombre en refusant de l’appeler un nombre. Arrête-toi en 1700 : deux familles y sont encore en sursis.",
+          "figureId": "frise-nombres"
+        },
+        {
+          "id": "c2",
+          "kind": "etape",
+          "title": "Les quatre temps, toujours les mêmes",
+          "body": "Un besoin pratique fait apparaître l’objet : mesurer une diagonale, noter une dette, résoudre une équation.\n\nLes savants le refusent : dans leur cadre, il n’a pas de sens.\n\nIl s’impose par son utilité, souvent chez les praticiens plutôt que chez les théoriciens.\n\nLe cadre s’élargit pour l’accueillir, et il devient banal."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Le refus n’était pas de la bêtise",
+          "body": "C’est l’erreur la plus courante en histoire des sciences : croire que les anciens étaient sots. Diophante écartant les solutions négatives n’était pas stupide — dans un cadre géométrique, elles sont effectivement absurdes.\n\nCe qui a changé n’est pas l’intelligence des mathématiciens, c’est le cadre."
+        },
+        {
+          "id": "c4",
+          "kind": "astuce",
+          "title": "Les noms gardent la trace du procès",
+          "body": "« Irrationnel » ne veut pas dire déraisonnable : il veut dire qui n’est pas un rapport, un ratio.\n\n« Imaginaire » était une moquerie de Descartes, « négatif » vient du mot qui veut dire refuser. Trois insultes devenues des noms de famille."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les quatre temps du schéma dans l'ordre.",
+          "explanation": "Un besoin pratique, un refus théorique, une imposition par l'usage, puis l'élargissement du cadre.",
+          "items": [
+            "un besoin pratique fait apparaître l'objet",
+            "les savants le refusent, faute de sens dans leur cadre",
+            "l'objet s'impose par son utilité",
+            "le cadre s'élargit et l'objet devient banal"
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "Diophante refusant les solutions négatives était-il stupide ?",
+          "explanation": "Non. Dans un cadre géométrique, une longueur négative est effectivement absurde. Ce qui a changé est le cadre, pas l'intelligence des mathématiciens.",
+          "options": [
+            {
+              "text": "non, elles étaient absurdes dans son cadre",
+              "correct": true
+            },
+            {
+              "text": "oui, c'était une erreur grossière"
+            },
+            {
+              "text": "oui, il manquait de rigueur"
+            },
+            {
+              "text": "impossible à juger"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "appariement",
+          "prompt": "Associe chaque nombre au cadre qu'il a brisé.",
+          "explanation": "Chaque nouveau nombre a cassé une certitude : les proportions entières, l'ancrage géométrique, la positivité des carrés.",
+          "pairs": [
+            {
+              "left": "les irrationnels",
+              "right": "tout est rapport d'entiers"
+            },
+            {
+              "left": "les négatifs",
+              "right": "un nombre mesure une longueur"
+            },
+            {
+              "left": "les imaginaires",
+              "right": "un carré est positif"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "choixUnique",
+          "prompt": "Que signifie vraiment « irrationnel » en mathématiques ?",
+          "explanation": "Qui n'est pas un rapport d'entiers, un ratio. Le sens de reproche est une dérive de la langue courante.",
+          "options": [
+            {
+              "text": "qui n'est pas un rapport d'entiers",
+              "correct": true
+            },
+            {
+              "text": "qui est déraisonnable"
+            },
+            {
+              "text": "qui est infini"
+            },
+            {
+              "text": "qui est impossible à écrire"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "kind": "choixUnique",
+          "prompt": "Quelle est l'erreur la plus courante en histoire des sciences ?",
+          "explanation": "Juger les savants du passé avec nos cadres actuels. Leurs refus étaient cohérents avec ce qu'ils tenaient pour établi.",
+          "options": [
+            {
+              "text": "juger le passé avec nos cadres actuels",
+              "correct": true
+            },
+            {
+              "text": "oublier les dates"
+            },
+            {
+              "text": "citer trop de noms"
+            },
+            {
+              "text": "négliger les mathématiques"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defi-nombres",
+      "title": "Défi : refaire la démonstration",
+      "subtitle": "Et voir où elle s'arrête.",
+      "kind": "defi",
+      "xp": 40,
+      "minutes": 11,
+      "cards": [
+        {
+          "id": "c1",
+          "kind": "figure",
+          "title": "Pousse la chasse jusqu’au bout",
+          "body": "Appuie sur le bouton jusqu’à 577 sur 408 : 332 929 d’un côté, 332 928 de l’autre. Il manque un. Il manquera toujours au moins un, parce que ce sont des entiers.",
+          "figureId": "racine-de-deux"
+        },
+        {
+          "id": "c2",
+          "kind": "texte",
+          "title": "La même preuve pour la racine de trois",
+          "body": "La démonstration pour √2 utilise que a² pair entraîne a pair. Pour √3, on utilise que a² divisible par 3 entraîne a divisible par 3.\n\nC’est vrai parce que 3 est premier, et tout le reste du raisonnement se recopie mot pour mot. Entre 2 et 10, seuls 4 et 9 ont une racine rationnelle : ce sont les carrés parfaits."
+        },
+        {
+          "id": "c3",
+          "kind": "aRetenir",
+          "title": "Où la preuve casse pour quatre",
+          "body": "Avec 4, l’argument tombe : 36 est divisible par 4, et 6 ne l’est pas.\n\nHeureusement — sinon on démontrerait que √4 est irrationnel, alors qu’elle vaut 2. Une preuve qui marcherait aussi dans les cas faux ne prouverait rien."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut 6² ?",
+          "explanation": "36, qui est divisible par 4 alors que 6 ne l'est pas : c'est le contre-exemple qui fait tomber la preuve pour √4.",
+          "answer": 36
+        },
+        {
+          "id": "q2",
+          "kind": "choixUnique",
+          "prompt": "36 est divisible par 4. Et 6 ?",
+          "explanation": "Non : 6 = 4 + 2. Donc « a² divisible par 4 entraîne a divisible par 4 » est faux.",
+          "options": [
+            {
+              "text": "non, 6 n'est pas divisible par 4",
+              "correct": true
+            },
+            {
+              "text": "oui"
+            },
+            {
+              "text": "seulement si on arrondit"
+            },
+            {
+              "text": "impossible à dire"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la démonstration marche-t-elle pour 2 et 3 mais pas pour 4 ?",
+          "explanation": "Parce que 2 et 3 sont premiers : un nombre premier qui divise un produit divise l'un des facteurs. Quatre n'étant pas premier, la propriété tombe.",
+          "options": [
+            {
+              "text": "2 et 3 sont premiers, 4 ne l'est pas",
+              "correct": true
+            },
+            {
+              "text": "4 est trop grand"
+            },
+            {
+              "text": "4 est pair"
+            },
+            {
+              "text": "c'est un hasard"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "kind": "saisieNumerique",
+          "prompt": "Pour quels entiers de 2 à 10 la racine est-elle rationnelle ? Donne combien il y en a.",
+          "hint": "Les carrés parfaits.",
+          "explanation": "Deux : 4 et 9, dont les racines valent 2 et 3. Pour tous les autres la racine est irrationnelle.",
+          "answer": 2
+        },
+        {
+          "id": "q5",
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut la racine carrée de 9 ?",
+          "explanation": "3, qui est rationnel. Neuf n'est pas premier, et c'est un carré parfait : la démonstration ne s'y applique pas.",
+          "answer": 3
+        },
+        {
+          "id": "q6",
+          "kind": "choixUnique",
+          "prompt": "Que montre le fait que la preuve échoue pour √4 ?",
+          "explanation": "Qu'elle est solide. Une démonstration qui prouverait aussi des énoncés faux ne vaudrait rien : elle doit échouer là où la conclusion est fausse.",
+          "options": [
+            {
+              "text": "qu'elle est solide : elle échoue là où la conclusion est fausse",
+              "correct": true
+            },
+            {
+              "text": "qu'elle est incomplète"
+            },
+            {
+              "text": "qu'il faut une autre méthode pour √2"
+            },
+            {
+              "text": "que √4 est en fait irrationnel"
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "kind": "vraiFaux",
+          "prompt": "La racine carrée de tout entier non carré parfait est irrationnelle.",
+          "explanation": "Vrai. La démonstration se généralise en décomposant l'entier en facteurs premiers : si l'un apparaît un nombre impair de fois, la racine est irrationnelle.",
+          "answer": true
+        }
+      ]
+    }
+  ]
+}
