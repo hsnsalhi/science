@@ -1,0 +1,481 @@
+{
+  "chapter": "maths-lycee-geometrie-reperee",
+  "lessons": [
+    {
+      "id": "distance-et-milieu",
+      "title": "Distance et milieu",
+      "subtitle": "Pythagore, écrit avec des coordonnées.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les deux côtés font l’hypoténuse",
+          "body": "Glisse sur la figure pour changer les côtés du triangle : l’aire bleue plus l’aire verte égale toujours l’aire orange. Touche la figure pour nommer les côtés. Dans un repère, les deux côtés de l’angle droit sont justement l’écart des abscisses et l’écart des ordonnées.",
+          "figureId": "pythagore-carres",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La distance entre deux points",
+          "body": "Pour A(xA ; yA) et B(xB ; yB) dans un repère orthonormé :\n\nAB = racine de ((xB − xA)² + (yB − yA)²)\n\nCe n’est pas une formule nouvelle : c’est le théorème de Pythagore appliqué au triangle rectangle dont l’hypoténuse est [AB] et les côtés les deux écarts.",
+          "formula": "AB = √((xB − xA)² + (yB − yA)²)",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le milieu d’un segment",
+          "body": "Pour A(xA ; yA) et B(xB ; yB), le milieu M a pour coordonnées :\n\nxM = (xA + xB)/2   et   yM = (yA + yB)/2\n\nC’est la moyenne, coordonnée par coordonnée. Rien de plus, et cette formule-là reste valable même si le repère n’est pas orthonormé.",
+          "formula": "M = ((xA + xB)/2 ; (yA + yB)/2)",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La distance exige un repère orthonormé",
+          "body": "La formule de la distance suppose que les axes sont perpendiculaires et que les deux unités sont égales. Sinon Pythagore ne s’applique pas.\n\nLe milieu, lui, ne demande rien de tel : il est défini par un rapport de longueurs sur une même droite, et les rapports survivent à n’importe quel repère.\n\nConfondre les deux conduit à calculer des longueurs fausses sans aucun signe d’alerte.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Reconnaître un triangle rectangle par le calcul",
+          "body": "A(1 ; 2), B(4 ; 6), C(0 ; 5).\n\nAB² = 3² + 4² = 25. AC² = 1² + 3² = 10. BC² = 4² + 1² = 17.\n\nLe plus grand est AB² = 25, et 10 + 17 = 27, qui n’est pas 25. Le triangle n’est donc pas rectangle.\n\nOn travaille sur les carrés des longueurs, jamais sur les longueurs : cela évite les racines et donc les arrondis, qui peuvent faire conclure à tort.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la distance entre A(1 ; 2) et B(4 ; 6) ?",
+          "explanation": "Les écarts valent 3 et 4, donc AB² = 9 + 16 = 25 et AB = 5. C’est le triangle 3-4-5.",
+          "answer": 5,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est l’abscisse du milieu de [AB] avec A(1 ; 2) et B(7 ; 6) ?",
+          "explanation": "(1 + 7)/2 = 4. Le milieu est la moyenne, coordonnée par coordonnée.",
+          "answer": 4,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La formule de la distance est valable dans n’importe quel repère.",
+          "explanation": "Faux. Elle suppose un repère orthonormé. Le milieu, lui, est valable partout, car il repose sur un rapport de longueurs.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi travailler sur les carrés des longueurs ?",
+          "explanation": "Pour éviter les racines, donc les arrondis, qui peuvent faire conclure à tort à un triangle rectangle qui n’en est pas un.",
+          "options": [
+            {
+              "text": "pour éviter les arrondis des racines",
+              "correct": true
+            },
+            {
+              "text": "parce que les carrés sont plus grands"
+            },
+            {
+              "text": "pour simplifier les signes"
+            },
+            {
+              "text": "parce que Pythagore l’exige"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le triangle A(1 ; 2), B(4 ; 6), C(0 ; 5) est rectangle.",
+          "explanation": "Faux. AB² = 25, AC² = 10, BC² = 17, et 10 + 17 = 27, différent de 25. La réciproque de Pythagore n’est pas vérifiée.",
+          "answer": false,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "equation-de-droite",
+      "title": "L’équation d’une droite",
+      "subtitle": "Le coefficient directeur se lit, se calcule et se compare.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La pente, lue sur une sécante",
+          "body": "Resserre l’écart avec le curseur : la pente de la sécante s’affiche et se stabilise. Sur une droite, cette pente ne changerait pas du tout, quel que soit l’écart — c’est exactement ce qui définit une droite.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux écritures",
+          "body": "Forme réduite : y = mx + p. Elle décrit toutes les droites sauf les verticales.\n\nForme générale : ax + by + c = 0. Elle décrit toutes les droites, verticales comprises, et c’est pour cela qu’on l’utilise en géométrie repérée.\n\nUne droite verticale a pour équation x = k, qu’aucune forme réduite ne peut écrire.",
+          "formula": "y = mx + p",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Calculer le coefficient directeur",
+          "body": "Pour deux points A et B d’abscisses différentes :\n\nm = (yB − yA)/(xB − xA)\n\nC’est l’accroissement vertical divisé par l’accroissement horizontal : si on avance de 1 en x, on monte de m en y.\n\nSi les abscisses sont égales, la division est impossible — et c’est précisément le cas de la droite verticale, qui n’a pas de coefficient directeur.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Parallèles et perpendiculaires",
+          "body": "Deux droites non verticales sont parallèles si et seulement si elles ont le même coefficient directeur.\n\nDans un repère orthonormé, elles sont perpendiculaires si et seulement si le produit de leurs coefficients vaut −1.\n\nUne pente de 2 est donc perpendiculaire à une pente de −0,5. Le critère des perpendiculaires, lui, exige l’orthonormé : sans cela, il est faux.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trouver l’équation à partir de deux points",
+          "body": "A(1 ; 3) et B(3 ; 7).\n\nm = (7 − 3)/(3 − 1) = 4/2 = 2.\n\nOn écrit y = 2x + p, et on remplace par A : 3 = 2 + p, donc p = 1.\n\nLa droite est y = 2x + 1, et on contrôle avec B : 2 × 3 + 1 = 7. Ce contrôle prend trois secondes et attrape presque toutes les erreurs de signe.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le coefficient directeur de la droite passant par A(1 ; 3) et B(3 ; 7) ?",
+          "explanation": "(7 − 3)/(3 − 1) = 4/2 = 2. On monte de 2 chaque fois qu’on avance de 1.",
+          "answer": 2,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle droite la forme y = mx + p ne peut-elle pas décrire ?",
+          "explanation": "Les verticales. Leur équation est x = k, et leur coefficient directeur n’existe pas : la division par un écart nul est impossible.",
+          "options": [
+            {
+              "text": "une droite verticale",
+              "correct": true
+            },
+            {
+              "text": "une droite horizontale"
+            },
+            {
+              "text": "une droite de pente négative"
+            },
+            {
+              "text": "une droite passant par l’origine"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une droite a pour pente 2. Quelle pente a une perpendiculaire, dans un repère orthonormé ?",
+          "explanation": "Le produit des pentes doit valoir −1, donc la pente cherchée est −0,5.",
+          "answer": -0.5,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le critère du produit des pentes égal à −1 vaut dans tout repère.",
+          "explanation": "Faux. Il exige un repère orthonormé. Le critère du parallélisme, lui, reste valable partout.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’équation de la droite passant par A(1 ; 3) de pente 2 ?",
+          "explanation": "y = 2x + p, et 3 = 2 × 1 + p donne p = 1. Donc y = 2x + 1.",
+          "options": [
+            {
+              "text": "y = 2x + 1",
+              "correct": true
+            },
+            {
+              "text": "y = 2x + 3"
+            },
+            {
+              "text": "y = 2x − 1"
+            },
+            {
+              "text": "y = x + 2"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi préfère-t-on la forme ax + by + c = 0 en géométrie repérée ?",
+          "explanation": "Parce qu’elle décrit toutes les droites, verticales comprises, alors que la forme réduite en laisse échapper toute une famille.",
+          "options": [
+            {
+              "text": "elle décrit aussi les droites verticales",
+              "correct": true
+            },
+            {
+              "text": "elle est plus courte"
+            },
+            {
+              "text": "elle donne la pente directement"
+            },
+            {
+              "text": "elle évite les fractions"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "alignement-et-colinearite",
+      "title": "Alignement et colinéarité",
+      "subtitle": "Un seul nombre décide, et il est nul ou il ne l’est pas.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des rapports qui ne bougent pas",
+          "body": "Fais glisser la parallèle dans le triangle : les longueurs affichées changent, leur rapport non. Deux vecteurs qui gardent le même rapport sont colinéaires, et c’est ce qui fait l’alignement.",
+          "figureId": "thales",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les coordonnées d’un vecteur",
+          "body": "Pour A(xA ; yA) et B(xB ; yB), le vecteur AB a pour coordonnées (xB − xA ; yB − yA).\n\nC’est l’arrivée moins le départ, dans cet ordre. L’inverser donne le vecteur opposé, ce qui change le signe du résultat final sans changer la conclusion sur l’alignement.\n\nUn vecteur n’a pas de position : seuls ses deux nombres comptent.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le déterminant, et ce qu’il décide",
+          "body": "Pour deux vecteurs u(x ; y) et v(x′ ; y′) :\n\ndet(u ; v) = x y′ − y x′\n\nIl est nul si et seulement si les deux vecteurs sont colinéaires. Trois points A, B, C sont donc alignés si et seulement si det(AB ; AC) = 0.\n\nUn seul calcul, une seule comparaison à zéro, aucune division : c’est pourquoi ce critère est préférable à la comparaison des coefficients directeurs.",
+          "formula": "det(u ; v) = x y′ − y x′",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi éviter les coefficients directeurs",
+          "body": "Comparer deux coefficients directeurs demande de diviser, donc d’exclure le cas d’un écart d’abscisses nul, donc de traiter les verticales à part.\n\nLe déterminant ne divise jamais : il traite les verticales comme les autres, sans cas particulier.\n\nC’est le genre de choix qui ne change rien aux résultats et beaucoup à la longueur des copies.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un alignement vérifié",
+          "body": "A(1 ; 2), B(3 ; 6), C(5 ; 10).\n\nAB a pour coordonnées (2 ; 4). AC a pour coordonnées (4 ; 8).\n\ndet = 2 × 8 − 4 × 4 = 16 − 16 = 0.\n\nLes trois points sont alignés. Et l’on voit en passant que AC est le double de AB, donc que B est le milieu de [AC].",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelles sont les coordonnées du vecteur AB avec A(1 ; 2) et B(4 ; 7) ?",
+          "explanation": "L’arrivée moins le départ : (4 − 1 ; 7 − 2) = (3 ; 5).",
+          "options": [
+            {
+              "text": "(3 ; 5)",
+              "correct": true
+            },
+            {
+              "text": "(5 ; 3)"
+            },
+            {
+              "text": "(−3 ; −5)"
+            },
+            {
+              "text": "(5 ; 9)"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Calcule det(u ; v) pour u(2 ; 4) et v(4 ; 8).",
+          "explanation": "2 × 8 − 4 × 4 = 16 − 16 = 0. Les deux vecteurs sont colinéaires.",
+          "answer": 0,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "A(1 ; 2), B(3 ; 6) et C(5 ; 10) sont alignés.",
+          "explanation": "Vrai. det(AB ; AC) = 2 × 8 − 4 × 4 = 0. Et AC vaut le double de AB, donc B est même le milieu de [AC].",
+          "answer": true,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le déterminant est-il préférable aux coefficients directeurs ?",
+          "explanation": "Parce qu’il ne divise jamais : il traite les droites verticales comme les autres, sans aucun cas particulier.",
+          "options": [
+            {
+              "text": "il ne divise pas, donc aucun cas particulier",
+              "correct": true
+            },
+            {
+              "text": "il donne la longueur en plus"
+            },
+            {
+              "text": "il est plus précis"
+            },
+            {
+              "text": "il évite les nombres négatifs"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Échanger l’ordre des deux vecteurs dans le déterminant change la conclusion sur l’alignement.",
+          "explanation": "Faux. Cela change le signe du déterminant, mais zéro reste zéro : la conclusion est la même.",
+          "answer": false,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-cercle",
+      "title": "Défi : l’équation du cercle",
+      "subtitle": "Une distance constante, écrite en coordonnées.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le cercle n’est qu’une distance",
+          "body": "Reprends le triangle rectangle : l’hypoténuse est la distance entre deux points. Si l’on impose à cette distance de valoir toujours la même chose, le second point décrit un cercle. L’équation du cercle est donc Pythagore avec une contrainte.",
+          "figureId": "pythagore-carres",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "L’équation d’un cercle",
+          "body": "Le cercle de centre O(a ; b) et de rayon r est l’ensemble des points M(x ; y) tels que :\n\n(x − a)² + (y − b)² = r²\n\nCentré à l’origine, cela devient x² + y² = r². On lit le centre directement dans les parenthèses, à condition de se méfier des signes : (x − 3)² signifie a = 3, et (x + 3)² signifie a = −3.",
+          "formula": "(x − a)² + (y − b)² = r²",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Reconnaître un cercle dans une équation développée",
+          "body": "Devant x² + y² − 6x + 4y − 12 = 0, on regroupe en x et en y.\n\nx² − 6x devient (x − 3)² − 9. y² + 4y devient (y + 2)² − 4.\n\nL’équation s’écrit (x − 3)² + (y + 2)² − 9 − 4 − 12 = 0, soit (x − 3)² + (y + 2)² = 25.\n\nC’est le cercle de centre (3 ; −2) et de rayon 5. Cette technique s’appelle compléter le carré, et c’est la même qui donne le discriminant du second degré.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Toutes ces équations ne sont pas des cercles",
+          "body": "Si le nombre obtenu à droite est strictement positif, c’est un cercle.\n\nS’il est nul, l’ensemble se réduit au seul centre : un unique point, et non un cercle de rayon nul.\n\nS’il est négatif, aucun point ne convient : l’ensemble est vide. Une somme de deux carrés ne peut pas être négative.\n\nIl faut donc toujours conclure après avoir regardé le signe, et non annoncer un cercle dès qu’on voit x² + y².",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a vraiment construit",
+          "body": "Une distance, un milieu, une pente, un déterminant, une équation de cercle : cinq outils, et un seul théorème dessous.\n\nToutes les longueurs viennent de Pythagore. Tous les alignements viennent de la proportionnalité de Thalès.\n\nMettre des coordonnées sur la géométrie n’a rien ajouté aux théorèmes : cela a remplacé la figure par du calcul, donc le coup d’œil par une méthode qui marche même quand on ne voit rien.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le centre du cercle d’équation (x − 3)² + (y + 2)² = 25 ?",
+          "explanation": "On lit dans les parenthèses en changeant les signes : (x − 3) donne 3, et (y + 2) donne −2. Le centre est (3 ; −2).",
+          "options": [
+            {
+              "text": "(3 ; −2)",
+              "correct": true
+            },
+            {
+              "text": "(−3 ; 2)"
+            },
+            {
+              "text": "(3 ; 2)"
+            },
+            {
+              "text": "(−3 ; −2)"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le rayon du cercle d’équation (x − 3)² + (y + 2)² = 25 ?",
+          "explanation": "Le membre de droite vaut r², donc r = racine de 25 = 5.",
+          "answer": 5,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que décrit l’équation (x − 1)² + (y − 2)² = 0 ?",
+          "explanation": "Un seul point, le centre (1 ; 2). Une somme de deux carrés n’est nulle que si chacun l’est.",
+          "options": [
+            {
+              "text": "un unique point",
+              "correct": true
+            },
+            {
+              "text": "un cercle de rayon nul"
+            },
+            {
+              "text": "l’ensemble vide"
+            },
+            {
+              "text": "une droite"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que décrit l’équation (x − 1)² + (y − 2)² = −4 ?",
+          "explanation": "L’ensemble vide. Une somme de deux carrés ne peut pas être négative, donc aucun point ne convient.",
+          "options": [
+            {
+              "text": "l’ensemble vide",
+              "correct": true
+            },
+            {
+              "text": "un cercle de rayon 2"
+            },
+            {
+              "text": "un unique point"
+            },
+            {
+              "text": "deux droites"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes pour reconnaître le cercle dans x² + y² − 6x + 4y − 12 = 0.",
+          "explanation": "On regroupe par variable, on complète chaque carré, on réunit les constantes à droite, puis on lit le centre et le rayon.",
+          "items": [
+            "regrouper les termes en x et ceux en y",
+            "compléter le carré dans chaque groupe",
+            "réunir les constantes à droite",
+            "lire le centre et le rayon"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a apporté le fait de mettre des coordonnées sur la géométrie ?",
+          "explanation": "Aucun théorème nouveau, mais une méthode de calcul qui fonctionne sans voir la figure. C’est tout l’apport de Descartes.",
+          "options": [
+            {
+              "text": "une méthode qui marche sans voir la figure",
+              "correct": true
+            },
+            {
+              "text": "de nouveaux théorèmes"
+            },
+            {
+              "text": "des figures plus précises"
+            },
+            {
+              "text": "la fin de Pythagore"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

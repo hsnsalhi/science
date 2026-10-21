@@ -1,0 +1,555 @@
+{
+  "chapter": "maths-lycee-logique-et-ensembles",
+  "lessons": [
+    {
+      "id": "implication",
+      "title": "Si, alors",
+      "subtitle": "Un seul des quatre cas peut faire tomber une implication.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le cas qui met la règle en défaut",
+          "body": "Parcours les quatre cas et trouve le seul qui rend l’implication fausse : condition remplie, conclusion fausse. Quand la condition n’est pas remplie, l’implication reste vraie — c’est déroutant la première fois, et c’est pourtant la seule convention cohérente.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois phrases qu’on confond tout le temps",
+          "body": "L’implication : si P alors Q.\n\nLa réciproque : si Q alors P. Elle n’a aucune raison d’être vraie en même temps.\n\nLa contraposée : si Q est faux alors P est faux. Celle-là est toujours vraie en même temps que l’implication : c’est la même affirmation dite autrement.\n\nDémontrer la contraposée démontre donc l’implication. C’est souvent beaucoup plus facile.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas où la réciproque est fausse",
+          "body": "Si un nombre est divisible par 4, alors il est divisible par 2. Vraie.\n\nRéciproque : si un nombre est divisible par 2, alors il est divisible par 4. Fausse, et 6 suffit à le montrer.\n\nContraposée : si un nombre n’est pas divisible par 2, alors il n’est pas divisible par 4. Vraie, forcément, puisque c’est l’implication de départ relue à l’envers.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Condition nécessaire, condition suffisante",
+          "body": "Dans « si P alors Q », P est suffisante pour Q : il suffit de P pour avoir Q.\n\nEt Q est nécessaire à P : sans Q, pas de P.\n\n« Nécessaire et suffisante » signifie que l’implication et sa réciproque sont toutes les deux vraies. On dit alors « si et seulement si », et c’est une affirmation deux fois plus forte.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un contre-exemple suffit, un exemple ne suffit jamais",
+          "body": "Pour montrer qu’une implication est fausse, un seul cas où P est vrai et Q faux règle la question définitivement.\n\nPour montrer qu’elle est vraie, aucun nombre d’exemples ne suffit : il faut une démonstration qui couvre tous les cas.\n\nCette asymétrie est la raison d’être de toute la suite du chapitre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel cas l’implication « si P alors Q » est-elle fausse ?",
+          "explanation": "Uniquement quand P est vrai et Q faux. Dans les trois autres cas, l’implication est vraie par convention, et c’est la seule convention cohérente.",
+          "options": [
+            {
+              "text": "P vrai et Q faux",
+              "correct": true
+            },
+            {
+              "text": "P faux et Q vrai"
+            },
+            {
+              "text": "P faux et Q faux"
+            },
+            {
+              "text": "P vrai et Q vrai"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque phrase à son nom.",
+          "explanation": "La réciproque échange les deux membres, la contraposée les échange et les nie. Seule la contraposée équivaut à l’implication.",
+          "pairs": [
+            {
+              "left": "si P alors Q",
+              "right": "l’implication"
+            },
+            {
+              "left": "si Q alors P",
+              "right": "la réciproque"
+            },
+            {
+              "left": "si Q est faux alors P est faux",
+              "right": "la contraposée"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si une implication est vraie, sa réciproque est vraie aussi.",
+          "explanation": "Faux. « Divisible par 4 donc par 2 » est vraie ; sa réciproque est fausse, et 6 suffit à le montrer.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si une implication est vraie, sa contraposée est vraie aussi.",
+          "explanation": "Vrai, toujours. La contraposée est la même affirmation dite autrement, et la démontrer démontre l’implication.",
+          "answer": true,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans « si un quadrilatère est un carré alors c’est un rectangle », qu’est « être un rectangle » ?",
+          "explanation": "Une condition nécessaire : sans elle, pas de carré. Elle n’est pas suffisante, puisqu’un rectangle n’est pas forcément un carré.",
+          "options": [
+            {
+              "text": "une condition nécessaire",
+              "correct": true
+            },
+            {
+              "text": "une condition suffisante"
+            },
+            {
+              "text": "nécessaire et suffisante"
+            },
+            {
+              "text": "ni l’une ni l’autre"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de contre-exemples faut-il pour réfuter une implication ?",
+          "explanation": "Un seul. Alors qu’aucun nombre d’exemples favorables ne suffit à la démontrer : c’est toute l’asymétrie du raisonnement.",
+          "options": [
+            {
+              "text": "un seul",
+              "correct": true
+            },
+            {
+              "text": "au moins trois"
+            },
+            {
+              "text": "une infinité"
+            },
+            {
+              "text": "cela dépend de l’énoncé"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "et-ou-non",
+      "title": "Et, ou, non",
+      "subtitle": "Nier une phrase retourne chaque pièce, y compris les connecteurs.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Toucher une case, voir le connecteur",
+          "body": "Touche les cases de la table : le « et » n’est vrai que sur une ligne, le « ou » sur trois. Le « ou » des mathématiques accepte les deux à la fois, contrairement au « ou » de la vie courante qui veut souvent dire « l’un ou l’autre mais pas les deux ».",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les règles de négation",
+          "body": "La négation de « P et Q » est « non P ou non Q ».\n\nLa négation de « P ou Q » est « non P et non Q ».\n\nLe connecteur change en même temps que les membres : c’est l’erreur la plus fréquente de l’année, et elle vient de ce qu’on nie les membres en oubliant le connecteur.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Nier une inégalité double",
+          "body": "La phrase « 2 est inférieur ou égal à x et x est inférieur ou égal à 5 » décrit l’intervalle de 2 à 5.\n\nSa négation n’est pas « x est entre 5 et 2 », ce qui ne veut rien dire. C’est « x est strictement inférieur à 2 ou x est strictement supérieur à 5 ».\n\nLe « et » est devenu « ou », et chaque inégalité large est devenue stricte. Deux changements, pas un.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Nier un quantificateur",
+          "body": "La négation de « pour tout x, P(x) » est « il existe un x tel que P(x) est faux ».\n\nLa négation de « il existe un x tel que P(x) » est « pour tout x, P(x) est faux ».\n\nRéfuter un « pour tout » demande donc un seul contre-exemple. Réfuter un « il existe » demande de traiter tous les cas : les deux travaux n’ont pas du tout la même difficulté.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’ordre des quantificateurs change tout",
+          "body": "« Pour tout entier n, il existe un entier m plus grand que n » est vraie : prends m = n + 1.\n\n« Il existe un entier m tel que pour tout entier n, m est plus grand que n » est fausse : aucun entier ne dépasse tous les autres.\n\nLes mêmes mots, dans un autre ordre, et l’une est vraie et l’autre fausse. Dans le premier cas m peut dépendre de n, dans le second il doit être choisi avant.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « P et Q » ?",
+          "explanation": "« non P ou non Q ». Le connecteur change en même temps que les membres : c’est l’erreur la plus fréquente.",
+          "options": [
+            {
+              "text": "non P ou non Q",
+              "correct": true
+            },
+            {
+              "text": "non P et non Q"
+            },
+            {
+              "text": "P ou Q"
+            },
+            {
+              "text": "non P et Q"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « 2 ≤ x et x ≤ 5 » ?",
+          "explanation": "« x < 2 ou x > 5 ». Le « et » devient « ou » et chaque inégalité large devient stricte : deux changements.",
+          "options": [
+            {
+              "text": "x < 2 ou x > 5",
+              "correct": true
+            },
+            {
+              "text": "x < 2 et x > 5"
+            },
+            {
+              "text": "5 ≤ x et x ≤ 2"
+            },
+            {
+              "text": "x ≤ 2 ou x ≥ 5"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Sur les quatre lignes d’une table de vérité, sur combien « P ou Q » est-il vrai ?",
+          "explanation": "Trois : le « ou » des mathématiques est vrai dès qu’au moins un membre l’est, les deux à la fois compris.",
+          "answer": 3,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « pour tout x, P(x) » ?",
+          "explanation": "« Il existe un x tel que P(x) est faux ». Un seul contre-exemple réfute donc un « pour tout ».",
+          "options": [
+            {
+              "text": "il existe un x tel que P(x) est faux",
+              "correct": true
+            },
+            {
+              "text": "pour tout x, P(x) est faux"
+            },
+            {
+              "text": "il existe un x tel que P(x)"
+            },
+            {
+              "text": "aucun x ne vérifie P"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "« Il existe un entier plus grand que tous les autres » est vraie.",
+          "explanation": "Faux. C’est la même phrase que la vraie, avec les quantificateurs échangés — et cet échange la rend fausse.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette phrase est-elle vraie ou fausse ?",
+          "explanation": "Avec « pour tout n » devant, on peut choisir m = n + 1. Avec « il existe m » devant, m doit battre tous les n à la fois : impossible.",
+          "categories": [
+            "vraie",
+            "fausse"
+          ],
+          "items": [
+            {
+              "text": "pour tout n, il existe m plus grand que n",
+              "category": 0
+            },
+            {
+              "text": "pour tout n, il existe m plus petit que n",
+              "category": 0
+            },
+            {
+              "text": "il existe m plus grand que tout n",
+              "category": 1
+            },
+            {
+              "text": "il existe m plus petit que tout n",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "par-l-absurde",
+      "title": "Le raisonnement par l’absurde",
+      "subtitle": "On suppose le contraire, et on va jusqu’à l’impossible.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Aucune fraction n’y arrive",
+          "body": "Fais monter le dénominateur, puis appuie sur « Sauter à la meilleure suivante » : l’écart à la racine de deux diminue sans jamais s’annuler. 99/70 est remarquablement proche, et pourtant faux. Aucun essai ne peut prouver qu’aucune fraction ne marche : il faut une démonstration.",
+          "figureId": "racine-de-deux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La démonstration, en cinq lignes",
+          "body": "Supposons que racine de deux s’écrive p/q, avec p et q entiers sans facteur commun.\n\nAlors p² = 2q², donc p² est pair, donc p est pair. Écrivons p = 2k.\n\nAlors 4k² = 2q², donc q² = 2k², donc q est pair aussi.\n\nMais p et q étaient sans facteur commun, et les voilà tous les deux pairs. Contradiction.\n\nL’hypothèse de départ était donc fausse : aucune fraction ne vaut racine de deux.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Comment se construit un raisonnement par l’absurde",
+          "body": "On suppose la négation de ce qu’on veut démontrer.\n\nOn en tire des conséquences, en calculant normalement.\n\nOn aboutit à une contradiction : une chose et son contraire, ou un résultat connu faux.\n\nOn conclut que la supposition était fausse, donc que l’énoncé est vrai. La force du procédé est qu’on n’a pas besoin de savoir pourquoi : il suffit que le contraire soit impossible.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Il y a une infinité de nombres premiers",
+          "body": "Supposons qu’il n’y en ait qu’un nombre fini : p1, p2, et ainsi de suite jusqu’à pn.\n\nConsidérons N, le produit de tous, plus 1. Aucun de ces nombres premiers ne divise N, puisque chacun laisse le reste 1.\n\nOr N est plus grand que 1, donc il a un diviseur premier, qui n’est pas dans la liste. La liste n’était donc pas complète.\n\nDémonstration d’Euclide, vers 300 avant notre ère, et toujours la plus courte connue.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Une contradiction, pas une surprise",
+          "body": "Aboutir à un résultat étonnant ne prouve rien. Il faut une vraie contradiction : A et non A.\n\nEt il faut avoir nié correctement l’énoncé au départ. Un raisonnement par l’absurde qui part d’une mauvaise négation ne démontre rien du tout, même s’il se termine bien.\n\nC’est pourquoi la leçon sur la négation vient avant celle-ci.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la démonstration de l’irrationalité de racine de deux dans l’ordre.",
+          "explanation": "On suppose une fraction irréductible, on en déduit que p est pair, puis que q l’est aussi, ce qui contredit l’irréductibilité.",
+          "items": [
+            "supposons racine de deux = p/q irréductible",
+            "alors p² = 2q², donc p est pair",
+            "en posant p = 2k, on trouve q² = 2k²",
+            "donc q est pair aussi : contradiction"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Par quoi commence un raisonnement par l’absurde ?",
+          "explanation": "Par la supposition de la négation de ce qu’on veut démontrer. On calcule ensuite normalement jusqu’à la contradiction.",
+          "options": [
+            {
+              "text": "par supposer le contraire de l’énoncé",
+              "correct": true
+            },
+            {
+              "text": "par supposer l’énoncé"
+            },
+            {
+              "text": "par un exemple bien choisi"
+            },
+            {
+              "text": "par la contraposée"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La fraction 99/70 est égale à racine de deux.",
+          "explanation": "Faux. Elle en est très proche — à moins d’un dix-millième — mais aucune fraction ne peut l’égaler, et la démonstration le prouve.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans la démonstration d’Euclide, pourquoi N = p1 × p2 × … × pn + 1 pose-t-il problème à la liste ?",
+          "explanation": "Aucun nombre de la liste ne divise N, qui laisse toujours le reste 1. Or N a un diviseur premier : il manquait à la liste.",
+          "options": [
+            {
+              "text": "aucun premier de la liste ne divise N",
+              "correct": true
+            },
+            {
+              "text": "N est premier à coup sûr"
+            },
+            {
+              "text": "N est pair"
+            },
+            {
+              "text": "N est plus petit que pn"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui termine valablement un raisonnement par l’absurde ?",
+          "explanation": "Une contradiction franche : une chose et son contraire. Un résultat simplement étonnant ne démontre rien.",
+          "options": [
+            {
+              "text": "une affirmation et son contraire",
+              "correct": true
+            },
+            {
+              "text": "un résultat surprenant"
+            },
+            {
+              "text": "un calcul très long"
+            },
+            {
+              "text": "un contre-exemple"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un raisonnement par l’absurde parti d’une négation mal écrite peut quand même démontrer l’énoncé.",
+          "explanation": "Faux. Il démontre autre chose, ou rien. C’est pourquoi savoir nier correctement vient avant savoir raisonner par l’absurde.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-choisir-sa-preuve",
+      "title": "Défi : choisir sa preuve",
+      "subtitle": "Quatre formes de démonstration, et le réflexe qui dit laquelle.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Plus d’objets que de tiroirs",
+          "body": "Monte le nombre d’objets au-dessus du nombre de tiroirs, puis appuie sur « Essaie une autre répartition » autant de fois que tu veux : un tiroir contient toujours au moins deux objets. Aucune répartition n’y échappe, et c’est une démonstration à soi seule.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre formes, et quand les employer",
+          "body": "Démonstration directe : on part des hypothèses et on arrive à la conclusion. À essayer toujours en premier.\n\nPar contraposée : quand nier la conclusion donne une prise plus facile. Typiquement quand la conclusion est une négation.\n\nPar l’absurde : quand il s’agit de montrer qu’une chose n’existe pas, ou qu’une écriture est impossible.\n\nPar disjonction de cas : quand les objets se répartissent en quelques familles qu’on peut traiter séparément — pair ou impair, positif ou négatif.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le principe des tiroirs comme démonstration",
+          "body": "Dans un groupe de 13 personnes, deux sont nées le même mois. Treize objets, douze tiroirs : c’est fini.\n\nDans Paris, deux habitants ont exactement le même nombre de cheveux. Un humain en porte au plus 200 000, et Paris compte 2 millions d’habitants.\n\nCes démonstrations ne construisent personne : elles prouvent une existence sans exhiber d’exemple. C’est parfaitement valide, et souvent déconcertant.",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le réflexe qui fait gagner du temps",
+          "body": "Lis la conclusion avant les hypothèses.\n\nSi la conclusion contient « ne… pas », « aucun », « impossible », pense contraposée ou absurde.\n\nSi elle contient « il existe », cherche à construire — ou à compter, comme avec les tiroirs.\n\nSi elle contient « pour tout », demande-toi si les cas se répartissent en familles, ou s’il faut une récurrence.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une démonstration est un texte, pas un calcul",
+          "body": "Elle s’adresse à un lecteur qui n’est pas d’accord d’avance. Chaque ligne doit lui dire d’où elle vient : hypothèse, résultat connu, ou ligne précédente.\n\nLes mots qui tiennent le texte — supposons, donc, or, ainsi, réciproquement — ne sont pas du décor. Ce sont eux qui disent le sens de la déduction.\n\nUne suite de calculs justes sans ces mots n’est pas une démonstration : c’est un brouillon.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque énoncé à la forme de preuve la plus naturelle.",
+          "explanation": "Une impossibilité appelle l’absurde, une conclusion négative la contraposée, un partage en familles la disjonction de cas, une existence par comptage les tiroirs.",
+          "pairs": [
+            {
+              "left": "racine de trois n’est pas une fraction",
+              "right": "par l’absurde"
+            },
+            {
+              "left": "si n² est pair alors n est pair",
+              "right": "par contraposée"
+            },
+            {
+              "left": "n² + n est toujours pair",
+              "right": "par disjonction de cas"
+            },
+            {
+              "left": "deux Parisiens ont autant de cheveux",
+              "right": "par les tiroirs"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de personnes faut-il au minimum pour être sûr que deux sont nées le même mois ?",
+          "explanation": "Treize. Avec douze, chacune peut avoir son mois ; avec treize, un mois en contient forcément deux.",
+          "answer": 13,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que démontre le principe des tiroirs, sans jamais exhiber d’exemple ?",
+          "explanation": "Une existence. Il prouve que deux objets partagent un tiroir sans dire lesquels : c’est valide, et déconcertant.",
+          "options": [
+            {
+              "text": "qu’une chose existe, sans dire laquelle",
+              "correct": true
+            },
+            {
+              "text": "qu’une chose est impossible"
+            },
+            {
+              "text": "qu’une chose est unique"
+            },
+            {
+              "text": "rien, c’est une heuristique"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "La conclusion à démontrer contient « aucun ». Quelle forme essayer d’abord ?",
+          "explanation": "La contraposée ou l’absurde. Une conclusion négative se retourne souvent en une hypothèse commode.",
+          "options": [
+            {
+              "text": "la contraposée ou l’absurde",
+              "correct": true
+            },
+            {
+              "text": "la disjonction de cas"
+            },
+            {
+              "text": "un exemple bien choisi"
+            },
+            {
+              "text": "la récurrence"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une suite de calculs justes constitue une démonstration.",
+          "explanation": "Faux. Sans les mots qui disent d’où vient chaque ligne — supposons, donc, or — c’est un brouillon, pas un texte qui convainc.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un humain porte au plus 200 000 cheveux. Combien d’habitants suffisent pour garantir que deux en ont exactement autant ?",
+          "explanation": "Les valeurs vont de 0 à 200 000, soit 200 001 tiroirs. Il faut donc 200 002 habitants pour forcer deux d’entre eux dans le même.",
+          "answer": 200002,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

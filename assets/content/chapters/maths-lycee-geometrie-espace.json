@@ -1,0 +1,524 @@
+{
+  "chapter": "maths-lycee-geometrie-dans-l-espace",
+  "lessons": [
+    {
+      "id": "representer-l-espace",
+      "title": "Représenter l’espace",
+      "subtitle": "Deux droites qui ne se coupent pas ne sont pas forcément parallèles.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Incliner la fuyante, voir les positions",
+          "body": "Choisis un cube, puis fais varier l’angle de fuite et affiche les arêtes cachées. Cherche deux arêtes qui ne se coupent pas et qui ne sont pas parallèles : dans le plan c’est impossible, dans l’espace c’est le cas le plus courant.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les positions relatives de deux droites",
+          "body": "Coplanaires et sécantes : elles se coupent en un point.\n\nCoplanaires et parallèles : elles ne se coupent jamais et appartiennent à un même plan.\n\nNon coplanaires : elles ne se coupent pas et aucun plan ne les contient toutes les deux. On dit qu’elles sont gauches, et ce cas n’existe pas dans le plan.\n\nC’est la nouveauté de l’espace, et elle explique presque toutes les erreurs de début d’année.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les positions relatives d’une droite et d’un plan",
+          "body": "La droite est contenue dans le plan : une infinité de points communs.\n\nLa droite coupe le plan : exactement un point commun.\n\nLa droite est parallèle au plan : aucun point commun.\n\nIl n’y a pas d’autre cas. Une droite ne peut pas toucher un plan en deux points sans y être entièrement contenue, puisque deux points suffisent à définir une droite.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux arêtes gauches dans un cube",
+          "body": "Prenons un cube ABCDEFGH, avec ABCD le carré du bas et EFGH celui du haut.\n\nLes droites (AB) et (CG) ne se coupent pas : A, B sont en bas, et (CG) monte depuis un autre coin.\n\nEt elles ne sont pas parallèles : (AB) est horizontale, (CG) est verticale.\n\nElles sont donc gauches. Un cube en contient de nombreuses paires, et le repérer sur la figure est plus sûr que de le raisonner de mémoire.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le parallélisme ne se transmet pas comme on croit",
+          "body": "Deux plans parallèles à un même troisième plan sont parallèles entre eux. Vrai.\n\nDeux droites parallèles à un même plan sont parallèles entre elles. Faux : elles peuvent être gauches, ou sécantes.\n\nLa règle à retenir est que le parallélisme se transmet entre objets de même nature — droite à droite, plan à plan — et pas d’une nature à l’autre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Deux droites de l’espace ne se coupent pas. Que peut-on conclure ?",
+          "explanation": "Rien de plus : elles sont parallèles ou gauches. Le second cas n’existe pas dans le plan et explique beaucoup d’erreurs.",
+          "options": [
+            {
+              "text": "elles sont parallèles ou gauches",
+              "correct": true
+            },
+            {
+              "text": "elles sont parallèles"
+            },
+            {
+              "text": "elles sont gauches"
+            },
+            {
+              "text": "elles sont dans un même plan"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Combien de points communs une droite et un plan peuvent-ils avoir ?",
+          "explanation": "Zéro si la droite est parallèle au plan, un si elle le coupe, une infinité si elle y est contenue. Jamais exactement deux.",
+          "categories": [
+            "cas possible",
+            "cas impossible"
+          ],
+          "items": [
+            {
+              "text": "aucun point commun",
+              "category": 0
+            },
+            {
+              "text": "exactement un point",
+              "category": 0
+            },
+            {
+              "text": "une infinité de points",
+              "category": 0
+            },
+            {
+              "text": "exactement deux points",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux droites parallèles à un même plan sont parallèles entre elles.",
+          "explanation": "Faux. Elles peuvent être gauches ou sécantes. Le parallélisme se transmet entre objets de même nature, pas d’une nature à l’autre.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux plans parallèles à un même troisième plan sont parallèles entre eux.",
+          "explanation": "Vrai. Ici les trois objets sont de même nature, et la transitivité fonctionne.",
+          "answer": true,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une droite ne peut-elle pas couper un plan en exactement deux points ?",
+          "explanation": "Parce que deux points suffisent à définir une droite : si deux de ses points sont dans le plan, elle y est entièrement contenue.",
+          "options": [
+            {
+              "text": "deux points communs la contiennent entièrement",
+              "correct": true
+            },
+            {
+              "text": "un plan est trop petit"
+            },
+            {
+              "text": "une droite est courbe dans l’espace"
+            },
+            {
+              "text": "c’est une convention de dessin"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "distances-dans-l-espace",
+      "title": "Les distances dans l’espace",
+      "subtitle": "Pythagore, appliqué deux fois de suite.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le théorème qu’on va utiliser deux fois",
+          "body": "Glisse sur la figure pour changer les côtés : l’aire bleue plus l’aire verte égale l’aire orange. Dans l’espace, on applique ce même théorème une première fois dans le plan du sol, puis une seconde fois en montant à la verticale.",
+          "figureId": "pythagore-carres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi deux applications suffisent",
+          "body": "Pour la diagonale d’un pavé de dimensions a, b et c, on commence par la diagonale du rectangle du bas : son carré vaut a² + b².\n\nCette diagonale et l’arête verticale c forment un triangle rectangle, dont l’hypoténuse est la diagonale du pavé.\n\nSon carré vaut donc (a² + b²) + c².\n\nLe même raisonnement vaut en dimension quatre, cinq, et au-delà : c’est pourquoi la formule des distances se généralise sans difficulté.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La distance dans un repère orthonormé de l’espace",
+          "body": "Pour A(xA ; yA ; zA) et B(xB ; yB ; zB) :\n\nAB² = (xB − xA)² + (yB − yA)² + (zB − zA)²\n\nC’est la formule du plan, avec un terme de plus. Et le milieu s’obtient toujours en moyennant chaque coordonnée, avec une troisième moyenne à faire.",
+          "formula": "AB² = Δx² + Δy² + Δz²",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La diagonale d’une pièce",
+          "body": "Une pièce de 4 mètres sur 3, hauteur 2,5 mètres.\n\nDiagonale du sol : racine de (16 + 9) = 5 mètres.\n\nDiagonale de la pièce : racine de (25 + 6,25) = racine de 31,25, soit environ 5,59 mètres.\n\nC’est la plus grande longueur qu’on puisse faire entrer dans la pièce, et c’est un calcul que font les déménageurs — sans toujours savoir qu’ils appliquent Pythagore deux fois.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La diagonale du cube de côté a",
+          "body": "Elle vaut a fois racine de 3, puisque a² + a² + a² = 3a².\n\nÀ comparer à la diagonale d’une face, qui vaut a fois racine de 2.\n\nRacine de 3 vaut environ 1,732 : la diagonale d’un cube dépasse donc son côté de 73 %. C’est beaucoup plus que ce que la plupart des gens estiment à vue d’œil.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la distance entre A(0 ; 0 ; 0) et B(2 ; 3 ; 6) ?",
+          "explanation": "4 + 9 + 36 = 49, donc AB = 7. C’est l’un des rares triplets qui donne un résultat entier.",
+          "answer": 7,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la diagonale du sol d’une pièce de 4 m sur 3 m ?",
+          "explanation": "Racine de (16 + 9) = racine de 25 = 5 mètres. C’est le triangle 3-4-5.",
+          "answer": 5,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien de pour cent la diagonale d’un cube dépasse-t-elle son côté ?",
+          "explanation": "Elle vaut a racine de 3, soit environ 1,732 a : elle dépasse le côté de 73 %.",
+          "min": 0,
+          "max": 200,
+          "answer": 73,
+          "tolerance": 8,
+          "unit": "%",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de fois applique-t-on Pythagore pour la diagonale d’un pavé ?",
+          "explanation": "Deux fois : une dans le plan du sol, puis une en montant à la verticale. Le raisonnement se généralise à toute dimension.",
+          "options": [
+            {
+              "text": "deux fois",
+              "correct": true
+            },
+            {
+              "text": "une fois"
+            },
+            {
+              "text": "trois fois"
+            },
+            {
+              "text": "cela dépend des dimensions"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien vaut la diagonale d’une face d’un cube de côté a ?",
+          "explanation": "a racine de 2, par Pythagore dans le carré. La diagonale du cube, elle, vaut a racine de 3.",
+          "options": [
+            {
+              "text": "a racine de 2",
+              "correct": true
+            },
+            {
+              "text": "a racine de 3"
+            },
+            {
+              "text": "2a"
+            },
+            {
+              "text": "a"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "vecteurs-et-coplanarite",
+      "title": "Vecteurs et coplanarité",
+      "subtitle": "Trois vecteurs sont coplanaires quand l’un se fabrique avec les deux autres.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quand tout s’aplatit",
+          "body": "Fais varier les quatre nombres et surveille le déterminant : quand il s’annule, le carré s’écrase sur une droite et une dimension est perdue. Dans l’espace, c’est exactement ce qui se passe pour trois vecteurs coplanaires : ils tiennent dans un plan au lieu de remplir le volume.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les coordonnées d’un vecteur de l’espace",
+          "body": "Pour A(xA ; yA ; zA) et B(xB ; yB ; zB), le vecteur AB a pour coordonnées (xB − xA ; yB − yA ; zB − zA).\n\nL’arrivée moins le départ, coordonnée par coordonnée, exactement comme dans le plan.\n\nOn additionne deux vecteurs en additionnant les coordonnées, et on multiplie par un réel en multipliant les trois. Rien de nouveau : seule la longueur de la liste a changé.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Colinéaires, coplanaires",
+          "body": "Deux vecteurs sont colinéaires si l’un est un multiple de l’autre. Ils engendrent alors une droite.\n\nTrois vecteurs sont coplanaires s’il existe deux réels a et b tels que le troisième vaut a fois le premier plus b fois le second. Ils engendrent alors un plan, et non un volume.\n\nDans les deux cas, l’idée est la même : un objet de trop, qui n’apporte aucune direction nouvelle.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Vérifier une coplanarité",
+          "body": "u(1 ; 0 ; 1), v(0 ; 1 ; 1), w(2 ; 3 ; 5).\n\nOn cherche a et b tels que w = a u + b v. La première coordonnée donne a = 2, la deuxième donne b = 3.\n\nOn vérifie sur la troisième : 2 × 1 + 3 × 1 = 5, et w a bien 5 pour troisième coordonnée.\n\nLes trois vecteurs sont coplanaires. Si la vérification avait échoué, ils ne l’auraient pas été : c’est la troisième ligne qui tranche, et c’est elle qu’on oublie de regarder.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un repère de l’espace demande trois vecteurs non coplanaires",
+          "body": "Avec trois vecteurs coplanaires, on ne peut atteindre que les points d’un plan : tout un pan de l’espace reste inaccessible.\n\nC’est exactement l’analogue du déterminant nul de la figure, qui fait perdre une dimension sans retour.\n\nVérifier la non-coplanarité avant de se lancer dans des calculs de coordonnées évite de travailler longtemps dans un repère qui n’en est pas un.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand trois vecteurs sont-ils coplanaires ?",
+          "explanation": "Quand l’un s’écrit comme combinaison des deux autres : il n’apporte aucune direction nouvelle.",
+          "options": [
+            {
+              "text": "quand l’un est combinaison des deux autres",
+              "correct": true
+            },
+            {
+              "text": "quand ils ont la même longueur"
+            },
+            {
+              "text": "quand ils partent du même point"
+            },
+            {
+              "text": "quand leur somme est nulle"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "u(1 ; 0 ; 1), v(0 ; 1 ; 1) et w(2 ; 3 ; 5) sont coplanaires.",
+          "explanation": "Vrai. a = 2 et b = 3 conviennent sur les deux premières coordonnées, et la troisième le confirme : 2 + 3 = 5.",
+          "answer": true,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans la vérification d’une coplanarité, quelle ligne tranche ?",
+          "explanation": "La troisième. Les deux premières donnent a et b ; c’est la troisième qui confirme ou infirme, et c’est elle qu’on oublie.",
+          "options": [
+            {
+              "text": "la troisième, qui confirme a et b",
+              "correct": true
+            },
+            {
+              "text": "la première"
+            },
+            {
+              "text": "la deuxième"
+            },
+            {
+              "text": "toutes sont équivalentes"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de vecteurs non coplanaires faut-il pour un repère de l’espace ?",
+          "explanation": "Trois. Avec trois vecteurs coplanaires, on n’atteint qu’un plan et tout un pan de l’espace reste inaccessible.",
+          "options": [
+            {
+              "text": "trois",
+              "correct": true
+            },
+            {
+              "text": "deux"
+            },
+            {
+              "text": "quatre"
+            },
+            {
+              "text": "autant qu’on veut"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelles sont les coordonnées du vecteur AB avec A(1 ; 2 ; 3) et B(4 ; 0 ; 5) ?",
+          "explanation": "L’arrivée moins le départ : (3 ; −2 ; 2).",
+          "options": [
+            {
+              "text": "(3 ; −2 ; 2)",
+              "correct": true
+            },
+            {
+              "text": "(−3 ; 2 ; −2)"
+            },
+            {
+              "text": "(5 ; 2 ; 8)"
+            },
+            {
+              "text": "(3 ; 2 ; 2)"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-sections-planes",
+      "title": "Défi : la section d’un solide par un plan",
+      "subtitle": "Deux points dans un même plan suffisent à tracer une arête de section.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les faces qu’il va falloir couper",
+          "body": "Passe d’un solide à l’autre et affiche les arêtes cachées : une section traverse les faces une par une, et chaque face plane donne un segment. Compte les faces d’un cube — six — et tu sais que la section a au plus six côtés.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, et pourquoi elle marche",
+          "body": "La section d’un solide par un plan est un polygone, dont chaque côté est l’intersection du plan de coupe avec une face du solide.\n\nDeux faces planes se coupent selon une droite. Donc : dès qu’on connaît deux points de la section situés dans une même face, on peut tracer le côté complet.\n\nOn avance ainsi de face en face, jusqu’à refermer le polygone.\n\nLe nombre de côtés ne peut pas dépasser le nombre de faces du solide.",
+          "id": "c2"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le théorème du toit, pour sortir d’une impasse",
+          "body": "Quand deux points d’une même face manquent, on utilise que deux plans parallèles sont coupés par un même troisième plan selon deux droites parallèles.\n\nDans un cube, la face du haut et celle du bas sont parallèles : la section les coupe donc selon deux segments parallèles.\n\nCela fournit la direction manquante, et débloque la construction. C’est l’outil qu’on emploie dans la grande majorité des exercices.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La section hexagonale du cube",
+          "body": "Prenons les milieux de six arêtes bien choisies d’un cube : celles qui ne touchent ni le sommet A ni le sommet opposé G.\n\nLe plan qui les contient coupe le cube selon un hexagone régulier, et il est perpendiculaire à la grande diagonale (AG).\n\nC’est la section de plus grand nombre de côtés qu’un cube admette, puisqu’il n’a que six faces.\n\nUn cube peut donc, à la coupe, ressembler à un triangle, à un carré, à un rectangle, à un pentagone ou à un hexagone selon l’angle — ce qui est le meilleur argument contre l’idée qu’une vue suffit à connaître un solide.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a changé",
+          "body": "Dans le plan, deux droites qui ne se coupent pas sont parallèles. Dans l’espace, cette déduction tombe, et il faut une méthode à la place de l’intuition.\n\nLes coordonnées fournissent cette méthode : une distance, une colinéarité, une coplanarité se décident par un calcul, sans rien voir.\n\nC’est le même service que la géométrie repérée rendait dans le plan, et il devient indispensable là où le dessin ne suffit plus.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le nombre maximal de côtés de la section d’un cube par un plan ?",
+          "explanation": "Six, puisque le cube a six faces et que chaque face donne au plus un segment de section.",
+          "answer": 6,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il pour tracer un côté complet de la section ?",
+          "explanation": "Deux points de la section situés dans une même face. Deux plans se coupent selon une droite, donc deux points la déterminent.",
+          "options": [
+            {
+              "text": "deux points de la section dans une même face",
+              "correct": true
+            },
+            {
+              "text": "un seul point et une direction"
+            },
+            {
+              "text": "trois points quelconques"
+            },
+            {
+              "text": "le centre du solide"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit le théorème du toit ?",
+          "explanation": "Qu’un plan coupe deux plans parallèles selon deux droites parallèles. Cela fournit la direction qui manque pour débloquer une construction.",
+          "options": [
+            {
+              "text": "un plan coupe deux plans parallèles selon deux droites parallèles",
+              "correct": true
+            },
+            {
+              "text": "deux plans parallèles ne se coupent jamais"
+            },
+            {
+              "text": "une section est toujours un quadrilatère"
+            },
+            {
+              "text": "un plan coupe un cube selon un carré"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles formes la section d’un cube peut-elle prendre ?",
+          "explanation": "Triangle, carré, rectangle, pentagone, hexagone selon l’angle de coupe. Jamais un heptagone : le cube n’a que six faces.",
+          "options": [
+            {
+              "text": "un triangle",
+              "correct": true
+            },
+            {
+              "text": "un rectangle",
+              "correct": true
+            },
+            {
+              "text": "un pentagone",
+              "correct": true
+            },
+            {
+              "text": "un hexagone",
+              "correct": true
+            },
+            {
+              "text": "un heptagone"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une seule vue suffit à connaître un solide.",
+          "explanation": "Faux. Un cube peut se présenter à la coupe comme un triangle, un carré, un pentagone ou un hexagone : il faut plusieurs vues.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle déduction du plan tombe dans l’espace ?",
+          "explanation": "Que deux droites qui ne se coupent pas sont parallèles. Dans l’espace, elles peuvent être gauches, et il faut une méthode de calcul.",
+          "options": [
+            {
+              "text": "deux droites non sécantes sont parallèles",
+              "correct": true
+            },
+            {
+              "text": "deux points définissent une droite"
+            },
+            {
+              "text": "la distance se calcule par Pythagore"
+            },
+            {
+              "text": "un milieu est une moyenne"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

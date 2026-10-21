@@ -1,0 +1,610 @@
+{
+  "chapter": "maths-lycee-algorithmique-et-programmation-maths",
+  "lessons": [
+    {
+      "id": "qu-est-ce-qu-un-algorithme",
+      "title": "Qu’est-ce qu’un algorithme",
+      "subtitle": "Une suite de pas si simples qu’une machine idiote peut les suivre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Exécuter pas à pas, sans rien comprendre",
+          "body": "Appuie sur « Un pas » plusieurs fois : la tête lit une case, écrit, se déplace, change d’état. Rien d’autre. Puis appuie sur « Jusqu’au bout ». La machine ne comprend pas ce qu’elle calcule, et pourtant elle le calcule.",
+          "figureId": "machine-turing",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre exigences d’un algorithme",
+          "body": "Chaque pas est non ambigu : deux personnes qui l’exécutent obtiennent le même résultat.\n\nLes entrées sont décrites, ainsi que ce qui en est attendu.\n\nIl se termine, et on doit pouvoir le justifier — une boucle qui ne s’arrête pas n’est pas un algorithme.\n\nIl produit la bonne réponse, ce qui se démontre et ne se constate pas sur quelques essais.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi la machine la plus bête suffit",
+          "body": "La machine de la figure ne sait que quatre choses : lire un symbole, en écrire un, se déplacer d’une case, changer d’état.\n\nTuring a montré en 1936 que cela suffit à calculer tout ce qui est calculable : aucun ordinateur, aussi puissant soit-il, ne calcule une fonction qu’une telle machine ne calculerait pas, avec assez de temps et de ruban.\n\nLes ordinateurs ne sont donc pas plus capables, seulement beaucoup plus rapides. La différence est de confort, pas de nature.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Certaines choses ne sont pas calculables",
+          "body": "Turing a aussi montré qu’aucun algorithme ne peut décider, pour tout programme et toute entrée, si ce programme s’arrêtera.\n\nCe n’est pas une limite des machines d’aujourd’hui, ni une question de puissance : c’est une impossibilité démontrée, par l’absurde.\n\nC’est pourquoi aucun outil ne détectera jamais toutes les boucles infinies d’un programme. Les outils existants en détectent beaucoup, pas toutes, et ce n’est pas un défaut qu’on finira par corriger.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Programme et algorithme ne sont pas la même chose",
+          "body": "L’algorithme est la méthode : on peut l’écrire en français, avec des pas numérotés.\n\nLe programme est sa traduction dans un langage que la machine accepte.\n\nUn bon algorithme mal programmé donne un programme faux ; un mauvais algorithme très bien programmé donne un programme lent. Les deux travaux sont distincts, et le premier se fait sur papier.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’exige-t-on d’un algorithme ?",
+          "explanation": "Des pas non ambigus, des entrées décrites, une terminaison justifiée et un résultat correct démontré.",
+          "options": [
+            {
+              "text": "des pas non ambigus",
+              "correct": true
+            },
+            {
+              "text": "des entrées décrites",
+              "correct": true
+            },
+            {
+              "text": "qu’il se termine",
+              "correct": true
+            },
+            {
+              "text": "qu’il donne la bonne réponse",
+              "correct": true
+            },
+            {
+              "text": "qu’il soit court"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que sait faire la machine de la figure ?",
+          "explanation": "Lire un symbole, en écrire un, se déplacer d’une case, changer d’état. Quatre opérations, et cela suffit à tout calculer.",
+          "options": [
+            {
+              "text": "lire un symbole",
+              "correct": true
+            },
+            {
+              "text": "écrire un symbole",
+              "correct": true
+            },
+            {
+              "text": "se déplacer d’une case",
+              "correct": true
+            },
+            {
+              "text": "changer d’état",
+              "correct": true
+            },
+            {
+              "text": "comprendre ce qu’elle calcule"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un ordinateur moderne peut calculer des fonctions qu’une machine de Turing ne calculerait pas.",
+          "explanation": "Faux. Avec assez de temps et de ruban, la machine calcule tout ce qui est calculable. La différence est de rapidité, pas de nature.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi aucun outil ne détectera-t-il jamais toutes les boucles infinies ?",
+          "explanation": "Parce que Turing a démontré que le problème de l’arrêt n’est pas décidable. Ce n’est pas une limite de puissance, c’est une impossibilité.",
+          "options": [
+            {
+              "text": "parce que le problème de l’arrêt est indécidable",
+              "correct": true
+            },
+            {
+              "text": "parce que les machines ne sont pas assez puissantes"
+            },
+            {
+              "text": "parce que les langages sont mal conçus"
+            },
+            {
+              "text": "parce que cela prendrait trop de mémoire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette erreur relève-t-elle de l’algorithme ou du programme ?",
+          "explanation": "Une méthode inutilement coûteuse ou fausse est un défaut d’algorithme. Une variable mal nommée ou un indice décalé est un défaut de programme.",
+          "categories": [
+            "défaut d’algorithme",
+            "défaut de programme"
+          ],
+          "items": [
+            {
+              "text": "la méthode choisie est inutilement lente",
+              "category": 0
+            },
+            {
+              "text": "la méthode ne traite pas le cas vide",
+              "category": 0
+            },
+            {
+              "text": "un indice de tableau est décalé de un",
+              "category": 1
+            },
+            {
+              "text": "une variable n’est pas initialisée",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "boucles-et-invariants",
+      "title": "Boucles et invariants",
+      "subtitle": "Ce qui reste vrai à chaque tour est ce qui démontre le résultat.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un terme calculé à partir du précédent",
+          "body": "Règle le premier terme et la raison, puis passe de la suite arithmétique à la géométrique. Chaque terme s’obtient du précédent par la même opération répétée — c’est exactement ce qu’une boucle fait, et la raison en est le corps.",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois questions d’une boucle",
+          "body": "Qu’est-ce qui change à chaque tour ? La variable de boucle, et l’accumulateur s’il y en a un.\n\nQu’est-ce qui reste vrai à chaque tour ? C’est l’invariant, et c’est lui qui prouve le résultat final.\n\nPourquoi la boucle s’arrête-t-elle ? Il faut une quantité entière positive qui décroît strictement à chaque tour.\n\nRépondre aux trois avant d’écrire la boucle évite la plupart des erreurs de bord.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La somme des n premiers entiers, avec son invariant",
+          "body": "On pose s égal à 0, puis pour i allant de 1 à n, on ajoute i à s.\n\nInvariant : après le tour numéro i, s contient la somme des entiers de 1 à i.\n\nIl est vrai au départ : avant le premier tour, s vaut 0, somme d’aucun entier. Il se conserve : si s valait la somme jusqu’à i − 1, alors après avoir ajouté i, il vaut la somme jusqu’à i.\n\nDonc à la sortie, s vaut la somme jusqu’à n. L’invariant a démontré l’algorithme, sans aucun essai numérique.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’invariant est la récurrence, appliquée au code",
+          "body": "La démonstration ci-dessus a exactement la structure d’une récurrence : vrai au départ, et conservé d’un tour au suivant.\n\nC’est le même outil, employé sur un programme au lieu d’une formule. Reconnaître cette parenté dispense d’apprendre deux choses.\n\nEt cela explique pourquoi un programmeur qui sait raisonner par récurrence écrit des boucles plus justes.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les erreurs de bord viennent toujours des mêmes endroits",
+          "body": "L’initialisation : s doit valoir 0 pour une somme, et 1 pour un produit. L’inverser donne un résultat faux sans message d’erreur.\n\nLa borne : de 1 à n inclus, ou exclu ? Un décalage de un est l’erreur la plus fréquente de toute la programmation.\n\nLe cas vide : que doit rendre l’algorithme pour n = 0 ? Y répondre explicitement vaut mieux que de le découvrir à l’exécution.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un invariant de boucle ?",
+          "explanation": "Une propriété vraie à chaque tour, qui démontre le résultat final quand la boucle sort.",
+          "options": [
+            {
+              "text": "une propriété vraie à chaque tour",
+              "correct": true
+            },
+            {
+              "text": "une variable qui ne change pas"
+            },
+            {
+              "text": "le nombre de tours"
+            },
+            {
+              "text": "la condition d’arrêt"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il pour garantir qu’une boucle s’arrête ?",
+          "explanation": "Une quantité entière positive qui décroît strictement à chaque tour : elle ne peut pas décroître indéfiniment.",
+          "options": [
+            {
+              "text": "une quantité entière positive qui décroît",
+              "correct": true
+            },
+            {
+              "text": "un nombre de tours connu d’avance"
+            },
+            {
+              "text": "un invariant"
+            },
+            {
+              "text": "une variable booléenne"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi faut-il initialiser l’accumulateur d’un produit ?",
+          "explanation": "À 1. L’initialiser à 0 donnerait toujours 0, sans aucun message d’erreur.",
+          "options": [
+            {
+              "text": "à 1",
+              "correct": true
+            },
+            {
+              "text": "à 0"
+            },
+            {
+              "text": "au premier élément"
+            },
+            {
+              "text": "cela n’a pas d’importance"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quel outil mathématique un invariant est-il la version programmée ?",
+          "explanation": "Du raisonnement par récurrence : vrai au départ, et conservé d’un tour au suivant. C’est la même structure.",
+          "options": [
+            {
+              "text": "le raisonnement par récurrence",
+              "correct": true
+            },
+            {
+              "text": "le raisonnement par l’absurde"
+            },
+            {
+              "text": "la contraposée"
+            },
+            {
+              "text": "la disjonction de cas"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de tours fait une boucle allant de 1 à 10 inclus ?",
+          "explanation": "Dix tours. Si la borne supérieure est exclue, il n’y en a que neuf : ce décalage de un est l’erreur la plus fréquente en programmation.",
+          "answer": 10,
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "D’où viennent le plus souvent les erreurs de bord ?",
+          "explanation": "De l’initialisation, de la borne incluse ou exclue, et du cas vide non traité.",
+          "options": [
+            {
+              "text": "l’initialisation de l’accumulateur",
+              "correct": true
+            },
+            {
+              "text": "la borne incluse ou exclue",
+              "correct": true
+            },
+            {
+              "text": "le cas vide non traité",
+              "correct": true
+            },
+            {
+              "text": "le nom des variables"
+            },
+            {
+              "text": "l’indentation"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "combien-ca-coute",
+      "title": "Combien ça coûte",
+      "subtitle": "Un facteur mille sur la taille peut faire un facteur un million sur le temps.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Faire grossir les données",
+          "body": "Fais grossir la taille des données avec le curseur et compare les courbes : à un milliard d’opérations, l’une répond instantanément et l’autre demande des années. Ce n’est pas une différence de machine, c’est une différence de méthode.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les coûts qu’on rencontre, du meilleur au pire",
+          "body": "Constant : le temps ne dépend pas de la taille. Lire la première case d’un tableau.\n\nLogarithmique : doubler la taille ajoute une seule étape. La recherche dichotomique.\n\nLinéaire : doubler la taille double le temps. Parcourir une liste.\n\nEn n log n : les bons tris.\n\nQuadratique : doubler la taille quadruple le temps. Comparer toutes les paires.\n\nExponentiel : ajouter un seul élément double le temps. Inutilisable au-delà de quelques dizaines.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Chercher dans un annuaire trié",
+          "body": "En parcourant depuis le début : jusqu’à un million de comparaisons pour un million de noms.\n\nEn coupant à chaque fois en deux : au plus 20 comparaisons, puisque 2 puissance 20 dépasse un million.\n\nLe rapport est de cinquante mille. Aucune machine plus rapide ne compense un tel écart : il faut changer de méthode.\n\nEt la méthode rapide exige que l’annuaire soit trié. Trier coûte, mais une seule fois pour toutes les recherches à venir.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi on néglige les constantes",
+          "body": "Un algorithme linéaire qui fait 100 opérations par élément bat un algorithme quadratique dès que la taille dépasse 100.\n\nPour les tailles qui comptent — des milliers, des millions — c’est la forme de la croissance qui décide, et les constantes deviennent du détail.\n\nC’est pourquoi on classe les algorithmes par leur comportement quand la taille grandit, et non par un chronomètre sur un exemple.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le coût en mémoire compte aussi",
+          "body": "Un algorithme peut être rapide et demander de garder toutes les données en mémoire d’un coup.\n\nSur un très grand volume, cela devient impossible, et un algorithme plus lent mais qui traite les données au fil de l’eau devient le seul utilisable.\n\nIl y a donc deux coûts à regarder, le temps et l’espace, et ils s’échangent souvent l’un contre l’autre : garder un résultat déjà calculé économise du temps et dépense de la mémoire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces coûts du meilleur au pire.",
+          "explanation": "Constant, logarithmique, linéaire, n log n, quadratique, exponentiel : chacun croît plus vite que le précédent.",
+          "items": [
+            "constant",
+            "logarithmique",
+            "linéaire",
+            "n log n",
+            "quadratique",
+            "exponentiel"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons au plus pour trouver un nom parmi un million, par dichotomie ?",
+          "explanation": "20, puisque 2 puissance 20 vaut 1 048 576, qui dépasse un million.",
+          "answer": 20,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un algorithme quadratique sur des données deux fois plus grandes prend combien de temps en plus ?",
+          "explanation": "Quatre fois plus : le temps varie comme le carré de la taille.",
+          "options": [
+            {
+              "text": "quatre fois plus",
+              "correct": true
+            },
+            {
+              "text": "deux fois plus"
+            },
+            {
+              "text": "le même temps"
+            },
+            {
+              "text": "huit fois plus"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une machine dix fois plus rapide compense un algorithme quadratique au lieu de logarithmique.",
+          "explanation": "Faux. Sur un million d’éléments le rapport est de cinquante mille : aucun gain de machine raisonnable ne le comble.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi néglige-t-on les constantes multiplicatives ?",
+          "explanation": "Parce que pour les tailles qui comptent, c’est la forme de la croissance qui décide : un linéaire à 100 opérations bat un quadratique dès n = 100.",
+          "options": [
+            {
+              "text": "la forme de la croissance finit par tout décider",
+              "correct": true
+            },
+            {
+              "text": "elles sont toujours égales à 1"
+            },
+            {
+              "text": "elles sont impossibles à mesurer"
+            },
+            {
+              "text": "elles ne changent pas le résultat"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’échange-t-on en gardant en mémoire un résultat déjà calculé ?",
+          "explanation": "De la mémoire contre du temps. Les deux coûts se négocient l’un contre l’autre en permanence.",
+          "options": [
+            {
+              "text": "de la mémoire contre du temps",
+              "correct": true
+            },
+            {
+              "text": "du temps contre de la précision"
+            },
+            {
+              "text": "de la mémoire contre de la précision"
+            },
+            {
+              "text": "rien, c’est gratuit"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-choisir-sa-structure",
+      "title": "Défi : choisir sa structure",
+      "subtitle": "La bonne structure transforme un problème difficile en problème évident.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le même contenu, deux ordres de sortie",
+          "body": "Ajoute plusieurs éléments, puis retire-les un par un. Change de structure et refais exactement la même suite d’ajouts : l’ordre de sortie est inversé. Le contenu est identique, et la discipline d’accès change tout.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les structures de base, et ce qu’elles rendent facile",
+          "body": "Le tableau : accès immédiat à la case numéro i ; insertion au milieu coûteuse, car il faut décaler.\n\nLa pile : dernier entré, premier sorti. Elle sert partout où il faut défaire dans l’ordre inverse — annuler une action, évaluer des parenthèses, parcourir en profondeur.\n\nLa file : premier entré, premier sorti. Elle sert aux files d’attente et au parcours en largeur, qui trouve le plus court chemin.\n\nLe dictionnaire : accès par clé en temps presque constant, au prix d’un peu de mémoire.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le même problème, deux structures",
+          "body": "Vérifier qu’une expression a des parenthèses bien appariées.\n\nAvec un compteur : on ajoute 1 à chaque ouvrante, on retire 1 à chaque fermante, et on vérifie qu’on ne passe jamais sous zéro. Cela marche avec un seul type de parenthèse.\n\nAvec une pile : on empile chaque ouvrante, et à chaque fermante on vérifie que le sommet correspond. Cela marche avec les parenthèses, les crochets et les accolades mélangés.\n\nLe compteur ne peut pas être réparé pour y arriver : il a perdu l’information de l’ordre. La structure décide de ce qui est possible.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La question à poser avant de coder",
+          "body": "Quelles opérations vais-je faire le plus souvent ?\n\nSi c’est chercher par identifiant, il faut un dictionnaire. Si c’est traiter dans l’ordre d’arrivée, une file. Si c’est revenir en arrière, une pile. Si c’est parcourir du début à la fin, un tableau suffit.\n\nChoisir d’abord la structure, écrire le code ensuite : l’ordre inverse conduit à bricoler une structure inadaptée pendant des heures.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un parcours en largeur et un en profondeur ne trouvent pas la même chose",
+          "body": "Les deux explorent un graphe, et ils ne diffèrent que par la structure employée : file pour la largeur, pile pour la profondeur.\n\nMais seul le parcours en largeur donne le plus court chemin en nombre d’étapes. Le parcours en profondeur trouve un chemin, pas le plus court.\n\nUn même algorithme, à une structure près, répond donc à deux questions différentes. C’est l’exemple le plus net de ce que ce chapitre voulait montrer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque besoin à la structure qui le rend facile.",
+          "explanation": "Pile pour défaire dans l’ordre inverse, file pour l’ordre d’arrivée, dictionnaire pour l’accès par clé, tableau pour l’accès par indice.",
+          "pairs": [
+            {
+              "left": "annuler la dernière action",
+              "right": "une pile"
+            },
+            {
+              "left": "servir dans l’ordre d’arrivée",
+              "right": "une file"
+            },
+            {
+              "left": "retrouver par identifiant",
+              "right": "un dictionnaire"
+            },
+            {
+              "left": "lire la case numéro i",
+              "right": "un tableau"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un simple compteur ne suffit-il pas pour des parenthèses de plusieurs types ?",
+          "explanation": "Parce qu’il a perdu l’information de l’ordre : il ne sait plus quel type d’ouvrante attend sa fermante.",
+          "options": [
+            {
+              "text": "il perd l’information de l’ordre",
+              "correct": true
+            },
+            {
+              "text": "il compte trop lentement"
+            },
+            {
+              "text": "il ne peut pas descendre sous zéro"
+            },
+            {
+              "text": "il prend trop de mémoire"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel parcours de graphe donne le plus court chemin en nombre d’étapes ?",
+          "explanation": "Le parcours en largeur, qui utilise une file. Le parcours en profondeur, avec une pile, trouve un chemin mais pas le plus court.",
+          "options": [
+            {
+              "text": "le parcours en largeur",
+              "correct": true
+            },
+            {
+              "text": "le parcours en profondeur"
+            },
+            {
+              "text": "les deux"
+            },
+            {
+              "text": "aucun des deux"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pile et une file rendent les éléments dans le même ordre.",
+          "explanation": "Faux. La pile rend le dernier entré, la file le premier : à ajouts identiques, les sorties sont inversées.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel ordre travailler ?",
+          "explanation": "Choisir la structure selon les opérations les plus fréquentes, puis écrire le code. L’inverse conduit à bricoler une structure inadaptée.",
+          "options": [
+            {
+              "text": "choisir la structure, puis écrire le code",
+              "correct": true
+            },
+            {
+              "text": "écrire le code, puis choisir la structure"
+            },
+            {
+              "text": "les deux en même temps"
+            },
+            {
+              "text": "commencer par mesurer le temps"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui distingue un parcours en largeur d’un parcours en profondeur ?",
+          "explanation": "La structure employée : une file dans un cas, une pile dans l’autre. Tout le reste du code est identique.",
+          "options": [
+            {
+              "text": "une file au lieu d’une pile",
+              "correct": true
+            },
+            {
+              "text": "l’ordre des sommets du graphe"
+            },
+            {
+              "text": "le nombre d’étapes autorisé"
+            },
+            {
+              "text": "le langage de programmation"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

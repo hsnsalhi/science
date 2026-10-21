@@ -1,0 +1,541 @@
+{
+  "chapter": "maths-lycee-probabilites-conditionnelles-et-lois",
+  "lessons": [
+    {
+      "id": "conditionner",
+      "title": "Conditionner, c’est changer d’univers",
+      "subtitle": "La probabilité n’est pas une propriété de l’événement seul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre cases, et une seule ligne qui compte",
+          "body": "Touche un parent pour changer ce qu’il porte : le tableau des quatre issues se refait. Conditionner consiste à ne regarder qu’une partie du tableau — une ligne, ou une colonne — et à y recompter les proportions comme si le reste n’existait pas.",
+          "figureId": "croisement",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La définition",
+          "body": "La probabilité de A sachant B, notée P de A sachant B, vaut :\n\nP(A et B) divisé par P(B), à condition que P(B) ne soit pas nul.\n\nC’est la proportion de A à l’intérieur de B, et non dans l’ensemble. On a changé d’univers : B devient le tout.\n\nD’où la conséquence utilisée partout : P(A et B) = P(B) × P de A sachant B.",
+          "formula": "P(A sachant B) = P(A et B) / P(B)",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les deux conditionnelles ne sont pas la même",
+          "body": "La probabilité d’être mouillé sachant qu’il pleut est très proche de 1.\n\nLa probabilité qu’il pleuve sachant qu’on est mouillé est bien plus faible : une douche, une piscine, un arrosage suffisent.\n\nConfondre les deux est l’erreur la plus répandue en probabilités, et elle n’est pas scolaire : elle fausse des diagnostics médicaux et des verdicts de justice.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un calcul sur un tableau",
+          "body": "Sur 100 élèves, 60 font de l’anglais, 30 de l’espagnol, et 10 les deux.\n\nLa probabilité de faire de l’espagnol est 30/100 = 0,3.\n\nLa probabilité de faire de l’espagnol sachant qu’on fait de l’anglais vaut 10/60, soit environ 0,17.\n\nOn ne regarde plus que les 60 anglicistes : le dénominateur a changé, et c’est tout l’effet du conditionnement.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le dénominateur dit tout",
+          "body": "Devant une probabilité conditionnelle, la seule question utile est : sur qui je divise ?\n\nP de A sachant B divise par les B. P de B sachant A divise par les A. Si les effectifs de A et de B diffèrent beaucoup, les deux résultats diffèrent énormément.\n\nC’est pourquoi on écrit toujours l’effectif du groupe de référence à côté d’une proportion conditionnelle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut P de A sachant B ?",
+          "explanation": "P(A et B) divisé par P(B) : la proportion de A à l’intérieur de B, et non dans l’ensemble.",
+          "options": [
+            {
+              "text": "P(A et B) / P(B)",
+              "correct": true
+            },
+            {
+              "text": "P(A et B) / P(A)"
+            },
+            {
+              "text": "P(A) × P(B)"
+            },
+            {
+              "text": "P(A) + P(B) − P(A et B)"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Sur 100 élèves, 60 font anglais, 30 espagnol, 10 les deux. Combien d’anglicistes sur 60 font aussi espagnol ?",
+          "explanation": "10. La probabilité de faire espagnol sachant anglais vaut donc 10/60, soit environ 0,17.",
+          "answer": 10,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "P de A sachant B et P de B sachant A sont égales.",
+          "explanation": "Faux, sauf cas particulier. Être mouillé sachant qu’il pleut est presque certain ; qu’il pleuve sachant qu’on est mouillé, non.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question poser devant une probabilité conditionnelle ?",
+          "explanation": "Sur qui on divise. Le dénominateur est le groupe de référence, et c’est lui qui change tout.",
+          "options": [
+            {
+              "text": "sur quel groupe on divise",
+              "correct": true
+            },
+            {
+              "text": "quel est le numérateur"
+            },
+            {
+              "text": "si les événements sont indépendants"
+            },
+            {
+              "text": "si la probabilité est faible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut P(A et B) en fonction d’une conditionnelle ?",
+          "explanation": "P(B) × P de A sachant B. C’est la formule qui fait fonctionner tous les arbres pondérés.",
+          "options": [
+            {
+              "text": "P(B) × P de A sachant B",
+              "correct": true
+            },
+            {
+              "text": "P(A) + P(B)"
+            },
+            {
+              "text": "P(A) × P(B), toujours"
+            },
+            {
+              "text": "P(A) / P(B)"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "arbres-et-probabilites-totales",
+      "title": "Arbres et probabilités totales",
+      "subtitle": "Un arbre bien construit calcule tout seul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un tableau croisé qui se recalcule",
+          "body": "Touche une cellule et change sa valeur : les totaux de ligne et de colonne suivent. Un arbre pondéré et un tableau croisé portent exactement la même information — l’arbre montre l’ordre des épreuves, le tableau montre les effectifs.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois règles d’un arbre pondéré",
+          "body": "La somme des probabilités des branches partant d’un même nœud vaut 1. C’est le contrôle le plus rapide d’un arbre mal rempli.\n\nLa probabilité d’un chemin complet est le produit des probabilités rencontrées le long du chemin.\n\nLa probabilité d’un événement est la somme des probabilités des chemins qui y mènent.\n\nLes branches du deuxième niveau portent des probabilités conditionnelles, et c’est ce qui fait marcher la multiplication.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La formule des probabilités totales",
+          "body": "Si B et son contraire partagent l’univers, alors pour tout événement A :\n\nP(A) = P(B) × P de A sachant B + P(non B) × P de A sachant non B\n\nC’est la lecture de l’arbre, écrite en une ligne. Elle se généralise à n cas qui partagent l’univers : on ajoute un terme par cas.",
+          "formula": "P(A) = somme des P(cas) × P(A sachant cas)",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux usines, un taux de défaut",
+          "body": "Une usine A fournit 70 % des pièces, avec 2 % de défauts. Une usine B fournit les 30 % restants, avec 5 % de défauts.\n\nProbabilité qu’une pièce prise au hasard soit défectueuse : 0,7 × 0,02 + 0,3 × 0,05 = 0,014 + 0,015 = 0,029, soit 2,9 %.\n\nRemarque que l’usine B, minoritaire, fournit plus de la moitié des pièces défectueuses : 0,015 contre 0,014.\n\nUn taux de défaut élevé sur une petite production peut donc peser plus lourd qu’un taux faible sur une grande.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Remonter l’arbre : la formule de Bayes",
+          "body": "L’arbre descend : il donne P de défaut sachant l’usine.\n\nLa question inverse — une pièce est défectueuse, de quelle usine vient-elle ? — remonte l’arbre.\n\nOn l’obtient par la définition : P de B sachant défaut = P(B et défaut) / P(défaut) = 0,015 / 0,029, soit environ 0,52.\n\nIl y a donc 52 % de chances que la pièce vienne de B, l’usine qui ne fournit que 30 % du total. Aucun calcul nouveau n’a été nécessaire : seulement la définition, appliquée à l’envers.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien vaut la somme des branches partant d’un même nœud ?",
+          "explanation": "1. C’est le contrôle le plus rapide pour repérer un arbre mal rempli.",
+          "options": [
+            {
+              "text": "1",
+              "correct": true
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "cela dépend du niveau"
+            },
+            {
+              "text": "la probabilité du nœud"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Usine A : 70 % des pièces, 2 % de défauts. Usine B : 30 %, 5 % de défauts. Quel pourcentage de pièces défectueuses au total ?",
+          "explanation": "0,7 × 0,02 + 0,3 × 0,05 = 0,014 + 0,015 = 0,029, soit 2,9 %.",
+          "min": 0,
+          "max": 20,
+          "answer": 2.9,
+          "tolerance": 0.4,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une pièce est défectueuse. Quelle est la probabilité qu’elle vienne de l’usine B ?",
+          "explanation": "0,015 / 0,029, soit environ 52 %. L’usine qui ne fournit que 30 % du total produit plus de la moitié des défauts.",
+          "options": [
+            {
+              "text": "environ 52 %",
+              "correct": true
+            },
+            {
+              "text": "environ 30 %"
+            },
+            {
+              "text": "environ 5 %"
+            },
+            {
+              "text": "environ 15 %"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment calcule-t-on la probabilité d’un chemin complet dans un arbre ?",
+          "explanation": "En multipliant les probabilités rencontrées le long du chemin, les branches du second niveau étant conditionnelles.",
+          "options": [
+            {
+              "text": "en multipliant les probabilités du chemin",
+              "correct": true
+            },
+            {
+              "text": "en les additionnant"
+            },
+            {
+              "text": "en prenant la plus petite"
+            },
+            {
+              "text": "en prenant la dernière"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un arbre pondéré et un tableau croisé contiennent la même information.",
+          "explanation": "Vrai. L’arbre montre l’ordre des épreuves, le tableau montre les effectifs : deux présentations du même contenu.",
+          "answer": true,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il pour appliquer la formule des probabilités totales ?",
+          "explanation": "Que les cas considérés partagent l’univers entier, sans recouvrement et sans oubli.",
+          "options": [
+            {
+              "text": "que les cas partagent tout l’univers",
+              "correct": true
+            },
+            {
+              "text": "que les cas soient indépendants"
+            },
+            {
+              "text": "qu’il y ait exactement deux cas"
+            },
+            {
+              "text": "que les probabilités soient égales"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "independance",
+      "title": "L’indépendance",
+      "subtitle": "Deux mots qu’on confond, et qui sont presque opposés.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Changer un parent sans changer l’autre",
+          "body": "Touche le premier parent : le tableau change. Touche ensuite le second : il change encore. Ce que porte l’un ne renseigne en rien sur ce que porte l’autre, et c’est exactement ce que veut dire l’indépendance.",
+          "figureId": "croisement",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La définition, et son test",
+          "body": "A et B sont indépendants si P(A et B) = P(A) × P(B).\n\nDe façon équivalente, si P de A sachant B = P(A) : savoir que B est réalisé n’apprend rien sur A.\n\nC’est une égalité numérique à vérifier, pas une impression. Deux événements qui « n’ont rien à voir » peuvent très bien être dépendants, et inversement.",
+          "formula": "A et B indépendants si P(A et B) = P(A) × P(B)",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Indépendants n’est pas incompatibles",
+          "body": "Incompatibles veut dire qu’ils ne peuvent pas arriver ensemble : P(A et B) = 0.\n\nIndépendants veut dire que l’un ne renseigne pas sur l’autre : P(A et B) = P(A) × P(B).\n\nDeux événements incompatibles de probabilités non nulles sont donc toujours dépendants, et fortement : savoir que l’un est arrivé garantit que l’autre ne l’est pas.\n\nLes deux mots ne décrivent pas la même chose : l’un parle de coexistence, l’autre d’information.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Vérifier une indépendance",
+          "body": "On lance un dé. A : le résultat est pair. B : le résultat est inférieur ou égal à 3.\n\nP(A) = 3/6 = 0,5. P(B) = 3/6 = 0,5. Le produit vaut 0,25.\n\nA et B signifie pair et au plus 3, donc uniquement 2 : P(A et B) = 1/6, soit environ 0,167.\n\nCe n’est pas 0,25 : les deux événements ne sont pas indépendants, alors que l’intuition n’y voyait aucun lien. Seul le calcul tranche.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’indépendance se répète, et c’est son intérêt",
+          "body": "Pour n épreuves indépendantes, la probabilité d’une suite précise de résultats est le produit des probabilités.\n\nC’est ce qui rend calculable « dix piles d’affilée » : 0,5 puissance 10, soit environ une chance sur mille.\n\nEt c’est ce qui justifie, en sens inverse, la méfiance devant une coïncidence : sur un million de personnes, un événement d’une chance sur mille arrive mille fois.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand A et B sont-ils indépendants ?",
+          "explanation": "Quand P(A et B) = P(A) × P(B), ce qui équivaut à dire que savoir B ne change pas la probabilité de A.",
+          "options": [
+            {
+              "text": "quand P(A et B) = P(A) × P(B)",
+              "correct": true
+            },
+            {
+              "text": "quand P(A et B) = 0"
+            },
+            {
+              "text": "quand P(A) = P(B)"
+            },
+            {
+              "text": "quand ils n’ont rien à voir"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux événements incompatibles de probabilités non nulles sont indépendants.",
+          "explanation": "Faux, et même le contraire : savoir que l’un est arrivé garantit que l’autre ne l’est pas. Ils sont fortement dépendants.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Sur un dé, « pair » et « au plus 3 » sont indépendants.",
+          "explanation": "Faux. P(A) × P(B) = 0,25 alors que P(A et B) = 1/6 ≈ 0,167. L’intuition n’y voyait aucun lien, et le calcul tranche.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la probabilité d’obtenir dix piles d’affilée, en chances sur mille ?",
+          "explanation": "0,5 puissance 10 vaut environ 0,00098, soit à peu près une chance sur mille.",
+          "min": 0,
+          "max": 100,
+          "answer": 1,
+          "tolerance": 0.5,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur un million de personnes, combien de fois arrive un événement d’une chance sur mille ?",
+          "explanation": "Environ mille fois. C’est pourquoi une coïncidence individuellement improbable n’a rien d’étonnant à l’échelle d’une population.",
+          "options": [
+            {
+              "text": "environ mille fois",
+              "correct": true
+            },
+            {
+              "text": "environ une fois"
+            },
+            {
+              "text": "jamais"
+            },
+            {
+              "text": "un million de fois"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette affirmation décrit-elle l’indépendance ou l’incompatibilité ?",
+          "explanation": "L’indépendance parle d’information : l’un ne renseigne pas sur l’autre. L’incompatibilité parle de coexistence : ils ne peuvent pas arriver ensemble.",
+          "categories": [
+            "indépendance",
+            "incompatibilité"
+          ],
+          "items": [
+            {
+              "text": "savoir que B est arrivé n’apprend rien sur A",
+              "category": 0
+            },
+            {
+              "text": "P(A et B) = P(A) × P(B)",
+              "category": 0
+            },
+            {
+              "text": "A et B ne peuvent pas arriver ensemble",
+              "category": 1
+            },
+            {
+              "text": "P(A et B) = 0",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-depistage",
+      "title": "Défi : pourquoi un test fiable se trompe",
+      "subtitle": "Un test à 99 % peut se tromper neuf fois sur dix.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Répartir une population dans des cases",
+          "body": "Monte le nombre d’objets au-dessus du nombre de tiroirs : il y a forcément un tiroir chargé. C’est le même raisonnement par comptage qu’on va appliquer à une population de dix mille personnes, en comptant les cas dans chaque case au lieu de manipuler des pourcentages.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul, sur dix mille personnes",
+          "body": "Une maladie touche une personne sur mille. Un test détecte 99 % des malades et se trompe sur 1 % des bien portants.\n\nSur 10 000 personnes : 10 sont malades, 9 990 ne le sont pas.\n\nParmi les 10 malades, le test en trouve 9 ou 10. Disons 10.\n\nParmi les 9 990 bien portants, il se trompe sur 1 %, soit environ 100 personnes.\n\nIl y a donc 110 tests positifs, dont 10 vrais. Un positif a environ 9 % de chances d’être malade.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi raisonner en effectifs plutôt qu’en pourcentages",
+          "body": "Le même calcul en pourcentages donne le même résultat, et presque tout le monde se trompe en le faisant.\n\nEn effectifs, l’erreur devient visible : 100 faux positifs contre 10 vrais, c’est un rapport de dix contre un qu’on voit sans calculer.\n\nDes études ont montré que des médecins passent de 15 % à 75 % de bonnes réponses sur ce problème selon qu’il est posé en pourcentages ou en effectifs. La présentation n’est pas un détail de pédagogie.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La prévalence commande tout",
+          "body": "Si la maladie touchait une personne sur dix au lieu d’une sur mille, sur 10 000 personnes il y aurait 990 malades détectés et 90 faux positifs : un positif serait malade à 92 %.\n\nLe test n’a pas changé. Seule la population a changé.\n\nC’est pourquoi on ne dépiste pas toute une population pour une maladie rare : le même test, excellent sur un groupe à risque, produit surtout des fausses alertes sur un groupe sain.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le même piège au tribunal",
+          "body": "Une trace correspond au suspect, et l’expert annonce une chance sur un million qu’une personne au hasard corresponde.\n\nSi l’on a cherché dans une base de dix millions de profils, on s’attend à trouver environ dix correspondances par hasard.\n\nLa correspondance seule n’est donc pas une preuve : tout dépend de la façon dont le suspect a été trouvé — soupçonné d’abord, ou sorti d’une recherche massive.\n\nOn appelle cela l’erreur du procureur, et c’est exactement la confusion entre P de trace sachant innocent et P d’innocent sachant trace.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Maladie à 1 pour 1 000, test à 99 %, 1 % de faux positifs. Sur 10 000 personnes, combien de faux positifs ?",
+          "explanation": "1 % de 9 990 bien portants, soit environ 100 personnes. Contre 10 vrais positifs seulement.",
+          "answer": 100,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Dans ce cas, quelle est la probabilité qu’un test positif corresponde à un vrai malade, en pourcentage ?",
+          "explanation": "10 vrais positifs sur 110 positifs au total, soit environ 9 %. Le test est excellent et son résultat positif peu informatif.",
+          "min": 0,
+          "max": 100,
+          "answer": 9,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui change tout dans ce calcul ?",
+          "explanation": "La prévalence de la maladie dans la population testée. Le même test donne 9 % ou 92 % selon qu’elle est rare ou fréquente.",
+          "options": [
+            {
+              "text": "la fréquence de la maladie dans la population",
+              "correct": true
+            },
+            {
+              "text": "la fiabilité du test"
+            },
+            {
+              "text": "le nombre de personnes testées"
+            },
+            {
+              "text": "le taux de faux négatifs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi raisonner en effectifs plutôt qu’en pourcentages ?",
+          "explanation": "Parce que l’erreur devient visible : 100 faux positifs contre 10 vrais se voit sans calculer. Des médecins passent de 15 % à 75 % de bonnes réponses.",
+          "options": [
+            {
+              "text": "parce que le déséquilibre devient visible",
+              "correct": true
+            },
+            {
+              "text": "parce que le résultat est différent"
+            },
+            {
+              "text": "parce que les pourcentages sont imprécis"
+            },
+            {
+              "text": "parce que c’est plus rapide"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il est pertinent de dépister toute une population pour une maladie rare.",
+          "explanation": "Faux. Le même test, excellent sur un groupe à risque, produit surtout des fausses alertes sur une population où la maladie est rare.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "En quoi consiste l’erreur du procureur ?",
+          "explanation": "À confondre la probabilité de la trace sachant l’innocence avec celle de l’innocence sachant la trace : les deux conditionnelles inversées.",
+          "options": [
+            {
+              "text": "confondre les deux probabilités conditionnelles inversées",
+              "correct": true
+            },
+            {
+              "text": "surestimer la fiabilité de l’analyse"
+            },
+            {
+              "text": "oublier les faux négatifs"
+            },
+            {
+              "text": "additionner des probabilités"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

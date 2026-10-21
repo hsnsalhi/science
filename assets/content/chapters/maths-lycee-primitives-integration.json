@@ -1,0 +1,583 @@
+{
+  "chapter": "maths-lycee-primitives-et-integration",
+  "lessons": [
+    {
+      "id": "remonter-la-derivee",
+      "title": "Remonter la dérivée",
+      "subtitle": "Dériver est mécanique ; primitiver est une reconnaissance de forme.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La pente, qu’on va maintenant remonter",
+          "body": "Resserre l’écart avec le curseur : la pente de la sécante tend vers celle de la tangente, et c’est la dérivée. Toute la leçon consiste à parcourir cette flèche dans l’autre sens : on connaît la pente en tout point, et on cherche la courbe.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’est une primitive",
+          "body": "F est une primitive de f sur un intervalle si F est dérivable et si sa dérivée vaut f partout sur cet intervalle.\n\nExemple : x² est une primitive de 2x, puisque la dérivée de x² vaut bien 2x.\n\nMais x² + 7 l’est aussi, et x² − 1000 également : ajouter une constante ne change pas la dérivée.\n\nUne fonction continue admet donc une infinité de primitives, qui diffèrent toutes d’une constante — et seulement d’une constante.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la constante compte",
+          "body": "Connaître la dérivée d’une fonction, c’est connaître sa pente partout, donc sa forme, mais pas sa hauteur.\n\nDeux voitures qui roulent à la même vitesse à chaque instant parcourent la même distance, sans forcément partir du même endroit.\n\nLa constante est précisément ce point de départ. Pour la fixer, il faut une condition supplémentaire : la valeur de F en un point.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Fixer la constante",
+          "body": "On cherche la primitive de 2x qui vaut 5 en 1.\n\nLes primitives sont x² + C. On écrit 1² + C = 5, donc C = 4.\n\nLa réponse est F(x) = x² + 4, et il y en a une seule.\n\nC’est toujours ainsi qu’on travaille en physique : la loi donne la dérivée, la condition initiale donne la constante, et les deux ensemble donnent une trajectoire unique.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Il n’y a pas de méthode générale",
+          "body": "Dériver se fait en appliquant des règles, dans l’ordre, mécaniquement. Toute fonction construite avec les fonctions usuelles se dérive.\n\nPrimitiver demande de reconnaître une forme déjà vue. Et certaines fonctions parfaitement simples n’ont aucune primitive exprimable avec les fonctions usuelles.\n\nC’est le cas de la fonction qui à x associe l’exponentielle de −x². Elle est partout en statistique, et son intégrale ne se calcule que numériquement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une primitive de f ?",
+          "explanation": "Une fonction F dérivable dont la dérivée vaut f partout sur l’intervalle considéré.",
+          "options": [
+            {
+              "text": "une fonction dont la dérivée vaut f",
+              "correct": true
+            },
+            {
+              "text": "la dérivée de f"
+            },
+            {
+              "text": "l’inverse de f"
+            },
+            {
+              "text": "la fonction f elle-même"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Lesquelles de ces fonctions sont des primitives de 2x ?",
+          "explanation": "x², x² + 7 et x² − 1000 : toutes les primitives de 2x diffèrent d’une constante, et seulement d’une constante.",
+          "options": [
+            {
+              "text": "x²",
+              "correct": true
+            },
+            {
+              "text": "x² + 7",
+              "correct": true
+            },
+            {
+              "text": "x² − 1000",
+              "correct": true
+            },
+            {
+              "text": "2"
+            },
+            {
+              "text": "x³"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On cherche la primitive F de 2x telle que F(1) = 5. Que vaut la constante ?",
+          "explanation": "F(x) = x² + C, et 1 + C = 5 donne C = 4. La condition initiale fixe la constante.",
+          "answer": 4,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Toute fonction continue construite avec les fonctions usuelles a une primitive qui s’exprime avec les fonctions usuelles.",
+          "explanation": "Faux. L’exponentielle de −x² en est le contre-exemple célèbre : elle est partout en statistique et son intégrale est seulement numérique.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux primitives d’une même fonction diffèrent-elles d’une constante ?",
+          "explanation": "Parce que leur différence a une dérivée nulle partout, donc elle est constante sur l’intervalle.",
+          "options": [
+            {
+              "text": "leur différence a une dérivée nulle",
+              "correct": true
+            },
+            {
+              "text": "par convention d’écriture"
+            },
+            {
+              "text": "parce que la dérivée perd un terme"
+            },
+            {
+              "text": "ce n’est vrai qu’au voisinage de zéro"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "primitives-usuelles",
+      "title": "Les primitives usuelles",
+      "subtitle": "Une table courte, et un contrôle qui ne trompe jamais.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les fonctions dont il faut connaître la primitive",
+          "body": "Passe de x² à x³, puis à racine de x et à 1/x : ce sont ces formes-là qu’il faut savoir remonter. Remarque que 1/x n’est pas définie en zéro — sa primitive ne l’est pas non plus, et cela limitera les intervalles de calcul.",
+          "figureId": "fonctions-reference",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La table à connaître",
+          "body": "Une primitive de x puissance n, pour n différent de −1, est x puissance (n + 1) divisé par (n + 1).\n\nUne primitive de 1/x, sur un intervalle où x est positif, est le logarithme népérien de x.\n\nUne primitive de l’exponentielle est l’exponentielle elle-même.\n\nUne primitive de cosinus est sinus ; une primitive de sinus est l’opposé du cosinus.",
+          "formula": "x puissance n donne x puissance (n+1) / (n+1)",
+          "id": "c2"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le contrôle qui ne trompe jamais",
+          "body": "Dérive ta réponse. Si tu ne retrouves pas la fonction de départ, c’est faux, sans discussion possible.\n\nCette vérification est toujours faisable, puisque dériver est mécanique. Elle prend quinze secondes et rend inutile tout doute.\n\nC’est le seul endroit du programme où l’on dispose d’un contrôle aussi complet : il serait absurde de ne pas s’en servir.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Reconnaître une forme composée",
+          "body": "Primitive de 2x fois l’exponentielle de x².\n\nOn reconnaît la dérivée de x², qui est 2x, multipliée par l’exponentielle de x². C’est la forme u prime fois l’exponentielle de u.\n\nLa réponse est donc l’exponentielle de x², plus une constante.\n\nContrôle : la dérivée de l’exponentielle de x² vaut 2x fois l’exponentielle de x². C’est bien le point de départ.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le cas n = −1 n’est pas un détail",
+          "body": "La formule générale divise par n + 1, qui vaut zéro pour n = −1. Elle est donc inutilisable pour 1/x.\n\nEt ce n’est pas une lacune de la formule : la primitive de 1/x n’est pas une puissance du tout, c’est un logarithme.\n\nCette exception unique est la raison historique pour laquelle le logarithme a été inventé avant qu’on sache ce qu’était une intégrale.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque fonction à une de ses primitives.",
+          "explanation": "On remonte la table : x² donne x³/3, 1/x donne le logarithme, cosinus donne sinus, et l’exponentielle est sa propre primitive.",
+          "pairs": [
+            {
+              "left": "x²",
+              "right": "x³/3"
+            },
+            {
+              "left": "1/x pour x positif",
+              "right": "le logarithme népérien"
+            },
+            {
+              "left": "cosinus",
+              "right": "sinus"
+            },
+            {
+              "left": "l’exponentielle",
+              "right": "l’exponentielle"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la formule des puissances ne marche-t-elle pas pour 1/x ?",
+          "explanation": "Parce qu’elle divise par n + 1, qui vaut zéro quand n = −1. Et la primitive de 1/x n’est pas une puissance : c’est un logarithme.",
+          "options": [
+            {
+              "text": "elle diviserait par zéro",
+              "correct": true
+            },
+            {
+              "text": "1/x n’a pas de primitive"
+            },
+            {
+              "text": "la formule est approchée"
+            },
+            {
+              "text": "1/x n’est pas continue"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la façon la plus sûre de vérifier une primitive ?",
+          "explanation": "La dériver. Si on ne retrouve pas la fonction de départ, c’est faux : le contrôle est total et mécanique.",
+          "options": [
+            {
+              "text": "dériver la réponse",
+              "correct": true
+            },
+            {
+              "text": "la comparer à la table"
+            },
+            {
+              "text": "vérifier son signe"
+            },
+            {
+              "text": "calculer sa valeur en zéro"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est une primitive de 2x fois l’exponentielle de x² ?",
+          "explanation": "L’exponentielle de x². On reconnaît la forme u prime fois l’exponentielle de u, et le contrôle par dérivation le confirme.",
+          "options": [
+            {
+              "text": "l’exponentielle de x²",
+              "correct": true
+            },
+            {
+              "text": "x² fois l’exponentielle de x²"
+            },
+            {
+              "text": "l’exponentielle de 2x"
+            },
+            {
+              "text": "2 fois l’exponentielle de x²"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est une primitive de x³ ?",
+          "explanation": "x⁴/4, en appliquant la formule : on monte l’exposant d’un cran et on divise par le nouvel exposant.",
+          "options": [
+            {
+              "text": "x⁴/4",
+              "correct": true
+            },
+            {
+              "text": "3x²"
+            },
+            {
+              "text": "x⁴"
+            },
+            {
+              "text": "x²/2"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’exponentielle est sa propre primitive.",
+          "explanation": "Vrai, à une constante près. C’est la propriété qui la définit, et ce qui la rend omniprésente dans les équations différentielles.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "integrale-et-aire",
+      "title": "L’intégrale, et l’aire",
+      "subtitle": "Une aire qui peut être négative : la convention a une raison.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’aire sous une courbe qui change de côté",
+          "body": "Règle a, b et c : quand la parabole passe sous l’axe, la portion qui s’y trouve compte en négatif dans l’intégrale. Surveille les racines affichées : ce sont elles qui délimitent les morceaux de signe différent.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que vaut une intégrale",
+          "body": "Si F est une primitive de f, alors l’intégrale de f entre a et b vaut F(b) − F(a).\n\nLa constante disparaît dans la soustraction : peu importe donc quelle primitive on choisit.\n\nQuand f est positive sur l’intervalle, ce nombre est l’aire entre la courbe et l’axe des abscisses, en unités d’aire.\n\nQuand f est négative, le nombre est négatif, et son opposé est l’aire.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le théorème fondamental",
+          "body": "intégrale de a à b de f = F(b) − F(a)\n\nCe résultat relie deux idées qui n’avaient aucune raison d’avoir un rapport : le calcul des pentes et le calcul des aires.\n\nC’est cette découverte, par Newton et Leibniz dans les années 1670, qui a fait l’analyse. Les Grecs savaient calculer certaines aires, mais une par une, par des méthodes ingénieuses et sans lien entre elles.",
+          "formula": "intégrale de a à b de f = F(b) − F(a)",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Intégrale nulle ne veut pas dire aire nulle",
+          "body": "L’intégrale de x entre −1 et 1 vaut zéro : la partie négative compense exactement la partie positive.\n\nL’aire, elle, vaut 1 : un demi de chaque côté.\n\nSi l’on veut une aire, il faut donc découper aux points où la fonction change de signe, et additionner les valeurs absolues. Oublier ce découpage est l’erreur la plus fréquente du chapitre.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la convention de signe est utile",
+          "body": "En physique, l’intégrale d’une vitesse donne un déplacement, et non une distance parcourue.\n\nUne voiture qui avance de 10 kilomètres puis recule de 10 kilomètres a une intégrale de vitesse nulle, ce qui est exact : elle est revenue au point de départ.\n\nSi l’intégrale comptait tout en positif, elle donnerait 20 et perdrait l’information. La convention n’est pas une bizarrerie, c’est ce qui rend l’outil juste.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut l’intégrale de x entre −1 et 1 ?",
+          "explanation": "Zéro : la partie négative compense exactement la partie positive. L’aire, elle, vaut 1.",
+          "answer": 0,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut l’aire entre la courbe de x et l’axe, entre −1 et 1 ?",
+          "explanation": "Un demi de chaque côté, soit 1. Il faut découper en zéro et additionner les valeurs absolues.",
+          "answer": 1,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le choix de la primitive n’a-t-il pas d’importance dans F(b) − F(a) ?",
+          "explanation": "Parce que la constante apparaît dans les deux termes et disparaît dans la soustraction.",
+          "options": [
+            {
+              "text": "la constante disparaît dans la soustraction",
+              "correct": true
+            },
+            {
+              "text": "la primitive est unique"
+            },
+            {
+              "text": "la constante vaut toujours zéro"
+            },
+            {
+              "text": "on prend toujours la plus simple"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une intégrale nulle signifie que la courbe reste sur l’axe.",
+          "explanation": "Faux. Elle peut s’éloigner beaucoup des deux côtés, les deux contributions se compensant exactement.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que donne l’intégrale d’une vitesse entre deux instants ?",
+          "explanation": "Un déplacement, et non une distance. Une voiture revenue à son point de départ a une intégrale de vitesse nulle, ce qui est exact.",
+          "options": [
+            {
+              "text": "un déplacement",
+              "correct": true
+            },
+            {
+              "text": "une distance parcourue"
+            },
+            {
+              "text": "une accélération"
+            },
+            {
+              "text": "une durée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle découverte le théorème fondamental a-t-il apportée ?",
+          "explanation": "Le lien entre le calcul des pentes et celui des aires, deux problèmes qui n’avaient aucune raison d’être liés.",
+          "options": [
+            {
+              "text": "le lien entre pentes et aires",
+              "correct": true
+            },
+            {
+              "text": "le calcul des aires de polygones"
+            },
+            {
+              "text": "la définition de la dérivée"
+            },
+            {
+              "text": "la notion de limite"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-aire-entre-deux-courbes",
+      "title": "Défi : l’aire entre deux courbes",
+      "subtitle": "Soustraire la bonne des deux, et savoir où elles se croisent.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Trouver où deux courbes se croisent",
+          "body": "Règle les coefficients pour faire apparaître deux racines : ce sont les points où la parabole coupe l’axe, c’est-à-dire où elle croise la courbe d’équation y = 0. Chercher l’intersection de deux courbes, c’est toujours résoudre une équation.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, en quatre temps",
+          "body": "On cherche les points d’intersection en résolvant f(x) = g(x), c’est-à-dire f(x) − g(x) = 0.\n\nOn détermine laquelle des deux courbes est au-dessus sur chaque intervalle, en testant un point.\n\nOn intègre la différence, celle du haut moins celle du bas, sur chaque intervalle.\n\nOn additionne. Si l’on a bien pris le haut moins le bas partout, chaque morceau est positif et aucune valeur absolue n’est nécessaire.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un calcul complet",
+          "body": "Aire entre y = x et y = x², entre leurs intersections.\n\nIntersections : x = x² donne x(1 − x) = 0, donc x = 0 et x = 1.\n\nEntre 0 et 1, x est au-dessus de x² : en 0,5 on a 0,5 contre 0,25.\n\nAire = intégrale de 0 à 1 de (x − x²) = [x²/2 − x³/3] de 0 à 1 = 1/2 − 1/3 = 1/6.\n\nContrôle d’ordre de grandeur : le domaine tient dans un carré de côté 1, donc l’aire est inférieure à 1. Un sixième est plausible.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’ordre de la soustraction décide du signe",
+          "body": "Si l’on intègre g − f au lieu de f − g, on obtient l’opposé.\n\nUne aire négative est donc le signe qu’on s’est trompé de sens, et non un résultat à présenter avec une valeur absolue ajoutée à la fin.\n\nLe test en un point intérieur prend cinq secondes et règle la question avant tout calcul.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que l’intégrale sait faire, au-delà des aires",
+          "body": "Une valeur moyenne : l’intégrale divisée par la longueur de l’intervalle.\n\nUn volume de révolution : l’intégrale de pi fois le carré du rayon.\n\nUn travail en physique : l’intégrale d’une force le long d’un déplacement.\n\nChaque fois, le schéma est le même : une quantité qui varie continûment, qu’on somme sur un intervalle. L’aire n’est que la première illustration, pas la définition.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le calcul d’une aire entre deux courbes dans l’ordre.",
+          "explanation": "Trouver les intersections, repérer la courbe du dessus, intégrer la différence, puis additionner les morceaux.",
+          "items": [
+            "résoudre f(x) = g(x)",
+            "repérer laquelle est au-dessus",
+            "intégrer le haut moins le bas",
+            "additionner les morceaux"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Où les courbes y = x et y = x² se croisent-elles ?",
+          "explanation": "x = x² donne x(1 − x) = 0, donc x = 0 et x = 1. Diviser par x aurait fait perdre la première.",
+          "options": [
+            {
+              "text": "en x = 0",
+              "correct": true
+            },
+            {
+              "text": "en x = 1",
+              "correct": true
+            },
+            {
+              "text": "en x = −1"
+            },
+            {
+              "text": "en x = 2"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’aire entre y = x et y = x² sur [0 ; 1] ?",
+          "explanation": "Intégrale de (x − x²) = 1/2 − 1/3 = 1/6. Le domaine tient dans un carré de côté 1, donc le résultat est plausible.",
+          "options": [
+            {
+              "text": "1/6",
+              "correct": true
+            },
+            {
+              "text": "1/2"
+            },
+            {
+              "text": "1/3"
+            },
+            {
+              "text": "1"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Vous obtenez une aire négative. Qu’est-ce que cela signifie ?",
+          "explanation": "Que la soustraction a été faite dans le mauvais sens. Un test en un point intérieur l’aurait évité en cinq secondes.",
+          "options": [
+            {
+              "text": "la soustraction est dans le mauvais sens",
+              "correct": true
+            },
+            {
+              "text": "la courbe passe sous l’axe"
+            },
+            {
+              "text": "il faut ajouter une valeur absolue"
+            },
+            {
+              "text": "les bornes sont inversées"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que sait calculer une intégrale, au-delà d’une aire ?",
+          "explanation": "Une valeur moyenne, un volume de révolution, un travail. Le schéma est toujours le même : sommer une quantité qui varie continûment.",
+          "options": [
+            {
+              "text": "une valeur moyenne",
+              "correct": true
+            },
+            {
+              "text": "un volume de révolution",
+              "correct": true
+            },
+            {
+              "text": "un travail en physique",
+              "correct": true
+            },
+            {
+              "text": "un nombre de solutions"
+            },
+            {
+              "text": "un coefficient directeur"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment obtient-on la valeur moyenne d’une fonction sur un intervalle ?",
+          "explanation": "En divisant l’intégrale par la longueur de l’intervalle. C’est l’analogue continu d’une moyenne arithmétique.",
+          "options": [
+            {
+              "text": "l’intégrale divisée par la longueur de l’intervalle",
+              "correct": true
+            },
+            {
+              "text": "la moyenne des valeurs aux bornes"
+            },
+            {
+              "text": "la dérivée au milieu"
+            },
+            {
+              "text": "l’intégrale elle-même"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

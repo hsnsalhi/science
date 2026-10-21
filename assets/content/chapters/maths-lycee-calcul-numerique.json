@@ -1,0 +1,559 @@
+{
+  "chapter": "maths-lycee-calcul-numerique-et-algebrique",
+  "lessons": [
+    {
+      "id": "les-familles-de-nombres",
+      "title": "Les familles de nombres",
+      "subtitle": "Chaque famille naît d’une opération qui sortait de la précédente.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une droite plus riche que les points où l’on s’arrête",
+          "body": "Règle le départ et le déplacement : tu te déplaces par sauts entiers. La droite, elle, ne contient pas que ces points-là — entre deux graduations il y a déjà une infinité de fractions, et entre les fractions, d’autres nombres encore.",
+          "figureId": "droite-graduee",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi chaque famille a été créée",
+          "body": "Les entiers naturels suffisent pour compter : 0, 1, 2, 3.\n\nMais 3 − 5 n’a pas de réponse. On invente les entiers relatifs, qui ajoutent les négatifs.\n\nMais 1 divisé par 3 n’a pas de réponse. On invente les rationnels, les quotients d’entiers.\n\nMais la diagonale du carré de côté 1 n’est aucun rationnel. On invente les réels, qui bouchent tous les trous de la droite.\n\nChaque famille contient la précédente, et chacune est née d’un calcul qui débordait.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Comment reconnaître un rationnel",
+          "body": "Un nombre est rationnel si et seulement si son écriture décimale s’arrête ou devient périodique.\n\n1/4 = 0,25 s’arrête. 1/3 = 0,333… est périodique. 1/7 = 0,142857142857… a une période de six chiffres.\n\nRacine de deux commence par 1,41421356 et ne fait jamais ni l’un ni l’autre. C’est la définition opératoire la plus utile du chapitre.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas qui surprend tout le monde",
+          "body": "0,999… avec une infinité de 9 vaut exactement 1, et non « presque 1 ».\n\nDémonstration en deux lignes : si x = 0,999…, alors 10x = 9,999… = 9 + x. Donc 9x = 9, donc x = 1.\n\nIl n’y a pas d’erreur : deux écritures différentes peuvent désigner le même réel. Ce n’est pas une approximation, c’est une égalité.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pi et racine de deux ne sont pas du même genre",
+          "body": "Racine de deux est irrationnelle mais algébrique : elle est solution de l’équation x² = 2, à coefficients entiers.\n\nPi est transcendant : aucune équation polynomiale à coefficients entiers ne l’admet pour solution. Lindemann l’a démontré en 1882.\n\nC’est cette démonstration, et non un échec de constructeurs, qui a réglé définitivement la quadrature du cercle : on ne peut pas construire un carré de même aire qu’un cercle à la règle et au compas.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "À quelle famille ce nombre appartient-il au plus juste ?",
+          "explanation": "4 est un entier naturel, −7 un relatif, 2/3 un rationnel non décimal, et racine de deux un irrationnel.",
+          "categories": [
+            "entier naturel",
+            "entier relatif non naturel",
+            "rationnel non entier",
+            "irrationnel"
+          ],
+          "items": [
+            {
+              "text": "4",
+              "category": 0
+            },
+            {
+              "text": "−7",
+              "category": 1
+            },
+            {
+              "text": "2/3",
+              "category": 2
+            },
+            {
+              "text": "racine de deux",
+              "category": 3
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment reconnaît-on un rationnel à son écriture décimale ?",
+          "explanation": "Elle s’arrête, ou elle devient périodique. Si elle ne fait ni l’un ni l’autre, le nombre est irrationnel.",
+          "options": [
+            {
+              "text": "elle s’arrête ou devient périodique",
+              "correct": true
+            },
+            {
+              "text": "elle s’arrête toujours"
+            },
+            {
+              "text": "elle a au plus dix chiffres"
+            },
+            {
+              "text": "elle ne contient pas de zéro"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "0,999… avec une infinité de 9 est légèrement inférieur à 1.",
+          "explanation": "Faux. Si x = 0,999… alors 10x = 9 + x, donc 9x = 9 et x = 1. Deux écritures peuvent désigner le même réel.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle différence y a-t-il entre racine de deux et pi ?",
+          "explanation": "Racine de deux est solution de x² = 2, donc algébrique. Pi n’est solution d’aucune équation polynomiale à coefficients entiers : il est transcendant.",
+          "options": [
+            {
+              "text": "racine de deux est solution d’une équation à coefficients entiers, pi non",
+              "correct": true
+            },
+            {
+              "text": "pi est rationnel, racine de deux non"
+            },
+            {
+              "text": "racine de deux a une écriture périodique"
+            },
+            {
+              "text": "aucune, ce sont deux irrationnels identiques"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les familles de nombres dans l’ordre d’inclusion, de la plus petite à la plus grande.",
+          "explanation": "Les naturels sont dans les relatifs, qui sont dans les rationnels, qui sont dans les réels. Chaque étape naît d’un calcul qui débordait.",
+          "items": [
+            "les entiers naturels",
+            "les entiers relatifs",
+            "les rationnels",
+            "les réels"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de chiffres compte la période de l’écriture décimale de 1/7 ?",
+          "explanation": "Six : 0,142857142857… Le motif 142857 se répète indéfiniment, ce qui confirme que 1/7 est rationnel.",
+          "answer": 6,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "fractions-puissances-racines",
+      "title": "Fractions, puissances, racines",
+      "subtitle": "Trois notations, et autant de fausses règles à désapprendre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Plus de parts, parts plus petites",
+          "body": "Règle le nombre de parts sur 4 et colorie-en 1. Passe à 8 parts, colorie-en 1 : la part coloriée est plus courte, alors que 8 est plus grand que 4. Un dénominateur qui grandit fait une fraction plus petite, et c’est l’origine de la moitié des erreurs.",
+          "figureId": "fraction-barre",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les règles qui marchent",
+          "body": "Addition : a/b + c/d = (ad + bc)/(bd), après mise au même dénominateur.\n\nProduit : a/b × c/d = ac/bd, directement.\n\nQuotient : diviser par une fraction, c’est multiplier par son inverse.\n\nPuissances : un produit de deux puissances d’une même base s’obtient en ajoutant les exposants, et une puissance de puissance en les multipliant.",
+          "formula": "a/b + c/d = (ad + bc)/(bd)",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les quatre fausses règles les plus fréquentes",
+          "body": "Racine de (a + b) n’est pas racine de a plus racine de b. Essaie avec 9 et 16 : racine de 25 vaut 5, pas 3 + 4 = 7.\n\n(a + b)² n’est pas a² + b². Il manque 2ab, et c’est presque toujours le terme qui compte.\n\n1/(a + b) n’est pas 1/a + 1/b. Essaie avec 1 et 1 : un demi contre deux.\n\na/b + c/d n’est pas (a + c)/(b + d). Essaie avec 1/2 + 1/2 : le résultat vaut 1, pas 2/4.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La règle de contrôle qui sauve",
+          "body": "Devant une identité douteuse, essaie des petits nombres : 0, 1, 2 ou 9 et 16 pour les racines.\n\nUn seul essai qui ne marche pas suffit à enterrer la règle, définitivement. C’est exactement le contre-exemple du chapitre de logique, appliqué au calcul.\n\nDix secondes de vérification valent mieux qu’une page de calculs sur une base fausse.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi les racines se simplifient",
+          "body": "Racine de 72 : on cherche le plus grand carré qui divise 72, c’est 36. Donc racine de 72 = racine de 36 × racine de 2 = 6 racine de 2.\n\nLa règle qui autorise cela est celle du produit : racine de (ab) égale racine de a fois racine de b. Elle est vraie, contrairement à celle de la somme.\n\nRetenir laquelle des deux est vraie est plus utile que de mémoriser des tables de racines.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut racine de 9 + racine de 16 ?",
+          "explanation": "3 + 4 = 7. Mais racine de 25 vaut 5 : la racine d’une somme n’est pas la somme des racines.",
+          "answer": 7,
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles égalités sont vraies pour tous les nombres positifs ?",
+          "explanation": "La racine d’un produit et la règle des exposants sont vraies. Les deux autres sont les fausses règles les plus répandues.",
+          "options": [
+            {
+              "text": "racine de (ab) = racine de a × racine de b",
+              "correct": true
+            },
+            {
+              "text": "(a + b)² = a² + 2ab + b²",
+              "correct": true
+            },
+            {
+              "text": "racine de (a + b) = racine de a + racine de b"
+            },
+            {
+              "text": "1/(a + b) = 1/a + 1/b"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Écris racine de 72 sous la forme k racine de 2. Que vaut k ?",
+          "explanation": "72 = 36 × 2, et racine de 36 vaut 6. Donc racine de 72 = 6 racine de 2.",
+          "answer": 6,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un dénominateur plus grand donne toujours une fraction plus grande.",
+          "explanation": "Faux. Un huitième est plus petit qu’un quart, et la figure le montre directement : plus de parts, parts plus courtes.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment vérifier en dix secondes qu’une règle de calcul est fausse ?",
+          "explanation": "En essayant de petits nombres. Un seul essai qui échoue enterre la règle définitivement : c’est le contre-exemple appliqué au calcul.",
+          "options": [
+            {
+              "text": "essayer de petits nombres comme 1 et 1",
+              "correct": true
+            },
+            {
+              "text": "la comparer à une règle connue"
+            },
+            {
+              "text": "vérifier qu’elle est symétrique"
+            },
+            {
+              "text": "demander à quelqu’un"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète les règles des puissances.",
+          "explanation": "On ajoute les exposants pour un produit de puissances d’une même base, et on les multiplie pour une puissance de puissance.",
+          "template": "Pour un produit de puissances d’une même base, on ___ les exposants ; pour une puissance de puissance, on les ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "ajoute",
+                "additionne"
+              ]
+            },
+            {
+              "accepted": [
+                "multiplie"
+              ]
+            }
+          ],
+          "hint": "L’une des deux opérations est plus forte que l’autre.",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "developper-et-factoriser",
+      "title": "Développer et factoriser",
+      "subtitle": "Deux sens de lecture du même rectangle, et deux usages opposés.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le rectangle coupé en deux",
+          "body": "Règle k, a et b, et déplace le trait qui coupe le rectangle : l’aire totale k(a + b) et la somme des deux morceaux ka + kb restent égales pour tous les réglages. C’est toute la distributivité, et on peut la lire dans les deux sens.",
+          "figureId": "distributivite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux sens, et à quoi chacun sert",
+          "body": "Développer : de la forme factorisée vers la somme. On s’en sert pour comparer deux expressions, ou pour repérer le degré.\n\nFactoriser : de la somme vers le produit. On s’en sert pour résoudre, parce qu’un produit nul donne des facteurs nuls.\n\nLa question utile n’est jamais « faut-il développer ou factoriser » dans l’abstrait, mais « que veux-je faire ensuite ? »",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois identités à connaître par cœur",
+          "body": "(a + b)² = a² + 2ab + b²\n\n(a − b)² = a² − 2ab + b²\n\n(a + b)(a − b) = a² − b²\n\nLa troisième est la plus utile en factorisation : dès qu’on voit une différence de deux carrés, elle se factorise sans calcul.",
+          "formula": "(a + b)(a − b) = a² − b²",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Reconnaître une factorisation possible",
+          "body": "Un facteur commun apparent : 6x² + 9x donne 3x(2x + 3).\n\nUne différence de deux carrés : x² − 16 donne (x − 4)(x + 4). Attention, x² + 16 ne se factorise pas sur les réels.\n\nUn carré parfait : x² + 6x + 9 donne (x + 3)². Le repère est que le terme du milieu vaut deux fois le produit des racines des extrêmes.\n\nUn facteur commun caché : (x + 1)(x + 2) + (x + 1)(x + 5) a (x + 1) en commun, ce qu’on ne voit plus si on développe d’abord.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Développer détruit parfois l’information",
+          "body": "Devant (x + 1)(x + 2) + (x + 1)(x + 5), développer donne 2x² + 9x + 7, où le facteur commun a disparu.\n\nIl faudra alors le retrouver par le discriminant, beaucoup plus laborieusement.\n\nC’est la raison pratique de regarder une expression avant de calculer : une structure visible se perd en une ligne, et se récupère en dix.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi factorise-t-on avant de résoudre une équation ?",
+          "explanation": "Parce qu’un produit est nul si et seulement si l’un de ses facteurs est nul. Une somme nulle ne dit rien de ses termes.",
+          "options": [
+            {
+              "text": "parce qu’un produit nul donne des facteurs nuls",
+              "correct": true
+            },
+            {
+              "text": "parce que c’est plus court à écrire"
+            },
+            {
+              "text": "parce que les sommes sont interdites"
+            },
+            {
+              "text": "parce que cela donne le degré"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque expression à sa forme factorisée.",
+          "explanation": "Facteur commun, différence de deux carrés, carré parfait : les trois repères de la factorisation.",
+          "pairs": [
+            {
+              "left": "6x² + 9x",
+              "right": "3x(2x + 3)"
+            },
+            {
+              "left": "x² − 16",
+              "right": "(x − 4)(x + 4)"
+            },
+            {
+              "left": "x² + 6x + 9",
+              "right": "(x + 3)²"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "x² + 16 se factorise sur les réels.",
+          "explanation": "Faux. Seule une différence de deux carrés se factorise ainsi ; une somme de deux carrés n’a pas de racine réelle.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Développe (x + 5)². Quel est le coefficient de x ?",
+          "explanation": "(x + 5)² = x² + 2 × 5 × x + 25, donc le coefficient de x vaut 10. L’oublier est l’erreur classique.",
+          "answer": 10,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il faire devant (x + 1)(x + 2) + (x + 1)(x + 5) ?",
+          "explanation": "Factoriser par (x + 1), qui est visible. Développer d’abord fait disparaître ce facteur, qu’il faudra retrouver laborieusement.",
+          "options": [
+            {
+              "text": "factoriser par (x + 1)",
+              "correct": true
+            },
+            {
+              "text": "développer entièrement"
+            },
+            {
+              "text": "utiliser une identité remarquable"
+            },
+            {
+              "text": "calculer le discriminant"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète l’identité remarquable la plus utile en factorisation.",
+          "explanation": "(a + b)(a − b) = a² − b². Dès qu’on reconnaît une différence de deux carrés, elle se factorise sans aucun calcul.",
+          "template": "(a + b)(a − b) = a² ___ b²",
+          "blanks": [
+            {
+              "accepted": [
+                "−",
+                "-",
+                "moins"
+              ]
+            }
+          ],
+          "hint": "Les termes croisés s’annulent.",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-equations-inequations",
+      "title": "Défi : équations et inéquations",
+      "subtitle": "Un produit nul se lit ; une inéquation se discute.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Factoriser pour pouvoir lire",
+          "body": "Reprends le rectangle : k(a + b) est un produit, ka + kb est une somme. Si le produit vaut zéro, l’un des deux côtés vaut zéro et on conclut immédiatement. Si la somme vaut zéro, on ne sait rien de chaque terme. Tout le chapitre tient dans cette asymétrie.",
+          "figureId": "distributivite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Résoudre une équation produit nul",
+          "body": "On ramène tout d’un côté, pour avoir un membre égal à zéro.\n\nOn factorise ce membre, autant que possible.\n\nOn annule chaque facteur séparément.\n\nOn vérifie que chaque solution trouvée est bien autorisée — une valeur qui annulerait un dénominateur est à exclure.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas complet",
+          "body": "Résoudre x² = 4x.\n\nOn ne divise pas par x : on perdrait la solution x = 0, et diviser par une quantité qui peut être nulle est interdit.\n\nOn écrit x² − 4x = 0, puis x(x − 4) = 0.\n\nDonc x = 0 ou x = 4. Deux solutions, alors que la division en aurait donné une seule.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Multiplier une inéquation par un négatif retourne le sens",
+          "body": "De −2x inférieur à 6, on tire x supérieur à −3, et non x inférieur à −3.\n\nC’est la seule opération qui change le sens, et c’est l’étourderie la plus coûteuse de l’année en contrôle.\n\nLe contrôle est immédiat : prends une valeur de ta solution et remplace-la dans l’inéquation de départ. Si elle n’est pas vérifiée, le sens a été retourné à tort — ou pas retourné du tout.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un tableau de signes pour les cas durs",
+          "body": "Pour résoudre un quotient ou un produit comparé à zéro, on cherche les valeurs qui annulent chaque facteur, on les place par ordre croissant, et on donne le signe de chaque facteur sur chaque intervalle.\n\nLe signe du tout est le produit des signes.\n\nLes valeurs qui annulent un dénominateur sont exclues, et on le marque par une double barre : l’expression n’y existe pas, elle n’y est ni positive ni négative.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la résolution d’une équation produit nul dans l’ordre.",
+          "explanation": "Tout d’un côté, factoriser, annuler chaque facteur, puis vérifier que les solutions sont autorisées.",
+          "items": [
+            "ramener tout d’un côté de l’égalité",
+            "factoriser le membre obtenu",
+            "annuler chaque facteur séparément",
+            "vérifier que chaque solution est autorisée"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles sont les solutions de x² = 4x ?",
+          "explanation": "x² − 4x = 0 donne x(x − 4) = 0, donc x = 0 ou x = 4. Diviser par x aurait fait perdre la solution 0.",
+          "options": [
+            {
+              "text": "x = 0",
+              "correct": true
+            },
+            {
+              "text": "x = 4",
+              "correct": true
+            },
+            {
+              "text": "x = 2"
+            },
+            {
+              "text": "x = −4"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Pour résoudre x² = 4x, on peut diviser les deux membres par x.",
+          "explanation": "Faux. x peut valoir 0, et diviser par une quantité qui peut être nulle est interdit : on perdrait précisément cette solution.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que donne −2x < 6 ?",
+          "explanation": "On divise par −2, ce qui retourne le sens : x > −3. C’est la seule opération qui change le sens d’une inéquation.",
+          "options": [
+            {
+              "text": "x > −3",
+              "correct": true
+            },
+            {
+              "text": "x < −3"
+            },
+            {
+              "text": "x > 3"
+            },
+            {
+              "text": "x < 3"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans un tableau de signes, que marque une double barre ?",
+          "explanation": "Une valeur interdite, qui annule un dénominateur. L’expression n’y existe pas : elle n’y est ni positive ni négative.",
+          "options": [
+            {
+              "text": "une valeur où l’expression n’existe pas",
+              "correct": true
+            },
+            {
+              "text": "un maximum"
+            },
+            {
+              "text": "une solution double"
+            },
+            {
+              "text": "un changement de signe"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment vérifier une inéquation résolue, en dix secondes ?",
+          "explanation": "En remplaçant une valeur de l’ensemble trouvé dans l’inéquation de départ. Si elle n’est pas vérifiée, le sens a été mal traité.",
+          "options": [
+            {
+              "text": "tester une valeur de la solution dans l’énoncé",
+              "correct": true
+            },
+            {
+              "text": "refaire le calcul à l’envers"
+            },
+            {
+              "text": "vérifier le signe du coefficient"
+            },
+            {
+              "text": "tracer la courbe"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

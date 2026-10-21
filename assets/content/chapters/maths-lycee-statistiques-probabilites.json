@@ -1,0 +1,543 @@
+{
+  "chapter": "maths-lycee-statistiques-et-probabilites-2de",
+  "lessons": [
+    {
+      "id": "resumer-une-serie",
+      "title": "Résumer une série",
+      "subtitle": "Un seul nombre ne peut pas tout dire, et le choix n’est pas neutre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Changer une valeur, voir bouger les résumés",
+          "body": "Touche une cellule et change sa valeur avec le curseur : les totaux se recalculent. Fais monter une seule valeur très haut : la moyenne suit, et c’est précisément ce qu’on lui reproche quand une série contient une valeur extrême.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois résumés de position",
+          "body": "La moyenne : la somme divisée par l’effectif. Elle tient compte de toutes les valeurs, donc de toutes les valeurs extrêmes.\n\nLa médiane : la valeur qui partage la série en deux moitiés de même effectif. Elle ne bouge presque pas si on change une valeur extrême.\n\nLes quartiles : les valeurs qui coupent aux quarts. L’écart interquartile, différence entre le troisième et le premier, contient la moitié centrale des données.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le salaire médian est publié",
+          "body": "Dans une entreprise de 10 personnes, neuf gagnent 2 000 euros et le dirigeant 50 000.\n\nLa moyenne vaut 6 800 euros. Aucun des dix salariés ne gagne cela, et le chiffre décrit mal l’entreprise.\n\nLa médiane vaut 2 000 euros, ce qui décrit exactement la situation de la grande majorité.\n\nC’est pour cette raison que les statistiques publiques publient toujours les deux. Choisir de ne citer que l’une est une façon très courante d’orienter une conclusion.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’écart type est une largeur",
+          "body": "Il mesure la dispersion autour de la moyenne : plus il est grand, plus les valeurs sont étalées.\n\nDeux séries peuvent avoir la même moyenne et des écarts types très différents : 10, 10, 10 et 0, 10, 20 ont toutes deux pour moyenne 10.\n\nUne moyenne sans indication de dispersion est donc une information incomplète, et pas seulement imprécise.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un résumé ne remplace pas le dessin",
+          "body": "Deux séries peuvent partager moyenne, médiane, écart type, et avoir des formes complètement différentes : l’une symétrique, l’autre avec deux bosses.\n\nIl existe des jeux de données construits exprès pour le démontrer, dont le plus célèbre forme un dinosaure quand on le trace, et a les mêmes résumés qu’un nuage sans forme.\n\nLa règle qui en sort : on trace avant de résumer, jamais l’inverse.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Neuf personnes gagnent 2 000 € et une 50 000 €. Quelle est la moyenne, en euros ?",
+          "explanation": "(9 × 2 000 + 50 000)/10 = 68 000/10 = 6 800 euros. Personne ne gagne cette somme.",
+          "answer": 6800,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans cette même entreprise, quelle est la médiane, en euros ?",
+          "explanation": "2 000 euros : la valeur qui partage les dix salaires en deux moitiés. Elle décrit la situation de la grande majorité.",
+          "answer": 2000,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel résumé est le moins sensible à une valeur extrême ?",
+          "explanation": "La médiane. Elle ne dépend que du rang des valeurs, pas de leur taille, alors que la moyenne les additionne toutes.",
+          "options": [
+            {
+              "text": "la médiane",
+              "correct": true
+            },
+            {
+              "text": "la moyenne"
+            },
+            {
+              "text": "l’écart type"
+            },
+            {
+              "text": "l’étendue"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux séries de même moyenne ont la même dispersion.",
+          "explanation": "Faux. 10, 10, 10 et 0, 10, 20 ont toutes deux pour moyenne 10, avec des écarts types très différents.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que contient l’écart interquartile ?",
+          "explanation": "La moitié centrale des données, entre le premier et le troisième quartile. Les quarts extrêmes en sont exclus.",
+          "options": [
+            {
+              "text": "la moitié centrale des données",
+              "correct": true
+            },
+            {
+              "text": "toutes les données"
+            },
+            {
+              "text": "le quart central"
+            },
+            {
+              "text": "les valeurs extrêmes"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel ordre travailler avec une série de données ?",
+          "explanation": "Tracer, puis résumer. Des séries aux résumés identiques peuvent avoir des formes complètement différentes.",
+          "options": [
+            {
+              "text": "tracer d’abord, résumer ensuite",
+              "correct": true
+            },
+            {
+              "text": "résumer d’abord, tracer ensuite"
+            },
+            {
+              "text": "calculer la moyenne et s’arrêter"
+            },
+            {
+              "text": "l’ordre n’a pas d’importance"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-hasard-equiprobable",
+      "title": "Le hasard équiprobable",
+      "subtitle": "Compter les cas, et surtout les compter tous.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre issues, toutes aussi probables",
+          "body": "Touche un parent pour changer ce qu’il porte : le tableau des quatre graines possibles se refait. Les quatre cases ne sont pas là par convention — elles sont les quatre combinaisons équiprobables, et c’est en les comptant qu’on obtient la probabilité.",
+          "figureId": "croisement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La définition, et sa condition",
+          "body": "Quand toutes les issues ont la même probabilité, la probabilité d’un événement vaut le nombre de cas favorables divisé par le nombre de cas possibles.\n\nLa condition d’équiprobabilité est essentielle, et on l’oublie souvent : avec deux dés, la somme 7 est beaucoup plus probable que la somme 2, parce qu’il y a six façons de faire 7 et une seule de faire 2.\n\nCompter sur les sommes mène donc à une erreur ; compter sur les couples de dés est correct.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux formules à connaître",
+          "body": "Probabilité du contraire : P(non A) = 1 − P(A). C’est souvent beaucoup plus facile à calculer que l’événement lui-même.\n\nProbabilité d’une réunion : P(A ou B) = P(A) + P(B) − P(A et B). On retire l’intersection, sinon elle est comptée deux fois.\n\nSi A et B sont incompatibles, l’intersection est vide et la formule se simplifie en une addition.",
+          "formula": "P(A ou B) = P(A) + P(B) − P(A et B)",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Passer par le contraire",
+          "body": "« Au moins un six en quatre lancers » demande de traiter les cas un, deux, trois et quatre six : c’est long.\n\nLe contraire est « aucun six », qui ne compte qu’un seul cas : (5/6) puissance 4, soit environ 0,482.\n\nLa réponse est donc 1 − 0,482 = 0,518, à peine plus d’une chance sur deux.\n\nDès qu’un énoncé contient « au moins un », passer par le contraire est presque toujours le bon réflexe.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le hasard n’a pas de mémoire",
+          "body": "Après cinq rouges à la roulette, le noir n’est pas « dû ». Chaque tour est indépendant, et la probabilité reste la même.\n\nCette croyance porte un nom, l’erreur du joueur, et elle vient d’une confusion : sur un très grand nombre de tours les proportions s’équilibrent, mais aucun tour particulier n’est chargé de corriger les précédents.\n\nLa loi des grands nombres parle du long terme, et ne promet rien sur le prochain coup.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Avec deux dés à six faces, combien de couples donnent une somme de 7 ?",
+          "explanation": "Six : 1-6, 2-5, 3-4, 4-3, 5-2 et 6-1. Contre un seul pour la somme 2, d’où la différence de probabilité.",
+          "answer": 6,
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Avec deux dés, toutes les sommes de 2 à 12 sont équiprobables.",
+          "explanation": "Faux. Il y a six façons de faire 7 et une seule de faire 2. Ce sont les couples de dés qui sont équiprobables, pas les sommes.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la meilleure méthode pour « au moins un six en quatre lancers » ?",
+          "explanation": "Passer par le contraire, « aucun six », qui ne compte qu’un cas : (5/6) puissance 4. La réponse est 1 moins cela.",
+          "options": [
+            {
+              "text": "calculer le contraire et soustraire à 1",
+              "correct": true
+            },
+            {
+              "text": "additionner les cas un, deux, trois et quatre six"
+            },
+            {
+              "text": "diviser 1 par 6 puis multiplier par 4"
+            },
+            {
+              "text": "multiplier 1/6 par lui-même quatre fois"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la probabilité d’obtenir au moins un six en quatre lancers de dé, en pourcentage ?",
+          "explanation": "1 − (5/6) puissance 4 vaut environ 0,518, soit 52 %. À peine plus d’une chance sur deux, contrairement à l’intuition de 4/6.",
+          "min": 0,
+          "max": 100,
+          "answer": 52,
+          "tolerance": 6,
+          "unit": "%",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Après cinq rouges à la roulette, quelle est la probabilité de rouge au tour suivant ?",
+          "explanation": "La même qu’au premier tour. Chaque tour est indépendant : le hasard n’a pas de mémoire, et aucun tour ne corrige les précédents.",
+          "options": [
+            {
+              "text": "la même qu’au premier tour",
+              "correct": true
+            },
+            {
+              "text": "plus faible, le noir est dû"
+            },
+            {
+              "text": "plus forte, la série continue"
+            },
+            {
+              "text": "impossible à dire"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi retire-t-on P(A et B) dans la formule de la réunion ?",
+          "explanation": "Parce que les issues communes aux deux événements seraient comptées deux fois en additionnant simplement.",
+          "options": [
+            {
+              "text": "pour ne pas compter deux fois l’intersection",
+              "correct": true
+            },
+            {
+              "text": "pour que le résultat soit positif"
+            },
+            {
+              "text": "par convention"
+            },
+            {
+              "text": "parce que A et B sont incompatibles"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "un-echantillon-fluctue",
+      "title": "Un échantillon fluctue",
+      "subtitle": "Deux sondages honnêtes donnent deux résultats différents.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Relancer la même expérience",
+          "body": "Règle l’avantage, puis appuie plusieurs fois sur « Recommencer » et « Dix générations » : le même réglage ne donne pas exactement la même courbe. Ce n’est pas un défaut de la figure — c’est le hasard de l’échantillon, et il faut apprendre à le mesurer.",
+          "figureId": "selection",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi deux sondages diffèrent",
+          "body": "Un sondage interroge quelques centaines de personnes tirées au hasard dans une population de millions.\n\nUn autre tirage donnera un autre échantillon, donc une autre proportion observée, même si la population n’a pas changé et si les deux sondeurs sont irréprochables.\n\nLa variation entre deux échantillons s’appelle la fluctuation d’échantillonnage. Elle n’est pas une erreur : elle est inévitable, et elle se calcule.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La largeur de l’incertitude",
+          "body": "Pour un échantillon de taille n et une proportion observée f, l’intervalle de confiance au niveau 95 % est à peu près :\n\nde f − 1/racine de n à f + 1/racine de n\n\nPour n = 1 000, cela fait environ 3 points de pourcentage de part et d’autre. Pour n = 100, dix points : un sondage sur cent personnes ne distingue pas 45 % de 55 %.",
+          "formula": "f ± 1/√n",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Quadrupler l’échantillon divise l’incertitude par deux",
+          "body": "La largeur varie comme un sur racine de n, et non comme un sur n.\n\nPasser de 1 000 à 2 000 personnes ne gagne donc que 30 % de précision, pour le double du coût.\n\nC’est la raison économique pour laquelle les sondages s’arrêtent presque tous autour de mille personnes : au-delà, on paye beaucoup pour gagner peu.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que l’intervalle ne couvre pas",
+          "body": "Il mesure uniquement le hasard du tirage.\n\nIl ne dit rien d’un échantillon mal tiré — par exemple interrogé en semaine à 14 heures, ce qui exclut la plupart des gens qui travaillent.\n\nIl ne dit rien non plus d’une question mal posée, ni des personnes qui refusent de répondre.\n\nCes biais ne diminuent pas quand on augmente la taille : un gros échantillon biaisé est une erreur précise.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux sondages honnêtes donnent-ils deux résultats différents ?",
+          "explanation": "Parce qu’ils interrogent deux échantillons différents. La fluctuation d’échantillonnage est inévitable et se calcule.",
+          "options": [
+            {
+              "text": "parce que les échantillons tirés diffèrent",
+              "correct": true
+            },
+            {
+              "text": "parce que l’un des deux se trompe"
+            },
+            {
+              "text": "parce que la population a changé"
+            },
+            {
+              "text": "parce que les questions sont différentes"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Pour un échantillon de 100 personnes, quelle est la demi-largeur de l’intervalle de confiance, en points de pourcentage ?",
+          "explanation": "1/racine de 100 = 1/10 = 0,1, soit 10 points. Un tel sondage ne distingue pas 45 % de 55 %.",
+          "answer": 10,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Pour 1 000 personnes, quelle est la demi-largeur de l’intervalle, en points de pourcentage ?",
+          "explanation": "1/racine de 1 000, soit environ 0,032 : un peu plus de 3 points de part et d’autre.",
+          "min": 0,
+          "max": 30,
+          "answer": 3.2,
+          "tolerance": 0.8,
+          "unit": "pts",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il faire pour diviser l’incertitude par deux ?",
+          "explanation": "Quadrupler l’échantillon, puisque la largeur varie comme un sur racine de n et non comme un sur n.",
+          "options": [
+            {
+              "text": "quadrupler la taille de l’échantillon",
+              "correct": true
+            },
+            {
+              "text": "doubler la taille de l’échantillon"
+            },
+            {
+              "text": "poser deux fois plus de questions"
+            },
+            {
+              "text": "interroger deux fois les mêmes personnes"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Augmenter la taille de l’échantillon corrige un biais de recrutement.",
+          "explanation": "Faux. L’intervalle ne mesure que le hasard du tirage. Un gros échantillon biaisé est une erreur précise, ce qui est pire.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les sondages s’arrêtent-ils souvent autour de mille personnes ?",
+          "explanation": "Parce qu’au-delà on paye beaucoup pour gagner peu : passer à 2 000 ne gagne que 30 % de précision pour le double du coût.",
+          "options": [
+            {
+              "text": "le gain de précision devient trop cher",
+              "correct": true
+            },
+            {
+              "text": "la formule ne marche plus au-delà"
+            },
+            {
+              "text": "la loi l’interdit"
+            },
+            {
+              "text": "les biais augmentent avec la taille"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-une-statistique",
+      "title": "Défi : lire une statistique publiée",
+      "subtitle": "Six questions, et la plupart des chiffres trompeurs tombent.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Refaire le calcul soi-même",
+          "body": "Touche les cellules et change les valeurs : les totaux suivent. C’est tout ce qu’il faut pour vérifier un pourcentage publié, et la vérification échoue plus souvent qu’on ne le croit.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les six questions à poser",
+          "body": "Sur combien de personnes ou de mesures ?\n\nComment ont-elles été choisies ?\n\nMoyenne ou médiane — et qu’aurait donné l’autre ?\n\nPourcentage de quoi : du total, ou d’un sous-groupe ?\n\nComparé à quoi : l’année dernière, un groupe témoin, ou rien ?\n\nQui a payé l’étude, et cela pouvait-il orienter la question posée ?",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le pourcentage d’un pourcentage",
+          "body": "« Le risque augmente de 50 % » peut signifier deux choses très différentes.\n\nSi le risque passait de 2 % à 3 %, l’augmentation relative est bien de 50 %, mais l’augmentation absolue est d’un point : une personne de plus sur cent.\n\nSi le risque passait de 40 % à 60 %, c’est aussi 50 % en relatif, et vingt points en absolu.\n\nLa presse publie presque toujours le relatif, parce qu’il est plus impressionnant. Demander l’absolu est la question la plus rentable qu’on puisse poser.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Corrélation et cause",
+          "body": "Deux grandeurs peuvent monter ensemble sans qu’aucune ne cause l’autre : les ventes de glaces et les noyades montent toutes deux en été.\n\nUne troisième grandeur — la chaleur — explique les deux. On l’appelle un facteur de confusion.\n\nPour conclure à une cause, il faut un mécanisme, ou une expérience où l’on fait varier une seule chose. Une corrélation seule n’y suffit jamais, même très forte et même sur beaucoup de données.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un graphique peut mentir sans un chiffre faux",
+          "body": "Un axe vertical qui ne part pas de zéro transforme une variation de 2 % en falaise.\n\nUne échelle logarithmique non signalée écrase une explosion.\n\nUn graphique tronqué au bon endroit fait disparaître la partie qui dérange.\n\nLe premier réflexe devant un graphique est donc de lire les axes et la légende, avant même de regarder la courbe.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles questions poser devant une statistique publiée ?",
+          "explanation": "L’effectif, le mode de recrutement, le résumé choisi, le dénominateur du pourcentage, la comparaison, et le financeur.",
+          "options": [
+            {
+              "text": "sur combien de personnes",
+              "correct": true
+            },
+            {
+              "text": "comment elles ont été choisies",
+              "correct": true
+            },
+            {
+              "text": "pourcentage de quoi",
+              "correct": true
+            },
+            {
+              "text": "comparé à quoi",
+              "correct": true
+            },
+            {
+              "text": "si le résultat est surprenant"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un risque passe de 2 % à 3 %. De combien de points augmente-t-il en absolu ?",
+          "explanation": "Un point : une personne de plus sur cent. En relatif c’est 50 %, ce qui paraît bien plus impressionnant.",
+          "answer": 1,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la presse préfère-t-elle le risque relatif ?",
+          "explanation": "Parce qu’il paraît plus impressionnant : 50 % sonne mieux qu’un point de pourcentage, pour la même information.",
+          "options": [
+            {
+              "text": "parce qu’il paraît plus impressionnant",
+              "correct": true
+            },
+            {
+              "text": "parce qu’il est plus exact"
+            },
+            {
+              "text": "parce qu’il est plus facile à calculer"
+            },
+            {
+              "text": "parce que l’absolu est confidentiel"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Les ventes de glaces et les noyades montent ensemble. Que conclure ?",
+          "explanation": "Rien de causal. Une troisième grandeur, la chaleur, explique les deux : c’est un facteur de confusion.",
+          "options": [
+            {
+              "text": "une troisième cause explique les deux",
+              "correct": true
+            },
+            {
+              "text": "les glaces causent les noyades"
+            },
+            {
+              "text": "les noyades font vendre des glaces"
+            },
+            {
+              "text": "la corrélation est une coïncidence sans cause"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le premier réflexe devant un graphique ?",
+          "explanation": "Lire les axes et la légende. Un axe qui ne part pas de zéro suffit à transformer 2 % de variation en falaise.",
+          "options": [
+            {
+              "text": "lire les axes et la légende",
+              "correct": true
+            },
+            {
+              "text": "regarder la forme de la courbe"
+            },
+            {
+              "text": "chercher le maximum"
+            },
+            {
+              "text": "vérifier les couleurs"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une corrélation très forte sur beaucoup de données établit une cause.",
+          "explanation": "Faux. Il faut un mécanisme, ou une expérience où l’on fait varier une seule chose. La taille des données n’y change rien.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

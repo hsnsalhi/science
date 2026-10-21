@@ -1,0 +1,582 @@
+{
+  "chapter": "maths-lycee-trigonometrie-et-fonctions-circulaires",
+  "lessons": [
+    {
+      "id": "le-cercle-et-le-radian",
+      "title": "Le cercle et le radian",
+      "subtitle": "Une unité d’angle qui est une longueur.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un tour, douze heures, 360 degrés",
+          "body": "Règle les heures et les minutes : la grande aiguille fait un tour complet quand la petite avance d’une heure. Une heure vaut donc 30 degrés sur le cadran, et une minute 6 degrés. Un angle n’est rien d’autre qu’une part de tour.",
+          "figureId": "horloge",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi inventer le radian",
+          "body": "Les 360 degrés viennent des Babyloniens et de leur base 60. Le nombre est pratique — il a beaucoup de diviseurs — mais arbitraire.\n\nLe radian, lui, mesure l’angle par la longueur de l’arc qu’il découpe sur le cercle de rayon 1.\n\nUn tour complet découpe un arc de longueur 2 pi : un tour vaut donc 2 pi radians. Un demi-tour vaut pi, un quart de tour pi/2.\n\nL’intérêt n’est pas l’élégance : c’est que la dérivée de sinus n’est égale à cosinus qu’en radians. En degrés, un facteur parasite apparaît partout.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La conversion",
+          "body": "angle en radians = angle en degrés × pi / 180\n\nLes valeurs à savoir de mémoire : 30 degrés font pi/6, 45 degrés font pi/4, 60 degrés font pi/3, 90 degrés font pi/2, et 180 degrés font pi.\n\nLe réflexe de contrôle : pi vaut environ 3,14, donc pi/3 vaut environ 1,05 radian. Un résultat de 60 radians pour 60 degrés signale une multiplication oubliée.",
+          "formula": "rad = deg × pi / 180",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Longueur d’arc et aire de secteur",
+          "body": "Sur un cercle de rayon r, un angle de mesure a en radians découpe un arc de longueur r × a.\n\nLe secteur correspondant a pour aire r² × a / 2.\n\nCes deux formules sont fausses en degrés. C’est la raison la plus concrète d’apprendre à penser en radians : elles n’ont pas de constante de conversion à retenir.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un angle, une infinité d’écritures",
+          "body": "Le point du cercle atteint après un quart de tour est le même qu’après un quart de tour plus un tour entier.\n\npi/2, pi/2 + 2 pi, pi/2 − 2 pi désignent donc le même point, et ont le même cosinus et le même sinus.\n\nOn parle de mesures d’un angle, au pluriel, et on choisit souvent celle qui tombe entre −pi et pi. C’est la source d’oublis de solutions la plus fréquente de ce chapitre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De combien de degrés la petite aiguille avance-t-elle en une heure ?",
+          "explanation": "Un tour de cadran fait 360 degrés pour 12 heures, donc 360/12 = 30 degrés par heure.",
+          "answer": 30,
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque angle en degrés à sa mesure en radians.",
+          "explanation": "On multiplie par pi/180 : 30 donne pi/6, 45 donne pi/4, 60 donne pi/3, 90 donne pi/2.",
+          "pairs": [
+            {
+              "left": "30 degrés",
+              "right": "pi/6"
+            },
+            {
+              "left": "45 degrés",
+              "right": "pi/4"
+            },
+            {
+              "left": "60 degrés",
+              "right": "pi/3"
+            },
+            {
+              "left": "90 degrés",
+              "right": "pi/2"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un cercle a pour rayon 3. Quelle est la longueur de l’arc découpé par un angle de 2 radians ?",
+          "explanation": "La longueur vaut r × a = 3 × 2 = 6. Cette formule n’est valable qu’en radians.",
+          "answer": 6,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le radian est-il préféré en analyse ?",
+          "explanation": "Parce que la dérivée de sinus n’égale cosinus qu’en radians. En degrés, un facteur de conversion apparaît partout.",
+          "options": [
+            {
+              "text": "parce que la dérivée de sinus vaut cosinus",
+              "correct": true
+            },
+            {
+              "text": "parce que les nombres sont plus petits"
+            },
+            {
+              "text": "parce que 360 n’a pas assez de diviseurs"
+            },
+            {
+              "text": "par tradition"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "answer": true,
+          "prompt": "Les mesures pi/2 et pi/2 + 2 pi désignent le même point du cercle.",
+          "explanation": "Vrai. Ajouter un tour complet ramène au même point : cosinus et sinus y sont identiques. D’où les oublis de solutions.",
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien vaut un angle de 60 degrés, en radians ?",
+          "explanation": "60 × pi/180 = pi/3, soit environ 1,05 radian. Un résultat voisin de 60 signale une multiplication oubliée.",
+          "min": 0,
+          "max": 7,
+          "answer": 1.05,
+          "tolerance": 0.2,
+          "unit": "rad",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "cosinus-et-sinus",
+      "title": "Cosinus et sinus",
+      "subtitle": "Deux coordonnées, et tout le reste en découle.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les trois rapports, et l’angle qui les fixe",
+          "body": "Choisis un rapport, puis règle l’angle : la valeur s’affiche. Change ensuite la taille du triangle : le rapport ne bouge pas. C’est cette invariance qui permet de définir cosinus et sinus pour un angle, sans parler d’aucun triangle particulier.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La définition par le cercle",
+          "body": "On place un point M sur le cercle de rayon 1 centré à l’origine, repéré par l’angle a depuis l’axe des abscisses.\n\nAlors cos a est l’abscisse de M, et sin a est son ordonnée.\n\nCette définition vaut pour tous les angles, y compris obtus et négatifs, là où la définition par le triangle rectangle s’arrêtait à 90 degrés.\n\nC’est le même cosinus : pour un angle aigu, les deux définitions coïncident.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation fondamentale",
+          "body": "cos² a + sin² a = 1, pour tout angle a.\n\nCe n’est rien d’autre que Pythagore dans le triangle rectangle dont l’hypoténuse est le rayon du cercle, de longueur 1.\n\nConséquence immédiate : cosinus et sinus restent toujours entre −1 et 1. Un résultat de 1,2 pour un cosinus est une erreur de calcul, pas un cas particulier.",
+          "formula": "cos² a + sin² a = 1",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les valeurs à connaître sans calculatrice",
+          "body": "cos 0 = 1 et sin 0 = 0.\n\ncos pi/6 = racine de 3 sur 2, sin pi/6 = 1/2.\n\ncos pi/4 = sin pi/4 = racine de 2 sur 2.\n\ncos pi/3 = 1/2, sin pi/3 = racine de 3 sur 2.\n\ncos pi/2 = 0 et sin pi/2 = 1. Le moyen de contrôle : les cosinus décroissent de 1 à 0 quand l’angle va de 0 à pi/2, et les sinus font l’inverse.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le signe dépend du quart de cercle",
+          "body": "Dans le premier quart, cosinus et sinus sont tous deux positifs.\n\nDans le deuxième, cosinus devient négatif et sinus reste positif.\n\nDans le troisième, les deux sont négatifs. Dans le quatrième, cosinus redevient positif et sinus reste négatif.\n\nInutile de l’apprendre par cœur : il suffit de se demander de quel côté de l’origine se trouve le point, en abscisse puis en ordonnée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que représente cos a sur le cercle de rayon 1 ?",
+          "explanation": "L’abscisse du point repéré par l’angle a. Le sinus est son ordonnée, et cette définition vaut pour tous les angles.",
+          "options": [
+            {
+              "text": "l’abscisse du point",
+              "correct": true
+            },
+            {
+              "text": "l’ordonnée du point"
+            },
+            {
+              "text": "la longueur de l’arc"
+            },
+            {
+              "text": "l’aire du secteur"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la relation cos² a + sin² a = 1 ?",
+          "explanation": "Du théorème de Pythagore dans le triangle dont l’hypoténuse est le rayon du cercle, de longueur 1.",
+          "options": [
+            {
+              "text": "du théorème de Pythagore",
+              "correct": true
+            },
+            {
+              "text": "de la définition du radian"
+            },
+            {
+              "text": "de la périodicité"
+            },
+            {
+              "text": "d’une convention"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un cosinus peut valoir 1,2 pour certains angles.",
+          "explanation": "Faux. La relation fondamentale impose à cosinus et sinus de rester entre −1 et 1. Un tel résultat est une erreur de calcul.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque angle à son cosinus.",
+          "explanation": "Les cosinus décroissent de 1 à 0 quand l’angle va de 0 à pi/2 : 1, puis racine de 3 sur 2, puis racine de 2 sur 2, puis 1/2, puis 0.",
+          "pairs": [
+            {
+              "left": "0",
+              "right": "1"
+            },
+            {
+              "left": "pi/4",
+              "right": "racine de 2 sur 2"
+            },
+            {
+              "left": "pi/3",
+              "right": "1/2"
+            },
+            {
+              "left": "pi/2",
+              "right": "0"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Dans ce quart de cercle, le cosinus est-il positif ou négatif ?",
+          "explanation": "Le cosinus est l’abscisse : positif à droite de l’origine, donc dans les premier et quatrième quarts, négatif dans les deux autres.",
+          "categories": [
+            "cosinus positif",
+            "cosinus négatif"
+          ],
+          "items": [
+            {
+              "text": "premier quart",
+              "category": 0
+            },
+            {
+              "text": "quatrième quart",
+              "category": 0
+            },
+            {
+              "text": "deuxième quart",
+              "category": 1
+            },
+            {
+              "text": "troisième quart",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que change la taille du triangle sur la valeur d’un rapport trigonométrique ?",
+          "explanation": "Rien. C’est cette invariance, visible dans la figure, qui permet de définir cosinus et sinus à partir de l’angle seul.",
+          "options": [
+            {
+              "text": "rien du tout",
+              "correct": true
+            },
+            {
+              "text": "elle multiplie le rapport"
+            },
+            {
+              "text": "elle change le signe"
+            },
+            {
+              "text": "elle change l’angle"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "periodicite-et-symetries",
+      "title": "Périodicité et symétries",
+      "subtitle": "Quatre identités remplacent une table entière.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui revient toujours au même endroit",
+          "body": "Règle les heures jusqu’à dépasser douze : les aiguilles retrouvent une position déjà vue. Une fonction périodique fait exactement cela — connaître une seule période suffit à la connaître partout.",
+          "figureId": "horloge",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les quatre identités à retenir",
+          "body": "cos(−a) = cos a et sin(−a) = −sin a. Le cosinus est pair, le sinus impair.\n\ncos(pi − a) = −cos a et sin(pi − a) = sin a. C’est la symétrie par rapport à l’axe vertical.\n\ncos(pi + a) = −cos a et sin(pi + a) = −sin a. C’est le demi-tour.\n\ncos(pi/2 − a) = sin a et sin(pi/2 − a) = cos a. Les deux fonctions s’échangent.",
+          "formula": "cos(−a) = cos a   ·   sin(−a) = −sin a",
+          "id": "c2"
+        },
+        {
+          "kind": "astuce",
+          "title": "Comment les retrouver au lieu de les apprendre",
+          "body": "Dessine le cercle et place le point de l’angle a. Puis place celui de l’angle demandé.\n\nPour −a, le point est le symétrique par rapport à l’axe horizontal : l’abscisse ne change pas, l’ordonnée change de signe. D’où cos pair et sin impair.\n\nDix secondes de dessin remplacent huit formules, et ne se trompent jamais de signe. C’est très exactement l’intérêt de définir cosinus et sinus sur le cercle.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Périodicité : 2 pi, et parfois pi",
+          "body": "cos et sin sont périodiques de période 2 pi : ajouter un tour ne change rien.\n\nLa tangente, elle, est périodique de période pi : un demi-tour change les deux signes, et leur quotient reste identique.\n\nCette différence de période explique pourquoi une équation en tangente a deux fois moins de familles de solutions qu’une équation en sinus.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Calculer cos(5 pi/6) sans table",
+          "body": "5 pi/6 s’écrit pi − pi/6.\n\nDonc cos(5 pi/6) = −cos(pi/6) = −racine de 3 sur 2.\n\nEt sin(5 pi/6) = sin(pi/6) = 1/2.\n\nToute la méthode est là : ramener l’angle à un angle usuel en s’aidant de pi, de pi/2 ou du signe, et conclure avec l’identité correspondante.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien vaut cos(−a) ?",
+          "explanation": "cos a. Le point de −a est le symétrique par l’axe horizontal : l’abscisse est inchangée. Le cosinus est pair.",
+          "options": [
+            {
+              "text": "cos a",
+              "correct": true
+            },
+            {
+              "text": "−cos a"
+            },
+            {
+              "text": "sin a"
+            },
+            {
+              "text": "−sin a"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien vaut sin(pi − a) ?",
+          "explanation": "sin a. La symétrie par l’axe vertical conserve l’ordonnée et change l’abscisse de signe.",
+          "options": [
+            {
+              "text": "sin a",
+              "correct": true
+            },
+            {
+              "text": "−sin a"
+            },
+            {
+              "text": "cos a"
+            },
+            {
+              "text": "−cos a"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien vaut cos(5 pi/6) ?",
+          "explanation": "5 pi/6 = pi − pi/6, donc cos(5 pi/6) = −cos(pi/6) = −racine de 3 sur 2.",
+          "options": [
+            {
+              "text": "−racine de 3 sur 2",
+              "correct": true
+            },
+            {
+              "text": "racine de 3 sur 2"
+            },
+            {
+              "text": "−1/2"
+            },
+            {
+              "text": "1/2"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la période de la fonction tangente, en multiples de pi ?",
+          "explanation": "1, c’est-à-dire pi. Le demi-tour change les signes de cosinus et de sinus, donc leur quotient est inchangé.",
+          "answer": 1,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Connaître une fonction périodique sur une seule période suffit à la connaître partout.",
+          "explanation": "Vrai. C’est la définition même de la périodicité, et ce qui rend le cercle trigonométrique si économique.",
+          "answer": true,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien vaut sin(pi/2 − a) ?",
+          "explanation": "cos a. Les deux fonctions s’échangent par cette symétrie, ce qui explique le nom de cosinus : le sinus du complémentaire.",
+          "options": [
+            {
+              "text": "cos a",
+              "correct": true
+            },
+            {
+              "text": "sin a"
+            },
+            {
+              "text": "−cos a"
+            },
+            {
+              "text": "1 − sin a"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-equations",
+      "title": "Défi : résoudre une équation trigonométrique",
+      "subtitle": "Deux familles de solutions, pas une.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux angles pour une même valeur",
+          "body": "Règle l’angle et surveille la valeur du cosinus : elle redescend après avoir monté. Deux angles différents donnent donc le même cosinus, et c’est pour cela qu’une équation en cosinus a deux familles de solutions et non une.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, en quatre temps",
+          "body": "On isole le cosinus ou le sinus seul d’un côté.\n\nOn vérifie que la valeur obtenue est entre −1 et 1 ; sinon il n’y a aucune solution, et on l’écrit.\n\nOn trouve une solution particulière, de préférence parmi les angles usuels.\n\nOn écrit toutes les solutions : la particulière, sa symétrique, et les tours entiers ajoutés aux deux.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux familles",
+          "body": "cos x = cos a donne x = a + 2k pi ou x = −a + 2k pi, pour tout entier k.\n\nsin x = sin a donne x = a + 2k pi ou x = pi − a + 2k pi.\n\nLa symétrique n’est pas la même dans les deux cas : c’est l’opposé pour le cosinus, et le supplémentaire pour le sinus. Les confondre fait perdre la moitié des solutions.",
+          "formula": "cos x = cos a donne x = ±a + 2k pi",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Résoudre 2 cos x = 1 sur un tour",
+          "body": "On isole : cos x = 1/2.\n\nLa valeur est bien entre −1 et 1. Une solution usuelle : x = pi/3.\n\nL’autre famille : x = −pi/3, ou de façon équivalente x = 5 pi/3 sur un tour.\n\nSur l’intervalle de 0 à 2 pi, il y a donc exactement deux solutions : pi/3 et 5 pi/3. Si l’on n’avait gardé que pi/3, la réponse serait à moitié fausse.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a changé",
+          "body": "La trigonométrie du collège mesurait des triangles. Celle du lycée décrit tout ce qui tourne et tout ce qui revient : un courant alternatif, une marée, un son, un balancier.\n\nLe passage s’est fait en remplaçant le triangle par un point qui parcourt un cercle — et ce point peut tourner indéfiniment, là où un triangle avait des angles bornés.\n\nC’est le même objet, libéré de sa limite.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode de résolution dans l’ordre.",
+          "explanation": "Isoler, vérifier que la valeur est atteignable, trouver une solution usuelle, puis écrire les deux familles complètes.",
+          "items": [
+            "isoler le cosinus ou le sinus",
+            "vérifier que la valeur est entre −1 et 1",
+            "trouver une solution particulière usuelle",
+            "écrire les deux familles de solutions"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles sont les solutions de 2 cos x = 1 entre 0 et 2 pi ?",
+          "explanation": "cos x = 1/2 donne x = pi/3 et son opposé, soit 5 pi/3 sur un tour. Deux solutions, pas une.",
+          "options": [
+            {
+              "text": "pi/3",
+              "correct": true
+            },
+            {
+              "text": "5 pi/3",
+              "correct": true
+            },
+            {
+              "text": "2 pi/3"
+            },
+            {
+              "text": "pi/6"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de solutions a l’équation cos x = 2 ?",
+          "explanation": "Aucune. Un cosinus reste entre −1 et 1 : la vérification se fait avant tout calcul et évite une page inutile.",
+          "options": [
+            {
+              "text": "aucune",
+              "correct": true
+            },
+            {
+              "text": "une"
+            },
+            {
+              "text": "deux"
+            },
+            {
+              "text": "une infinité"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pour sin x = sin a, quelle est la seconde famille de solutions ?",
+          "explanation": "x = pi − a + 2k pi. Pour le sinus c’est le supplémentaire, alors que pour le cosinus c’est l’opposé.",
+          "options": [
+            {
+              "text": "x = pi − a + 2k pi",
+              "correct": true
+            },
+            {
+              "text": "x = −a + 2k pi"
+            },
+            {
+              "text": "x = a + k pi"
+            },
+            {
+              "text": "x = pi + a + 2k pi"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Pour cos x = cos a, la seconde famille est x = pi − a + 2k pi.",
+          "explanation": "Faux. C’est x = −a + 2k pi. Le supplémentaire appartient au sinus ; confondre les deux fait perdre la moitié des solutions.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a permis le passage du triangle au cercle ?",
+          "explanation": "De décrire tout ce qui tourne et revient — courant alternatif, marée, son — là où le triangle bornait les angles à 90 degrés.",
+          "options": [
+            {
+              "text": "de décrire des angles sans limite",
+              "correct": true
+            },
+            {
+              "text": "de simplifier les calculs de triangles"
+            },
+            {
+              "text": "d’abandonner Pythagore"
+            },
+            {
+              "text": "de supprimer les degrés"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

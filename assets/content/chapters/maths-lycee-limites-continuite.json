@@ -1,0 +1,561 @@
+{
+  "chapter": "maths-lycee-limites-et-continuite",
+  "lessons": [
+    {
+      "id": "limite-d-une-suite",
+      "title": "La limite d’une suite",
+      "subtitle": "Ce qui compte n’est pas où elle commence, mais où elle va.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Changer le premier terme ne change pas la tendance",
+          "body": "Règle le premier terme et la raison, puis passe de la suite arithmétique à la géométrique. Avec une raison entre −1 et 1, les points s’écrasent vers zéro quel que soit le départ ; avec une raison supérieure à 1, ils s’envolent. Le premier terme ne décide de rien à long terme.",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois comportements possibles",
+          "body": "Converger : les termes se rapprochent d’un nombre et finissent par en rester aussi près qu’on veut. On dit que la suite a une limite finie.\n\nDiverger vers l’infini : les termes dépassent n’importe quel seuil qu’on se fixe d’avance.\n\nNe rien faire de tout cela : la suite (−1) puissance n alterne entre 1 et −1 sans jamais se fixer. Elle n’a pas de limite, et elle ne part pas à l’infini non plus.\n\nLes trois cas existent, et le troisième est celui qu’on oublie.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les limites des suites géométriques",
+          "body": "Pour la suite de terme général q puissance n :\n\nsi q est strictement entre −1 et 1, elle converge vers 0 ;\n\nsi q vaut 1, elle est constante égale à 1 ;\n\nsi q est strictement supérieur à 1, elle diverge vers plus l’infini ;\n\nsi q est inférieur ou égal à −1, elle n’a pas de limite, en alternant les signes.",
+          "formula": "|q| < 1 donne q puissance n vers 0",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une limite est une promesse de proximité",
+          "body": "Dire que la limite vaut 3 ne veut pas dire que la suite atteint 3, ni même qu’elle s’en approche à chaque étape.\n\nCela veut dire : pour toute marge qu’on se fixe, aussi petite qu’on veut, il existe un rang à partir duquel tous les termes sont dans cette marge.\n\nLa suite 1/n ne vaut jamais 0 et a pourtant 0 pour limite. C’est la bonne façon de comprendre le mot.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Croissante ne veut pas dire divergente",
+          "body": "La suite de terme général 1 − 1/n croît à chaque étape, et pourtant elle ne dépasse jamais 1 : elle converge vers 1.\n\nUne suite croissante et majorée converge toujours. C’est un théorème, et c’est souvent la seule façon de prouver qu’une limite existe quand on ne sait pas la calculer.\n\nInversement, une suite croissante non majorée part forcément à l’infini. Il n’y a pas de troisième possibilité pour une suite croissante.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette suite converge-t-elle, diverge-t-elle, ou n’a-t-elle pas de limite ?",
+          "explanation": "0,5 puissance n tend vers 0 et 1/n aussi. 2 puissance n part à l’infini. (−1) puissance n alterne sans se fixer.",
+          "categories": [
+            "converge",
+            "diverge vers l’infini",
+            "pas de limite"
+          ],
+          "items": [
+            {
+              "text": "0,5 puissance n",
+              "category": 0
+            },
+            {
+              "text": "1/n",
+              "category": 0
+            },
+            {
+              "text": "2 puissance n",
+              "category": 1
+            },
+            {
+              "text": "(−1) puissance n",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une suite qui a 0 pour limite finit par valoir exactement 0.",
+          "explanation": "Faux. La suite 1/n ne vaut jamais 0 et a pourtant 0 pour limite : une limite est une promesse de proximité, pas d’égalité.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que peut-on dire d’une suite croissante et majorée ?",
+          "explanation": "Elle converge, toujours. C’est le théorème qui permet de prouver qu’une limite existe sans savoir la calculer.",
+          "options": [
+            {
+              "text": "elle converge",
+              "correct": true
+            },
+            {
+              "text": "elle diverge vers l’infini"
+            },
+            {
+              "text": "elle n’a pas de limite"
+            },
+            {
+              "text": "on ne peut rien dire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le premier terme d’une suite géométrique change sa limite.",
+          "explanation": "Faux, sauf s’il est nul. Avec une raison entre −1 et 1, la suite tend vers 0 quel que soit le départ, comme le montre la figure.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Vers quoi tend la suite de terme général 1 − 1/n ?",
+          "explanation": "Vers 1. Elle croît sans jamais l’atteindre : croissante et majorée, donc convergente.",
+          "options": [
+            {
+              "text": "vers 1",
+              "correct": true
+            },
+            {
+              "text": "vers 0"
+            },
+            {
+              "text": "vers plus l’infini"
+            },
+            {
+              "text": "elle n’a pas de limite"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "limites-de-fonctions",
+      "title": "Les limites de fonctions",
+      "subtitle": "Quatre formes ne disent rien tant qu’on ne les a pas travaillées.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Là où la courbe s’arrête",
+          "body": "Choisis 1/x : la courbe ne traverse pas zéro, elle s’en échappe des deux côtés. Choisis racine de x : la courbe n’existe pas à gauche de zéro. La figure coupe le tracé là où la fonction n’est pas définie, au lieu de tricher.",
+          "figureId": "fonctions-reference",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux questions qu’on pose",
+          "body": "Que devient f(x) quand x part vers l’infini ? La réponse décrit le comportement au loin, et donne les asymptotes horizontales.\n\nQue devient f(x) quand x s’approche d’une valeur interdite ? La réponse donne les asymptotes verticales.\n\nPour 1/x : la limite en plus l’infini vaut 0, donc l’axe des abscisses est asymptote horizontale. La limite en 0 par la droite vaut plus l’infini, donc l’axe des ordonnées est asymptote verticale.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les quatre formes indéterminées",
+          "body": "L’infini moins l’infini. Zéro fois l’infini. Zéro sur zéro. L’infini sur l’infini.\n\nDans ces quatre cas, la limite peut valoir n’importe quoi selon la fonction, et il faut travailler l’expression avant de conclure.\n\nÉcrire « la limite vaut zéro sur zéro » n’est pas un résultat faux : ce n’est pas un résultat du tout. C’est le constat qu’il reste du travail.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Lever une indétermination",
+          "body": "Limite en plus l’infini de (3x² + x)/(x² − 5).\n\nLes deux membres partent à l’infini : la forme est indéterminée.\n\nOn factorise par le terme dominant en haut et en bas : x²(3 + 1/x) sur x²(1 − 5/x²). Les x² se simplifient.\n\nIl reste (3 + 1/x)/(1 − 5/x²), qui tend vers 3/1 = 3. La limite vaut 3, et la droite d’équation y = 3 est asymptote.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le réflexe pour les quotients de polynômes",
+          "body": "Si le degré du haut est inférieur à celui du bas, la limite à l’infini vaut 0.\n\nS’ils sont égaux, la limite vaut le quotient des coefficients dominants.\n\nSi le degré du haut est supérieur, la limite est infinie, du signe du quotient des coefficients dominants.\n\nCe n’est pas une règle à croire : c’est le résultat de la factorisation par le terme dominant, faite une fois pour toutes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles formes sont indéterminées ?",
+          "explanation": "L’infini moins l’infini, zéro fois l’infini, zéro sur zéro et l’infini sur l’infini. Dans ces cas, tout reste possible.",
+          "options": [
+            {
+              "text": "l’infini moins l’infini",
+              "correct": true
+            },
+            {
+              "text": "zéro fois l’infini",
+              "correct": true
+            },
+            {
+              "text": "zéro sur zéro",
+              "correct": true
+            },
+            {
+              "text": "l’infini sur l’infini",
+              "correct": true
+            },
+            {
+              "text": "un sur l’infini"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la limite en plus l’infini de (3x² + x)/(x² − 5) ?",
+          "explanation": "Les degrés sont égaux, donc la limite vaut le quotient des coefficients dominants : 3/1 = 3.",
+          "answer": 3,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la limite en plus l’infini de (2x + 1)/(x² + 3) ?",
+          "explanation": "Le degré du numérateur est inférieur à celui du dénominateur : la limite vaut 0.",
+          "options": [
+            {
+              "text": "0",
+              "correct": true
+            },
+            {
+              "text": "2"
+            },
+            {
+              "text": "plus l’infini"
+            },
+            {
+              "text": "1/3"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Écrire « la limite vaut zéro sur zéro » est un résultat acceptable.",
+          "explanation": "Faux. Ce n’est pas un résultat, c’est le constat qu’il reste du travail : il faut transformer l’expression avant de conclure.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque fonction à ce qui se passe en zéro.",
+          "explanation": "1/x s’échappe à l’infini des deux côtés avec un changement de signe, racine de x n’existe pas à gauche, et x² y est parfaitement définie.",
+          "pairs": [
+            {
+              "left": "1/x",
+              "right": "asymptote verticale"
+            },
+            {
+              "left": "racine de x",
+              "right": "non définie à gauche"
+            },
+            {
+              "left": "x²",
+              "right": "définie et valant 0"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie une asymptote horizontale d’équation y = 3 ?",
+          "explanation": "Que la courbe se rapproche indéfiniment de cette droite quand x part à l’infini, sans nécessairement l’atteindre.",
+          "options": [
+            {
+              "text": "la courbe se rapproche de y = 3 à l’infini",
+              "correct": true
+            },
+            {
+              "text": "la courbe coupe y = 3"
+            },
+            {
+              "text": "la fonction vaut 3 partout"
+            },
+            {
+              "text": "la fonction n’est pas définie en 3"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "continuite-et-tvi",
+      "title": "Continuité et valeurs intermédiaires",
+      "subtitle": "Une courbe qu’on trace sans lever le crayon traverse tout ce qu’elle enjambe.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Faire apparaître et disparaître les racines",
+          "body": "Règle a, b et c, et surveille le discriminant : quand il devient positif, la courbe traverse l’axe en deux points ; quand il devient négatif, elle passe entièrement au-dessus ou au-dessous. Pour traverser, il faut être d’un côté puis de l’autre.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que dit le théorème",
+          "body": "Si une fonction est continue sur un intervalle allant de a à b, et si f(a) et f(b) sont de signes contraires, alors il existe au moins un point entre a et b où la fonction s’annule.\n\nPlus généralement, elle prend toutes les valeurs comprises entre f(a) et f(b).\n\nLa continuité est indispensable : une fonction qui saute peut passer du négatif au positif sans jamais valoir zéro.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que le théorème ne donne pas",
+          "body": "Il garantit qu’une solution existe. Il ne dit ni combien il y en a, ni où elles sont.\n\nPour l’unicité, il faut ajouter que la fonction est strictement monotone sur l’intervalle. Alors elle ne peut traverser qu’une fois.\n\nPour la localiser, on coupe l’intervalle en deux, on regarde le signe au milieu, et on recommence du bon côté. Dix coupes divisent l’incertitude par plus de mille.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Montrer que x³ + x − 1 a une racine",
+          "body": "La fonction est continue, comme tout polynôme.\n\nEn 0 elle vaut −1, en 1 elle vaut 1. Les signes sont contraires.\n\nIl existe donc une racine entre 0 et 1. Et comme la dérivée 3x² + 1 est toujours strictement positive, la fonction est strictement croissante : cette racine est unique.\n\nElle vaut environ 0,682, et aucune formule simple ne la donne — ce qui est précisément pourquoi le théorème sert.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Une fonction peut être continue et terrible",
+          "body": "La valeur absolue est continue partout, et pourtant elle n’a pas de tangente en zéro : continuité et dérivabilité sont deux propriétés différentes.\n\nToute fonction dérivable est continue, mais l’inverse est faux.\n\nRetenir le sens de cette implication évite une bonne part des erreurs de raisonnement du programme de terminale.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que garantit le théorème des valeurs intermédiaires ?",
+          "explanation": "L’existence d’au moins une solution. Il ne dit ni combien, ni où : il faut la monotonie pour l’unicité et un algorithme pour la position.",
+          "options": [
+            {
+              "text": "qu’une solution existe",
+              "correct": true
+            },
+            {
+              "text": "qu’une solution est unique"
+            },
+            {
+              "text": "la valeur de la solution"
+            },
+            {
+              "text": "le nombre exact de solutions"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il ajouter pour garantir l’unicité de la solution ?",
+          "explanation": "La stricte monotonie sur l’intervalle. Une fonction strictement croissante ne peut traverser l’axe qu’une seule fois.",
+          "options": [
+            {
+              "text": "la stricte monotonie",
+              "correct": true
+            },
+            {
+              "text": "la dérivabilité"
+            },
+            {
+              "text": "un intervalle borné"
+            },
+            {
+              "text": "un signe constant"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Toute fonction continue est dérivable.",
+          "explanation": "Faux. La valeur absolue est continue partout mais n’a pas de tangente en zéro. C’est l’implication inverse qui est vraie.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "x³ + x − 1 vaut −1 en 0 et 1 en 1. Que peut-on conclure ?",
+          "explanation": "Qu’une racine existe entre 0 et 1. Et comme la dérivée 3x² + 1 est toujours positive, cette racine est unique.",
+          "options": [
+            {
+              "text": "une racine unique existe entre 0 et 1",
+              "correct": true
+            },
+            {
+              "text": "il n’y a aucune racine"
+            },
+            {
+              "text": "il y a exactement deux racines"
+            },
+            {
+              "text": "on ne peut rien conclure"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On part d’un intervalle de largeur 1 et on le coupe en deux dix fois. Quelle largeur reste-t-il, en millièmes ?",
+          "explanation": "On divise par 2 dix fois, soit par 1 024. Il reste environ 1/1024, c’est-à-dire près d’un millième.",
+          "answer": 1,
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une fonction qui passe du négatif au positif s’annule forcément quelque part.",
+          "explanation": "Faux si elle n’est pas continue : une fonction qui saute peut changer de signe sans jamais valoir zéro. La continuité est indispensable.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-comportements",
+      "title": "Défi : lire un comportement complet",
+      "subtitle": "Domaine, limites, variations, et la courbe est décidée.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cinq courbes, cinq comportements",
+          "body": "Passe d’une fonction de référence à l’autre et compare : x² et x³ ne se comportent pas pareil pour x négatif, 1/x et racine de x n’ont pas le même domaine. Règle ensuite le curseur pour lire des valeurs précises.",
+          "figureId": "fonctions-reference",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode complète, dans l’ordre",
+          "body": "Le domaine : quelles valeurs de x sont autorisées ? On exclut ce qui annule un dénominateur et ce qui rend négatif l’intérieur d’une racine.\n\nLes limites aux bornes du domaine, et aux valeurs interdites. Elles donnent les asymptotes.\n\nLa dérivée, son signe, et le tableau de variations.\n\nQuelques points remarquables, et la courbe se trace presque seule.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les cinq fonctions de référence, en une phrase chacune",
+          "body": "x² : définie partout, décroissante puis croissante, minimum en zéro, et symétrique par rapport à l’axe des ordonnées.\n\nx³ : définie partout, croissante partout, et symétrique par rapport à l’origine.\n\nracine de x : définie pour x positif ou nul, croissante, et de plus en plus plate.\n\n1/x : définie sauf en zéro, décroissante sur chaque moitié, avec les deux axes pour asymptotes.\n\nvaleur absolue : définie partout, continue, et anguleuse en zéro.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Décroissante sur chaque moitié ne veut pas dire décroissante",
+          "body": "La fonction 1/x décroît sur les x négatifs, et décroît sur les x positifs. Elle n’est pourtant pas décroissante sur son domaine : en −1 elle vaut −1, en 1 elle vaut 1.\n\nLa monotonie se dit toujours sur un intervalle, et le domaine de 1/x n’est pas un intervalle : c’est la réunion de deux intervalles.\n\nÉcrire « décroissante sur son ensemble de définition » est donc une faute, et elle est sanctionnée chaque année.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le contrôle final qui coûte dix secondes",
+          "body": "Prends une valeur simple du domaine, calcule l’image à la main, et vérifie qu’elle est cohérente avec le tableau et la courbe.\n\nSi le tableau annonce un minimum à −2 et que ton calcul donne −5, l’une des deux choses est fausse, et tu le sais avant le correcteur.\n\nC’est le même réflexe que le contrôle d’une inéquation ou d’une équation de droite : une substitution bat une relecture.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets l’étude d’une fonction dans l’ordre.",
+          "explanation": "Le domaine d’abord, puis les limites aux bornes, puis la dérivée et les variations, et enfin le tracé.",
+          "items": [
+            "déterminer le domaine",
+            "calculer les limites aux bornes",
+            "étudier le signe de la dérivée",
+            "tracer la courbe"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette fonction est-elle définie en zéro ?",
+          "explanation": "x², x³ et la valeur absolue sont définies partout. 1/x ne l’est pas en zéro. Racine de x y est définie, mais pas à gauche.",
+          "categories": [
+            "définie en zéro",
+            "non définie en zéro"
+          ],
+          "items": [
+            {
+              "text": "x²",
+              "category": 0
+            },
+            {
+              "text": "x³",
+              "category": 0
+            },
+            {
+              "text": "la valeur absolue",
+              "category": 0
+            },
+            {
+              "text": "1/x",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La fonction 1/x est décroissante sur son ensemble de définition.",
+          "explanation": "Faux. Elle décroît sur chaque moitié, mais en −1 elle vaut −1 et en 1 elle vaut 1. Son domaine n’est pas un intervalle.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle fonction de référence est symétrique par rapport à l’origine ?",
+          "explanation": "x³, qui est impaire : changer le signe de x change le signe de l’image. x² et la valeur absolue sont paires.",
+          "options": [
+            {
+              "text": "x³",
+              "correct": true
+            },
+            {
+              "text": "x²"
+            },
+            {
+              "text": "la valeur absolue"
+            },
+            {
+              "text": "racine de x"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel contrôle attrape le plus d’erreurs en fin d’étude de fonction ?",
+          "explanation": "Calculer une image à la main et la comparer au tableau et à la courbe. Une substitution bat une relecture.",
+          "options": [
+            {
+              "text": "calculer une image et la comparer au tableau",
+              "correct": true
+            },
+            {
+              "text": "relire le calcul de la dérivée"
+            },
+            {
+              "text": "refaire le tracé"
+            },
+            {
+              "text": "vérifier le domaine une seconde fois"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’exclut-on d’un domaine de définition ?",
+          "explanation": "Les valeurs qui annulent un dénominateur et celles qui rendent négatif l’intérieur d’une racine carrée.",
+          "options": [
+            {
+              "text": "ce qui annule un dénominateur",
+              "correct": true
+            },
+            {
+              "text": "ce qui rend négatif l’intérieur d’une racine",
+              "correct": true
+            },
+            {
+              "text": "les valeurs négatives"
+            },
+            {
+              "text": "les valeurs non entières"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
