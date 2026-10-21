@@ -1,0 +1,571 @@
+{
+  "chapter": "technologie-college-conduire-un-projet",
+  "lessons": [
+    {
+      "id": "le-cahier-des-charges",
+      "title": "Le cahier des charges",
+      "subtitle": "Tant qu’un critère ne se mesure pas, il ne se vérifie pas.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Dire ce que l’objet doit faire",
+          "body": "Fais glisser le seuil : tu viens d’écrire une ligne de cahier des charges. « Allumer le radiateur quand il fait froid » ne se vérifie pas ; « allumer le radiateur sous 18 °C » se vérifie avec un thermomètre.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que contient un cahier des charges",
+          "body": "Le besoin, en une phrase : à qui ça sert, et pour faire quoi.\n\nLes fonctions attendues : ce que l’objet doit faire, sans dire comment.\n\nLes critères, chacun avec une grandeur, une valeur et une tolérance : « se recharge en moins de 2 heures », « pèse moins de 300 grammes ».\n\nLes contraintes : budget, délai, matériaux disponibles, sécurité.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Fonction et solution ne sont pas la même chose",
+          "body": "« Prévenir l’utilisateur » est une fonction. « Faire sonner un buzzer » est une solution.\n\nÉcrire la solution dans le cahier des charges ferme la porte à toutes les autres : une diode qui clignote, une vibration, un message.\n\nC’est l’erreur la plus coûteuse du début de projet, parce qu’on ne s’en aperçoit qu’à la fin.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux formulations du même critère",
+          "body": "« L’arrosage doit être économe. » Personne ne saura dire si c’est atteint, et chacun dira oui.\n\n« L’arrosage doit utiliser au plus 2 litres par jour et par plant, mesurés au compteur sur une semaine. » On peut vérifier, et on peut échouer.\n\nUn critère qu’on ne peut pas rater n’est pas un critère : c’est un souhait.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les critères se contredisent, et c’est normal",
+          "body": "Plus léger et plus solide. Moins cher et plus durable. Plus rapide et plus silencieux.\n\nUn bon cahier des charges ne cache pas ces tensions : il dit lesquelles priment. « Le poids passe avant le prix » est une information décisive pour celui qui conçoit.\n\nUn cahier des charges sans priorité oblige chacun à trancher dans son coin, et les choix finissent par se contredire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Fonction attendue, ou solution technique ?",
+          "explanation": "Prévenir, maintenir et mesurer sont des fonctions. Un buzzer, une résistance chauffante et une thermistance sont des solutions.",
+          "categories": [
+            "fonction",
+            "solution"
+          ],
+          "items": [
+            {
+              "text": "prévenir l’utilisateur",
+              "category": 0
+            },
+            {
+              "text": "maintenir la température",
+              "category": 0
+            },
+            {
+              "text": "faire sonner un buzzer",
+              "category": 1
+            },
+            {
+              "text": "utiliser une résistance chauffante",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Lequel de ces critères est vérifiable ?",
+          "explanation": "Celui qui porte une grandeur, une valeur et un moyen de mesure. Les autres sont des souhaits qu’on ne peut pas rater.",
+          "options": [
+            {
+              "text": "pèse moins de 300 grammes",
+              "correct": true
+            },
+            {
+              "text": "est léger"
+            },
+            {
+              "text": "est agréable à utiliser"
+            },
+            {
+              "text": "est économe"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Mieux vaut écrire la solution technique dans le cahier des charges, pour être clair.",
+          "explanation": "Faux. Cela ferme la porte à toutes les autres solutions, et on s’en aperçoit seulement à la fin du projet.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un cahier des charges doit-il donner des priorités ?",
+          "explanation": "Parce que les critères se contredisent. Sans priorité, chacun tranche dans son coin et les choix finissent incompatibles.",
+          "options": [
+            {
+              "text": "parce que les critères se contredisent",
+              "correct": true
+            },
+            {
+              "text": "pour faire plus long"
+            },
+            {
+              "text": "pour satisfaire le client"
+            },
+            {
+              "text": "parce que c’est obligatoire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que doit porter un bon critère ?",
+          "explanation": "Une grandeur, une valeur chiffrée, une tolérance et un moyen de mesure. Sans quoi on ne peut ni vérifier ni échouer.",
+          "options": [
+            {
+              "text": "une grandeur mesurable",
+              "correct": true
+            },
+            {
+              "text": "une valeur chiffrée",
+              "correct": true
+            },
+            {
+              "text": "un moyen de mesure",
+              "correct": true
+            },
+            {
+              "text": "un adjectif positif"
+            },
+            {
+              "text": "le nom du fournisseur"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "planifier-et-chiffrer",
+      "title": "Planifier et chiffrer",
+      "subtitle": "Le total n’est pas la somme des tâches : c’est la longueur du plus long chemin.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un devis qui se recalcule",
+          "body": "Touche une cellule et change sa valeur avec le curseur : les totaux se refont seuls. Passe des Résultats aux Formules pour voir ce que chaque case calcule. C’est l’outil de tous les devis et de tous les plannings.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment on planifie",
+          "body": "On liste les tâches, en détaillant jusqu’à ce que chacune tienne en une demi-journée au plus.\n\nOn estime la durée de chacune, et on l’écrit avant de commencer : une estimation faite après coup n’apprend rien.\n\nOn note qui dépend de quoi : poncer ne peut pas commencer avant que découper soit fini.\n\nOn cherche alors le chemin le plus long de la première tâche à la dernière : c’est lui qui donne la durée du projet.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi deux personnes ne vont pas deux fois plus vite",
+          "body": "Découper prend 2 heures, peindre 3 heures, et il faut avoir découpé avant de peindre.\n\nÀ deux, on ne descend pas à 2,5 heures : on reste à 5 heures, parce que les tâches sont enchaînées. La deuxième personne attend.\n\nEn revanche, si pendant ce temps quelqu’un prépare le programme — 3 heures, indépendantes — on gagne vraiment. Ce qui se parallélise, ce sont les tâches sans lien, pas les heures.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les tâches qui ont du mou et celles qui n’en ont pas",
+          "body": "Une tâche sur le chemin le plus long n’a aucun mou : un jour de retard sur elle est un jour de retard sur tout le projet.\n\nUne tâche hors de ce chemin peut glisser un peu sans conséquence.\n\nSavoir lesquelles sont lesquelles change complètement la façon de surveiller un projet : on ne surveille pas tout avec la même attention.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "On sous-estime toujours",
+          "body": "Les estimations d’un projet scolaire comme d’un chantier autoroutier sont systématiquement trop optimistes, parce qu’on imagine le déroulement sans incident.\n\nUn remède simple : ajouter une marge explicite, de l’ordre de 30 %, et la noter comme telle au lieu de la cacher dans les tâches.\n\nUne marge annoncée se défend ; une marge dissimulée se fait rogner à la première discussion.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui donne la durée totale d’un projet ?",
+          "explanation": "Le chemin le plus long de la première tâche à la dernière, en tenant compte des dépendances. Pas la somme de toutes les tâches.",
+          "options": [
+            {
+              "text": "le chemin le plus long entre les tâches liées",
+              "correct": true
+            },
+            {
+              "text": "la somme des durées de toutes les tâches"
+            },
+            {
+              "text": "la durée de la tâche la plus longue"
+            },
+            {
+              "text": "le nombre de personnes disponibles"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Découper prend 2 h, peindre 3 h et doit suivre le découpage. Combien d’heures à deux personnes ?",
+          "explanation": "Toujours 5 heures : les deux tâches sont enchaînées, la seconde personne ne peut pas peindre avant la fin du découpage.",
+          "answer": 5,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Doubler l’équipe divise la durée d’un projet par deux.",
+          "explanation": "Faux. Seules les tâches indépendantes se parallélisent. Les tâches enchaînées gardent leur durée quel que soit l’effectif.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle tâche faut-il surveiller de près ?",
+          "explanation": "Celle qui est sur le chemin le plus long : un jour de retard sur elle retarde tout le projet. Les autres ont du mou.",
+          "options": [
+            {
+              "text": "celle qui est sur le chemin le plus long",
+              "correct": true
+            },
+            {
+              "text": "la plus courte"
+            },
+            {
+              "text": "la plus chère"
+            },
+            {
+              "text": "la dernière de la liste"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi noter la marge séparément plutôt que la cacher dans les tâches ?",
+          "explanation": "Parce qu’une marge annoncée se défend, alors qu’une marge dissimulée se fait rogner à la première discussion.",
+          "options": [
+            {
+              "text": "parce qu’une marge annoncée se défend",
+              "correct": true
+            },
+            {
+              "text": "pour faire plus professionnel"
+            },
+            {
+              "text": "pour gonfler le devis"
+            },
+            {
+              "text": "parce que c’est plus simple à calculer"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il faut estimer la durée d’une tâche une fois qu’elle est finie, pour être exact.",
+          "explanation": "Faux. Une estimation faite après coup n’apprend rien. C’est l’écart entre la prévision et le réel qui fait progresser.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "tester-et-corriger",
+      "title": "Tester et corriger",
+      "subtitle": "Surcorriger est une faute aussi sûre que ne rien corriger.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Corriger juste ce qu’il faut",
+          "body": "Monte le gain petit à petit : la réponse atteint la consigne de plus en plus vite. Continue : elle dépasse, revient, redépasse, et finit par diverger. Un projet corrigé à chaque remarque, trop fort, se comporte exactement comme cette courbe.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le cycle d’un prototype",
+          "body": "On construit la version la plus simple qui permette de mesurer quelque chose. Pas la plus belle, pas la plus complète.\n\nOn mesure, avec le moyen prévu au cahier des charges.\n\nOn calcule l’écart au critère : pas « ça marche à peu près », mais « 340 grammes au lieu de 300, soit 13 % de trop ».\n\nOn corrige une seule chose à la fois, et on remesure. Changer deux choses rend le résultat illisible.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi une seule chose à la fois",
+          "body": "Si on change le matériau et l’épaisseur en même temps et que le poids baisse, on ne sait pas lequel des deux a agi.\n\nAu tour suivant, on reprend donc les deux au hasard, et on tourne en rond.\n\nC’est exactement la règle de l’expérience scientifique, appliquée à un objet qu’on fabrique.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que donne la surcorrection",
+          "body": "Première remarque : « c’est trop lent ». On augmente fortement la vitesse du moteur.\n\nDeuxième remarque : « c’est bruyant et ça chauffe ». On réduit fortement.\n\nTroisième : « c’est redevenu trop lent ». Chaque correction répond à la dernière remarque et annule la précédente : la courbe oscille, le projet n’avance plus.\n\nLe remède est de corriger de moins en moins fort à mesure qu’on approche, exactement comme un bon réglage de gain.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Garder une trace de chaque essai",
+          "body": "Un tableau à quatre colonnes suffit : ce qui a été changé, ce qu’on attendait, ce qu’on a mesuré, ce qu’on en conclut.\n\nIl évite de refaire deux fois le même essai raté, ce qui arrive dans tous les projets sans journal.\n\nEt il constitue, à la fin, l’essentiel du rapport : il ne reste qu’à le mettre en forme.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le cycle de mise au point dans l’ordre.",
+          "explanation": "Construire le plus simple qui se mesure, mesurer, calculer l’écart au critère, corriger une seule chose, et remesurer.",
+          "items": [
+            "construire le prototype le plus simple",
+            "mesurer avec le moyen prévu",
+            "calculer l’écart au critère",
+            "corriger une seule chose",
+            "remesurer"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne changer qu’une chose à la fois ?",
+          "explanation": "Sinon on ne sait pas laquelle des deux a agi, et on reprend les deux au hasard au tour suivant.",
+          "options": [
+            {
+              "text": "pour savoir laquelle des deux a agi",
+              "correct": true
+            },
+            {
+              "text": "pour aller plus vite"
+            },
+            {
+              "text": "pour économiser du matériel"
+            },
+            {
+              "text": "parce que c’est plus facile"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il quand on corrige trop fort à chaque remarque ?",
+          "explanation": "On dépasse dans l’autre sens, puis il faut corriger encore : la réponse oscille et le projet n’avance plus.",
+          "options": [
+            {
+              "text": "le projet oscille entre deux défauts",
+              "correct": true
+            },
+            {
+              "text": "le projet converge plus vite"
+            },
+            {
+              "text": "les critères se simplifient"
+            },
+            {
+              "text": "rien ne change"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment formuler le résultat d’un essai ?",
+          "explanation": "Avec un chiffre et un écart au critère. « Ça marche à peu près » ne permet aucune décision.",
+          "options": [
+            {
+              "text": "340 grammes au lieu de 300, soit 13 % de trop",
+              "correct": true
+            },
+            {
+              "text": "ça marche à peu près"
+            },
+            {
+              "text": "c’est presque bon"
+            },
+            {
+              "text": "il faudrait améliorer un peu"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que doit contenir le journal d’essais ?",
+          "explanation": "Ce qui a été changé, ce qu’on attendait, ce qu’on a mesuré et ce qu’on en conclut. Quatre colonnes suffisent.",
+          "options": [
+            {
+              "text": "ce qui a été changé",
+              "correct": true
+            },
+            {
+              "text": "ce qu’on attendait",
+              "correct": true
+            },
+            {
+              "text": "ce qu’on a mesuré",
+              "correct": true
+            },
+            {
+              "text": "ce qu’on en conclut",
+              "correct": true
+            },
+            {
+              "text": "l’avis de chacun sur le résultat"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-rendre-compte",
+      "title": "Défi : rendre compte d’un projet",
+      "subtitle": "Un rapport qui ne contient aucun chiffre ne dit rien.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le tableau qui sert de rapport",
+          "body": "Reprends le tableau, touche une cellule et change-la : le total suit. C’est ce même tableau — prévu, réalisé, écart — qui constitue l’essentiel d’un compte rendu de projet. Les phrases ne font que le commenter.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les cinq parties d’un compte rendu",
+          "body": "Le besoin, en une phrase : ce que l’objet devait faire, et pour qui.\n\nLes critères, avec le prévu et le réalisé côte à côte.\n\nLes essais : ce qui a été changé, et ce que cela a donné.\n\nCe qui n’a pas marché, et ce qu’on en a appris. C’est la partie la plus instructive, et la plus souvent escamotée.\n\nCe qu’on ferait différemment en repartant de zéro.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Prévu, réalisé, écart",
+          "body": "Trois colonnes et tout est dit : poids prévu 300 g, réalisé 340 g, écart +13 %. Autonomie prévue 8 h, réalisée 11 h, écart +37 %.\n\nL’écart n’est pas une faute à cacher : c’est le seul chiffre qui permette de mieux estimer la prochaine fois.\n\nUne équipe qui n’écrit que ses réussites ne s’améliore pas, parce qu’elle n’a rien à comparer.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les mots qui ne veulent rien dire",
+          "body": "« Nous avons amélioré les performances. » De combien, mesuré comment ?\n\n« Le prototype fonctionne correctement. » Sur quel critère, dans quelles conditions, combien de fois d’affilée ?\n\n« Nous avons rencontré quelques difficultés. » Lesquelles, et qu’est-ce que cela a coûté en temps ?\n\nCes phrases se repèrent vite : chacune peut être remplacée par un chiffre, et devient alors intéressante.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le test du lecteur qui n’était pas là",
+          "body": "Donne ton compte rendu à quelqu’un qui n’a pas suivi le projet et demande-lui de refaire l’objet.\n\nTout ce qui lui manque est ce qui manque au rapport : une cote, une référence de composant, un réglage, une étape d’assemblage.\n\nC’est le même critère qu’en science : un travail est bien décrit quand un autre peut le refaire sans demander d’explication.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que doit contenir un compte rendu de projet ?",
+          "explanation": "Le besoin, les critères prévus et réalisés, les essais, ce qui n’a pas marché, et ce qu’on ferait autrement.",
+          "options": [
+            {
+              "text": "le besoin en une phrase",
+              "correct": true
+            },
+            {
+              "text": "le prévu et le réalisé côte à côte",
+              "correct": true
+            },
+            {
+              "text": "les essais et leurs résultats",
+              "correct": true
+            },
+            {
+              "text": "ce qui n’a pas marché",
+              "correct": true
+            },
+            {
+              "text": "les noms de ceux qui ont le moins travaillé"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Poids prévu 300 g, réalisé 345 g. Quel écart, en pourcentage ?",
+          "explanation": "345 − 300 = 45 grammes de trop, et 45 / 300 = 0,15, soit 15 %.",
+          "answer": 15,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi écrire les écarts et pas seulement les réussites ?",
+          "explanation": "Parce que l’écart est le seul chiffre qui permette de mieux estimer la fois suivante. Sans lui, rien à comparer.",
+          "options": [
+            {
+              "text": "parce qu’il permet de mieux estimer la prochaine fois",
+              "correct": true
+            },
+            {
+              "text": "parce que c’est obligatoire"
+            },
+            {
+              "text": "pour montrer qu’on a travaillé"
+            },
+            {
+              "text": "pour allonger le rapport"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle phrase mérite d’être remplacée par un chiffre ?",
+          "explanation": "« Nous avons amélioré les performances » ne dit ni de combien ni mesuré comment. Les trois autres portent un chiffre et des conditions.",
+          "options": [
+            {
+              "text": "nous avons amélioré les performances",
+              "correct": true
+            },
+            {
+              "text": "le poids est passé de 400 à 345 grammes"
+            },
+            {
+              "text": "l’autonomie mesurée est de 11 heures"
+            },
+            {
+              "text": "trois essais sur trois ont réussi"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le bon test d’un compte rendu ?",
+          "explanation": "Qu’une personne qui n’a pas suivi le projet puisse refaire l’objet sans poser de question. C’est le critère de la science aussi.",
+          "options": [
+            {
+              "text": "qu’un lecteur extérieur puisse refaire l’objet",
+              "correct": true
+            },
+            {
+              "text": "qu’il fasse au moins dix pages"
+            },
+            {
+              "text": "qu’il contienne des photographies"
+            },
+            {
+              "text": "qu’il soit relu par l’équipe"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un écart au critère est une faute à ne pas mentionner dans le rapport.",
+          "explanation": "Faux. C’est l’information la plus utile du rapport : elle dit où l’estimation s’est trompée, donc comment faire mieux ensuite.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

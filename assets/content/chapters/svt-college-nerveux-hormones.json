@@ -1,0 +1,571 @@
+{
+  "chapter": "svt-college-systeme-nerveux-et-hormones",
+  "lessons": [
+    {
+      "id": "du-capteur-au-muscle",
+      "title": "Du capteur au muscle",
+      "subtitle": "Trois pièces, toujours les mêmes, et un seuil entre elles.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Capter, décider, agir",
+          "body": "Fais glisser le seuil : le capteur mesure toujours la même température, mais la décision change, et l’actionneur suit. La chaîne ne contient rien d’autre que ces trois pièces, et le seuil n’est pas dans le monde : c’est un choix.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La chaîne nerveuse, pièce par pièce",
+          "body": "Un récepteur sensoriel capte : la peau capte le chaud, la rétine la lumière, le corpuscule du doigt la pression.\n\nUn nerf sensitif transporte le message vers la moelle épinière ou le cerveau.\n\nLe centre nerveux traite : il compare, décide, parfois attend.\n\nUn nerf moteur transporte l’ordre vers un muscle, qui est l’actionneur. Le muscle ne décide jamais rien.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Le message est toujours le même",
+          "body": "Un nerf ne transporte ni chaleur, ni lumière, ni son : seulement des impulsions électriques identiques, à une vitesse de 1 à 120 mètres par seconde selon la fibre.\n\nCe qui change avec l’intensité du stimulus, c’est le nombre d’impulsions par seconde, pas leur taille.\n\nEt ce qui fait qu’on voit au lieu d’entendre, c’est l’endroit du cerveau où le nerf arrive. Le message est neutre ; sa destination lui donne un sens.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le seuil est un réglage, pas une propriété du monde",
+          "body": "La figure le montre directement : même mesure, seuil déplacé, décision inverse.\n\nChez nous aussi, les seuils se règlent. Le même frôlement est anodin sur l’avant-bras et douloureux sur une brûlure, parce que la zone enflammée a abaissé son seuil.\n\nC’est utile : un seuil abaissé protège une zone blessée. Ce n’est pas un défaut du système, c’est son fonctionnement.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le réflexe court-circuite le cerveau",
+          "body": "Quand on se pique le doigt, la main se retire avant qu’on ait senti la douleur. Le message n’est pas monté au cerveau : il est passé par la moelle épinière, qui a renvoyé l’ordre immédiatement.\n\nDeux relais au lieu de plusieurs dizaines : environ 50 millisecondes au lieu de 400. Sur une main posée sur une plaque brûlante, ces 350 millisecondes sont exactement la différence entre une rougeur et une cloque.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne nerveuse dans l’ordre.",
+          "explanation": "Le récepteur capte, le nerf sensitif transporte, le centre nerveux décide, le nerf moteur transmet l’ordre, le muscle agit.",
+          "items": [
+            "le récepteur capte",
+            "le nerf sensitif transporte",
+            "le centre nerveux décide",
+            "le nerf moteur transmet",
+            "le muscle agit"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que transporte un nerf ?",
+          "explanation": "Des impulsions électriques toutes identiques. Ni chaleur, ni lumière, ni son : c’est la destination dans le cerveau qui donne le sens.",
+          "options": [
+            {
+              "text": "des impulsions électriques identiques",
+              "correct": true
+            },
+            {
+              "text": "de la chaleur"
+            },
+            {
+              "text": "de la lumière"
+            },
+            {
+              "text": "des molécules de douleur"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment un stimulus plus intense se traduit-il dans le nerf ?",
+          "explanation": "Par davantage d’impulsions par seconde. Leur taille ne change pas : seule la fréquence porte l’intensité.",
+          "options": [
+            {
+              "text": "plus d’impulsions par seconde",
+              "correct": true
+            },
+            {
+              "text": "des impulsions plus grandes"
+            },
+            {
+              "text": "des impulsions plus rapides"
+            },
+            {
+              "text": "un message de nature différente"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un seuil de douleur est une propriété fixe du corps.",
+          "explanation": "Faux. Une zone enflammée abaisse son seuil, ce qui rend douloureux un frôlement anodin ailleurs. Le seuil est un réglage.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de millisecondes gagne-t-on, en ordre de grandeur, en passant par la moelle plutôt que par le cerveau ?",
+          "explanation": "Environ 400 moins 50, soit 350 millisecondes. Sur une plaque brûlante, c’est la différence entre une rougeur et une cloque.",
+          "answer": 350,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui décide, dans un réflexe de retrait ?",
+          "explanation": "La moelle épinière. Le message n’est pas monté au cerveau, qui apprend la nouvelle après coup.",
+          "options": [
+            {
+              "text": "la moelle épinière",
+              "correct": true
+            },
+            {
+              "text": "le cerveau"
+            },
+            {
+              "text": "le muscle"
+            },
+            {
+              "text": "le récepteur de la peau"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "un-reseau-qui-se-reroute",
+      "title": "Un réseau qui se reroute",
+      "subtitle": "Pourquoi le cerveau ne tombe pas en panne pour un fil coupé.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Couper un câble et regarder",
+          "body": "Touche un câble pour le couper : le message cherche un autre chemin et le trouve, plus long. Coupe-en un deuxième, puis un troisième, jusqu’à ce qu’aucune route ne subsiste. C’est un réseau de données, mais la question posée est celle du cerveau.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Quatre-vingt-six milliards de neurones, et bien plus de liaisons",
+          "body": "Un neurone humain est connecté en moyenne à environ 7 000 autres : le total des liaisons se compte en centaines de milliers de milliards.\n\nAucune information importante ne passe par un seul chemin. C’est la raison pour laquelle on peut perdre des neurones tous les jours sans rien remarquer.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui se passe après une lésion",
+          "body": "Dans les heures qui suivent, la fonction est perdue : plus aucune route ne passe.\n\nDans les semaines qui suivent, les neurones voisins renforcent leurs liaisons existantes et en créent de nouvelles.\n\nAu bout de quelques mois, une partie de la fonction revient, souvent par un chemin différent et moins direct — exactement comme le détour que prend le paquet dans la figure.\n\nLa rééducation ne répare pas le câble coupé : elle entraîne le détour.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La redondance a un prix et une raison",
+          "body": "Un réseau avec un seul chemin par destination serait beaucoup moins coûteux en matière et en énergie.\n\nLe cerveau consomme environ 20 % de l’énergie du corps pour 2 % de sa masse, et une bonne part de cette dépense entretient des liaisons redondantes.\n\nC’est le même choix que fait un réseau de transport : des routes parallèles coûtent cher et sauvent la circulation le jour d’un accident.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La redondance a des limites",
+          "body": "La figure les montre : au bout de quelques coupures, il ne reste plus aucune route, et le message ne passe plus du tout.\n\nCertaines zones du cerveau n’ont pas de doublure : une lésion du tronc cérébral, où passent les commandes de la respiration, ne se contourne pas.\n\nUn système tolérant aux pannes n’est pas un système indestructible.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un fil coupé n’arrête-t-il pas le message dans la figure ?",
+          "explanation": "Parce qu’il existe d’autres chemins. Le message en prend un, plus long, jusqu’à ce qu’il n’en reste aucun.",
+          "options": [
+            {
+              "text": "parce qu’il existe d’autres chemins",
+              "correct": true
+            },
+            {
+              "text": "parce que le câble se répare"
+            },
+            {
+              "text": "parce que le message devient plus fort"
+            },
+            {
+              "text": "parce que le message attend"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "À combien d’autres neurones un neurone humain est-il connecté, en moyenne ?",
+          "explanation": "Environ 7 000. Multiplié par 86 milliards de neurones, cela donne des centaines de milliers de milliards de liaisons.",
+          "min": 1,
+          "max": 50000,
+          "answer": 7000,
+          "tolerance": 3000,
+          "id": "q2"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre ce qui suit une lésion cérébrale.",
+          "explanation": "La fonction est d’abord perdue, puis les voisins renforcent et créent des liaisons, et une partie revient par un chemin plus long.",
+          "items": [
+            "la fonction est perdue",
+            "les neurones voisins renforcent leurs liaisons",
+            "de nouvelles liaisons se créent",
+            "la fonction revient par un autre chemin"
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait la rééducation ?",
+          "explanation": "Elle entraîne le détour. Le câble coupé ne se répare pas : c’est un autre chemin qui se renforce par l’usage.",
+          "options": [
+            {
+              "text": "elle entraîne un chemin de remplacement",
+              "correct": true
+            },
+            {
+              "text": "elle répare les neurones détruits"
+            },
+            {
+              "text": "elle accélère le message"
+            },
+            {
+              "text": "elle abaisse les seuils"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un système tolérant aux pannes est un système indestructible.",
+          "explanation": "Faux. La figure le montre : passé quelques coupures, aucune route ne subsiste. Le tronc cérébral, lui, n’a pas de doublure.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage de l’énergie du corps le cerveau consomme-t-il ?",
+          "explanation": "Environ 20 %, pour seulement 2 % de la masse. Une bonne part entretient des liaisons redondantes.",
+          "answer": 20,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-hormones",
+      "title": "Les hormones, et la régulation",
+      "subtitle": "Un message lent, diffusé à tout le monde, qui corrige sans arrêt.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Corriger trop fort",
+          "body": "Monte le gain petit à petit : la réponse atteint la consigne de plus en plus vite. Continue : elle dépasse, revient, redépasse, et finit par diverger. Toute régulation du corps fonctionne ainsi, et le réglage compte autant que le mécanisme.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment fonctionne une régulation hormonale",
+          "body": "Un capteur mesure : les cellules du pancréas mesurent le glucose du sang.\n\nUn écart est constaté : le glucose est au-dessus de la valeur visée, environ 1 gramme par litre.\n\nUne hormone est libérée dans le sang : l’insuline, qui atteint toutes les cellules du corps.\n\nLes cellules capables de l’entendre absorbent le glucose, le glucose du sang baisse, le pancréas relâche. La boucle est fermée et ne s’arrête jamais.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Nerveux et hormonal, deux outils différents",
+          "body": "Le message nerveux va vite — millisecondes — et à une adresse précise : ce muscle-là.\n\nLe message hormonal est lent — secondes à heures — et diffusé à tout le corps par le sang. Seules les cellules qui portent le récepteur correspondant réagissent.\n\nL’un sert à agir, l’autre à régler. Retirer sa main du feu demande le premier ; maintenir sa glycémie toute la journée demande le second.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le réglage est délicat",
+          "body": "Corriger trop peu : l’écart reste, et la régulation ne sert à rien.\n\nCorriger trop : on dépasse, il faut corriger dans l’autre sens, et le système oscille. La figure le montre sans ambiguïté.\n\nUn bon réglage corrige fort au début et de moins en moins en approchant. C’est ce que fait le pancréas en libérant beaucoup d’insuline d’un coup après un repas, puis en relâchant.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui arrive quand la boucle est cassée",
+          "body": "Dans le diabète de type 1, le pancréas ne produit plus d’insuline : le capteur fonctionne, l’actionneur manque.\n\nDans le type 2, l’insuline est là mais les cellules l’entendent mal : le message part, personne ne répond.\n\nLes deux donnent trop de glucose dans le sang, pour des raisons opposées, et ne se traitent donc pas de la même façon. Savoir où la boucle est coupée, c’est savoir quoi corriger.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la régulation de la glycémie dans l’ordre.",
+          "explanation": "Le pancréas mesure, constate l’excès, libère l’insuline, les cellules absorbent le glucose, et le taux redescend.",
+          "items": [
+            "le pancréas mesure le glucose du sang",
+            "il constate un excès",
+            "il libère de l’insuline",
+            "les cellules absorbent le glucose",
+            "le taux redescend"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Message nerveux ou message hormonal ?",
+          "explanation": "Le nerveux est rapide et adressé à un organe précis ; l’hormonal est lent et diffusé à tout le corps par le sang.",
+          "categories": [
+            "nerveux",
+            "hormonal"
+          ],
+          "items": [
+            {
+              "text": "arrive en quelques millisecondes",
+              "category": 0
+            },
+            {
+              "text": "va à une adresse précise",
+              "category": 0
+            },
+            {
+              "text": "circule dans le sang",
+              "category": 1
+            },
+            {
+              "text": "atteint tout le corps",
+              "category": 1
+            },
+            {
+              "text": "agit en secondes ou en heures",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il si le gain de correction est trop fort ?",
+          "explanation": "La réponse dépasse la consigne, revient, redépasse, et finit par diverger. Trop corriger est aussi mauvais que trop peu.",
+          "options": [
+            {
+              "text": "le système oscille puis diverge",
+              "correct": true
+            },
+            {
+              "text": "il atteint la consigne plus précisément"
+            },
+            {
+              "text": "il ne bouge plus"
+            },
+            {
+              "text": "l’écart statique disparaît"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une hormone n’agit-elle pas sur toutes les cellules ?",
+          "explanation": "Parce que seules celles qui portent le récepteur correspondant peuvent l’entendre. Le message passe partout, la réponse non.",
+          "options": [
+            {
+              "text": "seules celles qui ont le récepteur réagissent",
+              "correct": true
+            },
+            {
+              "text": "le sang ne va pas partout"
+            },
+            {
+              "text": "l’hormone est détruite en route"
+            },
+            {
+              "text": "le cerveau choisit la cible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les deux types de diabète se traitent de la même façon, puisqu’ils donnent le même excès de glucose.",
+          "explanation": "Faux. Dans l’un l’insuline manque, dans l’autre les cellules l’entendent mal. La boucle est coupée à deux endroits différents.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Autour de quelle valeur, en grammes par litre, la glycémie est-elle maintenue ?",
+          "explanation": "Environ 1 gramme par litre. C’est la consigne que la boucle insuline–glucagon maintient en permanence.",
+          "answer": 1,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-regler-un-seuil",
+      "title": "Défi : régler un seuil, et en répondre",
+      "subtitle": "Chaque réglage protège de quelque chose et expose à autre chose.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un seuil, deux erreurs possibles",
+          "body": "Place le seuil très haut : l’actionneur ne se déclenche presque jamais. Place-le très bas : il se déclenche presque toujours. Aucun réglage ne supprime les deux erreurs à la fois, et c’est tout le problème.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux façons de se tromper",
+          "body": "Ne pas déclencher quand il aurait fallu : l’alerte manquée. Exemple : une douleur qu’on ne sent pas, et une blessure qui s’aggrave.\n\nDéclencher quand il ne fallait pas : la fausse alerte. Exemple : une allergie, où le système immunitaire attaque un pollen inoffensif.\n\nAbaisser le seuil réduit les alertes manquées et augmente les fausses alertes. Le relever fait exactement l’inverse. Il faut choisir laquelle des deux erreurs on préfère.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La fièvre est un seuil déplacé",
+          "body": "La température du corps est régulée autour de 37 °C. Pendant une infection, le cerveau déplace volontairement la consigne vers 38 ou 39 °C.\n\nLa régulation fonctionne parfaitement : c’est pour cela qu’on frissonne, le corps essaie d’atteindre la nouvelle consigne.\n\nLa fièvre n’est donc pas une panne du thermostat, c’est un thermostat réglé plus haut — ce qui gêne la multiplication de beaucoup de microbes.",
+          "id": "c3"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi la douleur ne se supprime pas sans coût",
+          "body": "Les personnes atteintes d’insensibilité congénitale à la douleur ne sentent aucune blessure. Elles se brûlent, se fracturent et s’infectent sans le savoir.\n\nLeur espérance de vie est fortement réduite, non par une maladie, mais par l’absence d’alerte.\n\nUn seuil remonté à l’infini supprime la gêne et le signal ensemble. C’est le meilleur argument contre l’idée qu’une alerte soit un défaut.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre dit en une phrase",
+          "body": "Le corps est fait de boucles : capter, comparer à une consigne, corriger.\n\nComprendre un trouble, c’est trouver laquelle des quatre pièces est en cause : le capteur, la consigne, le transmetteur, ou l’actionneur.\n\nC’est la même analyse pour une fièvre, un diabète, une allergie ou un réflexe absent — et c’est pour cela qu’elle valait la peine d’être apprise.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Alerte manquée ou fausse alerte ?",
+          "explanation": "Ne pas sentir une blessure est une alerte manquée. Attaquer un pollen inoffensif ou déclencher sur un faux signal est une fausse alerte.",
+          "categories": [
+            "alerte manquée",
+            "fausse alerte"
+          ],
+          "items": [
+            {
+              "text": "ne pas sentir une brûlure",
+              "category": 0
+            },
+            {
+              "text": "ne pas réagir à une infection",
+              "category": 0
+            },
+            {
+              "text": "une allergie au pollen",
+              "category": 1
+            },
+            {
+              "text": "une douleur sans blessure",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un seuil bien réglé supprime les deux types d’erreur à la fois.",
+          "explanation": "Faux. Abaisser le seuil réduit les alertes manquées et augmente les fausses alertes. On choisit quelle erreur on préfère.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la fièvre, du point de vue de la régulation ?",
+          "explanation": "Une consigne déplacée vers le haut. La régulation marche très bien : les frissons sont le corps qui cherche à l’atteindre.",
+          "options": [
+            {
+              "text": "une consigne de température déplacée plus haut",
+              "correct": true
+            },
+            {
+              "text": "une panne du thermostat"
+            },
+            {
+              "text": "un capteur défaillant"
+            },
+            {
+              "text": "un excès de chaleur produite par les microbes"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi frissonne-t-on quand on a de la fièvre ?",
+          "explanation": "Parce que la consigne est montée et que le corps est encore en dessous : il produit de la chaleur pour l’atteindre.",
+          "options": [
+            {
+              "text": "le corps cherche à atteindre la nouvelle consigne",
+              "correct": true
+            },
+            {
+              "text": "le corps est trop chaud et se refroidit"
+            },
+            {
+              "text": "les muscles sont infectés"
+            },
+            {
+              "text": "la régulation est en panne"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles pièces d’une boucle de régulation peuvent être en cause dans un trouble ?",
+          "explanation": "Les quatre : le capteur, la consigne, le transmetteur du message et l’actionneur. Trouver laquelle, c’est savoir quoi corriger.",
+          "options": [
+            {
+              "text": "le capteur",
+              "correct": true
+            },
+            {
+              "text": "la consigne",
+              "correct": true
+            },
+            {
+              "text": "le transmetteur du message",
+              "correct": true
+            },
+            {
+              "text": "l’actionneur",
+              "correct": true
+            },
+            {
+              "text": "la volonté de la personne"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que montre le cas de l’insensibilité congénitale à la douleur ?",
+          "explanation": "Qu’une alerte n’est pas un défaut : sans elle, les blessures s’accumulent sans être soignées et l’espérance de vie chute.",
+          "options": [
+            {
+              "text": "qu’une alerte supprimée coûte très cher",
+              "correct": true
+            },
+            {
+              "text": "que la douleur est inutile"
+            },
+            {
+              "text": "que le seuil est inné"
+            },
+            {
+              "text": "que le cerveau invente la douleur"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

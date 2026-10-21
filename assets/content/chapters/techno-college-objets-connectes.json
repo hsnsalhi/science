@@ -1,0 +1,570 @@
+{
+  "chapter": "technologie-college-objets-connectes-et-reseaux",
+  "lessons": [
+    {
+      "id": "capter-decider-agir",
+      "title": "Capter, décider, agir",
+      "subtitle": "Tout objet connecté tient dans ces trois mots.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les trois pièces, et le seuil entre elles",
+          "body": "Fais glisser le seuil : le capteur mesure la même température, mais la décision change et le radiateur suit. Un thermostat connecté n’est rien d’autre que cela, plus une liaison vers l’extérieur.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La chaîne d’information",
+          "body": "Le capteur transforme une grandeur physique en signal électrique : thermistance pour la température, photodiode pour la lumière, accéléromètre pour le mouvement.\n\nLe traitement compare ce signal à une consigne et décide. C’est un programme, et c’est là que se trouvent tous les choix.\n\nL’actionneur transforme la décision en action : moteur, relais, diode, haut-parleur.\n\nUn objet connecté ajoute une quatrième pièce : une liaison, qui envoie l’information ailleurs et reçoit des ordres.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Ce qu’un capteur mesure vraiment",
+          "body": "Une thermistance ne mesure pas une température : elle change de résistance électrique. C’est le programme qui traduit cette résistance en degrés, grâce à une courbe d’étalonnage.\n\nToute mesure passe donc par une convention, écrite quelque part par quelqu’un. Un capteur mal étalonné donne des chiffres précis et faux, ce qui est pire qu’une absence de mesure.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le programme est le seul endroit où il y a un choix",
+          "body": "Le capteur ne décide rien, l’actionneur ne décide rien.\n\nLe seuil, le délai avant réaction, ce qu’on fait en cas de perte de réseau : tout cela est écrit dans le programme.\n\nQuand un objet connecté se comporte mal, c’est donc presque toujours une décision qui a été prise, pas une panne.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Que fait l’objet quand le réseau tombe ?",
+          "body": "Un thermostat connecté qui ne sait plus joindre son serveur doit-il garder la dernière consigne, revenir à une valeur de sécurité, ou s’arrêter ?\n\nIl n’y a pas de bonne réponse universelle, mais il y a une réponse écrite dans le programme, et c’est une question à poser avant d’acheter.\n\nDes serrures connectées se sont retrouvées inutilisables le jour où leur fabricant a fermé ses serveurs.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Capteur, traitement ou actionneur ?",
+          "explanation": "La thermistance et la photodiode captent, le microcontrôleur décide, le moteur et la diode agissent.",
+          "categories": [
+            "capteur",
+            "traitement",
+            "actionneur"
+          ],
+          "items": [
+            {
+              "text": "une thermistance",
+              "category": 0
+            },
+            {
+              "text": "une photodiode",
+              "category": 0
+            },
+            {
+              "text": "le programme du microcontrôleur",
+              "category": 1
+            },
+            {
+              "text": "un moteur",
+              "category": 2
+            },
+            {
+              "text": "une diode lumineuse",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure physiquement une thermistance ?",
+          "explanation": "Rien d’autre qu’une résistance électrique. C’est le programme qui la traduit en degrés, par une courbe d’étalonnage.",
+          "options": [
+            {
+              "text": "une résistance électrique",
+              "correct": true
+            },
+            {
+              "text": "une température en degrés"
+            },
+            {
+              "text": "une quantité de chaleur"
+            },
+            {
+              "text": "une pression"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où se trouvent les choix, dans un objet connecté ?",
+          "explanation": "Dans le programme. Le seuil, le délai, la conduite en cas de perte de réseau : tout y est écrit par quelqu’un.",
+          "options": [
+            {
+              "text": "dans le programme",
+              "correct": true
+            },
+            {
+              "text": "dans le capteur"
+            },
+            {
+              "text": "dans l’actionneur"
+            },
+            {
+              "text": "dans la liaison réseau"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un capteur mal étalonné vaut mieux que pas de capteur du tout.",
+          "explanation": "Faux. Il donne des chiffres précis et faux, sur lesquels on s’appuie sans se méfier. Une absence de mesure, au moins, se voit.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question poser avant d’acheter un objet connecté ?",
+          "explanation": "Ce qu’il fait quand le réseau tombe ou que le fabricant ferme ses serveurs. Des serrures connectées en sont devenues inutilisables.",
+          "options": [
+            {
+              "text": "ce qu’il fait sans réseau",
+              "correct": true
+            },
+            {
+              "text": "sa couleur"
+            },
+            {
+              "text": "le nombre de ses capteurs"
+            },
+            {
+              "text": "la puissance de son moteur"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "tout-en-binaire",
+      "title": "Tout en binaire",
+      "subtitle": "Huit interrupteurs suffisent à écrire n’importe quoi.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Allumer les bits qu’il faut",
+          "body": "Touche un bit pour l’allumer ou l’éteindre : le nombre s’affiche. Essaie d’écrire 5, puis 10, puis 255. Appuie sur « Tout allumer » pour voir le plus grand nombre que huit bits peuvent dire.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi deux et pas dix",
+          "body": "Un circuit sait faire une chose de façon fiable : laisser passer le courant, ou le bloquer. Deux états bien séparés.\n\nDistinguer dix niveaux de tension demanderait des composants précis, sensibles à la chaleur et au vieillissement.\n\nLe binaire n’est donc pas un choix mathématique mais une conséquence de ce qu’un transistor sait faire.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La valeur de chaque position",
+          "body": "De droite à gauche, chaque bit vaut le double du précédent :\n\n128  64  32  16  8  4  2  1\n\nPour lire un octet, on additionne les positions allumées. 00001010 donne 8 + 2 = 10. Tout allumé donne 255, et avec le zéro cela fait 256 valeurs possibles.",
+          "formula": "2⁸ = 256 valeurs",
+          "id": "c3"
+        },
+        {
+          "kind": "texte",
+          "title": "Le même octet, trois significations",
+          "body": "01000001 vaut 65 si on le lit comme un nombre.\n\nC’est la lettre A si on le lit comme du texte en code ASCII.\n\nC’est un niveau de rouge moyennement sombre si on le lit comme une composante de couleur.\n\nL’octet ne contient pas son mode d’emploi : c’est le programme qui sait comment le lire. Un fichier ouvert avec le mauvais programme donne du charabia pour cette seule raison.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Compter les octets d’un message",
+          "body": "Une image de 1 000 sur 1 000 points, avec trois octets par point pour le rouge, le vert et le bleu, pèse 3 millions d’octets.\n\nUn capteur de température qui envoie deux octets toutes les dix secondes envoie 17 280 octets par jour, soit mille fois moins.\n\nC’est pour cela qu’un objet connecté sur pile envoie des chiffres et pas des images : chaque octet transmis coûte de l’énergie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la valeur de l’octet 00001010 ?",
+          "explanation": "Les positions allumées valent 8 et 2, donc 8 + 2 = 10.",
+          "answer": 10,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de valeurs différentes un octet de huit bits peut-il représenter ?",
+          "explanation": "2⁸ = 256, de 0 à 255 inclus.",
+          "answer": 256,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les circuits comptent-ils en base deux ?",
+          "explanation": "Parce qu’un transistor sait fiablement passer ou bloquer. Distinguer dix niveaux de tension demanderait des composants bien plus précis.",
+          "options": [
+            {
+              "text": "parce que deux états sont faciles à distinguer",
+              "correct": true
+            },
+            {
+              "text": "parce que c’est plus rapide à calculer"
+            },
+            {
+              "text": "parce que les mathématiques l’exigent"
+            },
+            {
+              "text": "parce que cela économise de la mémoire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un octet contient l’indication de la façon dont il faut le lire.",
+          "explanation": "Faux. 01000001 vaut 65, ou la lettre A, ou un niveau de rouge : c’est le programme qui décide. Un mauvais programme donne du charabia.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’octets pèse une image de 1 000 sur 1 000 points en rouge-vert-bleu, en millions d’octets ?",
+          "explanation": "1 000 × 1 000 = 1 000 000 de points, à trois octets chacun : 3 millions d’octets.",
+          "answer": 3,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un capteur sur pile envoie-t-il des chiffres et pas des images ?",
+          "explanation": "Parce que chaque octet transmis coûte de l’énergie, et qu’une image pèse des milliers de fois plus qu’une mesure.",
+          "options": [
+            {
+              "text": "chaque octet transmis coûte de l’énergie",
+              "correct": true
+            },
+            {
+              "text": "il ne sait pas faire d’images"
+            },
+            {
+              "text": "les images sont interdites sur le réseau"
+            },
+            {
+              "text": "les chiffres sont plus exacts"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "trouver-sa-route",
+      "title": "Comment un message trouve sa route",
+      "subtitle": "Personne ne connaît le chemin entier, et ça marche quand même.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Couper un câble, et regarder le détour",
+          "body": "Touche un câble pour le couper : le paquet cherche une autre route et la trouve, plus longue. Coupe-en d’autres jusqu’à ce qu’aucune route ne reste. Aucun nœud ne connaît le trajet complet : chacun sait seulement vers qui pousser le paquet.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui arrive à un message envoyé",
+          "body": "Il est découpé en paquets de taille limitée, chacun portant l’adresse de destination et son numéro d’ordre.\n\nChaque paquet part seul. À chaque nœud, le routeur regarde l’adresse et le pousse vers le voisin qui le rapproche.\n\nDeux paquets du même message peuvent prendre deux chemins différents et arriver dans le désordre.\n\nÀ l’arrivée, on remet les paquets dans l’ordre grâce aux numéros, et on redemande ceux qui manquent.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le découpage en paquets",
+          "body": "Un seul message long monopoliserait le câble ; des paquets courts s’entrelacent et tout le monde avance.\n\nUne erreur de transmission ne gâche qu’un paquet, qu’on redemande, au lieu de gâcher le message entier.\n\nEt un câble coupé ne perd que les paquets en transit : les suivants prennent le détour. La figure montre exactement ce point.",
+          "id": "c3"
+        },
+        {
+          "kind": "texte",
+          "title": "L’adresse et le nom",
+          "body": "Une adresse IP désigne une machine : 4 octets en version 4, soit environ 4 milliards d’adresses possibles — trop peu, d’où la version 6 et ses 16 octets.\n\nUn nom de domaine est fait pour les humains. Un service d’annuaire le traduit en adresse avant tout envoi.\n\nSans cet annuaire, le réseau fonctionne encore parfaitement, mais plus personne ne sait où aller. C’est le point de panne le plus fréquent des grandes coupures.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le réseau voit passer",
+          "body": "Le contenu d’un message peut être chiffré, et il l’est presque toujours aujourd’hui.\n\nMais les adresses, elles, doivent rester lisibles : sinon aucun routeur ne saurait où pousser le paquet.\n\nOn peut donc cacher ce qu’on dit, beaucoup plus difficilement à qui et quand on le dit. Pour beaucoup de questions, savoir qui parle à qui suffit largement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le voyage d’un message dans l’ordre.",
+          "explanation": "Découpage en paquets numérotés, routage nœud par nœud, arrivée dans le désordre, remise en ordre et redemande des manquants.",
+          "items": [
+            "le message est découpé en paquets numérotés",
+            "chaque nœud pousse le paquet vers un voisin",
+            "les paquets arrivent dans le désordre",
+            "on les remet en ordre et on redemande les manquants"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que connaît un routeur du chemin ?",
+          "explanation": "Seulement le voisin vers qui pousser le paquet. Aucun nœud ne connaît le trajet complet, et c’est ce qui rend le réseau robuste.",
+          "options": [
+            {
+              "text": "seulement le voisin suivant",
+              "correct": true
+            },
+            {
+              "text": "le chemin complet jusqu’à la destination"
+            },
+            {
+              "text": "la liste de tous les réseaux du monde"
+            },
+            {
+              "text": "le contenu du message"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Pourquoi découper un message en paquets ?",
+          "explanation": "Pour partager le câble, pour ne redemander qu’un paquet en cas d’erreur, et pour pouvoir contourner une coupure.",
+          "options": [
+            {
+              "text": "pour que plusieurs messages avancent ensemble",
+              "correct": true
+            },
+            {
+              "text": "pour ne redemander qu’un paquet en cas d’erreur",
+              "correct": true
+            },
+            {
+              "text": "pour pouvoir contourner une coupure",
+              "correct": true
+            },
+            {
+              "text": "pour chiffrer le contenu"
+            },
+            {
+              "text": "pour accélérer le câble"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux paquets du même message suivent forcément le même chemin.",
+          "explanation": "Faux. Chaque paquet est routé seul et peut prendre une autre route. C’est pourquoi ils arrivent parfois dans le désordre.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que reste-t-il visible même quand un message est chiffré ?",
+          "explanation": "Les adresses, qui doivent rester lisibles pour que les routeurs sachent où pousser le paquet. Donc qui parle à qui, et quand.",
+          "options": [
+            {
+              "text": "les adresses de départ et d’arrivée",
+              "correct": true
+            },
+            {
+              "text": "le texte du message"
+            },
+            {
+              "text": "le mot de passe"
+            },
+            {
+              "text": "rien du tout"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’octets compte une adresse IP en version 4 ?",
+          "explanation": "Quatre octets, soit environ 4 milliards d’adresses possibles. Trop peu, d’où la version 6 et ses 16 octets.",
+          "answer": 4,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-objet-connecte",
+      "title": "Défi : concevoir un objet connecté honnête",
+      "subtitle": "Ce qu’il envoie, à qui, et ce qu’il fait sans réseau.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Jusqu’où va la donnée",
+          "body": "Coupe des câbles et observe le détour : chaque nœud traversé est une machine qui a vu passer le paquet. Un capteur chez soi qui parle à un serveur lointain traverse une dizaine de nœuds appartenant à autant de sociétés différentes.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre questions à se poser",
+          "body": "Quelle donnée part ? Une température, ou une température plus une heure, plus un identifiant de maison ?\n\nOù part-elle ? Vers un serveur chez soi, ou chez un fabricant à l’autre bout du monde ?\n\nCombien de temps est-elle gardée ? Une semaine, ou pour toujours ?\n\nQue fait l’objet si le serveur ne répond plus ? Un objet qui devient inutilisable n’était pas un objet, c’était un abonnement.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’une courbe de température raconte",
+          "body": "Une seule mesure ne dit rien. Une courbe sur un mois dit à quelle heure on se lève, quand on part travailler, quels jours on est absent, et quand on part en vacances.\n\nAucune de ces informations n’a été envoyée : toutes se déduisent. C’est le propre des données accumulées — elles en disent plus que la somme de leurs parties.\n\nLa bonne question n’est donc jamais « cette donnée est-elle sensible ? » mais « que peut-on en déduire une fois accumulée ? »",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Trois réglages qui changent tout",
+          "body": "Mesurer moins souvent : une température toutes les heures suffit pour régler un chauffage, et raconte beaucoup moins qu’une mesure par minute.\n\nDécider sur place : si le seuil est comparé dans l’objet, seule la décision part, pas la mesure.\n\nGarder moins longtemps : effacer au bout d’une semaine suffit à la plupart des usages et supprime l’essentiel du risque.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un objet connecté est une chaîne et une politique",
+          "body": "La chaîne — capter, décider, agir, transmettre — est de la technique, et elle s’apprend.\n\nCe qui part, vers où, pour combien de temps, et ce qui se passe sans réseau : ce sont des décisions, prises par des personnes, et elles se discutent.\n\nConfondre les deux, c’est accepter comme une fatalité technique ce qui n’était qu’un choix.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles questions poser devant un objet connecté ?",
+          "explanation": "Quelle donnée part, vers où, pour combien de temps, et ce que l’objet fait si le serveur ne répond plus.",
+          "options": [
+            {
+              "text": "quelle donnée part",
+              "correct": true
+            },
+            {
+              "text": "vers quel serveur",
+              "correct": true
+            },
+            {
+              "text": "combien de temps elle est gardée",
+              "correct": true
+            },
+            {
+              "text": "ce qu’il fait sans réseau",
+              "correct": true
+            },
+            {
+              "text": "de quelle couleur il est"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que peut-on déduire d’une courbe de température sur un mois ?",
+          "explanation": "Les heures de lever, de départ, les jours d’absence et les vacances. Rien de tout cela n’a été envoyé : tout se déduit.",
+          "options": [
+            {
+              "text": "les habitudes et les absences des habitants",
+              "correct": true
+            },
+            {
+              "text": "rien de plus qu’une température"
+            },
+            {
+              "text": "la taille du logement"
+            },
+            {
+              "text": "le nom des habitants"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel réglage réduit le plus ce qu’on envoie, sans changer le service ?",
+          "explanation": "Comparer le seuil dans l’objet : seule la décision part, pas la mesure. Le chauffage fonctionne pareil.",
+          "options": [
+            {
+              "text": "décider sur place et n’envoyer que la décision",
+              "correct": true
+            },
+            {
+              "text": "chiffrer les mesures"
+            },
+            {
+              "text": "ajouter un deuxième capteur"
+            },
+            {
+              "text": "changer de serveur"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une donnée est sensible ou ne l’est pas, indépendamment de la quantité accumulée.",
+          "explanation": "Faux. Une mesure isolée ne dit rien, un mois de mesures raconte une vie. La bonne question porte sur ce qu’on peut déduire.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un objet qui devient inutilisable quand son fabricant ferme ses serveurs ?",
+          "explanation": "Un abonnement, pas un objet. C’est une décision de conception, pas une contrainte technique.",
+          "options": [
+            {
+              "text": "un abonnement déguisé en objet",
+              "correct": true
+            },
+            {
+              "text": "une panne normale"
+            },
+            {
+              "text": "une conséquence inévitable du réseau"
+            },
+            {
+              "text": "un défaut de fabrication"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Contrainte technique ou décision humaine ?",
+          "explanation": "Le découpage en paquets et l’adresse lisible sont techniques. La durée de conservation et le comportement sans réseau sont des choix.",
+          "categories": [
+            "contrainte technique",
+            "décision humaine"
+          ],
+          "items": [
+            {
+              "text": "le message est découpé en paquets",
+              "category": 0
+            },
+            {
+              "text": "les adresses restent lisibles des routeurs",
+              "category": 0
+            },
+            {
+              "text": "les mesures sont gardées pour toujours",
+              "category": 1
+            },
+            {
+              "text": "l’objet s’arrête sans réseau",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

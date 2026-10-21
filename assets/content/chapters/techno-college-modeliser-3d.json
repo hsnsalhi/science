@@ -1,0 +1,532 @@
+{
+  "chapter": "technologie-college-modeliser-en-3d",
+  "lessons": [
+    {
+      "id": "voir-en-trois-dimensions",
+      "title": "Voir en trois dimensions",
+      "subtitle": "Dessiner du volume sur une feuille plate demande une convention.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Incliner la fuyante, voir le solide",
+          "body": "Choisis un solide, puis fais varier l’angle de fuite et la réduction : la face avant ne bouge jamais, seules les fuyantes changent. Affiche les arêtes cachées, et lis la ligne d’Euler sous le dessin.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois règles de la perspective cavalière",
+          "body": "La face avant est dessinée en vraie grandeur, sans déformation. C’est elle qu’on choisit comme face principale.\n\nLes arêtes qui fuient vers l’arrière sont toutes parallèles entre elles, tracées sous un même angle — souvent 30 ou 45 degrés.\n\nCes fuyantes sont toutes réduites du même coefficient, souvent 0,5 ou 0,7.\n\nLes arêtes cachées se tracent en pointillés, jamais effacées : un dessin technique doit montrer ce qui existe.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la perspective cavalière conserve",
+          "body": "Elle conserve le parallélisme : deux arêtes parallèles sur le solide le restent sur le dessin.\n\nElle conserve les milieux et les rapports de longueur le long d’une même direction.\n\nElle ne conserve ni les angles, ni les longueurs d’une direction à l’autre. Un carré de face reste un carré ; le même carré sur le côté devient un parallélogramme.\n\nMesurer un angle sur une perspective cavalière n’a donc aucun sens.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation d’Euler",
+          "body": "Pour tout solide convexe, faces moins arêtes plus sommets vaut toujours 2 :\n\nF − A + S = 2\n\nLe cube : 6 − 12 + 8 = 2. La pyramide à base carrée : 5 − 8 + 5 = 2. Le prisme droit à base triangulaire : 5 − 9 + 6 = 2. La figure l’affiche pour chaque solide.",
+          "formula": "F − A + S = 2",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "À quoi sert la relation d’Euler en pratique",
+          "body": "À vérifier un modèle avant de l’imprimer. Un maillage 3D où la relation n’est pas vérifiée contient un trou, une face en double ou une arête orpheline.\n\nLes logiciels de modélisation ont tous une commande qui la teste, et une imprimante refuse souvent un modèle non étanche.\n\nC’est le genre de contrôle qui coûte dix secondes et évite une impression de quatre heures pour rien.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que conserve une perspective cavalière ?",
+          "explanation": "Le parallélisme, les milieux et les rapports de longueur dans une même direction. Pas les angles, pas les longueurs d’une direction à l’autre.",
+          "options": [
+            {
+              "text": "le parallélisme",
+              "correct": true
+            },
+            {
+              "text": "les milieux",
+              "correct": true
+            },
+            {
+              "text": "les rapports de longueur dans une même direction",
+              "correct": true
+            },
+            {
+              "text": "les angles"
+            },
+            {
+              "text": "toutes les longueurs"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un cube a 6 faces et 12 arêtes. Combien de sommets, d’après la relation d’Euler ?",
+          "explanation": "F − A + S = 2 donne 6 − 12 + S = 2, donc S = 8. Et le cube a bien 8 sommets.",
+          "answer": 8,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une pyramide à base carrée a 5 faces et 5 sommets. Combien d’arêtes ?",
+          "explanation": "5 − A + 5 = 2 donne A = 8 : les 4 côtés de la base et les 4 arêtes qui montent au sommet.",
+          "answer": 8,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On peut mesurer un angle du solide sur sa perspective cavalière.",
+          "explanation": "Faux. La perspective cavalière ne conserve pas les angles. Un carré vu de côté y devient un parallélogramme.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert de vérifier la relation d’Euler sur un modèle 3D ?",
+          "explanation": "À détecter un trou, une face en double ou une arête orpheline avant d’imprimer. Dix secondes de contrôle pour éviter une impression perdue.",
+          "options": [
+            {
+              "text": "à repérer un trou ou une face en double",
+              "correct": true
+            },
+            {
+              "text": "à calculer le volume"
+            },
+            {
+              "text": "à choisir la couleur"
+            },
+            {
+              "text": "à mesurer les angles"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment trace-t-on une arête cachée ?",
+          "explanation": "En pointillés. On ne l’efface jamais : un dessin technique doit montrer tout ce qui existe, visible ou non.",
+          "options": [
+            {
+              "text": "en pointillés",
+              "correct": true
+            },
+            {
+              "text": "on ne la trace pas"
+            },
+            {
+              "text": "en trait épais"
+            },
+            {
+              "text": "en couleur"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-echelle",
+      "title": "L’échelle, et le piège des aires",
+      "subtitle": "Doubler les cotes multiplie le volume par huit.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Déplacer la parallèle, lire le rapport",
+          "body": "Fais glisser la parallèle dans le triangle : les longueurs affichées sous le dessin gardent toujours le même rapport. C’est exactement ce qu’est une échelle — un rapport constant entre le modèle et le réel.",
+          "figureId": "thales",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Lire une échelle",
+          "body": "Une échelle 1:50 veut dire qu’un centimètre sur le plan correspond à 50 centimètres en vrai.\n\nUne échelle 2:1 est un agrandissement : le dessin est deux fois plus grand que l’objet, ce qui sert pour les petites pièces.\n\nPour passer du plan au réel on multiplie, pour passer du réel au plan on divise. Se tromper de sens donne un facteur 2 500 sur une échelle 1:50, ce qui se voit.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Longueurs, aires, volumes",
+          "body": "Si toutes les longueurs sont multipliées par k :\n\nles aires sont multipliées par k², les volumes par k³.\n\nDoubler les cotes d’une maquette multiplie sa surface à peindre par 4 et son volume de matière par 8. C’est la source d’erreur la plus fréquente dans les devis de maquette.",
+          "formula": "L × k, A × k², V × k³",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi un éléphant n’est pas une souris agrandie",
+          "body": "Multiplier toutes les dimensions d’un animal par 10 multiplie son poids par 1 000, mais la section de ses os seulement par 100.\n\nChaque centimètre carré d’os devrait donc porter 10 fois plus. Au-delà d’une certaine taille, l’os casse.\n\nC’est pour cela que les gros animaux ont des pattes proportionnellement bien plus épaisses. Agrandir un modèle à l’identique ne donne pas un modèle valide.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’impression 3D hérite du même piège",
+          "body": "Doubler la taille d’une pièce imprimée multiplie par 8 la matière, donc la durée et le prix.\n\nMais la résistance, elle, ne suit pas : une pièce deux fois plus grande avec la même épaisseur de paroi est relativement plus fragile.\n\nChanger d’échelle n’est donc jamais une opération neutre : il faut revoir les épaisseurs.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Sur un plan à l’échelle 1:50, un mur mesure 8 cm. Quelle est sa longueur réelle, en mètres ?",
+          "explanation": "8 × 50 = 400 centimètres, soit 4 mètres.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On multiplie toutes les cotes d’une maquette par 3. Par combien son volume est-il multiplié ?",
+          "explanation": "Le volume est multiplié par k³, donc 3³ = 27.",
+          "answer": 27,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double les cotes d’une maquette. Par combien la surface à peindre est-elle multipliée ?",
+          "explanation": "Les aires suivent k², donc 2² = 4. La surface quadruple alors que les longueurs n’ont fait que doubler.",
+          "answer": 4,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un éléphant a-t-il des pattes proportionnellement plus épaisses qu’une souris ?",
+          "explanation": "Le poids suit le volume, donc k³, et la résistance des os suit leur section, donc k². Les os doivent rattraper l’écart.",
+          "options": [
+            {
+              "text": "le poids croît plus vite que la section des os",
+              "correct": true
+            },
+            {
+              "text": "ses os sont moins solides"
+            },
+            {
+              "text": "il marche plus lentement"
+            },
+            {
+              "text": "c’est un hasard de l’évolution"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Agrandir une pièce imprimée sans changer l’épaisseur des parois la rend plus résistante.",
+          "explanation": "Faux. Le poids croît en k³ et la section des parois en k² : à épaisseur égale, la pièce agrandie est relativement plus fragile.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie une échelle 2:1 ?",
+          "explanation": "Le dessin est deux fois plus grand que l’objet réel. C’est un agrandissement, utile pour représenter de petites pièces.",
+          "options": [
+            {
+              "text": "le dessin est deux fois plus grand que l’objet",
+              "correct": true
+            },
+            {
+              "text": "le dessin est deux fois plus petit"
+            },
+            {
+              "text": "l’objet mesure deux mètres"
+            },
+            {
+              "text": "il faut deux plans"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "transformer-le-modele",
+      "title": "Transformer le modèle",
+      "subtitle": "Quatre nombres suffisent, et l’un des réglages détruit tout.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le déterminant, et le moment où ça s’aplatit",
+          "body": "Fais varier les quatre nombres et regarde le carré se déformer. Surveille le déterminant affiché : quand il s’annule, le carré s’aplatit sur une droite et la transformation n’est plus réversible. C’est à cet instant précis qu’un modèle est perdu.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les transformations d’un logiciel 3D",
+          "body": "La translation déplace sans déformer : on ajoute un vecteur à chaque point.\n\nLa rotation tourne autour d’un axe : les longueurs et les angles sont conservés.\n\nL’homothétie agrandit ou réduit d’un facteur, éventuellement différent selon chaque axe.\n\nToutes se composent, et l’ordre compte : tourner puis déplacer ne donne pas le même résultat que déplacer puis tourner.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le déterminant dit si l’opération est réversible",
+          "body": "Un déterminant différent de zéro : la transformation peut être défaite, le modèle d’origine est récupérable.\n\nUn déterminant nul : tout s’aplatit sur une droite ou sur un point, et l’information est perdue pour de bon. Aucune commande d’annulation mathématique ne la ramène.\n\nUn facteur d’échelle nul sur un axe, par exemple une réduction à 0 % en hauteur, produit exactement cela. C’est l’erreur qu’on fait en tapant 0 au lieu de 1 dans un champ.",
+          "id": "c3"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi l’ordre des transformations compte",
+          "body": "Prends un objet à 10 cm de l’origine. Tourne-le de 90 degrés autour de l’origine, puis déplace-le de 5 cm vers la droite : il finit à un endroit.\n\nDéplace-le d’abord de 5 cm, puis tourne de 90 degrés : le déplacement a tourné avec lui, et il finit ailleurs.\n\nC’est la raison pour laquelle les logiciels affichent la pile des transformations dans l’ordre, et qu’on peut la réorganiser. Ce n’est pas une complication gratuite.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Travailler sur une copie",
+          "body": "Avant toute transformation qu’on n’est pas certain de pouvoir défaire, on duplique.\n\nLes logiciels offrent presque tous des transformations dites non destructives, qui gardent le modèle d’origine et n’enregistrent que l’opération.\n\nC’est la même idée qu’un historique : conserver de quoi revenir en arrière coûte un peu de mémoire et sauve des heures.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette transformation conserve-t-elle les longueurs ?",
+          "explanation": "Translation et rotation déplacent sans déformer. L’homothétie et l’aplatissement changent les longueurs.",
+          "categories": [
+            "conserve les longueurs",
+            "ne les conserve pas"
+          ],
+          "items": [
+            {
+              "text": "la translation",
+              "category": 0
+            },
+            {
+              "text": "la rotation",
+              "category": 0
+            },
+            {
+              "text": "l’homothétie de facteur 3",
+              "category": 1
+            },
+            {
+              "text": "la réduction à 0 % en hauteur",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie un déterminant nul ?",
+          "explanation": "Que tout s’aplatit sur une droite ou un point : l’information est perdue et la transformation ne peut pas être défaite.",
+          "options": [
+            {
+              "text": "la transformation n’est pas réversible",
+              "correct": true
+            },
+            {
+              "text": "la transformation ne change rien"
+            },
+            {
+              "text": "le modèle double de taille"
+            },
+            {
+              "text": "les angles sont conservés"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Tourner puis déplacer donne le même résultat que déplacer puis tourner.",
+          "explanation": "Faux. Dans le second cas, le déplacement tourne avec l’objet. C’est pourquoi les logiciels affichent la pile des transformations dans l’ordre.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle erreur de saisie aplatit un modèle sans retour ?",
+          "explanation": "Un facteur d’échelle de 0 sur un axe : le déterminant s’annule et toute l’épaisseur disparaît définitivement.",
+          "options": [
+            {
+              "text": "taper 0 au lieu de 1 dans un facteur d’échelle",
+              "correct": true
+            },
+            {
+              "text": "taper 2 au lieu de 1"
+            },
+            {
+              "text": "tourner de 90 degrés"
+            },
+            {
+              "text": "déplacer de 0 millimètre"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une transformation non destructive ?",
+          "explanation": "Une transformation qui garde le modèle d’origine et n’enregistre que l’opération, ce qui permet de revenir en arrière.",
+          "options": [
+            {
+              "text": "elle garde le modèle d’origine et note l’opération",
+              "correct": true
+            },
+            {
+              "text": "elle ne change rien au modèle"
+            },
+            {
+              "text": "elle est plus rapide à calculer"
+            },
+            {
+              "text": "elle conserve les angles"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-modeliser",
+      "title": "Défi : modéliser une pièce imprimable",
+      "subtitle": "Du croquis au fichier, avec les contrôles qui évitent les ratés.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compter avant de lancer l’impression",
+          "body": "Passe d’un solide à l’autre et relis la ligne d’Euler : F − A + S vaut 2 pour tous les quatre. Affiche les arêtes cachées pour vérifier qu’aucune face ne manque. C’est le contrôle qu’on fait sur un maillage avant impression.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La suite des étapes",
+          "body": "Croquis à main levée, coté. C’est là qu’on décide des formes, pas devant le logiciel.\n\nModèle 3D, construit à partir de formes simples qu’on ajoute et qu’on soustrait.\n\nContrôles : le modèle est-il étanche, la relation d’Euler est-elle vérifiée, les parois sont-elles assez épaisses ?\n\nDécoupage en couches par le logiciel d’impression, puis impression, puis mesure de la pièce obtenue.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Ce qu’une imprimante ne sait pas faire",
+          "body": "Elle ne peut pas déposer de matière dans le vide : une avancée horizontale au-delà d’environ 45 degrés s’affaisse, sauf si on ajoute un support à casser ensuite.\n\nElle ne tient pas la cote au millième : compter 0,2 à 0,5 millimètre d’écart, ce qui condamne un ajustement serré prévu exact.\n\nEt elle imprime couche par couche : la pièce est nettement plus fragile dans le sens de l’empilement. L’orientation du modèle sur le plateau est donc un choix mécanique, pas esthétique.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les contrôles qui valent leur temps",
+          "body": "Vérifier F − A + S = 2 sur un modèle fermé : repère les trous.\n\nVérifier l’épaisseur minimale des parois : en dessous de deux fois le diamètre de la buse, souvent 0,8 millimètre, la paroi n’existe pas.\n\nVérifier les porte-à-faux : au-delà de 45 degrés, prévoir un support.\n\nChacun prend quelques secondes et chacun a déjà sauvé des heures d’impression à quelqu’un.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le modèle n’est pas la pièce",
+          "body": "Un modèle 3D est parfait par construction : arêtes vives, cotes exactes, matière homogène.\n\nLa pièce imprimée a des couches visibles, des cotes approchées, une résistance qui dépend de la direction, et un retrait au refroidissement.\n\nC’est pour cela qu’on mesure toujours la pièce obtenue au lieu de faire confiance au fichier. Le fichier dit ce qu’on voulait ; la pièce dit ce qu’on a.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes d’une pièce imprimée dans l’ordre.",
+          "explanation": "Croquis coté, modèle 3D, contrôles du maillage et des épaisseurs, découpage en couches, impression, puis mesure de la pièce.",
+          "items": [
+            "croquis coté à main levée",
+            "modèle 3D",
+            "contrôles du modèle",
+            "découpage en couches",
+            "impression",
+            "mesure de la pièce obtenue"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Au-delà de quel angle un porte-à-faux s’affaisse-t-il à l’impression ?",
+          "explanation": "Environ 45 degrés. Au-delà, l’imprimante déposerait de la matière dans le vide : il faut un support à casser ensuite.",
+          "options": [
+            {
+              "text": "environ 45 degrés",
+              "correct": true
+            },
+            {
+              "text": "environ 10 degrés"
+            },
+            {
+              "text": "environ 80 degrés"
+            },
+            {
+              "text": "il n’y a pas de limite"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pièce imprimée résiste autant dans toutes les directions.",
+          "explanation": "Faux. Elle est imprimée couche par couche et reste nettement plus fragile dans le sens de l’empilement.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels contrôles faire avant d’imprimer ?",
+          "explanation": "La relation d’Euler pour repérer les trous, l’épaisseur minimale des parois, et les porte-à-faux au-delà de 45 degrés.",
+          "options": [
+            {
+              "text": "vérifier F − A + S = 2",
+              "correct": true
+            },
+            {
+              "text": "vérifier l’épaisseur des parois",
+              "correct": true
+            },
+            {
+              "text": "repérer les porte-à-faux",
+              "correct": true
+            },
+            {
+              "text": "vérifier la couleur du filament"
+            },
+            {
+              "text": "compter les faces visibles seulement"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi mesurer la pièce imprimée au lieu de se fier au fichier ?",
+          "explanation": "Parce que l’impression introduit 0,2 à 0,5 mm d’écart et un retrait au refroidissement. Le fichier dit ce qu’on voulait, la pièce ce qu’on a.",
+          "options": [
+            {
+              "text": "parce que l’impression ne tient pas la cote exacte",
+              "correct": true
+            },
+            {
+              "text": "parce que le fichier est souvent corrompu"
+            },
+            {
+              "text": "parce que le logiciel se trompe de calcul"
+            },
+            {
+              "text": "par simple habitude"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Avec une buse de 0,4 mm, quelle épaisseur minimale de paroi, en millimètres, faut-il prévoir ?",
+          "explanation": "Deux fois le diamètre de la buse, soit 0,8 millimètre. En dessous, la paroi n’existe pas.",
+          "answer": 0.8,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

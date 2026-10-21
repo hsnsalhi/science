@@ -1,0 +1,578 @@
+{
+  "chapter": "svt-college-nutrition-et-besoins-des-etres-vivants",
+  "lessons": [
+    {
+      "id": "ce-qui-entre",
+      "title": "Ce qui entre dans le corps",
+      "subtitle": "Deux cargaisons, deux portes, un même destinataire.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Suivre une cargaison jusqu’au bout",
+          "body": "Choisis le dioxygène, puis appuie sur « étape suivante » autant de fois qu’il faut pour atteindre la cellule. Recommence avec le glucose : la porte d’entrée change, la destination non.",
+          "figureId": "approvisionnement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux trajets, côte à côte",
+          "body": "Le dioxygène entre par les poumons, traverse la paroi d’une alvéole, se fixe sur l’hémoglobine du sang, passe par le cœur gauche et sort au niveau d’un capillaire.\n\nLe glucose vient d’un aliment, naît de la digestion de l’amidon, traverse la paroi d’une villosité intestinale, circule dissous dans le sang et sort au même endroit.\n\nLes deux se retrouvent dans la cellule, où ils réagissent ensemble.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La réaction que fait la cellule",
+          "body": "glucose + dioxygène donne dioxyde de carbone + eau + énergie\n\nC’est la respiration cellulaire. Elle a lieu dans chaque cellule de chaque être vivant, en permanence, et c’est elle qui fournit l’énergie de tout ce que fait le corps.",
+          "formula": "glucose + O₂ donne CO₂ + H₂O + énergie",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le sang ne fait que transporter",
+          "body": "Il ne fabrique rien et ne consomme presque rien. Il relie des lieux : l’alvéole au capillaire, l’intestin au foie, la cellule au rein.\n\nUn organisme est d’abord un problème de livraison. C’est pour cela qu’un animal gros a besoin d’un cœur puissant alors qu’un ver plat n’a pas de sang du tout : chez lui, aucune cellule n’est loin de l’extérieur.",
+          "id": "c4"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi tout est replié",
+          "body": "Les alvéoles pulmonaires d’un adulte totalisent environ 70 mètres carrés, soit la surface d’un appartement, dans la cage thoracique.\n\nL’intestin grêle, avec ses replis et ses villosités, dépasse 200 mètres carrés pour 7 mètres de long.\n\nLa raison est simple : la quantité échangée est proportionnelle à la surface. Replier, c’est gagner de la surface sans gagner de volume.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le trajet du dioxygène dans l’ordre.",
+          "explanation": "De l’air inspiré à l’alvéole, puis fixé sur l’hémoglobine du sang, poussé par le cœur gauche jusqu’au capillaire et à la cellule.",
+          "items": [
+            "l’air inspiré",
+            "l’alvéole",
+            "le sang",
+            "le cœur gauche",
+            "la cellule"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque cargaison à sa porte d’entrée.",
+          "explanation": "Le dioxygène passe par l’alvéole pulmonaire, le glucose par la villosité intestinale. Les deux arrivent ensuite dans la cellule.",
+          "pairs": [
+            {
+              "left": "le dioxygène",
+              "right": "l’alvéole pulmonaire"
+            },
+            {
+              "left": "le glucose",
+              "right": "la villosité intestinale"
+            },
+            {
+              "left": "le dioxyde de carbone",
+              "right": "ressort par l’alvéole"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les surfaces d’échange sont-elles toujours repliées ?",
+          "explanation": "Parce que la quantité échangée est proportionnelle à la surface. Replier gagne de la surface sans gagner de volume.",
+          "options": [
+            {
+              "text": "pour gagner de la surface sans gagner de volume",
+              "correct": true
+            },
+            {
+              "text": "pour être plus solides"
+            },
+            {
+              "text": "pour aller plus vite"
+            },
+            {
+              "text": "par hasard de la croissance"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète la réaction de la respiration cellulaire.",
+          "explanation": "Le glucose et le dioxygène réagissent en donnant du dioxyde de carbone, de l’eau et l’énergie dont la cellule se sert.",
+          "template": "glucose + ___ donne dioxyde de carbone + eau + ___",
+          "blanks": [
+            {
+              "accepted": [
+                "dioxygène",
+                "oxygène",
+                "O2"
+              ]
+            },
+            {
+              "accepted": [
+                "énergie"
+              ]
+            }
+          ],
+          "hint": "Le gaz qu’on respire, puis ce que la cellule en tire.",
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un ver plat n’a pas de sang parce qu’il n’a pas besoin de dioxygène.",
+          "explanation": "Faux. Il en a besoin comme nous, mais il est si mince qu’aucune cellule n’est loin de l’extérieur : il n’a pas besoin d’un transporteur.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle surface totale les alvéoles pulmonaires d’un adulte représentent-elles, en mètres carrés ?",
+          "explanation": "Environ 70 mètres carrés, la surface d’un appartement, repliés dans la cage thoracique.",
+          "min": 1,
+          "max": 300,
+          "answer": 70,
+          "tolerance": 25,
+          "unit": "m²",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-cellule",
+      "title": "La cellule au travail",
+      "subtitle": "Toute la nutrition finit dans un sac de quelques centièmes de millimètre.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Qui fait quoi dans la cellule",
+          "body": "Touche chaque partie de la cellule : son rôle s’affiche. Passe ensuite de la cellule animale à la cellule végétale et cherche ce qui apparaît — paroi, chloroplaste, grande vacuole — et ce qui reste identique.",
+          "figureId": "cellule",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’on trouve dans les deux",
+          "body": "La membrane entoure la cellule et trie ce qui entre et ce qui sort.\n\nLe noyau contient l’ADN, donc le mode d’emploi.\n\nLe cytoplasme est le milieu où tout baigne.\n\nLes mitochondries font la respiration cellulaire : c’est là que le glucose et le dioxygène se rencontrent vraiment.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Ce que la cellule végétale a en plus",
+          "body": "Une paroi rigide en cellulose, par-dessus la membrane : c’est elle qui tient la plante debout sans squelette.\n\nDes chloroplastes, qui font la photosynthèse et fabriquent le glucose à partir de l’eau, du dioxyde de carbone et de la lumière.\n\nUne grande vacuole remplie d’eau, qui occupe souvent la majeure partie du volume et maintient la cellule gonflée. Une plante qui fane est une plante dont les vacuoles se sont vidées.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La différence qui compte",
+          "body": "L’animal doit trouver son glucose : il mange.\n\nLa plante le fabrique : elle a seulement besoin d’eau, de dioxyde de carbone, de sels minéraux et de lumière.\n\nMais toutes les deux respirent, jour et nuit, dans leurs mitochondries. Croire qu’une plante ne respire pas est l’erreur la plus fréquente du chapitre.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Photosynthèse et respiration ne sont pas opposées",
+          "body": "Elles ont lieu en même temps, dans la même cellule végétale, dans deux organites différents.\n\nEn pleine lumière, la photosynthèse l’emporte largement : la plante rejette du dioxygène. La nuit, seule la respiration continue : elle en consomme. Le bilan change, pas les mécanismes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cet organite est-il dans les deux types de cellule, ou seulement dans la végétale ?",
+          "explanation": "Membrane, noyau, cytoplasme et mitochondrie sont partout. Paroi, chloroplaste et grande vacuole n’existent que chez les végétaux.",
+          "categories": [
+            "dans les deux",
+            "seulement végétale"
+          ],
+          "items": [
+            {
+              "text": "le noyau",
+              "category": 0
+            },
+            {
+              "text": "la mitochondrie",
+              "category": 0
+            },
+            {
+              "text": "la membrane",
+              "category": 0
+            },
+            {
+              "text": "le chloroplaste",
+              "category": 1
+            },
+            {
+              "text": "la paroi de cellulose",
+              "category": 1
+            },
+            {
+              "text": "la grande vacuole",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où se fait la respiration cellulaire ?",
+          "explanation": "Dans les mitochondries, chez l’animal comme chez le végétal. C’est là que le glucose et le dioxygène se rencontrent.",
+          "options": [
+            {
+              "text": "dans les mitochondries",
+              "correct": true
+            },
+            {
+              "text": "dans le noyau"
+            },
+            {
+              "text": "dans les chloroplastes"
+            },
+            {
+              "text": "dans la vacuole"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une plante ne respire pas, elle fait seulement la photosynthèse.",
+          "explanation": "Faux. Elle respire jour et nuit dans ses mitochondries. La photosynthèse s’y ajoute en lumière, elle ne la remplace pas.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une plante privée d’eau fane-t-elle ?",
+          "explanation": "Ses vacuoles se vident, les cellules ne sont plus gonflées et ne se soutiennent plus mutuellement.",
+          "options": [
+            {
+              "text": "ses vacuoles se vident",
+              "correct": true
+            },
+            {
+              "text": "son noyau se dissout"
+            },
+            {
+              "text": "ses parois disparaissent"
+            },
+            {
+              "text": "ses mitochondries s’arrêtent"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "De quoi une plante verte a-t-elle besoin pour fabriquer son glucose ?",
+          "explanation": "D’eau, de dioxyde de carbone et de lumière. Elle n’a pas besoin de glucose puisque c’est précisément ce qu’elle produit.",
+          "options": [
+            {
+              "text": "de l’eau",
+              "correct": true
+            },
+            {
+              "text": "du dioxyde de carbone",
+              "correct": true
+            },
+            {
+              "text": "de la lumière",
+              "correct": true
+            },
+            {
+              "text": "du glucose"
+            },
+            {
+              "text": "de la viande"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "qui-mange-qui",
+      "title": "Qui mange qui",
+      "subtitle": "Retire une espèce, et compte celles qui tombent avec elle.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Retirer une espèce du pré",
+          "body": "Touche une espèce pour la retirer : la figure compte celles qui s’effondrent faute de nourriture, et celles qui se multiplient faute de prédateur. Essaie l’herbe, puis le renard : les deux retraits n’ont rien à voir.",
+          "figureId": "chaine-alimentaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois rôles",
+          "body": "Les producteurs fabriquent leur matière eux-mêmes : les végétaux verts, grâce à la photosynthèse. Ils sont toujours au départ.\n\nLes consommateurs mangent d’autres êtres vivants. Le premier mange un végétal, le deuxième mange le premier, et ainsi de suite.\n\nLes décomposeurs — vers, champignons, bactéries — démontent les cadavres et les déchets, et renvoient les sels minéraux au sol. Sans eux, le cycle s’arrête.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi les grands prédateurs sont rares",
+          "body": "À chaque repas, l’essentiel de l’énergie est déjà parti : respirée, perdue en chaleur, ou restée dans ce qui n’est pas mangé.\n\nIl faut de l’ordre de 10 kilos d’herbe pour faire 1 kilo de criquet, et 10 kilos de criquet pour 1 kilo d’oiseau.\n\nUn pré nourrit donc des milliers de criquets, des dizaines d’oiseaux, et un seul renard. La pyramide n’est pas un choix, c’est un compte d’énergie.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Retirer par le bas ou par le haut",
+          "body": "Retirer un producteur fait tout tomber : plus rien n’entre dans le réseau.\n\nRetirer un prédateur du sommet ne tue personne directement, mais ses proies se multiplient, surpâturent, et le réseau se déséquilibre quand même.\n\nIl n’existe donc pas d’espèce dont le retrait soit sans conséquence.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les loups de Yellowstone",
+          "body": "Disparus du parc en 1926, réintroduits en 1995. En leur absence, les cerfs avaient brouté les jeunes saules des berges.\n\nAprès le retour des loups, les saules ont repoussé, les castors sont revenus, et le tracé des rivières lui-même s’est modifié.\n\nUn prédateur au sommet peut donc agir jusque sur la forme du paysage. C’est le meilleur argument contre l’idée qu’une espèce serait inutile.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Producteur, consommateur ou décomposeur ?",
+          "explanation": "L’herbe produit sa propre matière, le lapin et le renard consomment, le champignon et le ver décomposent.",
+          "categories": [
+            "producteur",
+            "consommateur",
+            "décomposeur"
+          ],
+          "items": [
+            {
+              "text": "l’herbe",
+              "category": 0
+            },
+            {
+              "text": "le lapin",
+              "category": 1
+            },
+            {
+              "text": "le renard",
+              "category": 1
+            },
+            {
+              "text": "le champignon",
+              "category": 2
+            },
+            {
+              "text": "le ver de terre",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel retrait fait s’effondrer tout le réseau ?",
+          "explanation": "Celui du producteur. Sans l’herbe, plus rien n’entre dans le réseau et toutes les espèces suivent.",
+          "options": [
+            {
+              "text": "celui de l’herbe",
+              "correct": true
+            },
+            {
+              "text": "celui du renard"
+            },
+            {
+              "text": "celui de l’oiseau"
+            },
+            {
+              "text": "celui du criquet"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de kilos d’herbe faut-il, en ordre de grandeur, pour fabriquer 1 kilo d’oiseau en passant par le criquet ?",
+          "explanation": "10 kilos d’herbe pour 1 kilo de criquet, puis 10 kilos de criquet pour 1 kilo d’oiseau : 10 × 10 = 100 kilos d’herbe.",
+          "answer": 100,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Retirer un prédateur du sommet n’a aucune conséquence, puisqu’il ne nourrit personne.",
+          "explanation": "Faux. Ses proies se multiplient et surpâturent. À Yellowstone, l’absence des loups a modifié jusqu’au tracé des rivières.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi servent les décomposeurs ?",
+          "explanation": "Ils démontent cadavres et déchets et renvoient les sels minéraux au sol, où les producteurs les reprennent. Sans eux, le cycle s’arrête.",
+          "options": [
+            {
+              "text": "à renvoyer les sels minéraux au sol",
+              "correct": true
+            },
+            {
+              "text": "à nourrir les prédateurs"
+            },
+            {
+              "text": "à produire du dioxygène"
+            },
+            {
+              "text": "à limiter le nombre de proies"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-besoins",
+      "title": "Défi : de l’assiette à la cellule",
+      "subtitle": "Un seul trajet, suivi sans sauter d’étape.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Refaire le trajet sans se tromper",
+          "body": "Reprends la figure, cargaison par cargaison, et compte les étapes de chaque trajet avant de répondre. Les questions portent sur ce que tu vois, pas sur ce dont tu te souviens.",
+          "figureId": "approvisionnement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois conditions pour qu’une cellule travaille",
+          "body": "Il faut que le glucose arrive : c’est la digestion puis le sang.\n\nIl faut que le dioxygène arrive : c’est la respiration puis le sang.\n\nIl faut que les déchets repartent : dioxyde de carbone par les poumons, urée par les reins.\n\nSi l’une des trois conditions manque, la cellule s’arrête, même si les deux autres sont parfaitement remplies.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi l’effort essouffle",
+          "body": "Un muscle qui travaille consomme plus de glucose et plus de dioxygène, et produit plus de dioxyde de carbone.\n\nLe corps répond en augmentant le débit : le cœur bat plus vite, la respiration s’accélère, et les vaisseaux du muscle se dilatent pendant que ceux de l’intestin se resserrent.\n\nRien de nouveau n’est inventé : c’est le même trajet, parcouru plus vite.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le muscle sait travailler sans dioxygène, mal",
+          "body": "Quand l’apport ne suit plus, le muscle dégrade le glucose sans dioxygène. Il en tire environ quinze fois moins d’énergie et produit de l’acide lactique.\n\nC’est utile quelques dizaines de secondes, pas davantage. Un sprinteur de 100 mètres fonctionne ainsi presque tout du long ; un marathonien ne peut pas.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Nutrition, respiration, élimination",
+          "body": "Ces trois mots décrivent un seul système : approvisionner des cellules et évacuer ce qu’elles rejettent.\n\nLes organes qu’on étudie séparément — intestin, poumon, cœur, rein — sont les pièces d’un seul mécanisme de livraison. C’est la bonne façon de les retenir.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans la figure, combien d’étapes compte le trajet du dioxygène, de l’air inspiré à la cellule incluse ?",
+          "explanation": "Six : air inspiré, alvéole, sang, cœur gauche, capillaire, cellule.",
+          "answer": 6,
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles conditions faut-il pour qu’une cellule travaille ?",
+          "explanation": "Le glucose doit arriver, le dioxygène aussi, et les déchets doivent repartir. Les trois sont nécessaires ensemble.",
+          "options": [
+            {
+              "text": "le glucose arrive",
+              "correct": true
+            },
+            {
+              "text": "le dioxygène arrive",
+              "correct": true
+            },
+            {
+              "text": "les déchets repartent",
+              "correct": true
+            },
+            {
+              "text": "la température dépasse 40 °C"
+            },
+            {
+              "text": "la cellule se divise"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le cœur bat-il plus vite pendant un effort ?",
+          "explanation": "Pour parcourir plus vite le même trajet : les muscles demandent plus de glucose et de dioxygène et rejettent plus de dioxyde de carbone.",
+          "options": [
+            {
+              "text": "pour livrer plus vite les mêmes cargaisons",
+              "correct": true
+            },
+            {
+              "text": "pour fabriquer du glucose"
+            },
+            {
+              "text": "pour réchauffer le corps"
+            },
+            {
+              "text": "pour remplacer la respiration"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Dégrader le glucose sans dioxygène rapporte autant d’énergie qu’avec.",
+          "explanation": "Faux. Environ quinze fois moins, et cela produit de l’acide lactique. C’est tenable quelques dizaines de secondes.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque organe à ce qu’il fait entrer ou sortir.",
+          "explanation": "Le poumon échange les gaz, l’intestin fait entrer les nutriments, le rein évacue l’urée, et le cœur ne fait que pousser.",
+          "pairs": [
+            {
+              "left": "le poumon",
+              "right": "fait entrer le dioxygène"
+            },
+            {
+              "left": "l’intestin grêle",
+              "right": "fait entrer le glucose"
+            },
+            {
+              "left": "le rein",
+              "right": "évacue l’urée"
+            },
+            {
+              "left": "le cœur",
+              "right": "pousse le sang"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un marathonien ne peut-il pas courir comme un sprinteur ?",
+          "explanation": "Le travail sans dioxygène ne tient que quelques dizaines de secondes. Sur 42 kilomètres, il faut rester dans ce que l’apport permet.",
+          "options": [
+            {
+              "text": "le travail sans dioxygène ne tient pas longtemps",
+              "correct": true
+            },
+            {
+              "text": "ses muscles sont plus petits"
+            },
+            {
+              "text": "il n’a pas de mitochondries"
+            },
+            {
+              "text": "il respire moins"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

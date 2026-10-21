@@ -1,0 +1,508 @@
+{
+  "chapter": "maths-college-transformations-et-vecteurs",
+  "lessons": [
+    {
+      "id": "les-transformations",
+      "title": "Quatre façons de déplacer une figure",
+      "subtitle": "Chacune conserve quelque chose, et c’est par là qu’on les reconnaît.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Déforme le plan et regarde ce qui résiste",
+          "body": "Règle les quatre coefficients et observe le carré unité se transformer. Certains réglages le font glisser, d’autres le retournent, d’autres l’aplatissent. Une transformation se caractérise par ce qu’elle laisse intact.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre, et ce qu’elles gardent",
+          "body": "La translation fait glisser sans tourner ni retourner. Elle garde les longueurs, les angles et le sens.\n\nLa rotation tourne autour d’un point fixe. Mêmes conservations, mais les directions changent.\n\nLa symétrie axiale retourne autour d’une droite. Les longueurs sont gardées, le sens est inversé — comme dans un miroir.\n\nL’homothétie agrandit ou réduit depuis un point. Les angles sont gardés, les longueurs multipliées.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les points fixes trahissent la transformation",
+          "body": "Une translation n’a aucun point fixe, sauf si elle ne déplace rien.\n\nUne rotation en a un seul : son centre.\n\nUne symétrie axiale en a une droite entière : son axe.\n\nUne homothétie en a un : son centre. Chercher ce qui ne bouge pas est la façon la plus rapide de nommer une transformation.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Conserver les longueurs n’est pas conserver le sens",
+          "body": "Posez votre main droite devant un miroir : l’image a la même taille, les mêmes angles, et c’est une main gauche.\n\nLa symétrie axiale conserve tout sauf l’orientation. C’est pourquoi on ne peut pas superposer une figure et son image par symétrie en la faisant glisser : il faut la retourner.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le test du papier calque",
+          "body": "Décalque la figure de départ. Si tu peux amener le calque sur l’image en le glissant, c’est une translation. En le faisant pivoter, une rotation.\n\nS’il faut le retourner, c’est une symétrie. S’il ne colle jamais parce que la taille diffère, c’est une homothétie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque transformation à ses points fixes.",
+          "explanation": "Chercher ce qui ne bouge pas identifie la transformation : rien pour la translation, un point pour la rotation, une droite pour la symétrie axiale.",
+          "pairs": [
+            {
+              "left": "translation",
+              "right": "aucun point fixe"
+            },
+            {
+              "left": "rotation",
+              "right": "un seul point : le centre"
+            },
+            {
+              "left": "symétrie axiale",
+              "right": "une droite entière : l’axe"
+            },
+            {
+              "left": "homothétie",
+              "right": "un seul point : le centre"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle transformation inverse le sens d’une figure ?",
+          "explanation": "La symétrie axiale. Comme un miroir, elle conserve longueurs et angles mais retourne l’orientation.",
+          "options": [
+            {
+              "text": "la symétrie axiale",
+              "correct": true
+            },
+            {
+              "text": "la translation"
+            },
+            {
+              "text": "la rotation"
+            },
+            {
+              "text": "l’homothétie"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une homothétie conserve les angles.",
+          "explanation": "Vrai. Elle multiplie toutes les longueurs par le même nombre, ce qui laisse la forme inchangée et donc les angles aussi.",
+          "answer": true,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qu’une translation conserve ?",
+          "explanation": "Longueurs, angles, aires et sens : une translation ne fait que glisser. Seule la position change.",
+          "options": [
+            {
+              "text": "les longueurs",
+              "correct": true
+            },
+            {
+              "text": "les angles",
+              "correct": true
+            },
+            {
+              "text": "les aires",
+              "correct": true
+            },
+            {
+              "text": "le sens de la figure",
+              "correct": true
+            },
+            {
+              "text": "la position"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une figure et son image se superposent en glissant le calque. Quelle transformation ?",
+          "explanation": "Une translation : ni rotation ni retournement n’ont été nécessaires, et la taille est inchangée.",
+          "options": [
+            {
+              "text": "une translation",
+              "correct": true
+            },
+            {
+              "text": "une symétrie axiale"
+            },
+            {
+              "text": "une homothétie"
+            },
+            {
+              "text": "une rotation d’un quart de tour"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "les-vecteurs",
+      "title": "Le vecteur",
+      "subtitle": "Une direction, un sens, une longueur — et pas de point de départ.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le même déplacement, répété",
+          "body": "Règle le nombre de tours et exécute : le robot refait exactement le même déplacement à chaque passage, depuis un point différent. C’est cela, un vecteur — une instruction de déplacement qui ne dit pas d’où l’on part.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Ce qu’un vecteur dit, et ce qu’il ne dit pas",
+          "body": "Un vecteur donne trois choses : une direction, un sens le long de cette direction, et une longueur.\n\nIl ne dit pas où commencer. « Trois cases à droite et deux en haut » se fait depuis n’importe quel point.\n\nC’est pour cela que deux flèches de même longueur, parallèles et de même sens, représentent le même vecteur, où qu’elles soient dessinées.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les coordonnées d’un vecteur",
+          "body": "On soustrait les coordonnées du départ à celles de l’arrivée. D’un point A(1 ; 2) vers B(4 ; 3), le vecteur a pour coordonnées 3 et 1.",
+          "formula": "coordonnées = arrivée − départ",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Composer deux translations",
+          "body": "Enchaîner deux translations revient à en faire une seule.\n\nLes coordonnées s’additionnent : un déplacement de 3 et 1, suivi d’un déplacement de 2 et −4, donne un déplacement de 5 et −3.\n\nL’ordre n’a aucune importance : les deux enchaînements aboutissent au même point.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Reconnaître un parallélogramme",
+          "body": "Si le vecteur qui va de A vers B est le même que celui qui va de D vers C, alors ABCD est un parallélogramme.\n\nC’est souvent la façon la plus rapide de le démontrer : deux côtés opposés parallèles et de même longueur suffisent, et le vecteur dit les deux à la fois.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que définit un vecteur ?",
+          "explanation": "Une direction, un sens et une longueur. Il ne précise jamais le point de départ, ce qui le distingue d’un segment.",
+          "options": [
+            {
+              "text": "une direction, un sens et une longueur",
+              "correct": true
+            },
+            {
+              "text": "un point de départ et un point d’arrivée"
+            },
+            {
+              "text": "une longueur seulement"
+            },
+            {
+              "text": "une position dans le plan"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De A(1 ; 2) vers B(4 ; 3), quelle est la première coordonnée du vecteur ?",
+          "explanation": "3. On soustrait l’abscisse du départ à celle de l’arrivée : 4 − 1 = 3.",
+          "answer": 3,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On enchaîne un déplacement de coordonnées 3 et 1, puis un de 2 et −4. Quelle est la seconde coordonnée du total ?",
+          "explanation": "−3. Les coordonnées s’additionnent : 1 + (−4) = −3.",
+          "answer": -3,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux flèches dessinées à des endroits différents peuvent représenter le même vecteur.",
+          "explanation": "Vrai, si elles ont la même direction, le même sens et la même longueur. Un vecteur ne porte pas de point de départ.",
+          "answer": true,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Le vecteur de A vers B égale celui de D vers C. Que peut-on dire d’ABCD ?",
+          "explanation": "C’est un parallélogramme : deux côtés opposés sont à la fois parallèles et de même longueur, ce que l’égalité de vecteurs dit d’un coup.",
+          "options": [
+            {
+              "text": "c’est un parallélogramme",
+              "correct": true
+            },
+            {
+              "text": "c’est un carré"
+            },
+            {
+              "text": "c’est un losange"
+            },
+            {
+              "text": "on ne peut rien en dire"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’ordre dans lequel on enchaîne deux translations change le point d’arrivée.",
+          "explanation": "Faux. Les coordonnées s’additionnent, et l’addition ne dépend pas de l’ordre : on aboutit au même point.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "agrandir",
+      "title": "Agrandir et réduire",
+      "subtitle": "Ce qui est multiplié, et ce qui ne l’est pas.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le petit garde la forme du grand",
+          "body": "Fais glisser la parallèle : le petit triangle est une réduction du grand. Toutes ses longueurs sont divisées par le même nombre, et ses angles n’ont pas bougé d’un degré.",
+          "figureId": "thales",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le coefficient",
+          "body": "Un agrandissement de coefficient k multiplie toutes les longueurs par k. Au-dessus de 1 il agrandit, en dessous il réduit.",
+          "formula": "longueur image = k × longueur de départ",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les aires ne suivent pas les longueurs",
+          "body": "Un coefficient 2 double les longueurs et quadruple les aires.\n\nUn coefficient 3 triple les longueurs et multiplie les aires par neuf.\n\nL’aire est multipliée par le carré du coefficient. C’est la source d’erreur numéro un du chapitre, et elle se retrouve partout : doubler la taille d’une pizza en quadruple la surface.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Et les volumes par le cube",
+          "body": "Un coefficient 2 multiplie les volumes par huit.\n\nC’est pour cela qu’un animal deux fois plus grand pèse huit fois plus, alors que la section de ses os n’est que quatre fois plus grande. Les os doivent donc être proportionnellement plus épais — et c’est pourquoi un éléphant n’a pas les pattes d’une gazelle agrandie.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le facteur se lit sur deux longueurs correspondantes",
+          "body": "On choisit un côté et son image, et on divise l’image par l’original.\n\nToutes les autres paires doivent donner le même quotient. Si deux paires donnent des quotients différents, ce n’est pas un agrandissement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un agrandissement de coefficient 3 : par combien l’aire est-elle multipliée ?",
+          "explanation": "9. L’aire suit le carré du coefficient : 3 × 3 = 9.",
+          "answer": 9,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et le volume, avec un coefficient 2 ?",
+          "explanation": "8. Le volume suit le cube du coefficient : 2 × 2 × 2 = 8.",
+          "answer": 8,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un agrandissement change les angles de la figure.",
+          "explanation": "Faux. Toutes les longueurs sont multipliées par le même nombre, donc la forme est conservée et les angles avec elle.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une pizza de 30 cm de diamètre contre une de 15 cm : combien de fois plus de surface ?",
+          "explanation": "Quatre fois. Le diamètre double, donc l’aire est multipliée par le carré de 2, soit 4.",
+          "options": [
+            {
+              "text": "quatre fois",
+              "correct": true
+            },
+            {
+              "text": "deux fois"
+            },
+            {
+              "text": "huit fois"
+            },
+            {
+              "text": "trois fois"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un éléphant n’a-t-il pas les pattes d’une gazelle agrandie ?",
+          "explanation": "Parce que la masse suit le cube de la taille et la section des os seulement le carré : il faut des os proportionnellement plus épais.",
+          "options": [
+            {
+              "text": "la masse croît plus vite que la section des os",
+              "correct": true
+            },
+            {
+              "text": "ses os sont faits d’une autre matière"
+            },
+            {
+              "text": "il marche moins vite"
+            },
+            {
+              "text": "c’est une question d’espèce"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un côté de 4 cm devient 10 cm. Quel est le coefficient ?",
+          "explanation": "2,5. On divise l’image par l’original : 10 ÷ 4 = 2,5.",
+          "answer": 2.5,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-transformations",
+      "title": "Défi : le pavage",
+      "subtitle": "Trois transformations suffisent à couvrir un mur entier.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’une transformation fait au plan",
+          "body": "Règle les coefficients et regarde le carré se déplacer, tourner ou s’aplatir. Un pavage est fait de ces gestes répétés — et seuls ceux qui conservent les aires peuvent couvrir un mur sans trou ni recouvrement.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Le problème du carreleur",
+          "body": "Un carreleur veut couvrir un mur avec un motif unique, sans trou ni chevauchement.\n\nIl ne peut utiliser que des transformations qui conservent les longueurs : translation, rotation, symétrie. Une homothétie est exclue, puisqu’elle changerait la taille du carreau.\n\nLa question est de savoir quelles formes se prêtent à ce jeu.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Quels polygones réguliers pavent le plan",
+          "body": "Autour d’un sommet, les angles doivent totaliser exactement 360°.\n\nLe triangle équilatéral a des angles de 60° : six triangles font 360°, cela marche.\n\nLe carré a des angles de 90° : quatre carrés font 360°, cela marche.\n\nL’hexagone régulier a des angles de 120° : trois hexagones font 360°, cela marche. Le pentagone régulier a des angles de 108°, et 108 ne divise pas 360 : cela ne marche pas.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi les abeilles choisissent l’hexagone",
+          "body": "Parmi les trois formes qui pavent, c’est l’hexagone qui donne le plus grand volume pour le moins de cire.\n\nLes abeilles ne l’ont pas calculé, mais la sélection naturelle a fait le tri : les colonies qui dépensaient moins de cire pour autant de miel se sont imposées.",
+          "id": "c4"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de triangles équilatéraux se rejoignent autour d’un sommet d’un pavage ?",
+          "explanation": "Six. Chaque angle vaut 60°, et 6 × 60 = 360, le tour complet.",
+          "answer": 6,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et combien d’hexagones réguliers ?",
+          "explanation": "Trois. Chaque angle vaut 120°, et 3 × 120 = 360.",
+          "answer": 3,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le pentagone régulier ne pave-t-il pas le plan ?",
+          "explanation": "Son angle vaut 108°, et 108 ne divise pas 360 : trois pentagones laissent 36° de trou, quatre se chevauchent.",
+          "options": [
+            {
+              "text": "son angle ne divise pas 360°",
+              "correct": true
+            },
+            {
+              "text": "il a trop de côtés"
+            },
+            {
+              "text": "ses côtés sont inégaux"
+            },
+            {
+              "text": "personne n’a essayé"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Trois pentagones réguliers autour d’un sommet : combien de degrés manque-t-il pour 360 ?",
+          "explanation": "36°. Trois angles de 108° font 324, et il reste 360 − 324 = 36 degrés de trou.",
+          "answer": 36,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle transformation le carreleur ne peut-il pas utiliser ?",
+          "explanation": "L’homothétie, qui changerait la taille du carreau. Un pavage n’emploie que des transformations qui conservent les longueurs.",
+          "options": [
+            {
+              "text": "l’homothétie",
+              "correct": true
+            },
+            {
+              "text": "la translation"
+            },
+            {
+              "text": "la rotation"
+            },
+            {
+              "text": "la symétrie axiale"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ces polygones réguliers pavent-ils le plan ?",
+          "explanation": "Seuls le triangle, le carré et l’hexagone ont un angle qui divise 360°. Le pentagone et l’octogone régulier n’y arrivent pas seuls.",
+          "categories": [
+            "pave le plan",
+            "ne pave pas"
+          ],
+          "items": [
+            {
+              "text": "le triangle équilatéral",
+              "category": 0
+            },
+            {
+              "text": "le carré",
+              "category": 0
+            },
+            {
+              "text": "l’hexagone régulier",
+              "category": 0
+            },
+            {
+              "text": "le pentagone régulier",
+              "category": 1
+            },
+            {
+              "text": "l’octogone régulier",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

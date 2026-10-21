@@ -1,0 +1,528 @@
+{
+  "chapter": "svt-college-l-eau-et-les-ressources",
+  "lessons": [
+    {
+      "id": "le-cycle",
+      "title": "Le cycle de l’eau",
+      "subtitle": "Trois états, une seule eau, et jamais une goutte de plus.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La même eau, trois rangements",
+          "body": "Fais varier la température et regarde les molécules se ranger autrement : serrées et alignées dans la glace, serrées mais glissantes dans l’eau liquide, dispersées dans la vapeur. Aucune molécule n’apparaît ni ne disparaît : elles changent seulement de disposition.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le tour complet",
+          "body": "Le Soleil chauffe les océans : l’eau passe en vapeur, c’est l’évaporation.\n\nEn altitude l’air est plus froid : la vapeur redevient gouttelettes, ce sont les nuages.\n\nLes gouttelettes grossissent et tombent : pluie, neige ou grêle selon la température traversée.\n\nL’eau ruisselle, s’infiltre, rejoint les rivières, et revient à la mer. Le tour est bouclé.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La quantité d’eau sur Terre ne change pas",
+          "body": "Il y a aujourd’hui à peu près la même eau qu’il y a un milliard d’années : 1 400 millions de kilomètres cubes.\n\nCe qui change, c’est où elle se trouve et sous quel état. Parler de « manquer d’eau » veut dire manquer d’eau douce, accessible, au bon endroit et au bon moment.",
+          "id": "c3"
+        },
+        {
+          "kind": "texte",
+          "title": "Où elle est vraiment",
+          "body": "97 % de l’eau est salée, dans les océans.\n\nSur les 3 % restants, les deux tiers sont pris dans les glaces du Groenland et de l’Antarctique.\n\nIl reste environ 1 % de l’eau totale sous forme d’eau douce liquide, et presque toute cette part est souterraine. Les rivières et les lacs, d’où nous buvons surtout, pèsent moins d’un millième du total.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le gel qui casse la roche",
+          "body": "Repasse le curseur de la figure sous zéro : les molécules s’alignent, et en s’alignant elles occupent plus de place. L’eau est presque la seule substance qui gonfle en gelant, d’environ 9 %.\n\nUne fissure remplie d’eau qui gèle devient un coin qu’on enfonce. Répété chaque nuit d’hiver, ce coin détache des blocs entiers : c’est la première cause d’érosion en montagne.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il pour les molécules quand la glace fond ?",
+          "explanation": "Elles ne disparaissent pas et ne changent pas de nature : elles se rangent autrement, serrées mais libres de glisser.",
+          "options": [
+            {
+              "text": "elles se rangent autrement",
+              "correct": true
+            },
+            {
+              "text": "elles disparaissent"
+            },
+            {
+              "text": "elles se transforment en autre chose"
+            },
+            {
+              "text": "il y en a davantage"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le cycle de l’eau dans l’ordre.",
+          "explanation": "Évaporation sous l’effet du Soleil, condensation en altitude, précipitation, puis ruissellement vers la mer.",
+          "items": [
+            "l’océan s’évapore",
+            "la vapeur se condense en nuage",
+            "la pluie tombe",
+            "l’eau ruisselle vers la mer"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage de l’eau de la Terre est salée ?",
+          "explanation": "97 %. Toute l’eau douce, glaces comprises, tient dans les 3 % restants.",
+          "answer": 97,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La quantité totale d’eau sur Terre diminue quand on en consomme.",
+          "explanation": "Faux. L’eau utilisée repart dans le cycle. Ce qui manque, c’est de l’eau douce propre au bon endroit et au bon moment.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le gel casse-t-il la roche ?",
+          "explanation": "En gelant, l’eau gonfle d’environ 9 %. Dans une fissure, elle agit comme un coin qu’on enfonce chaque nuit d’hiver.",
+          "options": [
+            {
+              "text": "parce que l’eau gonfle en gelant",
+              "correct": true
+            },
+            {
+              "text": "parce que le froid rend la roche cassante"
+            },
+            {
+              "text": "parce que la glace est plus lourde"
+            },
+            {
+              "text": "parce que la glace dissout la roche"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Eau salée ou eau douce ?",
+          "explanation": "Les océans sont salés. Les glaciers, les nappes souterraines et les rivières contiennent l’eau douce, qui ne représente que 3 % du total.",
+          "categories": [
+            "eau salée",
+            "eau douce"
+          ],
+          "items": [
+            {
+              "text": "l’océan Atlantique",
+              "category": 0
+            },
+            {
+              "text": "la mer Méditerranée",
+              "category": 0
+            },
+            {
+              "text": "la glace de l’Antarctique",
+              "category": 1
+            },
+            {
+              "text": "une nappe souterraine",
+              "category": 1
+            },
+            {
+              "text": "un lac de montagne",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "compter-l-eau",
+      "title": "Compter l’eau qu’on utilise",
+      "subtitle": "Un chiffre juste vaut mieux qu’une bonne intention.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un budget d’eau qui se recalcule",
+          "body": "Touche une cellule, puis change sa valeur avec le curseur : les totaux se refont seuls. Passe des Résultats aux Formules pour voir ce que chaque case calcule. C’est exactement l’outil avec lequel on gère une ressource.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Les ordres de grandeur, par personne et par jour",
+          "body": "En France, environ 148 litres d’eau du robinet par habitant et par jour.\n\nLes bains et douches en prennent à peu près un tiers, les toilettes un cinquième, le linge et la vaisselle un autre cinquième.\n\nBoire et cuisiner représentent 7 litres, soit moins de 5 % du total. L’eau potable sert donc surtout à autre chose que boire.",
+          "id": "c2"
+        },
+        {
+          "kind": "astuce",
+          "title": "L’eau qu’on ne voit pas",
+          "body": "Produire un kilo de blé demande environ 1 500 litres d’eau ; un kilo de bœuf, de l’ordre de 15 000 litres.\n\nUn tee-shirt en coton : environ 2 700 litres.\n\nCette eau-là ne passe pas par le robinet, mais elle a bien été prélevée quelque part. Comparer 148 litres à 15 000 change l’idée qu’on se fait de ce qui compte.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Du captage au robinet",
+          "body": "On prélève l’eau dans une nappe ou une rivière.\n\nOn la débarrasse des grosses particules par dégrillage et décantation.\n\nOn la filtre sur sable, puis sur charbon actif pour les goûts et les molécules dissoutes.\n\nOn la désinfecte, au chlore ou à l’ozone, et on contrôle. Chaque étape a un coût en énergie et en matériel.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une ressource se gère avec des chiffres",
+          "body": "« Économiser l’eau » ne dit rien sur quoi économiser. Le tableau le dit : agir sur un poste de 50 litres rapporte plus que supprimer entièrement un poste de 7 litres.\n\nC’est la raison pour laquelle on commence toujours par mesurer, puis on décide.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de litres d’eau du robinet un habitant de France utilise-t-il par jour ?",
+          "explanation": "Environ 148 litres, dont 7 seulement pour boire et cuisiner.",
+          "min": 20,
+          "max": 400,
+          "answer": 148,
+          "tolerance": 35,
+          "unit": "L",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert la plus grande part de l’eau du robinet ?",
+          "explanation": "Aux bains et douches, à peu près un tiers du total. Boire et cuisiner ne font que 7 litres sur 148.",
+          "options": [
+            {
+              "text": "aux bains et aux douches",
+              "correct": true
+            },
+            {
+              "text": "à boire"
+            },
+            {
+              "text": "à cuisiner"
+            },
+            {
+              "text": "à arroser"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Produire un kilo de bœuf demande plus d’eau qu’un habitant n’en consomme au robinet en trois mois.",
+          "explanation": "Vrai. 15 000 litres contre 148 par jour, soit environ 101 jours. L’eau invisible pèse plus lourd que l’eau du robinet.",
+          "answer": true,
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le traitement de l’eau potable dans l’ordre.",
+          "explanation": "On prélève, on décante les grosses particules, on filtre, puis on désinfecte avant distribution.",
+          "items": [
+            "prélever dans la nappe",
+            "décanter",
+            "filtrer sur sable et charbon",
+            "désinfecter"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quel poste agir d’abord pour réduire sa consommation ?",
+          "explanation": "Sur le plus gros. Diviser par deux un poste de 50 litres gagne davantage que supprimer entièrement un poste de 7 litres.",
+          "options": [
+            {
+              "text": "sur le poste le plus gros",
+              "correct": true
+            },
+            {
+              "text": "sur le poste le plus facile"
+            },
+            {
+              "text": "sur l’eau de boisson"
+            },
+            {
+              "text": "sur tous à la fois, également"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "l-energie-de-l-eau",
+      "title": "L’énergie de l’eau",
+      "subtitle": "Un barrage ne crée rien : il convertit.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui entre, ce qui sort, ce qui se perd",
+          "body": "Touche chaque bloc de la chaîne, puis fais glisser le curseur : le rendement global change et la part perdue en chaleur avec lui. Aucun réglage ne fait sortir plus d’énergie qu’il n’en entre.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La chaîne d’un barrage",
+          "body": "Alimenter : l’eau retenue en hauteur possède de l’énergie de position. C’est le Soleil qui l’a montée là, en l’évaporant.\n\nConvertir : en tombant dans la conduite, cette énergie devient mouvement, qui fait tourner la turbine, qui entraîne l’alternateur.\n\nDistribuer : le courant part sur le réseau.\n\nÀ chaque passage, une part s’échappe en chaleur et en bruit.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’énergie d’une retenue",
+          "body": "Pour une masse m d’eau retenue à une hauteur h :\n\nE = m × g × h\n\navec g ≈ 10 N/kg. Mille tonnes d’eau à 100 mètres de hauteur donnent 1 000 000 × 10 × 100 = 10⁹ joules, soit environ 280 kilowattheures avant pertes.",
+          "formula": "E = m × g × h",
+          "id": "c3"
+        },
+        {
+          "kind": "texte",
+          "title": "Pourquoi l’hydraulique est précieuse",
+          "body": "Le rendement d’une centrale hydroélectrique atteint 85 à 90 %, bien au-delà d’une centrale thermique qui plafonne vers 40 %.\n\nSurtout, la retenue est un stock : on ouvre les vannes quand la demande monte. Aucune autre source ne se règle aussi vite, et c’est ce réglage, plus que la quantité produite, qui la rend indispensable au réseau.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un barrage n’est pas sans coût",
+          "body": "Il noie des vallées, bloque la remontée des poissons et retient les sédiments qui nourrissaient le delta en aval.\n\nDire qu’une énergie est renouvelable ne dit pas qu’elle est sans conséquence. Les deux questions sont différentes et il faut répondre aux deux.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une retenue contient 2 000 tonnes d’eau à 50 m de hauteur. Quelle énergie, en millions de joules, avec g = 10 N/kg ?",
+          "explanation": "E = m × g × h = 2 000 000 × 10 × 50 = 1 000 000 000 J, soit 1 000 millions de joules.",
+          "answer": 1000,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient l’énergie stockée derrière un barrage ?",
+          "explanation": "Du Soleil, qui a évaporé l’eau des océans pour qu’elle retombe en altitude. Le barrage ne fait que la retenir.",
+          "options": [
+            {
+              "text": "du Soleil, qui a monté l’eau en altitude",
+              "correct": true
+            },
+            {
+              "text": "du barrage lui-même"
+            },
+            {
+              "text": "de la turbine"
+            },
+            {
+              "text": "de la rotation de la Terre"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne d’énergie du barrage dans l’ordre.",
+          "explanation": "L’eau retenue tombe, la turbine tourne, l’alternateur produit le courant, le réseau le distribue.",
+          "items": [
+            "l’eau retenue tombe",
+            "la turbine tourne",
+            "l’alternateur produit du courant",
+            "le réseau distribue"
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un bon réglage permet de faire sortir d’une chaîne plus d’énergie qu’il n’en entre.",
+          "explanation": "Faux. Aucun réglage du curseur ne dépasse 100 % : le rendement ne fait que limiter la part perdue en chaleur.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles conséquences un grand barrage a-t-il en aval ?",
+          "explanation": "Il retient les sédiments, bloque la remontée des poissons et noie des vallées en amont. Renouvelable ne veut pas dire sans conséquence.",
+          "options": [
+            {
+              "text": "il retient les sédiments",
+              "correct": true
+            },
+            {
+              "text": "il bloque la remontée des poissons",
+              "correct": true
+            },
+            {
+              "text": "il noie des vallées",
+              "correct": true
+            },
+            {
+              "text": "il réchauffe l’atmosphère"
+            },
+            {
+              "text": "il consomme l’eau"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-polluer-depolluer",
+      "title": "Défi : polluer est gratuit, dépolluer non",
+      "subtitle": "Pourquoi le mélange ne se défait pas tout seul.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une goutte dans la boîte",
+          "body": "Appuie sur « Tout à gauche », puis sur « Un instant » : le mélange est déjà fait. Appuie sur « Vingt instants » : rien ne revient jamais à gauche. Aucune règle n’interdit le retour — il est seulement si improbable qu’on ne l’observe pas.",
+          "figureId": "entropie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi le retour n’arrive pas",
+          "body": "Une goutte de colorant dans un verre peut se répartir d’un nombre colossal de façons, et toutes nous paraissent « mélangées ».\n\nElle ne peut se retrouver entièrement rassemblée que d’un nombre minuscule de façons.\n\nLe hasard des chocs passe donc son temps dans les configurations nombreuses. Ce n’est pas une force : c’est un compte.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le coût est dans le sens du retour",
+          "body": "Verser un litre de solvant dans une rivière ne demande aucune énergie. Récupérer ce solvant dilué dans un million de litres d’eau demande de pomper, de chauffer, de filtrer et de traiter ce qu’on a retenu.\n\nD’où une règle qui vaut partout en gestion des ressources : il est toujours moins cher de ne pas mélanger que de séparer.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les nitrates d’une nappe",
+          "body": "Un engrais azoté épandu en excès s’infiltre et atteint la nappe. Une fois là, il est dilué dans des milliards de litres.\n\nArrêter l’épandage ne nettoie pas la nappe : le temps de renouvellement d’une nappe profonde se compte en décennies, parfois en siècles. On hérite d’une pollution faite avant notre naissance, et nos successeurs hériteront de la nôtre.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Trier à la source",
+          "body": "C’est la même règle appliquée aux déchets : un papier propre se recycle, le même papier mêlé à des restes alimentaires ne se recycle plus.\n\nLe tri n’est pas une corvée morale, c’est le refus d’un mélange qu’on ne saurait pas défaire ensuite.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le colorant ne se rassemble-t-il jamais ?",
+          "explanation": "Parce que les configurations mélangées sont immensément plus nombreuses que les configurations rassemblées. C’est un compte, pas une force.",
+          "options": [
+            {
+              "text": "les états mélangés sont bien plus nombreux",
+              "correct": true
+            },
+            {
+              "text": "une force l’en empêche"
+            },
+            {
+              "text": "les molécules se repoussent"
+            },
+            {
+              "text": "c’est interdit par une loi de la physique"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le retour du colorant à gauche est interdit par les lois de la physique.",
+          "explanation": "Faux. Il est permis, mais si improbable qu’on ne l’observe jamais. C’est toute la différence entre impossible et improbable.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi dépolluer coûte-t-il plus cher que polluer ?",
+          "explanation": "Parce qu’il faut fournir de l’énergie pour défaire un mélange que le hasard a fait tout seul : pomper, filtrer, traiter.",
+          "options": [
+            {
+              "text": "il faut fournir de l’énergie pour séparer",
+              "correct": true
+            },
+            {
+              "text": "les taxes sont plus élevées"
+            },
+            {
+              "text": "les polluants deviennent plus dangereux"
+            },
+            {
+              "text": "il y a plus d’eau à traiter qu’avant"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Arrêter l’épandage d’engrais fait disparaître les nitrates de la nappe en quelques mois.",
+          "explanation": "Faux. Le renouvellement d’une nappe profonde se compte en décennies, parfois en siècles.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle générale tirer de tout cela ?",
+          "explanation": "Il est toujours moins coûteux de ne pas mélanger que de séparer ensuite. C’est la justification du tri à la source.",
+          "options": [
+            {
+              "text": "ne pas mélanger coûte moins que séparer",
+              "correct": true
+            },
+            {
+              "text": "il faut diluer le plus possible"
+            },
+            {
+              "text": "tout finit par se nettoyer"
+            },
+            {
+              "text": "mieux vaut traiter en aval"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Qu’est-ce qui se fait tout seul, et qu’est-ce qui demande de l’énergie ?",
+          "explanation": "Le mélange, la dilution et la dispersion se font seuls. Séparer, filtrer et concentrer demandent toujours de fournir de l’énergie.",
+          "categories": [
+            "se fait tout seul",
+            "demande de l’énergie"
+          ],
+          "items": [
+            {
+              "text": "le colorant se disperse",
+              "category": 0
+            },
+            {
+              "text": "le solvant se dilue dans la rivière",
+              "category": 0
+            },
+            {
+              "text": "filtrer l’eau sur charbon actif",
+              "category": 1
+            },
+            {
+              "text": "concentrer un polluant pour l’extraire",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

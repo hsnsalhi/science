@@ -1,0 +1,459 @@
+{
+  "chapter": "maths-college-la-trigonometrie",
+  "lessons": [
+    {
+      "id": "les-rapports",
+      "title": "Trois rapports, un seul fait",
+      "subtitle": "Agrandir un triangle ne change pas ses rapports de côtés.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Agrandis, et regarde le nombre",
+          "body": "Pousse le curseur de taille : les trois longueurs grandissent ensemble, et le rapport affiché ne bouge pas d’un millième. Maintenant change l’angle : le rapport change avec lui. C’est tout le chapitre, et il se constate en dix secondes.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Nommer les côtés, depuis un angle",
+          "body": "L’hypoténuse est le côté opposé à l’angle droit. C’est toujours le plus long, et elle ne change pas de nom.\n\nLes deux autres se nomment par rapport à l’angle qu’on considère.\n\nLe côté opposé est celui qui ne touche pas cet angle.\n\nLe côté adjacent est celui qui le touche, sans être l’hypoténuse.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois rapports",
+          "body": "Chacun compare deux côtés. Le sinus et le cosinus se mesurent contre l’hypoténuse, la tangente contre l’adjacent.",
+          "formula": "sin = opposé ÷ hypoténuse     cos = adjacent ÷ hypoténuse     tan = opposé ÷ adjacent",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cela marche",
+          "body": "Deux triangles rectangles qui ont le même angle aigu ont la même forme : l’un est l’agrandissement de l’autre.\n\nAgrandir multiplie les trois côtés par le même nombre. Dans un quotient de deux côtés, ce nombre se simplifie et disparaît.\n\nLe rapport ne dépend donc que de l’angle. C’est pour cela qu’une table de sinus tient sur une page et sert pour tous les triangles du monde.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Opposé et adjacent changent de place",
+          "body": "Dans le même triangle, si l’on considère l’autre angle aigu, l’opposé et l’adjacent s’échangent.\n\nLe sinus de l’un est donc le cosinus de l’autre. Ce n’est pas une coïncidence : les deux angles sont complémentaires, et leur somme fait 90°.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans un triangle rectangle, quel côté est l’hypoténuse ?",
+          "explanation": "Celui opposé à l’angle droit. C’est toujours le plus long, et son nom ne dépend pas de l’angle qu’on considère.",
+          "options": [
+            {
+              "text": "le côté opposé à l’angle droit",
+              "correct": true
+            },
+            {
+              "text": "le côté le plus court"
+            },
+            {
+              "text": "celui qui touche l’angle étudié"
+            },
+            {
+              "text": "cela dépend de l’angle"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Agrandir un triangle rectangle change la valeur de son sinus.",
+          "explanation": "Faux. Les trois côtés sont multipliés par le même nombre, qui se simplifie dans le quotient. Le sinus ne dépend que de l’angle.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque rapport à sa définition.",
+          "explanation": "Sinus et cosinus se mesurent contre l’hypoténuse ; la tangente compare les deux côtés de l’angle droit entre eux.",
+          "pairs": [
+            {
+              "left": "sinus",
+              "right": "opposé ÷ hypoténuse"
+            },
+            {
+              "left": "cosinus",
+              "right": "adjacent ÷ hypoténuse"
+            },
+            {
+              "left": "tangente",
+              "right": "opposé ÷ adjacent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans un triangle rectangle, un angle aigu mesure 35°. Combien mesure l’autre, en degrés ?",
+          "explanation": "55°. Les deux angles aigus sont complémentaires : leur somme vaut 90°, puisque le troisième en prend 90.",
+          "answer": 55,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une table de sinus suffit-elle pour tous les triangles ?",
+          "explanation": "Parce que le rapport ne dépend que de l’angle. Deux triangles de même angle aigu sont des agrandissements l’un de l’autre.",
+          "options": [
+            {
+              "text": "parce que le rapport ne dépend que de l’angle",
+              "correct": true
+            },
+            {
+              "text": "parce que tous les triangles ont la même taille"
+            },
+            {
+              "text": "parce qu’on arrondit"
+            },
+            {
+              "text": "elle ne suffit pas"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le sinus d’un angle aigu est toujours inférieur à 1.",
+          "explanation": "Vrai. L’opposé est toujours plus court que l’hypoténuse, donc leur quotient reste sous 1.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "calculer-longueur",
+      "title": "Calculer une longueur",
+      "subtitle": "On connaît un angle et un côté, on cherche un autre côté.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Choisis le rapport qui relie les deux",
+          "body": "Bascule entre sinus, cosinus et tangente, et regarde quels côtés chacun met en évidence. Pour calculer, on choisit celui qui relie le côté connu au côté cherché — et un seul des trois convient.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, en trois temps",
+          "body": "1. Repérer l’angle dont on se sert, et nommer les côtés par rapport à lui.\n\n2. Regarder quel côté on connaît et lequel on cherche.\n\n3. Choisir le rapport qui contient exactement ces deux-là.\n\n4. Écrire l’égalité, puis isoler l’inconnue.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une échelle contre un mur",
+          "body": "Une échelle de 4 m fait un angle de 70° avec le sol. À quelle hauteur touche-t-elle le mur ?\n\nLa hauteur est le côté opposé à l’angle, l’échelle est l’hypoténuse. Le rapport qui les relie est le sinus.\n\nsin 70° = hauteur ÷ 4, donc hauteur = 4 × sin 70° ≈ 3,76 m.",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Vérifier par le bon sens",
+          "body": "La hauteur trouvée doit être inférieure à la longueur de l’échelle : l’hypoténuse est toujours le plus long côté.\n\nSi le calcul donne 4,3 m pour une échelle de 4 m, c’est qu’on a multiplié au lieu de diviser, ou choisi le mauvais rapport.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La calculatrice doit être en degrés",
+          "body": "Une calculatrice réglée en radians donne pour sin 70° la valeur 0,77 au lieu de 0,94.\n\nLe résultat reste plausible, et c’est ce qui rend l’erreur dangereuse. Vérifier une fois que sin 30° affiche bien 0,5 suffit à écarter le problème.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "On connaît l’hypoténuse et on cherche le côté opposé. Quel rapport ?",
+          "explanation": "Le sinus, qui relie précisément l’opposé à l’hypoténuse. Les deux autres font intervenir l’adjacent.",
+          "options": [
+            {
+              "text": "le sinus",
+              "correct": true
+            },
+            {
+              "text": "le cosinus"
+            },
+            {
+              "text": "la tangente"
+            },
+            {
+              "text": "n’importe lequel"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une échelle de 4 m fait 70° avec le sol. Hauteur atteinte, en mètres, arrondie au centième ? (sin 70° ≈ 0,940)",
+          "explanation": "3,76 m. On applique hauteur = 4 × sin 70°, soit 4 × 0,940.",
+          "answer": 3.76,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "On connaît les deux côtés de l’angle droit et on cherche l’angle. Quel rapport ?",
+          "explanation": "La tangente, seule à comparer l’opposé et l’adjacent sans faire intervenir l’hypoténuse.",
+          "options": [
+            {
+              "text": "la tangente",
+              "correct": true
+            },
+            {
+              "text": "le sinus"
+            },
+            {
+              "text": "le cosinus"
+            },
+            {
+              "text": "aucun des trois"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une longueur calculée peut dépasser celle de l’hypoténuse.",
+          "explanation": "Faux. L’hypoténuse est toujours le plus long côté d’un triangle rectangle : un résultat qui la dépasse signale une erreur.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut sin 30° ? Donne le résultat décimal.",
+          "explanation": "0,5 exactement. C’est le contrôle le plus rapide pour vérifier que la calculatrice est bien en degrés.",
+          "answer": 0.5,
+          "id": "q5"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode dans l’ordre.",
+          "explanation": "On nomme les côtés depuis l’angle, on repère le connu et le cherché, on choisit le rapport qui contient les deux, puis on isole.",
+          "items": [
+            "nommer les côtés par rapport à l’angle",
+            "repérer le côté connu et le côté cherché",
+            "choisir le rapport qui contient ces deux côtés",
+            "écrire l’égalité et isoler l’inconnue"
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "retrouver-angle",
+      "title": "Retrouver un angle",
+      "subtitle": "Le chemin inverse, et la touche qu’on oublie d’utiliser.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 6,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cherche l’angle qui donne ce rapport",
+          "body": "Fixe un rapport, par exemple la tangente, puis fais varier l’angle jusqu’à lire la valeur voulue. C’est exactement ce que fait la calculatrice quand on lui demande l’angle — en beaucoup plus vite.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Du rapport à l’angle",
+          "body": "1. Calculer le rapport à partir des deux longueurs connues.\n\n2. Demander à la calculatrice l’angle qui donne ce rapport.\n\n3. Vérifier que l’angle trouvé est bien aigu : entre 0 et 90°.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La pente d’un toit",
+          "body": "Un toit monte de 1,5 m sur une longueur horizontale de 4 m. Quel angle avec l’horizontale ?\n\nLa tangente vaut 1,5 ÷ 4 = 0,375.\n\nL’angle dont la tangente vaut 0,375 mesure environ 20,6°.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les touches inverses",
+          "body": "Sur une calculatrice, elles se notent le plus souvent avec un petit moins un en exposant, ou bien asin, acos, atan selon les modèles.\n\nElles ne calculent pas un inverse au sens de 1 divisé par : elles font le chemin en sens contraire, du rapport vers l’angle.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Le contrôle immédiat",
+          "body": "Une tangente supérieure à 1 signale un angle de plus de 45°, puisque tan 45° vaut exactement 1.\n\nUn sinus ou un cosinus supérieur à 1 signale une erreur de calcul : aucun angle ne les produit.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un toit monte de 1,5 m sur 4 m à l’horizontale. Que vaut la tangente de l’angle ?",
+          "explanation": "0,375. C’est le quotient de l’opposé par l’adjacent, soit 1,5 ÷ 4.",
+          "answer": 0.375,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une tangente vaut 1,4. Que peut-on dire de l’angle ?",
+          "explanation": "Il dépasse 45°, puisque tan 45° vaut exactement 1 et que la tangente croît avec l’angle.",
+          "options": [
+            {
+              "text": "il dépasse 45°",
+              "correct": true
+            },
+            {
+              "text": "il est inférieur à 45°"
+            },
+            {
+              "text": "il vaut 45°"
+            },
+            {
+              "text": "c’est impossible"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un cosinus peut valoir 1,2.",
+          "explanation": "Faux. L’adjacent est toujours plus court que l’hypoténuse : leur quotient ne dépasse jamais 1.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Que vaut tan 45° ?",
+          "explanation": "1 exactement. L’opposé et l’adjacent sont alors égaux, puisque le triangle est isocèle.",
+          "answer": 1,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "La touche notée asin fait quoi ?",
+          "explanation": "Elle donne l’angle dont le sinus vaut le nombre saisi. Ce n’est pas l’inverse au sens de 1 divisé par le sinus.",
+          "options": [
+            {
+              "text": "elle donne l’angle dont le sinus est ce nombre",
+              "correct": true
+            },
+            {
+              "text": "elle calcule 1 divisé par le sinus"
+            },
+            {
+              "text": "elle convertit en radians"
+            },
+            {
+              "text": "elle arrondit le sinus"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-trigonometrie",
+      "title": "Défi : mesurer sans monter",
+      "subtitle": "La hauteur d’un arbre, depuis le sol, avec un rapporteur.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un angle, une distance, une hauteur",
+          "body": "Règle l’angle sur 32° et observe le rapport de la tangente. Multiplié par la distance au pied de l’arbre, il donne la hauteur — et c’est la méthode des forestiers depuis deux siècles.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "La méthode du forestier",
+          "body": "On s’éloigne de l’arbre jusqu’à pouvoir voir sa cime confortablement, et on mesure cette distance : 25 mètres.\n\nOn vise la cime et on mesure l’angle que fait ce regard avec l’horizontale : 32°.\n\nOn mesure enfin la hauteur de son propre œil au-dessus du sol : 1,60 m.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul",
+          "body": "Le triangle a pour adjacent la distance au pied, 25 m, et pour opposé la hauteur de l’arbre au-dessus de l’œil.\n\ntan 32° ≈ 0,625, donc cette hauteur vaut 25 × 0,625 ≈ 15,6 m.\n\nIl reste à ajouter la hauteur de l’œil : 15,6 + 1,6 ≈ 17,2 m.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La hauteur de l’œil n’est pas un détail",
+          "body": "L’oublier fait perdre 1,60 m sur une hauteur de 17 m, soit près de 10 %.\n\nLe triangle qu’on mesure part de l’œil, pas du sol. C’est l’erreur que commettent presque tous ceux qui essaient cette méthode pour la première fois.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la trigonométrie permet vraiment",
+          "body": "Mesurer ce qu’on ne peut pas atteindre : la hauteur d’un arbre, la largeur d’une rivière, la distance d’un navire.\n\nC’est elle qui a permis de cartographier des pays entiers sans jamais parcourir toutes les distances — par triangulation, de proche en proche.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "À 25 m de l’arbre, la cime est vue sous 32°. tan 32° ≈ 0,625. Quelle hauteur au-dessus de l’œil, en mètres ?",
+          "explanation": "15,6 m environ. On multiplie la distance par la tangente : 25 × 0,625 = 15,625.",
+          "answer": 15.6,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "L’œil est à 1,60 m du sol. Quelle hauteur totale de l’arbre, en mètres ?",
+          "explanation": "17,2 m environ. On ajoute la hauteur de l’œil, parce que le triangle mesuré part de l’œil et non du sol.",
+          "answer": 17.2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ajouter la hauteur de l’œil ?",
+          "explanation": "Parce que le triangle part de l’œil : la trigonométrie donne la hauteur au-dessus de ce point, pas au-dessus du sol.",
+          "options": [
+            {
+              "text": "le triangle part de l’œil, pas du sol",
+              "correct": true
+            },
+            {
+              "text": "pour arrondir"
+            },
+            {
+              "text": "par convention des forestiers"
+            },
+            {
+              "text": "ce n’est pas nécessaire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En oubliant la hauteur de l’œil, de combien de pour cent se trompe-t-on, arrondi à l’unité ?",
+          "explanation": "9 %. L’erreur de 1,6 m sur 17,2 m vaut 1,6 ÷ 17,2, soit environ 0,093.",
+          "answer": 9,
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "À 40 m d’un immeuble, le sommet est vu sous 45°. Quelle hauteur environ, en mètres, œil à 1,6 m ?",
+          "explanation": "Environ 42 m. tan 45° vaut 1, donc la hauteur au-dessus de l’œil égale la distance : 40 m, plus 1,6 m.",
+          "min": 10,
+          "max": 120,
+          "answer": 42,
+          "tolerance": 5,
+          "unit": "mètres",
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Pour doubler la hauteur mesurée, il suffit de doubler l’angle de visée.",
+          "explanation": "Faux. La tangente ne double pas quand l’angle double : tan 30° vaut 0,58 et tan 60° vaut 1,73, soit trois fois plus.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

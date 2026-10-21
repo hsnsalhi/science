@@ -1,0 +1,536 @@
+{
+  "chapter": "svt-college-reproduction-et-peuplement-des-milieux",
+  "lessons": [
+    {
+      "id": "deux-parents",
+      "title": "Deux parents, un brassage",
+      "subtitle": "Pourquoi des frères et sœurs ne se ressemblent jamais tout à fait.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les quatre graines possibles",
+          "body": "Touche un parent pour changer ce qu’il porte, puis l’autre, et regarde les quatre graines possibles se recalculer. Avec deux parents porteurs d’un caractère caché, une graine sur quatre le montre : ce n’est pas un hasard, c’est un compte.",
+          "figureId": "croisement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que fait la reproduction sexuée",
+          "body": "Chaque parent fabrique des cellules reproductrices qui ne portent qu’une moitié de son information.\n\nLaquelle des deux moitiés ? Tirée au sort, différemment pour chaque cellule.\n\nUne cellule reproductrice de chaque parent fusionne : la cellule-œuf a de nouveau l’information complète, mais dans une combinaison qui n’existait chez ni l’un ni l’autre.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "La reproduction asexuée",
+          "body": "Un seul parent, et des descendants identiques à lui : une fraise qui envoie un stolon, une pomme de terre qui bourgeonne, une bactérie qui se coupe en deux.\n\nC’est rapide, sans partenaire à trouver, et chaque descendant est aussi bien adapté que le parent — au même milieu.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Chacune paye un prix",
+          "body": "L’asexuée est efficace tant que rien ne change. Si une maladie trouve la faille d’un individu, elle la trouve chez tous.\n\nLa sexuée est coûteuse : trouver un partenaire, et la moitié des descendants ne portera pas le caractère avantageux. Mais la population contient des combinaisons variées, et il s’en trouvera toujours quelques-unes pour résister.\n\nC’est pourquoi beaucoup d’espèces font les deux, selon les années.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le puceron change de méthode en cours d’année",
+          "body": "Au printemps et en été, quand il fait bon et que la plante abonde, les femelles produisent des clones sans mâle : une colonie peut doubler en quelques jours.\n\nÀ l’automne, des mâles apparaissent, et la reproduction redevient sexuée. Les œufs pondus passeront l’hiver.\n\nLa même espèce choisit donc la vitesse quand tout va bien, et la variété quand l’avenir est incertain.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi des frères et sœurs ne sont-ils jamais identiques ?",
+          "explanation": "Chaque cellule reproductrice emporte une moitié tirée au sort. Deux fécondations ne donnent presque jamais la même combinaison.",
+          "options": [
+            {
+              "text": "chaque cellule reproductrice emporte une moitié tirée au sort",
+              "correct": true
+            },
+            {
+              "text": "les parents changent entre deux naissances"
+            },
+            {
+              "text": "l’information se détériore avec le temps"
+            },
+            {
+              "text": "ils ne reçoivent pas la même nourriture"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Reproduction sexuée ou asexuée ?",
+          "explanation": "Le stolon de fraisier, le bourgeon de pomme de terre et la division bactérienne n’ont qu’un parent. La graine et le poussin en ont deux.",
+          "categories": [
+            "sexuée",
+            "asexuée"
+          ],
+          "items": [
+            {
+              "text": "une graine issue d’une fleur pollinisée",
+              "category": 0
+            },
+            {
+              "text": "un poussin sorti d’un œuf fécondé",
+              "category": 0
+            },
+            {
+              "text": "un stolon de fraisier",
+              "category": 1
+            },
+            {
+              "text": "une bactérie qui se divise",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le point faible d’une population de clones ?",
+          "explanation": "Une maladie qui trouve la faille d’un individu la trouve chez tous, puisqu’ils sont identiques.",
+          "options": [
+            {
+              "text": "une seule maladie peut tous les atteindre",
+              "correct": true
+            },
+            {
+              "text": "ils se reproduisent trop lentement"
+            },
+            {
+              "text": "ils ne peuvent pas se nourrir"
+            },
+            {
+              "text": "ils vieillissent plus vite"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une espèce utilise toujours un seul mode de reproduction.",
+          "explanation": "Faux. Le puceron se clone en été, quand tout va bien, et se reproduit sexuellement à l’automne, quand l’avenir est incertain.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Deux parents porteurs d’un caractère caché : sur quatre graines, combien le montrent ?",
+          "explanation": "Une sur quatre. Il faut recevoir la version cachée des deux parents, et chacun ne la transmet qu’une fois sur deux.",
+          "answer": 1,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "au-rythme-des-saisons",
+      "title": "Au rythme des saisons",
+      "subtitle": "Ce n’est pas le froid qui donne le signal, c’est la lumière.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La durée du jour, mois par mois",
+          "body": "Fais passer l’année avec le curseur : la durée du jour à Paris s’affiche sous le dessin, de 8 heures en décembre à plus de 16 heures en juin. C’est cette grandeur-là, et non la température, que la plupart des espèces mesurent.",
+          "figureId": "saisons",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi la lumière et non la chaleur",
+          "body": "La durée du jour à une date donnée est toujours la même, année après année : elle ne dépend que de la position de la Terre sur son orbite.\n\nLa température, elle, varie d’une année à l’autre et peut tromper : un redoux de février n’annonce pas le printemps.\n\nUn bourgeon qui s’ouvrirait sur un redoux gèlerait. Un bourgeon qui attend une certaine durée de jour ne se trompe jamais.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Les formes qui traversent la mauvaise saison",
+          "body": "Chez les plantes : la graine, le bulbe, le tubercule, le rhizome. Tout est en attente, déshydraté, protégé.\n\nChez les animaux : l’œuf chez beaucoup d’insectes, la larve enterrée, l’hibernation chez le loir et la marmotte, la migration chez l’hirondelle.\n\nDans tous les cas, le peuplement du milieu ne disparaît pas en hiver : il change de forme.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Peupler, c’est occuper un lieu et un moment",
+          "body": "Deux espèces peuvent partager exactement le même pré sans se concurrencer, si l’une y est active au printemps et l’autre en été.\n\nC’est pourquoi un relevé fait un seul jour ne dit presque rien du peuplement d’un milieu. Il faut revenir aux quatre saisons.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Quand les deux signaux se désaccordent",
+          "body": "Le réchauffement avance les dates de feuillaison, parce que la feuillaison dépend beaucoup de la température.\n\nMais le retour des oiseaux migrateurs dépend surtout de la durée du jour sous les tropiques, qui ne change pas.\n\nRésultat : certaines mésanges arrivent maintenant après le pic des chenilles dont elles nourrissent leurs petits. Deux horloges réglées sur deux signaux différents finissent par se désynchroniser.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel signal la plupart des espèces mesurent-elles pour régler leur cycle ?",
+          "explanation": "La durée du jour. Elle est identique à chaque date d’une année sur l’autre, alors que la température varie et peut tromper.",
+          "options": [
+            {
+              "text": "la durée du jour",
+              "correct": true
+            },
+            {
+              "text": "la température de l’air"
+            },
+            {
+              "text": "la quantité de pluie"
+            },
+            {
+              "text": "la direction du vent"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien d’heures dure le jour à Paris au solstice de juin ?",
+          "explanation": "Un peu plus de 16 heures, contre 8 heures au solstice de décembre.",
+          "min": 8,
+          "max": 24,
+          "answer": 16,
+          "tolerance": 1.5,
+          "unit": "h",
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Forme de résistance végétale ou animale ?",
+          "explanation": "Graine, bulbe et tubercule sont des formes végétales en attente. L’œuf d’insecte et l’hibernation sont les solutions animales.",
+          "categories": [
+            "végétale",
+            "animale"
+          ],
+          "items": [
+            {
+              "text": "la graine",
+              "category": 0
+            },
+            {
+              "text": "le bulbe",
+              "category": 0
+            },
+            {
+              "text": "le tubercule",
+              "category": 0
+            },
+            {
+              "text": "l’œuf d’insecte",
+              "category": 1
+            },
+            {
+              "text": "l’hibernation du loir",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un pré est dépeuplé en hiver.",
+          "explanation": "Faux. Le peuplement ne disparaît pas, il change de forme : graines, bulbes, œufs et larves attendent sous la surface.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi certaines mésanges arrivent-elles maintenant trop tard ?",
+          "explanation": "La feuillaison et les chenilles avancent avec la température, mais le départ en migration se règle sur la durée du jour, qui ne change pas.",
+          "options": [
+            {
+              "text": "leurs deux horloges ne suivent pas le même signal",
+              "correct": true
+            },
+            {
+              "text": "elles volent moins vite qu’avant"
+            },
+            {
+              "text": "les chenilles ont disparu"
+            },
+            {
+              "text": "les jours sont plus courts"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un relevé fait un seul jour suffit à décrire le peuplement d’un milieu.",
+          "explanation": "Faux. Deux espèces peuvent partager le même lieu à deux moments différents de l’année : il faut revenir aux quatre saisons.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "comment-une-forme-se-repand",
+      "title": "Comment une forme se répand",
+      "subtitle": "Un petit avantage, répété assez de fois, emporte tout.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Dix générations d’un coup",
+          "body": "Règle l’avantage sur zéro et appuie sur « Dix générations » : la proportion ne bouge pas. Remonte l’avantage et recommence : la courbe grimpe, et la figure annonce combien de générations il faut pour atteindre 99 %.",
+          "figureId": "selection",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois conditions, et elles suffisent",
+          "body": "Il faut de la variété : les individus ne sont pas tous identiques.\n\nIl faut que cette variété soit transmissible aux descendants.\n\nIl faut qu’elle change les chances de laisser des descendants, même très peu.\n\nQuand les trois sont réunies, la proportion de la forme avantagée monte toute seule. Personne ne décide, personne ne choisit.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "La puissance de la répétition",
+          "body": "Un avantage de 1 % par génération paraît négligeable. Sur mille générations, il multiplie la proportion par un facteur énorme.\n\nC’est le même calcul que les intérêts composés, et il surprend toujours : notre intuition est linéaire alors que le processus est multiplicatif.\n\nPour une bactérie qui se divise toutes les vingt minutes, mille générations tiennent dans deux semaines.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les antibiotiques",
+          "body": "Dans une population de bactéries, quelques-unes résistent déjà par hasard, avant tout traitement.\n\nUn antibiotique tue les autres : il ne crée pas la résistance, il lui laisse la place. Celles qui restent se multiplient sans concurrence.\n\nC’est pour cela qu’il faut finir un traitement commencé : l’arrêter trop tôt laisse vivantes les plus résistantes, et c’est exactement le pire choix.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le milieu ne commande pas, il trie",
+          "body": "Un milieu froid ne fait pas pousser de fourrure. Il élimine simplement, génération après génération, ceux qui en ont le moins.\n\nLa différence est capitale : une girafe ne s’allonge pas le cou en tendant vers les feuilles hautes. Ce sont les cous les plus longs qui ont laissé le plus de descendants.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles conditions suffisent pour qu’une forme se répande ?",
+          "explanation": "De la variété, transmissible, et qui change les chances de laisser des descendants. Trois conditions, et rien d’autre.",
+          "options": [
+            {
+              "text": "les individus ne sont pas tous identiques",
+              "correct": true
+            },
+            {
+              "text": "la différence se transmet aux descendants",
+              "correct": true
+            },
+            {
+              "text": "la différence change les chances de se reproduire",
+              "correct": true
+            },
+            {
+              "text": "une volonté dirige le processus"
+            },
+            {
+              "text": "le milieu fabrique le caractère utile"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Avec un avantage nul, la proportion de la forme avantagée monte quand même lentement.",
+          "explanation": "Faux. La figure le montre : sans avantage, la proportion ne bouge pas, quel que soit le nombre de générations.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un antibiotique crée-t-il la résistance ?",
+          "explanation": "Non. Quelques bactéries résistent déjà par hasard. L’antibiotique tue les autres et laisse la place aux résistantes.",
+          "options": [
+            {
+              "text": "non, il laisse la place à celles qui résistaient déjà",
+              "correct": true
+            },
+            {
+              "text": "oui, il modifie les bactéries"
+            },
+            {
+              "text": "oui, il les force à muter"
+            },
+            {
+              "text": "non, il n’a aucun effet"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le cou des girafes s’est-il allongé ?",
+          "explanation": "Parce que les cous les plus longs ont laissé le plus de descendants. Tendre vers les feuilles hautes n’allonge pas un cou.",
+          "options": [
+            {
+              "text": "les cous les plus longs ont laissé plus de descendants",
+              "correct": true
+            },
+            {
+              "text": "elles ont tendu le cou vers les feuilles hautes"
+            },
+            {
+              "text": "le milieu a fabriqué un cou plus long"
+            },
+            {
+              "text": "elles l’ont voulu"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il faut arrêter un antibiotique dès qu’on se sent mieux.",
+          "explanation": "Faux. C’est le pire choix : on laisse vivantes les bactéries les plus résistantes, qui se multiplient ensuite sans concurrence.",
+          "answer": false,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-peuplement",
+      "title": "Défi : coloniser une île neuve",
+      "subtitle": "Une île sort de l’eau. Qui arrive, dans quel ordre, et pourquoi.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Partir de deux individus",
+          "body": "Reprends les deux parents et compte les combinaisons possibles : quatre, à partir d’un seul caractère. Une colonisation commence souvent avec très peu d’individus, et donc avec très peu de combinaisons disponibles.",
+          "figureId": "croisement",
+          "id": "c1"
+        },
+        {
+          "kind": "exemple",
+          "title": "Surtsey, sortie de l’eau en 1963",
+          "body": "Une éruption au large de l’Islande fait apparaître une île stérile. Les scientifiques la surveillent depuis.\n\nPremière année : des bactéries, portées par le vent. Deuxième année : la première plante à fleurs, une roquette de mer, graine arrivée par la mer. Puis les mousses, les lichens.\n\nLes oiseaux nicheurs arrivent en 1970, et avec eux leurs fientes : le sol commence enfin à exister. Vingt ans plus tard, des buissons.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi cet ordre et pas un autre",
+          "body": "Il faut d’abord arriver : seules les espèces qui se dispersent loin — vent, mer, oiseaux — sont candidates.\n\nIl faut ensuite survivre sur de la roche nue, sans sol et sans eau retenue.\n\nIl faut enfin pouvoir se reproduire sur place, à quelques individus. Une espèce qui a besoin d’un pollinisateur absent échoue, même arrivée en bonne santé.\n\nLes premières espèces fabriquent le sol dont les suivantes ont besoin : chacune ouvre la porte à la suivante.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Peu d’individus au départ, peu de variété",
+          "body": "Une population fondée par quelques arrivants ne contient qu’une petite partie des combinaisons de l’espèce d’origine.\n\nElle est donc plus vulnérable à une maladie ou à un changement, et le restera longtemps.\n\nC’est le même problème que celui d’une population de clones, obtenu par un autre chemin.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un peuplement est une histoire, pas un état",
+          "body": "Le pré, la forêt ou l’île qu’on observe aujourd’hui sont le résultat de qui est arrivé quand, de ce que chacun a modifié, et de ce qui a tenu.\n\nC’est pour cela qu’on ne peut pas prévoir un peuplement en listant seulement les conditions du milieu : il faut aussi connaître l’ordre d’arrivée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la colonisation de Surtsey dans l’ordre observé.",
+          "explanation": "Bactéries portées par le vent, puis une plante à fleurs venue par la mer, puis mousses et lichens, puis les oiseaux nicheurs qui fabriquent le sol.",
+          "items": [
+            "des bactéries portées par le vent",
+            "une plante à fleurs venue par la mer",
+            "mousses et lichens",
+            "des oiseaux nicheurs, et leurs fientes"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que faut-il à une espèce pour coloniser une île neuve ?",
+          "explanation": "Arriver, survivre sur la roche nue, et pouvoir se reproduire sur place à quelques individus. Les trois sont nécessaires.",
+          "options": [
+            {
+              "text": "pouvoir y arriver",
+              "correct": true
+            },
+            {
+              "text": "survivre sans sol",
+              "correct": true
+            },
+            {
+              "text": "pouvoir se reproduire à quelques individus",
+              "correct": true
+            },
+            {
+              "text": "être plus grande que les autres"
+            },
+            {
+              "text": "arriver en même temps que ses prédateurs"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les oiseaux nicheurs changent-ils tout ?",
+          "explanation": "Leurs fientes apportent de la matière organique : le sol commence à exister, et les plantes exigeantes deviennent possibles.",
+          "options": [
+            {
+              "text": "leurs fientes fabriquent du sol",
+              "correct": true
+            },
+            {
+              "text": "ils chassent les bactéries"
+            },
+            {
+              "text": "ils apportent de l’eau douce"
+            },
+            {
+              "text": "ils abritent les mousses du vent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une population fondée par quelques arrivants contient autant de variété que sa population d’origine.",
+          "explanation": "Faux. Elle n’en emporte qu’une petite partie, et reste longtemps plus vulnérable à une maladie ou à un changement.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les conditions du milieu ne suffisent-elles pas à prévoir un peuplement ?",
+          "explanation": "Parce que chaque espèce arrivée modifie le milieu pour les suivantes : l’ordre d’arrivée fait partie du résultat.",
+          "options": [
+            {
+              "text": "parce que l’ordre d’arrivée compte aussi",
+              "correct": true
+            },
+            {
+              "text": "parce que les conditions sont inconnues"
+            },
+            {
+              "text": "parce que le hasard décide de tout"
+            },
+            {
+              "text": "parce que les espèces se ressemblent"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’années après l’apparition de l’île les premiers oiseaux nicheurs sont-ils arrivés ?",
+          "explanation": "L’île sort de l’eau en 1963, les oiseaux nicheurs s’installent en 1970 : sept ans.",
+          "answer": 7,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

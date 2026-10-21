@@ -1,0 +1,529 @@
+{
+  "chapter": "histoire-sciences-college-comment-une-idee-devient-science",
+  "lessons": [
+    {
+      "id": "hypothese",
+      "title": "Ce qu’est une hypothèse",
+      "subtitle": "Une supposition qui s’expose, et non une opinion qui se défend.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une hypothèse qu’on peut faire tomber",
+          "body": "Choisis les trois montages l’un après l’autre. Chacun est une façon de donner tort à l’expérimentateur, et c’est pour cela qu’ils existent. Une hypothèse qui ne prévoit aucun montage capable de la démentir n’en est pas une.",
+          "figureId": "col-de-cygne",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois mots qu’on confond",
+          "body": "Une observation est ce qu’on constate : le bouillon est trouble.\n\nUne hypothèse est ce qu’on suppose pour l’expliquer : des germes venus de l’air s’y sont installés.\n\nUne conclusion est ce qu’on retient après avoir mis l’hypothèse à l’épreuve.\n\nBeaucoup de désaccords viennent de ce qu’on appelle conclusion une hypothèse qui n’a jamais été testée.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une bonne hypothèse dit ce qu’on devrait voir",
+          "body": "« Il y a des germes dans l’air » est vague.\n\n« Si je filtre l’air, le bouillon restera limpide » est une hypothèse utilisable : elle annonce un résultat précis, et elle sera démentie si le bouillon se trouble quand même.\n\nPlus une hypothèse interdit de choses, plus elle est intéressante — et plus elle risque de tomber.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui ne peut pas être démenti n’est pas scientifique",
+          "body": "« Les événements arrivent parce qu’ils devaient arriver » s’accommode de tout. Rien ne pourrait la contredire, donc rien ne peut la confirmer non plus.\n\nCe n’est pas dire qu’elle est fausse. C’est dire que la science n’a aucune prise dessus, et qu’elle ne relève pas de son domaine.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "La question à poser systématiquement",
+          "body": "Demande : « qu’est-ce qui, si on l’observait, montrerait que c’est faux ? »\n\nSi la réponse vient facilement, l’affirmation est du bon type. Si rien ne vient, elle n’explique rien, même si elle est vraie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Observation, hypothèse ou conclusion ?",
+          "explanation": "On constate le trouble, on suppose les germes, et on conclut après le montage à col de cygne. Confondre les trois est l’erreur la plus répandue.",
+          "categories": [
+            "une observation",
+            "une hypothèse"
+          ],
+          "items": [
+            {
+              "text": "le bouillon est devenu trouble",
+              "category": 0
+            },
+            {
+              "text": "le flacon pèse 240 grammes",
+              "category": 0
+            },
+            {
+              "text": "des germes venus de l’air s’y sont installés",
+              "category": 1
+            },
+            {
+              "text": "la vie apparaît spontanément dans le bouillon",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la meilleure hypothèse ?",
+          "explanation": "Celle qui annonce un résultat précis et vérifiable. Plus une hypothèse interdit de choses, plus elle est utile.",
+          "options": [
+            {
+              "text": "si je filtre l’air, le bouillon restera limpide",
+              "correct": true
+            },
+            {
+              "text": "l’air contient des choses"
+            },
+            {
+              "text": "le bouillon est fragile"
+            },
+            {
+              "text": "tout dépend des conditions"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une affirmation qu’aucune expérience ne pourrait contredire est forcément fausse.",
+          "explanation": "Faux. Elle peut être vraie, mais la science n’a aucune prise dessus : elle ne relève pas de son domaine.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel test le plus rapide pour juger une affirmation ?",
+          "explanation": "Demander ce qui, si on l’observait, montrerait qu’elle est fausse. Si rien ne vient, elle n’explique rien.",
+          "options": [
+            {
+              "text": "demander ce qui la montrerait fausse",
+              "correct": true
+            },
+            {
+              "text": "demander qui l’a dite"
+            },
+            {
+              "text": "chercher un exemple qui la confirme"
+            },
+            {
+              "text": "vérifier qu’elle est cohérente"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Trouver un exemple qui confirme une hypothèse suffit à l’établir.",
+          "explanation": "Faux. Une hypothèse fausse peut avoir des milliers d’exemples favorables : c’est la recherche d’un contre-exemple qui l’éprouve.",
+          "answer": false,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "l-epreuve",
+      "title": "Mettre à l’épreuve",
+      "subtitle": "Une expérience qui ne risque rien ne prouve rien.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le seul cas qui compte",
+          "body": "Parcours les quatre cas et trouve celui qui met la règle en défaut : condition remplie, conclusion fausse. Toute mise à l’épreuve consiste à aller chercher ce cas-là — et à ne pas le trouver.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui fait une expérience décisive",
+          "body": "Elle fait varier une seule chose à la fois, tout le reste restant identique.\n\nElle prévoit à l’avance ce qu’on devrait observer si l’hypothèse est vraie, et ce qu’on observerait si elle est fausse.\n\nElle répond à l’objection de l’adversaire au lieu de la contourner.\n\nElle est refaisable par quelqu’un d’autre, qui n’a pas intérêt au résultat.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Le groupe témoin",
+          "body": "Pour savoir si un traitement agit, il ne suffit pas de constater que les malades traités guérissent : beaucoup auraient guéri sans rien.\n\nOn compare donc deux groupes tirés au sort, l’un traité, l’autre non. Sans ce témoin, on mesure l’évolution naturelle de la maladie et non l’effet du traitement.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "On voit ce qu’on cherche",
+          "body": "Un expérimentateur qui sait quel groupe est traité juge différemment, sans mauvaise foi.\n\nD’où les essais où ni le patient ni le médecin ne savent qui reçoit quoi. Ce n’est pas une méfiance envers les personnes : c’est une précaution contre un biais que personne ne contrôle volontairement.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un résultat isolé ne vaut rien",
+          "body": "Une expérience peut tomber juste par chance, ou être mal menée sans qu’on s’en aperçoive.\n\nC’est la répétition par d’autres équipes, ailleurs, avec d’autres instruments, qui transforme un résultat en fait établi. Un résultat que personne n’a su reproduire finit par être retiré.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert un groupe témoin ?",
+          "explanation": "À mesurer ce qui se serait passé sans traitement. Sans lui, on confond l’effet du traitement et l’évolution naturelle de la maladie.",
+          "options": [
+            {
+              "text": "à savoir ce qui arrive sans traitement",
+              "correct": true
+            },
+            {
+              "text": "à doubler le nombre de patients"
+            },
+            {
+              "text": "à rassurer les malades"
+            },
+            {
+              "text": "à gagner du temps"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui fait une expérience décisive ?",
+          "explanation": "Une seule variable, une prévision écrite d’avance, une réponse à l’objection adverse, et la possibilité d’être refaite par d’autres.",
+          "options": [
+            {
+              "text": "une seule chose varie à la fois",
+              "correct": true
+            },
+            {
+              "text": "elle prévoit ce qu’on devrait observer",
+              "correct": true
+            },
+            {
+              "text": "elle répond à l’objection adverse",
+              "correct": true
+            },
+            {
+              "text": "elle est refaisable par d’autres",
+              "correct": true
+            },
+            {
+              "text": "elle confirme ce qu’on espérait"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si les malades traités guérissent, le traitement est efficace.",
+          "explanation": "Faux. Beaucoup auraient guéri sans rien : seule la comparaison avec un groupe témoin permet de conclure.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi cacher au médecin quel patient reçoit le traitement ?",
+          "explanation": "Parce qu’un expérimentateur qui sait juge différemment, sans mauvaise foi. C’est une précaution contre un biais involontaire.",
+          "options": [
+            {
+              "text": "parce qu’on juge différemment quand on sait",
+              "correct": true
+            },
+            {
+              "text": "parce qu’on se méfie des médecins"
+            },
+            {
+              "text": "pour respecter le secret médical"
+            },
+            {
+              "text": "pour aller plus vite"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une expérience réussie une fois suffit à établir un fait.",
+          "explanation": "Faux. C’est la reproduction par d’autres équipes, ailleurs et avec d’autres instruments, qui transforme un résultat en fait établi.",
+          "answer": false,
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "resistance",
+      "title": "Pourquoi une idée juste met du temps",
+      "subtitle": "Ce ne sont presque jamais la bêtise ni la mauvaise foi.",
+      "kind": "cours",
+      "xp": 25,
+      "minutes": 7,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Combien de temps avant d’être admis",
+          "body": "Fais glisser l’année : la barre orange est le temps passé à se servir d’une idée en refusant de l’admettre. Vingt-quatre siècles pour les irrationnels, six siècles pour le zéro en Europe. Ce ne sont pas des anecdotes.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre raisons, dans l’ordre de fréquence",
+          "body": "Il manque un mécanisme. Semmelweis montre que se laver les mains sauve des vies, sans pouvoir dire pourquoi : on l’écarte.\n\nIl manque un instrument. L’atome attend Perrin et sa mesure, vingt-trois siècles après Démocrite.\n\nL’idée contredit un cadre qui explique bien d’autres choses. Aristote expliquait tant de phénomènes qu’on lui pardonnait ses erreurs.\n\nElle dérange des intérêts ou des convictions. C’est la raison la plus citée, et la moins fréquente.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le refus n’est pas de la bêtise",
+          "body": "Les contradicteurs de Semmelweis n’étaient pas stupides : on leur demandait de croire que leurs mains tuaient, sans explication.\n\nCeux de Darwin non plus : l’hérédité était inconnue, et son mécanisme avait un trou béant que lui-même reconnaissait.\n\nJuger le passé avec ce qu’on sait aujourd’hui est l’erreur la plus courante en histoire des sciences.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La symétrie à ne pas oublier",
+          "body": "Pour chaque idée juste longtemps rejetée, il y a des dizaines d’idées fausses qui ont été rejetées à juste titre.\n\n« On s’est moqué de Galilée » ne prouve donc rien sur celui qui l’invoque aujourd’hui. Être rejeté n’est pas une preuve d’avoir raison.",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Ce qui finit par emporter l’adhésion",
+          "body": "Un mécanisme qui explique, et pas seulement une corrélation constatée.\n\nDes prédictions nouvelles qui tombent juste, et qui auraient pu échouer.\n\nEt la reproduction du résultat par des gens qui n’avaient aucune envie qu’il soit vrai.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque idée à ce qui lui manquait.",
+          "explanation": "Semmelweis n’avait pas de mécanisme, l’atome attendait un instrument de mesure, et Darwin ignorait comment l’hérédité fonctionne.",
+          "pairs": [
+            {
+              "left": "le lavage des mains de Semmelweis",
+              "right": "un mécanisme pour expliquer"
+            },
+            {
+              "left": "l’atome de Démocrite",
+              "right": "un instrument pour mesurer"
+            },
+            {
+              "left": "la sélection naturelle",
+              "right": "une théorie de l’hérédité"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la raison la plus citée, et la moins fréquente ?",
+          "explanation": "Les intérêts et les convictions. Les trois autres raisons — mécanisme, instrument, cadre concurrent — expliquent bien plus de cas.",
+          "options": [
+            {
+              "text": "l’idée dérange des intérêts",
+              "correct": true
+            },
+            {
+              "text": "il manque un mécanisme"
+            },
+            {
+              "text": "il manque un instrument"
+            },
+            {
+              "text": "un autre cadre explique bien"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "« On s’est moqué de Galilée » prouve qu’une idée rejetée aujourd’hui finira par triompher.",
+          "explanation": "Faux. Pour une idée juste longtemps rejetée, il y en a des dizaines de fausses rejetées à juste titre. Être rejeté ne prouve rien.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui finit par emporter l’adhésion ?",
+          "explanation": "Un mécanisme qui explique, des prédictions nouvelles qui auraient pu échouer, et la reproduction par des gens non convaincus d’avance.",
+          "options": [
+            {
+              "text": "un mécanisme qui explique",
+              "correct": true
+            },
+            {
+              "text": "des prédictions qui auraient pu échouer",
+              "correct": true
+            },
+            {
+              "text": "la reproduction par d’autres équipes",
+              "correct": true
+            },
+            {
+              "text": "la notoriété de l’auteur"
+            },
+            {
+              "text": "la répétition de l’affirmation"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les contradicteurs de Semmelweis n’étaient-ils pas stupides ?",
+          "explanation": "On leur demandait d’admettre que leurs mains tuaient, sans aucune explication du comment : les microbes étaient inconnus.",
+          "options": [
+            {
+              "text": "il manquait toute explication du mécanisme",
+              "correct": true
+            },
+            {
+              "text": "ses chiffres étaient faux"
+            },
+            {
+              "text": "il n’avait pas publié"
+            },
+            {
+              "text": "ils n’avaient pas lu son travail"
+            }
+          ],
+          "id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "defi-publier",
+      "title": "Défi : ce que la publication garantit",
+      "subtitle": "Relu par des pairs ne veut pas dire vérifié.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre modèles publiés, trois faux",
+          "body": "Passe d’un modèle à l’autre. Tous ont été publiés, discutés et acceptés par les savants de leur temps. Trois sur quatre sont faux, et la ligne rouge dit ce qui les a mis en défaut.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "texte",
+          "title": "Ce que fait la relecture par les pairs",
+          "body": "Avant d’être publié, un article est envoyé à deux ou trois spécialistes du domaine, qui ne sont pas payés pour cela.\n\nIls vérifient que la méthode est décrite, que les calculs tiennent, que les conclusions ne dépassent pas les résultats, et que le travail antérieur est cité.\n\nIls ne refont pas les expériences. Ils n’ont ni le temps, ni l’argent, ni souvent le matériel.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’elle ne garantit pas",
+          "body": "Elle ne garantit pas que le résultat est vrai. Elle garantit qu’il est présenté de façon vérifiable par d’autres.\n\nDes articles relus par des pairs sont régulièrement retirés, parfois des années après, quand personne n’a réussi à reproduire le résultat.\n\n« C’est publié dans une revue scientifique » est donc un début d’argument, pas une preuve.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’on peut vérifier soi-même",
+          "body": "Est-ce une étude unique, ou une synthèse de plusieurs ?\n\nCombien de personnes ou de mesures ? Trente patients ne valent pas trente mille.\n\nY a-t-il un groupe témoin ?\n\nQui a financé, et cela pouvait-il influencer la question posée ?",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La science n’est pas une liste de vérités",
+          "body": "C’est une façon de poser les questions pour que la réalité puisse répondre non, et un ensemble de garde-fous contre nos propres erreurs.\n\nChacun de ces garde-fous — témoin, double aveugle, relecture, reproduction — a été inventé après une erreur qu’il aurait évitée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que font les relecteurs d’un article scientifique ?",
+          "explanation": "Ils vérifient la méthode, les calculs et la portée des conclusions. Ils ne refont pas les expériences, faute de temps et de moyens.",
+          "options": [
+            {
+              "text": "ils vérifient la méthode, sans refaire les expériences",
+              "correct": true
+            },
+            {
+              "text": "ils refont toutes les expériences"
+            },
+            {
+              "text": "ils votent sur la conclusion"
+            },
+            {
+              "text": "ils corrigent l’orthographe"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un article relu par des pairs est forcément exact.",
+          "explanation": "Faux. La relecture garantit que le résultat est présenté de façon vérifiable, pas qu’il est vrai. Des articles sont retirés chaque année.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que peut-on vérifier soi-même devant une étude ?",
+          "explanation": "Le nombre de participants, la présence d’un témoin, le caractère unique ou répété de l’étude, et son financement.",
+          "options": [
+            {
+              "text": "le nombre de participants",
+              "correct": true
+            },
+            {
+              "text": "la présence d’un groupe témoin",
+              "correct": true
+            },
+            {
+              "text": "si c’est une étude unique ou une synthèse",
+              "correct": true
+            },
+            {
+              "text": "qui l’a financée",
+              "correct": true
+            },
+            {
+              "text": "si la conclusion nous plaît"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Sur les quatre modèles de l’atome présentés dans la figure, combien se sont révélés faux ?",
+          "explanation": "Trois : Démocrite, Thomson et Rutherford ont tous été mis en défaut par une mesure. Chacun avait pourtant été accepté en son temps.",
+          "answer": 3,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où viennent les garde-fous de la science — témoin, double aveugle, reproduction ?",
+          "explanation": "Chacun a été inventé après une erreur qu’il aurait évitée. Ce ne sont pas des principes abstraits mais des leçons payées.",
+          "options": [
+            {
+              "text": "d’erreurs passées qu’ils auraient évitées",
+              "correct": true
+            },
+            {
+              "text": "de la philosophie antique"
+            },
+            {
+              "text": "de règlements administratifs"
+            },
+            {
+              "text": "du hasard"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une étude sur trente patients vaut une étude sur trente mille.",
+          "explanation": "Faux. Plus l’effectif est petit, plus le hasard peut produire un écart qui n’existe pas dans la population entière.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
