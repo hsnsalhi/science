@@ -1,0 +1,611 @@
+{
+  "chapter": "informatique-lycee-internet-et-le-web",
+  "lessons": [
+    {
+      "id": "commuter-des-paquets",
+      "title": "Commuter des paquets",
+      "subtitle": "Découper le message, et laisser chaque morceau trouver son chemin.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un réseau qu’on sabote, et un paquet qui s’adapte",
+          "body": "Touche un câble pour le couper : le paquet en prend un autre et le chemin se recalcule sous tes yeux. Essaie de l’empêcher d’arriver — il faut couper les deux câbles qui partent de « toi » pour y parvenir. Compte combien de coupures le réseau supporte avant de céder.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux façons de transmettre",
+          "body": "La commutation de circuits réserve un chemin pour toute la durée de l’échange. C’est le téléphone d’autrefois : on établissait une liaison, on parlait, on raccrochait.\n\nC’est simple, et c’est fragile : si un maillon tombe, la communication tombe avec lui. Et le chemin reste réservé même pendant les silences.\n\nLa commutation de paquets découpe le message en morceaux, chacun étiqueté de sa destination, et chacun routé indépendamment. Rien n’est réservé.\n\nUn maillon qui tombe ne coupe plus rien : les paquets suivants passent ailleurs, comme la figure le montre à chaque coupure.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi ce choix a été fait",
+          "body": "Paul Baran étudie en 1964, pour l’armée américaine, un réseau qui survive à la destruction d’une partie de ses nœuds.\n\nSa réponse est le maillage plus la commutation de paquets : beaucoup de chemins, et aucune réservation. Donald Davies arrive indépendamment à la même idée en Angleterre, et c’est lui qui lui donne le mot « packet ».\n\nARPANET relie quatre machines en 1969. Le protocole TCP/IP devient obligatoire sur le réseau le 1er janvier 1983, et cette date est la naissance d’Internet au sens strict.\n\nL’origine militaire est souvent citée pour suggérer un dessein caché. Elle explique en réalité une propriété technique précise, et c’est tout : la robustesse au lieu de la simplicité.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la découpe coûte",
+          "body": "Les paquets peuvent arriver dans le désordre, puisqu’ils ont pris des chemins différents.\n\nIls peuvent arriver en double, si un équipement a réémis. Ils peuvent ne pas arriver du tout.\n\nIl faut donc numéroter, réordonner, détecter les manques et redemander. Tout ce travail est fait par TCP, au-dessus d’IP, et c’est pourquoi il y a deux noms dans « TCP/IP ».\n\nLa robustesse du réseau n’est donc pas gratuite : elle est payée par la complexité des machines aux deux bouts. C’est un échange, et il a été fait exprès.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le principe du bout en bout",
+          "body": "Le réseau est volontairement bête : il transporte des paquets et ne comprend pas ce qu’ils contiennent.\n\nToute l’intelligence est aux extrémités, dans les machines des utilisateurs. C’est le principe du bout en bout.\n\nD’où une conséquence qui a tout décidé : on peut inventer un nouvel usage — le Web, la visioconférence, le partage de fichiers — sans demander la permission à personne, et sans changer un seul routeur.\n\nUn réseau intelligent aurait fallu être mis à jour pour chaque nouveauté. Celui-ci n’a jamais eu besoin de l’être.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de câbles faut-il couper, au minimum, pour isoler « toi » du serveur ?",
+          "explanation": "Deux : ce sont les seuls câbles qui partent de « toi ». Partout ailleurs, le paquet trouve un autre chemin.",
+          "answer": 2,
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Commutation de circuits ou de paquets ?",
+          "explanation": "Les circuits réservent un chemin entier ; les paquets sont routés indépendamment, sans réservation.",
+          "categories": [
+            "commutation de circuits",
+            "commutation de paquets"
+          ],
+          "items": [
+            {
+              "text": "un chemin réservé pour toute la durée",
+              "category": 0
+            },
+            {
+              "text": "une coupure interrompt la communication",
+              "category": 0
+            },
+            {
+              "text": "chaque morceau suit sa propre route",
+              "category": 1
+            },
+            {
+              "text": "une coupure ne coupe rien",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle propriété Baran cherchait-il en 1964 ?",
+          "explanation": "Qu’un réseau survive à la destruction d’une partie de ses nœuds. D’où le maillage et l’absence de réservation.",
+          "options": [
+            {
+              "text": "survivre à la destruction d’une partie du réseau",
+              "correct": true
+            },
+            {
+              "text": "aller plus vite"
+            },
+            {
+              "text": "coûter moins cher"
+            },
+            {
+              "text": "chiffrer les communications"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que la découpe en paquets rend possible, et qu’il faut donc corriger ?",
+          "explanation": "Les paquets peuvent arriver dans le désordre, en double, ou pas du tout. C’est le travail de TCP de remettre tout en ordre.",
+          "options": [
+            {
+              "text": "arriver dans le désordre",
+              "correct": true
+            },
+            {
+              "text": "arriver en double",
+              "correct": true
+            },
+            {
+              "text": "ne pas arriver",
+              "correct": true
+            },
+            {
+              "text": "changer de contenu en route"
+            },
+            {
+              "text": "changer de destinataire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le principe du bout en bout ?",
+          "explanation": "Que le réseau transporte sans comprendre, et que toute l’intelligence est dans les machines des extrémités.",
+          "options": [
+            {
+              "text": "le réseau transporte sans comprendre",
+              "correct": true
+            },
+            {
+              "text": "les routeurs analysent le contenu"
+            },
+            {
+              "text": "les deux bouts doivent être identiques"
+            },
+            {
+              "text": "chaque paquet suit le même chemin"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle conséquence pratique ce principe a-t-il eue ?",
+          "explanation": "On peut inventer un nouvel usage sans changer un seul routeur et sans demander la permission à personne.",
+          "options": [
+            {
+              "text": "inventer un usage sans modifier le réseau",
+              "correct": true
+            },
+            {
+              "text": "rendre le réseau plus rapide"
+            },
+            {
+              "text": "protéger la vie privée"
+            },
+            {
+              "text": "réduire le nombre de câbles"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-couches-et-les-adresses",
+      "title": "Les couches, et les adresses",
+      "subtitle": "Chaque couche ignore les autres, et c’est pour cela que tout tient.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux façons d’ordonner les mêmes éléments",
+          "body": "Ajoute plusieurs éléments, puis retire-en : la pile rend le dernier arrivé, la file rend le premier. Un routeur encombré garde les paquets en file : premier arrivé, premier servi. Et l’empilement des couches, lui, se défait dans l’ordre inverse de celui où il a été fait — comme une pile.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Quatre couches, quatre métiers",
+          "body": "La couche liaison transporte entre deux machines voisines, par un câble ou une onde. Ethernet, Wi-Fi. Elle ne connaît que le voisin.\n\nLa couche réseau achemine de bout en bout, de proche en proche. C’est IP, et son adresse identifie une machine dans le monde entier.\n\nLa couche transport remet en ordre et garantit la livraison. C’est TCP, ou UDP quand on préfère la vitesse à la fiabilité — un jeu vidéo ou un appel vidéo.\n\nLa couche application donne un sens : HTTP pour le Web, SMTP pour le courrier. C’est la seule que l’utilisateur voit.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Une adresse IP est un nombre",
+          "body": "Une adresse IPv4 s’écrit en quatre nombres de 0 à 255, séparés par des points. Chacun tient sur un octet, donc l’adresse tient sur 32 bits.\n\nCela fait 2 puissance 32 adresses possibles, soit 4 294 967 296. Un peu plus de quatre milliards, pour huit milliards d’humains et bien plus d’appareils.\n\nElles sont épuisées depuis 2011, et l’on s’en sort par des partages d’adresse qui compliquent tout.\n\nIPv6 porte 128 bits, soit 2 puissance 128 adresses : de quoi en donner des milliards de milliards à chaque grain de sable de la planète. Le déploiement est entamé depuis vingt ans.",
+          "formula": "2 puissance 32 = 4 294 967 296 adresses IPv4",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le DNS, l’annuaire qui rend tout lisible",
+          "body": "Les machines se parlent par adresses numériques, et les humains ne retiennent pas les nombres.\n\nLe système de noms de domaine fait la traduction : on demande un nom, on reçoit une adresse. C’est un annuaire mondial, réparti et hiérarchique.\n\nC’est pourquoi un site peut déménager de serveur sans changer d’adresse visible : seule l’entrée de l’annuaire change.\n\nEt c’est pourquoi une panne de DNS donne l’impression qu’Internet est tombé alors que tout fonctionne : les paquets passent, mais plus personne ne sait où envoyer les siens.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi découper en couches",
+          "body": "Chaque couche ne parle qu’à celle du dessus et celle du dessous, par une interface fixée.\n\nOn peut donc remplacer entièrement une couche sans toucher aux autres : passer du câble au Wi-Fi ne change rien à IP, et passer d’IPv4 à IPv6 ne change rien à HTTP.\n\nCette indépendance est ce qui a permis au réseau de traverser cinquante ans de changements matériels sans être réécrit.\n\nLe même principe sert en programmation, sous le nom de séparation des responsabilités, et pour la même raison : pouvoir changer une partie sans tout comprendre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les quatre couches, de la plus basse à la plus haute.",
+          "explanation": "Liaison entre voisins, réseau de bout en bout, transport qui remet en ordre, application qui donne un sens.",
+          "items": [
+            "la liaison, entre deux machines voisines",
+            "le réseau, de bout en bout, avec IP",
+            "le transport, qui remet en ordre, avec TCP",
+            "l’application, qui donne un sens, avec HTTP"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Sur combien de bits tient une adresse IPv4 ?",
+          "explanation": "32 bits : quatre octets, chacun de 0 à 255. Cela donne un peu plus de quatre milliards d’adresses.",
+          "answer": 32,
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque protocole à sa couche.",
+          "explanation": "Chaque couche a son métier, et ses protocoles. Wi-Fi relie les voisins, IP achemine, TCP fiabilise, HTTP donne un sens.",
+          "pairs": [
+            {
+              "left": "le Wi-Fi",
+              "right": "la liaison"
+            },
+            {
+              "left": "IP",
+              "right": "le réseau"
+            },
+            {
+              "left": "TCP",
+              "right": "le transport"
+            },
+            {
+              "left": "HTTP",
+              "right": "l’application"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le DNS ?",
+          "explanation": "À traduire un nom en adresse numérique. C’est un annuaire mondial, réparti et hiérarchique.",
+          "options": [
+            {
+              "text": "traduire un nom en adresse numérique",
+              "correct": true
+            },
+            {
+              "text": "chiffrer les communications"
+            },
+            {
+              "text": "choisir le chemin des paquets"
+            },
+            {
+              "text": "stocker les pages web"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une panne de DNS empêche les paquets de circuler.",
+          "explanation": "Faux. Les paquets passent très bien : plus personne ne sait à quelle adresse envoyer les siens, ce qui donne la même impression.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi utilise-t-on UDP plutôt que TCP pour un appel vidéo ?",
+          "explanation": "Parce qu’on préfère la vitesse à la fiabilité : une image perdue est préférable à une image en retard.",
+          "options": [
+            {
+              "text": "on préfère la vitesse à la fiabilité",
+              "correct": true
+            },
+            {
+              "text": "UDP est plus sûr"
+            },
+            {
+              "text": "TCP ne transporte pas d’images"
+            },
+            {
+              "text": "UDP chiffre les données"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-web-n-est-pas-internet",
+      "title": "Le Web n’est pas Internet",
+      "subtitle": "Vingt ans d’écart, et deux inventions qu’on confond toujours.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Tout finit en nombres",
+          "body": "Allume les huit interrupteurs et lis le nombre. Une adresse IP, un caractère de page web, une couleur de pixel : tout ce que transporte le réseau est de cette nature. Le Web n’ajoute pas une matière nouvelle — il ajoute une convention de lecture.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois inventions de 1989",
+          "body": "Tim Berners-Lee, au CERN, cherche à relier les documents de milliers de physiciens. Il propose trois choses, et il faut les trois.\n\nL’adresse universelle, aujourd’hui l’URL : un moyen de désigner n’importe quel document, où qu’il soit.\n\nLe protocole HTTP : une façon de demander un document et de le recevoir.\n\nLe langage HTML : une façon de décrire un document contenant des liens vers d’autres. Le premier site est en ligne en 1991, et le CERN place l’ensemble dans le domaine public en 1993.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui distingue les deux",
+          "body": "Internet est un réseau : des câbles, des routeurs, des protocoles pour transporter des paquets. Il existe depuis 1983.\n\nLe Web est un usage de ce réseau : des documents liés entre eux, consultés par un navigateur. Il existe depuis 1991.\n\nLe courrier électronique, plus ancien que le Web, n’en fait pas partie. Une application de messagerie, un jeu en ligne, un appel vidéo non plus.\n\nDire « Internet » pour parler du Web revient à dire « la route » pour parler des camions. La confusion est sans gravité dans la conversation et empêche de comprendre la suite du chapitre.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le domaine public a tout changé",
+          "body": "D’autres systèmes de documents liés existaient, et certains étaient techniquement supérieurs. Ils étaient propriétaires et payants.\n\nLe CERN renonce à tout droit sur le Web en avril 1993. N’importe qui peut écrire un serveur, un navigateur, une page, sans autorisation ni redevance.\n\nLe nombre de sites passe de quelques centaines en 1993 à plusieurs dizaines de milliers en 1995.\n\nCe n’est pas la qualité technique qui a gagné, c’est l’absence de péage. La leçon vaut au-delà de l’informatique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui se passe quand une page s’affiche",
+          "body": "Le navigateur demande au DNS l’adresse du serveur.\n\nIl ouvre une connexion TCP vers cette adresse, et envoie une requête HTTP nommant le document voulu.\n\nLe serveur répond par un code — 200 si tout va bien, 404 si le document n’existe pas — suivi du document.\n\nLe navigateur lit le HTML, découvre qu’il lui manque des images, des styles et des programmes, et redemande chacun. Une seule page en réclame souvent plus de cinquante.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles sont les trois inventions du Web ?",
+          "explanation": "L’adresse universelle, le protocole HTTP et le langage HTML. Il faut les trois, et aucune ne suffit seule.",
+          "options": [
+            {
+              "text": "l’adresse universelle, aujourd’hui l’URL",
+              "correct": true
+            },
+            {
+              "text": "le protocole HTTP",
+              "correct": true
+            },
+            {
+              "text": "le langage HTML",
+              "correct": true
+            },
+            {
+              "text": "le protocole TCP"
+            },
+            {
+              "text": "le système DNS"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cela fait-il partie du Web, ou seulement d’Internet ?",
+          "explanation": "Le Web est un usage du réseau : des documents liés consultés par un navigateur. Le courrier et les jeux en ligne passent par Internet sans être le Web.",
+          "categories": [
+            "le Web",
+            "Internet, mais pas le Web"
+          ],
+          "items": [
+            {
+              "text": "une page consultée au navigateur",
+              "category": 0
+            },
+            {
+              "text": "un lien hypertexte",
+              "category": 0
+            },
+            {
+              "text": "le courrier électronique",
+              "category": 1
+            },
+            {
+              "text": "un appel vidéo",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel code HTTP le serveur renvoie-t-il quand le document n’existe pas ?",
+          "explanation": "404. Un 200 signifie au contraire que tout va bien et que le document suit.",
+          "answer": 404,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le Web a-t-il supplanté des systèmes techniquement supérieurs ?",
+          "explanation": "Parce que le CERN l’a placé dans le domaine public en 1993 : pas d’autorisation, pas de redevance.",
+          "options": [
+            {
+              "text": "il était libre de droits et sans redevance",
+              "correct": true
+            },
+            {
+              "text": "il était plus rapide"
+            },
+            {
+              "text": "il affichait des images"
+            },
+            {
+              "text": "il était soutenu par les États"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre ce qui se passe quand une page s’affiche.",
+          "explanation": "Résoudre le nom, ouvrir la connexion, demander le document, puis redemander tout ce que le HTML réclame.",
+          "items": [
+            "demander au DNS l’adresse du serveur",
+            "ouvrir une connexion TCP vers cette adresse",
+            "envoyer la requête HTTP et recevoir le HTML",
+            "redemander les images, styles et programmes"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Internet et le Web sont nés la même année.",
+          "explanation": "Faux. Internet au sens strict date de 1983, le premier site web de 1991 : huit ans d’écart, et deux inventions différentes.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-suivre-une-requete",
+      "title": "Défi : suivre une requête de bout en bout",
+      "subtitle": "Du clavier à l’écran, et pourquoi cela prend du temps.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compter les sauts, et non les kilomètres",
+          "body": "Regarde le chemin du paquet : trois sauts, donc deux machines intermédiaires. Chacune lit l’adresse, choisit la sortie et renvoie. Coupe un câble et le chemin se rallonge. C’est le nombre de sauts, autant que la distance, qui fait le délai.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La file d’attente d’un routeur encombré",
+          "body": "Ajoute plusieurs éléments sans en retirer, puis retire-les un à un : la file les rend dans l’ordre d’arrivée. Un routeur fait exactement cela, et quand sa file est pleine, il jette. C’est ainsi qu’un réseau encombré perd des paquets.",
+          "figureId": "pile-file",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "D’où vient le délai, en quatre parts",
+          "body": "La propagation : la lumière met du temps. Dans une fibre elle va à environ 200 000 km/s, donc Paris–New York, 5 800 km, prend 29 millisecondes à l’aller, 58 à l’aller-retour.\n\nLe traitement : chaque routeur lit l’adresse et décide. Quelques microsecondes chacun, négligeable.\n\nL’attente en file : variable, de rien à des dizaines de millisecondes selon l’encombrement. C’est la part la plus imprévisible.\n\nLe temps de mise sur le câble : dépend du débit. Sur une ligne lente, un gros paquet met du temps à seulement sortir.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi un site peut sembler lent sans l’être",
+          "body": "Un aller-retour Paris–New York coûte 58 ms. Une page qui réclame cinquante fichiers, demandés un à un, coûte donc cinquante aller-retours, soit près de trois secondes d’attente — sans qu’aucun octet n’ait été lent à transférer.\n\nD’où les techniques qui dominent l’optimisation web : demander plusieurs fichiers en parallèle sur une même connexion, les regrouper, et surtout rapprocher les serveurs.\n\nUn réseau de diffusion place des copies du site sur tous les continents, et l’aller-retour tombe à quelques millisecondes.\n\nLa vitesse d’un site se gagne donc en réduisant le nombre d’aller-retours, bien plus qu’en réduisant le poids des fichiers.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "La commutation de paquets échange la simplicité contre la robustesse, et ce choix date de 1964.\n\nLes couches permettent de changer une partie du réseau sans toucher au reste, et c’est ce qui lui a permis de durer cinquante ans.\n\nLe Web est un usage d’Internet, né huit ans plus tard, et son succès vient d’une décision juridique autant que technique.\n\nEt la lenteur perçue vient du nombre d’aller-retours bien plus que du débit. Un chiffre à retenir : 58 millisecondes pour traverser l’Atlantique et revenir, quoi qu’on fasse.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Paris–New York, 5 800 km de fibre à 200 000 km/s. Combien de millisecondes pour un aller-retour ?",
+          "explanation": "5 800 / 200 000 = 29 ms à l’aller, donc 58 ms à l’aller-retour. Aucune technique ne descend en dessous.",
+          "min": 0,
+          "max": 300,
+          "answer": 58,
+          "tolerance": 6,
+          "unit": "ms",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Une page réclame 50 fichiers demandés un à un. Combien de secondes d’attente, à 58 ms l’aller-retour ?",
+          "explanation": "50 × 58 ms, soit environ 2,9 secondes, sans qu’aucun octet n’ait été lent à transférer.",
+          "min": 0,
+          "max": 20,
+          "answer": 2.9,
+          "tolerance": 0.4,
+          "unit": "s",
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "De quoi le délai d’un paquet est-il fait ?",
+          "explanation": "De la propagation, du traitement dans les routeurs, de l’attente en file, et du temps de mise sur le câble.",
+          "options": [
+            {
+              "text": "la propagation de la lumière",
+              "correct": true
+            },
+            {
+              "text": "le traitement dans chaque routeur",
+              "correct": true
+            },
+            {
+              "text": "l’attente dans les files",
+              "correct": true
+            },
+            {
+              "text": "le temps de mise sur le câble",
+              "correct": true
+            },
+            {
+              "text": "la taille de l’écran"
+            },
+            {
+              "text": "le nombre d’onglets ouverts"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle part du délai est la plus imprévisible ?",
+          "explanation": "L’attente en file : de rien à des dizaines de millisecondes selon l’encombrement. Les autres parts sont stables.",
+          "options": [
+            {
+              "text": "l’attente dans les files des routeurs",
+              "correct": true
+            },
+            {
+              "text": "la propagation"
+            },
+            {
+              "text": "le traitement dans les routeurs"
+            },
+            {
+              "text": "la mise sur le câble"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait un routeur dont la file est pleine ?",
+          "explanation": "Il jette les paquets suivants. C’est ainsi qu’un réseau encombré perd des paquets, et que TCP les redemande.",
+          "options": [
+            {
+              "text": "il jette les paquets suivants",
+              "correct": true
+            },
+            {
+              "text": "il ralentit l’émetteur"
+            },
+            {
+              "text": "il agrandit sa file"
+            },
+            {
+              "text": "il renvoie une erreur HTTP"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment gagne-t-on le plus de vitesse sur un site ?",
+          "explanation": "En réduisant le nombre d’aller-retours, et en rapprochant les serveurs. Bien plus qu’en allégeant les fichiers.",
+          "options": [
+            {
+              "text": "réduire le nombre d’aller-retours",
+              "correct": true
+            },
+            {
+              "text": "réduire le poids des images"
+            },
+            {
+              "text": "augmenter le débit de l’abonnement"
+            },
+            {
+              "text": "changer de navigateur"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

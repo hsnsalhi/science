@@ -1,0 +1,564 @@
+{
+  "chapter": "informatique-lycee-langages-et-programmation",
+  "lessons": [
+    {
+      "id": "variables-conditions-boucles",
+      "title": "Variables, conditions, boucles",
+      "subtitle": "Trois constructions, et tous les programmes du monde.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une boucle, et le nombre de tours qui décide tout",
+          "body": "Règle le nombre de répétitions de 1 à 6 et regarde le tracé. À trois, le chemin reste ouvert ; à quatre, il se referme en carré ; à cinq, le robot repasse sur ses pas. Le bon nombre n’est pas une consigne à retenir, c’est une conséquence qu’on observe.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois constructions, et pourquoi elles suffisent",
+          "body": "La séquence : faire une chose, puis une autre, dans l’ordre.\n\nLa condition : faire une chose ou une autre selon un test. C’est elle qui permet à un programme de se comporter différemment selon les données.\n\nLa boucle : refaire tant qu’une condition tient. C’est elle qui permet à un programme court de faire un travail long.\n\nCes trois constructions suffisent à écrire tout ce qui est calculable : c’est un théorème, démontré par Böhm et Jacopini en 1966. Tout le reste — fonctions, objets, modules — sert à organiser, pas à étendre le pouvoir.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Une variable n’est pas une inconnue",
+          "body": "En mathématiques, x = x + 1 n’a aucune solution. En programmation, c’est une instruction parfaitement claire : prendre la valeur de x, ajouter 1, et ranger le résultat dans x.\n\nLe signe égal n’est donc pas une égalité mais une affectation, et c’est la source de confusion la plus fréquente des débuts.\n\nCertains langages l’écrivent autrement pour cette raison — une flèche vers la gauche, ou deux points suivis du signe égal — et la confusion disparaît.\n\nUne variable est donc une boîte avec un nom, et non une valeur fixée. Ce qu’elle contient à un instant dépend de tout ce qui s’est passé avant.",
+          "formula": "x = x + 1 affecte, et n’affirme rien",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les deux pièges des boucles",
+          "body": "La boucle qui ne s’arrête pas : la condition reste vraie parce qu’on a oublié de faire évoluer ce qu’elle teste. Le programme tourne, et rien ne se passe.\n\nL’erreur d’un cran : on fait un tour de trop ou de moins. Elle vient presque toujours d’une confusion entre « jusqu’à n » et « jusqu’à n exclu », et c’est l’erreur la plus répandue de toute la programmation.\n\nLe remède est mécanique : écrire ce que vaut le compteur au premier et au dernier tour, et le vérifier à la main sur un cas de trois éléments.\n\nTrois éléments, c’est assez pour voir le premier, le dernier et le milieu, et assez peu pour tout vérifier de tête.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le tableau de trace, et ce qu’il économise",
+          "body": "Avant de lancer un programme, on peut écrire un tableau : une colonne par variable, une ligne par tour de boucle.\n\nOn le remplit à la main, sur un petit cas. C’est lent, et c’est la méthode la plus rapide pour comprendre pourquoi un programme ne fait pas ce qu’on croit.\n\nElle a un avantage que l’exécution n’a pas : elle montre ce qu’on attendait en même temps que ce qui se passe, et c’est l’écart entre les deux qui désigne l’erreur.\n\nLes débutants lancent et regardent ; les gens expérimentés tracent d’abord. Ce n’est pas une question de talent, c’est une habitude qui s’acquiert en un après-midi.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "À combien de répétitions le robot referme-t-il son carré ?",
+          "explanation": "À quatre : chaque répétition tourne d’un quart de tour, et quatre quarts font le tour complet.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles constructions suffisent à écrire tout ce qui est calculable ?",
+          "explanation": "La séquence, la condition et la boucle. C’est le théorème de Böhm et Jacopini, de 1966.",
+          "options": [
+            {
+              "text": "la séquence",
+              "correct": true
+            },
+            {
+              "text": "la condition",
+              "correct": true
+            },
+            {
+              "text": "la boucle",
+              "correct": true
+            },
+            {
+              "text": "les objets"
+            },
+            {
+              "text": "les fonctions"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie x = x + 1 dans un programme ?",
+          "explanation": "Prendre la valeur de x, ajouter 1, et ranger le résultat dans x. Le signe égal est une affectation, pas une égalité.",
+          "options": [
+            {
+              "text": "ranger dans x la valeur de x augmentée de 1",
+              "correct": true
+            },
+            {
+              "text": "affirmer que x égale x plus 1"
+            },
+            {
+              "text": "rien, l’équation est impossible"
+            },
+            {
+              "text": "comparer x à x plus 1"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient presque toujours une erreur d’un cran dans une boucle ?",
+          "explanation": "D’une confusion entre « jusqu’à n » et « jusqu’à n exclu ». C’est l’erreur la plus répandue de toute la programmation.",
+          "options": [
+            {
+              "text": "d’une confusion sur l’inclusion de la borne",
+              "correct": true
+            },
+            {
+              "text": "d’une variable mal nommée"
+            },
+            {
+              "text": "d’une erreur de calcul"
+            },
+            {
+              "text": "du langage employé"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi vérifier une boucle sur trois éléments ?",
+          "explanation": "Trois suffisent pour voir le premier, le dernier et le milieu, et c’est assez peu pour tout vérifier de tête.",
+          "options": [
+            {
+              "text": "on y voit le premier, le dernier et le milieu",
+              "correct": true
+            },
+            {
+              "text": "c’est le minimum pour que la boucle tourne"
+            },
+            {
+              "text": "c’est une convention"
+            },
+            {
+              "text": "pour aller plus vite"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un tableau de trace montre, que l’exécution ne montre pas ?",
+          "explanation": "Ce qu’on attendait, en même temps que ce qui se passe. C’est l’écart entre les deux qui désigne l’erreur.",
+          "options": [
+            {
+              "text": "ce qu’on attendait, à côté de ce qui se passe",
+              "correct": true
+            },
+            {
+              "text": "le temps d’exécution"
+            },
+            {
+              "text": "la mémoire utilisée"
+            },
+            {
+              "text": "le nom des variables"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "fonctions-et-pile-d-appels",
+      "title": "Les fonctions, et la pile d’appels",
+      "subtitle": "Nommer un morceau de programme, et ce que cela coûte en mémoire.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le dernier arrivé est le premier servi",
+          "body": "Ajoute plusieurs éléments, puis retire-les un à un : la pile rend le dernier entré. Les appels de fonction s’empilent exactement ainsi — la fonction appelée doit finir avant que l’appelante reprenne. Compare avec la file juste à côté, qui fait l’inverse.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une fonction apporte vraiment",
+          "body": "Elle évite la répétition, et c’est l’argument qu’on donne d’abord. Ce n’est pas le plus important.\n\nElle donne un nom à une intention : « distance entre deux points » se lit, alors que la formule qui la calcule demande à être déchiffrée.\n\nElle isole : ce qui se passe dans une fonction ne dépend que de ses paramètres, et n’affecte que son résultat. On peut donc la vérifier seule.\n\nC’est cette dernière propriété qui compte le plus. Un programme de mille lignes sans fonctions ne se vérifie que d’un bloc, c’est-à-dire jamais.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment les appels s’empilent",
+          "body": "Un programme appelle « moyenne », qui appelle « somme », qui appelle « longueur ».\n\nChaque appel pose sur la pile ce qu’il faut pour reprendre : ses paramètres, ses variables locales, et l’endroit où revenir. Trois appels imbriqués, trois niveaux empilés.\n\nQuand « longueur » rend son résultat, son niveau est retiré, et « somme » reprend exactement où elle en était. La pile garantit qu’on revient toujours au bon endroit.\n\nC’est pour cela qu’une fonction peut s’appeler elle-même sans se mélanger : chaque appel a son propre niveau, avec ses propres variables.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La pile a un fond, et on peut l’atteindre",
+          "body": "Une fonction qui s’appelle elle-même sans condition d’arrêt empile indéfiniment, et la pile finit par être pleine.\n\nLe programme s’arrête alors sur un message de débordement de pile, qui est un bon message : il dit exactement ce qui s’est passé.\n\nUne récursion correcte comporte toujours deux parties : un cas de base, qui ne rappelle rien, et un cas général qui se rappelle sur un problème strictement plus petit.\n\nLa factorielle de 5 vaut 120, et son calcul récursif empile cinq niveaux avant de redescendre. Oublier le cas de base « factorielle de 0 vaut 1 » suffit à tout faire tomber.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Portée des variables, et pourquoi c’est une bonne chose",
+          "body": "Une variable déclarée dans une fonction n’existe que pendant son exécution, et nulle part ailleurs.\n\nCela paraît une limite et c’est une garantie : on peut nommer une variable « i » dans deux fonctions différentes sans qu’elles interfèrent.\n\nL’inverse — des variables accessibles de partout — rend impossible de vérifier une fonction seule, puisque n’importe quelle autre partie du programme peut avoir changé ce qu’elle lit.\n\nD’où la règle : une fonction reçoit par ses paramètres et rend par son résultat. Tout le reste est une dépendance cachée, et les dépendances cachées sont ce qui rend un programme impossible à modifier.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel ordre une pile rend-elle ses éléments ?",
+          "explanation": "Le dernier entré sort le premier. Les appels de fonction s’empilent ainsi : l’appelée finit avant que l’appelante reprenne.",
+          "options": [
+            {
+              "text": "le dernier entré sort le premier",
+              "correct": true
+            },
+            {
+              "text": "le premier entré sort le premier"
+            },
+            {
+              "text": "dans un ordre quelconque"
+            },
+            {
+              "text": "par ordre de taille"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle propriété d’une fonction compte le plus ?",
+          "explanation": "L’isolement : ce qui s’y passe ne dépend que des paramètres et n’affecte que le résultat. C’est ce qui permet de la vérifier seule.",
+          "options": [
+            {
+              "text": "elle s’isole, donc elle se vérifie seule",
+              "correct": true
+            },
+            {
+              "text": "elle évite la répétition"
+            },
+            {
+              "text": "elle raccourcit le programme"
+            },
+            {
+              "text": "elle va plus vite"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que pose un appel de fonction sur la pile ?",
+          "explanation": "Ses paramètres, ses variables locales et l’endroit où revenir. C’est ce qui garantit qu’on reprend au bon point.",
+          "options": [
+            {
+              "text": "ses paramètres",
+              "correct": true
+            },
+            {
+              "text": "ses variables locales",
+              "correct": true
+            },
+            {
+              "text": "l’endroit où revenir",
+              "correct": true
+            },
+            {
+              "text": "le code de la fonction"
+            },
+            {
+              "text": "le résultat final du programme"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut la factorielle de 5 ?",
+          "explanation": "5 × 4 × 3 × 2 × 1 = 120. Son calcul récursif empile cinq niveaux avant de redescendre.",
+          "answer": 120,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que comporte toujours une récursion correcte ?",
+          "explanation": "Un cas de base qui ne rappelle rien, et un cas général qui se rappelle sur un problème strictement plus petit.",
+          "options": [
+            {
+              "text": "un cas de base qui ne rappelle rien",
+              "correct": true
+            },
+            {
+              "text": "un cas général sur un problème plus petit",
+              "correct": true
+            },
+            {
+              "text": "une boucle"
+            },
+            {
+              "text": "une variable globale"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Des variables accessibles de partout facilitent la vérification d’une fonction.",
+          "explanation": "Faux. Elles la rendent impossible : n’importe quelle autre partie du programme peut avoir changé ce que la fonction lit.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "mettre-au-point-un-programme",
+      "title": "Mettre au point un programme",
+      "subtitle": "Chercher une erreur est une démarche, pas une inspiration.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Exécuter un pas à la fois",
+          "body": "Touche les cases du ruban pour changer le nombre, puis avance d’un pas, et encore d’un pas. Tu vois l’état complet à chaque instant : le ruban, la case lue, le nom de l’état. C’est exactement ce que fait un débogueur, et c’est le seul moyen de voir un programme au lieu de l’imaginer.",
+          "figureId": "machine-turing",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, en cinq temps",
+          "body": "Reproduire. Une erreur qu’on ne sait pas provoquer à volonté ne se corrige pas : on corrige au hasard et l’on croit avoir réussi.\n\nRéduire. Trouver le plus petit cas qui échoue encore. Un jeu de trois éléments vaut mieux qu’un fichier de dix mille lignes.\n\nLocaliser. Couper le programme en deux et déterminer dans laquelle des moitiés l’état devient faux. Puis recommencer. Dix coupes suffisent pour mille lignes.\n\nComprendre, puis corriger. Et dans cet ordre : une correction qui fait disparaître le symptôme sans qu’on sache pourquoi n’est pas une correction.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi la réduction marche si bien",
+          "body": "Un programme de tri échoue sur un fichier de dix mille noms. Impossible de lire la sortie.\n\nOn coupe le fichier en deux : la première moitié échoue, la seconde passe. On recoupe la première moitié, et ainsi de suite. En quatorze coupes on arrive à deux ou trois lignes.\n\nIl apparaît alors que l’erreur vient d’un nom contenant une apostrophe. On ne l’aurait jamais vu dans dix mille lignes.\n\nC’est la même dichotomie que la recherche dans une liste triée, appliquée à la recherche d’une erreur. Quatorze étapes pour dix mille, parce que 2 puissance 14 dépasse 10 000.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui fait perdre le plus de temps",
+          "body": "Corriger avant de comprendre. Le symptôme disparaît, la cause reste, et elle ressort ailleurs trois semaines plus tard.\n\nChanger deux choses à la fois. Si ça marche, on ne sait pas laquelle a servi ; si ça ne marche pas, on ne sait pas laquelle a nui.\n\nSupposer au lieu de vérifier. « Cette variable vaut forcément 3 » est une hypothèse, et il faut l’afficher pour en faire un fait.\n\nEt accuser le langage, la machine ou le compilateur. C’est possible, cela arrive, et c’est à peu près une fois sur mille. Les neuf cent quatre-vingt-dix-neuf autres, c’est le programme.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les tests, et pourquoi ils se gardent",
+          "body": "Une fois l’erreur comprise, on écrit un test : le petit cas qui échouait, avec le résultat attendu.\n\nCe test ne sert pas à corriger — c’est déjà fait. Il sert à ce que la même erreur ne revienne pas, et elle revient, parce que quelqu’un modifiera cette partie sans connaître l’histoire.\n\nUn bon jeu de tests contient donc un cas par erreur passée, en plus des cas normaux et des cas limites.\n\nIl se lit comme un journal des erreurs du programme, et c’est la documentation la plus honnête qui existe : elle dit ce qui a déjà raté.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode de mise au point dans l’ordre.",
+          "explanation": "Reproduire, réduire au plus petit cas, localiser par dichotomie, comprendre, puis corriger.",
+          "items": [
+            "reproduire l’erreur à volonté",
+            "réduire au plus petit cas qui échoue",
+            "localiser en coupant le programme en deux",
+            "comprendre, puis corriger"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de coupes en deux pour réduire 10 000 lignes à une seule ?",
+          "explanation": "Quatorze : 2 puissance 14 vaut 16 384, donc dépasse 10 000. C’est la même dichotomie que la recherche dans une liste triée.",
+          "answer": 14,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne faut-il pas corriger avant de comprendre ?",
+          "explanation": "Parce que le symptôme disparaît, la cause reste, et elle ressort ailleurs plus tard.",
+          "options": [
+            {
+              "text": "la cause reste et ressort ailleurs",
+              "correct": true
+            },
+            {
+              "text": "cela prend plus de temps"
+            },
+            {
+              "text": "le programme ralentit"
+            },
+            {
+              "text": "ce n’est pas grave de corriger d’abord"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On peut changer deux choses à la fois pour aller plus vite.",
+          "explanation": "Faux. Si ça marche on ne sait pas laquelle a servi, et si ça rate on ne sait pas laquelle a nui.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert un test écrit après avoir corrigé une erreur ?",
+          "explanation": "À ce que la même erreur ne revienne pas — et elle revient, parce que quelqu’un modifiera cette partie sans connaître l’histoire.",
+          "options": [
+            {
+              "text": "empêcher l’erreur de revenir plus tard",
+              "correct": true
+            },
+            {
+              "text": "corriger l’erreur"
+            },
+            {
+              "text": "accélérer le programme"
+            },
+            {
+              "text": "documenter le langage"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de fois sur mille l’erreur vient-elle du langage ou du compilateur ?",
+          "explanation": "Environ une. Les neuf cent quatre-vingt-dix-neuf autres fois, c’est le programme.",
+          "options": [
+            {
+              "text": "environ une fois sur mille",
+              "correct": true
+            },
+            {
+              "text": "une fois sur dix"
+            },
+            {
+              "text": "jamais"
+            },
+            {
+              "text": "la moitié du temps"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ecrire-et-predire",
+      "title": "Défi : écrire un programme et prédire sa sortie",
+      "subtitle": "Prédire avant de lancer : c’est là qu’on apprend quelque chose.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Prédis le tracé avant de bouger le curseur",
+          "body": "Choisis mentalement une valeur, dessine le chemin que tu attends, puis règle le curseur et compare. Le but n’est pas d’avoir raison : c’est de savoir pourquoi on s’est trompé, quand cela arrive.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Une boucle qui accumule est une suite",
+          "body": "Règle le premier terme et la raison, et bascule entre arithmétique et géométrique. Une boucle qui ajoute à chaque tour construit la première ; une boucle qui multiplie construit la seconde. Les bâtons montrent pourquoi la seconde est dangereuse.",
+          "figureId": "suite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Écrire un programme en partant de la sortie",
+          "body": "D’abord décider ce que le programme doit afficher, sur un exemple précis, écrit à la main. Sans cela on code vers nulle part.\n\nEnsuite nommer les données d’entrée et leurs types. Un nombre, une liste de nombres, un texte ?\n\nEnsuite seulement écrire les étapes, en français, une par ligne. C’est l’algorithme, et il se vérifie avant d’être traduit.\n\nEt traduire en dernier. Les débutants commencent par la traduction, et c’est pourquoi ils écrivent des programmes qui compilent sans faire ce qu’il faut.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux boucles, deux comportements",
+          "body": "Une boucle qui ajoute 3 à chaque tour, en partant de 2, donne 2, 5, 8, 11. Au dixième terme, 29. Au centième, 299. La croissance est régulière, et prévisible de tête.\n\nUne boucle qui multiplie par 3 à chaque tour, en partant de 2, donne 2, 6, 18, 54. Au dixième terme, 39 366. Au vingtième, plus de deux milliards.\n\nLes deux boucles ont la même forme et deux lignes de différence. La seconde dépasse la capacité d’un entier ordinaire avant le quarantième tour.\n\nC’est pour cela qu’une boucle multiplicative mérite toujours un calcul de l’ordre de grandeur avant d’être lancée. La figure le montre en bâtons, et l’un des deux sort de l’écran.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Trois constructions suffisent à tout, et c’est démontré. Le reste sert à organiser.\n\nUne variable est une boîte, et le signe égal une affectation. Deux phrases qui défont la moitié des malentendus de début.\n\nLes appels s’empilent, et la pile a un fond. Une récursion correcte a un cas de base et un problème qui rétrécit.\n\nEt une erreur se cherche par dichotomie, pas par inspiration : quatorze coupes pour dix mille lignes. Ensuite on écrit le test, parce que l’erreur reviendra.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes de l’écriture d’un programme dans l’ordre.",
+          "explanation": "Décider la sortie attendue, nommer les entrées, écrire l’algorithme en français, puis traduire.",
+          "items": [
+            "écrire à la main la sortie attendue sur un exemple",
+            "nommer les entrées et leurs types",
+            "écrire les étapes en français, une par ligne",
+            "traduire dans le langage"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une boucle part de 2 et ajoute 3 à chaque tour. Que vaut le dixième terme ?",
+          "explanation": "2 + 9 × 3 = 29 : neuf ajouts après le premier terme. La croissance est régulière.",
+          "answer": 29,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une boucle part de 2 et multiplie par 3 à chaque tour. Que vaut le dixième terme ?",
+          "explanation": "2 × 3 puissance 9 = 39 366. La même forme de boucle, et un comportement sans comparaison.",
+          "answer": 39366,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mérite toujours une boucle multiplicative avant d’être lancée ?",
+          "explanation": "Un calcul de l’ordre de grandeur : elle dépasse la capacité d’un entier ordinaire bien plus vite qu’on ne croit.",
+          "options": [
+            {
+              "text": "un calcul de l’ordre de grandeur",
+              "correct": true
+            },
+            {
+              "text": "un test de performance"
+            },
+            {
+              "text": "un commentaire explicatif"
+            },
+            {
+              "text": "rien de particulier"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi prédire la sortie avant de lancer ?",
+          "explanation": "Pour savoir pourquoi on s’est trompé quand on se trompe. Lancer sans prédire n’enseigne rien.",
+          "options": [
+            {
+              "text": "pour apprendre de l’écart entre attente et résultat",
+              "correct": true
+            },
+            {
+              "text": "pour gagner du temps machine"
+            },
+            {
+              "text": "parce que c’est la consigne"
+            },
+            {
+              "text": "pour éviter les erreurs de frappe"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un programme qui compile fait ce qu’on voulait.",
+          "explanation": "Faux. Compiler veut dire que la grammaire est correcte, pas que l’intention est respectée. C’est pourquoi l’algorithme se vérifie avant d’être traduit.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

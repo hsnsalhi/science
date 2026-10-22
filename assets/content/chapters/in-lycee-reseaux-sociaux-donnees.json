@@ -1,0 +1,581 @@
+{
+  "chapter": "informatique-lycee-reseaux-sociaux-et-donnees-personnelles",
+  "lessons": [
+    {
+      "id": "un-reseau-est-un-graphe",
+      "title": "Un réseau social est un graphe",
+      "subtitle": "Des sommets, des arêtes, et des propriétés qui se calculent.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des sommets, des liens, et des chemins",
+          "body": "Sept machines, neuf câbles : c’est un graphe. Coupe des liens et regarde le chemin se rallonger, puis disparaître. Un réseau social a la même structure — des personnes à la place des machines, des relations à la place des câbles — et les mêmes questions s’y posent.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Combien de liens possibles",
+          "body": "Dans un groupe de n personnes, chaque paire peut être reliée ou non. Le nombre de paires est n × (n − 1) ÷ 2.\n\nPour une classe de 30 élèves, cela fait 435 liens possibles. Pour un village de 1 000 habitants, 499 500.\n\nLe nombre de liens croît donc comme le carré du nombre de personnes : doubler le groupe quadruple presque les liens possibles.\n\nC’est pourquoi un réseau de quelques milliards de comptes est un objet d’une taille que personne n’examine à la main, et pourquoi tout ce qu’on en sait vient de calculs.",
+          "formula": "liens possibles = n × (n − 1) ÷ 2",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Six poignées de main, puis trois et demie",
+          "body": "Stanley Milgram tente l’expérience en 1967 : il demande à des habitants du Nebraska de faire parvenir une lettre à un inconnu de Boston, en ne la confiant qu’à une connaissance personnelle.\n\nLes lettres arrivées ont demandé en moyenne cinq intermédiaires, d’où l’expression « six degrés de séparation ». L’expérience était fragile : la plupart des lettres n’ont jamais abouti.\n\nEn 2016, Facebook refait la mesure sur ses 1,6 milliard de comptes, où le graphe est entièrement connu. La distance moyenne entre deux comptes est de 3,57.\n\nLe monde n’a pas rétréci : on a cessé d’estimer pour compter. Et un graphe où l’on est à trois pas de tout le monde ne se comporte pas comme un village.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois grandeurs qui se mesurent sur un graphe",
+          "body": "Le degré d’un sommet : combien de liens il porte. Dans la figure, « toi » a deux câbles, et le nœud C en a trois.\n\nLa distance entre deux sommets : le nombre minimal de liens à parcourir. C’est ce que la figure recalcule à chaque coupure.\n\nLa connexité : existe-t-il un chemin entre deux sommets donnés ? Couper les deux câbles de « toi » rend le graphe non connexe, et la figure le dit.\n\nCes trois grandeurs suffisent déjà à beaucoup : repérer les comptes très suivis, mesurer la portée d’un message, détecter des groupes qui ne se parlent pas.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi quelques comptes comptent tant",
+          "body": "Les degrés d’un réseau social ne sont pas répartis de façon égale. La plupart des comptes ont quelques dizaines de relations, et quelques comptes en ont des millions.\n\nCette inégalité n’est pas un accident : elle apparaît spontanément dès qu’un nouveau venu se relie de préférence à ceux qui sont déjà très reliés.\n\nConséquence immédiate : la portée d’un message dépend beaucoup moins de son contenu que de l’identité du premier qui le relaie.\n\nEt conséquence pour la sécurité : quelques nœuds très connectés retirés, et le graphe se fragmente. C’est vrai d’un réseau social comme d’un réseau de câbles.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de liens possibles dans une classe de 30 élèves ?",
+          "explanation": "30 × 29 ÷ 2 = 435. Le nombre de liens croît comme le carré du nombre de personnes.",
+          "answer": 435,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a mesuré Facebook en 2016 sur 1,6 milliard de comptes ?",
+          "explanation": "Une distance moyenne de 3,57 entre deux comptes. Le graphe était entièrement connu, donc comptable plutôt qu’estimable.",
+          "options": [
+            {
+              "text": "une distance moyenne de 3,57",
+              "correct": true
+            },
+            {
+              "text": "une distance moyenne de 6"
+            },
+            {
+              "text": "que le graphe n’est pas connexe"
+            },
+            {
+              "text": "que tous les comptes ont le même degré"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à ce qu’elle mesure.",
+          "explanation": "Le degré compte les liens d’un sommet, la distance compte les liens d’un chemin minimal, la connexité dit s’il existe un chemin.",
+          "pairs": [
+            {
+              "left": "le degré",
+              "right": "combien de liens porte un sommet"
+            },
+            {
+              "left": "la distance",
+              "right": "combien de liens séparent deux sommets"
+            },
+            {
+              "left": "la connexité",
+              "right": "existe-t-il un chemin"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Dans un réseau social, les comptes ont à peu près tous le même nombre de relations.",
+          "explanation": "Faux. La plupart en ont quelques dizaines, quelques-uns en ont des millions. L’inégalité apparaît spontanément.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépend surtout la portée d’un message ?",
+          "explanation": "De l’identité du premier qui le relaie, bien plus que de son contenu. C’est une conséquence de l’inégalité des degrés.",
+          "options": [
+            {
+              "text": "de qui le relaie en premier",
+              "correct": true
+            },
+            {
+              "text": "de la qualité de son contenu"
+            },
+            {
+              "text": "de l’heure de publication"
+            },
+            {
+              "text": "de sa longueur"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de liens possibles dans un village de 1 000 habitants ?",
+          "explanation": "1 000 × 999 ÷ 2 = 499 500. Doubler le groupe quadruple presque les liens possibles.",
+          "answer": 499500,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-ca-va-si-vite",
+      "title": "Pourquoi une information va si vite",
+      "subtitle": "Trois partages chacun, et le compte devient vite impossible à suivre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La courbe qui monte le plus vite",
+          "body": "Pousse le curseur de 2 à 70 et regarde la courbe rouge, celle de 2 puissance n. À vingt, elle donne une milliseconde ; à soixante, des dizaines d’années ; à soixante-dix, des dizaines de milliers d’années. L’échelle verticale est logarithmique, sinon quatre courbes sur cinq seraient collées à l’axe.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul du partage en chaîne",
+          "body": "Supposons que chaque personne qui reçoit un message le partage à trois autres, et que personne ne le reçoive deux fois.\n\nAu premier tour, 3 personnes. Au deuxième, 9. Au troisième, 27. Au dixième, 3 puissance 10, soit 59 049.\n\nAu quinzième tour, plus de quatorze millions. Le nombre de tours a augmenté de cinquante pour-cent, et le nombre de personnes de deux cent quarante fois.\n\nCette croissance est celle que la figure trace en rouge, et c’est la raison mathématique pour laquelle « viral » est le mot juste : une épidémie se propage selon la même loi.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui freine, et pourquoi ça finit par ralentir",
+          "body": "Le calcul suppose que personne ne reçoive deux fois. Or dans un vrai réseau, les amis de mes amis sont souvent mes amis : les chemins se recoupent.\n\nLa propagation s’essouffle donc d’elle-même, et la courbe réelle n’est pas une exponentielle mais une courbe en S : lente, puis brutale, puis plate parce qu’il ne reste personne à atteindre.\n\nCe qui décide du départ est le nombre moyen de partages par personne. Au-dessus de un, ça démarre ; en dessous, ça s’éteint.\n\nCe seuil est exactement celui des épidémies, et il explique pourquoi une petite modification du taux de partage change tout ou rien.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que le classement algorithmique y ajoute",
+          "body": "Un fil chronologique montre les messages dans l’ordre. Un fil classé montre d’abord ceux qui retiendront le plus l’attention.\n\nLe critère optimisé est le temps passé, ou le nombre d’interactions. Pas la véracité, qu’aucun programme ne mesure, ni l’intérêt, qui ne se définit pas.\n\nOr ce qui retient l’attention est ce qui surprend ou indigne, et une information fausse est libre de surprendre autant qu’il faut, là où une information vraie est contrainte par les faits.\n\nLe classement ne favorise donc pas le faux par intention. Il favorise ce qui réagit, et le faux réagit mieux. C’est un effet de la mesure choisie, et il se corrige en changeant la mesure.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les deux questions à se poser devant un partage",
+          "body": "Qui a produit cette information, et comment le sait-il ? Une information sans source est une information sans valeur, quel que soit son air de vérité.\n\nPourquoi est-ce que je la vois, moi, maintenant ? Un contenu affiché a été choisi par un classement, et il est utile de savoir sur quel critère.\n\nCes deux questions prennent dix secondes et arrêtent la plupart des chaînes de partage.\n\nEt elles valent aussi pour les informations qui nous plaisent — c’est même là qu’on oublie le plus de les poser.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Chacun partage à 3 personnes. Combien atteintes au dixième tour ?",
+          "explanation": "3 puissance 10 = 59 049, en supposant que personne ne reçoive deux fois.",
+          "answer": 59049,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "2 puissance 20 opérations à un milliard par seconde : combien de millisecondes ?",
+          "explanation": "2 puissance 20 fait 1 048 576 opérations, soit environ 1 milliseconde. C’est ce que la figure affiche à vingt.",
+          "min": 0,
+          "max": 100,
+          "answer": 1,
+          "tolerance": 0.3,
+          "unit": "ms",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la propagation réelle n’est-elle pas exponentielle jusqu’au bout ?",
+          "explanation": "Parce que les chemins se recoupent : les amis de mes amis sont souvent mes amis. La courbe réelle est en S.",
+          "options": [
+            {
+              "text": "les chemins se recoupent",
+              "correct": true
+            },
+            {
+              "text": "les gens se lassent"
+            },
+            {
+              "text": "le réseau ralentit"
+            },
+            {
+              "text": "les algorithmes l’empêchent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel critère un fil classé optimise-t-il ?",
+          "explanation": "Le temps passé, ou le nombre d’interactions. Pas la véracité, qu’aucun programme ne mesure.",
+          "options": [
+            {
+              "text": "le temps passé et les interactions",
+              "correct": true
+            },
+            {
+              "text": "la véracité des informations"
+            },
+            {
+              "text": "la diversité des sources"
+            },
+            {
+              "text": "l’ordre chronologique"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une information fausse circule-t-elle souvent mieux ?",
+          "explanation": "Parce qu’elle est libre de surprendre autant qu’il faut, là où une information vraie est contrainte par les faits. Le classement favorise ce qui réagit.",
+          "options": [
+            {
+              "text": "elle est libre de surprendre, le vrai est contraint par les faits",
+              "correct": true
+            },
+            {
+              "text": "les algorithmes la favorisent exprès"
+            },
+            {
+              "text": "elle est plus courte"
+            },
+            {
+              "text": "les gens préfèrent mentir"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles questions se poser devant un partage ?",
+          "explanation": "Qui a produit l’information et comment le sait-il, et pourquoi est-ce que je la vois maintenant. Dix secondes, et la plupart des chaînes s’arrêtent.",
+          "options": [
+            {
+              "text": "qui l’a produite, et comment le sait-il",
+              "correct": true
+            },
+            {
+              "text": "pourquoi est-ce que je la vois, moi, maintenant",
+              "correct": true
+            },
+            {
+              "text": "combien de personnes l’ont partagée"
+            },
+            {
+              "text": "est-ce que mes amis sont d’accord"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "collectee-ou-deduite",
+      "title": "Collectée, ou déduite",
+      "subtitle": "Le plus révélateur n’est pas ce qu’on donne : c’est ce qui s’en déduit.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une colonne qui n’a pas été saisie",
+          "body": "Change un prix ou une quantité : la colonne des totaux se refait seule, et le total général avec. Bascule sur « Formules » pour voir d’où elle vient. Cette colonne n’a jamais été saisie par personne, et elle en dit plus que celles qui l’ont été.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois sortes de données, et une seule qu’on choisit",
+          "body": "Les données déclarées : le nom, l’âge, les intérêts cochés. Ce sont les seules qu’on donne consciemment, et les moins nombreuses.\n\nLes données observées : chaque page vue, chaque durée, chaque position du doigt, chaque message commencé puis effacé. Elles sont des milliers de fois plus nombreuses.\n\nLes données déduites : l’âge probable, la situation familiale, les opinions, l’état de santé. Personne ne les a saisies ; elles sont calculées, exactement comme la colonne des totaux du tableur.\n\nLes réglages de confidentialité portent presque toujours sur les premières, parfois sur les deuxièmes, et jamais sur les troisièmes.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’on déduit de presque rien",
+          "body": "La liste des pages aimées suffit à prédire, avec une bonne fiabilité, l’âge, le sexe, l’orientation politique et la situation amoureuse. Une étude de Cambridge l’a montré dès 2013, à partir de quelques dizaines de mentions.\n\nL’heure à laquelle un téléphone cesse de bouger renseigne sur les horaires de sommeil. La régularité de ces horaires est un indicateur de santé, utilisé en recherche médicale.\n\nLes trajets quotidiens d’un téléphone identifient une personne même sans son nom : quatre points connus dans le temps et l’espace suffisent à isoler la quasi-totalité des gens.\n\nIl n’y a donc pas de donnée de localisation anonyme. C’est une contradiction dans les termes, et elle n’est pas une opinion mais un résultat.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi « je n’ai rien à cacher » ne répond pas",
+          "body": "La phrase suppose que le risque serait d’être pris en faute. Ce n’est pas le risque principal.\n\nLe risque est d’être classé : un prêt refusé, une assurance plus chère, une candidature écartée, sur la base d’un profil qu’on ne voit pas et qu’on ne peut pas contester.\n\nC’est aussi d’être influencé : un message politique ajusté à ce qu’on craint n’est pas le même message que celui que reçoit le voisin, et le débat public suppose qu’on parle de la même chose.\n\nEt c’est enfin que les données durent plus longtemps que les régimes politiques qui les ont autorisées. Celui qui les lira dans vingt ans n’est pas celui qui les a collectées.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le réflexe qui change le plus de choses",
+          "body": "Devant un formulaire, se demander quelle donnée est indispensable au service demandé, et ne remplir que celle-là.\n\nLa plupart des champs ne sont pas obligatoires, et un champ laissé vide est la seule donnée qu’on ne pourra ni revendre, ni croiser, ni perdre.\n\nCe réflexe ne demande aucun réglage et aucun outil, et il porte sur les données déclarées — les seules qu’on contrôle vraiment.\n\nIl ne protège ni des données observées ni des données déduites. C’est peu, c’est tout ce qui dépend de nous, et cela mérite d’être fait.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette donnée est-elle déclarée, observée ou déduite ?",
+          "explanation": "On déclare consciemment, on est observé sans y penser, et le reste est calculé. Les réglages ne portent presque jamais sur le calculé.",
+          "categories": [
+            "déclarée",
+            "observée",
+            "déduite"
+          ],
+          "items": [
+            {
+              "text": "la date de naissance saisie",
+              "category": 0
+            },
+            {
+              "text": "la durée passée sur chaque page",
+              "category": 1
+            },
+            {
+              "text": "un message commencé puis effacé",
+              "category": 1
+            },
+            {
+              "text": "l’orientation politique probable",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de points connus dans le temps et l’espace suffisent à isoler presque n’importe qui ?",
+          "explanation": "Quatre. C’est pourquoi il n’existe pas de donnée de localisation anonyme.",
+          "answer": 4,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quelle catégorie les réglages de confidentialité portent-ils le moins ?",
+          "explanation": "Sur les données déduites : elles ne sont pas saisies, elles sont calculées, et aucun réglage ne les propose.",
+          "options": [
+            {
+              "text": "les données déduites",
+              "correct": true
+            },
+            {
+              "text": "les données déclarées"
+            },
+            {
+              "text": "les données observées"
+            },
+            {
+              "text": "elles portent sur les trois également"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le risque principal, plutôt qu’« être pris en faute » ?",
+          "explanation": "Être classé : un prêt refusé, une assurance plus chère, sur la base d’un profil invisible et incontestable.",
+          "options": [
+            {
+              "text": "être classé sur un profil qu’on ne voit pas",
+              "correct": true
+            },
+            {
+              "text": "être reconnu dans la rue"
+            },
+            {
+              "text": "perdre ses mots de passe"
+            },
+            {
+              "text": "recevoir de la publicité"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Des données de localisation peuvent être rendues anonymes.",
+          "explanation": "Faux, en pratique. Quatre points connus suffisent à isoler presque n’importe qui : c’est un résultat, pas une opinion.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la durée de conservation est-elle un problème en soi ?",
+          "explanation": "Parce que les données durent plus longtemps que les régimes qui les ont autorisées. Celui qui les lira dans vingt ans n’est pas celui qui les a collectées.",
+          "options": [
+            {
+              "text": "celui qui les lira plus tard n’est pas celui qui les a collectées",
+              "correct": true
+            },
+            {
+              "text": "elles prennent de la place"
+            },
+            {
+              "text": "elles deviennent fausses"
+            },
+            {
+              "text": "elles coûtent cher à stocker"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-reprendre-la-main",
+      "title": "Défi : reprendre la main sur ses données",
+      "subtitle": "Des droits qui existent, et des gestes qui les exercent.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’on peut demander à voir",
+          "body": "Regarde la table, puis la vue « Formules ». Une demande d’accès à ses données donne quelque chose comme la première vue : les valeurs. Elle donne rarement la seconde : les formules, c’est-à-dire comment le profil a été calculé. Toute la leçon tient dans cet écart.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que les autres publient de vous",
+          "body": "Ton compte est un sommet, mais les liens partent dans les deux sens. Coupe les câbles de « toi » : tu te retires du graphe, et les autres sommets restent reliés entre eux. Une photo de groupe publiée par quelqu’un d’autre est un lien que tu ne contrôles pas.",
+          "figureId": "reseau-paquet",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Cinq droits, depuis mai 2018",
+          "body": "Le règlement général sur la protection des données s’applique en Europe depuis le 25 mai 2018. Il donne cinq droits principaux.\n\nL’accès : obtenir la copie de ses données, gratuitement, dans un délai d’un mois.\n\nLa rectification : faire corriger une donnée fausse. L’effacement : faire supprimer, sauf obligation légale contraire.\n\nL’opposition : refuser un traitement, notamment la publicité ciblée. La portabilité : récupérer ses données dans un format réutilisable, pour partir ailleurs.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’il faut vérifier avant de cocher",
+          "body": "Un consentement n’est valable que s’il est libre, spécifique, éclairé et sans ambiguïté. Les quatre mots comptent.\n\nLibre veut dire qu’un refus ne doit pas priver du service principal. Spécifique veut dire une case par finalité, et non une case pour tout.\n\nÉclairé veut dire qu’on sait ce qu’on accepte, en langage ordinaire. Sans ambiguïté veut dire une action positive : une case précochée n’est pas un consentement.\n\nD’où une conséquence pratique : un bandeau sans bouton « tout refuser » aussi visible que « tout accepter » ne respecte pas le règlement, et l’autorité française a prononcé des amendes à ce sujet.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un réseau social est un graphe, et trois grandeurs calculées — degré, distance, connexité — en disent déjà beaucoup.\n\nUne information se propage comme une épidémie, avec un seuil au-dessus duquel tout part, et un classement qui favorise ce qui réagit plutôt que ce qui est vrai.\n\nLe plus révélateur n’est pas ce qu’on déclare mais ce qui s’en déduit, et les réglages ne portent presque jamais sur le déduit.\n\nEt des droits existent depuis 2018, dont l’accès et l’opposition. Ils ne s’exercent pas tout seuls : il faut écrire, et c’est pour cela que les connaître compte.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque droit à ce qu’il permet.",
+          "explanation": "Cinq droits principaux depuis mai 2018 : accéder, rectifier, effacer, s’opposer, et récupérer ses données pour partir.",
+          "pairs": [
+            {
+              "left": "l’accès",
+              "right": "obtenir la copie de ses données"
+            },
+            {
+              "left": "la rectification",
+              "right": "faire corriger une donnée fausse"
+            },
+            {
+              "left": "l’opposition",
+              "right": "refuser la publicité ciblée"
+            },
+            {
+              "left": "la portabilité",
+              "right": "récupérer ses données pour partir"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En combien de mois, au maximum, une demande d’accès doit-elle recevoir réponse ?",
+          "explanation": "Un mois, et la copie est gratuite. Au-delà, l’organisme est en infraction.",
+          "answer": 1,
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "À quelles conditions un consentement est-il valable ?",
+          "explanation": "Libre, spécifique, éclairé et sans ambiguïté. Une case précochée ou un refus qui prive du service ne valent pas consentement.",
+          "options": [
+            {
+              "text": "libre : un refus ne prive pas du service",
+              "correct": true
+            },
+            {
+              "text": "spécifique : une case par finalité",
+              "correct": true
+            },
+            {
+              "text": "éclairé : en langage ordinaire",
+              "correct": true
+            },
+            {
+              "text": "sans ambiguïté : une action positive",
+              "correct": true
+            },
+            {
+              "text": "donné une fois pour toutes"
+            },
+            {
+              "text": "donné par défaut"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une case précochée vaut consentement si l’on peut la décocher.",
+          "explanation": "Faux. Le consentement doit résulter d’une action positive : une case précochée n’en est pas une.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que donne rarement une demande d’accès à ses données ?",
+          "explanation": "Les formules : comment le profil a été calculé. Elle donne les valeurs, bien plus facilement que la méthode.",
+          "options": [
+            {
+              "text": "la façon dont le profil a été calculé",
+              "correct": true
+            },
+            {
+              "text": "la liste des données déclarées"
+            },
+            {
+              "text": "les pages consultées"
+            },
+            {
+              "text": "la date de création du compte"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que reste-t-il quand on supprime son compte ?",
+          "explanation": "Les liens que les autres ont publiés : une photo de groupe est un lien qu’on ne contrôle pas. Le graphe des autres reste relié.",
+          "options": [
+            {
+              "text": "ce que les autres ont publié de vous",
+              "correct": true
+            },
+            {
+              "text": "rien, tout est effacé"
+            },
+            {
+              "text": "seulement les données déclarées"
+            },
+            {
+              "text": "seulement les messages privés"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

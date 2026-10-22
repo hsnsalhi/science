@@ -1,0 +1,574 @@
+{
+  "chapter": "informatique-lycee-localisation-photo-et-objets-connectes",
+  "lessons": [
+    {
+      "id": "se-situer-sur-la-terre",
+      "title": "Se situer sur la Terre",
+      "subtitle": "Un angle mesuré ici renseigne sur une position là.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un angle d’ombre, et une position sur le globe",
+          "body": "Déplace la ville du nord le long du méridien : l’angle de l’ombre change, la distance au puits change, et le quotient des deux ne bouge pas. C’est la première façon qu’on a eue de se situer : mesurer un angle sur place pour en déduire où l’on est sur la sphère.",
+          "figureId": "eratosthene",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Latitude, longitude, et pourquoi l’une fut si difficile",
+          "body": "La latitude se lit dans le ciel : la hauteur de l’étoile Polaire au-dessus de l’horizon est, en degrés, la latitude du lieu. Un sextant et dix minutes suffisent.\n\nLa longitude ne se lit nulle part : rien dans le ciel ne dit à quelle distance on est d’un méridien choisi. Il faut comparer l’heure locale à l’heure d’un lieu de référence.\n\nIl fallait donc une horloge qui garde l’heure de départ pendant des mois de mer. John Harrison y parvient en 1761 avec un chronomètre dérivant de cinq secondes en quatre-vingt-un jours.\n\nLa longitude est donc un problème d’horloge, et non d’astronomie. Cela reste vrai aujourd’hui, exactement.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’un degré vaut sur le terrain",
+          "body": "Un méridien complet mesure environ 40 000 km, pour 360 degrés.\n\nUn degré de latitude vaut donc environ 111 km. Une minute d’angle, un soixantième de degré, vaut 1,85 km — c’est la définition du mille marin. Une seconde d’angle vaut 31 m.\n\nUne coordonnée donnée au millionième de degré, comme les téléphones les écrivent, prétend donc à une précision de 11 centimètres.\n\nAucun récepteur ordinaire n’atteint cela : la précision réelle est de quelques mètres. Les chiffres au-delà de la cinquième décimale sont du bruit, et les afficher est une façon de mentir.",
+          "formula": "1 degré de latitude ≈ 111 km ; 1 seconde ≈ 31 m",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment le satellite donne la position",
+          "body": "Chaque satellite émet en continu un message disant « je suis tel satellite, à telle position, et il est telle heure ».\n\nLe récepteur compare l’heure reçue à son horloge et en déduit la durée du trajet, donc la distance. Une distance connue à un satellite place le récepteur sur une sphère ; trois sphères se coupent en un point.\n\nMais l’horloge du récepteur est mauvaise, et une erreur d’une microseconde fait 300 mètres. Le quatrième satellite sert à corriger cette horloge : quatre mesures, quatre inconnues — trois de position et une de temps.\n\nLe récepteur n’émet rien. Il écoute. C’est pourquoi un nombre illimité d’appareils peut l’utiliser sans se gêner, et pourquoi le système ne sait pas qui s’en sert.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le détail qui prouve la relativité tous les jours",
+          "body": "Les horloges des satellites avancent plus vite que les nôtres : de 45 microsecondes par jour parce qu’elles sont plus loin de la Terre, et retardent de 7 parce qu’elles vont vite. Reste 38 microsecondes d’avance.\n\nMultipliées par 300 mètres la microseconde, cela ferait une dérive de plus de 11 kilomètres par jour.\n\nLa correction est donc appliquée dans les satellites eux-mêmes, et sans elle le système serait inutilisable en deux heures.\n\nLa relativité générale n’est donc pas une théorie exotique réservée aux trous noirs. Elle est dans chaque téléphone, et on la vérifie chaque fois qu’un itinéraire est juste.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de satellites faut-il, au minimum, pour se localiser ?",
+          "explanation": "Quatre : trois pour la position et un pour corriger l’horloge du récepteur, qui est mauvaise.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Une erreur d’une microseconde sur l’horloge fait combien de mètres d’erreur ?",
+          "explanation": "La lumière parcourt 300 mètres en une microseconde. D’où l’exigence sur les horloges, et le quatrième satellite.",
+          "min": 0,
+          "max": 1000,
+          "answer": 300,
+          "tolerance": 30,
+          "unit": "m",
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de kilomètres vaut un degré de latitude ?",
+          "explanation": "40 000 km divisés par 360 font environ 111 km. Une seconde d’angle vaut donc 31 mètres.",
+          "min": 0,
+          "max": 300,
+          "answer": 111,
+          "tolerance": 8,
+          "unit": "km",
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un récepteur satellitaire émet un signal que le système reçoit.",
+          "explanation": "Faux. Il écoute seulement. C’est pourquoi un nombre illimité d’appareils peut s’en servir, et pourquoi le système ne sait pas qui l’utilise.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la longitude a-t-elle été si difficile à déterminer en mer ?",
+          "explanation": "Parce que rien dans le ciel ne la donne : il faut comparer l’heure locale à celle d’un lieu de référence, donc emporter une horloge fiable.",
+          "options": [
+            {
+              "text": "il fallait une horloge qui garde l’heure de départ",
+              "correct": true
+            },
+            {
+              "text": "les étoiles ne sont pas visibles en mer"
+            },
+            {
+              "text": "les sextants manquaient de précision"
+            },
+            {
+              "text": "les cartes étaient fausses"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Sans correction relativiste, de combien de kilomètres par jour le système dériverait-il ?",
+          "explanation": "38 microsecondes d’avance par jour, multipliées par 300 mètres la microseconde, font plus de 11 kilomètres.",
+          "min": 0,
+          "max": 50,
+          "answer": 11.4,
+          "tolerance": 1.5,
+          "unit": "km",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "une-photo-est-un-tableau",
+      "title": "Une photo est un tableau de nombres",
+      "subtitle": "Trois nombres par point, et tout le reste en découle.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un octet par couleur primaire",
+          "body": "Allume les huit interrupteurs : de 0 à 255. C’est exactement l’étendue d’une composante de couleur. Mets tout à 255 sur les trois canaux et l’on obtient du blanc ; tout à 0 et l’on obtient du noir. Tous les gris sont entre les deux.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le poids d’une image, calculé",
+          "body": "Une image est une grille de points. Chaque point porte trois nombres de 0 à 255 : rouge, vert, bleu. Un octet chacun, donc trois octets par point.\n\nUne photo de 12 mégapixels pèse donc 12 millions fois 3 octets, soit 36 mégaoctets brute.\n\nLe même fichier en JPEG pèse environ 4 mégaoctets : neuf fois moins. La compression jette ce que l’œil distingue mal, et c’est irréversible.\n\nLe nombre de couleurs possibles est 256 au cube, soit 16 777 216. C’est de là que vient l’expression « seize millions de couleurs », et elle ne décrit rien d’autre que trois octets.",
+          "formula": "12 Mpx × 3 octets = 36 Mo brute",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce qu’une matrice fait à un carré",
+          "body": "Règle les quatre coefficients et regarde le carré unité se déformer. Le déterminant est le facteur par lequel l’aire est multipliée. Faire tourner ou agrandir une image, c’est appliquer cette transformation à la position de chaque point : la même matrice, trois millions de fois.",
+          "figureId": "matrice",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Les traitements, et ce qu’ils font aux nombres",
+          "body": "Éclaircir ajoute une constante à chaque composante, en plafonnant à 255. L’information au-delà du plafond est perdue, et assombrir ensuite ne la récupère pas.\n\nPasser en niveaux de gris remplace les trois composantes par une seule moyenne pondérée — le vert compte plus, parce que l’œil y est plus sensible.\n\nFlouter remplace chaque point par la moyenne de ses voisins. Détecter les contours fait l’inverse : il garde ce qui diffère des voisins.\n\nTourner, agrandir, redresser appliquent une matrice aux coordonnées. Et comme les coordonnées obtenues ne sont pas entières, il faut inventer la couleur des points intermédiaires — ce qui adoucit l’image à chaque opération.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi réenregistrer dégrade",
+          "body": "La compression JPEG jette de l’information. Réouvrir un JPEG et le réenregistrer en jette un peu plus, à chaque fois.\n\nDix passages suffisent à rendre visibles des carrés de huit points de côté, qui sont l’unité de découpe de l’algorithme.\n\nD’où une règle de travail : on garde l’original, on travaille sur une copie, et l’on n’enregistre en JPEG qu’à la dernière étape.\n\nLes formats sans perte — PNG, et les formats bruts des appareils — ne dégradent pas, et pèsent cinq à dix fois plus. Là encore, c’est un échange, et il se décide.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’octets pour un point d’image en couleur sur 8 bits par canal ?",
+          "explanation": "Trois : un par composante, rouge, vert et bleu, chacune de 0 à 255.",
+          "answer": 3,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de mégaoctets pèse une photo de 12 mégapixels, non compressée ?",
+          "explanation": "12 millions de points fois 3 octets font 36 mégaoctets. Le même fichier en JPEG en pèse environ 4.",
+          "min": 0,
+          "max": 200,
+          "answer": 36,
+          "tolerance": 4,
+          "unit": "Mo",
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de couleurs différentes avec trois octets ?",
+          "explanation": "256 au cube, soit 16 777 216. C’est d’où vient l’expression « seize millions de couleurs ».",
+          "answer": 16777216,
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque traitement à ce qu’il fait aux nombres.",
+          "explanation": "Chaque effet est une opération arithmétique sur la grille : ajouter, moyenner les trois canaux, moyenner les voisins, garder ce qui diffère.",
+          "pairs": [
+            {
+              "left": "éclaircir",
+              "right": "ajouter une constante"
+            },
+            {
+              "left": "niveaux de gris",
+              "right": "moyenner les trois canaux"
+            },
+            {
+              "left": "flouter",
+              "right": "moyenner les voisins"
+            },
+            {
+              "left": "détecter les contours",
+              "right": "garder ce qui diffère des voisins"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Assombrir une image trop éclaircie récupère les détails perdus.",
+          "explanation": "Faux. Ce qui a dépassé 255 a été plafonné, donc effacé. Assombrir ramène du gris uniforme, pas du détail.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi réenregistrer un JPEG plusieurs fois le dégrade-t-il ?",
+          "explanation": "Parce que chaque enregistrement jette de l’information. Après dix passages, les carrés de huit points de l’algorithme deviennent visibles.",
+          "options": [
+            {
+              "text": "chaque enregistrement jette de l’information",
+              "correct": true
+            },
+            {
+              "text": "le fichier grossit à chaque fois"
+            },
+            {
+              "text": "les couleurs se décalent au hasard"
+            },
+            {
+              "text": "ce n’est pas le cas"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-qu-une-photo-enregistre",
+      "title": "Ce qu’une photo enregistre, en plus de l’image",
+      "subtitle": "Le fichier en dit plus que la photographie.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les métadonnées, en table",
+          "body": "Regarde la table : des descripteurs à gauche, des valeurs à droite, et des colonnes calculées. Les métadonnées d’une photo ont exactement cette forme, et comportent aussi des champs déduits. La différence est qu’on ne les regarde jamais.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que contient le fichier",
+          "body": "La date et l’heure, à la seconde. Le modèle de l’appareil et son numéro de série, qui identifie l’exemplaire.\n\nLes réglages : ouverture, durée d’exposition, sensibilité, distance de mise au point.\n\nTrès souvent les coordonnées de prise de vue, l’altitude, et parfois le cap. Ces champs sont renseignés par défaut sur la plupart des téléphones.\n\nEt selon les logiciels, le nom du propriétaire, les noms des personnes reconnues, et l’historique des modifications. Rien de cela n’est visible en regardant l’image.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’on a déduit de métadonnées",
+          "body": "Des enquêteurs ont retrouvé des domiciles à partir de photos d’animaux de compagnie publiées en ligne, les coordonnées étant restées dans les fichiers.\n\nUn numéro de série d’appareil permet de relier entre elles des photos publiées sous différents pseudonymes, et donc de relier les comptes.\n\nLes dates à la seconde permettent de reconstituer un emploi du temps complet à partir d’un dossier de vacances.\n\nAucun de ces cas ne demande de compétence rare : les métadonnées se lisent avec un clic droit, et la plupart des gens ignorent qu’elles existent.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que les plateformes font, et ne font pas",
+          "body": "La plupart des réseaux sociaux retirent les coordonnées en publiant, et c’est une bonne nouvelle.\n\nIls les ont lues avant de les retirer, et les conservent de leur côté. L’information n’a pas disparu : elle a changé de propriétaire.\n\nEt l’envoi d’un fichier par message, par courrier électronique ou par clé ne retire rien du tout. C’est le cas le plus fréquent, et le moins connu.\n\nLa seule méthode fiable est de retirer les métadonnées soi-même avant d’envoyer. Tous les systèmes le proposent, dans les propriétés du fichier, et presque personne ne le sait.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La question à se poser avant d’envoyer",
+          "body": "Qu’est-ce que ce fichier dit que je n’ai pas voulu dire ?\n\nPour une photo, la date, le lieu et l’appareil. Pour un document de bureautique, l’auteur, les commentaires supprimés et parfois les versions antérieures du texte.\n\nPour un fichier de tableur, les onglets masqués et les formules qui pointent vers des fichiers internes.\n\nLa règle tient en une phrase : un fichier transporte son histoire, et l’histoire n’est pas ce qu’on voulait envoyer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que contient couramment le fichier d’une photo de téléphone ?",
+          "explanation": "La date à la seconde, le modèle et le numéro de série, les réglages, et très souvent les coordonnées de prise de vue.",
+          "options": [
+            {
+              "text": "la date et l’heure à la seconde",
+              "correct": true
+            },
+            {
+              "text": "le modèle et le numéro de série de l’appareil",
+              "correct": true
+            },
+            {
+              "text": "les coordonnées de prise de vue",
+              "correct": true
+            },
+            {
+              "text": "les réglages d’exposition",
+              "correct": true
+            },
+            {
+              "text": "le nom du photographié"
+            },
+            {
+              "text": "la liste des personnes à qui elle a été envoyée"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le numéro de série de l’appareil, pour qui lit les métadonnées ?",
+          "explanation": "À relier entre elles des photos publiées sous différents pseudonymes, donc à relier les comptes.",
+          "options": [
+            {
+              "text": "relier des photos publiées sous des pseudonymes différents",
+              "correct": true
+            },
+            {
+              "text": "savoir où la photo a été prise"
+            },
+            {
+              "text": "améliorer la qualité de l’image"
+            },
+            {
+              "text": "rien, il est anonyme"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Envoyer une photo par message retire ses métadonnées.",
+          "explanation": "Faux. Un envoi direct ne retire rien. Certains réseaux sociaux les retirent en publiant, après les avoir lues et conservées.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie qu’un réseau social retire les coordonnées en publiant ?",
+          "explanation": "Que l’information n’a pas disparu : elle a changé de propriétaire. Elles ont été lues avant d’être retirées.",
+          "options": [
+            {
+              "text": "elles ont changé de propriétaire, pas disparu",
+              "correct": true
+            },
+            {
+              "text": "elles sont définitivement effacées"
+            },
+            {
+              "text": "elles n’ont jamais existé"
+            },
+            {
+              "text": "elles sont chiffrées"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce fichier transporte-t-il cette information cachée ?",
+          "explanation": "Chaque type de fichier porte son histoire : lieu pour une photo, auteur et commentaires pour un document, onglets masqués pour un tableur.",
+          "categories": [
+            "une photo",
+            "un document de bureautique"
+          ],
+          "items": [
+            {
+              "text": "les coordonnées de prise de vue",
+              "category": 0
+            },
+            {
+              "text": "les réglages d’exposition",
+              "category": 0
+            },
+            {
+              "text": "les commentaires supprimés",
+              "category": 1
+            },
+            {
+              "text": "les versions antérieures du texte",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la seule méthode fiable avant d’envoyer un fichier ?",
+          "explanation": "Retirer les métadonnées soi-même, dans les propriétés du fichier. Tous les systèmes le proposent.",
+          "options": [
+            {
+              "text": "retirer les métadonnées soi-même",
+              "correct": true
+            },
+            {
+              "text": "passer par un réseau social"
+            },
+            {
+              "text": "renommer le fichier"
+            },
+            {
+              "text": "réduire sa taille"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-un-objet-connecte",
+      "title": "Défi : lire un objet connecté",
+      "subtitle": "Un capteur, un programme, un actionneur — et un réseau en plus.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le thermostat, et ce que le réseau y ajoute",
+          "body": "Règle la mesure et le seuil : la décision se prend sur place. Imagine maintenant que le seuil arrive par le réseau, et que la mesure y reparte. L’objet fait la même chose, et trois questions nouvelles se posent : qui décide, qui sait, et que se passe-t-il si le réseau tombe.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre questions à poser à un objet connecté",
+          "body": "Où la décision est-elle prise ? Sur l’objet, ou sur un serveur distant ? C’est la question qui détermine toutes les autres.\n\nQue part-il sur le réseau, et à quelle fréquence ? Une mesure par minute suffit à reconstituer des habitudes de vie.\n\nQue se passe-t-il quand le réseau tombe ? Une serrure connectée qui ne s’ouvre plus est un défaut de conception, pas une panne.\n\nEt que se passe-t-il quand le fabricant disparaît ? Des milliers d’objets ont cessé de fonctionner le jour où leur serveur a été éteint, bien qu’ils fussent intacts.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’une mesure par minute raconte",
+          "body": "Un compteur électrique communicant relève la consommation à intervalles courts.\n\nLa courbe suffit à dire quand les habitants se lèvent, quand ils partent, quand ils rentrent, s’ils reçoivent, et quand ils sont en vacances. Chaque appareil a une signature de consommation reconnaissable.\n\nRien dans ces données ne ressemble à une information personnelle : ce sont des watts. Et l’on y lit un emploi du temps.\n\nC’est l’illustration exacte de la leçon sur les données déduites : la sensibilité d’une donnée ne se voit pas dans la donnée, elle apparaît au croisement.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les objets connectés et la sécurité",
+          "body": "Beaucoup d’objets vendus sont livrés avec le même mot de passe par défaut, imprimé dans leur notice, et jamais changé par l’acheteur.\n\nEn 2016, un programme qui essayait soixante mots de passe courants a pris le contrôle de centaines de milliers de caméras et d’enregistreurs, et s’en est servi pour rendre inaccessibles de grands services du Web.\n\nLes propriétaires n’ont rien remarqué : leurs caméras fonctionnaient normalement.\n\nUn objet connecté n’est donc pas seulement un risque pour son propriétaire. C’est un ordinateur relié au monde, et il participe à ce que le monde subit.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Se localiser est un problème d’horloge, hier en mer et aujourd’hui par satellite, et la relativité y est vérifiée chaque jour.\n\nUne image est une grille de nombres, et chaque effet est une opération arithmétique. Le poids se calcule, il ne se devine pas.\n\nUn fichier transporte son histoire, et l’histoire n’est pas ce qu’on voulait envoyer.\n\nEt un objet connecté se juge à quatre questions, dont la dernière est rarement posée à l’achat : que se passe-t-il quand le fabricant disparaît ?",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles questions poser à un objet connecté ?",
+          "explanation": "Où la décision est prise, ce qui part sur le réseau, ce qu’il fait sans réseau, et ce qu’il devient sans son fabricant.",
+          "options": [
+            {
+              "text": "où la décision est-elle prise",
+              "correct": true
+            },
+            {
+              "text": "que part-il sur le réseau, et à quelle fréquence",
+              "correct": true
+            },
+            {
+              "text": "que fait-il si le réseau tombe",
+              "correct": true
+            },
+            {
+              "text": "que devient-il si le fabricant disparaît",
+              "correct": true
+            },
+            {
+              "text": "de quelle couleur est son boîtier"
+            },
+            {
+              "text": "combien pèse-t-il"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que lit-on dans la courbe d’un compteur électrique communicant ?",
+          "explanation": "Un emploi du temps : lever, départ, retour, visites, vacances. Chaque appareil a une signature reconnaissable.",
+          "options": [
+            {
+              "text": "un emploi du temps des habitants",
+              "correct": true
+            },
+            {
+              "text": "uniquement une consommation totale"
+            },
+            {
+              "text": "la marque des appareils, et rien d’autre"
+            },
+            {
+              "text": "rien d’exploitable"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment un programme a-t-il pris le contrôle de centaines de milliers de caméras en 2016 ?",
+          "explanation": "En essayant une soixantaine de mots de passe par défaut, imprimés dans les notices et jamais changés.",
+          "options": [
+            {
+              "text": "en essayant les mots de passe par défaut",
+              "correct": true
+            },
+            {
+              "text": "en cassant le chiffrement"
+            },
+            {
+              "text": "en exploitant une faille du réseau"
+            },
+            {
+              "text": "en achetant les objets"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les propriétaires des caméras compromises ont vu leur matériel cesser de fonctionner.",
+          "explanation": "Faux. Leurs caméras fonctionnaient normalement : un objet compromis ne prévient pas son propriétaire.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une serrure connectée ne s’ouvre plus quand le réseau tombe. Qu’est-ce que c’est ?",
+          "explanation": "Un défaut de conception, et non une panne. La question « que se passe-t-il sans réseau » se pose avant de concevoir.",
+          "options": [
+            {
+              "text": "un défaut de conception",
+              "correct": true
+            },
+            {
+              "text": "une panne normale"
+            },
+            {
+              "text": "une mesure de sécurité"
+            },
+            {
+              "text": "un problème du fournisseur d’accès"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où la sensibilité d’une donnée apparaît-elle ?",
+          "explanation": "Au croisement. Des watts ne ressemblent pas à une information personnelle, et l’on y lit un emploi du temps.",
+          "options": [
+            {
+              "text": "au croisement avec d’autres données",
+              "correct": true
+            },
+            {
+              "text": "dans la donnée elle-même"
+            },
+            {
+              "text": "dans son nom de colonne"
+            },
+            {
+              "text": "dans son unité"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

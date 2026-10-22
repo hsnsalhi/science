@@ -1,0 +1,634 @@
+{
+  "chapter": "informatique-lycee-architectures-systemes-et-reseaux",
+  "lessons": [
+    {
+      "id": "ce-qu-il-y-a-dans-la-machine",
+      "title": "Ce qu’il y a dans la machine",
+      "subtitle": "Quatre organes, un bus, et une idée de 1945.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "En dessous, ce sont des interrupteurs",
+          "body": "Ferme l’interrupteur, passe en série, dévisse une lampe : l’autre s’éteint parce que le courant n’a qu’un chemin. Un processeur est fait de milliards d’interrupteurs de ce genre — des transistors — et rien d’autre. Toute l’informatique est posée là-dessus.",
+          "figureId": "circuit",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’architecture de von Neumann, et sa seule idée forte",
+          "body": "Le rapport sur l’EDVAC, en 1945, décrit quatre organes : une unité de calcul, une unité de commande, une mémoire, et des entrées-sorties. Un bus les relie.\n\nL’idée forte n’est pas la liste : c’est que les instructions soient rangées dans la même mémoire que les données.\n\nAvant cela, une machine se reprogrammait en changeant des câbles. Après, un programme devient une donnée qu’on charge, qu’on copie, qu’on écrit par un autre programme.\n\nLes compilateurs, les systèmes d’exploitation, les virus et les mises à jour découlent tous de cette décision. C’est peut-être la plus conséquente de l’histoire de l’informatique.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que la mémoire contient",
+          "body": "Allume les huit interrupteurs et lis le nombre. Une case de mémoire ressemble exactement à cela. Et rien dans la case ne dit si 72 est le nombre soixante-douze, la lettre H, ou une instruction : c’est le contexte qui décide, pas le contenu.",
+          "figureId": "binaire",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "L’horloge, et ce qu’un cycle laisse faire",
+          "body": "Un processeur à 3 gigahertz exécute trois milliards de cycles par seconde. Un cycle dure donc un tiers de nanoseconde.\n\nPendant ce temps, la lumière parcourt dix centimètres. C’est moins que la largeur d’une carte mère, et c’est pourquoi on ne peut plus monter la fréquence indéfiniment : les signaux n’arrivent pas assez vite d’un bout à l’autre.\n\nD’où le tournant des années 2000 : au lieu d’un cœur plus rapide, plusieurs cœurs à la même vitesse.\n\nEt d’où une conséquence pour qui programme : un programme écrit pour un seul cœur ne va pas plus vite sur une machine à huit cœurs. Il faut l’écrire autrement, et c’est difficile.",
+          "formula": "3 GHz : un cycle dure 0,33 ns, et la lumière y fait 10 cm",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La hiérarchie des mémoires, à l’échelle humaine",
+          "body": "Les temps d’accès sont trop petits pour être sentis. Ramenons-les à une échelle où l’accès à un registre durerait une seconde.\n\nLa mémoire cache de premier niveau durerait alors quelques secondes. La mémoire vive, une minute et demie. Un disque à mémoire flash, une journée entière.\n\nEt un disque à plateaux, quatre mois.\n\nToute l’architecture moderne consiste à éviter les voyages lointains : les caches existent pour que les données soient déjà là quand on les demande. Un programme qui respecte cette logique peut être dix fois plus rapide qu’un programme équivalent qui l’ignore.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’idée forte de l’architecture de von Neumann ?",
+          "explanation": "Que les instructions soient rangées dans la même mémoire que les données. Un programme devient alors une donnée qu’on peut charger, copier, écrire.",
+          "options": [
+            {
+              "text": "les instructions sont dans la même mémoire que les données",
+              "correct": true
+            },
+            {
+              "text": "il y a quatre organes"
+            },
+            {
+              "text": "un bus relie le tout"
+            },
+            {
+              "text": "le calcul est binaire"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que cette décision a rendu possible ?",
+          "explanation": "Les compilateurs, les systèmes d’exploitation, les mises à jour et les virus découlent tous du fait qu’un programme est une donnée.",
+          "options": [
+            {
+              "text": "les compilateurs",
+              "correct": true
+            },
+            {
+              "text": "les systèmes d’exploitation",
+              "correct": true
+            },
+            {
+              "text": "les mises à jour logicielles",
+              "correct": true
+            },
+            {
+              "text": "les virus informatiques",
+              "correct": true
+            },
+            {
+              "text": "les écrans couleur"
+            },
+            {
+              "text": "les réseaux sans fil"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Un processeur à 3 GHz : combien de centimètres la lumière parcourt-elle en un cycle ?",
+          "explanation": "Un cycle dure 0,33 nanoseconde, et la lumière fait 30 cm par nanoseconde : environ 10 cm. Moins que la largeur d’une carte mère.",
+          "min": 0,
+          "max": 100,
+          "answer": 10,
+          "tolerance": 2,
+          "unit": "cm",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi est-on passé à plusieurs cœurs dans les années 2000 ?",
+          "explanation": "Parce qu’on ne pouvait plus monter la fréquence : les signaux n’arrivent pas assez vite d’un bout à l’autre de la puce.",
+          "options": [
+            {
+              "text": "on ne pouvait plus monter la fréquence",
+              "correct": true
+            },
+            {
+              "text": "les programmes le demandaient"
+            },
+            {
+              "text": "c’était moins cher"
+            },
+            {
+              "text": "pour économiser de l’énergie"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces mémoires de la plus rapide à la plus lente.",
+          "explanation": "À l’échelle où un registre durerait une seconde : le cache quelques secondes, la mémoire vive une minute et demie, la flash une journée, le plateau quatre mois.",
+          "items": [
+            "un registre du processeur",
+            "la mémoire cache",
+            "la mémoire vive",
+            "un disque à plateaux"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un programme écrit pour un seul cœur va huit fois plus vite sur une machine à huit cœurs.",
+          "explanation": "Faux. Il ne va pas plus vite du tout. Il faut l’écrire autrement pour employer plusieurs cœurs, et c’est difficile.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-systeme-d-exploitation",
+      "title": "Le système d’exploitation, arbitre de la machine",
+      "subtitle": "Plusieurs programmes, une machine, et personne qui se gêne.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La file des programmes qui attendent leur tour",
+          "body": "Ajoute plusieurs éléments et retire-les : la file les rend dans l’ordre d’arrivée. Un système d’exploitation tient une file de programmes prêts à s’exécuter, et donne la main à chacun quelques millisecondes. La pile voisine, elle, sert aux appels de fonction de chaque programme.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre arbitrages",
+          "body": "Le processeur : donner la main à chaque programme à tour de rôle, par tranches de quelques millisecondes. Mille commutations par seconde donnent l’illusion que tout tourne ensemble.\n\nLa mémoire : donner à chaque programme un espace à lui, et l’empêcher de lire celui des autres. C’est la mémoire virtuelle, et c’est ce qui fait qu’un programme qui plante n’emporte pas les autres.\n\nLes fichiers : nommer, ranger, autoriser. Deux programmes qui écrivent le même fichier en même temps doivent être arbitrés.\n\nLes périphériques : un seul programme à la fois peut parler à l’imprimante, et le système tient la file.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que l’isolation empêche vraiment",
+          "body": "Sans mémoire virtuelle, un programme pourrait lire la mémoire d’un autre, donc ses mots de passe, et écrire dedans, donc le détourner.\n\nAvec elle, chaque programme voit un espace qui commence à zéro et lui appartient. Le processeur traduit ces adresses en adresses réelles, et refuse celles qui sortent du territoire accordé.\n\nLa traduction se fait en matériel, à chaque accès, sans quoi elle coûterait trop cher. C’est un exemple remarquable d’exigence logicielle qui a modifié les processeurs.\n\nEt c’est pourquoi un programme malveillant doit d’abord sortir de son espace pour faire des dégâts : tout l’art des attaques consiste à tromper cette frontière.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi une machine devient lente",
+          "body": "Rarement parce que le processeur est saturé. Beaucoup plus souvent parce que la mémoire vive manque.\n\nQuand elle manque, le système déplace sur le disque les pages les moins utilisées. Et comme le disque est des milliers de fois plus lent, chaque accès à une page déplacée coûte une éternité.\n\nLa machine passe alors son temps à déplacer des pages au lieu de calculer, et le phénomène s’auto-entretient. Les anciens l’appelaient l’écroulement.\n\nD’où un diagnostic simple : si le processeur est à vingt pour-cent et que tout rame, ce n’est pas le processeur. Regarder la mémoire disponible avant d’accuser quoi que ce soit.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que le système ne fait pas",
+          "body": "Il n’accélère rien. Il arbitre, et chaque arbitrage coûte un peu de temps.\n\nIl ne rend pas une machine sûre : il met des frontières, et des frontières se franchissent. Une mise à jour de système est presque toujours la réparation d’un franchissement découvert.\n\nEt il ne protège pas d’un programme auquel on a donné les droits. Autoriser une application à tout lire, c’est retirer la frontière soi-même.\n\nLa question à se poser devant une demande de permission est donc toujours la même : cette fonction a-t-elle besoin de cela pour faire ce que j’attends d’elle ?",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’un système d’exploitation arbitre-t-il ?",
+          "explanation": "Le processeur, la mémoire, les fichiers et les périphériques. Quatre ressources, et personne qui se gêne.",
+          "options": [
+            {
+              "text": "le temps de processeur",
+              "correct": true
+            },
+            {
+              "text": "la mémoire",
+              "correct": true
+            },
+            {
+              "text": "les fichiers",
+              "correct": true
+            },
+            {
+              "text": "les périphériques",
+              "correct": true
+            },
+            {
+              "text": "la vitesse du réseau"
+            },
+            {
+              "text": "la luminosité de l’écran"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fait qu’un programme qui plante n’emporte pas les autres ?",
+          "explanation": "La mémoire virtuelle : chaque programme a un espace à lui, et le processeur refuse les accès qui en sortent.",
+          "options": [
+            {
+              "text": "la mémoire virtuelle, qui isole les espaces",
+              "correct": true
+            },
+            {
+              "text": "la file des programmes"
+            },
+            {
+              "text": "la sauvegarde automatique"
+            },
+            {
+              "text": "le nombre de cœurs"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où la traduction des adresses se fait-elle ?",
+          "explanation": "En matériel, à chaque accès : sinon elle coûterait trop cher. C’est une exigence logicielle qui a modifié les processeurs.",
+          "options": [
+            {
+              "text": "en matériel, dans le processeur",
+              "correct": true
+            },
+            {
+              "text": "dans le système, à chaque démarrage"
+            },
+            {
+              "text": "dans le programme lui-même"
+            },
+            {
+              "text": "sur le disque"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Le processeur est à vingt pour-cent et la machine rame. Que regarder ?",
+          "explanation": "La mémoire disponible. Quand elle manque, le système déplace des pages sur le disque, des milliers de fois plus lent.",
+          "options": [
+            {
+              "text": "la mémoire vive disponible",
+              "correct": true
+            },
+            {
+              "text": "la fréquence du processeur"
+            },
+            {
+              "text": "le nombre de fichiers"
+            },
+            {
+              "text": "la vitesse du réseau"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un système d’exploitation accélère les programmes.",
+          "explanation": "Faux. Il arbitre, et chaque arbitrage coûte un peu de temps. Son apport est l’ordre, pas la vitesse.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question se poser devant une demande de permission ?",
+          "explanation": "Cette fonction a-t-elle besoin de cela pour faire ce que j’attends d’elle ? Autoriser, c’est retirer la frontière soi-même.",
+          "options": [
+            {
+              "text": "cette fonction en a-t-elle besoin pour ce que j’attends",
+              "correct": true
+            },
+            {
+              "text": "l’application est-elle connue"
+            },
+            {
+              "text": "combien d’étoiles a-t-elle"
+            },
+            {
+              "text": "est-elle gratuite"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "du-reseau-local-a-internet",
+      "title": "Du réseau local à Internet",
+      "subtitle": "Ce qui reste chez vous, et ce qui sort.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des machines, des liens, et une sortie",
+          "body": "Sept machines et neuf câbles : « toi » d’un côté, « serveur » de l’autre. Coupe des liens et regarde le chemin se recalculer. Le réseau de ta maison a la même structure, en plus petit, et un seul de ses nœuds a le droit de parler au monde extérieur.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que fait une box, en trois métiers",
+          "body": "Elle est commutateur : elle relie entre eux les appareils de la maison, et les paquets qui vont d’un téléphone à une imprimante ne sortent jamais.\n\nElle est routeur : elle sait qu’une adresse qui n’est pas locale doit partir vers le fournisseur d’accès.\n\nElle est traducteur d’adresses : tous les appareils de la maison partagent une seule adresse publique, et elle tient le registre de qui a demandé quoi pour rendre les réponses au bon appareil.\n\nEt elle est serveur de noms et distributeur d’adresses, en plus. Un seul boîtier, cinq métiers : c’est pourquoi une panne de box donne des symptômes très variés.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Reconnaître une adresse locale",
+          "body": "Trois plages sont réservées aux réseaux privés, et ne circulent jamais sur Internet : celles qui commencent par 10, celles qui commencent par 192.168, et une plage intermédiaire autour de 172.\n\nUne machine dont l’adresse commence par 192.168 est donc forcément dans un réseau local, chez vous ou ailleurs.\n\nCela veut dire aussi qu’un appareil de la maison n’est pas joignable depuis l’extérieur, sauf si on l’a explicitement demandé à la box.\n\nC’est une protection réelle, et un effet de bord : elle ne vient pas d’un souci de sécurité mais du manque d’adresses IPv4.",
+          "formula": "10.x.x.x et 192.168.x.x ne sortent jamais",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le sans-fil, et ce qu’il expose",
+          "body": "Un câble se branche. Une onde se capte depuis la rue, et la capter ne laisse aucune trace.\n\nD’où le chiffrement : sans lui, tout ce qui passe est lisible par quiconque écoute. Les protocoles anciens — WEP, et le premier WPA — se cassent en quelques minutes avec un ordinateur ordinaire.\n\nLe nom du réseau n’est pas un secret : il est annoncé en clair, et le masquer ne protège rien. Seul le chiffrement protège.\n\nEt sur un réseau public, même chiffré, le partage est avec tout le monde. La seule protection utilisable est alors au niveau au-dessus : un site en HTTPS reste illisible pour celui qui écoute le réseau.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le réseau local, et ce qu’il ne protège pas",
+          "body": "Tous les appareils d’une maison se parlent librement entre eux. La box arbitre ce qui sort, pas ce qui circule à l’intérieur.\n\nUn objet connecté compromis est donc à l’intérieur de la frontière, avec l’imprimante, les caméras et l’ordinateur de travail.\n\nC’est pour cela que les box récentes proposent un réseau d’invités, séparé du principal : ce n’est pas une politesse, c’est une seconde frontière.\n\nEt c’est le bon endroit pour les objets connectés, qui n’ont aucune raison de pouvoir parler à l’imprimante.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels métiers une box exerce-t-elle ?",
+          "explanation": "Commutateur, routeur, traducteur d’adresses, serveur de noms et distributeur d’adresses. Cinq métiers dans un boîtier.",
+          "options": [
+            {
+              "text": "commutateur entre les appareils de la maison",
+              "correct": true
+            },
+            {
+              "text": "routeur vers le fournisseur d’accès",
+              "correct": true
+            },
+            {
+              "text": "traducteur d’adresses",
+              "correct": true
+            },
+            {
+              "text": "serveur de noms",
+              "correct": true
+            },
+            {
+              "text": "serveur de fichiers"
+            },
+            {
+              "text": "antivirus"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette adresse peut-elle circuler sur Internet ?",
+          "explanation": "Les plages 10 et 192.168 sont réservées aux réseaux privés et ne circulent jamais. Les autres sont publiques.",
+          "categories": [
+            "adresse privée",
+            "adresse publique"
+          ],
+          "items": [
+            {
+              "text": "192.168.1.14",
+              "category": 0
+            },
+            {
+              "text": "10.0.0.3",
+              "category": 0
+            },
+            {
+              "text": "93.184.216.34",
+              "category": 1
+            },
+            {
+              "text": "8.8.8.8",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient le partage d’une seule adresse publique entre tous les appareils ?",
+          "explanation": "Du manque d’adresses IPv4. La protection qui en résulte est un effet de bord, pas une intention.",
+          "options": [
+            {
+              "text": "du manque d’adresses IPv4",
+              "correct": true
+            },
+            {
+              "text": "d’un souci de sécurité"
+            },
+            {
+              "text": "d’une économie de câbles"
+            },
+            {
+              "text": "du protocole DNS"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Masquer le nom d’un réseau sans fil le protège.",
+          "explanation": "Faux. Le nom est annoncé en clair de toute façon, et le masquer ne protège rien. Seul le chiffrement protège.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur un réseau public chiffré, qu’est-ce qui protège encore ?",
+          "explanation": "Le chiffrement de la couche au-dessus : un site en HTTPS reste illisible pour celui qui écoute le réseau.",
+          "options": [
+            {
+              "text": "HTTPS, au niveau au-dessus",
+              "correct": true
+            },
+            {
+              "text": "le mot de passe du réseau"
+            },
+            {
+              "text": "le nom masqué du réseau"
+            },
+            {
+              "text": "rien du tout"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une panne de box donne-t-elle des symptômes si variés ?",
+          "explanation": "Parce qu’un seul boîtier exerce cinq métiers : selon celui qui défaille, le symptôme change du tout au tout.",
+          "options": [
+            {
+              "text": "elle exerce cinq métiers différents",
+              "correct": true
+            },
+            {
+              "text": "elle est mal conçue"
+            },
+            {
+              "text": "elle chauffe"
+            },
+            {
+              "text": "le réseau est encombré"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-diagnostiquer-une-panne",
+      "title": "Défi : diagnostiquer une panne",
+      "subtitle": "Partir du bas, et ne pas sauter d’étage.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un seul maillon suffit à tout arrêter",
+          "body": "Règle la mesure et le seuil : la décision dépend des deux. Maintenant imagine que le capteur soit bloqué sur une valeur. La décision reste cohérente, l’actionneur obéit, et le système se trompe quand même. Diagnostiquer, c’est trouver lequel des maillons ment.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode : du bas vers le haut",
+          "body": "Le câble est-il branché, la carte voit-elle un lien ? Sans cela, rien d’autre n’a de sens.\n\nAi-je une adresse IP, et est-elle plausible ? Une adresse qui commence par 169.254 veut dire qu’aucun distributeur n’a répondu, ce qui est déjà un diagnostic complet.\n\nEst-ce que je joins la box, puis une adresse publique numérique ? Si le numérique passe et pas le nom, c’est le service de noms.\n\nEt seulement alors : est-ce que l’application fonctionne ? Commencer par là, comme tout le monde le fait, fait perdre l’essentiel du temps.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trois symptômes, trois diagnostics",
+          "body": "« Internet ne marche pas, mais la messagerie si. » La messagerie passe donc : le réseau fonctionne. C’est le navigateur, un serveur de noms, ou le site visé.\n\n« Les sites s’ouvrent lentement, puis vite. » Un délai long avant le premier octet, suivi d’un transfert rapide, désigne la résolution de noms, pas le débit.\n\n« Tout marche sauf un seul site. » Rien dans la maison n’est en cause, et le réflexe de redémarrer la box est inutile.\n\nDans les trois cas, l’information décisive est ce qui fonctionne, et non ce qui échoue. On cherche la frontière entre les deux.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi redémarrer marche, et pourquoi c’est insuffisant",
+          "body": "Redémarrer remet tous les états à zéro, et beaucoup de pannes sont des états incohérents. C’est donc une mesure efficace, et il n’y a pas lieu d’en avoir honte.\n\nMais elle efface aussi toute trace de ce qui s’est passé, et la panne reviendra sans qu’on en sache plus.\n\nLa bonne pratique est donc de noter les symptômes exacts avant de redémarrer : l’heure, le message, ce qui marchait encore.\n\nTrois lignes notées valent plus qu’une heure de recherche la fois suivante, et c’est la seule différence entre subir une panne et la comprendre.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une machine, c’est quatre organes et une idée de 1945 : les instructions sont des données, et tout en découle.\n\nLes mémoires se classent par temps d’accès, et l’écart va de une seconde à quatre mois à l’échelle humaine. Un programme rapide est un programme qui évite les voyages lointains.\n\nLe système d’exploitation arbitre quatre ressources et pose des frontières. Il n’accélère rien, et il ne protège pas d’un droit qu’on a accordé.\n\nEt une panne se diagnostique du bas vers le haut, en cherchant la frontière entre ce qui marche et ce qui ne marche pas. C’est ce qui fonctionne qui renseigne.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le diagnostic dans l’ordre, du bas vers le haut.",
+          "explanation": "Lien physique, adresse IP, joindre la box puis une adresse numérique, puis le nom, et l’application en dernier.",
+          "items": [
+            "vérifier le lien physique",
+            "vérifier qu’on a une adresse IP plausible",
+            "joindre la box, puis une adresse publique numérique",
+            "vérifier le nom, puis l’application"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une adresse qui commence par 169.254 : qu’est-ce que cela dit ?",
+          "explanation": "Qu’aucun distributeur d’adresses n’a répondu. C’est déjà un diagnostic complet.",
+          "options": [
+            {
+              "text": "aucun distributeur d’adresses n’a répondu",
+              "correct": true
+            },
+            {
+              "text": "le réseau est public"
+            },
+            {
+              "text": "le pare-feu bloque"
+            },
+            {
+              "text": "l’adresse est normale"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Le numérique passe et pas le nom. Quel est le diagnostic ?",
+          "explanation": "Le service de noms. Les paquets circulent très bien : la traduction nom vers adresse échoue.",
+          "options": [
+            {
+              "text": "le service de noms",
+              "correct": true
+            },
+            {
+              "text": "le câble"
+            },
+            {
+              "text": "le débit de l’abonnement"
+            },
+            {
+              "text": "le navigateur"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle information est la plus décisive dans un diagnostic ?",
+          "explanation": "Ce qui fonctionne, et non ce qui échoue. On cherche la frontière entre les deux.",
+          "options": [
+            {
+              "text": "ce qui fonctionne encore",
+              "correct": true
+            },
+            {
+              "text": "le message d’erreur"
+            },
+            {
+              "text": "l’heure de la panne"
+            },
+            {
+              "text": "la marque du matériel"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Redémarrer est une mauvaise pratique qu’il faut éviter.",
+          "explanation": "Faux. Beaucoup de pannes sont des états incohérents, et redémarrer les efface. Le défaut est d’effacer aussi les traces : il faut noter les symptômes avant.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "« Tout marche sauf un seul site. » Que faut-il ne pas faire ?",
+          "explanation": "Redémarrer la box : rien dans la maison n’est en cause, puisque tout le reste fonctionne.",
+          "options": [
+            {
+              "text": "redémarrer la box",
+              "correct": true
+            },
+            {
+              "text": "essayer un autre navigateur"
+            },
+            {
+              "text": "vérifier l’adresse du site"
+            },
+            {
+              "text": "attendre un peu"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

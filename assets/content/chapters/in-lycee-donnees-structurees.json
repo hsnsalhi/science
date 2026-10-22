@@ -1,0 +1,615 @@
+{
+  "chapter": "informatique-lycee-donnees-structurees-et-traitement",
+  "lessons": [
+    {
+      "id": "donnee-descripteur-table",
+      "title": "Donnée, descripteur, table",
+      "subtitle": "Une table n’est pas un dessin de tableau : c’est une structure.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une table, et une colonne qui se calcule",
+          "body": "Change un prix ou une quantité : la colonne des totaux se refait seule. Bascule sur « Formules » pour voir pourquoi. Une case qui contient une question plutôt qu’un nombre, c’est tout ce qui sépare un tableur d’une table posée sur du papier.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le vocabulaire, et pourquoi il est précis",
+          "body": "Une donnée est une valeur isolée : 2,50.\n\nUn descripteur est le nom de ce qu’on mesure : « prix unitaire ». Sans lui, 2,50 ne veut rien dire.\n\nUn objet, ou enregistrement, regroupe une valeur par descripteur : les cahiers, leur prix, leur quantité. C’est une ligne de la table.\n\nUne table est une collection d’objets partageant les mêmes descripteurs. Cette dernière condition fait tout le travail : c’est elle qui permet de trier, de filtrer et de calculer sans regarder les lignes une par une.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le total général n’est pas une donnée",
+          "body": "Dans la figure, le total d’une ligne vaut prix × quantité, et le total général est la somme des totaux de ligne.\n\nAucun des deux n’a été saisi, et c’est important : si l’on changeait un prix sans refaire les calculs, la table se contredirait elle-même.\n\nLe tableur refait donc la somme à chaque fois, plutôt que de garder le résultat de côté. C’est un peu plus lent, et c’est ce qui garantit qu’une table affichée est une table cohérente.\n\nRègle générale : on ne stocke jamais ce qu’on peut recalculer. Deux copies d’une même information finissent toujours par différer.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les descripteurs qu’on oublie de déclarer",
+          "body": "Une colonne « prix » contient-elle des euros ou des centimes ? Des prix hors taxes ou toutes taxes ?\n\nUne colonne « date » suit-elle le format français ou américain ? Une colonne « distance », des mètres ou des kilomètres ?\n\nCes questions n’ont pas de réponse dans les données elles-mêmes, et aucun programme ne les devinera. Elles appartiennent à la description du jeu, qu’il faut écrire à côté.\n\nLa sonde Mars Climate Orbiter s’est écrasée en 1999 parce qu’un logiciel envoyait des livres-force et l’autre attendait des newtons. Le descripteur manquait, et il valait 125 millions de dollars.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’une bonne table garantit",
+          "body": "Chaque ligne décrit un objet, et un seul. Deux idées dans une ligne rendent tout traitement faux.\n\nChaque colonne contient un seul type de valeur. Une colonne où l’on trouve parfois un nombre et parfois « inconnu » n’est pas triable.\n\nChaque information figure une seule fois. Répéter le nom d’un fournisseur sur trente lignes garantit qu’il sera mal orthographié sur l’une d’elles.\n\nCes trois règles sont les mêmes que celles du modèle relationnel, qu’on verra en bases de données. Elles ne sont pas des exigences d’esthétique : chacune empêche une catégorie d’erreurs.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque mot à ce qu’il désigne.",
+          "explanation": "Une donnée est une valeur, un descripteur son nom, un objet une ligne, une table une collection d’objets aux mêmes descripteurs.",
+          "pairs": [
+            {
+              "left": "une donnée",
+              "right": "la valeur 2,50"
+            },
+            {
+              "left": "un descripteur",
+              "right": "le nom « prix unitaire »"
+            },
+            {
+              "left": "un objet",
+              "right": "une ligne de la table"
+            },
+            {
+              "left": "une table",
+              "right": "des objets aux mêmes descripteurs"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un tableur refait-il la somme à chaque fois ?",
+          "explanation": "Pour qu’une table affichée soit toujours cohérente. Garder le résultat de côté risquerait de le laisser contredire les données.",
+          "options": [
+            {
+              "text": "pour qu’une table affichée soit toujours cohérente",
+              "correct": true
+            },
+            {
+              "text": "parce que c’est plus rapide"
+            },
+            {
+              "text": "pour économiser de la mémoire"
+            },
+            {
+              "text": "c’est un choix arbitraire"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la sonde Mars Climate Orbiter s’est-elle écrasée en 1999 ?",
+          "explanation": "Un logiciel envoyait des livres-force et l’autre attendait des newtons. Le descripteur d’unité manquait.",
+          "options": [
+            {
+              "text": "une unité non déclarée entre deux logiciels",
+              "correct": true
+            },
+            {
+              "text": "une erreur de calcul d’orbite"
+            },
+            {
+              "text": "une panne de moteur"
+            },
+            {
+              "text": "une erreur de date"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que garantit une table bien construite ?",
+          "explanation": "Une ligne par objet, un type par colonne, une information une seule fois. Chaque règle empêche une catégorie d’erreurs.",
+          "options": [
+            {
+              "text": "une ligne décrit un objet, et un seul",
+              "correct": true
+            },
+            {
+              "text": "une colonne contient un seul type de valeur",
+              "correct": true
+            },
+            {
+              "text": "chaque information figure une seule fois",
+              "correct": true
+            },
+            {
+              "text": "les colonnes sont en ordre alphabétique"
+            },
+            {
+              "text": "la table tient sur un écran"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il faut stocker les résultats calculés pour gagner du temps.",
+          "explanation": "Faux, en règle générale. Deux copies d’une même information finissent toujours par différer. On ne stocke pas ce qu’on peut recalculer.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une colonne contient parfois un nombre, parfois le mot « inconnu ». Quel est le problème ?",
+          "explanation": "Elle n’est plus triable : une colonne doit contenir un seul type de valeur.",
+          "options": [
+            {
+              "text": "elle n’est plus triable",
+              "correct": true
+            },
+            {
+              "text": "elle prend plus de place"
+            },
+            {
+              "text": "elle est illisible"
+            },
+            {
+              "text": "il n’y a pas de problème"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "trier-filtrer-regrouper",
+      "title": "Trier, filtrer, regrouper",
+      "subtitle": "Trois opérations, et un coût qui décide de ce qui est faisable.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les trois opérations sur une table minuscule",
+          "body": "Règle les quantités pour qu’un article dépasse les autres, puis demande-toi ce que « trier par total décroissant » donnerait. Sur quatre lignes, l’œil suffit. La leçon dit ce qui change à quatre millions.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chaque opération fait, et ne fait pas",
+          "body": "Filtrer garde les lignes qui vérifient une condition, et jette les autres. Le nombre de colonnes ne change pas.\n\nTrier réordonne les lignes selon une clé. Aucune ligne n’apparaît ni ne disparaît.\n\nRegrouper remplace plusieurs lignes par une seule, portant un résultat agrégé : une somme, une moyenne, un compte. Le nombre de lignes diminue, et l’information des lignes individuelles est perdue.\n\nLa dernière est la seule qui détruise de l’information, et c’est pourquoi l’ordre des opérations compte : regrouper avant de filtrer ne donne pas le même résultat que l’inverse.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que coûte un tri quand la table grossit",
+          "body": "Compare la courbe violette, n log n, et l’orange, n². À dix, elles se touchent ; pousse le curseur et regarde l’écart s’ouvrir. Un bon tri suit la violette, un tri naïf suit l’orange, et c’est la différence entre une seconde et une journée.",
+          "figureId": "complexite",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le coût d’un tri, chiffré",
+          "body": "Un tri naïf compare chaque élément à chaque autre : son coût croît comme n². Un bon tri — par fusion, par exemple — coûte n × log n.\n\nPour un million de lignes, n² fait mille milliards d’opérations, soit environ un quart d’heure à un milliard d’opérations par seconde.\n\nEt n log n en fait vingt millions, soit deux centièmes de seconde. Le rapport est de cinquante mille.\n\nLe même ordinateur, le même jeu de données, le même résultat : seul l’algorithme change. C’est l’argument qui justifie tout le chapitre d’algorithmique.",
+          "formula": "n = 1 000 000 : n² ≈ 10 puissance 12, n log n ≈ 2 × 10 puissance 7",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Trier une fois, chercher mille fois",
+          "body": "Chercher une valeur dans une table non triée oblige à tout parcourir : coût n.\n\nDans une table triée, on coupe en deux à chaque étape : coût log n. Pour un million de lignes, vingt comparaisons au lieu d’un million.\n\nTrier coûte donc n log n une fois, et fait économiser à chaque recherche suivante. À partir de quelques dizaines de recherches, l’opération est rentable.\n\nC’est le raisonnement exact qui fait exister les index dans les bases de données, et c’est le même qui fait ranger un dictionnaire par ordre alphabétique.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette opération change-t-elle le nombre de lignes ?",
+          "explanation": "Filtrer en enlève, regrouper en fusionne, trier n’en change aucune. Seul le regroupement détruit de l’information.",
+          "categories": [
+            "le nombre de lignes change",
+            "il ne change pas"
+          ],
+          "items": [
+            {
+              "text": "filtrer sur une condition",
+              "category": 0
+            },
+            {
+              "text": "regrouper par catégorie",
+              "category": 0
+            },
+            {
+              "text": "trier par ordre croissant",
+              "category": 1
+            },
+            {
+              "text": "renommer une colonne",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle opération détruit de l’information ?",
+          "explanation": "Le regroupement : il remplace plusieurs lignes par une agrégée, et les lignes individuelles sont perdues.",
+          "options": [
+            {
+              "text": "regrouper",
+              "correct": true
+            },
+            {
+              "text": "trier"
+            },
+            {
+              "text": "filtrer"
+            },
+            {
+              "text": "aucune des trois"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Un million de lignes, tri naïf en n² à un milliard d’opérations par seconde. Combien de minutes ?",
+          "explanation": "10 puissance 12 opérations divisées par 10 puissance 9 font mille secondes, soit environ 17 minutes.",
+          "min": 0,
+          "max": 120,
+          "answer": 17,
+          "tolerance": 3,
+          "unit": "min",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et avec un tri en n log n, combien de secondes ?",
+          "explanation": "Environ 2 × 10 puissance 7 opérations, soit deux centièmes de seconde. Le rapport avec le tri naïf est de cinquante mille.",
+          "min": 0,
+          "max": 10,
+          "answer": 0.02,
+          "tolerance": 0.02,
+          "unit": "s",
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons pour chercher dans un million de lignes triées, en coupant en deux à chaque fois ?",
+          "explanation": "Environ 20 : 2 puissance 20 dépasse le million. Contre un million de comparaisons sans tri.",
+          "answer": 20,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand trier d’abord devient-il rentable ?",
+          "explanation": "À partir de quelques dizaines de recherches : le tri coûte une fois, et chaque recherche suivante y gagne.",
+          "options": [
+            {
+              "text": "à partir de quelques dizaines de recherches",
+              "correct": true
+            },
+            {
+              "text": "dès la première recherche"
+            },
+            {
+              "text": "jamais, le tri coûte trop cher"
+            },
+            {
+              "text": "seulement si la table est petite"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-formats-et-leurs-pieges",
+      "title": "Les formats d’échange, et leurs pièges",
+      "subtitle": "Un fichier de données est un texte, et un texte n’est pas sans ambiguïté.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un octet, et ce qu’il peut porter",
+          "body": "Allume les huit interrupteurs et lis le nombre : de 0 à 255. Un octet suffit pour les lettres de l’alphabet latin, et pas pour les accents du monde entier. Toute la question des encodages part de cette limite-là.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le format le plus répandu, et le plus fragile",
+          "body": "Un fichier CSV est un texte : une ligne par objet, des valeurs séparées par un caractère, souvent la virgule ou le point-virgule.\n\nIl est lisible par tout, et c’est son seul vrai avantage. Son défaut est qu’il ne déclare rien : ni les types, ni les unités, ni l’encodage, ni même toujours le séparateur.\n\nPremière source d’erreurs : une valeur qui contient le séparateur. « Dupont, Jean » dans un fichier à virgules fait deux colonnes au lieu d’une, et décale toute la ligne.\n\nOn y répond par des guillemets autour des valeurs, ce qui pose alors la question des guillemets dans les valeurs. Chaque rustine en appelle une autre.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les trois pièges qui coûtent le plus de temps",
+          "body": "L’encodage. Un fichier écrit en UTF-8 et relu en Latin-1 transforme « é » en deux caractères illisibles. Rien dans le fichier ne dit lequel des deux a été employé.\n\nLes dates. 03/04/2026 est le 3 avril en France et le 4 mars aux États-Unis. La norme ISO 8601 écrit 2026-04-03, qui est sans ambiguïté et se trie correctement comme texte.\n\nLes nombres décimaux. 1,5 et 1.5 ne sont pas lus pareil, et « 1,500 » peut valoir mille cinq cents ou un et demi selon le pays.\n\nCes trois pièges n’ont rien d’intellectuel, et ils consomment plus de temps, dans la vie réelle, que tous les algorithmes du programme.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "JSON, et ce qu’il résout",
+          "body": "Le format JSON déclare les types : les guillemets marquent le texte, leur absence les nombres, et les crochets les listes.\n\nIl accepte aussi l’imbrication : une valeur peut être un objet complet, ce qu’une table plate ne permet pas. Une commande peut donc porter sa liste de lignes, au lieu de l’éparpiller dans une seconde table.\n\nSon encodage est fixé : UTF-8. L’ambiguïté la plus coûteuse disparaît par décret.\n\nIl ne résout ni les dates, qui n’y ont pas de type, ni les unités, qui n’en ont nulle part. Le format aide ; il ne dispense pas de décrire le jeu.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le fichier qui voyage, et la note qui l’accompagne",
+          "body": "Un format déclare au mieux des types. Il ne déclare jamais le sens.\n\nUn jeu de données destiné à quelqu’un d’autre voyage donc avec une note : une ligne par colonne, disant ce qu’elle mesure, dans quelle unité, et ce que vaut une case vide.\n\nCette note s’écrit en dix minutes et fait gagner des heures à celui qui reçoit. Elle fait aussi gagner des heures à son auteur six mois plus tard, qui ne se souviendra de rien.\n\nLes jeux publics bien tenus en portent toujours une. Un jeu sans note est un jeu qu’il faut deviner, et deviner est la principale source d’erreurs de ce chapitre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le vrai avantage du format CSV ?",
+          "explanation": "Qu’il est lisible par tout. Il ne déclare en revanche ni types, ni unités, ni encodage.",
+          "options": [
+            {
+              "text": "il est lisible par presque tous les outils",
+              "correct": true
+            },
+            {
+              "text": "il déclare les types"
+            },
+            {
+              "text": "il est compact"
+            },
+            {
+              "text": "il gère les dates"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut 03/04/2026 ?",
+          "explanation": "Le 3 avril en France, le 4 mars aux États-Unis. La norme ISO 8601 écrit 2026-04-03 et lève l’ambiguïté.",
+          "options": [
+            {
+              "text": "cela dépend du pays, et c’est le problème",
+              "correct": true
+            },
+            {
+              "text": "le 3 avril, partout"
+            },
+            {
+              "text": "le 4 mars, partout"
+            },
+            {
+              "text": "la date est invalide"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce piège est-il résolu par JSON, ou non ?",
+          "explanation": "JSON fixe les types et l’encodage. Il ne dit rien des dates, qui n’y ont pas de type, ni des unités, qui n’en ont nulle part.",
+          "categories": [
+            "résolu par JSON",
+            "toujours à décrire soi-même"
+          ],
+          "items": [
+            {
+              "text": "distinguer un nombre d’un texte",
+              "category": 0
+            },
+            {
+              "text": "savoir quel encodage employer",
+              "category": 0
+            },
+            {
+              "text": "savoir si une date est anglaise ou française",
+              "category": 1
+            },
+            {
+              "text": "savoir si une distance est en mètres",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel encodage JSON impose-t-il ?",
+          "explanation": "UTF-8. L’ambiguïté la plus coûteuse disparaît par décret.",
+          "options": [
+            {
+              "text": "UTF-8",
+              "correct": true
+            },
+            {
+              "text": "Latin-1"
+            },
+            {
+              "text": "ASCII seulement"
+            },
+            {
+              "text": "aucun, il est libre"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un fichier CSV indique toujours quel séparateur il emploie.",
+          "explanation": "Faux. Il ne déclare rien, pas même son séparateur : on le devine en regardant, et l’on se trompe parfois.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’apporte l’imbrication de JSON ?",
+          "explanation": "Une valeur peut être un objet complet : une commande porte sa liste de lignes au lieu de l’éparpiller dans une seconde table.",
+          "options": [
+            {
+              "text": "une valeur peut être un objet complet",
+              "correct": true
+            },
+            {
+              "text": "les fichiers sont plus petits"
+            },
+            {
+              "text": "les dates sont typées"
+            },
+            {
+              "text": "le tri est plus rapide"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-traiter-un-jeu-de-donnees",
+      "title": "Défi : traiter un jeu de données",
+      "subtitle": "Cinq étapes, et la première est celle qu’on saute toujours.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La table avant tout traitement",
+          "body": "Mets une quantité à zéro, puis un prix à zéro. Le total s’adapte sans protester. Un jeu réel contient des zéros qui veulent dire « rien » et des zéros qui veulent dire « on ne sait pas », et aucun tableur ne les distingue. C’est le premier travail.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La démarche, en cinq étapes",
+          "body": "Explorer : combien de lignes, combien de colonnes, quelles valeurs extrêmes, combien de cases vides. On ne traite rien avant de savoir cela.\n\nNettoyer : décider ce qu’on fait des manques, des doublons, des valeurs aberrantes. Décider, et écrire la décision.\n\nTransformer : convertir les unités, uniformiser les dates, séparer ou fusionner des colonnes.\n\nAnalyser : filtrer, regrouper, calculer. C’est l’étape qu’on croit être tout le travail, et elle en est le cinquième. Puis communiquer, en disant toujours ce qu’on a jeté.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les valeurs manquantes ne sont pas des zéros",
+          "body": "Une température non relevée n’est pas une température de zéro degré. Un âge inconnu n’est pas un âge de zéro an.\n\nConfondre les deux fausse toutes les moyennes, et dans le sens qu’on ne soupçonne pas : vers le bas, silencieusement, sans qu’aucun calcul ne proteste.\n\nTrois réponses sont possibles, et il faut choisir : écarter les lignes incomplètes, remplacer le manque par une estimation, ou traiter le manque comme une catégorie à part entière.\n\nAucune n’est neutre. Écarter les lignes incomplètes, par exemple, écarte souvent une population particulière — celle qui répond mal aux questionnaires — et biaise le résultat sans laisser de trace.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas où le nettoyage change la conclusion",
+          "body": "Un relevé de températures contient des valeurs à −999, convention fréquente pour « capteur en panne ».\n\nLa moyenne brute sur mille relevés dont dix sont à −999 donne environ 1,9 degré alors que la vraie moyenne est de 12. L’écart est de dix degrés, pour un pour-cent de données invalides.\n\nUn traitement qui n’a pas exploré les valeurs extrêmes publie donc une conclusion fausse, et rien dans le calcul ne l’avertit.\n\nC’est pour cela que l’exploration vient d’abord. Regarder le minimum et le maximum de chaque colonne prend trente secondes et évite ce genre de ridicule.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une table est une structure, et le descripteur fait partie de la donnée. Sans unité déclarée, un nombre ne veut rien dire — et cela a coûté une sonde martienne.\n\nTrier, filtrer, regrouper : trois opérations, dont une seule détruit de l’information, d’où l’importance de leur ordre.\n\nLe coût d’un algorithme décide de ce qui est faisable. Cinquante mille fois plus vite, c’est la différence entre un quart d’heure et un clin d’œil.\n\nEt un traitement honnête commence par explorer et finit par dire ce qu’il a jeté. Les deux étapes sont celles qu’on saute, et ce sont celles qui décident de la validité du résultat.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes d’un traitement dans l’ordre.",
+          "explanation": "Explorer, nettoyer, transformer, analyser, communiquer. L’analyse qu’on croit être tout le travail n’en est que le quatrième temps.",
+          "items": [
+            "explorer : tailles, extrêmes, cases vides",
+            "nettoyer : manques, doublons, aberrations",
+            "transformer : unités, dates, colonnes",
+            "analyser, puis communiquer ce qu’on a jeté"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une température non relevée peut être comptée comme zéro degré.",
+          "explanation": "Faux. Cela fausse toutes les moyennes vers le bas, silencieusement, sans qu’aucun calcul ne proteste.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que peut-on faire d’une valeur manquante ?",
+          "explanation": "Écarter la ligne, estimer la valeur, ou traiter le manque comme une catégorie. Aucune réponse n’est neutre.",
+          "options": [
+            {
+              "text": "écarter la ligne incomplète",
+              "correct": true
+            },
+            {
+              "text": "remplacer par une estimation",
+              "correct": true
+            },
+            {
+              "text": "traiter le manque comme une catégorie",
+              "correct": true
+            },
+            {
+              "text": "la remplacer par zéro"
+            },
+            {
+              "text": "l’ignorer sans le dire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Mille relevés de vraie moyenne 12 degrés, dont dix à −999. Quelle moyenne brute obtient-on ?",
+          "explanation": "990 × 12 moins 10 × 999, divisé par 1 000, soit environ 1,9 degré. Un pour-cent de données invalides déplace la moyenne de dix degrés.",
+          "min": -20,
+          "max": 20,
+          "answer": 1.9,
+          "tolerance": 1,
+          "unit": "°C",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi écarter les lignes incomplètes n’est-il pas neutre ?",
+          "explanation": "Parce que cela écarte souvent une population particulière — celle qui répond mal aux questionnaires — et biaise le résultat sans laisser de trace.",
+          "options": [
+            {
+              "text": "cela écarte souvent une population particulière",
+              "correct": true
+            },
+            {
+              "text": "cela réduit la taille du fichier"
+            },
+            {
+              "text": "cela ralentit le traitement"
+            },
+            {
+              "text": "cela fausse les unités"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel geste de trente secondes évite la plupart des ridicules ?",
+          "explanation": "Regarder le minimum et le maximum de chaque colonne. C’est ce qui révèle les −999 et les zéros douteux.",
+          "options": [
+            {
+              "text": "regarder le minimum et le maximum de chaque colonne",
+              "correct": true
+            },
+            {
+              "text": "compter les lignes"
+            },
+            {
+              "text": "trier la table"
+            },
+            {
+              "text": "convertir en JSON"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

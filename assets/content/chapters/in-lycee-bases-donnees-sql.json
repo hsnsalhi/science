@@ -1,0 +1,633 @@
+{
+  "chapter": "informatique-lycee-bases-de-donnees-et-sql",
+  "lessons": [
+    {
+      "id": "ce-qu-un-tableur-ne-garantit-pas",
+      "title": "Ce qu’un tableur ne garantit pas",
+      "subtitle": "Il affiche tout, et il ne protège rien.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une table, et tout ce qu’on peut y casser",
+          "body": "Change un prix : les totaux suivent, et c’est ce qu’un tableur fait très bien. Imagine maintenant que le nom « Cahiers » apparaisse sur trente lignes, et qu’on l’écrive « Cahier » sur la vingt-huitième. Rien ne proteste, et toutes les sommes par article deviennent fausses.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre choses qu’un tableur laisse faire",
+          "body": "Écrire un texte dans une colonne de nombres. La colonne devient intriable, et aucun avertissement n’apparaît.\n\nRépéter la même information sur de nombreuses lignes. Un jour l’une d’elles sera orthographiée autrement, et les regroupements se trompent.\n\nModifier une ligne sans modifier les autres qui en dépendent. Changer l’adresse d’un fournisseur à un endroit sur trois laisse deux adresses périmées.\n\nTravailler à deux sur le même fichier. Le dernier qui enregistre écrase l’autre, sans que personne le sache.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les trois anomalies, nommées",
+          "body": "L’anomalie de modification : la même information figurant plusieurs fois, la corriger partout devient un travail, et l’oubli est garanti.\n\nL’anomalie d’insertion : on ne peut pas enregistrer un fournisseur tant qu’il n’a pas de commande, puisque son adresse n’habite que dans les lignes de commande.\n\nL’anomalie de suppression : en supprimant la dernière commande d’un fournisseur, on perd son adresse par accident.\n\nCes trois anomalies ont la même cause unique : une information stockée plusieurs fois, ou stockée au mauvais endroit. Les nommer sert à les reconnaître avant qu’elles frappent.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’un système de gestion ajoute",
+          "body": "Les types : une colonne déclarée entière refuse un texte, et le refus arrive au moment de l’écriture, pas six mois plus tard.\n\nLes contraintes : une valeur obligatoire, une valeur unique, une valeur comprise entre deux bornes, une référence qui doit exister ailleurs.\n\nLes transactions : plusieurs modifications qui réussissent ensemble ou échouent ensemble. Un virement débite et crédite, ou ne fait ni l’un ni l’autre.\n\nEt l’accès simultané : cent personnes peuvent écrire en même temps sans s’écraser, et deux ne peuvent pas réserver le même siège.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Quand un tableur suffit, et quand il ne suffit plus",
+          "body": "Un tableur suffit pour quelques centaines de lignes, un seul utilisateur, et des données qu’on peut refaire si elles sont perdues.\n\nIl ne suffit plus dès qu’il y a plusieurs utilisateurs, plusieurs tables qui se référencent, ou des données qu’on ne pourra pas reconstituer.\n\nLe critère n’est donc pas la taille : c’est le nombre de personnes et le coût d’une perte.\n\nDes hôpitaux, des laboratoires et des États ont perdu des données parce qu’un tableur était resté en service après avoir cessé de convenir. Le plus célèbre a perdu seize mille cas de covid en 2020, par dépassement du nombre de lignes d’un ancien format.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’un tableur laisse-t-il faire sans protester ?",
+          "explanation": "Écrire un texte dans une colonne de nombres, répéter une information, modifier une ligne sans les dépendantes, et travailler à deux sur un fichier.",
+          "options": [
+            {
+              "text": "mettre un texte dans une colonne de nombres",
+              "correct": true
+            },
+            {
+              "text": "répéter la même information partout",
+              "correct": true
+            },
+            {
+              "text": "laisser deux adresses contradictoires",
+              "correct": true
+            },
+            {
+              "text": "écraser le travail d’un collègue",
+              "correct": true
+            },
+            {
+              "text": "calculer une somme"
+            },
+            {
+              "text": "trier une colonne"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque anomalie à sa description.",
+          "explanation": "Les trois anomalies ont la même cause : une information stockée plusieurs fois, ou au mauvais endroit.",
+          "pairs": [
+            {
+              "left": "modification",
+              "right": "corriger partout, et en oublier un"
+            },
+            {
+              "left": "insertion",
+              "right": "ne pas pouvoir enregistrer sans commande"
+            },
+            {
+              "left": "suppression",
+              "right": "perdre une adresse en supprimant une commande"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la cause unique des trois anomalies ?",
+          "explanation": "Une information stockée plusieurs fois, ou stockée au mauvais endroit. Tout le modèle relationnel part de là.",
+          "options": [
+            {
+              "text": "une information répétée ou mal placée",
+              "correct": true
+            },
+            {
+              "text": "un trop grand nombre de lignes"
+            },
+            {
+              "text": "un mauvais tri"
+            },
+            {
+              "text": "des formules trop complexes"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que garantit une transaction ?",
+          "explanation": "Que plusieurs modifications réussissent ensemble ou échouent ensemble. Un virement débite et crédite, ou ne fait ni l’un ni l’autre.",
+          "options": [
+            {
+              "text": "tout réussit, ou rien ne se passe",
+              "correct": true
+            },
+            {
+              "text": "les données sont sauvegardées"
+            },
+            {
+              "text": "les calculs sont justes"
+            },
+            {
+              "text": "l’écriture est plus rapide"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le vrai critère pour quitter le tableur ?",
+          "explanation": "Le nombre de personnes et le coût d’une perte, bien plus que la taille du fichier.",
+          "options": [
+            {
+              "text": "le nombre d’utilisateurs et le coût d’une perte",
+              "correct": true
+            },
+            {
+              "text": "le nombre de lignes"
+            },
+            {
+              "text": "le nombre de colonnes"
+            },
+            {
+              "text": "la complexité des formules"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de cas de covid un service de santé a-t-il perdus en 2020 par dépassement du format d’un tableur ?",
+          "explanation": "Environ seize mille : l’ancien format était limité en nombre de lignes, et les suivantes ont été silencieusement perdues.",
+          "min": 0,
+          "max": 100000,
+          "answer": 16000,
+          "tolerance": 2000,
+          "unit": "cas",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "tables-cles-et-liens",
+      "title": "Tables, clés et liens",
+      "subtitle": "Chaque fait à un seul endroit, et des clés pour les relier.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ranger par attribut partagé",
+          "body": "Touche un animal : les attributs qu’il possède s’allument, et les boîtes auxquelles il appartient se dessinent. Le geste est exactement celui du modèle relationnel — ranger ensemble ce qui partage une valeur, et constater que les groupes s’emboîtent au lieu de se croiser.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le vocabulaire de Codd, en 1970",
+          "body": "Une relation est une table : un nom, des attributs, et des lignes. Edgar Codd publie le modèle en 1970, et il met quinze ans à s’imposer.\n\nUne clé primaire identifie une ligne de façon unique. Elle ne peut pas être vide, et deux lignes ne peuvent pas la partager.\n\nUne clé étrangère est une colonne qui contient la clé primaire d’une autre table. Elle crée le lien, et le système refuse d’enregistrer une référence vers une ligne qui n’existe pas.\n\nLe principe tient en une phrase : chaque fait est enregistré à un seul endroit, et partout ailleurs on met sa clé.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Pourquoi une clé doit avoir assez de valeurs",
+          "body": "Monte plus d’objets que de tiroirs : la figure conclut qu’un tiroir est chargé, sans avoir à regarder lequel. Si une clé a moins de valeurs possibles que la table n’a de lignes, deux lignes la partageront forcément — et ce n’est plus une clé.",
+          "figureId": "tiroirs",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Découper une table en trois",
+          "body": "Partons d’une table unique où chaque ligne porte : nom du client, adresse du client, article, prix, quantité.\n\nL’adresse d’un client y figure autant de fois qu’il a commandé, et c’est la source de toutes les anomalies.\n\nOn découpe en trois : une table Clients, avec un numéro et une adresse ; une table Articles, avec une référence et un prix ; une table Commandes, qui ne porte que des numéros, une quantité et une date.\n\nChaque adresse n’existe plus qu’une fois. La corriger est une seule écriture, et elle devient juste partout à la fois, y compris dans les commandes passées.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les clés naturelles sont un piège",
+          "body": "On est tenté de prendre comme clé une donnée existante : le nom, l’adresse électronique, le numéro de téléphone.\n\nToutes changent. Un nom se corrige, une adresse électronique s’abandonne, un numéro se réattribue. Et une clé qui change oblige à la changer partout où elle est référencée, ce qui revient exactement au problème qu’on voulait éviter.\n\nOn emploie donc un numéro sans signification, attribué par le système et jamais réutilisé.\n\nC’est une règle contre-intuitive : la bonne clé est celle qui ne veut rien dire, précisément parce qu’elle ne peut pas devenir fausse.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le principe central du modèle relationnel ?",
+          "explanation": "Chaque fait est enregistré à un seul endroit, et partout ailleurs on met sa clé.",
+          "options": [
+            {
+              "text": "chaque fait à un seul endroit, et sa clé ailleurs",
+              "correct": true
+            },
+            {
+              "text": "toutes les données dans une seule table"
+            },
+            {
+              "text": "une table par utilisateur"
+            },
+            {
+              "text": "un fichier par ligne"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que garantit une clé primaire ?",
+          "explanation": "Elle identifie une ligne de façon unique : elle n’est jamais vide, et deux lignes ne peuvent pas la partager.",
+          "options": [
+            {
+              "text": "elle n’est jamais vide",
+              "correct": true
+            },
+            {
+              "text": "deux lignes ne la partagent pas",
+              "correct": true
+            },
+            {
+              "text": "elle est triée"
+            },
+            {
+              "text": "elle est lisible par un humain"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il si une clé a moins de valeurs possibles que la table a de lignes ?",
+          "explanation": "Deux lignes la partagent forcément, par le principe des tiroirs. Ce n’est donc plus une clé.",
+          "options": [
+            {
+              "text": "deux lignes la partagent forcément",
+              "correct": true
+            },
+            {
+              "text": "la table est plus rapide"
+            },
+            {
+              "text": "rien, c’est permis"
+            },
+            {
+              "text": "le système ajoute des valeurs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne prend-on pas l’adresse électronique comme clé primaire ?",
+          "explanation": "Parce qu’elle change, et qu’une clé qui change doit être modifiée partout où elle est référencée — exactement le problème qu’on fuyait.",
+          "options": [
+            {
+              "text": "parce qu’elle change, et qu’une clé ne doit pas changer",
+              "correct": true
+            },
+            {
+              "text": "parce qu’elle est trop longue"
+            },
+            {
+              "text": "parce qu’elle contient un arobase"
+            },
+            {
+              "text": "parce qu’elle est personnelle"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Où cette information doit-elle être enregistrée ?",
+          "explanation": "L’adresse appartient au client, le prix à l’article, la quantité et la date à la commande. Chaque fait à un seul endroit.",
+          "categories": [
+            "table Clients",
+            "table Articles",
+            "table Commandes"
+          ],
+          "items": [
+            {
+              "text": "l’adresse de livraison habituelle",
+              "category": 0
+            },
+            {
+              "text": "le prix unitaire",
+              "category": 1
+            },
+            {
+              "text": "la quantité commandée",
+              "category": 2
+            },
+            {
+              "text": "la date de la commande",
+              "category": 2
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une bonne clé primaire est une donnée qui a du sens pour l’utilisateur.",
+          "explanation": "Faux. La bonne clé est celle qui ne veut rien dire : un numéro attribué par le système, qui ne peut donc pas devenir faux.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "interroger-en-sql",
+      "title": "Interroger en SQL",
+      "subtitle": "Dire ce qu’on veut, et laisser le système décider comment.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’une requête ferait sur cette table",
+          "body": "Règle les quantités, puis formule mentalement : « donne-moi les articles dont le total dépasse dix euros, du plus cher au moins cher ». Sur quatre lignes, l’œil répond. Une requête SQL écrit cette phrase, et répond pareil sur quarante millions de lignes.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les cinq mots qui font tout",
+          "body": "SELECT dit quelles colonnes on veut. FROM dit dans quelle table les chercher.\n\nWHERE filtre les lignes, avant tout regroupement. GROUP BY regroupe et permet les agrégats — somme, moyenne, compte. ORDER BY trie le résultat.\n\nL’ordre d’écriture n’est pas l’ordre d’exécution : le système lit d’abord FROM, puis WHERE, puis GROUP BY, puis SELECT, puis ORDER BY.\n\nComprendre cet ordre résout la plupart des messages d’erreur incompréhensibles des débuts, en particulier ceux qui disent qu’une colonne n’existe pas alors qu’on vient de la nommer.",
+          "formula": "SELECT … FROM … WHERE … GROUP BY … ORDER BY …",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La jointure, et ce qu’elle recolle",
+          "body": "On a découpé en trois tables pour ne stocker chaque fait qu’une fois. Il faut bien les remettre ensemble pour lire une facture.\n\nC’est le rôle de la jointure : elle associe les lignes de deux tables qui partagent une valeur de clé.\n\nUne commande portant le numéro de client 42 est ainsi recollée à la ligne du client 42, et la facture peut afficher son adresse — sans que l’adresse ait jamais été recopiée.\n\nLe découpage et la jointure sont donc deux faces du même choix. On paie un peu de complexité d’écriture pour supprimer toute une classe d’erreurs.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que SQL ne dit pas",
+          "body": "Une requête décrit le résultat voulu, et non la façon de l’obtenir. C’est un langage déclaratif.\n\nC’est le système qui choisit l’ordre des opérations, les index à employer, la méthode de jointure. Il le fait en estimant les coûts, et il se trompe parfois.\n\nDeux requêtes qui donnent le même résultat peuvent donc s’exécuter en un millième de seconde et en une heure. Ce n’est pas de la magie, et cela s’examine : tous les systèmes savent expliquer le plan qu’ils ont retenu.\n\nSavoir lire un plan d’exécution est, en pratique, la compétence qui sépare quelqu’un qui écrit du SQL de quelqu’un qui le fait marcher sur de gros volumes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Lire une requête à voix haute",
+          "body": "Une requête bien écrite se lit comme une phrase française, et c’était l’intention de ses concepteurs.\n\n« Donne-moi le nom du client et la somme de ses commandes, depuis les commandes jointes aux clients, pour les commandes de cette année, regroupées par client, triées par somme décroissante. »\n\nChaque morceau de cette phrase est un mot-clé, dans l’ordre d’écriture. Si la phrase ne se dit pas, la requête est probablement fausse.\n\nC’est le contrôle le plus rapide qui existe, et il ne demande aucun outil.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque mot-clé à son rôle.",
+          "explanation": "SELECT choisit les colonnes, WHERE filtre les lignes, GROUP BY regroupe pour agréger, ORDER BY trie le résultat.",
+          "pairs": [
+            {
+              "left": "SELECT",
+              "right": "quelles colonnes"
+            },
+            {
+              "left": "WHERE",
+              "right": "quelles lignes garder"
+            },
+            {
+              "left": "GROUP BY",
+              "right": "regrouper pour agréger"
+            },
+            {
+              "left": "ORDER BY",
+              "right": "trier le résultat"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets l’ordre d’exécution réel d’une requête.",
+          "explanation": "FROM, puis WHERE, puis GROUP BY, puis SELECT, puis ORDER BY. Ce n’est pas l’ordre d’écriture, et cela explique beaucoup d’erreurs.",
+          "items": [
+            "FROM : lire la table",
+            "WHERE : filtrer les lignes",
+            "GROUP BY : regrouper",
+            "SELECT puis ORDER BY : choisir et trier"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert une jointure ?",
+          "explanation": "À associer les lignes de deux tables qui partagent une valeur de clé, pour recoller ce que le découpage avait séparé.",
+          "options": [
+            {
+              "text": "associer deux tables par une valeur de clé",
+              "correct": true
+            },
+            {
+              "text": "trier deux tables ensemble"
+            },
+            {
+              "text": "copier une table dans une autre"
+            },
+            {
+              "text": "supprimer les doublons"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie que SQL est déclaratif ?",
+          "explanation": "Qu’une requête décrit le résultat voulu, et non la façon de l’obtenir. Le système choisit la méthode.",
+          "options": [
+            {
+              "text": "on décrit le résultat, pas la méthode",
+              "correct": true
+            },
+            {
+              "text": "on déclare les variables d’abord"
+            },
+            {
+              "text": "on écrit en majuscules"
+            },
+            {
+              "text": "on déclare les types des colonnes"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux requêtes qui donnent le même résultat mettent le même temps.",
+          "explanation": "Faux. L’une peut prendre un millième de seconde et l’autre une heure : le système choisit un plan, et il se trompe parfois.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle compétence sépare, en pratique, écrire du SQL de le faire marcher sur de gros volumes ?",
+          "explanation": "Savoir lire un plan d’exécution : tous les systèmes savent expliquer le plan qu’ils ont retenu.",
+          "options": [
+            {
+              "text": "savoir lire un plan d’exécution",
+              "correct": true
+            },
+            {
+              "text": "connaître tous les mots-clés"
+            },
+            {
+              "text": "écrire des requêtes courtes"
+            },
+            {
+              "text": "utiliser plusieurs jointures"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-pourquoi-un-index-change-tout",
+      "title": "Défi : pourquoi un index change tout",
+      "subtitle": "La même requête, cent mille fois plus vite.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Comparer n et log n",
+          "body": "Compare la courbe verte, log n, et la bleue, n. À dix, l’écart est modeste ; pousse le curseur à soixante-dix et regarde. Une recherche sans index suit la bleue, avec index la verte, et c’est tout le sujet de cette leçon.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’un index est, concrètement",
+          "body": "Sans index, répondre à « quelles lignes ont ce code postal » oblige à lire toutes les lignes. Coût proportionnel à n.\n\nUn index est une structure annexe, triée, qui associe chaque valeur à la liste des lignes qui la portent. Chercher dedans coûte log n, comme dans un dictionnaire papier.\n\nPour dix millions de lignes, cela fait vingt-quatre comparaisons au lieu de dix millions : environ quatre cent mille fois moins de travail.\n\nL’index ne change ni les données ni le résultat. Il change seulement le chemin qu’emprunte le système, et cela suffit.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi on n’indexe pas tout",
+          "body": "Un index occupe de la place, souvent dix à trente pour-cent de la table.\n\nEt il doit être tenu à jour : chaque insertion, chaque modification, chaque suppression oblige à le remanier. Une table portant huit index écrit donc neuf fois à chaque ligne ajoutée.\n\nUn index ne sert enfin que s’il correspond aux requêtes réellement posées. Indexer une colonne que personne ne filtre coûte sans rien rendre.\n\nLa règle de métier est donc : indexer les colonnes qui apparaissent dans les WHERE et les jointures fréquentes, et aucune autre. Et vérifier, après, que le plan d’exécution s’en sert vraiment.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux requêtes, et un piège classique",
+          "body": "Une colonne « date » est indexée. La requête qui demande les lignes entre deux dates emploie l’index, et répond instantanément.\n\nLa requête qui demande les lignes dont l’année extraite de la date vaut 2026 ne l’emploie pas : l’index porte sur la date, pas sur une fonction de la date. Le système lit tout.\n\nLes deux requêtes donnent le même résultat, et l’une est mille fois plus lente. La différence tient à une habitude d’écriture.\n\nLa règle qui en découle se retient : ne jamais appliquer de fonction à la colonne indexée dans un WHERE. On transforme la borne, pas la colonne.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un tableur affiche tout et ne garantit rien. Les trois anomalies ont une cause unique : une information répétée.\n\nLe modèle relationnel y répond en une phrase — chaque fait à un seul endroit, sa clé ailleurs — et les bonnes clés sont celles qui ne veulent rien dire.\n\nSQL décrit le résultat et laisse le système choisir la méthode, ce qui rend deux requêtes équivalentes très inégales en temps.\n\nEt un index transforme un coût en n en un coût en log n, à la condition d’être choisi d’après les requêtes réelles et de ne pas être neutralisé par une fonction mal placée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de comparaisons pour trouver une valeur parmi dix millions avec un index ?",
+          "explanation": "Environ 24 : 2 puissance 24 vaut un peu plus de seize millions. Contre dix millions de lectures sans index.",
+          "answer": 24,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que change un index ?",
+          "explanation": "Le chemin qu’emprunte le système. Ni les données ni le résultat ne changent.",
+          "options": [
+            {
+              "text": "le chemin emprunté, pas le résultat",
+              "correct": true
+            },
+            {
+              "text": "les données stockées"
+            },
+            {
+              "text": "le résultat de la requête"
+            },
+            {
+              "text": "l’ordre des colonnes"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Pourquoi n’indexe-t-on pas toutes les colonnes ?",
+          "explanation": "Un index occupe de la place, doit être tenu à jour à chaque écriture, et ne sert que s’il correspond aux requêtes réelles.",
+          "options": [
+            {
+              "text": "il occupe de la place",
+              "correct": true
+            },
+            {
+              "text": "il ralentit chaque écriture",
+              "correct": true
+            },
+            {
+              "text": "il ne sert que s’il correspond aux requêtes",
+              "correct": true
+            },
+            {
+              "text": "il modifie les données"
+            },
+            {
+              "text": "il empêche les jointures"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « l’année extraite de la date vaut 2026 » n’emploie-t-elle pas l’index sur la date ?",
+          "explanation": "Parce que l’index porte sur la date, pas sur une fonction de la date. Le système doit tout lire.",
+          "options": [
+            {
+              "text": "l’index porte sur la colonne, pas sur une fonction d’elle",
+              "correct": true
+            },
+            {
+              "text": "l’index est périmé"
+            },
+            {
+              "text": "2026 est dans le futur"
+            },
+            {
+              "text": "les dates ne s’indexent pas"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle d’écriture en découle ?",
+          "explanation": "Ne jamais appliquer de fonction à la colonne indexée dans un WHERE : on transforme la borne, pas la colonne.",
+          "options": [
+            {
+              "text": "transformer la borne, jamais la colonne",
+              "correct": true
+            },
+            {
+              "text": "éviter les dates dans les WHERE"
+            },
+            {
+              "text": "indexer aussi la fonction"
+            },
+            {
+              "text": "écrire les requêtes en majuscules"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une table portant huit index écrit neuf fois à chaque ligne ajoutée.",
+          "explanation": "Vrai : la ligne elle-même, puis chacun des huit index. C’est pourquoi un index de trop ralentit toutes les écritures.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
