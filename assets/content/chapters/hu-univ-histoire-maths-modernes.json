@@ -1,0 +1,633 @@
+{
+  "chapter": "histoire-sciences-universite-histoire-des-mathematiques-modernes",
+  "lessons": [
+    {
+      "id": "l-elargissement-des-nombres",
+      "title": "L’élargissement des nombres",
+      "subtitle": "Deux mille quatre cents ans entre l’usage et le droit de cité.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Chaque famille, et sa date d’admission",
+          "body": "Déplace le curseur du temps et regarde chaque famille entrer en usage, puis être admise bien plus tard. L’écart entre les deux dates est le vrai sujet de cette leçon : les mathématiciens ont calculé pendant des siècles avec des objets qu’ils tenaient pour illégitimes.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le motif qui se répète cinq fois",
+          "body": "À chaque élargissement, la même séquence. Un calcul exige un objet nouveau. On s’en sert comme d’un expédient, en s’excusant. On constate qu’il obéit aux mêmes règles que les autres. On finit par l’admettre, et une génération plus tard personne ne comprend le scandale.\n\nLe zéro a été un symbole de position avant d’être un nombre. Les négatifs sont apparus comme des dettes, et Pascal encore les jugeait absurdes.\n\nLes irrationnels ont scandalisé les Grecs, et attendu Weierstrass et Dedekind au dix-neuvième siècle pour être définis.\n\nLes imaginaires ont été nommés ainsi par Descartes, en reproche. Il leur a fallu l’interprétation géométrique de Gauss, en 1831, et la construction formelle de Hamilton, en 1837.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qui a fait admettre les imaginaires",
+          "body": "Cardan, en 1545, trouve que la formule de résolution des équations du troisième degré passe par des racines de nombres négatifs — même quand les trois solutions sont réelles.\n\nLe détour est donc obligatoire : on ne peut pas atteindre des solutions réelles sans traverser des quantités qu’on tient pour impossibles.\n\nC’est cet argument, et non une considération de principe, qui a fini par imposer les imaginaires. Ils servaient, et on ne pouvait pas s’en passer.\n\nLa légitimation est venue trois siècles après l’usage. Le motif est toujours le même : l’utilité force l’admission, et la définition rigoureuse arrive en dernier.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi ces résistances n’étaient pas stupides",
+          "body": "Un nombre négatif viole une intuition fondée : une quantité plus petite que rien n’a pas de sens physique immédiat. Refuser demandait de la rigueur, pas de la bêtise.\n\nEt les objections ont parfois eu raison. Les infinitésimaux de Leibniz ont été employés deux siècles sans définition acceptable, et Berkeley avait raison de protester.\n\nIl a fallu Weierstrass, en 1861, pour fonder l’analyse sans eux — puis Robinson, en 1960, pour les refonder rigoureusement, cent ans après qu’on avait appris à s’en passer.\n\nLes mathématiques ne progressent donc pas en ignorant les objections. Elles progressent en s’en servant, souvent avec beaucoup de retard.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que chaque élargissement a fait gagner",
+          "body": "Le zéro a permis la numération de position, donc le calcul écrit efficace. Sans lui, pas de colonnes, pas d’algorithmes.\n\nLes négatifs ont permis de résoudre toute équation du premier degré, et de parler de dettes, de températures, de déplacements.\n\nLes irrationnels ont permis de mesurer une diagonale, donc de faire de la géométrie avec des nombres. Les complexes ont permis que toute équation polynomiale ait ses racines — c’est le théorème fondamental de l’algèbre, et il est faux dans les réels.\n\nChaque élargissement comble donc une lacune précise, et se juge à elle. Un élargissement qui ne ferait rien gagner n’aurait jamais été admis, quelle que soit sa cohérence.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le motif d’un élargissement dans l’ordre.",
+          "explanation": "Un calcul exige l’objet, on l’emploie en s’excusant, on constate qu’il obéit aux mêmes règles, on l’admet.",
+          "items": [
+            "un calcul exige un objet nouveau",
+            "on s’en sert comme d’un expédient",
+            "on constate qu’il obéit aux mêmes règles",
+            "on l’admet, et le scandale devient incompréhensible"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui a nommé les nombres « imaginaires », et dans quel esprit ?",
+          "explanation": "Descartes, et c’était un reproche. Il leur a fallu Gauss en 1831 et Hamilton en 1837 pour être pleinement admis.",
+          "options": [
+            {
+              "text": "Descartes, en reproche",
+              "correct": true
+            },
+            {
+              "text": "Gauss, avec admiration"
+            },
+            {
+              "text": "Euler, par commodité"
+            },
+            {
+              "text": "Cardan, par prudence"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel argument a fini par imposer les imaginaires ?",
+          "explanation": "Que la résolution du troisième degré passe obligatoirement par eux, même quand les trois solutions sont réelles.",
+          "options": [
+            {
+              "text": "on ne peut pas atteindre certaines solutions réelles sans eux",
+              "correct": true
+            },
+            {
+              "text": "ils avaient une interprétation géométrique"
+            },
+            {
+              "text": "ils simplifiaient les notations"
+            },
+            {
+              "text": "une autorité les a imposés"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les objections de Berkeley aux infinitésimaux étaient infondées.",
+          "explanation": "Faux. Elles étaient justes, et personne n’a su y répondre avant Weierstrass en 1861 — soit cent vingt-six ans plus tard.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand les infinitésimaux ont-ils été refondés rigoureusement ?",
+          "explanation": "En 1960 par Robinson, cent ans après que Weierstrass avait appris à s’en passer. Les objections finissent par produire quelque chose.",
+          "options": [
+            {
+              "text": "en 1960, par Robinson",
+              "correct": true
+            },
+            {
+              "text": "en 1861, par Weierstrass"
+            },
+            {
+              "text": "jamais"
+            },
+            {
+              "text": "du vivant de Leibniz"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel ordre viennent usage et définition rigoureuse ?",
+          "explanation": "L’usage d’abord, la définition en dernier. C’est le motif de tous les élargissements de ce chapitre.",
+          "options": [
+            {
+              "text": "l’usage précède la définition rigoureuse",
+              "correct": true
+            },
+            {
+              "text": "la définition précède l’usage"
+            },
+            {
+              "text": "les deux arrivent ensemble"
+            },
+            {
+              "text": "cela dépend du siècle"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-crise-des-fondements",
+      "title": "La crise des fondements",
+      "subtitle": "Trente ans pour chercher le sol, et un théorème pour y renoncer.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le premier scandale, à refaire soi-même",
+          "body": "Cherche la fraction qui vaudrait racine de deux : règle le dénominateur jusqu’à soixante-dix et saute à la meilleure suivante. Tu t’approches sans jamais atteindre. Les Grecs ont vécu cet échec avant de comprendre qu’il était nécessaire, et c’est l’ordre qui compte.",
+          "figureId": "racine-de-deux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois chocs, et un programme",
+          "body": "Les géométries non euclidiennes, entre 1829 et 1854. Lobatchevski et Bolyai construisent des géométries cohérentes où le postulat des parallèles est faux. La géométrie cesse d’être la description du monde, et devient une structure parmi d’autres.\n\nL’arithmétisation de l’analyse, dans les années 1860 et 1870. Weierstrass fonde les limites sans infinitésimaux, Dedekind construit les réels à partir des rationnels.\n\nEt le paradoxe de Russell, en 1902, qui montre que la théorie des ensembles naïve est contradictoire.\n\nHilbert propose alors un programme : démontrer que l’arithmétique est cohérente, par des moyens finitaires que personne ne contesterait. C’était en 1922, et c’était raisonnable.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le programme de Hilbert a échoué",
+          "body": "Gödel démontre en 1931 deux choses. Premièrement, toute théorie cohérente assez riche pour contenir l’arithmétique comporte un énoncé ni démontrable ni réfutable.\n\nDeuxièmement, une telle théorie ne peut pas démontrer sa propre cohérence. C’est ce second théorème qui tue le programme de Hilbert, et non le premier.\n\nGödel avait vingt-cinq ans. Son résultat n’affirme pas que les mathématiques sont incertaines ou que la raison est limitée : il affirme qu’un système formel ne peut pas se valider lui-même.\n\nGentzen démontre d’ailleurs la cohérence de l’arithmétique en 1936, en employant un principe plus fort — ce qui est permis, et ce qui déplace la question d’un étage sans la fermer.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le théorème ne dit pas",
+          "body": "Il ne dit pas que les mathématiques contiennent des contradictions. Il dit qu’elles contiennent des énoncés indécidables, ce qui est très différent.\n\nIl ne dit pas que l’intuition humaine dépasse les machines. L’argument qui le prétend suppose que nous connaissons notre propre cohérence, et rien ne l’établit.\n\nIl ne s’applique pas à tout : la logique du premier ordre est complète, la géométrie élémentaire est décidable, et l’arithmétique sans multiplication l’est aussi.\n\nLes usages du théorème hors des mathématiques sont donc presque toujours abusifs. La règle pratique est simple : si un argument invoque Gödel sans parler de système formel, il ne parle pas de Gödel.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la crise a laissé",
+          "body": "Une pratique : définir avant de démontrer, et préciser dans quelle théorie on travaille. Avant 1900, un article ne le disait pas.\n\nUne discipline nouvelle, la théorie de la démonstration, qui prend les preuves elles-mêmes pour objets d’étude.\n\nEt un résultat inattendu : la machine. Les travaux de Gödel, Church et Turing sur ce qu’un système formel peut faire ont produit la notion de calculabilité, donc l’informatique théorique.\n\nLa crise des fondements a donc engendré l’ordinateur. C’est le plus beau cas connu de recherche sans application visible qui en a produit une considérable, et il mérite d’être cité chaque fois que la question de l’utilité se pose.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les chocs de la crise dans l’ordre chronologique.",
+          "explanation": "Les géométries non euclidiennes, l’arithmétisation de l’analyse, le paradoxe de Russell, puis le programme de Hilbert.",
+          "items": [
+            "les géométries non euclidiennes, dès 1829",
+            "l’arithmétisation de l’analyse, dans les années 1860",
+            "le paradoxe de Russell, en 1902",
+            "le programme de Hilbert, en 1922"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’ont montré les géométries non euclidiennes ?",
+          "explanation": "Que la géométrie n’est pas la description du monde, mais une structure parmi d’autres : on peut nier le postulat des parallèles sans contradiction.",
+          "options": [
+            {
+              "text": "la géométrie est une structure parmi d’autres",
+              "correct": true
+            },
+            {
+              "text": "Euclide s’était trompé"
+            },
+            {
+              "text": "l’espace est courbe"
+            },
+            {
+              "text": "les parallèles se coupent"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Lequel des deux théorèmes de 1931 tue le programme de Hilbert ?",
+          "explanation": "Le second : une théorie assez riche ne peut pas démontrer sa propre cohérence. Le premier porte sur les énoncés indécidables.",
+          "options": [
+            {
+              "text": "le second, sur la cohérence non démontrable",
+              "correct": true
+            },
+            {
+              "text": "le premier, sur les énoncés indécidables"
+            },
+            {
+              "text": "les deux également"
+            },
+            {
+              "text": "aucun des deux"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que le théorème d’incomplétude ne dit-il pas ?",
+          "explanation": "Il ne dit ni que les mathématiques se contredisent, ni que l’intuition dépasse les machines, ni qu’il s’applique à tout système.",
+          "options": [
+            {
+              "text": "que les mathématiques contiennent des contradictions",
+              "correct": true
+            },
+            {
+              "text": "que l’intuition humaine dépasse les machines",
+              "correct": true
+            },
+            {
+              "text": "qu’il s’applique à tout système formel",
+              "correct": true
+            },
+            {
+              "text": "qu’une théorie riche ne prouve pas sa cohérence"
+            },
+            {
+              "text": "qu’il existe des énoncés indécidables"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a fait Gentzen en 1936 ?",
+          "explanation": "Il a démontré la cohérence de l’arithmétique, en employant un principe plus fort. Cela déplace la question d’un étage sans la fermer.",
+          "options": [
+            {
+              "text": "démontré la cohérence de l’arithmétique, avec un principe plus fort",
+              "correct": true
+            },
+            {
+              "text": "réfuté Gödel"
+            },
+            {
+              "text": "achevé le programme de Hilbert"
+            },
+            {
+              "text": "trouvé une contradiction"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle pratique la leçon propose-t-elle sur les usages de Gödel ?",
+          "explanation": "Si un argument invoque Gödel sans parler de système formel, il ne parle pas de Gödel.",
+          "options": [
+            {
+              "text": "sans système formel, ce n’est pas du Gödel",
+              "correct": true
+            },
+            {
+              "text": "Gödel ne s’applique qu’aux mathématiques pures"
+            },
+            {
+              "text": "Gödel s’applique à tout raisonnement"
+            },
+            {
+              "text": "les usages philosophiques sont les plus justes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-abstraction-et-ce-qu-elle-a-permis",
+      "title": "L’abstraction, et ce qu’elle a permis",
+      "subtitle": "Oublier ce que sont les objets pour voir ce qu’ils ont en commun.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une matrice, et ce qu’elle fait au plan",
+          "body": "Règle les quatre coefficients et regarde le carré unité se déformer. Le déterminant est le facteur d’aire, et il s’annule exactement quand la transformation écrase le plan sur une droite. La formule et le fait n’ont l’air d’avoir aucun rapport tant qu’on ne l’a pas vu.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une structure est, et pourquoi c’est rentable",
+          "body": "Un groupe est un ensemble muni d’une opération associative, avec un neutre et des inverses. La définition ne dit pas de quoi sont faits les éléments, et c’est tout le point.\n\nLes rotations d’un cube, les permutations de cinq objets, les entiers modulo sept, les symétries d’un cristal sont tous des groupes. Un théorème démontré sur les groupes vaut pour les quatre à la fois.\n\nC’est le rendement de l’abstraction : une démonstration, et autant d’applications qu’il y a d’exemples de la structure.\n\nGalois invente l’idée vers 1830, à moins de vingt ans, pour répondre à une question très concrète : pourquoi les équations du cinquième degré ne se résolvent pas par radicaux. Il meurt à vingt ans, et son mémoire attend quatorze ans avant d’être publié.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que l’abstraction a tranché",
+          "body": "L’insolubilité de l’équation du cinquième degré par radicaux. Abel l’établit en 1824, Galois en donne la raison structurelle. Ce n’est pas qu’on n’a pas trouvé la formule : c’est qu’il n’en existe pas.\n\nLes trois problèmes de l’Antiquité — trisection de l’angle, duplication du cube, quadrature du cercle — sont réglés au dix-neuvième siècle par des arguments algébriques, et tous trois par la négative.\n\nCes résultats sont d’un type nouveau : ce ne sont pas des constructions mais des démonstrations d’impossibilité.\n\nDémontrer qu’une chose ne peut pas être faite est souvent plus difficile, et toujours plus définitif, que de la faire. Deux mille ans de recherches ont été clos par des arguments de quelques pages.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Bourbaki, et ce que le projet a coûté",
+          "body": "Un groupe de mathématiciens français entreprend en 1935 de réécrire toutes les mathématiques sur la base des structures, sous un nom collectif.\n\nLe projet a profondément réorganisé l’enseignement et la recherche, et sa méthode — définir, puis démontrer, en partant du plus général — est devenue le style standard.\n\nIl a aussi eu un coût. Les figures ont disparu des traités, les exemples sont passés après les définitions, et l’intuition géométrique a été reléguée.\n\nLa réforme dite des mathématiques modernes, dans les écoles des années 1960 et 1970, a appliqué ce style à des enfants de dix ans. L’échec a été net, et il enseigne quelque chose : l’ordre logique n’est pas l’ordre d’apprentissage.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Quand l’abstraction coûte plus qu’elle rapporte",
+          "body": "Généraliser a un prix : plus une structure est générale, moins elle a de propriétés, donc moins on peut en démontrer.\n\nUn théorème sur les groupes vaut partout et dit peu. Un théorème sur les groupes finis simples dit beaucoup et ne vaut que là. Le bon niveau d’abstraction est celui où le rapport est le meilleur, et il se cherche.\n\nD’où une erreur fréquente chez les débutants : abstraire d’emblée, avant d’avoir travaillé des cas particuliers. On obtient alors une théorie générale sans théorème intéressant.\n\nGalois avait un problème concret avant d’avoir une structure. C’est l’ordre qui a marché, et c’est l’ordre inverse de celui dans lequel on l’enseigne.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fait le rendement de l’abstraction ?",
+          "explanation": "Une démonstration sur la structure vaut pour tous ses exemples : rotations, permutations, entiers modulo n, symétries.",
+          "options": [
+            {
+              "text": "une démonstration vaut pour tous les exemples de la structure",
+              "correct": true
+            },
+            {
+              "text": "les démonstrations sont plus courtes"
+            },
+            {
+              "text": "les objets sont plus simples"
+            },
+            {
+              "text": "on évite les calculs"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question concrète a mené Galois à la notion de groupe ?",
+          "explanation": "Pourquoi les équations du cinquième degré ne se résolvent pas par radicaux. L’abstraction est née d’un problème très précis.",
+          "options": [
+            {
+              "text": "l’insolubilité du cinquième degré par radicaux",
+              "correct": true
+            },
+            {
+              "text": "la classification des symétries"
+            },
+            {
+              "text": "la nature des nombres complexes"
+            },
+            {
+              "text": "la géométrie non euclidienne"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce résultat est-il une construction, ou une impossibilité ?",
+          "explanation": "Les trois problèmes antiques et le cinquième degré ont été réglés par la négative : ce sont des démonstrations d’impossibilité.",
+          "categories": [
+            "une impossibilité démontrée",
+            "une construction"
+          ],
+          "items": [
+            {
+              "text": "la trisection de l’angle à la règle et au compas",
+              "category": 0
+            },
+            {
+              "text": "la quadrature du cercle",
+              "category": 0
+            },
+            {
+              "text": "la construction du pentagone régulier",
+              "category": 1
+            },
+            {
+              "text": "la résolution du troisième degré",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si l’on n’a pas trouvé la formule du cinquième degré, c’est qu’on n’a pas assez cherché.",
+          "explanation": "Faux. Abel a démontré en 1824 qu’il n’en existe pas, et Galois en a donné la raison structurelle.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a coûté le style de Bourbaki ?",
+          "explanation": "La disparition des figures, les exemples relégués après les définitions, et l’intuition géométrique mise de côté.",
+          "options": [
+            {
+              "text": "les figures, les exemples d’abord, et l’intuition géométrique",
+              "correct": true
+            },
+            {
+              "text": "la rigueur des démonstrations"
+            },
+            {
+              "text": "l’unité des mathématiques"
+            },
+            {
+              "text": "la place de l’algèbre"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’enseigne l’échec de la réforme des mathématiques modernes ?",
+          "explanation": "Que l’ordre logique n’est pas l’ordre d’apprentissage. Appliquer le style de Bourbaki à des enfants de dix ans n’a pas fonctionné.",
+          "options": [
+            {
+              "text": "l’ordre logique n’est pas l’ordre d’apprentissage",
+              "correct": true
+            },
+            {
+              "text": "les structures sont inutiles"
+            },
+            {
+              "text": "les enfants ne peuvent pas abstraire"
+            },
+            {
+              "text": "Bourbaki s’était trompé mathématiquement"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-une-demonstration-illisible",
+      "title": "Défi : une démonstration que personne ne peut lire",
+      "subtitle": "Quand la preuve dépasse la capacité humaine de vérification.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce que des millions de cas veulent dire",
+          "body": "Pousse le curseur et regarde les durées s’afficher. Une démonstration qui examine mille neuf cent trente-six configurations est hors de portée d’un lecteur humain, et triviale pour une machine. La leçon demande ce que cela fait au statut d’une preuve.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Un précédent : ce qui a mis des siècles à être admis",
+          "body": "Reprends la frise. Chaque famille a mis des siècles à passer de l’usage à l’admission, et aucune n’a été refusée pour toujours. Les démonstrations assistées par machine sont peut-être au même point que les imaginaires du temps de Cardan, et la leçon pèse l’analogie au lieu de l’asséner.",
+          "figureId": "frise-nombres",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois démonstrations qui posent le problème",
+          "body": "Le théorème des quatre couleurs, démontré en 1976 par Appel et Haken. La preuve ramène le problème à quelques milliers de configurations, vérifiées par ordinateur. Aucun humain n’a lu la vérification.\n\nLa classification des groupes finis simples, achevée vers 2004. Elle fait environ dix mille pages réparties sur des centaines d’articles et des dizaines d’auteurs. Personne n’en a tout lu, et une partie a dû être réécrite après qu’une lacune a été trouvée.\n\nLa conjecture de Kepler sur l’empilement des sphères, démontrée par Hales en 1998, et dont les relecteurs ont déclaré être « à 99 % certains » — ce qui n’est pas un verdict mathématique.\n\nDans les trois cas, le résultat est admis et la vérification humaine complète n’a pas eu lieu.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les objections, et ce qu’elles valent",
+          "body": "Première objection : une preuve doit être comprise, pas seulement validée. Elle a du poids — une démonstration sert aussi à expliquer, et un million de cas n’explique rien.\n\nDeuxième objection : le logiciel peut avoir un défaut. Elle est réelle, et elle vaut aussi pour les humains, qui se trompent davantage. Des erreurs sont régulièrement trouvées dans des articles relus par des pairs.\n\nLa réponse construite a été de formaliser intégralement les preuves dans un assistant, lui-même vérifié. Le théorème des quatre couleurs l’a été par Gonthier en 2005, et la conjecture de Kepler en 2014.\n\nLe problème de la compréhension reste entier, et celui de la confiance a été résolu — par plus de machine, et non par moins.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Les nombres se sont élargis cinq fois selon le même motif : l’usage force l’admission, la définition rigoureuse arrive en dernier.\n\nLa crise des fondements a produit un programme raisonnable et son échec. Gödel n’a pas limité la raison : il a montré qu’un système formel ne se valide pas lui-même.\n\nL’abstraction a permis des démonstrations d’impossibilité, et clos par quelques pages des recherches de deux mille ans. Elle a coûté les figures et l’intuition, et la réforme des années soixante en a payé le prix.\n\nEt la question ouverte aujourd’hui est celle d’une preuve qu’aucun humain ne lit. Elle a la forme exacte des résistances passées, ce qui est un argument et pas une preuve.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque démonstration à ce qui l’a rendue illisible.",
+          "explanation": "Les quatre couleurs par ses milliers de cas machine, la classification par ses dix mille pages, Kepler par une vérification incertaine.",
+          "pairs": [
+            {
+              "left": "les quatre couleurs, 1976",
+              "right": "des milliers de cas vérifiés par ordinateur"
+            },
+            {
+              "left": "les groupes finis simples, 2004",
+              "right": "dix mille pages et des dizaines d’auteurs"
+            },
+            {
+              "left": "la conjecture de Kepler, 1998",
+              "right": "des relecteurs « à 99 % certains »"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la première objection aux preuves assistées ?",
+          "explanation": "Qu’une preuve doit être comprise et pas seulement validée : un million de cas n’explique rien.",
+          "options": [
+            {
+              "text": "une preuve doit expliquer, pas seulement valider",
+              "correct": true
+            },
+            {
+              "text": "les ordinateurs sont trop lents"
+            },
+            {
+              "text": "les mathématiciens y perdraient leur emploi"
+            },
+            {
+              "text": "les résultats sont faux"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que valent les craintes sur les défauts de logiciel ?",
+          "explanation": "Elles sont réelles, et valent aussi pour les humains, qui se trompent davantage : des erreurs sont régulièrement trouvées dans des articles relus.",
+          "options": [
+            {
+              "text": "réelles, et valables aussi pour les relecteurs humains",
+              "correct": true
+            },
+            {
+              "text": "infondées, les logiciels sont sûrs"
+            },
+            {
+              "text": "décisives, il faut tout refuser"
+            },
+            {
+              "text": "sans objet, personne n’emploie de logiciel"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment le problème de la confiance a-t-il été résolu ?",
+          "explanation": "En formalisant intégralement les preuves dans un assistant lui-même vérifié : les quatre couleurs en 2005, Kepler en 2014.",
+          "options": [
+            {
+              "text": "par une formalisation complète dans un assistant vérifié",
+              "correct": true
+            },
+            {
+              "text": "en revenant aux preuves manuelles"
+            },
+            {
+              "text": "en faisant relire par plus de monde"
+            },
+            {
+              "text": "il ne l’a pas été"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La formalisation en assistant a aussi résolu le problème de la compréhension.",
+          "explanation": "Faux. Elle a résolu la confiance, par plus de machine et non par moins. Comprendre une preuve d’un million de cas reste hors de portée.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel statut la leçon donne-t-elle à l’analogie avec les imaginaires ?",
+          "explanation": "Celui d’un argument, pas d’une preuve : la question a la forme des résistances passées, ce qui ne garantit pas le même dénouement.",
+          "options": [
+            {
+              "text": "un argument, et non une preuve",
+              "correct": true
+            },
+            {
+              "text": "une démonstration que les preuves machine seront admises"
+            },
+            {
+              "text": "une raison de les refuser"
+            },
+            {
+              "text": "une coïncidence sans portée"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

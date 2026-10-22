@@ -1,0 +1,662 @@
+{
+  "chapter": "histoire-sciences-universite-sciences-et-controverses",
+  "lessons": [
+    {
+      "id": "ce-qu-une-etude-peut-montrer",
+      "title": "Ce qu’une étude peut montrer",
+      "subtitle": "Le type d’étude décide de ce qu’on peut en conclure.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des colonnes, et une qui est calculée",
+          "body": "Change un prix et regarde les totaux suivre. Une étude produit ce genre de table : des colonnes mesurées, et des colonnes déduites. Toute la question de cette leçon est de savoir laquelle est laquelle, et ce que la seconde permet d’affirmer.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Quatre types d’études, et leur portée",
+          "body": "L’étude de cas décrit quelques patients. Elle signale, elle n’établit rien. Sa valeur est d’attirer l’attention.\n\nL’étude transversale mesure une population à un instant. Elle donne des associations, et ne dit rien de l’ordre des événements.\n\nL’étude de cohorte suit un groupe dans le temps. Elle établit une antériorité, ce qui est beaucoup, et reste exposée aux facteurs de confusion.\n\nL’essai contrôlé randomisé attribue l’exposition au hasard. C’est le seul dispositif qui élimine les facteurs de confusion, connus et inconnus à la fois — et c’est pourquoi il est la référence.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi le tirage au sort change tout",
+          "body": "Un facteur de confusion est une variable liée à l’exposition et à la maladie. Les gros fumeurs boivent davantage : attribuer au tabac ce qui vient de l’alcool est alors possible.\n\nOn peut corriger les facteurs connus par le calcul. On ne peut rien faire des facteurs inconnus, par définition.\n\nLe tirage au sort répartit en moyenne également tous les facteurs entre les groupes, y compris ceux qu’on ignore. C’est son unique vertu, et elle est décisive.\n\nC’est pourquoi un essai randomisé sur mille personnes vaut plus qu’une cohorte observationnelle sur cent mille. Le nombre ne remplace pas le tirage au sort.",
+          "formula": "le tirage au sort équilibre aussi les facteurs inconnus",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’un essai randomisé ne peut pas faire",
+          "body": "Il est souvent impossible. On ne tire pas au sort les personnes qui fumeront pendant trente ans, ni celles qui seront exposées à l’amiante.\n\nIl est donc faux de conclure qu’on ne sait rien faute d’essai. Le lien entre tabac et cancer du poumon est établi sans essai randomisé, par la convergence de dizaines de cohortes et un mécanisme biologique identifié.\n\nBradford Hill propose en 1965 neuf critères pour juger une causalité sans essai : force de l’association, constance, antériorité, gradient dose-effet, plausibilité, et quelques autres.\n\nCes critères ne sont pas une case à cocher. Ils sont une liste de questions, et c’est leur convergence qui emporte la conviction — exactement comme pour juger une théorie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La phrase qui sert le plus, et la façon de s’en servir",
+          "body": "« Corrélation n’est pas causalité » est vraie, et elle est devenue un moyen de clore une discussion sans l’avoir ouverte.\n\nElle doit servir à poser la question suivante : quelle autre explication, précisément ? Un facteur de confusion nommé, ou une causalité inverse plausible, est un argument. « Ce n’est peut-être pas causal » n’en est pas un.\n\nDans le cas du tabac, l’objection a été formulée par un statisticien de premier rang, Ronald Fisher : un facteur génétique pourrait prédisposer à la fois à fumer et au cancer.\n\nL’objection était précise, donc testable, et elle a été testée et écartée — notamment par les jumeaux. C’est ainsi qu’une objection sert : nommée, elle fait avancer ; vague, elle bloque.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces études de la plus faible à la plus concluante.",
+          "explanation": "Étude de cas, transversale, cohorte, essai randomisé : seul le dernier élimine les facteurs de confusion inconnus.",
+          "items": [
+            "l’étude de cas, qui signale",
+            "l’étude transversale, qui associe",
+            "la cohorte, qui établit une antériorité",
+            "l’essai randomisé, qui élimine les confusions"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’unique vertu du tirage au sort ?",
+          "explanation": "Il répartit également tous les facteurs, y compris ceux qu’on ignore. Les facteurs connus, eux, se corrigent par le calcul.",
+          "options": [
+            {
+              "text": "il équilibre aussi les facteurs inconnus",
+              "correct": true
+            },
+            {
+              "text": "il augmente la taille de l’échantillon"
+            },
+            {
+              "text": "il réduit le coût de l’étude"
+            },
+            {
+              "text": "il élimine les erreurs de mesure"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Faute d’essai randomisé, on ne peut rien établir.",
+          "explanation": "Faux. Le lien tabac-cancer est établi sans essai, par la convergence de dizaines de cohortes et un mécanisme identifié.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels critères Bradford Hill propose-t-il en 1965 ?",
+          "explanation": "Force de l’association, constance d’une étude à l’autre, antériorité, gradient dose-effet, plausibilité biologique, entre autres.",
+          "options": [
+            {
+              "text": "la force de l’association",
+              "correct": true
+            },
+            {
+              "text": "la constance d’une étude à l’autre",
+              "correct": true
+            },
+            {
+              "text": "l’antériorité de la cause",
+              "correct": true
+            },
+            {
+              "text": "un gradient dose-effet",
+              "correct": true
+            },
+            {
+              "text": "le nombre de publications"
+            },
+            {
+              "text": "le consensus des experts"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle objection Fisher avait-il formulée sur le tabac ?",
+          "explanation": "Qu’un facteur génétique pourrait prédisposer à la fois à fumer et au cancer. L’objection était précise, donc testable — et elle a été écartée.",
+          "options": [
+            {
+              "text": "un facteur génétique prédisposant aux deux",
+              "correct": true
+            },
+            {
+              "text": "que les mesures étaient fausses"
+            },
+            {
+              "text": "que l’échantillon était trop petit"
+            },
+            {
+              "text": "que le cancer causait le tabagisme"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment « corrélation n’est pas causalité » doit-elle servir ?",
+          "explanation": "À poser la question suivante : quelle autre explication, précisément ? Nommée, une objection fait avancer ; vague, elle bloque.",
+          "options": [
+            {
+              "text": "à demander quelle autre explication, précisément",
+              "correct": true
+            },
+            {
+              "text": "à clore la discussion"
+            },
+            {
+              "text": "à rejeter l’étude"
+            },
+            {
+              "text": "à exiger un essai randomisé"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-hasard-produit-des-resultats",
+      "title": "Le hasard produit des résultats",
+      "subtitle": "Assez de tests, et quelque chose finit par sortir.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un comptage qui saute, et une loi qui tient",
+          "body": "Pousse le curseur et compte les noyaux : le nombre s’écarte de la courbe lisse à chaque tirage. Remets à zéro et recommence : l’écart change de sens. Aucun noyau n’obéit à la loi, et l’ensemble lui obéit. C’est le fond de toute la statistique de cette leçon.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’un seuil de cinq pour-cent signifie vraiment",
+          "body": "Un résultat est dit significatif au seuil de cinq pour-cent si, en l’absence de tout effet réel, il y avait moins d’une chance sur vingt de l’obtenir.\n\nCela veut donc dire qu’une étude sur vingt sans aucun effet réel produira un résultat significatif. Si l’on teste vingt hypothèses, on en obtiendra une en moyenne.\n\nCe n’est pas une fraude : c’est la définition du seuil. Le problème apparaît quand on ne publie que celle qui a marché.\n\nUn seuil de cinq pour-cent n’est donc pas une garantie de vérité à quatre-vingt-quinze pour-cent. C’est un taux de fausses alertes accepté, et il faut savoir combien de tests l’ont précédé.",
+          "formula": "au seuil de 5 %, une étude sur vingt « marche » sans effet réel",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois mécanismes qui produisent de faux résultats",
+          "body": "Le biais de publication : les résultats positifs sont publiés, les négatifs restent dans les tiroirs. La littérature surreprésente donc les effets, sans qu’aucun auteur n’ait triché.\n\nLe choix après coup : tester plusieurs analyses, plusieurs sous-groupes, plusieurs critères, et rapporter celle qui ressort. Chaque choix est défendable isolément, et l’ensemble n’est plus un test.\n\nLa petite taille : un échantillon faible ne détecte qu’un effet énorme. Quand un petit échantillon trouve un effet significatif, l’effet mesuré est donc surestimé, presque toujours.\n\nLes trois produisent de la littérature fausse sans aucune intention frauduleuse, et c’est ce qui les rend difficiles à combattre.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La crise de la reproductibilité, chiffrée",
+          "body": "Une équipe internationale a repris en 2015 cent études de psychologie publiées dans les meilleures revues, et a tenté de les refaire avec des échantillons plus grands.\n\nTrente-six pour-cent ont donné un résultat significatif dans le même sens. Les tailles d’effet mesurées valaient en moyenne la moitié de celles publiées.\n\nDes résultats comparables ont suivi en biologie du cancer, en économie expérimentale, en sciences de l’éducation.\n\nLe mot « crise » est discuté, et le fait ne l’est pas. La réponse construite est l’enregistrement préalable : déclarer l’analyse avant de voir les données, ce qui supprime d’un coup le choix après coup.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Quatre questions devant un résultat spectaculaire",
+          "body": "Combien de sujets ? Un effet spectaculaire sur vingt personnes est presque toujours surestimé.\n\nL’analyse était-elle prévue d’avance ? Un enregistrement préalable change radicalement la valeur du résultat.\n\nA-t-il été reproduit par une autre équipe ? Une étude isolée n’est pas un fait établi, quel que soit le prestige de la revue.\n\nEt l’effet est-il grand, ou seulement significatif ? Un effet significatif peut être minuscule, et la significativité ne mesure pas l’importance. Confondre les deux est l’erreur la plus répandue dans la lecture des études.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Au seuil de 5 %, sur combien d’études sans effet réel une donne-t-elle un résultat significatif ?",
+          "explanation": "Une sur vingt : c’est la définition du seuil, pas une fraude.",
+          "answer": 20,
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels mécanismes produisent de faux résultats sans fraude ?",
+          "explanation": "Le biais de publication, le choix de l’analyse après coup, et les petites tailles d’échantillon.",
+          "options": [
+            {
+              "text": "le biais de publication",
+              "correct": true
+            },
+            {
+              "text": "le choix de l’analyse après avoir vu les données",
+              "correct": true
+            },
+            {
+              "text": "les échantillons trop petits",
+              "correct": true
+            },
+            {
+              "text": "la falsification des données"
+            },
+            {
+              "text": "les conflits d’intérêts déclarés"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part des cent études de psychologie reprises en 2015 s’est reproduite, en pour-cent ?",
+          "explanation": "Trente-six pour-cent, et les tailles d’effet mesurées valaient en moyenne la moitié de celles publiées.",
+          "min": 0,
+          "max": 100,
+          "answer": 36,
+          "tolerance": 6,
+          "unit": "%",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’enregistrement préalable supprime ?",
+          "explanation": "Le choix de l’analyse après coup : on déclare ce qu’on va tester avant de voir les données.",
+          "options": [
+            {
+              "text": "le choix de l’analyse après coup",
+              "correct": true
+            },
+            {
+              "text": "le biais de publication"
+            },
+            {
+              "text": "les petites tailles d’échantillon"
+            },
+            {
+              "text": "les erreurs de mesure"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un seuil de 5 % signifie que le résultat est vrai à 95 %.",
+          "explanation": "Faux. C’est un taux de fausses alertes accepté en l’absence d’effet, et il ne dit rien de la probabilité que le résultat soit vrai.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle confusion est la plus répandue dans la lecture des études ?",
+          "explanation": "Confondre significatif et important : un effet significatif peut être minuscule.",
+          "options": [
+            {
+              "text": "confondre significatif et important",
+              "correct": true
+            },
+            {
+              "text": "confondre moyenne et médiane"
+            },
+            {
+              "text": "confondre cohorte et essai"
+            },
+            {
+              "text": "confondre échantillon et population"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-fabrique-du-doute",
+      "title": "La fabrique du doute",
+      "subtitle": "Il suffit de contester pour retarder, sans avoir à démontrer.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un seul cas met l’implication en défaut",
+          "body": "Bascule P et M : l’implication tombe sur un seul des quatre cas. Trouve celui où elle tient et où sa réciproque tombe. La technique que la leçon décrit consiste à exiger la réciproque quand l’implication est établie, et à présenter cette exigence comme de la rigueur.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le texte fondateur, et sa phrase",
+          "body": "Une note interne de l’industrie du tabac, en 1969, résume la stratégie : « le doute est notre produit, puisqu’il est le meilleur moyen de concurrencer le corpus de faits qui existe dans l’esprit du public ».\n\nL’objectif n’est donc pas de démontrer l’innocuité : c’est d’entretenir l’impression qu’une question est ouverte. Le doute n’a pas besoin d’être justifié pour être efficace.\n\nLa dissymétrie est le cœur du procédé : établir un fait coûte des décennies de recherche, le contester coûte un communiqué.\n\nLes mêmes cabinets et parfois les mêmes scientifiques ont ensuite travaillé sur les pluies acides, l’ozone, et le climat. Oreskes et Conway l’ont documenté en 2010, archives à l’appui.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Six techniques, et comment les reconnaître",
+          "body": "Exiger une certitude absolue, qu’aucune science n’offre, et présenter l’absence de certitude comme une absence de savoir.\n\nFinancer des études sur des questions périphériques, pour produire du volume sans toucher au point central.\n\nMettre en avant un scientifique dissident, en laissant croire que le débat est partagé. Donner la parole à parts égales quand les positions ne pèsent pas pareil.\n\nAttaquer les personnes plutôt que les résultats. Réclamer indéfiniment plus de recherche. Et déplacer la discussion vers les coûts, qui sont une question politique et non scientifique.",
+          "formula": "le doute coûte un communiqué, le fait coûte des décennies",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi cela ne rend pas tout douteux",
+          "body": "Le fait que le doute ait été fabriqué dans certains cas ne signifie pas que tout doute soit fabriqué. L’inverse serait tout aussi commode, et tout aussi faux.\n\nUn désaccord réel existe en science, et il est fréquent. Ce qui distingue un désaccord réel est qu’il porte sur des questions précises, qu’il évolue avec les données, et que ses porteurs publient dans les revues du domaine.\n\nUn doute fabriqué, au contraire, ne porte pas sur un point précis, ne change pas quand les données arrivent, et s’exprime surtout hors des revues.\n\nLe critère n’est donc pas le contenu de l’objection mais sa trajectoire. On retrouve le critère de Lakatos, appliqué à une controverse publique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que l’histoire donne comme repères",
+          "body": "L’amiante : danger établi dès les années 1930 dans la littérature, interdit en France en 1997. Soixante ans.\n\nLe plomb dans l’essence : nocivité connue dès l’introduction, dans les années 1920, interdiction généralisée dans les années 1990 et 2000.\n\nLes chlorofluorocarbures : mécanisme publié par Molina et Rowland en 1974, protocole de Montréal en 1987. Treize ans, et c’est le cas rapide — parce que le mécanisme était simple et les substituts disponibles.\n\nLe délai n’est donc pas une constante de la nature : il dépend du coût du changement et de la clarté du mécanisme. C’est un repère utile pour estimer, à l’avance, combien de temps une controverse va durer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est l’objectif de la fabrique du doute ?",
+          "explanation": "Entretenir l’impression qu’une question est ouverte. Il n’est pas de démontrer l’innocuité.",
+          "options": [
+            {
+              "text": "faire croire que la question est ouverte",
+              "correct": true
+            },
+            {
+              "text": "démontrer l’innocuité du produit"
+            },
+            {
+              "text": "améliorer la recherche"
+            },
+            {
+              "text": "réfuter une étude précise"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle dissymétrie rend le procédé efficace ?",
+          "explanation": "Établir un fait coûte des décennies de recherche ; le contester coûte un communiqué.",
+          "options": [
+            {
+              "text": "établir coûte des décennies, contester coûte un communiqué",
+              "correct": true
+            },
+            {
+              "text": "les scientifiques sont moins nombreux"
+            },
+            {
+              "text": "les revues sont payantes"
+            },
+            {
+              "text": "le public ne lit pas"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles techniques relèvent de la fabrique du doute ?",
+          "explanation": "Exiger une certitude absolue, financer du périphérique, mettre en avant un dissident, attaquer les personnes, réclamer plus de recherche indéfiniment.",
+          "options": [
+            {
+              "text": "exiger une certitude absolue",
+              "correct": true
+            },
+            {
+              "text": "financer des études périphériques",
+              "correct": true
+            },
+            {
+              "text": "mettre en avant un dissident isolé",
+              "correct": true
+            },
+            {
+              "text": "réclamer indéfiniment plus de recherche",
+              "correct": true
+            },
+            {
+              "text": "publier une réfutation dans une revue du domaine"
+            },
+            {
+              "text": "reproduire une étude avec plus de sujets"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Désaccord réel, ou doute fabriqué ?",
+          "explanation": "Le critère est la trajectoire : un désaccord réel porte sur un point précis, évolue avec les données, et se publie dans le domaine.",
+          "categories": [
+            "désaccord réel",
+            "doute fabriqué"
+          ],
+          "items": [
+            {
+              "text": "il porte sur une question précise",
+              "category": 0
+            },
+            {
+              "text": "il évolue quand les données arrivent",
+              "category": 0
+            },
+            {
+              "text": "il ne change pas malgré les données",
+              "category": 1
+            },
+            {
+              "text": "il s’exprime surtout hors des revues",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque dossier à son délai entre alerte et interdiction.",
+          "explanation": "Amiante soixante ans, plomb environ soixante-dix, chlorofluorocarbures treize — parce que le mécanisme était simple et les substituts disponibles.",
+          "pairs": [
+            {
+              "left": "l’amiante",
+              "right": "une soixantaine d’années"
+            },
+            {
+              "left": "le plomb dans l’essence",
+              "right": "environ soixante-dix ans"
+            },
+            {
+              "left": "les chlorofluorocarbures",
+              "right": "treize ans"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi le délai d’une controverse dépend-il ?",
+          "explanation": "Du coût du changement et de la clarté du mécanisme. Ce n’est pas une constante de la nature.",
+          "options": [
+            {
+              "text": "du coût du changement et de la clarté du mécanisme",
+              "correct": true
+            },
+            {
+              "text": "de la gravité du danger"
+            },
+            {
+              "text": "du nombre de publications"
+            },
+            {
+              "text": "de la volonté des gouvernements seule"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-une-controverse",
+      "title": "Défi : lire une controverse",
+      "subtitle": "Six questions, et aucune ne demande d’être expert.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Remonter aux colonnes mesurées",
+          "body": "Bascule entre « Résultats » et « Formules ». Devant une controverse, le même geste s’impose : remonter des conclusions affichées aux données mesurées, et regarder quelle formule relie les deux. C’est presque toujours là que le désaccord se trouve.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Vérifier ce qui est affirmé, et ce qui est exigé",
+          "body": "Reviens aux quatre cas. Beaucoup de controverses se résument à un désaccord sur ce qu’il faudrait établir : l’implication, ou sa réciproque. Nommer lequel des deux est en jeu fait souvent plus avancer qu’un argument supplémentaire.",
+          "figureId": "implication",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les six questions, dans l’ordre",
+          "body": "De quoi parle-t-on exactement ? Beaucoup de controverses mélangent plusieurs questions — un danger, son ampleur, le coût d’y répondre — et les confondre interdit de conclure.\n\nQu’est-ce qui est mesuré, et qu’est-ce qui est déduit ? La distinction est la même que dans le chapitre sur le climat, et elle départage la moitié des discussions.\n\nCombien d’études indépendantes, et convergent-elles ? Une étude isolée n’établit rien, quelle que soit sa revue.\n\nLes objections portent-elles sur un point précis ? Qui parle, et dans quel cadre publie-t-il ? Et enfin : la question est-elle scientifique, ou porte-t-elle sur ce qu’il faut faire ?",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La dernière question est la plus escamotée",
+          "body": "« Faut-il interdire ceci » n’est pas une question scientifique. La science dit ce qui se passera selon les options ; elle ne dit pas laquelle choisir.\n\nConfondre les deux produit deux erreurs symétriques. La première consiste à faire dire à la science une décision politique, et à présenter un désaccord sur les valeurs comme un déni des faits.\n\nLa seconde consiste à traiter un fait établi comme une opinion, sous prétexte que la décision est politique.\n\nLe travail honnête consiste à séparer les deux explicitement : voilà ce qui est établi, voilà ce qui est incertain, et voilà ce qui relève d’un choix. Les trois listes doivent être écrites, et séparément.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "La grille, sur un cas où elle a servi",
+          "body": "Les édulcorants : une agence internationale a classé l’aspartame en 2023 comme « peut-être cancérogène », tandis qu’un comité d’experts maintenait la dose journalière admissible inchangée.\n\nLes deux énoncés sont compatibles, et la grille le montre : le premier porte sur l’existence d’un danger, le second sur l’ampleur du risque aux doses réelles. Ce sont deux questions distinctes, et la première question de la grille les sépare.\n\nLa presse a surtout rapporté la contradiction apparente, parce qu’un désaccord fait un meilleur titre.\n\nAppliquer la grille n’a pas demandé de compétence en toxicologie. Elle a demandé de lire ce que chaque organisme disait précisément, et c’est à la portée de n’importe qui.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Le type d’étude décide de la portée de sa conclusion, et le tirage au sort a une vertu que le nombre ne remplace pas.\n\nUn seuil de cinq pour-cent est un taux de fausses alertes, non une garantie. Trois mécanismes sans fraude produisent de la littérature fausse, et l’enregistrement préalable en supprime un.\n\nLe doute a été fabriqué industriellement, et le critère pour distinguer un doute fabriqué d’un désaccord réel est sa trajectoire, non son contenu.\n\nEt la dernière question est toujours la même : qu’est-ce qui est établi, qu’est-ce qui est incertain, et qu’est-ce qui relève d’un choix ? Trois listes, écrites séparément, et la plupart des controverses deviennent lisibles.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les premières questions de la grille dans l’ordre.",
+          "explanation": "De quoi parle-t-on, qu’est-ce qui est mesuré, combien d’études convergent, puis la nature des objections.",
+          "items": [
+            "de quoi parle-t-on exactement",
+            "qu’est-ce qui est mesuré et qu’est-ce qui est déduit",
+            "combien d’études indépendantes convergent",
+            "les objections portent-elles sur un point précis"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "« Faut-il interdire ceci » est-elle une question scientifique ?",
+          "explanation": "Non. La science dit ce qui se passera selon les options ; elle ne dit pas laquelle choisir.",
+          "options": [
+            {
+              "text": "non, c’est une question de choix",
+              "correct": true
+            },
+            {
+              "text": "oui, si les données sont bonnes"
+            },
+            {
+              "text": "oui, les experts doivent trancher"
+            },
+            {
+              "text": "cela dépend du domaine"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet énoncé est-il scientifique, ou relève-t-il d’un choix ?",
+          "explanation": "Ce qui se passera selon les options est scientifique ; ce qu’il faut faire relève d’un choix, et les deux listes doivent rester séparées.",
+          "categories": [
+            "scientifique",
+            "relève d’un choix"
+          ],
+          "items": [
+            {
+              "text": "cette substance provoque telle maladie à telle dose",
+              "category": 0
+            },
+            {
+              "text": "tel scénario d’émissions donne telle température",
+              "category": 0
+            },
+            {
+              "text": "il faut interdire cette substance",
+              "category": 1
+            },
+            {
+              "text": "ce risque est acceptable",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les deux énoncés sur l’aspartame de 2023 sont-ils compatibles ?",
+          "explanation": "Parce que l’un porte sur l’existence d’un danger et l’autre sur l’ampleur du risque aux doses réelles : deux questions distinctes.",
+          "options": [
+            {
+              "text": "ils portent sur deux questions distinctes",
+              "correct": true
+            },
+            {
+              "text": "l’un des deux organismes s’est trompé"
+            },
+            {
+              "text": "les données étaient différentes"
+            },
+            {
+              "text": "ils ne sont pas compatibles"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle compétence a demandé l’application de la grille à ce cas ?",
+          "explanation": "Lire ce que chaque organisme disait précisément. Aucune compétence en toxicologie n’était nécessaire.",
+          "options": [
+            {
+              "text": "lire précisément ce que chacun affirmait",
+              "correct": true
+            },
+            {
+              "text": "des connaissances en toxicologie"
+            },
+            {
+              "text": "un accès aux données brutes"
+            },
+            {
+              "text": "une formation en statistique"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles trois listes faut-il écrire séparément ?",
+          "explanation": "Ce qui est établi, ce qui est incertain, et ce qui relève d’un choix. Les séparer rend la plupart des controverses lisibles.",
+          "options": [
+            {
+              "text": "ce qui est établi",
+              "correct": true
+            },
+            {
+              "text": "ce qui est incertain",
+              "correct": true
+            },
+            {
+              "text": "ce qui relève d’un choix",
+              "correct": true
+            },
+            {
+              "text": "ce que disent les experts"
+            },
+            {
+              "text": "ce que pense le public"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
