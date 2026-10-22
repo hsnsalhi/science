@@ -1,0 +1,626 @@
+{
+  "chapter": "svt-universite-geosciences",
+  "lessons": [
+    {
+      "id": "l-interieur-par-les-ondes",
+      "title": "L’intérieur, lu par les ondes",
+      "subtitle": "Douze kilomètres forés, six mille connus.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une onde de compression, et sa célérité",
+          "body": "Change le milieu — air, hélium, eau — et regarde la célérité. La figure montre un son, c’est-à-dire une onde de compression, et elle insiste sur un point : les particules vont et viennent sur place. Une onde sismique de type P est exactement cela, dans la roche, à environ six kilomètres par seconde dans la croûte.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Deux ondes, et ce que leur différence révèle",
+          "body": "Les ondes P sont longitudinales, comme le son. Elles traversent solides et liquides, à six kilomètres par seconde dans la croûte et jusqu’à treize à la base du manteau.\n\nLes ondes S sont transversales : elles cisaillent. Un liquide ne résiste pas au cisaillement, donc une onde S ne traverse pas un liquide. Elle va à 3,5 kilomètres par seconde dans la croûte.\n\nLa célérité dépend de la densité et de la rigidité du milieu. Une variation brusque de célérité signale donc un changement de nature ou d’état, et c’est ce qu’on appelle une discontinuité.\n\nToute la structure interne a été établie en repérant ces discontinuités sur des milliers de sismogrammes, sans jamais descendre au-delà de douze kilomètres.",
+          "formula": "P : 6 km/s dans la croûte ; S : 3,5 km/s, et pas dans un liquide",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois découvertes, trois discontinuités",
+          "body": "Mohorovičić, en 1909, remarque que les ondes d’un séisme arrivent en deux groupes au-delà d’une certaine distance. Il en déduit une couche plus rapide en profondeur : la limite croûte-manteau porte son nom.\n\nGutenberg, en 1913, exploite la zone d’ombre des ondes S pour placer le sommet du noyau liquide à 2 900 kilomètres.\n\nLehmann, en 1936, remarque de faibles arrivées dans la zone d’ombre, qui ne s’expliquent que par une réflexion sur une surface interne au noyau. Elle en déduit un noyau interne solide.\n\nLes trois raisonnements ont la même forme : une arrivée inattendue, et une structure qui l’explique. Personne n’a vu aucune de ces trois couches.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La zone à faible vitesse, et ce qu’elle contient",
+          "body": "Entre cent et deux cent cinquante kilomètres de profondeur, la célérité des ondes diminue au lieu d’augmenter. C’est anormal : la pression croissante devrait la faire monter.\n\nL’explication est une fusion partielle, de l’ordre d’un pour-cent de la roche. Quelques films de liquide entre les grains suffisent à ramollir l’ensemble.\n\nCette couche est l’asthénosphère, et c’est sur elle que les plaques glissent. Sans elle, la tectonique serait impossible — une lithosphère rigide posée sur un manteau également rigide ne bougerait pas.\n\nUn pour-cent de liquide décide donc du mouvement des continents. C’est un bel exemple de ce qu’une petite quantité au bon endroit peut faire.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi les séismes renseignent si bien",
+          "body": "Un séisme est une source d’ondes gratuite, puissante et répartie sur tout le globe. Plusieurs centaines par an sont assez forts pour être enregistrés partout.\n\nChaque séisme éclaire le globe depuis un point différent, et chaque station le reçoit par un trajet différent. Des millions de trajets sont donc disponibles.\n\nEn les combinant, on reconstruit la célérité en chaque point du globe, exactement comme un scanner médical reconstruit un volume à partir de projections. C’est la tomographie sismique, et elle emploie les mêmes mathématiques.\n\nElle a révélé des structures que les modèles en couches ne prévoyaient pas : des panneaux plongeants visibles jusqu’à la base du manteau, et des zones anormalement lentes sous l’Afrique et le Pacifique.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une onde S ne traverse-t-elle pas un liquide ?",
+          "explanation": "Parce qu’elle cisaille, et qu’un liquide ne résiste pas au cisaillement.",
+          "options": [
+            {
+              "text": "un liquide ne résiste pas au cisaillement",
+              "correct": true
+            },
+            {
+              "text": "elle est trop lente"
+            },
+            {
+              "text": "elle est absorbée par la chaleur"
+            },
+            {
+              "text": "sa fréquence est trop basse"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque découverte à son auteur.",
+          "explanation": "Mohorovičić 1909 pour la limite croûte-manteau, Gutenberg 1913 pour le noyau liquide, Lehmann 1936 pour le noyau interne solide.",
+          "pairs": [
+            {
+              "left": "la limite croûte-manteau, 1909",
+              "right": "Mohorovičić"
+            },
+            {
+              "left": "le noyau liquide à 2 900 km, 1913",
+              "right": "Gutenberg"
+            },
+            {
+              "left": "le noyau interne solide, 1936",
+              "right": "Lehmann"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui explique la zone à faible vitesse, entre 100 et 250 km ?",
+          "explanation": "Une fusion partielle d’environ un pour-cent : quelques films de liquide entre les grains suffisent à ramollir l’ensemble.",
+          "options": [
+            {
+              "text": "une fusion partielle d’environ un pour-cent",
+              "correct": true
+            },
+            {
+              "text": "une chute de pression"
+            },
+            {
+              "text": "un changement de composition"
+            },
+            {
+              "text": "la présence de métaux"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’asthénosphère est-elle indispensable à la tectonique ?",
+          "explanation": "C’est sur elle que les plaques glissent. Une lithosphère rigide posée sur un manteau également rigide ne bougerait pas.",
+          "options": [
+            {
+              "text": "les plaques y glissent",
+              "correct": true
+            },
+            {
+              "text": "elle produit le magma des volcans"
+            },
+            {
+              "text": "elle engendre le champ magnétique"
+            },
+            {
+              "text": "elle chauffe la croûte"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi la tomographie sismique ressemble-t-elle ?",
+          "explanation": "À un scanner médical : on reconstruit un volume à partir de projections, avec les mêmes mathématiques.",
+          "options": [
+            {
+              "text": "à un scanner médical",
+              "correct": true
+            },
+            {
+              "text": "à un sonar"
+            },
+            {
+              "text": "à un radar"
+            },
+            {
+              "text": "à une échographie simple"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que la tomographie a révélé, que les modèles en couches ne prévoyaient pas ?",
+          "explanation": "Des panneaux plongeants visibles jusqu’à la base du manteau, et des zones anormalement lentes sous l’Afrique et le Pacifique.",
+          "options": [
+            {
+              "text": "des panneaux plongeants jusqu’à la base du manteau",
+              "correct": true
+            },
+            {
+              "text": "des zones lentes sous l’Afrique et le Pacifique",
+              "correct": true
+            },
+            {
+              "text": "un second noyau liquide"
+            },
+            {
+              "text": "une croûte uniforme"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-le-manteau-est-solide",
+      "title": "Pourquoi le manteau est solide",
+      "subtitle": "Treize cents degrés, et pas une goutte de liquide.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La température, et le changement d’état",
+          "body": "Déplace la température de −20 à 140 degrés : les particules passent de serrées et ordonnées à libres. La figure ne montre qu’un paramètre, et c’est ce qui manque : la pression. La leçon ajoute cet axe, et il change tout.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La fusion dépend de deux paramètres, pas d’un",
+          "body": "Un diagramme de phase a deux axes : température et pression. Une courbe, le solidus, sépare la roche entièrement solide de la roche partiellement fondue.\n\nPour presque tous les minéraux, cette courbe monte avec la pression : il faut plus chaud pour fondre quand on comprime davantage.\n\nÀ deux cents kilomètres de profondeur, le manteau est à environ mille cinq cents degrés, et son solidus y est encore au-dessus. Il est donc solide, bien qu’il soit plus chaud que n’importe quelle lave de surface.\n\nDire qu’une roche fond à telle température est donc incomplet. Elle fond à telle température sous telle pression, et le second terme est aussi décisif que le premier.",
+          "formula": "le solidus monte avec la pression",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux façons de franchir le solidus",
+          "body": "Première façon : chauffer à pression constante. C’est l’intuition, et c’est rare en géologie — le manteau se réchauffe très lentement.\n\nDeuxième façon : décomprimer à température constante. Une roche qui monte sans perdre sa chaleur voit son solidus descendre sous sa température, et elle fond. C’est la fusion par décompression, et c’est le mécanisme des dorsales océaniques.\n\nTroisième façon, moins attendue : ajouter de l’eau. L’eau abaisse le solidus de plusieurs centaines de degrés, et une roche qui ne fondait pas se met à fondre sans qu’on ait changé ni sa température ni sa pression.\n\nC’est le mécanisme des zones de subduction, où la plaque plongeante libère l’eau qu’elle avait emmagasinée. Deux contextes volcaniques, deux mécanismes de fusion différents.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La fusion partielle, et ce qu’elle fabrique",
+          "body": "Une roche ne fond jamais entièrement en contexte naturel. Ses minéraux n’ont pas le même solidus, et les premiers à fondre donnent un liquide dont la composition diffère de celle de la roche.\n\nLe liquide est plus riche en silice et plus pauvre en magnésium et en fer. Il est aussi moins dense, donc il monte.\n\nLe manteau est une péridotite ; le liquide qu’il produit par quelques pour-cent de fusion est un basalte. Deux roches de compositions différentes, et la seconde vient de la première par un tri.\n\nC’est le mécanisme qui a fabriqué toute la croûte terrestre. La différenciation de la planète en couches de compositions distinctes n’est donc pas un héritage de sa formation : elle est entretenue, fusion partielle après fusion partielle.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Solide, et pourtant il coule",
+          "body": "Le manteau est solide au sens de la sismologie : il transmet les ondes de cisaillement. Et il flue, à l’échelle des temps géologiques.\\n\\nLes deux énoncés sont compatibles, et la contradiction n’est qu’apparente : la réponse d’un matériau dépend de la durée de la sollicitation. Sous une onde de quelques secondes, le manteau est rigide ; sous une contrainte de millions d’années, il s’écoule.\\n\\nLe verre d’une vitre ancienne en est un cousin discuté, et la poix un exemple net : elle casse en éclats sous un coup de marteau et s’écoule en quelques mois dans un entonnoir.\\n\\nLa distinction solide-liquide dépend donc de l’échelle de temps d’observation. C’est une leçon qui dépasse la géologie, et elle explique qu’un même matériau puisse être décrit différemment par deux disciplines sans qu’aucune se trompe.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi la fusion d’une roche dépend-elle ?",
+          "explanation": "De la température et de la pression. Dire qu’une roche fond à telle température est incomplet.",
+          "options": [
+            {
+              "text": "de la température et de la pression",
+              "correct": true
+            },
+            {
+              "text": "de la température seule"
+            },
+            {
+              "text": "de sa densité"
+            },
+            {
+              "text": "de sa profondeur seule"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le manteau est-il solide à 1 500 degrés ?",
+          "explanation": "Parce que la pression y place le solidus encore au-dessus de sa température. Il est plus chaud que n’importe quelle lave de surface, et solide.",
+          "options": [
+            {
+              "text": "la pression y relève le solidus au-dessus de sa température",
+              "correct": true
+            },
+            {
+              "text": "il est en réalité plus froid"
+            },
+            {
+              "text": "sa composition ne fond pas"
+            },
+            {
+              "text": "il manque d’eau"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce mécanisme de fusion correspond à quel contexte ?",
+          "explanation": "La décompression fait fondre sous les dorsales ; l’apport d’eau fait fondre dans les zones de subduction.",
+          "categories": [
+            "dorsale océanique",
+            "zone de subduction"
+          ],
+          "items": [
+            {
+              "text": "une roche qui monte et décomprime",
+              "category": 0
+            },
+            {
+              "text": "un solidus franchi par la baisse de pression",
+              "category": 0
+            },
+            {
+              "text": "l’eau libérée par la plaque plongeante",
+              "category": 1
+            },
+            {
+              "text": "un solidus abaissé de plusieurs centaines de degrés",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le liquide issu d’une fusion partielle diffère-t-il de la roche ?",
+          "explanation": "Parce que les minéraux n’ont pas le même solidus : les premiers à fondre donnent un liquide plus riche en silice.",
+          "options": [
+            {
+              "text": "les minéraux ne fondent pas tous à la même température",
+              "correct": true
+            },
+            {
+              "text": "le liquide se mélange à l’eau"
+            },
+            {
+              "text": "la pression change sa composition"
+            },
+            {
+              "text": "il ne diffère pas"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle roche la fusion partielle d’une péridotite donne-t-elle ?",
+          "explanation": "Un basalte : plus riche en silice, plus pauvre en magnésium et fer, et moins dense — donc il monte.",
+          "options": [
+            {
+              "text": "un basalte",
+              "correct": true
+            },
+            {
+              "text": "un granite"
+            },
+            {
+              "text": "une autre péridotite"
+            },
+            {
+              "text": "un calcaire"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La différenciation de la Terre en couches est un héritage de sa formation.",
+          "explanation": "Faux, pas seulement : elle est entretenue, fusion partielle après fusion partielle. C’est ce mécanisme qui a fabriqué toute la croûte.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "magmatisme-et-subduction",
+      "title": "Magmatisme et subduction",
+      "subtitle": "Deux contextes, deux magmas, deux dangers.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre états, et deux éruptions",
+          "body": "Parcours les quatre états : au repos, sous pression, éruption rouge, éruption grise. La coupe montre que le magma s’accumule d’abord dans une poche, et que la montagne est faite de ses éruptions passées. Compare les deux dernières images, et demande-toi d’où vient la différence.",
+          "figureId": "volcan",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi la subduction fabrique des magmas visqueux",
+          "body": "La plaque océanique qui plonge est hydratée : elle a passé des millions d’années sous l’eau, et ses minéraux en ont incorporé.\n\nÀ quelques dizaines de kilomètres de profondeur, la pression et la température libèrent cette eau, qui monte dans le manteau au-dessus et en abaisse le solidus.\n\nLe magma produit traverse ensuite une croûte continentale épaisse. Il y stagne, s’y refroidit partiellement, y cristallise ses minéraux les plus pauvres en silice — ce qui enrichit le liquide restant.\n\nIl arrive donc en surface riche en silice, donc visqueux, et chargé des gaz qu’il n’a pas pu libérer. Les deux conditions d’une éruption explosive sont ainsi réunies par le trajet lui-même.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi une plaque plonge, et jusqu’où",
+          "body": "Une lithosphère océanique jeune est chaude et peu dense. En s’éloignant de la dorsale, elle refroidit, s’épaissit, et sa densité augmente.\n\nVers vingt à trente millions d’années, elle devient plus dense que le manteau sous-jacent. Elle peut alors plonger, et son propre poids tire le reste de la plaque.\n\nC’est pourquoi aucune plaque océanique n’est très vieille : au-delà de deux cents millions d’années, elle a presque toujours été recyclée. La croûte continentale, moins dense, ne plonge pas et peut atteindre quatre milliards d’années.\n\nLa tomographie montre des panneaux plongeants jusqu’à deux mille neuf cents kilomètres, à la base du manteau. Ce qui descend traverse donc tout le manteau, et le brasse.",
+          "formula": "vers 20 à 30 millions d’années, la plaque devient plus dense que le manteau",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les points chauds, et un débat ouvert",
+          "body": "Certains volcans ne sont ni sur une dorsale ni sur une subduction : Hawaï, La Réunion, l’Islande en partie. On les appelle des points chauds.\n\nL’explication classique, proposée en 1963, est un panache de manteau chaud remontant depuis une grande profondeur, fixe, au-dessus duquel la plaque défile — ce qui explique les alignements d’îles d’âges croissants.\n\nL’explication est contestée depuis les années 2000. Certains points chauds n’ont pas de panache visible en tomographie, d’autres se déplacent, et des mécanismes alternatifs — fractures lithosphériques, hétérogénéités de composition — expliquent une partie des cas.\n\nLe débat n’est pas tranché, et c’est un cas utile : une explication peut être enseignée pendant quarante ans comme un acquis, et redevenir une hypothèse quand les moyens d’observation changent.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui entretient la chaleur interne",
+          "body": "On dit volontiers que la Terre est encore chaude de sa formation. C’est vrai pour une part minoritaire.\\n\\nLe flux de chaleur sortant du globe est d’environ quarante-sept térawatts, soit deux fois et demie la consommation énergétique mondiale. La moitié environ vient de la désintégration de l’uranium, du thorium et du potassium 40 dans le manteau et la croûte.\\n\\nC’est pourquoi la Terre est encore active après quatre milliards et demi d’années, là où un simple refroidissement l’aurait figée. Lord Kelvin, qui ignorait la radioactivité, calculait un âge cent fois trop faible — et contestait Darwin sur cette base.\\n\\nLes horloges radioactives ne servent donc pas seulement à dater. Elles sont aussi le moteur de ce qu’elles datent, et c’est la plus élégante circularité de la discipline.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la fabrication d’un magma de subduction dans l’ordre.",
+          "explanation": "La plaque hydratée plonge, libère son eau, qui abaisse le solidus du manteau au-dessus ; le magma stagne ensuite dans la croûte et s’enrichit en silice.",
+          "items": [
+            "une plaque océanique hydratée plonge",
+            "la chaleur et la pression libèrent son eau",
+            "l’eau abaisse le solidus du manteau au-dessus",
+            "le magma stagne dans la croûte et s’enrichit en silice"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un magma de subduction arrive-t-il visqueux et chargé de gaz ?",
+          "explanation": "Parce qu’il a stagné dans une croûte épaisse, y a cristallisé ses minéraux pauvres en silice, et n’a pas pu libérer ses gaz.",
+          "options": [
+            {
+              "text": "son trajet dans la croûte l’a enrichi en silice",
+              "correct": true
+            },
+            {
+              "text": "il est plus froid à la source"
+            },
+            {
+              "text": "l’eau le rend visqueux"
+            },
+            {
+              "text": "il vient de plus profond"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Vers quel âge, en millions d’années, une plaque océanique devient-elle plus dense que le manteau ?",
+          "explanation": "Vers vingt à trente millions d’années : elle a refroidi et s’est épaissie en s’éloignant de la dorsale.",
+          "min": 0,
+          "max": 200,
+          "answer": 25,
+          "tolerance": 7,
+          "unit": "millions d’années",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la croûte continentale peut-elle atteindre quatre milliards d’années ?",
+          "explanation": "Parce qu’elle est moins dense et ne plonge pas. La croûte océanique, elle, est recyclée au-delà de deux cents millions d’années.",
+          "options": [
+            {
+              "text": "moins dense, elle ne plonge pas",
+              "correct": true
+            },
+            {
+              "text": "elle est plus épaisse"
+            },
+            {
+              "text": "elle est plus froide"
+            },
+            {
+              "text": "elle est protégée par les océans"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle explication classique a été proposée pour les points chauds en 1963 ?",
+          "explanation": "Un panache de manteau chaud remontant de grande profondeur, fixe, sous une plaque qui défile — d’où les alignements d’îles d’âges croissants.",
+          "options": [
+            {
+              "text": "un panache fixe sous une plaque qui défile",
+              "correct": true
+            },
+            {
+              "text": "une subduction cachée"
+            },
+            {
+              "text": "une dorsale avortée"
+            },
+            {
+              "text": "un impact de météorite"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que le débat sur les points chauds illustre ?",
+          "explanation": "Qu’une explication peut être enseignée quarante ans comme un acquis et redevenir une hypothèse quand les moyens d’observation changent.",
+          "options": [
+            {
+              "text": "un acquis peut redevenir une hypothèse",
+              "correct": true
+            },
+            {
+              "text": "les géologues se contredisent souvent"
+            },
+            {
+              "text": "la tomographie est peu fiable"
+            },
+            {
+              "text": "les points chauds n’existent pas"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-reconstituer-une-histoire",
+      "title": "Défi : reconstituer une histoire",
+      "subtitle": "Trois sources indépendantes, et leur recoupement.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’horloge, et sa portée",
+          "body": "Pousse le curseur de 0 à 6 demi-vies et compte les noyaux restants. Chaque isotope a sa demi-vie, donc sa fenêtre d’utilité. Choisir le bon isotope est le premier geste d’une datation, et employer le mauvais ne donne pas une mauvaise précision mais un non-sens.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Une coupe, et des couches datables",
+          "body": "Reviens à la coupe et regarde les couches alternées de la montagne : chacune est une éruption, la plus basse est la plus ancienne. Si l’on peut dater deux d’entre elles, tout ce qui est entre les deux se trouve encadré.",
+          "figureId": "volcan",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois sources, et ce que chacune apporte",
+          "body": "Les relations géométriques : superposition, recoupement, inclusion. Elles donnent un ordre, sans aucune date, et sans aucun instrument.\n\nLes datations absolues : elles donnent des âges, avec une incertitude, sur les roches qui contiennent les bons isotopes — donc surtout les roches magmatiques.\n\nLes fossiles : ils donnent des âges relatifs, par comparaison avec des successions établies ailleurs, et ils fonctionnent sur les roches sédimentaires, que les isotopes datent mal.\n\nLes trois sont complémentaires parce qu’elles ne portent pas sur les mêmes roches. C’est leur recoupement qui fait une histoire, et un désaccord entre deux d’entre elles est une information — pas une erreur à arbitrer.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Comment les trois se recoupent, en pratique",
+          "body": "Une couche sédimentaire à fossiles est encadrée par deux coulées volcaniques, datées à cinquante et quarante millions d’années.\n\nLa couche a donc entre quarante et cinquante millions d’années, et ses fossiles reçoivent cet encadrement. On peut alors les employer ailleurs, là où aucune coulée n’existe.\n\nC’est ainsi que l’échelle des temps géologiques a été construite : des datations ponctuelles sur des roches magmatiques, transmises aux roches sédimentaires par les fossiles, puis étendues au monde entier par corrélation.\n\nL’échelle actuelle est le résultat de deux siècles de ce travail, et elle est révisée en permanence. Les limites d’étages bougent encore de quelques centaines de milliers d’années à chaque nouvelle datation de référence.",
+          "formula": "les isotopes datent le magmatique, les fossiles transmettent au sédimentaire",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "La structure du globe a été établie par les ondes, sans jamais descendre au-delà de douze kilomètres. Trois discontinuités, trois raisonnements de la même forme : une arrivée inattendue, et une structure qui l’explique.\n\nUne roche fond selon deux paramètres, et c’est la pression qui maintient le manteau solide à mille cinq cents degrés. Trois façons de franchir le solidus, dont deux expliquent les deux contextes volcaniques.\n\nLa fusion partielle trie et fabrique la croûte. La différenciation de la planète est entretenue, pas héritée.\n\nEt une histoire géologique se reconstruit par recoupement de trois sources qui ne portent pas sur les mêmes roches. Un désaccord entre deux d’entre elles est une information.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque source à ce qu’elle apporte.",
+          "explanation": "La géométrie donne un ordre, les isotopes des âges sur les roches magmatiques, les fossiles des âges relatifs sur les sédiments.",
+          "pairs": [
+            {
+              "left": "les relations géométriques",
+              "right": "un ordre, sans date"
+            },
+            {
+              "left": "les datations isotopiques",
+              "right": "des âges, surtout sur le magmatique"
+            },
+            {
+              "left": "les fossiles",
+              "right": "des âges relatifs sur les sédiments"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les trois sources sont-elles complémentaires ?",
+          "explanation": "Parce qu’elles ne portent pas sur les mêmes roches : les isotopes datent le magmatique, les fossiles le sédimentaire.",
+          "options": [
+            {
+              "text": "elles ne portent pas sur les mêmes roches",
+              "correct": true
+            },
+            {
+              "text": "elles ont la même précision"
+            },
+            {
+              "text": "elles se contredisent rarement"
+            },
+            {
+              "text": "elles emploient les mêmes instruments"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Une couche est entre deux coulées datées à 50 et 40 millions d’années. Quel âge, au plus, pour la couche ?",
+          "explanation": "Cinquante millions d’années : elle est plus jeune que la coulée du dessous et plus vieille que celle du dessus.",
+          "min": 0,
+          "max": 200,
+          "answer": 50,
+          "tolerance": 2,
+          "unit": "millions d’années",
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la construction de l’échelle des temps dans l’ordre.",
+          "explanation": "Dater des roches magmatiques, encadrer les couches sédimentaires, transmettre l’âge à leurs fossiles, puis corréler dans le monde entier.",
+          "items": [
+            "dater des roches magmatiques par les isotopes",
+            "encadrer les couches sédimentaires entre deux datations",
+            "transmettre ces âges à leurs fossiles",
+            "corréler par les fossiles dans le monde entier"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’échelle des temps géologiques est définitivement établie.",
+          "explanation": "Faux. Les limites d’étages bougent encore de quelques centaines de milliers d’années à chaque nouvelle datation de référence.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un désaccord entre deux sources de datation ?",
+          "explanation": "Une information, et non une erreur à arbitrer : il signale qu’une hypothèse de l’une des deux ne tient pas.",
+          "options": [
+            {
+              "text": "une information, qui signale une hypothèse fausse",
+              "correct": true
+            },
+            {
+              "text": "une erreur de mesure à corriger"
+            },
+            {
+              "text": "une raison de choisir la plus précise"
+            },
+            {
+              "text": "un cas sans conséquence"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

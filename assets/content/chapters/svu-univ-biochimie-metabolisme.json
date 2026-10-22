@@ -1,0 +1,640 @@
+{
+  "chapter": "svt-universite-biochimie-et-metabolisme",
+  "lessons": [
+    {
+      "id": "les-quatre-familles",
+      "title": "Les quatre familles de molécules",
+      "subtitle": "Des briques peu nombreuses, et des assemblages sans limite.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les compartiments, et ce qu’ils séparent",
+          "body": "Touche chaque partie de la cellule : la membrane trie, le noyau conserve, la mitochondrie convertit. Cette séparation en compartiments est ce qui permet à des réactions incompatibles de coexister à quelques micromètres, et c’est le fait de base de toute la biochimie.",
+          "figureId": "cellule",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Quatre familles, quatre fonctions",
+          "body": "Les glucides : énergie immédiate et structure. L’amidon stocke, la cellulose soutient, et les deux sont des chaînes du même glucose assemblées différemment.\n\nLes lipides : réserve dense, isolation, et surtout membranes. Leur caractère à la fois hydrophile d’un côté et hydrophobe de l’autre suffit à expliquer qu’ils s’organisent spontanément en bicouche.\n\nLes protéines : tout le travail. Catalyse, transport, mouvement, reconnaissance, structure. Vingt acides aminés en font des millions de variétés.\n\nLes acides nucléiques : l’information et sa transmission. Quatre bases, et la capacité de se copier — ce qu’aucune des trois autres familles ne sait faire.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi les protéines font tout",
+          "body": "Une protéine est une chaîne d’acides aminés, pliée. Sa fonction vient de sa forme, et sa forme vient de sa séquence.\n\nAvec vingt acides aminés et une chaîne de cent, il existe vingt puissance cent séquences possibles — un nombre qui dépasse le nombre d’atomes de l’Univers observable.\n\nL’évolution n’en a exploré qu’une fraction infinitésimale, et cela suffit : les protéines connues couvrent la catalyse, le transport, la contraction, la reconnaissance immunitaire.\n\nLe lien séquence-forme-fonction est donc le fait central de la biologie moléculaire. Et prédire la forme depuis la séquence a été un problème ouvert pendant cinquante ans, résolu en pratique seulement vers 2020.",
+          "formula": "20 puissance 100 séquences possibles pour une chaîne de cent",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’eau n’est pas un décor",
+          "body": "Soixante pour-cent de la masse d’un corps humain, et soixante-dix de celle d’une cellule. Elle n’est pas un solvant passif.\n\nC’est elle qui plie les protéines : les parties hydrophobes se regroupent à l’intérieur pour fuir l’eau, et c’est cette fuite qui donne la forme. Sans eau, pas de repliement, donc pas de fonction.\n\nC’est elle aussi qui assemble les membranes, pour la même raison, et qui maintient la forme des cellules végétales par la pression de turgescence.\n\nEt c’est un réactif à part entière : les hydrolyses, qui découpent toutes les grosses molécules de l’alimentation, consomment une molécule d’eau par liaison coupée. Il faut donc la compter dans les bilans, et on l’oublie systématiquement.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Quatre familles, et un vocabulaire commun",
+          "body": "Les quatre familles sont construites sur le même principe : des unités liées en chaîne par élimination d’une molécule d’eau, et séparées par ajout d’une molécule d’eau.\\n\\nGlucose sur glucose fait l’amidon, acide aminé sur acide aminé fait la protéine, nucléotide sur nucléotide fait l’ADN. La chimie de la liaison diffère, le schéma est identique.\\n\\nCette uniformité a une conséquence pratique : la digestion de n’importe quel aliment est une suite d’hydrolyses, et les enzymes digestives sont toutes des hydrolases.\\n\\nEt elle a une conséquence théorique : la polymérisation étant défavorable, toutes les synthèses du vivant exigent de l’énergie, alors que toutes les dégradations en libèrent. Le sens du métabolisme est donc inscrit dans la chimie des liaisons.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque famille à sa fonction dominante.",
+          "explanation": "Glucides pour l’énergie et la structure, lipides pour les membranes et les réserves, protéines pour le travail, acides nucléiques pour l’information.",
+          "pairs": [
+            {
+              "left": "les glucides",
+              "right": "énergie immédiate et structure"
+            },
+            {
+              "left": "les lipides",
+              "right": "membranes et réserves denses"
+            },
+            {
+              "left": "les protéines",
+              "right": "catalyse, transport, mouvement"
+            },
+            {
+              "left": "les acides nucléiques",
+              "right": "information et transmission"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’amidon et la cellulose ont en commun ?",
+          "explanation": "Ce sont des chaînes du même glucose, assemblées différemment. L’une stocke, l’autre soutient.",
+          "options": [
+            {
+              "text": "ce sont des chaînes du même glucose",
+              "correct": true
+            },
+            {
+              "text": "ce sont des lipides"
+            },
+            {
+              "text": "elles ont la même fonction"
+            },
+            {
+              "text": "elles contiennent de l’azote"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la fonction d’une protéine ?",
+          "explanation": "De sa forme, qui vient de sa séquence. C’est le lien séquence-forme-fonction, fait central de la biologie moléculaire.",
+          "options": [
+            {
+              "text": "de sa forme, qui vient de sa séquence",
+              "correct": true
+            },
+            {
+              "text": "de sa taille"
+            },
+            {
+              "text": "de sa charge électrique seule"
+            },
+            {
+              "text": "du compartiment où elle se trouve"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels rôles l’eau joue-t-elle, en plus d’être un solvant ?",
+          "explanation": "Elle plie les protéines, assemble les membranes, maintient la turgescence, et sert de réactif dans toutes les hydrolyses.",
+          "options": [
+            {
+              "text": "elle plie les protéines",
+              "correct": true
+            },
+            {
+              "text": "elle assemble les membranes",
+              "correct": true
+            },
+            {
+              "text": "elle maintient la turgescence",
+              "correct": true
+            },
+            {
+              "text": "elle est réactif des hydrolyses",
+              "correct": true
+            },
+            {
+              "text": "elle catalyse les réactions"
+            },
+            {
+              "text": "elle stocke l’information"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les parties hydrophobes d’une protéine se regroupent-elles à l’intérieur ?",
+          "explanation": "Pour fuir l’eau, et c’est cette fuite qui donne la forme. Sans eau, pas de repliement, donc pas de fonction.",
+          "options": [
+            {
+              "text": "pour fuir l’eau, et c’est ce qui donne la forme",
+              "correct": true
+            },
+            {
+              "text": "pour se protéger des enzymes"
+            },
+            {
+              "text": "par attraction électrostatique"
+            },
+            {
+              "text": "parce qu’elles sont plus lourdes"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand le problème de la prédiction de forme a-t-il été résolu en pratique ?",
+          "explanation": "Vers 2020, après cinquante ans de problème ouvert. La séquence était connue, la forme ne s’en déduisait pas.",
+          "options": [
+            {
+              "text": "vers 2020",
+              "correct": true
+            },
+            {
+              "text": "dans les années 1970"
+            },
+            {
+              "text": "il ne l’est pas"
+            },
+            {
+              "text": "dès la découverte de l’ADN"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-enzymes",
+      "title": "Les enzymes, et ce qu’elles ne font pas",
+      "subtitle": "Elles accélèrent, et ne décident de rien.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La température, et ce qu’elle fait à l’agitation",
+          "body": "Déplace la température : les particules passent de serrées et ordonnées à libres et rapides. Une réaction chimique a besoin que deux molécules se rencontrent avec assez d’énergie. Une enzyme ne change pas l’agitation — elle change la quantité d’énergie nécessaire, et la leçon dit comment.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’une enzyme change, et ce qu’elle ne change pas",
+          "body": "Elle abaisse l’énergie d’activation : la barrière à franchir pour que la réaction se produise. Elle accélère donc la réaction, parfois d’un facteur dix puissance dix-sept.\n\nElle ne change pas l’équilibre. Si la réaction est thermodynamiquement défavorable, l’enzyme ne la rendra pas spontanée : elle accélérera seulement l’atteinte du même équilibre.\n\nElle accélère donc les deux sens également. Une enzyme ne choisit pas de direction, et dire qu’elle « fabrique » un produit est un raccourci dangereux.\n\nC’est la concentration des réactifs et des produits qui décide du sens, et c’est pourquoi une cellule retire ses produits au fur et à mesure — pour maintenir le sens.",
+          "formula": "l’enzyme abaisse la barrière, jamais l’équilibre",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La spécificité, et comment elle est obtenue",
+          "body": "Une enzyme reconnaît son substrat par la forme de son site actif. L’ajustement n’est pas rigide : la liaison déforme l’enzyme et le substrat, et c’est cette déformation qui catalyse.\n\nLa spécificité est souvent extrême. Une enzyme distingue deux molécules images l’une de l’autre dans un miroir, et n’agit que sur l’une — ce qu’aucun catalyseur chimique ordinaire ne sait faire.\n\nC’est pourquoi un médicament de synthèse doit être produit sous la bonne forme spéculaire. Le mélange des deux n’est pas une demi-dose : l’autre forme peut être inactive, ou toxique.\n\nLe drame du thalidomide, en 1961, vient en partie de là. La question de la forme spéculaire n’est donc pas une subtilité de chimiste : c’est une question de sécurité.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui règle l’activité d’une enzyme",
+          "body": "La concentration en substrat : l’activité croît, puis sature quand toutes les enzymes sont occupées. La courbe est celle de Michaelis-Menten, et sa constante dit à quelle concentration la moitié des sites est occupée.\\n\\nLa température : l’activité croît avec l’agitation, puis s’effondre quand la protéine se dénature. L’optimum humain est vers 37 degrés, et ce n’est pas une coïncidence.\\n\\nL’acidité : chaque enzyme a son optimum. La pepsine de l’estomac travaille à pH 2, les enzymes intestinales vers 8, et chacune est inactive dans le milieu de l’autre.\\n\\nEt les régulateurs : des molécules qui se fixent ailleurs que sur le site actif et changent la forme de l’enzyme. C’est par là que la cellule commande son métabolisme, et c’est aussi par là qu’agissent de nombreux médicaments.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’inhibition, et les deux façons de bloquer",
+          "body": "Un inhibiteur compétitif ressemble au substrat et occupe le site actif. On le contourne en augmentant la concentration de substrat — les deux se font concurrence.\\n\\nUn inhibiteur non compétitif se fixe ailleurs et déforme l’enzyme. Augmenter le substrat ne sert à rien : le site est intact et l’enzyme ne fonctionne plus.\\n\\nLa distinction décide du traitement d’une intoxication. On traite l’empoisonnement au méthanol en administrant de l’éthanol, qui occupe par compétition l’enzyme responsable — c’est un antidote par concurrence de substrat.\\n\\nFace à un inhibiteur non compétitif, cette stratégie n’existe pas. Reconnaître de quel type on a affaire est donc un acte clinique avant d’être une distinction de cours.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’une enzyme change-t-elle ?",
+          "explanation": "L’énergie d’activation, donc la vitesse. Elle ne change pas l’équilibre de la réaction.",
+          "options": [
+            {
+              "text": "l’énergie d’activation, donc la vitesse",
+              "correct": true
+            },
+            {
+              "text": "l’équilibre de la réaction"
+            },
+            {
+              "text": "le sens de la réaction"
+            },
+            {
+              "text": "la nature des produits"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une enzyme peut rendre spontanée une réaction défavorable.",
+          "explanation": "Faux. Elle accélère l’atteinte du même équilibre, dans les deux sens également. Le sens est décidé par les concentrations.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment une cellule maintient-elle le sens d’une réaction ?",
+          "explanation": "En retirant ses produits au fur et à mesure : c’est la concentration qui décide du sens, pas l’enzyme.",
+          "options": [
+            {
+              "text": "en retirant ses produits au fur et à mesure",
+              "correct": true
+            },
+            {
+              "text": "en changeant d’enzyme"
+            },
+            {
+              "text": "en chauffant localement"
+            },
+            {
+              "text": "en inversant l’enzyme"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De quel facteur une enzyme peut-elle accélérer une réaction, en puissance de dix ?",
+          "explanation": "Jusqu’à dix puissance dix-sept pour les plus efficaces. C’est une accélération sans équivalent en chimie de synthèse.",
+          "min": 0,
+          "max": 30,
+          "answer": 17,
+          "tolerance": 3,
+          "unit": "puissance de 10",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui catalyse, dans la reconnaissance enzyme-substrat ?",
+          "explanation": "La déformation mutuelle lors de la liaison. L’ajustement n’est pas rigide, et c’est la déformation qui fait le travail.",
+          "options": [
+            {
+              "text": "la déformation mutuelle lors de la liaison",
+              "correct": true
+            },
+            {
+              "text": "la rigidité du site actif"
+            },
+            {
+              "text": "la charge du substrat"
+            },
+            {
+              "text": "la température locale"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la forme spéculaire d’un médicament importe-t-elle ?",
+          "explanation": "Parce qu’une enzyme n’agit que sur une des deux formes : l’autre peut être inactive ou toxique. Le drame du thalidomide en vient en partie.",
+          "options": [
+            {
+              "text": "l’autre forme peut être inactive ou toxique",
+              "correct": true
+            },
+            {
+              "text": "elle coûte moins cher à produire"
+            },
+            {
+              "text": "elle se conserve mieux"
+            },
+            {
+              "text": "c’est une exigence réglementaire sans fondement"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-metabolisme-comme-reseau",
+      "title": "Le métabolisme comme réseau",
+      "subtitle": "Deux mille réactions, et une poignée de carrefours.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des étages, et un rendement qui se multiplie",
+          "body": "Règle les quatre étages et lis le rendement global. Le métabolisme enchaîne des conversions de ce type, et chacune ne transmet qu’une fraction. Mais il n’est pas une chaîne : c’est un réseau, et la leçon dit ce que cette différence change.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi un réseau, et non une chaîne",
+          "body": "Une cellule humaine mène de l’ordre de deux mille réactions différentes. Chacune transforme une molécule en une autre, et les produits de l’une sont les réactifs de plusieurs autres.\n\nQuelques molécules apparaissent dans des centaines de réactions : l’ATP, les transporteurs d’électrons, l’eau, le phosphate. Ce sont les carrefours du réseau.\n\nCette structure a une conséquence : il n’existe pas un chemin unique du glucose à l’énergie. Selon les conditions, la cellule emprunte des voies différentes, et c’est ce qui lui permet de s’adapter.\n\nEt c’est pourquoi bloquer une enzyme ne bloque pas toujours une fonction : le réseau se reporte, exactement comme le faisait le réseau de paquets du cours d’informatique.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’ATP, et le chiffre qui frappe",
+          "body": "L’hydrolyse de l’ATP libère de l’ordre de trente kilojoules par mole dans les conditions cellulaires. C’est la monnaie énergétique de tout le vivant.\n\nUn corps humain en contient environ cinquante grammes à tout instant, et en consomme de l’ordre de quarante kilogrammes par jour.\n\nChaque molécule est donc recyclée des centaines de fois par jour. L’ATP n’est pas un stock, c’est un flux — et c’est pourquoi arrêter sa production tue en quelques secondes plutôt qu’en quelques heures.\n\nLe cyanure et le monoxyde de carbone agissent précisément là, sur la chaîne respiratoire. Leur rapidité d’action se déduit du rapport entre le stock et le flux, et non d’une toxicité particulière.",
+          "formula": "50 g d’ATP dans le corps, 40 kg consommés par jour",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le couplage, et ce qu’il permet",
+          "body": "Beaucoup de réactions du métabolisme sont défavorables prises isolément. Fabriquer une protéine à partir d’acides aminés consomme de l’énergie.\n\nElles se font quand même, parce qu’elles sont couplées à l’hydrolyse de l’ATP, qui est très favorable. Le bilan des deux réactions ensemble est négatif, donc spontané.\n\nLe couplage n’est pas une métaphore : les deux réactions se produisent sur la même enzyme, et partagent un intermédiaire. Sans cette liaison physique, l’ATP s’hydrolyserait en chaleur sans rien entraîner.\n\nC’est le mécanisme général par lequel le vivant fait advenir l’improbable sans violer la thermodynamique. Il paie, et il paie en ATP.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Anabolisme et catabolisme, et pourquoi les voies diffèrent",
+          "body": "Dégrader le glucose et le fabriquer ne suivent pas le même chemin, même si le bilan global est inverse.\\n\\nLa raison est thermodynamique : une voie favorable dans un sens est défavorable dans l’autre, et il faut contourner les étapes les plus défavorables par d’autres réactions, avec d’autres enzymes.\\n\\nCela coûte plus cher — refaire du glucose demande six ATP là où le dégrader en rapporte deux — et cela apporte un avantage décisif : les deux voies se régulent indépendamment.\\n\\nUne cellule peut ainsi arrêter la synthèse sans arrêter la dégradation. Si les deux empruntaient le même chemin, elles ne pourraient pas être commandées séparément, et le métabolisme tournerait en rond en dissipant de l’ATP.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de réactions différentes une cellule humaine mène-t-elle, en milliers ?",
+          "explanation": "De l’ordre de deux mille. Les produits de l’une sont les réactifs de plusieurs autres : c’est un réseau.",
+          "min": 0,
+          "max": 50,
+          "answer": 2,
+          "tolerance": 0.5,
+          "unit": "milliers",
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles molécules sont des carrefours du réseau métabolique ?",
+          "explanation": "L’ATP, les transporteurs d’électrons, l’eau, le phosphate : elles apparaissent dans des centaines de réactions.",
+          "options": [
+            {
+              "text": "l’ATP",
+              "correct": true
+            },
+            {
+              "text": "les transporteurs d’électrons",
+              "correct": true
+            },
+            {
+              "text": "l’eau",
+              "correct": true
+            },
+            {
+              "text": "le phosphate",
+              "correct": true
+            },
+            {
+              "text": "l’hémoglobine"
+            },
+            {
+              "text": "la cellulose"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi bloquer une enzyme ne bloque-t-il pas toujours une fonction ?",
+          "explanation": "Parce que le réseau se reporte sur une autre voie, exactement comme un réseau de paquets contourne un lien coupé.",
+          "options": [
+            {
+              "text": "le réseau se reporte sur une autre voie",
+              "correct": true
+            },
+            {
+              "text": "l’enzyme se régénère"
+            },
+            {
+              "text": "la réaction se fait sans enzyme"
+            },
+            {
+              "text": "la cellule produit une autre enzyme identique"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de kilogrammes d’ATP un corps humain consomme-t-il par jour ?",
+          "explanation": "De l’ordre de quarante kilogrammes, pour cinquante grammes présents à tout instant. L’ATP est un flux, pas un stock.",
+          "min": 0,
+          "max": 200,
+          "answer": 40,
+          "tolerance": 10,
+          "unit": "kg",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le cyanure tue-t-il en quelques secondes ?",
+          "explanation": "Parce qu’il bloque la chaîne respiratoire, et que le stock d’ATP ne vaut que quelques secondes de consommation.",
+          "options": [
+            {
+              "text": "le stock d’ATP ne couvre que quelques secondes",
+              "correct": true
+            },
+            {
+              "text": "il détruit les cellules directement"
+            },
+            {
+              "text": "il est très toxique à faible dose"
+            },
+            {
+              "text": "il bloque la circulation sanguine"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment une réaction défavorable se produit-elle quand même ?",
+          "explanation": "Par couplage à l’hydrolyse de l’ATP sur la même enzyme, avec un intermédiaire partagé : le bilan des deux est spontané.",
+          "options": [
+            {
+              "text": "par couplage physique à une réaction très favorable",
+              "correct": true
+            },
+            {
+              "text": "par une enzyme plus puissante"
+            },
+            {
+              "text": "par apport de chaleur"
+            },
+            {
+              "text": "elle ne se produit pas"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ou-va-l-energie",
+      "title": "Défi : où va l’énergie",
+      "subtitle": "Du glucose à un gradient de protons, et c’est ce gradient qui paie.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un gradient qui s’efface, et le travail qu’il peut faire",
+          "body": "Lance la diffusion : les particules envahissent la seconde moitié et n’en reviennent pas. Tant que le déséquilibre existe, on peut en tirer du travail ; une fois réparti, plus rien. Toute la bioénergétique tient dans cette phrase.",
+          "figureId": "entropie",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Les étages, et le rendement réel",
+          "body": "Mets les étages aux valeurs qui te paraissent raisonnables et lis le rendement global. La respiration cellulaire atteint environ trente-huit pour-cent du contenu énergétique du glucose, ce qui est remarquable — un moteur thermique de même taille ferait bien moins.",
+          "figureId": "chaine-energie",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois étapes, et ce que chacune rapporte",
+          "body": "La glycolyse, dans le cytoplasme : dix réactions, et un bilan net de deux ATP par glucose. Elle ne demande pas de dioxygène.\n\nLe cycle de Krebs, dans la mitochondrie : il ne produit presque pas d’ATP directement. Son rôle est de charger des transporteurs d’électrons.\n\nLa chaîne respiratoire : les électrons passent de transporteur en transporteur jusqu’au dioxygène, et l’énergie libérée sert à pomper des protons hors de la mitochondrie.\n\nC’est ce gradient de protons qui paie. Leur retour à travers une turbine protéique fabrique l’essentiel des trente ATP par glucose. Le dioxygène ne sert qu’à la toute dernière étape, comme accepteur final.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "La chimiosmose, et pourquoi on n’y croyait pas",
+          "body": "Peter Mitchell propose en 1961 que l’énergie soit stockée dans un gradient de protons à travers une membrane, et non dans un intermédiaire chimique.\n\nL’idée a été rejetée pendant quinze ans. On cherchait une molécule intermédiaire, et l’hypothèse d’un gradient paraissait exotique dans une discipline habituée aux réactions.\n\nLes preuves se sont accumulées, et Mitchell reçoit le prix Nobel en 1978. La turbine qui exploite le gradient a depuis été observée en rotation, molécule par molécule.\n\nLe même mécanisme vaut pour la photosynthèse et pour la respiration des bactéries. C’est donc un principe universel du vivant, et il a été rejeté parce qu’il ne ressemblait pas à ce qu’on cherchait.",
+          "formula": "l’énergie est stockée dans un gradient, pas dans une molécule",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Quatre familles de molécules, et l’eau qui n’est pas un décor : elle plie les protéines et sert de réactif dans toutes les hydrolyses.\n\nUne enzyme accélère et ne décide de rien. Elle ne peut pas rendre spontanée une réaction défavorable, et c’est le couplage à l’ATP qui s’en charge.\n\nLe métabolisme est un réseau à carrefours, pas une chaîne, et c’est pourquoi il se reporte quand on le bloque. L’ATP est un flux : cinquante grammes présents, quarante kilogrammes par jour.\n\nEt l’énergie finit dans un gradient de protons, ce que personne n’attendait et que Mitchell a mis quinze ans à faire admettre. Un principe universel peut être rejeté pour la seule raison qu’il ne ressemble à rien de connu.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes de la respiration cellulaire dans l’ordre.",
+          "explanation": "Glycolyse dans le cytoplasme, cycle de Krebs qui charge les transporteurs, chaîne respiratoire qui pompe les protons, puis la turbine.",
+          "items": [
+            "la glycolyse, dans le cytoplasme",
+            "le cycle de Krebs, qui charge les transporteurs",
+            "la chaîne respiratoire, qui pompe des protons",
+            "la turbine protéique, qui fabrique l’ATP"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’ATP la glycolyse rapporte-t-elle nettement, par glucose ?",
+          "explanation": "Deux, et sans dioxygène. L’essentiel vient de la chaîne respiratoire, en aval.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que produit le cycle de Krebs, principalement ?",
+          "explanation": "Des transporteurs d’électrons chargés. Il ne fabrique presque pas d’ATP directement.",
+          "options": [
+            {
+              "text": "des transporteurs d’électrons chargés",
+              "correct": true
+            },
+            {
+              "text": "l’essentiel de l’ATP"
+            },
+            {
+              "text": "du glucose"
+            },
+            {
+              "text": "du dioxygène"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le dioxygène, exactement ?",
+          "explanation": "Il est l’accepteur final des électrons, à la toute dernière étape de la chaîne respiratoire.",
+          "options": [
+            {
+              "text": "accepteur final des électrons",
+              "correct": true
+            },
+            {
+              "text": "il oxyde le glucose directement"
+            },
+            {
+              "text": "il fabrique l’ATP"
+            },
+            {
+              "text": "il entre dans le cycle de Krebs"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a proposé Mitchell en 1961 ?",
+          "explanation": "Que l’énergie soit stockée dans un gradient de protons à travers une membrane, et non dans un intermédiaire chimique.",
+          "options": [
+            {
+              "text": "un stockage dans un gradient de protons",
+              "correct": true
+            },
+            {
+              "text": "un intermédiaire chimique inconnu"
+            },
+            {
+              "text": "une catalyse enzymatique nouvelle"
+            },
+            {
+              "text": "un cycle supplémentaire"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi son hypothèse a-t-elle été rejetée quinze ans ?",
+          "explanation": "Parce qu’on cherchait une molécule intermédiaire, et qu’un gradient ne ressemblait pas à ce que la discipline cherchait.",
+          "options": [
+            {
+              "text": "elle ne ressemblait pas à ce qu’on cherchait",
+              "correct": true
+            },
+            {
+              "text": "les expériences la contredisaient"
+            },
+            {
+              "text": "Mitchell n’était pas biochimiste"
+            },
+            {
+              "text": "elle violait la thermodynamique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

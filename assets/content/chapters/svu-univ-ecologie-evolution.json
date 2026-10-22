@@ -1,0 +1,669 @@
+{
+  "chapter": "svt-universite-ecologie-et-evolution",
+  "lessons": [
+    {
+      "id": "les-quatre-mecanismes",
+      "title": "Les quatre mécanismes de l’évolution",
+      "subtitle": "La sélection est le plus connu, et pas toujours le plus fort.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un variant qui se répand, si l’avantage existe",
+          "body": "Règle l’avantage et avance de dix générations à la fois. Avec un avantage nul, rien ne bouge. Avec dix pour-cent, le variant passe de un à quatre-vingt-dix-neuf pour-cent en moins de cent générations. Note ce nombre : la leçon compare avec ce que d’autres mécanismes feraient.",
+          "figureId": "selection",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Quatre forces, et ce que chacune fait",
+          "body": "La mutation crée la variation. Elle est rare — de l’ordre d’une erreur pour cent millions de bases par génération — et c’est la seule source de nouveauté.\n\nLa sélection trie. Elle ne crée rien, et elle est directionnelle : elle augmente la fréquence de ce qui reproduit mieux dans l’environnement du moment.\n\nLa dérive est l’effet du hasard d’échantillonnage entre générations. Elle n’a aucune direction, et elle est d’autant plus forte que la population est petite.\n\nLa migration mélange. Elle homogénéise les populations connectées, et c’est ce qui empêche la plupart des divergences locales de se fixer.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Hardy-Weinberg, et pourquoi c’est un modèle nul",
+          "body": "Dans une population infinie, sans mutation, sans sélection, sans migration et à reproduction aléatoire, les fréquences des allèles ne changent pas d’une génération à l’autre.\n\nC’est un énoncé d’absence de force, exactement comme le principe d’inertie en mécanique. Aucune population réelle ne le vérifie, et ce n’est pas le but.\n\nSon usage est de servir de référence : si l’on observe un écart, c’est qu’au moins une des quatre forces agit, et l’écart aide à dire laquelle.\n\nC’est le même geste méthodologique que le modèle nul en statistique. On ne croit pas à l’hypothèse nulle : on s’en sert pour mesurer un écart.",
+          "formula": "sans aucune force, les fréquences d’allèles ne bougent pas",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La dérive, et pourquoi elle domine souvent",
+          "body": "Dans une population de cent individus, une variante neutre peut passer de cinquante à zéro pour-cent en quelques dizaines de générations, par pur hasard d’échantillonnage.\n\nL’effet de la dérive est inversement proportionnel à la taille de la population. Celui de la sélection ne dépend pas de la taille.\n\nIl existe donc un seuil : si l’avantage sélectif est plus petit que l’inverse de la taille de population, la dérive l’emporte, et la variante avantagée peut disparaître.\n\nDans une petite population, des variantes légèrement nuisibles se fixent donc régulièrement. C’est le problème central de la biologie de la conservation, et c’est pourquoi une espèce réduite à quelques dizaines d’individus est en danger même si on la protège.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Deux idées fausses tenaces",
+          "body": "Que l’évolution produirait des organismes de mieux en mieux adaptés, dans une direction. Elle trie selon l’environnement du moment, et l’environnement change. Un caractère avantageux devient nuisible quand les conditions tournent.\n\nQue la sélection agirait pour le bien de l’espèce. Elle agit sur ce qui reproduit le plus d’individus porteurs, et cela peut nuire à l’espèce — une ramure de cerf trop lourde en est l’exemple classique.\n\nLes deux erreurs ont la même source : attribuer un but à un mécanisme qui n’en a pas.\n\nLe test est simple : toute phrase qui dit « pour » à propos de l’évolution est à reformuler. « Les girafes ont un long cou pour atteindre les feuilles » devient « les girafes à cou plus long ont laissé plus de descendants ».",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque mécanisme à ce qu’il fait.",
+          "explanation": "La mutation crée, la sélection trie, la dérive brasse au hasard, la migration homogénéise.",
+          "pairs": [
+            {
+              "left": "la mutation",
+              "right": "créer la variation"
+            },
+            {
+              "left": "la sélection",
+              "right": "trier selon la reproduction"
+            },
+            {
+              "left": "la dérive",
+              "right": "brasser au hasard"
+            },
+            {
+              "left": "la migration",
+              "right": "homogénéiser les populations"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que le modèle de Hardy-Weinberg décrit ?",
+          "explanation": "Une population où aucune force n’agit : c’est un modèle nul, comme le principe d’inertie en mécanique.",
+          "options": [
+            {
+              "text": "une population où aucune des quatre forces n’agit",
+              "correct": true
+            },
+            {
+              "text": "une population idéalement adaptée"
+            },
+            {
+              "text": "une population en croissance"
+            },
+            {
+              "text": "une population isolée"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert un modèle nul ?",
+          "explanation": "À mesurer un écart. On ne croit pas à l’hypothèse nulle : on s’en sert comme référence.",
+          "options": [
+            {
+              "text": "à mesurer un écart par rapport à une référence",
+              "correct": true
+            },
+            {
+              "text": "à décrire la réalité"
+            },
+            {
+              "text": "à prédire l’avenir d’une population"
+            },
+            {
+              "text": "à simplifier les calculs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi l’effet de la dérive dépend-il ?",
+          "explanation": "De la taille de la population, inversement. Celui de la sélection n’en dépend pas, d’où un seuil de bascule.",
+          "options": [
+            {
+              "text": "inversement de la taille de la population",
+              "correct": true
+            },
+            {
+              "text": "de l’avantage sélectif"
+            },
+            {
+              "text": "du taux de mutation"
+            },
+            {
+              "text": "de rien, elle est constante"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une espèce réduite à quelques dizaines d’individus reste-t-elle en danger ?",
+          "explanation": "Parce que la dérive y domine la sélection : des variantes légèrement nuisibles se fixent régulièrement.",
+          "options": [
+            {
+              "text": "la dérive y fixe des variantes nuisibles",
+              "correct": true
+            },
+            {
+              "text": "la sélection y est trop forte"
+            },
+            {
+              "text": "les mutations y sont plus fréquentes"
+            },
+            {
+              "text": "la migration y est impossible"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La sélection agit pour le bien de l’espèce.",
+          "explanation": "Faux. Elle agit sur ce qui reproduit le plus d’individus porteurs, et cela peut nuire à l’espèce — la ramure du cerf en est l’exemple.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "speciation",
+      "title": "Comment deux populations deviennent deux espèces",
+      "subtitle": "Un isolement, du temps, et une définition qui résiste mal.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ranger par caractère partagé",
+          "body": "Touche un animal : ses attributs s’allument, et les boîtes s’emboîtent au lieu de se croiser. C’est ce fait — l’emboîtement, et non le croisement — qui prouve une descendance commune, et c’est le socle de toute la leçon.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux voies de la spéciation",
+          "body": "La voie géographique : une barrière sépare une population en deux. Chacune accumule ses mutations, subit sa sélection et sa dérive, et au bout d’assez longtemps les deux ne se reproduisent plus ensemble.\n\nC’est le cas le mieux documenté, et de loin le plus fréquent. Les îles, les chaînes de montagnes et les glaciations en ont produit d’innombrables exemples.\n\nLa voie sans séparation géographique existe aussi, et elle est plus rare et plus discutée. Elle demande un mécanisme qui empêche le croisement sur place : une spécialisation alimentaire, un décalage de période de reproduction, un choix de partenaire.\n\nDans les deux cas, ce qui définit la fin du processus est l’isolement reproductif. Et c’est là que le vocabulaire devient difficile.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le concept d’espèce, et ses quatre échecs",
+          "body": "La définition usuelle est l’interfécondité : deux individus sont de la même espèce s’ils peuvent avoir une descendance féconde.\n\nElle ne s’applique pas aux organismes asexués — bactéries, nombreux champignons — qui représentent l’essentiel de la biodiversité.\n\nElle ne s’applique pas aux fossiles, qu’on ne peut pas faire se reproduire.\n\nElle échoue sur les hybrides féconds, fréquents chez les plantes et les oiseaux. Et elle échoue sur les séries en anneau, où des populations voisines se croisent le long d’une chaîne dont les deux bouts ne se croisent plus. L’espèce est donc une catégorie commode, pas une réalité tranchée — et les désaccords sur le nombre d’espèces d’un genre viennent de là.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le temps nécessaire, et ce qui le fixe",
+          "body": "La durée d’une spéciation varie énormément. Chez les cichlidés des lacs africains, quelques milliers d’années ont suffi à produire des centaines d’espèces.\n\nChez des organismes à génération longue et à faible pression de sélection, il faut des millions d’années.\n\nTrois facteurs fixent la vitesse : la durée d’une génération, l’intensité de la divergence sélective, et la taille des populations isolées — une petite population dérive plus vite.\n\nIl n’existe donc aucune horloge universelle de la spéciation. Dater une séparation demande des marqueurs moléculaires calibrés sur des fossiles, et l’incertitude reste souvent d’un facteur deux.",
+          "formula": "de quelques milliers à plusieurs millions d’années",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la notion reste utile",
+          "body": "Malgré ces échecs, personne ne l’abandonne, et pour une raison précise : aucune catégorie de remplacement ne fait mieux sur l’ensemble des cas.\n\nLes biologistes emploient donc plusieurs concepts selon le contexte : interfécondité pour les animaux sexués actuels, ressemblance morphologique pour les fossiles, seuil de similarité génétique pour les bactéries.\n\nCe pluralisme est explicite et assumé dans la littérature, et il n’est pas un aveu de faiblesse : c’est la reconnaissance que la nature ne découpe pas aux endroits où nos catégories voudraient.\n\nLa leçon dépasse la biologie. Une catégorie peut être floue, contestée, et indispensable — et l’exiger nette avant de l’employer reviendrait à ne rien pouvoir dire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette voie de spéciation est-elle la plus fréquente, ou la plus rare ?",
+          "explanation": "La séparation géographique est la voie la mieux documentée et la plus fréquente ; la spéciation sur place est plus rare et discutée.",
+          "categories": [
+            "la plus fréquente",
+            "plus rare et discutée"
+          ],
+          "items": [
+            {
+              "text": "une barrière géographique sépare la population",
+              "category": 0
+            },
+            {
+              "text": "une île se détache d’un continent",
+              "category": 0
+            },
+            {
+              "text": "une spécialisation alimentaire sur place",
+              "category": 1
+            },
+            {
+              "text": "un décalage de période de reproduction",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui définit la fin d’une spéciation ?",
+          "explanation": "L’isolement reproductif : les deux populations ne se reproduisent plus ensemble.",
+          "options": [
+            {
+              "text": "l’isolement reproductif",
+              "correct": true
+            },
+            {
+              "text": "la différence d’apparence"
+            },
+            {
+              "text": "l’éloignement géographique"
+            },
+            {
+              "text": "un nombre de mutations accumulées"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Sur quels cas la définition par interfécondité échoue-t-elle ?",
+          "explanation": "Les asexués, les fossiles, les hybrides féconds, et les séries en anneau dont les deux bouts ne se croisent plus.",
+          "options": [
+            {
+              "text": "les organismes asexués",
+              "correct": true
+            },
+            {
+              "text": "les fossiles",
+              "correct": true
+            },
+            {
+              "text": "les hybrides féconds",
+              "correct": true
+            },
+            {
+              "text": "les séries en anneau",
+              "correct": true
+            },
+            {
+              "text": "les mammifères"
+            },
+            {
+              "text": "les oiseaux migrateurs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les biologistes n’abandonnent-ils pas la notion d’espèce ?",
+          "explanation": "Parce qu’aucune catégorie de remplacement ne fait mieux sur l’ensemble des cas. Ils emploient plusieurs concepts selon le contexte.",
+          "options": [
+            {
+              "text": "aucun remplacement ne fait mieux sur tous les cas",
+              "correct": true
+            },
+            {
+              "text": "par tradition"
+            },
+            {
+              "text": "parce qu’elle est exacte"
+            },
+            {
+              "text": "par contrainte réglementaire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque groupe au concept d’espèce employé.",
+          "explanation": "Interfécondité pour les animaux sexués actuels, morphologie pour les fossiles, similarité génétique pour les bactéries.",
+          "pairs": [
+            {
+              "left": "les animaux sexués actuels",
+              "right": "l’interfécondité"
+            },
+            {
+              "left": "les fossiles",
+              "right": "la ressemblance morphologique"
+            },
+            {
+              "left": "les bactéries",
+              "right": "un seuil de similarité génétique"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle leçon de méthode ce pluralisme donne-t-il ?",
+          "explanation": "Qu’une catégorie peut être floue, contestée et indispensable. L’exiger nette avant de l’employer empêcherait de rien dire.",
+          "options": [
+            {
+              "text": "une catégorie peut être floue et indispensable",
+              "correct": true
+            },
+            {
+              "text": "il faut définir avant d’employer"
+            },
+            {
+              "text": "les catégories biologiques sont arbitraires"
+            },
+            {
+              "text": "la nature a des frontières nettes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "dynamique-des-populations",
+      "title": "La dynamique des populations",
+      "subtitle": "Deux modèles, et ce que le second ajoute au premier.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cinq espèces, et ce qu’un retrait provoque",
+          "body": "Retire chaque espèce tour à tour et compte les conséquences. Les nombres diffèrent selon la place dans le réseau. La leçon passe de cette structure statique à la dynamique : comment les effectifs évoluent dans le temps.",
+          "figureId": "chaine-alimentaire",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Exponentielle, puis logistique",
+          "body": "Si chaque individu laisse en moyenne le même nombre de descendants, la population croît exponentiellement. Chaque génération multiplie l’effectif par un facteur constant.\n\nAucune population réelle ne le fait longtemps. Les ressources s’épuisent, les prédateurs se multiplient, les maladies circulent mieux.\n\nLe modèle logistique ajoute un terme de freinage proportionnel à l’occupation du milieu. La courbe prend alors la forme d’un S et plafonne à une capacité de charge.\n\nCette capacité n’est pas une constante du milieu : elle dépend des ressources disponibles, qui dépendent elles-mêmes de la population. C’est pourquoi un dépassement est possible, suivi d’un effondrement — ce que le modèle logistique simple ne prévoit pas.",
+          "formula": "exponentielle sans frein, logistique avec capacité de charge",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Proie et prédateur, et le décalage",
+          "body": "Lotka et Volterra proposent dans les années 1920 un modèle à deux espèces : les proies croissent, les prédateurs mangent les proies, et les prédateurs meurent sans proies.\n\nLa solution est une oscillation des deux effectifs, avec un décalage d’un quart de période : le pic des prédateurs suit celui des proies.\n\nCe décalage est la signature du modèle, et il est observé. Les relevés de fourrures de la Compagnie de la Baie d’Hudson, sur près d’un siècle, montrent des cycles du lièvre et du lynx avec cette structure.\n\nLe modèle est pourtant trop simple : il ne prévoit ni l’extinction, ni l’effet des refuges, ni la saturation du prédateur. Sa valeur est d’avoir montré qu’une oscillation peut venir de l’interaction seule, sans aucune cause externe périodique.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’exclusion compétitive, et ses exceptions",
+          "body": "Gause énonce dans les années 1930 que deux espèces exploitant exactement la même ressource de la même façon ne peuvent pas coexister : la plus efficace élimine l’autre.\n\nL’énoncé est juste, et il est presque inapplicable tel quel : deux espèces n’exploitent jamais exactement la même ressource de la même façon.\n\nD’où la notion de niche, qui est l’ensemble des conditions et des ressources qu’une espèce exploite. Deux espèces coexistent si leurs niches diffèrent assez, et la coexistence observée mesure donc la différence de niches.\n\nEt il existe des cas de coexistence que ce cadre n’explique pas, notamment le plancton, où des dizaines d’espèces partagent apparemment les mêmes ressources. On l’appelle le paradoxe du plancton, et il n’est pas clos.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ces modèles servent à faire",
+          "body": "Pas à prédire un effectif. Aucun ne le fait de façon fiable au-delà de quelques générations.\n\nIls servent à produire des attentes qualitatives : une croissance freinée doit faire un S, une interaction proie-prédateur doit osciller avec un décalage, deux espèces identiques ne doivent pas coexister.\n\nQuand l’observation s’écarte de l’attente, on sait qu’un mécanisme manque, et lequel chercher. C’est le même usage que le modèle nul de la leçon précédente.\n\nD’où une règle de lecture : un modèle écologique qui colle parfaitement aux données est suspect, parce qu’il a probablement assez de paramètres pour coller à n’importe quoi.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’ajoute le modèle logistique à l’exponentiel ?",
+          "explanation": "Un terme de freinage proportionnel à l’occupation du milieu, qui fait plafonner la courbe à une capacité de charge.",
+          "options": [
+            {
+              "text": "un freinage, donc un plafond",
+              "correct": true
+            },
+            {
+              "text": "les prédateurs"
+            },
+            {
+              "text": "les migrations"
+            },
+            {
+              "text": "les mutations"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un dépassement suivi d’effondrement est-il possible ?",
+          "explanation": "Parce que la capacité de charge dépend des ressources, qui dépendent de la population. Le modèle logistique simple ne le prévoit pas.",
+          "options": [
+            {
+              "text": "la capacité de charge dépend elle-même de la population",
+              "correct": true
+            },
+            {
+              "text": "les prédateurs arrivent brusquement"
+            },
+            {
+              "text": "les mutations s’accumulent"
+            },
+            {
+              "text": "c’est un artefact de mesure"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel décalage le modèle de Lotka-Volterra prédit-il ?",
+          "explanation": "Un quart de période : le pic des prédateurs suit celui des proies. C’est la signature du modèle, et elle est observée.",
+          "options": [
+            {
+              "text": "un quart de période",
+              "correct": true
+            },
+            {
+              "text": "une demi-période"
+            },
+            {
+              "text": "aucun décalage"
+            },
+            {
+              "text": "une période entière"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la valeur principale du modèle de Lotka-Volterra ?",
+          "explanation": "Avoir montré qu’une oscillation peut venir de l’interaction seule, sans aucune cause externe périodique.",
+          "options": [
+            {
+              "text": "une oscillation peut naître de l’interaction seule",
+              "correct": true
+            },
+            {
+              "text": "il prédit les effectifs exactement"
+            },
+            {
+              "text": "il explique les extinctions"
+            },
+            {
+              "text": "il mesure la capacité de charge"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que le paradoxe du plancton ?",
+          "explanation": "Des dizaines d’espèces coexistent en partageant apparemment les mêmes ressources, ce que l’exclusion compétitive interdirait. Il n’est pas clos.",
+          "options": [
+            {
+              "text": "des dizaines d’espèces coexistent sur les mêmes ressources",
+              "correct": true
+            },
+            {
+              "text": "le plancton n’a pas de prédateurs"
+            },
+            {
+              "text": "sa population n’oscille jamais"
+            },
+            {
+              "text": "il n’a pas de capacité de charge"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un modèle écologique qui colle parfaitement aux données est rassurant.",
+          "explanation": "Faux, il est suspect : il a probablement assez de paramètres pour coller à n’importe quoi. Ces modèles servent à produire des attentes, pas à ajuster.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-un-arbre",
+      "title": "Défi : lire un arbre phylogénétique",
+      "subtitle": "Quatre erreurs de lecture, et toutes les quatre très répandues.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des boîtes qui s’emboîtent",
+          "body": "Touche chaque animal et regarde les boîtes se dessiner. Elles s’emboîtent toujours, et ne se croisent jamais. Un arbre phylogénétique est la même information, dessinée autrement : chaque boîte devient un nœud, et chaque emboîtement une ramification.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Du temps, et des fréquences qui changent",
+          "body": "Avance de dix générations à la fois : la fréquence change, et l’axe est celui du temps. Un arbre a aussi un axe temporel, et la première erreur de lecture consiste à l’oublier — les espèces actuelles sont toutes à la même extrémité, et aucune n’est plus ancienne qu’une autre.",
+          "figureId": "selection",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’un arbre dit, et ce qu’il ne dit pas",
+          "body": "Il dit qui partage un ancêtre commun avec qui, et dans quel ordre les lignées se sont séparées. C’est tout.\n\nIl ne dit pas qu’une espèce descend d’une autre espèce actuelle. L’humain ne descend pas du chimpanzé : les deux descendent d’un ancêtre commun qui n’était ni l’un ni l’autre, et qui a disparu.\n\nIl ne dit pas qu’une branche est plus évoluée qu’une autre. Toutes les espèces actuelles ont exactement la même profondeur d’évolution derrière elles.\n\nEt l’ordre horizontal des feuilles n’a aucun sens : on peut faire pivoter n’importe quel nœud sans changer l’information. Deux espèces voisines sur le dessin ne sont pas forcément proches.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Sur quoi un arbre se construit",
+          "body": "Pas sur la ressemblance globale. Deux espèces peuvent se ressembler parce qu’elles ont subi la même pression, sans être proches parentes — c’est la convergence, et l’aile de la chauve-souris et celle de l’oiseau en sont l’exemple.\n\nUn arbre se construit sur les caractères dérivés partagés : des nouveautés apparues chez un ancêtre et héritées par tous ses descendants.\n\nD’où une conséquence qui dérange : un groupe n’est valide que s’il contient un ancêtre et tous ses descendants. Les reptiles au sens courant n’en forment pas un, parce que les oiseaux descendent d’eux et sont exclus du groupe.\n\n« Poissons » a le même défaut, puisque les tétrapodes en descendent. Ces mots restent commodes, et ils ne désignent pas des branches de l’arbre.",
+          "formula": "un groupe valide contient un ancêtre et tous ses descendants",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Quatre mécanismes, et la sélection n’est pas toujours le plus fort : sous un seuil fixé par la taille de la population, la dérive l’emporte.\n\nL’espèce est une catégorie commode et contestée, et les biologistes assument d’en employer plusieurs selon le contexte. Une catégorie peut être floue et indispensable.\n\nLes modèles de population servent à produire des attentes qualitatives, pas à prédire des effectifs — et celui qui colle trop bien est suspect.\n\nEt un arbre se lit sur les caractères dérivés partagés, pas sur la ressemblance. Quatre erreurs de lecture sont très répandues, dont « l’humain descend du chimpanzé » et « cette espèce est plus évoluée ».",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Un arbre phylogénétique dit-il cela, ou non ?",
+          "explanation": "Il dit qui partage un ancêtre et dans quel ordre les lignées ont divergé. Il ne hiérarchise ni les espèces ni les branches.",
+          "categories": [
+            "il le dit",
+            "il ne le dit pas"
+          ],
+          "items": [
+            {
+              "text": "qui partage un ancêtre commun avec qui",
+              "category": 0
+            },
+            {
+              "text": "dans quel ordre les lignées se sont séparées",
+              "category": 0
+            },
+            {
+              "text": "qu’une branche est plus évoluée qu’une autre",
+              "category": 1
+            },
+            {
+              "text": "qu’une espèce actuelle descend d’une autre actuelle",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’humain descend du chimpanzé.",
+          "explanation": "Faux. Les deux descendent d’un ancêtre commun qui n’était ni l’un ni l’autre, et qui a disparu.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie l’ordre horizontal des feuilles d’un arbre ?",
+          "explanation": "Rien : on peut faire pivoter n’importe quel nœud sans changer l’information. Deux voisines sur le dessin ne sont pas forcément proches.",
+          "options": [
+            {
+              "text": "rien, les nœuds peuvent pivoter librement",
+              "correct": true
+            },
+            {
+              "text": "la proximité de parenté"
+            },
+            {
+              "text": "l’ordre d’apparition"
+            },
+            {
+              "text": "le degré d’évolution"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quoi un arbre se construit-il ?",
+          "explanation": "Sur les caractères dérivés partagés : des nouveautés apparues chez un ancêtre et héritées par ses descendants. Pas sur la ressemblance globale.",
+          "options": [
+            {
+              "text": "les caractères dérivés partagés",
+              "correct": true
+            },
+            {
+              "text": "la ressemblance globale"
+            },
+            {
+              "text": "la taille des organismes"
+            },
+            {
+              "text": "la proximité géographique"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « reptiles » n’est-il pas un groupe valide ?",
+          "explanation": "Parce que les oiseaux en descendent et sont exclus du groupe. Un groupe valide contient un ancêtre et tous ses descendants.",
+          "options": [
+            {
+              "text": "les oiseaux en descendent et en sont exclus",
+              "correct": true
+            },
+            {
+              "text": "ils ne se ressemblent pas assez"
+            },
+            {
+              "text": "ils sont trop nombreux"
+            },
+            {
+              "text": "ils n’ont pas d’ancêtre commun"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la convergence, et pourquoi elle gêne ?",
+          "explanation": "Deux espèces se ressemblent par pression commune sans être proches parentes. Construire un arbre sur la ressemblance s’y trompe.",
+          "options": [
+            {
+              "text": "une ressemblance due à une pression commune, non à la parenté",
+              "correct": true
+            },
+            {
+              "text": "une hybridation entre lignées"
+            },
+            {
+              "text": "une mutation identique"
+            },
+            {
+              "text": "un ancêtre commun récent"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

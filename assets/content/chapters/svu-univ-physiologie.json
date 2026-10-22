@@ -1,0 +1,641 @@
+{
+  "chapter": "svt-universite-physiologie-animale-et-vegetale",
+  "lessons": [
+    {
+      "id": "les-gradients",
+      "title": "Les gradients, moteur de toute physiologie",
+      "subtitle": "Tout ce qui bouge dans un organisme descend une pente.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un trajet, et les frontières traversées",
+          "body": "Choisis le dioxygène puis le glucose et avance étape par étape. À chaque frontière franchie, la molécule passe d’un côté où elle est concentrée à un côté où elle l’est moins. Compte les franchissements : aucun ne se fait contre la pente, sauf un, et la leçon dit lequel.",
+          "figureId": "approvisionnement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux façons de traverser une membrane",
+          "body": "Le transport passif suit le gradient : la molécule va du plus concentré au moins concentré, et cela ne coûte rien. La diffusion simple, l’osmose et les canaux ioniques en relèvent.\n\nLe transport actif remonte le gradient, et il coûte de l’ATP. La pompe à sodium et potassium en est l’exemple central.\n\nLa distinction est absolue et se vérifie expérimentalement : privez une cellule d’ATP, et seuls les transports actifs s’arrêtent.\n\nToute la physiologie consiste alors à entretenir des gradients par transport actif, pour que des transports passifs puissent ensuite faire du travail. C’est exactement le mécanisme de la chaîne respiratoire, et il se répète partout.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La pompe sodium-potassium, et ce qu’elle coûte",
+          "body": "Elle expulse trois ions sodium et fait entrer deux ions potassium, par molécule d’ATP consommée.\n\nLe bilan de charges n’est pas nul : il sort une charge positive de plus qu’il n’en entre, et c’est en partie ce qui crée la différence de potentiel de membrane, voisine de moins soixante-dix millivolts.\n\nSon coût est considérable. Elle consomme de vingt à trente pour-cent de l’ATP d’une cellule ordinaire, et jusqu’à soixante-dix pour-cent dans un neurone.\n\nUn neurone dépense donc l’essentiel de son énergie à maintenir un déséquilibre qu’il va dépenser en une milliseconde lors d’un potentiel d’action. C’est une batterie qu’on recharge en permanence pour un usage bref.",
+          "formula": "3 Na sortent, 2 K entrent, par ATP",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’osmose, et la pression qu’elle développe",
+          "body": "L’eau traverse librement les membranes et se déplace vers le côté le plus concentré en solutés. La pression nécessaire pour l’en empêcher est la pression osmotique.\n\nElle n’est pas négligeable. Une cellule végétale développe couramment cinq à dix bars de pression de turgescence, soit cinq à dix fois la pression atmosphérique.\n\nC’est cette pression qui tient une plante droite. Privez-la d’eau et elle flétrit, non parce qu’elle manque de matière mais parce qu’elle a perdu sa pression.\n\nChez l’animal, la même physique est un danger : une cellule placée dans de l’eau pure gonfle et éclate. D’où la nécessité d’une régulation stricte de la salinité du sang, et d’où le fait qu’une perfusion ne soit jamais de l’eau.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le schéma qui se répète partout",
+          "body": "Entretenir un gradient par transport actif, puis le laisser se relâcher pour obtenir du travail.\n\nDans la mitochondrie : un gradient de protons, relâché par une turbine qui fabrique l’ATP. Dans le neurone : un gradient d’ions, relâché en potentiel d’action. Dans l’intestin : un gradient de sodium, qui entraîne l’absorption du glucose.\n\nDans le rein : un gradient de concentration dans la médulla, qui permet de concentrer l’urine sans dépenser d’énergie à l’étape finale.\n\nQuatre organes, un seul mécanisme. Reconnaître ce schéma permet de comprendre un organe nouveau en cherchant quel gradient il entretient et à quoi il le dépense.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce transport est-il passif, ou actif ?",
+          "explanation": "Le passif suit le gradient et ne coûte rien ; l’actif le remonte et consomme de l’ATP.",
+          "categories": [
+            "passif",
+            "actif"
+          ],
+          "items": [
+            {
+              "text": "la diffusion du dioxygène",
+              "category": 0
+            },
+            {
+              "text": "l’osmose",
+              "category": 0
+            },
+            {
+              "text": "la pompe sodium-potassium",
+              "category": 1
+            },
+            {
+              "text": "le pompage des protons dans la mitochondrie",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’ions sodium la pompe expulse-t-elle par ATP ?",
+          "explanation": "Trois, contre deux ions potassium qui entrent. Le bilan de charges n’est donc pas nul.",
+          "answer": 3,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part de son ATP un neurone consacre-t-il à cette pompe, en pour-cent ?",
+          "explanation": "Jusqu’à soixante-dix pour-cent : il maintient en permanence un déséquilibre qu’il dépensera en une milliseconde.",
+          "min": 0,
+          "max": 100,
+          "answer": 70,
+          "tolerance": 10,
+          "unit": "%",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle pression de turgescence une cellule végétale développe-t-elle, en bars ?",
+          "explanation": "Cinq à dix bars, soit cinq à dix fois la pression atmosphérique. C’est elle qui tient la plante droite.",
+          "min": 0,
+          "max": 100,
+          "answer": 7,
+          "tolerance": 3,
+          "unit": "bars",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une perfusion n’est-elle jamais de l’eau pure ?",
+          "explanation": "Parce qu’une cellule placée dans de l’eau pure gonfle par osmose et éclate. La salinité doit être proche de celle du sang.",
+          "options": [
+            {
+              "text": "les cellules gonfleraient et éclateraient",
+              "correct": true
+            },
+            {
+              "text": "l’eau pure est stérile mais acide"
+            },
+            {
+              "text": "elle diluerait les médicaments"
+            },
+            {
+              "text": "elle refroidirait le sang"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel schéma se répète dans la mitochondrie, le neurone, l’intestin et le rein ?",
+          "explanation": "Entretenir un gradient par transport actif, puis le relâcher pour obtenir du travail.",
+          "options": [
+            {
+              "text": "entretenir un gradient, puis le relâcher pour travailler",
+              "correct": true
+            },
+            {
+              "text": "produire de l’ATP localement"
+            },
+            {
+              "text": "filtrer le sang"
+            },
+            {
+              "text": "concentrer le glucose"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "nerveux-et-hormonal",
+      "title": "Deux systèmes de régulation",
+      "subtitle": "Rapide et ciblé, ou lent et général : chacun son emploi.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un seuil, et une décision",
+          "body": "Règle la mesure et le seuil : la décision dépend des deux, et l’actionneur obéit. Les deux systèmes de régulation de cette leçon ont cette structure, et ils diffèrent par le support du message et par le délai — pas par le schéma.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les quatre différences qui comptent",
+          "body": "La vitesse : un message nerveux met quelques millisecondes, une hormone des secondes à des heures.\n\nLa cible : un nerf aboutit à un endroit précis ; une hormone circule partout et n’agit que là où un récepteur l’attend. La spécificité vient donc du récepteur, non du trajet.\n\nLa durée : un message nerveux cesse à l’instant où la stimulation cesse ; un effet hormonal persiste jusqu’à l’élimination de l’hormone.\n\nEt l’amplitude du contrôle : le nerveux commande des mouvements, l’hormonal commande des états — croissance, métabolisme, reproduction. On ne grandit pas par ordre nerveux, et on ne retire pas sa main par voie hormonale.",
+          "formula": "millisecondes et ciblé, contre heures et général",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La rétroaction négative, et pourquoi elle domine",
+          "body": "Une variable s’écarte de sa valeur de référence. Le système détecte l’écart et commande une action qui le réduit. L’écart diminue, la commande faiblit.\n\nC’est exactement l’asservissement du cours d’automatique, et c’est le mécanisme de presque toute l’homéostasie : température, glycémie, pression artérielle, pH.\n\nLa glycémie en est le cas d’école. Elle monte : le pancréas libère de l’insuline, les cellules captent le glucose, la glycémie baisse. Elle descend : le glucagon mobilise les réserves du foie.\n\nDeux hormones antagonistes, donc un contrôle dans les deux sens — ce qu’une seule ne permettrait pas. C’est une architecture, et on la retrouve pour le calcium, pour le sodium, et pour la thyroïde.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les rétroactions positives, rares et spectaculaires",
+          "body": "Une rétroaction positive amplifie l’écart au lieu de le réduire. Elle est donc instable par construction, et c’est pourquoi elle est rare.\n\nElle existe quand on veut justement un emballement : la coagulation du sang, où chaque facteur activé en active d’autres ; l’accouchement, où les contractions stimulent la libération d’ocytocine qui renforce les contractions.\n\nLe potentiel d’action en est un aussi : l’entrée de sodium dépolarise la membrane, ce qui ouvre d’autres canaux à sodium. C’est ce qui lui donne son caractère de tout ou rien.\n\nDans les trois cas, le processus doit se terminer par autre chose qu’un retour à l’équilibre : un caillot formé, un enfant né, des canaux qui s’inactivent. Une rétroaction positive sans terminaison est une pathologie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi un délai est le vrai paramètre",
+          "body": "Dans les deux systèmes, ce qui limite la qualité de la régulation est le délai entre l’écart et la correction.\n\nLe nerveux a un délai de quelques millisecondes, donc il régule des grandeurs qui changent vite. L’hormonal a un délai de minutes, donc il régule des grandeurs lentes.\n\nAppliquer l’un au domaine de l’autre ne marcherait pas : réguler la glycémie par voie nerveuse serait inutilement rapide et coûteux, et réguler un retrait de la main par voie hormonale arriverait trop tard.\n\nC’est la même leçon que pour les boucles emboîtées d’un robot : chaque boucle doit être adaptée à la vitesse de ce qu’elle commande. L’organisme a deux boucles pour deux échelles de temps.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette caractéristique est-elle celle du nerveux, ou de l’hormonal ?",
+          "explanation": "Le nerveux est rapide, ciblé et bref ; l’hormonal lent, général et durable.",
+          "categories": [
+            "nerveux",
+            "hormonal"
+          ],
+          "items": [
+            {
+              "text": "quelques millisecondes",
+              "category": 0
+            },
+            {
+              "text": "une cible précise",
+              "category": 0
+            },
+            {
+              "text": "un effet qui persiste des heures",
+              "category": 1
+            },
+            {
+              "text": "un message qui circule partout",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la spécificité d’une hormone ?",
+          "explanation": "Du récepteur : elle circule partout et n’agit que là où un récepteur l’attend. Pas du trajet.",
+          "options": [
+            {
+              "text": "du récepteur de la cellule cible",
+              "correct": true
+            },
+            {
+              "text": "du trajet sanguin"
+            },
+            {
+              "text": "de la glande qui la produit"
+            },
+            {
+              "text": "de sa concentration"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux hormones antagonistes pour la glycémie ?",
+          "explanation": "Pour contrôler dans les deux sens : l’insuline fait baisser, le glucagon fait monter. Une seule ne permettrait qu’un sens.",
+          "options": [
+            {
+              "text": "pour pouvoir corriger dans les deux sens",
+              "correct": true
+            },
+            {
+              "text": "par redondance de sécurité"
+            },
+            {
+              "text": "parce que le pancréas a deux parties"
+            },
+            {
+              "text": "pour accélérer la réponse"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels processus reposent sur une rétroaction positive ?",
+          "explanation": "La coagulation, l’accouchement et le potentiel d’action. Les trois doivent se terminer par autre chose qu’un retour à l’équilibre.",
+          "options": [
+            {
+              "text": "la coagulation du sang",
+              "correct": true
+            },
+            {
+              "text": "l’accouchement",
+              "correct": true
+            },
+            {
+              "text": "le potentiel d’action",
+              "correct": true
+            },
+            {
+              "text": "la régulation de la glycémie"
+            },
+            {
+              "text": "la régulation de la température"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une rétroaction positive sans terminaison ?",
+          "explanation": "Une pathologie. Elle est instable par construction, et doit se terminer par un état nouveau : caillot formé, enfant né, canaux inactivés.",
+          "options": [
+            {
+              "text": "une pathologie",
+              "correct": true
+            },
+            {
+              "text": "un mécanisme homéostatique"
+            },
+            {
+              "text": "un cas fréquent et normal"
+            },
+            {
+              "text": "une impossibilité physique"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le vrai paramètre qui sépare les deux systèmes ?",
+          "explanation": "Le délai entre l’écart et la correction : chaque boucle est adaptée à la vitesse de ce qu’elle commande.",
+          "options": [
+            {
+              "text": "le délai, adapté à la vitesse de la grandeur régulée",
+              "correct": true
+            },
+            {
+              "text": "la nature chimique du message"
+            },
+            {
+              "text": "la distance parcourue"
+            },
+            {
+              "text": "le coût énergétique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-plante-organisme-immobile",
+      "title": "La plante, organisme immobile",
+      "subtitle": "Ne pas bouger impose des solutions qu’aucun animal n’a trouvées.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Trois parties qui n’existent que là",
+          "body": "Bascule sur la cellule végétale : la paroi, la vacuole et le chloroplaste apparaissent. Ces trois parties sont les réponses à trois contraintes de l’immobilité — tenir debout sans squelette, stocker sans graisse, et se nourrir sans chercher. Touche-les et lis leur rôle.",
+          "figureId": "cellule",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Quatre contraintes, et leurs solutions",
+          "body": "Tenir debout sans muscles : la paroi rigide et la pression de turgescence. Un arbre tient par la pression de l’eau dans ses cellules et par la lignine de son bois.\n\nSe nourrir sans se déplacer : la photosynthèse, qui prend la lumière là où l’on est, et des racines qui explorent le sol à la place du corps.\n\nSe reproduire sans se rencontrer : le pollen porté par le vent ou par un animal, et des graines dispersées de la même façon. La plante délègue la mobilité.\n\nEt se défendre sans fuir : la chimie. Les alcaloïdes, les tanins, les huiles essentielles sont des armes, et la caféine, la nicotine et la morphine en sont.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le compromis des stomates, chiffré",
+          "body": "Une plante doit laisser entrer le dioxyde de carbone pour photosynthétiser, et chaque ouverture laisse sortir de la vapeur d’eau.\n\nLe rapport est très défavorable : une plante de type courant perd de l’ordre de quatre cents molécules d’eau par molécule de dioxyde de carbone fixée.\n\nUn grand arbre transpire donc plusieurs centaines de litres par jour, et une forêt déplace plus d’eau qu’une rivière de même surface de bassin.\n\nCe compromis explique la plupart des adaptations des plantes de milieu sec. Certaines concentrent le dioxyde de carbone avant de le fixer, d’autres n’ouvrent leurs stomates que la nuit et stockent le carbone jusqu’au matin. Deux inventions indépendantes, pour le même problème.",
+          "formula": "environ 400 molécules d’eau perdues par CO₂ fixé",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment l’eau monte à cent mètres",
+          "body": "Aucune pompe ne pousse la sève brute. Elle est tirée par le haut.\n\nL’évaporation au niveau des feuilles crée une tension, et la colonne d’eau la transmet jusqu’aux racines parce que les molécules d’eau se tiennent entre elles. La colonne est sous pression négative, jusqu’à moins quinze bars au sommet d’un grand arbre.\n\nC’est un état instable : une bulle d’air suffit à rompre la colonne, et le vaisseau concerné devient inutilisable. Un arbre en a des milliers en parallèle, et perd les uns après les autres lors d’une sécheresse sévère.\n\nLa théorie date de 1894 et a été longtemps contestée, parce qu’une eau sous pression négative devrait bouillir. Elle ne le fait pas dans un tube très fin et sans germe de bulle, et c’est ce point de physique qui rend les arbres possibles.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que les plantes font et que les animaux ne savent pas faire",
+          "body": "Fabriquer leur matière organique à partir de minéral. Aucun animal n’y parvient, et c’est pourquoi tout réseau trophique commence par un végétal.\\n\\nRepousser à partir de presque rien. Un fragment de tige peut reconstituer une plante entière, parce que ses cellules restent capables de se dédifférencier. Un fragment de main ne refait pas une main.\\n\\nSupporter la perte d’une grande partie de leur corps. Un arbre élagué survit à la perte de la moitié de ses branches, un animal non.\\n\\nLes trois ont la même cause : une organisation modulaire et décentralisée, sans organe unique indispensable. Un animal est centralisé — un cerveau, un cœur — et c’est le prix de la mobilité. Le compromis entre centralisation et robustesse n’est donc pas propre à l’ingénierie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque contrainte à sa solution végétale.",
+          "explanation": "Paroi et turgescence pour tenir, photosynthèse et racines pour se nourrir, pollen et graines pour se reproduire, chimie pour se défendre.",
+          "pairs": [
+            {
+              "left": "tenir debout",
+              "right": "paroi rigide et turgescence"
+            },
+            {
+              "left": "se nourrir sur place",
+              "right": "photosynthèse et racines"
+            },
+            {
+              "left": "se reproduire à distance",
+              "right": "pollen et graines"
+            },
+            {
+              "left": "se défendre sans fuir",
+              "right": "molécules toxiques"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de molécules d’eau une plante courante perd-elle par CO₂ fixé ?",
+          "explanation": "De l’ordre de quatre cents. Le compromis des stomates est très défavorable, et il explique la plupart des adaptations au sec.",
+          "min": 0,
+          "max": 2000,
+          "answer": 400,
+          "tolerance": 80,
+          "unit": "molécules",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fait monter la sève brute ?",
+          "explanation": "L’évaporation au niveau des feuilles, qui tire la colonne d’eau. Aucune pompe ne pousse par le bas.",
+          "options": [
+            {
+              "text": "l’évaporation au niveau des feuilles, qui tire",
+              "correct": true
+            },
+            {
+              "text": "une pompe dans les racines"
+            },
+            {
+              "text": "la pression osmotique du sol"
+            },
+            {
+              "text": "la capillarité seule"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Jusqu’à quelle pression négative la colonne d’eau descend-elle, en bars, au sommet d’un grand arbre ?",
+          "explanation": "Jusqu’à moins quinze bars. C’est un état instable qu’une bulle d’air suffit à rompre.",
+          "min": -50,
+          "max": 0,
+          "answer": -15,
+          "tolerance": 4,
+          "unit": "bars",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la théorie de 1894 a-t-elle été contestée ?",
+          "explanation": "Parce qu’une eau sous pression négative devrait bouillir. Elle ne le fait pas dans un tube très fin et sans germe de bulle.",
+          "options": [
+            {
+              "text": "une eau sous pression négative devrait bouillir",
+              "correct": true
+            },
+            {
+              "text": "on ne pouvait pas mesurer la tension"
+            },
+            {
+              "text": "les arbres étaient trop grands"
+            },
+            {
+              "text": "elle contredisait l’osmose"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles adaptations au milieu sec le compromis des stomates explique-t-il ?",
+          "explanation": "Concentrer le CO₂ avant de le fixer, ou n’ouvrir les stomates que la nuit en stockant le carbone jusqu’au matin.",
+          "options": [
+            {
+              "text": "concentrer le CO₂ avant de le fixer",
+              "correct": true
+            },
+            {
+              "text": "n’ouvrir les stomates que la nuit",
+              "correct": true
+            },
+            {
+              "text": "augmenter la surface des feuilles"
+            },
+            {
+              "text": "perdre ses racines"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-un-effort-de-bout-en-bout",
+      "title": "Défi : un effort, de bout en bout",
+      "subtitle": "Un sprint, et six systèmes qui s’ajustent en quelques secondes.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le trajet, sous contrainte de débit",
+          "body": "Refais les deux trajets, le dioxygène et le glucose. Maintenant imagine que la demande musculaire soit multipliée par vingt en trois secondes. Chaque étape du trajet doit s’ajuster, et la leçon dit laquelle devient limitante.",
+          "figureId": "approvisionnement",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Les étages, et celui qui sature",
+          "body": "Règle les étages : le rendement global est fixé par le plus mauvais. Dans un effort, c’est la capacité d’apport en dioxygène qui plafonne, et non la puissance du muscle. La figure donne la structure, la leçon donne les chiffres.",
+          "figureId": "chaine-energie",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois filières, et leurs durées",
+          "body": "La filière anaérobie alcatique : les réserves d’ATP et de phosphocréatine du muscle. Puissance maximale, et quelques secondes — de l’ordre de dix.\n\nLa filière anaérobie lactique : la glycolyse sans dioxygène. Puissance élevée, et de quelques dizaines de secondes à deux minutes, avec accumulation de lactate.\n\nLa filière aérobie : la respiration complète. Puissance plus faible, et tenue pendant des heures.\n\nLes trois sont toujours actives, et leur part change avec la durée. Un cent mètres est presque entièrement alactique, un quatre cents fortement lactique, un marathon presque entièrement aérobie — et les entraînements diffèrent pour cette raison précise.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qui plafonne, et pourquoi",
+          "body": "Le débit cardiaque passe de cinq litres par minute au repos à vingt-cinq chez un sportif entraîné, par augmentation de la fréquence et du volume d’éjection.\n\nLa ventilation passe de six litres par minute à plus de cent cinquante.\n\nEt la consommation de dioxygène passe de 0,3 litre par minute à trois ou plus — c’est la consommation maximale, et c’est elle qui plafonne. Le muscle pourrait consommer davantage s’il était approvisionné.\n\nLa limite est donc dans le transport, non dans la conversion. C’est pourquoi l’entraînement d’endurance améliore d’abord le cœur et les capillaires, et pourquoi l’altitude et le dopage sanguin visent exactement ce point.",
+          "formula": "consommation de dioxygène : de 0,3 à 3 litres par minute",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Tout ce qui bouge dans un organisme descend un gradient, et toute la physiologie consiste à entretenir des gradients pour les dépenser ensuite. Un neurone y consacre jusqu’à soixante-dix pour-cent de son ATP.\n\nDeux systèmes de régulation, séparés par un délai, et chacun adapté à la vitesse de ce qu’il commande. Les rétroactions positives sont rares et doivent se terminer.\n\nL’immobilité impose quatre solutions qu’aucun animal n’a trouvées, et le compromis des stomates — quatre cents molécules d’eau par carbone — explique l’essentiel de la botanique des milieux secs.\n\nEt dans un effort, la limite est le transport et non le muscle. Reconnaître l’étage limitant est le geste que ce chapitre demande, et il vaut pour n’importe quel système vivant.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque filière à sa durée d’efficacité.",
+          "explanation": "Alactique une dizaine de secondes, lactique jusqu’à deux minutes, aérobie pendant des heures.",
+          "pairs": [
+            {
+              "left": "anaérobie alactique",
+              "right": "une dizaine de secondes"
+            },
+            {
+              "left": "anaérobie lactique",
+              "right": "jusqu’à deux minutes"
+            },
+            {
+              "left": "aérobie",
+              "right": "plusieurs heures"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "À combien de litres par minute le débit cardiaque peut-il monter chez un sportif entraîné ?",
+          "explanation": "Jusqu’à vingt-cinq litres par minute, contre cinq au repos.",
+          "min": 0,
+          "max": 100,
+          "answer": 25,
+          "tolerance": 5,
+          "unit": "L/min",
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et la consommation maximale de dioxygène, en litres par minute ?",
+          "explanation": "Trois litres par minute ou plus, contre 0,3 au repos. C’est elle qui plafonne.",
+          "min": 0,
+          "max": 20,
+          "answer": 3,
+          "tolerance": 0.8,
+          "unit": "L/min",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où est la limite d’un effort prolongé ?",
+          "explanation": "Dans le transport du dioxygène, non dans la conversion : le muscle pourrait consommer davantage s’il était approvisionné.",
+          "options": [
+            {
+              "text": "dans le transport du dioxygène",
+              "correct": true
+            },
+            {
+              "text": "dans la puissance du muscle"
+            },
+            {
+              "text": "dans les réserves de glucose"
+            },
+            {
+              "text": "dans la commande nerveuse"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’entraînement d’endurance améliore-t-il d’abord le cœur et les capillaires ?",
+          "explanation": "Parce que c’est là qu’est la limite. L’altitude et le dopage sanguin visent exactement ce même point.",
+          "options": [
+            {
+              "text": "parce que la limite est dans le transport",
+              "correct": true
+            },
+            {
+              "text": "parce que le muscle ne se renforce pas"
+            },
+            {
+              "text": "pour réduire le lactate"
+            },
+            {
+              "text": "pour économiser le glucose"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Quelle filière domine dans cette épreuve ?",
+          "explanation": "Un cent mètres est presque entièrement alactique, un quatre cents fortement lactique, un marathon presque entièrement aérobie.",
+          "categories": [
+            "anaérobie",
+            "aérobie"
+          ],
+          "items": [
+            {
+              "text": "un cent mètres",
+              "category": 0
+            },
+            {
+              "text": "un quatre cents mètres",
+              "category": 0
+            },
+            {
+              "text": "un marathon",
+              "category": 1
+            },
+            {
+              "text": "une randonnée de six heures",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

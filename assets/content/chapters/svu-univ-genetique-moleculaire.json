@@ -1,0 +1,631 @@
+{
+  "chapter": "svt-universite-genetique-et-biologie-moleculaire",
+  "lessons": [
+    {
+      "id": "du-gene-a-la-proteine",
+      "title": "Du gène à la protéine",
+      "subtitle": "Trois étapes, et une mutation peut n’avoir aucun effet.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une base changée, et la protéine retraduite",
+          "body": "Change une base de la séquence et regarde la protéine se retraduire. Trois issues apparaissent : elle ne change pas, elle change d’un acide aminé, ou elle s’arrête net. Cherche les trois avant de lire la suite — la première est la plus instructive.",
+          "figureId": "code-genetique",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le code, et pourquoi il est redondant",
+          "body": "Trois bases codent un acide aminé. Avec quatre bases, il y a soixante-quatre triplets possibles, pour vingt acides aminés et un signal d’arrêt.\n\nLe code est donc redondant : plusieurs triplets codent le même acide aminé. La leucine en a six, la méthionine une seule.\n\nCette redondance n’est pas répartie au hasard. Les triplets synonymes diffèrent le plus souvent par leur troisième base, ce qui rend les mutations sur cette position souvent silencieuses.\n\nLe code est donc organisé pour amortir les erreurs, et cette organisation est la même chez les bactéries et chez l’humain. C’est l’un des arguments les plus forts en faveur d’une origine commune : un code arbitraire aurait divergé.",
+          "formula": "64 triplets pour 20 acides aminés et un arrêt",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois étapes, et où elles se passent",
+          "body": "La transcription : l’ADN du noyau est copié en ARN messager. L’ADN ne sort jamais, et c’est une copie qui voyage.\n\nLa maturation : chez les eucaryotes, l’ARN est découpé. Les parties non codantes sont retirées, et les morceaux restants peuvent être recollés de plusieurs façons.\n\nLa traduction : dans le cytoplasme, un ribosome lit l’ARN triplet par triplet et assemble les acides aminés correspondants.\n\nUn gène peut donc donner plusieurs protéines, selon le découpage. C’est l’épissage alternatif, et il explique qu’un humain ait vingt mille gènes pour plus de cent mille protéines différentes — un rapport que la découverte du génome a rendu nécessaire à expliquer.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Quatre sortes de mutations, quatre effets",
+          "body": "Silencieuse : le triplet change, l’acide aminé non. Aucun effet sur la protéine.\n\nFaux-sens : un acide aminé est remplacé. L’effet va de nul à fatal selon la position — un changement dans le site actif d’une enzyme la détruit, le même ailleurs peut ne rien faire.\n\nNon-sens : un triplet d’arrêt apparaît. La protéine est tronquée, et généralement inactive.\n\nDécalage du cadre : une base est insérée ou supprimée. Tous les triplets suivants sont décalés, et la protéine n’a plus rien à voir. C’est le type le plus destructeur, pour une mutation d’une seule base.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le dogme central, et ses exceptions",
+          "body": "L’information va de l’ADN à l’ARN puis à la protéine. Crick l’énonce en 1958, et l’appelle lui-même un dogme en reconnaissant que le mot est mal choisi.\n\nLes exceptions sont réelles. Les rétrovirus copient de l’ARN vers l’ADN, par une transcriptase inverse — et cette enzyme est devenue un outil de laboratoire majeur.\n\nCertains virus n’ont que de l’ARN, et les prions se transmettent sans acide nucléique du tout : une protéine mal pliée qui en déforme d’autres.\n\nLe dogme reste la règle, et les exceptions ont chacune ouvert un domaine. La transcriptase inverse a donné le séquençage de l’ARN, et les prions ont expliqué la maladie de la vache folle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de triplets le code génétique comporte-t-il ?",
+          "explanation": "64 : quatre bases à la puissance trois, pour vingt acides aminés et un signal d’arrêt.",
+          "answer": 64,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quelle position les triplets synonymes diffèrent-ils le plus souvent ?",
+          "explanation": "La troisième. C’est ce qui rend beaucoup de mutations sur cette position silencieuses : le code est organisé pour amortir les erreurs.",
+          "options": [
+            {
+              "text": "la troisième base",
+              "correct": true
+            },
+            {
+              "text": "la première base"
+            },
+            {
+              "text": "la deuxième base"
+            },
+            {
+              "text": "les trois également"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’universalité du code est-elle un argument pour l’origine commune ?",
+          "explanation": "Parce qu’un code arbitraire aurait divergé : rien n’imposait cette correspondance précise plutôt qu’une autre.",
+          "options": [
+            {
+              "text": "un code arbitraire aurait divergé entre lignées",
+              "correct": true
+            },
+            {
+              "text": "le code est optimal"
+            },
+            {
+              "text": "il est simple à mémoriser"
+            },
+            {
+              "text": "il est imposé par la chimie"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Quel type de mutation est-ce ?",
+          "explanation": "Silencieuse si l’acide aminé ne change pas, faux-sens s’il est remplacé, non-sens si un arrêt apparaît, décalage si une base est insérée ou retirée.",
+          "categories": [
+            "sans effet sur la protéine",
+            "très destructrice"
+          ],
+          "items": [
+            {
+              "text": "le triplet change, l’acide aminé non",
+              "category": 0
+            },
+            {
+              "text": "un acide aminé loin du site actif change",
+              "category": 0
+            },
+            {
+              "text": "une base est insérée en début de gène",
+              "category": 1
+            },
+            {
+              "text": "un triplet d’arrêt apparaît tôt",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment vingt mille gènes donnent-ils plus de cent mille protéines ?",
+          "explanation": "Par l’épissage alternatif : les morceaux d’ARN restants peuvent être recollés de plusieurs façons.",
+          "options": [
+            {
+              "text": "par l’épissage alternatif de l’ARN",
+              "correct": true
+            },
+            {
+              "text": "par des mutations somatiques"
+            },
+            {
+              "text": "par duplication des gènes"
+            },
+            {
+              "text": "le chiffre est faux"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles exceptions au dogme central existent ?",
+          "explanation": "Les rétrovirus copient l’ARN vers l’ADN, certains virus n’ont que de l’ARN, et les prions se transmettent sans acide nucléique.",
+          "options": [
+            {
+              "text": "les rétrovirus, par transcriptase inverse",
+              "correct": true
+            },
+            {
+              "text": "les virus à ARN seul",
+              "correct": true
+            },
+            {
+              "text": "les prions, protéines mal pliées",
+              "correct": true
+            },
+            {
+              "text": "les bactéries"
+            },
+            {
+              "text": "les mitochondries"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "transmission-et-recombinaison",
+      "title": "Transmission et recombinaison",
+      "subtitle": "Mendel avait raison sur sept caractères, et tort sur la règle.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un croisement de pois, à composer",
+          "body": "Compose les croisements de Mendel : un seul gène, deux versions, jaune dominant vert. Les proportions de la descendance sortent du tirage, et non d’une règle à retenir. Fais plusieurs générations avant de lire la suite.",
+          "figureId": "croisement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux lois de Mendel, et ce qu’elles supposent",
+          "body": "La première : les deux versions d’un gène se séparent à la formation des gamètes, et chacune va dans la moitié d’entre eux. C’est la ségrégation, et elle est universelle.\n\nLa seconde : deux gènes différents se transmettent indépendamment. Elle n’est vraie que si les deux gènes sont sur des chromosomes différents, ou très éloignés sur le même.\n\nMendel a travaillé sur sept caractères du pois, et il a eu la chance qu’ils soient tous pratiquement indépendants. Avec deux caractères liés, il aurait obtenu d’autres proportions et une autre théorie.\n\nC’est un cas remarquable où le choix du matériel a décidé du résultat. Morgan établit l’existence de la liaison en 1911, chez la drosophile, et elle devient alors un outil plutôt qu’une exception.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La recombinaison, et la carte qu’elle permet",
+          "body": "Pendant la formation des gamètes, les chromosomes homologues échangent des morceaux. Plus deux gènes sont éloignés, plus la chance qu’un échange les sépare est grande.\n\nLa fréquence de recombinaison mesure donc une distance. Un pour-cent de recombinaison définit une unité, le centimorgan.\n\nEn mesurant ces fréquences par paires, on reconstitue l’ordre des gènes le long du chromosome. Les premières cartes génétiques datent de 1913, et elles ont été établies sans qu’on sache ce qu’un gène est matériellement.\n\nC’est un exemple frappant : on a cartographié le support avant de savoir de quoi il était fait. L’ADN n’a été reconnu comme support qu’en 1944, et sa structure décrite en 1953.",
+          "formula": "1 % de recombinaison = 1 centimorgan",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi la recombinaison compte tant",
+          "body": "Un humain a vingt-trois paires de chromosomes. La seule répartition aléatoire des paires donne deux puissance vingt-trois combinaisons de gamètes, soit huit millions.\n\nLa recombinaison multiplie ce nombre par un facteur énorme : chaque chromosome transmis est une mosaïque des deux reçus, et les points de coupure varient.\n\nDeux enfants des mêmes parents ne partagent donc en moyenne que la moitié de leur génome, et la variance autour de cette moitié est réelle — quelques pour-cent.\n\nSans recombinaison, un chromosome entier se transmettrait en bloc, et les gènes qui y sont ne pourraient jamais être testés séparément par la sélection. La recombinaison est donc ce qui permet à l’évolution de combiner les bonnes variantes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Dominance, et les trois pièges du vocabulaire",
+          "body": "Dominant ne veut pas dire fréquent. L’allèle de la maladie de Huntington est dominant et très rare ; celui du groupe sanguin O est récessif et majoritaire en Europe.\n\nDominant ne veut pas dire meilleur. C’est seulement l’allèle qui s’exprime quand les deux sont présents.\n\nEt la dominance n’est pas une propriété de l’allèle seul : elle dépend du caractère observé. Un même allèle peut être dominant pour la couleur et récessif pour la résistance à une maladie.\n\nLes trois confusions sont tenaces, et elles alimentent des raisonnements faux hors de la génétique — notamment chaque fois qu’on parle de « gènes dominants » dans un sens qui n’existe pas.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand la seconde loi de Mendel est-elle vraie ?",
+          "explanation": "Quand les deux gènes sont sur des chromosomes différents, ou très éloignés sur le même.",
+          "options": [
+            {
+              "text": "si les gènes sont sur des chromosomes différents",
+              "correct": true
+            },
+            {
+              "text": "toujours"
+            },
+            {
+              "text": "seulement chez le pois"
+            },
+            {
+              "text": "si les allèles sont dominants"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui a permis à Mendel d’obtenir sa seconde loi ?",
+          "explanation": "La chance que ses sept caractères du pois soient pratiquement indépendants. Avec deux caractères liés, il aurait eu une autre théorie.",
+          "options": [
+            {
+              "text": "ses sept caractères étaient pratiquement indépendants",
+              "correct": true
+            },
+            {
+              "text": "un très grand nombre de plants"
+            },
+            {
+              "text": "une méthode statistique nouvelle"
+            },
+            {
+              "text": "la connaissance des chromosomes"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure la fréquence de recombinaison entre deux gènes ?",
+          "explanation": "Leur distance sur le chromosome : un pour-cent de recombinaison définit un centimorgan.",
+          "options": [
+            {
+              "text": "leur distance sur le chromosome",
+              "correct": true
+            },
+            {
+              "text": "leur degré de dominance"
+            },
+            {
+              "text": "leur nombre d’allèles"
+            },
+            {
+              "text": "leur importance fonctionnelle"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de combinaisons de gamètes la seule répartition des 23 paires donne-t-elle, en millions ?",
+          "explanation": "2 puissance 23, soit environ huit millions. La recombinaison multiplie encore ce nombre.",
+          "min": 0,
+          "max": 100,
+          "answer": 8,
+          "tolerance": 1.5,
+          "unit": "millions",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi la recombinaison sert-elle, pour l’évolution ?",
+          "explanation": "À tester les gènes séparément : sans elle, un chromosome entier se transmettrait en bloc et les bonnes variantes ne pourraient pas être combinées.",
+          "options": [
+            {
+              "text": "tester et combiner les variantes séparément",
+              "correct": true
+            },
+            {
+              "text": "augmenter le taux de mutation"
+            },
+            {
+              "text": "réparer l’ADN"
+            },
+            {
+              "text": "conserver les chromosomes intacts"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un allèle dominant est plus fréquent dans la population.",
+          "explanation": "Faux. L’allèle de Huntington est dominant et très rare ; celui du groupe O est récessif et majoritaire en Europe.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-regulation",
+      "title": "La régulation de l’expression",
+      "subtitle": "Un seul génome, deux cents types de cellules.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le noyau, et ce qui en sort",
+          "body": "Touche le noyau : il conserve l’information et la laisse copier, sans jamais la laisser sortir elle-même. Toutes les cellules d’un corps ont le même noyau et le même contenu. La question de cette leçon est donc de savoir pourquoi un neurone ne ressemble pas à une cellule du foie.",
+          "figureId": "cellule",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le problème, posé en chiffres",
+          "body": "Un corps humain compte plus de deux cents types de cellules distinguables, et toutes portent le même génome.\n\nUn neurone et une cellule du foie ont donc exactement les mêmes gènes, et n’expriment pas les mêmes. On estime qu’une cellule donnée en exprime la moitié, et la moitié n’est pas la même d’un type à l’autre.\n\nLa différenciation n’est donc pas une perte d’information : c’est un choix d’expression, et il est stable — une cellule du foie reste une cellule du foie en se divisant.\n\nLe clonage l’a démontré : le noyau d’une cellule adulte, placé dans un ovule vidé, redonne un organisme complet. L’information était toute là, seulement verrouillée.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois niveaux de contrôle",
+          "body": "Le niveau de la transcription : des protéines, les facteurs de transcription, se fixent près d’un gène et autorisent ou empêchent sa copie. C’est le niveau principal.\n\nLe niveau de l’accès : l’ADN est enroulé, et un gène enroulé serré n’est pas lisible. Modifier cet enroulement verrouille ou déverrouille des régions entières.\n\nEt le niveau après transcription : l’ARN peut être découpé autrement, dégradé plus vite, ou bloqué par de petits ARN interférents.\n\nLe second niveau est celui qu’on appelle épigénétique. Il est transmis à la division cellulaire, et c’est ce qui rend la différenciation stable sans toucher à la séquence.",
+          "formula": "transcription, accès à l’ADN, et contrôle après transcription",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que « épigénétique » veut dire, et ce qu’on lui fait dire",
+          "body": "Au sens strict : des modifications chimiques de l’ADN ou de son emballage qui changent l’expression sans changer la séquence, et qui se transmettent lors de la division cellulaire.\n\nC’est un mécanisme établi, central dans le développement et dans les cancers.\n\nCe qui est beaucoup plus incertain est la transmission à la descendance, sur plusieurs générations. Elle existe chez certaines plantes et chez quelques animaux, et les preuves chez l’humain sont minces et contestées.\n\nEntre le mécanisme solide et l’idée que notre vécu marquerait nos petits-enfants, il y a un écart considérable. Le mot sert souvent à faire passer le second pour établi au nom du premier.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi les cellules souches sont une catégorie fonctionnelle",
+          "body": "Une cellule souche n’est pas définie par ce qu’elle est, mais par ce qu’elle peut devenir.\n\nTotipotente : elle peut donner un organisme entier, annexes comprises. Seules les premières cellules de l’embryon le sont. Pluripotente : tous les types de cellules, mais pas un organisme. Multipotente : plusieurs types d’une même famille, comme les cellules sanguines.\n\nYamanaka a démontré en 2006 qu’on peut reprogrammer une cellule adulte en cellule pluripotente, en y introduisant quatre facteurs de transcription. Prix Nobel en 2012.\n\nC’est le résultat qui a changé le domaine : la différenciation n’est pas un aller simple, et quatre protéines suffisent à remonter la pente.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de types de cellules distinguables un corps humain compte-t-il, au moins ?",
+          "explanation": "Plus de deux cents, et tous portent le même génome.",
+          "min": 0,
+          "max": 2000,
+          "answer": 200,
+          "tolerance": 40,
+          "unit": "types",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré le clonage sur la différenciation ?",
+          "explanation": "Que l’information est toute là, seulement verrouillée : le noyau d’une cellule adulte dans un ovule vidé redonne un organisme complet.",
+          "options": [
+            {
+              "text": "l’information est intacte, seulement verrouillée",
+              "correct": true
+            },
+            {
+              "text": "l’information est perdue en se différenciant"
+            },
+            {
+              "text": "les gènes sont réécrits"
+            },
+            {
+              "text": "les cellules adultes mutent"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque niveau de contrôle à son mécanisme.",
+          "explanation": "Les facteurs de transcription autorisent la copie, l’enroulement règle l’accès, et l’ARN peut être découpé ou dégradé après coup.",
+          "pairs": [
+            {
+              "left": "la transcription",
+              "right": "des facteurs qui autorisent la copie"
+            },
+            {
+              "left": "l’accès à l’ADN",
+              "right": "l’enroulement du brin"
+            },
+            {
+              "left": "après transcription",
+              "right": "découpage et dégradation de l’ARN"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie « épigénétique » au sens strict ?",
+          "explanation": "Des modifications qui changent l’expression sans changer la séquence, et qui se transmettent lors de la division cellulaire.",
+          "options": [
+            {
+              "text": "changer l’expression sans changer la séquence, transmis à la division",
+              "correct": true
+            },
+            {
+              "text": "transmettre son vécu à ses descendants"
+            },
+            {
+              "text": "muter sous l’effet de l’environnement"
+            },
+            {
+              "text": "exprimer un gène plus fortement"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La transmission épigénétique sur plusieurs générations est établie chez l’humain.",
+          "explanation": "Faux. Elle existe chez certaines plantes et quelques animaux ; chez l’humain, les preuves sont minces et contestées.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré Yamanaka en 2006 ?",
+          "explanation": "Qu’on peut reprogrammer une cellule adulte en cellule pluripotente, avec quatre facteurs de transcription. La différenciation n’est pas un aller simple.",
+          "options": [
+            {
+              "text": "quatre facteurs suffisent à reprogrammer une cellule adulte",
+              "correct": true
+            },
+            {
+              "text": "les cellules souches n’existent pas chez l’adulte"
+            },
+            {
+              "text": "le clonage humain est possible"
+            },
+            {
+              "text": "l’épigénétique se transmet aux descendants"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-un-genome",
+      "title": "Défi : lire un génome",
+      "subtitle": "Trois milliards de lettres, et ce qu’on ne sait pas encore y lire.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Lire une séquence, et la traduire",
+          "body": "Change des bases et observe la protéine : tu fais à la main ce qu’un programme fait sur trois milliards de positions. La leçon montre que traduire est la partie facile, et qu’interpréter est la partie ouverte.",
+          "figureId": "code-genetique",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Une variante qui se répand, ou non",
+          "body": "Règle l’avantage et avance de dix générations : une variante avantagée envahit la population, une variante neutre ne bouge pas. Lire un génome, c’est trouver des variantes ; dire lesquelles comptent demande de savoir si elles ont été sélectionnées.",
+          "figureId": "selection",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le génome humain, en chiffres",
+          "body": "Trois milliards deux cents millions de paires de bases, réparties sur vingt-trois paires de chromosomes.\n\nEnviron vingt mille gènes codant des protéines, ce qui représente moins de deux pour-cent de la séquence. Le reste comprend des régulateurs, des séquences répétées, des restes de virus intégrés, et des régions dont la fonction est discutée.\n\nDeux humains diffèrent par environ un nucléotide sur mille, soit trois millions de différences — et par des insertions et délétions qui en représentent davantage en nombre de bases.\n\nLe séquençage du premier génome a coûté environ trois milliards de dollars et treize ans. Il coûte aujourd’hui quelques centaines de dollars et une journée : une division par dix millions en vingt ans.",
+          "formula": "3,2 milliards de bases, 20 000 gènes, moins de 2 % codant",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’on sait lire, et ce qu’on ne sait pas",
+          "body": "On sait trouver les gènes codants, et prédire la protéine correspondante. C’est devenu une tâche de routine.\n\nOn sait identifier les variantes d’un individu et les comparer à des bases de données. Pour quelques milliers de maladies monogéniques, le diagnostic est direct.\n\nOn ne sait pas, dans le cas général, dire ce qu’une variante inconnue fait. Des millions de variantes humaines sont classées « de signification indéterminée », et c’est le principal problème pratique de la génétique médicale.\n\nEt on ne sait pas prédire un caractère complexe à partir du génome. La taille, pourtant très héritable, est influencée par des milliers de variantes de petit effet, et les meilleurs prédicteurs n’en expliquent qu’une partie.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’un test génétique grand public ne dit pas",
+          "body": "Il analyse en général quelques centaines de milliers de positions choisies, et non le génome entier. Ce qui n’est pas regardé n’est pas rapporté.\n\nSes estimations d’origine comparent à des panels de référence, et les résultats changent quand les panels changent. Plusieurs utilisateurs ont vu leurs pourcentages évoluer sans qu’aucun gène n’ait bougé.\n\nSes prédictions de risque sont des risques relatifs sur des populations, et un risque relatif de deux sur un événement rare reste rare.\n\nEt les données sont conservées. Plusieurs sociétés du secteur ont changé de propriétaire ou fait faillite, et le devenir des séquences n’était pas toujours réglé. C’est la donnée la plus durable qu’on puisse céder : elle concerne aussi des gens qui n’ont rien signé.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de milliards de paires de bases le génome humain compte-t-il ?",
+          "explanation": "Environ 3,2 milliards, sur vingt-trois paires de chromosomes.",
+          "min": 0,
+          "max": 50,
+          "answer": 3.2,
+          "tolerance": 0.4,
+          "unit": "milliards",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part de la séquence code des protéines, en pour-cent ?",
+          "explanation": "Moins de deux pour-cent. Le reste comprend régulateurs, répétitions, restes de virus, et régions discutées.",
+          "min": 0,
+          "max": 100,
+          "answer": 2,
+          "tolerance": 0.8,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De combien le coût du séquençage a-t-il été divisé en vingt ans ?",
+          "explanation": "D’environ dix millions : de trois milliards de dollars et treize ans à quelques centaines de dollars et une journée.",
+          "options": [
+            {
+              "text": "environ dix millions",
+              "correct": true
+            },
+            {
+              "text": "environ mille"
+            },
+            {
+              "text": "environ cent"
+            },
+            {
+              "text": "il n’a pas baissé"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Sait-on faire cela à partir d’un génome séquencé ?",
+          "explanation": "Trouver les gènes et identifier les variantes est de routine. Interpréter une variante inconnue ou prédire un caractère complexe ne l’est pas.",
+          "categories": [
+            "on sait faire",
+            "on ne sait pas faire"
+          ],
+          "items": [
+            {
+              "text": "trouver les gènes codants",
+              "category": 0
+            },
+            {
+              "text": "diagnostiquer une maladie monogénique connue",
+              "category": 0
+            },
+            {
+              "text": "dire ce qu’une variante inconnue fait",
+              "category": 1
+            },
+            {
+              "text": "prédire la taille d’un individu",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le principal problème pratique de la génétique médicale ?",
+          "explanation": "Les millions de variantes classées « de signification indéterminée » : on les trouve sans savoir ce qu’elles font.",
+          "options": [
+            {
+              "text": "les variantes de signification indéterminée",
+              "correct": true
+            },
+            {
+              "text": "le coût du séquençage"
+            },
+            {
+              "text": "la taille des fichiers"
+            },
+            {
+              "text": "la vitesse des machines"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles limites un test génétique grand public a-t-il ?",
+          "explanation": "Il n’analyse que des positions choisies, ses origines dépendent des panels, ses risques sont relatifs, et les données sont conservées.",
+          "options": [
+            {
+              "text": "il n’analyse que des positions choisies",
+              "correct": true
+            },
+            {
+              "text": "ses estimations d’origine dépendent des panels",
+              "correct": true
+            },
+            {
+              "text": "ses risques sont relatifs, non absolus",
+              "correct": true
+            },
+            {
+              "text": "les données sont conservées et cessibles",
+              "correct": true
+            },
+            {
+              "text": "il séquence tout le génome"
+            },
+            {
+              "text": "il diagnostique toutes les maladies"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
