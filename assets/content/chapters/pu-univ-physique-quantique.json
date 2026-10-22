@@ -1,0 +1,674 @@
+{
+  "chapter": "physique-chimie-universite-physique-quantique",
+  "lessons": [
+    {
+      "id": "ce-que-l-experience-impose",
+      "title": "Ce que l’expérience impose",
+      "subtitle": "Trois résultats qu’aucune onde classique ne produit.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’ondulatoire, et ses limites",
+          "body": "Change le milieu et la fréquence : l’onde se comporte comme prévu, et la longueur d’onde suit la vitesse. Ce modèle décrit parfaitement le son, la lumière en optique, et les vagues. Il échoue sur trois expériences précises, et ces trois échecs ont fondé toute la physique du vingtième siècle.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le premier échec : le corps noir",
+          "body": "Un objet chaud rayonne. La théorie classique prédit une intensité qui croît sans limite vers les courtes longueurs d’onde — ce qui voudrait dire qu’un four émet une énergie infinie.\n\nLa mesure, elle, montre un pic et une décroissance. L’écart n’est pas un désaccord de quelques pour-cent : la théorie est divergente et la nature ne l’est pas.\n\nPlanck trouve la bonne formule en 1900, en supposant que l’énergie ne s’échange que par paquets proportionnels à la fréquence. La constante de proportionnalité est minuscule, et c’est elle qu’on appelle depuis la constante de Planck.\n\nIl a lui-même tenu cela pour un artifice de calcul pendant des années, et il l’a écrit. L’idée que l’énergie soit réellement discontinue lui paraissait inacceptable, et c’est son propre résultat.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le deuxième échec : l’effet photoélectrique",
+          "body": "Éclairer un métal arrache des électrons. Une onde classique prédit que plus la lumière est intense, plus les électrons sortent énergiques.\n\nLa mesure dit autre chose. L’énergie des électrons dépend de la fréquence, et pas du tout de l’intensité. Et en dessous d’une fréquence seuil, rien ne sort — quelle que soit la puissance de la lampe, et quel que soit le temps qu’on attende.\n\nCe dernier point est décisif. Une onde étalée devrait accumuler de l’énergie jusqu’à arracher l’électron. Qu’il n’y ait aucun effet de durée dit que l’échange se fait d’un coup, avec un paquet unique.\n\nEinstein tire cela en 1905 : la lumière arrive en grains, d’énergie proportionnelle à la fréquence. C’est pour cela, et non pour la relativité, qu’il a reçu le prix Nobel.",
+          "formula": "l’énergie des électrons suit la fréquence, pas l’intensité",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le troisième échec : un électron à la fois",
+          "body": "Envoyer des électrons sur deux fentes donne des franges, comme une onde. De Broglie l’avait prédit en 1924, Davisson et Germer l’ont vu en 1927.\n\nOn peut les envoyer un par un, en attendant entre chacun. Chaque électron arrive en un point unique de l’écran, comme une particule. Et les points s’accumulent en franges, exactement celles de l’onde.\n\nIl n’y a donc pas un électron qui se partage. Il y a une statistique d’arrivées que seule une onde décrit, et des arrivées qui sont ponctuelles.\n\nEt si l’on installe de quoi savoir par quelle fente chacun est passé, les franges disparaissent. Ce n’est pas une question de brutalité de la mesure : c’est que l’information « par où » et les franges sont incompatibles. L’expérience a été faite avec des électrons, des neutrons, des atomes et des molécules de plusieurs centaines d’atomes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que « dualité » veut dire, et ne veut pas dire",
+          "body": "L’expression « à la fois onde et particule » est commode et trompeuse. Un électron n’est ni l’un ni l’autre : il est un objet quantique, et ces deux mots viennent d’une physique qui n’était pas faite pour lui.\n\nCe que l’expérience dit exactement est que selon le montage, l’un des deux vocabulaires donne les bonnes prédictions. Jamais les deux en même temps dans le même montage.\n\nC’est ce que Bohr appelait la complémentarité. L’énoncé est modeste et honnête : il porte sur ce qu’on peut dire, et non sur ce que l’électron est.\n\nD’où une discipline de pensée utile pour tout ce chapitre : quand une image classique échoue, préférer dire ce que l’expérience donne plutôt que forcer l’image. C’est inconfortable, et c’est la seule position qui ne produit pas d’erreurs.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que prédit la théorie classique pour le corps noir ?",
+          "explanation": "Une intensité qui croît sans limite vers les courtes longueurs d’onde : la théorie est divergente et la nature ne l’est pas.",
+          "options": [
+            {
+              "text": "une intensité infinie aux courtes longueurs d’onde",
+              "correct": true
+            },
+            {
+              "text": "un pic suivi d’une décroissance"
+            },
+            {
+              "text": "une intensité nulle"
+            },
+            {
+              "text": "une intensité indépendante de la température"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment Planck considérait-il son propre résultat ?",
+          "explanation": "Comme un artifice de calcul, pendant des années : l’idée d’une énergie réellement discontinue lui paraissait inacceptable.",
+          "options": [
+            {
+              "text": "comme un artifice de calcul",
+              "correct": true
+            },
+            {
+              "text": "comme une découverte fondamentale"
+            },
+            {
+              "text": "comme une erreur à corriger"
+            },
+            {
+              "text": "comme une conséquence de la relativité"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépend l’énergie des électrons arrachés à un métal ?",
+          "explanation": "De la fréquence de la lumière, et pas du tout de son intensité. En dessous d’un seuil, rien ne sort.",
+          "options": [
+            {
+              "text": "de la fréquence",
+              "correct": true
+            },
+            {
+              "text": "de l’intensité"
+            },
+            {
+              "text": "de la durée d’exposition"
+            },
+            {
+              "text": "de la nature du métal seulement"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel point de l’effet photoélectrique est décisif contre l’onde classique ?",
+          "explanation": "L’absence d’effet de durée : une onde étalée devrait accumuler de l’énergie jusqu’à arracher l’électron.",
+          "options": [
+            {
+              "text": "aucune accumulation dans le temps ne produit d’effet",
+              "correct": true
+            },
+            {
+              "text": "l’énergie dépend du métal"
+            },
+            {
+              "text": "les électrons sortent en nombre"
+            },
+            {
+              "text": "la lumière se réfléchit"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’arrive-t-il aux franges si l’on sait par quelle fente chaque électron passe ?",
+          "explanation": "Elles disparaissent. Ce n’est pas une question de brutalité de la mesure : l’information « par où » et les franges sont incompatibles.",
+          "options": [
+            {
+              "text": "elles disparaissent",
+              "correct": true
+            },
+            {
+              "text": "elles se décalent"
+            },
+            {
+              "text": "elles doublent"
+            },
+            {
+              "text": "elles ne changent pas"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme la complémentarité de Bohr ?",
+          "explanation": "Que selon le montage, l’un des deux vocabulaires donne les bonnes prédictions — jamais les deux à la fois dans le même montage.",
+          "options": [
+            {
+              "text": "selon le montage, un seul des deux vocabulaires prédit juste",
+              "correct": true
+            },
+            {
+              "text": "un électron est à la fois onde et particule"
+            },
+            {
+              "text": "la mesure crée la réalité"
+            },
+            {
+              "text": "l’onde est plus fondamentale que la particule"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-les-niveaux-sont-discrets",
+      "title": "Pourquoi les niveaux sont discrets",
+      "subtitle": "Confiner une onde impose des harmoniques.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des raies, et ce qu’elles comptent",
+          "body": "Choisis l’hydrogène : quatre raies visibles, à des places fixes qui ne dépendent pas de la température. Chaque raie est une différence entre deux niveaux d’énergie, et le fait qu’il y ait des raies et non un continuum est la preuve directe que ces niveaux sont en nombre discret.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’analogie exacte avec une corde",
+          "body": "Une corde de guitare attachée aux deux bouts ne peut vibrer qu’à certaines fréquences : celles pour lesquelles un nombre entier de demi-longueurs d’onde tient dans sa longueur.\n\nCe n’est pas une règle imposée, c’est une conséquence du confinement. Une vibration qui ne satisferait pas la condition s’annulerait elle-même.\n\nUn électron lié à un noyau est dans la même situation : confiné, donc limité à certains modes. Et à chaque mode correspond une énergie.\n\nC’est de là que vient tout le discret de la physique quantique, et ce n’est pas un postulat. Un électron libre, non confiné, a un spectre d’énergies continu — exactement comme une corde infinie admet toutes les fréquences.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les niveaux de l’hydrogène, et le chiffre à retenir",
+          "body": "L’énergie du niveau fondamental vaut moins treize virgule six électronvolts. Les suivants valent cette valeur divisée par le carré du rang.\n\nLe signe négatif dit que l’électron est lié : il faut fournir de l’énergie pour le détacher. Treize virgule six électronvolts, précisément, et c’est l’énergie d’ionisation de l’hydrogène.\n\nLes différences entre niveaux donnent les raies. La transition du niveau trois vers le niveau deux donne la raie rouge à six cent cinquante-six nanomètres, celle qui domine la couleur des nébuleuses.\n\nEt la décroissance en un sur le carré explique pourquoi les niveaux se resserrent vers le haut : ils s’accumulent vers zéro, et au-delà l’électron est libre et son énergie redevient continue. La frontière entre discret et continu est donc la frontière entre lié et libre.",
+          "formula": "niveau n : −13,6 électronvolts divisé par n²",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’effet tunnel, et les objets qui en vivent",
+          "body": "Une onde confinée ne s’arrête pas net à la paroi : elle y pénètre en décroissant. Si la paroi est mince, une part ressort de l’autre côté.\n\nConséquence : une particule peut franchir une barrière qu’elle n’a pas l’énergie de franchir. Ce n’est pas un emprunt d’énergie, c’est que la description par une onde confinée ne s’annule pas à la paroi.\n\nC’est de là que vient la radioactivité alpha, expliquée par Gamow en 1928 : le noyau sort par effet tunnel, et c’est la sensibilité exponentielle de l’effet à l’épaisseur qui explique des demi-vies allant de la microseconde au milliard d’années.\n\nEt c’est de là que viennent le microscope à effet tunnel, qui voit les atomes un par un, et la mémoire des clés USB, où les électrons franchissent une barrière isolante pour écrire. Un effet sans aucun équivalent classique, dans un objet de poche.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi un atome ne s’effondre pas",
+          "body": "La question de la leçon sur l’atome reçoit ici sa réponse complète. Un électron confiné dans une petite région doit avoir une grande énergie cinétique : c’est une conséquence du confinement, et c’est inévitable.\n\nPlus on le comprime, plus cette énergie monte, et plus elle s’oppose à la compression. L’atome a donc une taille d’équilibre, fixée par le combat entre l’attraction du noyau et cette résistance.\n\nLe calcul donne le bon ordre de grandeur sans aucun ajustement : un dixième de nanomètre. C’est l’un des plus beaux résultats d’ordre de grandeur de la physique.\n\nEt cela explique un fait étrange : l’hélium liquide ne se solidifie pas, même au zéro absolu, sous pression ordinaire. L’agitation qui reste n’est pas thermique — c’est cette énergie de confinement, et aucun refroidissement ne la retire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les niveaux d’énergie sont-ils discrets ?",
+          "explanation": "Parce que l’électron est confiné : comme une corde attachée aux deux bouts, il est limité à certains modes.",
+          "options": [
+            {
+              "text": "parce que l’électron est confiné",
+              "correct": true
+            },
+            {
+              "text": "parce que l’énergie est quantifiée par postulat"
+            },
+            {
+              "text": "parce que le noyau est chargé"
+            },
+            {
+              "text": "parce que les orbites sont circulaires"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un électron libre a lui aussi des niveaux d’énergie discrets.",
+          "explanation": "Faux. Non confiné, son spectre est continu — comme une corde infinie admet toutes les fréquences.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est l’énergie d’ionisation de l’hydrogène, en électronvolts ?",
+          "explanation": "13,6 électronvolts : c’est l’énergie à fournir pour détacher l’électron du niveau fondamental.",
+          "min": 0,
+          "max": 100,
+          "answer": 13.6,
+          "tolerance": 1,
+          "unit": "eV",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les niveaux se resserrent-ils vers le haut ?",
+          "explanation": "Parce qu’ils décroissent en un sur le carré du rang : ils s’accumulent vers zéro, où l’électron devient libre.",
+          "options": [
+            {
+              "text": "ils décroissent en un sur le carré du rang",
+              "correct": true
+            },
+            {
+              "text": "l’attraction du noyau s’affaiblit"
+            },
+            {
+              "text": "les électrons se repoussent"
+            },
+            {
+              "text": "la mesure devient imprécise"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels objets ou phénomènes reposent sur l’effet tunnel ?",
+          "explanation": "La radioactivité alpha, le microscope à effet tunnel, et la mémoire des clés USB. Aucun équivalent classique.",
+          "options": [
+            {
+              "text": "la radioactivité alpha",
+              "correct": true
+            },
+            {
+              "text": "le microscope à effet tunnel",
+              "correct": true
+            },
+            {
+              "text": "la mémoire des clés USB",
+              "correct": true
+            },
+            {
+              "text": "l’effet photoélectrique"
+            },
+            {
+              "text": "la fission nucléaire"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’hélium liquide ne se solidifie-t-il pas au zéro absolu ?",
+          "explanation": "Parce que l’agitation qui reste est une énergie de confinement, pas thermique : aucun refroidissement ne la retire.",
+          "options": [
+            {
+              "text": "l’agitation restante est de confinement, pas thermique",
+              "correct": true
+            },
+            {
+              "text": "il n’atteint jamais le zéro absolu"
+            },
+            {
+              "text": "ses atomes sont trop légers pour s’attirer"
+            },
+            {
+              "text": "la pression est trop faible pour le comprimer"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-indetermination",
+      "title": "L’indétermination, et ce qu’elle n’est pas",
+      "subtitle": "Ce n’est pas la mesure qui perturbe.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un hasard qui ne cache rien",
+          "body": "Avance d’une demi-vie : la moitié des cent quarante-quatre noyaux a disparu, et on ne peut pas dire lesquels. Aucun n’est plus vieux ni plus fragile qu’un autre — ils sont strictement identiques. Le hasard n’est pas ici notre ignorance d’un détail : c’est tout ce qu’il y a.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que la relation affirme",
+          "body": "Plus la position d’une particule est déterminée, moins sa quantité de mouvement l’est, et réciproquement. Le produit des deux imprécisions a une valeur minimale.\n\nC’est un énoncé sur l’état, pas sur la mesure. Une particule dont la position est bien définie n’a pas de quantité de mouvement précise — non pas qu’on l’ignore : elle n’en a pas.\n\nLa différence est vérifiable. Faire passer des particules par une fente étroite restreint leur position, et leur direction de sortie s’élargit exactement dans la proportion annoncée. Resserrer la fente élargit le faisceau.\n\nSi c’était une affaire de perturbation par l’instrument, un instrument plus délicat réduirait l’effet. Aucun ne le réduit, et c’est l’argument décisif.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La formulation qui circule, et pourquoi elle est fausse",
+          "body": "L’énoncé courant est : « mesurer la position perturbe la vitesse, donc on ne peut pas connaître les deux ». C’est l’image que Heisenberg lui-même a employée en 1927, sous forme de microscope imaginaire.\n\nElle a deux défauts. Elle suggère que la particule possède les deux valeurs et que nous les ignorons — ce qui est une hypothèse, et une hypothèse réfutée par la leçon suivante.\n\nEt elle suggère qu’un instrument meilleur contournerait la limite, ce qui est faux.\n\nLa bonne lecture est que position et quantité de mouvement ne sont pas simultanément définies pour un objet quantique. L’histoire de cette formulation est instructive : une image pédagogique utile au départ, devenue le principal obstacle à la compréhension du sujet un siècle plus tard.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le hasard quantique, et en quoi il diffère",
+          "body": "Lancer un dé donne un résultat imprévisible, et le hasard y est notre ignorance : la trajectoire est déterminée, et nous ne connaissons pas les conditions initiales assez bien.\n\nLa désintégration d’un noyau n’est pas de ce type. Deux noyaux identiques, préparés identiquement, se désintègrent à des instants différents, et aucune propriété ne les distingue.\n\nLa théorie ne donne qu’une probabilité, et la leçon suivante montre qu’aucune propriété cachée locale ne peut en rendre compte.\n\nC’est le point sur lequel Einstein a maintenu son désaccord jusqu’à la fin — sa formule sur Dieu qui ne joue pas aux dés porte précisément là. Il n’a pas eu tort de poser la question : c’est l’article qu’il a écrit pour la poser qui a conduit au théorème de Bell, et à la réponse expérimentale.",
+          "formula": "le hasard quantique n’est pas une ignorance de nos conditions initiales",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Où la limite se voit, et où elle ne compte pas",
+          "body": "Pour un électron dans un atome, l’imprécision sur la position est de l’ordre de la taille de l’atome : la limite gouverne tout.\n\nPour un grain de poussière d’un microgramme, elle correspond à des distances inimaginablement plus petites que le noyau d’un atome. Elle existe et n’a aucun effet observable.\n\nC’est pourquoi la physique classique marche. Elle n’est pas fausse : elle est la limite où la constante de Planck est négligeable devant les grandeurs du problème.\n\nMême structure que l’optique géométrique du chapitre précédent, qui est la limite où la longueur d’onde est négligeable. Une théorie dépassée reste valide dans son domaine, et savoir énoncer ce domaine est ce qui distingue une compréhension d’une récitation.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quoi la relation d’indétermination porte-t-elle ?",
+          "explanation": "Sur l’état, pas sur la mesure : une particule dont la position est bien définie n’a pas de quantité de mouvement précise.",
+          "options": [
+            {
+              "text": "sur l’état de la particule",
+              "correct": true
+            },
+            {
+              "text": "sur la précision des instruments"
+            },
+            {
+              "text": "sur la perturbation par la mesure"
+            },
+            {
+              "text": "sur notre connaissance des conditions initiales"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel argument montre qu’il ne s’agit pas d’une perturbation par l’instrument ?",
+          "explanation": "Qu’aucun instrument plus délicat ne réduit l’effet : resserrer une fente élargit toujours le faisceau dans la proportion annoncée.",
+          "options": [
+            {
+              "text": "aucun instrument meilleur ne réduit l’effet",
+              "correct": true
+            },
+            {
+              "text": "la mesure est trop rapide"
+            },
+            {
+              "text": "l’instrument n’intervient pas"
+            },
+            {
+              "text": "l’effet dépend de l’observateur"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels sont les défauts de la formulation « la mesure perturbe » ?",
+          "explanation": "Elle suggère que la particule possède les deux valeurs, et qu’un instrument meilleur contournerait la limite. Les deux sont faux.",
+          "options": [
+            {
+              "text": "elle suppose que la particule possède les deux valeurs",
+              "correct": true
+            },
+            {
+              "text": "elle suggère qu’un meilleur instrument suffirait",
+              "correct": true
+            },
+            {
+              "text": "elle est trop mathématique"
+            },
+            {
+              "text": "elle ne mentionne pas la constante de Planck"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce hasard est-il une ignorance, ou irréductible ?",
+          "explanation": "Pour un dé, la trajectoire est déterminée et nous ignorons les conditions. Pour un noyau, aucune propriété ne distingue deux noyaux identiques.",
+          "categories": [
+            "ignorance de notre part",
+            "irréductible"
+          ],
+          "items": [
+            {
+              "text": "le résultat d’un lancer de dé",
+              "category": 0
+            },
+            {
+              "text": "le tirage d’une carte dans un jeu mélangé",
+              "category": 0
+            },
+            {
+              "text": "l’instant de désintégration d’un noyau",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a produit le désaccord d’Einstein sur ce point ?",
+          "explanation": "L’article qu’il a écrit pour poser la question a conduit au théorème de Bell, et à la réponse expérimentale.",
+          "options": [
+            {
+              "text": "l’article qui a conduit au théorème de Bell",
+              "correct": true
+            },
+            {
+              "text": "une théorie alternative acceptée"
+            },
+            {
+              "text": "une correction de la relation d’indétermination"
+            },
+            {
+              "text": "rien, la question était mal posée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la physique classique fonctionne-t-elle ?",
+          "explanation": "Parce qu’elle est la limite où la constante de Planck est négligeable devant les grandeurs du problème. Elle n’est pas fausse.",
+          "options": [
+            {
+              "text": "elle est la limite où la constante de Planck est négligeable",
+              "correct": true
+            },
+            {
+              "text": "elle est fausse mais pratique"
+            },
+            {
+              "text": "elle ne s’applique qu’aux gros objets par convention"
+            },
+            {
+              "text": "elle est une approximation sans domaine défini"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-intrication-et-bell",
+      "title": "Défi : l’intrication, et ce que Bell a tranché",
+      "subtitle": "Un théorème sur toutes les théories, pas sur la mécanique quantique.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des corrélations, et comment on les compte",
+          "body": "Change les entrées et lis les sorties : chaque combinaison a sa ligne, et le compte est exhaustif. L’inégalité de Bell se démontre par un décompte de ce type sur des résultats de mesure — c’est une arithmétique élémentaire, et c’est ce qui rend le théorème si solide.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que nos images ne savent pas montrer",
+          "body": "Les quatre modèles sont tous des images spatiales : des grains, des pâtes, des couches. L’intrication n’est représentable par aucune image de ce genre — deux particules intriquées ne sont pas deux objets reliés par quelque chose, et c’est la raison pour laquelle il n’y a pas de figure pour elle dans ce cours.",
+          "figureId": "modeles-atome",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’est l’intrication",
+          "body": "Deux particules peuvent être préparées dans un état où aucune n’a de propriété définie, et où leurs propriétés sont néanmoins liées.\n\nExemple concret : deux particules dont les spins sont opposés, sans qu’aucune des deux ait un spin défini. Mesurer l’une donne un résultat au hasard, et la mesure de l’autre donne aussitôt l’opposé, quelle que soit la distance.\n\nEinstein, Podolsky et Rosen ont publié cela en 1935 comme une objection. Leur raisonnement : si la mesure ici révèle instantanément une propriété là-bas, c’est que la propriété existait déjà, et la théorie est donc incomplète.\n\nC’était une démonstration logique impeccable, fondée sur une hypothèse qu’ils tenaient pour évidente : les propriétés existent avant la mesure, et rien ne va plus vite que la lumière. Cette hypothèse est ce que Bell est allé tester.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que le théorème de Bell démontre",
+          "body": "Bell montre en 1964 que si les propriétés existent avant la mesure et qu’aucune influence ne va plus vite que la lumière, alors certaines corrélations mesurables ne peuvent pas dépasser une valeur précise.\n\nLe calcul est de l’arithmétique sur des comptages. Il ne suppose rien de la mécanique quantique, et c’est ce qui fait sa force : il contraint toute théorie satisfaisant ces deux hypothèses, connue ou à venir.\n\nOr la mécanique quantique prédit un dépassement de cette valeur, et les expériences le mesurent. Clauser en 1972, Aspect en 1982, et des versions sans faille expérimentale depuis 2015.\n\nLa conclusion est donc expérimentale, pas théorique : au moins une des deux hypothèses est fausse dans le monde réel. Prix Nobel de physique 2022 pour Aspect, Clauser et Zeilinger.",
+          "formula": "un dépassement mesuré réfute l’une des deux hypothèses",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que cela ne permet pas",
+          "body": "Cela ne permet pas de transmettre de l’information plus vite que la lumière. Chaque expérimentateur, de son côté, ne voit qu’une suite de résultats parfaitement aléatoires.\n\nLa corrélation n’apparaît qu’en comparant les deux listes, et cette comparaison exige de les transmettre par un canal ordinaire. Aucun signal ne passe par l’intrication.\n\nCela ne permet pas non plus de choisir le résultat de sa mesure, ce qui serait la seule façon d’envoyer un message.\n\nLe résultat est donc à la fois radical sur ce qu’il dit du monde et sans conséquence sur ce qu’on peut faire circuler. C’est une combinaison rare, et c’est pourquoi l’intrication alimente autant de mauvaises vulgarisations : le radical est spectaculaire et la restriction est toujours omise.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Trois expériences ont imposé la quantification : le corps noir, l’effet photoélectrique, et l’interférence d’une particule unique. Aucune onde classique ne les produit.\n\nLes niveaux sont discrets parce que l’électron est confiné, exactement comme une corde attachée aux deux bouts. L’effet tunnel en découle, et la taille même des atomes avec lui.\n\nL’indétermination porte sur l’état et non sur la mesure. Le hasard quantique n’est pas une ignorance de nos conditions initiales, et la physique classique reste la limite où la constante de Planck est négligeable.\n\nEt le théorème de Bell contraint toute théorie, pas seulement celle-ci. L’expérience a tranché contre l’hypothèse qu’Einstein tenait pour évidente — et rien de tout cela ne permet d’envoyer un message plus vite que la lumière.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’intrication ?",
+          "explanation": "Un état où aucune des deux particules n’a de propriété définie, et où leurs propriétés sont néanmoins liées.",
+          "options": [
+            {
+              "text": "des propriétés liées sans qu’aucune soit définie",
+              "correct": true
+            },
+            {
+              "text": "deux particules reliées par un signal"
+            },
+            {
+              "text": "deux particules de même spin"
+            },
+            {
+              "text": "deux particules au même endroit"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Sur quelles hypothèses le raisonnement d’Einstein, Podolsky et Rosen reposait-il ?",
+          "explanation": "Que les propriétés existent avant la mesure, et que rien ne va plus vite que la lumière. Ce sont elles que Bell est allé tester.",
+          "options": [
+            {
+              "text": "les propriétés existent avant la mesure",
+              "correct": true
+            },
+            {
+              "text": "rien ne va plus vite que la lumière",
+              "correct": true
+            },
+            {
+              "text": "la mécanique quantique est fausse"
+            },
+            {
+              "text": "la mesure perturbe le système"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fait la force du théorème de Bell ?",
+          "explanation": "Qu’il ne suppose rien de la mécanique quantique : il contraint toute théorie satisfaisant les deux hypothèses, connue ou à venir.",
+          "options": [
+            {
+              "text": "il ne suppose rien de la mécanique quantique",
+              "correct": true
+            },
+            {
+              "text": "il découle des équations quantiques"
+            },
+            {
+              "text": "il a été vérifié par Einstein"
+            },
+            {
+              "text": "il repose sur la relativité"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre chronologique.",
+          "explanation": "L’objection de 1935, le théorème de 1964, les premières expériences en 1972 et 1982, les versions sans faille depuis 2015.",
+          "items": [
+            "l’objection d’Einstein, Podolsky et Rosen",
+            "le théorème de Bell",
+            "les expériences de Clauser puis d’Aspect",
+            "les versions sans faille expérimentale"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la nature de la conclusion ?",
+          "explanation": "Expérimentale, pas théorique : la mesure d’un dépassement établit qu’au moins une des deux hypothèses est fausse dans le monde réel.",
+          "options": [
+            {
+              "text": "expérimentale : une des deux hypothèses est fausse",
+              "correct": true
+            },
+            {
+              "text": "théorique : la mécanique quantique est démontrée"
+            },
+            {
+              "text": "philosophique : la question reste ouverte"
+            },
+            {
+              "text": "mathématique : l’inégalité est démontrée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Pourquoi l’intrication ne permet-elle pas d’envoyer un message plus vite que la lumière ?",
+          "explanation": "Chacun ne voit qu’une suite aléatoire, la corrélation n’apparaît qu’en comparant par un canal ordinaire, et on ne choisit pas son résultat.",
+          "options": [
+            {
+              "text": "chaque côté ne voit qu’une suite aléatoire",
+              "correct": true
+            },
+            {
+              "text": "la comparaison exige un canal ordinaire",
+              "correct": true
+            },
+            {
+              "text": "on ne peut pas choisir le résultat de sa mesure",
+              "correct": true
+            },
+            {
+              "text": "la corrélation est trop faible"
+            },
+            {
+              "text": "la distance est limitée"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

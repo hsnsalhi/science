@@ -1,0 +1,667 @@
+{
+  "chapter": "physique-chimie-universite-mecanique-du-point-et-du-solide",
+  "lessons": [
+    {
+      "id": "referentiels-et-forces-d-inertie",
+      "title": "Référentiels, et les forces qui n’en sont pas",
+      "subtitle": "Les lois de Newton ne valent pas partout.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux mouvements, deux points de vue",
+          "body": "Regarde Mars tourner autour du Soleil, puis le même mouvement vu de la Terre : la boucle de rétrogradation apparaît. Rien n’a changé dans le ciel — seul le référentiel a changé. C’est tout le sujet de cette leçon, et c’est la raison pour laquelle la mécanique commence par cette question et non par les forces.",
+          "figureId": "orbites",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le référentiel galiléen, et sa définition circulaire",
+          "body": "Les lois de Newton ne s’écrivent sous leur forme simple que dans un référentiel galiléen : un référentiel où un corps libre va tout droit à vitesse constante.\n\nLa définition est circulaire, et c’est un vrai problème logique : on reconnaît un référentiel galiléen au fait que les lois y tiennent, et les lois ne tiennent que là.\n\nEn pratique on procède par approximations emboîtées. Le sol est galiléen pour une chute de deux mètres. Le centre de la Terre l’est pour un satellite. Le Soleil l’est pour les planètes. Chacun ne l’est qu’à l’échelle du phénomène étudié.\n\nRetenir cela : « galiléen » n’est pas une propriété d’un référentiel, c’est un jugement sur la précision qu’on exige. Le laboratoire terrestre n’est pas galiléen, et il l’est largement assez pour presque tout.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que « force centrifuge » désigne réellement",
+          "body": "Dans un virage, tu te sens poussé vers l’extérieur. Aucune force ne te pousse : la voiture te pousse vers l’intérieur, et ton corps continue tout droit.\n\nSi l’on choisit d’écrire les équations dans le référentiel de la voiture, qui tourne, il apparaît un terme supplémentaire. Ce terme a la forme d’une force et le nom de force centrifuge. C’est une correction d’écriture, pas une interaction.\n\nLa différence se vérifie : une force a un auteur. La poussée du siège vient du siège. La force centrifuge ne vient de rien — personne ne la subit en retour, et la troisième loi de Newton ne s’y applique pas.\n\nC’est utile malgré tout, et largement employé en ingénierie. L’honnêteté consiste à dire que c’est un outil de calcul dans un référentiel tournant, et non une force de la nature.",
+          "formula": "une force a un auteur ; une force d’inertie n’en a pas",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Coriolis, et ce qu’il fait tourner",
+          "body": "Dans un référentiel tournant, un corps en mouvement subit un second terme, perpendiculaire à sa vitesse. Il dévie vers la droite dans l’hémisphère nord, vers la gauche dans l’autre.\n\nSur Terre, la rotation est lente : un tour par jour, soit sept centièmes de milliradian par seconde. L’effet est donc faible, et il devient visible quand le mouvement dure longtemps.\n\nD’où ce qu’il explique et ce qu’il n’explique pas. Il explique l’enroulement des dépressions atmosphériques, le sens des grands courants océaniques, la rotation du plan d’oscillation du pendule de Foucault en 1851.\n\nIl n’explique pas le sens de rotation de l’eau dans un lavabo — qui dépend de la forme du bac et du geste qui l’a remplie, effets mille fois plus grands. Cette confusion est l’une des plus répandues de la physique populaire.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la pesanteur n’est pas la même partout",
+          "body": "Un corps posé à l’équateur tourne avec la Terre, donc une part de son poids sert à le maintenir sur ce cercle et ne presse pas la balance.\n\nCette part vaut environ trente-quatre millièmes de mètre par seconde carrée, soit trois millièmes du poids. S’y ajoute l’aplatissement de la Terre : l’équateur est vingt et un kilomètres plus loin du centre que les pôles.\n\nRésultat mesuré : environ neuf virgule soixante-dix-huit à l’équateur, neuf virgule quatre-vingt-trois aux pôles. Un demi pour-cent d’écart, et il faut en tenir compte dès qu’on pèse avec précision.\n\nC’est le cas le plus simple d’un principe général : ce qu’on appelle poids est déjà une somme de l’attraction et d’un terme d’inertie. Les deux sont indiscernables localement, et cette indiscernabilité est le point de départ de la relativité générale.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la définition d’un référentiel galiléen est-elle circulaire ?",
+          "explanation": "On le reconnaît au fait que les lois y tiennent, et les lois ne tiennent que là.",
+          "options": [
+            {
+              "text": "on le reconnaît par les lois qui n’y valent que là",
+              "correct": true
+            },
+            {
+              "text": "il faut connaître sa vitesse absolue"
+            },
+            {
+              "text": "aucun référentiel n’est immobile"
+            },
+            {
+              "text": "la Terre tourne"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment distinguer une force d’une force d’inertie ?",
+          "explanation": "Une force a un auteur, et quelqu’un la subit en retour. Une force d’inertie ne vient de rien : la troisième loi ne s’y applique pas.",
+          "options": [
+            {
+              "text": "une force a un auteur, une force d’inertie n’en a pas",
+              "correct": true
+            },
+            {
+              "text": "une force d’inertie est plus faible"
+            },
+            {
+              "text": "une force d’inertie ne s’exprime pas en newtons"
+            },
+            {
+              "text": "une force d’inertie n’accélère rien"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que l’effet Coriolis explique-t-il ?",
+          "explanation": "L’enroulement des dépressions, les grands courants océaniques, le pendule de Foucault. Pas le tourbillon d’un lavabo.",
+          "options": [
+            {
+              "text": "l’enroulement des dépressions atmosphériques",
+              "correct": true
+            },
+            {
+              "text": "le sens des grands courants océaniques",
+              "correct": true
+            },
+            {
+              "text": "la rotation du pendule de Foucault",
+              "correct": true
+            },
+            {
+              "text": "le sens du tourbillon d’un lavabo"
+            },
+            {
+              "text": "la chute d’une pomme"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le tourbillon d’un lavabo ne relève-t-il pas de Coriolis ?",
+          "explanation": "Parce que la forme du bac et le geste qui l’a rempli produisent des effets mille fois plus grands.",
+          "options": [
+            {
+              "text": "la forme du bac et le geste dominent de loin",
+              "correct": true
+            },
+            {
+              "text": "l’eau est trop dense"
+            },
+            {
+              "text": "Coriolis ne s’applique pas aux liquides"
+            },
+            {
+              "text": "le lavabo est trop petit pour tourner"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien la pesanteur varie-t-elle entre l’équateur et les pôles, en pour-cent ?",
+          "explanation": "Un demi pour-cent environ : de 9,78 à 9,83 mètres par seconde carrée, par la rotation et l’aplatissement.",
+          "min": 0,
+          "max": 10,
+          "answer": 0.5,
+          "tolerance": 0.2,
+          "unit": "%",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle idée l’indiscernabilité locale entre attraction et inertie annonce-t-elle ?",
+          "explanation": "Le point de départ de la relativité générale : on ne peut pas distinguer localement la gravitation d’une accélération.",
+          "options": [
+            {
+              "text": "la relativité générale",
+              "correct": true
+            },
+            {
+              "text": "la mécanique quantique"
+            },
+            {
+              "text": "la conservation de l’énergie"
+            },
+            {
+              "text": "le principe d’inertie"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "conservations-et-symetries",
+      "title": "Conservations et symétries",
+      "subtitle": "Chaque grandeur conservée répond à une symétrie.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une énergie qui se conserve et se dégrade",
+          "body": "Règle les rendements : le produit s’effondre. Rien n’est perdu — l’énergie manquante est partie en chaleur, et elle compte dans le bilan. La conservation est exacte ; ce qui se dégrade est l’usage qu’on peut en faire, et c’est deux choses différentes.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois conservations, et leur condition",
+          "body": "L’énergie se conserve si aucun travail extérieur n’est fourni au système.\n\nLa quantité de mouvement se conserve si la résultante des forces extérieures est nulle. C’est elle qui explique le recul d’un fusil et la propulsion d’une fusée dans le vide.\n\nLe moment cinétique se conserve si le moment des forces extérieures est nul. C’est lui qui fait accélérer la patineuse qui replie les bras.\n\nChacune est une conséquence des lois de Newton, et pourtant chacune est plus utile qu’elles. On les emploie parce qu’elles donnent l’état final sans qu’on sache rien du chemin : un choc de deux secondes et un choc de deux microsecondes donnent le même bilan.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le théorème de Noether, et ce qu’il révèle",
+          "body": "Emmy Noether a démontré en 1918 que chaque grandeur conservée correspond à une symétrie des lois, et réciproquement.\n\nLes lois ne changent pas si l’on décale l’origine du temps — refaire l’expérience demain donne le même résultat. De cette symétrie découle la conservation de l’énergie.\n\nLes lois ne changent pas si l’on décale l’origine de l’espace. De là la conservation de la quantité de mouvement. Et si l’on tourne le repère : de là le moment cinétique.\n\nCe résultat change la nature des conservations. Elles cessent d’être des faits constatés et deviennent des conséquences de l’homogénéité du monde. C’est l’un des théorèmes les plus profonds de la physique, et il est né d’une question posée à Noether sur la relativité générale.",
+          "formula": "une symétrie des lois, une grandeur conservée",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un choc, et les deux cas qu’on distingue",
+          "body": "Deux corps se heurtent. La quantité de mouvement totale est conservée dans tous les cas : c’est une conséquence directe du fait que les deux forces de contact sont opposées.\n\nL’énergie cinétique, elle, ne l’est pas toujours. Si elle l’est, le choc est élastique : deux boules d’acier, deux atomes de gaz.\n\nSi elle ne l’est pas, la part manquante est passée en déformation, en chaleur, en son. Deux voitures qui s’encastrent : presque toute l’énergie cinétique y passe, et c’est précisément le but d’une structure de déformation — absorber plutôt que renvoyer.\n\nD’où une conclusion contre-intuitive pour la sécurité : un véhicule qui rebondit bien est plus dangereux pour ses occupants qu’un véhicule qui se déforme, parce que le rebond leur restitue l’énergie au lieu de la consommer.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le travail, et pourquoi il n’est pas une force",
+          "body": "Le travail d’une force est le produit de la force par le déplacement dans sa direction. Une force perpendiculaire au mouvement ne travaille pas.\n\nConséquence : la force qui maintient un satellite sur son orbite circulaire ne lui fournit aucune énergie. Elle le tient, indéfiniment, gratuitement.\n\nMême chose pour la tension du fil d’un pendule, pour la réaction d’un support, pour la force magnétique sur une charge en mouvement.\n\nC’est ce qui permet de résoudre des problèmes entiers sans connaître ces forces : elles disparaissent du bilan énergétique. Reconnaître les forces qui ne travaillent pas est le premier réflexe de tout exercice d’énergétique, et il fait gagner plus de temps que n’importe quelle technique de calcul.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque conservation à sa condition.",
+          "explanation": "Chaque conservation a sa condition propre, et c’est cette condition qu’il faut vérifier avant d’écrire le bilan.",
+          "pairs": [
+            {
+              "left": "énergie",
+              "right": "aucun travail extérieur"
+            },
+            {
+              "left": "quantité de mouvement",
+              "right": "résultante des forces extérieures nulle"
+            },
+            {
+              "left": "moment cinétique",
+              "right": "moment des forces extérieures nul"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi emploie-t-on les conservations plutôt que les lois de Newton ?",
+          "explanation": "Parce qu’elles donnent l’état final sans qu’on sache rien du chemin : un choc long et un choc bref donnent le même bilan.",
+          "options": [
+            {
+              "text": "elles donnent l’état final sans connaître le chemin",
+              "correct": true
+            },
+            {
+              "text": "elles sont plus exactes"
+            },
+            {
+              "text": "elles ne demandent pas de référentiel"
+            },
+            {
+              "text": "elles s’appliquent aux forces inconnues"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque symétrie à la grandeur qu’elle conserve, selon Noether.",
+          "explanation": "Décalage du temps : énergie. Décalage de l’espace : quantité de mouvement. Rotation du repère : moment cinétique.",
+          "pairs": [
+            {
+              "left": "décaler l’origine du temps",
+              "right": "l’énergie"
+            },
+            {
+              "left": "décaler l’origine de l’espace",
+              "right": "la quantité de mouvement"
+            },
+            {
+              "left": "tourner le repère",
+              "right": "le moment cinétique"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur est-elle conservée dans un choc entre deux voitures qui s’encastrent ?",
+          "explanation": "La quantité de mouvement l’est toujours ; l’énergie cinétique passe en déformation, en chaleur et en son.",
+          "categories": [
+            "conservée",
+            "non conservée"
+          ],
+          "items": [
+            {
+              "text": "la quantité de mouvement totale",
+              "category": 0
+            },
+            {
+              "text": "l’énergie totale, chaleur comprise",
+              "category": 0
+            },
+            {
+              "text": "l’énergie cinétique",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un véhicule qui rebondit est-il plus dangereux qu’un véhicule qui se déforme ?",
+          "explanation": "Parce que le rebond restitue l’énergie à ses occupants au lieu de la consommer en déformation.",
+          "options": [
+            {
+              "text": "le rebond restitue l’énergie au lieu de la consommer",
+              "correct": true
+            },
+            {
+              "text": "il va plus vite après le choc"
+            },
+            {
+              "text": "il est plus lourd"
+            },
+            {
+              "text": "il ne respecte pas la conservation"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles forces ne travaillent pas ?",
+          "explanation": "Toute force perpendiculaire au mouvement : la tension du fil d’un pendule, la réaction d’un support, la force magnétique sur une charge en mouvement.",
+          "options": [
+            {
+              "text": "la tension du fil d’un pendule",
+              "correct": true
+            },
+            {
+              "text": "la réaction normale d’un support",
+              "correct": true
+            },
+            {
+              "text": "la force magnétique sur une charge en mouvement",
+              "correct": true
+            },
+            {
+              "text": "le poids d’un corps qui tombe"
+            },
+            {
+              "text": "le frottement sur une surface"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-solide-inertie-et-moment-cinetique",
+      "title": "Le solide : inertie de rotation",
+      "subtitle": "La masse ne suffit plus : sa répartition compte.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux roues, deux vitesses",
+          "body": "Change le nombre de dents de la roue menée : le rapport des tours s’inverse exactement. Douze dents contre vingt-quatre, et la menée fait un demi-tour par tour de la menante. Le moment cinétique et le couple se transmettent selon le même rapport, en sens inverse l’un de l’autre.",
+          "figureId": "engrenages",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que le moment d’inertie ajoute",
+          "body": "Pour un point, la masse suffit à dire sa résistance à l’accélération. Pour un solide qui tourne, non : la même masse placée loin de l’axe résiste beaucoup plus.\n\nLa grandeur qui le mesure est la somme, sur toute la matière, de la masse multipliée par le carré de sa distance à l’axe. Le carré est le point important : doubler le rayon quadruple la contribution.\n\nPour la même masse et le même rayon : un anneau vaut un, un cylindre plein un demi, une sphère pleine deux cinquièmes.\n\nConséquence : le moment d’inertie dépend de l’axe choisi, et un même objet en a autant que d’axes possibles. C’est pourquoi un livre lancé en l’air tourne stablement autour de deux de ses axes et bascule autour du troisième.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le couple, et son analogie avec la force",
+          "body": "Un couple est le produit d’une force par sa distance à l’axe. C’est pourquoi une clé longue serre mieux, et pourquoi on pousse une porte loin de ses charnières.\n\nToute la mécanique du point se transpose terme à terme. La force devient le couple, la masse devient le moment d’inertie, la vitesse devient la vitesse angulaire, la quantité de mouvement devient le moment cinétique.\n\nEt la deuxième loi de Newton garde exactement la même forme : le couple vaut le moment d’inertie multiplié par l’accélération angulaire.\n\nCette correspondance est l’économie la plus rentable du chapitre. Il n’y a rien de nouveau à apprendre sur la rotation : il y a un dictionnaire à retenir, et tout le reste est déjà connu.",
+          "formula": "couple = moment d’inertie × accélération angulaire",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qui descend une pente le plus vite",
+          "body": "Lâchés ensemble du haut d’un plan incliné, une sphère pleine, un cylindre plein et un anneau n’arrivent pas ensemble. La sphère gagne, le cylindre suit, l’anneau perd.\n\nLa raison est le partage de l’énergie. En descendant, chacun convertit la même énergie de position, mais doit en consacrer une part à sa rotation. L’anneau, dont toute la masse est loin de l’axe, en consacre la moitié ; la sphère, deux septièmes.\n\nLe résultat le plus frappant est ce dont il ne dépend pas : ni de la masse, ni du rayon. Deux sphères, l’une de cent grammes et l’autre de dix kilogrammes, arrivent exactement ensemble.\n\nC’est une expérience qu’on peut faire avec une bille, une pile et une bague, et elle surprend tout le monde. Ce qui décide n’est pas combien de matière il y a, mais où elle est.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le moment cinétique conservé, et ses effets",
+          "body": "Quand aucun couple extérieur n’agit, le moment cinétique reste constant. Si le moment d’inertie diminue, la vitesse angulaire augmente dans la même proportion.\n\nLa patineuse qui replie les bras divise son moment d’inertie par deux ou trois, donc tourne deux ou trois fois plus vite. Elle n’a reçu aucune impulsion : elle a changé la répartition de sa propre masse.\n\nLe même principe explique la stabilité d’une toupie, celle d’une roue de vélo en mouvement, le tir rayé d’un canon, et la nécessité d’un rotor de queue sur un hélicoptère.\n\nEt il explique la direction fixe de l’axe terrestre, qui pointe vers la même région du ciel pendant des millénaires. Un moment cinétique n’est pas seulement une quantité : c’est une direction, et c’est la direction qui est conservée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la masse ne suffit-elle pas pour un solide en rotation ?",
+          "explanation": "Parce que la même masse placée loin de l’axe résiste beaucoup plus : c’est la distance au carré qui compte.",
+          "options": [
+            {
+              "text": "la distance à l’axe compte, et au carré",
+              "correct": true
+            },
+            {
+              "text": "la masse change avec la vitesse"
+            },
+            {
+              "text": "la rotation ne suit pas les lois de Newton"
+            },
+            {
+              "text": "le solide se déforme"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe du plus petit au plus grand moment d’inertie, à masse et rayon égaux.",
+          "explanation": "Sphère pleine deux cinquièmes, cylindre plein un demi, anneau un. Plus la matière est loin de l’axe, plus le moment est grand.",
+          "items": [
+            "la sphère pleine",
+            "le cylindre plein",
+            "l’anneau"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur de translation à son équivalent en rotation.",
+          "explanation": "Il n’y a rien de nouveau à apprendre sur la rotation : il y a un dictionnaire à retenir.",
+          "pairs": [
+            {
+              "left": "la force",
+              "right": "le couple"
+            },
+            {
+              "left": "la masse",
+              "right": "le moment d’inertie"
+            },
+            {
+              "left": "la vitesse",
+              "right": "la vitesse angulaire"
+            },
+            {
+              "left": "la quantité de mouvement",
+              "right": "le moment cinétique"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui arrive en bas du plan incliné en premier ?",
+          "explanation": "La sphère pleine : elle consacre deux septièmes de son énergie à la rotation, contre la moitié pour l’anneau.",
+          "options": [
+            {
+              "text": "la sphère pleine",
+              "correct": true
+            },
+            {
+              "text": "l’anneau"
+            },
+            {
+              "text": "le cylindre plein"
+            },
+            {
+              "text": "les trois arrivent ensemble"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux sphères de masses très différentes arrivent ensemble en bas de la pente.",
+          "explanation": "Vrai. Le résultat ne dépend ni de la masse ni du rayon : seule la répartition de la matière compte.",
+          "answer": true,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment la patineuse accélère-t-elle sa pirouette ?",
+          "explanation": "En réduisant son moment d’inertie à moment cinétique constant : elle change la répartition de sa propre masse.",
+          "options": [
+            {
+              "text": "elle réduit son moment d’inertie à moment cinétique constant",
+              "correct": true
+            },
+            {
+              "text": "elle reçoit une impulsion de la glace"
+            },
+            {
+              "text": "elle diminue sa masse"
+            },
+            {
+              "text": "elle augmente son moment cinétique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-le-probleme-a-trois-corps",
+      "title": "Défi : le problème à trois corps",
+      "subtitle": "Deux corps se résolvent, trois ne se résolvent pas.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Huit corps, et pas de formule",
+          "body": "Fais tourner les planètes : chacune suit une ellipse régulière, et le dessin est stable. C’est une idéalisation — chaque planète attire toutes les autres, et ce système-là n’a aucune solution exacte. Les orbites affichées sont ce que des siècles de calculs approchés donnent, et c’est assez pour prédire une éclipse à la seconde.",
+          "figureId": "systeme-solaire",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Le cas qui se résout",
+          "body": "Augmente la vitesse : en dessous de sept virgule neuf kilomètres par seconde le boulet retombe, au-delà il tourne, et à onze virgule deux il s’en va. Deux corps seulement, et tout est calculable exactement — c’est le dernier cas de la mécanique céleste où cela soit vrai.",
+          "figureId": "canon-newton",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi deux corps se résolvent",
+          "body": "Deux corps qui s’attirent ont assez de grandeurs conservées pour que le mouvement se ramène à une équation d’une seule variable.\n\nLe résultat est une conique : ellipse, parabole ou hyperbole selon l’énergie. On connaît la position à tout instant, dans le passé comme dans l’avenir, par une formule.\n\nC’est ce que Newton a démontré en 1687, et c’est le succès fondateur de la physique moderne : les lois de Kepler, constatées sur les observations, deviennent des conséquences de deux énoncés.\n\nL’enthousiasme qui a suivi a duré deux siècles, et il reposait sur l’attente que le reste viendrait. Trois corps ont suffi à arrêter cela.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que Poincaré a démontré",
+          "body": "En 1889, répondant à un concours posé par le roi de Suède, Henri Poincaré établit qu’il n’existe pas de solution générale du problème à trois corps sous forme de formule.\n\nPire : certaines trajectoires sont si enchevêtrées qu’aucun dessin ne peut les représenter. Il écrit en avoir été frappé lui-même, et c’est la première description de ce qu’on appellera le chaos.\n\nLe résultat est négatif, et il a fondé une discipline. La sensibilité aux conditions initiales n’est pas un défaut de mesure : deux états aussi proches qu’on veut divergent exponentiellement, et le temps au bout duquel l’écart devient macroscopique est une propriété du système.\n\nPour le système solaire, ce temps est de l’ordre de cinq millions d’années. On sait donc où sera la Terre dans mille ans à la minute près, et on ne sait pas où elle sera dans cent millions d’années.",
+          "formula": "pas de formule, et une divergence exponentielle des écarts",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment on calcule tout de même",
+          "body": "On intègre numériquement : petits pas de temps, forces recalculées à chaque pas. Avec des algorithmes qui préservent les grandeurs conservées, l’erreur reste bornée sur des millions de pas.\n\nOn emploie les perturbations : on part de la solution à deux corps et on y ajoute l’effet des autres comme corrections successives. C’est ainsi que Le Verrier a prédit Neptune en 1846, à un degré près, sur le seul écart de l’orbite d’Uranus.\n\nEt on cherche les cas particuliers qui se résolvent : les cinq points de Lagrange, où un petit corps garde une position fixe par rapport à deux gros. Plusieurs observatoires spatiaux y sont placés aujourd’hui.\n\nLa morale est générale en physique : l’absence de solution exacte n’empêche pas de prédire. Elle oblige à dire sur quelle durée la prédiction vaut, ce qu’une formule exacte dispensait de préciser.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Les lois de Newton ne valent que dans un référentiel galiléen, et « galiléen » est un jugement sur la précision exigée. Une force a un auteur ; la force centrifuge n’en a pas.\n\nChaque conservation répond à une symétrie, et c’est le théorème de Noether. On emploie les conservations parce qu’elles donnent l’état final sans rien savoir du chemin.\n\nPour un solide, la répartition de la masse compte autant que sa quantité, et toute la rotation se lit par un dictionnaire : couple, moment d’inertie, vitesse angulaire, moment cinétique.\n\nEt deux corps se résolvent là où trois ne se résolvent pas. L’absence de formule n’empêche pas de prédire une éclipse à la seconde, et elle oblige à dire pour combien de temps.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la trajectoire générale d’un problème à deux corps ?",
+          "explanation": "Une conique : ellipse, parabole ou hyperbole selon l’énergie. Et elle est connue par une formule, à tout instant.",
+          "options": [
+            {
+              "text": "une conique, selon l’énergie",
+              "correct": true
+            },
+            {
+              "text": "toujours un cercle"
+            },
+            {
+              "text": "toujours une ellipse"
+            },
+            {
+              "text": "une trajectoire chaotique"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré Poincaré en 1889 ?",
+          "explanation": "Qu’il n’existe pas de solution générale du problème à trois corps sous forme de formule — et il y a décrit le chaos le premier.",
+          "options": [
+            {
+              "text": "qu’aucune formule générale ne résout trois corps",
+              "correct": true
+            },
+            {
+              "text": "que trois corps finissent toujours par se heurter"
+            },
+            {
+              "text": "que le système solaire est instable"
+            },
+            {
+              "text": "que les lois de Newton sont fausses"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la sensibilité aux conditions initiales ?",
+          "explanation": "Deux états aussi proches qu’on veut divergent exponentiellement. Ce n’est pas un défaut de mesure, c’est une propriété du système.",
+          "options": [
+            {
+              "text": "deux états voisins divergent exponentiellement",
+              "correct": true
+            },
+            {
+              "text": "une imprécision des instruments"
+            },
+            {
+              "text": "une erreur d’arrondi du calcul"
+            },
+            {
+              "text": "un effet du nombre de corps"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Au bout de combien de millions d’années la trajectoire du système solaire devient-elle imprédictible ?",
+          "explanation": "Environ cinq millions d’années. On sait où sera la Terre dans mille ans à la minute, et pas dans cent millions d’années.",
+          "min": 0,
+          "max": 1000,
+          "answer": 5,
+          "tolerance": 3,
+          "unit": "millions d’années",
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Comment calcule-t-on malgré l’absence de formule ?",
+          "explanation": "Par intégration numérique, par perturbations successives autour de la solution à deux corps, et par les cas particuliers comme les points de Lagrange.",
+          "options": [
+            {
+              "text": "par intégration numérique à petits pas",
+              "correct": true
+            },
+            {
+              "text": "par perturbations autour du problème à deux corps",
+              "correct": true
+            },
+            {
+              "text": "par les cas particuliers qui se résolvent",
+              "correct": true
+            },
+            {
+              "text": "en négligeant la gravitation"
+            },
+            {
+              "text": "en supposant les orbites circulaires"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’oblige à préciser l’absence de solution exacte ?",
+          "explanation": "Sur quelle durée la prédiction vaut. Une formule exacte dispensait de le dire.",
+          "options": [
+            {
+              "text": "la durée de validité de la prédiction",
+              "correct": true
+            },
+            {
+              "text": "la masse des corps en jeu"
+            },
+            {
+              "text": "le référentiel employé"
+            },
+            {
+              "text": "la précision des instruments"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

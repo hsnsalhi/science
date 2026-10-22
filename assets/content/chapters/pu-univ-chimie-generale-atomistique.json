@@ -1,0 +1,655 @@
+{
+  "chapter": "physique-chimie-universite-chimie-generale-et-atomistique",
+  "lessons": [
+    {
+      "id": "l-atome-quantique",
+      "title": "L’atome quantique : des orbitales, pas des orbites",
+      "subtitle": "L’électron n’a pas de trajectoire.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre modèles, et la faille de chacun",
+          "body": "Passe de Démocrite à Bohr : chaque modèle porte sa faille écrite. Celle de Bohr est la plus intéressante — exact pour l’hydrogène, faux dès l’hélium. C’est de cet échec précis que sort la leçon, et le modèle que tu dessines encore à main levée s’arrête là.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi le modèle de Bohr a dû tomber",
+          "body": "Il donne exactement les raies de l’hydrogène, ce qui fut un triomphe en 1913. Et il échoue sur l’hélium, qui n’a qu’un électron de plus.\n\nL’échec n’est pas quantitatif, il est de principe. Si un électron décrivait une orbite, il serait une charge accélérée, donc il rayonnerait, donc il perdrait son énergie et tomberait sur le noyau en une fraction de nanoseconde.\n\nBohr l’interdit par décret : certaines orbites seraient permises, et sur celles-là l’électron ne rayonnerait pas. L’interdiction marche et n’explique rien.\n\nLa mécanique quantique résout cela en supprimant la trajectoire. Un électron n’est pas quelque part en train de se déplacer : il est décrit par une densité de présence, qui ne varie pas dans le temps pour un état stable. Rien n’accélère, donc rien ne rayonne.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’une orbitale est réellement",
+          "body": "Une fonction qui donne, pour chaque point de l’espace, la probabilité de trouver l’électron là si on le cherche.\n\nCe n’est pas un chemin. Ce n’est pas une coquille matérielle. Ce n’est pas l’électron lui-même étalé comme un nuage de poussière. C’est une distribution de probabilité, et le mot « nuage » est une image dont il faut connaître les limites.\n\nQuatre nombres suffisent à la désigner. Le premier donne l’énergie et la taille, le deuxième la forme — sphérique, en deux lobes, plus compliquée —, le troisième l’orientation, et le quatrième le spin.\n\nCes quatre nombres ne sont pas des conventions de classement : ils sortent de l’équation, comme les modes de vibration d’une corde sortent de sa longueur. C’est l’analogie la plus fidèle — un atome est un instrument, et ses niveaux sont ses harmoniques.",
+          "formula": "une orbitale est une probabilité de présence, pas un trajet",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le principe de Pauli, et ce qu’il construit",
+          "body": "Deux électrons d’un même atome ne peuvent pas avoir les quatre nombres identiques. Comme le spin n’a que deux valeurs, chaque orbitale accepte deux électrons et pas trois.\n\nC’est de là que tout le reste découle. La structure en couches, le nombre d’éléments par ligne du tableau, la valence, la liaison chimique.\n\nEt plus loin que la chimie : c’est l’exclusion qui empêche la matière de s’effondrer sur elle-même, et qui fait qu’un solide occupe un volume. Sans elle, tous les électrons d’un atome tomberaient sur le niveau le plus bas et la matière serait incomparablement plus dense.\n\nÉnoncé par Pauli en 1925, d’abord comme une règle empirique pour rendre compte des spectres. Sa justification profonde — la nature des particules identiques — est venue après, et c’est l’ordre habituel en physique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’ordre de remplissage, et pourquoi il surprend",
+          "body": "Les niveaux ne se remplissent pas dans l’ordre naïf. Après la sous-couche s de la quatrième couche vient celle d de la troisième, et non celle p de la quatrième.\n\nLa raison est que l’énergie d’une sous-couche dépend des deux premiers nombres, pas seulement du premier. Les niveaux se chevauchent, et l’ordre énergétique n’est pas l’ordre des couches.\n\nC’est de ce chevauchement que viennent les métaux de transition, leurs couleurs, leurs degrés d’oxydation multiples, et leur aptitude à la catalyse.\n\nIl y a aussi des exceptions à l’ordre lui-même, chez le cuivre et le chrome notamment, parce qu’une sous-couche à demi ou complètement remplie est un peu plus stable. Une règle qui a des exceptions mesurées est une règle utile, pas une règle fausse — et c’est une leçon de méthode autant que de chimie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un électron en orbite devrait-il tomber sur le noyau ?",
+          "explanation": "Parce qu’il serait une charge accélérée : il rayonnerait, perdrait son énergie, et tomberait en une fraction de nanoseconde.",
+          "options": [
+            {
+              "text": "une charge accélérée rayonne et perd son énergie",
+              "correct": true
+            },
+            {
+              "text": "l’attraction est trop forte"
+            },
+            {
+              "text": "le noyau l’absorbe"
+            },
+            {
+              "text": "les autres électrons le repoussent"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment la mécanique quantique résout-elle ce problème ?",
+          "explanation": "En supprimant la trajectoire : une densité de présence qui ne varie pas dans le temps n’accélère rien, donc ne rayonne pas.",
+          "options": [
+            {
+              "text": "en supprimant la trajectoire",
+              "correct": true
+            },
+            {
+              "text": "en interdisant certaines orbites"
+            },
+            {
+              "text": "en ralentissant l’électron"
+            },
+            {
+              "text": "en augmentant la masse de l’électron"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’une orbitale n’est-elle pas ?",
+          "explanation": "Ni un chemin, ni une coquille matérielle, ni l’électron étalé comme un nuage de poussière. C’est une distribution de probabilité.",
+          "options": [
+            {
+              "text": "un chemin parcouru",
+              "correct": true
+            },
+            {
+              "text": "une coquille matérielle",
+              "correct": true
+            },
+            {
+              "text": "l’électron étalé comme de la poussière",
+              "correct": true
+            },
+            {
+              "text": "une probabilité de présence"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’électrons une orbitale peut-elle accueillir ?",
+          "explanation": "Deux : le spin n’a que deux valeurs, et le principe de Pauli interdit quatre nombres identiques.",
+          "answer": 2,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que le principe de Pauli construit-il ?",
+          "explanation": "La structure en couches, le nombre d’éléments par ligne, la liaison chimique — et le fait qu’un solide occupe un volume.",
+          "options": [
+            {
+              "text": "la structure en couches",
+              "correct": true
+            },
+            {
+              "text": "le nombre d’éléments par ligne du tableau",
+              "correct": true
+            },
+            {
+              "text": "le fait qu’un solide occupe un volume",
+              "correct": true
+            },
+            {
+              "text": "la charge de l’électron"
+            },
+            {
+              "text": "la masse du noyau"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où viennent les métaux de transition ?",
+          "explanation": "Du chevauchement des niveaux : la sous-couche d de la troisième couche se remplit après la s de la quatrième.",
+          "options": [
+            {
+              "text": "du chevauchement des niveaux d’énergie",
+              "correct": true
+            },
+            {
+              "text": "de leur masse atomique élevée"
+            },
+            {
+              "text": "de la taille de leur noyau"
+            },
+            {
+              "text": "de leur nombre de neutrons"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-classification-et-ses-tendances",
+      "title": "La classification, et ce qui la gouverne",
+      "subtitle": "La forme du tableau est le remplissage des couches, dessiné.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une signature, et comment on lit un élément",
+          "body": "Change d’élément : les raies changent de place, et elles ne dépendent pas de la température. Chaque élément a sa série de raies parce qu’il a ses niveaux d’énergie, et ces niveaux viennent du remplissage dont parle cette leçon. C’est ainsi qu’on a trouvé l’hélium dans le Soleil en 1868, vingt-sept ans avant de le trouver sur Terre.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi les lignes ont ces longueurs",
+          "body": "Deux éléments sur la première ligne, huit sur la deuxième et la troisième, dix-huit sur les deux suivantes, trente-deux ensuite.\n\nCe ne sont pas des nombres arbitraires. Deux pour une sous-couche s, six pour une p, dix pour une d, quatorze pour une f — c’est-à-dire deux fois le nombre d’orientations possibles de chaque forme.\n\nLa longueur d’une ligne est donc la somme des sous-couches qui s’y remplissent. Deux ; puis deux plus six ; puis deux plus dix plus six ; puis deux plus quatorze plus dix plus six.\n\nMendeleïev a construit ce tableau en 1869 sans rien savoir de tout cela, sur les seules propriétés chimiques. Que sa forme empirique se soit révélée être le dessin exact du remplissage quantique soixante ans plus tard est l’une des confirmations les plus spectaculaires de l’histoire des sciences.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux tendances dont presque tout découle",
+          "body": "En allant vers la droite d’une ligne, la charge du noyau augmente et les électrons restent sur la même couche. Ils sont donc plus attirés : l’atome rétrécit et retient mieux ses électrons.\n\nEn descendant une colonne, on ajoute une couche. Les électrons externes sont plus loin et écrantés par ceux de dessous : l’atome grossit et retient moins bien.\n\nDe ces deux phrases découlent l’énergie d’ionisation, l’électronégativité, le rayon atomique, le caractère métallique, et le sens de la plupart des réactions.\n\nLe fluor est l’élément le plus électronégatif du tableau — en haut à droite, petit et très chargé. Le césium est parmi les moins électronégatifs — en bas à gauche, gros et bien écranté. Les deux positions ne sont pas des faits à mémoriser : elles se déduisent des deux phrases ci-dessus.",
+          "formula": "vers la droite : plus petit et plus avide ; vers le bas : plus gros et moins avide",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que ces tendances prédisent, sans aucune mémorisation",
+          "body": "Pourquoi les alcalins réagissent violemment avec l’eau : ils sont à gauche, ils cèdent leur unique électron externe facilement, et cette facilité augmente en descendant la colonne. Le lithium bouillonne, le césium explose.\n\nPourquoi les gaz nobles ne réagissent presque pas : leur couche externe est complète, il n’y a ni électron à céder facilement ni place pour en recevoir.\n\nPourquoi le sel se forme : le sodium cède, le chlore prend, et les deux atteignent une couche complète. Le transfert est favorable des deux côtés.\n\nEt pourquoi une liaison entre atomes d’électronégativités voisines est covalente, tandis qu’un grand écart donne une liaison ionique. Il n’y a pas deux sortes de liaisons, mais un continuum, et l’écart d’électronégativité en est la graduation.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les prédictions de Mendeleïev, et ce qu’elles ont valu",
+          "body": "Il a laissé des cases vides, en affirmant que les éléments manquants existaient et en prédisant leurs propriétés à partir de la place.\n\nPour celui qu’il appelait l’eka-aluminium, il annonça une masse atomique voisine de soixante-huit et une densité autour de six. Le gallium fut isolé en 1875 : masse soixante-neuf virgule sept, densité cinq virgule neuf.\n\nDeux autres prédictions se sont réalisées de la même façon, avec le scandium et le germanium.\n\nC’est ce qui a emporté l’adhésion, et non la commodité du classement. Une classification qui ne fait que ranger est une commodité ; une classification qui prédit ce qu’on n’a pas encore vu est une théorie. La différence est le critère le plus sûr qu’on ait pour les distinguer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque sous-couche au nombre d’électrons qu’elle accueille.",
+          "explanation": "Deux fois le nombre d’orientations de chaque forme : s une, p trois, d cinq, f sept.",
+          "pairs": [
+            {
+              "left": "sous-couche s",
+              "right": "2 électrons"
+            },
+            {
+              "left": "sous-couche p",
+              "right": "6 électrons"
+            },
+            {
+              "left": "sous-couche d",
+              "right": "10 électrons"
+            },
+            {
+              "left": "sous-couche f",
+              "right": "14 électrons"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que savait Mendeleïev du remplissage quantique en 1869 ?",
+          "explanation": "Rien : il a construit le tableau sur les seules propriétés chimiques. La correspondance a été établie soixante ans plus tard.",
+          "options": [
+            {
+              "text": "rien du tout",
+              "correct": true
+            },
+            {
+              "text": "les nombres quantiques"
+            },
+            {
+              "text": "le principe de Pauli"
+            },
+            {
+              "text": "l’existence de l’électron"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur augmente-t-elle vers la droite d’une ligne, ou vers le bas d’une colonne ?",
+          "explanation": "Vers la droite, le noyau attire plus fort à couche constante ; vers le bas, la couche ajoutée éloigne et écrante.",
+          "categories": [
+            "augmente vers la droite",
+            "augmente vers le bas"
+          ],
+          "items": [
+            {
+              "text": "l’électronégativité",
+              "category": 0
+            },
+            {
+              "text": "l’énergie d’ionisation",
+              "category": 0
+            },
+            {
+              "text": "le rayon atomique",
+              "category": 1
+            },
+            {
+              "text": "le caractère métallique",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le césium réagit-il plus violemment que le lithium avec l’eau ?",
+          "explanation": "Parce qu’il est plus bas dans la colonne : son électron externe est plus loin et mieux écranté, donc cédé plus facilement.",
+          "options": [
+            {
+              "text": "son électron externe est plus loin et mieux écranté",
+              "correct": true
+            },
+            {
+              "text": "il est plus lourd"
+            },
+            {
+              "text": "il a plus d’électrons externes"
+            },
+            {
+              "text": "son noyau est plus chargé"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui distingue une liaison ionique d’une liaison covalente ?",
+          "explanation": "L’écart d’électronégativité. Il n’y a pas deux sortes de liaisons mais un continuum, et cet écart en est la graduation.",
+          "options": [
+            {
+              "text": "l’écart d’électronégativité, sur un continuum",
+              "correct": true
+            },
+            {
+              "text": "la nature des atomes, métal ou non"
+            },
+            {
+              "text": "le nombre d’électrons échangés"
+            },
+            {
+              "text": "la distance entre les noyaux"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui a emporté l’adhésion au tableau de Mendeleïev ?",
+          "explanation": "Ses prédictions vérifiées — gallium, scandium, germanium — et non la commodité du classement.",
+          "options": [
+            {
+              "text": "ses prédictions d’éléments encore inconnus",
+              "correct": true
+            },
+            {
+              "text": "la commodité de son classement"
+            },
+            {
+              "text": "sa correspondance avec les orbitales"
+            },
+            {
+              "text": "l’appui des chimistes de son temps"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-qui-decide-du-sens",
+      "title": "Ce qui décide du sens d’une réaction",
+      "subtitle": "Pas la chaleur dégagée : la combinaison de deux termes.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le désordre qui gagne, tout seul",
+          "body": "Mets toutes les particules à gauche, puis avance de vingt instants : elles se répartissent, et elles ne reviennent jamais. Rien ne les pousse — il y a simplement incomparablement plus de façons d’être réparties que d’être groupées. C’est tout ce qu’est l’entropie, et c’est l’un des deux termes qui décident du sens d’une réaction.",
+          "figureId": "entropie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux termes, et pourquoi il en faut deux",
+          "body": "Premier terme : la chaleur échangée. Une réaction qui dégage de la chaleur est favorisée, parce que l’énergie libérée se disperse dans le milieu.\n\nDeuxième terme : la variation du désordre, multipliée par la température. Une réaction qui augmente le nombre d’arrangements possibles est favorisée.\n\nLe sens est décidé par la différence des deux. Et comme le second est multiplié par la température, le même mélange peut évoluer dans un sens à froid et dans l’autre à chaud.\n\nC’est ce que la chimie du lycée laisse croire à tort en parlant surtout de chaleur. Exothermique ne veut pas dire spontané, et spontané ne veut pas dire exothermique. La fonte de la glace au-dessus de zéro degré absorbe de la chaleur et se fait toute seule.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que « spontané » veut dire, et ne veut pas dire",
+          "body": "Spontané veut dire : favorable, c’est-à-dire que le système y gagne au bilan des deux termes.\n\nCela ne dit rien sur la vitesse. Du diamant en graphite est spontané à température et pression ordinaires, et la transformation prend un temps inimaginable.\n\nCela ne dit rien non plus sur la complétude : une réaction favorable peut s’arrêter en chemin, à l’équilibre, avec une part notable de réactifs restants.\n\nLe mot « spontané » est donc l’un des plus trompeurs du vocabulaire chimique. Il signifie « pas interdit par la thermodynamique », et rien de plus. Un bijoutier n’a aucun souci à se faire.",
+          "formula": "spontané = favorable au bilan ; il ne dit rien de la vitesse",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trois cas, et comment les deux termes s’y partagent",
+          "body": "Une combustion. Très exothermique, et le désordre augmente aussi : les deux termes vont dans le même sens, la réaction est favorable à toute température.\n\nLa formation de la glace. Exothermique, et le désordre diminue — un solide est plus ordonné qu’un liquide. Les deux termes s’opposent, et comme le second croît avec la température, l’eau gèle en dessous de zéro et pas au-dessus.\n\nLa dissolution d’un sel avec refroidissement. Endothermique, et le désordre augmente beaucoup : les ions se dispersent. Le second terme l’emporte, et c’est le principe d’une poche de froid instantané.\n\nLe quatrième cas — endothermique et plus ordonné — n’est favorable à aucune température. Les deux termes s’opposent tous les deux au changement, et il n’y a pas de température qui arrange cela.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi l’entropie de l’univers, et pas celle du système",
+          "body": "Le critère exact porte sur l’entropie totale : celle du système plus celle du milieu. Une réaction se fait si cette somme augmente.\n\nMais l’entropie du milieu est difficile à suivre. On la remplace donc par ce qu’elle doit à la chaleur reçue du système, et c’est de là que vient le premier des deux termes de la carte précédente.\n\nLe résultat est un critère qui ne porte plus que sur le système, à température et pression fixées. C’est un tour de force pratique, et c’est pourquoi on l’emploie partout : on ne regarde plus que le bécher.\n\nConséquence sur le vocabulaire : il n’existe aucune réaction qui diminue l’entropie totale. Quand on lit que la vie « crée de l’ordre », c’est vrai localement et payé ailleurs — un organisme exporte plus de désordre dans son milieu qu’il n’en retire pour lui-même, et il n’existe aucune exception.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui décide du sens d’une réaction ?",
+          "explanation": "La différence entre la chaleur échangée et la variation du désordre multipliée par la température.",
+          "options": [
+            {
+              "text": "la combinaison de la chaleur et du désordre fois la température",
+              "correct": true
+            },
+            {
+              "text": "la chaleur dégagée seule"
+            },
+            {
+              "text": "la variation de désordre seule"
+            },
+            {
+              "text": "la vitesse de la réaction"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une réaction exothermique est toujours spontanée.",
+          "explanation": "Faux. La fonte de la glace absorbe de la chaleur et se fait toute seule au-dessus de zéro : les deux termes comptent.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que « spontané » veut-il dire, exactement ?",
+          "explanation": "Pas interdit par la thermodynamique, et rien de plus. Cela ne dit rien de la vitesse ni de la complétude.",
+          "options": [
+            {
+              "text": "pas interdit par la thermodynamique",
+              "correct": true
+            },
+            {
+              "text": "rapide"
+            },
+            {
+              "text": "complet"
+            },
+            {
+              "text": "exothermique"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un diamant ne devient-il pas du graphite ?",
+          "explanation": "La transformation est spontanée, et sa vitesse est inimaginablement lente. « Spontané » ne dit rien du temps.",
+          "options": [
+            {
+              "text": "elle est spontanée mais inimaginablement lente",
+              "correct": true
+            },
+            {
+              "text": "elle est interdite par la thermodynamique"
+            },
+            {
+              "text": "elle est endothermique"
+            },
+            {
+              "text": "elle exige une haute pression"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Les deux termes vont-ils dans le même sens, ou s’opposent-ils ?",
+          "explanation": "Quand ils vont dans le même sens, la réaction est favorable à toute température ; quand ils s’opposent, la température décide.",
+          "categories": [
+            "même sens",
+            "termes opposés"
+          ],
+          "items": [
+            {
+              "text": "une combustion",
+              "category": 0
+            },
+            {
+              "text": "la formation de la glace",
+              "category": 1
+            },
+            {
+              "text": "la dissolution d’un sel avec refroidissement",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel cas n’est favorable à aucune température ?",
+          "explanation": "Endothermique et plus ordonné : les deux termes s’opposent au changement, et aucune température n’arrange cela.",
+          "options": [
+            {
+              "text": "endothermique et plus ordonné",
+              "correct": true
+            },
+            {
+              "text": "exothermique et plus désordonné"
+            },
+            {
+              "text": "endothermique et plus désordonné"
+            },
+            {
+              "text": "exothermique et plus ordonné"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-equilibre-et-cinetique",
+      "title": "Défi : équilibre et cinétique",
+      "subtitle": "Deux questions différentes : jusqu’où, et en combien de temps.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un équilibre, et ce qu’il faut pour le garder",
+          "body": "Change un coefficient d’un côté : la balance penche, et il faut compenser de l’autre pour la remettre à l’horizontale. Un équilibre chimique se comporte exactement ainsi — on le perturbe, il se déplace, et le sens du déplacement est prévisible.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La température, et ce qu’elle décide",
+          "body": "Fais glisser le thermomètre de moins vingt à cent quarante degrés : les particules se rangent ou se dispersent, et les changements d’état se font à zéro et cent. La température gouverne à la fois jusqu’où une réaction va et à quelle vitesse elle y va, et la leçon montre que ce n’est pas dans le même sens.",
+          "figureId": "etats-matiere",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "L’équilibre, et ce qu’il n’est pas",
+          "body": "Une réaction favorable ne consomme pas tous ses réactifs. Elle s’arrête quand les vitesses des deux sens s’égalisent.\n\nÀ l’équilibre, rien ne semble se passer, et les deux réactions continuent à la même allure. C’est un état dynamique, pas un arrêt — et c’est le point que l’intuition rate le plus souvent.\n\nLa position de cet équilibre est chiffrée par une constante, qui ne dépend que de la température. Grande, l’équilibre est très déplacé vers les produits ; petite, il reste surtout des réactifs.\n\nEt cette constante ne dépend d’aucune quantité initiale. Partir des réactifs ou des produits mène au même état final. C’est une vérification expérimentale simple, et c’est ce qui a fait accepter l’idée d’équilibre.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le principe de Le Chatelier, et sa limite",
+          "body": "Un équilibre perturbé se déplace dans le sens qui atténue la perturbation. Ajouter un réactif le déplace vers les produits ; comprimer un mélange gazeux le déplace vers le côté qui occupe le moins de volume.\n\nPour la température, la règle se lit en traitant la chaleur comme un participant : chauffer une réaction exothermique la déplace vers les réactifs.\n\nLa limite est capitale, et c’est ce que l’énoncé ne dit jamais : un catalyseur ne déplace rien. Il accélère les deux sens également, donc il fait atteindre l’équilibre plus vite sans le changer d’un iota.\n\nC’est la distinction la plus utile du chapitre. La thermodynamique dit jusqu’où, la cinétique dit en combien de temps, et un catalyseur n’agit que sur la seconde question.",
+          "formula": "un catalyseur change le temps, jamais la position de l’équilibre",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "La vitesse, et le seul levier vraiment puissant",
+          "body": "Pour réagir, deux molécules doivent se rencontrer avec assez d’énergie pour franchir une barrière. La fraction de molécules qui en disposent croît très vite avec la température.\n\nL’ordre de grandeur est qu’une hausse de dix degrés double à peu près la vitesse de beaucoup de réactions. Trente degrés de plus, et c’est huit fois plus rapide — ce qui explique le réfrigérateur aussi bien que l’autocuiseur.\n\nUn catalyseur agit autrement : il abaisse la barrière en offrant un autre chemin. Les gains sont énormes, et sans aucune consommation.\n\nC’est pourquoi presque toute l’industrie chimique et toute la biologie reposent sur la catalyse. Une enzyme peut accélérer une réaction d’un facteur de l’ordre de dix puissance dix, et cette réaction serait sans elle infiniment trop lente pour qu’un être vivant en vive.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un électron n’a pas de trajectoire : une orbitale est une probabilité de présence. Le principe de Pauli donne deux électrons par orbitale, et de là sortent les couches, le tableau et le volume des solides.\n\nLa forme du tableau périodique est le remplissage des couches, dessiné. Deux phrases suffisent pour toutes les tendances : vers la droite plus petit et plus avide, vers le bas plus gros et moins avide.\n\nLe sens d’une réaction se décide par deux termes, et pas par la chaleur seule. Exothermique ne veut pas dire spontané, et spontané ne veut rien dire sur la vitesse.\n\nEt il faut séparer les deux questions. Jusqu’où : la constante d’équilibre, qui ne dépend que de la température. En combien de temps : la barrière, que la température et un catalyseur abaissent. Un catalyseur ne déplace jamais un équilibre.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un équilibre chimique ?",
+          "explanation": "Un état dynamique où les deux réactions continuent à la même allure. Ce n’est pas un arrêt.",
+          "options": [
+            {
+              "text": "un état où les deux sens vont à la même vitesse",
+              "correct": true
+            },
+            {
+              "text": "un arrêt des réactions"
+            },
+            {
+              "text": "la consommation totale des réactifs"
+            },
+            {
+              "text": "un mélange à parts égales"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi la constante d’équilibre dépend-elle ?",
+          "explanation": "De la seule température. Elle ne dépend d’aucune quantité initiale : partir des réactifs ou des produits mène au même état final.",
+          "options": [
+            {
+              "text": "de la température seule",
+              "correct": true
+            },
+            {
+              "text": "des quantités initiales"
+            },
+            {
+              "text": "de la présence d’un catalyseur"
+            },
+            {
+              "text": "du volume du récipient"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel sens un équilibre perturbé se déplace-t-il ?",
+          "explanation": "Dans le sens qui atténue la perturbation : c’est le principe de Le Chatelier.",
+          "options": [
+            {
+              "text": "dans le sens qui atténue la perturbation",
+              "correct": true
+            },
+            {
+              "text": "dans le sens qui l’amplifie"
+            },
+            {
+              "text": "vers les produits, toujours"
+            },
+            {
+              "text": "vers les réactifs, toujours"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un catalyseur déplace l’équilibre vers les produits.",
+          "explanation": "Faux. Il accélère les deux sens également : il fait atteindre l’équilibre plus vite, sans le changer.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De quel facteur la vitesse est-elle multipliée, en ordre de grandeur, pour trente degrés de plus ?",
+          "explanation": "Huit : dix degrés doublent à peu près la vitesse, donc trente degrés la multiplient par deux au cube.",
+          "answer": 8,
+          "id": "q5"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque question à ce qui y répond.",
+          "explanation": "La thermodynamique dit jusqu’où, la cinétique dit en combien de temps. Un catalyseur n’agit que sur la seconde.",
+          "pairs": [
+            {
+              "left": "jusqu’où la réaction va",
+              "right": "la constante d’équilibre"
+            },
+            {
+              "left": "en combien de temps",
+              "right": "la hauteur de la barrière"
+            },
+            {
+              "left": "ce qu’un catalyseur change",
+              "right": "le temps, pas la position"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

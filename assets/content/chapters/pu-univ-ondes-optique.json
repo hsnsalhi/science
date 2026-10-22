@@ -1,0 +1,694 @@
+{
+  "chapter": "physique-chimie-universite-ondes-et-optique",
+  "lessons": [
+    {
+      "id": "ce-qu-une-onde-transporte",
+      "title": "Ce qu’une onde transporte",
+      "subtitle": "De l’énergie, et pas de matière.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un point qui monte et descend sur place",
+          "body": "Change la fréquence : la longueur d’onde suit. Et surtout, suis le point marqué — il monte et descend sans avancer. L’onde traverse le milieu, le milieu ne voyage pas. Change le milieu aussi : à même fréquence, la longueur d’onde passe de l’air à l’hélium puis à l’eau, dans le rapport des vitesses.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui se propage, et ce qui reste",
+          "body": "Une onde transporte de l’énergie et de la quantité de mouvement. Elle ne transporte pas de matière : chaque point du milieu oscille autour de sa position et y reste.\n\nLe bouchon sur l’eau monte et descend, il n’est pas emporté. Le son traverse une pièce sans qu’aucun déplacement d’air ne la traverse.\n\nD’où la relation qui gouverne tout : la vitesse est le produit de la longueur d’onde par la fréquence. La vitesse est fixée par le milieu, la fréquence par la source. La longueur d’onde est donc la variable d’ajustement.\n\nCela se vérifie à l’oreille. En passant de l’air à l’eau, un son garde sa fréquence — donc sa note — et sa longueur d’onde est multipliée par plus de quatre. La note ne change pas quand le milieu change, et c’est ce qui prouve que la fréquence est la propriété de la source.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Transversale ou longitudinale, et ce que cela décide",
+          "body": "Dans une onde longitudinale, le milieu oscille dans la direction de propagation : des compressions et des dépressions. Le son dans l’air est de ce type.\n\nDans une onde transversale, le milieu oscille perpendiculairement : une corde pincée, une vague, la lumière.\n\nLa distinction a une conséquence mesurable : seule une onde transversale peut être polarisée, c’est-à-dire osciller dans une direction privilégiée.\n\nC’est de là que vient la preuve que la lumière est transversale, bien avant qu’on sache ce qui oscille. Un polariseur éteint la moitié de la lumière, et deux polariseurs croisés l’éteignent complètement. Rien de tel n’est possible avec le son, et c’est pourquoi on ne polarise pas un son.",
+          "formula": "vitesse = longueur d’onde × fréquence",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La voix dans l’hélium, et ce qui change vraiment",
+          "body": "L’explication courante est que les cordes vocales vibrent plus vite. C’est faux, et la figure le montre : la source garde sa fréquence quand le milieu change.\n\nCe qui change est la vitesse du son : mille sept dans l’hélium contre trois cent quarante-trois dans l’air, soit presque trois fois plus.\n\nLes cavités de la gorge et de la bouche résonnent à des fréquences qui dépendent de cette vitesse. Elles montent donc dans le même rapport, et ce sont elles qui donnent le timbre.\n\nRésultat : la hauteur de la note fondamentale ne change presque pas, et le timbre est bouleversé. On entend une voix aiguë parce qu’on identifie une voix par son timbre bien plus que par sa fondamentale — et c’est une leçon de perception autant que d’acoustique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’effet Doppler, et ce qu’il permet de mesurer",
+          "body": "Si la source s’approche, les crêtes arrivent plus rapprochées : la fréquence reçue monte. Si elle s’éloigne, elle baisse. La sirène qui passe en est l’exemple ordinaire.\n\nLe décalage relatif vaut, pour des vitesses faibles devant celle de l’onde, le rapport de la vitesse de la source à celle de l’onde.\n\nAppliqué à la lumière, cela donne l’outil le plus productif de l’astronomie. Le décalage des raies vers le rouge dit à quelle vitesse une galaxie s’éloigne, et c’est de là qu’est venue l’expansion de l’Univers.\n\nLe même principe mesure la vitesse d’une voiture au radar, le débit sanguin par échographie, et la vitesse du vent par sondage acoustique. Une seule relation, et quatre métiers qui en vivent.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’une onde transporte-t-elle ?",
+          "explanation": "De l’énergie et de la quantité de mouvement, pas de matière : chaque point du milieu oscille autour de sa position et y reste.",
+          "options": [
+            {
+              "text": "de l’énergie, pas de matière",
+              "correct": true
+            },
+            {
+              "text": "de la matière et de l’énergie"
+            },
+            {
+              "text": "de la matière seulement"
+            },
+            {
+              "text": "ni l’une ni l’autre"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand une onde change de milieu, qu’est-ce qui ne change pas ?",
+          "explanation": "La fréquence, qui est la propriété de la source. La vitesse change, donc la longueur d’onde aussi.",
+          "options": [
+            {
+              "text": "la fréquence",
+              "correct": true
+            },
+            {
+              "text": "la longueur d’onde"
+            },
+            {
+              "text": "la vitesse"
+            },
+            {
+              "text": "l’amplitude"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette onde est-elle longitudinale, ou transversale ?",
+          "explanation": "Longitudinale : le milieu oscille dans la direction de propagation. Transversale : perpendiculairement — et seule celle-là se polarise.",
+          "categories": [
+            "longitudinale",
+            "transversale"
+          ],
+          "items": [
+            {
+              "text": "le son dans l’air",
+              "category": 0
+            },
+            {
+              "text": "une onde sismique de compression",
+              "category": 0
+            },
+            {
+              "text": "une corde pincée",
+              "category": 1
+            },
+            {
+              "text": "la lumière",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui prouve que la lumière est transversale ?",
+          "explanation": "Qu’elle se polarise : deux polariseurs croisés l’éteignent complètement. Rien de tel n’est possible avec un son.",
+          "options": [
+            {
+              "text": "elle se polarise",
+              "correct": true
+            },
+            {
+              "text": "elle se propage dans le vide"
+            },
+            {
+              "text": "elle se réfracte"
+            },
+            {
+              "text": "sa vitesse est fixe"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la voix paraît-elle aiguë dans l’hélium ?",
+          "explanation": "Parce que les résonances des cavités montent avec la vitesse du son, et qu’on identifie une voix par son timbre plus que par sa fondamentale.",
+          "options": [
+            {
+              "text": "les résonances des cavités montent, pas la fondamentale",
+              "correct": true
+            },
+            {
+              "text": "les cordes vocales vibrent plus vite"
+            },
+            {
+              "text": "l’hélium est moins dense"
+            },
+            {
+              "text": "la fréquence de la source augmente"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que mesure-t-on par effet Doppler ?",
+          "explanation": "La vitesse d’éloignement d’une galaxie, celle d’une voiture au radar, le débit sanguin, la vitesse du vent. Une seule relation.",
+          "options": [
+            {
+              "text": "la vitesse d’une galaxie",
+              "correct": true
+            },
+            {
+              "text": "la vitesse d’une voiture au radar",
+              "correct": true
+            },
+            {
+              "text": "le débit sanguin par échographie",
+              "correct": true
+            },
+            {
+              "text": "la distance d’une galaxie"
+            },
+            {
+              "text": "la température d’une étoile"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "interference-et-diffraction",
+      "title": "Interférence et diffraction",
+      "subtitle": "Deux signatures que seule une onde peut produire.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une ombre, et son bord",
+          "body": "Approche l’objet de la lampe : l’ombre grandit, exactement dans le rapport des distances. Cette géométrie est juste, et son bord est une idéalisation — un vrai bord d’ombre est franchi par une alternance de franges claires et sombres, que cette figure ne montre pas et que la leçon va expliquer.",
+          "figureId": "ombre-lumiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La superposition, et ce qu’elle produit",
+          "body": "Quand deux ondes se rencontrent, les déplacements s’ajoutent. Là où deux crêtes coïncident, l’amplitude double. Là où une crête rencontre un creux, elle s’annule.\n\nCela se range sur une seule condition. Si la différence des chemins parcourus est un nombre entier de longueurs d’onde, les deux arrivent en phase et s’ajoutent. Si c’est un nombre entier plus une demie, elles s’annulent.\n\nLe résultat est une alternance de maximums et de minimums fixes dans l’espace : des franges.\n\nC’est la signature de l’ondulatoire, et c’est ce que des particules ne peuvent pas faire. Deux flots de billes qui se rencontrent ne laissent jamais de zone vide. C’est l’expérience de Young, en 1801, qui a tranché le débat sur la nature de la lumière — pour un siècle.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La diffraction, et le seul rapport qui compte",
+          "body": "Une onde qui passe par une ouverture s’étale derrière elle. L’étalement n’est pas gouverné par la taille de l’ouverture seule, ni par la longueur d’onde seule, mais par leur rapport.\n\nSi l’ouverture est beaucoup plus grande que la longueur d’onde, l’étalement est négligeable et l’onde va tout droit. Si l’ouverture est comparable à la longueur d’onde, l’onde se répand dans toutes les directions.\n\nD’où une observation quotidienne qui en découle entièrement : on entend derrière un coin de mur, et on ne voit pas derrière.\n\nUn son de trois cents hertz a une longueur d’onde d’environ un mètre, comparable à la porte : il diffracte massivement. La lumière visible fait un demi-micromètre, soit deux millions de fois moins que la porte : elle ne diffracte pas mesurablement à cette échelle.",
+          "formula": "ce qui compte est le rapport longueur d’onde sur ouverture",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Où la diffraction de la lumière se voit tout de même",
+          "body": "Sur un disque optique incliné : les sillons sont espacés de l’ordre du micromètre, soit la longueur d’onde. Les couleurs irisées en sont la diffraction directe.\n\nSur une aile de papillon ou une plume de paon : les couleurs ne viennent d’aucun pigment mais de structures de l’ordre du demi-micromètre. Broyer la plume détruit la couleur, ce qu’un pigment ne ferait pas.\n\nAutour d’une source lointaine vue à travers un tissu fin ou des cils : les halos et les croix sont de la diffraction par les fibres.\n\nEt dans tout instrument d’optique, où elle fixe une limite infranchissable. C’est l’objet du défi final, et c’est la conséquence la plus lourde de toute cette leçon.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La cohérence, et pourquoi deux lampes n’interfèrent pas",
+          "body": "Pour que des franges apparaissent, il faut que la différence de phase entre les deux ondes reste constante dans le temps.\n\nDeux lampes ordinaires émettent chacune une multitude de trains d’onde indépendants, dont les phases changent au hasard des milliards de fois par seconde. Les franges existent à chaque instant et changent de place trop vite pour être vues ou mesurées.\n\nC’est pourquoi l’expérience de Young emploie une seule source coupée en deux : les deux faisceaux issus du même train d’onde gardent une phase relative fixe.\n\nEt c’est pourquoi le laser a tant changé l’optique expérimentale. Sa cohérence est la propriété qui compte, bien plus que sa puissance : il rend visibles à l’œil nu des phénomènes qui demandaient auparavant un montage délicat.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "À quelle condition deux ondes s’ajoutent-elles ?",
+          "explanation": "Si la différence des chemins est un nombre entier de longueurs d’onde, elles arrivent en phase et s’ajoutent.",
+          "options": [
+            {
+              "text": "si la différence de chemin est un nombre entier de longueurs d’onde",
+              "correct": true
+            },
+            {
+              "text": "si elles ont la même amplitude"
+            },
+            {
+              "text": "si elles viennent de la même direction"
+            },
+            {
+              "text": "toujours, la superposition est additive"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi des particules ne peuvent-elles pas produire de franges ?",
+          "explanation": "Parce que deux flots de billes qui se rencontrent ne laissent jamais de zone vide : l’annulation est propre à l’ondulatoire.",
+          "options": [
+            {
+              "text": "deux flots de particules ne laissent jamais de zone vide",
+              "correct": true
+            },
+            {
+              "text": "les particules sont trop lourdes"
+            },
+            {
+              "text": "les particules ne se superposent pas"
+            },
+            {
+              "text": "les particules n’ont pas de fréquence"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui gouverne l’étalement par diffraction ?",
+          "explanation": "Le rapport de la longueur d’onde à la taille de l’ouverture, et non l’une ou l’autre séparément.",
+          "options": [
+            {
+              "text": "le rapport longueur d’onde sur ouverture",
+              "correct": true
+            },
+            {
+              "text": "la taille de l’ouverture seule"
+            },
+            {
+              "text": "la longueur d’onde seule"
+            },
+            {
+              "text": "l’intensité de l’onde"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi entend-on derrière un coin de mur sans y voir ?",
+          "explanation": "Un son de 300 hertz a environ un mètre de longueur d’onde, comparable à la porte ; la lumière visible, deux millions de fois moins.",
+          "options": [
+            {
+              "text": "le son diffracte massivement, la lumière non",
+              "correct": true
+            },
+            {
+              "text": "le son traverse les murs"
+            },
+            {
+              "text": "la lumière est absorbée"
+            },
+            {
+              "text": "le son se réfléchit mieux"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Où la diffraction de la lumière se voit-elle ?",
+          "explanation": "Sur un disque optique, sur une plume de paon, autour d’une source vue à travers un tissu fin — et dans tout instrument d’optique.",
+          "options": [
+            {
+              "text": "les irisations d’un disque optique",
+              "correct": true
+            },
+            {
+              "text": "la couleur d’une plume de paon",
+              "correct": true
+            },
+            {
+              "text": "les halos autour d’une source lointaine",
+              "correct": true
+            },
+            {
+              "text": "la couleur d’une peinture"
+            },
+            {
+              "text": "la couleur du ciel"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux lampes ordinaires n’interfèrent-elles pas visiblement ?",
+          "explanation": "Parce que leurs phases changent au hasard des milliards de fois par seconde : les franges changent de place trop vite pour être vues.",
+          "options": [
+            {
+              "text": "leurs phases changent au hasard trop vite",
+              "correct": true
+            },
+            {
+              "text": "elles n’ont pas la même fréquence"
+            },
+            {
+              "text": "elles sont trop puissantes"
+            },
+            {
+              "text": "la lumière blanche n’interfère pas"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-optique-geometrique",
+      "title": "L’optique géométrique, et son domaine",
+      "subtitle": "Des rayons droits : une approximation, et on sait quand elle vaut.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le sinus, et pourquoi il apparaît",
+          "body": "Agrandis le triangle : les trois longueurs grandissent et le rapport ne bouge pas. Change l’angle : le rapport change. C’est ce rapport, le sinus, qui apparaît dans la loi de la réfraction — et pas l’angle lui-même, ce qui n’est jamais évident au premier abord.",
+          "figureId": "trigonometrie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que l’optique géométrique suppose",
+          "body": "Qu’on peut remplacer l’onde par des rayons rectilignes, qui se réfléchissent et se réfractent aux surfaces.\n\nC’est le cas limite où la longueur d’onde est négligeable devant toutes les dimensions du problème. Les lentilles, les miroirs, les prismes font des centimètres, et la lumière un demi-micromètre : le rapport est de cent mille.\n\nDans ce régime, la diffraction et les interférences disparaissent des calculs, et toute l’optique se ramène à de la géométrie.\n\nL’approximation cesse de valoir dès que quelque chose approche la longueur d’onde : une ouverture très fine, un bord examiné de très près, ou la tache image d’un instrument parfait. C’est le dernier cas qui fait le défi final.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La réfraction, et pourquoi la lumière tourne",
+          "body": "En changeant de milieu, la lumière change de vitesse. L’indice d’un milieu est le rapport de la vitesse dans le vide à celle dans le milieu : un pour le vide, environ un virgule trois pour l’eau, un virgule cinq pour le verre.\n\nLa loi s’écrit en sinus : le produit de l’indice par le sinus de l’angle à la normale est le même de part et d’autre.\n\nL’image qui l’explique est celle d’une colonne de marcheurs qui aborde un terrain boueux en biais. Les premiers ralentissent avant les autres, donc la colonne pivote. La lumière fait la même chose, pour la même raison.\n\nEt cela se déduit d’un principe unique, énoncé par Fermat : la lumière suit le chemin qui prend le moins de temps. Pas le plus court — le plus rapide. C’est ce qui explique qu’elle accepte un détour géométrique pour traverser moins de milieu lent.",
+          "formula": "indice × sinus de l’angle : même valeur des deux côtés",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La réflexion totale, et ce qu’elle rend possible",
+          "body": "En passant d’un milieu lent à un milieu rapide, le rayon s’écarte de la normale. Au-delà d’un certain angle d’incidence, il ne peut plus sortir : il est entièrement réfléchi.\n\nPour du verre d’indice un virgule cinq vers l’air, cet angle critique est d’environ quarante-deux degrés. Tout rayon qui frappe la surface plus obliquement reste à l’intérieur.\n\nC’est le principe de la fibre optique : la lumière avance en rebondissant des millions de fois sans jamais sortir, et sans aucune perte par réflexion — une réflexion totale est totale.\n\nC’est aussi ce qui fait briller un diamant. Son indice est de deux virgule quatre, donc son angle critique n’est que de vingt-quatre degrés : la lumière entrée s’y trouve piégée et ressort par la face taillée pour cela. L’éclat d’un diamant est un effet de taille autant que de matière.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La dispersion, et d’où viennent les couleurs",
+          "body": "L’indice d’un milieu dépend un peu de la longueur d’onde. Dans le verre, le bleu est plus ralenti que le rouge, donc plus dévié.\n\nUn prisme sépare donc les couleurs, et c’est ce que Newton a établi en 1672 : la lumière blanche est une somme, et le prisme ne la colore pas, il la décompose. Sa preuve décisive fut de recombiner les couleurs par un second prisme et de retrouver du blanc.\n\nL’arc-en-ciel est le même phénomène dans des gouttes d’eau, avec une réflexion interne : d’où l’angle de quarante-deux degrés qui fixe sa position, toujours à l’opposé du Soleil.\n\nEt c’est un défaut pour les instruments : une lentille simple ne met pas toutes les couleurs au même point. On le corrige en collant deux verres de dispersions différentes, invention de 1733 sans laquelle aucun objectif moderne n’existerait.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand l’optique géométrique est-elle valide ?",
+          "explanation": "Quand la longueur d’onde est négligeable devant toutes les dimensions du problème. Pour une lentille, le rapport est de cent mille.",
+          "options": [
+            {
+              "text": "quand la longueur d’onde est négligeable devant les dimensions",
+              "correct": true
+            },
+            {
+              "text": "toujours, pour la lumière"
+            },
+            {
+              "text": "quand la source est cohérente"
+            },
+            {
+              "text": "quand les milieux sont transparents"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la lumière change-t-elle de direction en changeant de milieu ?",
+          "explanation": "Parce qu’elle change de vitesse : comme une colonne de marcheurs qui aborde un terrain boueux en biais, elle pivote.",
+          "options": [
+            {
+              "text": "elle change de vitesse, donc elle pivote",
+              "correct": true
+            },
+            {
+              "text": "elle est attirée par le milieu dense"
+            },
+            {
+              "text": "elle perd de l’énergie"
+            },
+            {
+              "text": "elle change de fréquence"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le principe de Fermat ?",
+          "explanation": "Que la lumière suit le chemin le plus rapide, et non le plus court : elle accepte un détour pour traverser moins de milieu lent.",
+          "options": [
+            {
+              "text": "la lumière suit le chemin le plus rapide",
+              "correct": true
+            },
+            {
+              "text": "la lumière suit le chemin le plus court"
+            },
+            {
+              "text": "la lumière suit la droite"
+            },
+            {
+              "text": "la lumière minimise son énergie"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel est l’angle critique du verre d’indice 1,5 vers l’air, en degrés ?",
+          "explanation": "Environ 42 degrés : au-delà, le rayon ne peut plus sortir et la réflexion est totale. C’est le principe de la fibre optique.",
+          "min": 0,
+          "max": 90,
+          "answer": 42,
+          "tolerance": 4,
+          "unit": "°",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un diamant brille-t-il autant ?",
+          "explanation": "Son indice de 2,4 donne un angle critique de 24 degrés : la lumière entrée est piégée et ressort par la face taillée pour cela.",
+          "options": [
+            {
+              "text": "son angle critique est très petit, la lumière est piégée",
+              "correct": true
+            },
+            {
+              "text": "il absorbe peu de lumière"
+            },
+            {
+              "text": "il disperse plus que le verre"
+            },
+            {
+              "text": "ses faces sont parfaitement planes"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle fut la preuve décisive de Newton en 1672 ?",
+          "explanation": "Recombiner les couleurs par un second prisme et retrouver du blanc : le prisme décompose, il ne colore pas.",
+          "options": [
+            {
+              "text": "recombiner les couleurs et retrouver du blanc",
+              "correct": true
+            },
+            {
+              "text": "mesurer l’angle de déviation"
+            },
+            {
+              "text": "observer un arc-en-ciel"
+            },
+            {
+              "text": "comparer deux prismes de verres différents"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-la-limite-de-resolution",
+      "title": "Défi : la limite de résolution",
+      "subtitle": "Un instrument parfait reste limité par la longueur d’onde.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La longueur d’onde, et ce qu’elle permet de voir",
+          "body": "Fais glisser la température : le pic se déplace, et le visible n’est qu’une bande étroite. Cette longueur d’onde-là, autour d’un demi-micromètre, est ce qui fixe la finesse de tout ce qu’un microscope optique pourra jamais montrer.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Deux points, et le moment où ils se confondent",
+          "body": "Rapproche l’objet de la lampe et regarde grandir l’ombre : la géométrie n’impose aucune limite, et deux objets très proches donneraient deux ombres distinctes aussi fines qu’on veut. C’est précisément ce que la diffraction interdit, et c’est l’écart entre cette figure et la réalité que la leçon chiffre.",
+          "figureId": "ombre-lumiere",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi un point ne donne jamais un point",
+          "body": "Même une lentille parfaite, sans aucun défaut de fabrication, ne forme pas l’image d’un point en un point. Elle forme une petite tache entourée d’anneaux.\n\nLa raison est la diffraction par l’ouverture de l’instrument lui-même. L’onde qui passe par un trou s’étale, et le trou ici est le diamètre de la lentille.\n\nLa taille angulaire de cette tache vaut à peu près le rapport de la longueur d’onde au diamètre de l’ouverture.\n\nDeux points plus proches que cela donnent deux taches qui se chevauchent, et on ne peut plus les séparer. C’est le critère de Rayleigh, et c’est une limite de principe : aucune amélioration de fabrication ne la franchit.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux conséquences, et leurs chiffres",
+          "body": "Pour un télescope, améliorer la finesse exige d’élargir le miroir. C’est la première raison de la course au diamètre, bien avant la collecte de lumière.\n\nUn miroir de dix centimètres sépare au mieux un peu plus d’une seconde d’arc ; un miroir de huit mètres, quelques centièmes. Dans les deux cas, l’atmosphère brouille à une seconde d’arc, et c’est pourquoi on monte en altitude, on corrige en temps réel, ou l’on va dans l’espace.\n\nPour un microscope optique, la limite est de l’ordre de la moitié de la longueur d’onde employée, soit environ deux cents nanomètres.\n\nUn virus de cent nanomètres est donc hors de portée d’un microscope optique, quel que soit son grossissement. Grossir plus n’ajoute aucun détail : cela agrandit une tache, et c’est ce qu’on appelle un grossissement vide.",
+          "formula": "séparation angulaire minimale ≈ longueur d’onde / diamètre",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment on dépasse la limite, et à quel prix",
+          "body": "Changer de longueur d’onde. Un microscope électronique emploie des électrons dont la longueur d’onde associée est cent mille fois plus courte, et il atteint l’échelle atomique. Le prix est le vide poussé et un échantillon qui ne peut pas être vivant.\n\nChanger de principe. La microscopie à champ proche palpe la surface au lieu de l’imager, et sort du cadre où le critère s’applique.\n\nRuser avec la fluorescence. En n’allumant que quelques molécules à la fois et en répétant, on localise chacune bien plus finement que la tache qu’elle produit. C’est ce qui a valu le prix Nobel de chimie 2014, et cela fonctionne sur du vivant.\n\nLes trois voies ont ceci en commun : aucune ne viole le critère de Rayleigh. Elles changent les conditions dans lesquelles il s’énonce, et c’est la façon ordinaire de contourner une limite de principe en physique.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une onde transporte de l’énergie et pas de matière. La fréquence appartient à la source, la vitesse au milieu, et la longueur d’onde s’ajuste. Seules les ondes transversales se polarisent, et c’est la preuve que la lumière en est une.\n\nL’interférence et la diffraction sont les deux signatures qu’une particule ne peut pas produire. Ce qui gouverne la diffraction est le rapport de la longueur d’onde à l’ouverture, et c’est pourquoi on entend derrière un coin sans y voir.\n\nL’optique géométrique est le cas limite où ce rapport est négligeable. La réfraction s’écrit en sinus, et découle du chemin le plus rapide — pas le plus court.\n\nEt la diffraction fixe une limite de principe à tout instrument. Deux cents nanomètres pour un microscope optique, et grossir plus n’ajoute rien : cela agrandit une tache.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une lentille parfaite ne forme-t-elle pas d’un point un point ?",
+          "explanation": "À cause de la diffraction par l’ouverture de l’instrument lui-même : l’onde qui passe par un trou s’étale.",
+          "options": [
+            {
+              "text": "la diffraction par l’ouverture de l’instrument",
+              "correct": true
+            },
+            {
+              "text": "un défaut de fabrication"
+            },
+            {
+              "text": "la dispersion des couleurs"
+            },
+            {
+              "text": "l’absorption du verre"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépend la séparation angulaire minimale ?",
+          "explanation": "Du rapport de la longueur d’onde au diamètre de l’ouverture. C’est le critère de Rayleigh.",
+          "options": [
+            {
+              "text": "du rapport longueur d’onde sur diamètre",
+              "correct": true
+            },
+            {
+              "text": "du grossissement"
+            },
+            {
+              "text": "de la qualité du verre"
+            },
+            {
+              "text": "de la distance de l’objet"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la limite de résolution d’un microscope optique, en nanomètres ?",
+          "explanation": "Environ 200 nanomètres, soit la moitié de la longueur d’onde employée. Un virus de 100 nanomètres est hors de portée.",
+          "min": 1,
+          "max": 2000,
+          "answer": 200,
+          "tolerance": 60,
+          "unit": "nm",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un grossissement vide ?",
+          "explanation": "Un grossissement qui agrandit la tache de diffraction sans ajouter aucun détail.",
+          "options": [
+            {
+              "text": "un grossissement qui agrandit la tache sans ajouter de détail",
+              "correct": true
+            },
+            {
+              "text": "un grossissement mal calculé"
+            },
+            {
+              "text": "un grossissement sans éclairage"
+            },
+            {
+              "text": "un grossissement limité par l’atmosphère"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Comment dépasse-t-on la limite de résolution optique ?",
+          "explanation": "En changeant de longueur d’onde, en changeant de principe, ou en rusant avec la fluorescence. Aucune ne viole le critère : elles changent ses conditions.",
+          "options": [
+            {
+              "text": "employer des électrons, de longueur d’onde bien plus courte",
+              "correct": true
+            },
+            {
+              "text": "palper la surface au lieu de l’imager",
+              "correct": true
+            },
+            {
+              "text": "n’allumer que quelques molécules fluorescentes à la fois",
+              "correct": true
+            },
+            {
+              "text": "augmenter le grossissement"
+            },
+            {
+              "text": "augmenter l’éclairage"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui limite en pratique un télescope au sol, avant son diamètre ?",
+          "explanation": "L’atmosphère, qui brouille à environ une seconde d’arc : d’où l’altitude, la correction en temps réel, ou l’espace.",
+          "options": [
+            {
+              "text": "l’atmosphère, qui brouille à une seconde d’arc",
+              "correct": true
+            },
+            {
+              "text": "la qualité du miroir"
+            },
+            {
+              "text": "la dispersion des couleurs"
+            },
+            {
+              "text": "la sensibilité du capteur"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

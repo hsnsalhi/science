@@ -1,0 +1,675 @@
+{
+  "chapter": "physique-chimie-universite-electromagnetisme",
+  "lessons": [
+    {
+      "id": "le-champ-et-pourquoi-il-existe",
+      "title": "Le champ, et pourquoi il existe vraiment",
+      "subtitle": "Ce n’est pas une façon de parler : il porte de l’énergie.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La loi du carré inverse",
+          "body": "Écarte les deux corps : à distance double la force tombe au quart, à distance cinq au vingt-cinquième. La force électrique suit exactement la même loi que celle-ci, avec une intensité incomparablement plus grande — entre deux protons, l’électricité l’emporte sur la gravitation d’un facteur de l’ordre de dix puissance trente-six.",
+          "figureId": "attraction-distance",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux façons de dire la même chose, et une qui est fausse",
+          "body": "Première façon : une charge agit à distance sur une autre, instantanément. C’est ce que la loi de Coulomb suggère, et c’est faux.\n\nDeuxième façon : une charge modifie l’espace autour d’elle, et une autre charge réagit à cette modification locale. C’est le champ, et c’est juste.\n\nLa différence n’est pas philosophique, et elle se mesure. Si l’on déplace brusquement une charge, l’autre ne le ressent pas tout de suite : l’information met le temps que la lumière met à parcourir la distance.\n\nEntre les deux instants, l’énergie n’est ni dans l’une ni dans l’autre. Elle est dans le champ. Un champ est donc un objet physique, qui porte de l’énergie et de la quantité de mouvement, et non une façon commode de parler.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le théorème de Gauss, et ce qu’il dispense de calculer",
+          "body": "Le flux du champ électrique à travers une surface fermée ne dépend que de la charge enfermée. Ni de sa position, ni de sa forme, ni de ce qui se trouve dehors.\n\nC’est une reformulation de la loi du carré inverse, et l’avantage est de taille : quand la situation est symétrique, le champ s’obtient sans la moindre intégrale.\n\nLe cas le plus utile est le conducteur. À l’équilibre, le champ y est nul : toute charge placée dessus migre en surface, et l’intérieur est protégé.\n\nC’est la cage de Faraday. Elle explique pourquoi on est en sécurité dans une voiture frappée par la foudre, pourquoi un téléphone ne capte pas dans un ascenseur, et pourquoi le blindage d’un câble est un conducteur et non un isolant.",
+          "formula": "le flux à travers une surface fermée ne dépend que de la charge enfermée",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le potentiel, et pourquoi on le préfère au champ",
+          "body": "Le champ est un vecteur : trois nombres par point de l’espace. Le potentiel est un nombre unique par point, et le champ s’en déduit en regardant comment il varie.\n\nTravailler avec un seul nombre au lieu de trois est l’économie la plus rentable de l’électrostatique, et c’est pourquoi tous les calculs réels passent par là.\n\nLa tension, celle qu’on mesure avec un voltmètre, est une différence de potentiel. Elle n’a de sens qu’entre deux points, et c’est pourquoi un oiseau sur un fil à haute tension ne risque rien : ses deux pattes sont au même potentiel.\n\nUn volt est un joule par coulomb. Une tension de deux cent trente volts dit donc : deux cent trente joules pour chaque coulomb de charge qui traverse. Lire une tension comme une énergie par unité de charge rend la plupart des calculs d’électrocinétique immédiats.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi l’électricité domine la chimie",
+          "body": "La force électrique entre deux protons dépasse leur attraction gravitationnelle d’un facteur voisin de dix puissance trente-six. L’écart est tel qu’aucune image n’en rend compte.\n\nConséquence : tout ce qui se passe à l’échelle des atomes et des molécules est électrique. La cohésion d’un solide, la température d’ébullition d’un liquide, la force d’un muscle, la dureté d’un métal.\n\nEt la gravitation ne compte qu’à partir d’échelles énormes, parce que la matière est neutre : les charges positives et négatives s’annulent, ce que les masses ne font jamais.\n\nC’est le principe d’une règle utile : à l’échelle humaine et en dessous, chercher l’explication du côté électrique ; au-delà de l’échelle planétaire, du côté gravitationnel. Entre les deux, l’échelle d’un corps humain, les deux comptent — et c’est ce qui la rend intéressante.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’action à distance instantanée est-elle fausse ?",
+          "explanation": "Parce qu’un déplacement de charge n’est ressenti qu’après le temps que la lumière met à parcourir la distance.",
+          "options": [
+            {
+              "text": "l’information met le temps de la lumière",
+              "correct": true
+            },
+            {
+              "text": "la force est trop faible"
+            },
+            {
+              "text": "les charges se neutralisent"
+            },
+            {
+              "text": "la loi de Coulomb est approchée"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où est l’énergie entre le déplacement d’une charge et la réaction de l’autre ?",
+          "explanation": "Dans le champ. C’est ce qui montre qu’un champ est un objet physique et non une façon de parler.",
+          "options": [
+            {
+              "text": "dans le champ",
+              "correct": true
+            },
+            {
+              "text": "dans la première charge"
+            },
+            {
+              "text": "dans la seconde charge"
+            },
+            {
+              "text": "nulle part, elle est créée à l’arrivée"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépend le flux du champ à travers une surface fermée ?",
+          "explanation": "De la seule charge enfermée. Ni de sa position, ni de sa forme, ni de ce qui se trouve dehors.",
+          "options": [
+            {
+              "text": "de la charge enfermée, et de rien d’autre",
+              "correct": true
+            },
+            {
+              "text": "de la forme de la surface"
+            },
+            {
+              "text": "de la position de la charge"
+            },
+            {
+              "text": "des charges extérieures"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’explique la cage de Faraday ?",
+          "explanation": "Qu’à l’équilibre le champ est nul dans un conducteur : la charge migre en surface et l’intérieur est protégé.",
+          "options": [
+            {
+              "text": "la sécurité dans une voiture frappée par la foudre",
+              "correct": true
+            },
+            {
+              "text": "l’absence de réseau dans un ascenseur",
+              "correct": true
+            },
+            {
+              "text": "le blindage conducteur d’un câble",
+              "correct": true
+            },
+            {
+              "text": "l’isolation d’un fil électrique"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un oiseau sur un fil à haute tension ne risque-t-il rien ?",
+          "explanation": "Parce que ses deux pattes sont au même potentiel : une tension n’a de sens qu’entre deux points.",
+          "options": [
+            {
+              "text": "ses deux pattes sont au même potentiel",
+              "correct": true
+            },
+            {
+              "text": "ses plumes isolent"
+            },
+            {
+              "text": "il est trop léger"
+            },
+            {
+              "text": "le courant passe dans le fil, pas dans l’air"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la gravitation ne compte-t-elle qu’aux grandes échelles ?",
+          "explanation": "Parce que la matière est neutre : les charges s’annulent, ce que les masses ne font jamais.",
+          "options": [
+            {
+              "text": "les charges s’annulent, les masses jamais",
+              "correct": true
+            },
+            {
+              "text": "la gravitation agit plus lentement"
+            },
+            {
+              "text": "la gravitation ne traverse pas la matière"
+            },
+            {
+              "text": "les petits objets n’ont pas de masse"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-quatre-equations",
+      "title": "Les quatre équations, en français",
+      "subtitle": "Quatre phrases, et toute l’électricité, le magnétisme et la lumière.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un circuit, et les règles qui le gouvernent",
+          "body": "Ferme l’interrupteur, puis dévisse une lampe : en série tout s’éteint, en dérivation l’autre reste allumée. Ces règles de circuit ne sont pas des règles à part : elles se déduisent des quatre équations de cette leçon, dans le cas où rien ne varie trop vite.",
+          "figureId": "circuit",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre énoncés, chacun en une phrase",
+          "body": "Les charges créent un champ électrique qui part d’elles ou y aboutit. Du positif vers le négatif, et les lignes ont des extrémités.\n\nIl n’existe pas de charge magnétique. Les lignes du champ magnétique n’ont ni début ni fin : elles se referment. Casser un aimant en deux donne deux aimants complets, jamais un pôle seul.\n\nUn champ magnétique qui varie crée un champ électrique qui tourne. C’est l’induction, et c’est la leçon suivante.\n\nUn courant, ou un champ électrique qui varie, crée un champ magnétique qui tourne. Le second terme est l’ajout de Maxwell, et c’est de lui que sortira la lumière.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que l’ajout de Maxwell a réparé",
+          "body": "Avant lui, la quatrième équation ne portait que le courant. Elle était donc en contradiction avec la conservation de la charge dans un cas simple : un condensateur en train de se charger, où le courant s’arrête aux armatures.\n\nMaxwell ajoute un terme proportionnel à la variation du champ électrique, qui prend le relais du courant entre les armatures. La contradiction disparaît.\n\nL’ajout est motivé par la cohérence, pas par une expérience. Aucune mesure ne le réclamait, et aucune ne pouvait alors le détecter.\n\nEt c’est ce terme — introduit pour réparer une incohérence — qui rend les équations capables de décrire une onde se propageant dans le vide. C’est le plus bel exemple de ce qu’une exigence de cohérence formelle peut produire, et il revient dans l’histoire des sciences plus souvent qu’on ne le croit.",
+          "formula": "un champ électrique qui varie fait le même effet qu’un courant",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que les quatre équations expliquent, en vrac",
+          "body": "Qu’un aimant attire le fer : les équations décrivent le champ, et la matière magnétique y réagit en alignant ses propres moments.\n\nQu’un fil parcouru par un courant dévie une boussole. C’est l’expérience d’Œrsted en 1820, et elle a établi que l’électricité et le magnétisme sont un seul sujet.\n\nQu’un aimant qui tombe dans un tube de cuivre descend lentement, sans frottement : les courants induits dans le cuivre créent un champ qui s’oppose à sa chute.\n\nEt qu’une antenne émette. Une charge accélérée rayonne, et c’est la seule façon connue de produire une onde électromagnétique. Que l’on pense à un émetteur radio, à une lampe, ou à une étoile : c’est toujours une charge qu’on secoue.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cette unification compte",
+          "body": "Avant 1865, l’électricité, le magnétisme et l’optique étaient trois sujets, enseignés par des gens différents, avec des instruments différents.\n\nQuatre équations les ont réduits à un. C’est la première grande unification de la physique, et le modèle de toutes les suivantes : on cherche depuis à faire la même chose avec les autres interactions.\n\nLa deuxième a réussi dans les années soixante, entre l’électromagnétisme et l’interaction faible. La troisième, avec la gravitation, n’a pas abouti.\n\nEt la méthode est restée : chercher ce que deux théories se disent en commun, forcer la cohérence, et accepter les objets nouveaux que cela impose. C’est exactement ce que Maxwell a fait avec son terme supplémentaire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque équation à son énoncé.",
+          "explanation": "Quatre phrases : les charges créent E, pas de charge magnétique, B qui varie crée E, courant ou E qui varie crée B.",
+          "pairs": [
+            {
+              "left": "les charges créent un champ",
+              "right": "les lignes de E ont des extrémités"
+            },
+            {
+              "left": "pas de charge magnétique",
+              "right": "les lignes de B se referment"
+            },
+            {
+              "left": "induction",
+              "right": "un B qui varie crée un E qui tourne"
+            },
+            {
+              "left": "Ampère complété",
+              "right": "un courant ou un E qui varie crée un B qui tourne"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Casser un aimant en deux peut donner un pôle magnétique seul.",
+          "explanation": "Faux. Il n’existe pas de charge magnétique : on obtient deux aimants complets.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle incohérence l’ajout de Maxwell a-t-il réparée ?",
+          "explanation": "La contradiction avec la conservation de la charge dans un condensateur qui se charge, où le courant s’arrête aux armatures.",
+          "options": [
+            {
+              "text": "le cas du condensateur en train de se charger",
+              "correct": true
+            },
+            {
+              "text": "l’absence de charge magnétique"
+            },
+            {
+              "text": "la direction du champ induit"
+            },
+            {
+              "text": "la valeur de la vitesse de la lumière"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui a motivé cet ajout ?",
+          "explanation": "La cohérence, pas une expérience : aucune mesure ne le réclamait, et aucune ne pouvait alors le détecter.",
+          "options": [
+            {
+              "text": "une exigence de cohérence formelle",
+              "correct": true
+            },
+            {
+              "text": "une mesure inexpliquée"
+            },
+            {
+              "text": "l’expérience d’Œrsted"
+            },
+            {
+              "text": "la mesure de la vitesse de la lumière"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un aimant tombe-t-il lentement dans un tube de cuivre ?",
+          "explanation": "Les courants induits dans le cuivre créent un champ qui s’oppose à sa chute. Il n’y a aucun frottement mécanique.",
+          "options": [
+            {
+              "text": "les courants induits créent un champ opposé",
+              "correct": true
+            },
+            {
+              "text": "le cuivre est magnétique"
+            },
+            {
+              "text": "l’air est comprimé sous l’aimant"
+            },
+            {
+              "text": "le cuivre frotte sur l’aimant"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment produit-on une onde électromagnétique ?",
+          "explanation": "En accélérant une charge. C’est la seule façon connue, et c’est la même pour une antenne, une lampe ou une étoile.",
+          "options": [
+            {
+              "text": "en accélérant une charge",
+              "correct": true
+            },
+            {
+              "text": "en chauffant un conducteur"
+            },
+            {
+              "text": "en déplaçant un aimant permanent"
+            },
+            {
+              "text": "en fermant un circuit"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-induction",
+      "title": "L’induction, et ce qu’elle fait tourner",
+      "subtitle": "Le signe de la loi de Lenz est la conservation de l’énergie.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Convertir, et ce que coûte chaque étage",
+          "body": "Les quatre étages affichent chacun leur rendement, et leur produit fait vingt-neuf pour-cent au départ. L’étage « convertir » est le plus mauvais, à quarante pour-cent : c’est là que vit l’induction, et c’est là que presque toute l’électricité du monde est produite.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que Faraday a trouvé en 1831",
+          "body": "Un circuit traversé par un champ magnétique qui varie voit apparaître une tension à ses bornes. Pas besoin de pile : le mouvement suffit.\n\nCe qui compte est la variation, et non la valeur. Un aimant immobile devant une bobine, aussi puissant soit-il, ne produit rien. Le même aimant qu’on retire produit une tension.\n\nTrois façons de faire varier : bouger l’aimant, bouger le circuit, ou déformer le circuit. Les trois marchent, et la tension ne dépend que du taux de variation.\n\nC’est de là que vient la quasi-totalité de l’électricité produite dans le monde. Un barrage, une centrale nucléaire, une éolienne, une centrale à charbon : toutes font tourner un aimant devant des bobines, et la différence est seulement dans ce qui les fait tourner.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi de Lenz, et pourquoi son signe est obligatoire",
+          "body": "Le courant induit s’oppose toujours à la variation qui l’a créé. S’il s’en rapprochait, le résultat serait une machine à énergie gratuite.\n\nL’argument se fait en une phrase. Approcher un aimant d’une bobine crée un courant ; si ce courant attirait l’aimant, il accélérerait, créerait plus de courant, attirerait plus fort. On aurait de l’énergie sans rien fournir.\n\nLe signe n’est donc pas un détail de convention : c’est la conservation de l’énergie, inscrite dans l’équation.\n\nConséquence pratique immédiate : produire de l’électricité demande un effort mécanique. Un générateur qui débite plus est plus dur à tourner, et c’est ce qu’on sent dans les jambes sur un vélo dont la dynamo est branchée.",
+          "formula": "le courant induit s’oppose à sa cause, sinon l’énergie serait gratuite",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un générateur et un moteur sont la même machine",
+          "body": "Faire tourner un aimant devant des bobines produit du courant. Envoyer du courant dans les bobines fait tourner l’aimant. Le même objet, dans les deux sens.\n\nC’est exploité tous les jours : un train électrique qui freine renvoie du courant dans la caténaire, et une voiture électrique recharge sa batterie en descendant un col.\n\nLe rendement d’un bon moteur électrique dépasse quatre-vingt-dix pour-cent dans les deux sens. Un moteur thermique plafonne autour de trente-cinq, et ne sait pas fonctionner à l’envers.\n\nCette réversibilité est l’avantage le plus souvent sous-estimé de la traction électrique. Elle ne vient pas d’une technologie récente : elle est inscrite dans la symétrie des équations de la leçon précédente.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le transformateur, et pourquoi le réseau est alternatif",
+          "body": "Deux bobines sur le même noyau de fer. Le courant de la première crée un champ variable, qui induit une tension dans la seconde. Le rapport des tensions est le rapport des nombres de tours.\n\nCela ne fonctionne qu’en alternatif. Un courant constant crée un champ constant, qui n’induit rien du tout.\n\nC’est la raison de la « guerre des courants » de la fin du dix-neuvième siècle, et la raison pour laquelle l’alternatif l’a gagnée : élever la tension divise les pertes par le carré, et seul l’alternatif permettait de l’élever facilement.\n\nL’électronique de puissance moderne a changé la donne, et le continu revient pour les très longues liaisons sous-marines. Mais le réseau de distribution reste alternatif pour une raison d’il y a cent trente ans, et il le restera longtemps.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui produit une tension induite ?",
+          "explanation": "La variation du champ à travers le circuit, pas sa valeur. Un aimant immobile ne produit rien, aussi puissant soit-il.",
+          "options": [
+            {
+              "text": "la variation du champ, pas sa valeur",
+              "correct": true
+            },
+            {
+              "text": "la valeur du champ"
+            },
+            {
+              "text": "la présence d’un aimant puissant"
+            },
+            {
+              "text": "le nombre de spires seul"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Comment faire varier le flux à travers un circuit ?",
+          "explanation": "Bouger l’aimant, bouger le circuit, ou déformer le circuit. Les trois marchent, et seul le taux de variation compte.",
+          "options": [
+            {
+              "text": "bouger l’aimant",
+              "correct": true
+            },
+            {
+              "text": "bouger le circuit",
+              "correct": true
+            },
+            {
+              "text": "déformer le circuit",
+              "correct": true
+            },
+            {
+              "text": "augmenter la résistance du circuit"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le signe de la loi de Lenz n’est-il pas une convention ?",
+          "explanation": "Parce que le signe inverse donnerait de l’énergie sans rien fournir : c’est la conservation de l’énergie dans l’équation.",
+          "options": [
+            {
+              "text": "le signe inverse donnerait de l’énergie gratuite",
+              "correct": true
+            },
+            {
+              "text": "il dépend du sens d’enroulement"
+            },
+            {
+              "text": "il découle du sens du champ"
+            },
+            {
+              "text": "il a été choisi par Lenz"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un générateur qui débite plus est-il plus dur à tourner ?",
+          "explanation": "Parce que le courant induit s’oppose à la cause : produire de l’électricité demande un effort mécanique équivalent.",
+          "options": [
+            {
+              "text": "le courant induit s’oppose au mouvement",
+              "correct": true
+            },
+            {
+              "text": "les bobines chauffent et se dilatent"
+            },
+            {
+              "text": "l’aimant s’affaiblit"
+            },
+            {
+              "text": "la friction augmente avec la vitesse"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un transformateur ne fonctionne-t-il pas en courant continu ?",
+          "explanation": "Parce qu’un courant constant crée un champ constant, qui n’induit rien du tout.",
+          "options": [
+            {
+              "text": "un champ constant n’induit rien",
+              "correct": true
+            },
+            {
+              "text": "le noyau de fer sature"
+            },
+            {
+              "text": "les bobines chauffent trop"
+            },
+            {
+              "text": "la tension est trop basse"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’alternatif a-t-il gagné la guerre des courants ?",
+          "explanation": "Parce qu’élever la tension divise les pertes par le carré, et que seul l’alternatif permettait de l’élever facilement.",
+          "options": [
+            {
+              "text": "seul l’alternatif permettait d’élever facilement la tension",
+              "correct": true
+            },
+            {
+              "text": "il est moins dangereux"
+            },
+            {
+              "text": "les moteurs n’acceptent que l’alternatif"
+            },
+            {
+              "text": "il voyage plus loin"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-la-lumiere-sort-des-equations",
+      "title": "Défi : la lumière sort des équations",
+      "subtitle": "Deux constantes électriques, et la vitesse de la lumière apparaît.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’une onde fait, et ce qu’elle ne fait pas",
+          "body": "Change le milieu et la fréquence : la longueur d’onde suit, et le point suivi monte et descend sur place. Une onde électromagnétique est de cette famille, à deux différences près — ce qui oscille n’est pas la matière mais les champs, et elle n’a besoin d’aucun milieu. La figure montre un son, et c’est le bon modèle pour tout le reste.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Un seul phénomène, du radio au gamma",
+          "body": "Change la température : le pic se déplace du rouge vers le bleu, et le visible n’est qu’une bande étroite de l’ensemble. Les ondes radio, l’infrarouge, les rayons X et les gamma sont la même chose que cette lumière, à d’autres fréquences.",
+          "figureId": "spectre-etoile",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul que Maxwell a fait",
+          "body": "Les quatre équations contiennent deux constantes mesurées en laboratoire. L’une décrit la force entre deux charges, l’autre la force entre deux courants.\n\nEn combinant les équations pour voir ce qu’elles permettent dans le vide, loin de toute charge, on obtient une équation d’onde. Les champs peuvent se propager seuls : le champ électrique qui varie engendre le magnétique, qui en variant engendre l’électrique.\n\nEt la vitesse de cette onde est fixée. Elle vaut un divisé par la racine du produit des deux constantes, et pas autre chose.\n\nLe nombre sort à environ trois cents millions de mètres par seconde. Or la vitesse de la lumière était mesurée depuis des décennies, et elle valait cela.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que cette coïncidence a signifié",
+          "body": "Deux expériences d’électricité, menées avec des fils et des aimants, sans aucune lumière, donnent la vitesse de la lumière.\n\nMaxwell écrit en 1862 qu’on peut à peine éviter la conclusion : la lumière est une onde électromagnétique. Il ne le prouve pas, il l’énonce comme la seule lecture possible du chiffre.\n\nLa confirmation vient en 1887 : Hertz produit et détecte des ondes de même nature à une fréquence tout autre, et montre qu’elles se réfléchissent, se réfractent et interfèrent comme la lumière.\n\nC’est l’un des épisodes où une théorie a devancé l’expérience de vingt-cinq ans. Et c’est le modèle de la façon dont la physique théorique prétend fonctionner depuis : non pas décrire ce qu’on a vu, mais dire ce qu’on devrait voir.",
+          "formula": "c = 1 sur la racine du produit des deux constantes électriques",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le problème que cela a créé",
+          "body": "Les équations donnent une vitesse, sans dire par rapport à quoi. Toutes les ondes connues alors avaient un milieu, et leur vitesse se mesurait par rapport à lui.\n\nOn a donc postulé un milieu : l’éther, emplissant tout l’espace. Et l’on s’est mis à chercher le mouvement de la Terre par rapport à lui.\n\nL’expérience de Michelson et Morley, en 1887, n’a rien trouvé. Elle était assez précise pour détecter un centième de la vitesse attendue, et le résultat était nul.\n\nDeux issues étaient ouvertes : sauver l’éther, ou accepter que la lumière ait la même vitesse pour tous les observateurs. Einstein a pris la seconde en 1905, et c’est la relativité restreinte. Le problème est donc né ici, dans cette leçon, et il a mis dix-huit ans à être résolu.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un champ n’est pas une commodité : il porte de l’énergie, et le délai entre la cause et l’effet le démontre. Le flux à travers une surface fermée ne dépend que de la charge enfermée, et c’est la cage de Faraday.\n\nQuatre phrases suffisent. Les charges créent un champ, il n’y a pas de charge magnétique, un champ magnétique qui varie crée un champ électrique qui tourne, et réciproquement.\n\nLe signe de la loi de Lenz est la conservation de l’énergie. Un générateur et un moteur sont la même machine, et le transformateur n’existe qu’en alternatif.\n\nEt la vitesse de la lumière sort de deux constantes électriques. Cette coïncidence a unifié l’optique et l’électricité, et posé le problème que la relativité a dû résoudre.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment les champs se propagent-ils seuls dans le vide ?",
+          "explanation": "Le champ électrique qui varie engendre le magnétique, qui en variant engendre l’électrique. Aucun milieu n’est nécessaire.",
+          "options": [
+            {
+              "text": "chacun engendre l’autre en variant",
+              "correct": true
+            },
+            {
+              "text": "ils sont portés par l’éther"
+            },
+            {
+              "text": "ils suivent les lignes de charge"
+            },
+            {
+              "text": "ils sont poussés par la source"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle vitesse les deux constantes électriques donnent-elles, en millions de mètres par seconde ?",
+          "explanation": "Environ 300 millions : un divisé par la racine du produit des deux constantes, et c’était la vitesse de la lumière mesurée.",
+          "min": 1,
+          "max": 1000,
+          "answer": 300,
+          "tolerance": 20,
+          "unit": "millions de m/s",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Ce que Maxwell a conclu en 1862, l’avait-il prouvé ?",
+          "explanation": "Non : il l’a énoncé comme la seule lecture possible du chiffre. La confirmation est venue de Hertz, vingt-cinq ans plus tard.",
+          "options": [
+            {
+              "text": "non, il l’a énoncé comme la seule lecture du chiffre",
+              "correct": true
+            },
+            {
+              "text": "oui, par le calcul"
+            },
+            {
+              "text": "oui, par une expérience d’optique"
+            },
+            {
+              "text": "oui, en mesurant la vitesse de la lumière"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a fait Hertz en 1887 ?",
+          "explanation": "Il a produit et détecté des ondes de même nature à une autre fréquence, et montré qu’elles se comportent comme la lumière.",
+          "options": [
+            {
+              "text": "produire et détecter des ondes de même nature",
+              "correct": true
+            },
+            {
+              "text": "mesurer la vitesse de la lumière"
+            },
+            {
+              "text": "détecter l’éther"
+            },
+            {
+              "text": "formuler les quatre équations"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a trouvé l’expérience de Michelson et Morley ?",
+          "explanation": "Rien : un résultat nul, alors qu’elle était assez précise pour détecter un centième de la vitesse attendue.",
+          "options": [
+            {
+              "text": "rien, un résultat nul",
+              "correct": true
+            },
+            {
+              "text": "le mouvement de la Terre dans l’éther"
+            },
+            {
+              "text": "une variation de la vitesse de la lumière"
+            },
+            {
+              "text": "la densité de l’éther"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle issue Einstein a-t-il prise en 1905 ?",
+          "explanation": "Accepter que la lumière ait la même vitesse pour tous les observateurs, et abandonner l’éther. C’est la relativité restreinte.",
+          "options": [
+            {
+              "text": "la même vitesse de la lumière pour tous les observateurs",
+              "correct": true
+            },
+            {
+              "text": "un éther entraîné par la Terre"
+            },
+            {
+              "text": "une correction des équations de Maxwell"
+            },
+            {
+              "text": "une erreur de mesure de Michelson"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
