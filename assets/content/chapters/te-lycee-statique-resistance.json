@@ -1,0 +1,548 @@
+{
+  "chapter": "technologie-lycee-statique-et-resistance",
+  "lessons": [
+    {
+      "id": "masse-poids-et-force",
+      "title": "Masse, poids, et ce qu’une structure porte",
+      "subtitle": "Deux grandeurs, deux unités, et une confusion qui coûte cher.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le même sac sur quatre astres",
+          "body": "Choisis l’astre, règle la masse du sac de 1 à 20 kg. Le sac ne change jamais : même taille, même contenu. La flèche du poids, elle, change d’un facteur quinze entre la Lune et Jupiter. Regarde ce qui bouge et ce qui ne bouge pas.",
+          "figureId": "poids-astres",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le poids se calcule, la masse se pèse",
+          "body": "La masse est la quantité de matière, en kilogrammes. Elle ne dépend que de l’objet.\n\nLe poids est la force que la pesanteur exerce sur cette masse, en newtons. Il dépend du lieu.\n\nUn sac de 10 kg pèse 98 N sur Terre, 16 N sur la Lune et 248 N sur Jupiter. C’est le même sac.\n\nUne structure ne porte jamais des kilogrammes : elle porte des newtons. L’unité dit déjà de quoi on parle.",
+          "formula": "P = m × g, avec g = 9,8 N/kg sur Terre",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi la confusion n’est pas innocente",
+          "body": "Dire « cette poutre supporte 500 kilos » est courant et imprécis : elle supporte environ 4 900 N, et ce nombre est le seul qui entre dans un calcul.\n\nTant qu’on reste sur Terre, le facteur 9,8 est constant et l’abus de langage ne fait rien perdre.\n\nIl devient une faute dès qu’on change de lieu, et les ingénieurs qui envoient du matériel sur Mars le savent : la même structure y porte deux fois et demie plus de masse pour la même force.\n\nUne unité n’est pas une décoration en fin de ligne. C’est ce qui dit si le nombre a un sens.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Les actions mécaniques, et leur représentation",
+          "body": "Une force se décrit par quatre choses : son point d’application, sa direction, son sens et son intensité.\n\nOn la dessine par une flèche, dont la longueur est proportionnelle à l’intensité. C’est exactement ce que fait la figure quand on pousse le curseur.\n\nOmettre l’un des quatre rend la description inutilisable : une force de 100 N appliquée au milieu d’une poutre et une force de 100 N appliquée à son extrémité ne produisent pas le même effet.\n\nDans un calcul de structure, c’est le point d’application qui est le plus souvent oublié, et le plus souvent décisif.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les trois conditions de l’équilibre",
+          "body": "Un solide est en équilibre si la somme des forces est nulle, et si la somme de leurs moments l’est aussi.\n\nLa première condition empêche la translation : sans elle, l’objet part.\n\nLa seconde empêche la rotation : deux forces égales et opposées appliquées à deux endroits différents font tourner, et leur somme est pourtant nulle.\n\nC’est pour cela qu’un calcul de forces seul ne suffit jamais. Un objet peut être parfaitement équilibré en forces et basculer quand même.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le poids, en newtons, d’un sac de 10 kg sur Terre ?",
+          "explanation": "P = m × g = 10 × 9,8 = 98 N. Le kilogramme mesure la masse, le newton mesure la force.",
+          "answer": 98,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et sur Jupiter, où la pesanteur vaut 24,8 N/kg ?",
+          "explanation": "10 × 24,8 = 248 N, soit deux fois et demie le poids terrestre. Le sac, lui, n’a pas changé.",
+          "min": 0,
+          "max": 500,
+          "answer": 248,
+          "tolerance": 10,
+          "unit": "N",
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur dépend-elle du lieu, ou non ?",
+          "explanation": "La masse est à l’objet, le poids est au lieu. La pesanteur est une propriété de l’astre.",
+          "categories": [
+            "dépend du lieu",
+            "ne dépend pas du lieu"
+          ],
+          "items": [
+            {
+              "text": "le poids d’un sac",
+              "category": 0
+            },
+            {
+              "text": "la pesanteur g",
+              "category": 0
+            },
+            {
+              "text": "la masse d’un sac",
+              "category": 1
+            },
+            {
+              "text": "le nombre d’objets dans le sac",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles informations faut-il pour décrire une force ?",
+          "explanation": "Point d’application, direction, sens et intensité. Le point d’application est le plus souvent oublié, et souvent décisif.",
+          "options": [
+            {
+              "text": "le point d’application",
+              "correct": true
+            },
+            {
+              "text": "la direction",
+              "correct": true
+            },
+            {
+              "text": "le sens",
+              "correct": true
+            },
+            {
+              "text": "l’intensité",
+              "correct": true
+            },
+            {
+              "text": "la masse du support"
+            },
+            {
+              "text": "la couleur de la flèche"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si la somme des forces est nulle, le solide est en équilibre.",
+          "explanation": "Faux. Il faut aussi que la somme des moments soit nulle : deux forces égales et opposées appliquées à deux endroits différents font tourner.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète les unités.",
+          "explanation": "La masse se mesure en kilogrammes, le poids en newtons, et la pesanteur en newtons par kilogramme.",
+          "template": "La masse s’exprime en ___, le poids en ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "kilogrammes",
+                "kilogramme",
+                "kg"
+              ]
+            },
+            {
+              "accepted": [
+                "newtons",
+                "newton",
+                "N"
+              ]
+            }
+          ],
+          "hint": "Une des deux unités porte le nom d’un physicien.",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "jusqu-ou-ca-tient",
+      "title": "Jusqu’où ça tient",
+      "subtitle": "La charge de rupture ne s’annonce pas : elle se cherche.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un fil, une masse, et le moment où ça cède",
+          "body": "Pousse le curseur gramme par gramme. Le fil s’allonge à mesure que la tension monte, et à un moment précis il cède. Cherche la valeur de rupture en approchant des deux côtés : elle n’est écrite nulle part dans ce cours.",
+          "figureId": "fil-qui-casse",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que l’allongement raconte avant la rupture",
+          "body": "Tant qu’il tient, le fil s’allonge proportionnellement à la tension. C’est le domaine élastique : relâchez, il reprend sa longueur.\n\nCette proportionnalité est la loi de Hooke, et elle est ce qui permet de voir venir. Une pièce qui travaille s’allonge, et la mesure de cet allongement est le principal outil de surveillance des structures réelles.\n\nAu-delà d’un seuil, la proportionnalité cesse : le matériau entre en domaine plastique, se déforme sans revenir, puis rompt.\n\nLe fil de la figure casse à 50 newtons, soit environ 5,1 kg sur Terre.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La même rupture, ailleurs",
+          "body": "Le fil cède à 50 N, quel que soit le lieu : c’est une propriété du fil, pas de la planète.\n\nSur Terre, cela correspond à 50 / 9,8, soit 5,1 kg. Le curseur de la figure atteint 10 kg : la rupture tombe au milieu de la course.\n\nSur la Lune, il faudrait 50 / 1,6, soit 31 kg, bien au-delà du curseur. Le même fil y porterait six fois plus de bagages.\n\nC’est pour cela qu’une charge admissible s’exprime en newtons dans une notice sérieuse, et en kilogrammes seulement quand on sait qu’on reste sur Terre.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Essayer n’est pas toujours possible",
+          "body": "Dans la figure, on trouve la rupture en poussant jusqu’à l’obtenir. C’est la bonne méthode pour un fil, et elle est interdite pour un pont.\n\nLes essais destructifs se font donc sur des éprouvettes : des échantillons normalisés du matériau, tirés jusqu’à la rupture sur une machine de traction.\n\nOn en tire une contrainte de rupture, propre au matériau, dont on déduit ensuite ce que tiendra la pièce réelle, sans jamais la casser.\n\nToute la résistance des matériaux est née de cette substitution : casser un petit morceau pour ne pas casser l’ouvrage.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Trois mots à ne pas confondre",
+          "body": "La charge de rupture est la force qui casse une pièce donnée, en newtons. Elle dépend de la pièce.\n\nLa contrainte de rupture est la force par unité de section, en mégapascals. Elle dépend du matériau seul, et c’est ce qu’on trouve dans les tables.\n\nLa charge admissible est ce qu’on s’autorise en service, bien en dessous de la rupture.\n\nUn calcul qui mélange les trois donne un nombre juste au mauvais endroit, ce qui est pire qu’une erreur visible.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Le fil casse à 50 N. À quelle masse cède-t-il sur Terre ?",
+          "explanation": "50 / 9,8 = 5,1 kg. La rupture est une propriété du fil ; la masse correspondante dépend de la pesanteur.",
+          "min": 0,
+          "max": 10,
+          "answer": 5.1,
+          "tolerance": 0.3,
+          "unit": "kg",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et sur la Lune, où g vaut 1,6 N/kg ?",
+          "explanation": "50 / 1,6 = 31 kg, soit six fois plus. Le fil n’a pas changé : la pesanteur a changé.",
+          "min": 0,
+          "max": 100,
+          "answer": 31,
+          "tolerance": 3,
+          "unit": "kg",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie que le fil est dans son domaine élastique ?",
+          "explanation": "Qu’il reprend sa longueur quand on relâche, et que son allongement est proportionnel à la tension. C’est la loi de Hooke.",
+          "options": [
+            {
+              "text": "il reprend sa longueur quand on relâche",
+              "correct": true
+            },
+            {
+              "text": "il ne s’allonge pas du tout"
+            },
+            {
+              "text": "il est sur le point de casser"
+            },
+            {
+              "text": "il s’allonge sans limite"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à ce dont elle dépend.",
+          "explanation": "La charge de rupture dépend de la pièce, la contrainte de rupture du matériau seul, la charge admissible du choix de l’ingénieur.",
+          "pairs": [
+            {
+              "left": "charge de rupture, en N",
+              "right": "la pièce précise"
+            },
+            {
+              "left": "contrainte de rupture, en MPa",
+              "right": "le matériau seul"
+            },
+            {
+              "left": "charge admissible, en N",
+              "right": "le coefficient retenu"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment connaît-on la résistance d’un pont sans le casser ?",
+          "explanation": "En cassant des éprouvettes normalisées du matériau, et en déduisant ce que tiendra la pièce réelle.",
+          "options": [
+            {
+              "text": "on casse des éprouvettes du matériau",
+              "correct": true
+            },
+            {
+              "text": "on le charge jusqu’à la rupture"
+            },
+            {
+              "text": "on se fie à l’expérience du constructeur"
+            },
+            {
+              "text": "on ne peut pas la connaître"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La charge de rupture du fil dépend de la planète où il se trouve.",
+          "explanation": "Faux. Elle vaut 50 N partout : c’est une propriété du fil. Seule la masse correspondante change.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "contrainte-et-echelle",
+      "title": "La contrainte, et pourquoi un géant s’effondre",
+      "subtitle": "Agrandir une structure ne la rend pas plus solide.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Changer de taille sans changer de forme",
+          "body": "Fais glisser la parallèle : les six longueurs changent et les trois rapports restent égaux. Passer de la maquette à l’ouvrage est exactement cette opération. La leçon montre ce qu’elle garde, et ce qu’elle ne garde pas.",
+          "figureId": "thales",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La contrainte : une force rapportée à une section",
+          "body": "Deux câbles du même acier, l’un de 1 mm² et l’autre de 10 mm², ne portent pas la même force — mais ils cèdent à la même contrainte.\n\nLa contrainte est la force divisée par la section. Elle s’exprime en pascals, et plus commodément en mégapascals : un mégapascal est un newton par millimètre carré.\n\nUn acier courant rompt vers 400 MPa. Un câble de 1 mm² de cet acier casse donc vers 400 N, et un câble de 10 mm² vers 4 000 N.\n\nC’est ce rapport qui permet de lire une table une fois et de calculer toutes les sections.",
+          "formula": "contrainte = force ÷ section",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Des faces, des arêtes, un volume",
+          "body": "Choisis un solide et incline-le pour le voir en perspective. Compte ses faces et ses arêtes, puis garde en tête ce que la leçon va utiliser : une longueur doublée multiplie chaque face par quatre et le volume par huit. Ces trois exposants différents sont toute la leçon.",
+          "figureId": "solides-perspective",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "La loi du carré-cube, en trois lignes",
+          "body": "Doublons toutes les dimensions d’une structure.\n\nLes sections, qui sont des surfaces, sont multipliées par quatre. Les volumes, donc les masses et les poids, sont multipliés par huit.\n\nLa contrainte, qui est le poids divisé par la section, est donc multipliée par deux : la structure agrandie travaille deux fois plus près de sa rupture, avec le même matériau et la même forme.\n\nAgrandir fragilise. Ce n’est pas un effet de matériau, c’est de la géométrie, et aucun acier n’y échappe.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi les géants n’existent pas",
+          "body": "Un homme de dix mètres, dix fois plus grand qu’un homme d’un mètre quatre-vingts à l’échelle, aurait une section de fémur trente fois plus grande et un poids cent soixante-dix fois plus grand.\n\nLa contrainte dans son os serait donc cinq à six fois celle d’un homme ordinaire, et l’os humain n’a pas cette marge.\n\nGalilée l’écrit en 1638, dans le premier texte de résistance des matériaux jamais publié, et il en tire la bonne conclusion : les grands animaux n’ont pas la forme des petits agrandis. L’éléphant a des pattes épaisses, et ce n’est pas un hasard d’évolution.\n\nLa même loi explique pourquoi une maquette de pont qui tient ne garantit rien, et pourquoi un insecte survit à une chute que rien ne nous ferait survivre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un acier rompt à 400 MPa. À quelle force casse un câble de 1 mm² de cet acier ?",
+          "explanation": "Un mégapascal est un newton par millimètre carré : 400 MPa × 1 mm² = 400 N.",
+          "answer": 400,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et un câble de 10 mm² du même acier ?",
+          "explanation": "400 × 10 = 4 000 N. La contrainte de rupture est la même ; c’est la section qui change.",
+          "answer": 4000,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Si on double toutes les dimensions d’une structure, par combien la contrainte est-elle multipliée ?",
+          "explanation": "Par deux : le poids est multiplié par huit, la section par quatre, et 8 divisé par 4 fait 2.",
+          "options": [
+            {
+              "text": "par deux",
+              "correct": true
+            },
+            {
+              "text": "elle ne change pas"
+            },
+            {
+              "text": "par quatre"
+            },
+            {
+              "text": "par huit"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Si on double une longueur, cette grandeur est multipliée par combien ?",
+          "explanation": "Les longueurs par 2, les surfaces par 4, les volumes et les poids par 8. Ces trois exposants font toute la loi du carré-cube.",
+          "categories": [
+            "par 4",
+            "par 8"
+          ],
+          "items": [
+            {
+              "text": "la section d’un câble",
+              "category": 0
+            },
+            {
+              "text": "la surface d’une face",
+              "category": 0
+            },
+            {
+              "text": "le volume",
+              "category": 1
+            },
+            {
+              "text": "le poids",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’en a conclu Galilée en 1638 ?",
+          "explanation": "Que les grands animaux n’ont pas la forme des petits agrandis. L’éléphant a des pattes épaisses, et ce n’est pas un hasard.",
+          "options": [
+            {
+              "text": "les grands animaux n’ont pas la forme des petits agrandis",
+              "correct": true
+            },
+            {
+              "text": "les géants sont possibles avec de l’acier"
+            },
+            {
+              "text": "la résistance ne dépend pas de la taille"
+            },
+            {
+              "text": "les maquettes prédisent tout"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une maquette de pont qui tient prouve que le pont tiendra.",
+          "explanation": "Faux. En agrandissant, la contrainte augmente proportionnellement à l’échelle. La maquette travaille bien plus loin de sa rupture que l’ouvrage.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-dimensionner-une-piece",
+      "title": "Défi : dimensionner une pièce",
+      "subtitle": "Le coefficient de sécurité n’est pas de la prudence : c’est un calcul.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Revenir au fil, pour le dimensionner",
+          "body": "Retrouve la rupture à 50 N, puis demande-toi ce que tu autoriserais en service. Pas 49 N : la leçon va dire pourquoi, et combien. Repousse le curseur jusqu’à la valeur que tu auras calculée, et vérifie qu’il reste de la marge visible.",
+          "figureId": "fil-qui-casse",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, en quatre pas",
+          "body": "Premier pas : recenser les charges. Le poids propre, la charge utile, et les charges accidentelles — vent, neige, choc.\n\nDeuxième pas : lire la contrainte de rupture du matériau dans une table.\n\nTroisième pas : choisir un coefficient de sécurité, et diviser la contrainte de rupture par lui. On obtient la contrainte admissible.\n\nQuatrième pas : la section nécessaire est la force divisée par cette contrainte admissible. On arrondit ensuite à une section du commerce, toujours vers le haut.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un câble de levage, de bout en bout",
+          "body": "On veut lever 200 kg, soit 1 960 N. Le câble est en acier de 400 MPa de rupture, et le levage de personnes impose un coefficient de 5.\n\nContrainte admissible : 400 / 5 = 80 MPa.\n\nSection nécessaire : 1 960 / 80 = 24,5 mm². On prendra donc un câble de 25 mm², disponible au catalogue.\n\nVérification : un câble de 25 mm² de cet acier rompt à 10 000 N, soit cinq fois la charge. Le compte est bon, et c’est la vérification qui le dit, pas la confiance.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le coefficient couvre vraiment",
+          "body": "Il ne couvre pas l’imprudence : il couvre l’ignorance quantifiée.\n\nLa contrainte de rupture d’un lot d’acier varie d’un pour-cent à l’autre. La section réelle d’une pièce usinée s’écarte de la cote. La charge annoncée est dépassée un jour sur dix. Le matériau fatigue sous les cycles répétés.\n\nChacune de ces incertitudes est petite, et elles se multiplient. Un coefficient de 5 n’est donc pas cinq fois trop prudent : il absorbe quatre ou cinq facteurs de 1,2 à 1,5.\n\nLes normes fixent ces coefficients, et elles le font à partir d’accidents. Chaque valeur du tableau a une histoire.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une structure porte des newtons, pas des kilogrammes, et l’unité le dit.\n\nUn matériau se caractérise par une contrainte, en MPa, qui ne dépend pas de la pièce. Une pièce se caractérise par une charge, en N, qui en dépend.\n\nAgrandir fragilise, par pure géométrie, et aucun matériau n’y échappe.\n\nEt un dimensionnement finit par une vérification chiffrée. Sentir qu’une pièce est assez grosse n’a jamais empêché un effondrement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les quatre pas du dimensionnement dans l’ordre.",
+          "explanation": "Recenser les charges, lire la contrainte de rupture, diviser par le coefficient, puis en déduire la section et arrondir vers le haut.",
+          "items": [
+            "recenser les charges, y compris accidentelles",
+            "lire la contrainte de rupture du matériau",
+            "diviser par le coefficient de sécurité",
+            "calculer la section et arrondir au-dessus"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Acier de 400 MPa, coefficient 5. Quelle contrainte admissible, en MPa ?",
+          "explanation": "400 / 5 = 80 MPa. C’est cette valeur, et non la rupture, qui entre dans le calcul de section.",
+          "answer": 80,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Pour lever 1 960 N à 80 MPa admissibles, quelle section faut-il, en mm² ?",
+          "explanation": "1 960 / 80 = 24,5 mm². On prendra 25 mm², la section du commerce juste au-dessus.",
+          "min": 0,
+          "max": 100,
+          "answer": 24.5,
+          "tolerance": 1.5,
+          "unit": "mm²",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que couvre un coefficient de sécurité ?",
+          "explanation": "Les incertitudes quantifiées : dispersion du matériau, écarts d’usinage, dépassements de charge, fatigue. Chacune est petite, et elles se multiplient.",
+          "options": [
+            {
+              "text": "les incertitudes sur le matériau, la cote, la charge et la fatigue",
+              "correct": true
+            },
+            {
+              "text": "les erreurs de calcul de l’ingénieur"
+            },
+            {
+              "text": "une marge arbitraire par prudence"
+            },
+            {
+              "text": "le coût du matériau"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On arrondit la section calculée à la valeur du commerce la plus proche.",
+          "explanation": "Faux : on arrondit toujours vers le haut. Arrondir vers le bas entame la marge qu’on vient de calculer.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où viennent les coefficients de sécurité des normes ?",
+          "explanation": "D’accidents. Chaque valeur du tableau a une histoire, et c’est pourquoi on ne les choisit pas au ressenti.",
+          "options": [
+            {
+              "text": "d’accidents passés, inscrits dans les normes",
+              "correct": true
+            },
+            {
+              "text": "de calculs théoriques purs"
+            },
+            {
+              "text": "du prix des matériaux"
+            },
+            {
+              "text": "de la tradition des ateliers"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "chapter": "technologie-lycee-electronique-et-signal",
+  "lessons": [
+    {
+      "id": "tension-courant-et-deux-branchements",
+      "title": "Tension, courant, et deux façons de brancher",
+      "subtitle": "La différence entre série et dérivation se voit en dévissant une lampe.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux lampes, et une lampe qu’on dévisse",
+          "body": "Ferme l’interrupteur, puis passe en série et dévisse la lampe 1. L’autre s’éteint. Repasse en dérivation et refais le même geste : elle reste allumée. Tout le chapitre tient dans la différence entre ces deux observations.",
+          "figureId": "circuit",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Trois grandeurs, et la loi qui les relie",
+          "body": "La tension se mesure entre deux points, en volts : c’est une différence, et parler de « la tension en un point » n’a pas de sens.\n\nL’intensité se mesure en un point d’une branche, en ampères : c’est un débit de charges.\n\nLa résistance, en ohms, est le rapport des deux. C’est la loi d’Ohm, et elle vaut pour un conducteur ordinaire à température constante — pas pour une diode, ni pour une lampe chaude.\n\nLe voltmètre se branche donc en parallèle, aux bornes de ce qu’on mesure, et l’ampèremètre en série, dans la branche. Les inverser détruit l’un des deux.",
+          "formula": "U = R × I",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chaque branchement partage",
+          "body": "En série, il n’y a qu’un chemin : l’intensité est la même partout, et les tensions s’additionnent. Deux lampes identiques sous 12 V reçoivent 6 V chacune, donc éclairent faiblement.\n\nEn dérivation, chaque lampe a son chemin : la tension est la même pour toutes, et les intensités s’additionnent. Les deux lampes reçoivent 12 V et éclairent normalement.\n\nD’où la règle de l’habitation : tout est en dérivation, pour que chaque appareil reçoive la tension du réseau et que l’éteindre n’éteigne pas les autres.\n\nEt d’où le défaut des vieilles guirlandes, montées en série : une ampoule grillée éteignait toute la guirlande.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les résistances, et un piège de calcul",
+          "body": "En série, les résistances s’additionnent : deux résistances de 100 Ω en série en font 200.\n\nEn dérivation, ce sont les inverses qui s’additionnent : deux résistances de 100 Ω en dérivation en font 50, soit moins que chacune.\n\nCe résultat surprend, et il est logique : ajouter un chemin ne peut que faciliter le passage du courant.\n\nLe piège est d’écrire que deux résistances en dérivation font 200 Ω parce qu’on additionne d’habitude. Le contrôle est immédiat : la résistance d’un ensemble en dérivation est toujours plus petite que la plus petite des branches.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le court-circuit, et pourquoi il chauffe",
+          "body": "Un court-circuit est un chemin de résistance presque nulle offert au courant.\n\nLa loi d’Ohm dit alors que l’intensité devient énorme, et l’effet Joule que la puissance dissipée vaut R × I². Le carré fait le reste : ça fond.\n\nC’est contre cela que servent fusibles et disjoncteurs, qui coupent avant que le fil ne chauffe. Ils protègent l’installation, pas l’appareil.\n\nEt c’est pour cela qu’un ampèremètre branché en parallèle est détruit : il a une résistance presque nulle, donc le brancher ainsi crée exactement un court-circuit.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "En série, on dévisse une lampe. Que fait l’autre ?",
+          "explanation": "Elle s’éteint : le courant n’a qu’un chemin, et il est coupé.",
+          "options": [
+            {
+              "text": "elle s’éteint",
+              "correct": true
+            },
+            {
+              "text": "elle reste allumée"
+            },
+            {
+              "text": "elle éclaire plus fort"
+            },
+            {
+              "text": "elle grille"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Deux lampes identiques en série sous 12 V. Quelle tension reçoit chacune, en volts ?",
+          "explanation": "6 V : en série les tensions s’additionnent, et elles se partagent également entre deux lampes identiques.",
+          "answer": 6,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Deux résistances de 100 Ω en dérivation : quelle résistance équivalente, en ohms ?",
+          "explanation": "50 Ω. En dérivation ce sont les inverses qui s’additionnent, et ajouter un chemin facilite le passage.",
+          "answer": 50,
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "En série ou en dérivation ?",
+          "explanation": "En série l’intensité est commune et les tensions s’additionnent ; en dérivation la tension est commune et les intensités s’additionnent.",
+          "categories": [
+            "en série",
+            "en dérivation"
+          ],
+          "items": [
+            {
+              "text": "la même intensité partout",
+              "category": 0
+            },
+            {
+              "text": "les tensions s’additionnent",
+              "category": 0
+            },
+            {
+              "text": "la même tension partout",
+              "category": 1
+            },
+            {
+              "text": "les intensités s’additionnent",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un ampèremètre se branche aux bornes de ce qu’on mesure.",
+          "explanation": "Faux. Il se branche en série, dans la branche. Aux bornes, sa résistance presque nulle crée un court-circuit qui le détruit.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que protège un disjoncteur ?",
+          "explanation": "L’installation, en coupant avant que les fils ne chauffent. Il ne protège pas l’appareil branché.",
+          "options": [
+            {
+              "text": "l’installation, pas l’appareil",
+              "correct": true
+            },
+            {
+              "text": "l’appareil branché"
+            },
+            {
+              "text": "la personne qui touche le fil"
+            },
+            {
+              "text": "le compteur électrique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "du-capteur-a-l-actionneur",
+      "title": "Du capteur à l’actionneur",
+      "subtitle": "Trois mots qu’on retient sans les comprendre, et un thermostat qui les relie.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un thermostat complet, du capteur au radiateur",
+          "body": "Deux curseurs, de 10 à 28 degrés : la température mesurée et le seuil. Règle-les séparément et regarde la décision se prendre. Mets-les exactement égaux pour voir ce que le programme décide au cas limite.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois maillons, et qui fait quoi",
+          "body": "Acquérir : le capteur traduit une grandeur physique en signal électrique. Une thermistance change de résistance avec la température, et rien d’autre.\n\nTraiter : le programme compare, décide, et il est le seul à décider. Le capteur ne sait pas s’il fait froid ; il sait quelle résistance il a.\n\nAgir : l’actionneur convertit l’ordre en effet physique. Un relais ferme le circuit du radiateur.\n\nC’est le point que la figure rend visible : on peut bouger le seuil sans toucher à la température, et la décision change. Le monde n’a pas bougé — le programme, si.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que mesure vraiment un capteur",
+          "body": "Un capteur de température mesure une résistance. Un capteur de distance à ultrasons mesure une durée. Un capteur de lumière mesure un courant.\n\nAucun ne mesure la grandeur qui nous intéresse : tous mesurent autre chose, et c’est un calcul qui fait la traduction.\n\nD’où l’étalonnage : il faut avoir relevé, une fois, la correspondance entre la grandeur mesurée et la grandeur physique, sans quoi le nombre affiché est faux de façon invisible.\n\nUn capteur mal étalonné ne tombe jamais en panne. Il donne des valeurs plausibles et fausses, ce qui est bien plus difficile à repérer qu’une panne franche.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le cas limite, et la stricte inégalité",
+          "body": "Dans la figure, à température égale au seuil, le radiateur reste éteint. La condition est stricte.\n\nCe n’est pas un détail de programmation : c’est un choix, et l’autre choix était possible. Il suffit d’un signe pour passer de l’un à l’autre.\n\nLes cas limites sont l’endroit où les programmes se trompent le plus souvent, et ils sont aussi les plus faciles à tester : il n’y en a que quelques-uns.\n\nUn bon jeu d’essais contient toujours la valeur juste en dessous du seuil, la valeur du seuil, et la valeur juste au-dessus.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi séparer les deux chaînes",
+          "body": "La chaîne d’information décide, la chaîne d’énergie exécute.\n\nCette séparation permet de changer le comportement sans toucher au matériel : le même thermostat, reprogrammé, peut chauffer la nuit et pas le jour.\n\nElle permet aussi l’inverse : changer le radiateur sans reprogrammer quoi que ce soit.\n\nC’est la raison pour laquelle tout objet technique moderne est construit ainsi, et pourquoi une mise à jour logicielle peut changer le comportement d’une voiture déjà vendue.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chaîne d’information dans l’ordre.",
+          "explanation": "Le capteur acquiert, le programme traite et décide, l’actionneur agit sur le monde.",
+          "items": [
+            "le capteur traduit une grandeur physique en signal",
+            "le programme compare au seuil",
+            "le programme décide d’allumer ou non",
+            "l’actionneur ferme le circuit du radiateur"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure vraiment une thermistance ?",
+          "explanation": "Sa propre résistance, qui change avec la température. C’est un calcul qui fait la traduction.",
+          "options": [
+            {
+              "text": "sa propre résistance",
+              "correct": true
+            },
+            {
+              "text": "la température en degrés"
+            },
+            {
+              "text": "la chaleur reçue en joules"
+            },
+            {
+              "text": "la différence avec le seuil"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui prend la décision d’allumer le radiateur ?",
+          "explanation": "Le programme. Le capteur ne sait pas s’il fait froid, et c’est pourquoi déplacer le seuil change la décision sans que le monde ait bougé.",
+          "options": [
+            {
+              "text": "le programme",
+              "correct": true
+            },
+            {
+              "text": "le capteur"
+            },
+            {
+              "text": "l’actionneur"
+            },
+            {
+              "text": "le relais"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un capteur mal étalonné se repère facilement.",
+          "explanation": "Faux. Il ne tombe pas en panne : il donne des valeurs plausibles et fausses, plus difficiles à repérer qu’une panne franche.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles valeurs un bon jeu d’essais contient-il autour d’un seuil ?",
+          "explanation": "Juste en dessous, exactement le seuil, et juste au-dessus. Les cas limites sont rares et c’est là que les programmes se trompent.",
+          "options": [
+            {
+              "text": "juste en dessous du seuil",
+              "correct": true
+            },
+            {
+              "text": "exactement le seuil",
+              "correct": true
+            },
+            {
+              "text": "juste au-dessus du seuil",
+              "correct": true
+            },
+            {
+              "text": "une valeur très éloignée"
+            },
+            {
+              "text": "uniquement le seuil"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’autorise la séparation des deux chaînes ?",
+          "explanation": "Changer le comportement sans toucher au matériel, et changer le matériel sans reprogrammer. D’où les mises à jour logicielles d’objets déjà vendus.",
+          "options": [
+            {
+              "text": "changer l’un sans toucher à l’autre",
+              "correct": true
+            },
+            {
+              "text": "économiser de l’énergie"
+            },
+            {
+              "text": "supprimer le capteur"
+            },
+            {
+              "text": "augmenter la puissance"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "numeriser-un-signal",
+      "title": "Numériser un signal",
+      "subtitle": "Découper le temps, puis découper les valeurs.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le signal continu qu’on va découper",
+          "body": "Change le milieu et la fréquence, de 170 à 2 000 hertz. La courbe du bas est une grandeur qui varie continûment : à chaque instant elle a une valeur, et il y a une infinité d’instants. C’est cela qu’il va falloir ramener à des nombres.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Échantillonner : découper le temps",
+          "body": "On relève la valeur du signal à intervalles réguliers, et on jette le reste. Le nombre de relevés par seconde est la fréquence d’échantillonnage.\n\nCombien en faut-il ? Le théorème de Shannon répond : plus du double de la plus haute fréquence présente dans le signal.\n\nPour le son de la figure, qui monte à 2 000 Hz, il faut donc plus de 4 000 relevés par seconde.\n\nEn dessous, le signal reconstruit n’est pas dégradé : il est faux. Une fréquence trop haute réapparaît sous une fréquence plus basse qui n’existait pas, et c’est le repliement.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Quantifier : découper les valeurs",
+          "body": "Huit interrupteurs, et la valeur de chacun écrite au-dessus : 128, 64, 32… Allume-les pour écrire un nombre. Avec huit bits on atteint 255, et pas un de plus. Un échantillon sonore sur huit bits ne peut donc prendre que 256 valeurs.",
+          "figureId": "binaire",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Quantifier, et ce que coûte un bit de plus",
+          "body": "Chaque relevé doit devenir un nombre entier, donc être arrondi à l’un des niveaux disponibles. Le nombre de niveaux est deux puissance le nombre de bits.\n\nHuit bits donnent 256 niveaux, seize bits en donnent 65 536. Un bit de plus double la finesse et n’augmente la taille du fichier que d’un seizième.\n\nL’écart entre la vraie valeur et le niveau retenu est l’erreur de quantification. Elle s’entend comme un souffle de fond, et chaque bit ajouté le divise par deux.\n\nLe disque compact retient 16 bits et 44 100 relevés par seconde : de quoi couvrir les 20 000 Hz de l’oreille, avec la marge que Shannon exige.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que pèse une minute de musique",
+          "body": "Seize bits par relevé, 44 100 relevés par seconde, deux voies pour la stéréo.\n\nCela fait 16 × 44 100 × 2, soit 1 411 200 bits par seconde, ou environ 176 kilooctets par seconde.\n\nUne minute pèse donc à peu près 10,6 mégaoctets, et un album d’une heure plus de 600. C’est exactement la capacité d’un disque compact, et ce n’est pas une coïncidence : le format a été choisi pour cela.\n\nLes formats compressés divisent ce chiffre par dix en jetant ce que l’oreille ne distingue pas. Ils ne numérisent pas mieux : ils jettent plus.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un son monte à 2 000 Hz. Combien de relevés par seconde faut-il au minimum, selon Shannon ?",
+          "explanation": "Plus du double, soit plus de 4 000 relevés par seconde. En dessous, le signal reconstruit est faux et non seulement dégradé.",
+          "answer": 4000,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de niveaux différents peut prendre un échantillon sur 8 bits ?",
+          "explanation": "2 puissance 8 = 256 niveaux, de 0 à 255. Chaque bit ajouté double ce nombre.",
+          "answer": 256,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’arrive-t-il si on échantillonne trop lentement ?",
+          "explanation": "Une fréquence trop haute réapparaît sous une fréquence plus basse qui n’existait pas : c’est le repliement. Le signal n’est pas dégradé, il est faux.",
+          "options": [
+            {
+              "text": "une fréquence inexistante apparaît",
+              "correct": true
+            },
+            {
+              "text": "le son est seulement plus sourd"
+            },
+            {
+              "text": "le fichier est plus petit, sans autre effet"
+            },
+            {
+              "text": "rien, si l’oreille ne l’entend pas"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait un bit de quantification supplémentaire ?",
+          "explanation": "Il double le nombre de niveaux et divise par deux l’erreur de quantification, qui s’entend comme un souffle de fond.",
+          "options": [
+            {
+              "text": "il divise par deux l’erreur de quantification",
+              "correct": true
+            },
+            {
+              "text": "il double la fréquence d’échantillonnage"
+            },
+            {
+              "text": "il double la taille du fichier"
+            },
+            {
+              "text": "il n’a aucun effet audible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien pèse une minute de musique en qualité disque compact, en mégaoctets ?",
+          "explanation": "16 bits × 44 100 × 2 voies font 1 411 200 bits par seconde, soit environ 176 ko/s et 10,6 Mo par minute.",
+          "min": 0,
+          "max": 50,
+          "answer": 10.6,
+          "tolerance": 1.5,
+          "unit": "Mo",
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un format compressé numérise le son plus finement.",
+          "explanation": "Faux. Il jette davantage : ce que l’oreille ne distingue pas. L’échantillonnage et la quantification ne sont pas meilleurs.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-regler-un-seuil",
+      "title": "Défi : régler un seuil sans faire battre le système",
+      "subtitle": "Un seul seuil suffit à faire claquer un relais mille fois par heure.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Approche le seuil et regarde la décision hésiter",
+          "body": "Place le seuil à 19 degrés, puis amène la mesure à 19 exactement, puis à 18,5, puis à 19 de nouveau. La décision change à chaque passage. Imagine maintenant que la vraie température oscille d’un demi-degré autour du seuil, toute la journée.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le problème, en trois phrases",
+          "body": "Le radiateur chauffe, donc la température monte, donc elle dépasse le seuil, donc le radiateur s’arrête.\n\nLa température redescend, repasse sous le seuil, et le radiateur repart.\n\nAvec un seul seuil et un capteur sensible, ce cycle peut durer quelques secondes. Le relais claque, le moteur démarre et s’arrête, et les deux s’usent beaucoup plus vite qu’en marche continue.\n\nCe n’est pas un défaut du capteur ni du programme pris séparément : c’est un défaut de l’ensemble bouclé, et il n’apparaît qu’en fonctionnement.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’hystérésis, et le réfrigérateur de la cuisine",
+          "body": "La solution est d’employer deux seuils au lieu d’un. On allume en dessous de 18,5 et l’on éteint au-dessus de 19,5.\n\nEntre les deux, le système garde son état précédent : il ne décide rien, et c’est exactement ce qu’on veut. La décision dépend alors de la mesure et de l’état, non de la mesure seule.\n\nC’est pour cela qu’un réfrigérateur démarre quelques minutes puis s’arrête une demi-heure, au lieu de pulser sans arrêt. L’écart entre ses deux seuils est de deux à trois degrés.\n\nLe mot savant est hystérésis, et l’idée tient en une phrase : il faut qu’il soit plus difficile de revenir que de partir.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que l’hystérésis coûte",
+          "body": "Elle fait perdre en précision ce qu’elle gagne en tranquillité. Avec deux seuils écartés d’un degré, la température réelle oscille d’un degré.\n\nLe réglage est donc un compromis, et les deux bouts sont mauvais : trop serré, le système bat ; trop large, la régulation est grossière.\n\nUne autre voie existe, qui ne décide plus par tout ou rien mais dose la puissance en fonction de l’écart. C’est l’asservissement proportionnel, et il a ses propres pièges.\n\nUn ingénieur ne choisit donc pas entre une bonne et une mauvaise solution. Il choisit quel défaut il préfère.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Deux branchements, et une observation qui les sépare : dévisser une lampe.\n\nUne chaîne d’information en trois maillons, où le capteur ne décide rien et le programme décide tout.\n\nDeux découpages pour numériser, celui du temps et celui des valeurs, chacun avec sa règle et son coût.\n\nEt un défaut qui n’existe qu’en boucle, le battement, qui se soigne en rendant le retour plus difficile que l’aller. La suite du programme reprend exactement là.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un thermostat à seuil unique fait-il claquer son relais ?",
+          "explanation": "Parce que chauffer fait dépasser le seuil, ce qui arrête le chauffage, ce qui fait repasser dessous. Le cycle est très court.",
+          "options": [
+            {
+              "text": "chauffer fait repasser le seuil, et inversement",
+              "correct": true
+            },
+            {
+              "text": "le capteur est en panne"
+            },
+            {
+              "text": "le relais est mal dimensionné"
+            },
+            {
+              "text": "la température extérieure varie"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "En quoi consiste une hystérésis ?",
+          "explanation": "À employer deux seuils : un pour allumer, un autre pour éteindre. Entre les deux, le système garde son état.",
+          "options": [
+            {
+              "text": "employer deux seuils au lieu d’un",
+              "correct": true
+            },
+            {
+              "text": "ralentir le capteur"
+            },
+            {
+              "text": "augmenter la puissance du radiateur"
+            },
+            {
+              "text": "mesurer plus souvent"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On allume sous 18,5 degrés et on éteint au-dessus de 19,5. Quel est l’écart des seuils, en degrés ?",
+          "explanation": "1 degré. C’est aussi, à peu près, l’amplitude dont la température réelle va osciller.",
+          "answer": 1,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’hystérésis améliore à la fois la précision et la durée de vie du matériel.",
+          "explanation": "Faux. Elle fait perdre en précision ce qu’elle gagne en tranquillité : la température oscille de l’écart entre les deux seuils.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans une hystérésis, de quoi dépend la décision ?",
+          "explanation": "De la mesure et de l’état précédent, non de la mesure seule. C’est ce qui crée la zone où le système ne décide rien.",
+          "options": [
+            {
+              "text": "de la mesure et de l’état précédent",
+              "correct": true
+            },
+            {
+              "text": "de la mesure seule"
+            },
+            {
+              "text": "de la durée depuis le dernier changement"
+            },
+            {
+              "text": "de la puissance du radiateur"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle autre voie existe que le tout ou rien ?",
+          "explanation": "Doser la puissance en fonction de l’écart : l’asservissement proportionnel, qui a ses propres pièges.",
+          "options": [
+            {
+              "text": "doser la puissance selon l’écart",
+              "correct": true
+            },
+            {
+              "text": "mesurer avec deux capteurs"
+            },
+            {
+              "text": "augmenter l’hystérésis"
+            },
+            {
+              "text": "arrêter de réguler"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

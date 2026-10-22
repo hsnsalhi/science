@@ -1,0 +1,573 @@
+{
+  "chapter": "technologie-lycee-conception-et-prototypage",
+  "lessons": [
+    {
+      "id": "representer-en-volume",
+      "title": "Représenter en volume",
+      "subtitle": "Un volume sur une feuille plate : quatre méthodes, quatre usages.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un solide, ses sommets, ses arêtes",
+          "body": "Choisis un solide et incline-le au curseur. Les sommets sont donnés en coordonnées de l’espace et la projection s’en charge : c’est exactement ce que fait un logiciel de conception, et c’est pourquoi le même modèle donne toutes les vues sans qu’on les redessine.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre représentations, et à quoi chacune sert",
+          "body": "La perspective cavalière montre le volume d’un coup d’œil, et déforme les longueurs vers le fond. Elle sert à comprendre, pas à fabriquer.\n\nLes vues orthogonales — face, dessus, gauche — conservent toutes les longueurs mais obligent à reconstruire le volume mentalement. Elles servent à fabriquer.\n\nLa coupe montre l’intérieur, et c’est la seule qui le fasse. Sans elle, une pièce creuse et une pièce pleine se dessinent pareil.\n\nLa vue éclatée montre l’ordre d’assemblage. C’est elle qu’on trouve dans les notices de montage, et jamais dans un plan d’atelier.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le volume se modélise une seule fois",
+          "body": "Autrefois, un dessinateur traçait les trois vues séparément, et une modification obligeait à les reprendre toutes — avec le risque d’en oublier une.\n\nUn logiciel de conception ne stocke pas les vues : il stocke le volume, et calcule les vues à la demande. Changer une cote met tout à jour, y compris la coupe et la masse.\n\nC’est le gain principal de la conception assistée, et il n’est pas d’avoir des traits plus propres : c’est qu’une contradiction entre deux vues devient impossible.\n\nLa figure fonctionne de la même façon : les sommets sont en coordonnées, et l’inclinaison ne change que la projection.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un beau modèle n’est pas une pièce fabricable",
+          "body": "Un logiciel accepte des formes qu’aucune machine ne produit : un angle rentrant parfaitement vif, une paroi de deux centièmes de millimètre, un perçage sans accès pour l’outil.\n\nL’écran ne proteste pas, et l’atelier, lui, proteste.\n\nD’où une habitude à prendre tôt : se demander, pour chaque forme dessinée, par quel geste et avec quel outil elle existera.\n\nUn congé de rayon un millimètre dans chaque angle intérieur n’est pas une décoration : c’est la trace de l’outil, et l’oublier rend la pièce impossible ou trois fois plus chère.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Lire un plan, c’est reconstruire un volume",
+          "body": "Trois vues ne décrivent un volume que si on les lit ensemble, et cette lecture s’apprend par la pratique.\n\nLe réflexe utile est de partir d’une vue, d’y repérer un détail, et de le chercher dans les deux autres. Un trou visible de face et absent de dessus n’est pas un trou : c’est une erreur de plan.\n\nCette vérification croisée est ce que fait un préparateur d’atelier avant de lancer une série.\n\nElle ne demande aucun logiciel, et elle rattrape la majorité des erreurs de conception.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque représentation à son usage.",
+          "explanation": "La perspective fait comprendre, les vues orthogonales font fabriquer, la coupe montre l’intérieur, l’éclatée montre l’assemblage.",
+          "pairs": [
+            {
+              "left": "la perspective cavalière",
+              "right": "comprendre le volume"
+            },
+            {
+              "left": "les trois vues",
+              "right": "fabriquer la pièce"
+            },
+            {
+              "left": "la coupe",
+              "right": "voir l’intérieur"
+            },
+            {
+              "left": "la vue éclatée",
+              "right": "monter l’objet"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que stocke un logiciel de conception ?",
+          "explanation": "Le volume, et il calcule les vues à la demande. C’est pourquoi une contradiction entre deux vues devient impossible.",
+          "options": [
+            {
+              "text": "le volume, dont il déduit les vues",
+              "correct": true
+            },
+            {
+              "text": "les trois vues, qu’il assemble"
+            },
+            {
+              "text": "une photographie de la pièce"
+            },
+            {
+              "text": "la liste des cotes seulement"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le gain principal de la conception assistée ?",
+          "explanation": "Qu’une contradiction entre deux vues devient impossible, puisqu’elles viennent du même volume. Pas la propreté du trait.",
+          "options": [
+            {
+              "text": "les vues ne peuvent plus se contredire",
+              "correct": true
+            },
+            {
+              "text": "les traits sont plus propres"
+            },
+            {
+              "text": "le dessin va plus vite"
+            },
+            {
+              "text": "on peut imprimer en couleur"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si un logiciel accepte une forme, une machine peut la produire.",
+          "explanation": "Faux. L’écran accepte un angle vif parfait ou une paroi de deux centièmes ; l’atelier non. Il faut se demander par quel outil la forme existera.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi correspond un congé de rayon dans un angle intérieur ?",
+          "explanation": "À la trace de l’outil, qui est rond. L’oublier rend la pièce impossible ou beaucoup plus chère.",
+          "options": [
+            {
+              "text": "à la trace de l’outil, qui est rond",
+              "correct": true
+            },
+            {
+              "text": "à une exigence esthétique"
+            },
+            {
+              "text": "à une marge de tolérance"
+            },
+            {
+              "text": "à un défaut de dessin"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment vérifier qu’un plan à trois vues est cohérent ?",
+          "explanation": "Repérer un détail sur une vue et le chercher dans les deux autres. Un trou visible de face et absent de dessus est une erreur.",
+          "options": [
+            {
+              "text": "chercher chaque détail dans les deux autres vues",
+              "correct": true
+            },
+            {
+              "text": "mesurer les traits à la règle"
+            },
+            {
+              "text": "compter les cotes"
+            },
+            {
+              "text": "comparer à la perspective"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "coter-et-tolerancer",
+      "title": "Coter, et dire combien d’erreur est permise",
+      "subtitle": "Une cote sans tolérance est une cote impossible à respecter.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les centièmes, colonne par colonne",
+          "body": "Règle séparément les unités, les dixièmes et les centièmes, et regarde la barre. Une tolérance d’atelier s’écrit dans la troisième colonne : vingt millimètres à cinq centièmes près, ce n’est pas 20 et un peu, c’est un intervalle précis que la figure permet de voir.",
+          "figureId": "decimaux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi une cote exacte n’existe pas",
+          "body": "Aucun procédé ne produit une dimension exacte. Une fraiseuse atteint le centième de millimètre, une imprimante tridimensionnelle le dixième, une scie à main le millimètre.\n\nÉcrire « 20 mm » sur un plan ne dit donc rien de fabricable : il faut dire combien d’écart est accepté.\n\nOn écrit alors 20 plus ou moins 0,1 : la pièce est bonne entre 19,9 et 20,1. Cet écart de 0,2 mm est l’intervalle de tolérance.\n\nUne pièce qui mesure 20,15 n’est pas « presque bonne ». Elle est refusée, et c’est le plan qui l’a décidé.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un arbre dans un alésage, et le jeu qui en résulte",
+          "body": "On veut qu’un axe tourne librement dans un trou, sans flotter.\n\nLe trou est coté entre 20,00 et 20,05 ; l’axe entre 19,90 et 19,95. Le jeu minimal est donc 20,00 − 19,95, soit 0,05 mm, et le jeu maximal 20,05 − 19,90, soit 0,15 mm.\n\nLe montage fonctionne dans tous les cas, quelles que soient les pièces tirées du lot. C’est tout l’objet de l’interchangeabilité : on n’apparie pas les pièces, on les prend au hasard.\n\nSans tolérances calculées, il faudrait un ajusteur pour chaque assemblage, et c’était la situation avant 1900.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Serrer une tolérance coûte très cher",
+          "body": "Diviser un intervalle de tolérance par deux ne double pas le prix : il augmente plus vite, parce qu’il faut changer de procédé.\n\nPasser du dixième au centième fait quitter l’impression tridimensionnelle pour l’usinage. Passer du centième au micron fait quitter l’usinage pour la rectification, et impose un atelier climatisé — l’acier se dilate d’un micron par mètre et par dixième de degré.\n\nD’où la règle : on ne serre que les cotes qui en ont besoin, c’est-à-dire celles d’une surface qui en touche une autre.\n\nSur une pièce réelle, cinq cotes sont serrées et quarante sont libres. Un plan où tout est serré est le signe d’un concepteur qui n’a pas choisi.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La cote fonctionnelle, et la question qui la trouve",
+          "body": "Pour chaque dimension, une seule question : qu’est-ce qui ne marcherait plus si elle était un peu différente ?\n\nSi la réponse est « rien », la cote est libre. Si la réponse est « l’axe ne tournerait plus », la cote est fonctionnelle et mérite une tolérance serrée.\n\nCette question se pose sans aucun calcul, et c’est elle qui distingue un plan utilisable d’un plan recopié.\n\nElle se pose aussi, mot pour mot, en programmation : quelles valeurs doivent être exactes, et lesquelles n’ont qu’à être plausibles.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une cote de 20 ± 0,1 mm. Quel est l’intervalle de tolérance, en millimètres ?",
+          "explanation": "0,2 mm : la pièce est bonne entre 19,9 et 20,1, soit un intervalle de deux dixièmes.",
+          "answer": 0.2,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Trou entre 20,00 et 20,05, axe entre 19,90 et 19,95. Quel est le jeu minimal, en millimètres ?",
+          "explanation": "20,00 − 19,95 = 0,05 mm. C’est le cas le plus serré : le plus petit trou avec le plus gros axe.",
+          "min": 0,
+          "max": 1,
+          "answer": 0.05,
+          "tolerance": 0.01,
+          "unit": "mm",
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et le jeu maximal ?",
+          "explanation": "20,05 − 19,90 = 0,15 mm : le plus gros trou avec le plus petit axe.",
+          "min": 0,
+          "max": 1,
+          "answer": 0.15,
+          "tolerance": 0.01,
+          "unit": "mm",
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pièce cotée 20 ± 0,1 et mesurée à 20,15 est presque bonne.",
+          "explanation": "Faux. Elle est refusée : c’est le plan qui a fixé la limite, et une limite dépassée est dépassée.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelles cotes faut-il serrer ?",
+          "explanation": "Celles d’une surface qui en touche une autre. Sur une pièce réelle, cinq cotes sont serrées et quarante sont libres.",
+          "options": [
+            {
+              "text": "celles des surfaces qui en touchent d’autres",
+              "correct": true
+            },
+            {
+              "text": "toutes, par sécurité"
+            },
+            {
+              "text": "les plus grandes"
+            },
+            {
+              "text": "celles qui sont visibles"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question trouve une cote fonctionnelle ?",
+          "explanation": "Qu’est-ce qui ne marcherait plus si cette dimension était un peu différente ? Si la réponse est « rien », la cote est libre.",
+          "options": [
+            {
+              "text": "qu’est-ce qui ne marcherait plus si elle changeait un peu",
+              "correct": true
+            },
+            {
+              "text": "cette cote est-elle grande ou petite"
+            },
+            {
+              "text": "cette surface est-elle visible"
+            },
+            {
+              "text": "combien coûte cette cote"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "prototyper-c-est-se-tromper-tot",
+      "title": "Prototyper, c’est se tromper tôt",
+      "subtitle": "Une erreur trouvée sur une maquette coûte mille fois moins.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un essai qu’on pousse jusqu’à la rupture",
+          "body": "Pousse le curseur jusqu’à ce que le fil cède. C’est exactement ce qu’on fait sur un prototype : on le charge au-delà du service pour savoir où est la limite, parce qu’on ne peut pas le faire sur l’objet livré.",
+          "figureId": "fil-qui-casse",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Changer d’échelle, et ce que cela conserve",
+          "body": "Fais glisser la parallèle : les longueurs changent, les rapports tiennent. Une maquette à l’échelle conserve les formes et les proportions. La leçon dit lesquelles des autres grandeurs ne suivent pas, et c’est là que les maquettes trompent.",
+          "figureId": "thales",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre niveaux de prototype",
+          "body": "La maquette d’aspect : du carton, de la mousse, quelques heures. Elle répond aux questions de taille, de prise en main et d’encombrement, et à rien d’autre.\n\nLe prototype fonctionnel : il fait ce que fera le produit, mal et avec les mauvais matériaux. Il répond aux questions de principe.\n\nLe prototype de validation : mêmes matériaux, mêmes procédés qu’en série. Il répond aux questions de durée de vie et de tolérances.\n\nLa préséries : fabriquée avec l’outillage définitif. Elle répond aux questions de fabrication, qui sont souvent les dernières découvertes et les plus coûteuses à corriger.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le coût d’une erreur, selon le moment",
+          "body": "Une erreur trouvée sur un croquis se corrige en gommant.\n\nTrouvée sur une maquette, elle coûte une journée. Trouvée sur un prototype de validation, quelques semaines et un moule modifié. Trouvée après le lancement, elle coûte un rappel.\n\nLe rapport entre les deux extrêmes se compte en milliers, et c’est pourquoi on multiplie les prototypes bon marché au début plutôt qu’un seul très soigné.\n\nTrois maquettes en carton valent mieux qu’un prototype usiné, non pas parce qu’elles sont meilleures, mais parce qu’elles posent trois questions au lieu d’une.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’une maquette ne transpose pas",
+          "body": "L’échelle conserve les formes et les rapports de longueurs. Elle ne conserve ni les contraintes, ni les écoulements, ni les temps.\n\nUne maquette de pont à l’échelle un dixième travaille dix fois moins près de sa rupture, comme la loi du carré-cube l’a montré.\n\nUne maquette de bateau en bassin ne reproduit pas les vagues réelles, et les ingénieurs navals ont dû inventer des corrections pour en tirer quoi que ce soit.\n\nUne maquette répond donc à la question pour laquelle elle a été faite, et à aucune autre. Lui en poser une seconde est l’erreur la plus commune du prototypage.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les niveaux de prototype dans l’ordre.",
+          "explanation": "Maquette d’aspect, prototype fonctionnel, prototype de validation, préséries avec l’outillage définitif.",
+          "items": [
+            "la maquette d’aspect, en carton",
+            "le prototype fonctionnel, qui marche mal",
+            "le prototype de validation, aux bons matériaux",
+            "la préséries, avec l’outillage définitif"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque prototype à la question qu’il résout.",
+          "explanation": "Chaque niveau répond à une classe de questions, et à aucune autre : taille, principe, durée de vie, fabrication.",
+          "pairs": [
+            {
+              "left": "la maquette d’aspect",
+              "right": "la taille et la prise en main"
+            },
+            {
+              "left": "le prototype fonctionnel",
+              "right": "le principe retenu"
+            },
+            {
+              "left": "le prototype de validation",
+              "right": "la durée de vie"
+            },
+            {
+              "left": "la préséries",
+              "right": "la fabricabilité en série"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi trois maquettes en carton valent-elles mieux qu’un prototype usiné ?",
+          "explanation": "Parce qu’elles posent trois questions au lieu d’une. Elles ne sont pas meilleures : elles sont plus nombreuses pour le même prix.",
+          "options": [
+            {
+              "text": "elles posent trois questions au lieu d’une",
+              "correct": true
+            },
+            {
+              "text": "elles sont plus solides"
+            },
+            {
+              "text": "elles sont plus précises"
+            },
+            {
+              "text": "elles plaisent davantage au client"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Une maquette à l’échelle conserve-t-elle cette grandeur ?",
+          "explanation": "Les formes et les rapports de longueurs se conservent. Les contraintes, les écoulements et les durées ne suivent pas l’échelle.",
+          "categories": [
+            "conservé",
+            "non conservé"
+          ],
+          "items": [
+            {
+              "text": "les rapports de longueurs",
+              "category": 0
+            },
+            {
+              "text": "les formes et les angles",
+              "category": 0
+            },
+            {
+              "text": "la contrainte dans les pièces",
+              "category": 1
+            },
+            {
+              "text": "le comportement des vagues",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une maquette de pont à l’échelle un dixième qui tient prouve que le pont tiendra.",
+          "explanation": "Faux. Elle travaille dix fois moins près de sa rupture : c’est la loi du carré-cube, et aucun matériau n’y échappe.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’erreur la plus commune du prototypage ?",
+          "explanation": "Poser à une maquette une seconde question, pour laquelle elle n’a pas été faite.",
+          "options": [
+            {
+              "text": "lui poser une question pour laquelle elle n’a pas été faite",
+              "correct": true
+            },
+            {
+              "text": "faire trop de maquettes"
+            },
+            {
+              "text": "utiliser du carton"
+            },
+            {
+              "text": "commencer trop tôt"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-concevoir-une-piece",
+      "title": "Défi : concevoir une pièce de bout en bout",
+      "subtitle": "Du besoin à la cote, en gardant la trace des décisions.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Revenir au volume, pour le décider",
+          "body": "Reprends un solide et incline-le. Demande-toi, pour chaque face, si elle touche quelque chose, et pour chaque arête, par quel outil elle existerait. C’est l’examen que la leçon va formaliser, et il se fait sur n’importe quelle forme.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La démarche, en cinq temps",
+          "body": "Le besoin : ce que la pièce doit faire, exprimé sans mentionner aucune solution. « Maintenir l’axe à 40 mm du bâti », et non « une équerre en tôle ».\n\nLes fonctions : ce qu’il faut assurer, chacune avec un critère mesurable. Supporter 300 N, se monter en moins d’une minute, tenir dans 60 mm.\n\nLes solutions : au moins deux, pour pouvoir comparer. Une seule solution n’est pas un choix.\n\nLe dimensionnement : section, matériau, coefficient de sécurité, comme au premier chapitre. Puis la cotation, en ne serrant que les cotes fonctionnelles.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le support d’axe, chiffré",
+          "body": "Besoin : maintenir un axe de 20 mm à 40 mm du bâti, sous 300 N.\n\nDeux solutions : une équerre en tôle pliée, ou un bloc usiné. La tôle est dix fois moins chère et plus souple ; le bloc est rigide et lourd. Le critère qui tranche est la déformation admissible, qu’il faut donc avoir chiffrée.\n\nRetenons la tôle. Trois cotes sont fonctionnelles : le diamètre de l’alésage, à 20,00 jusqu’à 20,05 ; l’entraxe de fixation, à plus ou moins 0,1 ; la hauteur de 40, à plus ou moins 0,2.\n\nToutes les autres sont libres, au millimètre près. Le plan tient sur une page, et chaque tolérance s’explique en une phrase.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Garder la trace des décisions",
+          "body": "Six mois plus tard, personne ne se souviendra pourquoi l’alésage est serré et la largeur libre.\n\nQuelqu’un voudra alors « simplifier » en serrant tout, ou en relâchant la mauvaise cote. Les deux coûtent cher, et les deux arrivent.\n\nD’où la pratique de noter, à côté de chaque cote serrée, la fonction qui l’exige. Une ligne par cote suffit, et ce document-là sert plus longtemps que le plan.\n\nC’est la même raison qui fait écrire des commentaires dans un programme : non pas pour dire ce que fait le code, mais pour dire pourquoi il le fait ainsi.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un volume se modélise une fois, et les vues s’en déduisent. Lire un plan, c’est vérifier qu’elles s’accordent.\n\nUne cote sans tolérance n’est pas fabricable, et serrer une tolérance coûte un changement de procédé.\n\nUn prototype répond à une question et à une seule, et les maquettes bon marché multipliées valent mieux qu’une soignée.\n\nEt une conception se juge à la trace qu’elle laisse : un plan dont chaque tolérance s’explique est un plan qu’on pourra modifier.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la démarche de conception dans l’ordre.",
+          "explanation": "Le besoin sans solution, les fonctions avec critères, au moins deux solutions, le dimensionnement, puis la cotation.",
+          "items": [
+            "exprimer le besoin sans nommer de solution",
+            "lister les fonctions avec un critère mesurable",
+            "proposer au moins deux solutions",
+            "dimensionner, puis coter les cotes fonctionnelles"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Laquelle de ces formulations exprime un besoin, et non une solution ?",
+          "explanation": "« Maintenir l’axe à 40 mm du bâti » dit ce qu’il faut obtenir. « Une équerre en tôle » nomme déjà une solution.",
+          "options": [
+            {
+              "text": "maintenir l’axe à 40 mm du bâti",
+              "correct": true
+            },
+            {
+              "text": "une équerre en tôle pliée"
+            },
+            {
+              "text": "un bloc usiné de 60 mm"
+            },
+            {
+              "text": "deux vis de diamètre 6"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une seule solution bien étudiée suffit à justifier un choix.",
+          "explanation": "Faux. Une seule solution n’est pas un choix : il en faut au moins deux pour pouvoir comparer sur un critère chiffré.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans l’exemple du support, quel critère tranche entre la tôle et le bloc usiné ?",
+          "explanation": "La déformation admissible, qu’il faut donc avoir chiffrée avant de comparer. Sans elle, les deux solutions se valent sur le papier.",
+          "options": [
+            {
+              "text": "la déformation admissible",
+              "correct": true
+            },
+            {
+              "text": "le poids"
+            },
+            {
+              "text": "la couleur"
+            },
+            {
+              "text": "le nombre de vis"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans l’exemple, combien de cotes sont fonctionnelles ?",
+          "explanation": "Trois : l’alésage, l’entraxe de fixation et la hauteur. Toutes les autres sont libres au millimètre près.",
+          "answer": 3,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi noter la fonction à côté de chaque cote serrée ?",
+          "explanation": "Pour que personne, six mois plus tard, ne serre tout ou ne relâche la mauvaise cote. Ce document sert plus longtemps que le plan.",
+          "options": [
+            {
+              "text": "pour que personne ne relâche la mauvaise cote plus tard",
+              "correct": true
+            },
+            {
+              "text": "pour respecter la norme de dessin"
+            },
+            {
+              "text": "pour calculer le prix"
+            },
+            {
+              "text": "pour aider le dessinateur à tracer"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

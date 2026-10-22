@@ -1,0 +1,549 @@
+{
+  "chapter": "technologie-lycee-automatique-et-asservissement",
+  "lessons": [
+    {
+      "id": "boucle-ouverte-boucle-fermee",
+      "title": "Commander sans mesurer, commander en mesurant",
+      "subtitle": "Deux façons d’obtenir un résultat, et une seule qui se corrige.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un robot qui répète sans jamais vérifier",
+          "body": "Règle le nombre de répétitions, de 1 à 6, et regarde le tracé. À quatre, le chemin se referme ; à cinq, le robot repasse sur ses pas. Il ne regarde jamais où il est : il compte. C’est exactement une commande en boucle ouverte.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une boucle ouverte sait et ne sait pas",
+          "body": "En boucle ouverte, la commande est calculée d’avance et appliquée sans retour. Avancer de deux cases, tourner à droite, recommencer.\n\nCela marche parfaitement si le monde se comporte comme prévu. Une roue qui glisse, un sol en pente, une pile qui faiblit, et l’écart s’accumule sans que rien ne le rattrape.\n\nUn four de cuisine réglé sur « vingt minutes » est en boucle ouverte sur le temps. Un grille-pain l’est aussi, et c’est pourquoi il brûle le pain quand il est déjà chaud.\n\nLa boucle ouverte n’est pas une erreur de conception. Elle est simple, prévisible et sans risque d’instabilité — et elle suppose un monde docile.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Le même problème, avec une mesure",
+          "body": "Règle la mesure et le seuil séparément. Ici le système sait où il en est : la décision dépend de la température constatée, et non d’une durée décidée d’avance. C’est une boucle fermée, et la plus simple qui soit — tout ou rien.",
+          "figureId": "chaine-information",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le schéma d’un asservissement",
+          "body": "Quatre éléments, toujours les mêmes. La consigne, ce qu’on veut. La mesure, ce qu’on a. L’écart, qui est la différence. Et le correcteur, qui transforme l’écart en commande.\n\nLe mot « asservissement » décrit ce bouclage : le système est asservi à sa consigne, c’est-à-dire qu’il la suit.\n\nToute la variété des régulateurs tient dans le correcteur. Le plus simple multiplie l’écart par un nombre, le gain, et c’est le correcteur proportionnel.\n\nLes autres ajoutent la mémoire du passé et la prévision de la pente, mais tous partent de l’écart.",
+          "formula": "écart = consigne − mesure, puis commande = correcteur(écart)",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que le bouclage apporte, et ce qu’il introduit",
+          "body": "Il apporte la correction des perturbations imprévues, et c’est sa seule raison d’être.\n\nIl introduit un risque que la boucle ouverte n’avait pas : l’instabilité. Un système qui se corrige peut se corriger trop, dépasser, se corriger en sens inverse, et s’emballer.\n\nLe battement du thermostat de la leçon précédente en est la forme la plus douce. L’oscillation divergente en est la forme grave.\n\nD’où la règle : on ne boucle que lorsqu’on en a besoin, et boucler oblige à étudier la stabilité. C’est le prix de la correction.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "À combien de répétitions le tracé du robot se referme-t-il en carré ?",
+          "explanation": "À quatre : quatre quarts de tour font un tour complet. À cinq, il repasse sur ses pas.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce système est-il en boucle ouverte ou fermée ?",
+          "explanation": "Une boucle ouverte applique une commande décidée d’avance ; une boucle fermée mesure le résultat et corrige.",
+          "categories": [
+            "boucle ouverte",
+            "boucle fermée"
+          ],
+          "items": [
+            {
+              "text": "un four réglé sur vingt minutes",
+              "category": 0
+            },
+            {
+              "text": "un robot qui compte ses pas",
+              "category": 0
+            },
+            {
+              "text": "un thermostat qui lit la température",
+              "category": 1
+            },
+            {
+              "text": "un régulateur de vitesse de voiture",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un grille-pain brûle-t-il le pain quand il est déjà chaud ?",
+          "explanation": "Parce qu’il est en boucle ouverte sur le temps : il compte les minutes et ne mesure pas le pain.",
+          "options": [
+            {
+              "text": "il compte le temps et ne mesure pas le pain",
+              "correct": true
+            },
+            {
+              "text": "sa résistance est trop puissante"
+            },
+            {
+              "text": "son thermostat est en panne"
+            },
+            {
+              "text": "le pain est différent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le schéma d’un asservissement dans l’ordre.",
+          "explanation": "On compare la consigne à la mesure, on en tire l’écart, le correcteur en fait une commande, et le système réagit — puis on recommence.",
+          "items": [
+            "relever la mesure",
+            "calculer l’écart avec la consigne",
+            "le correcteur transforme l’écart en commande",
+            "le système réagit, et l’on mesure de nouveau"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’apporte le bouclage, et lui seul ?",
+          "explanation": "La correction des perturbations imprévues. C’est sa seule raison d’être, et elle justifie le risque d’instabilité qu’il introduit.",
+          "options": [
+            {
+              "text": "la correction des perturbations imprévues",
+              "correct": true
+            },
+            {
+              "text": "la rapidité"
+            },
+            {
+              "text": "l’économie d’énergie"
+            },
+            {
+              "text": "la simplicité du montage"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une commande en boucle ouverte peut devenir instable.",
+          "explanation": "Faux. Sans retour, rien ne s’emballe : elle est prévisible, et c’est son seul avantage. Elle suppose en revanche un monde docile.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-correcteur-proportionnel",
+      "title": "Le correcteur proportionnel, et son erreur",
+      "subtitle": "Sans écart, pas de commande — et c’est tout le problème.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La réponse à gain 1",
+          "body": "Laisse le gain à 1 et lis la valeur atteinte : 0,5, pour une consigne de 1. Le système se stabilise à la moitié de ce qu’on lui demande, et il y reste. Ce n’est pas un défaut de réglage, c’est la nature du correcteur proportionnel.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi l’erreur ne peut pas s’annuler",
+          "body": "Le correcteur proportionnel calcule la commande en multipliant l’écart par le gain. Si l’écart devient nul, la commande devient nulle.\n\nOr il faut une commande non nulle pour maintenir la sortie à sa valeur : un radiateur éteint laisse la pièce refroidir.\n\nLe système se stabilise donc là où l’écart produit exactement la commande nécessaire, et cet écart n’est pas zéro. On l’appelle l’erreur statique.\n\nPour une consigne de 1, la valeur atteinte vaut le gain divisé par le gain plus un. À gain 1 cela fait 0,5 ; à gain 4, 0,8 ; à gain 9, 0,9.",
+          "formula": "valeur atteinte = consigne × K ÷ (K + 1)",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La tentation, et le mur",
+          "body": "Pour réduire l’erreur statique, il suffit d’augmenter le gain : à gain 19, on atteindrait 0,95.\n\nLa figure montre que cela ne marche pas. En montant le gain, on voit d’abord la réponse s’accélérer et l’erreur diminuer, puis des oscillations apparaître, puis la réponse partir.\n\nLe gain utilisable est donc borné, et l’erreur statique avec lui. Avec la figure, le plus grand gain encore stable laisse encore quinze pour-cent d’écart.\n\nC’est l’impasse du correcteur proportionnel seul, et elle est structurelle. On ne la contourne pas en réglant mieux.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment on s’en sort vraiment",
+          "body": "On ajoute un terme qui accumule l’écart au fil du temps : l’intégrale.\n\nTant qu’il reste un écart, même minuscule, l’accumulation grandit et la commande augmente. L’erreur statique est alors annulée, non pas réduite.\n\nC’est le correcteur proportionnel-intégral, le plus employé de l’industrie. On y ajoute parfois un terme dérivé, qui anticipe sur la pente et amortit le dépassement.\n\nLes trois ensemble font le correcteur PID, et sa popularité tient à ce qu’on peut le régler sans modèle du système : trois nombres, et une méthode d’essais.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le raisonnement à retenir",
+          "body": "Un correcteur proportionnel a besoin d’un écart pour agir, donc il laisse un écart.\n\nCette phrase se déduit en une ligne et dispense d’apprendre la formule. Devant un régulateur qui n’atteint jamais tout à fait sa consigne, le diagnostic est immédiat.\n\nEt la réciproque est vraie : un régulateur qui atteint exactement sa consigne comporte forcément un terme intégral, quelque part.\n\nDeux phrases, et l’on sait lire la plupart des régulations qu’on rencontre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Consigne 1, gain 1. Quelle valeur le système atteint-il ?",
+          "explanation": "1 × 1 / (1 + 1) = 0,5. Le système se stabilise à la moitié de la consigne, et il y reste.",
+          "answer": 0.5,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et avec un gain de 4 ?",
+          "explanation": "4 / 5 = 0,8. L’erreur statique tombe à 20 %, sans jamais s’annuler.",
+          "answer": 0.8,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un correcteur proportionnel laisse-t-il toujours un écart ?",
+          "explanation": "Parce que sa commande est proportionnelle à l’écart : un écart nul donnerait une commande nulle, qui ne maintiendrait rien.",
+          "options": [
+            {
+              "text": "sans écart, sa commande serait nulle",
+              "correct": true
+            },
+            {
+              "text": "parce que le capteur est imprécis"
+            },
+            {
+              "text": "parce que le gain est trop faible"
+            },
+            {
+              "text": "parce que le système est lent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel terme annule l’erreur statique ?",
+          "explanation": "Le terme intégral, qui accumule l’écart : tant qu’il en reste, la commande continue d’augmenter.",
+          "options": [
+            {
+              "text": "le terme intégral",
+              "correct": true
+            },
+            {
+              "text": "un gain plus grand"
+            },
+            {
+              "text": "le terme dérivé"
+            },
+            {
+              "text": "un capteur plus précis"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "En montant assez le gain, on annule l’erreur statique.",
+          "explanation": "Faux. On la réduit, et le gain utilisable est borné par l’instabilité : au-delà, la réponse oscille puis part.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un régulateur atteint exactement sa consigne. Qu’en déduit-on ?",
+          "explanation": "Qu’il comporte un terme intégral quelque part. Un proportionnel seul en est incapable.",
+          "options": [
+            {
+              "text": "qu’il comporte un terme intégral",
+              "correct": true
+            },
+            {
+              "text": "que son gain est très élevé"
+            },
+            {
+              "text": "qu’il est en boucle ouverte"
+            },
+            {
+              "text": "que son capteur est parfait"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-trois-regimes",
+      "title": "Les trois régimes, et où sont les seuils",
+      "subtitle": "Le gain n’est pas un curseur de qualité : ses deux bouts sont mauvais.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Balaye le gain de 0,25 à 7",
+          "body": "Pousse lentement, et note où la courbe change de nature. Vers 2,3 des oscillations apparaissent : la réponse dépasse la consigne avant de revenir. Vers 5,7 elles ne reviennent plus. Trouve ces deux seuils toi-même avant de lire la suite.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois régimes, dans l’ordre du curseur",
+          "body": "Gain faible : la réponse monte doucement et s’arrête loin sous la consigne. Elle est lente et très imprécise, mais parfaitement sage.\n\nGain moyen : la réponse est rapide, dépasse un peu, oscille quelques fois et se range. L’erreur est faible. C’est la zone où l’on travaille.\n\nGain élevé : chaque correction dépasse plus que la précédente. L’amplitude grandit à chaque pas, et la sortie part. Le système se détruit, pour de vrai, dans un système réel.\n\nLe passage du premier au deuxième se fait vers un gain de 2,3 dans la figure ; celui du deuxième au troisième vers 5,7.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La même chose, en conduisant",
+          "body": "Un conducteur prudent corrige peu : la voiture dérive un peu dans la voie et il la ramène doucement. Gain faible.\n\nUn conducteur nerveux corrige fort : la voiture louvoie d’un bord à l’autre, chaque coup de volant appelant le suivant. Gain trop élevé.\n\nCe qui change n’est ni la voiture ni la route : c’est le gain du correcteur humain.\n\nEt l’on retrouve le même phénomène sur une balançoire poussée au mauvais moment, dans une sonorisation qui siffle, et dans une file d’attente qui pulse parce que chacun réagit trop vite à la file voisine.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un retard déplace les seuils",
+          "body": "Les deux seuils ne sont pas des constantes universelles : ils dépendent du système bouclé, et surtout de son retard.\n\nPlus la réaction tarde, plus la correction porte sur une situation périmée, et plus vite le système devient instable. Un gain de 3, sage sur un système rapide, peut faire divergir un système lent.\n\nC’est pourquoi on règle la température d’une douche à tâtons : le délai entre le robinet et la peau est long, et chacun a déjà oscillé entre trop chaud et trop froid.\n\nRéduire le retard est donc souvent plus efficace que régler le gain. Un capteur plus proche vaut mieux qu’un correcteur plus savant.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Reconnaître un gain mal réglé, sans instrument",
+          "body": "Trop faible : le système répond mollement et n’arrive jamais tout à fait. On est tenté de croire qu’il manque de puissance.\n\nTrop fort : le système réagit vite et n’arrête pas de corriger. Un bruit régulier, un relais qui claque, une aiguille qui vibre en sont les signes.\n\nCes deux symptômes se confondent rarement, et ils suffisent à savoir dans quel sens tourner le réglage avant tout calcul.\n\nC’est ce diagnostic à l’oreille qui distingue un technicien d’un manuel d’utilisation.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Vers quel gain les oscillations apparaissent-elles dans la figure ?",
+          "explanation": "Vers 2,3. En dessous, la réponse monte sans dépasser ; au-dessus, elle dépasse la consigne avant de revenir.",
+          "min": 0,
+          "max": 7,
+          "answer": 2.3,
+          "tolerance": 0.4,
+          "unit": "",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et vers quel gain la réponse ne revient-elle plus ?",
+          "explanation": "Vers 5,7. Au-delà, chaque correction dépasse plus que la précédente et la sortie part.",
+          "min": 0,
+          "max": 7,
+          "answer": 5.7,
+          "tolerance": 0.4,
+          "unit": "",
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque gain à sa réponse.",
+          "explanation": "Gain faible : lente et imprécise. Gain moyen : rapide et précise. Gain élevé : divergente.",
+          "pairs": [
+            {
+              "left": "gain faible",
+              "right": "lente, et loin sous la consigne"
+            },
+            {
+              "left": "gain moyen",
+              "right": "rapide, et presque juste"
+            },
+            {
+              "left": "gain élevé",
+              "right": "elle part et ne revient pas"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui rend un système plus facilement instable ?",
+          "explanation": "Son retard. Plus la réaction tarde, plus la correction porte sur une situation périmée.",
+          "options": [
+            {
+              "text": "un retard plus long",
+              "correct": true
+            },
+            {
+              "text": "une consigne plus élevée"
+            },
+            {
+              "text": "un capteur plus précis"
+            },
+            {
+              "text": "une puissance plus faible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi règle-t-on une douche à tâtons ?",
+          "explanation": "Parce que le délai entre le robinet et la peau est long : on corrige sur une information périmée, et l’on oscille.",
+          "options": [
+            {
+              "text": "le délai entre le robinet et la peau est long",
+              "correct": true
+            },
+            {
+              "text": "le débit est irrégulier"
+            },
+            {
+              "text": "la main est un mauvais capteur"
+            },
+            {
+              "text": "l’eau chaude est limitée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un capteur plus proche du phénomène vaut souvent mieux qu’un correcteur plus savant.",
+          "explanation": "Vrai. Il réduit le retard, ce qui écarte les deux seuils et rend tous les réglages plus faciles.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-regler-un-gain",
+      "title": "Défi : régler un gain",
+      "subtitle": "Choisir, c’est accepter un défaut en connaissance de cause.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Trouve le meilleur réglage, et dis pourquoi",
+          "body": "Cherche le gain qui te paraît le meilleur compromis, puis justifie-le : combien d’erreur statique restante, combien de dépassement, en combien de pas. Trois nombres, pas une impression. La leçon donne ensuite la méthode employée dans l’industrie.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois critères d’un bon réglage",
+          "body": "La précision : combien d’écart reste en régime permanent. Avec un proportionnel seul, elle est fixée par le gain.\n\nLa rapidité : en combien de pas la sortie atteint sa valeur finale, à quelques pour-cent près. Un gain plus grand accélère.\n\nLa stabilité : de combien la sortie dépasse la consigne, et combien d’oscillations avant de se ranger. Un gain plus grand dégrade les deux.\n\nLes trois critères ne peuvent pas être optimisés ensemble, car le même curseur les commande en sens opposés. Un cahier des charges dit donc toujours lequel compte le plus.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment l’industrie règle, en pratique",
+          "body": "La méthode la plus répandue consiste à monter le gain jusqu’à l’apparition d’oscillations entretenues, à noter cette valeur critique, puis à redescendre à une fraction de celle-ci.\n\nZiegler et Nichols la publient en 1942, et la fraction qu’ils recommandent pour un correcteur proportionnel est la moitié du gain critique.\n\nSur la figure, le gain critique est de 5,7 environ, ce qui donnerait un réglage vers 2,8.\n\nLa méthode ne demande aucun modèle du système, et c’est sa force : elle marche sur une machine qu’on ne comprend pas. Elle demande en revanche de pouvoir faire osciller la machine, ce qui n’est pas toujours permis.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un réglage n’est jamais définitif",
+          "body": "Un système vieillit. Les frottements augmentent, les joints durcissent, la charge change.\n\nUn réglage trouvé au plus près du seuil d’instabilité se retrouve donc du mauvais côté quelques mois plus tard, et le système qui marchait très bien se met à osciller sans raison apparente.\n\nD’où la règle de métier : on ne règle jamais au bord. La marge qu’on garde n’est pas de la timidité, c’est de la prévoyance sur le vieillissement.\n\nLa moitié du gain critique de Ziegler et Nichols n’est pas un nombre magique. C’est cette marge, écrite une fois pour toutes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une boucle fermée corrige l’imprévu, et paie ce service par un risque d’instabilité que la boucle ouverte n’avait pas.\n\nUn correcteur proportionnel a besoin d’un écart pour agir, donc il en laisse un : l’erreur statique se déduit, elle ne s’apprend pas.\n\nLe gain commande la précision, la rapidité et la stabilité en sens opposés, et ses deux bouts sont mauvais.\n\nEt l’on règle en gardant une marge, parce que la machine de l’an prochain ne sera plus celle d’aujourd’hui.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels sont les trois critères d’un réglage ?",
+          "explanation": "La précision, la rapidité et la stabilité. Le même gain les commande en sens opposés, d’où le compromis.",
+          "options": [
+            {
+              "text": "la précision",
+              "correct": true
+            },
+            {
+              "text": "la rapidité",
+              "correct": true
+            },
+            {
+              "text": "la stabilité",
+              "correct": true
+            },
+            {
+              "text": "la puissance consommée"
+            },
+            {
+              "text": "le coût du capteur"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode de Ziegler et Nichols dans l’ordre.",
+          "explanation": "Monter le gain jusqu’aux oscillations entretenues, noter le gain critique, puis redescendre à la moitié.",
+          "items": [
+            "monter le gain progressivement",
+            "repérer l’apparition d’oscillations entretenues",
+            "noter ce gain critique",
+            "régler à la moitié de cette valeur"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Gain critique de 5,7. Quel réglage la méthode recommande-t-elle pour un correcteur proportionnel ?",
+          "explanation": "La moitié, soit environ 2,8. La marge conservée n’est pas de la timidité : elle couvre le vieillissement.",
+          "min": 0,
+          "max": 7,
+          "answer": 2.8,
+          "tolerance": 0.4,
+          "unit": "",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la force de cette méthode ?",
+          "explanation": "Elle ne demande aucun modèle du système : elle marche sur une machine qu’on ne comprend pas.",
+          "options": [
+            {
+              "text": "elle ne demande aucun modèle du système",
+              "correct": true
+            },
+            {
+              "text": "elle donne le réglage optimal exact"
+            },
+            {
+              "text": "elle annule l’erreur statique"
+            },
+            {
+              "text": "elle ne fait jamais osciller la machine"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne règle-t-on jamais au bord du seuil d’instabilité ?",
+          "explanation": "Parce que le système vieillit : frottements, joints, charge. Un réglage au bord se retrouve du mauvais côté quelques mois plus tard.",
+          "options": [
+            {
+              "text": "parce que le système vieillit",
+              "correct": true
+            },
+            {
+              "text": "parce que le calcul est imprécis"
+            },
+            {
+              "text": "parce que la norme l’interdit"
+            },
+            {
+              "text": "parce que le capteur dérive toujours"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On peut optimiser ensemble la précision, la rapidité et la stabilité.",
+          "explanation": "Faux. Le même curseur les commande en sens opposés. Un cahier des charges dit donc toujours lequel compte le plus.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

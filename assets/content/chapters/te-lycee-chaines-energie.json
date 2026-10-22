@@ -1,0 +1,552 @@
+{
+  "chapter": "technologie-lycee-chaines-d-energie",
+  "lessons": [
+    {
+      "id": "les-quatre-fonctions",
+      "title": "Alimenter, distribuer, convertir, transmettre",
+      "subtitle": "Quatre fonctions, et le même découpage pour tous les systèmes.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les quatre étages d’une chaîne",
+          "body": "Touche un étage pour le sélectionner, puis règle son rendement au curseur. La barre rétrécit à chaque étage, et ce qui manque est l’énergie perdue. Pars des valeurs affichées et lis le rendement global qu’elles donnent.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chaque fonction fait",
+          "body": "Alimenter : prendre l’énergie là où elle est. Une prise de courant, un réservoir, un panneau solaire.\n\nDistribuer : la laisser passer ou non, et en quelle quantité. Un interrupteur, un variateur, une vanne. C’est l’étage que commande la chaîne d’information.\n\nConvertir : changer la forme de l’énergie. Un moteur, une lampe, un vérin. C’est presque toujours l’étage le plus coûteux.\n\nTransmettre : la porter jusqu’à l’endroit utile. Des engrenages, une courroie, un arbre.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le même découpage sur trois objets",
+          "body": "Un ventilateur : la prise alimente, l’interrupteur distribue, le moteur convertit l’électricité en rotation, l’hélice transmet au mouvement de l’air.\n\nUne perceuse à batterie : la batterie alimente, la gâchette distribue, le moteur convertit, le réducteur transmet au mandrin.\n\nUn vélo : le cycliste alimente, les jambes distribuent, le pédalier convertit le mouvement alternatif en rotation, la chaîne transmet à la roue.\n\nLe découpage n’est pas une grille scolaire. Il permet de comparer deux machines qui n’ont rien à voir, fonction par fonction, et c’est à cela qu’il sert en bureau d’études.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Énergie et puissance ne se confondent pas",
+          "body": "La puissance est un débit : des joules par seconde, c’est-à-dire des watts. L’énergie est une quantité : des joules, ou des wattheures.\n\nUn radiateur de 2 000 W allumé une demi-heure consomme 1 000 Wh, soit 1 kWh. Une ampoule de 10 W allumée cent heures consomme la même chose.\n\nSur une facture, on paie l’énergie. Sur une notice, on lit une puissance. Confondre les deux conduit à croire qu’un appareil puissant coûte cher, alors que c’est la durée qui décide.\n\nLe rendement, lui, est un rapport sans unité, et se lit indifféremment sur des puissances ou sur des énergies.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La chaîne d’énergie et la chaîne d’information",
+          "body": "Un système comporte toujours les deux, et elles ne transportent pas la même chose.\n\nLa chaîne d’énergie porte des watts, du réservoir jusqu’à l’effet voulu.\n\nLa chaîne d’information porte des mesures et des décisions, et elle ne consomme presque rien.\n\nLe point de contact est l’étage « distribuer » : c’est là que la décision, qui ne coûte rien, commande la puissance, qui coûte cher. Un interrupteur est précisément cet endroit.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque fonction à son composant.",
+          "explanation": "Alimenter prend l’énergie, distribuer la laisse passer, convertir change sa forme, transmettre la porte à l’endroit utile.",
+          "pairs": [
+            {
+              "left": "alimenter",
+              "right": "la batterie"
+            },
+            {
+              "left": "distribuer",
+              "right": "la gâchette"
+            },
+            {
+              "left": "convertir",
+              "right": "le moteur"
+            },
+            {
+              "left": "transmettre",
+              "right": "le réducteur"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un radiateur de 2 000 W allumé une demi-heure : combien de Wh consommés ?",
+          "explanation": "2 000 × 0,5 = 1 000 Wh, soit 1 kWh. La puissance est un débit, l’énergie une quantité.",
+          "answer": 1000,
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur est-elle une puissance ou une énergie ?",
+          "explanation": "Le watt est un débit d’énergie, le joule et le wattheure sont des quantités. Sur la facture on paie une énergie.",
+          "categories": [
+            "une puissance",
+            "une énergie"
+          ],
+          "items": [
+            {
+              "text": "2 000 W",
+              "category": 0
+            },
+            {
+              "text": "les watts d’un moteur",
+              "category": 0
+            },
+            {
+              "text": "1 kWh",
+              "category": 1
+            },
+            {
+              "text": "les joules d’un réservoir",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où la chaîne d’information touche-t-elle la chaîne d’énergie ?",
+          "explanation": "À l’étage « distribuer ». C’est là que la décision, qui ne coûte rien, commande la puissance, qui coûte cher.",
+          "options": [
+            {
+              "text": "à l’étage « distribuer »",
+              "correct": true
+            },
+            {
+              "text": "à l’étage « alimenter »"
+            },
+            {
+              "text": "à l’étage « convertir »"
+            },
+            {
+              "text": "elles ne se touchent pas"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un appareil plus puissant consomme forcément plus d’énergie.",
+          "explanation": "Faux. Une ampoule de 10 W allumée cent heures consomme autant qu’un radiateur de 2 000 W allumé une demi-heure. C’est la durée qui décide.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le découpage en quatre fonctions en bureau d’études ?",
+          "explanation": "À comparer deux machines qui n’ont rien à voir, fonction par fonction.",
+          "options": [
+            {
+              "text": "comparer deux machines fonction par fonction",
+              "correct": true
+            },
+            {
+              "text": "calculer le prix de revient"
+            },
+            {
+              "text": "dessiner le schéma électrique"
+            },
+            {
+              "text": "choisir la couleur du boîtier"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-rendements-se-multiplient",
+      "title": "Les rendements se multiplient",
+      "subtitle": "Quatre étages très honnêtes, et moins de la moitié qui passe.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Mets les quatre étages à 80 %",
+          "body": "Règle chaque curseur sur 80 %. Quatre-vingts pour-cent, c’est un bon rendement pour n’importe quel étage. Lis ce que la chaîne laisse passer au bout : 41 %. Le résultat se croit mal écrit, et se constate bien réglé.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi ils se multiplient et ne s’additionnent pas",
+          "body": "Chaque étage ne transmet qu’une fraction de ce qu’il reçoit, et non de ce qui est entré au départ.\n\nEntrent 100 J. Le premier étage à 80 % en rend 80. Le deuxième en prend 80 % de 80, soit 64. Le troisième, 80 % de 64, soit 51,2. Le quatrième, 41 J.\n\nLes pertes, elles, s’additionnent bien : 20, puis 16, puis 12,8, puis 10,2, ce qui fait 59 J perdus en tout.\n\nC’est le même calcul qu’une remise de 20 % appliquée quatre fois de suite : elle ne fait pas 80 % de remise, elle en fait 59.",
+          "formula": "rendement global = produit des rendements des étages",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La chaîne de la figure, telle qu’elle démarre",
+          "body": "Les valeurs de départ sont 90 %, 95 %, 40 % et 85 %.\n\nLeur produit vaut 0,90 × 0,95 × 0,40 × 0,85, soit 0,29. Moins de trois dixièmes de l’énergie arrive au bout.\n\nCes chiffres ne sont pas inventés pour l’exercice : ils ressemblent à ceux d’une voiture à essence, où le moteur thermique tient le rôle de l’étage à 40 %.\n\nSur dix litres de carburant, trois servent à avancer. Le reste chauffe l’air, et c’est à peu près ce qu’on observe.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un rendement supérieur à 100 % n’existe pas",
+          "body": "Aucun étage ne peut rendre plus qu’il reçoit : ce serait créer de l’énergie, et le premier principe l’interdit.\n\nLes pompes à chaleur semblent faire mieux, avec des coefficients de 3 ou 4. Elles ne créent rien : elles déplacent de la chaleur prise dehors, qui n’est pas comptée dans l’entrée.\n\nLe rapport qu’on affiche alors n’est pas un rendement mais un coefficient de performance, et le mot change parce que le calcul change.\n\nDevant une machine qui annonce plus de 100 %, il y a toujours une entrée non comptée. La chercher est plus instructif que de crier au miracle.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la multiplication impose",
+          "body": "Un étage médiocre plombe toute la chaîne, quels que soient les autres. Un étage excellent ne la sauve pas.\n\nD’où une conséquence de conception : réduire le nombre d’étages vaut souvent mieux que les améliorer. Une transmission directe bat une transmission à trois renvois, même si chaque renvoi est bon.\n\nC’est pourquoi un moteur-roue électrique gagne contre un moteur central à cardan, et pourquoi on supprime la boîte de vitesses quand on peut.\n\nChaque étage retiré est un facteur retiré du produit.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Quatre étages à 80 % chacun : quel rendement global, en pour-cent ?",
+          "explanation": "0,8 × 0,8 × 0,8 × 0,8 = 0,41, soit 41 %. Les rendements se multiplient, ils ne se moyennent pas.",
+          "min": 0,
+          "max": 100,
+          "answer": 41,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et avec les valeurs de départ de la figure, 90, 95, 40 et 85 % ?",
+          "explanation": "0,90 × 0,95 × 0,40 × 0,85 = 0,29, soit 29 %. L’étage à 40 % commande tout le reste.",
+          "min": 0,
+          "max": 100,
+          "answer": 29,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les rendements se multiplient-ils ?",
+          "explanation": "Parce que chaque étage transmet une fraction de ce qu’il reçoit, et non de ce qui est entré au départ.",
+          "options": [
+            {
+              "text": "chaque étage prend une fraction de ce qu’il reçoit",
+              "correct": true
+            },
+            {
+              "text": "parce que les pertes s’additionnent"
+            },
+            {
+              "text": "c’est une convention de calcul"
+            },
+            {
+              "text": "parce qu’il y a quatre étages"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pompe à chaleur avec un coefficient de 4 a un rendement de 400 %.",
+          "explanation": "Faux. Elle déplace de la chaleur prise dehors, qui n’est pas comptée en entrée. Le mot change parce que le calcul change.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut-il souvent mieux faire qu’améliorer les étages ?",
+          "explanation": "En supprimer. Chaque étage retiré est un facteur retiré du produit, et une transmission directe bat trois bons renvois.",
+          "options": [
+            {
+              "text": "en supprimer",
+              "correct": true
+            },
+            {
+              "text": "en ajouter un très bon"
+            },
+            {
+              "text": "augmenter la puissance d’entrée"
+            },
+            {
+              "text": "les mettre tous au même rendement"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Entrent 100 J dans un étage à 80 %. Combien de joules ressortent ?",
+          "explanation": "80 J. Les 20 J manquants sont perdus, le plus souvent en chaleur.",
+          "answer": 80,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ou-part-l-energie-perdue",
+      "title": "Où part l’énergie perdue",
+      "subtitle": "Elle n’est pas détruite, et c’est justement le problème.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un gaz qui envahit la boîte et n’en revient pas",
+          "body": "Avance d’« un instant », puis de « vingt instants » : les particules occupent la seconde moitié. Rien dans les lois du mouvement n’interdit le retour, il est seulement très improbable. Fais « tout à gauche » et recommence autant de fois que tu veux — le gaz va toujours dans le même sens.",
+          "figureId": "entropie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le premier principe, et ce qu’il ne dit pas",
+          "body": "L’énergie se conserve : les 59 J perdus de la leçon précédente n’ont pas disparu. Ils sont là, sous forme de chaleur, de bruit et de vibrations.\n\nLe premier principe est donc une mauvaise nouvelle déguisée en bonne : rien n’est détruit, et rien n’est récupérable.\n\nCar toutes les formes d’énergie ne se valent pas. L’électricité se convertit presque entièrement en mouvement ; la chaleur à trente degrés ne se convertit presque en rien.\n\nC’est le second principe qui dit cela, et l’entropie qui le mesure. Perdre de l’énergie, c’est la dégrader en une forme dont on ne peut plus rien faire.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les trois pertes qu’on rencontre toujours",
+          "body": "Les frottements mécaniques : deux pièces qui glissent s’échauffent. C’est pour cela qu’on lubrifie, et qu’un roulement remplace un palier.\n\nL’effet Joule : un courant dans un conducteur dégage une puissance égale à R × I². Doubler le courant quadruple la perte, d’où le transport électrique à très haute tension — à puissance égale, plus de tension signifie moins de courant.\n\nLes pertes thermiques des conversions : un moteur thermique ne peut pas dépasser une limite fixée par les températures entre lesquelles il travaille, et cette limite est loin de 100 %.\n\nLes trois finissent en chaleur, et la chaleur finit dans l’air.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Récupérer n’est pas toujours absurde",
+          "body": "Une perte à basse température est perdue. Une perte à haute température est une ressource.\n\nLes gaz d’échappement d’une turbine sortent à 500 degrés, et l’on en fait de la vapeur qui fait tourner une seconde turbine : c’est le cycle combiné, qui porte le rendement d’une centrale de 38 à près de 60 %.\n\nLe freinage d’un train dissipe de l’énergie mécanique à haute qualité, et le freinage régénératif en récupère une bonne part.\n\nLa question n’est donc jamais « peut-on récupérer », mais « à quelle qualité la perte se présente-t-elle ».",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la chaleur est la poubelle de la physique",
+          "body": "Toutes les formes d’énergie se dégradent en chaleur, et la chaleur ne remonte pas d’elle-même.\n\nCela donne un sens au temps dans les machines : on sait toujours distinguer un film de moteur passé à l’endroit d’un film passé à l’envers.\n\nEt cela fixe une limite à tout : aucune amélioration de fabrication ne fera dépasser à un moteur thermique la limite de ses températures.\n\nLes ingénieurs ne luttent donc pas contre les pertes en général. Ils choisissent où les mettre, et à quelle température.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Où partent les 59 J perdus dans une chaîne à quatre étages de 80 % ?",
+          "explanation": "En chaleur, en bruit et en vibrations. L’énergie se conserve : elle est là, et elle n’est plus utilisable.",
+          "options": [
+            {
+              "text": "en chaleur, en bruit et en vibrations",
+              "correct": true
+            },
+            {
+              "text": "ils sont détruits"
+            },
+            {
+              "text": "ils retournent à la source"
+            },
+            {
+              "text": "ils sont stockés dans la machine"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Si on double le courant dans un conducteur, la perte par effet Joule est multipliée par combien ?",
+          "explanation": "Par quatre : la puissance perdue vaut R × I², et le carré double deux fois. D’où le transport à très haute tension.",
+          "options": [
+            {
+              "text": "par quatre",
+              "correct": true
+            },
+            {
+              "text": "par deux"
+            },
+            {
+              "text": "elle ne change pas"
+            },
+            {
+              "text": "par huit"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Toutes les formes d’énergie se valent, puisque l’énergie se conserve.",
+          "explanation": "Faux. L’électricité se convertit presque entièrement en mouvement ; la chaleur à trente degrés ne se convertit presque en rien. C’est le second principe.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Un cycle combiné porte le rendement d’une centrale de 38 % à combien, environ ?",
+          "explanation": "À près de 60 % : la chaleur des gaz d’échappement, encore à 500 degrés, fait tourner une seconde turbine.",
+          "min": 0,
+          "max": 100,
+          "answer": 60,
+          "tolerance": 5,
+          "unit": "%",
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette perte est-elle récupérable, ou non ?",
+          "explanation": "Une perte à haute température ou sous forme mécanique est une ressource ; une perte tiède dispersée dans l’air est perdue.",
+          "categories": [
+            "récupérable",
+            "perdue"
+          ],
+          "items": [
+            {
+              "text": "des gaz d’échappement à 500 degrés",
+              "category": 0
+            },
+            {
+              "text": "l’énergie du freinage d’un train",
+              "category": 0
+            },
+            {
+              "text": "la chaleur d’un boîtier à 30 degrés",
+              "category": 1
+            },
+            {
+              "text": "le bruit dispersé dans l’air",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que choisissent vraiment les ingénieurs à propos des pertes ?",
+          "explanation": "Où les mettre, et à quelle température. Les supprimer toutes est impossible ; les placer là où elles se récupèrent ne l’est pas.",
+          "options": [
+            {
+              "text": "où les mettre, et à quelle température",
+              "correct": true
+            },
+            {
+              "text": "comment les supprimer toutes"
+            },
+            {
+              "text": "comment les convertir en électricité"
+            },
+            {
+              "text": "comment les ignorer dans les calculs"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ameliorer-la-bonne-etape",
+      "title": "Défi : améliorer la bonne étape",
+      "subtitle": "Mettre l’argent là où le produit en profite.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux améliorations, deux résultats",
+          "body": "Pars des valeurs de départ. Monte d’abord l’étage à 95 % jusqu’à 100 % et note le gain global. Remets-le à 95 %, puis monte l’étage à 40 % jusqu’à 60 % et note le gain. Compare les deux nombres avant de lire la suite.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul des deux options",
+          "body": "La chaîne de départ donne 0,90 × 0,95 × 0,40 × 0,85, soit 29 %.\n\nPortons l’étage à 95 % jusqu’à 100 %, ce qui est le mieux concevable : 0,90 × 1 × 0,40 × 0,85 donne 31 %. Deux points gagnés, et il n’y a plus rien à y prendre.\n\nPortons plutôt l’étage à 40 % jusqu’à 60 % : 0,90 × 0,95 × 0,60 × 0,85 donne 44 %. Quinze points gagnés.\n\nLe même effort d’ingénierie, selon l’étage où on le place, rapporte deux points ou quinze. Et l’étage où le placer se trouve sans aucun calcul : c’est le plus mauvais.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Transmettre en changeant le couple",
+          "body": "Règle le nombre de dents de la roue menée et regarde les deux compteurs de tours. Avec douze dents à l’entrée et vingt-quatre à la sortie, la roue menée fait un demi-tour par tour, et son couple double. La transmission ne crée rien : elle échange de la vitesse contre de la force.",
+          "figureId": "engrenages",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi un réducteur n’est pas une perte",
+          "body": "Un moteur électrique a son meilleur rendement à grande vitesse et faible couple. Une roue de véhicule demande l’inverse.\n\nLe réducteur fait la conversion, au prix d’un rendement de 95 à 98 % — ce qui est peu. Sans lui, le moteur travaillerait loin de son point optimal et perdrait bien davantage.\n\nAjouter un étage peut donc améliorer la chaîne, quand cet étage permet à un autre de travailler mieux.\n\nC’est la nuance qui manque à la règle « moins d’étages, mieux c’est » : il faut compter le produit complet, pas le nombre de facteurs.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Quatre fonctions suffisent à décrire toute chaîne d’énergie, et le même découpage sert à un vélo et à une centrale.\n\nLes rendements se multiplient, ce qui rend les chaînes longues mauvaises et les étages médiocres décisifs.\n\nL’énergie perdue existe toujours, sous forme de chaleur, et sa récupération dépend de sa température.\n\nEt l’étage à améliorer se repère à l’œil : c’est le plus mauvais. Toute l’ingénierie du rendement commence par ce regard-là.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "En portant l’étage à 40 % jusqu’à 60 %, que devient le rendement global, en pour-cent ?",
+          "explanation": "0,90 × 0,95 × 0,60 × 0,85 = 0,44, soit 44 %. Quinze points gagnés sur les 29 % de départ.",
+          "min": 0,
+          "max": 100,
+          "answer": 44,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et en portant plutôt l’étage à 95 % jusqu’à 100 % ?",
+          "explanation": "0,90 × 1 × 0,40 × 0,85 = 0,31, soit 31 %. Deux points, et il n’y a plus rien à prendre sur cet étage.",
+          "min": 0,
+          "max": 100,
+          "answer": 31,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment trouve-t-on l’étage à améliorer ?",
+          "explanation": "C’est le plus mauvais, et cela se voit sans aucun calcul. C’est lui qui commande le produit.",
+          "options": [
+            {
+              "text": "c’est le plus mauvais, et cela se voit",
+              "correct": true
+            },
+            {
+              "text": "c’est le plus cher"
+            },
+            {
+              "text": "c’est le dernier de la chaîne"
+            },
+            {
+              "text": "il faut essayer les quatre"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Roue menante de 12 dents, roue menée de 24. Combien de tours fait la menée pendant un tour de la menante ?",
+          "explanation": "12 / 24 = 0,5 tour. La roue menée tourne deux fois moins vite, et son couple double.",
+          "answer": 0.5,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un réducteur dégrade toujours le rendement de la chaîne.",
+          "explanation": "Faux. Son propre rendement est de 95 à 98 %, mais il permet au moteur de travailler à son point optimal, où il gagne bien plus.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’échange une transmission par engrenages ?",
+          "explanation": "De la vitesse contre de la force. Elle ne crée rien : la puissance en sortie est celle d’entrée, moins ses propres pertes.",
+          "options": [
+            {
+              "text": "de la vitesse contre de la force",
+              "correct": true
+            },
+            {
+              "text": "de l’électricité contre du mouvement"
+            },
+            {
+              "text": "de la chaleur contre du couple"
+            },
+            {
+              "text": "rien, elle transmet à l’identique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
