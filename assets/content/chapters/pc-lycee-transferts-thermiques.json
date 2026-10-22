@@ -1,0 +1,555 @@
+{
+  "chapter": "physique-chimie-lycee-thermodynamique-et-transferts",
+  "lessons": [
+    {
+      "id": "temperature-et-energie",
+      "title": "Température et énergie",
+      "subtitle": "Un degré n’est pas une quantité d’énergie.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce que le thermomètre mesure vraiment",
+          "body": "Fais varier la température : l’agitation des particules suit, et c’est exactement ce qu’un thermomètre mesure. Remarque que le nombre de particules, lui, ne change jamais — la température dit l’agitation moyenne de chacune, pas la quantité totale d’énergie.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois mots qu’il faut séparer",
+          "body": "La température mesure l’agitation moyenne des particules. Elle s’exprime en degrés Celsius ou en kelvins, et elle ne dépend pas de la quantité de matière.\n\nL’énergie interne est l’énergie totale contenue dans le corps. Elle dépend de la température et de la quantité de matière.\n\nLe transfert thermique est l’énergie qui passe d’un corps à un autre à cause d’un écart de température. On le note Q, et il s’exprime en joules.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une étincelle et une baignoire",
+          "body": "Une étincelle de meuleuse est à 1 000 °C ; une baignoire d’eau tiède à 40 °C.\n\nL’étincelle a la température la plus haute de très loin, et pourtant elle ne vous brûle pas sérieusement : elle contient très peu de matière, donc très peu d’énergie.\n\nLa baignoire, bien plus froide, contient des millions de fois plus d’énergie interne.\n\nConfondre les deux revient à confondre « très chaud » et « beaucoup de chaleur », et c’est la confusion centrale du chapitre.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "L’énergie à fournir pour chauffer",
+          "body": "Q = m × c × ΔT\n\nm est la masse en kilogrammes, ΔT l’élévation de température, et c la capacité thermique massique, qui vaut 4 185 J/(kg·K) pour l’eau.\n\nL’eau a une capacité remarquablement élevée : il faut plus d’énergie pour chauffer un kilo d’eau que presque n’importe quel autre kilo de matière courante. C’est ce qui fait des océans un régulateur du climat, et d’une bouillotte un bon objet.",
+          "formula": "Q = m × c × ΔT",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le kelvin et le degré, et quand l’un compte",
+          "body": "Un écart de température est le même en kelvins et en degrés Celsius : ΔT de 20 °C vaut ΔT de 20 K. Dans Q = m × c × ΔT, les deux marchent.\n\nMais une température absolue ne s’exprime qu’en kelvins : T(K) = T(°C) + 273,15.\n\nDès qu’une formule contient T et non ΔT — un rendement de Carnot, une loi des gaz — travailler en Celsius donne un résultat faux sans aucun signe d’alerte.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur dépend-elle de la quantité de matière ?",
+          "explanation": "La température est une moyenne par particule. L’énergie interne et le transfert thermique dépendent de la quantité.",
+          "categories": [
+            "indépendante de la quantité",
+            "dépend de la quantité"
+          ],
+          "items": [
+            {
+              "text": "la température",
+              "category": 0
+            },
+            {
+              "text": "l’énergie interne",
+              "category": 1
+            },
+            {
+              "text": "le transfert thermique Q",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle énergie, en kilojoules, pour chauffer 1 kg d’eau de 20 à 100 °C ? (c = 4 185 J/(kg·K))",
+          "explanation": "Q = 1 × 4 185 × 80 = 334 800 J, soit environ 335 kilojoules.",
+          "answer": 335,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de secondes une bouilloire de 2 000 W met-elle pour fournir cette énergie ?",
+          "explanation": "334 800 divisé par 2 000 donne environ 167 secondes, soit un peu moins de trois minutes.",
+          "min": 10,
+          "max": 1000,
+          "answer": 167,
+          "tolerance": 20,
+          "unit": "s",
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une étincelle à 1 000 °C contient plus d’énergie qu’une baignoire à 40 °C.",
+          "explanation": "Faux. Elle est bien plus chaude et contient des millions de fois moins d’énergie : elle n’a presque pas de matière.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand faut-il impérativement travailler en kelvins ?",
+          "explanation": "Dès qu’une formule contient une température absolue T et non un écart ΔT. Un écart, lui, est le même dans les deux unités.",
+          "options": [
+            {
+              "text": "quand la formule contient T et non ΔT",
+              "correct": true
+            },
+            {
+              "text": "toujours"
+            },
+            {
+              "text": "jamais, les deux sont équivalentes"
+            },
+            {
+              "text": "seulement sous zéro"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les océans régulent-ils le climat ?",
+          "explanation": "Parce que la capacité thermique de l’eau est très élevée : il faut beaucoup d’énergie pour en changer la température.",
+          "options": [
+            {
+              "text": "l’eau a une capacité thermique très élevée",
+              "correct": true
+            },
+            {
+              "text": "l’eau est transparente"
+            },
+            {
+              "text": "l’eau est salée"
+            },
+            {
+              "text": "les océans sont profonds"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-trois-modes",
+      "title": "Les trois modes de transfert",
+      "subtitle": "Par contact, par mouvement, ou sans rien du tout.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui entre, ce qui sort, ce qui part en chaleur",
+          "body": "Touche chaque bloc et fais varier le curseur : la part perdue en chaleur change avec le rendement. Ces pertes ne disparaissent pas — elles partent par les trois modes de transfert que cette leçon décrit.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois modes, et ce qui circule",
+          "body": "La conduction : de proche en proche, sans déplacement de matière. Les particules agitées bousculent leurs voisines. C’est le manche de la casserole qui chauffe.\n\nLa convection : par déplacement de matière. Le fluide chaud, moins dense, monte ; le froid descend et prend sa place. C’est le radiateur qui chauffe toute la pièce et non seulement son voisinage.\n\nLe rayonnement : par ondes électromagnétiques, sans aucun milieu. C’est la seule façon dont l’énergie du Soleil nous parvient, puisque l’espace est vide.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le flux à travers une paroi",
+          "body": "φ = λ × S × ΔT / e\n\nφ est le flux thermique en watts, S la surface, e l’épaisseur, ΔT l’écart de température entre les deux faces, et λ la conductivité thermique du matériau.\n\nDoubler l’épaisseur divise les pertes par deux. Doubler l’écart de température les double.",
+          "formula": "φ = λ × S × ΔT / e",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi un isolant isole",
+          "body": "Conductivité λ, en watts par mètre et par kelvin : cuivre 400, acier 50, verre 1, bois 0,15, laine de verre 0,04, air immobile 0,026.\n\nLe cuivre conduit dix mille fois mieux que la laine de verre. C’est pourquoi on fait les casseroles avec l’un et les murs avec l’autre.\n\nEt l’on remarque que le meilleur isolant de la liste est l’air immobile. Tous les bons isolants — laine, plume, polystyrène, double vitrage — ne font qu’une chose : emprisonner de l’air pour l’empêcher de faire de la convection.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un corps froid rayonne aussi",
+          "body": "Tout corps dont la température dépasse le zéro absolu émet un rayonnement. Un glaçon rayonne, un mur rayonne, vous rayonnez.\n\nCe qui compte n’est pas l’émission seule mais le bilan : on a froid devant une fenêtre parce qu’on lui envoie plus de rayonnement qu’elle ne nous en renvoie.\n\nDire qu’un corps froid « envoie du froid » est donc faux : il envoie du rayonnement, simplement moins que ce qu’il reçoit. Le froid n’est pas une chose qui circule.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque situation à son mode de transfert dominant.",
+          "explanation": "Le manche conduit, le radiateur fait circuler l’air, et le Soleil rayonne à travers le vide.",
+          "pairs": [
+            {
+              "left": "le manche de la casserole chauffe",
+              "right": "la conduction"
+            },
+            {
+              "left": "le radiateur chauffe toute la pièce",
+              "right": "la convection"
+            },
+            {
+              "left": "le Soleil nous chauffe",
+              "right": "le rayonnement"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel mode de transfert fonctionne dans le vide ?",
+          "explanation": "Le rayonnement seul. La conduction et la convection ont toutes deux besoin de matière.",
+          "options": [
+            {
+              "text": "le rayonnement",
+              "correct": true
+            },
+            {
+              "text": "la conduction"
+            },
+            {
+              "text": "la convection"
+            },
+            {
+              "text": "les trois"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double l’épaisseur d’un isolant. Par combien les pertes sont-elles divisées ?",
+          "explanation": "Par 2 : le flux vaut λ × S × ΔT / e, donc il est inversement proportionnel à l’épaisseur.",
+          "answer": 2,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le meilleur isolant de la liste du cours ?",
+          "explanation": "L’air immobile, avec 0,026 W/(m·K). Tous les bons isolants ne font qu’emprisonner de l’air pour l’empêcher de circuler.",
+          "options": [
+            {
+              "text": "l’air immobile",
+              "correct": true
+            },
+            {
+              "text": "la laine de verre"
+            },
+            {
+              "text": "le bois"
+            },
+            {
+              "text": "le polystyrène"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un glaçon n’émet aucun rayonnement.",
+          "explanation": "Faux. Tout corps au-dessus du zéro absolu rayonne. Ce qui compte est le bilan entre ce qu’il émet et ce qu’il reçoit.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi a-t-on froid devant une grande fenêtre, même sans courant d’air ?",
+          "explanation": "Parce qu’on lui envoie plus de rayonnement qu’elle ne nous en renvoie. Le bilan est négatif, et le froid ne circule pas.",
+          "options": [
+            {
+              "text": "le bilan de rayonnement est en notre défaveur",
+              "correct": true
+            },
+            {
+              "text": "la fenêtre envoie du froid"
+            },
+            {
+              "text": "l’air y est plus dense"
+            },
+            {
+              "text": "la conduction y est plus forte"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-sens-des-transferts",
+      "title": "Le sens des transferts",
+      "subtitle": "Du chaud vers le froid, et jamais l’inverse tout seul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui se mélange ne se démêle pas",
+          "body": "Appuie sur « Tout à gauche », puis sur « Un instant » : le mélange est fait. Appuie sur « Vingt instants » : rien ne revient jamais. Un transfert thermique obéit à la même règle, et pour la même raison — un compte, pas une force.",
+          "figureId": "entropie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi le sens est toujours le même",
+          "body": "Mettez un corps chaud contre un corps froid. Les particules agitées bousculent les particules lentes, et leur cèdent de l’agitation.\n\nL’inverse — les lentes cédant de l’agitation aux rapides — n’est interdit par aucune loi de la mécanique. Il est seulement immensément improbable, parce qu’il correspond à un nombre minuscule de configurations.\n\nLe transfert spontané va donc du chaud vers le froid, et le contraire ne s’observe jamais. Ce n’est pas un principe de plus : c’est le même comptage que pour le colorant dans l’eau.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un réfrigérateur ne viole rien",
+          "body": "Il fait bien passer de l’énergie du froid vers le chaud — de l’intérieur vers la cuisine.\n\nMais il consomme de l’électricité pour cela, et il rejette à l’arrière plus d’énergie qu’il n’en a retirée à l’intérieur.\n\nLe transfert « vers le haut » est donc payé. Le second principe n’interdit pas de remonter : il interdit de remonter gratuitement.\n\nC’est pourquoi laisser la porte du réfrigérateur ouverte réchauffe la cuisine au lieu de la rafraîchir.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le rendement maximal d’un moteur thermique",
+          "body": "Aucun moteur prenant de l’énergie à une source chaude et en rejetant à une source froide ne peut dépasser :\n\nrendement = 1 − Tfroide / Tchaude\n\navec les deux températures en kelvins, obligatoirement.\n\nUne centrale dont la vapeur est à 550 °C (823 K) et le condenseur à 30 °C (303 K) plafonne donc à 1 − 303/823 = 63 %. Les meilleures atteignent 45 % : la limite n’est pas un défaut d’ingénierie, c’est un plafond physique.",
+          "formula": "rendement ≤ 1 − Tf / Tc",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’énergie se conserve, sa qualité non",
+          "body": "Le premier principe dit que l’énergie ne se crée ni ne se détruit. Le second dit qu’elle se dégrade.\n\nL’énergie électrique peut se transformer entièrement en chaleur. La chaleur ne peut jamais se transformer entièrement en électricité.\n\n« Économiser l’énergie » est donc une formule trompeuse : l’énergie ne disparaît jamais. Ce qu’on économise, c’est de l’énergie encore utilisable — et c’est elle qui est rare.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un transfert thermique va-t-il du chaud vers le froid ?",
+          "explanation": "Parce que l’inverse correspond à un nombre minuscule de configurations. C’est un comptage, pas une force.",
+          "options": [
+            {
+              "text": "l’inverse est immensément improbable",
+              "correct": true
+            },
+            {
+              "text": "une force pousse la chaleur"
+            },
+            {
+              "text": "le froid attire la chaleur"
+            },
+            {
+              "text": "c’est interdit par la mécanique"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un réfrigérateur viole le second principe, puisqu’il refroidit.",
+          "explanation": "Faux. Il consomme de l’électricité et rejette à l’arrière plus qu’il n’a retiré. Le second principe interdit de remonter gratuitement, pas de remonter.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il si on laisse la porte du réfrigérateur ouverte ?",
+          "explanation": "La cuisine se réchauffe. L’appareil rejette plus d’énergie qu’il n’en retire, et l’écart vient de l’électricité consommée.",
+          "options": [
+            {
+              "text": "la cuisine se réchauffe",
+              "correct": true
+            },
+            {
+              "text": "la cuisine se rafraîchit"
+            },
+            {
+              "text": "rien ne change"
+            },
+            {
+              "text": "le réfrigérateur s’arrête"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une centrale a sa source chaude à 823 K et sa source froide à 303 K. Quel rendement maximal, en pourcentage ?",
+          "explanation": "1 − 303/823 = 1 − 0,368 = 0,632, soit environ 63 %. Les meilleures centrales réelles atteignent 45 %.",
+          "answer": 63,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit le second principe, en une phrase ?",
+          "explanation": "Que l’énergie se dégrade : elle se conserve en quantité mais perd en qualité, et la dégradation ne se défait pas gratuitement.",
+          "options": [
+            {
+              "text": "l’énergie se conserve mais se dégrade",
+              "correct": true
+            },
+            {
+              "text": "l’énergie se crée dans les moteurs"
+            },
+            {
+              "text": "l’énergie finit par disparaître"
+            },
+            {
+              "text": "la chaleur est la seule forme d’énergie"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "De la chaleur peut être entièrement convertie en électricité.",
+          "explanation": "Faux. L’inverse est possible, pas celui-là : c’est l’asymétrie que décrit le second principe, et elle fixe un plafond aux moteurs.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-isoler-une-maison",
+      "title": "Défi : isoler une maison",
+      "subtitle": "Trois modes de transfert, trois parades, et un calcul qui tranche.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Suivre l’énergie jusqu’à sa perte",
+          "body": "Reprends la chaîne et baisse le rendement : la part qui s’échappe grandit. Dans une maison, cette part franchit les murs, le toit, les fenêtres et le plancher — et le défi demande dans quel ordre s’en occuper.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Par où l’énergie s’en va, dans l’ordre",
+          "body": "Le toit : environ 30 % des pertes d’une maison non isolée. L’air chaud monte, et c’est là qu’il arrive.\n\nLes murs : environ 25 %.\n\nL’air renouvelé, par les fuites et la ventilation : environ 20 %. Il faut pourtant renouveler l’air, donc on le fait de façon contrôlée.\n\nLes fenêtres : environ 15 %. Le plancher : environ 10 %.\n\nL’ordre des travaux suit cette liste, et non le confort ressenti — on commence par le toit, qui est aussi le moins cher.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que gagne un double vitrage",
+          "body": "Une vitre simple de 4 millimètres : le verre conduit à 1 W/(m·K), donc une paroi très mince et très conductrice.\n\nUn double vitrage n’ajoute pas surtout du verre : il ajoute une lame d’air ou d’argon de 16 millimètres, immobilisée entre les deux vitres.\n\nC’est cette lame qui isole, avec sa conductivité de 0,026 — quarante fois moindre que celle du verre. Le gain vient de l’épaisseur du gaz immobile, pas de la seconde vitre.\n\nEt si la lame était trop épaisse, l’air s’y mettrait à circuler : la convection reprendrait, et l’isolation baisserait. Seize millimètres est un optimum, pas un choix arbitraire.",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Les trois parades, une par mode",
+          "body": "Contre la conduction : de l’épaisseur et un matériau de faible conductivité.\n\nContre la convection : de l’étanchéité, et des cavités assez petites pour que l’air n’y circule pas.\n\nContre le rayonnement : une surface réfléchissante, comme le film peu émissif déposé sur les vitrages modernes, ou la couverture de survie d’une trousse de secours.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le calcul qui décide, avant les devis",
+          "body": "φ = λ × S × ΔT / e donne les pertes de chaque paroi en watts.\n\nMultiplié par la durée de chauffe de la saison, cela donne une énergie, donc une facture.\n\nComparée au prix des travaux, cette facture donne un temps de retour, et c’est ce nombre-là qui tranche entre isoler le toit et changer les fenêtres.\n\nToute la physique de ce chapitre sert à produire ce seul nombre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe les pertes d’une maison non isolée, de la plus grande à la plus petite.",
+          "explanation": "Le toit environ 30 %, les murs 25 %, l’air renouvelé 20 %, les fenêtres 15 %, le plancher 10 %.",
+          "items": [
+            "le toit",
+            "les murs",
+            "l’air renouvelé",
+            "les fenêtres",
+            "le plancher"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui isole dans un double vitrage ?",
+          "explanation": "La lame de gaz immobile entre les deux vitres, dont la conductivité est quarante fois moindre que celle du verre.",
+          "options": [
+            {
+              "text": "la lame de gaz immobile entre les vitres",
+              "correct": true
+            },
+            {
+              "text": "la seconde vitre"
+            },
+            {
+              "text": "le cadre"
+            },
+            {
+              "text": "le vide entre les vitres"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la lame d’un double vitrage ne fait-elle que 16 mm ?",
+          "explanation": "Au-delà, l’air se mettrait à circuler et la convection reprendrait, ce qui dégraderait l’isolation.",
+          "options": [
+            {
+              "text": "plus épaisse, l’air se mettrait à circuler",
+              "correct": true
+            },
+            {
+              "text": "pour économiser le gaz"
+            },
+            {
+              "text": "pour que la fenêtre reste légère"
+            },
+            {
+              "text": "c’est une norme arbitraire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque mode de transfert à sa parade.",
+          "explanation": "L’épaisseur contre la conduction, l’étanchéité contre la convection, une surface réfléchissante contre le rayonnement.",
+          "pairs": [
+            {
+              "left": "la conduction",
+              "right": "de l’épaisseur, peu conductrice"
+            },
+            {
+              "left": "la convection",
+              "right": "de l’étanchéité et des cavités fines"
+            },
+            {
+              "left": "le rayonnement",
+              "right": "une surface réfléchissante"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel nombre tranche finalement entre deux travaux d’isolation ?",
+          "explanation": "Le temps de retour : l’économie annuelle calculée par le flux, comparée au prix des travaux.",
+          "options": [
+            {
+              "text": "le temps de retour sur investissement",
+              "correct": true
+            },
+            {
+              "text": "la conductivité du matériau"
+            },
+            {
+              "text": "la surface de la paroi"
+            },
+            {
+              "text": "le confort ressenti"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il faut supprimer complètement le renouvellement d’air pour isoler au mieux.",
+          "explanation": "Faux. L’air doit être renouvelé pour la santé et contre l’humidité : on le fait de façon contrôlée, pas en calfeutrant tout.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

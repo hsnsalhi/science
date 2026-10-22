@@ -1,0 +1,588 @@
+{
+  "chapter": "physique-chimie-lycee-mesure-et-incertitudes",
+  "lessons": [
+    {
+      "id": "une-mesure-est-un-intervalle",
+      "title": "Une mesure est un intervalle",
+      "subtitle": "Un nombre seul n’est pas un résultat de mesure.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une position, et la graduation qui la borne",
+          "body": "Règle le départ et le déplacement : le résultat tombe sur une graduation entière. Un instrument réel fait la même chose — il ne peut pas distinguer deux valeurs plus proches que sa plus petite division, et c’est déjà une incertitude.",
+          "figureId": "droite-graduee",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment s’écrit un résultat",
+          "body": "Une valeur, une incertitude, une unité : L = 12,4 ± 0,2 cm.\n\nCela veut dire que la vraie longueur est probablement comprise entre 12,2 et 12,6 centimètres.\n\nL’incertitude s’écrit avec un seul chiffre significatif, deux au plus, et la valeur s’arrête au même rang : écrire 12,4387 ± 0,2 est incohérent, puisque les trois derniers chiffres sont noyés dans l’incertitude.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les chiffres significatifs disent l’incertitude",
+          "body": "Écrire 2,5 m et 2,50 m n’est pas la même chose : le premier annonce une précision au décimètre, le second au centimètre.\n\nUn résultat de calcul ne peut pas être plus précis que la donnée la moins précise qui y entre. Une calculatrice qui affiche onze chiffres n’en rend aucun significatif.\n\nRendre une surface de 18,8496 m² à partir de longueurs mesurées au centimètre est donc une faute, et elle se voit immédiatement.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "D’où vient l’incertitude d’une règle",
+          "body": "Une règle graduée au millimètre ne permet pas de lire mieux que le demi-millimètre, et encore faut-il bien placer le zéro.\n\nOn compte donc deux contributions : la lecture à chaque bout.\n\nEn pratique, pour une règle au millimètre, on retient une incertitude de l’ordre de 0,5 à 1 millimètre sur une longueur, selon le soin et selon la netteté des bords de l’objet.\n\nCe n’est pas une recette : c’est une estimation, et l’annoncer comme telle fait partie du résultat.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Précis et exact ne sont pas synonymes",
+          "body": "Une mesure précise est reproductible : on retrouve la même valeur à chaque essai.\n\nUne mesure exacte est proche de la vraie valeur.\n\nUne balance déréglée de 50 grammes est très précise — elle rend toujours le même nombre — et complètement inexacte. Répéter la mesure mille fois ne corrigera jamais son défaut, et donnera au contraire une grande confiance dans un résultat faux.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment s’écrit correctement un résultat de mesure ?",
+          "explanation": "Valeur, incertitude et unité, arrêtées au même rang : 12,4 ± 0,2 cm. Les chiffres au-delà de l’incertitude n’ont pas de sens.",
+          "options": [
+            {
+              "text": "12,4 ± 0,2 cm",
+              "correct": true
+            },
+            {
+              "text": "12,4387 ± 0,2 cm"
+            },
+            {
+              "text": "12,4 cm"
+            },
+            {
+              "text": "12,4387 cm"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Écrire 2,5 m et 2,50 m revient au même.",
+          "explanation": "Faux. Le premier annonce une précision au décimètre, le second au centimètre. Les chiffres significatifs portent cette information.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une balance déréglée de 50 g, qui rend toujours le même nombre, est…",
+          "explanation": "Précise mais inexacte. Répéter la mesure ne corrigera jamais son défaut, et donnera confiance dans un résultat faux.",
+          "options": [
+            {
+              "text": "précise mais inexacte",
+              "correct": true
+            },
+            {
+              "text": "exacte mais imprécise"
+            },
+            {
+              "text": "précise et exacte"
+            },
+            {
+              "text": "ni l’une ni l’autre"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "On mesure un rectangle au centimètre. Comment rendre son aire ?",
+          "explanation": "Avec le même nombre de chiffres significatifs que la donnée la moins précise. Onze chiffres de calculatrice n’en rendent aucun significatif.",
+          "options": [
+            {
+              "text": "avec autant de chiffres que la donnée la moins précise",
+              "correct": true
+            },
+            {
+              "text": "avec tous les chiffres de la calculatrice"
+            },
+            {
+              "text": "avec deux décimales, toujours"
+            },
+            {
+              "text": "en arrondissant à l’entier"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un résultat s’écrit 12,4 ± 0,2 cm. Quelle est la borne basse de l’intervalle, en centimètres ?",
+          "explanation": "12,4 − 0,2 = 12,2 centimètres. La vraie valeur est probablement entre 12,2 et 12,6.",
+          "answer": 12.2,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Avec combien de chiffres significatifs écrit-on une incertitude ?",
+          "explanation": "Un, deux au plus. Écrire une incertitude avec quatre chiffres prétendrait connaître précisément ce qu’on ne connaît pas.",
+          "options": [
+            {
+              "text": "un, deux au plus",
+              "correct": true
+            },
+            {
+              "text": "autant que la valeur"
+            },
+            {
+              "text": "trois"
+            },
+            {
+              "text": "tous ceux du calcul"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "aleatoire-ou-systematique",
+      "title": "Aléatoire ou systématique",
+      "subtitle": "L’une se dilue en répétant, l’autre jamais.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Relancer la même expérience",
+          "body": "Règle l’avantage, puis appuie plusieurs fois sur « Recommencer » et « Dix générations » : le même réglage ne donne jamais exactement la même courbe. C’est le hasard de l’échantillon, et c’est ce que fait une erreur aléatoire sur une mesure.",
+          "figureId": "selection",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux familles d’erreur",
+          "body": "L’erreur aléatoire change de signe et de taille à chaque mesure. Elle vient des petites fluctuations : la main, la lecture, les courants d’air, le bruit électronique.\n\nElle se repère en répétant : les valeurs se dispersent autour d’une moyenne, et cette dispersion se mesure.\n\nL’erreur systématique est toujours dans le même sens et de la même taille. Elle vient d’un défaut d’étalonnage, d’un zéro mal réglé, d’une méthode biaisée.\n\nElle ne se voit pas en répétant : toutes les mesures sont décalées ensemble.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Répéter divise l’incertitude par racine de n",
+          "body": "Pour n mesures répétées, l’incertitude sur la moyenne vaut à peu près :\n\nu = s / √n\n\noù s est l’écart type de la série.\n\nQuadrupler le nombre de mesures divise donc l’incertitude par deux, et non par quatre. Passer de 4 à 100 mesures ne gagne qu’un facteur 5, pour vingt-cinq fois plus de travail.",
+          "formula": "u = s / √n",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Répéter ne corrige jamais un biais",
+          "body": "C’est le piège central de la leçon. Mille mesures avec une balance déréglée donnent une moyenne très précise et toujours fausse de 50 grammes.\n\nPire : l’incertitude calculée sera très petite, ce qui donnera une grande confiance dans un résultat faux.\n\nContre un biais, il faut changer quelque chose : étalonner avec un étalon connu, mesurer avec un autre instrument, ou demander à quelqu’un d’autre de refaire. Jamais répéter davantage.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment on traque un biais",
+          "body": "On mesure un étalon dont la valeur est connue : l’écart révèle le biais, et on peut le soustraire.\n\nOn mesure avec deux instruments de principes différents : un biais propre à l’un ne se retrouve pas dans l’autre.\n\nOn inverse le montage, ou l’opérateur, ou le sens de lecture : un biais lié au geste change de signe.\n\nC’est exactement la même logique que le groupe témoin en biologie, appliquée à un instrument.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette erreur est-elle aléatoire ou systématique ?",
+          "explanation": "Le tremblement et le bruit changent à chaque mesure. Un zéro mal réglé et un étalonnage faux décalent toutes les mesures du même côté.",
+          "categories": [
+            "aléatoire",
+            "systématique"
+          ],
+          "items": [
+            {
+              "text": "le tremblement de la main",
+              "category": 0
+            },
+            {
+              "text": "le bruit électronique",
+              "category": 0
+            },
+            {
+              "text": "un zéro mal réglé",
+              "category": 1
+            },
+            {
+              "text": "une règle dilatée par la chaleur",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On veut diviser l’incertitude par 3 en répétant. Par combien faut-il multiplier le nombre de mesures ?",
+          "explanation": "L’incertitude varie en 1/√n, donc il faut multiplier n par 3² = 9.",
+          "answer": 9,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Répéter mille fois une mesure corrige une balance déréglée.",
+          "explanation": "Faux, et c’est pire : l’incertitude calculée devient très petite, donnant une grande confiance dans un résultat faux de 50 grammes.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Comment traquer une erreur systématique ?",
+          "explanation": "En mesurant un étalon connu, en changeant d’instrument, ou en inversant le montage ou l’opérateur. Répéter ne sert à rien.",
+          "options": [
+            {
+              "text": "mesurer un étalon de valeur connue",
+              "correct": true
+            },
+            {
+              "text": "utiliser un instrument de principe différent",
+              "correct": true
+            },
+            {
+              "text": "inverser le montage ou changer d’opérateur",
+              "correct": true
+            },
+            {
+              "text": "répéter davantage de mesures"
+            },
+            {
+              "text": "calculer l’écart type"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Passer de 4 à 100 mesures gagne un facteur combien sur l’incertitude ?",
+          "explanation": "√100 / √4 = 10/2 = 5. Vingt-cinq fois plus de travail pour cinq fois moins d’incertitude.",
+          "options": [
+            {
+              "text": "5",
+              "correct": true
+            },
+            {
+              "text": "25"
+            },
+            {
+              "text": "10"
+            },
+            {
+              "text": "2"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi la traque d’un biais ressemble-t-elle, en biologie ?",
+          "explanation": "Au groupe témoin : on compare à une référence pour voir ce qui vient de la méthode et non du phénomène.",
+          "options": [
+            {
+              "text": "au groupe témoin",
+              "correct": true
+            },
+            {
+              "text": "au double aveugle seulement"
+            },
+            {
+              "text": "à la relecture par les pairs"
+            },
+            {
+              "text": "à la répétition de l’expérience"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "comparer-deux-resultats",
+      "title": "Comparer deux résultats",
+      "subtitle": "Deux nombres différents peuvent dire la même chose.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un tableau qui refait les comptes",
+          "body": "Touche une cellule et change sa valeur : les totaux se recalculent. C’est l’outil d’un compte rendu de mesures — une colonne de valeurs, une moyenne, un écart type, et l’incertitude qui en découle.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La question à poser, et comment y répondre",
+          "body": "On ne demande pas si deux résultats sont égaux : ils ne le sont jamais exactement.\n\nOn demande s’ils sont compatibles, c’est-à-dire si leurs intervalles se recouvrent, ou si leur écart reste petit devant les incertitudes.\n\nEn pratique, on calcule l’écart normalisé : la différence des deux valeurs, divisée par la racine de la somme des carrés des incertitudes.\n\nEn dessous de 2, les résultats sont compatibles. Au-delà, il y a quelque chose à expliquer.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux équipes, une constante",
+          "body": "Équipe A trouve g = 9,76 ± 0,05 m/s². Équipe B trouve g = 9,83 ± 0,04 m/s².\n\nL’écart vaut 0,07. La racine de la somme des carrés des incertitudes vaut racine de (0,05² + 0,04²), soit 0,064.\n\nL’écart normalisé vaut 0,07 / 0,064 = 1,1 : inférieur à 2, donc les deux mesures sont compatibles.\n\nAnnoncer que l’équipe B « a trouvé une valeur plus juste » n’aurait aucun fondement : la différence n’est pas significative.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Compatible ne veut pas dire juste",
+          "body": "Deux équipes qui utilisent le même instrument mal étalonné trouveront des résultats parfaitement compatibles, et tous deux faux.\n\nLa compatibilité teste la cohérence, pas la vérité. Elle ne détecte que les erreurs aléatoires.\n\nC’est pourquoi, en métrologie, on compare toujours des méthodes différentes et non seulement des opérateurs différents. Deux mesures d’accord par la même voie ne prouvent presque rien.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un écart normalisé de 3 n’est pas une erreur de calcul",
+          "body": "C’est un signal : soit une incertitude a été sous-estimée, soit l’une des deux mesures porte un biais, soit les deux ne mesurent pas tout à fait la même chose.\n\nLes trois explications sont intéressantes, et aucune ne se règle en refaisant la division.\n\nC’est exactement ainsi que des découvertes commencent : un écart qui ne se referme pas, et qu’on finit par prendre au sérieux.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question pose-t-on devant deux résultats de mesure ?",
+          "explanation": "S’ils sont compatibles, pas s’ils sont égaux. Deux mesures ne sont jamais exactement égales.",
+          "options": [
+            {
+              "text": "sont-ils compatibles ?",
+              "correct": true
+            },
+            {
+              "text": "sont-ils égaux ?"
+            },
+            {
+              "text": "lequel est le plus grand ?"
+            },
+            {
+              "text": "lequel a le plus de chiffres ?"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "A trouve 9,76 ± 0,05 et B trouve 9,83 ± 0,04. Quel est l’écart normalisé ?",
+          "explanation": "Écart 0,07 ; racine de (0,05² + 0,04²) = 0,064 ; 0,07/0,064 = 1,1. Inférieur à 2, donc compatibles.",
+          "min": 0,
+          "max": 10,
+          "answer": 1.1,
+          "tolerance": 0.2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "En dessous de quelle valeur d’écart normalisé deux résultats sont-ils compatibles ?",
+          "explanation": "2, par convention usuelle. Au-delà, il y a quelque chose à expliquer plutôt qu’un calcul à refaire.",
+          "options": [
+            {
+              "text": "2",
+              "correct": true
+            },
+            {
+              "text": "0,5"
+            },
+            {
+              "text": "5"
+            },
+            {
+              "text": "10"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux résultats compatibles sont forcément justes.",
+          "explanation": "Faux. Deux équipes avec le même instrument mal étalonné sont parfaitement compatibles et toutes deux fausses.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que peut signifier un écart normalisé de 3 ?",
+          "explanation": "Une incertitude sous-estimée, un biais sur l’une des mesures, ou deux mesures qui ne portent pas sur la même grandeur.",
+          "options": [
+            {
+              "text": "une incertitude sous-estimée",
+              "correct": true
+            },
+            {
+              "text": "un biais sur l’une des deux mesures",
+              "correct": true
+            },
+            {
+              "text": "deux grandeurs différentes mesurées",
+              "correct": true
+            },
+            {
+              "text": "une erreur dans la division"
+            },
+            {
+              "text": "rien, c’est normal"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi compare-t-on des méthodes différentes et non seulement des opérateurs ?",
+          "explanation": "Parce qu’un biais de méthode se retrouve chez tous les opérateurs. Deux mesures d’accord par la même voie ne prouvent presque rien.",
+          "options": [
+            {
+              "text": "un biais de méthode touche tous les opérateurs",
+              "correct": true
+            },
+            {
+              "text": "les opérateurs sont peu fiables"
+            },
+            {
+              "text": "cela va plus vite"
+            },
+            {
+              "text": "c’est une obligation réglementaire"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-rendre-un-resultat",
+      "title": "Défi : rendre un résultat défendable",
+      "subtitle": "Un nombre, une incertitude, et de quoi les refaire.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La colonne, la moyenne, l’incertitude",
+          "body": "Change une valeur de la colonne et regarde les totaux suivre. C’est tout l’appareil d’un résultat de mesure : des valeurs brutes qu’on garde, une moyenne qu’on en tire, et une incertitude qui se calcule au lieu de se décréter.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le protocole complet, dans l’ordre",
+          "body": "Répéter la mesure, au moins cinq fois, et écrire toutes les valeurs — y compris celles qui déplaisent.\n\nCalculer la moyenne, puis l’écart type de la série.\n\nDiviser l’écart type par racine de n pour obtenir l’incertitude sur la moyenne.\n\nChercher les biais : étalon, second instrument, inversion du montage.\n\nArrondir l’incertitude à un chiffre, puis la valeur au même rang.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Écarter une valeur demande une raison",
+          "body": "Une valeur très éloignée des autres est tentante à supprimer, et cette tentation est exactement ce contre quoi la méthode existe.\n\nOn ne l’écarte que si l’on sait pourquoi : un instrument bousculé, une lecture notée de travers, une erreur d’unité constatée sur le moment.\n\nL’écarter parce qu’elle dérange est une faute, et elle a produit de vraies erreurs scientifiques. Dans le doute, on la garde et on la signale.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’un rapport doit contenir",
+          "body": "Le protocole, assez détaillé pour être refait par quelqu’un d’autre.\n\nLes valeurs brutes, toutes, dans un tableau.\n\nLe calcul de la moyenne et de l’incertitude, avec la formule employée.\n\nLes biais cherchés et ce qu’on a trouvé — y compris « rien ».\n\nLe résultat final, sous la forme valeur ± incertitude unité, et sa comparaison à une valeur de référence par l’écart normalisé.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre dit de la science",
+          "body": "Une mesure sans incertitude n’est pas une mesure : c’est une opinion chiffrée.\n\nAnnoncer son incertitude n’est pas un aveu de faiblesse, c’est ce qui rend un résultat utilisable par d’autres — et réfutable, ce qui revient au même.\n\nLes grandes annonces scientifiques se jouent précisément là : une particule n’est déclarée découverte qu’au-delà d’un écart normalisé de 5, soit une chance sur trois millions que le hasard seul l’explique.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le protocole de mesure dans l’ordre.",
+          "explanation": "Répéter et tout noter, calculer moyenne et écart type, diviser par racine de n, chercher les biais, puis arrondir.",
+          "items": [
+            "répéter la mesure et noter toutes les valeurs",
+            "calculer la moyenne et l’écart type",
+            "diviser l’écart type par racine de n",
+            "chercher les biais systématiques",
+            "arrondir l’incertitude puis la valeur"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand peut-on écarter une valeur aberrante ?",
+          "explanation": "Seulement si l’on sait pourquoi : instrument bousculé, lecture notée de travers, erreur d’unité constatée. Jamais parce qu’elle dérange.",
+          "options": [
+            {
+              "text": "seulement si l’on sait pourquoi elle est fausse",
+              "correct": true
+            },
+            {
+              "text": "dès qu’elle s’écarte de la moyenne"
+            },
+            {
+              "text": "jamais"
+            },
+            {
+              "text": "si elle change la conclusion"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que doit contenir un rapport de mesure ?",
+          "explanation": "Le protocole, toutes les valeurs brutes, le calcul de l’incertitude, les biais cherchés, et le résultat avec sa comparaison.",
+          "options": [
+            {
+              "text": "le protocole, assez détaillé pour être refait",
+              "correct": true
+            },
+            {
+              "text": "toutes les valeurs brutes",
+              "correct": true
+            },
+            {
+              "text": "le calcul de l’incertitude",
+              "correct": true
+            },
+            {
+              "text": "les biais cherchés et ce qu’on a trouvé",
+              "correct": true
+            },
+            {
+              "text": "seulement le résultat final"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Au-delà de quel écart normalisé déclare-t-on une particule découverte, en physique ?",
+          "explanation": "5, soit environ une chance sur trois millions que le hasard seul explique le signal.",
+          "answer": 5,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une mesure sans incertitude ?",
+          "explanation": "Une opinion chiffrée. Sans incertitude, le résultat n’est ni utilisable par d’autres ni réfutable.",
+          "options": [
+            {
+              "text": "une opinion chiffrée",
+              "correct": true
+            },
+            {
+              "text": "une mesure parfaite"
+            },
+            {
+              "text": "une mesure exacte"
+            },
+            {
+              "text": "une mesure de référence"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Annoncer une incertitude affaiblit un résultat.",
+          "explanation": "Faux. C’est ce qui le rend utilisable par d’autres et réfutable — et une affirmation qu’on ne peut pas réfuter n’apprend rien.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

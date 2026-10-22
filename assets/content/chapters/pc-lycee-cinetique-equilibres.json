@@ -1,0 +1,603 @@
+{
+  "chapter": "physique-chimie-lycee-cinetique-et-equilibres",
+  "lessons": [
+    {
+      "id": "la-vitesse-d-une-reaction",
+      "title": "La vitesse d’une réaction",
+      "subtitle": "Un désordre individuel, une loi collective.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Chaque noyau au hasard, le total obéit",
+          "body": "Fais avancer le temps : le nombre restant suit la courbe prévue alors qu’aucun noyau ne sait quand il va se désintégrer. La régularité n’est pas celle des individus, c’est celle du grand nombre — et une réaction chimique fonctionne exactement ainsi.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’on mesure quand on mesure une vitesse",
+          "body": "La vitesse d’une réaction est la variation d’une quantité par unité de temps : combien de moles de réactif disparaissent, ou de produit apparaissent, par seconde.\n\nElle n’est pas constante : elle est maximale au début, quand les réactifs sont les plus concentrés, et elle décroît ensuite.\n\nDire « cette réaction est rapide » sans préciser à quel moment n’a donc pas de sens. On donne plutôt le temps de demi-réaction.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le temps de demi-réaction",
+          "body": "C’est la durée au bout de laquelle la moitié du réactif limitant a été consommée. On le note t½.\n\nPour une décroissance de ce type, il ne dépend pas de la quantité de départ : partir de mille noyaux ou d’un million donne le même t½.\n\nC’est une propriété remarquable, et elle est ce qui rend la datation possible : il suffit de compter ce qui reste pour savoir combien de t½ se sont écoulés.",
+          "formula": "t½ : la moitié a disparu",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le carbone 14",
+          "body": "Son temps de demi-vie vaut 5 730 ans.\n\nUn échantillon qui n’en contient plus que la moitié a donc 5 730 ans ; le quart, 11 460 ans ; le huitième, 17 190 ans.\n\nAu bout de dix demi-vies, soit 57 300 ans, il en reste un millième — trop peu pour être mesuré avec certitude. C’est la raison, et la seule, pour laquelle la datation au carbone 14 s’arrête vers 50 000 ans.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Vite et beaucoup ne sont pas la même chose",
+          "body": "La vitesse dit en combien de temps on arrive quelque part. L’avancement final dit jusqu’où on arrive.\n\nUne réaction peut être très rapide et s’arrêter à 10 % d’avancement ; une autre très lente et finir à 99 %.\n\nLa rouille est lente et totale. L’explosion d’un mélange est rapide et totale. La dissolution d’un gaz est rapide et très partielle. Ce sont deux questions séparées, et le chapitre traite la seconde dans sa troisième leçon.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "À quel moment la vitesse d’une réaction est-elle maximale ?",
+          "explanation": "Au début, quand les réactifs sont les plus concentrés. Elle décroît ensuite à mesure qu’ils se raréfient.",
+          "options": [
+            {
+              "text": "au début",
+              "correct": true
+            },
+            {
+              "text": "au milieu"
+            },
+            {
+              "text": "à la fin"
+            },
+            {
+              "text": "elle est constante"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Le carbone 14 a une demi-vie de 5 730 ans. Quel âge a un échantillon qui en contient le quart ?",
+          "explanation": "Le quart, c’est deux demi-vies : 2 × 5 730 = 11 460 ans.",
+          "answer": 11460,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Au bout de combien de demi-vies reste-t-il moins d’un centième du départ ?",
+          "explanation": "Après 6 demi-vies il reste 1/64, soit 1,6 % ; après 7, il reste 1/128, soit 0,8 %. La réponse est 7.",
+          "answer": 7,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le temps de demi-réaction dépend de la quantité de réactif au départ.",
+          "explanation": "Faux pour ce type de décroissance. Partir de mille noyaux ou d’un million donne le même t½, et c’est ce qui rend la datation possible.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette transformation est-elle rapide ou lente, totale ou partielle ?",
+          "explanation": "La rouille est lente et totale, l’explosion rapide et totale, la dissolution d’un gaz rapide et très partielle. Vitesse et avancement sont indépendants.",
+          "categories": [
+            "rapide",
+            "lente"
+          ],
+          "items": [
+            {
+              "text": "l’explosion d’un mélange air-méthane",
+              "category": 0
+            },
+            {
+              "text": "la dissolution d’un gaz dans l’eau",
+              "category": 0
+            },
+            {
+              "text": "la rouille d’une grille",
+              "category": 1
+            },
+            {
+              "text": "la formation du pétrole",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la datation au carbone 14 s’arrête-t-elle vers 50 000 ans ?",
+          "explanation": "Parce qu’après dix demi-vies il n’en reste qu’un millième, trop peu pour être mesuré avec certitude.",
+          "options": [
+            {
+              "text": "il en reste trop peu pour être mesuré",
+              "correct": true
+            },
+            {
+              "text": "le carbone 14 disparaît complètement"
+            },
+            {
+              "text": "la loi de décroissance cesse de s’appliquer"
+            },
+            {
+              "text": "les objets plus vieux n’existent pas"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-facteurs-cinetiques",
+      "title": "Ce qui accélère une réaction",
+      "subtitle": "Pour réagir, il faut se rencontrer, et assez fort.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La température, c’est de l’agitation",
+          "body": "Fais monter la température : les particules s’agitent de plus en plus. C’est tout ce que mesure un thermomètre, et c’est pourquoi chauffer accélère une réaction — les rencontres deviennent plus fréquentes et plus violentes.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre leviers, et leur raison commune",
+          "body": "La température : plus les particules vont vite, plus elles se rencontrent souvent et avec assez d’énergie pour franchir la barrière d’activation.\n\nLa concentration : plus il y a de particules par litre, plus les rencontres sont fréquentes.\n\nLa surface de contact : un solide pulvérisé offre bien plus de surface qu’un bloc, donc bien plus de lieux de rencontre.\n\nLe catalyseur : il abaisse la barrière à franchir, sans être consommé.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une règle d’ordre de grandeur",
+          "body": "Pour beaucoup de réactions au voisinage de la température ambiante, +10 °C double approximativement la vitesse.\n\nC’est pourquoi un aliment se conserve des semaines au réfrigérateur à 4 °C et deux jours à 24 °C : vingt degrés d’écart, donc un facteur quatre environ sur les réactions de dégradation et sur la croissance des micro-organismes.\n\nCette règle est grossière et il ne faut pas lui demander de précision. Elle sert à estimer, pas à calculer.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La poussière qui explose",
+          "body": "Un sac de farine brûle lentement. La même farine en suspension dans l’air d’un silo peut exploser.\n\nLa matière est identique, la réaction est identique. Seule la surface de contact a changé : un kilogramme de farine pulvérisée offre des milliers de mètres carrés au dioxygène.\n\nLes explosions de silos et de minoteries sont une cause d’accident industriel bien réelle, et elles n’ont pas d’autre explication que celle-là.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un catalyseur ne change pas l’état final",
+          "body": "Il accélère l’arrivée, pas la destination. Il abaisse l’énergie d’activation dans les deux sens, donc il accélère autant la réaction directe que la réaction inverse.\n\nUn équilibre atteint avec catalyseur est exactement le même qu’atteint sans — simplement atteint plus tôt.\n\nAttendre d’un catalyseur qu’il améliore un rendement est l’erreur la plus coûteuse qu’on puisse faire dans ce chapitre, et elle se paie en industrie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui accélère une transformation chimique ?",
+          "explanation": "La température, la concentration, la surface de contact et un catalyseur. Tous augmentent la fréquence ou l’efficacité des rencontres.",
+          "options": [
+            {
+              "text": "élever la température",
+              "correct": true
+            },
+            {
+              "text": "augmenter la concentration",
+              "correct": true
+            },
+            {
+              "text": "pulvériser un solide",
+              "correct": true
+            },
+            {
+              "text": "ajouter un catalyseur",
+              "correct": true
+            },
+            {
+              "text": "augmenter le volume du récipient"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure un thermomètre, au niveau des particules ?",
+          "explanation": "Leur agitation. C’est pour cela que chauffer rend les rencontres plus fréquentes et plus énergiques.",
+          "options": [
+            {
+              "text": "l’agitation des particules",
+              "correct": true
+            },
+            {
+              "text": "le nombre de particules"
+            },
+            {
+              "text": "la taille des particules"
+            },
+            {
+              "text": "la pression du gaz"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien la vitesse est-elle multipliée, en ordre de grandeur, si la température monte de 20 °C ?",
+          "explanation": "Environ 2 par tranche de 10 °C, soit 2 × 2 = 4. C’est une règle d’estimation, pas un calcul exact.",
+          "min": 1,
+          "max": 50,
+          "answer": 4,
+          "tolerance": 1,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la farine en suspension peut-elle exploser ?",
+          "explanation": "La surface de contact avec le dioxygène est démultipliée. La matière et la réaction sont pourtant les mêmes que pour un sac.",
+          "options": [
+            {
+              "text": "sa surface de contact est démultipliée",
+              "correct": true
+            },
+            {
+              "text": "elle change de nature en volant"
+            },
+            {
+              "text": "elle est plus chaude en suspension"
+            },
+            {
+              "text": "elle se charge en électricité"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un catalyseur améliore le rendement d’une réaction.",
+          "explanation": "Faux. Il accélère l’arrivée, pas la destination : il abaisse la barrière dans les deux sens et l’état final est inchangé.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un aliment se conserve-t-il mieux au réfrigérateur ?",
+          "explanation": "Les réactions de dégradation et la croissance microbienne ralentissent d’environ un facteur quatre pour vingt degrés de moins.",
+          "options": [
+            {
+              "text": "les réactions de dégradation ralentissent",
+              "correct": true
+            },
+            {
+              "text": "le froid tue les micro-organismes"
+            },
+            {
+              "text": "le froid supprime le dioxygène"
+            },
+            {
+              "text": "l’humidité y est plus faible"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-equilibre-chimique",
+      "title": "L’équilibre chimique",
+      "subtitle": "Les deux sens coexistent, et rien ne s’arrête.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux côtés qui se répondent",
+          "body": "Déroule les étapes : ce qu’on fait d’un côté, on le fait de l’autre, et l’équilibre se maintient. Un équilibre chimique est de cette nature — non pas un arrêt, mais deux transformations inverses qui se compensent exactement.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui se passe vraiment à l’équilibre",
+          "body": "La réaction directe transforme les réactifs en produits.\n\nLa réaction inverse transforme les produits en réactifs. Elle existe dès le début, mais elle est d’abord négligeable faute de produits.\n\nÀ mesure que les produits s’accumulent, la réaction inverse accélère et la directe ralentit.\n\nQuand les deux vitesses s’égalisent, les concentrations cessent de varier. Rien ne s’est arrêté : les deux transformations continuent au même rythme. On parle d’équilibre dynamique.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Immobile ne veut pas dire inactif",
+          "body": "Si l’on marque quelques molécules de réactif avec un isotope et qu’on attend à l’équilibre, on les retrouve réparties des deux côtés.\n\nRien n’aurait bougé si l’équilibre était un arrêt. C’est l’expérience qui tranche, et elle a été faite.\n\nL’image à garder est celle d’un escalier mécanique descendant sur lequel on monte à la même vitesse : on ne bouge pas, et on ne cesse pas de marcher.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le taux d’avancement final",
+          "body": "τ = avancement final / avancement maximal\n\nτ vaut 1 pour une transformation totale, et moins de 1 pour une transformation limitée par un équilibre.\n\nIl ne dit rien de la vitesse. Une réaction de τ = 0,02 peut être instantanée, et une de τ = 1 peut demander des siècles.",
+          "formula": "τ = x final / x max",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Déplacer un équilibre",
+          "body": "Un système à l’équilibre soumis à une contrainte évolue dans le sens qui atténue cette contrainte.\n\nOn augmente la concentration d’un réactif : l’équilibre se déplace vers les produits, ce qui consomme l’excès.\n\nOn retire un produit au fur et à mesure : l’équilibre se déplace pour le reformer, et l’on peut ainsi pousser une réaction limitée jusqu’à un rendement élevé.\n\nC’est précisément ce que fait un chimiste industriel qui distille en continu le produit formé.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il à l’équilibre chimique ?",
+          "explanation": "Les deux réactions inverses se poursuivent à la même vitesse. Les concentrations ne varient plus, mais rien ne s’est arrêté.",
+          "options": [
+            {
+              "text": "les deux réactions continuent à la même vitesse",
+              "correct": true
+            },
+            {
+              "text": "toutes les réactions s’arrêtent"
+            },
+            {
+              "text": "seule la réaction directe continue"
+            },
+            {
+              "text": "les réactifs ont tous disparu"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle expérience montre qu’un équilibre est dynamique ?",
+          "explanation": "Marquer des molécules avec un isotope : on les retrouve des deux côtés, ce qui serait impossible si rien ne se passait.",
+          "options": [
+            {
+              "text": "marquer des molécules avec un isotope",
+              "correct": true
+            },
+            {
+              "text": "mesurer la température"
+            },
+            {
+              "text": "peser le mélange"
+            },
+            {
+              "text": "attendre plus longtemps"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un taux d’avancement final de 0,02 indique une réaction lente.",
+          "explanation": "Faux. Le taux dit jusqu’où on va, pas en combien de temps. Une réaction de τ = 0,02 peut être instantanée.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "On ajoute un réactif à un système à l’équilibre. Que fait le système ?",
+          "explanation": "Il évolue vers les produits, ce qui consomme l’excès ajouté : il atténue la contrainte qu’on lui impose.",
+          "options": [
+            {
+              "text": "il évolue vers les produits",
+              "correct": true
+            },
+            {
+              "text": "il évolue vers les réactifs"
+            },
+            {
+              "text": "il ne change pas"
+            },
+            {
+              "text": "il s’arrête"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment pousser une réaction limitée vers un bon rendement ?",
+          "explanation": "En retirant un produit au fur et à mesure : l’équilibre se déplace pour le reformer. C’est ce que fait une distillation continue.",
+          "options": [
+            {
+              "text": "retirer un produit au fur et à mesure",
+              "correct": true
+            },
+            {
+              "text": "ajouter un catalyseur"
+            },
+            {
+              "text": "attendre plus longtemps"
+            },
+            {
+              "text": "augmenter le volume"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le taux d’avancement final, en pourcentage, d’une transformation totale ?",
+          "explanation": "100 % : τ vaut 1, l’avancement final égale l’avancement maximal.",
+          "answer": 100,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-choisir-ses-conditions",
+      "title": "Défi : choisir ses conditions",
+      "subtitle": "Vitesse et rendement ne se règlent pas avec les mêmes boutons.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une décroissance qu’on ne peut pas tricher",
+          "body": "Reprends le curseur du temps : la courbe est celle qu’elle est, et aucun réglage ne la change. En chimie, certains boutons déplacent la courbe et d’autres seulement la parcourent plus vite — le défi demande de savoir lequel est lequel.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux tableaux à ne pas confondre",
+          "body": "Ce qui change la vitesse sans toucher à l’état final : le catalyseur, la surface de contact, et l’agitation.\n\nCe qui change l’état final : la concentration initiale, le retrait d’un produit, et, pour une réaction en phase gazeuse, la pression.\n\nEt la température, qui fait les deux : elle accélère toujours, et elle déplace l’équilibre dans un sens qui dépend du caractère exothermique ou endothermique de la réaction.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le compromis de la synthèse de l’ammoniac",
+          "body": "La réaction est exothermique : baisser la température déplacerait l’équilibre vers le produit, donc améliorerait le rendement.\n\nMais à basse température elle est si lente qu’elle n’aboutit jamais en pratique.\n\nOn travaille donc vers 450 °C, ce qui sacrifie du rendement pour gagner de la vitesse, et l’on compense par une forte pression, qui favorise le produit sans ralentir. Un catalyseur au fer accélère le tout.\n\nCe procédé nourrit aujourd’hui une part considérable de l’humanité, et il est le résultat de ce compromis-là.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La question à poser en premier",
+          "body": "« Est-ce que je veux aller plus vite, ou aller plus loin ? »\n\nLes deux réponses n’emploient pas les mêmes moyens, et la plupart des erreurs de ce chapitre viennent de ne pas avoir tranché avant d’agir.\n\nUn industriel, lui, pose toujours une troisième question : combien cela coûte-t-il. Un rendement de 98 % obtenu en trois jours vaut souvent moins qu’un rendement de 60 % obtenu en une heure, et recyclé.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Attention aux raisonnements en deux temps",
+          "body": "« Je chauffe, donc ça va plus vite, donc j’aurai plus de produit » enchaîne deux affirmations dont la seconde ne découle pas de la première.\n\nPlus vite dit seulement qu’on arrive plus tôt à l’état final. Si cet état final est moins favorable, on aura moins de produit, et plus rapidement.\n\nChaque fois qu’un raisonnement de chimie enchaîne « donc », il vaut la peine de vérifier qu’on n’a pas glissé de la vitesse au rendement sans s’en apercevoir.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce levier change-t-il la vitesse seulement, ou aussi l’état final ?",
+          "explanation": "Catalyseur, surface et agitation ne touchent qu’à la vitesse. Concentration initiale et retrait d’un produit changent l’état final.",
+          "categories": [
+            "la vitesse seulement",
+            "aussi l’état final"
+          ],
+          "items": [
+            {
+              "text": "ajouter un catalyseur",
+              "category": 0
+            },
+            {
+              "text": "pulvériser le solide",
+              "category": 0
+            },
+            {
+              "text": "agiter le mélange",
+              "category": 0
+            },
+            {
+              "text": "retirer un produit en continu",
+              "category": 1
+            },
+            {
+              "text": "augmenter la concentration initiale",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel levier agit à la fois sur la vitesse et sur l’équilibre ?",
+          "explanation": "La température : elle accélère toujours, et elle déplace l’équilibre selon que la réaction est exothermique ou endothermique.",
+          "options": [
+            {
+              "text": "la température",
+              "correct": true
+            },
+            {
+              "text": "le catalyseur"
+            },
+            {
+              "text": "la surface de contact"
+            },
+            {
+              "text": "l’agitation"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi synthétise-t-on l’ammoniac à 450 °C alors que le froid donnerait un meilleur rendement ?",
+          "explanation": "Parce qu’à basse température la réaction est trop lente pour aboutir. On sacrifie du rendement pour gagner de la vitesse.",
+          "options": [
+            {
+              "text": "à froid la réaction serait trop lente",
+              "correct": true
+            },
+            {
+              "text": "le froid déplacerait l’équilibre vers les réactifs"
+            },
+            {
+              "text": "le catalyseur exige cette température"
+            },
+            {
+              "text": "pour économiser l’énergie"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Chauffer donne toujours plus de produit à la fin.",
+          "explanation": "Faux. Chauffer fait arriver plus tôt à l’état final, et peut rendre cet état moins favorable. On a alors moins de produit, plus vite.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la première question à poser devant un problème de conditions ?",
+          "explanation": "Veut-on aller plus vite, ou aller plus loin ? Les deux réponses n’emploient pas les mêmes moyens.",
+          "options": [
+            {
+              "text": "aller plus vite, ou aller plus loin ?",
+              "correct": true
+            },
+            {
+              "text": "quelle température choisir ?"
+            },
+            {
+              "text": "quel catalyseur employer ?"
+            },
+            {
+              "text": "quelle est la masse molaire ?"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que fait un chimiste industriel pour améliorer un rendement limité ?",
+          "explanation": "Il retire le produit en continu, ajuste la pression en phase gazeuse et recycle les réactifs non consommés. Le catalyseur, lui, ne change rien au rendement.",
+          "options": [
+            {
+              "text": "retirer le produit au fur et à mesure",
+              "correct": true
+            },
+            {
+              "text": "ajuster la pression en phase gazeuse",
+              "correct": true
+            },
+            {
+              "text": "recycler les réactifs non consommés",
+              "correct": true
+            },
+            {
+              "text": "ajouter davantage de catalyseur"
+            },
+            {
+              "text": "agiter plus fort"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

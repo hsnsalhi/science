@@ -30,6 +30,8 @@ import 'package:eureka/design_system/figures/matrix_figure.dart';
 import 'package:eureka/design_system/figures/moon_phases_figure.dart';
 import 'package:eureka/design_system/figures/number_line_figure.dart';
 import 'package:eureka/design_system/figures/orbits_figure.dart';
+import 'package:eureka/design_system/figures/weight_figure.dart';
+import 'package:eureka/design_system/figures/newton_cannon_figure.dart';
 import 'package:eureka/design_system/figures/parabola_figure.dart';
 import 'package:eureka/design_system/figures/pattern_figure.dart';
 import 'package:eureka/design_system/figures/projectile_figure.dart';
@@ -7163,6 +7165,89 @@ void main() {
       // était faux, l'argument de la leçon tomberait.
       const double c = 2.99792458e8;
       expect(100 / c * 1e6, closeTo(0.33, 0.02));
+    });
+  });
+
+  // Champs et gravitation : le chapitre affirme que la troisième loi de
+  // Kepler tient sur les huit planètes. L'affirmation se vérifie ici
+  // contre les deux tables qui servent aussi à dessiner les figures —
+  // distances dans solar_system_figure, périodes dans orbits_figure —
+  // donc sans recopier un seul nombre dans le test.
+  group('Chapitre complet : champs et gravitation', () {
+    late Chapter gravitation;
+
+    setUpAll(() {
+      gravitation =
+          catalog.chapterById('physique-chimie-lycee-champs-et-gravitation')!;
+    });
+
+    test('est jouable de bout en bout', () {
+      expect(gravitation.isPlayable, isTrue);
+      expect(gravitation.lessons.length, greaterThanOrEqualTo(4));
+      expect(gravitation.objectives, isNotEmpty);
+    });
+
+    test('les deux tables décrivent les mêmes planètes', () {
+      // Le test suivant les indexe ensemble : si l'une changeait de
+      // longueur, il comparerait des astres différents sans rien dire.
+      expect(periodes.length, planetes.length);
+      expect(planetes.length, 8);
+    });
+
+    test('la loi de Kepler tient sur les huit planètes', () {
+      final List<double> rapports = <double>[
+        for (int i = 0; i < planetes.length; i++)
+          periodes[i] * periodes[i] /
+              (planetes[i].distance * planetes[i].distance * planetes[i].distance),
+      ];
+      final double moyen =
+          rapports.reduce((double a, double b) => a + b) / rapports.length;
+      for (int i = 0; i < rapports.length; i++) {
+        expect(
+          (rapports[i] - moyen).abs() / moyen,
+          lessThan(0.03),
+          reason: '${planetes[i].nom} s\'écarte trop du rapport commun',
+        );
+      }
+      // Et la constante annoncée par le chapitre est bien celle-là.
+      expect(moyen, closeTo(0.0397, 0.0005));
+    });
+
+    test('l’intervalle couvert rend la constance significative', () {
+      // Une relation qui ne tiendrait que sur des planètes voisines
+      // n'apprendrait rien. Ce test fixe l'amplitude sur laquelle le
+      // chapitre affirme qu'elle tient.
+      expect(planetes.last.distance / planetes.first.distance,
+          greaterThan(70));
+      expect(periodes.last / periodes.first, greaterThan(600));
+    });
+
+    test('la période prévue à 600 millions de kilomètres est celle du défi', () {
+      const double constante = 0.0397;
+      final double t = math.sqrt(constante * 600 * 600 * 600);
+      expect(t, closeTo(2930, 60));
+    });
+
+    test('le rapport des deux vitesses cosmiques vaut racine de deux', () {
+      // Le chapitre annonce que ce n'est pas une coïncidence. Les deux
+      // valeurs viennent de la figure du canon de Newton.
+      expect(
+        NewtonCannonFigure.vitesseLiberation /
+            NewtonCannonFigure.vitesseOrbitale,
+        closeTo(math.sqrt(2), 0.01),
+      );
+    });
+
+    test('les pesanteurs employées sont celles de la figure', () {
+      // Les poids calculés dans les questions doivent sortir des mêmes
+      // constantes que celles que l'élève voit.
+      double pesanteurDe(String nom) => WeightFigure.astres
+          .firstWhere((Astre a) => a.nom == nom)
+          .pesanteur;
+      expect(pesanteurDe('Terre'), closeTo(9.8, 0.05));
+      expect(pesanteurDe('Lune'), closeTo(1.6, 0.05));
+      expect(72 * pesanteurDe('Lune'), closeTo(115.2, 0.1));
+      expect(pesanteurDe('Terre') / pesanteurDe('Lune'), closeTo(6.1, 0.2));
     });
   });
 }

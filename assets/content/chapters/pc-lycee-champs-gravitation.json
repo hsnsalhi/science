@@ -1,0 +1,517 @@
+{
+  "chapter": "physique-chimie-lycee-champs-et-gravitation",
+  "lessons": [
+    {
+      "id": "la-loi-universelle",
+      "title": "La loi universelle",
+      "subtitle": "Doubler la distance divise la force par quatre, pas par deux.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Éloigner, et regarder la force s’effondrer",
+          "body": "Fais glisser la distance : la force affichée ne diminue pas proportionnellement, elle s’effondre. Double la distance et cherche la force : elle vaut le quart, pas la moitié. C’est tout ce que veut dire « en 1 sur d² ».",
+          "figureId": "attraction-distance",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi de Newton, 1687",
+          "body": "Deux corps de masses mA et mB, dont les centres sont distants de d, s’attirent avec une force :\n\nF = G × mA × mB / d²\n\navec G = 6,67 × 10⁻¹¹ N·m²·kg⁻², la constante de gravitation.\n\nLes deux corps subissent la même force, en sens opposés. La Terre attire la pomme, et la pomme attire la Terre tout autant : c’est la différence de masse qui fait que seule la pomme bouge visiblement.",
+          "formula": "F = G × mA × mB / d²",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le carré, et pas autre chose",
+          "body": "L’attraction se répartit sur une sphère entourant le corps attirant.\n\nLa surface d’une sphère vaut 4πr² : elle grandit comme le carré du rayon. La même influence, répartie sur quatre fois plus de surface, est quatre fois plus faible en chaque point.\n\nLa lumière d’une ampoule faiblit exactement de la même façon, et pour exactement la même raison. Toutes les grandeurs qui rayonnent depuis un point suivent cette loi.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi on ne sent pas l’attraction de son voisin",
+          "body": "Deux personnes de 70 kg à un mètre l’une de l’autre s’attirent avec une force de 6,67 × 10⁻¹¹ × 70 × 70 / 1, soit environ 3 × 10⁻⁷ newton.\n\nC’est le poids d’un grain de poussière de trente microgrammes.\n\nLa gravitation est de très loin la plus faible des quatre interactions. Elle ne domine à grande échelle que parce qu’elle est toujours attractive et ne s’annule jamais, là où les charges électriques se compensent.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La distance se compte depuis les centres",
+          "body": "Pour un objet posé au sol, d n’est pas zéro : c’est le rayon de la Terre, 6 370 kilomètres.\n\nMonter au sommet de l’Everest, 8,8 kilomètres, ne change donc d que d’un millième, et le poids d’environ deux millièmes.\n\nC’est pourquoi on ne pèse pas sensiblement moins lourd en altitude, contrairement à ce qu’on imagine. À 400 kilomètres, l’altitude de la station spatiale, la pesanteur vaut encore 89 % de celle du sol.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double la distance entre deux corps. Par combien la force est-elle divisée ?",
+          "explanation": "Par 4 : la force varie en 1/d², donc doubler d divise la force par 2² = 4.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On triple la distance. Par combien la force est-elle divisée ?",
+          "explanation": "Par 9, soit 3². C’est l’écart avec l’intuition linéaire qui fait l’intérêt de la loi.",
+          "answer": 9,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la force varie-t-elle comme l’inverse du carré ?",
+          "explanation": "Parce que l’influence se répartit sur une sphère, dont la surface vaut 4πr² et grandit donc comme le carré du rayon.",
+          "options": [
+            {
+              "text": "la surface d’une sphère grandit comme le carré du rayon",
+              "correct": true
+            },
+            {
+              "text": "c’est une constatation sans explication"
+            },
+            {
+              "text": "parce que la masse est au carré"
+            },
+            {
+              "text": "parce que l’espace a deux dimensions"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La Terre attire la pomme plus fort que la pomme n’attire la Terre.",
+          "explanation": "Faux. Les deux forces sont égales et opposées. C’est l’énorme différence de masse qui fait que seule la pomme bouge visiblement.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "À 400 km d’altitude, la pesanteur est presque nulle.",
+          "explanation": "Faux. Elle vaut encore 89 % de celle du sol. Si les astronautes flottent, ce n’est pas parce que la gravité a disparu.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la gravitation domine-t-elle à grande échelle malgré sa faiblesse ?",
+          "explanation": "Parce qu’elle est toujours attractive et ne s’annule jamais, alors que les charges électriques, plus fortes, se compensent.",
+          "options": [
+            {
+              "text": "elle est toujours attractive et ne se compense jamais",
+              "correct": true
+            },
+            {
+              "text": "elle est la plus forte des interactions"
+            },
+            {
+              "text": "elle porte plus loin que les autres"
+            },
+            {
+              "text": "elle agit instantanément"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "poids-et-masse",
+      "title": "Le poids et la masse",
+      "subtitle": "Deux grandeurs, deux unités, et une confusion quotidienne.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le même sac, quatre astres",
+          "body": "Règle la masse du sac, puis passe de la Terre à la Lune, à Mars et à Jupiter. Le nombre de kilogrammes ne bouge jamais : c’est le produit affiché, le poids en newtons, qui change d’un astre à l’autre.",
+          "figureId": "poids-astres",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation, et ses deux unités",
+          "body": "P = m × g\n\nLa masse m est en kilogrammes : c’est une quantité de matière, et elle est la même partout dans l’univers.\n\nLe poids P est en newtons : c’est une force, celle que l’astre exerce, et elle dépend de l’endroit.\n\ng, l’intensité de la pesanteur, vaut 9,8 N/kg sur Terre, 1,6 sur la Lune, 3,7 sur Mars et 24,8 sur Jupiter.",
+          "formula": "P = m × g",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La balance de la salle de bains ment poliment",
+          "body": "Elle mesure une force — celle que vous exercez sur elle — et affiche des kilogrammes.\n\nElle a donc une valeur de g câblée dans son électronique. Emportée sur la Lune, elle afficherait 12 kg pour une personne de 72, sans être en panne : elle ferait exactement ce pour quoi elle a été réglée.\n\nUne balance à deux plateaux, elle, compare deux masses et donnerait le bon résultat partout. C’est pour cela que les étalons de masse se comparent ainsi.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le même astronaute, quatre poids",
+          "body": "Une personne de 72 kg pèse 706 newtons sur Terre.\n\nSur la Lune : 72 × 1,6 = 115 newtons, six fois moins.\n\nSur Mars : 72 × 3,7 = 266 newtons.\n\nSur Jupiter : 72 × 24,8 = 1 786 newtons, deux fois et demie le poids terrestre. Sa masse, elle, vaut 72 kg aux quatre endroits, et il faudrait exactement la même force pour la mettre en mouvement horizontalement.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "D’où vient g",
+          "body": "g n’est pas une constante fondamentale : c’est la gravitation appliquée à la surface d’un astre.\n\ng = G × M / R², où M est la masse de l’astre et R son rayon.\n\nC’est pourquoi Mars, bien plus petite que la Terre, a une pesanteur de 3,7 : sa masse est dix fois moindre, mais son rayon l’est deux fois, et le carré au dénominateur rattrape une partie de l’écart.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur change-t-elle d’un astre à l’autre ?",
+          "explanation": "La masse en kilogrammes est la même partout. Le poids en newtons et l’intensité de la pesanteur dépendent de l’astre.",
+          "categories": [
+            "identique partout",
+            "dépend de l’astre"
+          ],
+          "items": [
+            {
+              "text": "la masse, en kilogrammes",
+              "category": 0
+            },
+            {
+              "text": "la quantité de matière",
+              "category": 0
+            },
+            {
+              "text": "le poids, en newtons",
+              "category": 1
+            },
+            {
+              "text": "l’intensité de la pesanteur g",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel est le poids, en newtons, d’une personne de 72 kg sur la Lune, où g vaut 1,6 N/kg ?",
+          "explanation": "P = m × g = 72 × 1,6 = 115,2 newtons, soit environ six fois moins que sur Terre.",
+          "answer": 115.2,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de fois le poids terrestre est-il plus grand que le poids lunaire ?",
+          "explanation": "9,8 divisé par 1,6 donne environ 6. C’est le rapport des deux pesanteurs, et rien d’autre.",
+          "min": 1,
+          "max": 30,
+          "answer": 6,
+          "tolerance": 0.6,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’afficherait une balance de salle de bains emportée sur la Lune ?",
+          "explanation": "Un sixième de la masse réelle. Elle mesure une force et la convertit avec le g terrestre câblé dans son électronique.",
+          "options": [
+            {
+              "text": "six fois moins que la masse réelle",
+              "correct": true
+            },
+            {
+              "text": "la masse réelle, elle mesure des kilogrammes"
+            },
+            {
+              "text": "six fois plus"
+            },
+            {
+              "text": "rien, elle serait en panne"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient l’intensité de la pesanteur d’un astre ?",
+          "explanation": "De sa masse et de son rayon : g = G × M / R². Ce n’est pas une constante fondamentale.",
+          "options": [
+            {
+              "text": "de sa masse et de son rayon",
+              "correct": true
+            },
+            {
+              "text": "de sa seule masse"
+            },
+            {
+              "text": "de sa distance au Soleil"
+            },
+            {
+              "text": "de sa vitesse de rotation"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il faudrait moins d’effort pour faire glisser horizontalement une caisse sur la Lune que sur Terre, à frottement nul.",
+          "explanation": "Faux. C’est la masse qui résiste à la mise en mouvement, et elle est identique. Seul le poids, donc les frottements, changerait.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "se-mettre-en-orbite",
+      "title": "Se mettre en orbite",
+      "subtitle": "Une orbite est une chute qui rate la Terre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Tirer de plus en plus vite",
+          "body": "Règle la vitesse du boulet. Trop lent, il retombe. À 7,9 kilomètres par seconde, la Terre se dérobe exactement aussi vite qu’il tombe : il est en orbite. Au-delà de 11,2, il ne revient jamais.",
+          "figureId": "canon-newton",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’expérience de pensée de Newton",
+          "body": "Un canon au sommet d’une montagne très haute, au-dessus de l’atmosphère.\n\nTir faible : le boulet décrit une courbe et tombe assez près.\n\nTir plus fort : il tombe plus loin, et la courbure de la Terre commence à compter.\n\nTir assez fort : le sol s’éloigne sous lui exactement aussi vite qu’il descend. Il tourne, et il tombe toujours — il ne touche simplement jamais.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi les astronautes flottent",
+          "body": "Pas parce que la gravité aurait disparu : à 400 kilomètres, elle vaut encore 89 % de celle du sol.\n\nIls flottent parce que la station et eux tombent ensemble, à la même accélération. Rien ne les presse l’un contre l’autre, donc rien ne donne la sensation de poids.\n\nC’est exactement ce qu’on ressent pendant la fraction de seconde où un ascenseur démarre vers le bas, prolongé indéfiniment. On parle d’impesanteur, et non d’absence de gravité.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux vitesses à retenir",
+          "body": "Vitesse de satellisation, au ras du sol : environ 7,9 km/s, soit 28 400 km/h. En dessous, l’objet retombe.\n\nVitesse de libération : environ 11,2 km/s, soit 40 300 km/h. Au-delà, l’objet ne revient jamais et quitte l’attraction terrestre.\n\nLe rapport entre les deux vaut exactement racine de 2, ce qui n’est pas une coïncidence mais une conséquence du calcul de l’énergie.",
+          "formula": "v libération = v orbitale × √2",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux orbites qu’on utilise tous les jours",
+          "body": "La station spatiale, à 400 kilomètres : un tour en 90 minutes, soit seize levers de soleil par jour pour son équipage.\n\nLes satellites géostationnaires, à 35 786 kilomètres : un tour en exactement 24 heures. Ils restent donc au-dessus du même point du sol, ce qui permet de pointer une antenne une fois pour toutes.\n\nCette altitude n’est pas un choix : c’est la seule à laquelle la période vaut un jour. Elle se calcule, et le calcul est celui de la leçon suivante.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle vitesse faut-il, en km/s, pour se satelliser au ras du sol ?",
+          "explanation": "Environ 7,9 km/s. En dessous, le boulet de Newton retombe : la Terre ne se dérobe pas assez vite.",
+          "answer": 7.9,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et quelle vitesse, en km/s, pour ne jamais revenir ?",
+          "explanation": "11,2 km/s, la vitesse de libération. Le rapport avec la précédente vaut racine de 2.",
+          "answer": 11.2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les astronautes flottent-ils dans la station spatiale ?",
+          "explanation": "Parce qu’ils tombent avec la station, à la même accélération. Rien ne les presse contre elle, donc aucune sensation de poids.",
+          "options": [
+            {
+              "text": "ils tombent avec la station, à la même accélération",
+              "correct": true
+            },
+            {
+              "text": "la gravité y est nulle"
+            },
+            {
+              "text": "ils sont trop loin de la Terre"
+            },
+            {
+              "text": "la rotation annule la pesanteur"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une orbite, en une phrase ?",
+          "explanation": "Une chute perpétuelle qui ne touche jamais le sol, parce que la Terre se courbe aussi vite que l’objet descend.",
+          "options": [
+            {
+              "text": "une chute qui rate la Terre",
+              "correct": true
+            },
+            {
+              "text": "un équilibre entre deux forces opposées"
+            },
+            {
+              "text": "une zone où la gravité s’annule"
+            },
+            {
+              "text": "un mouvement sans force"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes dure un tour de la station spatiale ?",
+          "explanation": "Environ 90 minutes, soit seize tours par jour — et seize levers de soleil pour l’équipage.",
+          "answer": 90,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les satellites géostationnaires sont-ils tous à 35 786 km ?",
+          "explanation": "Parce que c’est la seule altitude où la période vaut 24 heures. Ce n’est pas un choix d’ingénieur mais un résultat de calcul.",
+          "options": [
+            {
+              "text": "c’est la seule altitude où la période vaut 24 h",
+              "correct": true
+            },
+            {
+              "text": "c’est la limite de l’atmosphère"
+            },
+            {
+              "text": "c’est une convention internationale"
+            },
+            {
+              "text": "au-delà la gravité est trop faible"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-kepler",
+      "title": "Défi : la troisième loi de Kepler",
+      "subtitle": "Un rapport qui reste constant sur quatre mille fois la distance.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compter les tours plutôt que les croire",
+          "body": "Lance le temps, puis arrête-le : les compteurs donnent le nombre de tours de chaque planète. Au bout d’une année terrestre, Mercure en a fait quatre et Mars pas la moitié d’un. Plus une planète est loin, plus son année est longue — et le défi demande de combien.",
+          "figureId": "orbites",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi de 1618",
+          "body": "Pour toute planète du Système solaire, le carré de la période divisé par le cube du demi-grand axe est le même nombre :\n\nT² / a³ = constante\n\nKepler l’a trouvée en comparant des tables d’observations, sans savoir pourquoi. Newton l’a démontrée soixante-dix ans plus tard à partir de la loi en 1/d² : c’est une conséquence, pas un fait séparé.",
+          "formula": "T² / a³ = constante",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "L’éprouver sur les huit planètes",
+          "body": "Avec T en jours et a en millions de kilomètres, le rapport vaut environ 0,0397 pour Mercure et 0,0399 pour Neptune.\n\nEntre les deux, la distance est multipliée par 77 et la période par 684. Le rapport, lui, ne varie que de 2 %, et cet écart résiduel vient des arrondis des tables, pas de la loi.\n\nUne relation qui tient sur un tel intervalle n’est pas une coïncidence d’ajustement : c’est la signature d’un mécanisme.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "S’en servir pour prévoir",
+          "body": "Une planète hypothétique à 600 millions de kilomètres du Soleil.\n\nT² = 0,0397 × 600³ = 0,0397 × 216 000 000, soit environ 8 575 000.\n\nT = racine de 8 575 000, soit environ 2 930 jours, un peu plus de huit ans.\n\nOn vient de prévoir l’année d’une planète qu’on n’a jamais observée, à partir de sa seule distance. C’est ce pouvoir de prédiction, et non l’élégance de la formule, qui a fait accepter la mécanique de Newton.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a fait tenir ensemble",
+          "body": "La pomme qui tombe, le poids qui change d’un astre à l’autre, la station qui ne tombe jamais et l’année de Neptune sont le même phénomène, décrit par une seule formule en 1/d².\n\nC’est ce rassemblement qui a fait la réputation de Newton, bien plus que chacun des résultats pris séparément.\n\nAvant lui, le ciel et la Terre obéissaient à deux physiques différentes. Après lui, à une seule.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Mercure fait un tour en 88 jours. Combien de tours fait-elle pendant une année terrestre de 365 jours ?",
+          "explanation": "365 divisé par 88 donne environ 4,1 : un peu plus de quatre tours, ce que la figure affiche.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut T² / a³ pour une planète du Système solaire ?",
+          "explanation": "Le même nombre pour toutes : c’est le contenu de la troisième loi de Kepler.",
+          "options": [
+            {
+              "text": "le même nombre pour toutes les planètes",
+              "correct": true
+            },
+            {
+              "text": "un nombre proportionnel à la masse"
+            },
+            {
+              "text": "un nombre qui croît avec la distance"
+            },
+            {
+              "text": "un nombre différent pour chacune"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Une planète est à 600 millions de km du Soleil. Quelle est sa période, en jours ?",
+          "explanation": "T² = 0,0397 × 600³ = 8 575 000 environ, donc T vaut à peu près 2 930 jours, un peu plus de huit ans.",
+          "min": 100,
+          "max": 20000,
+          "answer": 2930,
+          "tolerance": 350,
+          "unit": "j",
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Kepler a démontré sa troisième loi à partir de la gravitation.",
+          "explanation": "Faux. Il l’a trouvée dans des tables d’observations, sans savoir pourquoi. C’est Newton qui l’a démontrée, soixante-dix ans après.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’écart de 2 % entre Mercure et Neptune ne met-il pas la loi en défaut ?",
+          "explanation": "Parce qu’il vient des arrondis des tables. Sur un intervalle où la distance est multipliée par 77, 2 % est remarquablement constant.",
+          "options": [
+            {
+              "text": "il vient des arrondis des valeurs tabulées",
+              "correct": true
+            },
+            {
+              "text": "la loi ne vaut que pour les planètes proches"
+            },
+            {
+              "text": "Neptune a une orbite particulière"
+            },
+            {
+              "text": "2 % est une marge conventionnelle"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que Newton a réellement apporté ?",
+          "explanation": "Il a montré que la chute d’une pomme et l’orbite d’une planète relèvent d’une seule loi. Avant lui, ciel et Terre avaient deux physiques.",
+          "options": [
+            {
+              "text": "une seule loi pour le ciel et pour la Terre",
+              "correct": true
+            },
+            {
+              "text": "la découverte des orbites elliptiques"
+            },
+            {
+              "text": "la mesure de la constante G"
+            },
+            {
+              "text": "la première observation des satellites"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
