@@ -39,6 +39,7 @@ import 'root_two_figure.dart';
 import 'solid_figure.dart';
 import 'spreadsheet_figure.dart';
 import 'trigonometry_figure.dart';
+import 'wave_figure.dart';
 import 'rutherford_figure.dart';
 import 'swan_neck_figure.dart';
 import 'loop_robot_figure.dart';
@@ -133,6 +134,11 @@ abstract final class FigureRegistry {
     // Un triangle rectangle qu'on agrandit : le rapport ne bouge pas.
     'trigonometrie': (BuildContext context, Color accent) =>
         TrigonometryFigure(accent: accent),
+    // Une onde sonore qui avance, et le point du milieu qui reste sur
+    // place : on règle le milieu et la fréquence, jamais la longueur
+    // d'onde.
+    'onde': (BuildContext context, Color accent) =>
+        WaveFigure(accent: accent),
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),
