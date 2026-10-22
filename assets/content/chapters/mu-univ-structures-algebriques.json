@@ -1,0 +1,677 @@
+{
+  "chapter": "maths-universite-structures-algebriques",
+  "lessons": [
+    {
+      "id": "les-groupes",
+      "title": "Les groupes",
+      "subtitle": "Quatre conditions, et des millions d’exemples.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux roues, et un comptage qui se referme",
+          "body": "Règle le nombre de dents de la roue menée et regarde les deux compteurs. Une roue de n dents revient à sa position de départ quand n dents ont passé, puis recommence. Compter des dents sur une roue, c’est compter modulo n — et c’est le groupe le plus simple qui existe.",
+          "figureId": "engrenages",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La définition, et ce qu’il faut vérifier",
+          "body": "Un groupe est un ensemble muni d’une opération qui vérifie quatre conditions : l’opération reste dans l’ensemble, elle est associative, il existe un élément neutre, et chaque élément a un inverse.\n\nLa première condition est celle qu’on oublie. Les entiers impairs ne forment pas un groupe pour l’addition : la somme de deux impairs est paire, donc on sort de l’ensemble.\n\nLa commutativité n’est pas exigée. Les rotations d’un cube ne commutent pas, et elles forment bien un groupe. Un groupe commutatif s’appelle abélien.\n\nLa définition ne dit rien de ce que sont les éléments. C’est précisément ce qui fait sa portée : tout théorème démontré sur les groupes vaut partout où ces quatre conditions sont réunies.",
+          "formula": "stabilité, associativité, neutre, inverses",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Cinq groupes qui ne se ressemblent pas",
+          "body": "Les entiers pour l’addition, avec 0 comme neutre et l’opposé comme inverse. Infini et abélien.\n\nLes réels non nuls pour la multiplication, avec 1 comme neutre. On retire zéro parce qu’il n’a pas d’inverse.\n\nLes entiers modulo n pour l’addition : n éléments, et c’est le groupe des dents de la roue.\n\nLes permutations de n objets, avec n factorielle éléments, non abélien dès n égal 3. Et les isométries d’une figure, qui décrivent exactement ses symétries. Cinq objets sans aucun rapport apparent, et un seul théorème les atteint tous.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Le théorème de Lagrange, et ce qu’il interdit",
+          "body": "Un sous-groupe est une partie qui est elle-même un groupe pour la même opération.\n\nLagrange démontre que l’ordre d’un sous-groupe divise toujours l’ordre du groupe. Un groupe de douze éléments ne peut donc avoir de sous-groupe de cinq éléments, et il est inutile d’en chercher.\n\nConséquence immédiate : un groupe dont l’ordre est premier n’a aucun sous-groupe propre, donc il est cyclique — engendré par n’importe lequel de ses éléments non neutres.\n\nC’est un exemple typique de ce que l’abstraction rapporte : une contrainte arithmétique sur un objet dont on ne connaît rien, obtenue sans aucun calcul sur ses éléments.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi les groupes sont nés de la géométrie et des équations",
+          "body": "Galois les introduit vers 1830 pour étudier les permutations des racines d’une équation. Klein les emploie en 1872 pour organiser les géométries, dans son programme d’Erlangen.\\n\\nSon idée est qu’une géométrie est définie par son groupe de transformations : la géométrie euclidienne est l’étude de ce qui reste invariant sous les isométries, la géométrie affine sous les applications affines, la projective sous les projections.\\n\\nLes géométries ne sont donc pas des théories rivales : elles sont ordonnées par leurs groupes, du plus gros au plus petit, et chacune étudie les invariants du sien.\\n\\nCette façon de voir a survécu à tout le reste. En physique, les lois de conservation correspondent à des symétries — c’est le théorème de Noether, 1915 — et le lien entre groupe et invariant y est exactement celui de Klein.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles conditions définissent un groupe ?",
+          "explanation": "Stabilité de l’opération, associativité, élément neutre, et inverse pour chaque élément. La commutativité n’est pas exigée.",
+          "options": [
+            {
+              "text": "l’opération reste dans l’ensemble",
+              "correct": true
+            },
+            {
+              "text": "elle est associative",
+              "correct": true
+            },
+            {
+              "text": "il existe un neutre",
+              "correct": true
+            },
+            {
+              "text": "chaque élément a un inverse",
+              "correct": true
+            },
+            {
+              "text": "elle est commutative"
+            },
+            {
+              "text": "l’ensemble est fini"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les entiers impairs ne forment-ils pas un groupe pour l’addition ?",
+          "explanation": "La somme de deux impairs est paire : on sort de l’ensemble, donc la stabilité manque.",
+          "options": [
+            {
+              "text": "la somme de deux impairs n’est pas impaire",
+              "correct": true
+            },
+            {
+              "text": "il n’y a pas de neutre"
+            },
+            {
+              "text": "l’addition n’est pas associative"
+            },
+            {
+              "text": "ils n’ont pas d’inverse"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet ensemble, muni de l’opération indiquée, est-il un groupe ?",
+          "explanation": "Les entiers pour l’addition et les réels non nuls pour la multiplication le sont. Les entiers pour la multiplication non, faute d’inverses.",
+          "categories": [
+            "c’est un groupe",
+            "ce n’est pas un groupe"
+          ],
+          "items": [
+            {
+              "text": "les entiers, pour l’addition",
+              "category": 0
+            },
+            {
+              "text": "les réels non nuls, pour la multiplication",
+              "category": 0
+            },
+            {
+              "text": "les entiers, pour la multiplication",
+              "category": 1
+            },
+            {
+              "text": "les entiers impairs, pour l’addition",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’éléments a le groupe des permutations de 4 objets ?",
+          "explanation": "4 factorielle = 24. Il est non abélien, comme dès trois objets.",
+          "answer": 24,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un groupe a douze éléments. Peut-il avoir un sous-groupe de cinq éléments ?",
+          "explanation": "Non : l’ordre d’un sous-groupe divise l’ordre du groupe, et 5 ne divise pas 12. C’est le théorème de Lagrange.",
+          "options": [
+            {
+              "text": "non, 5 ne divise pas 12",
+              "correct": true
+            },
+            {
+              "text": "oui, s’il est cyclique"
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "cela dépend de l’opération"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que peut-on dire d’un groupe d’ordre premier ?",
+          "explanation": "Il est cyclique, engendré par n’importe lequel de ses éléments non neutres : Lagrange interdit tout sous-groupe propre.",
+          "options": [
+            {
+              "text": "il est cyclique, et engendré par tout élément non neutre",
+              "correct": true
+            },
+            {
+              "text": "il est abélien mais pas cyclique"
+            },
+            {
+              "text": "il n’existe pas"
+            },
+            {
+              "text": "il a exactement deux sous-groupes propres"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "anneaux-et-corps",
+      "title": "Anneaux et corps",
+      "subtitle": "Deux opérations au lieu d’une, et une question d’inverses.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les familles de nombres, et ce qu’elles permettent",
+          "body": "Déplace le curseur du temps : chaque famille s’ajoute et autorise une opération de plus. Les entiers naturels ne permettent pas toujours de soustraire, les entiers ne permettent pas toujours de diviser, et les rationnels le permettent. Cette suite d’élargissements est exactement la hiérarchie de cette leçon.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Anneau, puis corps",
+          "body": "Un anneau a deux opérations : une addition qui en fait un groupe abélien, et une multiplication associative distributive sur l’addition.\n\nLes entiers forment un anneau. On peut y ajouter, soustraire, multiplier, et pas toujours diviser.\n\nUn corps est un anneau où tout élément non nul a un inverse multiplicatif. On peut donc y diviser, sauf par zéro.\n\nLes rationnels, les réels et les complexes sont des corps. Les entiers ne le sont pas, et c’est pourquoi l’arithmétique des entiers est bien plus riche que celle des rationnels : l’impossibilité de diviser crée les notions de divisibilité, de nombre premier et de reste, qui n’existent pas dans un corps.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les entiers modulo n, et quand ils font un corps",
+          "body": "Les entiers modulo n forment toujours un anneau : on peut ajouter, soustraire et multiplier.\n\nEst-ce un corps ? Il faut que tout élément non nul ait un inverse. Modulo 6, l’élément 2 n’en a pas : aucun produit par 2 ne donne 1, parce que 2 divise 6.\n\nModulo 5, chaque élément non nul en a un : 2 fois 3 fait 6, donc 1. La différence vient de ce que 5 est premier.\n\nLe théorème est exactement celui-là : les entiers modulo n forment un corps si et seulement si n est premier. C’est pourquoi la cryptographie travaille modulo des premiers, et c’est la raison, pas une préférence.",
+          "formula": "les entiers modulo n font un corps si et seulement si n est premier",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les diviseurs de zéro, et ce qu’ils cassent",
+          "body": "Dans les entiers modulo 6, le produit de 2 par 3 vaut zéro, alors qu’aucun des deux n’est nul. On appelle cela des diviseurs de zéro.\n\nLa conséquence est lourde : l’équation 2x égale 0 a deux solutions, 0 et 3. La règle « un produit nul implique un facteur nul » tombe, et avec elle la résolution des équations par factorisation.\n\nUn corps n’a jamais de diviseurs de zéro, et c’est la propriété qu’on emploie sans la nommer chaque fois qu’on résout une équation du second degré.\n\nD’où une leçon de lecture : quand un raisonnement algébrique échoue dans un contexte nouveau, la première question est de savoir si l’on est dans un corps. L’habitude des réels fait employer leurs propriétés sans y penser.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les corps finis, et leur usage quotidien",
+          "body": "Les entiers modulo p, avec p premier, sont des corps finis. Il en existe aussi d’ordre p puissance n, et ce sont les seuls : aucun corps fini n’a un ordre qui ne soit pas une puissance de premier.\\n\\nLe corps à 256 éléments est employé partout. Un octet y est un élément, l’addition est le ou exclusif bit à bit, et la multiplication est définie par un polynôme.\\n\\nC’est dans ce corps que travaillent le chiffrement AES, les codes correcteurs des disques et des codes-barres bidimensionnels, et le stockage réparti.\\n\\nUn résultat d’algèbre abstraite du dix-neuvième siècle est donc exécuté quelques milliards de fois par seconde dans le monde. C’est un argument commode quand on demande à quoi l’algèbre sert.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui distingue un corps d’un anneau ?",
+          "explanation": "Tout élément non nul y a un inverse multiplicatif : on peut diviser, sauf par zéro.",
+          "options": [
+            {
+              "text": "tout élément non nul y est inversible",
+              "correct": true
+            },
+            {
+              "text": "l’addition y est commutative"
+            },
+            {
+              "text": "la multiplication y est associative"
+            },
+            {
+              "text": "il est fini"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’arithmétique des entiers est-elle plus riche que celle des rationnels ?",
+          "explanation": "Parce qu’on ne peut pas toujours y diviser : cela crée divisibilité, nombres premiers et restes, qui n’existent pas dans un corps.",
+          "options": [
+            {
+              "text": "l’impossibilité de diviser crée divisibilité et premiers",
+              "correct": true
+            },
+            {
+              "text": "il y a plus d’entiers que de rationnels"
+            },
+            {
+              "text": "les entiers sont mieux ordonnés"
+            },
+            {
+              "text": "les rationnels sont trop nombreux"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Les entiers modulo 6 forment-ils un corps ?",
+          "explanation": "Non : 2 n’y a pas d’inverse, parce que 2 divise 6. Il faut que n soit premier.",
+          "options": [
+            {
+              "text": "non, car 6 n’est pas premier",
+              "correct": true
+            },
+            {
+              "text": "oui, comme tous les modulo n"
+            },
+            {
+              "text": "oui, car 6 est pair"
+            },
+            {
+              "text": "non, car l’addition n’y est pas définie"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Les entiers modulo ce nombre forment-ils un corps ?",
+          "explanation": "Oui si et seulement si le module est premier. C’est pourquoi la cryptographie travaille modulo des premiers.",
+          "categories": [
+            "c’est un corps",
+            "ce n’est pas un corps"
+          ],
+          "items": [
+            {
+              "text": "modulo 5",
+              "category": 0
+            },
+            {
+              "text": "modulo 7",
+              "category": 0
+            },
+            {
+              "text": "modulo 6",
+              "category": 1
+            },
+            {
+              "text": "modulo 12",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de solutions l’équation 2x = 0 a-t-elle modulo 6 ?",
+          "explanation": "Deux : 0 et 3. La règle « un produit nul implique un facteur nul » tombe à cause des diviseurs de zéro.",
+          "options": [
+            {
+              "text": "deux",
+              "correct": true
+            },
+            {
+              "text": "une"
+            },
+            {
+              "text": "aucune"
+            },
+            {
+              "text": "six"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle propriété des réels emploie-t-on sans la nommer en résolvant une équation ?",
+          "explanation": "L’absence de diviseurs de zéro : un produit nul implique un facteur nul, et c’est ce qui autorise la factorisation.",
+          "options": [
+            {
+              "text": "un produit nul implique un facteur nul",
+              "correct": true
+            },
+            {
+              "text": "la commutativité"
+            },
+            {
+              "text": "l’ordre total"
+            },
+            {
+              "text": "la complétude"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "lineaire-et-matrices",
+      "title": "Applications linéaires et matrices",
+      "subtitle": "Un objet géométrique, et son écriture en nombres.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’une matrice fait au plan",
+          "body": "Règle les quatre coefficients et regarde le carré unité se déformer. Le déterminant est le facteur par lequel l’aire est multipliée, et il s’annule exactement quand la transformation écrase le plan sur une droite. La formule ad moins bc et ce fait n’ont l’air d’avoir aucun rapport tant qu’on ne l’a pas vu.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Linéaire veut dire deux choses, et seulement deux",
+          "body": "Une application est linéaire si l’image d’une somme est la somme des images, et si l’image d’un multiple est le même multiple de l’image.\n\nCes deux conditions ont une conséquence immédiate : l’image du vecteur nul est nulle. Une application affine, qui ajoute une constante, n’est donc pas linéaire — et c’est le piège de vocabulaire le plus durable, parce que son graphe est une droite.\n\nElles ont une seconde conséquence, bien plus utile : une application linéaire est entièrement déterminée par les images des vecteurs d’une base.\n\nRanger ces images en colonnes donne la matrice. Une matrice n’est donc pas un tableau de nombres : c’est la liste de ce que la transformation fait aux vecteurs de base, et rien d’autre.",
+          "formula": "image d’une somme = somme des images ; image d’un multiple = multiple de l’image",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le théorème du rang, et ce qu’il compte",
+          "body": "Le noyau est l’ensemble des vecteurs envoyés sur zéro. L’image est l’ensemble des vecteurs atteints. Les deux sont des sous-espaces vectoriels.\n\nLe théorème du rang affirme que la dimension du noyau plus la dimension de l’image égale la dimension de l’espace de départ.\n\nC’est un bilan de comptage : chaque dimension de départ est soit écrasée, soit transmise. Rien ne se perd et rien ne s’invente.\n\nConséquence pratique immédiate : une application d’un espace dans lui-même est injective si et seulement si elle est surjective. En dimension infinie, c’est faux — et c’est l’une des raisons pour lesquelles l’analyse fonctionnelle est une autre discipline.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le déterminant, lu de trois façons",
+          "body": "Comme formule : ad moins bc en dimension deux, et une somme de produits plus compliquée au-delà.\n\nComme facteur d’aire ou de volume : la figure le montre, et un déterminant négatif signifie que l’orientation a été retournée.\n\nComme critère d’inversibilité : la matrice est inversible si et seulement si son déterminant est non nul. La lecture géométrique l’explique — un déterminant nul veut dire que le volume est écrasé, donc que de l’information a été perdue, donc qu’on ne peut pas revenir.\n\nLes trois lectures sont la même chose, et la troisième ne se retient que par la deuxième. C’est pourquoi un cours qui commence par la formule rend le résultat arbitraire.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le choix d’une base cache",
+          "body": "Une matrice dépend de la base choisie. La même application linéaire a une infinité de matrices, une par base.\\n\\nCertaines quantités ne changent pas : le déterminant, la trace, le rang, les valeurs propres. On les appelle des invariants, et ce sont les seules qui parlent de l’application plutôt que de son écriture.\\n\\nD’où une règle de lecture : un énoncé qui emploie les coefficients individuels d’une matrice parle probablement de la base et non de l’application.\\n\\nEt d’où l’intérêt de diagonaliser : trouver une base où la matrice est la plus simple possible. L’application n’a pas changé — on a seulement cessé de la regarder à travers une base mal choisie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Une application affine, qui ajoute une constante, est-elle linéaire ?",
+          "explanation": "Non : l’image du vecteur nul doit être nulle. Son graphe est pourtant une droite, et c’est le piège de vocabulaire le plus durable.",
+          "options": [
+            {
+              "text": "non, l’image de zéro ne serait pas nulle",
+              "correct": true
+            },
+            {
+              "text": "oui, son graphe est une droite"
+            },
+            {
+              "text": "oui, si la constante est petite"
+            },
+            {
+              "text": "cela dépend de la dimension"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une matrice, au fond ?",
+          "explanation": "La liste de ce que la transformation fait aux vecteurs de base, rangée en colonnes. Pas un tableau de nombres quelconque.",
+          "options": [
+            {
+              "text": "la liste des images des vecteurs de base",
+              "correct": true
+            },
+            {
+              "text": "un tableau de nombres"
+            },
+            {
+              "text": "un système d’équations"
+            },
+            {
+              "text": "une liste de coefficients arbitraires"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le théorème du rang ?",
+          "explanation": "Que la dimension du noyau plus celle de l’image égale la dimension de l’espace de départ : chaque dimension est écrasée ou transmise.",
+          "options": [
+            {
+              "text": "dim noyau + dim image = dim de l’espace de départ",
+              "correct": true
+            },
+            {
+              "text": "le rang est égal au déterminant"
+            },
+            {
+              "text": "le noyau est toujours nul"
+            },
+            {
+              "text": "l’image est toujours l’espace entier"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "En dimension finie, une application d’un espace dans lui-même injective est-elle surjective ?",
+          "explanation": "Oui, et c’est une conséquence du théorème du rang. En dimension infinie, c’est faux.",
+          "options": [
+            {
+              "text": "oui, par le théorème du rang",
+              "correct": true
+            },
+            {
+              "text": "non, jamais"
+            },
+            {
+              "text": "seulement si le déterminant est positif"
+            },
+            {
+              "text": "cela dépend de la base choisie"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque lecture du déterminant à son énoncé.",
+          "explanation": "Formule, facteur d’aire, critère d’inversibilité : trois lectures du même objet, et la troisième se retient par la deuxième.",
+          "pairs": [
+            {
+              "left": "comme formule",
+              "right": "ad moins bc"
+            },
+            {
+              "left": "comme géométrie",
+              "right": "le facteur d’aire"
+            },
+            {
+              "left": "comme critère",
+              "right": "inversible si et seulement si non nul"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un déterminant nul empêche-t-il l’inversion ?",
+          "explanation": "Parce que le volume est écrasé : de l’information a été perdue, donc on ne peut pas revenir.",
+          "options": [
+            {
+              "text": "le volume est écrasé, donc de l’information est perdue",
+              "correct": true
+            },
+            {
+              "text": "la division par zéro est interdite"
+            },
+            {
+              "text": "la matrice n’est pas carrée"
+            },
+            {
+              "text": "les colonnes sont nulles"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-reconnaitre-une-structure",
+      "title": "Défi : reconnaître une structure",
+      "subtitle": "Le travail n’est pas de démontrer : c’est de voir laquelle.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une transformation, et la composition",
+          "body": "Règle les coefficients, puis demande-toi ce que donnerait l’application de deux transformations à la suite. Les matrices inversibles forment un groupe pour la composition : neutre l’identité, inverse la matrice inverse. La figure donne les éléments, la leçon donne la structure.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Huit bits, et une opération qui en fait un groupe",
+          "body": "Allume et éteins les bits. L’opération « basculer certains bits » est son propre inverse : la refaire revient à ne rien faire. L’ensemble des combinaisons de basculements forme donc un groupe où chaque élément est son propre inverse — et ce groupe sert en codage correcteur d’erreurs.",
+          "figureId": "binaire",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode, en quatre questions",
+          "body": "Quels sont les éléments ? C’est l’étape la plus souvent sautée, et celle qui décide. Les éléments d’un groupe de symétries sont des transformations, pas des points.\n\nQuelle est l’opération ? Et reste-t-elle dans l’ensemble ? La stabilité est la condition qu’on oublie.\n\nY a-t-il un neutre, et chaque élément a-t-il un inverse ? Pour les transformations, c’est l’identité et la transformation réciproque.\n\nEt enfin : à quel groupe connu ressemble-t-il ? Deux groupes de même ordre ne sont pas forcément isomorphes, et deux groupes isomorphes sont le même objet sous deux noms.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trois problèmes qui sont le même",
+          "body": "Les rotations d’un cadran d’horloge à douze positions. Les restes de la division par douze. Les notes de la gamme chromatique, à l’octave près.\n\nLes trois sont le groupe des entiers modulo douze. Un théorème sur l’un vaut pour les trois, et c’est la définition de l’isomorphisme : une bijection qui respecte l’opération.\n\nD’où une conséquence qui surprend les musiciens : les transpositions et les inversions d’un thème forment un groupe, et Schoenberg s’en est servi explicitement pour construire la musique sérielle.\n\nReconnaître la structure permet donc de transporter un résultat d’un domaine à l’autre. C’est le rendement de l’abstraction, et il demande d’abord de la reconnaître.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Quatre conditions font un groupe, et celle qu’on oublie est la stabilité. Lagrange en tire une contrainte arithmétique sans calculer sur les éléments.\n\nUn corps est un anneau où l’on peut diviser, et c’est l’impossibilité de diviser qui fait toute la richesse de l’arithmétique des entiers.\n\nUne matrice est la liste des images des vecteurs de base, et le déterminant est un facteur de volume avant d’être une formule.\n\nEt reconnaître une structure est le vrai travail : trois problèmes sans rapport apparent peuvent être le même groupe, et un seul théorème les règle alors tous les trois.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les questions à poser dans l’ordre.",
+          "explanation": "Quels éléments, quelle opération et reste-t-elle dedans, y a-t-il neutre et inverses, et à quel groupe connu cela ressemble.",
+          "items": [
+            "quels sont les éléments",
+            "quelle est l’opération, et est-elle stable",
+            "y a-t-il un neutre et des inverses",
+            "à quel groupe connu cela ressemble-t-il"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle étape est la plus souvent sautée ?",
+          "explanation": "L’identification des éléments. Les éléments d’un groupe de symétries sont des transformations, pas des points.",
+          "options": [
+            {
+              "text": "dire quels sont les éléments",
+              "correct": true
+            },
+            {
+              "text": "vérifier l’associativité"
+            },
+            {
+              "text": "chercher le neutre"
+            },
+            {
+              "text": "calculer l’ordre"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ces objets forment-ils le même groupe ?",
+          "explanation": "Rotations d’un cadran à douze positions, restes modulo douze et notes de la gamme chromatique sont le même groupe. Les permutations de trois objets, non.",
+          "categories": [
+            "le groupe des entiers modulo douze",
+            "un autre groupe"
+          ],
+          "items": [
+            {
+              "text": "les rotations d’un cadran à douze positions",
+              "category": 0
+            },
+            {
+              "text": "les restes de la division par douze",
+              "category": 0
+            },
+            {
+              "text": "les permutations de trois objets",
+              "category": 1
+            },
+            {
+              "text": "les réels non nuls pour la multiplication",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un isomorphisme de groupes ?",
+          "explanation": "Une bijection qui respecte l’opération. Deux groupes isomorphes sont le même objet sous deux noms.",
+          "options": [
+            {
+              "text": "une bijection qui respecte l’opération",
+              "correct": true
+            },
+            {
+              "text": "deux groupes de même ordre"
+            },
+            {
+              "text": "une application linéaire"
+            },
+            {
+              "text": "une bijection quelconque"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Deux groupes de même ordre sont isomorphes.",
+          "explanation": "Faux. Il existe par exemple deux groupes d’ordre quatre non isomorphes, et bien davantage aux ordres supérieurs.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui s’est servi explicitement du groupe des transpositions en musique ?",
+          "explanation": "Schoenberg, pour construire la musique sérielle : transpositions et inversions d’un thème forment un groupe.",
+          "options": [
+            {
+              "text": "Schoenberg, pour la musique sérielle",
+              "correct": true
+            },
+            {
+              "text": "Bach, pour les fugues"
+            },
+            {
+              "text": "Rameau, pour l’harmonie"
+            },
+            {
+              "text": "personne, c’est une analogie"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

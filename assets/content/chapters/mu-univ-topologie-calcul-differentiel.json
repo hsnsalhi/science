@@ -1,0 +1,658 @@
+{
+  "chapter": "maths-universite-topologie-et-calcul-differentiel",
+  "lessons": [
+    {
+      "id": "ouverts-et-fermes",
+      "title": "Ouverts et fermés",
+      "subtitle": "Deux mots mal nommés, et un ensemble qui n’est ni l’un ni l’autre.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des points, et des voisinages",
+          "body": "Pose un point et déplace-toi à gauche ou à droite. Un ensemble est ouvert si, depuis chacun de ses points, on peut bouger un peu dans les deux sens sans en sortir. Essaie mentalement sur l’intervalle de 0 à 10 inclus, puis exclu : la différence est exactement aux bornes.",
+          "figureId": "droite-graduee",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux définitions, et leur dissymétrie",
+          "body": "Un ensemble est ouvert si chacun de ses points en est le centre d’un petit intervalle entièrement contenu dedans. Aucun point n’est au bord.\n\nUn ensemble est fermé si son complémentaire est ouvert. C’est une définition par négation, et c’est ce qui rend le vocabulaire trompeur.\n\nFermé ne signifie donc pas « non ouvert ». L’intervalle de 0 inclus à 1 exclu n’est ni ouvert — à cause du 0 — ni fermé — car son complémentaire contient 1 et ne l’est pas non plus.\n\nEt deux ensembles sont à la fois ouverts et fermés : l’ensemble vide et ℝ tout entier. Un espace où ce sont les seuls est dit connexe, et la leçon suivante y revient.",
+          "formula": "fermé veut dire « complémentaire ouvert », pas « non ouvert »",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi ces notions, et pas d’autres",
+          "body": "Elles sont choisies pour une raison précise : ce sont les plus petites notions qui rendent la continuité exprimable sans distance.\n\nLa définition topologique de la continuité est que l’image réciproque de tout ouvert est un ouvert. Elle ne mentionne ni epsilon, ni distance, ni limite.\n\nDans un espace métrique, elle est équivalente à la définition avec epsilon et delta — c’est un exercice, et il éclaire les deux.\n\nL’intérêt est qu’elle s’applique là où aucune distance n’est naturelle : espaces de fonctions, espaces quotients, convergence en loi. La topologie est donc née du besoin d’étendre la continuité, et non d’un goût pour la généralité.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les unions et les intersections, et le piège",
+          "body": "Une union quelconque d’ouverts est ouverte, même infinie. Une intersection d’ouverts est ouverte si elle est finie.\n\nPas si elle est infinie : l’intersection des intervalles ouverts de moins un sur n à un sur n, pour tous les n, est l’ensemble réduit à zéro — qui n’est pas ouvert.\n\nLa règle est donc dissymétrique, et elle l’est volontairement : ces trois propriétés sont exactement les axiomes d’une topologie, et tout espace qui les vérifie en est une.\n\nPour les fermés, tout s’inverse : intersections quelconques et unions finies. L’erreur classique consiste à supposer qu’une union infinie de fermés est fermée. L’union des segments de 0 à 1 moins 1 sur n donne l’intervalle de 0 inclus à 1 exclu, qui n’est pas fermé.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Intérieur, adhérence, frontière",
+          "body": "L’intérieur d’un ensemble est le plus grand ouvert qu’il contient. L’adhérence est le plus petit fermé qui le contient.\\n\\nLa frontière est la différence des deux : les points dont tout voisinage rencontre à la fois l’ensemble et son complémentaire.\\n\\nUn ensemble est ouvert si et seulement s’il égale son intérieur, fermé si et seulement s’il égale son adhérence. Les deux caractérisations sont souvent plus commodes que les définitions.\\n\\nUn cas éclairant : les rationnels dans ℝ ont un intérieur vide et une adhérence égale à ℝ tout entier. Leur frontière est donc ℝ. Un ensemble peut ainsi être entièrement constitué de points de frontière, ce qu’aucun dessin ne suggère.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que veut dire qu’un ensemble est fermé ?",
+          "explanation": "Que son complémentaire est ouvert. Ce n’est pas la négation d’ouvert, et c’est ce qui rend le vocabulaire trompeur.",
+          "options": [
+            {
+              "text": "son complémentaire est ouvert",
+              "correct": true
+            },
+            {
+              "text": "il n’est pas ouvert"
+            },
+            {
+              "text": "il est borné"
+            },
+            {
+              "text": "il contient ses bornes"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet ensemble de ℝ est-il ouvert, fermé, ou ni l’un ni l’autre ?",
+          "explanation": "L’intervalle ouvert est ouvert, le segment est fermé, le demi-ouvert n’est ni l’un ni l’autre, et ℝ est les deux.",
+          "categories": [
+            "ouvert",
+            "ni ouvert ni fermé"
+          ],
+          "items": [
+            {
+              "text": "l’intervalle de 0 à 1 exclus des deux côtés",
+              "category": 0
+            },
+            {
+              "text": "la réunion de deux intervalles ouverts",
+              "category": 0
+            },
+            {
+              "text": "l’intervalle de 0 inclus à 1 exclu",
+              "category": 1
+            },
+            {
+              "text": "les rationnels de 0 à 1",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la définition topologique de la continuité ?",
+          "explanation": "L’image réciproque de tout ouvert est un ouvert. Elle ne mentionne ni epsilon, ni distance, ni limite.",
+          "options": [
+            {
+              "text": "l’image réciproque de tout ouvert est ouverte",
+              "correct": true
+            },
+            {
+              "text": "l’image de tout ouvert est ouverte"
+            },
+            {
+              "text": "l’image de tout fermé est fermée"
+            },
+            {
+              "text": "la fonction est bornée sur les ouverts"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la topologie est-elle née ?",
+          "explanation": "Du besoin d’exprimer la continuité là où aucune distance n’est naturelle : espaces de fonctions, espaces quotients, convergence en loi.",
+          "options": [
+            {
+              "text": "pour exprimer la continuité sans distance",
+              "correct": true
+            },
+            {
+              "text": "par goût de la généralité"
+            },
+            {
+              "text": "pour classer les surfaces"
+            },
+            {
+              "text": "pour remplacer la géométrie"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une intersection infinie d’ouverts est-elle ouverte ?",
+          "explanation": "Non. L’intersection des intervalles de −1/n à 1/n pour tous les n est l’ensemble réduit à zéro, qui n’est pas ouvert.",
+          "options": [
+            {
+              "text": "non, l’exemple des intervalles de −1/n à 1/n le montre",
+              "correct": true
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "oui, si les ouverts sont bornés"
+            },
+            {
+              "text": "oui, si l’intersection est non vide"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une union infinie de fermés est fermée.",
+          "explanation": "Faux. L’union des segments de 0 à 1 − 1/n donne l’intervalle de 0 inclus à 1 exclu, qui n’est pas fermé.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "compacite-et-connexite",
+      "title": "Compacité et connexité",
+      "subtitle": "Deux propriétés, et chacune garantit une famille de théorèmes.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un trou, et ce qu’il casse",
+          "body": "Cherche la fraction qui vaudrait racine de deux : tu t’approches sans atteindre. Dans ℚ, l’ensemble des rationnels de carré inférieur à 2 est fermé et borné, et il n’est pas compact — une suite peut y tourner sans converger. Le trou est exactement ce qui empêche la compacité.",
+          "figureId": "racine-de-deux",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Compact, et les deux caractérisations",
+          "body": "Dans ℝ puissance n, un ensemble est compact si et seulement s’il est fermé et borné. C’est le théorème de Heine-Borel, et c’est la caractérisation qu’on emploie.\n\nLa définition générale est autre : de toute suite on peut extraire une sous-suite convergente dans l’ensemble. Elle vaut dans tout espace métrique, et c’est elle qui sert dans les démonstrations.\n\nLes deux coïncident dans ℝ puissance n et pas ailleurs. Dans un espace de fonctions, un ensemble fermé et borné n’est généralement pas compact, et c’est l’une des difficultés centrales de l’analyse fonctionnelle.\n\nLa compacité garantit l’existence : une fonction continue sur un compact est bornée, atteint ses bornes, et est uniformément continue. Trois théorèmes, une propriété.",
+          "formula": "dans ℝ puissance n : compact si et seulement si fermé et borné",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Connexe, et ce que cela garantit",
+          "body": "Un ensemble est connexe s’il ne peut pas être coupé en deux parties ouvertes non vides disjointes. Intuitivement : il est d’un seul morceau.\n\nLes intervalles de ℝ sont exactement les ensembles connexes de ℝ, et c’est un théorème, pas une évidence.\n\nLa connexité garantit le passage : l’image d’un connexe par une fonction continue est connexe. Le théorème des valeurs intermédiaires n’est rien d’autre que cet énoncé, appliqué à un intervalle.\n\nD’où la répartition : la compacité garantit l’existence d’un extremum, la connexité garantit qu’on passe par toutes les valeurs intermédiaires. Les deux sont indépendantes, et un énoncé qui demande les deux exige un segment.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas où la compacité manque, et ce qui se casse",
+          "body": "La fonction inverse sur l’intervalle ouvert de 0 à 1 est continue. L’intervalle est borné et n’est pas fermé, donc pas compact.\n\nConséquence : la fonction n’est pas bornée, elle n’atteint aucune borne, et elle n’est pas uniformément continue. Les trois théorèmes tombent ensemble, et c’est normal — ils venaient de la même propriété.\n\nAjoutons les bornes : sur le segment de 0 à 1, la fonction n’est plus définie en zéro. Il n’y a donc pas de contre-exemple sur un compact, et il ne peut pas y en avoir.\n\nC’est la bonne façon de retenir ces théorèmes : non comme une liste, mais comme trois conséquences d’une même hypothèse, qui se vérifient ou tombent ensemble.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les deux propriétés se transmettent par continuité",
+          "body": "L’image d’un compact par une fonction continue est compacte. L’image d’un connexe est connexe.\\n\\nCes deux énoncés sont les théorèmes utiles, et tout le reste s’en déduit. Une fonction continue sur un segment a une image compacte dans ℝ, donc fermée et bornée, donc avec un plus grand et un plus petit élément : voilà le théorème des bornes atteintes.\\n\\nL’image est aussi connexe, donc c’est un intervalle : voilà le théorème des valeurs intermédiaires.\\n\\nLes deux grands théorèmes du cours d’analyse sont donc le même énoncé — « l’image d’un segment est un segment » — lu une fois par la compacité et une fois par la connexité. C’est la formulation la plus économique qu’on en connaisse.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans ℝ puissance n, à quoi la compacité équivaut-elle ?",
+          "explanation": "À être fermé et borné : c’est le théorème de Heine-Borel, et c’est la caractérisation qu’on emploie.",
+          "options": [
+            {
+              "text": "être fermé et borné",
+              "correct": true
+            },
+            {
+              "text": "être fermé seulement"
+            },
+            {
+              "text": "être borné seulement"
+            },
+            {
+              "text": "être connexe"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la définition générale d’un compact dans un espace métrique ?",
+          "explanation": "De toute suite on peut extraire une sous-suite convergente dans l’ensemble. C’est elle qui sert dans les démonstrations.",
+          "options": [
+            {
+              "text": "toute suite admet une sous-suite convergente dedans",
+              "correct": true
+            },
+            {
+              "text": "il est fermé et borné"
+            },
+            {
+              "text": "il est d’un seul morceau"
+            },
+            {
+              "text": "il est de mesure finie"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Dans un espace de fonctions, fermé et borné implique compact.",
+          "explanation": "Faux. Les deux ne coïncident que dans ℝ puissance n, et c’est l’une des difficultés centrales de l’analyse fonctionnelle.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce théorème vient de la compacité, ou de la connexité ?",
+          "explanation": "La compacité garantit l’existence d’extrema et l’uniforme continuité ; la connexité garantit le passage par les valeurs intermédiaires.",
+          "categories": [
+            "de la compacité",
+            "de la connexité"
+          ],
+          "items": [
+            {
+              "text": "une fonction continue sur un segment est bornée",
+              "category": 0
+            },
+            {
+              "text": "elle atteint ses bornes",
+              "category": 0
+            },
+            {
+              "text": "le théorème des valeurs intermédiaires",
+              "category": 1
+            },
+            {
+              "text": "l’image d’un intervalle est un intervalle",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quels sont les ensembles connexes de ℝ ?",
+          "explanation": "Exactement les intervalles. C’est un théorème, pas une évidence.",
+          "options": [
+            {
+              "text": "exactement les intervalles",
+              "correct": true
+            },
+            {
+              "text": "exactement les segments"
+            },
+            {
+              "text": "tous les ensembles bornés"
+            },
+            {
+              "text": "tous les ouverts"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les trois théorèmes tombent-ils ensemble sur l’intervalle ouvert ?",
+          "explanation": "Parce qu’ils venaient tous de la compacité, qui manque. Ce ne sont pas trois résultats mais trois conséquences d’une hypothèse.",
+          "options": [
+            {
+              "text": "ils venaient tous de la compacité, qui manque",
+              "correct": true
+            },
+            {
+              "text": "la fonction n’est pas continue"
+            },
+            {
+              "text": "l’intervalle n’est pas connexe"
+            },
+            {
+              "text": "par coïncidence"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-derivee-comme-application-lineaire",
+      "title": "La dérivée comme application linéaire",
+      "subtitle": "En dimension un, un nombre. Au-delà, une matrice — et c’est la bonne définition.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La meilleure approximation affine",
+          "body": "Resserre la sécante jusqu’à la tangente. Ce que tu obtiens n’est pas seulement une pente : c’est la droite qui approche le mieux la courbe près du point. Retiens « meilleure approximation », car c’est cette formulation qui se généralise, et pas celle du taux.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Une application linéaire, en quatre nombres",
+          "body": "Règle les coefficients et regarde le carré se déformer. En plusieurs variables, la dérivée en un point est une transformation de ce type : elle dit comment un petit déplacement d’entrée se transforme en petit déplacement de sortie. La matrice qui la porte s’appelle la jacobienne.",
+          "figureId": "matrice",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La différentielle, définie proprement",
+          "body": "Une fonction est différentiable en un point s’il existe une application linéaire telle que l’accroissement de la fonction soit égal à cette application appliquée à l’accroissement, plus un reste négligeable devant lui.\n\nCette application linéaire est la différentielle. En dimension un, elle se réduit à la multiplication par un nombre, et ce nombre est la dérivée.\n\nLa définition ne parle pas de taux d’accroissement, et c’est volontaire : un taux exige de diviser, ce qui n’a pas de sens quand l’entrée est un vecteur.\n\nToute la généralisation vient donc d’avoir reformulé la dérivée comme une approximation linéaire au lieu d’une limite de quotient. C’est un changement de point de vue, pas un calcul nouveau.",
+          "formula": "accroissement = différentielle appliquée au déplacement + reste négligeable",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les dérivées partielles ne suffisent pas",
+          "body": "Les dérivées partielles sont les dérivées selon chaque axe, obtenues en figeant les autres variables. Elles se calculent facilement.\n\nLeur existence ne garantit pas la différentiabilité. Il existe des fonctions dont toutes les dérivées partielles existent en un point, et qui n’y sont pas différentiables : la fonction produit divisé par la somme des carrés, prolongée par zéro à l’origine, en est l’exemple standard.\n\nElle est nulle sur les deux axes, donc ses dérivées partielles y valent zéro. Et elle vaut un demi sur la diagonale, donc aucune application linéaire ne l’approche.\n\nLe théorème utile est que si les dérivées partielles existent et sont continues, alors la fonction est différentiable. C’est une condition suffisante, et c’est celle qu’on vérifie en pratique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le gradient, et la direction de plus forte pente",
+          "body": "Pour une fonction à valeurs réelles, la différentielle s’écrit comme un produit scalaire avec un vecteur : le gradient.\\n\\nIl en résulte une propriété géométrique : parmi toutes les directions de déplacement de même longueur, celle qui fait le plus augmenter la fonction est celle du gradient. C’est le produit scalaire qui le dit, puisqu’il est maximal quand les vecteurs sont colinéaires.\\n\\nLe gradient est donc perpendiculaire aux lignes de niveau, où la fonction ne varie pas. Une carte de randonnée le montre : les sentiers de plus grande pente coupent les courbes de niveau à angle droit.\\n\\nC’est toute la base de la descente de gradient, l’algorithme le plus employé de l’apprentissage automatique : avancer dans la direction opposée au gradient, et recommencer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la différentielle en un point ?",
+          "explanation": "L’application linéaire qui approche l’accroissement de la fonction, à un reste négligeable près.",
+          "options": [
+            {
+              "text": "l’application linéaire qui approche l’accroissement",
+              "correct": true
+            },
+            {
+              "text": "la limite du taux d’accroissement"
+            },
+            {
+              "text": "le vecteur des dérivées partielles"
+            },
+            {
+              "text": "la pente de la tangente"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la définition n’emploie-t-elle pas de taux d’accroissement ?",
+          "explanation": "Parce qu’un taux exige de diviser, ce qui n’a pas de sens quand l’entrée est un vecteur.",
+          "options": [
+            {
+              "text": "diviser par un vecteur n’a pas de sens",
+              "correct": true
+            },
+            {
+              "text": "le taux n’existe pas toujours"
+            },
+            {
+              "text": "c’est une convention"
+            },
+            {
+              "text": "le taux serait trop difficile à calculer"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "L’existence de toutes les dérivées partielles garantit-elle la différentiabilité ?",
+          "explanation": "Non. La fonction produit sur somme des carrés, prolongée par zéro, a ses partielles nulles à l’origine et n’y est pas différentiable.",
+          "options": [
+            {
+              "text": "non, un contre-exemple standard existe",
+              "correct": true
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "oui, en dimension deux seulement"
+            },
+            {
+              "text": "oui, si la fonction est continue"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle condition suffisante vérifie-t-on en pratique ?",
+          "explanation": "Que les dérivées partielles existent et soient continues : cela implique la différentiabilité.",
+          "options": [
+            {
+              "text": "des dérivées partielles continues",
+              "correct": true
+            },
+            {
+              "text": "des dérivées partielles existantes"
+            },
+            {
+              "text": "la continuité de la fonction"
+            },
+            {
+              "text": "la bornitude de la fonction"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment s’appelle la matrice de la différentielle ?",
+          "explanation": "La jacobienne. Ses colonnes sont les dérivées partielles, et elle représente la différentielle dans les bases canoniques.",
+          "options": [
+            {
+              "text": "la jacobienne",
+              "correct": true
+            },
+            {
+              "text": "la hessienne"
+            },
+            {
+              "text": "le gradient"
+            },
+            {
+              "text": "le laplacien"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La généralisation de la dérivée a demandé un calcul nouveau.",
+          "explanation": "Faux. Elle a demandé un changement de point de vue : reformuler la dérivée comme une approximation linéaire au lieu d’une limite de quotient.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-optimiser",
+      "title": "Défi : optimiser, avec et sans contrainte",
+      "subtitle": "Annuler le gradient est nécessaire, et jamais suffisant.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un extremum, et ce que le signe de a décide",
+          "body": "Règle a, b et c : le sommet de la parabole est un minimum si a est positif, un maximum sinon. La dérivée s’annule dans les deux cas, et c’est la dérivée seconde qui tranche. La leçon généralise ce raisonnement à plusieurs variables.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La condition du premier ordre, et sa limite",
+          "body": "En un extremum intérieur d’une fonction différentiable, le gradient est nul. C’est une condition nécessaire.\n\nElle n’est pas suffisante. Un gradient nul peut correspondre à un minimum, un maximum, ou un point selle — un point qui monte dans une direction et descend dans une autre.\n\nLe point selle n’a pas d’équivalent en dimension un, et c’est la nouveauté du cas multidimensionnel. La fonction x carré moins y carré en a un à l’origine.\n\nC’est la matrice des dérivées secondes, la hessienne, qui tranche. Si elle est définie positive, c’est un minimum ; définie négative, un maximum ; de signes mélangés, un point selle.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les multiplicateurs de Lagrange, et ce qu’ils disent",
+          "body": "On cherche l’extremum d’une fonction sur une courbe ou une surface, définie par une contrainte.\n\nEn un tel point, le gradient de la fonction est colinéaire au gradient de la contrainte. Le coefficient de colinéarité est le multiplicateur de Lagrange.\n\nLa raison est géométrique : si les deux gradients n’étaient pas colinéaires, on pourrait se déplacer le long de la contrainte dans une direction où la fonction augmente. On ne serait donc pas à un extremum.\n\nLa méthode transforme ainsi une optimisation sous contrainte en un système d’équations sans contrainte. Et le multiplicateur a un sens : il mesure de combien l’optimum changerait si la contrainte se relâchait d’une unité — c’est un prix.",
+          "formula": "à l’optimum sous contrainte, les deux gradients sont colinéaires",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un cas où le multiplicateur est le résultat intéressant",
+          "body": "Une usine maximise sa production sous une contrainte de budget. La méthode donne les quantités optimales, et aussi le multiplicateur.\n\nCelui-ci vaut la production supplémentaire qu’un euro de budget en plus apporterait. En économie, on l’appelle un prix implicite, ou un prix dual.\n\nC’est souvent l’information la plus utile : elle dit s’il faut demander plus de budget, et combien cela vaudrait.\n\nLe même raisonnement sert en physique, où les multiplicateurs associés aux contraintes d’un système mécanique sont exactement les forces de liaison. Un objet mathématique introduit pour résoudre un système se révèle être une grandeur physique, et cela mérite d’être remarqué.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Fermé ne veut pas dire non ouvert, et un ensemble peut n’être ni l’un ni l’autre. Les trois axiomes d’une topologie sont volontairement dissymétriques.\n\nLa compacité garantit des existences, la connexité des passages. Les théorèmes du cours d’analyse se rangent en deux familles selon celle des deux qu’ils emploient.\n\nLa dérivée est une approximation linéaire avant d’être une limite de quotient, et c’est cette reformulation qui la généralise. Les dérivées partielles ne suffisent pas.\n\nEt annuler un gradient ne donne qu’un candidat. La hessienne tranche, les points selles n’existent qu’au-delà d’une dimension, et un multiplicateur de Lagrange est un prix.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un gradient nul garantit ?",
+          "explanation": "Rien de plus qu’un candidat : minimum, maximum ou point selle. C’est une condition nécessaire, pas suffisante.",
+          "options": [
+            {
+              "text": "un candidat, dont la nature reste à déterminer",
+              "correct": true
+            },
+            {
+              "text": "un minimum"
+            },
+            {
+              "text": "un maximum"
+            },
+            {
+              "text": "un extremum, de nature indifférente"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un point selle ?",
+          "explanation": "Un point qui monte dans une direction et descend dans une autre. Il n’a pas d’équivalent en dimension un.",
+          "options": [
+            {
+              "text": "un point qui monte dans une direction et descend dans une autre",
+              "correct": true
+            },
+            {
+              "text": "un point où la fonction est nulle"
+            },
+            {
+              "text": "un minimum local non global"
+            },
+            {
+              "text": "un point de non-différentiabilité"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui tranche entre les trois cas ?",
+          "explanation": "La hessienne, matrice des dérivées secondes : définie positive pour un minimum, négative pour un maximum, mélangée pour un point selle.",
+          "options": [
+            {
+              "text": "la hessienne",
+              "correct": true
+            },
+            {
+              "text": "la jacobienne"
+            },
+            {
+              "text": "le gradient"
+            },
+            {
+              "text": "la valeur de la fonction"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit la condition de Lagrange à l’optimum sous contrainte ?",
+          "explanation": "Que les gradients de la fonction et de la contrainte sont colinéaires. Sinon on pourrait se déplacer le long de la contrainte en augmentant la fonction.",
+          "options": [
+            {
+              "text": "les deux gradients sont colinéaires",
+              "correct": true
+            },
+            {
+              "text": "les deux gradients sont nuls"
+            },
+            {
+              "text": "les deux gradients sont orthogonaux"
+            },
+            {
+              "text": "la contrainte est saturée"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure le multiplicateur de Lagrange ?",
+          "explanation": "De combien l’optimum changerait si la contrainte se relâchait d’une unité. C’est un prix, et souvent l’information la plus utile.",
+          "options": [
+            {
+              "text": "le gain qu’une unité de contrainte en plus apporterait",
+              "correct": true
+            },
+            {
+              "text": "la valeur de l’optimum"
+            },
+            {
+              "text": "la pente de la contrainte"
+            },
+            {
+              "text": "rien, c’est un intermédiaire de calcul"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi les multiplicateurs correspondent-ils en mécanique ?",
+          "explanation": "Aux forces de liaison. Un objet introduit pour résoudre un système se révèle être une grandeur physique.",
+          "options": [
+            {
+              "text": "aux forces de liaison",
+              "correct": true
+            },
+            {
+              "text": "aux énergies potentielles"
+            },
+            {
+              "text": "aux accélérations"
+            },
+            {
+              "text": "aux moments d’inertie"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

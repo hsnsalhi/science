@@ -1,0 +1,615 @@
+{
+  "chapter": "maths-universite-integration-et-series",
+  "lessons": [
+    {
+      "id": "l-integrale-comme-limite-de-sommes",
+      "title": "L’intégrale comme limite de sommes",
+      "subtitle": "Découper, encadrer, resserrer : trois gestes et c’est tout.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une courbe dont on veut l’aire",
+          "body": "Règle a, b et c et regarde la parabole se déformer. Demande-toi quelle est l’aire entre la courbe et l’axe, entre deux abscisses. Aucune formule de géométrie élémentaire ne la donne, et c’est le problème que l’intégrale résout.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La construction, en trois gestes",
+          "body": "On découpe l’intervalle en morceaux. Sur chacun, on encadre la fonction par son plus petit et son plus grand majorant, et l’on forme deux sommes de rectangles : une en dessous, une au-dessus.\n\nLa somme inférieure est inférieure à l’aire cherchée, la supérieure est supérieure. L’aire est donc prise en sandwich.\n\nOn resserre le découpage. Si les deux sommes se rapprochent indéfiniment, leur limite commune est l’intégrale, et la fonction est dite intégrable au sens de Riemann.\n\nOn reconnaît le mécanisme du chapitre précédent : un encadrement qui se resserre, et la complétude de ℝ qui garantit l’existence de la limite. L’intégrale est donc fondée sur le même axiome que tout le reste.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Quelles fonctions sont intégrables",
+          "body": "Toute fonction continue sur un segment est intégrable, et c’est le cas qui couvre l’essentiel des usages.\n\nToute fonction monotone sur un segment l’est aussi, même si elle a des sauts. Et toute fonction bornée n’ayant qu’un nombre fini de discontinuités.\n\nLa condition exacte est que l’ensemble des discontinuités soit négligeable au sens de la mesure, ce qui dépasse le premier cours — mais l’idée est simple : on peut se permettre des discontinuités tant qu’elles ne sont pas partout.\n\nLa fonction qui vaut 1 sur les rationnels et 0 ailleurs n’est pas intégrable au sens de Riemann : ses sommes inférieures valent toujours 0 et ses sommes supérieures toujours 1, quel que soit le découpage.",
+          "formula": "continue sur un segment implique intégrable",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi Lebesgue a refait la théorie",
+          "body": "La fonction indicatrice des rationnels devrait avoir une intégrale nulle : les rationnels sont dénombrables, donc négligeables parmi les réels.\n\nRiemann ne peut pas le dire, parce qu’il découpe le domaine. Lebesgue, en 1902, découpe l’image : il regroupe les points selon la valeur prise, et mesure chaque groupe.\n\nL’intégrale de Lebesgue existe alors, et vaut zéro. Elle étend celle de Riemann sans la contredire : quand les deux existent, elles coïncident.\n\nSon vrai avantage n’est pas de traiter des fonctions bizarres. Il est que les théorèmes de passage à la limite y sont bien plus simples, et c’est ce qui l’a rendue indispensable en probabilités et en analyse fonctionnelle.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que l’intégrale mesure, au-delà des aires",
+          "body": "L’aire est le premier exemple, et elle masque la généralité. Une intégrale additionne des contributions infinitésimales, quelles qu’elles soient.\\n\\nLe travail d’une force qui varie le long d’un chemin, la masse d’une tige de densité variable, la charge d’un condensateur pendant une charge, la probabilité qu’une grandeur continue tombe dans un intervalle.\\n\\nDans chaque cas, le raisonnement est le même : découper assez fin pour que la grandeur soit presque constante sur chaque morceau, sommer, et passer à la limite.\\n\\nReconnaître ce schéma est ce qui permet d’écrire une intégrale devant un problème nouveau, plutôt que d’en appliquer une apprise. C’est la compétence que le cours vise, et elle ne s’obtient qu’en l’exerçant sur des grandeurs qui ne sont pas des aires.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la construction de l’intégrale dans l’ordre.",
+          "explanation": "Découper, encadrer par deux sommes de rectangles, resserrer le découpage, et conclure si les deux limites coïncident.",
+          "items": [
+            "découper l’intervalle en morceaux",
+            "encadrer par une somme inférieure et une supérieure",
+            "resserrer le découpage",
+            "conclure si les deux sommes ont la même limite"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel axiome garantit l’existence de la limite ?",
+          "explanation": "La complétude de ℝ : c’est le même encadrement qui se resserre que dans tout le chapitre d’analyse.",
+          "options": [
+            {
+              "text": "la complétude de ℝ",
+              "correct": true
+            },
+            {
+              "text": "l’axiome du choix"
+            },
+            {
+              "text": "la continuité de la fonction"
+            },
+            {
+              "text": "la densité de ℚ"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles fonctions sont intégrables au sens de Riemann sur un segment ?",
+          "explanation": "Les continues, les monotones même avec des sauts, et les bornées n’ayant qu’un nombre fini de discontinuités.",
+          "options": [
+            {
+              "text": "les fonctions continues",
+              "correct": true
+            },
+            {
+              "text": "les fonctions monotones",
+              "correct": true
+            },
+            {
+              "text": "les bornées à discontinuités en nombre fini",
+              "correct": true
+            },
+            {
+              "text": "l’indicatrice des rationnels"
+            },
+            {
+              "text": "toutes les fonctions bornées"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’indicatrice des rationnels n’est-elle pas intégrable au sens de Riemann ?",
+          "explanation": "Ses sommes inférieures valent toujours 0 et ses sommes supérieures toujours 1, quel que soit le découpage.",
+          "options": [
+            {
+              "text": "ses deux sommes valent toujours 0 et 1",
+              "correct": true
+            },
+            {
+              "text": "elle n’est pas bornée"
+            },
+            {
+              "text": "elle n’est pas définie partout"
+            },
+            {
+              "text": "les rationnels ne sont pas dénombrables"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que Lebesgue découpe, là où Riemann découpait le domaine ?",
+          "explanation": "L’image : il regroupe les points selon la valeur prise, et mesure chaque groupe.",
+          "options": [
+            {
+              "text": "l’image, en regroupant par valeur prise",
+              "correct": true
+            },
+            {
+              "text": "le domaine, plus finement"
+            },
+            {
+              "text": "la dérivée"
+            },
+            {
+              "text": "rien, il change d’axiomes"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le vrai avantage de l’intégrale de Lebesgue ?",
+          "explanation": "Les théorèmes de passage à la limite y sont bien plus simples, et c’est ce qui l’a rendue indispensable.",
+          "options": [
+            {
+              "text": "les passages à la limite y sont beaucoup plus simples",
+              "correct": true
+            },
+            {
+              "text": "elle traite des fonctions bizarres"
+            },
+            {
+              "text": "elle est plus facile à calculer"
+            },
+            {
+              "text": "elle contredit celle de Riemann"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-theoreme-fondamental",
+      "title": "Le théorème fondamental",
+      "subtitle": "Deux opérations inventées séparément, et qui sont l’une l’inverse de l’autre.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La pente, et l’aire",
+          "body": "Resserre la sécante jusqu’à obtenir la tangente : tu obtiens une pente. L’intégrale, elle, donne une aire. Rien dans ces deux gestes ne laisse deviner qu’ils sont liés, et le théorème de cette leçon affirme qu’ils sont exactement inverses l’un de l’autre.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux énoncés, qu’il faut distinguer",
+          "body": "Premier énoncé : si f est continue, la fonction qui à x associe l’intégrale de f entre a et x est dérivable, et sa dérivée est f. Intégrer puis dériver redonne la fonction de départ.\n\nSecond énoncé : si F est une primitive de f, l’intégrale de f entre a et b vaut F de b moins F de a. C’est celui qu’on emploie pour calculer.\n\nLe premier affirme l’existence d’une primitive pour toute fonction continue, et c’est le contenu profond. Le second est une conséquence, et c’est le plus utilisé.\n\nLes confondre fait perdre l’essentiel : ce théorème n’est pas une technique de calcul, c’est l’affirmation que deux constructions indépendantes sont réciproques.",
+          "formula": "l’intégrale de a à b vaut F(b) − F(a)",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi c’était inattendu",
+          "body": "La dérivée a été inventée pour les tangentes et les vitesses. L’intégrale, pour les aires et les volumes — Archimède calculait des aires par encadrement deux mille ans plus tôt.\n\nLes deux problèmes n’ont aucun rapport apparent, et ont été travaillés séparément pendant des siècles.\n\nNewton et Leibniz établissent le lien indépendamment, vers 1670 et 1675. C’est cela, et non le calcul des dérivées, qui constitue leur apport décisif : avant eux, chaque aire était un problème neuf ; après, elle se ramène à la recherche d’une primitive.\n\nLa querelle de priorité entre eux a empoisonné les mathématiques anglaises pendant un siècle, et c’est la notation de Leibniz qui a gagné.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Une primitive existe, et ne s’écrit pas toujours",
+          "body": "Le théorème garantit qu’une fonction continue a une primitive. Il ne garantit pas qu’elle s’écrive avec les fonctions usuelles.\n\nLa fonction exponentielle de moins x carré est continue, donc elle a une primitive. Liouville a démontré en 1835 que cette primitive ne s’exprime avec aucune combinaison finie de fonctions élémentaires.\n\nC’est une impossibilité démontrée, et non un aveu d’ignorance. Elle a d’ailleurs la même forme que l’insolubilité du cinquième degré par radicaux, et la théorie est parente.\n\nD’où l’importance du calcul numérique et des fonctions spéciales : la fonction d’erreur, tabulée et employée en statistique, est précisément cette primitive à laquelle on a donné un nom faute de formule.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les deux techniques qui viennent du théorème",
+          "body": "L’intégration par parties est la dérivée d’un produit, lue à l’envers. Elle transforme une intégrale en une autre, et le pari est que la seconde soit plus facile.\\n\\nLe changement de variable est la dérivée d’une composée, lue à l’envers. Même pari, autre règle.\\n\\nIl n’existe pas d’autre technique générale. Tout le reste — décomposition en éléments simples, formules trigonométriques, astuces de symétrie — consiste à mettre l’intégrale sous une forme où l’une des deux s’applique.\\n\\nD’où une conséquence pratique : dériver est un algorithme, intégrer est une recherche. Il existe des programmes qui dérivent n’importe quelle expression, et aucun qui intègre n’importe laquelle — parce que certaines primitives n’existent pas sous forme élémentaire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit le premier énoncé du théorème fondamental ?",
+          "explanation": "Que la fonction associant à x l’intégrale de a à x est dérivable, de dérivée f. C’est l’affirmation qu’une primitive existe.",
+          "options": [
+            {
+              "text": "intégrer puis dériver redonne la fonction",
+              "correct": true
+            },
+            {
+              "text": "l’intégrale vaut F(b) − F(a)"
+            },
+            {
+              "text": "toute fonction est intégrable"
+            },
+            {
+              "text": "toute primitive s’écrit explicitement"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Lequel des deux énoncés porte le contenu profond ?",
+          "explanation": "Le premier : il affirme l’existence d’une primitive pour toute fonction continue. Le second en est une conséquence, et c’est le plus utilisé.",
+          "options": [
+            {
+              "text": "le premier, qui affirme l’existence d’une primitive",
+              "correct": true
+            },
+            {
+              "text": "le second, qui permet de calculer"
+            },
+            {
+              "text": "les deux également"
+            },
+            {
+              "text": "aucun, ce sont des définitions"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel était l’apport décisif de Newton et Leibniz ?",
+          "explanation": "Le lien entre les deux problèmes, et non le calcul des dérivées. Avant eux, chaque aire était un problème neuf.",
+          "options": [
+            {
+              "text": "le lien entre tangentes et aires",
+              "correct": true
+            },
+            {
+              "text": "le calcul des dérivées"
+            },
+            {
+              "text": "le calcul des aires par encadrement"
+            },
+            {
+              "text": "la notation moderne"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si une fonction continue a une primitive, celle-ci s’écrit avec les fonctions usuelles.",
+          "explanation": "Faux. Liouville a démontré en 1835 que la primitive de l’exponentielle de moins x carré ne s’exprime avec aucune combinaison finie de fonctions élémentaires.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la nature du résultat de Liouville ?",
+          "explanation": "Une impossibilité démontrée, de la même forme que l’insolubilité du cinquième degré par radicaux — et la théorie est parente.",
+          "options": [
+            {
+              "text": "une impossibilité démontrée",
+              "correct": true
+            },
+            {
+              "text": "une conjecture"
+            },
+            {
+              "text": "un aveu d’ignorance provisoire"
+            },
+            {
+              "text": "une convention de notation"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la fonction d’erreur, employée en statistique ?",
+          "explanation": "La primitive de l’exponentielle de moins x carré, à laquelle on a donné un nom faute de formule.",
+          "options": [
+            {
+              "text": "une primitive qu’on a nommée faute de pouvoir l’écrire",
+              "correct": true
+            },
+            {
+              "text": "une approximation numérique"
+            },
+            {
+              "text": "une fonction élémentaire"
+            },
+            {
+              "text": "la dérivée de l’exponentielle"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-series-et-leurs-pieges",
+      "title": "Les séries, et leurs pièges",
+      "subtitle": "Une somme infinie n’est pas une somme, et ne s’en comporte pas comme une.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Dix termes, deux croissances",
+          "body": "Bascule entre arithmétique et géométrique et règle la raison. Une série est la suite des sommes partielles de ces bâtons. Avec une raison inférieure à 1 en valeur absolue, la somme a une limite finie ; sinon non. Le seuil est à 1, exactement.",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Deux séries célèbres, et leurs sorts opposés",
+          "body": "La série géométrique de raison q converge si la valeur absolue de q est strictement inférieure à 1, et sa somme vaut 1 sur 1 moins q. C’est le cas le plus simple et le plus employé.\n\nLa série harmonique — la somme des inverses des entiers — diverge. Oresme le démontre vers 1350 en groupant les termes : un tiers plus un quart dépasse un demi, les quatre suivants aussi, et ainsi indéfiniment.\n\nLa somme des inverses des carrés, elle, converge, et vaut pi carré sur six. Euler le démontre en 1735, et le résultat est resté célèbre pour l’apparition inexpliquée de pi.\n\nLa règle générale est que la somme des inverses de n puissance alpha converge si et seulement si alpha est strictement supérieur à 1. Le cas alpha égal 1 est donc la frontière, et il diverge.",
+          "formula": "somme de 1 ÷ n puissance α : converge si et seulement si α > 1",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comme la série harmonique diverge lentement",
+          "body": "La somme des n premiers termes vaut environ le logarithme de n, plus une constante proche de 0,577.\n\nPour dépasser 10, il faut donc environ douze mille termes. Pour dépasser 20, près de trois cents millions.\n\nEt pour dépasser 100, il faudrait environ dix puissance quarante-trois termes : plus que le nombre d’atomes de la Terre.\n\nLa série diverge donc, et aucun calcul numérique ne pourra jamais le constater. C’est un cas où seule la démonstration accède au résultat, et où l’expérimentation donnerait la réponse inverse.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le piège du réarrangement",
+          "body": "La série harmonique alternée — plus un, moins un demi, plus un tiers — converge, vers le logarithme de deux.\n\nRéarrangeons ses termes : prenons deux positifs, puis un négatif, et ainsi de suite. La nouvelle série converge encore, et vers une autre valeur.\n\nRiemann démontre qu’on peut réarranger une telle série pour qu’elle converge vers n’importe quel nombre choisi d’avance, ou pour qu’elle diverge.\n\nUne somme infinie dépend donc de l’ordre de ses termes, ce qu’aucune somme finie ne fait. Le mot « somme » est donc trompeur, et la propriété se rétablit seulement pour les séries absolument convergentes.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Trois erreurs qui coûtent cher",
+          "body": "Croire qu’une série converge parce que ses termes tendent vers zéro. La série harmonique le fait et diverge. La condition est nécessaire, pas suffisante.\\n\\nDériver ou intégrer une série terme à terme sans vérifier. L’opération n’est licite que sous des conditions de convergence uniforme, et les contre-exemples sont nombreux.\\n\\nAppliquer un critère hors de son domaine. Le critère des séries alternées exige que les valeurs absolues décroissent, et pas seulement qu’elles tendent vers zéro — deux conditions différentes.\\n\\nLes trois ont ceci de commun qu’elles produisent des résultats numériquement plausibles. Une série mal manipulée ne proteste pas : elle donne un nombre, et c’est pourquoi la vérification des hypothèses n’est pas une formalité.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "La série des inverses des entiers converge-t-elle ?",
+          "explanation": "Non, elle diverge. Oresme le démontre vers 1350 en groupant les termes par paquets dont la somme dépasse un demi.",
+          "options": [
+            {
+              "text": "non, elle diverge",
+              "correct": true
+            },
+            {
+              "text": "oui, vers ln 2"
+            },
+            {
+              "text": "oui, vers pi carré sur six"
+            },
+            {
+              "text": "cela dépend de l’ordre des termes"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut la somme des inverses des carrés ?",
+          "explanation": "Pi carré sur six, démontré par Euler en 1735. L’apparition de pi y est restée célèbre.",
+          "options": [
+            {
+              "text": "pi carré sur six",
+              "correct": true
+            },
+            {
+              "text": "elle diverge"
+            },
+            {
+              "text": "ln 2"
+            },
+            {
+              "text": "deux"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pour quelles valeurs de α la somme des inverses de n puissance α converge-t-elle ?",
+          "explanation": "Pour α strictement supérieur à 1. Le cas α égal 1 est la frontière, et il diverge.",
+          "options": [
+            {
+              "text": "α strictement supérieur à 1",
+              "correct": true
+            },
+            {
+              "text": "α supérieur ou égal à 1"
+            },
+            {
+              "text": "α strictement positif"
+            },
+            {
+              "text": "toutes les valeurs de α"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de termes de la série harmonique faut-il pour dépasser 10 ?",
+          "explanation": "Environ douze mille : la somme vaut à peu près le logarithme de n plus 0,577.",
+          "min": 0,
+          "max": 100000,
+          "answer": 12000,
+          "tolerance": 2500,
+          "unit": "termes",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré Riemann sur le réarrangement des séries ?",
+          "explanation": "Qu’une série convergente mais pas absolument convergente peut être réarrangée pour converger vers n’importe quelle valeur, ou diverger.",
+          "options": [
+            {
+              "text": "on peut la réarranger pour atteindre n’importe quelle valeur",
+              "correct": true
+            },
+            {
+              "text": "le réarrangement ne change rien"
+            },
+            {
+              "text": "le réarrangement fait toujours diverger"
+            },
+            {
+              "text": "seules les séries divergentes se réarrangent"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une somme infinie ne dépend pas de l’ordre de ses termes.",
+          "explanation": "Faux, sauf si elle est absolument convergente. C’est ce qui rend le mot « somme » trompeur pour une série.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-majorer-un-reste",
+      "title": "Défi : majorer un reste",
+      "subtitle": "Savoir qu’une série converge ne sert à rien sans savoir de combien.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les termes, et ce qui reste après n",
+          "body": "Règle la raison géométrique à 0,5 et regarde les bâtons : chacun est la moitié du précédent. La somme de tous les termes restants après un certain rang est alors égale au double du premier d’entre eux, ce qui donne une majoration immédiate du reste.",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que coûte un calcul de somme",
+          "body": "Pousse le curseur : à soixante-dix, la courbe exponentielle annonce des dizaines de milliers d’années. Calculer un million de termes d’une série coûte, lui, une fraction de seconde — mais il faut savoir combien de termes suffisent, et c’est la majoration qui le dit.",
+          "figureId": "complexite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois méthodes de majoration",
+          "body": "La comparaison à une géométrique : si les termes décroissent au moins aussi vite qu’une géométrique de raison q, le reste est majoré par le premier terme négligé divisé par 1 moins q. Rapide, et c’est la plus employée.\n\nLa comparaison à une intégrale : pour une suite décroissante positive, le reste est encadré par deux intégrales. Elle donne l’estimation du logarithme pour la série harmonique.\n\nLe critère des séries alternées : si les valeurs absolues décroissent vers zéro, le reste est majoré par le premier terme négligé. C’est le résultat le plus simple à retenir du chapitre.\n\nLes trois donnent une inégalité, et pas une valeur. C’est exactement ce qu’on veut : une garantie, pas une estimation.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Un calcul complet",
+          "body": "On veut le logarithme de deux à un millième près, par la série harmonique alternée.\n\nLe critère des séries alternées majore le reste par le premier terme négligé, soit un sur n plus un. Il faut donc n plus un inférieur à un millième, c’est-à-dire environ mille termes.\n\nMille termes pour trois décimales, c’est très mauvais. La série du logarithme de deux obtenue autrement converge beaucoup plus vite, et vingt termes suffisent.\n\nLa leçon est que la convergence n’est pas une propriété binaire. Deux séries de même somme peuvent demander mille et vingt termes, et le choix de la série est le vrai travail.",
+          "formula": "séries alternées : reste majoré par le premier terme négligé",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "L’intégrale est un encadrement qui se resserre, fondé sur le même axiome que les suites. Lebesgue découpe l’image là où Riemann découpait le domaine, et le gain est dans les passages à la limite.\n\nLe théorème fondamental relie deux constructions inventées séparément pendant des siècles. Son premier énoncé affirme une existence, et une primitive existante ne s’écrit pas toujours.\n\nUne somme infinie n’est pas une somme : elle dépend de l’ordre des termes, sauf si elle est absolument convergente.\n\nEt la question utile n’est jamais « converge-t-elle » mais « combien de termes pour quelle précision ». La série harmonique diverge, et aucun ordinateur ne le constatera jamais.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque méthode à ce qu’elle majore.",
+          "explanation": "La comparaison géométrique majore par le premier terme sur 1 moins q ; l’intégrale encadre ; les alternées majorent par le premier terme négligé.",
+          "pairs": [
+            {
+              "left": "comparaison à une géométrique",
+              "right": "le premier terme négligé sur 1 − q"
+            },
+            {
+              "left": "comparaison à une intégrale",
+              "right": "un encadrement par deux intégrales"
+            },
+            {
+              "left": "critère des séries alternées",
+              "right": "le premier terme négligé"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de termes de la série harmonique alternée pour ln 2 à un millième près ?",
+          "explanation": "Le reste est majoré par un sur n plus un : il faut environ mille termes, ce qui est très mauvais.",
+          "answer": 1000,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que donnent les trois méthodes de majoration ?",
+          "explanation": "Une inégalité, pas une valeur. C’est exactement ce qu’on veut : une garantie, et non une estimation.",
+          "options": [
+            {
+              "text": "une inégalité, donc une garantie",
+              "correct": true
+            },
+            {
+              "text": "la valeur exacte de la somme"
+            },
+            {
+              "text": "une estimation approchée"
+            },
+            {
+              "text": "le nombre de termes exact"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la comparaison de mille et vingt termes enseigne ?",
+          "explanation": "Que la convergence n’est pas binaire : le choix de la série est le vrai travail, pour une même somme.",
+          "options": [
+            {
+              "text": "le choix de la série compte autant que sa convergence",
+              "correct": true
+            },
+            {
+              "text": "les séries alternées sont mauvaises"
+            },
+            {
+              "text": "ln 2 est difficile à calculer"
+            },
+            {
+              "text": "mille termes est toujours nécessaire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la question utile devant une série ?",
+          "explanation": "Combien de termes pour quelle précision. « Converge-t-elle » ne suffit pas à calculer quoi que ce soit.",
+          "options": [
+            {
+              "text": "combien de termes pour quelle précision",
+              "correct": true
+            },
+            {
+              "text": "converge-t-elle"
+            },
+            {
+              "text": "quelle est sa somme exacte"
+            },
+            {
+              "text": "est-elle alternée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un ordinateur pourrait constater numériquement la divergence de la série harmonique.",
+          "explanation": "Faux. Dépasser 100 demanderait environ dix puissance quarante-trois termes : seule la démonstration accède au résultat.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

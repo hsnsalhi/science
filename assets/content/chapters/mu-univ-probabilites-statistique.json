@@ -1,0 +1,599 @@
+{
+  "chapter": "maths-universite-probabilites-et-statistique",
+  "lessons": [
+    {
+      "id": "modeliser-le-hasard",
+      "title": "Modéliser le hasard",
+      "subtitle": "Trois objets, et le plus difficile est de choisir le premier.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des événements individuels, et une loi d’ensemble",
+          "body": "Pousse le curseur et compte les noyaux restants : le nombre s’écarte de la courbe lisse, et l’écart change de sens à chaque tirage. Aucun noyau n’obéit à la loi, et l’ensemble lui obéit. C’est le fait de base de tout le chapitre, et il faut l’avoir vu pour admettre la suite.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois objets d’un modèle probabiliste",
+          "body": "L’univers : l’ensemble des résultats possibles. Pour un dé, six éléments. Pour la durée de vie d’un noyau, tous les réels positifs.\n\nLa tribu : l’ensemble des événements dont on veut parler. Sur un univers fini, toutes les parties. Sur un univers continu, il faut la restreindre, et c’est la raison technique de son existence.\n\nLa probabilité : une fonction qui attribue un nombre entre 0 et 1 à chaque événement, additive sur les réunions disjointes, et valant 1 sur l’univers tout entier.\n\nKolmogorov pose ces axiomes en 1933, et c’est ce qui a fait des probabilités une branche des mathématiques plutôt qu’un ensemble de recettes. Avant lui, les paradoxes du calcul des probabilités venaient tous d’un univers mal défini.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le choix de l’univers décide du résultat",
+          "body": "On lance deux dés et l’on cherche la probabilité d’obtenir une somme de 7.\n\nSi l’univers est l’ensemble des sommes possibles, de 2 à 12, il a onze éléments et l’on serait tenté de répondre un onzième. C’est faux, parce que ces onze résultats ne sont pas équiprobables.\n\nSi l’univers est l’ensemble des couples de faces, il a trente-six éléments équiprobables, dont six donnent 7. La réponse est un sixième.\n\nLe même problème a donc deux réponses selon l’univers choisi, et une seule est juste. L’équiprobabilité n’est pas une propriété du monde : c’est une hypothèse sur le modèle, qu’il faut justifier.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le paradoxe de Bertrand, et sa leçon",
+          "body": "On trace une corde au hasard dans un cercle. Quelle est la probabilité qu’elle soit plus longue que le côté du triangle équilatéral inscrit ?\n\nTrois façons de tirer « au hasard » donnent un demi, un tiers, et un quart. Tirer deux extrémités sur le cercle, tirer un milieu dans le disque, tirer une distance au centre : trois procédures, trois réponses.\n\nAucune n’est fausse. Ce qui est fautif est l’énoncé, qui dit « au hasard » sans dire selon quelle loi.\n\nBertrand publie cela en 1889, et c’est l’argument le plus fort en faveur de l’axiomatisation : il n’existe pas de hasard par défaut, et une probabilité n’a de sens que relativement à un modèle explicite.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une variable aléatoire n’est pas aléatoire",
+          "body": "Le nom est trompeur. Une variable aléatoire est une fonction : elle associe un nombre à chaque résultat de l’univers.\\n\\nLancer deux dés et considérer leur somme, c’est définir une fonction sur les trente-six couples. La fonction est parfaitement déterminée ; c’est l’argument qu’on lui donne qui est tiré au sort.\\n\\nCette façon de voir résout beaucoup de confusions. La loi d’une variable aléatoire est l’image de la probabilité par cette fonction, et deux variables différentes peuvent avoir la même loi.\\n\\nD’où une distinction utile : deux variables de même loi ne sont pas égales. La somme de deux dés et la somme de deux autres dés ont la même loi et ne prennent pas la même valeur. Confondre les deux produit des raisonnements faux sur l’indépendance.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque objet du modèle à son rôle.",
+          "explanation": "L’univers liste les résultats, la tribu les événements dont on parle, la probabilité leur attribue un nombre.",
+          "pairs": [
+            {
+              "left": "l’univers",
+              "right": "les résultats possibles"
+            },
+            {
+              "left": "la tribu",
+              "right": "les événements dont on veut parler"
+            },
+            {
+              "left": "la probabilité",
+              "right": "un nombre entre 0 et 1 par événement"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la probabilité d’obtenir 7 avec deux dés ?",
+          "explanation": "Un sixième : six couples de faces sur trente-six donnent 7. Les onze sommes possibles ne sont pas équiprobables.",
+          "options": [
+            {
+              "text": "un sixième",
+              "correct": true
+            },
+            {
+              "text": "un onzième"
+            },
+            {
+              "text": "un douzième"
+            },
+            {
+              "text": "un trente-sixième"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "L’équiprobabilité est-elle une propriété du monde ?",
+          "explanation": "Non : c’est une hypothèse sur le modèle, qu’il faut justifier. Un mauvais choix d’univers donne une mauvaise réponse.",
+          "options": [
+            {
+              "text": "non, c’est une hypothèse sur le modèle",
+              "correct": true
+            },
+            {
+              "text": "oui, pour les dés et les pièces"
+            },
+            {
+              "text": "oui, toujours"
+            },
+            {
+              "text": "cela dépend du nombre de résultats"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui est fautif dans le paradoxe de Bertrand ?",
+          "explanation": "L’énoncé, qui dit « au hasard » sans dire selon quelle loi. Les trois réponses sont correctes pour trois procédures différentes.",
+          "options": [
+            {
+              "text": "l’énoncé, qui ne précise pas la loi de tirage",
+              "correct": true
+            },
+            {
+              "text": "deux des trois réponses"
+            },
+            {
+              "text": "le calcul géométrique"
+            },
+            {
+              "text": "la définition de la corde"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a apporté l’axiomatisation de Kolmogorov en 1933 ?",
+          "explanation": "Elle a fait des probabilités une branche des mathématiques : avant, les paradoxes venaient tous d’un univers mal défini.",
+          "options": [
+            {
+              "text": "un cadre où l’univers doit être explicite",
+              "correct": true
+            },
+            {
+              "text": "de nouvelles formules de calcul"
+            },
+            {
+              "text": "la loi des grands nombres"
+            },
+            {
+              "text": "la notion de hasard objectif"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il existe un hasard par défaut, quand l’énoncé ne précise rien.",
+          "explanation": "Faux. C’est exactement ce que Bertrand a montré : une probabilité n’a de sens que relativement à un modèle explicite.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "denombrer-correctement",
+      "title": "Dénombrer correctement",
+      "subtitle": "Deux questions à se poser, et le reste est mécanique.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un dénombrement qui conclut sans compter",
+          "body": "Monte plus d’objets que de tiroirs : la figure affirme qu’un tiroir est chargé, sans en désigner aucun. Le dénombrement sert aussi à cela — établir une existence par un simple compte, qu’on appelle ici principe des tiroirs et ailleurs argument de cardinalité.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les quatre cas, et les deux questions",
+          "body": "Deux questions suffisent : l’ordre compte-t-il, et peut-on répéter ?\n\nOrdre et répétition : il y a n puissance k possibilités. Un code à quatre chiffres : dix puissance quatre, soit dix mille.\n\nOrdre sans répétition : les arrangements, n factorielle divisée par n moins k factorielle. Un podium parmi dix coureurs : 720.\n\nNi ordre ni répétition : les combinaisons, le même nombre divisé par k factorielle. Une main de cinq cartes parmi cinquante-deux : près de deux millions six cents mille.",
+          "formula": "avec ordre et répétition : n puissance k",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le problème des anniversaires",
+          "body": "Dans un groupe de vingt-trois personnes, la probabilité que deux partagent leur jour de naissance dépasse un demi.\n\nLe résultat surprend parce qu’on pense à soi : la probabilité qu’une autre personne partage mon anniversaire est faible. Mais on demande qu’une paire quelconque coïncide, et il y a deux cent cinquante-trois paires dans un groupe de vingt-trois.\n\nLe calcul passe par l’événement contraire : la probabilité que tous les anniversaires soient distincts est le produit de 364 sur 365, 363 sur 365, et ainsi de suite. À vingt-trois, ce produit tombe sous un demi.\n\nLa leçon de méthode est double : compter les paires et non les individus, et passer par le contraire quand l’événement direct se décompose mal.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les deux erreurs les plus fréquentes",
+          "body": "Compter deux fois. Choisir un président puis un trésorier parmi dix donne quatre-vingt-dix possibilités ; choisir deux responsables donne quarante-cinq. L’ordre compte dans un cas et pas dans l’autre, et le facteur deux vient de là.\n\nAppliquer une formule sans vérifier les deux questions. Les quatre formules se ressemblent, et seule la réponse aux deux questions les distingue.\n\nLe contrôle qui rattrape presque tout est de traiter le cas minuscule à la main. Deux objets parmi trois : on les énumère en dix secondes, et l’on compare au résultat de la formule.\n\nC’est exactement la méthode de vérification des boucles de programmation, appliquée au dénombrement.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le dénombrement reste difficile",
+          "body": "Les quatre formules sont simples, et les problèmes réels ne s’énoncent presque jamais sous la forme d’un des quatre cas.\\n\\nIl faut d’abord traduire : décider ce qu’on compte, et vérifier qu’aucune configuration n’est comptée deux fois ni oubliée. Cette traduction est tout le travail, et elle ne se mécanise pas.\\n\\nDeux outils aident. Le principe d’inclusion-exclusion, quand des catégories se recouvrent. Et la bijection : montrer que ce qu’on compte est en correspondance exacte avec autre chose, déjà compté.\\n\\nLa seconde est la plus puissante et la moins enseignée. Compter les chemins d’un quadrillage en les mettant en bijection avec des suites de lettres transforme un problème géométrique en un problème de combinaisons, et c’est le genre de geste qui fait toute la combinatoire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles deux questions suffisent à choisir la formule ?",
+          "explanation": "L’ordre compte-t-il, et peut-on répéter ? Les quatre formules se distinguent par les réponses à ces deux questions.",
+          "options": [
+            {
+              "text": "l’ordre compte-t-il",
+              "correct": true
+            },
+            {
+              "text": "peut-on répéter",
+              "correct": true
+            },
+            {
+              "text": "les objets sont-ils identiques"
+            },
+            {
+              "text": "combien y a-t-il d’objets"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de podiums possibles parmi dix coureurs ?",
+          "explanation": "10 × 9 × 8 = 720 : l’ordre compte et il n’y a pas de répétition.",
+          "answer": 720,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de paires dans un groupe de 23 personnes ?",
+          "explanation": "23 × 22 ÷ 2 = 253. C’est ce nombre, et non 23, qui explique le paradoxe des anniversaires.",
+          "answer": 253,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "À partir de combien de personnes la probabilité d’une coïncidence d’anniversaire dépasse-t-elle un demi ?",
+          "explanation": "23. Le calcul passe par l’événement contraire : le produit de 364/365, 363/365, etc., tombe sous un demi à ce rang.",
+          "answer": 23,
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Dans ce problème, l’ordre compte-t-il ?",
+          "explanation": "Un président et un trésorier sont des rôles distincts, donc l’ordre compte. Deux responsables sans rôle, non.",
+          "categories": [
+            "l’ordre compte",
+            "l’ordre ne compte pas"
+          ],
+          "items": [
+            {
+              "text": "choisir un président puis un trésorier",
+              "category": 0
+            },
+            {
+              "text": "former un code à quatre chiffres",
+              "category": 0
+            },
+            {
+              "text": "choisir deux responsables sans rôle",
+              "category": 1
+            },
+            {
+              "text": "tirer une main de cinq cartes",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel contrôle rattrape presque toutes les erreurs de dénombrement ?",
+          "explanation": "Traiter le cas minuscule à la main — deux objets parmi trois — et comparer au résultat de la formule.",
+          "options": [
+            {
+              "text": "énumérer un cas minuscule à la main",
+              "correct": true
+            },
+            {
+              "text": "refaire le calcul"
+            },
+            {
+              "text": "vérifier l’ordre de grandeur"
+            },
+            {
+              "text": "consulter un formulaire"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "grands-nombres-et-central-limite",
+      "title": "Des grands nombres au théorème central limite",
+      "subtitle": "Deux théorèmes qu’on confond, et qui ne disent pas la même chose.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une suite qui se stabilise",
+          "body": "Bascule sur géométrique et règle la raison à 0,5 : les bâtons tendent vers zéro. L’écart entre une moyenne d’échantillon et l’espérance se comporte de cette façon — il tend vers zéro, et la question de cette leçon est de savoir à quelle vitesse.",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi des grands nombres, et ce qu’elle garantit",
+          "body": "La moyenne d’un échantillon de n variables indépendantes de même loi tend vers l’espérance quand n grandit. C’est la loi des grands nombres.\n\nElle justifie l’estimation : mesurer plusieurs fois et moyenner donne quelque chose qui approche la vraie valeur.\n\nElle ne dit rien de la vitesse. Elle ne dit pas non plus que l’écart diminue toujours — il peut remonter, et il le fait.\n\nEt elle ne dit rien d’un tirage particulier. Croire qu’après dix piles un face devient plus probable est l’erreur du joueur : les tirages sont indépendants, et la loi porte sur la moyenne, pas sur la compensation.",
+          "formula": "la moyenne de l’échantillon tend vers l’espérance",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le théorème central limite, et ce qu’il ajoute",
+          "body": "Il donne la vitesse, et la forme. L’écart entre la moyenne et l’espérance, multiplié par racine de n, tend vers une loi normale centrée.\n\nConséquence : l’incertitude sur une moyenne décroît comme l’inverse de racine de n. Pour diviser l’incertitude par deux, il faut quadrupler l’échantillon.\n\nEt la forme de la distribution devient normale, quelle que soit la loi de départ. Des dés, des durées, des tailles : la moyenne d’un grand nombre est normale dans tous les cas.\n\nC’est ce second point qui explique l’omniprésence de la loi normale. Elle n’est pas la loi de la nature : elle est la loi des moyennes, et la nature additionne beaucoup de petites causes.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les conditions, et quand elles tombent",
+          "body": "Le théorème exige l’indépendance et une variance finie. Les deux peuvent manquer.\n\nL’indépendance manque dès qu’il y a contagion, imitation ou cause commune. Les cours de bourse, les épidémies et les opinions ne sont pas des tirages indépendants.\n\nLa variance finie manque pour certaines lois dites à queue lourde, où les valeurs extrêmes dominent. La taille des villes, la richesse, l’intensité des séismes en relèvent.\n\nDans ces cas, la moyenne d’un échantillon ne se stabilise pas : une seule observation peut la déplacer entièrement. Appliquer le théorème central limite sans vérifier produit alors des intervalles de confiance qui ne contiennent presque jamais la vraie valeur.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi trente n’est pas un seuil magique",
+          "body": "Les manuels disent qu’un échantillon de trente suffit à appliquer le théorème central limite. Ce n’est pas un théorème, c’est une règle du pouce.\\n\\nElle est bonne pour une loi de départ à peu près symétrique. Elle est très mauvaise pour une loi fortement asymétrique, où il peut falloir des milliers d’observations.\\n\\nEt elle n’a aucun sens pour une loi sans variance : aucun échantillon, quelle que soit sa taille, ne rendra la moyenne normale.\\n\\nLa bonne pratique est de regarder la distribution des données avant de décider. Un histogramme coûte une minute et dit plus que la règle de trente, qui a été écrite à une époque où tracer un histogramme coûtait une journée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce résultat vient-il de la loi des grands nombres, ou du théorème central limite ?",
+          "explanation": "La loi des grands nombres donne la convergence ; le théorème central limite donne la vitesse et la forme de la distribution.",
+          "categories": [
+            "loi des grands nombres",
+            "théorème central limite"
+          ],
+          "items": [
+            {
+              "text": "la moyenne tend vers l’espérance",
+              "category": 0
+            },
+            {
+              "text": "moyenner plusieurs mesures approche la vraie valeur",
+              "category": 0
+            },
+            {
+              "text": "l’incertitude décroît comme 1 sur racine de n",
+              "category": 1
+            },
+            {
+              "text": "la distribution de la moyenne devient normale",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Par combien faut-il multiplier l’échantillon pour diviser l’incertitude par deux ?",
+          "explanation": "Par quatre : l’incertitude décroît comme l’inverse de racine de n.",
+          "answer": 4,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Après dix piles de suite, un face devient plus probable.",
+          "explanation": "Faux. C’est l’erreur du joueur : les tirages sont indépendants, et la loi des grands nombres porte sur la moyenne, non sur une compensation.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la loi normale est-elle si répandue ?",
+          "explanation": "Parce qu’elle est la loi des moyennes : la moyenne d’un grand nombre de causes indépendantes est normale, quelle que soit leur loi.",
+          "options": [
+            {
+              "text": "c’est la loi des moyennes, quelle que soit la loi de départ",
+              "correct": true
+            },
+            {
+              "text": "c’est la loi de la nature"
+            },
+            {
+              "text": "elle est la plus simple à calculer"
+            },
+            {
+              "text": "elle décrit tous les phénomènes"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles conditions le théorème central limite exige-t-il ?",
+          "explanation": "L’indépendance des tirages et une variance finie. Les deux peuvent manquer, et chacune pour des raisons courantes.",
+          "options": [
+            {
+              "text": "l’indépendance des tirages",
+              "correct": true
+            },
+            {
+              "text": "une variance finie",
+              "correct": true
+            },
+            {
+              "text": "une loi normale au départ"
+            },
+            {
+              "text": "un échantillon de plus de trente"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette grandeur relève-t-elle d’une loi à queue lourde ?",
+          "explanation": "Taille des villes, richesse et intensité des séismes ont des valeurs extrêmes dominantes. Taille et poids humains, non.",
+          "categories": [
+            "queue lourde",
+            "distribution sage"
+          ],
+          "items": [
+            {
+              "text": "la taille des villes",
+              "category": 0
+            },
+            {
+              "text": "la richesse des individus",
+              "category": 0
+            },
+            {
+              "text": "la taille des adultes",
+              "category": 1
+            },
+            {
+              "text": "la durée d’un trajet quotidien",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-conditionnelles-et-intervalles",
+      "title": "Défi : conditionnelles et intervalles",
+      "subtitle": "Deux objets que presque tout le monde interprète à l’envers.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des effectifs, et des colonnes calculées",
+          "body": "Change une quantité et regarde les totaux suivre. Un tableau croisé d’effectifs a cette forme, et les probabilités conditionnelles s’y lisent comme des rapports de cases. La leçon montre que ce détour par les effectifs supprime presque toutes les erreurs.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Un intervalle qui contient, ou ne contient pas",
+          "body": "Pousse le curseur et compte : à chaque tirage le comptage tombe ailleurs. Un intervalle de confiance se comporte ainsi — il change à chaque échantillon, et c’est lui qui est aléatoire. La vraie valeur, elle, ne bouge pas.",
+          "figureId": "demi-vie",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Bayes, et le piège de la prévalence",
+          "body": "Un test détecte 99 % des malades et se trompe sur 1 % des bien-portants. La maladie touche une personne sur mille. Un test est positif : quelle probabilité d’être malade ?\n\nLa réponse intuitive est 99 %. La bonne est environ 9 %.\n\nLe calcul par effectifs est immédiat : sur cent mille personnes, cent sont malades et 99 sont détectées. Parmi les 99 900 bien-portants, 999 sont positifs à tort. Il y a donc 1 098 positifs dont 99 malades, soit 9 %.\n\nL’erreur vient d’avoir confondu la probabilité d’être positif sachant qu’on est malade, qui vaut 99 %, avec celle d’être malade sachant qu’on est positif. Les deux conditionnelles sont différentes, et la prévalence fait toute la différence.",
+          "formula": "99 malades détectés pour 999 faux positifs : environ 9 %",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’un intervalle de confiance dit vraiment",
+          "body": "Un intervalle de confiance à 95 % ne signifie pas qu’il y a 95 % de chances que la vraie valeur soit dedans. La vraie valeur n’est pas aléatoire : elle est fixée, et inconnue.\n\nCe qui est aléatoire est l’intervalle, puisqu’il dépend de l’échantillon. L’énoncé correct est : si l’on répétait l’expérience un grand nombre de fois, 95 % des intervalles construits ainsi contiendraient la vraie valeur.\n\nLa différence paraît un détail de formulation, et elle change ce qu’on a le droit de conclure d’un seul intervalle : rien, sinon qu’il a été produit par une procédure fiable à 95 %.\n\nC’est la même distinction qu’entre la fiabilité d’un procédé et la justesse d’un résultat particulier, et c’est la source du désaccord persistant entre statistique fréquentiste et bayésienne.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un modèle probabiliste exige un univers explicite, et le paradoxe de Bertrand montre qu’il n’existe pas de hasard par défaut.\n\nDeux questions suffisent au dénombrement, et le contrôle sur un cas minuscule rattrape presque tout. Les anniversaires se comprennent en comptant les paires.\n\nLa loi des grands nombres donne la convergence, le théorème central limite la vitesse et la forme. Et la loi normale est la loi des moyennes, non celle de la nature.\n\nEnfin, deux conditionnelles inverses n’ont rien à voir, et un intervalle de confiance qualifie une procédure et non un résultat. Ces deux confusions sont les plus coûteuses de toute la statistique appliquée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Test à 99 %, maladie à une personne sur mille, test positif : quelle probabilité d’être malade, en pour-cent ?",
+          "explanation": "Environ 9 % : 99 vrais positifs pour 999 faux positifs sur cent mille personnes.",
+          "min": 0,
+          "max": 100,
+          "answer": 9,
+          "tolerance": 2,
+          "unit": "%",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient l’erreur quand on répond 99 % ?",
+          "explanation": "De la confusion entre « positif sachant malade », qui vaut 99 %, et « malade sachant positif ». La prévalence fait la différence.",
+          "options": [
+            {
+              "text": "on confond les deux conditionnelles inverses",
+              "correct": true
+            },
+            {
+              "text": "le test est mal décrit"
+            },
+            {
+              "text": "le calcul est trop difficile"
+            },
+            {
+              "text": "la prévalence est inconnue"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle méthode supprime presque toutes ces erreurs ?",
+          "explanation": "Le passage par les effectifs sur une population fictive : sur cent mille personnes, les comptes se font sans formule.",
+          "options": [
+            {
+              "text": "raisonner en effectifs sur une population fictive",
+              "correct": true
+            },
+            {
+              "text": "appliquer la formule de Bayes"
+            },
+            {
+              "text": "augmenter la sensibilité du test"
+            },
+            {
+              "text": "refaire le test"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui est aléatoire, dans un intervalle de confiance ?",
+          "explanation": "L’intervalle, puisqu’il dépend de l’échantillon. La vraie valeur est fixée et inconnue.",
+          "options": [
+            {
+              "text": "l’intervalle, pas la vraie valeur",
+              "correct": true
+            },
+            {
+              "text": "la vraie valeur"
+            },
+            {
+              "text": "les deux"
+            },
+            {
+              "text": "ni l’un ni l’autre"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un intervalle de confiance à 95 % contient la vraie valeur avec 95 % de chances.",
+          "explanation": "Faux. L’énoncé correct porte sur la procédure : 95 % des intervalles construits ainsi contiendraient la vraie valeur, si l’on répétait l’expérience.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que peut-on conclure d’un seul intervalle de confiance ?",
+          "explanation": "Qu’il a été produit par une procédure fiable à 95 %. Rien de plus sur ce cas particulier.",
+          "options": [
+            {
+              "text": "qu’il vient d’une procédure fiable à 95 %",
+              "correct": true
+            },
+            {
+              "text": "que la vraie valeur est dedans à 95 %"
+            },
+            {
+              "text": "que la vraie valeur est au centre"
+            },
+            {
+              "text": "que l’échantillon était représentatif"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

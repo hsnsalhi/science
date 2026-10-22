@@ -1,0 +1,656 @@
+{
+  "chapter": "maths-universite-analyse-reelle",
+  "lessons": [
+    {
+      "id": "la-borne-superieure",
+      "title": "La borne supérieure",
+      "subtitle": "Un axiome, et tout le reste en découle.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un nombre qui manque dans les fractions",
+          "body": "Cherche la fraction qui vaudrait racine de deux : règle le dénominateur jusqu’à soixante-dix, saute à la meilleure suivante. Tu t’approches indéfiniment sans atteindre. Ce trou n’est pas une imperfection de la recherche : c’est la propriété qui sépare ℚ de ℝ, et cette leçon la nomme.",
+          "figureId": "racine-de-deux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui manque à ℚ, dit précisément",
+          "body": "Considérons l’ensemble des rationnels dont le carré est inférieur à 2. Il est non vide et majoré — par 2, par exemple.\n\nIl n’a pourtant aucun plus petit majorant rationnel. Tout rationnel majorant peut être diminué en restant majorant, indéfiniment.\n\nDans ℝ, ce plus petit majorant existe : c’est racine de deux. La propriété qu’on vient d’énoncer est l’existence de la borne supérieure, et elle est ce qui définit ℝ.\n\nℝ n’est donc pas « ℚ avec quelques nombres en plus ». C’est le plus petit corps ordonné où tout ensemble non vide et majoré a une borne supérieure, et cette caractérisation le détermine entièrement.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Borne supérieure et maximum ne sont pas la même chose",
+          "body": "Le maximum d’un ensemble est un élément de l’ensemble qui majore tous les autres. Il n’existe pas toujours.\n\nLa borne supérieure est le plus petit des majorants, qu’il appartienne ou non à l’ensemble. Elle existe toujours, dans ℝ, dès que l’ensemble est non vide et majoré.\n\nL’intervalle ouvert de 0 à 1 n’a pas de maximum, et sa borne supérieure vaut 1. Confondre les deux est l’erreur la plus fréquente du premier semestre.\n\nLa caractérisation utile est en deux points : un nombre est la borne supérieure s’il majore l’ensemble, et si tout nombre strictement plus petit ne le majore pas. C’est cette seconde ligne qu’on oublie d’écrire.",
+          "formula": "sup existe toujours dans ℝ ; max, non",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que l’axiome permet de démontrer",
+          "body": "Le théorème des valeurs intermédiaires : une fonction continue sur un intervalle qui change de signe s’annule. La démonstration consiste à considérer la borne supérieure des points où la fonction est négative.\n\nLe théorème de Bolzano-Weierstrass : toute suite bornée admet une sous-suite convergente. Même outil.\n\nLa convergence des suites croissantes majorées, qui est le résultat le plus employé de tout le cours.\n\nLes trois seraient faux dans ℚ. Une fonction continue à valeurs rationnelles peut changer de signe sans s’annuler — il suffit qu’elle traverse là où racine de deux aurait dû être. L’axiome n’est donc pas un détail de fondation : c’est ce qui fait fonctionner l’analyse.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les quatre énoncés équivalents",
+          "body": "L’existence de la borne supérieure. La convergence des suites croissantes majorées. Le théorème de Bolzano-Weierstrass. Et la complétude au sens de Cauchy, c’est-à-dire que toute suite de Cauchy converge.\n\nLes quatre sont équivalents, et on peut partir de n’importe lequel pour construire les autres. Les cours choisissent différemment, et le contenu est le même.\n\nIl est donc inutile de chercher lequel est « le vrai » : ce sont quatre visages d’une seule propriété, celle de n’avoir aucun trou.\n\nSavoir cela évite une confusion durable, et permet de reconnaître qu’un raisonnement emploie la complétude même quand il ne la nomme pas.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’ensemble des rationnels de carré inférieur à 2 n’a-t-il pas de borne supérieure dans ℚ ?",
+          "explanation": "Tout rationnel majorant peut être diminué en restant majorant : il n’y a pas de plus petit majorant rationnel.",
+          "options": [
+            {
+              "text": "tout majorant rationnel peut être diminué en restant majorant",
+              "correct": true
+            },
+            {
+              "text": "l’ensemble n’est pas majoré"
+            },
+            {
+              "text": "l’ensemble est vide"
+            },
+            {
+              "text": "il en a une, et c’est 2"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la borne supérieure de l’intervalle ouvert de 0 à 1 ?",
+          "explanation": "1, qui n’appartient pas à l’intervalle. Cet intervalle n’a donc pas de maximum, et il a bien une borne supérieure.",
+          "options": [
+            {
+              "text": "1, et l’intervalle n’a pas de maximum",
+              "correct": true
+            },
+            {
+              "text": "1, qui est aussi son maximum"
+            },
+            {
+              "text": "il n’en a pas"
+            },
+            {
+              "text": "0,999…"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que faut-il vérifier pour montrer qu’un nombre est la borne supérieure ?",
+          "explanation": "Qu’il majore l’ensemble, et que tout nombre strictement plus petit ne le majore pas. C’est la seconde ligne qu’on oublie.",
+          "options": [
+            {
+              "text": "qu’il majore l’ensemble",
+              "correct": true
+            },
+            {
+              "text": "que tout nombre plus petit ne majore pas",
+              "correct": true
+            },
+            {
+              "text": "qu’il appartient à l’ensemble"
+            },
+            {
+              "text": "que l’ensemble est fini"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le théorème des valeurs intermédiaires serait-il faux dans ℚ ?",
+          "explanation": "Une fonction continue à valeurs rationnelles peut changer de signe en traversant là où racine de deux aurait dû être.",
+          "options": [
+            {
+              "text": "une fonction peut changer de signe là où un irrationnel manque",
+              "correct": true
+            },
+            {
+              "text": "ℚ n’a pas d’intervalles"
+            },
+            {
+              "text": "la continuité n’y est pas définie"
+            },
+            {
+              "text": "il resterait vrai"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels énoncés sont équivalents à l’axiome de la borne supérieure ?",
+          "explanation": "La convergence des suites croissantes majorées, Bolzano-Weierstrass, et la complétude de Cauchy. Quatre visages d’une seule propriété.",
+          "options": [
+            {
+              "text": "toute suite croissante majorée converge",
+              "correct": true
+            },
+            {
+              "text": "toute suite bornée a une sous-suite convergente",
+              "correct": true
+            },
+            {
+              "text": "toute suite de Cauchy converge",
+              "correct": true
+            },
+            {
+              "text": "toute fonction continue est dérivable"
+            },
+            {
+              "text": "tout ensemble est dénombrable"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il existe parmi ces quatre énoncés un seul qui soit le véritable axiome.",
+          "explanation": "Faux. Ils sont équivalents : on peut partir de n’importe lequel, et les cours choisissent différemment pour le même contenu.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-que-converger-veut-dire",
+      "title": "Ce que converger veut dire",
+      "subtitle": "Trois quantificateurs dans l’ordre, et tout dépend de l’ordre.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Dix termes, et deux comportements",
+          "body": "Règle le premier terme et la raison, et bascule entre arithmétique et géométrique. Avec une raison entre 0 et 1, les bâtons descendent vers zéro ; au-delà de 1, ils sortent de l’écran. Le seuil est exactement à 1, et la leçon dit ce que cette observation cache de précis.",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La définition, et l’ordre des quantificateurs",
+          "body": "Une suite converge vers l si, pour tout epsilon strictement positif, il existe un rang N tel que pour tout n supérieur ou égal à N, l’écart entre le terme et l est inférieur à epsilon.\n\nTrois quantificateurs, dans cet ordre, et le N dépend de l’epsilon — c’est tout le contenu de la définition. Un epsilon plus petit demande un rang plus grand.\n\nÉchanger les deux premiers donnerait : il existe un rang à partir duquel tous les écarts sont nuls. Ce serait une suite constante à partir d’un certain rang, ce qui est beaucoup plus fort et presque jamais vrai.\n\nD’où la leçon du chapitre sur les quantificateurs, appliquée ici : l’ordre n’est pas de la notation, c’est l’énoncé.",
+          "formula": "pour tout ε > 0, il existe N, pour tout n ≥ N : |u(n) − l| < ε",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les théorèmes qui dispensent de l’epsilon",
+          "body": "On ne revient presque jamais à la définition. On emploie des théorèmes qui en dispensent, et c’est pourquoi il faut les connaître plutôt que la définition seule.\n\nToute suite croissante majorée converge, vers la borne supérieure de l’ensemble de ses termes. C’est le résultat le plus employé, et il vient directement de l’axiome.\n\nLe théorème des gendarmes : si une suite est encadrée par deux suites de même limite, elle converge vers cette limite.\n\nEt la continuité : si une suite converge vers l et qu’une fonction est continue en l, l’image de la suite converge vers l’image de l. C’est exactement ce que la continuité signifie, et c’est la définition séquentielle.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Deux pièges durables",
+          "body": "Une suite peut être bornée sans converger : la suite qui alterne entre 1 et −1 en est l’exemple minimal. Bornée n’est donc pas convergente, et Bolzano-Weierstrass dit seulement qu’une sous-suite converge.\n\nUne suite peut avoir des termes qui se rapprochent sans converger : les termes de la suite des sommes partielles harmoniques se rapprochent de moins en moins vite, et la suite diverge quand même.\n\nC’est pourquoi la condition de Cauchy porte sur l’écart entre deux termes quelconques de rang grand, et non entre deux termes consécutifs.\n\nConfondre les deux est l’erreur la plus coûteuse du sujet, parce qu’elle produit des démonstrations qui ont l’air correctes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les suites de Cauchy, et à quoi elles servent vraiment",
+          "body": "Une suite est de Cauchy si, pour tout epsilon, il existe un rang à partir duquel deux termes quelconques sont distants de moins d’epsilon.\\n\\nDans ℝ, être de Cauchy et converger sont équivalents. L’intérêt est donc dans un seul sens : on peut établir la convergence sans connaître la limite.\\n\\nC’est décisif, parce que la plupart des limites n’ont aucune expression. La suite qui approche racine de deux par l’algorithme de Héron converge, et on le démontre sans jamais écrire sa limite.\\n\\nDans ℚ, l’équivalence tombe : une suite de Cauchy de rationnels peut ne pas avoir de limite rationnelle. C’est d’ailleurs ainsi qu’on construit ℝ — comme l’ensemble des suites de Cauchy de rationnels, à équivalence près.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans la définition d’une limite, de quoi le rang N dépend-il ?",
+          "explanation": "De l’epsilon : un epsilon plus petit demande un rang plus grand. C’est tout le contenu de la définition.",
+          "options": [
+            {
+              "text": "de l’epsilon choisi",
+              "correct": true
+            },
+            {
+              "text": "de la limite l"
+            },
+            {
+              "text": "de rien, il est fixé"
+            },
+            {
+              "text": "du premier terme de la suite"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirmerait la définition si l’on échangeait les deux premiers quantificateurs ?",
+          "explanation": "Qu’il existe un rang à partir duquel tous les écarts sont nuls : une suite constante à partir d’un certain rang, bien plus fort.",
+          "options": [
+            {
+              "text": "que la suite est constante à partir d’un certain rang",
+              "correct": true
+            },
+            {
+              "text": "la même chose, écrite autrement"
+            },
+            {
+              "text": "que la suite est bornée"
+            },
+            {
+              "text": "que la suite est croissante"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une suite bornée converge.",
+          "explanation": "Faux. La suite qui alterne entre 1 et −1 est bornée et ne converge pas. Bolzano-Weierstrass dit seulement qu’une sous-suite converge.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel théorème est le plus employé, et d’où vient-il ?",
+          "explanation": "Toute suite croissante majorée converge, vers la borne supérieure de ses termes. Il vient directement de l’axiome.",
+          "options": [
+            {
+              "text": "les suites croissantes majorées convergent, par l’axiome du sup",
+              "correct": true
+            },
+            {
+              "text": "le théorème des gendarmes"
+            },
+            {
+              "text": "Bolzano-Weierstrass"
+            },
+            {
+              "text": "la définition séquentielle de la continuité"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la condition de Cauchy ne porte-t-elle pas sur deux termes consécutifs ?",
+          "explanation": "Parce que des termes consécutifs peuvent se rapprocher sans que la suite converge — les sommes partielles harmoniques le font.",
+          "options": [
+            {
+              "text": "des termes consécutifs peuvent se rapprocher sans convergence",
+              "correct": true
+            },
+            {
+              "text": "ce serait plus difficile à vérifier"
+            },
+            {
+              "text": "ce serait équivalent"
+            },
+            {
+              "text": "les suites ne sont pas toujours ordonnées"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit la définition séquentielle de la continuité ?",
+          "explanation": "Que l’image d’une suite convergeant vers l converge vers l’image de l. C’est exactement ce que la continuité signifie.",
+          "options": [
+            {
+              "text": "l’image d’une suite convergente converge vers l’image de la limite",
+              "correct": true
+            },
+            {
+              "text": "la fonction est dérivable"
+            },
+            {
+              "text": "la fonction est bornée"
+            },
+            {
+              "text": "la fonction est monotone"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "continuite-et-derivabilite",
+      "title": "Continuité et dérivabilité",
+      "subtitle": "Trois propriétés emboîtées, et aucune réciproque.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Resserrer une sécante",
+          "body": "Pose un point A sur la courbe, place B un peu plus loin, et rapproche B de A : la droite pivote de moins en moins et finit par se poser. Le nombre dérivé est cette position limite, et le mot « limite » y a exactement le sens de la leçon précédente — c’est ce qui rend la définition licite.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La dérivée, comme limite d’un taux",
+          "body": "Le taux d’accroissement entre deux points est la différence des images divisée par la différence des abscisses. C’est la pente de la sécante.\n\nLa fonction est dérivable en un point si ce taux a une limite quand le second point tend vers le premier. Cette limite est le nombre dérivé.\n\nRien ne garantit que cette limite existe. La valeur absolue en zéro a un taux qui vaut 1 à droite et −1 à gauche : deux limites, donc aucune.\n\nLa fonction est pourtant continue en zéro. Continue sans être dérivable : la première implication qui ne se retourne pas.",
+          "formula": "nombre dérivé = limite du taux d’accroissement",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les implications, et le sens dans lequel elles vont",
+          "body": "Dérivable implique continue. La démonstration tient en une ligne : si le taux a une limite finie, la différence des images tend vers zéro.\n\nContinue n’implique pas dérivable, et la valeur absolue le montre. On pourrait croire que les points de non-dérivabilité sont rares — des angles isolés.\n\nWeierstrass construit en 1872 une fonction continue partout et dérivable nulle part. Elle n’a pas de tangente en un seul point, et elle est pourtant continue.\n\nLa construction a choqué : on croyait qu’une courbe continue devait avoir une tangente presque partout, et l’intuition géométrique a été prise en défaut sur son propre terrain. C’est l’un des épisodes qui ont imposé la rigueur analytique.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La continuité uniforme, et pourquoi elle est autre",
+          "body": "La continuité est locale : en chaque point, pour chaque epsilon, il existe un voisinage. Le voisinage peut dépendre du point.\n\nLa continuité uniforme exige un voisinage qui marche partout à la fois : pour chaque epsilon, un seul delta, valable pour tous les points.\n\nLa fonction inverse sur l’intervalle ouvert de 0 à 1 est continue et pas uniformément continue : près de zéro, elle varie si vite qu’aucun delta ne convient partout.\n\nLe théorème de Heine rétablit l’équivalence sur un segment fermé borné : toute fonction continue y est uniformément continue. C’est la compacité qui fait le travail, et c’est pourquoi les segments reviennent constamment dans les énoncés.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cette rigueur a été nécessaire",
+          "body": "Pendant deux siècles, l’analyse a fonctionné sur l’intuition géométrique : une courbe continue avait une tangente presque partout, une série convergente se manipulait librement, une fonction se dérivait terme à terme.\\n\\nLes contre-exemples ont tous été trouvés entre 1820 et 1880 : des séries convergentes qu’on ne peut pas réarranger, des fonctions continues sans dérivée, des suites de fonctions dérivables dont la limite ne l’est pas.\\n\\nChacun a montré qu’une manipulation courante était fausse dans certains cas, et les cas n’étaient pas pathologiques — ils apparaissaient en physique, dans les séries de Fourier.\\n\\nLa rigueur n’est donc pas venue d’un goût pour la précision : elle est venue de calculs faux. C’est le même motif que pour Berkeley et les infinitésimaux, à soixante ans d’écart.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la valeur absolue n’est-elle pas dérivable en zéro ?",
+          "explanation": "Son taux d’accroissement vaut 1 à droite et −1 à gauche : deux limites, donc aucune.",
+          "options": [
+            {
+              "text": "son taux a deux limites différentes, à droite et à gauche",
+              "correct": true
+            },
+            {
+              "text": "elle n’est pas continue en zéro"
+            },
+            {
+              "text": "elle n’est pas définie en zéro"
+            },
+            {
+              "text": "sa limite est infinie"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette implication est-elle vraie, ou fausse ?",
+          "explanation": "Dérivable implique continue, en une ligne. La réciproque est fausse, et la fonction de Weierstrass l’est partout.",
+          "categories": [
+            "implication vraie",
+            "implication fausse"
+          ],
+          "items": [
+            {
+              "text": "dérivable en un point implique continue",
+              "category": 0
+            },
+            {
+              "text": "dérivable sur un intervalle implique continue",
+              "category": 0
+            },
+            {
+              "text": "continue implique dérivable",
+              "category": 1
+            },
+            {
+              "text": "continue implique dérivable sauf en des points isolés",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a construit Weierstrass en 1872 ?",
+          "explanation": "Une fonction continue partout et dérivable nulle part : aucune tangente en aucun point.",
+          "options": [
+            {
+              "text": "une fonction continue partout et dérivable nulle part",
+              "correct": true
+            },
+            {
+              "text": "une fonction discontinue partout"
+            },
+            {
+              "text": "une fonction dérivable et non continue"
+            },
+            {
+              "text": "une fonction sans limite"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’exige la continuité uniforme, de plus que la continuité ?",
+          "explanation": "Un seul delta par epsilon, valable pour tous les points à la fois. En continuité simple, le delta peut dépendre du point.",
+          "options": [
+            {
+              "text": "un delta unique valable en tous les points",
+              "correct": true
+            },
+            {
+              "text": "la dérivabilité"
+            },
+            {
+              "text": "que la fonction soit bornée"
+            },
+            {
+              "text": "que la fonction soit monotone"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le théorème de Heine ?",
+          "explanation": "Que sur un segment fermé borné, toute fonction continue est uniformément continue. C’est la compacité qui fait le travail.",
+          "options": [
+            {
+              "text": "sur un segment, continue implique uniformément continue",
+              "correct": true
+            },
+            {
+              "text": "toute fonction continue est dérivable"
+            },
+            {
+              "text": "toute fonction bornée est continue"
+            },
+            {
+              "text": "toute fonction continue est bornée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La fonction inverse sur l’intervalle ouvert de 0 à 1 est uniformément continue.",
+          "explanation": "Faux. Près de zéro elle varie si vite qu’aucun delta ne convient partout, alors qu’elle est continue en chaque point.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-d-ou-viennent-les-theoremes",
+      "title": "Défi : d’où viennent les théorèmes",
+      "subtitle": "Chaque grand théorème vient d’une propriété nommée.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cinq courbes, et des propriétés à lire",
+          "body": "Promène le point sur chacune des cinq courbes et lis ses deux coordonnées. Pour chaque fonction, demande-toi sur quel intervalle elle est bornée, où elle atteint ses extrêmes, et si elle les atteint. Les réponses diffèrent, et ces différences sont ce que les théorèmes de cette leçon expliquent.",
+          "figureId": "fonctions-reference",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Le mécanisme de toutes les démonstrations",
+          "body": "Règle la raison entre 0 et 1 : les bâtons tendent vers zéro. Presque toutes les démonstrations de ce chapitre construisent une suite de ce genre — un encadrement qui se resserre — et invoquent la complétude pour conclure qu’elle converge.",
+          "figureId": "suite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois théorèmes, trois propriétés",
+          "body": "Le théorème des valeurs intermédiaires vient de la connexité d’un intervalle : on ne peut pas passer d’un côté à l’autre sans traverser.\n\nLe théorème des bornes atteintes — une fonction continue sur un segment est bornée et atteint ses bornes — vient de la compacité. Il est faux sur un intervalle ouvert : la fonction identité sur l’intervalle ouvert de 0 à 1 n’atteint ni 0 ni 1.\n\nLe théorème de Heine vient de la compacité aussi.\n\nD’où une méthode de lecture : devant un énoncé, repérer l’hypothèse sur l’intervalle. « Segment » veut dire compacité, « intervalle » veut dire connexité, et chacun annonce la propriété qui sera employée.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le théorème des accroissements finis, et ce qu’il donne",
+          "body": "Si une fonction est continue sur un segment et dérivable à l’intérieur, il existe un point intérieur où la dérivée vaut la pente de la corde.\n\nC’est le théorème le plus rentable de l’analyse d’une variable. Il permet de majorer un écart par un majorant de la dérivée, ce qui est l’outil de presque toutes les estimations.\n\nIl donne aussi le lien entre signe de la dérivée et monotonie, qu’on emploie partout sans y penser : une dérivée positive implique une fonction croissante, et la démonstration passe par lui.\n\nSon cas particulier où la corde est horizontale est le théorème de Rolle, et c’est lui qu’on démontre d’abord — par la compacité, encore.",
+          "formula": "il existe c intérieur tel que f’(c) soit la pente de la corde",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un axiome, celui de la borne supérieure, et quatre énoncés équivalents qui en sont les visages. ℝ est caractérisé par l’absence de trous.\n\nUne définition de la limite dont l’ordre des quantificateurs est tout le contenu, et des théorèmes qui dispensent d’y revenir.\n\nTrois propriétés emboîtées sans réciproque, et une fonction de 1872 qui a mis l’intuition géométrique en défaut sur son propre terrain.\n\nEt une méthode de lecture : repérer l’hypothèse sur l’intervalle, car elle annonce la propriété qui travaille. « Segment » et « intervalle » ne sont pas des synonymes, et c’est la distinction la plus utile du cours.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque théorème à la propriété dont il vient.",
+          "explanation": "Les valeurs intermédiaires viennent de la connexité ; les bornes atteintes et Heine, de la compacité.",
+          "pairs": [
+            {
+              "left": "les valeurs intermédiaires",
+              "right": "la connexité d’un intervalle"
+            },
+            {
+              "left": "les bornes atteintes",
+              "right": "la compacité d’un segment"
+            },
+            {
+              "left": "le théorème de Heine",
+              "right": "la compacité d’un segment"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le théorème des bornes atteintes est-il faux sur un intervalle ouvert ?",
+          "explanation": "La fonction identité sur l’intervalle ouvert de 0 à 1 n’atteint ni 0 ni 1 : l’intervalle n’est pas compact.",
+          "options": [
+            {
+              "text": "l’intervalle n’est pas compact, et les bornes ne sont pas atteintes",
+              "correct": true
+            },
+            {
+              "text": "la fonction n’y est pas continue"
+            },
+            {
+              "text": "la fonction n’y est pas bornée"
+            },
+            {
+              "text": "il reste vrai"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signale l’hypothèse « segment » dans un énoncé ?",
+          "explanation": "Que la compacité va travailler. « Intervalle » signale la connexité, et les deux ne sont pas des synonymes.",
+          "options": [
+            {
+              "text": "que la compacité va être employée",
+              "correct": true
+            },
+            {
+              "text": "que la connexité va être employée"
+            },
+            {
+              "text": "que la fonction est dérivable"
+            },
+            {
+              "text": "que l’intervalle est borné seulement"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi le théorème des accroissements finis sert-il le plus ?",
+          "explanation": "À majorer un écart par un majorant de la dérivée : c’est l’outil de presque toutes les estimations.",
+          "options": [
+            {
+              "text": "majorer un écart par un majorant de la dérivée",
+              "correct": true
+            },
+            {
+              "text": "calculer une dérivée"
+            },
+            {
+              "text": "démontrer la continuité"
+            },
+            {
+              "text": "trouver les zéros d’une fonction"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel théorème se démontre d’abord, et sert à établir l’autre ?",
+          "explanation": "Rolle, le cas où la corde est horizontale. Il se démontre par la compacité, et les accroissements finis s’en déduisent.",
+          "options": [
+            {
+              "text": "le théorème de Rolle",
+              "correct": true
+            },
+            {
+              "text": "le théorème des accroissements finis"
+            },
+            {
+              "text": "le théorème de Heine"
+            },
+            {
+              "text": "le théorème des valeurs intermédiaires"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel mécanisme presque toutes les démonstrations du chapitre emploient-elles ?",
+          "explanation": "Construire un encadrement qui se resserre, puis invoquer la complétude pour conclure qu’il converge.",
+          "options": [
+            {
+              "text": "un encadrement qui se resserre, puis la complétude",
+              "correct": true
+            },
+            {
+              "text": "un calcul de dérivée"
+            },
+            {
+              "text": "un raisonnement par récurrence"
+            },
+            {
+              "text": "une majoration brutale"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
