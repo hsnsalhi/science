@@ -1,0 +1,625 @@
+{
+  "chapter": "technologie-universite-electronique-et-electrotechnique",
+  "lessons": [
+    {
+      "id": "ce-que-mesure-une-tension-efficace",
+      "title": "Ce que mesure une tension efficace",
+      "subtitle": "Deux cent trente volts n’est jamais la tension de la prise.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une sinusoïde, et sa période",
+          "body": "Change la fréquence de 170 à 2 000 hertz et regarde la courbe du bas : la période est l’inverse de la fréquence, et rien d’autre. À 170 hertz, elle vaut 5,9 millisecondes. Le réseau électrique est à 50 hertz, donc 20 millisecondes — même relation, autre valeur.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi la valeur efficace, et non le maximum",
+          "body": "La tension du réseau est une sinusoïde qui passe par zéro cent fois par seconde. Sa valeur instantanée ne caractérise donc rien.\n\nLa valeur efficace est définie par un effet : c’est la tension continue qui dégagerait la même chaleur dans une résistance. Elle se calcule comme la racine de la moyenne du carré.\n\nPour une sinusoïde, elle vaut le maximum divisé par racine de deux. Les 230 volts annoncés correspondent donc à un maximum de 325 volts, atteint deux fois par période.\n\nC’est pourquoi un composant de prise doit tenir 325 volts et non 230, et pourquoi les notices spécifient toujours laquelle des deux valeurs elles donnent.",
+          "formula": "valeur efficace = maximum ÷ racine de 2 ; 325 ÷ 1,414 = 230",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui change en alternatif",
+          "body": "Une résistance se comporte pareil : la loi d’Ohm reste valable en valeurs efficaces, et le courant est en phase avec la tension.\n\nUne inductance s’oppose aux variations de courant. Le courant y est en retard d’un quart de période sur la tension.\n\nUn condensateur s’oppose aux variations de tension. Le courant y est en avance d’un quart de période.\n\nD’où l’impédance, qui remplace la résistance : elle a un module, qui donne le rapport des amplitudes, et une phase, qui donne le décalage. Deux nombres au lieu d’un, et c’est exactement ce qu’un nombre complexe sert à porter.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La résonance, et à quoi elle sert",
+          "body": "Dans un circuit comportant une inductance et un condensateur, les deux effets s’opposent : l’un retarde le courant, l’autre l’avance.\n\nÀ une fréquence précise, ils se compensent exactement. L’impédance devient purement résistive, et le courant atteint son maximum.\n\nC’est la résonance, et c’est ce qui permet de sélectionner une fréquence : un récepteur radio accordé laisse passer une station et atténue les autres.\n\nLe même phénomène est un danger ailleurs : une résonance non voulue dans un réseau industriel peut multiplier un courant harmonique par dix, et détruire des condensateurs de compensation. Le phénomène est le même, l’usage décide s’il est utile.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le triphasé, et le facteur racine de trois",
+          "body": "Le réseau de distribution porte trois tensions sinusoïdales décalées d’un tiers de période. Entre une phase et le neutre, 230 volts efficaces ; entre deux phases, 400.\\n\\nLe rapport entre les deux est racine de trois, soit 1,732, et il vient de la géométrie du décalage : deux sinusoïdes décalées de cent vingt degrés ne se soustraient pas simplement.\\n\\nL’intérêt du triphasé est double. La somme des trois courants est nulle quand les charges sont équilibrées, donc le conducteur neutre ne porte rien et peut être allégé.\\n\\nEt un moteur triphasé crée un champ tournant sans aucun dispositif de commutation. C’est ce qui en fait la machine la plus simple et la plus robuste de l’industrie — pas de balais, rien qui s’use.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la période du réseau à 50 Hz, en millisecondes ?",
+          "explanation": "20 millisecondes : la période est l’inverse de la fréquence.",
+          "min": 0,
+          "max": 200,
+          "answer": 20,
+          "tolerance": 2,
+          "unit": "ms",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la tension maximale d’un réseau à 230 V efficaces ?",
+          "explanation": "230 fois racine de deux, soit environ 325 volts, atteints deux fois par période.",
+          "min": 0,
+          "max": 1000,
+          "answer": 325,
+          "tolerance": 20,
+          "unit": "V",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment la valeur efficace est-elle définie ?",
+          "explanation": "Par un effet : c’est la tension continue qui dégagerait la même chaleur dans une résistance.",
+          "options": [
+            {
+              "text": "la tension continue qui dégagerait la même chaleur",
+              "correct": true
+            },
+            {
+              "text": "la moyenne de la tension"
+            },
+            {
+              "text": "la moitié du maximum"
+            },
+            {
+              "text": "la tension au passage par zéro"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Dans ce composant, le courant est-il en avance ou en retard sur la tension ?",
+          "explanation": "L’inductance retarde le courant d’un quart de période, le condensateur l’avance. La résistance ne décale rien.",
+          "categories": [
+            "le courant est en retard",
+            "le courant est en avance"
+          ],
+          "items": [
+            {
+              "text": "une inductance",
+              "category": 0
+            },
+            {
+              "text": "un bobinage de moteur",
+              "category": 0
+            },
+            {
+              "text": "un condensateur",
+              "category": 1
+            },
+            {
+              "text": "un câble très capacitif",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que porte une impédance, qu’une résistance ne porte pas ?",
+          "explanation": "Une phase, en plus d’un module : le décalage entre courant et tension. C’est ce qu’un nombre complexe sert à porter.",
+          "options": [
+            {
+              "text": "une phase, en plus du rapport des amplitudes",
+              "correct": true
+            },
+            {
+              "text": "une puissance"
+            },
+            {
+              "text": "une fréquence"
+            },
+            {
+              "text": "une température"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’arrive-t-il à la résonance ?",
+          "explanation": "Les effets de l’inductance et du condensateur se compensent : l’impédance devient purement résistive et le courant est maximal.",
+          "options": [
+            {
+              "text": "les deux effets se compensent et le courant est maximal",
+              "correct": true
+            },
+            {
+              "text": "le courant s’annule"
+            },
+            {
+              "text": "la tension double"
+            },
+            {
+              "text": "le circuit s’ouvre"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-facteur-de-puissance",
+      "title": "Le facteur de puissance, et ce qu’il coûte",
+      "subtitle": "Un courant qui circule sans rien transporter.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un courant, et un chemin",
+          "body": "Ferme l’interrupteur et dévisse une lampe : ce qui compte est le courant qui passe, et par où. En alternatif, un courant peut circuler dans les câbles sans transporter aucune énergie utile, et c’est ce que la leçon chiffre.",
+          "figureId": "circuit",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Trois puissances, et une seule qui travaille",
+          "body": "La puissance apparente est le produit de la tension efficace par le courant efficace. Elle s’exprime en voltampères, et c’est elle qui dimensionne les câbles et les transformateurs.\n\nLa puissance active est celle qui se convertit en travail ou en chaleur. Elle vaut la puissance apparente multipliée par le cosinus du déphasage, et elle s’exprime en watts. C’est elle qu’on paie.\n\nLa puissance réactive est la différence, en voltampères réactifs. Elle fait circuler du courant sans rien transporter.\n\nUn moteur de facteur de puissance 0,8 appelle donc 25 % de courant en plus de ce que sa puissance utile exigerait. Les câbles doivent porter ce courant, et les pertes qu’il cause sont bien réelles.",
+          "formula": "puissance active = U × I × cos φ",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi ce courant inutile existe",
+          "body": "Un moteur est d’abord un bobinage, donc une inductance. Le champ magnétique qu’il crée stocke de l’énergie pendant une partie de la période et la rend pendant l’autre.\n\nCet échange ne produit aucun travail en moyenne, et il fait pourtant circuler un courant à chaque période.\n\nC’est donc un prêt permanent entre le réseau et la machine. Le réseau le consent, et le facture indirectement par le dimensionnement des installations.\n\nD’où la compensation : on ajoute des condensateurs, dont l’échange est de signe opposé. Le prêt se fait alors entre le moteur et le condensateur, localement, et le réseau n’en voit plus rien.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que la compensation rapporte, chiffré",
+          "body": "Une installation de 100 kilowatts utiles à facteur de puissance 0,7 appelle 143 kilovoltampères, donc un courant 43 % plus élevé que nécessaire.\n\nLes pertes en ligne, proportionnelles au carré du courant, sont alors doublées : 1,43 au carré fait 2,04.\n\nCompenser à 0,95 ramène l’appel à 105 kilovoltampères, et les pertes à 1,1 fois le minimum. Les câbles peuvent être plus fins, et le transformateur plus petit.\n\nC’est pourquoi les tarifs industriels pénalisent un mauvais facteur de puissance : le distributeur a dû dimensionner pour un courant qui ne transportait rien.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un deuxième coupable, moins connu",
+          "body": "Un déphasage n’est pas la seule cause d’un mauvais facteur de puissance. Les charges à découpage — alimentations d’ordinateurs, lampes à diodes, variateurs — appellent un courant non sinusoïdal.\\n\\nCe courant déformé contient des harmoniques, c’est-à-dire des composantes à des multiples de 50 hertz. Elles ne transportent aucune puissance utile et chauffent les câbles comme le reste.\\n\\nLes condensateurs de compensation sont alors inefficaces, et parfois nuisibles : ils peuvent entrer en résonance avec l’inductance du réseau à une fréquence harmonique, et amplifier le problème.\\n\\nIl faut donc des filtres, ou des alimentations à correction de facteur de puissance, obligatoires au-delà de 75 watts dans l’Union européenne. Le remède du siècle dernier ne traite pas la pollution de celui-ci.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque puissance à son unité et à son rôle.",
+          "explanation": "L’apparente en voltampères dimensionne, l’active en watts travaille, la réactive en voltampères réactifs ne transporte rien.",
+          "pairs": [
+            {
+              "left": "la puissance apparente",
+              "right": "en VA, elle dimensionne les câbles"
+            },
+            {
+              "left": "la puissance active",
+              "right": "en W, c’est elle qu’on paie"
+            },
+            {
+              "left": "la puissance réactive",
+              "right": "en VAR, elle ne transporte rien"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Un moteur de facteur de puissance 0,8 : combien de pour-cent de courant en plus ?",
+          "explanation": "1 divisé par 0,8 fait 1,25, soit 25 % de courant en plus de ce que la puissance utile exigerait.",
+          "min": 0,
+          "max": 200,
+          "answer": 25,
+          "tolerance": 4,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un moteur appelle-t-il un courant réactif ?",
+          "explanation": "Parce que son bobinage stocke de l’énergie magnétique une partie de la période et la rend l’autre : un prêt permanent, sans travail net.",
+          "options": [
+            {
+              "text": "son bobinage stocke puis rend de l’énergie à chaque période",
+              "correct": true
+            },
+            {
+              "text": "il chauffe"
+            },
+            {
+              "text": "il tourne irrégulièrement"
+            },
+            {
+              "text": "ses balais frottent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment compense-t-on un facteur de puissance inductif ?",
+          "explanation": "En ajoutant des condensateurs, dont l’échange est de signe opposé : le prêt se fait alors localement, et le réseau n’en voit plus rien.",
+          "options": [
+            {
+              "text": "en ajoutant des condensateurs",
+              "correct": true
+            },
+            {
+              "text": "en ajoutant des inductances"
+            },
+            {
+              "text": "en augmentant la tension"
+            },
+            {
+              "text": "en réduisant la fréquence"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "100 kW utiles à facteur 0,7 : combien de kVA appelés ?",
+          "explanation": "100 divisé par 0,7 fait environ 143 kilovoltampères, donc 43 % de courant en trop.",
+          "min": 0,
+          "max": 500,
+          "answer": 143,
+          "tolerance": 10,
+          "unit": "kVA",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les tarifs industriels pénalisent-ils un mauvais facteur de puissance ?",
+          "explanation": "Parce que le distributeur a dû dimensionner câbles et transformateurs pour un courant qui ne transportait rien.",
+          "options": [
+            {
+              "text": "le réseau a été dimensionné pour un courant inutile",
+              "correct": true
+            },
+            {
+              "text": "l’énergie réactive coûte à produire"
+            },
+            {
+              "text": "cela abîme les compteurs"
+            },
+            {
+              "text": "c’est une règle arbitraire"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "pourquoi-la-tres-haute-tension",
+      "title": "Pourquoi la très haute tension",
+      "subtitle": "Un carré au dénominateur, et quatre cents fois moins de pertes.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les puissances de deux, pour sentir les facteurs",
+          "body": "Allume les bits et regarde les valeurs : 128, 64, 32… Chaque position vaut le double de la précédente, et le dernier bit vaut plus que tous les autres réunis. La leçon manipule des facteurs du même ordre, et il est utile d’avoir vu à quelle vitesse ils montent.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les pertes en ligne, et le choix qui en découle",
+          "body": "Transporter une puissance P sous une tension U demande un courant P divisé par U. La perte dans la ligne vaut sa résistance multipliée par le carré de ce courant.\n\nÀ puissance donnée, multiplier la tension par vingt divise le courant par vingt, donc les pertes par quatre cents.\n\nC’est tout l’argument du transport à très haute tension : le réseau français transporte à 400 000 volts, et distribue à 400 puis 230.\n\nLes pertes totales du réseau français sont de l’ordre de deux pour-cent sur le transport et de quatre à cinq sur la distribution. Sans la haute tension, la distribution serait impossible au-delà de quelques kilomètres.",
+          "formula": "pertes = R × (P ÷ U)² : vingt fois plus de tension, quatre cents fois moins de pertes",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le transformateur, et pourquoi il impose l’alternatif",
+          "body": "Un transformateur change la tension dans le rapport des nombres de spires de ses deux bobinages, en conservant la puissance aux pertes près — et ses pertes sont inférieures à un pour-cent sur les grosses unités.\n\nIl ne fonctionne que si le flux magnétique varie, donc si le courant est alternatif. En continu, il ne transmet rien.\n\nC’est la raison historique du choix de l’alternatif, dans la guerre des courants des années 1890 : Edison défendait le continu, Westinghouse et Tesla l’alternatif, et le transformateur a décidé.\n\nL’argument s’est inversé depuis. L’électronique de puissance sait maintenant transformer du continu, et les liaisons très longues se font en courant continu haute tension — moins de pertes, et pas de synchronisation à tenir entre deux réseaux.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la haute tension coûte en retour",
+          "body": "L’isolement. Il faut des distances dans l’air proportionnelles à la tension : environ trois mètres pour 400 000 volts, d’où la taille des pylônes.\n\nLes pertes par effet de couronne, quand le champ ionise l’air autour des conducteurs. C’est le grésillement qu’on entend sous une ligne par temps humide, et c’est de l’énergie perdue.\n\nLe coût des transformateurs, qui est considérable aux très hautes tensions.\n\nIl existe donc un optimum pour chaque distance et chaque puissance, et c’est pourquoi le réseau comporte plusieurs niveaux de tension plutôt qu’un seul. Chaque palier est le résultat d’un calcul économique, pas d’une tradition.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le même raisonnement, dans une voiture électrique",
+          "body": "Un véhicule électrique transporte de la puissance entre sa batterie et son moteur, sur deux mètres de câble. La question est la même, à une autre échelle.\\n\\nLes premières générations travaillaient à 400 volts. Les plus récentes passent à 800, ce qui divise le courant par deux à puissance égale, donc les pertes par quatre.\\n\\nLe gain réel n’est pas le rendement, qui était déjà bon : c’est la masse de cuivre, et la vitesse de recharge. Charger à 350 kilowatts sous 400 volts demanderait 875 ampères, et un câble que personne ne peut soulever.\\n\\nLe même carré au dénominateur décide donc du réseau national et du câble d’une borne de recharge. C’est le propre d’une bonne loi physique : elle ne connaît pas d’échelle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On multiplie la tension de transport par 20. Par combien les pertes sont-elles divisées ?",
+          "explanation": "Par quatre cents : le courant est divisé par vingt, et les pertes varient comme son carré.",
+          "answer": 400,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un transformateur impose-t-il l’alternatif ?",
+          "explanation": "Parce qu’il ne fonctionne que si le flux magnétique varie. En continu, il ne transmet rien.",
+          "options": [
+            {
+              "text": "il lui faut un flux magnétique variable",
+              "correct": true
+            },
+            {
+              "text": "ses bobinages chaufferaient"
+            },
+            {
+              "text": "le continu ne passe pas dans le cuivre"
+            },
+            {
+              "text": "c’est une convention"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui a tranché la guerre des courants des années 1890 ?",
+          "explanation": "Le transformateur : il rendait le transport à haute tension possible, et il n’existait pas en continu.",
+          "options": [
+            {
+              "text": "le transformateur",
+              "correct": true
+            },
+            {
+              "text": "la sécurité des personnes"
+            },
+            {
+              "text": "le coût du cuivre"
+            },
+            {
+              "text": "les brevets d’Edison"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les liaisons très longues se font-elles aujourd’hui en continu ?",
+          "explanation": "Moins de pertes, et pas de synchronisation à tenir entre deux réseaux. L’électronique de puissance a inversé l’argument de 1890.",
+          "options": [
+            {
+              "text": "moins de pertes, et aucune synchronisation à tenir",
+              "correct": true
+            },
+            {
+              "text": "les transformateurs y sont moins chers"
+            },
+            {
+              "text": "le continu est plus sûr"
+            },
+            {
+              "text": "les câbles sont plus fins"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que coûte la très haute tension ?",
+          "explanation": "L’isolement, donc la taille des pylônes ; les pertes par effet de couronne ; et le coût des transformateurs.",
+          "options": [
+            {
+              "text": "des distances d’isolement importantes",
+              "correct": true
+            },
+            {
+              "text": "des pertes par effet de couronne",
+              "correct": true
+            },
+            {
+              "text": "des transformateurs coûteux",
+              "correct": true
+            },
+            {
+              "text": "des pertes par effet Joule plus élevées"
+            },
+            {
+              "text": "une fréquence plus haute"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le réseau comporte-t-il plusieurs niveaux de tension ?",
+          "explanation": "Parce qu’il existe un optimum par distance et par puissance. Chaque palier résulte d’un calcul économique.",
+          "options": [
+            {
+              "text": "il existe un optimum par distance et par puissance",
+              "correct": true
+            },
+            {
+              "text": "pour des raisons historiques"
+            },
+            {
+              "text": "pour la sécurité des usagers"
+            },
+            {
+              "text": "pour pouvoir isoler des pannes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lineaire-ou-a-decoupage",
+      "title": "Défi : linéaire, ou à découpage",
+      "subtitle": "Deux façons d’abaisser une tension, et un facteur deux sur le rendement.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le rendement global, étage par étage",
+          "body": "Règle les quatre étages et lis le rendement. Une alimentation est une chaîne de conversions, et la leçon compare deux chaînes qui font le même travail : l’une dissipe la différence, l’autre la refuse. Mets un étage à 40 % et un autre à 95 % pour voir l’écart.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’alimentation linéaire, et où part l’énergie",
+          "body": "Elle abaisse la tension en dissipant la différence dans un transistor réglé en résistance variable.\n\nPour passer de 12 volts à 5 avec un courant de 1 ampère, elle fournit 5 watts utiles et dissipe 7 watts en chaleur. Le rendement est donc de 42 %.\n\nSon avantage est la simplicité et la propreté du signal : aucune commutation, donc aucun parasite. Les montages de mesure les emploient encore pour cette raison.\n\nSon défaut est que la chaleur dissipée ne dépend pas de la qualité du composant : elle est imposée par l’écart de tension et par le courant. On ne l’améliore pas, on en change.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’alimentation à découpage, et son principe",
+          "body": "Au lieu de dissiper la différence, on hache la tension d’entrée par un interrupteur très rapide, puis on lisse le résultat par une inductance et un condensateur.\n\nLa tension de sortie vaut la tension d’entrée multipliée par le rapport cyclique, c’est-à-dire la fraction du temps où l’interrupteur est fermé.\n\nUn interrupteur idéal ne dissipe rien : fermé, sa tension est nulle ; ouvert, son courant est nul. Dans les deux états, le produit est nul.\n\nLe rendement réel atteint 90 à 95 %, et les pertes viennent de la résistance à l’état fermé et de l’énergie perdue pendant les transitions.",
+          "formula": "tension de sortie = tension d’entrée × rapport cyclique",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le découpage introduit",
+          "body": "Des parasites électromagnétiques, puisqu’on commute des courants importants des dizaines de milliers de fois par seconde. Il faut filtrer, blinder, et respecter des normes.\n\nUne ondulation résiduelle à la fréquence de découpage, qui gêne les mesures fines et les circuits audio.\n\nUne complexité bien plus grande : une boucle de régulation, un composant magnétique, et un tracé de circuit imprimé qui compte autant que le schéma.\n\nLe choix n’est donc pas « le découpage est meilleur ». Il est : le découpage gagne sur le rendement et perd sur la propreté, et beaucoup d’appareils emploient les deux en série — un découpage pour descendre, un linéaire pour nettoyer.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Deux cent trente volts est une valeur efficace, définie par un effet thermique, et le maximum vaut 325. Un composant de prise doit tenir le second.\\n\\nUn courant peut circuler sans transporter d’énergie, et il faut quand même dimensionner les câbles pour lui. La compensation déplace le prêt au lieu de le supprimer.\\n\\nLes pertes vont comme le carré du courant, donc comme l’inverse du carré de la tension. Vingt fois plus de tension, quatre cents fois moins de pertes, et c’est vrai du réseau national comme d’une voiture.\\n\\nEt dissiper une différence ou la refuser sont deux stratégies, pas deux niveaux de qualité. Le linéaire garde un usage précis, et le savoir évite de le traiter comme une technique dépassée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Une alimentation linéaire 12 V vers 5 V à 1 A : quel rendement, en pour-cent ?",
+          "explanation": "5 watts utiles pour 12 consommés, soit environ 42 %. Les 7 watts restants partent en chaleur.",
+          "min": 0,
+          "max": 100,
+          "answer": 42,
+          "tolerance": 5,
+          "unit": "%",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un interrupteur idéal ne dissipe-t-il rien ?",
+          "explanation": "Fermé, sa tension est nulle ; ouvert, son courant est nul. Dans les deux états, le produit est nul.",
+          "options": [
+            {
+              "text": "dans chacun de ses deux états, le produit U × I est nul",
+              "correct": true
+            },
+            {
+              "text": "il n’a pas de résistance"
+            },
+            {
+              "text": "il commute trop vite pour chauffer"
+            },
+            {
+              "text": "il est refroidi"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépend la tension de sortie d’une alimentation à découpage ?",
+          "explanation": "Du rapport cyclique : la fraction du temps où l’interrupteur est fermé, multipliée par la tension d’entrée.",
+          "options": [
+            {
+              "text": "du rapport cyclique de l’interrupteur",
+              "correct": true
+            },
+            {
+              "text": "de la résistance du transistor"
+            },
+            {
+              "text": "de la fréquence seulement"
+            },
+            {
+              "text": "du courant de sortie"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet avantage est-il celui du linéaire, ou du découpage ?",
+          "explanation": "Le linéaire gagne sur la propreté et la simplicité, le découpage sur le rendement et la masse.",
+          "categories": [
+            "avantage du linéaire",
+            "avantage du découpage"
+          ],
+          "items": [
+            {
+              "text": "aucun parasite de commutation",
+              "category": 0
+            },
+            {
+              "text": "un schéma très simple",
+              "category": 0
+            },
+            {
+              "text": "un rendement de 90 à 95 %",
+              "category": 1
+            },
+            {
+              "text": "un transformateur beaucoup plus petit",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un meilleur transistor améliore le rendement d’une alimentation linéaire.",
+          "explanation": "Faux. La chaleur dissipée est imposée par l’écart de tension et le courant : on ne l’améliore pas, on change de principe.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi beaucoup d’appareils emploient-ils les deux en série ?",
+          "explanation": "Un découpage pour descendre avec un bon rendement, un linéaire pour nettoyer ce qu’il a sali.",
+          "options": [
+            {
+              "text": "le découpage pour le rendement, le linéaire pour la propreté",
+              "correct": true
+            },
+            {
+              "text": "par redondance"
+            },
+            {
+              "text": "pour doubler la puissance"
+            },
+            {
+              "text": "pour réduire le coût"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

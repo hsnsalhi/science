@@ -1,0 +1,604 @@
+{
+  "chapter": "technologie-universite-mecanique-des-structures",
+  "lessons": [
+    {
+      "id": "contrainte-et-deformation",
+      "title": "Contrainte et déformation",
+      "subtitle": "Une droite, une pente, et un matériau tout entier dans ce nombre.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’allongement avant la rupture",
+          "body": "Pousse le curseur gramme par gramme : le fil s’allonge proportionnellement à la tension, puis cède à 50 newtons. Cette proportionnalité est tout le sujet de la leçon, et la pente de la droite est une propriété du matériau — pas du fil.",
+          "figureId": "fil-qui-casse",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi de Hooke, sous sa forme utile",
+          "body": "La contrainte est la force divisée par la section, en mégapascals. La déformation est l’allongement divisé par la longueur initiale, et elle est sans unité.\n\nDans le domaine élastique, les deux sont proportionnelles. Le coefficient s’appelle module d’Young, et il s’exprime en gigapascals.\n\nIl vaut 210 gigapascals pour l’acier, 70 pour l’aluminium, une trentaine pour le béton, une dizaine pour le bois, et un centième pour un caoutchouc.\n\nL’acier est donc trois fois plus rigide que l’aluminium, et vingt mille fois plus qu’un caoutchouc. Ce seul nombre suffit à prévoir la déformation de n’importe quelle pièce de ce matériau.",
+          "formula": "contrainte = module d’Young × déformation",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Rigidité et résistance sont deux choses",
+          "body": "Le module d’Young mesure la rigidité : de combien ça plie. La contrainte de rupture mesure la résistance : à partir de quand ça casse.\n\nLes deux ne vont pas ensemble. Le verre est très rigide et très fragile ; le caoutchouc est très souple et se déforme énormément sans rompre ; un acier à ressort est rigide et tenace.\n\nConfondre les deux conduit à choisir un matériau rigide quand on voulait un matériau résistant, et inversement.\n\nUne pièce qui plie trop n’est pas sous-dimensionnée en résistance : elle est insuffisamment rigide, et les deux problèmes se corrigent différemment. Le premier demande une autre forme, le second un autre matériau ou une section plus grande.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le coefficient de Poisson, et ce qu’il révèle",
+          "body": "Une barre tirée s’allonge, et elle s’amincit en même temps. Le rapport entre le retrait transversal et l’allongement est le coefficient de Poisson.\n\nIl vaut environ 0,3 pour la plupart des métaux, 0,5 pour un caoutchouc — ce qui signifie un volume constant — et peut descendre à 0,1 pour un béton ou un liège.\n\nUn matériau de coefficient nul s’allonge sans s’amincir, et le liège en est proche : c’est pourquoi un bouchon s’enfonce et se retire sans serrer les parois.\n\nIl existe même des matériaux de coefficient négatif, qui s’épaississent quand on les tire. Ce sont des structures fabriquées, pas des matières naturelles, et elles servent en amortissement.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les trois domaines d’un essai de traction",
+          "body": "Le domaine élastique : la déformation est proportionnelle et réversible. On y travaille toujours, en service.\n\nLe domaine plastique : la déformation devient irréversible, la pièce reste déformée après décharge. La limite entre les deux est la limite d’élasticité, et c’est elle qu’on compare à la contrainte de service.\n\nPuis la striction et la rupture. Un acier doux s’allonge de vingt pour-cent avant de rompre, ce qui donne un avertissement visible.\n\nUn matériau fragile — verre, fonte, béton en traction — n’a presque pas de domaine plastique : il casse sans prévenir. C’est pourquoi on dimensionne les matériaux fragiles avec des coefficients bien plus grands.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque matériau à son module d’Young.",
+          "explanation": "210 GPa pour l’acier, 70 pour l’aluminium, une trentaine pour le béton, une dizaine pour le bois.",
+          "pairs": [
+            {
+              "left": "l’acier",
+              "right": "210 GPa"
+            },
+            {
+              "left": "l’aluminium",
+              "right": "70 GPa"
+            },
+            {
+              "left": "le béton",
+              "right": "une trentaine de GPa"
+            },
+            {
+              "left": "le bois",
+              "right": "une dizaine de GPa"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure le module d’Young ?",
+          "explanation": "La rigidité : de combien ça plie. La résistance, c’est la contrainte de rupture, et c’est une autre grandeur.",
+          "options": [
+            {
+              "text": "la rigidité, donc de combien ça plie",
+              "correct": true
+            },
+            {
+              "text": "la résistance, donc quand ça casse"
+            },
+            {
+              "text": "la dureté de surface"
+            },
+            {
+              "text": "la masse volumique"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce matériau est-il rigide, ou résistant à la déformation sans rompre ?",
+          "explanation": "Rigidité et résistance ne vont pas ensemble : le verre est rigide et fragile, le caoutchouc souple et très déformable.",
+          "categories": [
+            "très rigide",
+            "très déformable sans rompre"
+          ],
+          "items": [
+            {
+              "text": "le verre",
+              "category": 0
+            },
+            {
+              "text": "l’acier",
+              "category": 0
+            },
+            {
+              "text": "le caoutchouc",
+              "category": 1
+            },
+            {
+              "text": "un élastomère de joint",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien vaut le coefficient de Poisson de la plupart des métaux ?",
+          "explanation": "Environ 0,3 : une barre tirée s’amincit de trois dixièmes de son allongement relatif.",
+          "min": 0,
+          "max": 1,
+          "answer": 0.3,
+          "tolerance": 0.05,
+          "unit": "",
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les domaines d’un essai de traction dans l’ordre.",
+          "explanation": "Élastique réversible, plastique irréversible, striction, rupture. La limite d’élasticité sépare les deux premiers.",
+          "items": [
+            "le domaine élastique, réversible",
+            "la limite d’élasticité",
+            "le domaine plastique, irréversible",
+            "la striction, puis la rupture"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi dimensionne-t-on les matériaux fragiles avec de plus grands coefficients ?",
+          "explanation": "Parce qu’ils n’ont presque pas de domaine plastique : ils cassent sans prévenir, donc sans avertissement visible.",
+          "options": [
+            {
+              "text": "ils cassent sans avertissement",
+              "correct": true
+            },
+            {
+              "text": "ils sont moins rigides"
+            },
+            {
+              "text": "ils vieillissent plus vite"
+            },
+            {
+              "text": "ils coûtent moins cher"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-forme-compte-au-cube",
+      "title": "La forme compte au cube",
+      "subtitle": "Doubler la hauteur d’une poutre divise sa flèche par huit.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un volume, et la direction qui compte",
+          "body": "Choisis un pavé et incline-le. Une poutre rectangulaire fléchit très différemment selon qu’on la charge sur sa face large ou sur sa face étroite, et c’est pourtant le même objet. La leçon dit pourquoi, et de combien.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La flèche, et où la hauteur apparaît",
+          "body": "La flèche d’une poutre chargée est proportionnelle à la force, au cube de la portée, et inversement proportionnelle au module d’Young et au moment d’inertie de la section.\n\nPour une section rectangulaire, ce moment vaut la largeur fois le cube de la hauteur, divisé par douze. La hauteur y est donc au cube, et la largeur seulement au premier degré.\n\nDoubler la hauteur divise la flèche par huit. Doubler la largeur ne la divise que par deux.\n\nUne planche de deux centimètres sur vingt, posée à plat, fléchit cent fois plus que la même posée sur chant. C’est le même bois, la même quantité de matière, et un facteur cent.",
+          "formula": "moment d’inertie = largeur × hauteur³ ÷ 12",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi les poutres sont en I",
+          "body": "En flexion, les fibres du haut sont comprimées et celles du bas tendues. Au milieu, une couche ne travaille pas du tout : c’est la fibre neutre.\n\nLa matière placée près de la fibre neutre ne sert donc presque à rien. L’éliminer réduit la masse sans réduire la rigidité.\n\nD’où le profil en I : deux semelles loin de l’axe, et une âme mince pour les relier et transmettre le cisaillement.\n\nUn profil en I a, à masse égale, un moment d’inertie plusieurs fois supérieur à celui d’une barre pleine. C’est la contribution la plus rentable de la mécanique des structures à l’économie des matériaux, et elle date du dix-neuvième siècle.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un tube, et pourquoi la nature l’emploie",
+          "body": "Le même raisonnement appliqué à une section circulaire donne le tube : la matière du centre ne travaille pas, on l’enlève.\n\nUn tube de même masse qu’une barre pleine a un diamètre plus grand, donc un moment d’inertie bien supérieur. C’est pourquoi les cadres de vélo, les échafaudages et les mâts sont des tubes.\n\nLes os longs sont creux, les tiges de graminées sont creuses, les plumes sont creuses. Le bambou tient quinze mètres avec quelques millimètres de paroi.\n\nIl y a une limite : une paroi trop mince flambe localement, et le tube s’écrase comme une canette. L’optimum existe, et il se calcule — c’est le sujet de la dernière leçon.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La même loi, lue dans les objets du quotidien",
+          "body": "Une feuille de papier ne tient pas droite. Pliée en accordéon, elle porte un livre : les plis éloignent la matière de la fibre neutre, sans ajouter un gramme.\n\nUne tôle ondulée tient une portée qu’une tôle plane de même épaisseur ne tient pas. Un carton double cannelure est rigide parce que ses deux faces sont écartées par un vide organisé.\n\nUne barre de chocolat se casse plus facilement à plat que sur chant, et une règle plastique le montre encore mieux.\n\nDans tous les cas, la quantité de matière est la même et la rigidité change d’un ordre de grandeur. Savoir cela dispense de beaucoup de calculs : devant une pièce qui plie, la première question n’est pas quel matériau, mais quelle forme.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double la hauteur d’une poutre. Par combien la flèche est-elle divisée ?",
+          "explanation": "Par huit : la hauteur intervient au cube dans le moment d’inertie.",
+          "answer": 8,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et si l’on double la largeur ?",
+          "explanation": "Par deux seulement : la largeur n’intervient qu’au premier degré.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Une planche de 2 cm sur 20 : combien de fois plus rigide sur chant qu’à plat ?",
+          "explanation": "Le moment d’inertie vaut largeur fois hauteur au cube : sur chant 2 × 20³, à plat 20 × 2³. Le rapport fait exactement cent, pour le même bois et la même quantité de matière.",
+          "min": 0,
+          "max": 1000,
+          "answer": 100,
+          "tolerance": 20,
+          "unit": "fois",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une poutre est-elle en I ?",
+          "explanation": "Parce que la matière près de la fibre neutre ne travaille pas : on l’enlève, et la rigidité reste.",
+          "options": [
+            {
+              "text": "la matière près de la fibre neutre ne travaille pas",
+              "correct": true
+            },
+            {
+              "text": "cela facilite l’assemblage"
+            },
+            {
+              "text": "cela réduit la corrosion"
+            },
+            {
+              "text": "c’est plus facile à laminer"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles structures naturelles sont creuses, pour cette raison ?",
+          "explanation": "Les os longs, les tiges de graminées, les plumes. Le bambou tient quinze mètres avec quelques millimètres de paroi.",
+          "options": [
+            {
+              "text": "les os longs",
+              "correct": true
+            },
+            {
+              "text": "les tiges de graminées",
+              "correct": true
+            },
+            {
+              "text": "les plumes",
+              "correct": true
+            },
+            {
+              "text": "les dents"
+            },
+            {
+              "text": "les coquilles d’œuf"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui limite l’amincissement d’une paroi de tube ?",
+          "explanation": "Le flambement local : une paroi trop mince s’écrase comme une canette. L’optimum se calcule.",
+          "options": [
+            {
+              "text": "le flambement local de la paroi",
+              "correct": true
+            },
+            {
+              "text": "la corrosion"
+            },
+            {
+              "text": "la fabrication"
+            },
+            {
+              "text": "le poids"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "isostatique-ou-hyperstatique",
+      "title": "Isostatique, ou hyperstatique",
+      "subtitle": "Trop de liaisons est un défaut, et pas une sécurité.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le seul polygone rigide",
+          "body": "Fais glisser pour changer les deux côtés de l’angle droit : l’hypoténuse suit, et le triangle reste déterminé. Trois longueurs fixent entièrement un triangle. Aucun autre polygone n’a cette propriété, et toute la construction des treillis en découle.",
+          "figureId": "triangle-sides",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi le triangle, et pas le carré",
+          "body": "Un triangle dont les trois côtés sont fixés ne peut pas se déformer. Ses angles sont déterminés par ses longueurs.\n\nUn quadrilatère articulé, lui, se déforme en parallélogramme sans changer aucune longueur. Il faut une diagonale pour le bloquer, et cette diagonale le découpe en deux triangles.\n\nUn treillis est donc un assemblage de triangles, et les charpentes métalliques, les grues et les pylônes n’en sont que des variations.\n\nC’est aussi pourquoi un portail qui s’affaisse se répare avec une diagonale, et non avec une barre de plus dans le même sens.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Compter les liaisons, et ce que le compte dit",
+          "body": "Un solide libre dans le plan a trois degrés de liberté : deux translations et une rotation. Il faut donc exactement trois liaisons indépendantes pour l’immobiliser.\n\nExactement trois : la structure est isostatique, et les efforts dans chaque liaison se calculent par les seules équations d’équilibre.\n\nMoins de trois : elle est mobile, donc ce n’est pas une structure. Plus de trois : elle est hyperstatique, et l’équilibre ne suffit plus à déterminer les efforts — il faut tenir compte des déformations.\n\nUn tabouret à trois pieds est isostatique et ne bascule jamais. À quatre pieds, il est hyperstatique, et il boite dès que le sol n’est pas plan.",
+          "formula": "dans le plan : 3 degrés de liberté, donc 3 liaisons",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi l’hyperstatisme n’est pas une sécurité",
+          "body": "L’intuition dit que plus de liaisons veut dire plus solide. C’est faux, et pour une raison précise.\n\nDans une structure hyperstatique, une liaison mal placée introduit des efforts qui n’existaient pas : un appui trop haut de deux millimètres charge la structure comme le ferait une force, et cette force n’apparaît dans aucun calcul de charge.\n\nLa dilatation thermique produit le même effet : un pont bridé aux deux bouts se contraint lui-même de plusieurs dizaines de mégapascals pour vingt degrés d’écart.\n\nD’où les appuis glissants et les joints de dilatation, qui retirent volontairement des liaisons. Un bon pont est aussi isostatique que possible, et c’est l’inverse de l’intuition.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Quand l’hyperstatisme est quand même choisi",
+          "body": "Il a un avantage réel : la redondance. Si une liaison cède, une structure hyperstatique peut tenir ; une isostatique s’effondre.\n\nC’est pourquoi les bâtiments sont volontairement hyperstatiques, et les ponts de grande portée souvent le moins possible. Le critère est le mode de défaillance qu’on redoute.\n\nLe prix est un calcul bien plus lourd, qui demande de connaître les rigidités, donc les matériaux, et de tenir compte de la température et des défauts de montage.\n\nAvant l’informatique, on cherchait l’isostatisme par nécessité de calcul. Depuis, on choisit — ce qui ne dispense pas de savoir ce qu’on a choisi.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un quadrilatère articulé n’est-il pas rigide ?",
+          "explanation": "Il se déforme en parallélogramme sans changer aucune longueur. Il faut une diagonale, qui le découpe en deux triangles.",
+          "options": [
+            {
+              "text": "il se déforme en parallélogramme sans changer de longueurs",
+              "correct": true
+            },
+            {
+              "text": "ses angles sont trop grands"
+            },
+            {
+              "text": "il a trop de côtés"
+            },
+            {
+              "text": "ses liaisons sont faibles"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de liaisons indépendantes faut-il pour immobiliser un solide dans le plan ?",
+          "explanation": "Trois : deux translations et une rotation à bloquer.",
+          "answer": 3,
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette structure est-elle isostatique, ou hyperstatique ?",
+          "explanation": "Exactement trois liaisons : isostatique, les efforts se calculent par l’équilibre. Plus de trois : hyperstatique, il faut les déformations.",
+          "categories": [
+            "isostatique",
+            "hyperstatique"
+          ],
+          "items": [
+            {
+              "text": "un tabouret à trois pieds",
+              "category": 0
+            },
+            {
+              "text": "une poutre sur deux appuis, dont un glissant",
+              "category": 0
+            },
+            {
+              "text": "un tabouret à quatre pieds",
+              "category": 1
+            },
+            {
+              "text": "un pont bridé à ses deux extrémités",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’arrive-t-il si un appui d’une structure hyperstatique est trop haut de deux millimètres ?",
+          "explanation": "Il charge la structure comme le ferait une force, et cette force n’apparaît dans aucun calcul de charge.",
+          "options": [
+            {
+              "text": "il introduit des efforts qui n’étaient pas prévus",
+              "correct": true
+            },
+            {
+              "text": "rien, la structure s’adapte"
+            },
+            {
+              "text": "la structure devient isostatique"
+            },
+            {
+              "text": "la structure se déplace de deux millimètres"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi servent les joints de dilatation d’un pont ?",
+          "explanation": "À retirer volontairement des liaisons, donc à éviter que le pont se contraigne lui-même avec la température.",
+          "options": [
+            {
+              "text": "retirer des liaisons pour éviter les contraintes thermiques",
+              "correct": true
+            },
+            {
+              "text": "amortir les vibrations"
+            },
+            {
+              "text": "faciliter l’entretien"
+            },
+            {
+              "text": "évacuer l’eau"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel avantage réel l’hyperstatisme apporte-t-il ?",
+          "explanation": "La redondance : si une liaison cède, la structure peut tenir. C’est pourquoi les bâtiments sont volontairement hyperstatiques.",
+          "options": [
+            {
+              "text": "la redondance en cas de défaillance d’une liaison",
+              "correct": true
+            },
+            {
+              "text": "un calcul plus simple"
+            },
+            {
+              "text": "une moindre sensibilité à la température"
+            },
+            {
+              "text": "une masse plus faible"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-le-flambement",
+      "title": "Défi : le flambement",
+      "subtitle": "Une pièce comprimée peut céder bien avant sa contrainte de rupture.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "En traction, c’est simple",
+          "body": "Revois le fil en traction : il tient jusqu’à 50 newtons, et la rupture est une affaire de contrainte. Retiens cette simplicité, car la compression ne s’y ramène pas : une pièce comprimée peut céder à une charge bien inférieure, et la contrainte n’y est pour rien.",
+          "figureId": "fil-qui-casse",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La longueur, et ce qu’elle change",
+          "body": "Fais glisser la parallèle : les longueurs changent, les rapports tiennent. Pour le flambement, c’est le rapport entre la longueur et la section qui décide — l’élancement. Deux pièces de même section et de longueurs différentes n’ont pas la même charge critique, et le rapport n’est pas proportionnel.",
+          "figureId": "thales",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La charge critique d’Euler, 1744",
+          "body": "Une colonne comprimée cède par flexion latérale soudaine, à une charge qui ne dépend pas de la résistance du matériau mais de sa rigidité et de sa géométrie.\n\nLa charge critique vaut pi au carré, fois le module d’Young, fois le moment d’inertie, divisé par le carré de la longueur.\n\nDoubler la longueur divise donc la charge critique par quatre. Une pièce deux fois plus longue tient quatre fois moins en compression, à section égale.\n\nEuler l’établit en 1744, et c’est l’un des premiers résultats de mécanique où une instabilité, et non une rupture, fixe la limite.",
+          "formula": "charge critique = π² × E × I ÷ L²",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi c’est le mode de défaillance le plus dangereux",
+          "body": "Il est soudain : rien ne se déforme visiblement, puis la pièce part d’un coup sur le côté. Aucun avertissement.\n\nIl ne dépend pas de la contrainte de rupture, donc un calcul de résistance ne le détecte pas. On peut dimensionner correctement en contrainte et s’effondrer en flambement.\n\nIl est très sensible aux défauts : une colonne légèrement courbe au départ flambe bien avant la charge théorique, et aucune colonne réelle n’est droite.\n\nEt il est sensible aux conditions d’appui : une colonne encastrée aux deux bouts tient quatre fois la charge de la même colonne simplement appuyée. Le même tube, deux montages, un facteur quatre.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Le module d’Young mesure la rigidité, la contrainte de rupture la résistance, et confondre les deux fait choisir le mauvais remède.\n\nLa hauteur d’une poutre compte au cube, d’où le profil en I et les tubes — et d’où le fait qu’une planche sur chant soit cent fois plus rigide qu’à plat.\n\nTrop de liaisons n’est pas une sécurité : l’hyperstatisme introduit des efforts invisibles dans les calculs de charge, et les joints de dilatation existent pour cela.\n\nEt une pièce comprimée se dimensionne contre une instabilité, pas contre une contrainte. C’est le piège classique de la discipline, et il tient en une formule de 1744.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double la longueur d’une colonne. Par combien la charge critique est-elle divisée ?",
+          "explanation": "Par quatre : la longueur intervient au carré au dénominateur de la formule d’Euler.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi la charge critique de flambement dépend-elle ?",
+          "explanation": "De la rigidité et de la géométrie, et non de la résistance du matériau. Un calcul de contrainte ne détecte pas ce mode.",
+          "options": [
+            {
+              "text": "de la rigidité et de la géométrie",
+              "correct": true
+            },
+            {
+              "text": "de la contrainte de rupture"
+            },
+            {
+              "text": "de la dureté du matériau"
+            },
+            {
+              "text": "de la masse de la colonne"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Pourquoi le flambement est-il le mode de défaillance le plus dangereux ?",
+          "explanation": "Il est soudain, invisible pour un calcul de résistance, très sensible aux défauts initiaux et aux conditions d’appui.",
+          "options": [
+            {
+              "text": "il est soudain, sans avertissement",
+              "correct": true
+            },
+            {
+              "text": "un calcul de contrainte ne le détecte pas",
+              "correct": true
+            },
+            {
+              "text": "il est très sensible aux défauts initiaux",
+              "correct": true
+            },
+            {
+              "text": "il dépend des conditions d’appui",
+              "correct": true
+            },
+            {
+              "text": "il abîme le matériau de façon invisible"
+            },
+            {
+              "text": "il ne se calcule pas"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une colonne encastrée aux deux bouts tient combien de fois la charge de la même colonne simplement appuyée ?",
+          "explanation": "Quatre fois. Le même tube, deux montages, un facteur quatre : les conditions d’appui comptent autant que la pièce.",
+          "answer": 4,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pièce correctement dimensionnée en contrainte ne peut pas flamber.",
+          "explanation": "Faux. Le flambement ne dépend pas de la contrainte de rupture : on peut être juste en résistance et s’effondrer en instabilité.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle grandeur géométrique décide du flambement ?",
+          "explanation": "L’élancement, c’est-à-dire le rapport entre la longueur et la section. Deux pièces de même section et de longueurs différentes n’ont pas la même charge critique.",
+          "options": [
+            {
+              "text": "l’élancement, rapport de la longueur à la section",
+              "correct": true
+            },
+            {
+              "text": "la section seule"
+            },
+            {
+              "text": "la longueur seule"
+            },
+            {
+              "text": "la masse volumique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

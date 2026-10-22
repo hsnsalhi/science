@@ -1,0 +1,630 @@
+{
+  "chapter": "technologie-universite-materiaux-et-procedes",
+  "lessons": [
+    {
+      "id": "les-quatre-familles",
+      "title": "Les quatre familles de matériaux",
+      "subtitle": "Des liaisons différentes, donc des comportements différents.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des particules rangées, glissantes, ou libres",
+          "body": "Déplace la température et regarde l’arrangement : serré et ordonné, puis glissant, puis libre. Ce que cette figure montre à l’échelle des particules décide des propriétés à notre échelle — c’est la nature des liaisons entre atomes qui fait qu’un matériau plie ou casse.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Métaux, céramiques, polymères, composites",
+          "body": "Les métaux : liaison métallique, électrons libres. D’où la conduction électrique et thermique, et surtout la ductilité — les plans d’atomes glissent les uns sur les autres sans rompre la liaison.\n\nLes céramiques : liaisons ioniques ou covalentes, rigides et dirigées. Très dures, très réfractaires, et fragiles : aucun glissement possible, donc rupture brutale.\n\nLes polymères : longues chaînes faiblement liées entre elles. Légers, souples, sensibles à la température, et sujets au fluage.\n\nLes composites : deux matériaux associés, dont l’un porte l’effort et l’autre le transmet. Des fibres de carbone dans une résine, du fer dans du béton. Leurs propriétés dépendent de la direction, et c’est à la fois leur force et leur difficulté.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Trois nombres qui séparent les familles",
+          "body": "Le module d’Young : 70 à 400 gigapascals pour métaux et céramiques, 0,1 à 5 pour les polymères. Trois ordres de grandeur.\n\nLa masse volumique : 1 à 2 pour les polymères, 2 à 3 pour l’aluminium et les céramiques courantes, 8 pour l’acier, 11 pour le plomb.\n\nLa température de service : quelques dizaines de degrés pour beaucoup de polymères, des centaines pour les métaux, plus de mille pour les céramiques.\n\nUn polymère n’est donc jamais en concurrence avec une céramique sur les mêmes critères. Les familles occupent des régions disjointes, et c’est pourquoi le choix commence par la famille et non par la nuance.",
+          "formula": "module : 0,1 à 5 GPa pour les polymères, 70 à 400 pour les métaux",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le béton est armé",
+          "body": "Le béton résiste très bien à la compression, environ trente mégapascals, et très mal à la traction, environ trois. Un facteur dix.\n\nUne poutre en flexion est comprimée d’un côté et tendue de l’autre. Le côté tendu du béton casserait presque immédiatement.\n\nOn y place donc de l’acier, qui résiste à la traction. Chaque matériau travaille là où il est bon, et les deux adhèrent assez pour se transmettre les efforts.\n\nLe détail qui rend l’association possible est fortuit : les deux ont presque le même coefficient de dilatation thermique. Sans cela, chaque variation de température les décollerait, et le béton armé n’existerait pas.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui explique la fragilité, en une image",
+          "body": "Dans un métal, un plan d’atomes peut glisser sur le suivant : les électrons libres se redistribuent, et la liaison tient pendant le glissement.\\n\\nDans une céramique, la liaison est dirigée entre deux atomes précis. Un glissement la rompt, et il rapprocherait en plus des charges de même signe.\\n\\nAucun glissement n’est donc possible, et la seule réponse à une contrainte excessive est la propagation d’une fissure.\\n\\nLa fragilité d’une céramique n’est pas un défaut de fabrication : c’est la conséquence directe de sa liaison, et c’est pourquoi aucun progrès de procédé ne la rendra ductile. On la contourne, par la mise en compression ou par un composite, mais on ne la supprime pas.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque famille à sa propriété caractéristique.",
+          "explanation": "La ductilité des métaux vient du glissement des plans d’atomes ; la fragilité des céramiques de l’impossibilité de ce glissement.",
+          "pairs": [
+            {
+              "left": "les métaux",
+              "right": "ductiles et conducteurs"
+            },
+            {
+              "left": "les céramiques",
+              "right": "dures, réfractaires, fragiles"
+            },
+            {
+              "left": "les polymères",
+              "right": "légers, souples, sujets au fluage"
+            },
+            {
+              "left": "les composites",
+              "right": "propriétés dépendant de la direction"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la ductilité des métaux ?",
+          "explanation": "Du glissement des plans d’atomes les uns sur les autres, sans rupture de la liaison métallique.",
+          "options": [
+            {
+              "text": "les plans d’atomes glissent sans rompre la liaison",
+              "correct": true
+            },
+            {
+              "text": "leurs atomes sont plus petits"
+            },
+            {
+              "text": "ils contiennent des impuretés"
+            },
+            {
+              "text": "leur liaison est covalente"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de fois le béton résiste-t-il mieux en compression qu’en traction ?",
+          "explanation": "Environ dix fois : trente mégapascals contre trois. D’où l’armature d’acier du côté tendu.",
+          "min": 0,
+          "max": 100,
+          "answer": 10,
+          "tolerance": 2,
+          "unit": "fois",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel détail fortuit rend le béton armé possible ?",
+          "explanation": "L’acier et le béton ont presque le même coefficient de dilatation thermique. Sans cela, chaque variation de température les décollerait.",
+          "options": [
+            {
+              "text": "ils ont presque le même coefficient de dilatation",
+              "correct": true
+            },
+            {
+              "text": "l’acier ne rouille pas dans le béton"
+            },
+            {
+              "text": "ils ont la même masse volumique"
+            },
+            {
+              "text": "ils ont le même module d’Young"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce module d’Young appartient à quelle famille ?",
+          "explanation": "0,1 à 5 GPa pour les polymères, 70 à 400 pour métaux et céramiques : trois ordres de grandeur séparent les deux.",
+          "categories": [
+            "un polymère",
+            "un métal ou une céramique"
+          ],
+          "items": [
+            {
+              "text": "2 gigapascals",
+              "category": 0
+            },
+            {
+              "text": "0,5 gigapascal",
+              "category": 0
+            },
+            {
+              "text": "70 gigapascals",
+              "category": 1
+            },
+            {
+              "text": "400 gigapascals",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le choix commence-t-il par la famille ?",
+          "explanation": "Parce que les familles occupent des régions disjointes : un polymère n’est jamais en concurrence avec une céramique sur les mêmes critères.",
+          "options": [
+            {
+              "text": "les familles occupent des régions disjointes",
+              "correct": true
+            },
+            {
+              "text": "c’est une habitude de bureau d’études"
+            },
+            {
+              "text": "les nuances sont trop nombreuses"
+            },
+            {
+              "text": "les prix varient par famille"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-indices-de-performance",
+      "title": "Les indices de performance",
+      "subtitle": "Le bon matériau n’est pas le meilleur : c’est celui qui maximise un rapport.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une pièce tendue, et ce qui la limite",
+          "body": "Pousse le curseur jusqu’à la rupture : en traction, c’est la contrainte qui décide. La leçon montre que le choix du matériau ne dépend pas de la même grandeur selon que la pièce est tendue ou fléchie, et que la réponse change avec le mode de chargement.",
+          "figureId": "fil-qui-casse",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le même matériau gagne ou perd selon le chargement",
+          "body": "Pour une barre tendue la plus légère possible à rigidité donnée, il faut maximiser le module divisé par la masse volumique.\n\nCe rapport vaut environ 27 pour l’acier, 26 pour l’aluminium, 24 pour le titane, 20 pour le bois dans le fil. Ils sont donc presque équivalents, ce qui surprend toujours.\n\nPour une poutre fléchie la plus légère à rigidité donnée, c’est la racine du module divisé par la masse volumique qu’il faut maximiser. Et l’ordre change : environ 1,9 pour l’acier, 3,1 pour l’aluminium, 6,3 pour le bois.\n\nEn flexion, le bois bat l’aluminium qui bat l’acier, d’un facteur trois. C’est pourquoi les avions ont été en bois, puis en aluminium, et jamais en acier.",
+          "formula": "en traction : E ÷ ρ ; en flexion : racine de E ÷ ρ",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi l’exposant change",
+          "body": "En traction, la rigidité d’une barre est proportionnelle à sa section. Doubler la section double la rigidité et double la masse : le rapport est direct.\n\nEn flexion, la rigidité dépend du moment d’inertie, donc de la hauteur au cube. On peut gagner en rigidité en épaississant plutôt qu’en ajoutant de la matière partout.\n\nUn matériau peu rigide mais léger peut donc être épaissi jusqu’à égaler un matériau rigide et lourd, et rester plus léger. C’est d’où vient la racine carrée.\n\nLa conséquence pratique est qu’il n’existe pas de « meilleur matériau » : il existe un meilleur matériau pour un mode de chargement et une contrainte de conception données.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les diagrammes d’Ashby, et comment on les lit",
+          "body": "Michael Ashby propose dans les années 1980 de placer tous les matériaux sur un graphique à deux propriétés, en échelles logarithmiques.\n\nLes familles y apparaissent comme des régions distinctes, et chaque indice de performance devient une droite de pente connue : tous les matériaux sur une même droite sont équivalents pour cet usage.\n\nChoisir consiste alors à déplacer cette droite vers le haut jusqu’à ne garder que quelques candidats, puis à trancher sur le prix, la mise en œuvre et la disponibilité.\n\nC’est devenu la méthode standard, et son intérêt est pédagogique autant que pratique : elle rend visible qu’un choix de matériau est une optimisation, et non une liste de préférences.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que les indices ne contiennent pas",
+          "body": "Le prix. Le titane est excellent sur presque tous les indices, et cinquante fois le prix de l’acier au kilo.\\n\\nLa mise en œuvre. Un composite à fibres de carbone bat tout en rigidité spécifique, et demande un moule, une autoclave, et une main-d’œuvre qualifiée pour chaque pièce.\\n\\nLa fin de vie. Un acier se recycle indéfiniment et sans perte de qualité ; un composite thermodurcissable ne se recycle pratiquement pas.\\n\\nUn indice de performance classe donc des candidats, et ne choisit pas. La méthode d’Ashby le dit explicitement : l’indice réduit la liste, et les critères non quantifiables tranchent ensuite. L’oublier produit des choix techniquement brillants et industriellement absurdes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel indice maximiser pour une barre tendue légère à rigidité donnée ?",
+          "explanation": "Le module divisé par la masse volumique. Acier, aluminium, titane et bois y sont presque équivalents.",
+          "options": [
+            {
+              "text": "le module divisé par la masse volumique",
+              "correct": true
+            },
+            {
+              "text": "la racine du module divisée par la masse volumique"
+            },
+            {
+              "text": "le module seul"
+            },
+            {
+              "text": "la contrainte de rupture"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Et pour une poutre fléchie ?",
+          "explanation": "La racine du module divisée par la masse volumique. L’ordre change alors : le bois bat l’aluminium qui bat l’acier.",
+          "options": [
+            {
+              "text": "la racine du module divisée par la masse volumique",
+              "correct": true
+            },
+            {
+              "text": "le module divisé par la masse volumique"
+            },
+            {
+              "text": "le module au carré"
+            },
+            {
+              "text": "la masse volumique seule"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces matériaux du meilleur au moins bon pour une poutre fléchie légère.",
+          "explanation": "Racine de E sur ρ : environ 6,3 pour le bois, 3,1 pour l’aluminium, 1,9 pour l’acier.",
+          "items": [
+            "le bois dans le fil",
+            "l’aluminium",
+            "l’acier",
+            "le plomb"
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la racine carrée dans l’indice de flexion ?",
+          "explanation": "De ce que la rigidité en flexion dépend de la hauteur au cube : on peut épaissir au lieu d’ajouter de la matière partout.",
+          "options": [
+            {
+              "text": "la rigidité en flexion dépend de la hauteur au cube",
+              "correct": true
+            },
+            {
+              "text": "d’une convention de normalisation"
+            },
+            {
+              "text": "de la racine du moment d’inertie"
+            },
+            {
+              "text": "du coefficient de Poisson"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il existe un meilleur matériau, indépendamment de l’usage.",
+          "explanation": "Faux. Il existe un meilleur matériau pour un mode de chargement et une contrainte de conception données, et l’ordre change avec eux.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que devient un indice de performance sur un diagramme d’Ashby ?",
+          "explanation": "Une droite de pente connue : tous les matériaux situés dessus sont équivalents pour cet usage.",
+          "options": [
+            {
+              "text": "une droite de pente connue",
+              "correct": true
+            },
+            {
+              "text": "un point unique"
+            },
+            {
+              "text": "une région fermée"
+            },
+            {
+              "text": "une courbe exponentielle"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-qu-un-procede-impose",
+      "title": "Ce qu’un procédé impose à la forme",
+      "subtitle": "Le choix du procédé décide de la forme autant que l’inverse.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des formes, et par quel geste elles existent",
+          "body": "Choisis chaque solide et incline-le. Demande-toi, pour chacun, par quel procédé on l’obtiendrait : un cube par usinage ou moulage, une pyramide creuse difficilement par moulage, un prisme très long par extrusion. La forme et le procédé ne se choisissent pas séparément.",
+          "figureId": "solides-perspective",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Quatre grandes voies, et leurs contraintes",
+          "body": "Le moulage part d’un liquide. Il autorise presque toutes les formes extérieures, et impose des dépouilles pour démouler, des épaisseurs régulières contre les retassures, et des congés partout.\n\nLa déformation — laminage, forgeage, emboutissage — garde la matière solide. Elle améliore les propriétés en orientant les fibres, et impose des rayons minimaux et un retour élastique.\n\nL’usinage enlève de la matière. Il donne la meilleure précision et laisse des angles toujours arrondis par le rayon de l’outil, et exige un accès pour celui-ci.\n\nL’addition de matière, couche par couche, lève l’essentiel de ces contraintes et en ajoute d’autres : anisotropie entre couches, supports à retirer, état de surface médiocre.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le coût, et pourquoi la série décide de tout",
+          "body": "Un procédé a un coût fixe — outillage, moule, programme — et un coût par pièce.\n\nUn moule d’injection coûte des dizaines de milliers d’euros et produit ensuite pour quelques centimes. L’usinage ne coûte rien en outillage et plusieurs euros par pièce. L’impression n’exige aucun outillage et reste lente.\n\nLe coût total est donc le fixe plus le variable multiplié par la quantité, et deux droites se croisent toujours quelque part.\n\nD’où une règle de métier : on ne choisit pas un procédé sans connaître la série. À dix pièces, l’impression ou l’usinage ; à dix mille, le moulage. Et la pièce ne sera pas dessinée pareil dans les deux cas.",
+          "formula": "coût total = coût fixe + coût unitaire × quantité",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La tentation de l’impression, et sa limite",
+          "body": "L’addition de matière permet des formes impossibles autrement : canaux internes courbes, structures en treillis, pièces allégées par optimisation topologique.\n\nElle est donc indispensable pour des pièces uniques et complexes, en aéronautique et en médical.\n\nElle est très souvent un mauvais choix ailleurs. Une pièce simple imprimée coûte dix à cent fois ce qu’elle coûterait usinée en série, et elle est mécaniquement moins bonne.\n\nL’erreur fréquente est de dessiner une pièce comme on l’aurait usinée, puis de l’imprimer. On paie alors le procédé le plus coûteux pour une forme qui n’en avait pas besoin. Le procédé doit être choisi avant que la forme soit figée.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La règle qui résume le chapitre",
+          "body": "Une pièce n’est pas une forme à laquelle on choisit ensuite un matériau et un procédé. Les trois se décident ensemble, et chaque décision contraint les deux autres.\\n\\nUn matériau impose des procédés : on ne forge pas une céramique, on ne moule pas un composite à fibres longues comme un alliage.\\n\\nUn procédé impose des formes : dépouilles, rayons minimaux, épaisseurs régulières, accès d’outil.\\n\\nEt une forme impose un mode de chargement, donc un indice de performance, donc une famille de matériaux. Le triangle est fermé — c’est pourquoi un concepteur qui ne connaît pas les procédés dessine des pièces qu’il faudra redessiner.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque procédé à une contrainte qu’il impose.",
+          "explanation": "Le moulage impose des dépouilles, la déformation un retour élastique, l’usinage un accès à l’outil, l’addition une anisotropie entre couches.",
+          "pairs": [
+            {
+              "left": "le moulage",
+              "right": "des dépouilles pour démouler"
+            },
+            {
+              "left": "l’emboutissage",
+              "right": "un retour élastique à compenser"
+            },
+            {
+              "left": "l’usinage",
+              "right": "un accès pour l’outil"
+            },
+            {
+              "left": "l’impression",
+              "right": "une anisotropie entre couches"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui décide du choix d’un procédé, avant tout ?",
+          "explanation": "La taille de la série : le coût fixe et le coût par pièce se compensent à une quantité qu’on peut calculer.",
+          "options": [
+            {
+              "text": "la taille de la série",
+              "correct": true
+            },
+            {
+              "text": "la précision voulue"
+            },
+            {
+              "text": "le matériau"
+            },
+            {
+              "text": "la forme de la pièce"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce procédé convient-il à dix pièces, ou à dix mille ?",
+          "explanation": "Les procédés sans outillage conviennent aux petites séries, ceux à outillage coûteux aux grandes.",
+          "categories": [
+            "à dix pièces",
+            "à dix mille pièces"
+          ],
+          "items": [
+            {
+              "text": "l’impression tridimensionnelle",
+              "category": 0
+            },
+            {
+              "text": "l’usinage à la commande numérique",
+              "category": 0
+            },
+            {
+              "text": "le moulage par injection",
+              "category": 1
+            },
+            {
+              "text": "l’emboutissage avec outillage dédié",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que l’addition de matière permet-elle qu’aucun autre procédé ne permette ?",
+          "explanation": "Des canaux internes courbes, des structures en treillis, des pièces allégées par optimisation topologique.",
+          "options": [
+            {
+              "text": "des canaux internes courbes",
+              "correct": true
+            },
+            {
+              "text": "des structures en treillis internes",
+              "correct": true
+            },
+            {
+              "text": "des formes issues d’optimisation topologique",
+              "correct": true
+            },
+            {
+              "text": "une meilleure précision"
+            },
+            {
+              "text": "un meilleur état de surface"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’erreur fréquente avec l’impression ?",
+          "explanation": "Dessiner la pièce comme on l’aurait usinée, puis l’imprimer : on paie le procédé le plus coûteux pour une forme qui n’en avait pas besoin.",
+          "options": [
+            {
+              "text": "imprimer une forme conçue pour l’usinage",
+              "correct": true
+            },
+            {
+              "text": "choisir un mauvais matériau"
+            },
+            {
+              "text": "imprimer trop vite"
+            },
+            {
+              "text": "négliger les supports"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pièce simple imprimée est aussi bonne mécaniquement qu’usinée.",
+          "explanation": "Faux. Elle est anisotrope entre couches, et son état de surface est médiocre. Elle coûte aussi dix à cent fois plus en série.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-la-fatigue",
+      "title": "Défi : la fatigue",
+      "subtitle": "Neuf ruptures sur dix, sous des charges qui ne cassaient rien.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des événements rares, et un effet cumulé",
+          "body": "Pousse le curseur : chaque noyau tient ou casse, au hasard, et l’ensemble suit une loi. La fatigue a cette nature statistique — chaque cycle fait avancer une fissure microscopique d’un peu, et la rupture arrive au bout d’un nombre de cycles qu’on ne connaît qu’en distribution.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce qui casse en une fois, et ce qui casse en un million",
+          "body": "Le fil cède à 50 newtons. Charge-le à 20 et relâche : rien ne se passe. Refais-le un million de fois, et il peut céder quand même. C’est tout l’objet de cette leçon, et c’est ce que la figure ne peut pas montrer — il faudrait un million de gestes.",
+          "figureId": "fil-qui-casse",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La courbe de Wöhler, et la limite d’endurance",
+          "body": "On trace la contrainte appliquée en fonction du nombre de cycles avant rupture, en échelles logarithmiques. La courbe descend : moins de contrainte, plus de cycles.\n\nPour un acier, elle devient horizontale vers dix millions de cycles, à une contrainte d’environ la moitié de la limite de rupture. En dessous, la pièce tient indéfiniment : c’est la limite d’endurance.\n\nPour un alliage d’aluminium, la courbe ne devient jamais horizontale. Il n’y a pas de limite d’endurance : toute contrainte répétée finit par rompre la pièce.\n\nD’où une différence de conception majeure : une structure en acier peut être dimensionnée pour durer sans limite, une structure en aluminium se dimensionne pour un nombre de cycles, donc pour une durée de vie annoncée.",
+          "formula": "acier : limite d’endurance ≈ la moitié de la rupture ; aluminium : aucune",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Les concentrations de contrainte, et pourquoi elles décident",
+          "body": "Une fissure de fatigue démarre là où la contrainte locale est maximale, et ce n’est jamais au milieu d’une surface lisse.\n\nUn trou circulaire dans une plaque tendue multiplie la contrainte locale par trois, sur son bord. Un angle vif la multiplie par bien davantage, en théorie par l’infini.\n\nC’est pourquoi les congés ne sont pas une finition : ils sont un élément de dimensionnement. Un rayon de deux millimètres au lieu d’un angle vif peut multiplier la durée de vie par dix.\n\nEt c’est pourquoi un état de surface rugueux, une rayure d’usinage ou un poinçonnage réduisent la tenue en fatigue sans rien changer à la résistance statique.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le Comet, et ce que l’accident a appris",
+          "body": "Le de Havilland Comet, premier avion de ligne à réaction, perd deux appareils en vol en 1954, sans explication immédiate.\n\nL’enquête — dont un essai de fatigue en bassin sur un fuselage complet — montre des fissures parties des coins des hublots, qui étaient carrés. La pressurisation répétée à chaque vol faisait un cycle, et les coins concentraient la contrainte.\n\nTous les avions de ligne ont depuis des hublots à coins arrondis, et la raison est exactement celle-là.\n\nLa fatigue représente de l’ordre de quatre-vingt-dix pour-cent des ruptures mécaniques en service. Elle n’apparaît dans aucun calcul de résistance statique, et c’est ce qui la rend si coûteuse à ignorer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "La limite d’endurance d’un acier vaut quelle fraction de sa limite de rupture, en pour-cent ?",
+          "explanation": "Environ la moitié, soit 50 %. En dessous, la pièce tient indéfiniment.",
+          "min": 0,
+          "max": 100,
+          "answer": 50,
+          "tolerance": 8,
+          "unit": "%",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle différence majeure l’aluminium présente-t-il ?",
+          "explanation": "Il n’a pas de limite d’endurance : toute contrainte répétée finit par rompre la pièce, donc on dimensionne pour une durée de vie.",
+          "options": [
+            {
+              "text": "il n’a pas de limite d’endurance",
+              "correct": true
+            },
+            {
+              "text": "sa limite d’endurance est plus haute"
+            },
+            {
+              "text": "il ne fatigue pas"
+            },
+            {
+              "text": "il casse toujours en statique d’abord"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Par combien un trou circulaire multiplie-t-il la contrainte locale dans une plaque tendue ?",
+          "explanation": "Par trois, sur le bord du trou. Un angle vif la multiplie par bien davantage.",
+          "answer": 3,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les congés ne sont-ils pas une finition ?",
+          "explanation": "Parce qu’ils sont un élément de dimensionnement : un rayon de deux millimètres au lieu d’un angle vif peut multiplier la durée de vie par dix.",
+          "options": [
+            {
+              "text": "ils changent la durée de vie, parfois d’un facteur dix",
+              "correct": true
+            },
+            {
+              "text": "ils facilitent l’usinage"
+            },
+            {
+              "text": "ils réduisent la masse"
+            },
+            {
+              "text": "ils améliorent l’aspect"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où partaient les fissures du Comet en 1954 ?",
+          "explanation": "Des coins des hublots, qui étaient carrés. La pressurisation de chaque vol faisait un cycle, et les coins concentraient la contrainte.",
+          "options": [
+            {
+              "text": "des coins carrés des hublots",
+              "correct": true
+            },
+            {
+              "text": "des attaches de moteur"
+            },
+            {
+              "text": "des rivets de voilure"
+            },
+            {
+              "text": "du train d’atterrissage"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part des ruptures mécaniques en service relève de la fatigue, en pour-cent ?",
+          "explanation": "De l’ordre de quatre-vingt-dix pour-cent, et elle n’apparaît dans aucun calcul de résistance statique.",
+          "min": 0,
+          "max": 100,
+          "answer": 90,
+          "tolerance": 8,
+          "unit": "%",
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

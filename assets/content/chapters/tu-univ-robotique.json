@@ -1,0 +1,574 @@
+{
+  "chapter": "technologie-universite-robotique",
+  "lessons": [
+    {
+      "id": "degres-de-liberte",
+      "title": "Degrés de liberté",
+      "subtitle": "Six pour placer un objet, et pas un de moins.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un robot qui compte au lieu de regarder",
+          "body": "Règle le nombre de répétitions de 1 à 6 : le tracé se referme à quatre et repasse sur ses pas à cinq. Ce robot n’a que deux commandes, avancer et tourner, et il ne mesure rien. La leçon part de là pour compter ce qu’il faudrait pour une tâche réelle.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Six, et pourquoi exactement six",
+          "body": "Placer un solide dans l’espace demande de fixer sa position — trois nombres — et son orientation — trois autres. Six au total.\n\nUn bras doit donc comporter au moins six articulations motorisées pour atteindre n’importe quel point avec n’importe quelle orientation. C’est pourquoi les bras industriels en ont six.\n\nMoins de six limite la tâche, et ce n’est pas toujours un défaut : visser des bouchons ne demande que quatre degrés, et un robot à quatre axes est plus rapide, plus rigide et moins cher.\n\nPlus de six donne de la redondance : on atteint le même point de plusieurs façons, ce qui permet d’éviter un obstacle ou une position inconfortable. Un bras humain en a sept, et c’est pourquoi on peut saisir un verre en contournant un obstacle.",
+          "formula": "3 de position + 3 d’orientation = 6 degrés de liberté",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux architectures, deux compromis",
+          "body": "Le bras sériel : les articulations sont en chaîne, chacune portant les suivantes. Il a un grand volume de travail, et les moteurs du bas doivent porter tout le reste, donc il est lourd et peu rigide en extension.\n\nLa structure parallèle : plusieurs bras relient la base à l’effecteur, en boucles fermées. Les efforts se répartissent, donc elle est très rigide et très rapide — mais son volume de travail est petit.\n\nD’où la répartition des usages : les bras sériels en soudage et manutention, les structures parallèles en prise rapide d’objets et en simulateurs de vol.\n\nLe choix ne porte donc pas sur la qualité mais sur le rapport entre volume de travail et rigidité, et il n’existe pas d’architecture qui gagne sur les deux.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le volume de travail n’est pas une sphère",
+          "body": "Un bras de portée un mètre n’atteint pas tous les points d’une sphère de un mètre. Les butées articulaires, les collisions du bras avec lui-même et le socle en retirent des régions entières.\n\nIl reste souvent une cavité centrale inaccessible, près de l’axe, parce que le bras devrait se replier à l’intérieur de lui-même.\n\nEt atteindre un point n’est pas y arriver avec n’importe quelle orientation : le volume où toutes les orientations sont possibles est bien plus petit que le volume atteignable.\n\nD’où une règle d’implantation : on ne place pas une cellule robotisée d’après la portée annoncée. On la place d’après le volume réellement exploitable, qui se simule.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le cas du robot mobile, où le compte change",
+          "body": "Une voiture dans un plan a trois degrés de liberté : deux de position, un d’orientation. Elle n’a pourtant que deux commandes — avancer et braquer.\\n\\nElle peut quand même atteindre n’importe quelle configuration, et pas directement : il faut manœuvrer. C’est ce que fait un créneau, et c’est pourquoi on ne se gare pas en translatant latéralement.\\n\\nOn dit que le système est non holonome : il a moins de commandes que de degrés de liberté, et le chemin pour atteindre une configuration compte autant que la configuration.\\n\\nLa planification y est donc d’une nature différente de celle d’un bras : il ne s’agit plus de choisir parmi des solutions, mais de construire une trajectoire. C’est pourquoi la robotique mobile et la robotique manipulatrice sont deux disciplines.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de degrés de liberté faut-il pour placer un solide dans l’espace ?",
+          "explanation": "Six : trois de position et trois d’orientation.",
+          "answer": 6,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un robot à quatre axes peut-il être un bon choix ?",
+          "explanation": "Parce qu’une tâche comme visser des bouchons ne demande que quatre degrés, et qu’un robot à quatre axes est plus rapide, plus rigide et moins cher.",
+          "options": [
+            {
+              "text": "la tâche n’en demande pas plus, et il est plus rapide et rigide",
+              "correct": true
+            },
+            {
+              "text": "il consomme moins"
+            },
+            {
+              "text": "il est plus précis par nature"
+            },
+            {
+              "text": "il n’a pas besoin de capteurs"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de degrés de liberté a un bras humain, de l’épaule au poignet ?",
+          "explanation": "Sept : un de plus que nécessaire, et c’est cette redondance qui permet de contourner un obstacle pour saisir un verre.",
+          "answer": 7,
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette propriété est-elle celle d’un bras sériel, ou d’une structure parallèle ?",
+          "explanation": "Le sériel offre un grand volume et peu de rigidité ; le parallèle l’inverse. Aucune architecture ne gagne sur les deux.",
+          "categories": [
+            "bras sériel",
+            "structure parallèle"
+          ],
+          "items": [
+            {
+              "text": "un grand volume de travail",
+              "category": 0
+            },
+            {
+              "text": "des moteurs qui portent les suivants",
+              "category": 0
+            },
+            {
+              "text": "une très grande rigidité",
+              "category": 1
+            },
+            {
+              "text": "un volume de travail restreint",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un bras de portée un mètre atteint tous les points d’une sphère de un mètre.",
+          "explanation": "Faux. Butées, collisions avec lui-même et socle en retirent des régions, et il reste souvent une cavité centrale inaccessible.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le volume où toutes les orientations sont possibles est-il plus petit ?",
+          "explanation": "Parce qu’atteindre un point n’est pas y arriver avec n’importe quelle orientation : les butées en interdisent une partie.",
+          "options": [
+            {
+              "text": "atteindre un point n’implique pas toutes les orientations",
+              "correct": true
+            },
+            {
+              "text": "les moteurs manquent de couple en extension"
+            },
+            {
+              "text": "les capteurs y sont imprécis"
+            },
+            {
+              "text": "la portée est surévaluée par les fabricants"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "directe-et-inverse",
+      "title": "Cinématique directe et inverse",
+      "subtitle": "Une question facile, et sa réciproque qui ne l’est pas.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une transformation, et ce qu’elle fait",
+          "body": "Règle les quatre coefficients et regarde le carré unité se transformer. Une articulation de robot fait exactement cela en trois dimensions : elle applique une transformation. Enchaîner les articulations revient à multiplier les matrices, dans l’ordre.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La cinématique directe, et pourquoi elle est facile",
+          "body": "Question : les six angles étant connus, où se trouve l’effecteur et dans quelle orientation ?\n\nLa réponse s’obtient en composant les transformations, une par articulation. On multiplie six matrices, et le résultat donne position et orientation.\n\nLe calcul est direct, unique, et sans aucune difficulté : il y a une seule réponse, et elle s’obtient en une passe.\n\nOn emploie des matrices de taille quatre plutôt que trois, pour que les translations s’écrivent comme des multiplications au lieu d’additions séparées. C’est la seule astuce du sujet, et elle s’appelle coordonnées homogènes.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "La cinématique inverse, et pourquoi elle est dure",
+          "body": "Question inverse : la position et l’orientation voulues étant données, quels angles faut-il ?\n\nC’est celle qu’on pose en pratique, puisqu’on sait où l’on veut aller et non comment plier le bras. Et elle n’a pas de réponse unique.\n\nUn bras plan à deux segments atteint un point donné de deux façons : coude en haut, coude en bas. Un bras industriel à six axes a généralement huit solutions, parfois seize.\n\nEt parfois aucune : si le point est hors du volume, ou si l’orientation demandée y est impossible. Le logiciel doit donc choisir une solution, détecter l’absence de solution, et préférer celle qui évite les butées — trois travaux que la cinématique directe ne connaît pas.",
+          "formula": "directe : une solution ; inverse : zéro, huit ou seize",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les singularités, et ce qu’elles font",
+          "body": "Dans certaines configurations, deux axes s’alignent. Le bras perd alors un degré de liberté : il ne peut plus bouger dans une direction, quelle que soit la vitesse des moteurs.\n\nPire : pour traverser une telle configuration à vitesse constante de l’effecteur, certains moteurs devraient tourner infiniment vite. La commande demande l’impossible.\n\nLes robots industriels s’arrêtent donc en alarme à l’approche d’une singularité, et les trajectoires sont planifiées pour les éviter.\n\nC’est une difficulté purement géométrique, qui n’a rien à voir avec la mécanique ni l’électronique. Elle ne se corrige donc pas par un meilleur matériel, et elle reste le premier obstacle de la programmation de trajectoires.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cette asymétrie se retrouve partout",
+          "body": "Calculer dans un sens est facile, dans l’autre difficile : c’est un motif qui dépasse la robotique.\\n\\nMultiplier deux grands nombres premiers est immédiat, retrouver les facteurs ne l’est pas — et toute la cryptographie à clé publique repose là-dessus.\\n\\nDériver une fonction est mécanique, l’intégrer demande du flair. Simuler un système est direct, identifier ses paramètres depuis son comportement est un problème ouvert.\\n\\nOn parle de problèmes directs et de problèmes inverses, et les seconds forment un domaine à eux. Reconnaître qu’on a affaire à un problème inverse est souvent la première étape utile : cela dit à quoi s’attendre, et quelles méthodes chercher.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle question la cinématique directe résout-elle ?",
+          "explanation": "Les angles étant connus, où se trouve l’effecteur. Le calcul est direct, unique et sans difficulté.",
+          "options": [
+            {
+              "text": "les angles étant connus, où est l’effecteur",
+              "correct": true
+            },
+            {
+              "text": "la position voulue étant donnée, quels angles"
+            },
+            {
+              "text": "quelle vitesse pour chaque moteur"
+            },
+            {
+              "text": "quel couple pour chaque articulation"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de solutions un bras plan à deux segments a-t-il pour un point donné ?",
+          "explanation": "Deux : coude en haut, coude en bas.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de solutions un bras industriel à six axes a-t-il généralement ?",
+          "explanation": "Huit, parfois seize. Et parfois aucune, si le point ou l’orientation est hors d’atteinte.",
+          "options": [
+            {
+              "text": "huit, parfois seize",
+              "correct": true
+            },
+            {
+              "text": "une seule"
+            },
+            {
+              "text": "deux"
+            },
+            {
+              "text": "une infinité"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi servent les coordonnées homogènes ?",
+          "explanation": "À écrire les translations comme des multiplications, en employant des matrices de taille quatre au lieu de trois.",
+          "options": [
+            {
+              "text": "écrire les translations comme des multiplications",
+              "correct": true
+            },
+            {
+              "text": "réduire le nombre de calculs"
+            },
+            {
+              "text": "éviter les singularités"
+            },
+            {
+              "text": "calculer les vitesses"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il dans une singularité ?",
+          "explanation": "Deux axes s’alignent, le bras perd un degré de liberté, et traverser à vitesse constante demanderait des vitesses moteur infinies.",
+          "options": [
+            {
+              "text": "le bras perd un degré de liberté et la commande demande l’impossible",
+              "correct": true
+            },
+            {
+              "text": "les moteurs forcent et chauffent"
+            },
+            {
+              "text": "le calcul direct échoue"
+            },
+            {
+              "text": "le bras perd sa précision"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un matériel plus performant supprime les singularités.",
+          "explanation": "Faux. C’est une difficulté purement géométrique : elle vient de la structure du bras, pas de ses moteurs.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "commander-une-articulation",
+      "title": "Commander une articulation",
+      "subtitle": "Trois boucles emboîtées, et chacune dix fois plus rapide que la précédente.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un gain, et trois régimes",
+          "body": "Balaye le gain de 0,25 à 7. Vers 2,3 la réponse commence à osciller, vers 5,7 elle part. Une articulation de robot est commandée par trois boucles de ce genre, emboîtées, et chacune a son propre réglage avec les mêmes trois régimes.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois boucles, de l’intérieur vers l’extérieur",
+          "body": "La boucle de courant, la plus rapide : elle règle le courant dans le moteur, donc le couple. Elle travaille à des dizaines de kilohertz.\n\nLa boucle de vitesse, au-dessus : elle compare la vitesse mesurée à la consigne et commande le courant. Quelques kilohertz.\n\nLa boucle de position, la plus lente : elle compare la position mesurée à la consigne et commande la vitesse. Quelques centaines de hertz.\n\nChaque boucle doit être au moins dix fois plus rapide que celle qui la commande, sans quoi l’extérieure voit un retard et devient instable. C’est une règle de conception, et elle explique l’architecture.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi un correcteur proportionnel seul ne suffit pas",
+          "body": "Un correcteur proportionnel a besoin d’un écart pour commander. Une articulation horizontale s’arrêterait donc avant la consigne, et l’écart serait proportionnel au couple de frottement.\n\nLe terme intégral annule cet écart : il accumule, et la commande monte jusqu’à ce que la position soit atteinte.\n\nLe terme dérivé anticipe : il réagit à la vitesse d’approche et freine avant l’arrivée, ce qui limite le dépassement.\n\nD’où le correcteur à trois termes, le plus employé de l’industrie. Son réglage se fait en général dans cet ordre : le proportionnel d’abord, le dérivé pour amortir, l’intégral en dernier et avec parcimonie.",
+          "formula": "proportionnel pour réagir, dérivé pour amortir, intégral pour annuler l’écart",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la mécanique impose à la commande",
+          "body": "Une transmission n’est jamais parfaitement rigide. Le moteur et la charge forment donc un système à deux masses reliées par un ressort, qui possède une fréquence de résonance.\n\nSi la boucle est réglée au-delà de cette fréquence, elle excite la résonance : le bras vibre, et augmenter le gain aggrave tout.\n\nLa bande passante atteignable est donc fixée par la mécanique, et non par l’électronique. Un meilleur correcteur ne la dépasse pas.\n\nD’où la règle qui surprend les automaticiens débutants : pour améliorer la dynamique d’un axe, il faut souvent raidir la transmission plutôt que régler mieux. La commande ne répare pas la mécanique.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Un quatrième terme, qui ne boucle pas",
+          "body": "Les trois termes du correcteur réagissent tous à un écart, donc après coup. Il existe un quatrième apport qui agit avant : l’anticipation.\\n\\nSi l’on connaît la trajectoire voulue, on connaît l’accélération voulue, donc le couple nécessaire — et on peut le commander directement, sans attendre un écart.\\n\\nLa boucle n’a plus alors qu’à corriger les écarts résiduels, qui sont dix fois plus petits. C’est ce qui permet à un robot de suivre une trajectoire rapide avec une erreur de quelques centièmes de millimètre.\\n\\nEt cela demande un modèle du robot : masses, inerties, frottements. L’anticipation est donc le point où la commande a besoin de la mécanique — et où un bon modèle vaut mieux qu’un bon réglage.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe les trois boucles de la plus rapide à la plus lente.",
+          "explanation": "Courant à des dizaines de kilohertz, vitesse à quelques kilohertz, position à quelques centaines de hertz.",
+          "items": [
+            "la boucle de courant",
+            "la boucle de vitesse",
+            "la boucle de position",
+            "la génération de trajectoire"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi chaque boucle doit-elle être dix fois plus rapide que celle qui la commande ?",
+          "explanation": "Sinon l’extérieure voit un retard, et un retard dans une boucle la rend instable.",
+          "options": [
+            {
+              "text": "sinon l’extérieure voit un retard et devient instable",
+              "correct": true
+            },
+            {
+              "text": "pour économiser du calcul"
+            },
+            {
+              "text": "pour réduire le bruit des capteurs"
+            },
+            {
+              "text": "c’est une convention de normalisation"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque terme du correcteur à son rôle.",
+          "explanation": "Le proportionnel réagit à l’écart, le dérivé amortit en anticipant, l’intégral annule l’écart résiduel.",
+          "pairs": [
+            {
+              "left": "le terme proportionnel",
+              "right": "réagir à l’écart"
+            },
+            {
+              "left": "le terme dérivé",
+              "right": "freiner avant l’arrivée"
+            },
+            {
+              "left": "le terme intégral",
+              "right": "annuler l’écart résiduel"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fixe la bande passante atteignable d’un axe ?",
+          "explanation": "La mécanique : la résonance du système moteur-transmission-charge. Un meilleur correcteur ne la dépasse pas.",
+          "options": [
+            {
+              "text": "la résonance de la transmission",
+              "correct": true
+            },
+            {
+              "text": "la fréquence du microcontrôleur"
+            },
+            {
+              "text": "la résolution du codeur"
+            },
+            {
+              "text": "le réglage du correcteur"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Augmenter le gain au-delà de la résonance améliore la dynamique.",
+          "explanation": "Faux. Cela excite la résonance : le bras vibre, et augmenter davantage aggrave tout.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment améliore-t-on souvent la dynamique d’un axe ?",
+          "explanation": "En raidissant la transmission plutôt qu’en réglant mieux. La commande ne répare pas la mécanique.",
+          "options": [
+            {
+              "text": "en raidissant la transmission",
+              "correct": true
+            },
+            {
+              "text": "en montant le gain"
+            },
+            {
+              "text": "en ajoutant un terme intégral"
+            },
+            {
+              "text": "en changeant de microcontrôleur"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-repetabilite-et-exactitude",
+      "title": "Défi : répétabilité et exactitude",
+      "subtitle": "Deux nombres que les notices mélangent, et un seul qui sert.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Mesurer, décider, agir",
+          "body": "Règle la mesure et le seuil : la décision dépend des deux, et le capteur ne décide rien. Un robot a cette structure pour chaque axe, et la question de cette leçon est de savoir à quel point on peut se fier à ce que le capteur annonce.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Un robot qui compte, et l’erreur qui s’accumule",
+          "body": "Règle les répétitions : le robot compte ses pas et ne vérifie jamais où il est. Si chaque pas était légèrement faux, l’erreur s’additionnerait sans jamais se corriger. C’est exactement la différence entre un robot en boucle ouverte et un robot asservi.",
+          "figureId": "boucle-robot",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux nombres, définis proprement",
+          "body": "La répétabilité est la dispersion des positions atteintes quand on redemande la même consigne, plusieurs fois. Un robot industriel courant tient 0,05 millimètre.\n\nL’exactitude est l’écart entre la position atteinte et la position demandée dans le repère réel. Elle est souvent dix fois pire, autour de 0,5 millimètre.\n\nLa différence vient des erreurs systématiques : longueurs de segments connues à quelques centièmes près, déformations sous charge, dilatation thermique, jeux dans les réducteurs.\n\nUn robot est donc très régulier et modérément juste. C’est le contraire de l’intuition qu’on a devant une machine, et c’est ce qui décide de la façon de l’employer.",
+          "formula": "répétabilité ≈ 0,05 mm ; exactitude ≈ 0,5 mm",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment on travaille avec cette asymétrie",
+          "body": "On ne programme pas un robot par coordonnées calculées : on l’amène aux positions voulues et on les enregistre. L’exactitude ne compte alors pas, et seule la répétabilité joue.\n\nC’est pourquoi la programmation par apprentissage a dominé l’industrie pendant quarante ans, et domine encore pour les tâches répétitives.\n\nQuand on doit programmer hors ligne, depuis un modèle informatique, l’exactitude devient décisive — et il faut alors calibrer : mesurer le robot réel et corriger son modèle géométrique.\n\nLa calibration ramène l’exactitude au niveau de la répétabilité, à peu près. Elle coûte une journée de mesures, et elle est refaite après tout choc ou tout démontage.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Six degrés de liberté pour placer un solide, et le compte décide de l’architecture. Moins est parfois mieux, et plus donne de la redondance.\n\nLa cinématique directe est facile et unique, l’inverse est multiple et parfois impossible. C’est l’inverse qu’on pose en pratique, et les singularités y sont géométriques — donc incorrigibles par le matériel.\n\nLa commande est faite de boucles emboîtées, chacune dix fois plus rapide que celle qui la commande, et la mécanique fixe la limite.\n\nEt un robot est régulier bien plus que juste. Savoir lequel des deux nombres compte pour une tâche donnée est la compétence pratique la plus rentable de tout le chapitre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Quelle répétabilité un robot industriel courant atteint-il, en millimètres ?",
+          "explanation": "Environ 0,05 millimètre : c’est la dispersion quand on redemande la même consigne.",
+          "min": 0,
+          "max": 5,
+          "answer": 0.05,
+          "tolerance": 0.03,
+          "unit": "mm",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et quelle exactitude, dans le repère réel ?",
+          "explanation": "Environ 0,5 millimètre, soit dix fois pire : les erreurs systématiques s’ajoutent.",
+          "min": 0,
+          "max": 10,
+          "answer": 0.5,
+          "tolerance": 0.3,
+          "unit": "mm",
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "D’où vient l’écart entre les deux ?",
+          "explanation": "Des erreurs systématiques : longueurs de segments imparfaitement connues, déformations sous charge, dilatation, jeux.",
+          "options": [
+            {
+              "text": "les longueurs de segments mal connues",
+              "correct": true
+            },
+            {
+              "text": "les déformations sous charge",
+              "correct": true
+            },
+            {
+              "text": "la dilatation thermique",
+              "correct": true
+            },
+            {
+              "text": "les jeux dans les réducteurs",
+              "correct": true
+            },
+            {
+              "text": "le bruit des codeurs"
+            },
+            {
+              "text": "la fréquence de la boucle de position"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la programmation par apprentissage a-t-elle dominé l’industrie ?",
+          "explanation": "Parce qu’elle n’emploie que la répétabilité : on amène le robot aux positions voulues et on les enregistre, sans calculer de coordonnées.",
+          "options": [
+            {
+              "text": "elle n’exige que la répétabilité, jamais l’exactitude",
+              "correct": true
+            },
+            {
+              "text": "elle est plus rapide à écrire"
+            },
+            {
+              "text": "elle évite les singularités"
+            },
+            {
+              "text": "elle ne demande pas de calibration"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand l’exactitude devient-elle décisive ?",
+          "explanation": "Quand on programme hors ligne, depuis un modèle informatique : il faut alors calibrer le robot réel.",
+          "options": [
+            {
+              "text": "quand on programme hors ligne depuis un modèle",
+              "correct": true
+            },
+            {
+              "text": "quand la tâche est répétitive"
+            },
+            {
+              "text": "quand le robot est rapide"
+            },
+            {
+              "text": "quand la charge est lourde"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un robot est plus juste que régulier.",
+          "explanation": "Faux, et c’est le contraire de l’intuition : il est très régulier et modérément juste, d’un facteur dix.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
