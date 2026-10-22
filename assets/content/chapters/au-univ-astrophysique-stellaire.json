@@ -1,0 +1,609 @@
+{
+  "chapter": "astronomie-universite-astrophysique-stellaire",
+  "lessons": [
+    {
+      "id": "lire-une-etoile-dans-sa-lumiere",
+      "title": "Lire une étoile dans sa lumière",
+      "subtitle": "Deux informations indépendantes dans une seule image.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La couleur, les raies, et leur indépendance",
+          "body": "Change l’élément : les raies sombres se déplacent, le fond ne bouge pas. Change la température : le fond change de couleur, les raies restent où elles sont. Fais les deux séparément — c’est cette indépendance qui permet de tirer deux grandeurs d’une seule image.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Wien, et la température de couleur",
+          "body": "Un corps chaud rayonne sur toutes les longueurs d’onde, avec un maximum qui dépend de sa température seule.\n\nLa loi de Wien le situe : la longueur d’onde du maximum, en nanomètres, vaut environ 2,898 millions divisé par la température en kelvins.\n\nPour le Soleil à 5 778 kelvins, cela donne 501 nanomètres, en plein vert. Notre œil est le plus sensible exactement là, et ce n’est pas une coïncidence.\n\nMesurer la couleur d’une étoile donne donc sa température de surface, sans rien savoir d’autre d’elle. C’est la mesure la moins coûteuse de toute l’astrophysique.",
+          "formula": "longueur d’onde du maximum = 2,898 × 10 puissance 6 ÷ T",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les raies, et ce qu’elles identifient",
+          "body": "Chaque élément absorbe à des longueurs d’onde précises, déterminées par les écarts entre ses niveaux d’énergie électroniques. Ces écarts sont une propriété de l’élément, et ne dépendent d’aucune condition extérieure.\n\nL’hydrogène montre la série de Balmer : 656, 486, 434 et 410 nanomètres dans le visible. Le sodium son doublet à 589. Le calcium ses raies H et K dans le violet.\n\nDeux éléments ne partagent aucune raie, et c’est ce qui fait d’un spectre une signature au sens strict.\n\nL’hélium a d’ailleurs été découvert dans le spectre du Soleil, en 1868, avant d’être trouvé sur Terre en 1895. Son nom vient de là.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les classes spectrales, et l’ordre qui surprend",
+          "body": "Les étoiles se classent O, B, A, F, G, K, M, de la plus chaude à la plus froide. Les lettres ne sont pas dans l’ordre alphabétique, et c’est un accident historique.\n\nLe classement initial, par Annie Jump Cannon et ses collègues de Harvard à partir de 1890, était alphabétique selon l’intensité des raies de l’hydrogène. On a compris ensuite que le paramètre physique était la température, et il a fallu réordonner les lettres sans les renommer.\n\nLe Soleil est de classe G2. Les O sont bleues et dépassent 30 000 kelvins ; les M sont rouges et descendent sous 3 500.\n\nCannon a classé à la main plus de 350 000 étoiles. Le classement porte son système, et c’est lui qu’on emploie encore.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une troisième information, et un quatrième usage",
+          "body": "Le décalage des raies vers le rouge ou le bleu donne la vitesse radiale, par effet Doppler. Une raie connue à 589 nanomètres mesurée à 589,2 dit que l’objet s’éloigne.\n\nL’élargissement des raies renseigne sur la pression et la rotation : une étoile qui tourne vite a des raies élargies, parce qu’un bord s’approche quand l’autre s’éloigne.\n\nUn seul spectre livre donc quatre choses : température, composition, vitesse, et rotation. Aucune autre mesure astronomique n’est aussi rentable.\n\nC’est pourquoi la spectroscopie a fait l’astrophysique. Avant elle, on mesurait des positions ; après, on a su de quoi les étoiles sont faites.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Le Soleil est à 5 778 K. À quelle longueur d’onde son maximum, en nanomètres ?",
+          "explanation": "2 898 000 divisé par 5 778 donne environ 501 nm, en plein vert — là où notre œil est le plus sensible.",
+          "min": 0,
+          "max": 2000,
+          "answer": 501,
+          "tolerance": 30,
+          "unit": "nm",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépendent les longueurs d’onde des raies d’un élément ?",
+          "explanation": "Des écarts entre ses niveaux d’énergie électroniques, qui sont une propriété de l’élément et d’aucune condition extérieure.",
+          "options": [
+            {
+              "text": "des écarts entre ses niveaux d’énergie",
+              "correct": true
+            },
+            {
+              "text": "de la température de l’étoile"
+            },
+            {
+              "text": "de la distance de l’observateur"
+            },
+            {
+              "text": "de la pression du gaz"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces classes spectrales de la plus chaude à la plus froide.",
+          "explanation": "O, B, A, F, G, K, M. L’ordre n’est pas alphabétique : c’est un classement initial par raies de l’hydrogène, réordonné ensuite par température.",
+          "items": [
+            "O, au-delà de 30 000 K",
+            "A",
+            "G, celle du Soleil",
+            "M, sous 3 500 K"
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’hélium porte-t-il ce nom ?",
+          "explanation": "Parce qu’il a été découvert dans le spectre du Soleil en 1868, avant d’être trouvé sur Terre en 1895.",
+          "options": [
+            {
+              "text": "il a été découvert dans le spectre du Soleil",
+              "correct": true
+            },
+            {
+              "text": "il est le plus léger des gaz nobles"
+            },
+            {
+              "text": "il brûle avec une flamme solaire"
+            },
+            {
+              "text": "il a été découvert un jour de solstice"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que livre un seul spectre d’étoile ?",
+          "explanation": "Température par la couleur, composition par les raies, vitesse radiale par leur décalage, rotation par leur élargissement.",
+          "options": [
+            {
+              "text": "la température de surface",
+              "correct": true
+            },
+            {
+              "text": "la composition chimique",
+              "correct": true
+            },
+            {
+              "text": "la vitesse radiale",
+              "correct": true
+            },
+            {
+              "text": "la vitesse de rotation",
+              "correct": true
+            },
+            {
+              "text": "la distance"
+            },
+            {
+              "text": "l’âge exact"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une étoile en rotation rapide a-t-elle des raies élargies ?",
+          "explanation": "Parce qu’un bord s’approche de nous quand l’autre s’éloigne : les décalages Doppler opposés étalent la raie.",
+          "options": [
+            {
+              "text": "un bord s’approche quand l’autre s’éloigne",
+              "correct": true
+            },
+            {
+              "text": "elle est plus chaude"
+            },
+            {
+              "text": "ses atomes sont déformés"
+            },
+            {
+              "text": "sa lumière traverse plus de gaz"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-diagramme-qui-a-tout-range",
+      "title": "Le diagramme qui a tout rangé",
+      "subtitle": "Deux axes, et quatre-vingt-dix pour-cent des étoiles sur une ligne.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’axe des températures, à parcourir",
+          "body": "Balaye la température de 3 000 à 30 000 kelvins et regarde la teinte annoncée passer du rouge au bleu. C’est l’axe horizontal du diagramme de ce cours, et il est tracé à l’envers par tradition : les chaudes à gauche, les froides à droite.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Une puissance, et ce qu’elle fait aux écarts",
+          "body": "Bascule sur « géométrique » et règle la raison à 3 : les bâtons montent d’abord doucement puis sortent de l’écran. La luminosité d’une étoile varie comme sa masse à la puissance 3,5 — un écart de masse modeste devient un écart de luminosité énorme, et la figure montre à quoi ressemble ce genre de loi.",
+          "figureId": "suite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux axes, et ce qui apparaît",
+          "body": "En abscisse, la température de surface, ou la classe spectrale, décroissante de gauche à droite.\n\nEn ordonnée, la luminosité intrinsèque, en unités solaires, sur une échelle logarithmique couvrant un facteur un million.\n\nHertzsprung et Russell le tracent indépendamment vers 1910. Les étoiles n’y sont pas réparties au hasard : près de quatre-vingt-dix pour-cent tombent sur une bande diagonale, la séquence principale.\n\nLe reste forme deux groupes nets : les géantes, froides et pourtant très lumineuses, en haut à droite ; et les naines blanches, chaudes et très peu lumineuses, en bas à gauche. Trois régions, et il a fallu trente ans pour comprendre pourquoi.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que la séquence principale signifie",
+          "body": "Une étoile de la séquence principale brûle de l’hydrogène en son cœur. Sa position sur la bande ne dépend que de sa masse.\n\nLa luminosité croît comme la masse à la puissance 3,5 environ. Une étoile deux fois plus massive que le Soleil est onze fois plus lumineuse ; dix fois plus massive, trois mille fois plus lumineuse.\n\nLa durée de vie est le rapport du carburant à la consommation, donc de la masse à la luminosité. Elle varie comme la masse à la puissance moins 2,5.\n\nLe Soleil tient dix milliards d’années. Une étoile de dix masses solaires tient trente millions d’années. Une étoile de la moitié de la masse du Soleil tient plus longtemps que l’âge de l’Univers.",
+          "formula": "L proportionnel à M puissance 3,5 ; durée de vie à M puissance −2,5",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi le diagramme n’est pas une évolution",
+          "body": "On dit volontiers qu’une étoile « descend la séquence principale » au cours de sa vie. C’est faux : elle y reste à peu près au même endroit pendant quatre-vingt-dix pour-cent de son existence.\n\nLa séquence principale n’est pas un chemin, c’est un lieu. Ce qui y place une étoile est sa masse, qui ne change presque pas.\n\nCe qui bouge, c’est la fin : quand l’hydrogène du cœur s’épuise, l’étoile quitte la séquence et traverse le diagramme en quelques pour-cent de sa durée de vie.\n\nD’où une conséquence d’observation : les régions peu peuplées du diagramme ne sont pas des états impossibles, mais des états brefs. Le vide y mesure une durée, pas une interdiction.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle proportion d’étoiles se trouve sur la séquence principale ?",
+          "explanation": "Près de quatre-vingt-dix pour-cent : elles y brûlent l’hydrogène de leur cœur, pendant l’essentiel de leur vie.",
+          "options": [
+            {
+              "text": "environ 90 %",
+              "correct": true
+            },
+            {
+              "text": "environ la moitié"
+            },
+            {
+              "text": "environ 10 %"
+            },
+            {
+              "text": "toutes"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui détermine la position d’une étoile sur la séquence principale ?",
+          "explanation": "Sa masse, et presque rien d’autre. C’est pourquoi la séquence est une bande et non un nuage.",
+          "options": [
+            {
+              "text": "sa masse",
+              "correct": true
+            },
+            {
+              "text": "son âge"
+            },
+            {
+              "text": "sa composition"
+            },
+            {
+              "text": "sa distance"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Une étoile de 10 masses solaires : combien de fois plus lumineuse que le Soleil ?",
+          "explanation": "10 puissance 3,5, soit environ 3 000 fois. La luminosité varie comme la masse à la puissance 3,5.",
+          "min": 0,
+          "max": 20000,
+          "answer": 3000,
+          "tolerance": 500,
+          "unit": "fois",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et combien de temps vit-elle, en millions d’années ?",
+          "explanation": "La durée varie comme la masse à la puissance −2,5 : dix milliards divisés par environ 316 donnent une trentaine de millions d’années.",
+          "min": 0,
+          "max": 1000,
+          "answer": 32,
+          "tolerance": 8,
+          "unit": "millions d’années",
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une étoile descend la séquence principale au cours de sa vie.",
+          "explanation": "Faux. Elle y reste à peu près au même endroit pendant 90 % de son existence : la séquence est un lieu, pas un chemin.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure le vide des régions peu peuplées du diagramme ?",
+          "explanation": "Une durée : ces états sont brefs, pas impossibles. Une étoile les traverse en quelques pour-cent de sa vie.",
+          "options": [
+            {
+              "text": "la brièveté de ces états",
+              "correct": true
+            },
+            {
+              "text": "leur impossibilité physique"
+            },
+            {
+              "text": "un manque d’observations"
+            },
+            {
+              "text": "une limite des télescopes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "d-ou-vient-l-energie",
+      "title": "D’où vient l’énergie d’une étoile",
+      "subtitle": "Sept millièmes de la masse, et cela suffit à dix milliards d’années.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre modèles, et un noyau qui apparaît",
+          "body": "Fais défiler les quatre modèles historiques et lis ce qui a tué chacun. Retiens le rapport annoncé entre la taille de l’atome et celle du noyau : cent mille. C’est dans ce point minuscule que réside toute l’énergie d’une étoile, et c’est pourquoi il a fallu attendre 1938 pour comprendre le Soleil.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les hypothèses fausses, et pourquoi on les a abandonnées",
+          "body": "La combustion chimique : un Soleil de charbon de sa masse brûlerait quelques milliers d’années. Les géologues du dix-neuvième siècle réclamaient déjà des centaines de millions d’années.\n\nLa contraction gravitationnelle, proposée par Kelvin et Helmholtz : une trentaine de millions d’années. Mieux, et encore cent fois trop peu — et c’est sur ce calcul que Kelvin contestait Darwin.\n\nLa fusion nucléaire, proposée par Eddington en 1920 et détaillée par Bethe en 1938 : dix milliards d’années pour le Soleil. L’ordre de grandeur colle enfin.\n\nTrois hypothèses, et le critère qui a tranché est à chaque fois une durée. Les géologues avaient raison contre les physiciens, faute d’une physique qui n’existait pas encore.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le défaut de masse, chiffré",
+          "body": "Quatre noyaux d’hydrogène fusionnent en un noyau d’hélium. La masse du produit est inférieure à celle des réactifs de sept millièmes.\n\nCette masse manquante est partie en énergie, selon la relation d’Einstein. Sept millièmes paraissent peu, et c’est quarante millions de fois plus que la combustion du charbon par unité de masse.\n\nLe Soleil convertit six cents millions de tonnes d’hydrogène par seconde, et perd ainsi quatre millions de tonnes de masse par seconde.\n\nIl le fait depuis quatre milliards et demi d’années, et il a ainsi perdu environ un dix-millième de sa masse. Il ne lui manque donc presque rien, et il lui reste la moitié de son carburant.",
+          "formula": "7 ‰ de la masse converti, soit 4 millions de tonnes par seconde",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi une étoile ne s’emballe pas",
+          "body": "Une réaction qui dégage de l’énergie dans un milieu confiné devrait s’accélérer : plus chaud veut dire plus de réactions, donc plus chaud encore.\n\nCe qui l’en empêche est l’équilibre hydrostatique. Si le cœur chauffe, la pression monte, l’étoile se dilate, le cœur se refroidit, et les réactions ralentissent.\n\nC’est un asservissement, au sens exact du cours d’automatique : une boucle de contre-réaction négative, avec un gain fixé par la physique du gaz.\n\nUne étoile est donc un réacteur auto-régulé, et c’est ce qui lui permet de brûler pendant des milliards d’années à puissance quasi constante. Les bombes à fusion n’ont pas ce mécanisme — c’est précisément pourquoi elles explosent.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la lumière met si longtemps à sortir",
+          "body": "L’énergie est produite au cœur du Soleil, à quelque sept cents mille kilomètres de la surface. À la vitesse de la lumière, ce trajet prendrait deux secondes.\n\nIl prend des dizaines de milliers d’années. Le milieu est si dense qu’un photon y est absorbé et réémis en permanence, dans une direction chaque fois quelconque.\n\nLe trajet est donc une marche au hasard, et une marche au hasard avance comme la racine du nombre de pas, non comme le nombre de pas. C’est la même loi que la diffusion dans un tissu vivant.\n\nLa lumière qui nous arrive aujourd’hui a donc été produite bien avant l’apparition de l’écriture. Les neutrinos, eux, sortent en deux secondes — et c’est pour cela qu’on les observe : ils renseignent sur le cœur à l’instant présent.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque hypothèse à la durée de vie qu’elle donnait au Soleil.",
+          "explanation": "Chimique : quelques milliers d’années. Gravitationnelle : une trentaine de millions. Nucléaire : dix milliards.",
+          "pairs": [
+            {
+              "left": "la combustion chimique",
+              "right": "quelques milliers d’années"
+            },
+            {
+              "left": "la contraction gravitationnelle",
+              "right": "une trentaine de millions d’années"
+            },
+            {
+              "left": "la fusion nucléaire",
+              "right": "dix milliards d’années"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel critère a tranché entre les trois hypothèses ?",
+          "explanation": "Une durée, à chaque fois. Les géologues réclamaient des centaines de millions d’années, et avaient raison contre les physiciens.",
+          "options": [
+            {
+              "text": "la durée de vie exigée par les observations géologiques",
+              "correct": true
+            },
+            {
+              "text": "la température de surface"
+            },
+            {
+              "text": "la couleur du Soleil"
+            },
+            {
+              "text": "la masse du Soleil"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle fraction de masse la fusion de l’hydrogène en hélium convertit-elle, en millièmes ?",
+          "explanation": "Environ sept millièmes, soit quarante millions de fois plus d’énergie que la combustion du charbon par unité de masse.",
+          "min": 0,
+          "max": 100,
+          "answer": 7,
+          "tolerance": 1,
+          "unit": "‰",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de millions de tonnes de masse le Soleil perd-il par seconde ?",
+          "explanation": "Environ quatre millions de tonnes : sept millièmes des six cents millions de tonnes d’hydrogène qu’il convertit chaque seconde.",
+          "min": 0,
+          "max": 100,
+          "answer": 4,
+          "tolerance": 1,
+          "unit": "millions de tonnes",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui empêche une étoile de s’emballer ?",
+          "explanation": "L’équilibre hydrostatique : si le cœur chauffe, l’étoile se dilate, le cœur se refroidit et les réactions ralentissent.",
+          "options": [
+            {
+              "text": "la dilatation qui refroidit le cœur",
+              "correct": true
+            },
+            {
+              "text": "l’épuisement du carburant"
+            },
+            {
+              "text": "le rayonnement qui s’échappe"
+            },
+            {
+              "text": "la rotation de l’étoile"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une bombe à fusion explose-t-elle, et pas une étoile ?",
+          "explanation": "Parce qu’elle n’a pas de boucle de contre-réaction : rien ne refroidit le milieu quand la réaction s’accélère.",
+          "options": [
+            {
+              "text": "elle n’a aucune contre-réaction qui ralentisse la réaction",
+              "correct": true
+            },
+            {
+              "text": "elle contient plus de carburant"
+            },
+            {
+              "text": "elle est plus chaude"
+            },
+            {
+              "text": "elle emploie un autre combustible"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-comment-une-etoile-finit",
+      "title": "Défi : comment une étoile finit",
+      "subtitle": "Sa masse initiale décide de tout, et de rien d’autre.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les étages, et celui qui bloque",
+          "body": "Règle les quatre étages et lis le rendement global. Une étoile massive enchaîne elle aussi des conversions, de l’hydrogène jusqu’au fer, et chacune rapporte moins que la précédente. Le dernier étage ne rapporte plus rien du tout, et c’est à ce moment que tout s’arrête.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La montée jusqu’au fer, et pourquoi elle s’arrête",
+          "body": "Quand l’hydrogène du cœur est épuisé, le cœur se contracte, chauffe, et l’hélium se met à fusionner. Puis le carbone, l’oxygène, le silicium.\n\nChaque étage est plus court que le précédent : des millions d’années pour l’hélium, des milliers pour le carbone, des jours pour le silicium.\n\nLa montée s’arrête au fer. Le noyau de fer est le plus fortement lié de tous : fusionner du fer consomme de l’énergie au lieu d’en dégager.\n\nLe cœur n’a donc plus de source, la pression s’effondre, et l’étoile s’écrase sur elle-même en une fraction de seconde. C’est la supernova, et son énergie vient de l’effondrement, non d’une réaction.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Trois destins, et deux seuils",
+          "body": "En dessous d’environ huit masses solaires, l’étoile expulse ses couches externes et laisse un cœur nu qui ne fusionne plus : une naine blanche, de la taille de la Terre et de la masse du Soleil. Une cuillerée y pèserait une tonne.\n\nAu-delà, la supernova laisse une étoile à neutrons si le cœur résiduel reste sous environ 2,5 masses solaires : un objet de vingt kilomètres de diamètre, où une cuillerée pèserait un milliard de tonnes.\n\nAu-delà encore, rien ne résiste : c’est un trou noir.\n\nLa limite de Chandrasekhar, 1,4 masse solaire, est celle au-delà de laquelle une naine blanche ne peut pas tenir. Chandrasekhar l’établit en 1930, à dix-neuf ans, et Eddington l’a publiquement ridiculisé pendant des années avant qu’elle ne soit admise.",
+          "formula": "naine blanche sous 1,4 masse solaire, étoile à neutrons sous 2,5, puis trou noir",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que les supernovæ nous ont laissé",
+          "body": "Les éléments plus lourds que le fer ne peuvent pas se former par fusion ordinaire : ils demandent de l’énergie. Ils se fabriquent dans l’effondrement, et dans la fusion d’étoiles à neutrons.\n\nL’or, l’uranium, l’iode de notre thyroïde viennent donc d’un événement de ce genre. Les éléments plus légers viennent de générations d’étoiles antérieures au Soleil.\n\nLe calcium de nos os a été fabriqué dans le cœur d’une étoile massive, et le carbone de nos cellules dans une étoile plus modeste.\n\nSeuls l’hydrogène, l’hélium et un peu de lithium datent du Big Bang. Tout le reste du tableau périodique a été fabriqué dans des étoiles, et cette phrase n’est pas une métaphore : c’est un bilan de masse vérifié.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un spectre livre quatre grandeurs, et la spectroscopie a transformé l’astronomie des positions en astrophysique.\n\nLe diagramme de Hertzsprung-Russell est un lieu et non un chemin : la masse place l’étoile, et la masse ne change presque pas.\n\nSept millièmes de défaut de masse suffisent à dix milliards d’années, et l’équilibre hydrostatique fait d’une étoile un réacteur auto-régulé.\n\nEt la masse initiale décide du destin, par deux seuils. Tout le reste du tableau périodique vient de là, et c’est un bilan de masse, pas une image.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces étages de fusion du plus long au plus court.",
+          "explanation": "Chaque étage est plus court que le précédent : millions d’années pour l’hélium, milliers pour le carbone, jours pour le silicium.",
+          "items": [
+            "l’hydrogène, des milliards d’années",
+            "l’hélium, des millions",
+            "le carbone, des milliers",
+            "le silicium, des jours"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la fusion s’arrête-t-elle au fer ?",
+          "explanation": "Parce que le noyau de fer est le plus fortement lié : fusionner du fer consomme de l’énergie au lieu d’en dégager.",
+          "options": [
+            {
+              "text": "fusionner du fer consomme de l’énergie",
+              "correct": true
+            },
+            {
+              "text": "le fer est trop lourd pour fusionner"
+            },
+            {
+              "text": "il n’y a plus assez de température"
+            },
+            {
+              "text": "le fer bloque le rayonnement"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient l’énergie d’une supernova ?",
+          "explanation": "De l’effondrement du cœur, et non d’une réaction : il n’y a plus de source quand le fer est atteint.",
+          "options": [
+            {
+              "text": "de l’effondrement du cœur",
+              "correct": true
+            },
+            {
+              "text": "de la fusion du fer"
+            },
+            {
+              "text": "de la fission des noyaux lourds"
+            },
+            {
+              "text": "de la combustion de l’hydrogène restant"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la limite de Chandrasekhar, en masses solaires ?",
+          "explanation": "1,4 masse solaire : au-delà, une naine blanche ne peut pas tenir. Établie en 1930 par Chandrasekhar à dix-neuf ans.",
+          "min": 0,
+          "max": 10,
+          "answer": 1.4,
+          "tolerance": 0.2,
+          "unit": "masses solaires",
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "D’où vient cet élément ?",
+          "explanation": "Hydrogène, hélium et un peu de lithium datent du Big Bang ; tout le reste a été fabriqué dans des étoiles.",
+          "categories": [
+            "du Big Bang",
+            "fabriqué dans des étoiles"
+          ],
+          "items": [
+            {
+              "text": "l’hydrogène",
+              "category": 0
+            },
+            {
+              "text": "l’hélium",
+              "category": 0
+            },
+            {
+              "text": "le carbone de nos cellules",
+              "category": 1
+            },
+            {
+              "text": "l’or et l’uranium",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les éléments plus lourds que le fer ne se forment-ils pas par fusion ordinaire ?",
+          "explanation": "Parce que leur formation demande de l’énergie : il faut l’effondrement d’une supernova ou la fusion d’étoiles à neutrons.",
+          "options": [
+            {
+              "text": "leur formation consomme de l’énergie",
+              "correct": true
+            },
+            {
+              "text": "ils sont trop rares"
+            },
+            {
+              "text": "les étoiles ne sont pas assez chaudes"
+            },
+            {
+              "text": "ils se désintègrent aussitôt"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "chapter": "astronomie-universite-mecanique-celeste",
+  "lessons": [
+    {
+      "id": "kepler-puis-newton",
+      "title": "Kepler, puis Newton",
+      "subtitle": "Trois lois décrites, puis une seule qui les explique.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Huit planètes, et les périodes réelles",
+          "body": "Regarde tourner les planètes : chacune met sa vraie durée, et les plus lointaines sont les plus lentes. Confronte cette observation aux distances du Système solaire — le rapport entre les deux n’est pas libre, et la leçon le chiffre.",
+          "figureId": "orbites",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois lois de Kepler, et ce qu’elles ne disent pas",
+          "body": "Première loi, 1609 : chaque planète décrit une ellipse dont le Soleil occupe un foyer. Les orbites circulaires de nos schémas sont une approximation, excellente pour la Terre et mauvaise pour Mercure.\n\nDeuxième loi : le segment Soleil-planète balaie des aires égales en des temps égaux. La planète va donc plus vite quand elle est proche.\n\nTroisième loi, 1619 : le carré de la période est proportionnel au cube du demi-grand axe. Le rapport est le même pour les huit planètes, et on le vérifie à quelques pour-cent avec les valeurs de la figure.\n\nCes trois lois décrivent et n’expliquent rien. Kepler les tire de vingt ans de mesures de Tycho Brahe, et il ignore pourquoi elles sont vraies.",
+          "formula": "T² ÷ a³ est le même pour toutes les planètes",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que la distance fait à la force",
+          "body": "Règle la distance de 0,5 à 5 et lis la force. Double la distance : la force est divisée par quatre, pas par deux. Triple-la : divisée par neuf. C’est la loi en carré inverse, et c’est elle qui engendre les trois lois de Kepler.",
+          "figureId": "attraction-distance",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que Newton apporte en 1687",
+          "body": "Une seule loi : deux corps s’attirent proportionnellement au produit de leurs masses et inversement au carré de leur distance.\n\nDe cette loi, combinée aux principes de la dynamique, les trois lois de Kepler se déduisent par le calcul. L’ellipse n’est plus un fait d’observation : elle est une conséquence.\n\nEt la loi dit plus que Kepler : elle s’applique aux comètes, aux satellites, aux marées, à la chute d’une pomme. La même formule gouverne la Lune et la pomme, et c’est cela qui était inouï.\n\nNewton n’a pas expliqué la gravitation — il écrit lui-même qu’il n’en dit pas la cause — et il a unifié le ciel et la Terre. La distinction entre décrire, prévoir et expliquer est exactement en jeu ici.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La troisième loi, et comment on pèse une étoile",
+          "body": "La troisième loi s’écrit, en version newtonienne, avec la masse centrale dedans : le rapport du cube du demi-grand axe au carré de la période est proportionnel à la masse du corps central.\n\nMesurer la période et la distance d’un satellite donne donc la masse de ce qu’il orbite, sans jamais s’en approcher.\n\nC’est ainsi qu’on pèse le Soleil, Jupiter, une étoile double, et le trou noir au centre de notre galaxie — dont la masse de quatre millions de soleils vient de l’orbite des étoiles qui l’entourent.\n\nToute l’astrophysique des masses repose sur cette seule formule. C’est probablement l’équation la plus rentable de la discipline.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit la troisième loi de Kepler ?",
+          "explanation": "Que le carré de la période est proportionnel au cube du demi-grand axe, avec le même rapport pour toutes les planètes.",
+          "options": [
+            {
+              "text": "T² est proportionnel à a³, avec le même rapport",
+              "correct": true
+            },
+            {
+              "text": "les orbites sont des ellipses"
+            },
+            {
+              "text": "les aires balayées sont égales"
+            },
+            {
+              "text": "la vitesse est constante"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Si l’on triple la distance, par combien la force est-elle divisée ?",
+          "explanation": "Par neuf : la force décroît comme le carré de la distance.",
+          "answer": 9,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’apporte Newton que Kepler n’avait pas ?",
+          "explanation": "Une seule loi d’où les trois se déduisent, et qui s’applique aussi aux comètes, aux marées et à la chute d’une pomme.",
+          "options": [
+            {
+              "text": "une loi unique dont les trois se déduisent",
+              "correct": true
+            },
+            {
+              "text": "des mesures plus précises"
+            },
+            {
+              "text": "la forme elliptique des orbites"
+            },
+            {
+              "text": "l’explication de la gravitation"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Newton a expliqué ce qu’est la gravitation.",
+          "explanation": "Faux. Il écrit lui-même qu’il n’en dit pas la cause. Il l’a décrite et rendue calculable, ce qui est autre chose.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment pèse-t-on une étoile sans s’en approcher ?",
+          "explanation": "Par la troisième loi : la période et la distance d’un corps en orbite donnent la masse du corps central.",
+          "options": [
+            {
+              "text": "par la période et la distance d’un corps qui l’orbite",
+              "correct": true
+            },
+            {
+              "text": "par sa luminosité"
+            },
+            {
+              "text": "par sa couleur"
+            },
+            {
+              "text": "par son diamètre apparent"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de masses solaires fait le trou noir au centre de notre galaxie, en millions ?",
+          "explanation": "Environ quatre millions, déduites de l’orbite des étoiles qui l’entourent — par la troisième loi de Kepler.",
+          "min": 0,
+          "max": 100,
+          "answer": 4,
+          "tolerance": 1,
+          "unit": "millions",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "mettre-en-orbite-et-s-echapper",
+      "title": "Mettre en orbite, et s’échapper",
+      "subtitle": "Deux vitesses, et un rapport qui vaut racine de deux.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un boulet, et la vitesse qui décide de tout",
+          "body": "Règle la vitesse de 2 à 13 kilomètres par seconde. En dessous de 7,9 le boulet retombe, à 7,9 il tourne, au-delà de 11,2 il s’en va pour ne plus revenir. Cherche les deux seuils avant de lire la suite : l’expérience de pensée de 1687 est restée la meilleure explication d’une orbite jamais trouvée.",
+          "figureId": "canon-newton",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux vitesses, et leur rapport",
+          "body": "La vitesse orbitale au ras du sol s’obtient en égalant l’attraction à la force nécessaire pour courber la trajectoire au rayon de la Terre. Elle vaut 7,9 kilomètres par seconde.\n\nLa vitesse de libération s’obtient en égalant l’énergie cinétique à l’énergie qu’il faut pour s’extraire du puits de gravité. Elle vaut 11,2.\n\nLe rapport des deux est exactement racine de deux, soit environ 1,414, et cela se vérifie : 7,9 fois 1,414 donne bien 11,2.\n\nCe rapport ne dépend ni de la masse de l’astre ni de son rayon : il est le même sur la Lune, sur Mars et autour du Soleil. C’est le genre de résultat qu’on retient une fois pour toutes.",
+          "formula": "vitesse de libération = vitesse orbitale × racine de 2",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une orbite est vraiment",
+          "body": "Un satellite en orbite n’échappe pas à la gravité : il tombe en permanence, et manque la Terre parce qu’il avance assez vite pour que le sol se dérobe sous lui.\n\nL’apesanteur ressentie à bord n’est donc pas une absence de gravité — à 400 kilomètres, elle vaut encore 89 % de celle du sol. C’est une chute libre partagée par le vaisseau et son occupant.\n\nDire « il n’y a pas de gravité dans l’espace » est faux, et l’erreur n’est pas bénigne : elle empêche de comprendre pourquoi un satellite reste en orbite au lieu de partir tout droit.\n\nLe mot correct est microgravité, et il désigne les petits écarts résiduels, pas l’absence du phénomène.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi l’altitude coûte moins cher que la vitesse",
+          "body": "Atteindre 400 kilomètres d’altitude demande environ quatre mégajoules par kilogramme. Atteindre la vitesse orbitale en demande une trentaine.\n\nL’essentiel de l’énergie d’un lancement sert donc à aller vite, et non à aller haut. C’est pourquoi les fusées s’inclinent rapidement après le décollage au lieu de monter droit.\n\nUn vol suborbital qui atteint cent kilomètres n’est donc pas « presque en orbite » : il lui manque environ quatre-vingt-dix pour-cent de l’énergie.\n\nLa différence entre un vol touristique de quelques minutes et une mise en orbite n’est pas une différence de degré. C’est un facteur dix en énergie, et cela se voit à la taille des lanceurs.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi une orbite plus haute est plus lente",
+          "body": "L’intuition dit l’inverse : pour aller plus haut, il faut aller plus vite. C’est vrai de l’énergie, et faux de la vitesse finale.\n\nUne orbite haute demande plus d’énergie pour y arriver, et la vitesse une fois là-bas est plus faible — la Station spatiale fait 7,7 km/s à 400 kilomètres, un satellite géostationnaire 3,1 à 36 000.\n\nD’où le paradoxe des rendez-vous orbitaux : pour rattraper un vaisseau devant soi, il faut freiner. On descend alors sur une orbite plus basse, donc plus rapide, et l’on rattrape par dessous.\n\nCette contre-intuition a coûté des manœuvres ratées aux débuts du programme Gemini, et elle se déduit en deux lignes de la troisième loi de Kepler.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la vitesse orbitale au ras du sol, en km/s ?",
+          "explanation": "7,9 km/s. En dessous, le boulet de Newton retombe ; à cette vitesse, il tourne.",
+          "min": 0,
+          "max": 20,
+          "answer": 7.9,
+          "tolerance": 0.5,
+          "unit": "km/s",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Et la vitesse de libération ?",
+          "explanation": "11,2 km/s, soit la vitesse orbitale multipliée par racine de deux.",
+          "min": 0,
+          "max": 30,
+          "answer": 11.2,
+          "tolerance": 0.6,
+          "unit": "km/s",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que vaut le rapport entre les deux vitesses ?",
+          "explanation": "Racine de deux, soit environ 1,414 — et ce rapport ne dépend ni de la masse ni du rayon de l’astre.",
+          "options": [
+            {
+              "text": "racine de deux",
+              "correct": true
+            },
+            {
+              "text": "deux"
+            },
+            {
+              "text": "trois"
+            },
+            {
+              "text": "cela dépend de l’astre"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il n’y a pas de gravité à 400 kilomètres d’altitude.",
+          "explanation": "Faux. Elle y vaut encore 89 % de celle du sol. L’apesanteur ressentie est une chute libre partagée, pas une absence de gravité.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert l’essentiel de l’énergie d’un lancement ?",
+          "explanation": "À aller vite, et non à aller haut : une trentaine de mégajoules par kilogramme contre quatre pour l’altitude.",
+          "options": [
+            {
+              "text": "à atteindre la vitesse orbitale",
+              "correct": true
+            },
+            {
+              "text": "à atteindre l’altitude"
+            },
+            {
+              "text": "à vaincre le frottement de l’air"
+            },
+            {
+              "text": "à orienter la fusée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un vol suborbital à cent kilomètres est-il presque en orbite ?",
+          "explanation": "Non : il lui manque environ quatre-vingt-dix pour-cent de l’énergie. Ce n’est pas une différence de degré.",
+          "options": [
+            {
+              "text": "non, il lui manque l’essentiel de l’énergie",
+              "correct": true
+            },
+            {
+              "text": "oui, il suffit de monter un peu plus"
+            },
+            {
+              "text": "oui, l’altitude est le critère"
+            },
+            {
+              "text": "cela dépend de la fusée"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "deux-corps-et-puis-trois",
+      "title": "Deux corps, et puis trois",
+      "subtitle": "Un problème résolu, et un autre qui a changé la physique.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux mouvements composés, et ce que l’œil en fait",
+          "body": "Regarde Mars vue depuis la Terre, pendant que les deux tournent autour du Soleil. La trajectoire apparente fait une boucle, alors que les deux mouvements sont parfaitement réguliers. Retiens ce point : ici la complexité est apparente, et parfaitement périodique. La leçon montre un cas où elle ne l’est pas.",
+          "figureId": "retrogradation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le problème à deux corps, et pourquoi il se résout",
+          "body": "Deux masses isolées s’attirant selon la loi en carré inverse : la solution est connue exactement depuis Newton.\n\nLes trajectoires sont des coniques — ellipse, parabole ou hyperbole selon l’énergie — et l’on peut écrire la position à tout instant par une formule.\n\nDeux quantités se conservent, l’énergie et le moment cinétique, et cela suffit à réduire le problème à une seule équation en une variable.\n\nC’est le cas heureux, et il est heureux parce qu’il y a assez de quantités conservées pour le nombre d’inconnues. Toute la mécanique analytique tourne autour de ce décompte.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Trois corps, et la fin d’un programme",
+          "body": "Avec trois corps, il n’existe pas de solution générale en formules. Ce n’est pas une difficulté technique : c’est démontré.\n\nHenri Poincaré, en concourant pour un prix du roi de Suède en 1889, découvre en cherchant la solution qu’il n’y en a pas — et que certaines trajectoires sont si sensibles aux conditions initiales qu’aucune prévision à long terme n’est possible.\n\nSon mémoire contient une erreur, qu’il corrige lui-même en 1890, et la correction est précisément la découverte du chaos déterministe.\n\nUn système peut donc être entièrement déterministe et imprévisible. Les deux mots ne sont pas contraires, et c’est l’un des renversements conceptuels majeurs de la physique.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qui reste calculable quand même",
+          "body": "Les cas particuliers : trois corps aux sommets d’un triangle équilatéral tournant ensemble, ou alignés dans un ordre précis. Lagrange en trouve cinq en 1772, et ils portent son nom.\n\nCes points sont employés : le télescope spatial James Webb stationne à L2, à un million et demi de kilomètres de la Terre, dans l’ombre permanente de notre planète.\n\nEt les calculs numériques : on n’a pas de formule, on a des trajectoires calculées pas à pas, et elles sont fiables sur des durées limitées.\n\nLes orbites du Système solaire sont ainsi connues avec une précision de quelques mètres sur des siècles, et deviennent imprévisibles au-delà de quelques dizaines de millions d’années. L’horizon de prévision est une grandeur physique, et elle se mesure.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le Système solaire tient quand même",
+          "body": "Huit planètes, c’est un problème à neuf corps, donc sans solution en formules et potentiellement chaotique.\n\nIl tient pour deux raisons. Le Soleil pèse mille fois Jupiter et trois cent trente mille fois la Terre : chaque planète voit surtout lui, et les autres comme de petites perturbations.\n\nEt les orbites sont très espacées. Les configurations trop serrées ont été éliminées tôt, par éjection ou par collision : ce qui reste est ce qui a survécu, pas ce qui était là au départ.\n\nLa stabilité observée est donc le résultat d’un tri, et non une propriété garantie par les équations. Les simulations longues montrent d’ailleurs que Mercure a quelques pour-cent de chances de devenir instable d’ici cinq milliards d’années.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le problème à deux corps se résout-il exactement ?",
+          "explanation": "Parce qu’il y a assez de quantités conservées — énergie et moment cinétique — pour le nombre d’inconnues.",
+          "options": [
+            {
+              "text": "les quantités conservées suffisent au nombre d’inconnues",
+              "correct": true
+            },
+            {
+              "text": "les masses sont égales"
+            },
+            {
+              "text": "les orbites sont circulaires"
+            },
+            {
+              "text": "la force est constante"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a découvert Poincaré en 1889, en cherchant la solution du problème à trois corps ?",
+          "explanation": "Qu’il n’y en a pas de générale, et que certaines trajectoires sont si sensibles aux conditions initiales qu’aucune prévision longue n’est possible.",
+          "options": [
+            {
+              "text": "qu’il n’existe pas de solution générale, et que le chaos existe",
+              "correct": true
+            },
+            {
+              "text": "la solution exacte à trois corps"
+            },
+            {
+              "text": "les points de Lagrange"
+            },
+            {
+              "text": "une erreur de Newton"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un système déterministe est forcément prévisible.",
+          "explanation": "Faux. C’est le renversement de Poincaré : déterminisme et prévisibilité sont deux choses différentes.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de points de Lagrange existe-t-il ?",
+          "explanation": "Cinq, trouvés par Lagrange en 1772 : des cas particuliers où le problème à trois corps se résout.",
+          "answer": 5,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où stationne le télescope spatial James Webb ?",
+          "explanation": "Au point L2, à un million et demi de kilomètres de la Terre, dans l’ombre permanente de notre planète.",
+          "options": [
+            {
+              "text": "au point L2, à 1,5 million de kilomètres",
+              "correct": true
+            },
+            {
+              "text": "en orbite basse"
+            },
+            {
+              "text": "autour de la Lune"
+            },
+            {
+              "text": "au point L1"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Jusqu’à quand les orbites du Système solaire sont-elles prévisibles ?",
+          "explanation": "Jusqu’à quelques dizaines de millions d’années. L’horizon de prévision est une grandeur physique, et elle se mesure.",
+          "options": [
+            {
+              "text": "quelques dizaines de millions d’années",
+              "correct": true
+            },
+            {
+              "text": "indéfiniment"
+            },
+            {
+              "text": "quelques siècles seulement"
+            },
+            {
+              "text": "quelques milliers d’années"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-predire-une-planete",
+      "title": "Défi : prédire une planète",
+      "subtitle": "Le calcul qui a désigné un point du ciel, et l’a trouvée.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les périodes, et ce qu’une anomalie signifie",
+          "body": "Regarde les planètes tourner à leurs vraies périodes. Imagine maintenant que l’une d’elles soit en retard de quelques secondes d’arc sur la position calculée, année après année. Deux explications possibles, et la leçon raconte ce qui est arrivé quand on a dû choisir.",
+          "figureId": "orbites",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Uranus, et une anomalie qui ne passe pas",
+          "body": "Uranus est découverte en 1781. Au fil des décennies, sa position observée s’écarte de la position calculée par la loi de Newton, et l’écart atteint deux minutes d’arc vers 1840.\n\nDeux explications : ou la loi de Newton est fausse à grande distance, ou un corps inconnu perturbe Uranus.\n\nUrbain Le Verrier choisit la seconde, et fait le calcul inverse : quelle masse, à quelle distance, dans quelle direction, produirait exactement cet écart ?\n\nIl envoie sa prédiction à Berlin en septembre 1846. Johann Galle pointe le télescope le soir même et trouve Neptune à un degré de la position annoncée. Le calcul avait désigné un point du ciel vide de toute observation.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La même méthode, et un échec retentissant",
+          "body": "Le Verrier applique ensuite la méthode à Mercure, dont le périhélie avance de 43 secondes d’arc par siècle de plus que prévu.\n\nIl postule une planète intérieure, qu’il nomme Vulcain. On la cherche pendant cinquante ans, des observateurs annoncent l’avoir vue, et elle n’existe pas.\n\nL’explication arrive en 1915 : la relativité générale d’Einstein prédit exactement 43 secondes d’arc par siècle, sans aucun corps supplémentaire. C’était bien la loi de Newton qui était en défaut — la première explication, écartée pour Neptune.\n\nLa même méthode, appliquée deux fois, donne un triomphe et une erreur. Rien dans la méthode ne permettait de savoir laquelle des deux explications choisir, et c’est la leçon de méthode la plus utile du chapitre.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que cette histoire enseigne sur les anomalies",
+          "body": "Une anomalie n’indique jamais par elle-même s’il manque un objet ou s’il faut changer la loi.\n\nLes deux issues se sont produites, à vingt ans d’intervalle, avec le même astronome et la même méthode.\n\nLa question se pose encore aujourd’hui, exactement dans ces termes : les courbes de rotation des galaxies ne collent pas aux masses visibles. Ou il manque de la matière — c’est l’hypothèse de la matière noire — ou la gravitation n’est pas ce qu’on croit aux faibles accélérations.\n\nLe débat n’est pas tranché, et il a exactement la forme du choix de 1846. Connaître Neptune et Vulcain est donc utile pour lire l’astrophysique contemporaine.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Kepler décrit, Newton explique, et la différence entre les deux gestes est le sujet du premier cours de mécanique céleste.\n\nUne orbite est une chute permanente, et la vitesse de libération vaut racine de deux fois la vitesse orbitale, partout.\n\nDeux corps se résolvent, trois ne se résolvent pas, et cette impossibilité a produit le concept de chaos déterministe.\n\nEt une anomalie admet toujours deux lectures : un objet manquant, ou une loi fausse. Neptune et Vulcain sont les deux réponses, et la matière noire est la question d’aujourd’hui.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la découverte de Neptune dans l’ordre.",
+          "explanation": "Uranus s’écarte, Le Verrier suppose un corps inconnu, calcule sa position, et Galle la trouve le soir même.",
+          "items": [
+            "la position d’Uranus s’écarte des calculs",
+            "Le Verrier suppose un corps inconnu qui la perturbe",
+            "il calcule masse, distance et direction",
+            "Galle trouve Neptune à un degré de la prédiction"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles explications une anomalie orbitale admet-elle ?",
+          "explanation": "Un corps inconnu, ou une loi de la gravitation en défaut. Les deux se sont produites, avec le même astronome.",
+          "options": [
+            {
+              "text": "un corps inconnu qui perturbe",
+              "correct": true
+            },
+            {
+              "text": "la loi de la gravitation est en défaut",
+              "correct": true
+            },
+            {
+              "text": "une erreur de télescope"
+            },
+            {
+              "text": "un changement de masse de la planète"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien de secondes d’arc par siècle le périhélie de Mercure avance-t-il en trop ?",
+          "explanation": "43 secondes d’arc par siècle, exactement ce que la relativité générale prédit en 1915.",
+          "min": 0,
+          "max": 200,
+          "answer": 43,
+          "tolerance": 5,
+          "unit": "secondes d’arc",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’était Vulcain ?",
+          "explanation": "Une planète intérieure postulée par Le Verrier pour expliquer Mercure. Elle n’existe pas : c’était la loi de Newton qui était en défaut.",
+          "options": [
+            {
+              "text": "une planète postulée qui n’existe pas",
+              "correct": true
+            },
+            {
+              "text": "une lune de Mercure"
+            },
+            {
+              "text": "un astéroïde découvert plus tard"
+            },
+            {
+              "text": "un point de Lagrange"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel débat actuel a la même forme que le choix de 1846 ?",
+          "explanation": "Les courbes de rotation des galaxies : matière noire manquante, ou gravitation différente aux faibles accélérations.",
+          "options": [
+            {
+              "text": "la matière noire contre une gravitation modifiée",
+              "correct": true
+            },
+            {
+              "text": "l’âge de l’Univers"
+            },
+            {
+              "text": "l’existence des trous noirs"
+            },
+            {
+              "text": "la nature de la lumière"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La méthode de Le Verrier permettait de savoir laquelle des deux explications choisir.",
+          "explanation": "Faux, et c’est la leçon de méthode du chapitre : la même méthode a donné un triomphe et une erreur, sans que rien ne les distingue d’avance.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

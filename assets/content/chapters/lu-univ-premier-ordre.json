@@ -1,0 +1,644 @@
+{
+  "chapter": "logique-universite-logique-du-premier-ordre",
+  "lessons": [
+    {
+      "id": "pourquoi-le-propositionnel-ne-suffit-pas",
+      "title": "Pourquoi le propositionnel ne suffit pas",
+      "subtitle": "Un syllogisme de deux mille ans que quatre lignes ne capturent pas.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux variables, et rien à l’intérieur",
+          "body": "Bascule A et B : chacune vaut vrai ou faux, et c’est tout ce qu’on peut en dire. Aucune ne contient de structure, aucune ne parle d’objets. Toute la leçon part de cette limite-là, qu’il faut avoir vue pour vouloir en sortir.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le syllogisme que le propositionnel perd",
+          "body": "Tout homme est mortel. Socrate est un homme. Donc Socrate est mortel.\n\nEn propositionnel, ces trois phrases sont trois variables sans rapport : A, B, C. Rien ne relie A et B à C, et la conclusion ne suit pas.\n\nCe n’est pas que le raisonnement soit mauvais : c’est que le langage ne voit pas ce qui le rend valide. La validité tient à une structure interne — un prédicat, un objet, une quantification — que les variables propositionnelles effacent.\n\nIl faut donc un langage qui parle d’objets, de propriétés et de « tous » ou « il existe ». C’est le premier ordre, et il a été conçu pour exactement cela.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les quatre briques du langage",
+          "body": "Les termes désignent des objets : des constantes comme « Socrate », des variables, et des fonctions appliquées à des termes comme « le père de x ».\n\nLes prédicats disent des propriétés ou des relations : « est mortel » porte sur un objet, « est plus grand que » sur deux.\n\nLes connecteurs sont ceux du propositionnel, inchangés.\n\nEt les quantificateurs lient une variable sur un domaine : « pour tout x » et « il existe x ». Le syllogisme s’écrit alors en trois formules, et sa validité devient vérifiable mécaniquement.",
+          "formula": "termes, prédicats, connecteurs, quantificateurs",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Premier ordre, et ce qui serait du second",
+          "body": "Au premier ordre, les quantificateurs ne portent que sur des objets du domaine. On peut dire « tout nombre a un successeur », pas « toute propriété des nombres se transmet par récurrence ».\n\nQuantifier sur les propriétés serait du second ordre, et cela change tout : le second ordre est plus expressif, et il perd la complétude.\n\nC’est pourquoi le premier ordre est le cadre standard de la logique mathématique. Il est le compromis le plus favorable connu entre ce qu’on peut dire et ce qu’on peut démontrer.\n\nLe principe de récurrence, lui, s’exprime au premier ordre non comme un axiome mais comme un schéma : une infinité d’axiomes, un par propriété écrite dans le langage. Ce détour aura des conséquences considérables.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le prix de l’expressivité, annoncé dès maintenant",
+          "body": "Le propositionnel est décidable : la table tranche toujours, même si elle coûte cher.\n\nLe premier ordre ne l’est pas. Church et Turing le démontrent indépendamment en 1936 : aucun algorithme ne décide, pour toute formule du premier ordre, si elle est valide.\n\nIl reste semi-décidable : s’il existe une démonstration, on la trouvera en les énumérant toutes. Si la formule n’est pas valide, la recherche peut ne jamais s’arrêter, et rien ne distingue cette situation d’une recherche qui va aboutir.\n\nGagner en expressivité coûte donc la décidabilité. Ce n’est pas un défaut de nos méthodes, c’est un théorème, et il est le même que celui du problème de l’arrêt.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le syllogisme de Socrate échappe-t-il au propositionnel ?",
+          "explanation": "Parce que sa validité tient à une structure interne — prédicat, objet, quantification — que les variables propositionnelles effacent.",
+          "options": [
+            {
+              "text": "sa validité tient à une structure que les variables effacent",
+              "correct": true
+            },
+            {
+              "text": "il est en réalité invalide"
+            },
+            {
+              "text": "il comporte trop de propositions"
+            },
+            {
+              "text": "il emploie un connecteur inconnu"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque brique à ce qu’elle désigne.",
+          "explanation": "Les termes désignent des objets, les prédicats des propriétés ou relations, les quantificateurs lient une variable sur le domaine.",
+          "pairs": [
+            {
+              "left": "un terme",
+              "right": "un objet du domaine"
+            },
+            {
+              "left": "un prédicat",
+              "right": "une propriété ou une relation"
+            },
+            {
+              "left": "un quantificateur",
+              "right": "une variable liée sur le domaine"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet énoncé est-il du premier ordre, ou du second ?",
+          "explanation": "Au premier ordre, on ne quantifie que sur les objets. Quantifier sur les propriétés est du second ordre.",
+          "categories": [
+            "premier ordre",
+            "second ordre"
+          ],
+          "items": [
+            {
+              "text": "tout nombre a un successeur",
+              "category": 0
+            },
+            {
+              "text": "il existe un nombre plus grand que 5",
+              "category": 0
+            },
+            {
+              "text": "toute propriété des nombres se transmet par récurrence",
+              "category": 1
+            },
+            {
+              "text": "il existe une relation qui ordonne le domaine",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que perd le second ordre, en échange de son expressivité ?",
+          "explanation": "La complétude : il n’existe pas de système de démonstration qui capture tous ses énoncés valides.",
+          "options": [
+            {
+              "text": "la complétude",
+              "correct": true
+            },
+            {
+              "text": "la cohérence"
+            },
+            {
+              "text": "la possibilité d’écrire des formules"
+            },
+            {
+              "text": "les quantificateurs"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment le principe de récurrence s’écrit-il au premier ordre ?",
+          "explanation": "Comme un schéma : une infinité d’axiomes, un par propriété exprimable dans le langage. Ce détour aura des conséquences.",
+          "options": [
+            {
+              "text": "comme un schéma, une infinité d’axiomes",
+              "correct": true
+            },
+            {
+              "text": "comme un axiome unique"
+            },
+            {
+              "text": "il ne s’écrit pas du tout"
+            },
+            {
+              "text": "comme une règle de déduction"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le premier ordre est le cadre standard parce qu’il est le plus expressif.",
+          "explanation": "Faux. Il est le meilleur compromis connu entre ce qu’on peut dire et ce qu’on peut démontrer. Le second ordre dit plus et démontre moins.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "quantificateurs-portee-et-variables",
+      "title": "Quantificateurs, portée, variables liées",
+      "subtitle": "L’ordre et la portée ne sont pas des détails de notation.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des objets, des attributs, des groupes",
+          "body": "Touche un animal : ses attributs s’allument et les boîtes auxquelles il appartient se dessinent. C’est exactement la situation du premier ordre — un domaine d’objets, des prédicats qui les décrivent, et des énoncés qui portent sur tous ou sur certains.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Libre ou liée, et pourquoi ça compte",
+          "body": "Dans « x est mortel », x est libre : la formule n’a pas de valeur de vérité tant qu’on n’a pas dit qui est x.\n\nDans « pour tout x, x est mortel », x est liée : la formule a une valeur de vérité, qui ne dépend plus d’aucun x.\n\nUne formule sans variable libre est un énoncé. Les autres sont des conditions, et parler de leur vérité n’a pas de sens.\n\nC’est la même distinction qu’entre une fonction et une valeur, ou entre un paramètre de fonction et une variable globale. L’erreur de débutant est toujours la même : affirmer une formule qui contient encore une variable libre.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’ordre des quantificateurs change l’énoncé",
+          "body": "« Pour tout x, il existe y tel que y est plus grand que x » est vraie dans les entiers : à chaque x on peut associer son successeur. Le y dépend du x.\n\n« Il existe y tel que pour tout x, y est plus grand que x » est fausse : elle affirme un entier plus grand que tous, et il n’en existe pas. Le y doit être le même pour tous les x.\n\nLes deux formules contiennent les mêmes symboles dans un ordre différent, et l’une est vraie quand l’autre est fausse.\n\nLa règle est mécanique : un « il existe » placé après un « pour tout » peut dépendre de lui ; placé avant, il ne peut pas. C’est la distinction entre « chacun a un plus grand » et « il y en a un plus grand que tous ».",
+          "formula": "pour tout x, il existe y ≠ il existe y, pour tout x",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La négation, et la règle qui ne se discute pas",
+          "body": "La négation de « pour tout x, P de x » est « il existe x tel que non P de x ».\n\nLa négation de « il existe x tel que P de x » est « pour tout x, non P de x ».\n\nNier une formule à plusieurs quantificateurs revient donc à échanger chaque quantificateur et à nier le cœur. Nier « pour tout x, il existe y, P » donne « il existe x tel que pour tout y, non P ».\n\nCette règle est purement mécanique, et c’est ce qui la rend précieuse : nier un énoncé compliqué sans y penser est exactement ce qu’il faut savoir faire pour raisonner par l’absurde ou pour chercher un contre-exemple.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les deux erreurs d’écriture les plus coûteuses",
+          "body": "La première est de réutiliser une variable déjà liée. Dans « pour tout x, P de x, et il existe x, Q de x », les deux x ne désignent rien de commun — la formule est correcte et illisible, et on la relit toujours mal.\n\nLa seconde est de se tromper de portée. « Pour tout x, P de x implique Q de x » et « pour tout x, P de x, implique Q de x » sont deux formules différentes, et une parenthèse les sépare.\n\nLe remède est une discipline d’écriture : un nom de variable par quantificateur, et des parenthèses même quand elles sont facultatives.\n\nC’est exactement la même hygiène qu’en programmation, et pour la même raison : la machine lit la portée écrite, et le lecteur lit la portée qu’il croit.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette formule est-elle un énoncé, ou une condition ?",
+          "explanation": "Une formule sans variable libre est un énoncé et a une valeur de vérité ; avec une variable libre, c’est une condition.",
+          "categories": [
+            "un énoncé",
+            "une condition"
+          ],
+          "items": [
+            {
+              "text": "pour tout x, x est mortel",
+              "category": 0
+            },
+            {
+              "text": "il existe x tel que x est premier",
+              "category": 0
+            },
+            {
+              "text": "x est mortel",
+              "category": 1
+            },
+            {
+              "text": "x est plus grand que y",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "« Il existe y tel que pour tout x, y est plus grand que x », dans les entiers ?",
+          "explanation": "Fausse : elle affirme un entier plus grand que tous. Le y doit être le même pour tous les x.",
+          "options": [
+            {
+              "text": "fausse",
+              "correct": true
+            },
+            {
+              "text": "vraie"
+            },
+            {
+              "text": "ni vraie ni fausse"
+            },
+            {
+              "text": "cela dépend de x"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Et « pour tout x, il existe y tel que y est plus grand que x » ?",
+          "explanation": "Vraie : à chaque x on associe son successeur. Le y dépend du x, ce que cet ordre autorise.",
+          "options": [
+            {
+              "text": "vraie",
+              "correct": true
+            },
+            {
+              "text": "fausse"
+            },
+            {
+              "text": "elle est équivalente à la précédente"
+            },
+            {
+              "text": "elle n’est pas un énoncé"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « pour tout x, P de x » ?",
+          "explanation": "« Il existe x tel que non P de x ». Nier échange le quantificateur et nie le cœur.",
+          "options": [
+            {
+              "text": "il existe x tel que non P de x",
+              "correct": true
+            },
+            {
+              "text": "pour tout x, non P de x"
+            },
+            {
+              "text": "il existe x tel que P de x"
+            },
+            {
+              "text": "non P"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « pour tout x, il existe y, P » ?",
+          "explanation": "« Il existe x tel que pour tout y, non P ». Chaque quantificateur s’échange, et le cœur se nie.",
+          "options": [
+            {
+              "text": "il existe x tel que pour tout y, non P",
+              "correct": true
+            },
+            {
+              "text": "pour tout x, il existe y, non P"
+            },
+            {
+              "text": "il existe x et il existe y, non P"
+            },
+            {
+              "text": "pour tout x et pour tout y, non P"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi la mécanique de la négation sert-elle surtout ?",
+          "explanation": "À raisonner par l’absurde et à chercher un contre-exemple : nier un énoncé compliqué sans y réfléchir.",
+          "options": [
+            {
+              "text": "raisonner par l’absurde et chercher un contre-exemple",
+              "correct": true
+            },
+            {
+              "text": "simplifier les formules"
+            },
+            {
+              "text": "changer l’ordre des quantificateurs"
+            },
+            {
+              "text": "éliminer les variables libres"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "modeles-validite-et-completude",
+      "title": "Modèles, validité, et complétude",
+      "subtitle": "Vraie ici, ou vraie partout : deux notions à ne pas mélanger.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un énoncé vrai dans un modèle fini",
+          "body": "Monte plus d’objets que de tiroirs : la figure conclut qu’un tiroir est chargé. L’énoncé « si l’on range n objets dans moins de n tiroirs, deux partagent un tiroir » est vrai dans tous les modèles finis, et la figure en montre un. Un modèle est exactement cela : un domaine concret où l’on évalue.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’il faut pour évaluer une formule",
+          "body": "Un domaine : un ensemble non vide d’objets. Les quantificateurs y porteront.\n\nUne interprétation : chaque constante désigne un objet, chaque prédicat désigne une relation sur le domaine, chaque fonction une opération.\n\nLe couple des deux s’appelle un modèle, ou une structure. Une même formule est alors vraie dans certains modèles et fausse dans d’autres.\n\n« Pour tout x, il existe y plus grand » est vraie dans les entiers et fausse dans un domaine fini. La formule n’a donc pas de valeur de vérité en soi : elle en a une par modèle.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Validité, satisfiabilité, conséquence",
+          "body": "Une formule est valide si elle est vraie dans tous les modèles. Satisfiable s’il en existe au moins un où elle est vraie.\n\nUne formule B est conséquence d’un ensemble A si tout modèle qui rend A vrai rend B vrai. C’est la notion qu’un raisonnement est censé préserver.\n\nAttention au sens des mots : valide se dit d’une formule vraie partout, et démontrable d’une formule qu’un système prouve. Ce sont deux propriétés de natures différentes — l’une sémantique, l’autre syntaxique.\n\nToute la question du chapitre est de savoir si elles coïncident.",
+          "formula": "valide : vraie dans tout modèle ; démontrable : prouvée par le système",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le théorème de complétude de Gödel, 1930",
+          "body": "Gödel démontre dans sa thèse que, pour le premier ordre, les deux notions coïncident : une formule est valide si et seulement si elle est démontrable.\n\nC’est un résultat remarquable, et dans le bon sens : tout ce qui est vrai partout peut être prouvé, par un système fini de règles.\n\nIl ne faut pas le confondre avec le théorème d’incomplétude, publié un an plus tard et portant sur autre chose : non pas sur la logique du premier ordre, mais sur les théories arithmétiques écrites dans ce langage.\n\nLa logique est complète, et l’arithmétique ne l’est pas. Les deux énoncés sont du même auteur, à un an d’écart, et on les confond constamment.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la complétude ne donne pas",
+          "body": "Elle garantit qu’une démonstration existe pour toute formule valide. Elle ne dit pas comment la trouver, ni en combien de temps.\n\nElle ne dit rien non plus des formules non valides : on peut chercher indéfiniment une démonstration qui n’existe pas, sans jamais savoir qu’on cherche en vain.\n\nEt elle ne garantit pas qu’une théorie particulière soit complète. Que la logique le soit n’empêche pas l’arithmétique de laisser des énoncés ni démontrables ni réfutables.\n\nUne complétude est donc toujours relative à ce dont on parle. Lire « complet » sans lire de quoi est la source de presque toutes les mauvaises vulgarisations de Gödel.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que faut-il pour évaluer une formule du premier ordre ?",
+          "explanation": "Un domaine non vide, et une interprétation des constantes, prédicats et fonctions. Le couple des deux est un modèle.",
+          "options": [
+            {
+              "text": "un domaine non vide d’objets",
+              "correct": true
+            },
+            {
+              "text": "une interprétation des prédicats",
+              "correct": true
+            },
+            {
+              "text": "une interprétation des constantes",
+              "correct": true
+            },
+            {
+              "text": "une table de vérité"
+            },
+            {
+              "text": "une démonstration"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "« Pour tout x, il existe y plus grand » est-elle vraie en soi ?",
+          "explanation": "Non : vraie dans les entiers, fausse dans un domaine fini. Une formule a une valeur de vérité par modèle.",
+          "options": [
+            {
+              "text": "non, cela dépend du modèle",
+              "correct": true
+            },
+            {
+              "text": "oui, elle est valide"
+            },
+            {
+              "text": "non, elle est toujours fausse"
+            },
+            {
+              "text": "elle n’est pas un énoncé"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque notion à sa définition.",
+          "explanation": "Valide : vraie dans tout modèle. Satisfiable : vraie dans au moins un. Conséquence : préservée par tout modèle des hypothèses.",
+          "pairs": [
+            {
+              "left": "valide",
+              "right": "vraie dans tous les modèles"
+            },
+            {
+              "left": "satisfiable",
+              "right": "vraie dans au moins un modèle"
+            },
+            {
+              "left": "conséquence de A",
+              "right": "vraie dans tout modèle de A"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le théorème de complétude de Gödel, en 1930 ?",
+          "explanation": "Qu’au premier ordre, valide et démontrable coïncident : tout ce qui est vrai partout peut être prouvé.",
+          "options": [
+            {
+              "text": "valide et démontrable coïncident au premier ordre",
+              "correct": true
+            },
+            {
+              "text": "l’arithmétique est incomplète"
+            },
+            {
+              "text": "la validité est décidable"
+            },
+            {
+              "text": "tout énoncé est démontrable"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce résultat porte-t-il sur la logique, ou sur l’arithmétique ?",
+          "explanation": "La complétude de 1930 porte sur la logique du premier ordre ; l’incomplétude de 1931 porte sur les théories arithmétiques.",
+          "categories": [
+            "la logique du premier ordre",
+            "les théories arithmétiques"
+          ],
+          "items": [
+            {
+              "text": "la complétude, 1930",
+              "category": 0
+            },
+            {
+              "text": "valide équivaut à démontrable",
+              "category": 0
+            },
+            {
+              "text": "l’incomplétude, 1931",
+              "category": 1
+            },
+            {
+              "text": "un énoncé vrai et indémontrable",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les théorèmes de complétude et d’incomplétude de Gödel se contredisent.",
+          "explanation": "Faux. Ils portent sur des objets différents : la logique du premier ordre est complète, les théories arithmétiques écrites dedans ne le sont pas.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-formaliser-et-refuter",
+      "title": "Défi : formaliser, puis réfuter",
+      "subtitle": "Un contre-modèle vaut une démonstration, et coûte bien moins cher.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un domaine fini, à portée de main",
+          "body": "Touche les animaux et regarde les groupes : voilà un domaine concret, avec ses objets et ses prédicats. Pour réfuter une formule, il suffit de trouver un domaine de ce genre où elle est fausse — et plus il est petit, plus la réfutation est convaincante.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Le cas qui réfute, isolé",
+          "body": "Bascule P et M jusqu’au cas où l’implication tient et sa réciproque tombe. Un contre-modèle est exactement cela : une ligne, un cas, une situation concrète. On ne réfute jamais par un raisonnement général quand un exemple suffit.",
+          "figureId": "implication",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode de réfutation, en quatre pas",
+          "body": "Écrire la formule proprement, en explicitant chaque quantificateur et sa portée. La moitié des erreurs disparaît ici.\n\nChercher le plus petit domaine possible. Un seul élément, puis deux : la plupart des formules fausses se réfutent avec deux objets.\n\nChoisir l’interprétation des prédicats, c’est-à-dire décider quels couples sont en relation. C’est le seul moment d’invention.\n\nVérifier ligne à ligne que la formule est fausse dans ce modèle. Et le dire : un contre-modèle non vérifié n’est pas un contre-modèle.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une réfutation à deux éléments",
+          "body": "Prenons la formule : si tout x est en relation avec un y, alors il existe un y avec lequel tous les x sont en relation. C’est l’échange de quantificateurs, et il est invalide.\n\nDomaine : deux éléments, a et b. Relation : a est en relation avec a, et b avec b, et rien d’autre.\n\nL’hypothèse tient : chaque élément est bien en relation avec quelqu’un, lui-même. La conclusion tombe : aucun élément n’est en relation avec les deux.\n\nDeux objets ont suffi. C’est l’ordre de grandeur habituel, et c’est pourquoi chercher grand est presque toujours une perte de temps.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Le propositionnel ne voit pas la structure interne des énoncés, et perd un syllogisme de deux mille ans. Le premier ordre la voit.\n\nL’ordre des quantificateurs change l’énoncé, et la négation s’obtient mécaniquement en les échangeant tous.\n\nUne formule n’est pas vraie en soi : elle est vraie dans un modèle. Valide veut dire vraie dans tous, et au premier ordre cela coïncide avec démontrable — c’est Gödel, en 1930.\n\nEt pour réfuter, deux objets suffisent presque toujours. Démontrer demande de l’invention ; réfuter demande de l’économie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode de réfutation dans l’ordre.",
+          "explanation": "Écrire proprement, chercher le plus petit domaine, choisir l’interprétation, puis vérifier.",
+          "items": [
+            "écrire la formule et expliciter les portées",
+            "chercher le plus petit domaine possible",
+            "choisir l’interprétation des prédicats",
+            "vérifier que la formule est bien fausse"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’éléments suffisent à réfuter l’échange des quantificateurs ?",
+          "explanation": "Deux : chacun en relation avec lui-même seulement. L’hypothèse tient, la conclusion tombe.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le seul moment d’invention dans une réfutation ?",
+          "explanation": "Le choix de l’interprétation des prédicats : décider quels couples sont en relation.",
+          "options": [
+            {
+              "text": "choisir l’interprétation des prédicats",
+              "correct": true
+            },
+            {
+              "text": "écrire la formule"
+            },
+            {
+              "text": "choisir la taille du domaine"
+            },
+            {
+              "text": "vérifier le résultat"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un contre-modèle qu’on n’a pas vérifié est quand même un contre-modèle.",
+          "explanation": "Faux. La vérification fait partie de la réfutation : sans elle, on a une intuition, pas un contre-modèle.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi chercher un grand domaine est-il presque toujours inutile ?",
+          "explanation": "Parce que la plupart des formules fausses se réfutent avec un ou deux objets. Réfuter demande de l’économie.",
+          "options": [
+            {
+              "text": "un ou deux objets suffisent presque toujours",
+              "correct": true
+            },
+            {
+              "text": "les grands domaines sont interdits"
+            },
+            {
+              "text": "les formules sont rarement fausses"
+            },
+            {
+              "text": "la vérification y est impossible"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle asymétrie ce chapitre souligne-t-il entre démontrer et réfuter ?",
+          "explanation": "Démontrer demande de l’invention ; réfuter demande de l’économie. Un exemple bien choisi remplace un raisonnement général.",
+          "options": [
+            {
+              "text": "démontrer demande de l’invention, réfuter de l’économie",
+              "correct": true
+            },
+            {
+              "text": "réfuter est toujours plus difficile"
+            },
+            {
+              "text": "les deux coûtent la même chose"
+            },
+            {
+              "text": "réfuter ne prouve rien"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

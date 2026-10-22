@@ -1,0 +1,589 @@
+{
+  "chapter": "logique-universite-logique-propositionnelle",
+  "lessons": [
+    {
+      "id": "un-connecteur-est-sa-table",
+      "title": "Un connecteur est sa table",
+      "subtitle": "Rien d’autre à savoir, et c’est ce qui rend tout calculable.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux interrupteurs, trois résultats",
+          "body": "Bascule A et B et lis les trois sorties. Le « ou » reste allumé quand les deux le sont, et c’est le point que l’usage courant fait manquer. Parcours les quatre lignes dans l’ordre avant de continuer : ces quatre lignes sont la définition complète de chaque connecteur.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La sémantique, et ce qu’elle élimine",
+          "body": "Une variable propositionnelle n’a aucun contenu. Elle vaut vrai ou faux, et c’est tout ce qu’on sait d’elle.\n\nUne valuation est une attribution de valeurs à toutes les variables. Pour n variables, il y a 2 puissance n valuations, et la table en a autant de lignes.\n\nUn connecteur est alors une fonction qui, à partir des valeurs de ses arguments, rend une valeur. Rien dans sa définition ne parle de sens, de cause ou de temps.\n\nC’est une amputation volontaire, et elle paie : tout ce qui reste se calcule mécaniquement. Les discussions sur ce que « implique » veut dire en français sont hors sujet dès qu’on a fixé la table.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Combien de connecteurs existe-t-il ?",
+          "body": "Une fonction de n variables booléennes associe une valeur à chacune des 2 puissance n lignes de la table.\n\nIl y a donc 2 puissance (2 puissance n) fonctions distinctes. Pour une variable, 4 ; pour deux, 16 ; pour trois, 256 ; pour quatre, 65 536.\n\nLes seize fonctions de deux variables sont donc toutes connues : « et », « ou », « implique », « équivaut », leurs négations, les projections, les constantes.\n\nIl n’y a rien d’autre à découvrir à ce niveau. C’est un domaine fini, entièrement énumérable, et c’est pourquoi la logique propositionnelle est décidable.",
+          "formula": "2 puissance (2 puissance n) fonctions de n variables",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une seule porte suffit à tout",
+          "body": "Le connecteur NAND vaut faux quand les deux arguments sont vrais, et vrai dans les trois autres cas. C’est la négation du « et ».\n\nLa négation de A s’écrit NAND de A avec A. Le « et » s’écrit comme la négation du NAND, donc avec deux NAND. Le « ou » se déduit par De Morgan.\n\nTous les connecteurs se construisent donc avec un seul, et le NOR a la même propriété. On dit qu’ils sont complets.\n\nCe n’est pas une curiosité : les circuits intégrés sont fabriqués ainsi. Une puce qui n’emploierait qu’un type de porte est plus simple à produire, et toutes les fonctions y restent accessibles.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Trois statuts, et un seul qui se teste vite",
+          "body": "Une formule est une tautologie si elle vaut vrai sur toutes les lignes. Une contradiction si elle vaut faux sur toutes. Satisfiable si au moins une ligne la rend vraie.\n\nLes trois sont liés : une formule est une tautologie si et seulement si sa négation n’est pas satisfiable.\n\nMontrer qu’une formule est satisfiable est facile quand on a la bonne ligne : il suffit de la donner, et la vérification est immédiate.\n\nMontrer qu’elle ne l’est pas demande d’examiner toutes les lignes, ou de trouver une démonstration. Cette asymétrie entre trouver et vérifier est exactement ce qui définit la classe de problèmes la plus célèbre de l’informatique.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lignes a la table d’une formule à 4 variables ?",
+          "explanation": "2 puissance 4 = 16 valuations, donc 16 lignes.",
+          "answer": 16,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de fonctions booléennes distinctes de 2 variables ?",
+          "explanation": "2 puissance (2 puissance 2) = 2 puissance 4 = 16. Le domaine est fini et entièrement énumérable.",
+          "answer": 16,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et de 3 variables ?",
+          "explanation": "2 puissance (2 puissance 3) = 2 puissance 8 = 256.",
+          "answer": 256,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment écrire la négation de A avec le seul connecteur NAND ?",
+          "explanation": "NAND de A avec A : les deux arguments sont égaux, donc le résultat est faux si A est vrai et vrai sinon.",
+          "options": [
+            {
+              "text": "NAND de A avec A",
+              "correct": true
+            },
+            {
+              "text": "NAND de A avec vrai"
+            },
+            {
+              "text": "NAND de A avec faux"
+            },
+            {
+              "text": "c’est impossible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une formule est une tautologie si et seulement si quoi ?",
+          "explanation": "Si et seulement si sa négation n’est pas satisfiable. Les trois statuts sont liés par cette équivalence.",
+          "options": [
+            {
+              "text": "sa négation n’est pas satisfiable",
+              "correct": true
+            },
+            {
+              "text": "elle est satisfiable"
+            },
+            {
+              "text": "sa négation est une tautologie"
+            },
+            {
+              "text": "elle n’a aucune variable"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette question est-elle facile à vérifier, ou coûteuse à établir ?",
+          "explanation": "Donner une ligne satisfaisante se vérifie immédiatement ; montrer qu’aucune ligne ne convient demande d’examiner la table entière ou de démontrer.",
+          "categories": [
+            "vérifiable immédiatement",
+            "coûteux à établir"
+          ],
+          "items": [
+            {
+              "text": "voici une valuation qui la rend vraie",
+              "category": 0
+            },
+            {
+              "text": "voici une ligne qui la rend fausse",
+              "category": 0
+            },
+            {
+              "text": "aucune valuation ne la rend vraie",
+              "category": 1
+            },
+            {
+              "text": "toutes les valuations la rendent vraie",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-implication-et-ses-pieges",
+      "title": "L’implication, et ses deux pièges",
+      "subtitle": "Un connecteur dont la table surprend, et qui ne dit rien de la causalité.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le seul cas qui met « si… alors » en défaut",
+          "body": "Bascule P et M : l’implication ne tombe que sur un des quatre cas. Arrête-toi sur celui où il ne pleut pas et où le sol est mouillé — l’implication y est vraie, sa réciproque fausse. C’est ce cas qui porte toute la leçon.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La table, et pourquoi elle est ainsi",
+          "body": "A implique B vaut faux dans un seul cas : A vrai et B faux. Dans les trois autres, elle vaut vrai.\n\nEn particulier, une implication dont la prémisse est fausse est vraie, quel que soit le reste. « Si 2 = 3 alors je suis le pape » est une proposition vraie.\n\nCela choque, et c’est pourtant le seul choix cohérent : une promesse qu’on n’a pas eu à tenir n’a pas été violée. On l’appelle l’implication matérielle.\n\nElle est équivalente à « non A ou B », ce qui se vérifie ligne à ligne et sert constamment en calcul.",
+          "formula": "A implique B équivaut à non A ou B",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Deux erreurs de raisonnement, nommées",
+          "body": "L’affirmation du conséquent : de « A implique B » et de B, conclure A. C’est l’inversion de réciproque, et c’est le faux raisonnement le plus répandu de tous.\n\nLa négation de l’antécédent : de « A implique B » et de non A, conclure non B. Également invalide, et également courante.\n\nLes deux formes valides sont le modus ponens — de A implique B et de A, conclure B — et le modus tollens — de A implique B et de non B, conclure non A.\n\nDeux valides, deux invalides, et les quatre se ressemblent. La table de vérité les départage en quatre lignes, sans aucune intuition à mobiliser : c’est précisément à cela qu’elle sert.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que l’implication ne dit pas",
+          "body": "« S’il pleut, le sol est mouillé » est vraie et exprime une cause. « Si Paris est en France, alors 2 + 2 = 4 » est vraie aussi, et n’exprime rien.\n\nL’implication matérielle ne distingue pas les deux : elle ne regarde que les valeurs de vérité, pas le lien entre les propositions.\n\nC’est une limite réelle, et des logiques entières ont été construites pour la dépasser — logiques modales, logiques pertinentes, logiques conditionnelles.\n\nAucune n’a la simplicité de la table à quatre lignes, et c’est pourquoi on commence par celle-là. Savoir ce qu’un outil ne capture pas fait partie de savoir l’utiliser.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Contraposée, réciproque, et laquelle est gratuite",
+          "body": "La contraposée de « A implique B » est « non B implique non A ». Les deux ont exactement la même table, donc elles sont équivalentes : démontrer l’une démontre l’autre.\n\nLa réciproque est « B implique A ». Elle n’a pas la même table, et elle est indépendante : vraie ou fausse sans rapport avec l’originale.\n\nD’où une technique de démonstration gratuite : quand « A implique B » résiste, essayer la contraposée. C’est la même affirmation, et elle part parfois d’une hypothèse bien plus commode.\n\nLa confusion entre les deux est la plus coûteuse de la logique élémentaire, et elle se défait en comparant deux tables de quatre lignes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel cas « A implique B » est-elle fausse ?",
+          "explanation": "Un seul : A vrai et B faux. Dans les trois autres, elle vaut vrai.",
+          "options": [
+            {
+              "text": "A vrai et B faux",
+              "correct": true
+            },
+            {
+              "text": "A faux et B vrai"
+            },
+            {
+              "text": "A faux et B faux"
+            },
+            {
+              "text": "A vrai et B vrai"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "« Si 2 = 3 alors je suis le pape » est une proposition vraie.",
+          "explanation": "Vrai. Une implication dont la prémisse est fausse est vraie : une promesse qu’on n’a pas eu à tenir n’a pas été violée.",
+          "answer": true,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi « A implique B » est-elle équivalente ?",
+          "explanation": "À « non A ou B », ce qui se vérifie ligne à ligne et sert constamment en calcul.",
+          "options": [
+            {
+              "text": "non A ou B",
+              "correct": true
+            },
+            {
+              "text": "A ou non B"
+            },
+            {
+              "text": "non A et B"
+            },
+            {
+              "text": "A et B"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce raisonnement est-il valide ?",
+          "explanation": "Modus ponens et modus tollens sont valides ; affirmer le conséquent et nier l’antécédent ne le sont pas.",
+          "categories": [
+            "valide",
+            "invalide"
+          ],
+          "items": [
+            {
+              "text": "de A implique B et de A, conclure B",
+              "category": 0
+            },
+            {
+              "text": "de A implique B et de non B, conclure non A",
+              "category": 0
+            },
+            {
+              "text": "de A implique B et de B, conclure A",
+              "category": 1
+            },
+            {
+              "text": "de A implique B et de non A, conclure non B",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que l’implication matérielle ne capture-t-elle pas ?",
+          "explanation": "Le lien entre les propositions : elle ne regarde que les valeurs de vérité. « Si Paris est en France alors 2 + 2 = 4 » est vraie et n’exprime rien.",
+          "options": [
+            {
+              "text": "le lien de cause entre les propositions",
+              "correct": true
+            },
+            {
+              "text": "les cas où la prémisse est fausse"
+            },
+            {
+              "text": "la négation"
+            },
+            {
+              "text": "la réciproque"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi commence-t-on quand même par l’implication matérielle ?",
+          "explanation": "Parce qu’aucune logique plus fine n’a la simplicité d’une table à quatre lignes. Connaître ses limites fait partie de son usage.",
+          "options": [
+            {
+              "text": "aucune alternative n’a cette simplicité",
+              "correct": true
+            },
+            {
+              "text": "les autres logiques sont fausses"
+            },
+            {
+              "text": "elle capture la causalité"
+            },
+            {
+              "text": "c’est une tradition scolaire"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "formes-normales-et-circuits",
+      "title": "Formes normales et circuits",
+      "subtitle": "Toute formule se réécrit de façon canonique, et se câble.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un courant, un chemin, une condition",
+          "body": "Passe en série, puis en dérivation, et dévisse une lampe. En série, les deux doivent être en place : c’est un « et ». En dérivation, une seule suffit à laisser passer : c’est un « ou ». Les connecteurs logiques ne ressemblent pas à des circuits — ils en sont.",
+          "figureId": "circuit",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Huit bits, et une fonction par position",
+          "body": "Allume les interrupteurs et lis le nombre. Chaque bit est une variable booléenne, et un additionneur est un circuit qui calcule chacun des huit bits de sortie comme une fonction booléenne des bits d’entrée. C’est le lien direct entre ce chapitre et une machine.",
+          "figureId": "binaire",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La forme normale disjonctive, en une recette",
+          "body": "Prenons la table d’une formule. Repérons les lignes où elle vaut vrai.\n\nPour chacune, écrivons la conjonction qui décrit exactement cette ligne : chaque variable, niée si elle vaut faux sur la ligne.\n\nLa disjonction de toutes ces conjonctions est équivalente à la formule de départ. C’est la forme normale disjonctive, et la recette ne demande aucune astuce.\n\nConséquence immédiate : « et », « ou » et « non » suffisent à exprimer toute fonction booléenne, puisque la recette n’emploie qu’eux. La complétude de ces trois connecteurs est démontrée par une construction, pas par un argument.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que la forme normale coûte",
+          "body": "Une formule de n variables peut avoir jusqu’à 2 puissance (n − 1) lignes vraies, et sa forme normale disjonctive compte alors autant de termes.\n\nPour 20 variables, cela fait plus de cinq cent mille termes. La forme canonique existe toujours, et elle est souvent inutilisable.\n\nD’où toute une discipline, la minimisation logique, qui cherche une expression équivalente plus courte. Elle est elle-même difficile, et les outils de conception de circuits en font leur métier.\n\nL’existence d’une forme canonique et son utilité pratique sont donc deux questions distinctes. C’est vrai de beaucoup de formes canoniques en mathématiques.",
+          "formula": "jusqu’à 2 puissance (n − 1) termes pour n variables",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "De la formule au silicium",
+          "body": "Une porte logique est un petit circuit qui réalise un connecteur. Quelques transistors chacune.\n\nUne formule en forme normale se câble donc directement : une porte « et » par terme, une porte « ou » pour les réunir. La profondeur du circuit est de deux, ce qui est le minimum, et sa largeur est le nombre de termes.\n\nD’où un compromis que tout concepteur connaît : un circuit plat est rapide et large, un circuit profond est compact et lent. Le même calcul, deux géométries.\n\nUn processeur additionne en quelques portes de profondeur, et c’est ce qui lui permet de le faire en un cycle. Toute l’architecture matérielle est une négociation entre profondeur et surface.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce montage réalise quel connecteur ?",
+          "explanation": "En série, les deux lampes doivent être en place : c’est un « et ». En dérivation, une seule suffit : c’est un « ou ».",
+          "categories": [
+            "un « et »",
+            "un « ou »"
+          ],
+          "items": [
+            {
+              "text": "deux interrupteurs en série",
+              "category": 0
+            },
+            {
+              "text": "les deux lampes doivent être vissées",
+              "category": 0
+            },
+            {
+              "text": "deux interrupteurs en dérivation",
+              "category": 1
+            },
+            {
+              "text": "une seule lampe suffit à éclairer",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la construction de la forme normale disjonctive dans l’ordre.",
+          "explanation": "Dresser la table, repérer les lignes vraies, décrire chacune par une conjonction, et réunir le tout par un « ou ».",
+          "items": [
+            "dresser la table de la formule",
+            "repérer les lignes où elle vaut vrai",
+            "décrire chaque ligne par une conjonction",
+            "réunir ces conjonctions par un « ou »"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que démontre cette construction ?",
+          "explanation": "Que « et », « ou » et « non » suffisent à exprimer toute fonction booléenne. La démonstration est une construction, pas un argument.",
+          "options": [
+            {
+              "text": "que « et », « ou » et « non » suffisent à tout",
+              "correct": true
+            },
+            {
+              "text": "que toute formule est une tautologie"
+            },
+            {
+              "text": "que NAND est complet"
+            },
+            {
+              "text": "que la table est inutile"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de termes au maximum dans la forme normale d’une formule à 20 variables ?",
+          "explanation": "Jusqu’à 2 puissance 19, soit plus de cinq cent mille. La forme canonique existe toujours et reste souvent inutilisable.",
+          "min": 0,
+          "max": 2000000,
+          "answer": 524288,
+          "tolerance": 50000,
+          "unit": "termes",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le compromis d’un circuit plat ?",
+          "explanation": "Il est rapide et large ; un circuit profond est compact et lent. Le même calcul, deux géométries.",
+          "options": [
+            {
+              "text": "rapide mais large",
+              "correct": true
+            },
+            {
+              "text": "lent mais compact"
+            },
+            {
+              "text": "rapide et compact"
+            },
+            {
+              "text": "lent et large"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Qu’une forme canonique existe suffit à ce qu’elle soit utilisable.",
+          "explanation": "Faux. Sa taille peut croître exponentiellement : l’existence et l’utilité pratique sont deux questions distinctes.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-decider-la-validite",
+      "title": "Défi : décider la validité, et ce que cela coûte",
+      "subtitle": "Décidable ne veut pas dire faisable.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La méthode qui marche toujours",
+          "body": "Les quatre lignes de la figure sont la table complète pour deux variables. Elle suffit à décider n’importe quelle formule de deux variables, mécaniquement, sans réflexion. Toute la question de cette leçon est ce que devient cette méthode quand le nombre de variables monte.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois méthodes, et leurs domaines",
+          "body": "La table de vérité : toujours concluante, et de coût 2 puissance n. Elle est inutilisable au-delà d’une trentaine de variables.\n\nLa déduction naturelle : on démontre la formule à partir d’axiomes et de règles. Plus courte quand elle marche, et elle demande de l’invention.\n\nLa résolution : on nie la formule, on la met en forme normale conjonctive, et l’on combine les clauses jusqu’à obtenir une contradiction. Mécanique comme la table, et souvent beaucoup plus rapide.\n\nLa résolution est la méthode des machines, et la déduction naturelle celle des humains. Ce n’est pas un hasard : l’une demande de la patience, l’autre du flair.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le coût, chiffré",
+          "body": "Avec 10 variables, la table a 1 024 lignes : instantané.\n\nAvec 30, elle en a plus d’un milliard : quelques secondes sur une machine ordinaire.\n\nAvec 100, elle en a 2 puissance 100, soit mille milliards de fois le nombre de secondes depuis le début de l’Univers. Aucune machine, aucune technologie future ne la parcourra.\n\nEt pourtant on résout tous les jours des problèmes à des millions de variables. C’est là que la théorie et la pratique se séparent, et il faut comprendre comment.",
+          "formula": "2 puissance 100 lignes : hors de portée, définitivement",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "SAT, et le paradoxe des solveurs",
+          "body": "Décider si une formule est satisfiable s’appelle le problème SAT. Stephen Cook démontre en 1971 qu’il est NP-complet : c’est le premier problème dont on l’ait montré, et tous les autres s’y ramènent.\n\nCela signifie qu’aucun algorithme connu ne le résout en temps raisonnable dans tous les cas, et qu’il est très probable qu’aucun n’existe.\n\nLes solveurs modernes traitent cependant des instances à plusieurs millions de variables, tous les jours, en vérification de circuits et en planification.\n\nLa contradiction n’est qu’apparente : la difficulté théorique porte sur le pire cas, et les instances réelles ne sont pas le pire cas. Elles ont une structure, et les solveurs l’exploitent. C’est la leçon la plus utile de la théorie de la complexité.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un connecteur est sa table, et rien d’autre. L’amputation du sens est ce qui rend le calcul possible.\n\nLe domaine est fini : 2 puissance (2 puissance n) fonctions, toutes exprimables avec « et », « ou » et « non », et même avec le seul NAND.\n\nL’implication matérielle a une table qui surprend et deux pièges nommés. La table les départage sans intuition.\n\nEt la logique propositionnelle est décidable sans être facile. Décidable est une propriété théorique ; faisable dépend de la structure des instances qu’on rencontre vraiment.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque méthode à sa caractéristique.",
+          "explanation": "La table est exhaustive et coûteuse, la déduction demande de l’invention, la résolution est mécanique et souvent rapide.",
+          "pairs": [
+            {
+              "left": "la table de vérité",
+              "right": "exhaustive, de coût 2 puissance n"
+            },
+            {
+              "left": "la déduction naturelle",
+              "right": "courte, mais demande de l’invention"
+            },
+            {
+              "left": "la résolution",
+              "right": "mécanique, et souvent rapide"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de lignes a la table d’une formule à 10 variables ?",
+          "explanation": "2 puissance 10 = 1 024 lignes : instantané pour une machine.",
+          "answer": 1024,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré Cook en 1971 ?",
+          "explanation": "Que SAT est NP-complet, et c’est le premier problème dont on l’ait montré : tous les autres s’y ramènent.",
+          "options": [
+            {
+              "text": "que SAT est NP-complet",
+              "correct": true
+            },
+            {
+              "text": "que SAT est indécidable"
+            },
+            {
+              "text": "que SAT se résout en temps polynomial"
+            },
+            {
+              "text": "que SAT n’a pas de solution"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment les solveurs traitent-ils des millions de variables, si SAT est NP-complet ?",
+          "explanation": "La difficulté théorique porte sur le pire cas. Les instances réelles ont une structure, et les solveurs l’exploitent.",
+          "options": [
+            {
+              "text": "les instances réelles ont une structure exploitable",
+              "correct": true
+            },
+            {
+              "text": "ils se trompent souvent"
+            },
+            {
+              "text": "ils ne traitent que des cas faciles définis à l’avance"
+            },
+            {
+              "text": "la démonstration de Cook est fausse"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un problème décidable est un problème faisable.",
+          "explanation": "Faux. La logique propositionnelle est décidable par la table, et la table est hors de portée au-delà d’une trentaine de variables.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la leçon la plus utile de la théorie de la complexité, selon ce chapitre ?",
+          "explanation": "Que la difficulté porte sur le pire cas, et que les instances réelles n’en sont pas. La structure change tout.",
+          "options": [
+            {
+              "text": "la difficulté porte sur le pire cas, pas sur les cas réels",
+              "correct": true
+            },
+            {
+              "text": "les problèmes difficiles sont insolubles"
+            },
+            {
+              "text": "tout problème a un bon algorithme"
+            },
+            {
+              "text": "la complexité ne sert à rien en pratique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

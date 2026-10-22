@@ -1,0 +1,649 @@
+{
+  "chapter": "logique-universite-theorie-des-ensembles",
+  "lessons": [
+    {
+      "id": "pourquoi-axiomatiser",
+      "title": "Pourquoi axiomatiser",
+      "subtitle": "Une définition naïve qui marchait, jusqu’à ce qu’elle ne marche plus.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ranger ensemble ce qui partage un attribut",
+          "body": "Touche un animal : ses attributs s’allument, et les boîtes se dessinent. Le geste est celui qui fonde la notion d’ensemble — réunir ce qui vérifie une propriété. La leçon montre pourquoi ce geste, pris sans restriction, est contradictoire.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La définition naïve, et son attrait",
+          "body": "Cantor définit un ensemble comme une collection d’objets distincts de notre intuition ou de notre pensée, réunis en un tout.\n\nLa règle de construction qui en découle est celle de la compréhension sans restriction : pour toute propriété, l’ensemble des objets qui la vérifient existe.\n\nC’est commode, intuitif, et cela suffit à reconstruire presque toutes les mathématiques — les nombres, les fonctions, les espaces. Les vingt dernières années du dix-neuvième siècle s’emploient à le faire.\n\nEt cette règle est contradictoire. Russell l’écrit à Frege en 1902, alors que le second volume des Grundgesetze est sous presse.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le paradoxe, en deux lignes",
+          "body": "Soit R l’ensemble des ensembles qui ne s’appartiennent pas eux-mêmes. La compréhension sans restriction garantit son existence.\n\nR s’appartient-il ? S’il s’appartient, il vérifie la propriété de ses éléments, donc il ne s’appartient pas. S’il ne s’appartient pas, il vérifie la propriété, donc il s’appartient.\n\nLes deux branches se contredisent. R ne peut pas exister, et la règle qui le construisait est donc fausse.\n\nFrege ajoute en postface qu’un édifice est ébranlé après l’achèvement du travail — c’est l’une des phrases les plus honnêtes de l’histoire des mathématiques, et il ne s’est jamais relevé de ce coup.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux sorties possibles, et celle qu’on a prise",
+          "body": "Première sortie : interdire l’autoréférence par une hiérarchie de types. Un ensemble de niveau n ne contient que des objets de niveau inférieur, donc ne peut pas se contenir. C’est la voie de Russell et Whitehead, et elle est lourde.\n\nSeconde sortie : garder un seul niveau et restreindre la construction. On n’autorise plus « l’ensemble de tous les x qui vérifient P », mais seulement « les éléments d’un ensemble déjà donné qui vérifient P ».\n\nC’est le schéma de séparation de Zermelo, en 1908, et c’est la voie qui a gagné. Toute construction part désormais d’un ensemble existant.\n\nLe paradoxe est alors bloqué : on ne peut plus former R, faute d’un ensemble de tous les ensembles d’où le séparer. La solution n’est pas de répondre à la question, mais d’interdire de la poser.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’une axiomatisation fait vraiment",
+          "body": "Elle ne définit pas ce qu’est un ensemble. Elle dit ce qu’on peut en faire.\n\nZF ne contient aucune définition de l’appartenance : c’est un symbole primitif, et les axiomes en fixent le comportement. Demander ce qu’un ensemble est vraiment n’a pas de réponse dans la théorie.\n\nC’est le même geste que pour les points et les droites chez Hilbert : on ne dit pas ce qu’ils sont, on dit comment ils se comportent, et les démonstrations n’ont besoin que de cela.\n\nUne axiomatisation est donc un renoncement à l’essence en échange de la sûreté. C’est un marché, et les mathématiques du vingtième siècle l’ont accepté partout.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle de la théorie naïve est contradictoire ?",
+          "explanation": "La compréhension sans restriction : pour toute propriété, l’ensemble des objets qui la vérifient existerait.",
+          "options": [
+            {
+              "text": "la compréhension sans restriction",
+              "correct": true
+            },
+            {
+              "text": "la définition de l’appartenance"
+            },
+            {
+              "text": "l’existence de l’ensemble vide"
+            },
+            {
+              "text": "la notion d’inclusion"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le paradoxe de Russell dans l’ordre.",
+          "explanation": "Former R, supposer qu’il s’appartient, en déduire le contraire, puis conclure qu’il ne peut pas exister.",
+          "items": [
+            "former l’ensemble des ensembles qui ne s’appartiennent pas",
+            "supposer qu’il s’appartient : il ne s’appartient donc pas",
+            "supposer qu’il ne s’appartient pas : il s’appartient donc",
+            "conclure que cet ensemble ne peut pas exister"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que propose le schéma de séparation de Zermelo ?",
+          "explanation": "De ne séparer que parmi les éléments d’un ensemble déjà donné, au lieu de former l’ensemble de tous les x vérifiant P.",
+          "options": [
+            {
+              "text": "ne séparer que dans un ensemble déjà existant",
+              "correct": true
+            },
+            {
+              "text": "interdire les ensembles infinis"
+            },
+            {
+              "text": "hiérarchiser les ensembles par types"
+            },
+            {
+              "text": "définir l’appartenance précisément"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le paradoxe est-il alors bloqué ?",
+          "explanation": "Parce qu’il n’existe pas d’ensemble de tous les ensembles d’où séparer R. La solution interdit la question au lieu d’y répondre.",
+          "options": [
+            {
+              "text": "il n’y a pas d’ensemble de tous les ensembles d’où séparer",
+              "correct": true
+            },
+            {
+              "text": "R est déclaré vide"
+            },
+            {
+              "text": "l’autoréférence est interdite"
+            },
+            {
+              "text": "la propriété est reformulée"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "ZF définit ce qu’est un ensemble.",
+          "explanation": "Faux. L’appartenance est un symbole primitif, et les axiomes en fixent le comportement. Demander ce qu’un ensemble est vraiment n’a pas de réponse dans la théorie.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel marché une axiomatisation propose-t-elle ?",
+          "explanation": "Un renoncement à l’essence en échange de la sûreté. C’est le même geste que Hilbert pour les points et les droites.",
+          "options": [
+            {
+              "text": "renoncer à l’essence pour gagner la sûreté",
+              "correct": true
+            },
+            {
+              "text": "renoncer à la rigueur pour gagner en simplicité"
+            },
+            {
+              "text": "définir enfin les objets de base"
+            },
+            {
+              "text": "réduire le nombre de théorèmes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-axiomes-et-ce-qu-ils-autorisent",
+      "title": "Les axiomes, et ce que chacun autorise",
+      "subtitle": "Huit énoncés, et chacun répond à un besoin précis.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un argument qui ne construit rien",
+          "body": "Monte plus d’objets que de tiroirs : la figure conclut qu’un tiroir est chargé, sans dire lequel. Beaucoup d’axiomes d’existence ont ce caractère — ils affirment qu’un ensemble existe sans donner le moyen de le décrire. L’axiome du choix est l’exemple extrême, et la dernière leçon y revient.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les axiomes d’identité et de construction",
+          "body": "Extensionnalité : deux ensembles ayant les mêmes éléments sont égaux. C’est ce qui fait qu’un ensemble n’a ni ordre ni répétition.\n\nPaire, union, parties : à partir d’ensembles donnés, on peut former la paire de deux d’entre eux, l’union d’une famille, et l’ensemble des parties d’un ensemble.\n\nSéparation : dans un ensemble donné, on peut isoler les éléments vérifiant une propriété. C’est la version restreinte qui évite Russell.\n\nRemplacement : l’image d’un ensemble par une correspondance définissable est un ensemble. C’est l’axiome le plus puissant, et celui qui a été ajouté le plus tard — Fraenkel et Skolem, en 1922.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les axiomes d’existence",
+          "body": "Il faut un ensemble pour commencer, puisque toute construction part d’un ensemble donné. L’axiome de l’ensemble vide le fournit.\n\nIl faut un ensemble infini, sans quoi on ne construirait jamais les entiers naturels. L’axiome de l’infini le postule, et il faut bien le postuler : rien d’autre ne le donne.\n\nLes entiers se construisent alors par la méthode de von Neumann : zéro est l’ensemble vide, et chaque entier est l’ensemble de ses prédécesseurs. Ainsi 3 est l’ensemble contenant 0, 1 et 2, et il a bien trois éléments.\n\nL’axiome de fondation interdit enfin les chaînes d’appartenance infinies descendantes, donc en particulier qu’un ensemble s’appartienne. C’est l’hygiène, plus que la nécessité.",
+          "formula": "0 est l’ensemble vide, et n est l’ensemble de ses prédécesseurs",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un axiome ne se démontre pas, et se juge quand même",
+          "body": "On ne démontre pas un axiome, mais on ne le choisit pas au hasard. Trois critères servent.\n\nLa cohérence : le système ne doit pas prouver une contradiction. On ne peut pas le démontrer de l’intérieur — c’est le second théorème de Gödel — mais on peut démontrer des cohérences relatives.\n\nL’indépendance : un axiome qui se déduit des autres est superflu. Montrer une indépendance demande deux modèles, l’un où l’axiome vaut et l’autre non.\n\nEt la fécondité : un axiome se juge aussi à ce qu’il permet de démontrer. C’est le critère le moins formel, et c’est celui qui a réellement décidé du sort de l’axiome du choix.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi ZF sert de fondation à tout le reste",
+          "body": "Avec ces axiomes, on construit les entiers, puis les rationnels comme classes de couples, puis les réels comme coupures ou suites de Cauchy.\n\nUne fonction devient un ensemble de couples, une relation un ensemble de couples aussi, un espace vectoriel un ensemble muni d’opérations qui sont elles-mêmes des ensembles.\n\nTout objet mathématique usuel se ramène donc à des ensembles, et toute démonstration usuelle se ramène à ces axiomes. C’est ce qui fait de ZF une fondation, et non une théorie parmi d’autres.\n\nPersonne ne travaille à ce niveau au quotidien, et c’est le but : une fondation sert à savoir que le sol existe, pas à l’examiner chaque matin.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque axiome à ce qu’il autorise.",
+          "explanation": "Chaque axiome répond à un besoin précis : identifier, construire, séparer, ou faire exister.",
+          "pairs": [
+            {
+              "left": "extensionnalité",
+              "right": "mêmes éléments, même ensemble"
+            },
+            {
+              "left": "parties",
+              "right": "former l’ensemble des sous-ensembles"
+            },
+            {
+              "left": "séparation",
+              "right": "isoler dans un ensemble donné"
+            },
+            {
+              "left": "infini",
+              "right": "postuler un ensemble infini"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi faut-il un axiome de l’ensemble vide ?",
+          "explanation": "Parce que toute construction part d’un ensemble donné : sans un premier ensemble, rien ne démarre.",
+          "options": [
+            {
+              "text": "toute construction part d’un ensemble déjà donné",
+              "correct": true
+            },
+            {
+              "text": "pour définir le zéro"
+            },
+            {
+              "text": "pour éviter Russell"
+            },
+            {
+              "text": "pour que l’union existe"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’éléments a l’entier 3, construit à la von Neumann ?",
+          "explanation": "Trois : il est l’ensemble de ses prédécesseurs, donc contient 0, 1 et 2.",
+          "answer": 3,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’interdit l’axiome de fondation ?",
+          "explanation": "Les chaînes d’appartenance infinies descendantes, donc en particulier qu’un ensemble s’appartienne.",
+          "options": [
+            {
+              "text": "les chaînes d’appartenance infinies descendantes",
+              "correct": true
+            },
+            {
+              "text": "les ensembles infinis"
+            },
+            {
+              "text": "les ensembles vides"
+            },
+            {
+              "text": "les ensembles de parties"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Selon quels critères juge-t-on un axiome ?",
+          "explanation": "Cohérence, indépendance, et fécondité. Le dernier est le moins formel et c’est celui qui a décidé du sort de l’axiome du choix.",
+          "options": [
+            {
+              "text": "la cohérence du système",
+              "correct": true
+            },
+            {
+              "text": "son indépendance des autres",
+              "correct": true
+            },
+            {
+              "text": "ce qu’il permet de démontrer",
+              "correct": true
+            },
+            {
+              "text": "son évidence intuitive"
+            },
+            {
+              "text": "sa brièveté"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment montre-t-on qu’un axiome est indépendant des autres ?",
+          "explanation": "En exhibant deux modèles : l’un où il vaut, l’autre où il est faux, les autres axiomes tenant dans les deux.",
+          "options": [
+            {
+              "text": "en exhibant deux modèles, l’un avec, l’autre sans",
+              "correct": true
+            },
+            {
+              "text": "en le démontrant à partir des autres"
+            },
+            {
+              "text": "en montrant qu’il est évident"
+            },
+            {
+              "text": "en comptant ses conséquences"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-echelle-des-infinis",
+      "title": "L’échelle des infinis",
+      "subtitle": "Compter au-delà de la fin, et deux façons de le faire.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux mille quatre cents ans d’admissions",
+          "body": "Déplace le curseur du temps et regarde chaque famille de nombres entrer en usage, puis obtenir droit de cité bien plus tard. Les négatifs, les irrationnels, les imaginaires ont tous attendu. Les cardinaux infinis de Cantor sont le dernier élargissement de cette liste, et il a été contesté comme les précédents.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Cardinal et ordinal, deux questions différentes",
+          "body": "Un cardinal répond à « combien ». Deux ensembles ont le même cardinal s’il existe une bijection entre eux, et rien d’autre n’entre dans la définition.\n\nUn ordinal répond à « dans quel ordre ». Il décrit un ensemble bien ordonné, c’est-à-dire où toute partie non vide a un plus petit élément.\n\nSur les ensembles finis, les deux notions coïncident et l’on ne voit pas la différence : cinq objets font cinq, dans tous les ordres.\n\nSur les infinis elles divergent radicalement. Il existe une infinité d’ordinaux de même cardinal, parce qu’on peut réordonner un ensemble infini sans changer son nombre d’éléments.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’argument diagonal, et ce qu’il engendre",
+          "body": "Cantor démontre en 1891 qu’il n’existe pas de bijection entre les entiers et les réels : supposons une liste de tous les réels entre 0 et 1, et construisons un nombre qui diffère du premier par son premier chiffre, du deuxième par son deuxième, et ainsi de suite.\n\nLe même argument vaut plus généralement : pour tout ensemble A, l’ensemble de ses parties a un cardinal strictement plus grand. C’est le théorème de Cantor.\n\nIl n’y a donc pas de plus grand cardinal : partir de n’importe lequel et prendre ses parties en donne un plus grand.\n\nL’échelle des infinis est elle-même sans fin, et il n’existe pas d’ensemble de tous les cardinaux. Le même interdit que pour l’ensemble de tous les ensembles, et pour la même raison.",
+          "formula": "pour tout A, le cardinal des parties de A dépasse celui de A",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qui est dénombrable, et ce qui ne l’est pas",
+          "body": "Les entiers pairs, les entiers relatifs, les rationnels sont dénombrables : on peut les mettre en liste. Pour les rationnels, Cantor donne un parcours en diagonale du tableau des fractions.\n\nLes nombres algébriques — racines de polynômes à coefficients entiers — sont dénombrables aussi, et c’est bien plus surprenant.\n\nLes réels ne le sont pas. Il y a donc des réels non algébriques, les transcendants, et il y en a « presque tous ». C’est la démonstration de Cantor, et elle établit leur existence sans en exhiber un seul.\n\nLiouville en avait construit un en 1844, et Hermite avait montré en 1873 que e en était un. Cantor démontre en 1874 qu’ils sont l’immense majorité, par un argument qui ne construit rien. Deux façons d’établir une existence, et la seconde scandalisait.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Trois intuitions à abandonner",
+          "body": "Qu’un ensemble soit plus grand qu’une de ses parties strictes. C’est vrai pour les finis, faux pour les infinis : les entiers pairs sont aussi nombreux que les entiers.\n\nQu’ajouter des éléments augmente la taille. Ajouter un point à une droite ne change pas son cardinal, et doubler un ensemble infini non plus.\n\nQue « plus long » veuille dire « plus nombreux ». Un segment de un centimètre et une droite entière ont le même cardinal, ce qui se montre par une bijection géométrique en deux traits.\n\nCes trois abandons sont le vrai coût d’entrée de la théorie. Une fois faits, le reste se calcule ; tant qu’ils ne le sont pas, chaque résultat paraît absurde.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand deux ensembles ont-ils le même cardinal ?",
+          "explanation": "Quand il existe une bijection entre eux. Rien d’autre n’entre dans la définition.",
+          "options": [
+            {
+              "text": "quand il existe une bijection entre eux",
+              "correct": true
+            },
+            {
+              "text": "quand ils ont les mêmes éléments"
+            },
+            {
+              "text": "quand on peut les ordonner pareil"
+            },
+            {
+              "text": "quand ils sont tous deux infinis"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet ensemble est-il dénombrable ?",
+          "explanation": "Entiers, rationnels et nombres algébriques se mettent en liste. Les réels et les parties de ℕ non.",
+          "categories": [
+            "dénombrable",
+            "non dénombrable"
+          ],
+          "items": [
+            {
+              "text": "les rationnels",
+              "category": 0
+            },
+            {
+              "text": "les nombres algébriques",
+              "category": 0
+            },
+            {
+              "text": "les réels",
+              "category": 1
+            },
+            {
+              "text": "les parties des entiers",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le théorème de Cantor ?",
+          "explanation": "Que pour tout ensemble A, l’ensemble de ses parties a un cardinal strictement plus grand. Il n’y a donc pas de plus grand cardinal.",
+          "options": [
+            {
+              "text": "les parties de A ont un cardinal strictement plus grand",
+              "correct": true
+            },
+            {
+              "text": "les réels sont dénombrables"
+            },
+            {
+              "text": "tous les infinis sont égaux"
+            },
+            {
+              "text": "il existe un plus grand cardinal"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi cardinal et ordinal se confondent-ils sur les ensembles finis ?",
+          "explanation": "Parce que cinq objets font cinq dans tous les ordres. Sur les infinis, réordonner ne change pas le cardinal, et change l’ordinal.",
+          "options": [
+            {
+              "text": "réordonner un ensemble fini ne change rien",
+              "correct": true
+            },
+            {
+              "text": "les deux notions sont identiques par définition"
+            },
+            {
+              "text": "les ensembles finis n’ont pas d’ordre"
+            },
+            {
+              "text": "c’est une convention"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les nombres algébriques sont non dénombrables.",
+          "explanation": "Faux, et c’est surprenant : ils sont dénombrables. Ce sont donc les transcendants qui forment l’immense majorité des réels.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui scandalisait dans la démonstration de Cantor en 1874 ?",
+          "explanation": "Qu’elle établisse l’existence d’une immense majorité de transcendants sans en exhiber un seul.",
+          "options": [
+            {
+              "text": "elle établit une existence sans rien construire",
+              "correct": true
+            },
+            {
+              "text": "elle contredisait Liouville"
+            },
+            {
+              "text": "elle employait l’axiome du choix"
+            },
+            {
+              "text": "elle était trop longue"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-le-choix-et-le-continu",
+      "title": "Défi : l’axiome du choix et l’hypothèse du continu",
+      "subtitle": "Deux énoncés que ZF ne tranche pas, et ce que cela signifie.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Choisir un représentant dans chaque boîte",
+          "body": "Chaque boîte de la figure contient des animaux. Choisir un représentant dans chacune des quelques boîtes affichées est évident. L’axiome du choix affirme qu’on peut le faire pour une famille infinie de boîtes, sans donner aucune règle de choix — et c’est là que l’évidence s’arrête.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Les familles de nombres, et le saut de cardinal",
+          "body": "Reprends la frise : chaque famille élargit la précédente. Entiers, rationnels et algébriques ont tous le même cardinal, le plus petit infini. Le passage aux réels change de cardinal, et l’hypothèse du continu demande s’il y a quelque chose entre les deux.",
+          "figureId": "frise-nombres",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "L’axiome du choix, et ses conséquences contrastées",
+          "body": "Il affirme que pour toute famille d’ensembles non vides, il existe une fonction qui choisit un élément dans chacun. Pour une famille finie, il se démontre. Pour une famille infinie, il est indépendant du reste de ZF.\n\nIl donne des résultats indispensables : tout espace vectoriel a une base, tout ensemble peut être bien ordonné, le lemme de Zorn. Une bonne part de l’analyse et de l’algèbre modernes en dépend.\n\nIl donne aussi le paradoxe de Banach-Tarski, publié en 1924 : on peut découper une boule en un nombre fini de morceaux et les réassembler en deux boules identiques à la première.\n\nCe n’est pas une contradiction — les morceaux sont non mesurables, et l’on n’a donc pas doublé un volume. C’est le prix d’un axiome qui affirme des existences sans les construire.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "L’hypothèse du continu, et son sort",
+          "body": "Le plus petit cardinal infini est celui des entiers. Celui des réels est strictement plus grand, et vaut deux puissance celui des entiers.\n\nL’hypothèse du continu affirme qu’il n’y a rien entre les deux : aucun ensemble de cardinal strictement intermédiaire.\n\nGödel démontre en 1938 qu’on ne peut pas la réfuter dans ZFC. Paul Cohen démontre en 1963 qu’on ne peut pas la démontrer non plus, et reçoit la médaille Fields en 1966 pour la méthode qu’il invente à cette occasion, le forcing.\n\nL’hypothèse est donc indépendante : ZFC ne la tranche pas. On peut ajouter l’un ou l’autre, et obtenir deux mathématiques cohérentes.",
+          "formula": "cardinal des réels = 2 puissance cardinal des entiers",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "La théorie naïve était contradictoire, et la sortie n’a pas été de répondre au paradoxe mais d’interdire de le poser : toute construction part d’un ensemble déjà donné.\n\nUne axiomatisation ne dit pas ce que sont les objets. Elle dit ce qu’on peut en faire, et ce renoncement est le prix de la sûreté.\n\nLes infinis forment une échelle sans fin, et cardinal et ordinal y divergent. L’argument diagonal engendre toute l’échelle, et interdit un plus grand cardinal.\n\nEt deux énoncés célèbres sont indépendants de ZF. Qu’une question mathématique bien posée puisse n’avoir aucune réponse dans le cadre où on la pose est le résultat le plus philosophiquement lourd de tout le chapitre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme l’axiome du choix ?",
+          "explanation": "Que pour toute famille d’ensembles non vides, il existe une fonction qui choisit un élément dans chacun — sans donner de règle.",
+          "options": [
+            {
+              "text": "il existe une fonction de choix, sans règle donnée",
+              "correct": true
+            },
+            {
+              "text": "tout ensemble est fini ou dénombrable"
+            },
+            {
+              "text": "tout ensemble a un plus petit élément"
+            },
+            {
+              "text": "toute famille est dénombrable"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels résultats dépendent de l’axiome du choix ?",
+          "explanation": "Tout espace vectoriel a une base, tout ensemble peut être bien ordonné, le lemme de Zorn — et aussi Banach-Tarski.",
+          "options": [
+            {
+              "text": "tout espace vectoriel a une base",
+              "correct": true
+            },
+            {
+              "text": "tout ensemble peut être bien ordonné",
+              "correct": true
+            },
+            {
+              "text": "le lemme de Zorn",
+              "correct": true
+            },
+            {
+              "text": "le paradoxe de Banach-Tarski",
+              "correct": true
+            },
+            {
+              "text": "le théorème de Cantor"
+            },
+            {
+              "text": "le paradoxe de Russell"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Banach-Tarski n’est-il pas une contradiction ?",
+          "explanation": "Parce que les morceaux obtenus ne sont pas mesurables : on n’a donc pas doublé un volume, faute de volume défini.",
+          "options": [
+            {
+              "text": "les morceaux ne sont pas mesurables",
+              "correct": true
+            },
+            {
+              "text": "les boules ne sont pas identiques"
+            },
+            {
+              "text": "le découpage est infini"
+            },
+            {
+              "text": "la démonstration est fausse"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme l’hypothèse du continu ?",
+          "explanation": "Qu’aucun ensemble n’a un cardinal strictement entre celui des entiers et celui des réels.",
+          "options": [
+            {
+              "text": "il n’y a aucun cardinal entre celui des entiers et celui des réels",
+              "correct": true
+            },
+            {
+              "text": "les réels sont dénombrables"
+            },
+            {
+              "text": "il existe un plus grand cardinal"
+            },
+            {
+              "text": "tout ensemble infini a le cardinal des réels"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets l’histoire de l’hypothèse du continu dans l’ordre.",
+          "explanation": "Cantor la formule, Gödel montre en 1938 qu’on ne peut la réfuter, Cohen montre en 1963 qu’on ne peut la démontrer : elle est indépendante.",
+          "items": [
+            "Cantor formule l’hypothèse",
+            "Gödel montre en 1938 qu’on ne peut pas la réfuter",
+            "Cohen montre en 1963 qu’on ne peut pas la démontrer",
+            "elle est donc indépendante de ZFC"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie qu’un énoncé est indépendant de ZFC ?",
+          "explanation": "Qu’on peut ajouter l’énoncé ou sa négation, et obtenir dans les deux cas une théorie cohérente. La question n’a pas de réponse dans ce cadre.",
+          "options": [
+            {
+              "text": "on peut ajouter l’énoncé ou sa négation sans contradiction",
+              "correct": true
+            },
+            {
+              "text": "l’énoncé est faux"
+            },
+            {
+              "text": "l’énoncé est vrai mais indémontrable"
+            },
+            {
+              "text": "l’énoncé est mal posé"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

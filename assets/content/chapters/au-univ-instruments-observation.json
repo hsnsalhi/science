@@ -1,0 +1,564 @@
+{
+  "chapter": "astronomie-universite-instruments-et-observation",
+  "lessons": [
+    {
+      "id": "collecter-et-resoudre",
+      "title": "Collecter, et résoudre",
+      "subtitle": "Deux qualités différentes, et un seul diamètre qui les commande.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La lumière va droit, et c’est tout ce qu’il faut",
+          "body": "Déplace la lampe et regarde l’ombre changer de taille. Tout l’instrument d’optique repose sur cette propriété et sur elle seule : des rayons rectilignes qu’on fait converger. La leçon montre où cette description cesse de suffire.",
+          "figureId": "ombre-lumiere",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Collecter : la surface, donc le carré du diamètre",
+          "body": "Un télescope collecte la lumière qui tombe sur son ouverture. La quantité collectée est donc proportionnelle à la surface, c’est-à-dire au carré du diamètre.\n\nUn miroir de huit mètres collecte soixante-quatre fois plus de lumière qu’un miroir d’un mètre. Doubler le diamètre quadruple la collecte.\n\nCela décide de la magnitude limite, donc des objets accessibles. L’œil nu atteint la magnitude 6 ; les grands instruments atteignent la magnitude 30, soit des objets quatre milliards de fois moins lumineux.\n\nL’échelle des magnitudes est logarithmique : cinq magnitudes valent un facteur cent en flux, donc une magnitude vaut un facteur 2,512.",
+          "formula": "collecte proportionnelle à D² ; 5 magnitudes = facteur 100",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Résoudre : la diffraction, donc le diamètre tout court",
+          "body": "Deux points très proches donnent deux taches qui finissent par se confondre, et ce n’est pas un défaut de fabrication : c’est la diffraction, inévitable.\n\nL’angle minimal séparable vaut environ 1,22 fois la longueur d’onde divisée par le diamètre. Il est donc inversement proportionnel au diamètre, et proportionnel à la longueur d’onde.\n\nPour de la lumière verte et un miroir d’un mètre, cela fait 0,14 seconde d’arc. Pour huit mètres, 0,017.\n\nD’où une conséquence importante : en radio, où les longueurs d’onde sont un million de fois plus grandes, il faut un million de fois plus de diamètre pour la même finesse. C’est pourquoi les radiotélescopes sont énormes et voient pourtant flou.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’atmosphère annule l’avantage du grand miroir",
+          "body": "La turbulence de l’air brouille l’image. Sur un bon site, la limite est d’environ une seconde d’arc.\n\nUn télescope d’un mètre devrait résoudre 0,14 seconde, et un de huit mètres 0,017 : au sol, sans correction, les deux sont limités à une seconde. Le grand miroir ne sert alors qu’à collecter.\n\nDeux réponses existent. L’optique adaptative déforme un petit miroir mille fois par seconde pour compenser la turbulence mesurée en temps réel. Et l’espace, qui supprime le problème au lieu de le corriger.\n\nHubble n’a que 2,4 mètres, moins qu’un télescope amateur haut de gamme en surface collectrice par rapport aux grands observatoires — et il a produit des images que le sol ne pouvait pas faire, parce qu’il atteint sa limite théorique de 0,05 seconde d’arc.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’interférométrie, ou comment tricher sur le diamètre",
+          "body": "La résolution dépend du diamètre. Mais si l’on combine la lumière de deux télescopes éloignés, c’est la distance entre eux qui joue le rôle du diamètre.\n\nLe Very Large Telescope combine ainsi quatre miroirs de 8,2 mètres séparés de plus de cent mètres, et atteint une résolution de milliseconde d’arc.\n\nEn radio, la technique va jusqu’à l’échelle du globe : l’Event Horizon Telescope a combiné des antennes réparties sur toute la Terre pour obtenir, en 2019, la première image de l’environnement d’un trou noir.\n\nCe qu’on gagne est la résolution, et seulement elle. La collecte reste celle des miroirs réels, pas celle d’un miroir de la taille de la Terre — d’où des images fines et pauvres en lumière.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un miroir de 8 m collecte combien de fois plus de lumière qu’un miroir de 1 m ?",
+          "explanation": "64 fois : la collecte est proportionnelle au carré du diamètre.",
+          "answer": 64,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi l’angle minimal séparable dépend-il ?",
+          "explanation": "De la longueur d’onde divisée par le diamètre : il est proportionnel à la première et inversement proportionnel au second.",
+          "options": [
+            {
+              "text": "de la longueur d’onde divisée par le diamètre",
+              "correct": true
+            },
+            {
+              "text": "du carré du diamètre"
+            },
+            {
+              "text": "de la surface du miroir"
+            },
+            {
+              "text": "du temps de pose"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les radiotélescopes voient-ils flou malgré leur taille ?",
+          "explanation": "Parce que les longueurs d’onde radio sont un million de fois plus grandes : il faudrait un million de fois plus de diamètre.",
+          "options": [
+            {
+              "text": "les longueurs d’onde radio sont un million de fois plus grandes",
+              "correct": true
+            },
+            {
+              "text": "leurs miroirs sont imprécis"
+            },
+            {
+              "text": "l’atmosphère les gêne davantage"
+            },
+            {
+              "text": "les ondes radio sont plus faibles"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la limite de résolution due à la turbulence, sur un bon site, en secondes d’arc ?",
+          "explanation": "Environ une seconde d’arc. Sans correction, un télescope d’un mètre et un de huit mètres y sont tous deux limités.",
+          "min": 0,
+          "max": 20,
+          "answer": 1,
+          "tolerance": 0.4,
+          "unit": "secondes d’arc",
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Comment échappe-t-on à la turbulence atmosphérique ?",
+          "explanation": "Par l’optique adaptative, qui déforme un miroir mille fois par seconde, ou en allant dans l’espace, qui supprime le problème.",
+          "options": [
+            {
+              "text": "l’optique adaptative",
+              "correct": true
+            },
+            {
+              "text": "aller dans l’espace",
+              "correct": true
+            },
+            {
+              "text": "agrandir le miroir"
+            },
+            {
+              "text": "allonger le temps de pose"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Au sol et sans correction, un miroir de 8 m résout huit fois mieux qu’un miroir de 1 m.",
+          "explanation": "Faux. Les deux sont limités à la seconde d’arc par la turbulence : le grand miroir ne sert alors qu’à collecter.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-que-l-atmosphere-laisse-passer",
+      "title": "Ce que l’atmosphère laisse passer",
+      "subtitle": "Deux fenêtres ouvertes, et tout le reste fermé.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le visible, et seulement lui",
+          "body": "La figure n’affiche que de 380 à 750 nanomètres, et ce n’est pas une simplification : c’est à peu près tout ce que l’atmosphère laisse passer dans cette région du spectre. Déplace la température jusqu’à 30 000 kelvins — le maximum sort du cadre, et il sort aussi de ce qu’on peut observer du sol.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La même grandeur, à toutes les échelles",
+          "body": "Change la fréquence et le milieu : la longueur d’onde se recalcule comme la célérité divisée par la fréquence. La relation est la même pour une onde électromagnétique, avec la vitesse de la lumière à la place de celle du son — et c’est cette longueur d’onde qui décide si l’atmosphère laisse passer.",
+          "figureId": "onde",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les fenêtres, et ce qui les ferme",
+          "body": "Le visible passe, et une partie du proche infrarouge. C’est notre fenêtre historique, et ce n’est pas un hasard que nos yeux y soient sensibles.\n\nLes ondes radio passent largement, du millimètre à une vingtaine de mètres. Au-delà, l’ionosphère réfléchit — ce qui sert aux radioamateurs et interdit l’astronomie.\n\nL’ultraviolet est arrêté par l’ozone, les rayons X et gamma par l’atmosphère entière. Ces domaines ont attendu les satellites, donc les années soixante.\n\nEt l’infrarouge moyen est absorbé par la vapeur d’eau, d’où les observatoires très secs et très hauts — Atacama à 5 000 mètres — et les télescopes spatiaux refroidis comme James Webb.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que chaque domaine montre",
+          "body": "Le radio montre le gaz froid, les jets, le fond diffus cosmologique. Il traverse la poussière, donc il voit le centre galactique que le visible ne montre pas.\n\nL’infrarouge montre la poussière elle-même, les étoiles en formation, et les objets très lointains dont la lumière visible a été décalée vers le rouge par l’expansion.\n\nLe visible montre les étoiles ordinaires. L’ultraviolet les étoiles très chaudes et jeunes.\n\nLes X et les gamma montrent la matière la plus violente : disques d’accrétion, sursauts, restes de supernovæ. Chaque domaine montre une population différente, et observer dans un seul revient à ne voir qu’une partie du ciel.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi notre œil voit exactement là",
+          "body": "La fenêtre visible va de 380 à 750 nanomètres environ. Notre sensibilité couvre à peu près exactement cet intervalle.\n\nCe n’est pas une coïncidence, et ce n’est pas non plus une intention : la vision est apparue dans l’eau, sous un rayonnement déjà filtré par l’atmosphère et par l’eau elle-même, et la sélection a retenu les pigments sensibles à ce qui était disponible.\n\nLa loi de Wien ajoute une raison : le maximum du Soleil tombe à 501 nanomètres, au milieu de cette fenêtre.\n\nL’œil est donc adapté à deux contraintes qui se recouvrent, ce qui explique sa plage étroite. Un animal né autour d’une étoile plus froide verrait dans l’infrarouge, et sa fenêtre atmosphérique ne serait pas la nôtre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce domaine passe-t-il l’atmosphère, ou non ?",
+          "explanation": "Le visible et le radio passent ; l’ultraviolet est arrêté par l’ozone, les X et gamma par l’atmosphère entière.",
+          "categories": [
+            "passe",
+            "est bloqué"
+          ],
+          "items": [
+            {
+              "text": "la lumière visible",
+              "category": 0
+            },
+            {
+              "text": "les ondes radio",
+              "category": 0
+            },
+            {
+              "text": "l’ultraviolet",
+              "category": 1
+            },
+            {
+              "text": "les rayons X",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui arrête l’ultraviolet ?",
+          "explanation": "L’ozone. Les rayons X et gamma, eux, sont arrêtés par l’atmosphère entière.",
+          "options": [
+            {
+              "text": "l’ozone",
+              "correct": true
+            },
+            {
+              "text": "la vapeur d’eau"
+            },
+            {
+              "text": "l’ionosphère"
+            },
+            {
+              "text": "le dioxyde de carbone"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les observatoires infrarouges sont-ils très hauts et très secs ?",
+          "explanation": "Parce que la vapeur d’eau absorbe l’infrarouge moyen. D’où l’Atacama à 5 000 mètres, et les télescopes spatiaux refroidis.",
+          "options": [
+            {
+              "text": "la vapeur d’eau absorbe l’infrarouge",
+              "correct": true
+            },
+            {
+              "text": "l’altitude réduit la turbulence seulement"
+            },
+            {
+              "text": "le froid améliore la résolution"
+            },
+            {
+              "text": "pour éviter la pollution lumineuse"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque domaine à ce qu’il montre.",
+          "explanation": "Chaque domaine montre une population différente : gaz froid, poussière et formation, étoiles ordinaires, matière violente.",
+          "pairs": [
+            {
+              "left": "le radio",
+              "right": "le gaz froid et le fond cosmologique"
+            },
+            {
+              "left": "l’infrarouge",
+              "right": "la poussière et les étoiles en formation"
+            },
+            {
+              "left": "le visible",
+              "right": "les étoiles ordinaires"
+            },
+            {
+              "left": "les rayons X",
+              "right": "disques d’accrétion et supernovæ"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le radio voit-il le centre galactique quand le visible ne le voit pas ?",
+          "explanation": "Parce qu’il traverse la poussière, qui arrête la lumière visible.",
+          "options": [
+            {
+              "text": "il traverse la poussière",
+              "correct": true
+            },
+            {
+              "text": "il est plus énergétique"
+            },
+            {
+              "text": "il est moins absorbé par l’atmosphère"
+            },
+            {
+              "text": "les objets y sont plus brillants"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Observer dans un seul domaine suffit à connaître le ciel.",
+          "explanation": "Faux. Chaque domaine montre une population différente, et une seule fenêtre ne révèle qu’une partie des objets.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "du-photon-au-nombre",
+      "title": "Du photon au nombre",
+      "subtitle": "Un capteur, une conversion, et un fichier.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La valeur d’un pixel, bit par bit",
+          "body": "Allume les huit interrupteurs : de 0 à 255. Un capteur astronomique travaille plutôt sur seize bits, donc de 0 à 65 535, et la raison est dans la leçon. Compte ce que huit bits permettent, et demande-toi si cela suffit à un ciel qui va de l’étoile brillante au fond noir.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment un photon devient une charge",
+          "body": "Un photon qui frappe le silicium y libère un électron, par effet photoélectrique. Le capteur compte ensuite les électrons.\n\nLe rendement quantique est la proportion de photons qui produisent effectivement un électron. Une plaque photographique atteignait un ou deux pour-cent. Un capteur moderne dépasse quatre-vingt-dix.\n\nLe gain est donc d’un facteur cinquante, et il a plus changé l’astronomie que n’importe quel agrandissement de miroir. Un télescope d’un mètre équipé d’un capteur voit plus loin qu’un télescope de cinq mètres équipé de plaques.\n\nLes capteurs à transfert de charge sont inventés en 1969 par Boyle et Smith, pour un tout autre usage, et employés en astronomie dès la fin des années soixante-dix.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi seize bits, et non huit",
+          "body": "Un pixel code un nombre d’électrons. Avec huit bits, 256 niveaux ; avec seize, 65 536.\n\nLa dynamique d’une image astronomique est énorme : dans un même champ, une étoile brillante et une galaxie faible peuvent différer d’un facteur mille. Huit bits les écraseraient — l’étoile saturée, la galaxie noyée dans un ou deux niveaux.\n\nSeize bits laissent assez de place pour les deux, et c’est pourquoi les formats astronomiques les emploient.\n\nLe même raisonnement vaut en photographie : les formats bruts des appareils codent douze ou quatorze bits par canal, et c’est ce qui permet de récupérer un ciel surexposé.",
+          "formula": "8 bits : 256 niveaux ; 16 bits : 65 536 niveaux",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les corrections, et pourquoi aucune image brute ne sert",
+          "body": "Chaque pixel a son propre décalage à zéro, sa propre sensibilité, et son propre courant parasite qui croît avec la température et le temps.\n\nOn enregistre donc trois séries de calibration : une pose de durée nulle pour le décalage, une pose à l’obscurité pour le courant parasite, et une pose sur une surface uniformément éclairée pour la sensibilité.\n\nL’image scientifique est la brute, moins les deux premières, divisée par la troisième. Sans ces corrections, les variations entre pixels dépassent souvent le signal cherché.\n\nC’est la partie du métier qu’aucune image de presse ne montre, et elle occupe plus de temps que l’observation elle-même. Une belle image publiée est un calcul, pas une photographie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi les images astronomiques sont en fausses couleurs",
+          "body": "Un capteur ne voit pas les couleurs : il compte des photons sans distinguer leur longueur d’onde.\n\nUne image colorée s’obtient donc par trois poses à travers trois filtres, recombinées ensuite. Et rien n’oblige les filtres à correspondre au rouge, au vert et au bleu de l’œil.\n\nOn choisit les filtres selon ce qu’on veut montrer — une raie d’hydrogène, une raie d’oxygène, un domaine infrarouge — puis on leur attribue des couleurs d’affichage.\n\nCes images ne sont donc ni fausses ni truquées : elles sont des cartes, et leur légende dit quel filtre porte quelle couleur. Les lire sans la légende est l’erreur, pas les publier.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait un photon qui frappe le silicium d’un capteur ?",
+          "explanation": "Il y libère un électron par effet photoélectrique. Le capteur compte ensuite les électrons.",
+          "options": [
+            {
+              "text": "il libère un électron",
+              "correct": true
+            },
+            {
+              "text": "il chauffe le pixel"
+            },
+            {
+              "text": "il modifie une charge déjà présente"
+            },
+            {
+              "text": "il produit un signal lumineux"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel rendement quantique atteint un capteur moderne, en pour-cent ?",
+          "explanation": "Plus de 90 %, contre un ou deux pour-cent pour une plaque photographique : un facteur cinquante.",
+          "min": 0,
+          "max": 100,
+          "answer": 92,
+          "tolerance": 7,
+          "unit": "%",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui a le plus changé l’astronomie observationnelle ?",
+          "explanation": "Le passage de la plaque au capteur : un facteur cinquante en rendement, plus que n’importe quel agrandissement de miroir.",
+          "options": [
+            {
+              "text": "le passage de la plaque au capteur",
+              "correct": true
+            },
+            {
+              "text": "l’agrandissement des miroirs"
+            },
+            {
+              "text": "l’optique adaptative"
+            },
+            {
+              "text": "les ordinateurs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de niveaux code un pixel sur 16 bits ?",
+          "explanation": "65 536, contre 256 sur huit bits. La dynamique d’un champ astronomique l’exige.",
+          "answer": 65536,
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le traitement d’une image dans l’ordre.",
+          "explanation": "On retire le décalage à zéro, puis le courant parasite, puis on divise par la réponse uniforme.",
+          "items": [
+            "enregistrer l’image brute",
+            "soustraire le décalage à zéro",
+            "soustraire le courant parasite",
+            "diviser par la pose uniforme"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une image publiée par un observatoire est une photographie.",
+          "explanation": "Faux. C’est un calcul : une brute corrigée de trois séries de calibration, souvent combinée sur plusieurs poses et plusieurs filtres.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-dimensionner-une-observation",
+      "title": "Défi : dimensionner une observation",
+      "subtitle": "Le bruit vient des photons eux-mêmes, et il se calcule.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Compter des événements rares, et le bruit que cela fait",
+          "body": "Pousse le curseur et compte les noyaux restants : le nombre saute d’un tirage à l’autre autour de la courbe lisse. Plus l’effectif est grand, plus l’écart relatif est petit. C’est exactement la statistique du comptage de photons, et c’est elle qui fixe un temps de pose.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le bruit de photons, et la racine carrée",
+          "body": "Les photons arrivent au hasard, indépendamment les uns des autres. Si l’on en compte N en moyenne, la fluctuation d’une mesure à l’autre est de racine de N.\n\nLe rapport signal sur bruit est donc N divisé par racine de N, c’est-à-dire racine de N. Il croît comme la racine du nombre de photons, donc comme la racine du temps de pose.\n\nPour cent photons, le rapport est de dix, soit dix pour-cent d’incertitude. Pour dix mille, il est de cent, soit un pour-cent.\n\nDoubler le rapport signal sur bruit demande donc de quadrupler le temps de pose. C’est la loi la plus présente dans la vie d’un observateur, et elle décide des demandes de temps de télescope.",
+          "formula": "rapport signal sur bruit = racine de N, donc racine du temps",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre sources de bruit, et laquelle domine",
+          "body": "Le bruit de l’objet lui-même, en racine du nombre de ses photons. Irréductible.\n\nLe bruit du fond de ciel, qui est aussi un comptage de photons, et qui domine pour les objets faibles. C’est lui que la pollution lumineuse aggrave.\n\nLe bruit de lecture du capteur, fixe par pose : il pousse à faire peu de poses longues plutôt que beaucoup de courtes.\n\nEt le courant parasite, qui croît avec la température et le temps : d’où les capteurs refroidis à l’azote liquide. Savoir lequel domine décide de la stratégie, et c’est le vrai travail de préparation d’une nuit.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un calcul de nuit, de bout en bout",
+          "body": "On veut mesurer la luminosité d’une galaxie à un pour-cent près. Il faut donc un rapport signal sur bruit de cent, donc dix mille photons détectés.\n\nSi l’instrument en reçoit dix par seconde, cela fait mille secondes, soit un peu moins de dix-sept minutes.\n\nMais on ne fait pas une pose de mille secondes : les rayons cosmiques laissent des traces, et le suivi dérive. On fait dix poses de cent secondes, et on les combine.\n\nCombiner dix poses de cent secondes donne le même nombre de photons, et permet en plus d’écarter les pixels aberrants par comparaison. Le découpage ne coûte que le bruit de lecture, payé dix fois au lieu d’une.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Collecter va comme le carré du diamètre, résoudre comme le diamètre tout court. Deux qualités différentes, et c’est la turbulence qui annule la seconde au sol.\n\nL’atmosphère n’ouvre que deux fenêtres, le visible et le radio. Tout le reste a attendu les satellites, et chaque domaine montre une population différente.\n\nLe passage de la plaque au capteur a valu un facteur cinquante, plus qu’aucun miroir. Et une image publiée est un calcul.\n\nEnfin le bruit vient des photons eux-mêmes, en racine du comptage. Doubler la qualité coûte quatre fois le temps, et c’est cette loi qui gouverne l’attribution du temps de télescope dans le monde entier.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On compte 10 000 photons. Quel est le rapport signal sur bruit ?",
+          "explanation": "Racine de 10 000 = 100, soit un pour-cent d’incertitude.",
+          "answer": 100,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Par combien faut-il multiplier le temps de pose pour doubler le rapport signal sur bruit ?",
+          "explanation": "Par quatre : le rapport croît comme la racine du temps.",
+          "answer": 4,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel bruit domine pour un objet faible ?",
+          "explanation": "Le fond de ciel, qui est aussi un comptage de photons. C’est lui que la pollution lumineuse aggrave.",
+          "options": [
+            {
+              "text": "le fond de ciel",
+              "correct": true
+            },
+            {
+              "text": "le bruit de l’objet"
+            },
+            {
+              "text": "le bruit de lecture"
+            },
+            {
+              "text": "le courant parasite"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "L’instrument reçoit 10 photons par seconde et il en faut 10 000. Combien de minutes de pose ?",
+          "explanation": "1 000 secondes, soit un peu moins de dix-sept minutes.",
+          "min": 0,
+          "max": 120,
+          "answer": 16.7,
+          "tolerance": 2,
+          "unit": "min",
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Pourquoi découper une longue pose en plusieurs courtes ?",
+          "explanation": "Pour écarter les traces de rayons cosmiques et les pixels aberrants, et parce que le suivi dérive. Le coût est le bruit de lecture, payé plusieurs fois.",
+          "options": [
+            {
+              "text": "écarter les traces de rayons cosmiques",
+              "correct": true
+            },
+            {
+              "text": "écarter les pixels aberrants par comparaison",
+              "correct": true
+            },
+            {
+              "text": "limiter l’effet de la dérive du suivi",
+              "correct": true
+            },
+            {
+              "text": "collecter plus de photons"
+            },
+            {
+              "text": "réduire le bruit de lecture"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi refroidit-on les capteurs astronomiques ?",
+          "explanation": "Pour réduire le courant parasite, qui croît avec la température et le temps de pose.",
+          "options": [
+            {
+              "text": "pour réduire le courant parasite",
+              "correct": true
+            },
+            {
+              "text": "pour augmenter le rendement quantique"
+            },
+            {
+              "text": "pour améliorer la résolution"
+            },
+            {
+              "text": "pour éviter la condensation seulement"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
