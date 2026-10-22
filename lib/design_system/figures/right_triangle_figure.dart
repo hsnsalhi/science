@@ -381,6 +381,7 @@ class _TrianglePainter extends CustomPainter {
         text: text,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           fontSize: 13,
           fontWeight: bold ? FontWeight.w800 : FontWeight.w700,
           fontVariations: <FontVariation>[

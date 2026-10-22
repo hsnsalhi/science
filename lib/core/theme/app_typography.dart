@@ -17,9 +17,26 @@ import 'package:flutter/material.dart';
 /// graisse. Flutter n'applique pas toujours `fontWeight` à l'axe `wght` d'une
 /// police variable, donc chaque style déclare explicitement une
 /// [FontVariation] — c'est la raison d'être de [_style].
+///
+/// Deux polices de **repli** complètent les deux premières, glyphe par
+/// glyphe. Ni Nunito ni Baloo 2 ne contiennent l'alphabet grec : elles
+/// n'ont que les cinq symboles mathématiques d'usage courant (pi, delta,
+/// sigma, oméga et le micro). Un caractère absent ne provoque aucune
+/// erreur — il est dessiné en rectangle vide chez l'élève — et un cours
+/// de physique qui ne peut écrire ni lambda, ni thêta, ni oméga n'est pas
+/// un cours de physique. Voir `assets/fonts/README.md`.
 abstract final class AppTypography {
   static const String display = 'Baloo2';
   static const String body = 'Nunito';
+
+  /// Les polices consultées, dans l'ordre, quand la famille principale
+  /// n'a pas le glyphe demandé.
+  ///
+  /// Le grec vient d'une police de texte et non d'une police de symboles,
+  /// pour qu'un lambda au milieu d'une phrase reste une lettre et non un
+  /// pictogramme. Les opérateurs viennent ensuite, parce qu'eux n'existent
+  /// nulle part ailleurs.
+  static const List<String> replis = <String>['NotoSansGrec', 'NotoSansMath'];
 
   /// Fabrique un style en synchronisant [FontWeight] et l'axe `wght`.
   static TextStyle _style({
@@ -31,6 +48,7 @@ abstract final class AppTypography {
   }) {
     return TextStyle(
       fontFamily: family,
+      fontFamilyFallback: replis,
       fontSize: size,
       // Les deux sont nécessaires : `fontWeight` pour le repli et la
       // sémantique, `fontVariations` pour le rendu réel de la police variable.

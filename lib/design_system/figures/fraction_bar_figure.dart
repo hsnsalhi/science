@@ -284,6 +284,7 @@ class _BarresPainter extends CustomPainter {
         text: etiquette,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: 13,
           fontWeight: FontWeight.w800,

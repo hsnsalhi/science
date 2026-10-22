@@ -294,6 +294,7 @@ class _PreuvePainter extends CustomPainter {
         text: texte,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur.withValues(alpha: opacite.clamp(0.0, 1.0)),
           fontSize: 18,
           fontWeight: FontWeight.w800,

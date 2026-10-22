@@ -329,6 +329,8 @@ class _FrisePainter extends CustomPainter {
       text: TextSpan(
         text: texte,
         style: TextStyle(
+          fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: taille,
           fontWeight: FontWeight.w600,

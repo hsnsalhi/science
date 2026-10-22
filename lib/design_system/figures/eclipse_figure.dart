@@ -485,6 +485,7 @@ class _EclipsePainter extends CustomPainter {
         text: nom,
         style: const TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: Colors.white70,
           fontSize: 11,
           fontWeight: FontWeight.w700,

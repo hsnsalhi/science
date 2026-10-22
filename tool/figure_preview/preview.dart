@@ -14,8 +14,10 @@ library;
 import 'dart:io';
 
 import 'package:eureka/core/theme/app_theme.dart';
+import 'package:eureka/core/theme/app_typography.dart';
 import 'package:eureka/design_system/figures/figure_registry.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Les figures à rendre, et sous quel thème.
@@ -51,6 +53,23 @@ const List<String> _figures = <String>[
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  // Sans chargement explicite, le moteur de test dessine chaque mot en
+  // rectangle gris : les polices déclarées dans pubspec ne sont pas
+  // montées d'office. On regarde ce banc pour juger un dessin, et un
+  // dessin se juge avec ses étiquettes — d'autant qu'un caractère
+  // absent des polices se voit ici exactement comme chez l'élève.
+  setUpAll(() async {
+    for (final String famille in <String>[
+      AppTypography.body,
+      AppTypography.display,
+      ...AppTypography.replis,
+    ]) {
+      await (FontLoader(famille)
+            ..addFont(rootBundle.load('assets/fonts/$famille.ttf')))
+          .load();
+    }
+  });
 
   for (final String id in _figures) {
     for (final (String nom, Brightness clarte) in <(String, Brightness)>[

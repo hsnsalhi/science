@@ -299,6 +299,7 @@ class _ThalesPainter extends CustomPainter {
         text: texte,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: 14,
           fontWeight: gras ? FontWeight.w800 : FontWeight.w600,

@@ -399,6 +399,7 @@ class _TerrePainter extends CustomPainter {
           text: texte,
           style: TextStyle(
             fontFamily: AppTypography.body,
+            fontFamilyFallback: AppTypography.replis,
             color: couleur,
             fontSize: gras ? 14 : 11,
             fontWeight: gras ? FontWeight.w800 : FontWeight.w600,

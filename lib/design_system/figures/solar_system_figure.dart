@@ -392,6 +392,7 @@ class _SystemePainter extends CustomPainter {
           // widgets retombe sur la police par défaut — des rectangles
           // pleins dans les captures de référence.
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: taille,
           fontWeight: gras ? FontWeight.w700 : FontWeight.w500,

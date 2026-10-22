@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:eureka/app/app.dart';
 import 'package:eureka/app/providers.dart';
+import 'package:eureka/core/theme/app_typography.dart';
 import 'package:eureka/data/content/content_catalog.dart';
 import 'package:eureka/data/content/content_loader.dart';
 import 'package:eureka/data/local/key_value_store.dart';
@@ -82,7 +83,11 @@ void main() {
     // Sans chargement explicite, le moteur de test dessine le texte en
     // rectangles : les polices déclarées dans pubspec ne sont pas montées
     // d'office.
-    for (final String family in <String>['Nunito', 'Baloo2']) {
+    for (final String family in <String>[
+      'Nunito',
+      'Baloo2',
+      ...AppTypography.replis,
+    ]) {
       final FontLoader loader = FontLoader(family)
         ..addFont(rootBundle.load('assets/fonts/$family.ttf'));
       await loader.load();

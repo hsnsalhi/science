@@ -243,6 +243,7 @@ class _TestPainter extends CustomPainter {
         text: text,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           fontSize: 13,
           fontWeight: FontWeight.w700,
           fontVariations: const <FontVariation>[FontVariation('wght', 700)],

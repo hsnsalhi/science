@@ -23,7 +23,7 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
 | Contenu rédigé de bout en bout | **159 chapitres** : 636 leçons, 2 704 cartes, 3 317 questions |
 | **68 figures interactives**, dessinées d'après le réel | ✅ |
-| 1 503 tests (domaine, contenu, parcours d'interface) | ✅ |
+| 1 504 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 | Pipeline Android : APK installable, puis Google Play | ✅ |
@@ -87,7 +87,7 @@ partagent — voir [docs/SECRETS.md](docs/SECRETS.md).
 ```bash
 flutter pub get
 flutter run              # appareil ou émulateur connecté
-flutter test             # 1 503 tests
+flutter test             # 1 504 tests
 flutter analyze          # analyse statique stricte
 ```
 
@@ -114,7 +114,7 @@ lib/
 site/          les pages publiques (confidentialité, assistance)
 assets/
   content/       le contenu pédagogique, en JSON
-  fonts/         Nunito et Baloo 2 (variables, embarquées)
+  fonts/         Nunito, Baloo 2, et deux replis pour le grec
 test/
   domain/        moteurs XP, séries, maîtrise, quiz
   data/          validation du contenu réellement embarqué

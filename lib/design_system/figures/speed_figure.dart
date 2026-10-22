@@ -266,6 +266,7 @@ class _PistePainter extends CustomPainter {
         text: texte,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: 10,
           fontWeight: FontWeight.w600,

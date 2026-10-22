@@ -266,6 +266,7 @@ class _HorlogePainter extends CustomPainter {
           text: '$i',
           style: const TextStyle(
             fontFamily: AppTypography.body,
+            fontFamilyFallback: AppTypography.replis,
             color: Color(0xFF2E261F),
             fontSize: 14,
             fontWeight: FontWeight.w800,

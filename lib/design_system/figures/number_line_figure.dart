@@ -283,6 +283,7 @@ class _DroitePainter extends CustomPainter {
         text: texte,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: gras ? 14 : 10,
           fontWeight: gras ? FontWeight.w800 : FontWeight.w600,

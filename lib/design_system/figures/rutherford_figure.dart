@@ -483,7 +483,7 @@ class _RutherfordPainter extends CustomPainter {
     ).round();
     final Offset position = versEcran(points[index]);
     Realisme.sphere(canvas, position, 5.5, couleur: tokens.error);
-    _etiquette(canvas, 'alpha', position + const Offset(6, -18), tokens.error);
+    _etiquette(canvas, 'α', position + const Offset(6, -18), tokens.error);
   }
 
   /// Le repère de visée : la distance au noyau, mesurée et nommée.
@@ -511,6 +511,8 @@ class _RutherfordPainter extends CustomPainter {
       text: TextSpan(
         text: texte,
         style: TextStyle(
+          fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: 11.5,
           fontWeight: FontWeight.w600,

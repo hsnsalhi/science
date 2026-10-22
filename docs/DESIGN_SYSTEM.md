@@ -48,6 +48,11 @@ sombre sans une seule condition.
 
 - **Baloo 2** pour les titres : arrondie, chaleureuse, donne le ton « jeu ».
 - **Nunito** pour le texte : très lisible en petit corps, formes ouvertes.
+- **Deux polices de repli**, consultées glyphe par glyphe pour ce que les
+  deux premières ne dessinent pas : l’alphabet grec et les opérateurs
+  mathématiques. Elles ne sont jamais la police principale d’un style, et
+  leur arrivée n’a modifié aucune capture de référence. Détail et licences
+  dans `assets/fonts/README.md`.
 
 Les deux sont des polices **variables** embarquées dans l'application : un
 seul fichier couvre toutes les graisses, et rien n'est téléchargé à

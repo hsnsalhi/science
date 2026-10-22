@@ -293,6 +293,8 @@ class _CarrePainter extends CustomPainter {
       text: TextSpan(
         text: texte,
         style: TextStyle(
+          fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: 11.5,
           fontWeight: FontWeight.w600,

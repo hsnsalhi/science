@@ -196,7 +196,7 @@ class _WaveFigureState extends State<WaveFigure>
           style: AppTypography.formula(size: 16, color: tokens.inkMuted),
         ),
         Text(
-          'v / f = '
+          'λ = v / f = '
           '${NumericQuestion.formatNumber((lambda * 100).roundToDouble() / 100)}'
           ' m',
           textAlign: TextAlign.center,
@@ -209,7 +209,7 @@ class _WaveFigureState extends State<WaveFigure>
                     '${NumericQuestion.formatNumber(
                       (periodeMs * 100).roundToDouble() / 100,
                     )} ms, et le mouvement est ralenti.'
-              : 'La longueur d’onde dépasse les '
+              : 'λ dépasse les '
                     '${NumericQuestion.formatNumber(WaveFigure.fenetre)} m de '
                     'la fenêtre : on n’en voit qu’un morceau.',
           textAlign: TextAlign.center,
@@ -226,7 +226,7 @@ class _WaveFigureState extends State<WaveFigure>
           },
         ),
         Text(
-          'Change le milieu, puis la fréquence : la longueur d’onde suit',
+          'Change le milieu, puis la fréquence : λ suit sans qu’on y touche',
           textAlign: TextAlign.center,
           style: context.text.labelSmall?.copyWith(color: tokens.inkSubtle),
         ),
@@ -575,37 +575,13 @@ class _OndePainter extends CustomPainter {
     canvas.drawLine(Offset(margeGauche, y), Offset(fin, y), crayon);
     canvas.drawLine(Offset(margeGauche, y - 4), Offset(margeGauche, y + 4), crayon);
     canvas.drawLine(Offset(fin, y - 4), Offset(fin, y + 4), crayon);
-    _lambda(canvas, Offset((margeGauche + fin) / 2, y - 17), 13);
-  }
-
-  /// La lettre lambda, tracée au trait.
-  ///
-  /// Aucune des deux polices du projet ne contient le caractère U+03BB,
-  /// alors qu'elles ont pi, delta et oméga ; un `Text` l'afficherait en
-  /// rectangle vide chez l'élève. Et c'est précisément le symbole que ce
-  /// chapitre doit apprendre à lire : le remplacer par le mot aurait
-  /// coûté plus cher que de le dessiner.
-  void _lambda(Canvas canvas, Offset centreBas, double hauteur) {
-    final double largeur = hauteur * 0.72;
-    final Offset sommet = Offset(centreBas.dx - largeur * 0.12, centreBas.dy - hauteur);
-    final Offset basDroite = Offset(centreBas.dx + largeur / 2, centreBas.dy);
-    final Offset basGauche = Offset(centreBas.dx - largeur / 2, centreBas.dy);
-    // La branche part du tiers haut de la jambe principale, comme sur un
-    // lambda d'imprimerie.
-    final Offset depart = sommet + (basDroite - sommet) * 0.38;
-
-    canvas.drawPath(
-      Path()
-        ..moveTo(sommet.dx, sommet.dy)
-        ..lineTo(basDroite.dx, basDroite.dy)
-        ..moveTo(depart.dx, depart.dy)
-        ..lineTo(basGauche.dx, basGauche.dy),
-      Paint()
-        ..color = ink
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = hauteur * 0.14
-        ..strokeCap = StrokeCap.round
-        ..strokeJoin = StrokeJoin.round,
+    _texte(
+      canvas,
+      'λ',
+      Offset((margeGauche + fin) / 2, y - 21),
+      ink,
+      15,
+      centre: true,
     );
   }
 

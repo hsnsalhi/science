@@ -340,6 +340,7 @@ class _TrajectoirePainter extends CustomPainter {
         text: texte,
         style: TextStyle(
           fontFamily: AppTypography.body,
+          fontFamilyFallback: AppTypography.replis,
           color: couleur,
           fontSize: 11,
           fontWeight: FontWeight.w700,

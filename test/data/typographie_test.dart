@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:eureka/core/theme/app_typography.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -71,10 +72,22 @@ void main() {
     return couverts;
   }
 
+  /// Les points de code que Nunito dessine elle-même.
   late Set<int> nunito;
+
+  /// Tout ce que l'application sait dessiner : Nunito, plus les polices
+  /// de repli déclarées dans [AppTypography.replis] et câblées sur
+  /// chaque style. Un caractère couvert par l'une des trois s'affiche.
+  late Set<int> dessinables;
 
   setUpAll(() async {
     nunito = pointsDeCode(await rootBundle.load('assets/fonts/Nunito.ttf'));
+    dessinables = <int>{...nunito};
+    for (final String repli in AppTypography.replis) {
+      dessinables.addAll(
+        pointsDeCode(await rootBundle.load('assets/fonts/$repli.ttf')),
+      );
+    }
   });
 
   test('la police du corps de texte couvre un alphabet crédible', () {
@@ -91,7 +104,33 @@ void main() {
     expect(nunito.length, greaterThan(300));
   });
 
-  test('tout le contenu s’affiche avec la police du corps de texte', () async {
+  test('les polices de repli apportent le grec et les opérateurs', () {
+    // Ce que Nunito n'a pas et que les replis doivent fournir. Sans ce
+    // test, un repli vidé par erreur ne se verrait qu'à l'écran d'un
+    // élève, et seulement sur les chapitres qui s'en servent.
+    for (final String c in <String>['λ', 'θ', 'ω', 'ρ', 'α', 'Λ', 'Π']) {
+      expect(nunito, isNot(contains(c.runes.first)));
+      expect(
+        dessinables,
+        contains(c.runes.first),
+        reason: 'le grec « $c » n’est dessiné par aucune police',
+      );
+    }
+    for (final String c in <String>['∈', '⊂', '∪', '⇒', '∀', '→', '⁺', '⁻']) {
+      expect(
+        dessinables,
+        contains(c.runes.first),
+        reason: 'le symbole « $c » n’est dessiné par aucune police',
+      );
+    }
+    // Nunito reste la police principale : les replis ne doivent pas
+    // s'être substitués à elle pour l'alphabet courant.
+    for (final String c in <String>['a', 'é', 'ç']) {
+      expect(nunito, contains(c.runes.first));
+    }
+  });
+
+  test('tout le contenu s’affiche avec les polices embarquées', () async {
     // La liste des fichiers vient du catalogue lui-même : c'est
     // exactement ce qui est embarqué et lu par l'application.
     const String catalogue = 'assets/content/catalog.json';
@@ -114,7 +153,7 @@ void main() {
     for (final String chemin in fichiers) {
       final String texte = await rootBundle.loadString(chemin);
       for (final int point in texte.runes) {
-        if (point < 128 || nunito.contains(point)) continue;
+        if (point < 128 || dessinables.contains(point)) continue;
         absents
             .putIfAbsent(chemin.split('/').last, () => <String>{})
             .add(
@@ -148,7 +187,7 @@ void main() {
         final String ligne = lignes[i];
         if (ligne.trimLeft().startsWith('//')) continue;
         for (final int point in ligne.runes) {
-          if (point < 128 || nunito.contains(point)) continue;
+          if (point < 128 || dessinables.contains(point)) continue;
           absents
               .putIfAbsent('${entite.path}:${i + 1}', () => <String>{})
               .add(

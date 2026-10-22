@@ -459,6 +459,7 @@ class _BalancePainter extends CustomPainter {
           text: 'x',
           style: TextStyle(
             fontFamily: AppTypography.body,
+            fontFamilyFallback: AppTypography.replis,
             color: Colors.white.withValues(alpha: 0.95),
             fontSize: 9,
             fontWeight: FontWeight.w800,

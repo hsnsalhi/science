@@ -74,6 +74,7 @@ abstract final class AppTheme {
       canvasColor: bg,
       textTheme: textTheme,
       fontFamily: AppTypography.body,
+      fontFamilyFallback: AppTypography.replis,
       extensions: <ThemeExtension<dynamic>>[tokens],
       splashFactory: InkSparkle.splashFactory,
       // Les interactions de l'application sont animées à la main (enfoncement,

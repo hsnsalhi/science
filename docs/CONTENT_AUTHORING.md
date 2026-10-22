@@ -85,18 +85,32 @@ cours lisible sur un téléphone.
 
 Les formules s'écrivent en Unicode : `a² + b² = c²`, `√2`, `×`, `÷`, `π`, `≈`.
 
-**Attention au jeu de caractères.** Les polices du projet ne couvrent pas
-tout Unicode, et un caractère absent est dessiné comme un rectangle vide —
-sans la moindre erreur, chez l'élève et nulle part ailleurs. Sont notamment
-absents : les flèches (`→`, `←`), les lettres grecques minuscules (`α`,
-`ρ`, `τ`), l'exposant en lettre (`xⁿ`), les quantificateurs (`∀`, `∃`), les
-coches (`✓`, `✗`) et les crochets de partie entière. Écrire « vers », « 2^n »,
-« il existe » ou « l'angle a » règle le problème.
+**Le jeu de caractères s'est élargi, il n'est pas infini.** Un caractère
+qu'aucune police embarquée ne dessine apparaît comme un rectangle vide —
+sans la moindre erreur, chez l'élève et nulle part ailleurs.
 
-`flutter test test/data/typographie_test.dart` lit la table de caractères des
-polices et refuse tout contenu qui ne s'afficherait pas. Il vaut mieux le
-lancer avant d'écrire une formule inhabituelle que découvrir des carrés sur
-une capture d'écran.
+Sont désormais disponibles, grâce à deux polices de repli décrites dans
+`assets/fonts/README.md` :
+
+- tout l'alphabet grec, majuscules et minuscules : `λ`, `θ`, `ω`, `ρ`, `α`,
+  `Δ`, `Σ`, `Ω`, et les variantes `ϑ ϕ ϖ ϱ ϵ` ;
+- les opérateurs et les flèches : `∈ ∉ ⊂ ⊃ ∪ ∩ ∀ ∃ ⇒ ⇔ → ← ↑ ↓ ↔ ∇ ∝ ⊥ ≡
+  ∧ ∨ ¬ ⌈⌉⌊⌋` ;
+- les exposants et indices en lettre ou en signe : `xⁿ`, `Mg²⁺`, `Cl⁻`,
+  `MgCl₂`.
+
+Restent absents : les coches (`✓`, `✗`), les symboles décoratifs et
+l'essentiel des blocs Unicode au-delà des mathématiques courantes.
+
+Deux habitudes valent mieux qu'une liste à retenir. D'abord, le symbole
+s'écrit quand c'est le symbole qu'il faut apprendre à lire — `λ = v / f`
+plutôt que « lambda égale v sur f » — et le mot quand c'est le mot qu'on
+emploie en français, comme « une particule alpha » ou « la sonde lambda ».
+Ensuite, devant un signe inhabituel, on lance
+`flutter test test/data/typographie_test.dart` : il lit les tables de
+caractères des quatre polices et refuse tout contenu qui ne s'afficherait
+pas. Mieux vaut le lancer avant d'écrire une formule que découvrir des
+carrés sur une capture d'écran.
 
 ### Les neuf types de question
 
