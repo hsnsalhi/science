@@ -1,0 +1,575 @@
+{
+  "chapter": "logique-lycee-ensembles-et-operations",
+  "lessons": [
+    {
+      "id": "appartenir-ou-etre-inclus",
+      "title": "Appartenir, ou être inclus",
+      "subtitle": "Deux relations qu’un seul symbole mal choisi confond.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un objet, ses caractères, son rangement",
+          "body": "Touche un animal : les caractères qu’il possède s’allument, et c’est ce qui décide de sa place. L’animal appartient à des groupes ; les groupes, eux, sont inclus les uns dans les autres. Ce sont deux relations différentes, et la figure les montre côte à côte.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux relations, et ce qu’elles relient",
+          "body": "x ∈ A se lit « x appartient à A ». Elle relie un élément à un ensemble.\n\nA ⊂ B se lit « A est inclus dans B ». Elle relie deux ensembles : tout élément de A est aussi élément de B.\n\nConfondre les deux revient à confondre un chat et l’espèce des chats. Le chat appartient à l’espèce ; l’espèce est incluse dans les mammifères.\n\nÉcrire « le chat est inclus dans les mammifères » n’est pas une maladresse de style : c’est une erreur de niveau.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un ensemble peut être élément d’un autre",
+          "body": "Rien n’interdit à un ensemble d’appartenir à un ensemble.\n\nSoit A = {1, 2} et B = {1, 2, A}. Alors A ∈ B, puisque A figure dans la liste. Et A ⊂ B aussi, puisque 1 et 2 sont dans B.\n\nLes deux relations valent en même temps, pour des raisons différentes. C’est rare, et c’est l’exemple qui montre qu’elles ne sont pas deux façons de dire la même chose.\n\nL’ensemble vide, lui, est inclus dans tout ensemble et n’appartient à aucun, sauf si on l’y met.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "L’ensemble des parties",
+          "body": "L’ensemble de toutes les parties d’un ensemble A se note P(A), le « P » de « parties ».\n\nPour A = {1, 2}, ses parties sont ∅, {1}, {2} et {1, 2}. Il y en a quatre.\n\nSi A a n éléments, P(A) en a 2 puissance n : chaque élément est dedans ou dehors, indépendamment des autres.\n\nLes éléments de P(A) sont donc des ensembles, et l’on écrit {1} ∈ P(A) mais {1} ⊂ A. Le même objet, deux relations, deux symboles.",
+          "formula": "|P(A)| = 2 puissance |A|",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le contrôle qui ne trompe pas",
+          "body": "Devant un symbole, se demander ce qu’il relie : un élément à un ensemble, ou deux ensembles ?\n\nSi les deux côtés sont des ensembles, c’est ⊂. Si le côté gauche est un élément, c’est ∈.\n\nEt quand l’élément est lui-même un ensemble, les deux peuvent être vrais ou faux indépendamment : il faut alors vérifier les deux séparément, sans supposer que l’une entraîne l’autre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Faut-il écrire ∈ ou ⊂ ?",
+          "explanation": "∈ relie un élément à un ensemble, ⊂ relie deux ensembles. Le nombre 2 est un élément ; l’ensemble {2} est une partie.",
+          "categories": [
+            "∈",
+            "⊂"
+          ],
+          "items": [
+            {
+              "text": "2 … {1, 2, 3}",
+              "category": 0
+            },
+            {
+              "text": "le chat … l’espèce des chats",
+              "category": 0
+            },
+            {
+              "text": "{1, 2} … {1, 2, 3}",
+              "category": 1
+            },
+            {
+              "text": "les chats … les mammifères",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de parties a un ensemble de 4 éléments ?",
+          "explanation": "2 puissance 4 = 16 : chaque élément est dedans ou dehors, indépendamment des autres.",
+          "answer": 16,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Si A ∈ B, alors A ⊂ B.",
+          "explanation": "Faux en général. Les deux relations sont indépendantes, et il faut les vérifier séparément — même si elles peuvent valoir ensemble.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle relation l’ensemble vide entretient-il avec tout ensemble ?",
+          "explanation": "Il y est inclus, toujours : il n’a aucun élément qui pourrait manquer. Il n’y appartient que si on l’y a mis.",
+          "options": [
+            {
+              "text": "il est inclus dans tout ensemble",
+              "correct": true
+            },
+            {
+              "text": "il appartient à tout ensemble"
+            },
+            {
+              "text": "il n’a aucune relation avec eux"
+            },
+            {
+              "text": "il contient tout ensemble"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pour A = {1, 2}, laquelle de ces écritures est correcte ?",
+          "explanation": "{1} est une partie de A, donc {1} ⊂ A, et c’est aussi un élément de P(A). Écrire {1} ∈ A serait faux.",
+          "options": [
+            {
+              "text": "{1} ⊂ A",
+              "correct": true
+            },
+            {
+              "text": "{1} ∈ A"
+            },
+            {
+              "text": "1 ⊂ A"
+            },
+            {
+              "text": "A ∈ A"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel contrôle applique-t-on devant ∈ ou ⊂ ?",
+          "explanation": "Se demander ce que le symbole relie : un élément à un ensemble, ou deux ensembles.",
+          "options": [
+            {
+              "text": "regarder ce que le symbole relie",
+              "correct": true
+            },
+            {
+              "text": "compter les éléments"
+            },
+            {
+              "text": "vérifier l’ordre alphabétique"
+            },
+            {
+              "text": "chercher l’ensemble le plus grand"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "union-intersection-complementaire",
+      "title": "Union, intersection, complémentaire",
+      "subtitle": "Trois opérations, et les mêmes lois que « et », « ou », « non ».",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les mêmes lignes que pour les connecteurs",
+          "body": "Touche les cases : le « et » n’est vrai que sur une ligne, le « ou » sur trois. L’intersection et l’union suivent exactement ces lignes-là — appartenir à A ∩ B, c’est vérifier « dans A et dans B », et rien d’autre.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois définitions",
+          "body": "A ∪ B est l’ensemble des x qui sont dans A ou dans B, les deux compris.\n\nA ∩ B est l’ensemble des x qui sont dans A et dans B.\n\nLe complémentaire de A dans un ensemble de référence E est l’ensemble des x de E qui ne sont pas dans A.\n\nChacune reprend un connecteur logique : ou, et, non. Les ensembles ne sont pas un sujet de plus — c’est la logique, écrite avec des collections d’objets.",
+          "formula": "x ∈ A ∩ B ⇔ x ∈ A et x ∈ B",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les lois de De Morgan, des deux côtés",
+          "body": "En logique : non(P et Q) = non P ou non Q, et non(P ou Q) = non P et non Q.\n\nEn ensembles : le complémentaire de A ∩ B est l’union des complémentaires, et le complémentaire de A ∪ B est l’intersection des complémentaires.\n\nCe sont les mêmes lois, dites dans deux langages. Les retenir une fois suffit.\n\nEt la même règle vaut en informatique : « non(a et b) » s’écrit « non a ou non b » dans toutes les conditions d’un programme.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Compter sans compter deux fois",
+          "body": "Dans une classe de 30 élèves, 18 font de l’anglais, 15 de l’espagnol, et 7 les deux.\n\nCombien en font au moins une ? Additionner 18 et 15 donne 33, soit plus que la classe : les 7 bilingues ont été comptés deux fois.\n\nLa formule corrige : |A ∪ B| = |A| + |B| − |A ∩ B|, soit 18 + 15 − 7 = 26.\n\nIl reste donc 4 élèves qui n’en font aucune des deux. Le principe d’inclusion-exclusion n’est que cela : retirer ce qu’on a compté deux fois.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le complémentaire n’existe pas sans référence",
+          "body": "Le complémentaire des nombres pairs, c’est quoi ? Les impairs, si l’on parle des entiers. Mais dans les réels, c’est tout sauf les pairs, ce qui est bien plus vaste.\n\nUn complémentaire se prend toujours dans un ensemble de référence, et il faut le nommer.\n\nC’est la même exigence que pour les quantificateurs, qui réclamaient un domaine. Les deux omissions produisent les mêmes faux raisonnements.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque opération à son connecteur.",
+          "explanation": "L’union est le « ou », l’intersection le « et », le complémentaire le « non ». Les ensembles sont la logique écrite avec des collections.",
+          "pairs": [
+            {
+              "left": "A ∪ B",
+              "right": "dans A ou dans B"
+            },
+            {
+              "left": "A ∩ B",
+              "right": "dans A et dans B"
+            },
+            {
+              "left": "le complémentaire de A",
+              "right": "pas dans A"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "30 élèves, 18 en anglais, 15 en espagnol, 7 les deux. Combien en font au moins une ?",
+          "explanation": "18 + 15 − 7 = 26. Additionner sans retirer compterait les bilingues deux fois.",
+          "answer": 26,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien n’en font alors aucune des deux ?",
+          "explanation": "30 − 26 = 4 élèves n’en font aucune des deux. Le total moins ceux qui en font au moins une.",
+          "answer": 4,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le complémentaire de A ∩ B ?",
+          "explanation": "L’union des complémentaires. C’est la loi de De Morgan, la même qu’en logique pour non(P et Q).",
+          "options": [
+            {
+              "text": "l’union des complémentaires",
+              "correct": true
+            },
+            {
+              "text": "l’intersection des complémentaires"
+            },
+            {
+              "text": "le complémentaire de A ∪ B"
+            },
+            {
+              "text": "l’ensemble vide"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le complémentaire d’un ensemble se définit sans ensemble de référence.",
+          "explanation": "Faux. Le complémentaire des pairs est les impairs dans les entiers, et bien plus vaste dans les réels. Il faut nommer la référence.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment s’écrit « non(a et b) » dans une condition de programme ?",
+          "explanation": "« non a ou non b ». C’est la même loi de De Morgan, et elle vaut dans tous les langages.",
+          "options": [
+            {
+              "text": "non a ou non b",
+              "correct": true
+            },
+            {
+              "text": "non a et non b"
+            },
+            {
+              "text": "a ou b"
+            },
+            {
+              "text": "non(a ou b)"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "des-infinis-de-tailles-differentes",
+      "title": "Des infinis de tailles différentes",
+      "subtitle": "Compter ce qu’on ne peut pas finir de compter.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Comparer sans compter",
+          "body": "Monte les objets au-dessus des tiroirs : la figure conclut qu’un tiroir est chargé, sans avoir compté quoi que ce soit. Comparer deux ensembles infinis se fait exactement ainsi — en cherchant un appariement, et non en dénombrant.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment comparer sans compter",
+          "body": "Deux ensembles ont la même taille s’il existe une façon d’apparier leurs éléments un à un, sans reste d’aucun côté.\n\nPour des ensembles finis, cela revient à compter. Pour des ensembles infinis, c’est la seule définition qui tienne, puisqu’on ne peut pas finir de compter.\n\nEt elle réserve des surprises : il y a autant d’entiers pairs que d’entiers, puisqu’on peut apparier n avec 2n.\n\nUn ensemble infini peut donc avoir la même taille qu’une de ses parties strictes. C’est même ce qui définit l’infini.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’hôtel de Hilbert",
+          "body": "Un hôtel a une infinité de chambres, toutes occupées.\n\nUn client arrive. On demande à chacun de passer dans la chambre suivante : l’occupant de la 1 va en 2, celui de la 2 en 3. La chambre 1 se libère, et personne n’est à la rue.\n\nUne infinité de clients arrive. On demande à chacun de passer dans la chambre au numéro double : toutes les chambres impaires se libèrent, et il y en a une infinité.\n\nL’hôtel est toujours plein et toujours capable d’accueillir. Aucune de ces manœuvres n’est possible avec un hôtel fini, et c’est là toute la différence.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Tous les infinis ne sont pas égaux",
+          "body": "Cantor démontre en 1891 qu’on ne peut pas apparier ℕ avec ℝ.\n\nSon argument : supposons une liste de tous les réels entre 0 et 1. On construit alors un nouveau nombre en changeant le premier chiffre du premier, le deuxième du deuxième, et ainsi de suite.\n\nCe nombre diffère de chacun de la liste par au moins un chiffre. Il n’y figure donc pas, et la liste n’était pas complète.\n\nIl y a donc strictement plus de réels que d’entiers. C’est la diagonale de Cantor, et c’est l’une des démonstrations les plus courtes et les plus dérangeantes des mathématiques.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que cela ne veut pas dire",
+          "body": "Pas que les réels seraient « plus infinis » au sens d’aller plus loin : les deux ensembles sont sans fin.\n\nCela veut dire qu’aucune liste, même infinie, ne peut les contenir tous — alors que les entiers, les pairs, les rationnels et même les fractions se listent.\n\nLa conséquence pratique est précise : presque tous les réels n’ont aucune description finie. Les nombres qu’on sait nommer, racine de deux, pi, e, forment un ensemble négligeable dans l’océan des réels.\n\nOn passe sa scolarité avec des nombres exceptionnels, en croyant qu’ils sont la règle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment compare-t-on la taille de deux ensembles infinis ?",
+          "explanation": "En cherchant un appariement un à un, sans reste. On ne peut pas les dénombrer, donc c’est la seule définition qui tienne.",
+          "options": [
+            {
+              "text": "en cherchant un appariement un à un",
+              "correct": true
+            },
+            {
+              "text": "en comptant leurs éléments"
+            },
+            {
+              "text": "en comparant leurs bornes"
+            },
+            {
+              "text": "on ne peut pas les comparer"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il y a deux fois moins d’entiers pairs que d’entiers.",
+          "explanation": "Faux. On apparie n avec 2n, sans reste d’aucun côté : les deux ensembles ont la même taille.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment l’hôtel de Hilbert, plein, accueille-t-il une infinité de clients ?",
+          "explanation": "En demandant à chacun de passer dans la chambre au numéro double : toutes les impaires se libèrent, et il y en a une infinité.",
+          "options": [
+            {
+              "text": "chacun passe dans la chambre au numéro double",
+              "correct": true
+            },
+            {
+              "text": "chacun passe dans la chambre suivante"
+            },
+            {
+              "text": "on construit un nouvel étage"
+            },
+            {
+              "text": "c’est impossible"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré Cantor en 1891 ?",
+          "explanation": "Qu’on ne peut pas apparier ℕ avec ℝ : aucune liste, même infinie, ne contient tous les réels.",
+          "options": [
+            {
+              "text": "qu’il y a strictement plus de réels que d’entiers",
+              "correct": true
+            },
+            {
+              "text": "que tous les infinis sont égaux"
+            },
+            {
+              "text": "que les réels sont dénombrables"
+            },
+            {
+              "text": "que pi est transcendant"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle conséquence pratique l’argument de Cantor a-t-il ?",
+          "explanation": "Presque tous les réels n’ont aucune description finie. Les nombres qu’on sait nommer forment un ensemble négligeable.",
+          "options": [
+            {
+              "text": "presque aucun réel n’a de description finie",
+              "correct": true
+            },
+            {
+              "text": "les réels sont plus grands que les entiers"
+            },
+            {
+              "text": "on ne peut pas calculer avec les réels"
+            },
+            {
+              "text": "pi n’existe pas vraiment"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cet ensemble peut-il être mis en liste, ou non ?",
+          "explanation": "Entiers, pairs et rationnels se listent. Les réels, et les parties de ℕ, ne se listent pas : c’est la diagonale de Cantor.",
+          "categories": [
+            "se met en liste",
+            "ne se met pas en liste"
+          ],
+          "items": [
+            {
+              "text": "les entiers naturels",
+              "category": 0
+            },
+            {
+              "text": "les entiers pairs",
+              "category": 0
+            },
+            {
+              "text": "les rationnels",
+              "category": 0
+            },
+            {
+              "text": "les réels",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-raisonner-sur-des-ensembles",
+      "title": "Défi : raisonner sur des ensembles",
+      "subtitle": "Une égalité d’ensembles se démontre par double inclusion.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La table qui tranche les égalités",
+          "body": "Parcours les quatre lignes : deux expressions logiques sont égales si elles donnent la même colonne. Deux ensembles sont égaux pour exactement la même raison — leurs conditions d’appartenance coïncident ligne à ligne.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode de la double inclusion",
+          "body": "Pour démontrer A = B, on démontre A ⊂ B puis B ⊂ A.\n\nPour A ⊂ B, on prend un x quelconque de A — « soit x ∈ A » — et l’on démontre que x ∈ B.\n\nLe mot « quelconque » fait tout le travail : on n’a le droit d’utiliser sur x que ce que l’appartenance à A garantit, rien de plus.\n\nPuis on recommence dans l’autre sens. C’est long, c’est mécanique, et c’est sans surprise — ce qui est exactement ce qu’on demande à une méthode.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une égalité démontrée de bout en bout",
+          "body": "Montrons que A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).\n\nPremier sens. Soit x dans le membre de gauche. Alors x ∈ A, et x ∈ B ou x ∈ C. Si x ∈ B, alors x ∈ A ∩ B. Sinon x ∈ C, donc x ∈ A ∩ C. Dans les deux cas x est dans la réunion de droite.\n\nSecond sens. Soit x dans le membre de droite. Il est dans A ∩ B ou dans A ∩ C. Dans les deux cas il est dans A, et il est dans B ou dans C. Donc il est à gauche.\n\nLes deux inclusions tiennent, donc les ensembles sont égaux. On remarque que la démonstration n’a fait que distribuer un « et » sur un « ou ».",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les pièges d’un diagramme",
+          "body": "Un dessin de deux ou trois patates qui se chevauchent aide à deviner un résultat, et c’est son seul rôle.\n\nIl ne démontre rien : on a dessiné un cas particulier, et rien ne garantit qu’il représente tous les cas.\n\nAvec quatre ensembles, aucun diagramme plan de ce type ne peut même montrer toutes les intersections possibles — il en faudrait seize régions distinctes, et les patates ne les fournissent pas.\n\nDessiner pour deviner, rédiger pour démontrer.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Deux relations à ne pas confondre, appartenance et inclusion.\n\nTrois opérations qui sont les trois connecteurs logiques, et qui obéissent donc aux mêmes lois.\n\nUne méthode de démonstration mécanique, la double inclusion.\n\nEt un résultat qui dérange, la diagonale de Cantor, pour rappeler que les ensembles ne sont pas qu’un langage commode : ils produisent des théorèmes que rien d’autre n’atteignait.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la démonstration de A = B dans l’ordre.",
+          "explanation": "Prendre un x quelconque de A, montrer qu’il est dans B, recommencer dans l’autre sens, puis conclure à l’égalité.",
+          "items": [
+            "soit x un élément quelconque de A",
+            "montrer que x appartient à B",
+            "recommencer en partant de B",
+            "conclure que les deux ensembles sont égaux"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que garantit le mot « quelconque » dans « soit x quelconque de A » ?",
+          "explanation": "Qu’on n’utilisera sur x que ce que l’appartenance à A garantit. C’est ce qui rend la démonstration valable pour tous les éléments.",
+          "options": [
+            {
+              "text": "qu’on n’utilisera que ce que A garantit",
+              "correct": true
+            },
+            {
+              "text": "que x est choisi au hasard"
+            },
+            {
+              "text": "que x est le premier élément"
+            },
+            {
+              "text": "que A n’est pas vide"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait au fond la démonstration de A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C) ?",
+          "explanation": "Elle distribue un « et » sur un « ou ». L’égalité d’ensembles n’est que cette loi logique, écrite avec des collections.",
+          "options": [
+            {
+              "text": "elle distribue un « et » sur un « ou »",
+              "correct": true
+            },
+            {
+              "text": "elle compte les éléments"
+            },
+            {
+              "text": "elle utilise De Morgan"
+            },
+            {
+              "text": "elle raisonne par l’absurde"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un diagramme de patates démontre une égalité d’ensembles.",
+          "explanation": "Faux. Il aide à deviner : on a dessiné un cas particulier, et rien ne garantit qu’il représente tous les cas.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de régions distinctes faudrait-il pour représenter toutes les intersections de 4 ensembles ?",
+          "explanation": "2 puissance 4 = 16 : chaque ensemble contient ou non la région. Aucun diagramme de patates ne les fournit.",
+          "answer": 16,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle de travail ce chapitre propose-t-il pour les diagrammes ?",
+          "explanation": "Dessiner pour deviner, rédiger pour démontrer. Le dessin suggère ; seule la double inclusion établit.",
+          "options": [
+            {
+              "text": "dessiner pour deviner, rédiger pour démontrer",
+              "correct": true
+            },
+            {
+              "text": "ne jamais dessiner"
+            },
+            {
+              "text": "dessiner après avoir démontré"
+            },
+            {
+              "text": "remplacer la rédaction par un schéma"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

@@ -28,7 +28,7 @@ cours de physique — d'où ces deux compléments.
 | Fichier | Famille | Apporte | Copyright |
 |---|---|---|---|
 | `NotoSansGrec.ttf` | `NotoSansGrec` | L'alphabet grec complet, ses variantes (ϑ ϕ ϖ ϱ ϵ) et les exposants et indices `⁺ ⁻ ⁿ ₊ ₋ ₙ` | Copyright 2022 The Noto Project Authors |
-| `NotoSansMath.ttf` | `NotoSansMath` | Les opérateurs et flèches : `∈ ∉ ⊂ ⊃ ∪ ∩ ∀ ∃ ⇒ ⇔ → ← ↑ ↓ ↔ ∇ ∓ ∝ ⊥ ≡ ≪ ≫ ∧ ∨ ¬ ⌈⌉⌊⌋` | Copyright 2022 Google LLC |
+| `NotoSansMath.ttf` | `NotoSansMath` | Les opérateurs et flèches `∈ ∉ ⊂ ⊃ ∪ ∩ ∀ ∃ ⇒ ⇔ → ← ↑ ↓ ↔ ∇ ∓ ∝ ⊥ ≡ ≪ ≫ ∧ ∨ ¬ ⌈⌉⌊⌋ ∖ ∅`, et les ensembles de nombres `ℝ ℕ ℤ ℚ ℂ` | Copyright 2022 Google LLC |
 
 Elles ne sont **jamais** la police principale d'un style. Elles sont déclarées
 dans `AppTypography.replis` et câblées sur chaque `TextStyle` via
@@ -47,7 +47,7 @@ C'est visible si on le cherche, et sans conséquence sur la lisibilité.
 
 Les fichiers de repli sont des extraits : les polices complètes pèsent 2,0 Mo
 et 1,0 Mo, ce qui serait absurde pour quelques dizaines de signes. Les
-extraits pèsent 54 Ko et 19 Ko (54 040 et 19 228 octets).
+extraits pèsent 54 Ko et 23 Ko (54 040 et 23 120 octets).
 
 ```sh
 pip install fonttools brotli
@@ -63,7 +63,7 @@ pyftsubset notosans.ttf --output-file=NotoSansGrec.ttf \
 
 pyftsubset notosansmath.ttf --output-file=NotoSansMath.ttf \
   --layout-features='*' --name-IDs='*' --notdef-outline \
-  --text='∇∓∈∉⊂⊃⊆⊇∪∩∀∃∄⇒⇔→←↑↓↔∝∴⊥≡≪≫⌈⌉⌊⌋∧∨¬'
+  --text='∇∓∈∉⊂⊃⊆⊇∪∩∀∃∄⇒⇔→←↑↓↔∝∴⊥≡≪≫⌈⌉⌊⌋∧∨¬ℝℕℤℚℂ∖∅'
 ```
 
 `--name-IDs='*'` n'est pas un détail : c'est ce qui conserve les mentions de

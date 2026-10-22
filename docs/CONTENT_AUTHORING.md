@@ -95,7 +95,8 @@ Sont désormais disponibles, grâce à deux polices de repli décrites dans
 - tout l'alphabet grec, majuscules et minuscules : `λ`, `θ`, `ω`, `ρ`, `α`,
   `Δ`, `Σ`, `Ω`, et les variantes `ϑ ϕ ϖ ϱ ϵ` ;
 - les opérateurs et les flèches : `∈ ∉ ⊂ ⊃ ∪ ∩ ∀ ∃ ⇒ ⇔ → ← ↑ ↓ ↔ ∇ ∝ ⊥ ≡
-  ∧ ∨ ¬ ⌈⌉⌊⌋` ;
+  ∧ ∨ ¬ ⌈⌉⌊⌋ ∖ ∅` ;
+- les ensembles de nombres : `ℝ`, `ℕ`, `ℤ`, `ℚ`, `ℂ` ;
 - les exposants et indices en lettre ou en signe : `xⁿ`, `Mg²⁺`, `Cl⁻`,
   `MgCl₂`.
 

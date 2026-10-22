@@ -1,0 +1,598 @@
+{
+  "chapter": "logique-lycee-paradoxes-et-pieges",
+  "lessons": [
+    {
+      "id": "ni-vraie-ni-fausse",
+      "title": "Une phrase qui ne peut être ni vraie ni fausse",
+      "subtitle": "L’autoréférence, et ce qu’elle casse.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux valeurs, et pas une troisième",
+          "body": "Touche les cases : chaque ligne donne une valeur, vrai ou faux, jamais autre chose. Toute la logique de ce cours tient dans cette contrainte. La leçon montre une phrase qui refuse les deux, et ce que cela coûte.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le menteur, en quatre lignes",
+          "body": "Considérons la phrase : « cette phrase est fausse ».\n\nSupposons-la vraie. Alors ce qu’elle affirme est le cas, donc elle est fausse. Contradiction.\n\nSupposons-la fausse. Alors ce qu’elle affirme n’est pas le cas, donc elle n’est pas fausse, donc elle est vraie. Contradiction encore.\n\nLes deux hypothèses mènent à l’absurde. Il n’y a pas de troisième option : la phrase n’est donc pas un énoncé logique, quoi qu’en dise la grammaire française.",
+          "id": "c2"
+        },
+        {
+          "kind": "astuce",
+          "title": "Ce que la grammaire ne garantit pas",
+          "body": "Une suite de mots correcte n’est pas forcément une affirmation dont on peut dire si elle est vraie.\n\n« Le nombre sept est bleu » est grammaticale et sans valeur de vérité, faute de sens. « Cette phrase est fausse » est grammaticale et sans valeur de vérité, pour une autre raison : elle parle d’elle-même.\n\nLa logique ne travaille donc pas sur les phrases en général, mais sur celles dont on peut dire qu’elles sont vraies ou fausses. Trier d’abord, raisonner ensuite.\n\nC’est le premier filtre, et il est souvent sauté.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le barbier, puis l’ensemble de Russell",
+          "body": "Dans un village, le barbier rase tous ceux qui ne se rasent pas eux-mêmes, et seulement ceux-là. Qui rase le barbier ?\n\nS’il se rase, il appartient aux gens qui se rasent eux-mêmes, donc le barbier ne le rase pas, donc il ne se rase pas. Et l’inverse se tient aussi mal. Un tel village ne peut pas exister.\n\nRussell transpose en 1901 le même mécanisme aux ensembles : soit R l’ensemble des ensembles qui ne s’appartiennent pas eux-mêmes. R ∈ R entraîne R ∉ R, et réciproquement.\n\nCe n’est plus une curiosité de village : la définition naïve d’ensemble, « toute collection d’objets », est contradictoire. Les mathématiques ont dû revoir leurs fondations.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le signal à repérer",
+          "body": "Un paradoxe de ce type demande trois ingrédients : une affirmation, une négation, et une référence de l’affirmation à elle-même.\n\nDès que les trois sont réunis, il faut se méfier. Et la sortie n’est jamais de trancher la question posée : elle est de refuser la question.\n\nLes mathématiciens n’ont pas répondu « qui rase le barbier » ; ils ont interdit de construire certains ensembles. Refuser une question est parfois la seule réponse honnête.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que conclut-on de « cette phrase est fausse » ?",
+          "explanation": "Que ce n’est pas un énoncé logique. Les deux hypothèses, vraie et fausse, mènent à une contradiction, et il n’y a pas de troisième valeur.",
+          "options": [
+            {
+              "text": "ce n’est pas un énoncé logique",
+              "correct": true
+            },
+            {
+              "text": "elle est vraie"
+            },
+            {
+              "text": "elle est fausse"
+            },
+            {
+              "text": "elle est vraie et fausse à la fois"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre le raisonnement sur le menteur.",
+          "explanation": "On suppose vraie, on obtient faux ; on suppose fausse, on obtient vrai ; les deux étant absurdes, la phrase n’est pas un énoncé.",
+          "items": [
+            "supposons la phrase vraie",
+            "alors ce qu’elle affirme est le cas, donc elle est fausse",
+            "supposons-la fausse : on obtient qu’elle est vraie",
+            "aucune des deux valeurs ne tient : ce n’est pas un énoncé"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette phrase a-t-elle une valeur de vérité ?",
+          "explanation": "Une phrase grammaticale n’est pas forcément vraie ou fausse : il faut qu’elle affirme quelque chose de vérifiable, et qu’elle ne parle pas d’elle-même.",
+          "categories": [
+            "vraie ou fausse",
+            "ni l’une ni l’autre"
+          ],
+          "items": [
+            {
+              "text": "sept est un nombre premier",
+              "category": 0
+            },
+            {
+              "text": "la Lune tourne autour de la Terre",
+              "category": 0
+            },
+            {
+              "text": "cette phrase est fausse",
+              "category": 1
+            },
+            {
+              "text": "le nombre sept est bleu",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quels sont les trois ingrédients d’un paradoxe du menteur ?",
+          "explanation": "Une affirmation, une négation, et une référence de l’affirmation à elle-même. Dès que les trois sont réunis, il faut se méfier.",
+          "options": [
+            {
+              "text": "une affirmation, une négation, une autoréférence",
+              "correct": true
+            },
+            {
+              "text": "deux affirmations contraires"
+            },
+            {
+              "text": "une hypothèse et une conclusion"
+            },
+            {
+              "text": "un ensemble et son complémentaire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a montré Russell en 1901 ?",
+          "explanation": "Que la définition naïve d’ensemble est contradictoire : l’ensemble des ensembles qui ne s’appartiennent pas s’appartient si et seulement s’il ne s’appartient pas.",
+          "options": [
+            {
+              "text": "que la définition naïve d’ensemble est contradictoire",
+              "correct": true
+            },
+            {
+              "text": "que le barbier existe"
+            },
+            {
+              "text": "que les réels ne sont pas dénombrables"
+            },
+            {
+              "text": "qu’aucun ensemble n’est vide"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Face au barbier, les mathématiciens ont tranché qui le rase.",
+          "explanation": "Faux. Ils ont refusé la question, en interdisant de construire certains ensembles. Refuser une question est parfois la seule réponse honnête.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "valide-ou-seulement-convaincant",
+      "title": "Valide, ou seulement convaincant",
+      "subtitle": "Deux raisonnements : l’un trompe, l’autre choque et tient.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le seul cas qui met « si… alors » en défaut",
+          "body": "Touche P et M pour changer de cas. L’implication ne tombe que sur un seul des quatre, et sa réciproque tombe sur un autre. Le cas où il ne pleut pas et où le sol est mouillé est celui qui porte toute la leçon : il sépare les deux.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La réciproque n’est pas la phrase",
+          "body": "« S’il pleut, le sol est mouillé » est vraie. « Si le sol est mouillé, il pleut » est fausse : quelqu’un a pu arroser.\n\nConfondre les deux est le faux raisonnement le plus répandu, et il passe partout. « Les malades de cette grippe ont de la fièvre, donc qui a de la fièvre a cette grippe » a la même forme, et la même faille.\n\nLe test est mécanique : chercher un cas où la conclusion est vraie sans la condition. S’il en existe un, la réciproque est fausse.\n\nEt ce test ne demande aucun talent, seulement de penser à le faire.",
+          "id": "c2"
+        },
+        {
+          "kind": "figure",
+          "title": "Un raisonnement qui choque et qui tient",
+          "body": "Monte les objets au-dessus des tiroirs : la figure affirme qu’un tiroir est chargé sans dire lequel. Cela paraît une esquive, et c’est une démonstration complète — elle établit qu’il en existe un, ce qui était tout ce qu’on demandait.",
+          "figureId": "tiroirs",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Prouver qu’une chose existe sans la montrer",
+          "body": "Dans Paris, deux personnes ont le même nombre de cheveux. On n’en nomme aucune, et c’est démontré : il y a plus d’habitants que de nombres de cheveux possibles.\n\nLe raisonnement ne produit pas d’exemple, et n’en a pas besoin. « Il existe » est une affirmation plus faible que « voici », et c’est elle qu’on a établie.\n\nCe genre de preuve dérange parce qu’on attend d’une démonstration qu’elle fabrique l’objet. Beaucoup n’en fabriquent aucun.\n\nUne démonstration non constructive est une démonstration. Refuser de la croire parce qu’elle ne montre rien, c’est exiger autre chose que ce qui était demandé.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le critère, et ce qu’il n’est pas",
+          "body": "Un raisonnement est valide si la vérité des prémisses garantit celle de la conclusion, dans tous les cas sans exception.\n\nCe critère ne dit rien du caractère convaincant. Une inversion de réciproque convainc et n’est pas valide ; un argument par les tiroirs ne convainc pas et l’est.\n\nLa sensation d’évidence n’est donc pas un instrument de mesure. Chercher un contre-exemple, en est un.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quel cas « s’il pleut, le sol est mouillé » est-elle fausse ?",
+          "explanation": "Seulement quand il pleut et que le sol est sec. Les trois autres cas la laissent debout.",
+          "options": [
+            {
+              "text": "il pleut et le sol est sec",
+              "correct": true
+            },
+            {
+              "text": "il ne pleut pas et le sol est sec"
+            },
+            {
+              "text": "il ne pleut pas et le sol est mouillé"
+            },
+            {
+              "text": "il pleut et le sol est mouillé"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel cas rend l’implication vraie et sa réciproque fausse ?",
+          "explanation": "Il ne pleut pas et le sol est mouillé : quelqu’un a arrosé. C’est ce cas qui sépare la phrase de sa réciproque.",
+          "options": [
+            {
+              "text": "il ne pleut pas et le sol est mouillé",
+              "correct": true
+            },
+            {
+              "text": "il pleut et le sol est mouillé"
+            },
+            {
+              "text": "il pleut et le sol est sec"
+            },
+            {
+              "text": "il ne pleut pas et le sol est sec"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "« Les malades de cette grippe ont de la fièvre, donc qui a de la fièvre a cette grippe » est un raisonnement valide.",
+          "explanation": "Faux. C’est une inversion de réciproque : bien d’autres causes donnent de la fièvre.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel test détecte une réciproque fausse ?",
+          "explanation": "Chercher un cas où la conclusion est vraie sans la condition. S’il en existe un, la réciproque tombe.",
+          "options": [
+            {
+              "text": "chercher un cas où la conclusion vaut sans la condition",
+              "correct": true
+            },
+            {
+              "text": "vérifier que la phrase est grammaticale"
+            },
+            {
+              "text": "compter les cas favorables"
+            },
+            {
+              "text": "demander si elle semble plausible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une démonstration qui n’exhibe aucun exemple ne démontre rien.",
+          "explanation": "Faux. « Il existe » est plus faible que « voici », et c’est bien « il existe » qu’on avait à établir. Le raisonnement par les tiroirs en est l’exemple type.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un raisonnement valide ?",
+          "explanation": "Un raisonnement où la vérité des prémisses garantit celle de la conclusion, dans tous les cas sans exception. Le caractère convaincant n’y entre pas.",
+          "options": [
+            {
+              "text": "la vérité des prémisses garantit celle de la conclusion",
+              "correct": true
+            },
+            {
+              "text": "un raisonnement que tout le monde accepte"
+            },
+            {
+              "text": "un raisonnement qui exhibe un exemple"
+            },
+            {
+              "text": "un raisonnement sans hypothèse"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "un-probleme-sans-algorithme",
+      "title": "Un problème sans algorithme",
+      "subtitle": "Certaines questions n’ont pas de programme, et on peut le démontrer.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une machine qui ajoute un, pas à pas",
+          "body": "Touche les cases du ruban pour changer le nombre, puis avance d’un pas ou va jusqu’au bout. Trois règles suffisent, et il n’y a aucune mémoire cachée : le ruban et le nom de l’état sont tout ce que la machine sait. Vérifie le résultat par une addition.",
+          "figureId": "machine-turing",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi un modèle aussi pauvre",
+          "body": "Un ruban, une tête, un nom d’état, quelques règles. Aucune variable, aucune fonction, aucun écran.\n\nTuring propose ce modèle en 1936 non pour programmer, mais pour démontrer. Avec un modèle riche, on ne peut rien prouver sur l’ensemble des programmes ; avec celui-là, on peut raisonner sur tous les programmes possibles.\n\nEt l’on démontre qu’il ne perd rien : tout ce qu’un ordinateur d’aujourd’hui calcule, cette machine le calcule aussi, plus lentement.\n\nUn modèle se choisit pauvre quand on veut démontrer, et riche quand on veut construire.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La machine qui ne s’arrête pas",
+          "body": "La figure finit par s’arrêter. Rien ne l’y obligeait : change les règles et la tête peut faire des allers-retours sans fin.\n\nRegarder tourner un programme ne dit donc pas s’il s’arrêtera. Après mille pas, on sait qu’il n’a pas fini en mille pas, et rien de plus.\n\nD’où la question : existe-t-il un programme qui, lisant n’importe quel programme et son entrée, dise s’il s’arrête ?\n\nLa réponse est non, et ce n’est pas un aveu d’ignorance : c’est un théorème.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La démonstration, en trois mouvements",
+          "body": "Supposons qu’un tel programme existe ; appelons-le Arrête, qui répond oui ou non.\n\nConstruisons alors Pervers, qui lit un programme p, demande à Arrête ce que fait p sur lui-même, et fait l’inverse : si Arrête dit « il s’arrête », Pervers boucle sans fin ; sinon, Pervers s’arrête.\n\nDonnons enfin Pervers à Pervers. S’il s’arrête, c’est qu’Arrête a dit non, donc il ne devait pas s’arrêter. Et l’autre branche se contredit pareillement.\n\nArrête ne peut donc pas exister. On reconnaît les trois ingrédients de la leçon 1 : une affirmation, sa négation, et un programme qui se reçoit lui-même.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce théorème change",
+          "body": "Aucun outil ne détectera jamais toutes les boucles infinies d’un programme. Ce n’est pas un défaut des outils actuels.\n\nAucun antivirus ne décidera jamais, pour tout programme, s’il est malveillant — la propriété se ramène à l’arrêt.\n\nLes outils réels font donc autre chose : ils répondent sur une partie des cas et disent « je ne sais pas » ailleurs, ou n’acceptent que des programmes dont l’arrêt est garanti par construction.\n\nSavoir qu’un problème est indécidable n’est pas décourageant. C’est ce qui évite de passer sa vie à chercher l’outil parfait.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Tout ce qu’une machine de Turing « sait » tient dans quoi ?",
+          "explanation": "Le ruban, la case lue et le nom de l’état. Aucune mémoire cachée, aucune variable.",
+          "options": [
+            {
+              "text": "le ruban, la case lue et le nom de l’état",
+              "correct": true
+            },
+            {
+              "text": "ses règles et ses variables"
+            },
+            {
+              "text": "sa mémoire et son écran"
+            },
+            {
+              "text": "le nombre de pas déjà faits"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Turing choisit-il un modèle aussi pauvre ?",
+          "explanation": "Pour démontrer. Avec un modèle riche, on ne peut rien prouver sur l’ensemble des programmes possibles.",
+          "options": [
+            {
+              "text": "pour pouvoir raisonner sur tous les programmes possibles",
+              "correct": true
+            },
+            {
+              "text": "parce que les ordinateurs n’existaient pas"
+            },
+            {
+              "text": "pour aller plus vite"
+            },
+            {
+              "text": "pour économiser la mémoire"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "En regardant tourner un programme assez longtemps, on finit par savoir s’il s’arrêtera.",
+          "explanation": "Faux. Après mille pas, on sait qu’il n’a pas fini en mille pas, et rien de plus.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la démonstration de l’indécidabilité de l’arrêt dans l’ordre.",
+          "explanation": "On suppose Arrête, on construit Pervers qui fait l’inverse de sa réponse, on le lui donne lui-même, et la contradiction élimine Arrête.",
+          "items": [
+            "supposons qu’un programme Arrête existe",
+            "construisons Pervers, qui fait l’inverse de ce qu’Arrête annonce",
+            "donnons Pervers à Pervers lui-même",
+            "les deux branches se contredisent : Arrête n’existe pas"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que font les outils réels de détection de boucles ?",
+          "explanation": "Ils répondent sur une partie des cas et disent « je ne sais pas » ailleurs, ou n’acceptent que des programmes dont l’arrêt est garanti par construction.",
+          "options": [
+            {
+              "text": "ils répondent sur une partie des cas seulement",
+              "correct": true
+            },
+            {
+              "text": "ils détectent toutes les boucles"
+            },
+            {
+              "text": "ils exécutent le programme jusqu’au bout"
+            },
+            {
+              "text": "ils comptent les lignes de code"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’indécidabilité de l’arrêt vient de ce que nos ordinateurs sont trop lents.",
+          "explanation": "Faux. C’est un théorème, démontré pour tout programme possible, quelle que soit la machine.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-demonter-un-paradoxe",
+      "title": "Défi : démonter un paradoxe",
+      "subtitle": "Nommer l’étape fautive, et non seulement sentir que ça cloche.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’absurde employé correctement",
+          "body": "Suis la construction : on suppose une fraction irréductible, et la parité de chaque terme se contredit. Ici la contradiction conclut — elle élimine l’hypothèse de départ. Dans un paradoxe, au contraire, il n’y a aucune hypothèse à éliminer, et c’est ce qui change tout.",
+          "figureId": "racine-de-deux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode : trois questions",
+          "body": "Première question : chaque étape est-elle correcte, prise séparément ? Souvent oui, et c’est pour cela que le paradoxe tient debout.\n\nDeuxième question : les mots gardent-ils le même sens d’un bout à l’autre ? Beaucoup de paradoxes vivent d’un glissement silencieux.\n\nTroisième question : une opération interdite a-t-elle été faite ? Diviser par zéro, additionner une infinité de termes, s’appliquer à soi-même.\n\nSentir que ça cloche ne suffit pas. Un paradoxe est démonté quand on peut pointer la ligne.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Démonstration que un égale deux",
+          "body": "Soit a = b. Multiplions par a : a² = ab. Retirons b² des deux côtés : a² − b² = ab − b².\n\nFactorisons : (a − b)(a + b) = b(a − b). Divisons par (a − b) : a + b = b. Avec a = b, cela donne 2b = b, puis 2 = 1.\n\nLa ligne fautive est la division par (a − b). Puisque a = b, ce facteur est nul, et diviser par zéro n’est pas une opération.\n\nToutes les autres lignes sont justes. C’est la troisième question de la méthode qui tranche, et elle la tranche en une ligne.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Achille et la tortue",
+          "body": "Achille court dix fois plus vite que la tortue, partie cent mètres devant. Quand il atteint son point de départ, elle a avancé de dix mètres ; quand il y est, d’un mètre, et ainsi de suite. Zénon conclut qu’il ne la rattrape jamais.\n\nChaque étape est correcte, et il y en a bien une infinité. Le glissement est ailleurs : une infinité d’étapes n’exige pas une durée infinie.\n\nLes durées forment 10 s, 1 s, 0,1 s, et leur somme vaut 100 / 9 secondes, soit environ 11,1 s. Achille rattrape la tortue au bout de ce temps, à environ 111 mètres.\n\nLe paradoxe reposait sur une confusion entre « infiniment nombreux » et « infiniment long ». C’est la deuxième question qui le démonte.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une phrase grammaticale n’est pas forcément vraie ou fausse, et l’autoréférence est le signal à repérer.\n\nUn raisonnement convaincant n’est pas forcément valide, et un raisonnement choquant peut l’être.\n\nCertains problèmes n’ont aucun algorithme, et c’est démontré, non supposé.\n\nEt un paradoxe se démonte en pointant une ligne, pas en haussant les épaules. Ces quatre habitudes servent bien au-delà d’un cours de logique.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Où se trouve la faute dans la démonstration que 1 = 2 ?",
+          "explanation": "Dans la division par (a − b). Puisque a = b, ce facteur est nul, et diviser par zéro n’est pas une opération.",
+          "options": [
+            {
+              "text": "la division par (a − b), qui est nul",
+              "correct": true
+            },
+            {
+              "text": "la factorisation"
+            },
+            {
+              "text": "la multiplication par a"
+            },
+            {
+              "text": "la soustraction de b²"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Au bout de combien de secondes Achille rattrape-t-il la tortue ?",
+          "explanation": "La somme 10 + 1 + 0,1 + … vaut 100 / 9, soit environ 11,1 secondes. Une infinité d’étapes, une durée finie.",
+          "min": 0,
+          "max": 60,
+          "answer": 11.1,
+          "tolerance": 1,
+          "unit": "s",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quelle confusion repose le paradoxe de Zénon ?",
+          "explanation": "Entre « infiniment nombreux » et « infiniment long ». Les étapes sont en nombre infini, et leur durée totale est finie.",
+          "options": [
+            {
+              "text": "entre infiniment nombreux et infiniment long",
+              "correct": true
+            },
+            {
+              "text": "entre vitesse et accélération"
+            },
+            {
+              "text": "entre distance et durée"
+            },
+            {
+              "text": "entre Achille et la tortue"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Quelle question de la méthode démonte ce paradoxe ?",
+          "explanation": "Le 1 = 2 vient d’une opération interdite ; Zénon et le menteur viennent d’un glissement de sens ou d’une autoréférence, qu’il faut nommer.",
+          "categories": [
+            "une opération interdite",
+            "un glissement de sens"
+          ],
+          "items": [
+            {
+              "text": "la démonstration que 1 = 2",
+              "category": 0
+            },
+            {
+              "text": "additionner une infinité de termes sans précaution",
+              "category": 0
+            },
+            {
+              "text": "Achille et la tortue",
+              "category": 1
+            },
+            {
+              "text": "« cette phrase est fausse »",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui distingue la preuve de l’irrationalité de racine de deux d’un paradoxe ?",
+          "explanation": "Elle part d’une hypothèse que la contradiction élimine. Dans un paradoxe, il n’y a aucune hypothèse à éliminer.",
+          "options": [
+            {
+              "text": "elle part d’une hypothèse que la contradiction élimine",
+              "correct": true
+            },
+            {
+              "text": "elle ne contient aucune contradiction"
+            },
+            {
+              "text": "elle exhibe un exemple"
+            },
+            {
+              "text": "elle est plus courte"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand un paradoxe est-il démonté ?",
+          "explanation": "Quand on peut pointer la ligne fautive. Sentir que ça cloche ne suffit pas.",
+          "options": [
+            {
+              "text": "quand on peut pointer la ligne fautive",
+              "correct": true
+            },
+            {
+              "text": "quand on sent que ça cloche"
+            },
+            {
+              "text": "quand on trouve la conclusion absurde"
+            },
+            {
+              "text": "quand personne ne sait y répondre"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

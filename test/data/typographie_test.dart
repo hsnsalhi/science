@@ -116,7 +116,9 @@ void main() {
         reason: 'le grec « $c » n’est dessiné par aucune police',
       );
     }
-    for (final String c in <String>['∈', '⊂', '∪', '⇒', '∀', '→', '⁺', '⁻']) {
+    for (final String c in <String>[
+      '∈', '⊂', '∪', '⇒', '∀', '→', '⁺', '⁻', 'ℝ', 'ℕ', 'ℤ',
+    ]) {
       expect(
         dessinables,
         contains(c.runes.first),

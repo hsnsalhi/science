@@ -1,0 +1,671 @@
+{
+  "chapter": "logique-lycee-quantificateurs",
+  "lessons": [
+    {
+      "id": "les-deux-quantificateurs",
+      "title": "Les deux quantificateurs",
+      "subtitle": "L’un demande tous les cas, l’autre un seul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le cas qui met une règle en défaut",
+          "body": "Parcours les quatre cas et trouve celui qui rend l’implication fausse. C’est exactement ce qu’un contre-exemple fait à un énoncé en « pour tout » : un seul cas suffit, et il n’en faut pas davantage.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chacun exige",
+          "body": "∀x P(x) se lit « pour tout x, P(x) ». L’énoncé est vrai si P tient dans tous les cas, sans exception.\n\n∃x P(x) se lit « il existe un x tel que P(x) ». L’énoncé est vrai dès qu’un seul cas convient.\n\nLe travail à fournir n’est donc pas le même. Démontrer un « pour tout » demande un raisonnement qui couvre tous les cas ; démontrer un « il existe » demande d’en exhiber un, ou de prouver qu’il y en a un.\n\nEt pour réfuter, les rôles s’échangent exactement.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le tableau des quatre tâches",
+          "body": "Démontrer ∀x P(x) : traiter tous les cas, par un argument général.\n\nRéfuter ∀x P(x) : exhiber un seul contre-exemple.\n\nDémontrer ∃x P(x) : exhiber un seul exemple.\n\nRéfuter ∃x P(x) : traiter tous les cas, et montrer qu’aucun ne convient.\n\nDeux de ces tâches sont faciles et deux sont difficiles, et elles ne tombent pas du même côté. Savoir dans quelle case on se trouve avant de commencer évite de chercher un exemple quand il faut une démonstration.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trois énoncés, trois travaux différents",
+          "body": "« Tout entier pair supérieur à 2 est somme de deux nombres premiers. » C’est la conjecture de Goldbach : vérifiée jusqu’à des quadrillions, et non démontrée depuis 1742. Un seul contre-exemple la réglerait.\n\n« Il existe une infinité de nombres premiers. » Démontré par Euclide en quelques lignes, par l’absurde.\n\n« Tout entier supérieur à 1 admet un diviseur premier. » Vrai, et démontrable en trois lignes par descente.\n\nMême forme apparente, et des difficultés sans commune mesure. La forme logique ne dit pas la difficulté : elle dit seulement quel genre de travail il faut fournir.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’ensemble de référence fait partie de l’énoncé",
+          "body": "« Pour tout x, x² est positif ou nul » est vrai pour les réels.\n\n« Pour tout x, il existe y tel que y² = x » est faux pour les réels et vrai pour les complexes.\n\nUn quantificateur sans domaine ne veut rien dire. On écrit donc ∀x ∈ ℝ, et jamais ∀x tout court.\n\nC’est la première chose à vérifier devant un énoncé qu’on trouve faux : peut-être porte-t-il sur un autre ensemble que celui qu’on a supposé.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette tâche est-elle facile ou difficile, en général ?",
+          "explanation": "Exhiber un exemple ou un contre-exemple est ponctuel. Traiter tous les cas demande un argument général.",
+          "categories": [
+            "exhiber un seul cas",
+            "traiter tous les cas"
+          ],
+          "items": [
+            {
+              "text": "réfuter « pour tout x, P(x) »",
+              "category": 0
+            },
+            {
+              "text": "démontrer « il existe x tel que P(x) »",
+              "category": 0
+            },
+            {
+              "text": "démontrer « pour tout x, P(x) »",
+              "category": 1
+            },
+            {
+              "text": "réfuter « il existe x tel que P(x) »",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de contre-exemples faut-il pour réfuter un énoncé en ∀ ?",
+          "explanation": "Un seul. C’est ce qui rend la réfutation d’un « pour tout » ponctuelle, là où sa démonstration demande un argument général.",
+          "options": [
+            {
+              "text": "un seul",
+              "correct": true
+            },
+            {
+              "text": "au moins deux"
+            },
+            {
+              "text": "une infinité"
+            },
+            {
+              "text": "cela dépend du domaine"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la conjecture de Goldbach ?",
+          "explanation": "Que tout entier pair supérieur à 2 est somme de deux nombres premiers. Vérifiée jusqu’à des quadrillions, non démontrée depuis 1742.",
+          "options": [
+            {
+              "text": "tout pair au-delà de 2 est somme de deux premiers",
+              "correct": true
+            },
+            {
+              "text": "il existe une infinité de nombres premiers"
+            },
+            {
+              "text": "tout entier a un diviseur premier"
+            },
+            {
+              "text": "tout pair est somme de deux carrés"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La forme logique d’un énoncé indique sa difficulté.",
+          "explanation": "Faux. « Tout entier a un diviseur premier » se démontre en trois lignes, Goldbach résiste depuis 1742 : même forme, difficultés sans rapport.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi écrit-on toujours ∀x ∈ ℝ et jamais ∀x seul ?",
+          "explanation": "Parce qu’un quantificateur sans domaine ne veut rien dire : le même énoncé peut être faux sur les réels et vrai sur les complexes.",
+          "options": [
+            {
+              "text": "le domaine fait partie du sens de l’énoncé",
+              "correct": true
+            },
+            {
+              "text": "c’est une convention d’écriture"
+            },
+            {
+              "text": "pour éviter les confusions de lettres"
+            },
+            {
+              "text": "pour pouvoir nier plus facilement"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "« Pour tout x réel, il existe y tel que y² = x. » Cet énoncé est…",
+          "explanation": "Faux sur les réels : aucun carré réel n’est négatif. Il devient vrai sur les complexes, ce qui montre que le domaine est décisif.",
+          "options": [
+            {
+              "text": "faux sur les réels, vrai sur les complexes",
+              "correct": true
+            },
+            {
+              "text": "vrai sur les réels"
+            },
+            {
+              "text": "faux dans tous les cas"
+            },
+            {
+              "text": "dépourvu de sens"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "nier-un-enonce-quantifie",
+      "title": "Nier un énoncé quantifié",
+      "subtitle": "Chaque quantificateur bascule, et la propriété se nie à la fin.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce que nier veut dire, cas par cas",
+          "body": "Touche les cases de la table : la négation renverse chaque ligne, sans exception. Sur un énoncé quantifié, le même renversement s’applique — à ceci près qu’il faut aussi échanger les quantificateurs.",
+          "figureId": "table-de-verite",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La règle, et elle n’a pas d’exception",
+          "body": "La négation de ∀x P(x) est ∃x non P(x).\n\nLa négation de ∃x P(x) est ∀x non P(x).\n\nPour un énoncé à plusieurs quantificateurs, on les bascule tous, dans l’ordre, puis on nie la propriété finale :\n\nnon(∀x ∃y P(x, y)) devient ∃x ∀y non P(x, y).",
+          "formula": "non(∀x P(x)) = ∃x non P(x)",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Nier une phrase de la vie courante",
+          "body": "« Tous les élèves de la classe ont un stylo. »\n\nSa négation n’est pas « aucun élève n’a de stylo », qui est bien plus forte.\n\nC’est « il existe un élève qui n’a pas de stylo » — un seul suffit.\n\nCette erreur-là est quotidienne, et pas seulement en mathématiques : contredire une généralisation ne demande pas d’affirmer la généralisation inverse. Un seul cas suffit, et prétendre davantage affaiblit la réfutation.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Nier une inégalité, c’est nier deux choses",
+          "body": "La négation de « x ≥ 3 » est « x < 3 », et non « x ≤ 3 ».\n\nLa négation de « 2 ≤ x et x ≤ 5 » est « x < 2 ou x > 5 » : le « et » devient « ou », et chaque inégalité large devient stricte.\n\nDeux changements à chaque fois, et c’est l’un des deux qu’on oublie. Le contrôle est immédiat : prendre une valeur qui vérifiait l’énoncé de départ, et vérifier qu’elle ne vérifie pas la négation.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "À quoi la négation sert, concrètement",
+          "body": "À raisonner par l’absurde : on suppose la négation de ce qu’on veut démontrer, et il faut l’avoir écrite correctement sous peine de démontrer autre chose.\n\nÀ savoir ce qu’il faut chercher pour réfuter : la négation d’un « pour tout » dit exactement ce qu’est un contre-exemple.\n\nÀ comprendre ce qu’une définition exclut : nier « la suite converge » donne la définition précise d’une suite divergente, et personne ne la retient autrement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « tous les élèves ont un stylo » ?",
+          "explanation": "« Il existe un élève qui n’en a pas. » « Aucun élève n’en a » est bien plus fort, et contredire ne demande pas d’affirmer l’inverse.",
+          "options": [
+            {
+              "text": "il existe un élève qui n’a pas de stylo",
+              "correct": true
+            },
+            {
+              "text": "aucun élève n’a de stylo"
+            },
+            {
+              "text": "tous les élèves n’ont pas de stylo"
+            },
+            {
+              "text": "certains élèves ont un stylo"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de ∀x ∃y P(x, y) ?",
+          "explanation": "∃x ∀y non P(x, y) : on bascule tous les quantificateurs dans l’ordre, puis on nie la propriété finale.",
+          "options": [
+            {
+              "text": "∃x ∀y non P(x, y)",
+              "correct": true
+            },
+            {
+              "text": "∀x ∃y non P(x, y)"
+            },
+            {
+              "text": "∃x ∃y non P(x, y)"
+            },
+            {
+              "text": "∀x ∀y non P(x, y)"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « x ≥ 3 » ?",
+          "explanation": "« x < 3 », avec une inégalité stricte. Écrire « x ≤ 3 » laisserait 3 vérifier l’énoncé et sa négation.",
+          "options": [
+            {
+              "text": "x < 3",
+              "correct": true
+            },
+            {
+              "text": "x ≤ 3"
+            },
+            {
+              "text": "x > 3"
+            },
+            {
+              "text": "x = 3"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « 2 ≤ x et x ≤ 5 » ?",
+          "explanation": "« x < 2 ou x > 5 » : le « et » devient « ou » et chaque inégalité large devient stricte. Deux changements, pas un.",
+          "options": [
+            {
+              "text": "x < 2 ou x > 5",
+              "correct": true
+            },
+            {
+              "text": "x < 2 et x > 5"
+            },
+            {
+              "text": "x ≤ 2 ou x ≥ 5"
+            },
+            {
+              "text": "5 ≤ x et x ≤ 2"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "À quoi sert de savoir nier correctement ?",
+          "explanation": "À raisonner par l’absurde, à savoir ce qu’est un contre-exemple, et à comprendre ce qu’une définition exclut.",
+          "options": [
+            {
+              "text": "à raisonner par l’absurde",
+              "correct": true
+            },
+            {
+              "text": "à savoir ce qu’il faut chercher pour réfuter",
+              "correct": true
+            },
+            {
+              "text": "à comprendre ce qu’une définition exclut",
+              "correct": true
+            },
+            {
+              "text": "à démontrer plus vite"
+            },
+            {
+              "text": "à éviter les quantificateurs"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment vérifier en dix secondes qu’une négation est correcte ?",
+          "explanation": "Prendre une valeur qui vérifiait l’énoncé de départ, et vérifier qu’elle ne vérifie pas la négation.",
+          "options": [
+            {
+              "text": "tester une valeur qui vérifiait l’énoncé de départ",
+              "correct": true
+            },
+            {
+              "text": "relire la règle"
+            },
+            {
+              "text": "nier une seconde fois"
+            },
+            {
+              "text": "compter les quantificateurs"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-ordre-change-tout",
+      "title": "L’ordre change tout",
+      "subtitle": "Les mêmes mots, permutés, et l’un est vrai, l’autre faux.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un cas où l’existence se prouve sans exemple",
+          "body": "Monte le nombre d’objets au-dessus du nombre de tiroirs : la figure affirme qu’un tiroir contient au moins deux objets sans jamais dire lequel. C’est un « il existe » démontré par comptage, et c’est précisément ce que l’ordre des quantificateurs permet d’exprimer.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux phrases, les mêmes mots",
+          "body": "∀n ∈ ℕ, ∃m ∈ ℕ tel que m > n. Vrai : il suffit de prendre m = n + 1. Le m choisi a le droit de dépendre du n.\n\n∃m ∈ ℕ tel que ∀n ∈ ℕ, m > n. Faux : il faudrait un entier plus grand que tous les autres, lui compris.\n\nLa différence tient à un seul point : ce qui est écrit en premier est choisi en premier, donc sans connaître la suite.\n\nDans le second cas, m doit être fixé avant de savoir à quel n on le comparera. C’est une contrainte bien plus forte.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La règle de lecture, une fois pour toutes",
+          "body": "Lire de gauche à droite, comme un dialogue.\n\n∀ : « donne-moi n’importe quel x, même choisi contre moi ».\n\n∃ : « alors je te fournis un y », et ce y peut dépendre de tous les x déjà donnés, mais d’aucun de ceux qui viendront après.\n\nPermuter deux quantificateurs différents change donc qui choisit en premier, et c’est tout le sens de l’énoncé qui bascule.\n\nEn revanche, permuter deux quantificateurs identiques ne change rien : ∀x ∀y et ∀y ∀x disent la même chose.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une définition de cours où l’ordre est tout",
+          "body": "Une suite converge vers L si, pour tout ε > 0, il existe un rang N à partir duquel tous les termes sont à moins de ε de L.\n\nLe N dépend du ε : plus la marge est petite, plus il faut aller loin. C’est l’ordre ∀ε ∃N.\n\nÉcrire ∃N ∀ε donnerait : il existe un rang à partir duquel les termes sont à moins de n’importe quelle marge de L. Cela signifierait que la suite vaut exactement L à partir de ce rang.\n\nDeux définitions très différentes, pour les mêmes symboles dans un autre ordre. Et la seconde ne décrirait presque aucune suite convergente.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La dépendance cachée se repère au brouillon",
+          "body": "Quand on démontre un énoncé en ∀ε ∃N, le N qu’on construit fait intervenir ε dans son expression.\n\nSi, au milieu d’une démonstration, on se retrouve à choisir un objet avant une quantité dont il dépend, quelque chose ne va pas.\n\nLe réflexe : écrire au brouillon, à côté de chaque objet introduit, de quoi il a le droit de dépendre. La plupart des fausses démonstrations d’analyse se repèrent ainsi en une minute.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cet énoncé sur les entiers est-il vrai ou faux ?",
+          "explanation": "Avec ∀n d’abord, on choisit m = n + 1. Avec ∃m d’abord, il faudrait un entier plus grand que tous, lui compris.",
+          "categories": [
+            "vrai",
+            "faux"
+          ],
+          "items": [
+            {
+              "text": "∀n, ∃m tel que m > n",
+              "category": 0
+            },
+            {
+              "text": "∀n, ∃m tel que m < n + 2",
+              "category": 0
+            },
+            {
+              "text": "∃m tel que ∀n, m > n",
+              "category": 1
+            },
+            {
+              "text": "∃m tel que ∀n, m < n",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi un objet introduit par ∃ a-t-il le droit de dépendre ?",
+          "explanation": "De tout ce qui a été introduit avant lui, et de rien de ce qui vient après. C’est l’ordre de lecture qui le décide.",
+          "options": [
+            {
+              "text": "de ce qui a été introduit avant lui",
+              "correct": true
+            },
+            {
+              "text": "de rien du tout"
+            },
+            {
+              "text": "de tout l’énoncé"
+            },
+            {
+              "text": "de ce qui vient après lui"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Permuter deux quantificateurs identiques change le sens de l’énoncé.",
+          "explanation": "Faux. ∀x ∀y et ∀y ∀x disent la même chose. Seule la permutation de deux quantificateurs différents change qui choisit en premier.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans la définition de la convergence, de quoi N dépend-il ?",
+          "explanation": "De ε : plus la marge est petite, plus il faut aller loin. C’est l’ordre ∀ε ∃N qui l’autorise.",
+          "options": [
+            {
+              "text": "de ε",
+              "correct": true
+            },
+            {
+              "text": "de rien"
+            },
+            {
+              "text": "de la limite L seulement"
+            },
+            {
+              "text": "du premier terme de la suite"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que décrirait la définition écrite ∃N ∀ε ?",
+          "explanation": "Une suite qui vaut exactement L à partir d’un certain rang — ce qui ne décrit presque aucune suite convergente.",
+          "options": [
+            {
+              "text": "une suite égale à L à partir d’un rang",
+              "correct": true
+            },
+            {
+              "text": "la même chose"
+            },
+            {
+              "text": "une suite divergente"
+            },
+            {
+              "text": "une suite bornée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel réflexe repère une dépendance fautive dans une démonstration ?",
+          "explanation": "Noter à côté de chaque objet introduit de quoi il a le droit de dépendre. La plupart des fausses démonstrations d’analyse se voient ainsi.",
+          "options": [
+            {
+              "text": "noter de quoi chaque objet a le droit de dépendre",
+              "correct": true
+            },
+            {
+              "text": "compter les quantificateurs"
+            },
+            {
+              "text": "relire la conclusion"
+            },
+            {
+              "text": "vérifier les inégalités"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ecrire-et-nier",
+      "title": "Défi : écrire, puis nier",
+      "subtitle": "Traduire une phrase française, et la retourner sans faute.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le cas à chercher, toujours le même",
+          "body": "Reviens aux quatre cas : condition remplie, conclusion fausse. Nier un énoncé universel revient à annoncer qu’on va chercher cette case-là, et le défi consiste à dire exactement dans quoi la chercher.",
+          "figureId": "implication",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode de traduction, en trois temps",
+          "body": "Repérer les groupes nominaux quantifiés dans la phrase française : « tout », « chaque », « il y a », « certains », « aucun ».\n\nLes ordonner comme la phrase les ordonne, car le français suit en général le bon ordre — mais le vérifier, car il est parfois ambigu.\n\nÉcrire la propriété finale, en nommant explicitement les objets.\n\nPuis relire à l’envers : l’énoncé écrit dit-il bien ce que la phrase voulait dire ?",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une phrase ambiguë en français, pas en symboles",
+          "body": "« Tout le monde aime quelqu’un. »\n\nPremière lecture : chacun a une personne qu’il aime, pas forcément la même. C’est ∀x ∃y A(x, y).\n\nSeconde lecture : il y a une personne que tout le monde aime. C’est ∃y ∀x A(x, y).\n\nLa phrase française ne tranche pas. Les symboles, eux, obligent.\n\nC’est le principal service que rend cette notation : elle interdit de rester vague là où le langage courant le permet, et elle rend l’ambiguïté visible au moment de traduire.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le « ou » des mathématiques est inclusif",
+          "body": "« Il existe un x qui est pair ou premier » est vrai dès qu’un x vérifie l’une des deux, les deux comprises.\n\nLe français emploie souvent « ou » au sens exclusif : « fromage ou dessert » n’autorise pas les deux.\n\nEn logique, « ou » est toujours inclusif, et l’exclusif s’écrit explicitement « l’un ou l’autre mais pas les deux ».\n\nTraduire sans y penser introduit donc un sens que l’énoncé n’avait pas.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a vraiment construit",
+          "body": "Une écriture qui oblige à dire quel domaine, dans quel ordre, et avec quelles dépendances.\n\nChacune de ces trois exigences correspond à une erreur quotidienne : oublier le domaine, permuter les quantificateurs, faire dépendre un objet de ce qui vient après.\n\nLa notation ne rend pas le raisonnement plus profond. Elle le rend vérifiable, ce qui n’est pas la même chose et vaut souvent mieux.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Quelle lecture de « tout le monde aime quelqu’un » ?",
+          "explanation": "∀x ∃y signifie que chacun a quelqu’un, pas forcément le même. ∃y ∀x signifie qu’une même personne est aimée de tous.",
+          "categories": [
+            "∀x ∃y A(x, y)",
+            "∃y ∀x A(x, y)"
+          ],
+          "items": [
+            {
+              "text": "chacun a une personne qu’il aime",
+              "category": 0
+            },
+            {
+              "text": "personne n’est sans affection",
+              "category": 0
+            },
+            {
+              "text": "il y a une personne aimée de tous",
+              "category": 1
+            },
+            {
+              "text": "une célébrité que tous admirent",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel service la notation quantifiée rend-elle au français ?",
+          "explanation": "Elle interdit de rester vague : là où la phrase française ne tranche pas entre deux lectures, les symboles obligent à choisir.",
+          "options": [
+            {
+              "text": "elle rend l’ambiguïté visible et force à trancher",
+              "correct": true
+            },
+            {
+              "text": "elle abrège l’écriture"
+            },
+            {
+              "text": "elle évite les fautes d’orthographe"
+            },
+            {
+              "text": "elle rend le raisonnement plus profond"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "En logique, « ou » exclut le cas où les deux sont vrais.",
+          "explanation": "Faux. Le « ou » logique est inclusif. L’exclusif doit être écrit explicitement, contrairement à l’usage courant du français.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la négation de « tout le monde aime quelqu’un », au sens ∀x ∃y ?",
+          "explanation": "∃x ∀y non A(x, y) : il existe quelqu’un qui n’aime personne. On bascule les deux quantificateurs et on nie la propriété.",
+          "options": [
+            {
+              "text": "il existe quelqu’un qui n’aime personne",
+              "correct": true
+            },
+            {
+              "text": "personne n’aime personne"
+            },
+            {
+              "text": "tout le monde n’aime personne"
+            },
+            {
+              "text": "il existe quelqu’un que personne n’aime"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles exigences la notation quantifiée impose-t-elle ?",
+          "explanation": "Préciser le domaine, fixer l’ordre, et expliciter les dépendances. Chacune correspond à une erreur quotidienne.",
+          "options": [
+            {
+              "text": "préciser le domaine de chaque variable",
+              "correct": true
+            },
+            {
+              "text": "fixer l’ordre des quantificateurs",
+              "correct": true
+            },
+            {
+              "text": "expliciter de quoi chaque objet dépend",
+              "correct": true
+            },
+            {
+              "text": "démontrer l’énoncé"
+            },
+            {
+              "text": "choisir entre vrai et faux"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la notation apporte au raisonnement ?",
+          "explanation": "Elle le rend vérifiable, et non plus profond. Ce n’est pas la même chose, et cela vaut souvent mieux.",
+          "options": [
+            {
+              "text": "elle le rend vérifiable",
+              "correct": true
+            },
+            {
+              "text": "elle le rend plus profond"
+            },
+            {
+              "text": "elle le rend plus court"
+            },
+            {
+              "text": "elle le rend plus élégant"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
