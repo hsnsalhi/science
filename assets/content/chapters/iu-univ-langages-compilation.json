@@ -1,0 +1,685 @@
+{
+  "chapter": "informatique-universite-theorie-des-langages-et-compilation",
+  "lessons": [
+    {
+      "id": "langages-grammaires-automates",
+      "title": "Langages, grammaires, automates",
+      "subtitle": "Un langage est un ensemble de mots, et une machine qui les reconnaît.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une machine qui lit et décide",
+          "body": "Fais un pas, puis va jusqu’au bout : la machine lit le ruban, change d’état, écrit, avance. Un reconnaisseur de langage est cette même chose en plus simple — il lit, change d’état, et répond oui ou non à la fin. Toute la leçon porte sur ce qu’il faut lui donner comme mémoire selon le langage.",
+          "figureId": "machine-turing",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois objets, et comment ils se correspondent",
+          "body": "Un alphabet : un ensemble fini de symboles. Un mot : une suite finie de symboles. Un langage : un ensemble de mots, souvent infini.\n\nUne grammaire engendre les mots du langage, par règles de réécriture appliquées depuis un symbole de départ.\n\nUn automate reconnaît les mots du langage : on lui donne un mot, il répond oui ou non.\n\nLe résultat central de la théorie est que ces deux points de vue sont équivalents, classe par classe. À chaque type de grammaire correspond exactement un type de machine, et c’est ce qui rend la théorie utile : on choisit la grammaire qu’on peut écrire, et on sait quelle machine il faudra construire.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’automate fini, et ce qu’il ne peut pas",
+          "body": "Un nombre fini d’états, un pointeur qui avance, aucune mémoire autre que l’état courant.\n\nIl reconnaît exactement les langages réguliers — ceux qu’on décrit par une expression régulière. Cela couvre les nombres, les identifiants, les mots-clés : tout le travail du premier étage d’un compilateur.\n\nIl ne peut pas compter sans borne. Reconnaître les mots formés d’autant de parenthèses ouvrantes que de fermantes lui est impossible, parce qu’il faudrait retenir un nombre quelconque, et qu’il n’a que des états en nombre fini.\n\nCette impossibilité se démontre, par le lemme de l’étoile : au-delà d’une certaine longueur, l’automate repasse forcément par un état déjà visité, donc on peut répéter le morceau intermédiaire et il acceptera toujours. Sur les parenthèses, cela produit un mot déséquilibré accepté.",
+          "formula": "un automate fini ne sait pas compter sans borne",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi cela se voit tous les jours",
+          "body": "Une expression régulière ne peut pas vérifier qu’un document balisé est bien formé : les balises s’imbriquent, donc il faut compter sans borne.\n\nC’est la raison technique derrière une règle qu’on répète sans toujours l’expliquer : on n’analyse pas du balisage avec une expression régulière. Ce n’est pas une question de difficulté, c’est une impossibilité de classe.\n\nMême chose pour les expressions arithmétiques parenthésées, pour les blocs d’un langage de programmation, pour les accolades d’un fichier de configuration.\n\nLes bibliothèques d’expressions régulières modernes ajoutent des extensions — références arrière, récursion — qui dépassent les langages réguliers. Elles ne sont donc plus des expressions régulières au sens de la théorie, et leur coût d’exécution peut devenir exponentiel, ce qui est une source réelle de pannes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "L’automate à pile, et ce qu’une pile achète",
+          "body": "Ajoute une pile à l’automate fini : il peut empiler à chaque parenthèse ouvrante et dépiler à chaque fermante. Les parenthèses équilibrées deviennent reconnaissables.\n\nIl reconnaît alors les langages engendrés par les grammaires hors contexte, et c’est la classe dans laquelle tombe la syntaxe de presque tous les langages de programmation.\n\nCe n’est pas une coïncidence : on conçoit les langages pour qu’ils y tombent, parce que l’analyse y est faisable en temps proportionnel à la longueur du texte.\n\nEt la pile ne suffit toujours pas pour tout. Vérifier qu’une variable est déclarée avant d’être employée dépasse cette classe, et c’est pourquoi aucun compilateur ne le fait pendant l’analyse syntaxique : c’est renvoyé à une étape ultérieure.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque notion à sa définition.",
+          "explanation": "Une grammaire engendre, un automate reconnaît, et les deux points de vue sont équivalents classe par classe.",
+          "pairs": [
+            {
+              "left": "alphabet",
+              "right": "un ensemble fini de symboles"
+            },
+            {
+              "left": "mot",
+              "right": "une suite finie de symboles"
+            },
+            {
+              "left": "langage",
+              "right": "un ensemble de mots"
+            },
+            {
+              "left": "grammaire",
+              "right": "des règles qui engendrent les mots"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle mémoire possède un automate fini ?",
+          "explanation": "Aucune autre que son état courant. C’est ce qui l’empêche de compter sans borne.",
+          "options": [
+            {
+              "text": "son état courant, et rien d’autre",
+              "correct": true
+            },
+            {
+              "text": "une pile"
+            },
+            {
+              "text": "un ruban"
+            },
+            {
+              "text": "un compteur"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un automate fini ne reconnaît-il pas les parenthèses équilibrées ?",
+          "explanation": "Parce qu’il faudrait retenir un nombre quelconque d’ouvrantes, et qu’il n’a que des états en nombre fini.",
+          "options": [
+            {
+              "text": "il faudrait retenir un nombre non borné",
+              "correct": true
+            },
+            {
+              "text": "les parenthèses ne sont pas des symboles"
+            },
+            {
+              "text": "le mot est trop long"
+            },
+            {
+              "text": "il n’a pas assez d’états pour les mots longs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi n’analyse-t-on pas du balisage avec une expression régulière ?",
+          "explanation": "Parce que les balises s’imbriquent : il faut compter sans borne. Ce n’est pas une difficulté, c’est une impossibilité de classe.",
+          "options": [
+            {
+              "text": "les balises s’imbriquent, donc il faut compter sans borne",
+              "correct": true
+            },
+            {
+              "text": "les expressions régulières sont trop lentes"
+            },
+            {
+              "text": "le balisage change trop souvent"
+            },
+            {
+              "text": "les attributs posent problème"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’ajoute une pile à un automate fini ?",
+          "explanation": "La reconnaissance des langages hors contexte : il empile à chaque ouvrante et dépile à chaque fermante.",
+          "options": [
+            {
+              "text": "les langages hors contexte",
+              "correct": true
+            },
+            {
+              "text": "la reconnaissance de tout langage"
+            },
+            {
+              "text": "de la vitesse"
+            },
+            {
+              "text": "la vérification des déclarations"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un automate à pile peut vérifier qu’une variable est déclarée avant d’être employée.",
+          "explanation": "Faux. Cela dépasse les langages hors contexte, et c’est pourquoi aucun compilateur ne le fait pendant l’analyse syntaxique.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-hierarchie-de-chomsky",
+      "title": "La hiérarchie de Chomsky",
+      "subtitle": "Quatre classes emboîtées, quatre machines.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La mémoire qui fait la différence",
+          "body": "Empile et dépile : le dernier entré sort le premier. C’est exactement la mémoire d’un automate à pile, et c’est elle qui sépare la deuxième classe de la hiérarchie de la première. Toute la hiérarchie se lit comme une suite d’ajouts de mémoire.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre niveaux, et ce qui les distingue",
+          "body": "Type trois, réguliers : automate fini, aucune mémoire. Reconnaissance en temps proportionnel à la longueur, et en mémoire constante.\n\nType deux, hors contexte : automate à pile. Reconnaissance en temps proportionnel à la longueur pour les grammaires qu’on emploie en pratique.\n\nType un, contextuels : machine dont le ruban est borné par la taille de l’entrée. Reconnaissance possible, mais le coût devient prohibitif.\n\nType zéro, récursivement énumérables : machine de Turing complète. On peut reconnaître les mots du langage, et on ne peut pas toujours rejeter les autres — la machine peut tourner indéfiniment sur un mot qui n’y appartient pas.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’emboîtement, et son prix",
+          "body": "Chaque classe contient strictement la précédente. Il existe donc des langages hors contexte qui ne sont pas réguliers — les parenthèses équilibrées — et des langages contextuels qui ne sont pas hors contexte.\n\nLe prix monte avec la classe, et pas doucement. Du régulier au hors contexte, on passe de la mémoire constante à une mémoire proportionnelle à l’imbrication. Du hors contexte au contextuel, le coût en temps devient exponentiel dans le pire cas.\n\nC’est pourquoi le choix de la classe est une décision d’ingénierie et non de théorie : on prend la classe la plus pauvre qui suffit.\n\nAnalyser un format de données ligne par ligne ? Régulier. Analyser un langage de programmation ? Hors contexte. Au-delà, on sort de l’analyse et on passe à une vérification séparée — exactement ce que fait un compilateur.",
+          "formula": "réguliers ⊂ hors contexte ⊂ contextuels ⊂ énumérables",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un langage de chaque classe, pour fixer les idées",
+          "body": "Régulier : les suites de chiffres. Un automate fini suffit, et c’est ce qu’emploie tout analyseur lexical.\n\nHors contexte mais pas régulier : les mots formés de n parenthèses ouvrantes suivies de n fermantes. Il faut une pile, et elle suffit.\n\nContextuel mais pas hors contexte : les mots formés de n a, puis n b, puis n c. Une pile ne suffit pas, parce qu’en dépilant pour compter les b on perd le nombre à comparer aux c.\n\nÉnumérable mais pas contextuel : les descriptions de programmes qui s’arrêtent. On peut les énumérer en simulant les programmes en parallèle, et on ne peut pas décider à coup sûr qu’un programme donné n’y est pas. C’est le sujet de la leçon quatre.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cette classification tient encore",
+          "body": "Chomsky l’a publiée en 1956, en linguistique, pour décrire les langues humaines. Elle a trouvé son usage ailleurs : dans la construction des compilateurs.\n\nCe qui la rend durable, c’est qu’elle classe non pas des langages mais des besoins en mémoire. Et le besoin en mémoire est une propriété de la structure, pas de la technologie.\n\nConséquence : un langage de programmation conçu aujourd’hui tombe encore dans le type deux, parce que c’est la classe où l’analyse est faisable vite. Ce n’est pas une contrainte historique, c’est un choix renouvelé.\n\nEt l’étage du dessus garde son utilité négative : il dit ce qu’il ne faut pas essayer de faire dans la grammaire. Les vérifications de types et de portée sont contextuelles par nature, donc elles vivent ailleurs.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe les quatre types de la hiérarchie du plus pauvre au plus riche.",
+          "explanation": "Réguliers, hors contexte, contextuels, récursivement énumérables. Chaque classe contient strictement la précédente.",
+          "items": [
+            "réguliers",
+            "hors contexte",
+            "contextuels",
+            "récursivement énumérables"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque classe à sa machine.",
+          "explanation": "La hiérarchie se lit comme une suite d’ajouts de mémoire : rien, une pile, un ruban borné, un ruban libre.",
+          "pairs": [
+            {
+              "left": "réguliers",
+              "right": "automate fini"
+            },
+            {
+              "left": "hors contexte",
+              "right": "automate à pile"
+            },
+            {
+              "left": "contextuels",
+              "right": "ruban borné par l’entrée"
+            },
+            {
+              "left": "énumérables",
+              "right": "machine de Turing"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une pile ne suffit-elle pas pour « n a, puis n b, puis n c » ?",
+          "explanation": "Parce qu’en dépilant pour compter les b on perd le nombre à comparer aux c.",
+          "options": [
+            {
+              "text": "en dépilant pour les b, on perd le nombre pour les c",
+              "correct": true
+            },
+            {
+              "text": "la pile est trop petite"
+            },
+            {
+              "text": "il y a trois symboles au lieu de deux"
+            },
+            {
+              "text": "la grammaire est ambiguë"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle d’ingénierie découle de l’emboîtement ?",
+          "explanation": "Prendre la classe la plus pauvre qui suffit : le coût monte vite avec la classe.",
+          "options": [
+            {
+              "text": "prendre la classe la plus pauvre qui suffit",
+              "correct": true
+            },
+            {
+              "text": "prendre la classe la plus riche disponible"
+            },
+            {
+              "text": "toujours employer une grammaire hors contexte"
+            },
+            {
+              "text": "éviter les automates finis"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Dans quelle classe tombe la syntaxe des langages de programmation ?",
+          "explanation": "Hors contexte, et c’est un choix renouvelé : c’est la classe où l’analyse est faisable en temps proportionnel au texte.",
+          "options": [
+            {
+              "text": "hors contexte",
+              "correct": true
+            },
+            {
+              "text": "régulière"
+            },
+            {
+              "text": "contextuelle"
+            },
+            {
+              "text": "récursivement énumérable"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les vérifications de types ne vivent-elles pas dans la grammaire ?",
+          "explanation": "Parce qu’elles sont contextuelles par nature : elles dépassent la classe où l’analyse syntaxique opère.",
+          "options": [
+            {
+              "text": "elles sont contextuelles par nature",
+              "correct": true
+            },
+            {
+              "text": "elles sont trop lentes"
+            },
+            {
+              "text": "la grammaire serait ambiguë"
+            },
+            {
+              "text": "les types changent à l’exécution"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-etapes-d-un-compilateur",
+      "title": "Les étapes d’un compilateur",
+      "subtitle": "Chaque étage rejette une classe d’erreurs, et laisse passer le reste.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Pourquoi l’analyse doit être linéaire",
+          "body": "Compare n et n² sur le curseur. Un compilateur traite des fichiers de dizaines de milliers de lignes : une analyse quadratique y serait inutilisable. C’est la raison technique pour laquelle on restreint les grammaires acceptées, et non la beauté de la théorie.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les six étages, et ce que chacun rejette",
+          "body": "Analyse lexicale : découper en mots. Rejette un caractère interdit, un littéral mal fermé.\n\nAnalyse syntaxique : construire l’arbre. Rejette une parenthèse manquante, un point-virgule oublié.\n\nAnalyse sémantique : vérifier ce que la grammaire ne peut pas. Rejette une variable non déclarée, une addition entre un entier et une fonction.\n\nPuis le code intermédiaire, les optimisations, et la génération pour une machine donnée. Ces trois derniers étages ne rejettent plus rien : à ce stade, le programme est accepté, et il ne reste qu’à le traduire du mieux possible.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que la table des symboles porte",
+          "body": "Pour chaque nom : son type, sa portée, son emplacement, et si nécessaire sa signature.\n\nC’est la structure qui permet à l’analyse sémantique de faire ce que la grammaire ne pouvait pas. Elle est remplie en descendant dans les blocs et dépilée en sortant, donc c’est encore une pile — une pile de tables.\n\nSon existence explique les messages d’erreur qu’on connaît. « Variable non déclarée » veut dire : absente de toutes les tables ouvertes. « Déjà déclarée » veut dire : présente dans la table courante.\n\nEt elle explique les règles de portée. Un nom déclaré dans un bloc intérieur masque celui du bloc extérieur, parce que la recherche part de la table la plus récemment empilée.",
+          "formula": "portée = pile de tables, recherche du haut vers le bas",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trois optimisations, et ce qu’elles supposent",
+          "body": "Le calcul des constantes. Deux fois trois devient six à la compilation. Suppose que l’opération ne dépende de rien d’autre, ce qui est vrai pour les entiers et faux pour certaines opérations sur les flottants selon le mode d’arrondi.\n\nL’élimination du code mort. Une branche dont la condition est toujours fausse disparaît. Suppose que la condition soit réellement constante, et un compilateur ne le sait pas toujours.\n\nL’insertion de fonction. Le corps remplace l’appel, ce qui supprime un cadre de pile et ouvre d’autres optimisations. Suppose que le gain compense la taille de code ajoutée, et au-delà d’un seuil elle nuit au cache d’instructions.\n\nLes trois montrent la même chose : une optimisation est un pari sur un invariant. Quand l’invariant est faux — et le code indéfini du langage C en offre beaucoup d’occasions — le programme optimisé ne fait pas ce que le programme écrit faisait.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi un bon message d’erreur est difficile",
+          "body": "L’erreur est détectée là où le texte cesse d’être cohérent, et non là où le programmeur s’est trompé. Un point-virgule oublié ligne dix est signalé ligne quatorze.\n\nL’analyseur doit aussi se reprendre : s’il s’arrête à la première erreur, il faut recompiler après chaque correction. S’il continue mal, il produit une cascade de faux messages.\n\nLa stratégie courante est de sauter jusqu’à un point de synchronisation — la fin d’une instruction, la fermeture d’un bloc — et de reprendre là.\n\nC’est pourquoi la qualité des messages est un critère de choix d’un compilateur à part entière, et pourquoi elle a tant progressé depuis dix ans : il s’agit d’un vrai travail d’ingénierie, pas d’une amabilité.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre les étapes d’un compilateur.",
+          "explanation": "Lexicale, syntaxique, sémantique, code intermédiaire, optimisation, génération. Les trois dernières ne rejettent plus rien.",
+          "items": [
+            "analyse lexicale",
+            "analyse syntaxique",
+            "analyse sémantique",
+            "code intermédiaire",
+            "optimisations",
+            "génération de code"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Quel étage rejette cette erreur ?",
+          "explanation": "Le lexical découpe les mots, le syntaxique construit l’arbre, le sémantique vérifie ce que la grammaire ne peut pas.",
+          "categories": [
+            "lexical",
+            "syntaxique",
+            "sémantique"
+          ],
+          "items": [
+            {
+              "text": "un littéral de chaîne mal fermé",
+              "category": 0
+            },
+            {
+              "text": "un caractère interdit",
+              "category": 0
+            },
+            {
+              "text": "une parenthèse manquante",
+              "category": 1
+            },
+            {
+              "text": "une variable non déclarée",
+              "category": 2
+            },
+            {
+              "text": "une addition entre un entier et une fonction",
+              "category": 2
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un nom d’un bloc intérieur masque-t-il celui du bloc extérieur ?",
+          "explanation": "Parce que la recherche part de la table la plus récemment empilée : la portée est une pile de tables.",
+          "options": [
+            {
+              "text": "la recherche part de la table la plus récente",
+              "correct": true
+            },
+            {
+              "text": "le nom extérieur est supprimé"
+            },
+            {
+              "text": "le compilateur préfère le plus court"
+            },
+            {
+              "text": "les deux noms fusionnent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une optimisation, au fond ?",
+          "explanation": "Un pari sur un invariant. Quand l’invariant est faux, le programme optimisé ne fait pas ce que le programme écrit faisait.",
+          "options": [
+            {
+              "text": "un pari sur un invariant",
+              "correct": true
+            },
+            {
+              "text": "une réécriture toujours sûre"
+            },
+            {
+              "text": "une suppression de code inutile"
+            },
+            {
+              "text": "une traduction plus directe"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un point-virgule oublié ligne dix est-il signalé ligne quatorze ?",
+          "explanation": "Parce que l’erreur est détectée là où le texte cesse d’être cohérent, et non là où le programmeur s’est trompé.",
+          "options": [
+            {
+              "text": "l’incohérence apparaît plus loin que la faute",
+              "correct": true
+            },
+            {
+              "text": "le compilateur compte mal les lignes"
+            },
+            {
+              "text": "l’analyse lexicale décale le texte"
+            },
+            {
+              "text": "les messages sont groupés"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un point de synchronisation ?",
+          "explanation": "Un endroit — fin d’instruction, fermeture de bloc — où l’analyseur reprend après une erreur, pour éviter une cascade de faux messages.",
+          "options": [
+            {
+              "text": "un endroit où l’analyseur reprend après une erreur",
+              "correct": true
+            },
+            {
+              "text": "un point d’arrêt pour le débogueur"
+            },
+            {
+              "text": "la fin de l’analyse lexicale"
+            },
+            {
+              "text": "une barrière entre fils d’exécution"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ce-qu-un-compilateur-ne-peut-pas",
+      "title": "Défi : ce qu’aucun compilateur ne pourra faire",
+      "subtitle": "Il y a des questions que la machine ne décidera jamais.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La machine qui sert de preuve",
+          "body": "Lance-la jusqu’au bout : elle s’arrête, et on voit le résultat. Maintenant imagine un ruban pour lequel on ne sait pas si elle s’arrêtera. Le dernier défi du chapitre démontre qu’aucun programme ne peut répondre à cette question dans tous les cas — et que ce n’est pas une limite de notre ingéniosité.",
+          "figureId": "machine-turing",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Une négation, et la contradiction qu’elle produit",
+          "body": "Change les entrées et lis les sorties : la négation inverse, toujours. La démonstration de l’indécidabilité repose entièrement sur une négation placée au bon endroit — une machine qui fait le contraire de ce qu’on prédit d’elle.",
+          "figureId": "table-de-verite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le problème de l’arrêt, et sa démonstration",
+          "body": "Question : existe-t-il un programme qui, recevant la description d’un programme et son entrée, dit toujours si ce programme s’arrête ?\n\nSupposons qu’il existe, et appelons-le l’oracle. Construisons alors un programme qui interroge l’oracle à son propre sujet, et qui fait le contraire : s’il est prédit qu’il s’arrête, il boucle ; s’il est prédit qu’il boucle, il s’arrête.\n\nCe programme s’arrête si et seulement s’il ne s’arrête pas. C’est une contradiction, donc l’oracle n’existe pas.\n\nDémontré par Turing en 1936, avant le premier ordinateur. La démonstration tient en un paragraphe, n’emploie aucune mathématique au-delà de la négation, et vaut pour toute machine concevable — aujourd’hui, demain, quantique ou non.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le théorème de Rice, ou la généralisation",
+          "body": "Toute propriété non triviale du comportement d’un programme est indécidable. Non triviale veut dire : vraie pour certains programmes et fausse pour d’autres.\n\nDonc : est-ce que ce programme calcule la bonne fonction ? Indécidable. Est-ce qu’il déborde un tableau ? Indécidable. Est-ce que ces deux programmes font la même chose ? Indécidable.\n\nDémontré par Henry Rice en 1951, et c’est le résultat le plus utile de la liste pour un ingénieur : il dit qu’aucun outil ne répondra jamais exactement à ces questions.\n\nAttention au périmètre : Rice parle du comportement, pas de la forme du texte. « Ce programme contient-il une division écrite ? » est décidable, et il suffit de regarder. « Ce programme divisera-t-il par zéro ? » ne l’est pas.",
+          "formula": "toute propriété non triviale du comportement est indécidable",
+          "id": "c4"
+        },
+        {
+          "kind": "astuce",
+          "title": "Comment on contourne, sans jamais résoudre",
+          "body": "On se trompe du côté sûr. Un analyseur peut répondre « sûr », « dangereux », ou « je ne sais pas ». Les deux premiers sont fiables, le troisième est le prix de l’indécidabilité.\n\nOn restreint le langage. Un système de types rejette des programmes corrects, et en échange il garantit l’absence de toute une classe d’erreurs. L’emprunt et la durée de vie des références dans certains langages récents fonctionnent exactement ainsi.\n\nOn teste et on mesure, en acceptant d’échantillonner.\n\nEt on démontre à la main, sur les parties critiques, avec un assistant de preuve. Un noyau de système d’exploitation a été démontré correct ainsi — plusieurs années de travail pour quelques milliers de lignes, ce qui dit à la fois que c’est possible et pourquoi ce n’est pas la méthode ordinaire.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un langage se reconnaît par une machine, et la mémoire requise classe les langages. Un automate fini ne sait pas compter sans borne, donc on n’analyse pas du balisage avec une expression régulière.\n\nLa hiérarchie de Chomsky emboîte quatre classes, et la règle pratique est de prendre la plus pauvre qui suffit. La syntaxe des langages de programmation tient dans le type deux par choix, pas par accident.\n\nUn compilateur rejette les erreurs par étages, et chaque étage ne voit que sa classe. Les trois derniers étages ne rejettent plus rien, et chaque optimisation est un pari sur un invariant.\n\nEt l’indécidabilité est une barrière, pas une difficulté. Aucun outil ne dira jamais exactement si un programme est correct. Ce qu’on fait à la place : se tromper du côté sûr, restreindre le langage, tester, et démontrer à la main là où l’enjeu le justifie.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre la démonstration de l’indécidabilité de l’arrêt.",
+          "explanation": "On suppose l’oracle, on construit un programme qui fait le contraire de ce qu’il prédit, et on obtient une contradiction.",
+          "items": [
+            "supposer qu’un oracle de l’arrêt existe",
+            "construire un programme qui l’interroge sur lui-même",
+            "le faire boucler s’il est prédit qu’il s’arrête",
+            "constater qu’il s’arrête si et seulement s’il ne s’arrête pas",
+            "conclure que l’oracle n’existe pas"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "L’indécidabilité de l’arrêt est-elle une limite de nos machines ?",
+          "explanation": "Non : la démonstration vaut pour toute machine concevable, aujourd’hui, demain, quantique ou non.",
+          "options": [
+            {
+              "text": "non, elle vaut pour toute machine concevable",
+              "correct": true
+            },
+            {
+              "text": "oui, un ordinateur plus puissant la lèverait"
+            },
+            {
+              "text": "oui, un ordinateur quantique la lèverait"
+            },
+            {
+              "text": "non, mais seulement pour les machines actuelles"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le théorème de Rice ?",
+          "explanation": "Que toute propriété non triviale du comportement d’un programme est indécidable.",
+          "options": [
+            {
+              "text": "toute propriété non triviale du comportement est indécidable",
+              "correct": true
+            },
+            {
+              "text": "aucun programme ne peut être démontré correct"
+            },
+            {
+              "text": "tout programme s’arrête ou boucle"
+            },
+            {
+              "text": "les compilateurs ne peuvent pas optimiser"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette question est-elle décidable ?",
+          "explanation": "Rice parle du comportement, pas de la forme du texte : regarder le texte est toujours possible, prévoir l’exécution non.",
+          "categories": [
+            "décidable",
+            "indécidable"
+          ],
+          "items": [
+            {
+              "text": "ce programme contient-il une division écrite",
+              "category": 0
+            },
+            {
+              "text": "ce programme compte-t-il plus de mille lignes",
+              "category": 0
+            },
+            {
+              "text": "ce programme divisera-t-il par zéro",
+              "category": 1
+            },
+            {
+              "text": "ces deux programmes font-ils la même chose",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Comment contourne-t-on l’indécidabilité en pratique ?",
+          "explanation": "Se tromper du côté sûr, restreindre le langage, tester, et démontrer à la main là où l’enjeu le justifie.",
+          "options": [
+            {
+              "text": "répondre « je ne sais pas » plutôt que de se tromper",
+              "correct": true
+            },
+            {
+              "text": "restreindre le langage par un système de types",
+              "correct": true
+            },
+            {
+              "text": "tester en acceptant d’échantillonner",
+              "correct": true
+            },
+            {
+              "text": "démontrer à la main les parties critiques",
+              "correct": true
+            },
+            {
+              "text": "employer une machine plus puissante"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que coûte un système de types, et qu’achète-t-il ?",
+          "explanation": "Il rejette des programmes corrects, et garantit en échange l’absence de toute une classe d’erreurs.",
+          "options": [
+            {
+              "text": "il rejette des programmes corrects, et exclut une classe d’erreurs",
+              "correct": true
+            },
+            {
+              "text": "il ralentit l’exécution, et accélère la compilation"
+            },
+            {
+              "text": "il allonge le code, et le rend plus lisible"
+            },
+            {
+              "text": "il ne coûte rien et garantit la correction"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+{
+  "chapter": "informatique-universite-programmation-imperative-et-objet",
+  "lessons": [
+    {
+      "id": "l-etat-et-pourquoi-il-est-difficile",
+      "title": "L’état, et pourquoi il est difficile",
+      "subtitle": "Un programme impératif est une suite de modifications d’état.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’état complet, visible d’un coup d’œil",
+          "body": "Avance d’un pas, puis encore d’un pas. À chaque instant, tout ce que la machine sait tient dans trois champs : le ruban, la case lue, le nom de l’état. Aucune mémoire cachée. C’est cette transparence qu’on perd dès qu’un programme grossit, et toute la leçon porte sur ce qu’on y gagne et ce qu’on y perd.",
+          "figureId": "machine-turing",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que l’état apporte, et ce qu’il coûte",
+          "body": "Il apporte l’efficacité : modifier un tableau en place est bien moins coûteux que d’en construire une copie modifiée.\n\nIl apporte aussi la correspondance directe avec la machine, qui fonctionne par modification de mémoire. Un programme impératif se traduit presque mot pour mot en instructions.\n\nIl coûte la perte de la localité du raisonnement. Pour savoir ce que fait une ligne, il faut savoir ce qui s’est passé avant, et ce qui aurait pu modifier les variables qu’elle lit.\n\nEt il coûte la non-reproductibilité apparente : un même appel, deux fois, peut donner deux résultats différents. C’est l’origine de la majorité des erreurs difficiles.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "L’aliasing, et le piège qu’il crée",
+          "body": "Deux noms peuvent désigner le même objet en mémoire. Modifier par l’un modifie l’autre, et rien dans le code ne le signale.\n\nC’est ce qu’on appelle l’aliasing, et c’est la source d’erreurs la plus difficile à diagnostiquer, parce que la ligne fautive est souvent très loin de la ligne qui échoue.\n\nLe cas classique est de passer une liste à une fonction qui la modifie, en croyant lui en passer une copie. La fonction est correcte, l’appelant est correct, et l’ensemble est faux.\n\nLes remèdes sont connus : rendre les objets non modifiables quand c’est possible, copier explicitement à l’entrée des fonctions, ou documenter clairement qu’une fonction modifie son argument. Aucun langage n’oblige à choisir, et c’est pourquoi l’erreur se répète.",
+          "formula": "deux noms, un seul objet : modifier l’un modifie l’autre",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La portée, et les variables globales",
+          "body": "Une variable locale n’existe que pendant l’exécution de son bloc. C’est une garantie : personne d’autre ne peut la lire ni la modifier.\n\nUne variable globale est lisible et modifiable de partout. Elle supprime donc la possibilité de vérifier une fonction seule : n’importe quelle autre partie du programme peut avoir changé ce qu’elle lit.\n\nC’est pourquoi les variables globales sont proscrites dans presque toutes les conventions de code, et c’est un argument de vérifiabilité et non de style.\n\nLe remède général est le même : une fonction reçoit par ses paramètres et rend par son résultat. Tout le reste est une dépendance cachée, et les dépendances cachées sont ce qui rend un programme impossible à modifier sans le casser.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le fonctionnel propose autre chose",
+          "body": "Un style fonctionnel interdit la modification : au lieu de changer une structure, on en construit une nouvelle.\n\nLe gain est la localité du raisonnement : une expression dépend uniquement de ses arguments, donc elle se vérifie et se teste seule. Et l’exécution en parallèle devient sûre, puisque rien n’est partagé en écriture.\n\nLe coût est la copie. Les langages fonctionnels le réduisent par des structures qui partagent leurs parties communes, mais il ne disparaît pas.\n\nLa pratique courante n’est donc ni l’un ni l’autre : on emploie l’état à l’intérieur de fonctions dont l’extérieur ne le voit pas. Le mot d’ordre est de confiner l’état, non de le supprimer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que l’état mutable apporte-t-il ?",
+          "explanation": "L’efficacité — modifier en place coûte moins qu’une copie — et la correspondance directe avec la machine.",
+          "options": [
+            {
+              "text": "l’efficacité de la modification en place",
+              "correct": true
+            },
+            {
+              "text": "la correspondance directe avec la machine",
+              "correct": true
+            },
+            {
+              "text": "la localité du raisonnement"
+            },
+            {
+              "text": "la reproductibilité des appels"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’aliasing ?",
+          "explanation": "Deux noms désignent le même objet en mémoire : modifier par l’un modifie l’autre, et rien dans le code ne le signale.",
+          "options": [
+            {
+              "text": "deux noms pour un seul objet en mémoire",
+              "correct": true
+            },
+            {
+              "text": "une variable renommée"
+            },
+            {
+              "text": "une copie implicite"
+            },
+            {
+              "text": "un conflit de types"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’aliasing est-il si difficile à diagnostiquer ?",
+          "explanation": "Parce que la ligne fautive est souvent très loin de la ligne qui échoue, et que chaque partie prise séparément est correcte.",
+          "options": [
+            {
+              "text": "la cause est loin de l’effet, et chaque partie est correcte",
+              "correct": true
+            },
+            {
+              "text": "les messages d’erreur sont obscurs"
+            },
+            {
+              "text": "il n’apparaît qu’en production"
+            },
+            {
+              "text": "il dépend du compilateur"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les variables globales sont-elles proscrites ?",
+          "explanation": "Parce qu’elles suppriment la possibilité de vérifier une fonction seule. C’est un argument de vérifiabilité, pas de style.",
+          "options": [
+            {
+              "text": "elles empêchent de vérifier une fonction seule",
+              "correct": true
+            },
+            {
+              "text": "elles consomment plus de mémoire"
+            },
+            {
+              "text": "elles ralentissent le programme"
+            },
+            {
+              "text": "elles sont interdites par les langages"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que gagne un style sans modification ?",
+          "explanation": "La localité du raisonnement, donc la testabilité, et la sûreté de l’exécution en parallèle puisque rien n’est partagé en écriture.",
+          "options": [
+            {
+              "text": "chaque expression se vérifie seule",
+              "correct": true
+            },
+            {
+              "text": "l’exécution en parallèle devient sûre",
+              "correct": true
+            },
+            {
+              "text": "l’économie de mémoire"
+            },
+            {
+              "text": "la vitesse d’exécution"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le mot d’ordre de la pratique courante ?",
+          "explanation": "Confiner l’état, non le supprimer : employer l’état à l’intérieur de fonctions dont l’extérieur ne le voit pas.",
+          "options": [
+            {
+              "text": "confiner l’état, pas le supprimer",
+              "correct": true
+            },
+            {
+              "text": "supprimer tout état"
+            },
+            {
+              "text": "employer l’état partout"
+            },
+            {
+              "text": "remplacer les fonctions par des objets"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "pile-et-recursion",
+      "title": "La pile d’appels et la récursion",
+      "subtitle": "Le dernier appelé finit le premier, et la pile a un fond.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le dernier entré, le premier sorti",
+          "body": "Ajoute plusieurs éléments puis retire-les un à un : la pile rend le dernier entré. Compare avec la file juste à côté, qui fait l’inverse. Les appels de fonction s’empilent exactement comme la pile, et c’est ce qui garantit qu’on revient toujours au bon endroit.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’un appel pose sur la pile",
+          "body": "Les paramètres, les variables locales, et l’adresse de retour. Ensemble, cela s’appelle un cadre de pile.\n\nQuand la fonction rend son résultat, son cadre est retiré, et l’appelante reprend exactement où elle en était.\n\nC’est ce mécanisme qui permet à une fonction de s’appeler elle-même sans se mélanger : chaque appel a son propre cadre, avec ses propres variables locales.\n\nEt c’est ce qui limite la profondeur. Un programme dispose d’une pile de taille fixe, de l’ordre du mégaoctet, et une récursion trop profonde la remplit. Le message de débordement est un bon message : il dit exactement ce qui s’est passé.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Récursion et itération, et quand chacune gagne",
+          "body": "Toute récursion peut être réécrite en boucle, et réciproquement. Le choix est donc une question de lisibilité et de coût, pas de pouvoir d’expression.\n\nLa récursion gagne quand la structure du problème est récursive : parcourir un arbre, découper un intervalle, explorer un graphe. Le code suit alors la structure, et une version itérative demanderait de gérer une pile à la main.\n\nL’itération gagne quand la récursion est linéaire. Calculer une somme par récursion coûte un cadre de pile par élément, pour rien.\n\nCertains langages optimisent le cas où l’appel récursif est la dernière opération : le cadre est réutilisé au lieu d’être empilé. C’est l’élimination des appels terminaux, et elle rend la récursion linéaire gratuite — quand le langage la garantit, ce qui n’est pas le cas de tous.",
+          "formula": "récursion et itération ont le même pouvoir, pas le même coût",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La récursion naïve, et son coût caché",
+          "body": "Calculer un terme de la suite de Fibonacci par la définition récursive directe recalcule les mêmes valeurs un nombre exponentiel de fois.\n\nPour le trentième terme, environ deux millions sept cents mille appels. Pour le cinquantième, plus de quarante milliards. Le programme est correct et inutilisable.\n\nLe remède est de mémoriser les résultats déjà calculés. Le coût tombe alors à proportionnel au rang, et le trentième terme demande trente calculs.\n\nC’est la programmation dynamique, et son principe tient en une phrase : ne jamais recalculer ce qu’on a déjà calculé. Elle s’applique bien au-delà de Fibonacci, et c’est la première chose à tenter devant une récursion qui explose.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le tas, et pourquoi il est distinct",
+          "body": "La pile sert aux appels, et sa taille est connue à la compilation : chaque cadre a une forme fixe. C’est ce qui rend l’empilement et le retrait aussi rapides.\n\nLe tas sert à ce dont on ne connaît la taille qu’à l’exécution : une liste dont on ignore la longueur, un objet qui doit survivre à la fonction qui l’a créé.\n\nLe prix du tas est la gestion : il faut libérer ce qui n’est plus utilisé. Soit à la main, et on oublie — c’est la fuite de mémoire ; soit par un ramasse-miettes, et on paye des pauses imprévisibles.\n\nLa règle pratique est donc : la pile par défaut, le tas quand la durée de vie dépasse l’appel ou que la taille n’est connue qu’à l’exécution. Un objet local rendu par référence est l’erreur classique — son cadre est retiré, et la référence pointe sur rien.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que contient un cadre de pile ?",
+          "explanation": "Les paramètres, les variables locales et l’adresse de retour. C’est ce qui garantit qu’on reprend au bon endroit.",
+          "options": [
+            {
+              "text": "les paramètres",
+              "correct": true
+            },
+            {
+              "text": "les variables locales",
+              "correct": true
+            },
+            {
+              "text": "l’adresse de retour",
+              "correct": true
+            },
+            {
+              "text": "le code de la fonction"
+            },
+            {
+              "text": "les variables globales"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quand la récursion est-elle le bon choix ?",
+          "explanation": "Quand la structure du problème est récursive : arbre, découpage, graphe. Le code suit alors la structure.",
+          "options": [
+            {
+              "text": "quand la structure du problème est récursive",
+              "correct": true
+            },
+            {
+              "text": "toujours, elle est plus élégante"
+            },
+            {
+              "text": "quand le calcul est linéaire"
+            },
+            {
+              "text": "jamais, l’itération est plus rapide"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’élimination des appels terminaux ?",
+          "explanation": "Réutiliser le cadre de pile quand l’appel récursif est la dernière opération. Elle rend la récursion linéaire gratuite, quand le langage la garantit.",
+          "options": [
+            {
+              "text": "réutiliser le cadre quand l’appel est la dernière opération",
+              "correct": true
+            },
+            {
+              "text": "supprimer la récursion à la compilation"
+            },
+            {
+              "text": "limiter la profondeur de pile"
+            },
+            {
+              "text": "mémoriser les résultats"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien d’appels pour le trentième terme de Fibonacci en récursion naïve, en millions ?",
+          "explanation": "Environ 2,7 millions : la définition récursive directe recalcule les mêmes valeurs un nombre exponentiel de fois.",
+          "min": 0,
+          "max": 100,
+          "answer": 2.7,
+          "tolerance": 0.6,
+          "unit": "millions",
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de calculs avec mémorisation, pour le même terme ?",
+          "explanation": "Trente : chaque valeur n’est calculée qu’une fois. C’est la programmation dynamique.",
+          "answer": 30,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le principe de la programmation dynamique ?",
+          "explanation": "Ne jamais recalculer ce qu’on a déjà calculé. C’est la première chose à tenter devant une récursion qui explose.",
+          "options": [
+            {
+              "text": "ne jamais recalculer ce qui est déjà calculé",
+              "correct": true
+            },
+            {
+              "text": "remplacer la récursion par une boucle"
+            },
+            {
+              "text": "augmenter la taille de la pile"
+            },
+            {
+              "text": "paralléliser les appels"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "objets-encapsuler-l-etat",
+      "title": "Les objets, ou comment confiner l’état",
+      "subtitle": "Un objet n’est pas une catégorie : c’est un état plus ses opérations.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des boîtes qui s’emboîtent, et pas toujours",
+          "body": "Touche un animal : ses attributs s’allument, et les boîtes s’emboîtent sans se croiser. L’héritage en programmation copie cette structure, et c’est à la fois son attrait et son piège — les objets d’un programme ne s’emboîtent pas toujours aussi bien que des animaux.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’un objet apporte vraiment",
+          "body": "Il regroupe un état et les opérations qui le manipulent, et il empêche l’accès direct à cet état depuis l’extérieur.\n\nC’est l’encapsulation, et c’est le seul des apports de l’objet qui soit indiscutable. Elle répond exactement au problème de la leçon un : confiner l’état plutôt que le laisser global.\n\nConséquence pratique : on peut changer la représentation interne sans toucher au reste du programme, à condition que les opérations publiques ne changent pas.\n\nUn objet est donc d’abord un contrat : voici ce que je sais faire, et peu importe comment. L’héritage et le polymorphisme viennent après, et ils sont bien plus discutés.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Héritage ou composition, et la règle qui a gagné",
+          "body": "L’héritage dit « est un » : un carré est un rectangle, un chien est un animal. La classe fille reçoit tout de la mère et peut redéfinir.\n\nLa composition dit « a un » : une voiture a un moteur. L’objet contient un autre objet et lui délègue ce qu’il ne sait pas faire.\n\nLe problème de l’héritage est qu’il lie fortement : un changement dans la classe mère casse les filles, et le lien ne se défait pas. Le célèbre cas du carré et du rectangle le montre — si un rectangle a une méthode qui change sa largeur seule, un carré ne peut pas l’hériter sans cesser d’être un carré.\n\nD’où la règle devenue standard : préférer la composition à l’héritage. Elle n’interdit pas l’héritage, elle en fait le second choix.",
+          "formula": "héritage : « est un » ; composition : « a un »",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le principe de substitution, et comment on le viole",
+          "body": "Si une classe hérite d’une autre, on doit pouvoir employer la fille partout où la mère est attendue, sans que le programme cesse de fonctionner. C’est le principe de substitution, énoncé par Barbara Liskov.\n\nLe violer est facile et courant : une fille qui refuse une opération de la mère, qui restreint les valeurs acceptées, ou qui change le sens d’une méthode.\n\nLe symptôme est reconnaissable : du code qui teste le type réel d’un objet pour décider quoi faire. Si l’on doit demander « es-tu un carré ou un rectangle », la hiérarchie est mauvaise.\n\nLa règle de travail est donc de concevoir l’héritage depuis les usages, et non depuis les ressemblances. Deux objets qui se ressemblent ne sont pas forcément interchangeables, et c’est l’interchangeabilité qui compte.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que l’objet ne règle pas",
+          "body": "Il ne règle pas le partage d’état entre objets. Deux objets qui détiennent une référence vers un troisième le partagent, et l’encapsulation de chacun n’y change rien.\n\nIl ne règle pas la concurrence. Un objet dont les méthodes sont appelées depuis deux fils d’exécution est exposé aux mêmes courses que n’importe quelle variable partagée.\n\nEt il ne règle pas la complexité : un programme de cent classes mal découpées est plus difficile à suivre qu’un programme de mille lignes de fonctions.\n\nL’objet est donc un outil de confinement, et un bon. Il n’est pas une méthode de conception, et les quinze années où il a été vendu comme telle ont produit beaucoup de hiérarchies dont personne ne voulait.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel apport de l’objet est indiscutable ?",
+          "explanation": "L’encapsulation : regrouper un état et ses opérations, et interdire l’accès direct. Elle répond au problème de l’état global.",
+          "options": [
+            {
+              "text": "l’encapsulation",
+              "correct": true
+            },
+            {
+              "text": "l’héritage"
+            },
+            {
+              "text": "le polymorphisme"
+            },
+            {
+              "text": "la réutilisation du code"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette relation relève-t-elle de l’héritage, ou de la composition ?",
+          "explanation": "L’héritage dit « est un », la composition dit « a un ». La règle standard est de préférer la seconde.",
+          "categories": [
+            "héritage, « est un »",
+            "composition, « a un »"
+          ],
+          "items": [
+            {
+              "text": "un chien est un animal",
+              "category": 0
+            },
+            {
+              "text": "un carré est un rectangle",
+              "category": 0
+            },
+            {
+              "text": "une voiture a un moteur",
+              "category": 1
+            },
+            {
+              "text": "une facture a une liste de lignes",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le problème du cas carré-rectangle ?",
+          "explanation": "Si un rectangle a une méthode qui change sa largeur seule, un carré ne peut pas l’hériter sans cesser d’être un carré.",
+          "options": [
+            {
+              "text": "le carré ne peut pas hériter d’une méthode qui change une seule dimension",
+              "correct": true
+            },
+            {
+              "text": "le carré a moins d’attributs"
+            },
+            {
+              "text": "les deux n’ont pas la même aire"
+            },
+            {
+              "text": "il n’y a pas de problème"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme le principe de substitution de Liskov ?",
+          "explanation": "Qu’on doit pouvoir employer la fille partout où la mère est attendue, sans que le programme cesse de fonctionner.",
+          "options": [
+            {
+              "text": "la fille doit être utilisable partout où la mère est attendue",
+              "correct": true
+            },
+            {
+              "text": "la fille doit avoir plus de méthodes"
+            },
+            {
+              "text": "la mère ne doit pas être instanciée"
+            },
+            {
+              "text": "l’héritage doit être unique"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel symptôme signale une mauvaise hiérarchie ?",
+          "explanation": "Du code qui teste le type réel d’un objet pour décider quoi faire. Si l’on doit demander « es-tu un carré », la hiérarchie est mauvaise.",
+          "options": [
+            {
+              "text": "du code qui teste le type réel de l’objet",
+              "correct": true
+            },
+            {
+              "text": "trop de classes filles"
+            },
+            {
+              "text": "des noms de classes longs"
+            },
+            {
+              "text": "un héritage sur plus de deux niveaux"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que l’objet ne règle-t-il pas ?",
+          "explanation": "Le partage d’état entre objets, la concurrence, et la complexité de découpage. Il confine l’état, et ce n’est pas une méthode de conception.",
+          "options": [
+            {
+              "text": "le partage d’état entre objets",
+              "correct": true
+            },
+            {
+              "text": "les courses entre fils d’exécution",
+              "correct": true
+            },
+            {
+              "text": "la complexité d’un mauvais découpage",
+              "correct": true
+            },
+            {
+              "text": "le confinement de l’état"
+            },
+            {
+              "text": "la lisibilité des opérations publiques"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-invariants-et-tests",
+      "title": "Défi : invariants et tests",
+      "subtitle": "Un invariant démontre, un test échantillonne.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une boucle, et ce qui reste vrai à chaque tour",
+          "body": "Règle le nombre de répétitions et regarde le tracé. À chaque tour, quelque chose reste vrai : le robot est sur une case de la grille, et son orientation est l’une des quatre. Nommer ce qui reste vrai est exactement ce que la leçon demande.",
+          "figureId": "boucle-robot",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Un invariant de structure",
+          "body": "Ajoute et retire des éléments. À tout instant, le nombre d’éléments de la pile est le nombre d’ajouts moins le nombre de retraits, et il n’est jamais négatif. Cette seconde affirmation est un invariant, et c’est elle qui garantit qu’un retrait sur pile vide est une erreur et non un comportement.",
+          "figureId": "pile-file",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’est un invariant de boucle",
+          "body": "Une propriété vraie avant la boucle, préservée par chaque tour, et qui, combinée à la condition d’arrêt, donne le résultat voulu.\n\nPour une recherche du maximum, l’invariant est : la variable courante contient le maximum des éléments déjà parcourus. Il est vrai avant le premier tour, chaque tour le préserve, et à la sortie « déjà parcourus » veut dire « tous ».\n\nTrois vérifications, et la boucle est démontrée — pas testée, démontrée. C’est la méthode de Hoare, publiée en 1969.\n\nSon coût est de devoir trouver l’invariant, et c’est la partie difficile. Son bénéfice est que l’exercice révèle presque toujours l’erreur avant qu’on ait écrit un test.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’un test peut, et ce qu’il ne peut pas",
+          "body": "Un test exécute le programme sur un cas et compare au résultat attendu. Il établit que le programme est correct sur ce cas, et sur aucun autre.\n\nUn programme à deux entiers de trente-deux bits a deux puissance soixante-quatre couples d’entrées possibles. Les tester tous est exclu, donc tout test est un échantillon.\n\nLa couverture de code mesure quelles lignes ont été exécutées. Cent pour-cent de couverture ne prouve rien sur la correction : une ligne exécutée avec une seule valeur reste non éprouvée.\n\nD’où la hiérarchie : un invariant démontré vaut mieux qu’un test, un test vaut mieux qu’une relecture, et une couverture élevée ne vaut rien par elle-même.",
+          "formula": "un invariant démontre, un test échantillonne",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "L’état apporte l’efficacité et coûte la localité du raisonnement. L’aliasing en est le piège le plus coûteux, parce que chaque partie prise séparément est correcte.\n\nLa pile garantit le retour au bon endroit et a un fond. Une récursion naïve peut être correcte et inutilisable, et la mémorisation ramène l’exponentiel au linéaire.\n\nL’objet confine l’état, et c’est son seul apport indiscutable. Préférer la composition à l’héritage, et concevoir depuis les usages et non depuis les ressemblances.\n\nEt un invariant démontre là où un test échantillonne. Le chercher révèle presque toujours l’erreur avant le premier test, et c’est le meilleur emploi d’une heure de travail sur un algorithme.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les trois vérifications d’un invariant de boucle.",
+          "explanation": "Vrai avant la boucle, préservé par chaque tour, et combiné à la condition d’arrêt il donne le résultat.",
+          "items": [
+            "vérifier qu’il est vrai avant la boucle",
+            "vérifier que chaque tour le préserve",
+            "combiner avec la condition d’arrêt",
+            "conclure que le résultat est correct"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est l’invariant d’une recherche du maximum ?",
+          "explanation": "La variable courante contient le maximum des éléments déjà parcourus. À la sortie, « déjà parcourus » veut dire « tous ».",
+          "options": [
+            {
+              "text": "la variable contient le maximum des éléments déjà vus",
+              "correct": true
+            },
+            {
+              "text": "la variable contient le dernier élément vu"
+            },
+            {
+              "text": "le compteur est positif"
+            },
+            {
+              "text": "la liste n’est pas vide"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’établit un test ?",
+          "explanation": "Que le programme est correct sur ce cas, et sur aucun autre. Tout test est un échantillon.",
+          "options": [
+            {
+              "text": "la correction sur ce cas, et rien de plus",
+              "correct": true
+            },
+            {
+              "text": "la correction du programme"
+            },
+            {
+              "text": "l’absence d’erreur de compilation"
+            },
+            {
+              "text": "la couverture du code"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Cent pour-cent de couverture de code prouve la correction.",
+          "explanation": "Faux. Une ligne exécutée avec une seule valeur reste non éprouvée : la couverture ne mesure que ce qui a été exécuté.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces moyens de vérification du plus fort au plus faible.",
+          "explanation": "Un invariant démontré, puis un test, puis une relecture, et une couverture élevée ne vaut rien par elle-même.",
+          "items": [
+            "un invariant démontré",
+            "un test sur un cas bien choisi",
+            "une relecture attentive",
+            "une couverture de code élevée"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le meilleur emploi d’une heure de travail sur un algorithme ?",
+          "explanation": "Chercher son invariant : l’exercice révèle presque toujours l’erreur avant qu’on ait écrit un test.",
+          "options": [
+            {
+              "text": "chercher son invariant",
+              "correct": true
+            },
+            {
+              "text": "écrire des tests supplémentaires"
+            },
+            {
+              "text": "mesurer sa performance"
+            },
+            {
+              "text": "améliorer sa lisibilité"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

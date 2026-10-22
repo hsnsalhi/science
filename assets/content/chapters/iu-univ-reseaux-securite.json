@@ -1,0 +1,629 @@
+{
+  "chapter": "informatique-universite-reseaux-et-securite",
+  "lessons": [
+    {
+      "id": "les-couches-et-la-congestion",
+      "title": "Les couches, et le contrôle de congestion",
+      "subtitle": "Chaque couche ne garantit qu’une chose, et délègue le reste.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un paquet, et le chemin qu’il trouve",
+          "body": "Envoie un paquet : il saute de machine en machine jusqu’au serveur. Coupe un lien : il en trouve un autre. Coupe les deux liens de « toi » : plus rien ne part. C’est exactement ce que fait la couche réseau, et rien de plus — elle achemine, sans garantir ni l’ordre ni l’arrivée.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chaque couche garantit, et ce qu’elle ne garantit pas",
+          "body": "Liaison : faire passer une trame d’une machine à sa voisine directe. Elle détecte les erreurs de transmission, et ne garantit rien au-delà du câble.\n\nRéseau : acheminer un paquet de bout en bout, par n’importe quel chemin. Elle ne garantit ni l’arrivée, ni l’ordre, ni l’unicité — un paquet peut être perdu, dupliqué, ou arriver après un plus récent.\n\nTransport : réparer tout cela si on le demande. Un protocole fiable renumérote, retransmet et réordonne ; un protocole non fiable ne fait rien de cela et va plus vite.\n\nApplication : donner un sens aux octets. Le découpage en couches est ce qui permet de changer le câble sans changer le navigateur, et c’est son seul but.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi la fiabilité est au transport, et pas plus bas",
+          "body": "On pourrait rendre chaque lien parfaitement fiable, et on l’a essayé. Mais une chaîne de liens fiables ne donne pas une communication fiable : il reste la perte dans un routeur saturé, et le routeur qui tombe.\n\nEt un lien fiable coûte à tout le monde, y compris aux applications qui préfèrent perdre un paquet que d’attendre — la voix et la vidéo en direct sont exactement de ce type.\n\nD’où le principe de bout en bout, énoncé par Saltzer, Reed et Clark en 1984 : une fonction qui doit être assurée aux extrémités ne doit pas être dupliquée en dessous.\n\nC’est l’un des rares principes d’architecture qui ait tenu quarante ans. Il explique pourquoi le réseau mondial est « bête » en son centre et intelligent à ses bords, et pourquoi on a pu y ajouter le web sans rien changer aux routeurs.",
+          "formula": "réseau simple au centre, intelligence aux extrémités",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le contrôle de congestion, ou l’altruisme obligatoire",
+          "body": "Rien n’empêche une machine d’émettre à plein débit. Si toutes le faisaient, les files des routeurs déborderaient, les paquets seraient perdus, les émetteurs retransmettraient, et le débit utile tomberait à presque rien.\n\nC’est arrivé : en octobre 1986, le débit entre deux sites universitaires américains est passé de trente-deux kilobits par seconde à quarante bits par seconde. Un facteur mille.\n\nLa réponse, due à Van Jacobson, est que chaque émetteur augmente son débit lentement et le divise par deux dès qu’il détecte une perte. Une perte est interprétée comme un signal de saturation, et non comme un incident.\n\nLe réseau mondial repose donc sur une convention volontaire : chaque machine se limite, alors que tricher lui profiterait à court terme. C’est un équilibre fragile et vieux de quarante ans, et il n’a pas de gardien.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le nommage, et la couche qu’on oublie",
+          "body": "On tape un nom, la machine a besoin d’une adresse. La traduction est faite par un service hiérarchique, réparti sur des milliers de serveurs, interrogé des milliers de milliards de fois par jour.\n\nC’est la pièce la plus critique et la moins visible. Une panne de ce service rend le réseau inutilisable alors que tout fonctionne : les adresses sont joignables, et personne ne les connaît.\n\nC’est aussi la pièce la plus attaquée, parce que celui qui détourne une réponse détourne le trafic sans toucher au chiffrement. Le site visité sera le bon pour le navigateur, et le mauvais en réalité.\n\nCe qui protège de cela est la signature des réponses, et elle n’est pas déployée partout. Retenir cela : la couche la plus fragile du réseau n’est pas le transport, c’est le nommage.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Quelle couche garantit cela ?",
+          "explanation": "La liaison va d’une machine à sa voisine ; le réseau achemine de bout en bout sans garantie ; le transport répare si on le demande.",
+          "categories": [
+            "liaison",
+            "réseau",
+            "transport"
+          ],
+          "items": [
+            {
+              "text": "faire passer une trame sur un câble",
+              "category": 0
+            },
+            {
+              "text": "détecter une erreur de transmission",
+              "category": 0
+            },
+            {
+              "text": "trouver un chemin jusqu’à la destination",
+              "category": 1
+            },
+            {
+              "text": "retransmettre et réordonner",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que la couche réseau ne garantit-elle pas ?",
+          "explanation": "Ni l’arrivée, ni l’ordre, ni l’unicité : un paquet peut être perdu, dupliqué, ou arriver après un plus récent.",
+          "options": [
+            {
+              "text": "l’arrivée du paquet",
+              "correct": true
+            },
+            {
+              "text": "l’ordre des paquets",
+              "correct": true
+            },
+            {
+              "text": "l’absence de duplication",
+              "correct": true
+            },
+            {
+              "text": "le choix d’un chemin"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’énonce le principe de bout en bout ?",
+          "explanation": "Qu’une fonction qui doit être assurée aux extrémités ne doit pas être dupliquée en dessous.",
+          "options": [
+            {
+              "text": "ce qui doit être assuré aux extrémités ne doit pas être dupliqué en dessous",
+              "correct": true
+            },
+            {
+              "text": "chaque lien doit être fiable"
+            },
+            {
+              "text": "le réseau doit garantir l’ordre"
+            },
+            {
+              "text": "les applications doivent ignorer le réseau"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "En 1986, de quel facteur le débit a-t-il chuté lors du premier effondrement par congestion ?",
+          "explanation": "D’un facteur mille environ : de 32 kilobits par seconde à 40 bits par seconde entre deux sites universitaires.",
+          "min": 1,
+          "max": 10000,
+          "answer": 800,
+          "tolerance": 400,
+          "unit": "fois",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment un émetteur interprète-t-il une perte de paquet ?",
+          "explanation": "Comme un signal de saturation : il divise son débit par deux. Ce n’est pas traité comme un incident.",
+          "options": [
+            {
+              "text": "comme un signal de saturation, et il ralentit",
+              "correct": true
+            },
+            {
+              "text": "comme une panne, et il arrête"
+            },
+            {
+              "text": "comme un incident, et il réémet plus vite"
+            },
+            {
+              "text": "comme une erreur de la couche liaison"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le nommage est-il la couche la plus fragile ?",
+          "explanation": "Parce que sa panne rend le réseau inutilisable alors que tout fonctionne, et que détourner une réponse détourne le trafic sans toucher au chiffrement.",
+          "options": [
+            {
+              "text": "sa panne rend le réseau inutilisable alors que tout marche",
+              "correct": true
+            },
+            {
+              "text": "elle est la plus lente"
+            },
+            {
+              "text": "elle n’est pas chiffrée"
+            },
+            {
+              "text": "elle dépend d’un seul serveur"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "chiffrement-symetrique-et-asymetrique",
+      "title": "Chiffrer : deux familles, deux rôles",
+      "subtitle": "L’une est rapide, l’autre résout le problème de la clé.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce sur quoi tout chiffrement opère",
+          "body": "Allume des bits et lis la valeur : un message n’est qu’une suite de nombres de huit bits. Chiffrer, c’est les transformer de façon réversible avec une clé. Rien de plus mystérieux — toute la difficulté est que l’opération soit irréversible sans la clé.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le chiffrement symétrique, et son unique problème",
+          "body": "Une seule clé chiffre et déchiffre. Les algorithmes courants traitent plusieurs giga-octets par seconde sur un processeur ordinaire, car les processeurs ont des instructions dédiées.\n\nLa sécurité repose sur la taille de la clé. Cent vingt-huit bits font deux puissance cent vingt-huit possibilités : hors d’atteinte de toute machine concevable, et ce n’est pas une affaire de progrès technique.\n\nLe problème n’est donc pas la force : c’est la distribution. Deux personnes qui n’ont jamais communiqué ne peuvent pas convenir d’une clé sans l’envoyer, et l’envoyer sur le canal qu’on veut protéger n’a aucun sens.\n\nPour n personnes qui veulent toutes communiquer deux à deux, il faut n fois n moins un, divisé par deux clés. À mille personnes, cela fait presque cinq cent mille clés à gérer.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le chiffrement asymétrique, et ce qu’il achète",
+          "body": "Deux clés liées mathématiquement. L’une est publiée, l’autre gardée. Ce que l’une chiffre, seule l’autre déchiffre.\n\nConséquence : n’importe qui peut m’écrire sans que nous ayons convenu de rien, et moi seul peux lire. Le problème de la distribution disparaît.\n\nLe prix est la lenteur : mille fois plus lent environ que le symétrique, parfois plus. Chiffrer un film ainsi serait absurde.\n\nD’où ce que fait tout protocole réel : l’asymétrique sert uniquement à convenir d’une clé symétrique, et toute la suite de la conversation est symétrique. On paye le coût une fois, à l’ouverture, et pas sur chaque octet.",
+          "formula": "asymétrique pour convenir de la clé, symétrique pour le reste",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Diffie et Hellman, ou convenir d’un secret en public",
+          "body": "Deux personnes choisissent chacune un nombre secret. Elles s’envoient publiquement un nombre calculé à partir du leur. Chacune combine ce qu’elle a reçu avec son propre secret, et les deux obtiennent le même résultat.\n\nUn observateur a vu les deux nombres échangés, et il ne peut pas en déduire le secret commun : l’opération inverse est, autant qu’on sache, hors d’atteinte.\n\nPublié en 1976, c’est le premier résultat qui a montré que s’entendre sur un secret en public était possible. Avant, l’idée paraissait contradictoire, et des services entiers transportaient des clés dans des valises.\n\nAttention cependant : cet échange ne dit pas à qui l’on parle. Il établit un secret partagé avec quelqu’un, et c’est l’authentification — donc les signatures de la leçon trois — qui dit lequel.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui casse en pratique",
+          "body": "Presque jamais l’algorithme. Les chiffrements standards ont résisté à vingt ans d’attaques publiques, et c’est précisément pourquoi on ne doit pas en écrire soi-même.\n\nCe qui casse, c’est l’implémentation : une clé tirée d’un générateur prévisible, une valeur à usage unique réutilisée, une durée de calcul qui dépend du secret et le révèle.\n\nCe qui casse, c’est aussi la gestion : une clé privée dans un dépôt de code, un certificat non vérifié, une version ancienne du protocole acceptée pour compatibilité.\n\nEt ce qui casse le plus souvent, c’est l’humain : il suffit qu’on donne son mot de passe. Un chiffrement parfait ne protège de rien quand la clé est écrite sur un papier collé à l’écran, et c’est pourquoi la leçon quatre parle de modèle de menace et pas d’algorithmes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le problème du chiffrement symétrique ?",
+          "explanation": "La distribution de la clé : deux personnes qui n’ont jamais communiqué ne peuvent pas convenir d’une clé sans l’envoyer.",
+          "options": [
+            {
+              "text": "la distribution de la clé",
+              "correct": true
+            },
+            {
+              "text": "sa lenteur"
+            },
+            {
+              "text": "la taille de la clé"
+            },
+            {
+              "text": "la force de l’algorithme"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de clés faut-il pour que dix personnes communiquent deux à deux en symétrique ?",
+          "explanation": "Dix fois neuf divisé par deux, soit 45. À mille personnes, cela fait presque cinq cent mille clés.",
+          "answer": 45,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Combien de fois le chiffrement asymétrique est-il plus lent que le symétrique, environ ?",
+          "explanation": "De l’ordre de mille fois. C’est pourquoi il ne sert qu’à convenir d’une clé, pas à chiffrer la conversation.",
+          "options": [
+            {
+              "text": "environ mille fois",
+              "correct": true
+            },
+            {
+              "text": "environ deux fois"
+            },
+            {
+              "text": "environ dix fois"
+            },
+            {
+              "text": "il est plus rapide"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert l’asymétrique dans un protocole réel ?",
+          "explanation": "À convenir d’une clé symétrique. Toute la suite de la conversation est symétrique : on paye le coût une fois.",
+          "options": [
+            {
+              "text": "à convenir d’une clé symétrique",
+              "correct": true
+            },
+            {
+              "text": "à chiffrer tout le trafic"
+            },
+            {
+              "text": "à compresser les données"
+            },
+            {
+              "text": "à vérifier l’intégrité"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’échange de Diffie-Hellman dit à qui l’on parle.",
+          "explanation": "Faux. Il établit un secret partagé avec quelqu’un ; c’est l’authentification, donc la signature, qui dit lequel.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui casse en pratique ?",
+          "explanation": "L’implémentation, la gestion des clés, et l’humain. Presque jamais l’algorithme, qui a résisté à vingt ans d’attaques publiques.",
+          "options": [
+            {
+              "text": "une valeur à usage unique réutilisée",
+              "correct": true
+            },
+            {
+              "text": "une clé privée dans un dépôt de code",
+              "correct": true
+            },
+            {
+              "text": "un mot de passe donné",
+              "correct": true
+            },
+            {
+              "text": "l’algorithme de chiffrement"
+            },
+            {
+              "text": "la taille de la clé"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "hachage-et-signatures",
+      "title": "Hachage et signatures",
+      "subtitle": "Une empreinte de taille fixe, et pourquoi les collisions existent toujours.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Pourquoi les collisions sont inévitables",
+          "body": "Mets plus d’objets que de tiroirs et répartis-les au mieux : un tiroir en contient toujours au moins deux. Une fonction de hachage range une infinité de messages dans un nombre fini d’empreintes — les collisions existent donc par principe, et aucune invention ne les supprimera.",
+          "figureId": "tiroirs",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une fonction de hachage doit faire",
+          "body": "Rendre une empreinte de taille fixe, deux cent cinquante-six bits par exemple, quelle que soit la taille de l’entrée.\n\nÊtre rapide à calculer, et impossible à inverser : de l’empreinte, on ne doit pas pouvoir remonter au message.\n\nRésister aux collisions : trouver deux messages de même empreinte doit être hors d’atteinte, même si la théorie des tiroirs garantit qu’il en existe.\n\nEt changer complètement pour un bit modifié. Un caractère changé dans un livre doit donner une empreinte sans aucun rapport avec la précédente : c’est l’effet d’avalanche, et c’est ce qui rend l’empreinte utilisable comme détecteur de modification.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le paradoxe des anniversaires, et la taille qu’il impose",
+          "body": "Pour trouver une collision, on n’a pas besoin d’essayer toutes les empreintes : il suffit d’en essayer environ la racine carrée du nombre total.\n\nC’est le même calcul que celui qui fait qu’il suffit de vingt-trois personnes pour que deux partagent un anniversaire avec une chance sur deux, alors qu’il y a trois cent soixante-cinq jours.\n\nConséquence directe sur le dimensionnement : une empreinte de cent vingt-huit bits ne donne que soixante-quatre bits de résistance aux collisions. Et soixante-quatre bits est aujourd’hui atteignable.\n\nC’est pourquoi les empreintes modernes font deux cent cinquante-six bits : pour garder cent vingt-huit bits de résistance réelle. Les fonctions de cent vingt-huit bits largement employées dans les années 2000 ont effectivement été cassées de cette façon.",
+          "formula": "n bits d’empreinte = n sur deux bits de résistance aux collisions",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’une signature ajoute",
+          "body": "Une empreinte seule ne prouve rien : qui fournit le fichier peut fournir l’empreinte, et les changer tous les deux.\n\nUne signature est l’empreinte chiffrée avec la clé privée de l’auteur. N’importe qui peut la déchiffrer avec la clé publique et la comparer à l’empreinte qu’il recalcule.\n\nSi les deux coïncident, trois choses sont établies d’un coup : le fichier n’a pas été modifié, il vient bien du détenteur de la clé privée, et celui-ci ne peut pas le nier.\n\nC’est pourquoi on signe l’empreinte et non le fichier : l’asymétrique est mille fois plus lent, et l’empreinte fait trente-deux octets quelle que soit la taille du fichier. Signer un film coûte le même temps que signer une phrase.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les mots de passe, et pourquoi le hachage simple ne suffit pas",
+          "body": "Un mot de passe ne doit jamais être stocké, même chiffré : on stocke son empreinte, et on compare les empreintes.\n\nMais une fonction de hachage rapide est ici un défaut. Un processeur graphique calcule des milliards d’empreintes par seconde, donc il essaie tous les mots de passe courants en quelques minutes.\n\nDeux remèdes, tous deux obligatoires. Le sel : une valeur aléatoire ajoutée par compte, qui interdit de casser tous les comptes d’un coup avec une table précalculée. Et une fonction lente à dessein, réglée pour prendre une fraction de seconde — imperceptible à la connexion, prohibitive pour un milliard d’essais.\n\nEmployer une fonction de hachage ordinaire pour des mots de passe est l’erreur la plus répandue et la plus coûteuse de la sécurité applicative. Elle est à l’origine de la plupart des fuites massives devenues publiques.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les collisions de hachage existent-elles forcément ?",
+          "explanation": "Parce qu’on range une infinité de messages dans un nombre fini d’empreintes : c’est le principe des tiroirs.",
+          "options": [
+            {
+              "text": "une infinité de messages pour un nombre fini d’empreintes",
+              "correct": true
+            },
+            {
+              "text": "les fonctions actuelles sont imparfaites"
+            },
+            {
+              "text": "les empreintes sont trop courtes"
+            },
+            {
+              "text": "les messages se ressemblent"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’effet d’avalanche ?",
+          "explanation": "Un bit modifié dans l’entrée change complètement l’empreinte. C’est ce qui rend l’empreinte utilisable comme détecteur de modification.",
+          "options": [
+            {
+              "text": "un bit changé change toute l’empreinte",
+              "correct": true
+            },
+            {
+              "text": "l’empreinte grandit avec l’entrée"
+            },
+            {
+              "text": "les collisions se propagent"
+            },
+            {
+              "text": "le calcul accélère sur de grandes entrées"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de bits de résistance aux collisions offre une empreinte de 256 bits ?",
+          "explanation": "128, soit la moitié : le paradoxe des anniversaires ramène l’effort à la racine carrée du nombre d’empreintes.",
+          "answer": 128,
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre la vérification d’une signature.",
+          "explanation": "On recalcule l’empreinte du fichier, on déchiffre la signature avec la clé publique, et on compare.",
+          "items": [
+            "recalculer l’empreinte du fichier reçu",
+            "déchiffrer la signature avec la clé publique",
+            "comparer les deux empreintes",
+            "conclure que le fichier est intact et authentique"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi signe-t-on l’empreinte et non le fichier ?",
+          "explanation": "Parce que l’asymétrique est mille fois plus lent, et que l’empreinte fait trente-deux octets quelle que soit la taille du fichier.",
+          "options": [
+            {
+              "text": "l’empreinte est courte et l’asymétrique est lent",
+              "correct": true
+            },
+            {
+              "text": "le fichier n’est pas chiffrable"
+            },
+            {
+              "text": "l’empreinte est plus sûre"
+            },
+            {
+              "text": "la clé privée est trop courte"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que faut-il pour stocker des mots de passe correctement ?",
+          "explanation": "Un sel par compte, qui interdit les tables précalculées, et une fonction lente à dessein. Les deux sont obligatoires.",
+          "options": [
+            {
+              "text": "un sel aléatoire par compte",
+              "correct": true
+            },
+            {
+              "text": "une fonction lente à dessein",
+              "correct": true
+            },
+            {
+              "text": "une fonction de hachage rapide"
+            },
+            {
+              "text": "un chiffrement symétrique"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-modele-de-menace",
+      "title": "Défi : construire un modèle de menace",
+      "subtitle": "La sécurité est une question d’adversaire, pas de technique.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Où un adversaire peut se placer",
+          "body": "Regarde le chemin d’un paquet : il traverse plusieurs machines qui ne sont pas à toi. Chacune peut lire, retarder, dupliquer ou jeter. Un modèle de menace commence exactement par cette question : qui est sur le chemin, et qu’est-ce qu’il peut faire ?",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Pourquoi un secret a une durée de vie",
+          "body": "Avance d’une demi-vie, puis d’une autre : la moitié part à chaque fois. Un secret suit une logique voisine, pour une raison différente : plus il vit, plus il a de chances d’avoir fuité quelque part. La figure montre une décroissance radioactive, pas une fuite de clé — mais c’est le bon réflexe : on ne garde pas une clé indéfiniment, on la fait tourner.",
+          "figureId": "demi-vie",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre questions d’un modèle de menace",
+          "body": "Que protège-t-on ? Pas « le système » : des données précises, dont on sait ce que leur divulgation coûterait.\n\nContre qui ? Un curieux, un concurrent, un employé mécontent, un État. Leurs moyens diffèrent de plusieurs ordres de grandeur, et les mesures aussi.\n\nQu’est-ce qu’il peut faire ? Lire le trafic ? Le modifier ? Accéder physiquement à la machine ? Obtenir un accès administrateur ailleurs dans le système ?\n\nEt que peut-on accepter de perdre ? Une sécurité sans limite n’existe pas : il faut dire explicitement quelle attaque on renonce à contrer, sinon on fait semblant de les contrer toutes.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les trois erreurs les plus fréquentes",
+          "body": "Se protéger contre l’adversaire qu’on sait traiter. On chiffre le disque parce qu’on sait le faire, alors que la menace réelle est un courriel frauduleux auquel le chiffrement ne change rien.\n\nConfondre le maillon et la chaîne. Un algorithme à cent vingt-huit bits derrière un mot de passe de six chiffres offre la sécurité du mot de passe, soit un million de possibilités, donc rien.\n\nOublier l’intérieur. La plupart des défenses regardent dehors, alors qu’une large part des incidents vient d’un accès légitime mal cloisonné — un employé, un prestataire, un service qui a trop de droits.\n\nD’où le principe du moindre privilège : chaque composant reçoit exactement les droits dont il a besoin, et rien de plus. C’est la mesure la plus rentable de toute la sécurité informatique, et la plus souvent négligée parce qu’elle complique le travail quotidien.",
+          "id": "c4"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’il faut supposer connu de l’adversaire",
+          "body": "Qu’il connaît tout du système, sauf les clés. L’algorithme, le code source, l’architecture, les versions : tout.\n\nC’est le principe de Kerckhoffs, énoncé en 1883, et il tient encore pour une raison simple. Un secret partagé par cent personnes n’est plus un secret, et un code source finit toujours par fuiter ou être désassemblé.\n\nConséquence : la sécurité par l’obscurité ne compte pas. Un système dont la sûreté dépend de ce que l’attaquant ignore son fonctionnement est un système non sécurisé qui n’a pas encore été examiné.\n\nEt son corollaire pratique : un algorithme publié et attaqué pendant vingt ans vaut mieux qu’un algorithme secret, même si l’intuition dit l’inverse. C’est exactement pourquoi les standards de chiffrement sont choisis par concours public.",
+          "formula": "l’adversaire connaît tout, sauf les clés",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Chaque couche garantit une chose et délègue le reste. Le réseau achemine sans promettre ni l’ordre ni l’arrivée, et c’est le transport qui répare — le réseau est simple au centre et intelligent aux bords.\n\nLe symétrique est rapide et bute sur la distribution des clés ; l’asymétrique résout cela et coûte mille fois plus. Tout protocole réel emploie le second pour convenir d’une clé du premier.\n\nUne empreinte de n bits ne résiste aux collisions qu’à hauteur de n divisé par deux bits, et une fonction rapide est un défaut pour les mots de passe — il faut un sel et une fonction lente à dessein.\n\nEt la sécurité est une question d’adversaire. Supposer qu’il connaît tout sauf les clés, dire explicitement ce qu’on renonce à contrer, et appliquer le moindre privilège partout. Le reste est de la technique.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre les quatre questions d’un modèle de menace.",
+          "explanation": "Que protège-t-on, contre qui, avec quels moyens, et que peut-on accepter de perdre.",
+          "items": [
+            "quelles données précises protège-t-on",
+            "contre quel adversaire",
+            "de quels moyens dispose-t-il",
+            "quelle attaque renonce-t-on à contrer"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la sécurité réelle d’un algorithme à 128 bits derrière un mot de passe de six chiffres ?",
+          "explanation": "Celle du mot de passe, soit un million de possibilités — donc à peu près rien. La chaîne vaut son maillon le plus faible.",
+          "options": [
+            {
+              "text": "celle du mot de passe, un million de possibilités",
+              "correct": true
+            },
+            {
+              "text": "celle de l’algorithme, 128 bits"
+            },
+            {
+              "text": "la moyenne des deux"
+            },
+            {
+              "text": "le produit des deux"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la mesure la plus rentable de la sécurité informatique ?",
+          "explanation": "Le moindre privilège : chaque composant reçoit exactement les droits dont il a besoin, et rien de plus.",
+          "options": [
+            {
+              "text": "le moindre privilège",
+              "correct": true
+            },
+            {
+              "text": "le chiffrement du disque"
+            },
+            {
+              "text": "un pare-feu"
+            },
+            {
+              "text": "des mots de passe longs"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’énonce le principe de Kerckhoffs ?",
+          "explanation": "Que l’adversaire connaît tout du système, sauf les clés : algorithme, code source, architecture, versions.",
+          "options": [
+            {
+              "text": "l’adversaire connaît tout, sauf les clés",
+              "correct": true
+            },
+            {
+              "text": "l’algorithme doit rester secret"
+            },
+            {
+              "text": "les clés doivent être publiques"
+            },
+            {
+              "text": "le code source doit être fermé"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un algorithme publié et attaqué pendant vingt ans vaut mieux qu’un algorithme secret.",
+          "explanation": "Vrai, même si l’intuition dit l’inverse. C’est pourquoi les standards de chiffrement sont choisis par concours public.",
+          "answer": true,
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles sont les erreurs fréquentes d’un modèle de menace ?",
+          "explanation": "Se protéger de l’adversaire qu’on sait traiter, confondre le maillon et la chaîne, et oublier les accès légitimes mal cloisonnés.",
+          "options": [
+            {
+              "text": "se protéger de l’adversaire qu’on sait traiter",
+              "correct": true
+            },
+            {
+              "text": "confondre la force d’un maillon et celle de la chaîne",
+              "correct": true
+            },
+            {
+              "text": "oublier les accès légitimes mal cloisonnés",
+              "correct": true
+            },
+            {
+              "text": "publier l’algorithme employé"
+            },
+            {
+              "text": "faire tourner les clés"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

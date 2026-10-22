@@ -1,0 +1,671 @@
+{
+  "chapter": "informatique-universite-bases-de-donnees",
+  "lessons": [
+    {
+      "id": "le-modele-relationnel",
+      "title": "Le modèle relationnel",
+      "subtitle": "Tout est table, et une table est un ensemble de lignes.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des lignes, des colonnes, un total",
+          "body": "Change une quantité : le total suit, parce qu’il est calculé et non saisi. Une base relationnelle est cette idée poussée au bout : on ne stocke que ce qui est irréductible, et tout le reste est calculé au moment de la question.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une relation est, exactement",
+          "body": "Un ensemble de lignes qui ont tous les mêmes colonnes typées. Deux choses s’en déduisent, et elles surprennent souvent.\n\nL’ordre des lignes n’a aucun sens. Une table n’est pas une liste : si une requête rend ses résultats dans un certain ordre sans qu’on l’ait demandé, c’est un hasard d’exécution.\n\nIl n’y a pas de doublons, en théorie. En pratique les bases les tolèrent, et la clé primaire est ce qui les interdit réellement.\n\nUne clé primaire identifie une ligne et une seule. Une clé étrangère est une colonne dont chaque valeur doit exister comme clé primaire ailleurs — c’est ce qui empêche une commande de désigner un client qui n’existe pas.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les cinq opérations dont tout le reste découle",
+          "body": "Codd a montré en 1970 que toutes les interrogations se ramènent à une petite algèbre.\n\nLa sélection garde les lignes qui vérifient une condition. La projection garde certaines colonnes. Le produit associe chaque ligne de l’une à chaque ligne de l’autre.\n\nL’union réunit deux tables de mêmes colonnes, et la différence ôte de l’une ce qui est dans l’autre.\n\nLa jointure, qui semble l’opération de base, n’en est pas une : c’est un produit suivi d’une sélection sur l’égalité des clés. Savoir cela explique son coût — une jointure naïve examine autant de couples que le produit des tailles.",
+          "formula": "jointure = produit, puis sélection sur l’égalité des clés",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une requête, et ce qu’elle demande à la machine",
+          "body": "« Les clients de Lyon qui ont commandé plus de cent euros en mars. » Trois tables sont en jeu : clients, commandes, lignes de commande.\n\nLa base doit joindre les trois, filtrer sur la ville et sur le mois, grouper par client, sommer les montants, et ne garder que les groupes dont la somme dépasse cent.\n\nCe qu’on écrit est ce qu’on veut, pas comment l’obtenir. C’est la propriété essentielle du langage : il est déclaratif, et l’ordre des opérations est choisi par la base.\n\nConséquence pratique immédiate : deux requêtes qui demandent la même chose avec des mots différents peuvent prendre le même temps, et deux requêtes presque identiques peuvent différer d’un facteur mille. Ce qui décide, c’est le plan que la base choisit, et c’est l’objet de la leçon trois.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les valeurs nulles, et le piège logique",
+          "body": "Une colonne peut n’avoir pas de valeur. La base note cela nul, et le traite en logique à trois valeurs : vrai, faux, inconnu.\n\nConséquence contre-intuitive : nul n’est pas égal à nul. Deux valeurs inconnues ne sont pas connues pour être les mêmes, donc la comparaison rend « inconnu » et la ligne est écartée.\n\nDeuxième piège : une condition sur une colonne nulle n’est jamais vraie. Chercher les clients dont la remise n’est pas égale à dix laisse de côté tous ceux dont la remise est inconnue, alors qu’on les voulait presque sûrement.\n\nLe remède est de tester explicitement la nullité, et de déclarer les colonnes non nulles chaque fois qu’on peut. La majorité des erreurs de requête en production viennent de là.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que déduit-on de ce qu’une relation est un ensemble ?",
+          "explanation": "L’ordre des lignes n’a aucun sens, et il n’y a pas de doublons — c’est la clé primaire qui les interdit réellement.",
+          "options": [
+            {
+              "text": "l’ordre des lignes n’a pas de sens",
+              "correct": true
+            },
+            {
+              "text": "les doublons n’ont pas de place",
+              "correct": true
+            },
+            {
+              "text": "les colonnes sont ordonnées"
+            },
+            {
+              "text": "la table a une taille fixe"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert une clé étrangère ?",
+          "explanation": "À garantir que chaque valeur existe comme clé primaire ailleurs : une commande ne peut pas désigner un client qui n’existe pas.",
+          "options": [
+            {
+              "text": "garantir que la ligne désignée existe",
+              "correct": true
+            },
+            {
+              "text": "identifier une ligne de façon unique"
+            },
+            {
+              "text": "accélérer les requêtes"
+            },
+            {
+              "text": "interdire les valeurs nulles"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une jointure, en termes d’algèbre relationnelle ?",
+          "explanation": "Un produit suivi d’une sélection sur l’égalité des clés. C’est ce qui explique son coût.",
+          "options": [
+            {
+              "text": "un produit, puis une sélection",
+              "correct": true
+            },
+            {
+              "text": "une opération de base irréductible"
+            },
+            {
+              "text": "une union de deux tables"
+            },
+            {
+              "text": "une projection sur les clés"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’un langage déclaratif, dans ce contexte ?",
+          "explanation": "On écrit ce qu’on veut, pas comment l’obtenir : l’ordre des opérations est choisi par la base.",
+          "options": [
+            {
+              "text": "on écrit ce qu’on veut, pas comment l’obtenir",
+              "correct": true
+            },
+            {
+              "text": "on déclare les types avant de requêter"
+            },
+            {
+              "text": "on écrit les opérations dans l’ordre d’exécution"
+            },
+            {
+              "text": "on déclare les index nécessaires"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Dans une base relationnelle, nul est égal à nul.",
+          "explanation": "Faux. Deux valeurs inconnues ne sont pas connues pour être les mêmes : la comparaison rend « inconnu » et la ligne est écartée.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi « remise différente de dix » peut-il écarter des lignes qu’on voulait ?",
+          "explanation": "Parce qu’une condition sur une colonne nulle n’est jamais vraie : les remises inconnues sont laissées de côté.",
+          "options": [
+            {
+              "text": "les lignes à remise nulle ne satisfont aucune condition",
+              "correct": true
+            },
+            {
+              "text": "la comparaison est de type incompatible"
+            },
+            {
+              "text": "l’index ne couvre pas la colonne"
+            },
+            {
+              "text": "la base arrondit les valeurs"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "normalisation",
+      "title": "Normaliser, ou pourquoi découper",
+      "subtitle": "Une donnée écrite deux fois sera un jour contradictoire.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un attribut, et le niveau auquel il appartient",
+          "body": "Touche un animal : chaque attribut est rangé au niveau exact où il s’applique, et pas plus bas. « A des poils » appartient aux mammifères, pas au chien. La normalisation fait précisément cela sur les tables : placer chaque fait à l’endroit où il dépend de la clé, et nulle part ailleurs.",
+          "figureId": "classification",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le mal qu’on soigne : trois anomalies",
+          "body": "Anomalie de modification. L’adresse d’un fournisseur est recopiée sur chacune de ses mille commandes. Il déménage : il faut mille écritures, et si une échoue, la base se contredit.\n\nAnomalie d’insertion. On ne peut pas enregistrer un fournisseur qui n’a pas encore de commande, parce que son adresse n’a nulle part où tenir.\n\nAnomalie de suppression. On supprime la dernière commande d’un fournisseur, et on perd son adresse sans l’avoir voulu.\n\nLes trois ont la même cause : un fait — l’adresse — rangé ailleurs que là où il appartient. La normalisation est la démarche qui consiste à le remettre à sa place.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois premières formes normales",
+          "body": "Première forme : chaque case contient une valeur unique, pas une liste. Une colonne « téléphones » contenant trois numéros séparés par des virgules la viole, et rend toute requête sur un numéro impossible.\n\nDeuxième forme : chaque colonne dépend de la clé entière, pas d’une partie. Dans une table de clé « commande plus produit », le nom du produit ne dépend que du produit : il doit sortir.\n\nTroisième forme : aucune colonne ne dépend d’une autre colonne non clé. Si la ville détermine le département, le département n’a rien à faire dans la table.\n\nLa règle mnémonique, due à Kent, résume les trois : chaque colonne dépend de la clé, de toute la clé, et de rien d’autre que la clé.",
+          "formula": "la clé, toute la clé, rien que la clé",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Quand dénormaliser, et pourquoi c’est un choix",
+          "body": "Une base normalisée exige des jointures, et les jointures coûtent. Certaines applications recopient donc délibérément une donnée pour éviter une jointure sur le chemin critique.\n\nC’est légitime, à trois conditions. Que le gain soit mesuré et non supposé. Que la redondance soit documentée. Et qu’un mécanisme garantisse la cohérence — un déclencheur, une tâche de rapprochement, ou une écriture unique dans une transaction.\n\nLe danger n’est pas la dénormalisation : c’est la dénormalisation accidentelle, celle qu’on découvre trois ans plus tard parce que deux écrans affichent deux montants différents.\n\nLa règle de travail est donc : normaliser d’abord, dénormaliser ensuite si la mesure l’exige. Jamais l’inverse, parce qu’on ne sait pas renormaliser une base en production.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un découpage, de bout en bout",
+          "body": "Avant : une table « commandes » avec le numéro de commande, la date, le nom du client, son adresse, le produit, son prix unitaire, la quantité.\n\nLe nom et l’adresse du client sont recopiés sur chaque commande du même client. Le prix unitaire du produit est recopié sur chaque ligne où il figure. Les deux violent la troisième forme.\n\nAprès : quatre tables. Clients, avec le nom et l’adresse. Produits, avec le prix. Commandes, avec la date et une clé étrangère vers le client. Lignes de commande, avec la quantité, une clé vers la commande et une clé vers le produit.\n\nLe déménagement du client devient une seule écriture, et un changement de prix ne réécrit plus l’historique — à condition de garder le prix pratiqué dans la ligne de commande, car c’est un fait de la vente et non du produit. Ce dernier point est l’erreur que la normalisation mécanique fait commettre.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "De quelle anomalie s’agit-il ?",
+          "explanation": "Les trois ont la même cause : un fait rangé ailleurs que là où il appartient.",
+          "categories": [
+            "modification",
+            "insertion",
+            "suppression"
+          ],
+          "items": [
+            {
+              "text": "un déménagement demande mille écritures",
+              "category": 0
+            },
+            {
+              "text": "deux lignes finissent par se contredire",
+              "category": 0
+            },
+            {
+              "text": "on ne peut pas enregistrer un fournisseur sans commande",
+              "category": 1
+            },
+            {
+              "text": "on perd l’adresse en supprimant la dernière commande",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’exige la première forme normale ?",
+          "explanation": "Qu’une case contienne une valeur unique, pas une liste. Trois numéros séparés par des virgules rendent toute requête impossible.",
+          "options": [
+            {
+              "text": "une valeur unique par case",
+              "correct": true
+            },
+            {
+              "text": "une clé primaire sur chaque table"
+            },
+            {
+              "text": "aucune colonne nulle"
+            },
+            {
+              "text": "aucune dépendance entre colonnes"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle forme normale est violée si le nom du produit figure dans une table de clé « commande plus produit » ?",
+          "explanation": "La deuxième : le nom ne dépend que d’une partie de la clé, le produit, et doit donc sortir.",
+          "options": [
+            {
+              "text": "la deuxième",
+              "correct": true
+            },
+            {
+              "text": "la première"
+            },
+            {
+              "text": "la troisième"
+            },
+            {
+              "text": "aucune, c’est correct"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète la règle mnémonique de Kent.",
+          "explanation": "Chaque colonne dépend de la clé, de toute la clé, et de rien d’autre que la clé.",
+          "template": "Chaque colonne dépend de la clé, de ___ la clé, et de rien d’___ que la clé.",
+          "blanks": [
+            {
+              "accepted": [
+                "toute"
+              ]
+            },
+            {
+              "accepted": [
+                "autre"
+              ]
+            }
+          ],
+          "hint": "Trois mots, dont deux à retrouver.",
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "À quelles conditions dénormaliser est-il légitime ?",
+          "explanation": "Gain mesuré, redondance documentée, et un mécanisme qui garantit la cohérence.",
+          "options": [
+            {
+              "text": "le gain est mesuré, pas supposé",
+              "correct": true
+            },
+            {
+              "text": "la redondance est documentée",
+              "correct": true
+            },
+            {
+              "text": "un mécanisme garantit la cohérence",
+              "correct": true
+            },
+            {
+              "text": "la table est petite"
+            },
+            {
+              "text": "la base est récente"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi normaliser d’abord et dénormaliser ensuite, jamais l’inverse ?",
+          "explanation": "Parce qu’on ne sait pas renormaliser une base en production : le découpage tardif demande de réécrire les données et le code.",
+          "options": [
+            {
+              "text": "on ne sait pas renormaliser une base en production",
+              "correct": true
+            },
+            {
+              "text": "la dénormalisation est toujours plus rapide"
+            },
+            {
+              "text": "les formes normales sont obligatoires"
+            },
+            {
+              "text": "les index l’exigent"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "index-plans-et-transactions",
+      "title": "Index, plans d’exécution, transactions",
+      "subtitle": "Un index change l’ordre de grandeur, et ralentit l’écriture.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’un index fait vraiment",
+          "body": "Compare n et log n sur le curseur : à n égal soixante-dix, l’un vaut soixante-dix et l’autre six. Pour un million de lignes, un parcours complet en demande un million, et un index en demande une vingtaine. C’est tout l’enjeu, et c’est un changement d’ordre de grandeur, pas une optimisation.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’un index est, et ce qu’il coûte",
+          "body": "Une structure annexe, le plus souvent un arbre équilibré, qui mène d’une valeur aux lignes qui la portent sans parcourir la table.\n\nLe gain en lecture est logarithmique : une vingtaine de comparaisons pour un million de lignes, une quarantaine pour mille milliards.\n\nLe coût est triple. L’espace, parfois autant que la table. L’écriture, car chaque insertion doit mettre à jour chaque index. Et la maintenance, car un index fragmenté perd son efficacité.\n\nConséquence : une table très lue et peu écrite mérite des index ; une table d’insertion massive en souffre. Indexer toutes les colonnes « pour être sûr » est l’erreur classique du débutant, et elle peut diviser par trois le débit d’écriture.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le plan d’exécution, et comment le lire",
+          "body": "La base reçoit une requête déclarative et choisit comment l’exécuter : dans quel ordre joindre, quel index employer, quel algorithme de jointure.\n\nElle le fait sur des statistiques — nombre de lignes, distribution des valeurs — collectées périodiquement. Si les statistiques sont périmées, le plan est mauvais, et la requête qui prenait dix millisecondes en prend dix secondes sans qu’une ligne de code ait changé.\n\nTrois choses se lisent dans un plan. Un parcours complet de table là où on attendait un index. Une estimation du nombre de lignes très éloignée du réel. Et une jointure imbriquée sur deux grosses tables.\n\nC’est le premier outil à sortir devant une requête lente, bien avant de la réécrire. Dans la plupart des cas, le plan désigne l’index manquant.",
+          "formula": "requête lente : lire le plan avant de réécrire",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi un index n’est pas toujours employé",
+          "body": "Si une requête ramène la moitié de la table, le parcours complet est plus rapide que l’index : l’index fait sauter d’un endroit à l’autre du disque, le parcours lit en séquence.\n\nSi la condition porte sur une expression — une fonction appliquée à la colonne — l’index sur la colonne ne sert plus. Une date dont on extrait l’année ne peut pas employer l’index sur la date, sauf si un index sur l’expression existe.\n\nSi la condition commence par un caractère générique, un index ordonné ne peut pas être parcouru : il ne sait pas où commencer.\n\nEt si les statistiques sont fausses, la base croit la requête peu sélective et préfère le parcours. Les trois premiers cas se corrigent en écrivant autrement ; le quatrième en recollectant les statistiques.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les transactions, et les quatre lettres",
+          "body": "Atomicité : tout ou rien. Un virement débite et crédite, ou ne fait ni l’un ni l’autre, même si la machine s’arrête entre les deux.\n\nCohérence : les contraintes déclarées sont vraies avant et après — pas pendant.\n\nIsolation : une transaction ne voit pas les résultats intermédiaires d’une autre. C’est la propriété la plus coûteuse et la plus souvent relâchée.\n\nDurabilité : une fois validée, elle survit à une coupure. Ce qui garantit cela est le journal, écrit et forcé sur disque avant l’acquittement. C’est aussi ce qui fait qu’une validation ne peut pas être plus rapide qu’une écriture physique — la raison pour laquelle on groupe les écritures quand le débit compte.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de comparaisons pour trouver une ligne par index dans une table d’un million de lignes ?",
+          "explanation": "Une vingtaine : deux puissance vingt dépasse le million. Contre un million pour un parcours complet.",
+          "min": 1,
+          "max": 1000,
+          "answer": 20,
+          "tolerance": 6,
+          "unit": "comparaisons",
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que coûte un index ?",
+          "explanation": "L’espace, le ralentissement de chaque écriture, et la maintenance quand il se fragmente.",
+          "options": [
+            {
+              "text": "de l’espace, parfois autant que la table",
+              "correct": true
+            },
+            {
+              "text": "le ralentissement des écritures",
+              "correct": true
+            },
+            {
+              "text": "de la maintenance",
+              "correct": true
+            },
+            {
+              "text": "le ralentissement des lectures"
+            },
+            {
+              "text": "la perte de la cohérence"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une requête peut-elle ralentir d’un facteur mille sans qu’une ligne de code change ?",
+          "explanation": "Parce que les statistiques sont périmées et que la base choisit alors un mauvais plan d’exécution.",
+          "options": [
+            {
+              "text": "les statistiques périmées font choisir un mauvais plan",
+              "correct": true
+            },
+            {
+              "text": "l’index a été supprimé"
+            },
+            {
+              "text": "la table a changé de forme normale"
+            },
+            {
+              "text": "le disque est plus lent"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Dans quels cas un index n’est-il pas employé ?",
+          "explanation": "Requête peu sélective, condition sur une expression, générique en tête, ou statistiques fausses.",
+          "options": [
+            {
+              "text": "la requête ramène la moitié de la table",
+              "correct": true
+            },
+            {
+              "text": "la condition porte sur une fonction de la colonne",
+              "correct": true
+            },
+            {
+              "text": "la condition commence par un caractère générique",
+              "correct": true
+            },
+            {
+              "text": "la table est trop grosse"
+            },
+            {
+              "text": "la colonne est une clé primaire"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque lettre d’ACID à ce qu’elle garantit.",
+          "explanation": "Atomicité : tout ou rien. Cohérence : les contraintes tiennent. Isolation : pas de résultat intermédiaire visible. Durabilité : survit à la coupure.",
+          "pairs": [
+            {
+              "left": "atomicité",
+              "right": "tout ou rien"
+            },
+            {
+              "left": "cohérence",
+              "right": "les contraintes déclarées tiennent"
+            },
+            {
+              "left": "isolation",
+              "right": "aucun résultat intermédiaire visible"
+            },
+            {
+              "left": "durabilité",
+              "right": "survit à une coupure"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui garantit la durabilité ?",
+          "explanation": "Le journal, écrit et forcé sur disque avant l’acquittement. C’est pourquoi une validation ne peut pas être plus rapide qu’une écriture physique.",
+          "options": [
+            {
+              "text": "le journal forcé sur disque avant l’acquittement",
+              "correct": true
+            },
+            {
+              "text": "la réplication sur une autre machine"
+            },
+            {
+              "text": "les index"
+            },
+            {
+              "text": "les statistiques"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-acid-et-cap",
+      "title": "Défi : ACID et le théorème CAP",
+      "subtitle": "Trois propriétés, deux au choix — et ce que l’énoncé ne dit pas.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La panne que CAP suppose",
+          "body": "Coupe les deux liens qui partent de « toi » : tu es isolé du serveur, alors que chaque machine fonctionne. C’est exactement la situation que le théorème CAP considère — une partition du réseau, pas une panne de machine — et c’est pourquoi son énoncé surprend quand on le lit sans cette image.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Deux écrans, deux montants",
+          "body": "Modifie une quantité : ici le total se recalcule aussitôt, donc les deux ne peuvent pas se contredire. Dans un système réparti, l’un peut être recalculé sur une machine et pas encore sur l’autre, et c’est précisément le choix que CAP force à faire.",
+          "figureId": "tableur",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que le théorème CAP affirme",
+          "body": "En présence d’une partition du réseau, un système réparti ne peut pas offrir à la fois la cohérence et la disponibilité.\n\nCohérence : toute lecture rend la dernière écriture validée. Disponibilité : toute requête reçoit une réponse non erronée.\n\nL’argument est immédiat. Deux moitiés séparées, une écriture dans l’une : soit l’autre refuse de répondre, et la disponibilité est perdue ; soit elle répond une valeur périmée, et la cohérence est perdue. Il n’y a pas de troisième possibilité.\n\nDémontré par Gilbert et Lynch en 2002, deux ans après la conjecture de Brewer. La démonstration tient en une page, et c’est l’une des rares de l’informatique répartie qu’on peut refaire de tête.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le théorème ne dit pas",
+          "body": "Il ne dit pas qu’il faut choisir deux propriétés sur trois. La tolérance aux partitions n’est pas un choix : les réseaux tombent, donc tout système réparti réel la subit. Le choix porte sur les deux autres, et seulement pendant une partition.\n\nIl ne dit rien du fonctionnement normal. Hors partition, un système peut être cohérent et disponible, et les bons systèmes le sont.\n\nIl ne dit pas que la cohérence est tout ou rien. Entre « toute lecture voit la dernière écriture » et « rien n’est garanti », il existe une dizaine de niveaux bien définis.\n\nEt le slogan « choisir deux sur trois », qui a fait sa célébrité, est l’une des formules les plus mal comprises de l’informatique. Brewer lui-même l’a écrit en 2012 : elle trompe plus qu’elle n’éclaire.",
+          "id": "c4"
+        },
+        {
+          "kind": "formule",
+          "title": "Les niveaux d’isolation, et ce qu’on accepte en échange",
+          "body": "Les bases relationnelles offrent le même compromis à petite échelle, et le rendent réglable.\n\nLecture non validée : on peut lire ce qu’une autre transaction n’a pas encore validé. Rapide, et presque jamais souhaitable.\n\nLecture validée : on ne lit que du validé, mais deux lectures de la même ligne peuvent différer. C’est le réglage par défaut de la plupart des bases.\n\nLecture reproductible : la même ligne rend la même valeur pendant toute la transaction. Sérialisable : le résultat est celui d’une exécution en file, une transaction après l’autre.\n\nChaque niveau coûte plus de verrous ou plus de versions conservées. Et le réglage par défaut n’est pas le plus sûr : c’est un choix de performance que la plupart des applications subissent sans le savoir.",
+          "formula": "plus d’isolation = plus de verrous ou plus de versions",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une relation est un ensemble : l’ordre des lignes n’a pas de sens, et nul n’est pas égal à nul. Une jointure est un produit suivi d’une sélection, ce qui explique son coût.\n\nNormaliser, c’est mettre chaque fait là où il dépend de la clé, de toute la clé, et de rien d’autre que la clé. Dénormaliser ensuite si la mesure l’exige, jamais l’inverse.\n\nUn index change l’ordre de grandeur en lecture et ralentit l’écriture. Devant une requête lente, lire le plan avant de réécrire : il désigne l’index manquant la plupart du temps.\n\nEt CAP ne dit pas « deux sur trois ». Il dit que pendant une partition — qui n’est pas un choix — il faut sacrifier la cohérence ou la disponibilité. Hors partition, les deux sont possibles, et les bons systèmes les offrent.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’affirme exactement le théorème CAP ?",
+          "explanation": "Qu’en présence d’une partition du réseau, on ne peut pas avoir à la fois la cohérence et la disponibilité.",
+          "options": [
+            {
+              "text": "pendant une partition, cohérence ou disponibilité, pas les deux",
+              "correct": true
+            },
+            {
+              "text": "il faut choisir deux propriétés sur trois"
+            },
+            {
+              "text": "un système réparti ne peut pas être cohérent"
+            },
+            {
+              "text": "la disponibilité exige la réplication"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la tolérance aux partitions n’est-elle pas un choix ?",
+          "explanation": "Parce que les réseaux tombent : tout système réparti réel subit les partitions, qu’il le veuille ou non.",
+          "options": [
+            {
+              "text": "les réseaux tombent, le système la subit",
+              "correct": true
+            },
+            {
+              "text": "elle est exigée par le théorème"
+            },
+            {
+              "text": "elle découle de la cohérence"
+            },
+            {
+              "text": "elle est gratuite"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Hors partition, un système réparti peut être à la fois cohérent et disponible.",
+          "explanation": "Vrai. Le théorème ne dit rien du fonctionnement normal, et les bons systèmes offrent les deux.",
+          "answer": true,
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe les niveaux d’isolation du plus faible au plus fort.",
+          "explanation": "Lecture non validée, lecture validée, lecture reproductible, sérialisable. Chaque niveau coûte plus de verrous ou plus de versions.",
+          "items": [
+            "lecture non validée",
+            "lecture validée",
+            "lecture reproductible",
+            "sérialisable"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel niveau d’isolation la plupart des bases emploient-elles par défaut ?",
+          "explanation": "La lecture validée : on ne lit que du validé, mais deux lectures de la même ligne peuvent différer. Ce n’est pas le plus sûr.",
+          "options": [
+            {
+              "text": "la lecture validée",
+              "correct": true
+            },
+            {
+              "text": "sérialisable"
+            },
+            {
+              "text": "la lecture reproductible"
+            },
+            {
+              "text": "la lecture non validée"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le premier geste devant une requête lente ?",
+          "explanation": "Lire son plan d’exécution. Dans la plupart des cas, il désigne l’index manquant.",
+          "options": [
+            {
+              "text": "lire son plan d’exécution",
+              "correct": true
+            },
+            {
+              "text": "la réécrire autrement"
+            },
+            {
+              "text": "ajouter un index sur chaque colonne"
+            },
+            {
+              "text": "dénormaliser la table"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

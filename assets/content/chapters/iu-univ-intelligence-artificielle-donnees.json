@@ -1,0 +1,692 @@
+{
+  "chapter": "informatique-universite-intelligence-artificielle-et-donnees",
+  "lessons": [
+    {
+      "id": "apprendre-c-est-ajuster-des-parametres",
+      "title": "Apprendre, c’est ajuster des paramètres",
+      "subtitle": "Une couche est une multiplication par une matrice, et rien de plus.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’une couche fait au vecteur d’entrée",
+          "body": "Bouge les quatre curseurs et regarde ce que le carré devient : étiré, tourné, aplati, retourné. Une couche de réseau est exactement cela, en bien plus grand — une matrice qui transforme un vecteur. Les coefficients que tu déplaces sont ce que l’apprentissage ajuste.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul d’une couche, en trois gestes",
+          "body": "Multiplier le vecteur d’entrée par une matrice de poids. C’est ce que la figure montre : une combinaison linéaire des entrées, une par sortie.\n\nAjouter un vecteur de biais, qui décale le résultat sans le déformer.\n\nAppliquer une fonction non linéaire à chaque composante, le plus souvent « garder si positif, zéro sinon ».\n\nLe troisième geste est indispensable, et c’est le point le plus souvent mal compris. Sans lui, empiler cent couches donnerait exactement la même chose qu’une seule : le produit de cent matrices est une matrice. Toute la profondeur viendrait de rien, et ce serait une régression linéaire déguisée.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Combien de paramètres, et ce que cela signifie",
+          "body": "Une couche qui va de mille entrées à mille sorties porte un million de poids, plus mille biais.\n\nLes grands modèles de langage en comptent des centaines de milliards — pour l’un des premiers de cette échelle, cent soixante-quinze milliards.\n\nChacun de ces nombres est ajusté par l’apprentissage, et aucun n’a été écrit par un humain. C’est ce qui distingue cette programmation de l’autre : on écrit la forme du calcul et la mesure de l’erreur, pas le calcul.\n\nConséquence immédiate et importante : personne ne peut lire un modèle. Expliquer pourquoi il a répondu ceci plutôt que cela demande des méthodes indirectes, et c’est un domaine de recherche entier et non une fonctionnalité manquante.",
+          "formula": "mille entrées, mille sorties : un million de poids pour une seule couche",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce qu’apprendre veut dire, concrètement",
+          "body": "On a des exemples : des entrées, et la sortie attendue pour chacune.\n\nOn définit une fonction d’erreur : un nombre qui mesure l’écart entre ce que le modèle produit et ce qu’on attendait, sur l’ensemble des exemples.\n\nApprendre, c’est chercher les valeurs des paramètres qui rendent cette erreur la plus petite possible. Rien d’autre. Ce n’est pas une métaphore de l’apprentissage humain, c’est une minimisation de fonction.\n\nEt c’est pourquoi le choix de la fonction d’erreur est la décision la plus lourde de tout le projet : le modèle optimisera exactement ce qu’on a écrit, y compris si ce n’est pas ce qu’on voulait. Un modèle qui maximise le temps passé sur un service fera exactement cela, et pas ce qui serait utile aux gens.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui a changé depuis les années quatre-vingt",
+          "body": "Les idées de base — couches, non-linéarité, correction par le gradient — sont établies depuis les années quatre-vingt et antérieures.\n\nTrois choses ont changé. La quantité de données disponibles, qui a crû de plusieurs ordres de grandeur avec le réseau mondial.\n\nLa puissance de calcul, par les processeurs graphiques : un entraînement qui aurait pris des années en prend des jours, et c’est ce qui a permis d’essayer.\n\nEt quelques trouvailles d’ingénierie qui ont rendu les réseaux profonds entraînables : la non-linéarité « garder si positif », les connexions qui sautent des couches, la normalisation. Aucune n’est une percée théorique, et ensemble elles ont tout débloqué. C’est une leçon sur la nature du progrès dans ce domaine.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre les trois gestes d’une couche.",
+          "explanation": "Multiplier par la matrice de poids, ajouter le biais, appliquer la non-linéarité.",
+          "items": [
+            "multiplier par la matrice de poids",
+            "ajouter le biais",
+            "appliquer la fonction non linéaire"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que donnerait l’empilement de cent couches sans non-linéarité ?",
+          "explanation": "La même chose qu’une seule couche : le produit de cent matrices est une matrice. Ce serait une régression linéaire déguisée.",
+          "options": [
+            {
+              "text": "la même chose qu’une seule couche",
+              "correct": true
+            },
+            {
+              "text": "un modèle cent fois plus puissant"
+            },
+            {
+              "text": "un modèle instable"
+            },
+            {
+              "text": "un calcul cent fois plus lent, mais plus précis"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de poids porte une couche de mille entrées vers mille sorties ?",
+          "explanation": "Un million : mille fois mille, plus mille biais.",
+          "answer": 1000000,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’écrit un humain dans un projet d’apprentissage ?",
+          "explanation": "La forme du calcul et la mesure de l’erreur, pas le calcul. Aucun des paramètres n’est écrit à la main.",
+          "options": [
+            {
+              "text": "la forme du calcul et la mesure de l’erreur",
+              "correct": true
+            },
+            {
+              "text": "les valeurs des poids"
+            },
+            {
+              "text": "les règles de décision"
+            },
+            {
+              "text": "la sortie attendue pour chaque entrée possible"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le choix de la fonction d’erreur est-il la décision la plus lourde ?",
+          "explanation": "Parce que le modèle optimisera exactement ce qu’on a écrit, y compris si ce n’est pas ce qu’on voulait.",
+          "options": [
+            {
+              "text": "le modèle optimise exactement ce qui est écrit, voulu ou non",
+              "correct": true
+            },
+            {
+              "text": "elle détermine la vitesse d’entraînement"
+            },
+            {
+              "text": "elle fixe le nombre de paramètres"
+            },
+            {
+              "text": "elle est difficile à calculer"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui a changé depuis les années quatre-vingt ?",
+          "explanation": "La quantité de données, la puissance de calcul, et quelques trouvailles d’ingénierie — aucune n’étant une percée théorique.",
+          "options": [
+            {
+              "text": "la quantité de données disponibles",
+              "correct": true
+            },
+            {
+              "text": "la puissance de calcul",
+              "correct": true
+            },
+            {
+              "text": "des trouvailles d’ingénierie sur l’entraînabilité",
+              "correct": true
+            },
+            {
+              "text": "les idées de base du calcul par couches"
+            },
+            {
+              "text": "le principe de correction par le gradient"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-descente-de-gradient",
+      "title": "La descente de gradient",
+      "subtitle": "Suivre la pente, et choisir la longueur du pas.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un creux, et le point le plus bas",
+          "body": "Mets a positif et regarde le sommet : c’est le point le plus bas de la courbe, et la pente y est nulle. Déplace b : le creux glisse. Minimiser une erreur, c’est chercher ce point-là, dans un espace non pas à une dimension mais à des milliards.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La pente, et comment on la mesure",
+          "body": "Rapproche les deux points : la sécante devient la tangente, et sa pente est la dérivée. C’est ce nombre qui dit dans quel sens descendre, et de combien la fonction baisse si l’on bouge un peu. Tout l’apprentissage repose sur ce calcul, répété pour chaque paramètre.",
+          "figureId": "secante-tangente",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "L’algorithme, en quatre lignes",
+          "body": "Partir de paramètres au hasard.\n\nCalculer l’erreur sur un échantillon d’exemples.\n\nCalculer, pour chaque paramètre, de combien l’erreur changerait si on le modifiait un peu : c’est le gradient.\n\nDéplacer chaque paramètre un peu dans le sens qui fait baisser l’erreur, puis recommencer. Des millions de fois. Il n’y a rien de plus dans l’entraînement d’un réseau, et c’est le même algorithme pour un modèle à dix paramètres et pour un modèle à cent milliards.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "Le pas, et les deux façons de se tromper",
+          "body": "Le pas est la longueur du déplacement à chaque itération, et c’est le réglage le plus sensible de tout l’entraînement.\n\nTrop petit : on avance, mais il faudrait cent fois plus de temps que le budget disponible. L’entraînement semble ne rien apprendre.\n\nTrop grand : on saute par-dessus le creux, on arrive de l’autre côté plus haut qu’on était, et l’erreur se met à croître au lieu de décroître. L’entraînement divergent se reconnaît en quelques minutes à ce signe.\n\nD’où la pratique : commencer avec un pas plus grand et le réduire progressivement. On avance vite loin du creux, et on affine en approchant. Ce réglage dans le temps est ce qui sépare un entraînement qui converge d’un entraînement qui n’aboutit pas, bien plus que l’architecture du modèle.",
+          "formula": "pas trop petit : trop lent ; pas trop grand : l’erreur monte",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "La rétropropagation, ou le gradient sans le payer",
+          "body": "Calculer la dérivée de l’erreur par rapport à chacun des cent milliards de paramètres paraît impossible : une dérivée par paramètre, et chacune demanderait de réévaluer tout le modèle.\n\nLa rétropropagation l’obtient en une seule passe en arrière, pour un coût comparable à celui de la passe avant. Elle applique la règle de dérivation en chaîne, de la sortie vers l’entrée, en réutilisant à chaque couche ce que la couche suivante a déjà calculé.\n\nC’est la programmation dynamique de la leçon sur la récursion, appliquée aux dérivées : ne jamais recalculer ce qu’on a déjà calculé.\n\nRien d’autre ne rendrait l’apprentissage profond possible. Sans elle, chaque itération coûterait cent milliards de fois plus, et c’est pourquoi sa diffusion en 1986 marque le vrai début du domaine, alors que l’idée de dérivation automatique inverse était connue depuis les années soixante-dix.",
+          "id": "c5"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le minimum local, et pourquoi il inquiète moins qu’on croit",
+          "body": "Une fonction d’erreur peut avoir plusieurs creux. La descente s’arrête dans celui où elle tombe, qui n’est pas forcément le plus profond.\n\nC’était l’objection théorique majeure contre la méthode, et elle s’est révélée largement sans portée en pratique. En très grande dimension, les points où la pente est nulle sont presque tous des cols — descendants dans au moins une direction — et non des creux.\n\nEt les creux atteints se révèlent de qualité comparable : plusieurs entraînements du même modèle partis de points différents aboutissent à des erreurs voisines.\n\nC’est un bon exemple d’un écart entre la théorie et la pratique dans ce domaine : l’obstacle qu’on redoutait n’était pas le bon, et les vraies difficultés — le réglage du pas, la qualité des données, le surapprentissage — étaient ailleurs.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre une itération de descente de gradient.",
+          "explanation": "Calculer l’erreur sur un échantillon, calculer le gradient, déplacer les paramètres, recommencer.",
+          "items": [
+            "calculer l’erreur sur un échantillon",
+            "calculer le gradient pour chaque paramètre",
+            "déplacer chaque paramètre dans le sens descendant",
+            "recommencer avec un nouvel échantillon"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce symptôme vient-il d’un pas trop petit, ou trop grand ?",
+          "explanation": "Trop petit : l’entraînement semble ne rien apprendre. Trop grand : l’erreur se met à croître.",
+          "categories": [
+            "pas trop petit",
+            "pas trop grand"
+          ],
+          "items": [
+            {
+              "text": "l’erreur baisse, mais beaucoup trop lentement",
+              "category": 0
+            },
+            {
+              "text": "l’entraînement semble ne rien apprendre",
+              "category": 0
+            },
+            {
+              "text": "l’erreur se met à croître",
+              "category": 1
+            },
+            {
+              "text": "on arrive plus haut qu’on était parti",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle pratique sur le pas sépare un entraînement qui converge d’un qui n’aboutit pas ?",
+          "explanation": "Commencer plus grand et réduire progressivement : avancer vite loin du creux, affiner en approchant.",
+          "options": [
+            {
+              "text": "commencer grand et réduire progressivement",
+              "correct": true
+            },
+            {
+              "text": "garder le pas constant"
+            },
+            {
+              "text": "commencer petit et augmenter"
+            },
+            {
+              "text": "choisir le pas au hasard à chaque itération"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel principe la rétropropagation applique-t-elle ?",
+          "explanation": "Ne jamais recalculer ce qu’on a déjà calculé : c’est la programmation dynamique appliquée aux dérivées, par la règle de la chaîne.",
+          "options": [
+            {
+              "text": "ne jamais recalculer ce qui est déjà calculé",
+              "correct": true
+            },
+            {
+              "text": "approcher la dérivée par différences finies"
+            },
+            {
+              "text": "échantillonner les paramètres au hasard"
+            },
+            {
+              "text": "paralléliser une dérivée par paramètre"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les minimums locaux inquiètent-ils moins qu’on ne craignait ?",
+          "explanation": "Parce qu’en très grande dimension les points de pente nulle sont presque tous des cols, et que les creux atteints sont de qualité comparable.",
+          "options": [
+            {
+              "text": "en grande dimension, ce sont presque tous des cols",
+              "correct": true
+            },
+            {
+              "text": "la fonction d’erreur n’a qu’un seul creux"
+            },
+            {
+              "text": "le pas variable les évite"
+            },
+            {
+              "text": "la rétropropagation les contourne"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Où sont les vraies difficultés de l’entraînement ?",
+          "explanation": "Le réglage du pas, la qualité des données, le surapprentissage. L’obstacle théorique redouté — les minimums locaux — n’était pas le bon.",
+          "options": [
+            {
+              "text": "le réglage du pas",
+              "correct": true
+            },
+            {
+              "text": "la qualité des données",
+              "correct": true
+            },
+            {
+              "text": "le surapprentissage",
+              "correct": true
+            },
+            {
+              "text": "les minimums locaux"
+            },
+            {
+              "text": "le calcul du gradient"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "surapprentissage-et-validation",
+      "title": "Le surapprentissage, et la validation",
+      "subtitle": "Un modèle qui réussit sur ses exemples n’a rien prouvé.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Plus de souplesse, plus de formes",
+          "body": "Passe de la racine au carré puis au cube : plus la fonction est flexible, plus elle peut épouser de formes. C’est tout l’enjeu du chapitre — une famille plus riche s’ajuste mieux aux points qu’on lui donne, et se trompe plus volontiers sur ceux qu’elle n’a pas vus.",
+          "figureId": "fonctions-reference",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le phénomène, et comment il se voit",
+          "body": "Un modèle assez flexible peut passer exactement par tous les points d’apprentissage. Il a alors une erreur nulle sur eux, et n’a rien appris de général : il a mémorisé.\n\nLe signe est net quand on le cherche : l’erreur sur les exemples d’apprentissage continue de baisser, et l’erreur sur des exemples mis de côté commence à remonter.\n\nLe point où les deux courbes se séparent est le moment où il aurait fallu s’arrêter. On ne peut pas le voir sans données mises de côté, et c’est la seule raison pour laquelle on en met de côté.\n\nUn modèle avec autant de paramètres que de points de données peut toujours mémoriser exactement. Aujourd’hui les modèles en ont souvent bien plus que de données, ce qui rend la surveillance obligatoire et non facultative.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Les trois ensembles, et leurs trois rôles",
+          "body": "L’ensemble d’apprentissage sert à ajuster les paramètres. C’est le plus gros, souvent huit parties sur dix.\n\nL’ensemble de validation sert à choisir : le nombre de couches, le pas, le moment d’arrêter. Il est regardé des centaines de fois.\n\nL’ensemble de test ne sert qu’à une seule mesure, à la fin, et ne doit jamais être regardé avant.\n\nLa raison du troisième ensemble est subtile et décisive. À force de choisir les réglages d’après la validation, on finit par s’ajuster à elle aussi — par la main de l’ingénieur, cette fois, et non par la descente de gradient. Le test est le seul chiffre honnête, et il cesse de l’être dès qu’on s’en sert pour décider quoi que ce soit.",
+          "formula": "apprendre sur l’un, choisir sur le deuxième, mesurer une fois sur le troisième",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Ce qui corrige vraiment un surapprentissage",
+          "body": "Plus de données. C’est le remède le plus efficace, et de loin : un modèle ne peut pas mémoriser ce qui est trop varié pour l’être.\n\nUn modèle plus petit, ou pénalisé pour la taille de ses poids. On réduit la flexibilité, donc la capacité à mémoriser.\n\nL’arrêt précoce, au point où les deux courbes se séparent. Gratuit, et étonnamment efficace.\n\nEt l’augmentation des données : dériver de nouveaux exemples des anciens par des transformations qui ne changent pas la réponse — retourner une image, changer sa luminosité. Cela dit au modèle ce qui est accessoire, et c’est une façon détournée mais pratique de lui transmettre une connaissance du domaine.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La fuite de données, et pourquoi elle trompe",
+          "body": "Si une information de l’ensemble de test se retrouve dans l’apprentissage, le résultat mesuré est faux — trop bon, et l’erreur ne se verra qu’en production.\n\nLes cas réels sont rarement grossiers. Normaliser les données avant de les séparer : la moyenne employée contient déjà le test. Séparer au hasard des données temporelles : le modèle apprend du futur pour prédire le passé.\n\nSéparer au hasard des mesures répétées sur les mêmes personnes : deux clichés du même patient se retrouvent de part et d’autre, et le modèle reconnaît le patient au lieu de la maladie.\n\nLe réflexe à prendre est un seul : séparer d’abord, tout traiter ensuite, et séparer selon ce qui doit être nouveau à l’usage — le patient, la période, le site — et non selon la ligne du fichier.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment reconnaît-on un surapprentissage ?",
+          "explanation": "L’erreur d’apprentissage continue de baisser tandis que l’erreur sur des exemples mis de côté remonte.",
+          "options": [
+            {
+              "text": "l’erreur mise de côté remonte quand celle d’apprentissage baisse",
+              "correct": true
+            },
+            {
+              "text": "les deux erreurs remontent"
+            },
+            {
+              "text": "l’erreur d’apprentissage cesse de baisser"
+            },
+            {
+              "text": "l’entraînement diverge"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque ensemble à son rôle.",
+          "explanation": "On apprend sur le premier, on choisit les réglages sur le deuxième, et on mesure une seule fois sur le troisième.",
+          "pairs": [
+            {
+              "left": "apprentissage",
+              "right": "ajuster les paramètres"
+            },
+            {
+              "left": "validation",
+              "right": "choisir les réglages"
+            },
+            {
+              "left": "test",
+              "right": "une seule mesure, à la fin"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un troisième ensemble, alors que la validation existe ?",
+          "explanation": "Parce qu’à force de choisir les réglages d’après la validation, on s’ajuste à elle — par la main de l’ingénieur cette fois.",
+          "options": [
+            {
+              "text": "on finit par s’ajuster à la validation elle-même",
+              "correct": true
+            },
+            {
+              "text": "la validation est trop petite"
+            },
+            {
+              "text": "il faut deux mesures pour faire une moyenne"
+            },
+            {
+              "text": "la validation sert à l’apprentissage"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui corrige un surapprentissage ?",
+          "explanation": "Plus de données d’abord, un modèle plus petit ou pénalisé, l’arrêt précoce, et l’augmentation des données.",
+          "options": [
+            {
+              "text": "plus de données",
+              "correct": true
+            },
+            {
+              "text": "un modèle plus petit ou pénalisé",
+              "correct": true
+            },
+            {
+              "text": "l’arrêt précoce",
+              "correct": true
+            },
+            {
+              "text": "l’augmentation des données",
+              "correct": true
+            },
+            {
+              "text": "un pas plus grand"
+            },
+            {
+              "text": "plus d’itérations"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce geste provoque-t-il une fuite de données, ou non ?",
+          "explanation": "Il faut séparer d’abord et tout traiter ensuite, en séparant selon ce qui doit être nouveau à l’usage.",
+          "categories": [
+            "fuite de données",
+            "correct"
+          ],
+          "items": [
+            {
+              "text": "normaliser avant de séparer",
+              "category": 0
+            },
+            {
+              "text": "séparer au hasard des données temporelles",
+              "category": 0
+            },
+            {
+              "text": "mettre deux clichés du même patient de part et d’autre",
+              "category": 0
+            },
+            {
+              "text": "séparer par patient, puis normaliser sur l’apprentissage",
+              "category": 1
+            },
+            {
+              "text": "séparer par période pour des données temporelles",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Selon quoi faut-il séparer les données ?",
+          "explanation": "Selon ce qui doit être nouveau à l’usage — le patient, la période, le site — et non selon la ligne du fichier.",
+          "options": [
+            {
+              "text": "selon ce qui sera nouveau à l’usage",
+              "correct": true
+            },
+            {
+              "text": "au hasard, toujours"
+            },
+            {
+              "text": "selon la taille des exemples"
+            },
+            {
+              "text": "selon la classe à prédire"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ce-qu-un-modele-ne-sait-pas",
+      "title": "Défi : ce qu’un modèle ne sait pas",
+      "subtitle": "Il répond toujours, y compris quand il n’a aucune raison de savoir.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les données décident, pas l’algorithme",
+          "body": "Change une quantité : le total suit. Maintenant imagine qu’une des quantités saisies soit fausse — le total l’est aussi, et rien dans le tableau ne le signale. Un modèle est dans cette situation en permanence : il n’a aucun moyen de savoir que ce qu’on lui a donné était faux, biaisé ou incomplet.",
+          "figureId": "tableur",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que coûte le fait de douter",
+          "body": "Compare les ordres de grandeur sur le curseur. Estimer l’incertitude d’un modèle demande souvent de l’exécuter plusieurs dizaines de fois au lieu d’une. C’est pourquoi cette mesure, bien que connue et utile, n’est presque jamais déployée en production.",
+          "figureId": "complexite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le piège de l’exactitude moyenne",
+          "body": "Une maladie touche une personne sur cent. Un modèle qui répond toujours « non malade » a quatre-vingt-dix-neuf pour-cent d’exactitude, et il est inutile.\n\nD’où deux mesures qui disent ce que l’exactitude cache. La précision : parmi ceux que le modèle déclare malades, quelle part l’est. Le rappel : parmi les malades, quelle part le modèle trouve.\n\nLes deux s’opposent. Déclarer plus de monde malade augmente le rappel et baisse la précision, et inversement. Le réglage du seuil est donc un choix de société, pas un réglage technique : il décide combien de malades on accepte de rater pour éviter combien de fausses alertes.\n\nC’est le point où un projet d’apprentissage cesse d’être un problème d’informatique. Ce choix appartient à ceux qui vivront ses conséquences, et il doit être écrit avant l’entraînement et non négocié après.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La corrélation apprise, et le vrai de travers",
+          "body": "Un modèle apprend ce qui prédit, pas ce qui cause. Si tous les clichés de malades viennent d’un appareil et tous les autres d’un second, le modèle reconnaît l’appareil.\n\nUn cas publié et devenu classique : un classifieur distinguant les loups des chiens de traîneau s’appuyait en réalité sur la neige en arrière-plan. Il était excellent sur les données disponibles, et sans aucune valeur.\n\nLe modèle ne mentait pas : la neige prédisait bien le loup dans ces photos. Il a trouvé la régularité la plus facile, ce qu’il fait toujours.\n\nConséquence pratique : avant de regarder la performance, regarder sur quoi le modèle s’appuie. Les méthodes qui montrent les zones d’une image qui ont décidé, ou les mots d’un texte, sont imparfaites et valent infiniment mieux que la confiance aveugle dans un chiffre.",
+          "id": "c4"
+        },
+        {
+          "kind": "formule",
+          "title": "Le décalage de distribution, et pourquoi c’est la panne numéro un",
+          "body": "Un modèle n’est valide que sur des données ressemblant à celles de son apprentissage. Et le monde bouge.\n\nLes habitudes changent, un capteur est remplacé, une population n’est pas celle de l’étude, une fraude s’adapte justement parce qu’elle est détectée.\n\nLe symptôme est reconnaissable et déroutant : la performance se dégrade lentement, sans qu’aucun code n’ait changé et sans qu’aucune alerte ne se déclenche. Un modèle ne tombe pas en panne, il devient faux.\n\nD’où l’obligation de surveiller la distribution des entrées en production, et pas seulement la performance. Et de réentraîner régulièrement. Un modèle est une denrée périssable, et c’est l’écart le plus courant entre un projet de recherche et un service qui tient.",
+          "formula": "un modèle ne tombe pas en panne : il devient faux, lentement",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une couche est une matrice, un biais, une non-linéarité — et sans la troisième, cent couches valent une seule. Apprendre est une minimisation, et le modèle optimisera exactement la mesure d’erreur qu’on a écrite.\n\nLa descente de gradient tient en quatre lignes, et le réglage du pas décide de tout. La rétropropagation obtient toutes les dérivées en une passe, et sans elle rien de tout cela n’existerait.\n\nUn modèle qui réussit sur ses exemples n’a rien prouvé. Apprendre sur un ensemble, choisir sur un deuxième, mesurer une seule fois sur un troisième — et séparer selon ce qui sera nouveau à l’usage.\n\nEt un modèle répond toujours. Il ne sait pas qu’il ne sait pas, il apprend ce qui prédit et non ce qui cause, et il devient faux lentement quand le monde bouge. Surveiller les entrées, pas seulement les scores.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle exactitude, en pour-cent, obtient un modèle qui répond toujours « non malade » pour une maladie touchant une personne sur cent ?",
+          "explanation": "99 % — et il est inutile. C’est pourquoi l’exactitude moyenne ne dit rien sur une classe rare.",
+          "answer": 99,
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque mesure à sa définition.",
+          "explanation": "La précision regarde les déclarés malades, le rappel regarde les malades réels. Les deux s’opposent.",
+          "pairs": [
+            {
+              "left": "précision",
+              "right": "parmi les déclarés malades, la part qui l’est"
+            },
+            {
+              "left": "rappel",
+              "right": "parmi les malades, la part trouvée"
+            },
+            {
+              "left": "exactitude",
+              "right": "la part de réponses justes, toutes classes confondues"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À qui appartient le choix du seuil entre précision et rappel ?",
+          "explanation": "À ceux qui vivront ses conséquences : c’est un choix de société, à écrire avant l’entraînement et non à négocier après.",
+          "options": [
+            {
+              "text": "à ceux qui vivront ses conséquences",
+              "correct": true
+            },
+            {
+              "text": "à l’ingénieur qui entraîne le modèle"
+            },
+            {
+              "text": "à l’algorithme d’optimisation"
+            },
+            {
+              "text": "au fournisseur des données"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Sur quoi s’appuyait le classifieur loup-chien devenu classique ?",
+          "explanation": "Sur la neige en arrière-plan. Il était excellent sur les données disponibles, et sans aucune valeur.",
+          "options": [
+            {
+              "text": "la neige en arrière-plan",
+              "correct": true
+            },
+            {
+              "text": "la forme des oreilles"
+            },
+            {
+              "text": "la couleur du pelage"
+            },
+            {
+              "text": "la taille de l’animal"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment se manifeste un décalage de distribution ?",
+          "explanation": "La performance se dégrade lentement, sans qu’aucun code n’ait changé ni qu’aucune alerte ne se déclenche.",
+          "options": [
+            {
+              "text": "une dégradation lente, sans alerte et sans changement de code",
+              "correct": true
+            },
+            {
+              "text": "une erreur d’exécution"
+            },
+            {
+              "text": "une divergence de l’entraînement"
+            },
+            {
+              "text": "une chute brutale de l’exactitude"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que faut-il surveiller pour un modèle en production ?",
+          "explanation": "La distribution des entrées autant que la performance, et il faut réentraîner régulièrement : un modèle est une denrée périssable.",
+          "options": [
+            {
+              "text": "la distribution des entrées",
+              "correct": true
+            },
+            {
+              "text": "la performance mesurée",
+              "correct": true
+            },
+            {
+              "text": "sur quoi le modèle s’appuie pour décider",
+              "correct": true
+            },
+            {
+              "text": "le nombre de paramètres"
+            },
+            {
+              "text": "le pas d’apprentissage"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "chapter": "informatique-universite-architecture-et-systemes",
+  "lessons": [
+    {
+      "id": "du-circuit-a-l-instruction",
+      "title": "Du circuit à l’instruction",
+      "subtitle": "Une instruction est une suite de portes qui s’ouvrent.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce dont tout est fait",
+          "body": "Ferme l’interrupteur : le courant passe. Dévisse une lampe en série : tout s’éteint ; en dérivation : l’autre reste allumée. Un processeur est cette même physique, répétée des milliards de fois, à des milliards d’ouvertures par seconde. Rien d’autre n’est en jeu.",
+          "figureId": "circuit",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le cycle d’une instruction, en quatre temps",
+          "body": "Chercher : lire l’instruction à l’adresse que pointe le compteur de programme.\n\nDécoder : reconnaître l’opération et ses opérandes.\n\nExécuter : faire passer les données dans l’unité de calcul.\n\nÉcrire : ranger le résultat dans un registre ou en mémoire, et avancer le compteur de programme.\n\nRien de plus. C’est l’architecture de von Neumann, décrite en 1945, et c’est encore celle de la machine sur laquelle tu lis cette ligne. Ce qui a changé depuis, c’est la vitesse et le nombre de ces cycles menés de front.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le pipeline, ou comment faire quatre choses à la fois",
+          "body": "Si les quatre étapes sont menées par quatre circuits distincts, rien n’empêche de décoder la deuxième instruction pendant qu’on exécute la première.\n\nAvec cinq étages, une instruction sort du pipeline à chaque cycle au lieu d’une tous les cinq. Le débit est multiplié par cinq, et la latence d’une instruction prise seule ne change pas.\n\nC’est la distinction la plus utile du chapitre : le pipeline améliore le débit, pas la latence. Une instruction ne va pas plus vite, il en sort simplement plus par seconde.\n\nLe prix est l’aléa. Si l’instruction deux a besoin du résultat de l’instruction un, elle doit attendre. Et si l’instruction un est un branchement, on ne sait même pas quelle est la suivante.",
+          "formula": "débit : une instruction par cycle ; latence : toujours cinq cycles",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La prédiction de branchement, et son pari",
+          "body": "Un processeur ne peut pas attendre de savoir si un test est vrai avant de charger la suite : il perdrait tout le bénéfice du pipeline. Il parie donc, et exécute la branche pariée.\n\nLes prédicteurs modernes ont raison dans plus de quatre-vingt-quinze pour cent des cas, en apprenant l’historique de chaque branchement. Une boucle de mille tours est prédite juste neuf cent quatre-vingt-dix-neuf fois.\n\nQuand le pari est perdu, tout le travail entamé est jeté et le pipeline est rempli à nouveau. Sur un pipeline profond de quinze étages, cela coûte une quinzaine de cycles.\n\nConséquence mesurable : un code dont les branchements sont imprévisibles — un test sur des données aléatoires — peut tourner plusieurs fois plus lentement que le même code sur des données triées. Trier avant de filtrer est parfois gagnant pour cette seule raison.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la fréquence a cessé de monter",
+          "body": "De 1980 à 2004, la fréquence des processeurs a été multipliée par mille environ, et la puissance dissipée croît avec elle. Au-delà de quelques gigahertz, la chaleur n’est plus évacuable dans un boîtier ordinaire.\n\nL’industrie a donc changé de direction : au lieu d’un cœur plus rapide, plusieurs cœurs à fréquence constante.\n\nC’est un déplacement du problème vers le programmeur. Un programme séquentiel ne va plus plus vite d’une génération à la suivante, alors qu’il allait deux fois plus vite tous les dix-huit mois pendant vingt ans.\n\nToute la suite du chapitre découle de là : si la vitesse vient du parallélisme, il faut savoir ce que le parallélisme peut donner, et la loi d’Amdahl répond à cette question.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre le cycle d’une instruction.",
+          "explanation": "Chercher, décoder, exécuter, écrire. C’est l’architecture de von Neumann, décrite en 1945.",
+          "items": [
+            "chercher l’instruction",
+            "la décoder",
+            "l’exécuter",
+            "écrire le résultat"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’améliore le pipeline ?",
+          "explanation": "Le débit, pas la latence. Une instruction ne va pas plus vite, il en sort simplement plus par seconde.",
+          "options": [
+            {
+              "text": "le débit, pas la latence",
+              "correct": true
+            },
+            {
+              "text": "la latence, pas le débit"
+            },
+            {
+              "text": "les deux à la fois"
+            },
+            {
+              "text": "la consommation électrique"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Avec cinq étages, combien d’instructions sortent par cycle au régime établi ?",
+          "explanation": "Une par cycle, au lieu d’une tous les cinq. Le débit est multiplié par cinq.",
+          "answer": 1,
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui fait caler un pipeline ?",
+          "explanation": "Une instruction qui attend le résultat de la précédente, et un branchement dont on ne connaît pas encore l’issue.",
+          "options": [
+            {
+              "text": "une dépendance de données",
+              "correct": true
+            },
+            {
+              "text": "un branchement mal prédit",
+              "correct": true
+            },
+            {
+              "text": "un nombre trop grand"
+            },
+            {
+              "text": "une instruction trop longue à décoder"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel est le taux de réussite d’un prédicteur de branchement moderne, en pour-cent ?",
+          "explanation": "Plus de 95 %, en apprenant l’historique de chaque branchement. Une boucle de mille tours est prédite juste 999 fois.",
+          "min": 50,
+          "max": 100,
+          "answer": 96,
+          "tolerance": 4,
+          "unit": "%",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la fréquence a-t-elle cessé de monter vers 2004 ?",
+          "explanation": "Parce que la puissance dissipée croît avec elle, et qu’au-delà de quelques gigahertz la chaleur n’est plus évacuable dans un boîtier ordinaire.",
+          "options": [
+            {
+              "text": "la chaleur n’était plus évacuable",
+              "correct": true
+            },
+            {
+              "text": "les transistors ont cessé de rétrécir"
+            },
+            {
+              "text": "les programmes n’en avaient plus besoin"
+            },
+            {
+              "text": "la mémoire ne suivait plus"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-hierarchie-des-memoires",
+      "title": "La hiérarchie des mémoires, chiffrée",
+      "subtitle": "Entre le registre et le disque, un facteur un million.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un ordre de grandeur, et ce qu’il fait",
+          "body": "Fais glisser n et regarde les temps : à n égal soixante-dix, deux puissance n dépasse l’âge de l’univers alors que n log n tient en une microseconde. Les écarts de la hiérarchie mémoire sont du même genre : pas des pour-cent, des facteurs de cent.",
+          "figureId": "complexite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les cinq étages, et ce qu’ils coûtent",
+          "body": "Un registre : accès immédiat, quelques dizaines d’octets au total.\n\nLe cache de premier niveau : environ quatre cycles, trente-deux kilo-octets.\n\nLe deuxième niveau : une douzaine de cycles, un méga-octet. Le troisième : une quarantaine de cycles, quelques dizaines de méga-octets.\n\nLa mémoire vive : environ deux cents cycles, plusieurs giga-octets. Un disque à mémoire flash : cent mille cycles au moins, mille fois plus encore pour un disque à plateaux.\n\nChaque étage est dix à cent fois plus lent et dix à cent fois plus gros que le précédent. Cette pyramide n’est pas un choix de conception : c’est la seule façon connue d’avoir à la fois la vitesse et la capacité.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’un défaut de cache coûte réellement",
+          "body": "Deux cents cycles d’attente, sur un processeur qui pourrait retirer quatre instructions par cycle, représentent huit cents instructions non exécutées.\n\nAutrement dit : un seul accès à une donnée absente du cache coûte autant que plusieurs centaines de calculs. Sur un code qui parcourt de grandes structures, le temps est dominé par les déplacements de données, et pas du tout par les opérations.\n\nC’est pourquoi un tableau parcouru dans l’ordre est souvent cinq à dix fois plus rapide qu’une liste chaînée de même taille, alors que les deux font le même nombre d’opérations. Le tableau est contigu, donc chaque ligne de cache chargée sert pour plusieurs éléments.\n\nLa règle qui en découle est contre-intuitive : pour accélérer un programme, il faut souvent réduire ses accès mémoire plutôt que ses calculs.",
+          "formula": "un défaut de cache ≈ 200 cycles ≈ plusieurs centaines d’instructions perdues",
+          "id": "c3"
+        },
+        {
+          "kind": "astuce",
+          "title": "Les deux localités, et comment en profiter",
+          "body": "Localité temporelle : une donnée lue a de bonnes chances d’être relue bientôt. Le cache la garde, et c’est gratuit.\n\nLocalité spatiale : une donnée lue a de bonnes chances d’avoir ses voisines lues ensuite. Le cache charge donc une ligne entière — soixante-quatre octets d’un coup — et non l’octet demandé.\n\nEn profiter se résume à trois gestes. Parcourir les tableaux dans l’ordre des adresses. Grouper les champs réellement utilisés ensemble dans la même structure. Et traiter les données par blocs qui tiennent dans le cache, plutôt que de traverser l’ensemble à chaque passe.\n\nLe dernier geste a un nom : le découpage en blocs. Sur une multiplication de matrices, il accélère d’un facteur cinq à dix sans changer une seule opération arithmétique.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La mémoire virtuelle, et le disque qui s’invite",
+          "body": "Chaque programme croit disposer d’un espace d’adresses à lui seul. Le système traduit ces adresses virtuelles en adresses physiques, par pages de quatre kilo-octets le plus souvent.\n\nLe bénéfice est l’isolation : un programme ne peut pas lire la mémoire d’un autre, parce qu’il n’a pas d’adresse pour y parvenir.\n\nLe danger est que les pages non utilisées peuvent être écrites sur le disque. Si un programme demande plus que la mémoire disponible, le système passe son temps à échanger des pages, et tout s’arrête sans que rien plante.\n\nUn défaut de page servi depuis le disque coûte de l’ordre de cent mille à dix millions de cycles. C’est la raison pour laquelle une machine qui manque de mémoire ne ralentit pas : elle devient inutilisable, d’un coup.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces mémoires du plus rapide au plus lent.",
+          "explanation": "Registre, cache L1, cache L3, mémoire vive, disque. Chaque étage est dix à cent fois plus lent et plus gros que le précédent.",
+          "items": [
+            "un registre",
+            "le cache de premier niveau",
+            "le cache de troisième niveau",
+            "la mémoire vive",
+            "un disque flash"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de cycles coûte un accès à la mémoire vive ?",
+          "explanation": "Environ 200 cycles, contre 4 pour le cache de premier niveau. Un facteur cinquante.",
+          "min": 1,
+          "max": 1000,
+          "answer": 200,
+          "tolerance": 70,
+          "unit": "cycles",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un tableau est-il souvent plus rapide qu’une liste chaînée de même taille ?",
+          "explanation": "Parce qu’il est contigu : chaque ligne de cache chargée sert pour plusieurs éléments. Les deux font le même nombre d’opérations.",
+          "options": [
+            {
+              "text": "il est contigu, donc une ligne de cache sert plusieurs éléments",
+              "correct": true
+            },
+            {
+              "text": "il fait moins d’opérations"
+            },
+            {
+              "text": "il occupe moins de mémoire"
+            },
+            {
+              "text": "il tient toujours dans le cache"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "De quelle localité ce geste tire-t-il parti ?",
+          "explanation": "La temporelle concerne la même donnée relue ; la spatiale concerne ses voisines, chargées avec elle par ligne de soixante-quatre octets.",
+          "categories": [
+            "localité temporelle",
+            "localité spatiale"
+          ],
+          "items": [
+            {
+              "text": "réutiliser une variable dans la même boucle",
+              "category": 0
+            },
+            {
+              "text": "traiter les données par blocs qui tiennent dans le cache",
+              "category": 0
+            },
+            {
+              "text": "parcourir un tableau dans l’ordre des adresses",
+              "category": 1
+            },
+            {
+              "text": "grouper les champs utilisés ensemble",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle règle contre-intuitive découle du coût des défauts de cache ?",
+          "explanation": "Pour accélérer un programme, il faut souvent réduire ses accès mémoire plutôt que ses calculs.",
+          "options": [
+            {
+              "text": "réduire les accès mémoire avant les calculs",
+              "correct": true
+            },
+            {
+              "text": "réduire le nombre d’instructions"
+            },
+            {
+              "text": "augmenter la fréquence"
+            },
+            {
+              "text": "ajouter des fils d’exécution"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une machine qui manque de mémoire devient-elle inutilisable d’un coup ?",
+          "explanation": "Parce qu’un défaut de page servi depuis le disque coûte cent mille cycles au moins : le système passe son temps à échanger des pages.",
+          "options": [
+            {
+              "text": "un défaut de page sur disque coûte cent mille cycles au moins",
+              "correct": true
+            },
+            {
+              "text": "le système arrête les programmes"
+            },
+            {
+              "text": "le cache est vidé"
+            },
+            {
+              "text": "la fréquence est réduite"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "processus-fils-et-concurrence",
+      "title": "Processus, fils d’exécution, concurrence",
+      "subtitle": "Partager la mémoire est rapide, et dangereux.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une file d’attente, comme l’ordonnanceur en tient",
+          "body": "Ajoute des éléments à la file et retire-les : le premier entré sort le premier. Un ordonnanceur de système tient des files de ce type, une par niveau de priorité, et y prend le prochain programme à faire tourner. La pile voisine, elle, est ce que chaque fil d’exécution possède en propre.",
+          "figureId": "pile-file",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Processus et fil, et ce qui les sépare",
+          "body": "Un processus a son espace d’adresses à lui. Deux processus ne peuvent pas se lire mutuellement : il leur faut passer par le système, par un tuyau ou une zone partagée déclarée.\n\nUn fil d’exécution partage l’espace d’adresses de ses frères. Il n’a en propre que sa pile et ses registres.\n\nConséquence pour la vitesse : passer d’un fil à l’autre coûte beaucoup moins que passer d’un processus à l’autre, parce qu’il n’y a pas de table de pages à changer.\n\nConséquence pour la sûreté : un fil qui corrompt la mémoire corrompt celle de tous ses frères, et un fil qui plante emporte le processus entier. Le partage est exactement ce qui rend les fils rapides et dangereux.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La course, et pourquoi elle est si traître",
+          "body": "Deux fils qui incrémentent le même compteur peuvent perdre une incrémentation : chacun lit la même valeur, ajoute un, et écrit le même résultat.\n\nUne incrémentation n’est pas une opération indivisible — c’est une lecture, un calcul et une écriture — et le changement de contexte peut tomber entre les deux.\n\nCe qui rend la course traître, c’est qu’elle dépend de l’ordonnancement. Le programme donne le bon résultat mille fois, puis se trompe une fois, sur la machine du client, sans qu’on sache reproduire.\n\nLe remède est l’exclusion mutuelle : un verrou qu’un seul fil détient à la fois. Mais un verrou mal posé crée un nouveau problème, et c’est l’objet de la carte suivante.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "L’interblocage, et ses quatre conditions",
+          "body": "Deux fils, deux verrous. Le premier prend A puis veut B ; le second prend B puis veut A. Aucun ne lâche, et plus rien n’avance.\n\nCoffman a montré en 1971 que quatre conditions doivent être réunies simultanément : exclusion mutuelle, détention pendant l’attente, absence de réquisition, et attente circulaire.\n\nL’intérêt de cet énoncé est pratique : il suffit d’en casser une. La plus facile à casser est la quatrième — on impose un ordre global sur les verrous, et tout le monde les prend dans cet ordre.\n\nUn ordre global ne coûte rien à l’exécution et supprime la classe entière des interblocages par attente circulaire. C’est la convention la plus rentable de la programmation concurrente.",
+          "formula": "exclusion + détention + non-réquisition + cercle = interblocage",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La loi d’Amdahl, ou la part qu’on ne parallélise pas",
+          "body": "Si une fraction du programme reste séquentielle, aucun nombre de cœurs ne peut descendre en dessous du temps de cette fraction.\n\nAvec dix pour-cent de code séquentiel, l’accélération maximale est dix, même avec mille cœurs. Avec un pour-cent, elle est cent. Avec cinq pour-cent, vingt.\n\nLa loi est énoncée par Gene Amdahl en 1967, et elle a été longue à être prise au sérieux : elle dit que paralléliser n’est rentable qu’après avoir traqué la part séquentielle.\n\nSon corollaire est la bonne pratique : avant d’ajouter des fils, mesurer quelle fraction du temps est réellement parallélisable. Dans la plupart des programmes, c’est beaucoup moins que ce qu’on croit, et le gain plafonne bien avant le nombre de cœurs disponibles.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce trait appartient-il au processus, ou au fil d’exécution ?",
+          "explanation": "Le processus a son espace d’adresses propre ; le fil ne possède que sa pile et ses registres, et partage le reste.",
+          "categories": [
+            "propre au processus",
+            "propre au fil"
+          ],
+          "items": [
+            {
+              "text": "un espace d’adresses isolé",
+              "category": 0
+            },
+            {
+              "text": "une table de pages à lui",
+              "category": 0
+            },
+            {
+              "text": "sa pile d’appels",
+              "category": 1
+            },
+            {
+              "text": "ses registres",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi deux fils peuvent-ils perdre une incrémentation ?",
+          "explanation": "Parce qu’une incrémentation est une lecture, un calcul et une écriture : le changement de contexte peut tomber entre les deux.",
+          "options": [
+            {
+              "text": "incrémenter n’est pas une opération indivisible",
+              "correct": true
+            },
+            {
+              "text": "les fils n’ont pas la même priorité"
+            },
+            {
+              "text": "le cache n’est pas à jour"
+            },
+            {
+              "text": "le compteur déborde"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui rend une course si traître ?",
+          "explanation": "Elle dépend de l’ordonnancement : le programme est juste mille fois, puis se trompe une fois sans qu’on sache reproduire.",
+          "options": [
+            {
+              "text": "elle dépend de l’ordonnancement, donc ne se reproduit pas",
+              "correct": true
+            },
+            {
+              "text": "elle plante le programme"
+            },
+            {
+              "text": "elle n’apparaît qu’avec beaucoup de cœurs"
+            },
+            {
+              "text": "elle corrompt le disque"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle condition de Coffman est la plus facile à casser ?",
+          "explanation": "L’attente circulaire : on impose un ordre global sur les verrous, et tout le monde les prend dans cet ordre.",
+          "options": [
+            {
+              "text": "l’attente circulaire",
+              "correct": true
+            },
+            {
+              "text": "l’exclusion mutuelle"
+            },
+            {
+              "text": "la détention pendant l’attente"
+            },
+            {
+              "text": "l’absence de réquisition"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Avec dix pour-cent de code séquentiel, quelle accélération maximale la loi d’Amdahl autorise-t-elle ?",
+          "explanation": "Dix, même avec mille cœurs : le temps ne peut pas descendre sous celui de la part séquentielle.",
+          "answer": 10,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faire avant d’ajouter des fils d’exécution ?",
+          "explanation": "Mesurer quelle fraction du temps est réellement parallélisable. Dans la plupart des programmes, c’est bien moins qu’on croit.",
+          "options": [
+            {
+              "text": "mesurer la fraction réellement parallélisable",
+              "correct": true
+            },
+            {
+              "text": "augmenter le nombre de cœurs"
+            },
+            {
+              "text": "poser des verrous partout"
+            },
+            {
+              "text": "réduire la taille des données"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ou-va-le-temps",
+      "title": "Défi : où va le temps",
+      "subtitle": "Mesurer avant d’optimiser, toujours.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Huit interrupteurs, et tout ce qu’ils disent",
+          "body": "Allume des bits : la valeur décimale et l’écriture hexadécimale suivent. Huit bits vont de zéro à deux cent cinquante-cinq, et pas plus loin. C’est pourquoi un entier de trente-deux bits s’arrête à deux milliards et quelques, et pourquoi un compteur qui dépasse revient à zéro au lieu de prévenir.",
+          "figureId": "binaire",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La seule optimisation qui compte toujours",
+          "body": "Compare n² et n log n à n égal soixante-dix, puis imagine n à un million. Aucun gain de facteur deux sur les constantes ne rattrape un changement d’ordre de grandeur. C’est pourquoi on regarde l’algorithme avant le code.",
+          "figureId": "complexite",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois raisons pour lesquelles un code est lent",
+          "body": "Le mauvais algorithme. Un tri quadratique sur un million d’éléments met des heures là où un tri en n log n met une seconde. Aucun réglage de code ne rattrape cela.\n\nLes accès mémoire. Même ordre de grandeur, structure mal disposée, et un facteur dix sur le même nombre d’opérations.\n\nL’attente. Un disque, un réseau, un verrou : le processeur ne fait rien et le temps passe. C’est souvent la cause dominante dans un programme réel, et c’est celle qu’un profileur de processeur montre le plus mal.\n\nLes examiner dans cet ordre est la méthode. Commencer par la troisième raison dans un service en réseau, par la première dans un calcul.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi l’intuition se trompe presque toujours",
+          "body": "On optimise la boucle qu’on a sous les yeux, et elle représente deux pour-cent du temps. Le gain final est de un pour-cent, pour une journée de travail et un code moins lisible.\n\nLa raison est structurelle : les écarts entre étages — cache contre mémoire, mémoire contre disque, local contre réseau — sont des facteurs de cent à un million, et l’intuition raisonne en pour-cent.\n\nD’où la seule règle qui tient : mesurer d’abord, sur des données réelles et à l’échelle réelle. Un profil de dix secondes d’exécution en apprend plus que deux heures de lecture de code.\n\nEt mesurer de nouveau après. Une optimisation sur deux n’améliore rien, et une sur dix dégrade — l’intuition se trompe aussi sur le sens de l’effet, pas seulement sur son ampleur.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Une instruction est quatre temps, et le pipeline en mène plusieurs de front : il améliore le débit, pas la latence. La fréquence a cessé de monter vers 2004, et la vitesse vient désormais du parallélisme.\n\nLa hiérarchie mémoire couvre un facteur un million entre le registre et le disque. Un défaut de cache coûte plusieurs centaines d’instructions perdues, donc réduire les accès mémoire passe souvent avant réduire les calculs.\n\nUn fil partage la mémoire de ses frères : c’est ce qui le rend rapide et dangereux. Un ordre global sur les verrous supprime la classe entière des interblocages par attente circulaire.\n\nEt la loi d’Amdahl plafonne le gain à l’inverse de la part séquentielle. Dix pour-cent de séquentiel, accélération dix au mieux, quel que soit le nombre de cœurs.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Dans quel ordre examiner les causes de lenteur d’un calcul ?",
+          "explanation": "L’algorithme d’abord — aucun réglage ne rattrape un mauvais ordre de grandeur — puis les accès mémoire, puis les attentes.",
+          "items": [
+            "l’ordre de grandeur de l’algorithme",
+            "la disposition des données en mémoire",
+            "les attentes sur disque, réseau ou verrou",
+            "le réglage du code lui-même"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle cause de lenteur un profileur de processeur montre-t-il le plus mal ?",
+          "explanation": "L’attente : disque, réseau, verrou. Le processeur ne fait rien, et c’est souvent la cause dominante dans un programme réel.",
+          "options": [
+            {
+              "text": "l’attente sur disque, réseau ou verrou",
+              "correct": true
+            },
+            {
+              "text": "le mauvais algorithme"
+            },
+            {
+              "text": "les défauts de cache"
+            },
+            {
+              "text": "les branchements mal prédits"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’intuition se trompe-t-elle sur les performances ?",
+          "explanation": "Parce que les écarts entre étages sont des facteurs de cent à un million, et que l’intuition raisonne en pour-cent.",
+          "options": [
+            {
+              "text": "les écarts réels sont des facteurs, l’intuition pense en pour-cent",
+              "correct": true
+            },
+            {
+              "text": "les processeurs sont trop complexes"
+            },
+            {
+              "text": "les compilateurs changent le code"
+            },
+            {
+              "text": "les mesures sont imprécises"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il faut mesurer après une optimisation, pas seulement avant.",
+          "explanation": "Vrai. Une optimisation sur deux n’améliore rien, et une sur dix dégrade : l’intuition se trompe aussi sur le sens de l’effet.",
+          "answer": true,
+          "id": "q4"
+        },
+        {
+          "kind": "texteATrous",
+          "prompt": "Complète le bilan du chapitre.",
+          "explanation": "Le pipeline améliore le débit, et la loi d’Amdahl plafonne l’accélération à l’inverse de la part séquentielle.",
+          "template": "Le pipeline améliore le ___, pas la latence ; la loi d’Amdahl plafonne le gain à l’inverse de la part ___.",
+          "blanks": [
+            {
+              "accepted": [
+                "débit",
+                "debit"
+              ]
+            },
+            {
+              "accepted": [
+                "séquentielle",
+                "sequentielle"
+              ]
+            }
+          ],
+          "hint": "Deux mots du chapitre.",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le meilleur emploi de dix minutes sur un programme lent ?",
+          "explanation": "Un profil de dix secondes d’exécution sur des données réelles : il en apprend plus que deux heures de lecture de code.",
+          "options": [
+            {
+              "text": "le profiler sur des données réelles",
+              "correct": true
+            },
+            {
+              "text": "relire la boucle principale"
+            },
+            {
+              "text": "ajouter des fils d’exécution"
+            },
+            {
+              "text": "réduire la taille du code"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
