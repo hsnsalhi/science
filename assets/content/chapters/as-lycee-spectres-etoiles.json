@@ -1,0 +1,582 @@
+{
+  "chapter": "astronomie-lycee-spectres-et-composition-des-etoiles",
+  "lessons": [
+    {
+      "id": "la-couleur-dit-la-temperature",
+      "title": "La couleur dit la température",
+      "subtitle": "Le bleu est chaud, et c’est l’inverse des robinets.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Chauffer l’étoile, et regarder le fond",
+          "body": "Fais monter la température : le repère du maximum glisse vers le bleu, et toute la bande s’éclaire de ce côté. Descends sous 4 000 K : le maximum sort du visible par la droite, et il ne reste que du rouge. Les raies sombres, elles, n’ont pas bougé d’un nanomètre.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi de Wien",
+          "body": "La longueur d’onde du maximum d’émission est inversement proportionnelle à la température absolue :\n\nλmax = 2,898 × 10⁶ / T\n\navec λmax en nanomètres et T en kelvins.\n\nDoubler la température divise la longueur d’onde par deux. Une mesure de couleur devient donc une mesure de température, sans aucun contact et à n’importe quelle distance.",
+          "formula": "λmax = 2,898 × 10⁶ / T",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Trois étoiles qu’on voit à l’œil nu",
+          "body": "Bételgeuse, dans Orion : 3 600 kelvins, maximum à 805 nanomètres, donc dans l’infrarouge. On n’en voit que la queue rouge, et c’est pourquoi elle paraît orangée.\n\nLe Soleil : 5 778 kelvins, maximum à 501 nanomètres, en plein milieu du visible.\n\nRigel, dans la même constellation : 12 100 kelvins, maximum à 240 nanomètres, dans l’ultraviolet. On n’en voit que le pied bleu de la courbe.\n\nLes deux extrêmes paraissent donc colorés pour la même raison : leur maximum est hors du visible, et nous n’en apercevons qu’un bord.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi notre œil est accordé au Soleil",
+          "body": "Le maximum solaire tombe à 501 nanomètres, et la sensibilité maximale de l’œil humain en plein jour est à 555 nanomètres.\n\nL’écart est faible, et il n’a rien d’un hasard : l’œil a évolué sous cette lumière, et sur une planète dont l’atmosphère est justement transparente dans cette plage.\n\nUn œil ajusté à une étoile rouge verrait naturellement dans l’infrarouge. La « lumière visible » n’est pas une catégorie de la nature : c’est la fenêtre dans laquelle notre étoile émet le plus.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Chaud ne veut pas dire lumineux",
+          "body": "Une étoile bleue est plus chaude par unité de surface. Elle n’est pas forcément plus brillante vue de la Terre : cela dépend aussi de sa taille et de sa distance.\n\nBételgeuse est froide et pourtant parmi les plus brillantes du ciel, parce qu’elle est une supergéante de près de mille fois le rayon du Soleil.\n\nTempérature, taille et distance sont trois grandeurs indépendantes. Le spectre donne la première ; il faut d’autres mesures pour les deux autres.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la longueur d’onde du maximum, en nanomètres, pour une étoile à 5 800 K ?",
+          "explanation": "2,898 × 10⁶ divisé par 5 800 donne environ 500 nanomètres, en plein milieu du visible.",
+          "answer": 500,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double la température d’une étoile. Par combien la longueur d’onde du maximum est-elle divisée ?",
+          "explanation": "Par 2 : la loi de Wien est une proportionnalité inverse.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette étoile est-elle chaude ou froide ?",
+          "explanation": "Le bleu et le blanc signalent une température élevée, le rouge et l’orange une température basse. C’est l’inverse du code des robinets.",
+          "categories": [
+            "chaude",
+            "froide"
+          ],
+          "items": [
+            {
+              "text": "une étoile bleue",
+              "category": 0
+            },
+            {
+              "text": "une étoile blanche",
+              "category": 0
+            },
+            {
+              "text": "une étoile orangée",
+              "category": 1
+            },
+            {
+              "text": "une étoile rouge",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Bételgeuse paraît-elle rouge ?",
+          "explanation": "Son maximum est à 805 nm, dans l’infrarouge : on n’en voit que la queue rouge de la courbe.",
+          "options": [
+            {
+              "text": "son maximum est dans l’infrarouge",
+              "correct": true
+            },
+            {
+              "text": "elle est très lointaine"
+            },
+            {
+              "text": "elle est petite"
+            },
+            {
+              "text": "sa lumière traverse de la poussière"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une étoile rouge est forcément moins brillante qu’une étoile bleue.",
+          "explanation": "Faux. Bételgeuse est froide et parmi les plus brillantes du ciel : elle fait près de mille fois le rayon du Soleil.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’œil humain est-il le plus sensible vers 555 nanomètres ?",
+          "explanation": "Parce qu’il a évolué sous une lumière dont le maximum est à 501 nm, et sur une planète transparente dans cette plage.",
+          "options": [
+            {
+              "text": "c’est là que le Soleil émet le plus",
+              "correct": true
+            },
+            {
+              "text": "c’est le milieu de l’arc-en-ciel"
+            },
+            {
+              "text": "c’est une propriété des couleurs"
+            },
+            {
+              "text": "c’est le hasard de l’évolution"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-raies-disent-la-composition",
+      "title": "Les raies disent la composition",
+      "subtitle": "Un motif que rien ne déplace, et qui n’appartient qu’à un élément.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Changer d’élément, pas de température",
+          "body": "Passe de l’hydrogène au sodium, puis au calcium et au fer : le motif des raies change complètement alors que le fond reste identique. Reviens à l’hydrogène et fais varier la température : cette fois c’est le fond qui change et les raies qui restent. Deux informations indépendantes, dans une seule image.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois lois de Kirchhoff",
+          "body": "Un corps dense et chaud donne un spectre continu, sans raie : c’est l’intérieur de l’étoile.\n\nUn gaz chaud et peu dense donne des raies brillantes, aux longueurs d’onde qui lui sont propres : c’est une nébuleuse éclairée.\n\nUn gaz plus froid placé devant une source continue prélève exactement ces mêmes longueurs d’onde et laisse des raies sombres : c’est l’atmosphère de l’étoile devant son intérieur, et c’est ce que la figure montre.\n\nLes trois lois datent de 1859 et elles ont ouvert toute l’astrophysique.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le motif est une signature",
+          "body": "Les électrons d’un atome n’occupent que certains niveaux d’énergie. Passer de l’un à l’autre demande exactement l’écart entre les deux.\n\nCes écarts sont fixés par la structure de l’atome, donc par l’élément. Ils ne dépendent ni de la température, ni de la pression, ni de l’endroit de l’univers.\n\nL’hydrogène d’une galaxie lointaine absorbe aux mêmes longueurs d’onde que celui d’un tube de laboratoire. C’est ce qui permet de lire la composition d’objets où l’on n’ira jamais — et c’est aussi un argument fort pour l’universalité des lois physiques.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Les niveaux qui fabriquent les raies",
+          "body": "Regarde les électrons rangés par couches, à des distances bien séparées. C’est cette séparation en niveaux distincts qui interdit les énergies intermédiaires, et c’est pour cela qu’un élément prélève des longueurs d’onde précises plutôt qu’une bande floue.",
+          "figureId": "modeles-atome"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les raies de Fraunhofer",
+          "body": "En 1814, Joseph von Fraunhofer compte 574 raies sombres dans le spectre solaire et les désigne par des lettres.\n\nIl ne sait pas ce qu’elles signifient. Quarante-cinq ans plus tard, Kirchhoff et Bunsen montrent que la raie D correspond exactement à celle qu’émet le sodium chauffé au laboratoire.\n\nIl y a donc du sodium dans le Soleil, et on vient de le démontrer sans y aller.\n\nC’est le moment où l’astronomie cesse d’être la science des positions pour devenir celle de la matière.",
+          "id": "c5"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’intensité d’une raie n’est pas l’abondance",
+          "body": "Une raie forte ne signifie pas forcément que l’élément est abondant : elle signifie que beaucoup d’atomes sont dans le bon état pour absorber.\n\nOr cet état dépend de la température. Les raies de l’hydrogène sont maximales vers 10 000 kelvins ; plus chaud, l’hydrogène est ionisé et n’absorbe plus.\n\nUne étoile très chaude peut donc montrer des raies d’hydrogène faibles tout en étant composée presque entièrement d’hydrogène.\n\nLire une abondance demande un modèle d’atmosphère. Le spectre donne l’élément à coup sûr, sa quantité seulement avec des hypothèses.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque situation au spectre qu’elle produit.",
+          "explanation": "Les trois lois de Kirchhoff : dense et chaud donne un continu, gaz chaud peu dense des raies brillantes, gaz froid devant un continu des raies sombres.",
+          "pairs": [
+            {
+              "left": "un corps dense et chaud",
+              "right": "un spectre continu"
+            },
+            {
+              "left": "un gaz chaud et peu dense",
+              "right": "des raies brillantes"
+            },
+            {
+              "left": "un gaz froid devant une source continue",
+              "right": "des raies sombres"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La position des raies d’un élément dépend de la température de l’étoile.",
+          "explanation": "Faux. Elle ne dépend que de la structure de l’atome. C’est ce que la figure montre en séparant les deux réglages.",
+          "answer": false,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a démontré Kirchhoff en 1859 à propos de la raie D du Soleil ?",
+          "explanation": "Qu’elle correspond exactement à celle du sodium chauffé au laboratoire : il y a donc du sodium dans le Soleil.",
+          "options": [
+            {
+              "text": "qu’il y a du sodium dans le Soleil",
+              "correct": true
+            },
+            {
+              "text": "que le Soleil est fait de fer"
+            },
+            {
+              "text": "que le Soleil tourne sur lui-même"
+            },
+            {
+              "text": "que la lumière est une onde"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une raie d’hydrogène faible signifie qu’il y a peu d’hydrogène.",
+          "explanation": "Faux. Au-delà de 10 000 K l’hydrogène est ionisé et n’absorbe plus : une étoile très chaude peut en être presque entièrement faite.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le motif de raies est-il le même partout dans l’univers ?",
+          "explanation": "Parce que les écarts entre niveaux d’énergie sont fixés par la structure de l’atome, et par rien d’autre.",
+          "options": [
+            {
+              "text": "les niveaux d’énergie ne dépendent que de l’élément",
+              "correct": true
+            },
+            {
+              "text": "la lumière voyage toujours pareil"
+            },
+            {
+              "text": "les étoiles ont la même composition"
+            },
+            {
+              "text": "c’est une convention de mesure"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’années séparent le comptage des raies par Fraunhofer de leur explication par Kirchhoff ?",
+          "explanation": "De 1814 à 1859, soit 45 ans. Fraunhofer a vu les raies sans savoir ce qu’elles disaient.",
+          "answer": 45,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-decalage-dit-le-mouvement",
+      "title": "Le décalage dit le mouvement",
+      "subtitle": "Un motif intact, mais glissé en bloc.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Toutes s’éloignent, et les plus lointaines le plus vite",
+          "body": "Touche une galaxie pour t’y placer : les vitesses d’éloignement s’affichent et croissent avec la distance. Ces vitesses ne se mesurent pas en chronométrant — on les lit dans le décalage de leurs raies, et c’est l’objet de cette leçon.",
+          "figureId": "expansion",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "L’effet Doppler appliqué à la lumière",
+          "body": "Si la source s’éloigne, toutes ses raies glissent vers les grandes longueurs d’onde — vers le rouge. Si elle s’approche, elles glissent vers le bleu.\n\nPour des vitesses petites devant celle de la lumière :\n\nΔλ / λ = v / c\n\nLe motif n’est pas déformé : il est translaté en bloc. C’est cela qui permet de le reconnaître et de mesurer de combien il a glissé.",
+          "formula": "Δλ / λ = v / c",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi on reconnaît le motif malgré le décalage",
+          "body": "Si chaque raie glissait de son côté, on ne saurait plus quel élément on observe.\n\nMais le décalage est proportionnel à la longueur d’onde, donc l’ensemble du motif garde ses rapports. Les quatre raies de l’hydrogène restent dans les mêmes proportions les unes par rapport aux autres.\n\nOn identifie donc l’hydrogène d’abord, et on mesure ensuite de combien son motif a bougé. Sans cette propriété, la cosmologie entière serait impossible.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La première exoplanète, en 1995",
+          "body": "Une planète fait tourner son étoile autour de leur centre de masse commun. L’étoile s’approche puis s’éloigne de nous périodiquement, et ses raies oscillent.\n\nPour 51 Pegasi, Michel Mayor et Didier Queloz mesurent une oscillation de 59 mètres par seconde, avec une période de 4,2 jours.\n\n59 mètres par seconde sur 300 000 kilomètres par seconde, cela fait un décalage relatif de deux dix-millionièmes : à 500 nanomètres, un déplacement d’un dix-millième de nanomètre.\n\nIls n’ont jamais vu la planète. Ils ont vu l’étoile osciller, et cela a suffi — prix Nobel 2019.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le décalage cosmologique n’est pas un Doppler",
+          "body": "Pour les galaxies lointaines, le rougissement ne vient pas d’un mouvement à travers l’espace.\n\nIl vient de l’expansion de l’espace lui-même pendant le voyage de la lumière : l’onde s’est allongée avec lui.\n\nLa formule Doppler reste une bonne approximation à faible distance, et elle devient fausse pour les objets très lointains, où elle donnerait des vitesses supérieures à celle de la lumière.\n\nDeux phénomènes différents produisent donc un décalage vers le rouge, et les confondre mène aux paradoxes classiques sur l’expansion.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que devient le spectre d’une source qui s’éloigne ?",
+          "explanation": "Toutes ses raies glissent vers les grandes longueurs d’onde, c’est-à-dire vers le rouge. Le motif est translaté, pas déformé.",
+          "options": [
+            {
+              "text": "toutes ses raies glissent vers le rouge",
+              "correct": true
+            },
+            {
+              "text": "toutes ses raies glissent vers le bleu"
+            },
+            {
+              "text": "ses raies s’écartent les unes des autres"
+            },
+            {
+              "text": "ses raies disparaissent"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi reconnaît-on encore l’élément malgré le décalage ?",
+          "explanation": "Parce que le décalage est proportionnel à la longueur d’onde : le motif garde ses rapports et se translate en bloc.",
+          "options": [
+            {
+              "text": "le motif garde ses proportions",
+              "correct": true
+            },
+            {
+              "text": "le décalage est toujours petit"
+            },
+            {
+              "text": "on connaît déjà la composition"
+            },
+            {
+              "text": "les raies reviennent à leur place"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "51 Pegasi oscille de 59 m/s. Quel est le décalage relatif, en millionièmes ?",
+          "explanation": "59 divisé par 3 × 10⁸ donne 2 × 10⁻⁷, soit 0,2 millionième. À 500 nm, un dix-millième de nanomètre.",
+          "min": 0,
+          "max": 10,
+          "answer": 0.2,
+          "tolerance": 0.05,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment Mayor et Queloz ont-ils détecté la première exoplanète ?",
+          "explanation": "En mesurant l’oscillation périodique des raies de l’étoile, signe qu’une planète la fait tourner. Ils n’ont jamais vu la planète.",
+          "options": [
+            {
+              "text": "en voyant les raies de l’étoile osciller",
+              "correct": true
+            },
+            {
+              "text": "en photographiant la planète"
+            },
+            {
+              "text": "en mesurant une baisse de luminosité"
+            },
+            {
+              "text": "en captant un signal radio"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le décalage vers le rouge des galaxies lointaines est un effet Doppler.",
+          "explanation": "Faux. Il vient de l’expansion de l’espace pendant le voyage de la lumière, et la formule Doppler devient fausse à grande distance.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Ce décalage vient-il d’un mouvement ou de l’expansion ?",
+          "explanation": "Une étoile qui oscille et une galaxie proche bougent réellement. Le rougissement des galaxies très lointaines vient de l’allongement de l’espace.",
+          "categories": [
+            "un mouvement réel",
+            "l’expansion de l’espace"
+          ],
+          "items": [
+            {
+              "text": "l’oscillation de 51 Pegasi",
+              "category": 0
+            },
+            {
+              "text": "Andromède qui se rapproche",
+              "category": 0
+            },
+            {
+              "text": "le rougissement d’une galaxie très lointaine",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-un-spectre",
+      "title": "Défi : tout lire dans une seule image",
+      "subtitle": "Quatre informations, un seul instrument.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les deux lectures, l’une après l’autre",
+          "body": "Choisis un élément, note la position de ses raies. Change la température, note la couleur du fond. Puis recommence dans l’autre ordre. Les deux lectures ne se gênent jamais, et c’est ce qui permet d’en tirer deux grandeurs indépendantes.",
+          "figureId": "spectre-etoile",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’un seul spectre contient",
+          "body": "La température de surface, par la couleur d’ensemble et la loi de Wien.\n\nLa composition de l’atmosphère, par le motif des raies.\n\nLa vitesse radiale, par le décalage en bloc de ce motif.\n\nEt, si ce décalage oscille périodiquement, la présence d’une planète invisible, avec sa période et une estimation de sa masse.\n\nUn instrument, quatre réponses, sur un objet situé à des milliers d’années-lumière et où personne n’ira.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La classification qui en découle",
+          "body": "Les astronomes rangent les étoiles par température décroissante en sept classes : O, B, A, F, G, K, M.\n\nO dépasse 30 000 kelvins et paraît bleue ; M descend sous 3 700 et paraît rouge. Le Soleil est de classe G, vers 5 800.\n\nCette suite a d’abord été établie par ordre d’intensité des raies d’hydrogène, d’où ses lettres dans le désordre. On a compris ensuite qu’elle correspondait à la température, et on a gardé les lettres.\n\nC’est Annie Jump Cannon qui a classé ainsi près de 350 000 étoiles, à la main, entre 1911 et 1924.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le spectre ne donne pas",
+          "body": "La distance : il faut la parallaxe, ou une chandelle standard.\n\nLa taille : il faut combiner la température avec la luminosité réelle, donc connaître la distance d’abord.\n\nLa composition du cœur : le spectre ne voit que la surface.\n\nL’âge : il se déduit, par modèle, de la masse et de l’état d’évolution. Rien ne le lit directement.\n\nSavoir ce qu’un instrument ne mesure pas vaut autant que savoir ce qu’il mesure.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi ce chapitre compte plus qu’il n’en a l’air",
+          "body": "Avant 1859, on pensait sérieusement que la composition des étoiles resterait à jamais inconnue. Auguste Comte l’avait écrit en 1835, et c’était raisonnable.\n\nUne raie jaune a suffi à le démentir.\n\nLa leçon n’est pas que Comte était sot : c’est qu’une question déclarée insoluble l’est souvent par manque d’une idée, et non par nature. L’histoire des sciences en fournit assez d’exemples pour qu’on hésite à refermer une question.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que peut-on tirer d’un seul spectre d’étoile ?",
+          "explanation": "La température, la composition de surface, la vitesse radiale, et par l’oscillation de celle-ci, la présence de planètes.",
+          "options": [
+            {
+              "text": "la température de surface",
+              "correct": true
+            },
+            {
+              "text": "la composition de l’atmosphère",
+              "correct": true
+            },
+            {
+              "text": "la vitesse radiale",
+              "correct": true
+            },
+            {
+              "text": "la présence de planètes",
+              "correct": true
+            },
+            {
+              "text": "la distance de l’étoile"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe les classes spectrales de la plus chaude à la plus froide.",
+          "explanation": "O, B, A, F, G, K, M — de plus de 30 000 kelvins à moins de 3 700. Le Soleil est de classe G.",
+          "items": [
+            "O",
+            "B",
+            "A",
+            "F",
+            "G",
+            "K",
+            "M"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les lettres des classes spectrales sont-elles dans le désordre ?",
+          "explanation": "La suite a d’abord été établie par intensité des raies d’hydrogène. On a compris ensuite qu’elle suivait la température, et gardé les lettres.",
+          "options": [
+            {
+              "text": "elles venaient d’un classement antérieur par les raies",
+              "correct": true
+            },
+            {
+              "text": "par hasard"
+            },
+            {
+              "text": "elles suivent l’ordre de découverte"
+            },
+            {
+              "text": "elles désignent des couleurs en anglais"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qu’un spectre seul ne donne pas ?",
+          "explanation": "Ni la distance, ni la taille, ni la composition du cœur, ni l’âge. Toutes demandent d’autres mesures ou un modèle.",
+          "options": [
+            {
+              "text": "la distance",
+              "correct": true
+            },
+            {
+              "text": "la taille de l’étoile",
+              "correct": true
+            },
+            {
+              "text": "la composition du cœur",
+              "correct": true
+            },
+            {
+              "text": "l’âge",
+              "correct": true
+            },
+            {
+              "text": "la température de surface"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’étoiles Annie Jump Cannon a-t-elle classées, en milliers ?",
+          "explanation": "Près de 350 000, soit 350 milliers, à la main entre 1911 et 1924.",
+          "answer": 350,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’illustre l’affirmation d’Auguste Comte sur la composition des étoiles ?",
+          "explanation": "Qu’une question déclarée insoluble l’est souvent par manque d’une idée, et non par nature. Une raie jaune a suffi à le démentir.",
+          "options": [
+            {
+              "text": "qu’une question dite insoluble manque souvent d’une idée",
+              "correct": true
+            },
+            {
+              "text": "que les philosophes se trompent toujours"
+            },
+            {
+              "text": "que la spectroscopie était déjà connue"
+            },
+            {
+              "text": "que les étoiles sont inaccessibles"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

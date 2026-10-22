@@ -1,0 +1,526 @@
+{
+  "chapter": "astronomie-lycee-rayonnement-solaire-et-bilan-radiatif",
+  "lessons": [
+    {
+      "id": "le-flux-recu",
+      "title": "Le flux reçu",
+      "subtitle": "La même puissance, étalée sur plus ou moins de surface.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’axe ne bouge pas, l’éclairement si",
+          "body": "Fais passer l’année : l’axe de la Terre garde toujours la même direction, et pourtant la durée du jour à Paris va de 8 à plus de 16 heures. Lis aussi la latitude où le Soleil passe au zénith : c’est elle qui décide de l’inclinaison des rayons.",
+          "figureId": "saisons",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux effets, et le second est le principal",
+          "body": "La durée du jour : plus elle est longue, plus l’énergie reçue dans la journée est grande.\n\nL’inclinaison des rayons : un faisceau qui arrive de biais étale la même puissance sur une surface plus grande, donc chaque mètre carré reçoit moins.\n\nÀ 60 degrés d’inclinaison par rapport à la verticale, la surface éclairée double et le flux par mètre carré est divisé par deux.\n\nC’est cet effet-là qui fait l’essentiel de l’écart entre l’été et l’hiver, et entre l’équateur et les pôles.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce n’est pas une affaire de distance",
+          "body": "La Terre est au plus près du Soleil début janvier, et au plus loin début juillet. L’écart est de 3 % sur la distance, donc d’environ 7 % sur le flux reçu.\n\nC’est donc l’hiver dans l’hémisphère nord quand la Terre est au plus près. Si la distance commandait les saisons, elles seraient inversées.\n\nEt surtout : les deux hémisphères ont des saisons opposées au même instant, ce qu’aucune explication par la distance ne peut produire. C’est l’argument qui tranche, et il tient en une phrase.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "La constante solaire",
+          "body": "Au-dessus de l’atmosphère, perpendiculairement aux rayons, la Terre reçoit 1 361 watts par mètre carré.\n\nCette valeur ne dépend que de la distance au Soleil : sur Mars, une fois et demie plus loin, elle tombe à 1 361 / 1,5², soit environ 590 watts par mètre carré.\n\nC’est la même loi en 1/d² que pour la gravitation, et pour la même raison géométrique.",
+          "formula": "1 361 W/m² au-dessus de l’atmosphère",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi les panneaux solaires s’inclinent",
+          "body": "Un panneau horizontal à Paris reçoit les rayons très de biais en hiver, puisque le Soleil ne monte qu’à 18 degrés au-dessus de l’horizon au solstice.\n\nL’incliner à environ 35 degrés — la latitude moins une dizaine de degrés — ramène les rayons plus près de la perpendiculaire sur l’ensemble de l’année.\n\nLe gain est de l’ordre de 15 à 20 % sur la production annuelle, pour une opération qui ne coûte que de la réflexion au moment de la pose.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de watts par mètre carré la Terre reçoit-elle au-dessus de l’atmosphère ?",
+          "explanation": "1 361 W/m², perpendiculairement aux rayons. C’est la constante solaire.",
+          "answer": 1361,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel effet explique l’essentiel de l’écart entre l’été et l’hiver ?",
+          "explanation": "L’inclinaison des rayons : de biais, la même puissance s’étale sur une plus grande surface, donc chaque mètre carré reçoit moins.",
+          "options": [
+            {
+              "text": "l’inclinaison des rayons",
+              "correct": true
+            },
+            {
+              "text": "la distance au Soleil"
+            },
+            {
+              "text": "l’épaisseur de l’atmosphère"
+            },
+            {
+              "text": "la vitesse de la Terre"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il fait froid en janvier dans l’hémisphère nord parce que la Terre est loin du Soleil.",
+          "explanation": "Faux. Elle est au contraire au plus près début janvier. Et les deux hémisphères ont des saisons opposées, ce qu’aucune distance n’explique.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel flux solaire, en W/m², Mars reçoit-elle, à 1,5 fois la distance Terre-Soleil ?",
+          "explanation": "1 361 divisé par 1,5², soit 1 361 / 2,25 = 605 W/m² environ. La loi en 1/d² vaut aussi pour le rayonnement.",
+          "min": 100,
+          "max": 2000,
+          "answer": 600,
+          "tolerance": 60,
+          "unit": "W/m²",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel argument tranche définitivement contre l’explication par la distance ?",
+          "explanation": "Les deux hémisphères ont des saisons opposées au même instant, ce qu’une distance unique ne peut pas produire.",
+          "options": [
+            {
+              "text": "les deux hémisphères ont des saisons opposées",
+              "correct": true
+            },
+            {
+              "text": "l’écart de distance est faible"
+            },
+            {
+              "text": "l’orbite est presque circulaire"
+            },
+            {
+              "text": "la durée du jour varie"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien de degrés incline-t-on un panneau solaire à Paris, à la latitude 49° ?",
+          "explanation": "Environ 35 degrés, soit la latitude moins une dizaine de degrés, ce qui optimise la production annuelle.",
+          "min": 0,
+          "max": 90,
+          "answer": 35,
+          "tolerance": 8,
+          "unit": "°",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-bilan-radiatif",
+      "title": "Le bilan radiatif",
+      "subtitle": "Ce qui entre doit sortir, et la Terre n’est pas un disque.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui entre, ce qui ressort, ce qui est retenu",
+          "body": "Touche chaque bloc et fais varier le curseur : ce qui n’est pas converti part en chaleur. Le bilan radiatif de la Terre est exactement ce genre de comptabilité — une entrée, une sortie, et un écart qui se paie en température.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le facteur quatre, et d’où il vient",
+          "body": "La Terre intercepte le rayonnement sur un disque de surface πR² : vue du Soleil, elle n’est qu’un cercle.\n\nMais elle rayonne par toute sa surface de sphère, soit 4πR².\n\nLe flux moyen reçu par mètre carré de surface terrestre vaut donc la constante solaire divisée par quatre : 1 361 / 4 = 340 watts par mètre carré.\n\nOublier ce facteur quatre est l’erreur la plus fréquente du chapitre, et elle donne une température d’équilibre absurde.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que la Terre absorbe vraiment",
+          "body": "Environ 30 % du rayonnement est renvoyé directement par les nuages, la neige et les surfaces claires : c’est l’albédo.\n\nLe flux absorbé vaut donc 340 × 0,70 = 238 watts par mètre carré.\n\nÀ l’équilibre, la Terre doit réémettre exactement ces 238 watts par mètre carré, sous forme de rayonnement infrarouge.",
+          "formula": "340 × (1 − albédo) = 238 W/m²",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La température d’équilibre, et l’écart",
+          "body": "La loi de Stefan donne la puissance rayonnée par une surface : elle vaut σT⁴, avec σ = 5,67 × 10⁻⁸.\n\nEn posant σT⁴ = 238, on trouve T⁴ = 4,2 × 10⁹, donc T = 255 kelvins, soit −18 degrés Celsius.\n\nLa température moyenne réelle de la surface est de +15 degrés.\n\nL’écart de 33 degrés est l’effet de serre, et il n’a rien d’une anomalie : sans lui, les océans seraient gelés et le calcul ci-dessus serait le bon.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’effet de serre n’est pas une serre",
+          "body": "Une serre de jardin chauffe surtout parce qu’elle empêche l’air chaud de s’échapper par convection.\n\nL’atmosphère fait autre chose : elle est transparente au rayonnement visible qui arrive, et opaque à une partie de l’infrarouge qui repart. Elle laisse entrer et freine la sortie.\n\nLe nom est donc trompeur, et le mécanisme est à décrire en termes de longueurs d’onde, jamais en termes de couvercle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Par combien divise-t-on la constante solaire pour obtenir le flux moyen par mètre carré de Terre ?",
+          "explanation": "Par 4 : la Terre intercepte sur un disque πR² et rayonne sur une sphère 4πR².",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel flux, en W/m², la Terre absorbe-t-elle, avec un albédo de 0,30 ?",
+          "explanation": "340 × 0,70 = 238 watts par mètre carré. C’est ce qu’elle doit réémettre à l’équilibre.",
+          "answer": 238,
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle serait la température moyenne de la Terre sans effet de serre, en degrés Celsius ?",
+          "explanation": "σT⁴ = 238 donne T = 255 K, soit −18 °C. Les océans seraient gelés.",
+          "answer": -18,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De combien de degrés l’effet de serre réchauffe-t-il la surface ?",
+          "explanation": "De −18 à +15 degrés, soit 33 degrés. Sans lui, la Terre serait inhabitable.",
+          "answer": 33,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’albédo ?",
+          "explanation": "La part du rayonnement renvoyée directement, environ 30 % pour la Terre : nuages, neige et surfaces claires.",
+          "options": [
+            {
+              "text": "la part du rayonnement renvoyée directement",
+              "correct": true
+            },
+            {
+              "text": "la part absorbée par l’atmosphère"
+            },
+            {
+              "text": "la part convertie en chaleur"
+            },
+            {
+              "text": "la part émise en infrarouge"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "En quoi l’effet de serre diffère-t-il d’une serre de jardin ?",
+          "explanation": "Une serre bloque la convection ; l’atmosphère laisse entrer le visible et freine la sortie de l’infrarouge. Ce sont deux mécanismes différents.",
+          "options": [
+            {
+              "text": "il joue sur les longueurs d’onde, pas sur la convection",
+              "correct": true
+            },
+            {
+              "text": "il est beaucoup plus faible"
+            },
+            {
+              "text": "il ne concerne que les nuages"
+            },
+            {
+              "text": "il n’y a aucune différence"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-retroactions",
+      "title": "Les rétroactions",
+      "subtitle": "Certaines boucles calment le système, d’autres l’emballent.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quand la correction devient le problème",
+          "body": "Monte le gain petit à petit : la réponse atteint sa consigne de plus en plus vite, puis dépasse, oscille et finit par diverger. Un climat contient des boucles de ce genre, et leur gain décide de tout.",
+          "figureId": "asservissement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux familles de boucle",
+          "body": "Une rétroaction négative amortit : une variation déclenche une réponse qui la réduit. Le système revient vers son état précédent, et il est stable.\n\nUne rétroaction positive amplifie : une variation déclenche une réponse qui l’augmente. Le système s’éloigne de plus en plus vite.\n\nLes mots sont trompeurs : positive ne veut pas dire bénéfique, et négative ne veut pas dire nuisible. Ils décrivent le signe de l’effet de retour, rien d’autre.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux boucles du climat, de signes opposés",
+          "body": "La glace et l’albédo, rétroaction positive : il fait plus chaud, la glace fond, la surface sombre ainsi découverte absorbe davantage, donc il fait encore plus chaud. Le réchauffement s’auto-entretient, et c’est pourquoi l’Arctique se réchauffe trois à quatre fois plus vite que la moyenne.\n\nLe rayonnement de Stefan, rétroaction négative : il fait plus chaud, donc la Terre rayonne davantage — en T puissance 4, donc très vite — ce qui la refroidit. C’est cette boucle-là qui stabilise le climat et l’empêche de diverger.\n\nL’état du climat résulte du bilan de toutes ces boucles.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La vapeur d’eau, et pourquoi l’ordre compte",
+          "body": "La vapeur d’eau est le premier gaz à effet de serre en quantité. On en conclut parfois que le dioxyde de carbone est négligeable.\n\nC’est confondre un acteur et un déclencheur. La quantité de vapeur d’eau dans l’air est fixée par la température : elle ne peut pas augmenter toute seule durablement, l’excès retombe en pluie en quelques jours.\n\nLe dioxyde de carbone, lui, reste des siècles. Il déclenche un réchauffement, qui permet plus de vapeur d’eau, qui amplifie le réchauffement.\n\nLa vapeur d’eau est donc une rétroaction, pas un forçage. L’ordre des causes n’est pas un détail de vocabulaire.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’un point de bascule veut dire",
+          "body": "Tant que les rétroactions négatives l’emportent, une perturbation se résorbe.\n\nSi une rétroaction positive devient plus forte, le système peut basculer vers un autre état, et y rester même si l’on supprime la cause initiale.\n\nC’est exactement ce que montre la figure quand le gain dépasse le seuil : revenir en arrière sur le réglage ne ramène pas la courbe d’où elle venait.\n\nLe mot « irréversible » employé à propos du climat désigne cela, et non une fin du monde : un nouvel état stable dont on ne revient pas en annulant la cause.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette rétroaction amplifie-t-elle ou amortit-elle ?",
+          "explanation": "La fonte de la glace découvre une surface sombre qui absorbe plus : cela amplifie. Le rayonnement en T⁴ augmente avec la chaleur et refroidit : cela amortit.",
+          "categories": [
+            "amplifie",
+            "amortit"
+          ],
+          "items": [
+            {
+              "text": "la fonte de la glace découvre une surface sombre",
+              "category": 0
+            },
+            {
+              "text": "plus de chaleur permet plus de vapeur d’eau",
+              "category": 0
+            },
+            {
+              "text": "plus chaud, donc la Terre rayonne davantage",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie « rétroaction positive » ?",
+          "explanation": "Que l’effet de retour amplifie la variation initiale. Positive ne veut pas dire bénéfique : c’est un signe, pas un jugement.",
+          "options": [
+            {
+              "text": "l’effet de retour amplifie la variation",
+              "correct": true
+            },
+            {
+              "text": "l’effet de retour est bénéfique"
+            },
+            {
+              "text": "la variation est positive"
+            },
+            {
+              "text": "le système se stabilise"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’Arctique se réchauffe-t-il trois à quatre fois plus vite que la moyenne ?",
+          "explanation": "À cause de la boucle glace-albédo : la fonte découvre une surface sombre qui absorbe plus, ce qui accélère la fonte.",
+          "options": [
+            {
+              "text": "la fonte de la glace découvre une surface absorbante",
+              "correct": true
+            },
+            {
+              "text": "il y a plus de dioxyde de carbone au pôle"
+            },
+            {
+              "text": "le Soleil y est plus haut"
+            },
+            {
+              "text": "l’atmosphère y est plus fine"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La vapeur d’eau étant le premier gaz à effet de serre, le dioxyde de carbone est négligeable.",
+          "explanation": "Faux. La vapeur d’eau est une rétroaction, fixée par la température et éliminée en quelques jours. Le CO₂ est un forçage qui dure des siècles.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle boucle empêche le climat de diverger ?",
+          "explanation": "Le rayonnement de Stefan en T⁴ : plus il fait chaud, plus la Terre rayonne, et très vite. C’est la rétroaction négative dominante.",
+          "options": [
+            {
+              "text": "le rayonnement qui croît en T⁴",
+              "correct": true
+            },
+            {
+              "text": "la boucle glace-albédo"
+            },
+            {
+              "text": "la vapeur d’eau"
+            },
+            {
+              "text": "la fonte du permafrost"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que désigne le mot « irréversible » à propos du climat ?",
+          "explanation": "Un nouvel état stable dont on ne revient pas en annulant la cause initiale. Pas une fin du monde : un changement de régime.",
+          "options": [
+            {
+              "text": "un nouvel état stable dont on ne revient pas",
+              "correct": true
+            },
+            {
+              "text": "la fin de toute vie"
+            },
+            {
+              "text": "un réchauffement infini"
+            },
+            {
+              "text": "une erreur de mesure"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-bilan-complet",
+      "title": "Défi : refaire le bilan soi-même",
+      "subtitle": "Quatre nombres, deux divisions, et la température d’une planète.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le point de départ du calcul",
+          "body": "Reprends le curseur de l’année et la latitude du zénith : c’est la géométrie que le bilan radiatif moyenne sur toute la planète et sur toute l’année. Le calcul du défi réduit tout cela à un seul nombre par mètre carré.",
+          "figureId": "saisons",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul, en quatre temps",
+          "body": "Partir de la constante solaire de la planète, qui dépend de sa distance au Soleil en 1/d².\n\nDiviser par quatre, parce qu’on intercepte sur un disque et qu’on rayonne sur une sphère.\n\nMultiplier par 1 moins l’albédo, pour ne garder que ce qui est absorbé.\n\nPoser σT⁴ égal à ce flux, et extraire la racine quatrième. On obtient la température d’équilibre sans atmosphère.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le calcul pour Vénus, et la surprise",
+          "body": "Vénus est à 0,72 unité astronomique : sa constante solaire vaut 1 361 / 0,72², soit 2 625 watts par mètre carré.\n\nSon albédo est très élevé, 0,77, à cause de ses nuages. Le flux absorbé vaut donc 2 625 / 4 × 0,23 = 151 watts par mètre carré — moins que la Terre.\n\nSa température d’équilibre serait donc de 227 kelvins, soit −46 degrés : plus froide que la Terre.\n\nSa température réelle de surface est de 464 degrés. L’effet de serre y vaut 500 degrés, contre 33 sur Terre. C’est le meilleur argument pour prendre le mécanisme au sérieux.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que ce modèle ne contient pas",
+          "body": "Il suppose la planète à température uniforme, ce qu’aucune n’est.\n\nIl ignore la rotation, les océans, les courants, les nuages et toute la circulation atmosphérique.\n\nIl donne pourtant la bonne température à quelques degrés près pour la Terre sans atmosphère, et il montre que Vénus est une anomalie de 500 degrés.\n\nC’est tout l’intérêt d’un modèle grossier : il ne décrit rien finement, et il désigne sans ambiguïté ce qui demande une explication.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a construit",
+          "body": "Un flux qui dépend de la distance et de l’inclinaison.\n\nUn bilan qui impose que ce qui entre ressorte, à l’équilibre.\n\nUne température qui en découle, et un écart avec la réalité qui mesure l’effet de serre.\n\nEt des boucles de rétroaction dont le signe décide si une perturbation se résorbe ou s’amplifie. Ces quatre idées suffisent à comprendre pourquoi le climat se discute en degrés et non en opinions.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le calcul de la température d’équilibre dans l’ordre.",
+          "explanation": "Constante solaire selon la distance, division par quatre, retrait de l’albédo, puis racine quatrième par la loi de Stefan.",
+          "items": [
+            "calculer la constante solaire de la planète",
+            "diviser par quatre",
+            "multiplier par 1 moins l’albédo",
+            "poser σT⁴ égal au flux et extraire T"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la constante solaire de Vénus, à 0,72 unité astronomique, en W/m² ?",
+          "explanation": "1 361 divisé par 0,72², soit 1 361 / 0,518 = 2 625 watts par mètre carré.",
+          "min": 500,
+          "max": 6000,
+          "answer": 2625,
+          "tolerance": 200,
+          "unit": "W/m²",
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Vénus absorbe plus d’énergie par mètre carré que la Terre.",
+          "explanation": "Faux. Son albédo de 0,77 lui en renvoie l’essentiel : elle absorbe 151 W/m² contre 238 pour la Terre.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De combien de degrés l’effet de serre réchauffe-t-il la surface de Vénus ?",
+          "explanation": "De −46 °C d’équilibre à 464 °C réels, soit environ 510 degrés. Contre 33 sur Terre.",
+          "answer": 510,
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que ce modèle simple ignore-t-il ?",
+          "explanation": "La rotation, les océans et courants, les nuages et la circulation atmosphérique. Il suppose une planète à température uniforme.",
+          "options": [
+            {
+              "text": "la rotation de la planète",
+              "correct": true
+            },
+            {
+              "text": "les océans et les courants",
+              "correct": true
+            },
+            {
+              "text": "la circulation atmosphérique",
+              "correct": true
+            },
+            {
+              "text": "la distance au Soleil"
+            },
+            {
+              "text": "l’albédo"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert un modèle aussi grossier ?",
+          "explanation": "À désigner sans ambiguïté ce qui demande une explication : il ne décrit rien finement, mais il fait ressortir l’anomalie de Vénus.",
+          "options": [
+            {
+              "text": "à désigner ce qui demande une explication",
+              "correct": true
+            },
+            {
+              "text": "à prévoir le temps qu’il fera"
+            },
+            {
+              "text": "à remplacer les modèles complets"
+            },
+            {
+              "text": "à calculer l’albédo"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

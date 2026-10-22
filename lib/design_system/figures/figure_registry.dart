@@ -39,6 +39,7 @@ import 'root_two_figure.dart';
 import 'solid_figure.dart';
 import 'spreadsheet_figure.dart';
 import 'trigonometry_figure.dart';
+import 'spectrum_figure.dart';
 import 'wave_figure.dart';
 import 'rutherford_figure.dart';
 import 'swan_neck_figure.dart';
@@ -139,6 +140,11 @@ abstract final class FigureRegistry {
     // d'onde.
     'onde': (BuildContext context, Color accent) =>
         WaveFigure(accent: accent),
+    // Le spectre d'une étoile : la couleur donne la température, les
+    // raies sombres donnent la composition, et les deux se règlent
+    // séparément.
+    'spectre-etoile': (BuildContext context, Color accent) =>
+        SpectrumFigure(accent: accent),
     // Une balance à deux plateaux : résoudre ax + b = c par gestes.
     'balance-equation': (BuildContext context, Color accent) =>
         BalanceFigure(accent: accent),

@@ -1,0 +1,551 @@
+{
+  "chapter": "astronomie-lycee-naissance-des-elements",
+  "lessons": [
+    {
+      "id": "d-ou-viennent-les-atomes",
+      "title": "D’où viennent les atomes",
+      "subtitle": "Tout ce qui vous compose a été fabriqué ailleurs.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le noyau, et ce qu’on y ajoute",
+          "body": "Reviens au modèle de Rutherford et fais varier la taille du noyau : c’est là que se joue toute cette leçon. Fabriquer un nouvel élément, ce n’est pas changer les électrons — c’est ajouter des protons dans ce noyau minuscule.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois ateliers, trois époques",
+          "body": "Les trois premières minutes après le Big Bang : l’univers est assez chaud pour fusionner. Il en sort 75 % d’hydrogène, 25 % d’hélium en masse, et des traces de lithium. Rien d’autre.\n\nLe cœur des étoiles, pendant des milliards d’années : de l’hélium jusqu’au fer, par fusions successives.\n\nLes explosions d’étoiles et les collisions d’étoiles à neutrons, en quelques secondes : tout ce qui est plus lourd que le fer, l’or et l’uranium compris.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Vous êtes fait de restes d’étoiles",
+          "body": "Le carbone de vos molécules, l’oxygène que vous respirez, le calcium de vos os, le fer de votre sang : aucun n’existait au début de l’Univers.\n\nTous ont été fabriqués dans le cœur d’étoiles mortes avant la naissance du Soleil, puis dispersés par leurs explosions, puis rassemblés dans le nuage dont le Système solaire s’est formé.\n\nSeul l’hydrogène de vos molécules d’eau est d’origine, et il représente environ 10 % de votre masse. Les 90 % restants sont d’occasion.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’or de votre bague",
+          "body": "L’or ne peut pas se former dans une étoile ordinaire : sa fabrication consomme de l’énergie au lieu d’en libérer.\n\nIl faut un événement d’une violence extrême et d’une brièveté extrême. La collision de deux étoiles à neutrons observée en 2017, à la fois en ondes gravitationnelles et en lumière, en a produit plusieurs fois la masse de la Terre.\n\nC’est la première fois qu’on a vu se fabriquer l’or dont nous nous servons, et cela n’a été possible que parce que deux instruments de natures différentes ont regardé au même endroit.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Un élément ne se change pas par la chimie",
+          "body": "Les alchimistes cherchaient à transformer le plomb en or en chauffant, mélangeant, dissolvant.\n\nC’était voué à l’échec, et la raison est précise : la chimie ne touche qu’aux électrons, et c’est le nombre de protons qui définit l’élément.\n\nChanger un élément en un autre demande d’atteindre le noyau, ce qui exige des énergies des millions de fois supérieures à celles d’une réaction chimique. On sait le faire aujourd’hui, dans un accélérateur, et cela coûte infiniment plus cher que l’or produit.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque élément à son lieu de fabrication.",
+          "explanation": "L’hydrogène vient du Big Bang, le carbone et l’oxygène du cœur des étoiles, l’or des collisions d’étoiles à neutrons.",
+          "pairs": [
+            {
+              "left": "l’hydrogène",
+              "right": "les trois premières minutes"
+            },
+            {
+              "left": "le carbone et l’oxygène",
+              "right": "le cœur des étoiles"
+            },
+            {
+              "left": "l’or et l’uranium",
+              "right": "explosions et collisions d’astres"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage en masse de l’hélium est sorti des trois premières minutes de l’Univers ?",
+          "explanation": "Environ 25 %, contre 75 % d’hydrogène. Rien d’autre n’a été produit en quantité notable.",
+          "answer": 25,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le fer de votre sang existait au début de l’Univers.",
+          "explanation": "Faux. Il a été fabriqué dans le cœur d’étoiles mortes avant la naissance du Soleil, puis dispersé par leurs explosions.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les alchimistes ne pouvaient-ils pas transformer le plomb en or ?",
+          "explanation": "La chimie ne touche qu’aux électrons, et c’est le nombre de protons qui définit l’élément. Il faut atteindre le noyau.",
+          "options": [
+            {
+              "text": "la chimie ne touche qu’aux électrons",
+              "correct": true
+            },
+            {
+              "text": "ils manquaient de chaleur"
+            },
+            {
+              "text": "le plomb est trop stable"
+            },
+            {
+              "text": "il leur manquait un catalyseur"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a-t-on observé pour la première fois en 2017 ?",
+          "explanation": "La fabrication de l’or, lors d’une collision d’étoiles à neutrons vue à la fois en ondes gravitationnelles et en lumière.",
+          "options": [
+            {
+              "text": "la fabrication de l’or dans une collision d’astres",
+              "correct": true
+            },
+            {
+              "text": "la première supernova"
+            },
+            {
+              "text": "la fusion de l’hydrogène"
+            },
+            {
+              "text": "la naissance d’une planète"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel pourcentage de votre masse est de l’hydrogène, donc d’origine cosmologique ?",
+          "explanation": "Environ 10 %. Les 90 % restants ont été fabriqués dans des étoiles mortes depuis longtemps.",
+          "min": 0,
+          "max": 100,
+          "answer": 10,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-fusion-et-son-plafond",
+      "title": "La fusion, et son plafond",
+      "subtitle": "Tout monte vers le fer, et rien ne le dépasse en gagnant.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui entre, ce qui sort",
+          "body": "Touche les blocs et fais varier le rendement : la part perdue change, le total jamais. Une étoile obéit au même bilan — elle convertit de la masse en énergie, et ce qu’elle rayonne est exactement ce qu’elle a perdu.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La masse est une forme d’énergie",
+          "body": "E = m × c²\n\nAvec c = 3,0 × 10⁸ m/s, le facteur c² vaut 9 × 10¹⁶ : un gramme de matière vaut 9 × 10¹³ joules, soit l’énergie d’environ vingt mille tonnes de TNT.\n\nCe n’est pas une conversion qu’on peut faire à volonté : la fusion ne libère que 0,7 % de la masse des noyaux engagés. Mais 0,7 % d’une quantité multipliée par 9 × 10¹⁶ reste colossal.",
+          "formula": "E = m × c²",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que le Soleil perd chaque seconde",
+          "body": "Il fusionne environ 600 millions de tonnes d’hydrogène par seconde.\n\nL’hélium produit pèse 0,7 % de moins. La différence, environ 4 millions de tonnes par seconde, est partie en lumière.\n\nOn le vérifie à l’envers : la puissance rayonnée du Soleil vaut 3,8 × 10²⁶ watts, et la masse correspondante est 3,8 × 10²⁶ divisé par 9 × 10¹⁶, soit 4,2 × 10⁹ kilogrammes par seconde. Les deux calculs tombent d’accord.\n\nÀ ce rythme, le Soleil a encore de quoi tenir cinq milliards d’années : il n’a consommé qu’une petite part de son hydrogène.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Le noyau, qui grossit d’une fusion à l’autre",
+          "body": "Reviens au curseur de la taille du noyau. Chaque fusion y ajoute des protons, et c’est tout ce qui distingue l’hélium du carbone, puis du fer. La montée décrite par la carte précédente se joue entièrement dans cette tache minuscule.",
+          "figureId": "modeles-atome"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi la montée s’arrête au fer",
+          "body": "Chaque noyau a une énergie de liaison par nucléon, qui mesure sa stabilité.\n\nElle augmente de l’hydrogène jusqu’au fer 56, où elle culmine à environ 8,8 millions d’électronvolts par nucléon.\n\nAu-delà, elle redescend. Fusionner deux noyaux plus lourds que le fer coûte de l’énergie au lieu d’en rendre.\n\nUne étoile qui a fabriqué un cœur de fer n’a donc plus de carburant : elle ne peut plus résister à sa propre gravité, et elle s’effondre. C’est ce qui déclenche une supernova.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La même courbe explique fusion et fission",
+          "body": "Pour les noyaux légers, on gagne en fusionnant vers le fer : c’est la fusion, celle des étoiles et des bombes H.\n\nPour les noyaux lourds, on gagne en se cassant vers le fer : c’est la fission, celle des centrales et des premières bombes.\n\nLes deux procédés opposés libèrent de l’énergie pour la même raison : ils se rapprochent tous deux du sommet de la courbe.\n\nLe fer est donc la cendre ultime de l’univers nucléaire, par les deux bouts.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de millions de tonnes le Soleil perd-il en énergie chaque seconde ?",
+          "explanation": "Environ 4 millions de tonnes, soit 0,7 % des 600 millions de tonnes d’hydrogène qu’il fusionne.",
+          "min": 0,
+          "max": 100,
+          "answer": 4,
+          "tolerance": 1,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Jusqu’à quel élément la fusion libère-t-elle de l’énergie ?",
+          "explanation": "Jusqu’au fer 56, où l’énergie de liaison par nucléon culmine à environ 8,8 MeV. Au-delà, fusionner coûte de l’énergie.",
+          "options": [
+            {
+              "text": "le fer",
+              "correct": true
+            },
+            {
+              "text": "l’uranium"
+            },
+            {
+              "text": "le carbone"
+            },
+            {
+              "text": "le plomb"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que devient une étoile qui a fabriqué un cœur de fer ?",
+          "explanation": "Elle n’a plus de carburant, ne peut plus résister à sa gravité, et s’effondre. C’est ce qui déclenche une supernova.",
+          "options": [
+            {
+              "text": "elle s’effondre et explose",
+              "correct": true
+            },
+            {
+              "text": "elle continue vers l’uranium"
+            },
+            {
+              "text": "elle se refroidit lentement"
+            },
+            {
+              "text": "elle double de taille"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Fusion et fission libèrent de l’énergie pour des raisons opposées.",
+          "explanation": "Faux. Les deux rapprochent du fer, sommet de la courbe d’énergie de liaison : c’est la même raison, atteinte par les deux bouts.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage de la masse la fusion de l’hydrogène convertit-elle en énergie ?",
+          "explanation": "0,7 %. C’est peu, mais multiplié par c² cela reste colossal.",
+          "answer": 0.7,
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Pendant combien de milliards d’années le Soleil peut-il encore briller ?",
+          "explanation": "Environ cinq milliards d’années : il n’a consommé qu’une part de son hydrogène, et il a déjà 4,6 milliards d’années.",
+          "min": 0,
+          "max": 50,
+          "answer": 5,
+          "tolerance": 1.5,
+          "unit": "Ga",
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-elements-lourds",
+      "title": "Les éléments lourds, et leur horloge",
+      "subtitle": "Fabriqués en quelques secondes, et dont certains tiennent des milliards d’années.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui reste d’une fabrication ancienne",
+          "body": "Fais avancer le temps : la courbe décide, et aucun noyau ne sait quand son tour viendra. Les éléments lourds fabriqués avant la naissance du Soleil décroissent depuis, et ce qu’il en reste aujourd’hui est ce que cette courbe en a laissé.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment on dépasse le fer",
+          "body": "La fusion ne le peut pas, puisqu’elle y perdrait de l’énergie.\n\nLa méthode est différente : on ajoute des neutrons, qui ne sont pas repoussés par le noyau puisqu’ils n’ont pas de charge.\n\nUn noyau trop chargé en neutrons se réarrange ensuite, un neutron se transformant en proton — ce qui le fait monter d’une case dans le tableau périodique.\n\nRépété très vite dans une supernova ou une collision d’étoiles à neutrons, ce procédé remonte jusqu’à l’uranium en quelques secondes.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi il reste de l’uranium, et plus de plutonium",
+          "body": "L’uranium 238 a une demi-vie de 4,5 milliards d’années, soit à peu près l’âge de la Terre. Il en reste donc environ la moitié de ce qui était présent à l’origine.\n\nL’uranium 235 a une demi-vie de 700 millions d’années : il en reste bien moins, et c’est pourquoi il ne représente que 0,7 % de l’uranium naturel alors qu’il en formait près du tiers à la formation de la Terre.\n\nLe plutonium 244, lui, a une demi-vie de 80 millions d’années. Après 4,5 milliards d’années, soit cinquante-six demi-vies, il n’en reste rien de mesurable. Il faut le fabriquer pour en avoir.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La composition de la Terre est datée",
+          "body": "La proportion actuelle d’isotopes n’est pas un hasard : c’est ce que la décroissance a laissé depuis la formation du Système solaire.\n\nElle permet donc de dater, mais elle permet aussi de vérifier : un isotope à courte demi-vie trouvé en quantité notable signalerait une fabrication récente.\n\nC’est exactement ainsi qu’on a identifié le réacteur nucléaire naturel d’Oklo, au Gabon : l’uranium y était anormalement pauvre en isotope 235, ce qui ne s’expliquait que par une réaction en chaîne spontanée, il y a deux milliards d’années.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Demi-vie courte veut dire rare, pas inoffensif",
+          "body": "Un isotope de courte demi-vie disparaît vite, et c’est pour cela qu’on n’en trouve pas dans la nature.\n\nMais courte demi-vie signifie aussi beaucoup de désintégrations par seconde, donc une activité élevée.\n\nLes deux énoncés sont liés et vont dans des sens opposés : un isotope très actif est forcément éphémère, et un isotope qui dure des milliards d’années est forcément peu actif. L’uranium 238 est à peine radioactif, et c’est pourquoi on peut le tenir.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment fabrique-t-on des noyaux plus lourds que le fer ?",
+          "explanation": "En ajoutant des neutrons, qui ne sont pas repoussés par le noyau. Le noyau se réarrange ensuite et monte dans le tableau.",
+          "options": [
+            {
+              "text": "en ajoutant des neutrons",
+              "correct": true
+            },
+            {
+              "text": "en fusionnant deux noyaux lourds"
+            },
+            {
+              "text": "en ajoutant des électrons"
+            },
+            {
+              "text": "en chauffant davantage"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la demi-vie de l’uranium 238, en milliards d’années ?",
+          "explanation": "4,5 milliards d’années, à peu près l’âge de la Terre : il en reste donc environ la moitié de l’origine.",
+          "answer": 4.5,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’uranium 235 ne représente-t-il que 0,7 % de l’uranium naturel ?",
+          "explanation": "Sa demi-vie de 700 millions d’années est bien plus courte que celle de l’uranium 238 : il a presque entièrement disparu.",
+          "options": [
+            {
+              "text": "sa demi-vie est bien plus courte",
+              "correct": true
+            },
+            {
+              "text": "il en a été fabriqué moins"
+            },
+            {
+              "text": "il est plus difficile à extraire"
+            },
+            {
+              "text": "il se transforme en uranium 238"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un isotope de très longue demi-vie est très radioactif.",
+          "explanation": "Faux, c’est l’inverse. Longue demi-vie signifie peu de désintégrations par seconde : l’uranium 238 est à peine radioactif.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment a-t-on identifié le réacteur naturel d’Oklo ?",
+          "explanation": "Par une anomalie isotopique : l’uranium y était anormalement pauvre en 235, ce qu’une réaction en chaîne spontanée explique.",
+          "options": [
+            {
+              "text": "l’uranium y était anormalement pauvre en isotope 235",
+              "correct": true
+            },
+            {
+              "text": "on y a trouvé du plutonium"
+            },
+            {
+              "text": "la roche y était fondue"
+            },
+            {
+              "text": "par la mesure de la température"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi ne trouve-t-on pas de plutonium 244 naturel sur Terre ?",
+          "explanation": "Sa demi-vie de 80 millions d’années signifie cinquante-six demi-vies écoulées depuis la formation de la Terre : il n’en reste rien.",
+          "options": [
+            {
+              "text": "sa demi-vie est trop courte devant l’âge de la Terre",
+              "correct": true
+            },
+            {
+              "text": "il n’a jamais été fabriqué"
+            },
+            {
+              "text": "il est trop lourd et a coulé au centre"
+            },
+            {
+              "text": "il s’est transformé en uranium"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-une-etoile",
+      "title": "Défi : lire la composition d’une étoile",
+      "subtitle": "On connaît la recette d’objets où l’on n’ira jamais.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les électrons, et ce qu’ils trahissent",
+          "body": "Reviens au modèle où les électrons occupent des couches distinctes. C’est cette structure en niveaux séparés qui rend la lecture possible : un électron ne peut absorber que des énergies précises, et ce sont elles qui signent l’élément.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Comment un atome signe sa présence",
+          "body": "Les électrons d’un atome ne peuvent occuper que certains niveaux d’énergie, pas ceux qu’ils veulent.\n\nPour monter d’un niveau à l’autre, un électron doit absorber exactement l’écart entre les deux — ni plus, ni moins.\n\nUn gaz traversé par de la lumière prélève donc précisément les couleurs correspondant à ses écarts de niveaux, et laisse des raies sombres dans le spectre.\n\nCes écarts sont propres à chaque élément. Le motif de raies est une signature, aussi sûre qu’une empreinte digitale.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’hélium a été trouvé dans le Soleil avant la Terre",
+          "body": "En 1868, lors d’une éclipse, deux astronomes relèvent dans le spectre solaire une raie jaune qui ne correspond à aucun élément connu.\n\nOn en déduit l’existence d’un élément nouveau, qu’on nomme hélium d’après le nom grec du Soleil.\n\nIl faudra attendre 1895 pour l’isoler sur Terre, vingt-sept ans plus tard.\n\nC’est le seul élément chimique à avoir été découvert ailleurs que sur notre planète, et c’est la meilleure démonstration de ce que vaut la spectroscopie.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que le spectre ne dit pas tout seul",
+          "body": "Il donne la composition de la couche superficielle de l’étoile, pas de son cœur. Le cœur du Soleil fusionne de l’hélium que nous ne voyons pas dans son spectre.\n\nL’intensité d’une raie dépend aussi de la température : un élément présent peut donner une raie faible parce que ses atomes sont ionisés.\n\nInterpréter un spectre demande donc un modèle d’atmosphère stellaire. Ce n’est pas une lecture directe, c’est une mesure avec des hypothèses — comme toute mesure indirecte.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’un spectre apporte, au total",
+          "body": "La composition chimique, par le motif des raies.\n\nLa température de surface, par la couleur d’ensemble : une étoile bleue est plus chaude qu’une rouge, contrairement au code couleur des robinets.\n\nLa vitesse radiale, par le décalage de toutes les raies vers le rouge ou vers le bleu.\n\nEt donc, par ce dernier point, la présence de planètes invisibles qui font osciller leur étoile. Un seul instrument, quatre informations, sur un objet situé à des milliers d’années-lumière.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un élément donne-t-il des raies à des longueurs d’onde précises ?",
+          "explanation": "Parce que ses électrons ne peuvent occuper que certains niveaux : ils n’absorbent que les écarts exacts entre ces niveaux.",
+          "options": [
+            {
+              "text": "ses électrons n’occupent que certains niveaux",
+              "correct": true
+            },
+            {
+              "text": "ses atomes vibrent à une fréquence fixe"
+            },
+            {
+              "text": "sa couleur propre filtre la lumière"
+            },
+            {
+              "text": "son noyau émet à cette longueur d’onde"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel élément a été découvert dans le Soleil avant d’être isolé sur Terre ?",
+          "explanation": "L’hélium, repéré en 1868 par une raie jaune inconnue, et isolé sur Terre seulement en 1895.",
+          "options": [
+            {
+              "text": "l’hélium",
+              "correct": true
+            },
+            {
+              "text": "l’hydrogène"
+            },
+            {
+              "text": "le sodium"
+            },
+            {
+              "text": "le fer"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’années séparent la découverte de l’hélium dans le Soleil de son isolement sur Terre ?",
+          "explanation": "De 1868 à 1895, soit 27 ans.",
+          "answer": 27,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle étoile est la plus chaude ?",
+          "explanation": "La bleue. Le code couleur de l’intuition est inversé par rapport à celui des robinets.",
+          "options": [
+            {
+              "text": "une étoile bleue",
+              "correct": true
+            },
+            {
+              "text": "une étoile rouge"
+            },
+            {
+              "text": "une étoile jaune"
+            },
+            {
+              "text": "la couleur ne dit rien de la température"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que peut-on tirer du spectre d’une étoile ?",
+          "explanation": "Sa composition de surface, sa température, sa vitesse radiale — et par là, la présence de planètes qui la font osciller.",
+          "options": [
+            {
+              "text": "sa composition de surface",
+              "correct": true
+            },
+            {
+              "text": "sa température de surface",
+              "correct": true
+            },
+            {
+              "text": "sa vitesse radiale",
+              "correct": true
+            },
+            {
+              "text": "la présence de planètes",
+              "correct": true
+            },
+            {
+              "text": "la composition de son cœur"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un spectre donne directement la composition du cœur d’une étoile.",
+          "explanation": "Faux. Il ne renseigne que sur la couche superficielle. Le cœur du Soleil fusionne de l’hélium qui n’apparaît pas ainsi.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

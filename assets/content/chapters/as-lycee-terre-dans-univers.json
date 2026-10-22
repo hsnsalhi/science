@@ -1,0 +1,530 @@
+{
+  "chapter": "astronomie-lycee-la-terre-dans-l-univers",
+  "lessons": [
+    {
+      "id": "les-echelles",
+      "title": "Les échelles",
+      "subtitle": "Aucune image ne peut montrer à la fois les planètes et leurs distances.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le temps que met la lumière",
+          "body": "Glisse sur l’axe des distances et lis, sous le dessin, le temps que met la lumière pour atteindre chaque planète. Huit minutes pour la Terre, plus de quatre heures pour Neptune. Remarque que les quatre planètes internes sont agrandies : sans cela, elles seraient invisibles.",
+          "figureId": "systeme-solaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les unités, et pourquoi il en faut plusieurs",
+          "body": "L’unité astronomique, 150 millions de kilomètres, est la distance Terre-Soleil. Elle sert dans le Système solaire : Neptune est à 30 unités astronomiques.\n\nL’année-lumière, 9 500 milliards de kilomètres, est la distance parcourue par la lumière en un an. Elle sert entre les étoiles : la plus proche est à 4,2 années-lumière.\n\nLe parsec, 3,26 années-lumière, est l’unité des astronomes professionnels, parce qu’il sort directement de la mesure de parallaxe.\n\nChanger d’unité tous les mille facteurs n’est pas une complication : c’est ce qui permet de garder des nombres maniables.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Une maquette à l’échelle, vraiment",
+          "body": "Si le Soleil était une boule de 1,4 mètre de diamètre, la Terre serait une bille de 1,3 centimètre à 150 mètres de là.\n\nNeptune serait une noisette de 5 centimètres à 4,5 kilomètres.\n\nEt l’étoile la plus proche serait une autre boule de 1,4 mètre, à 40 000 kilomètres — soit le tour de la Terre.\n\nAucune illustration de manuel ne respecte ces proportions, et c’est pourquoi l’intuition qu’on en retire est fausse. Le Système solaire est surtout du vide, et l’espace entre les étoiles l’est encore bien davantage.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Regarder loin, c’est regarder tôt",
+          "body": "La lumière met du temps à venir. Voir le Soleil, c’est le voir tel qu’il était il y a huit minutes.\n\nVoir l’étoile la plus proche, c’est la voir il y a 4,2 ans. Voir la galaxie d’Andromède, il y a 2,5 millions d’années.\n\nUn télescope est donc une machine à remonter le temps, et c’est le seul instrument dont nous disposions pour observer le passé directement. Une étoile qu’on observe à mille années-lumière a peut-être cessé d’exister depuis neuf siècles.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Comment on mesure vraiment une distance",
+          "body": "Par parallaxe pour les étoiles proches : la Terre se déplace de 300 millions de kilomètres en six mois, et l’étoile semble bouger un peu sur le fond du ciel. L’angle donne la distance.\n\nPar les céphéides au-delà : ces étoiles variables ont une période liée à leur luminosité réelle, donc comparer luminosité apparente et réelle donne la distance.\n\nPar le décalage vers le rouge pour les galaxies lointaines.\n\nChaque méthode est étalonnée sur la précédente. On parle d’une échelle des distances, et une erreur sur un barreau se propage à tous ceux du dessus.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque unité à son usage.",
+          "explanation": "L’unité astronomique pour le Système solaire, l’année-lumière entre les étoiles, le parsec pour les professionnels car il sort de la parallaxe.",
+          "pairs": [
+            {
+              "left": "l’unité astronomique",
+              "right": "les distances dans le Système solaire"
+            },
+            {
+              "left": "l’année-lumière",
+              "right": "les distances entre étoiles"
+            },
+            {
+              "left": "le parsec",
+              "right": "l’unité issue de la parallaxe"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes la lumière met-elle pour venir du Soleil ?",
+          "explanation": "Environ 8 minutes : 150 millions de kilomètres à 300 000 km/s.",
+          "answer": 8,
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "À combien d’années-lumière se trouve l’étoile la plus proche du Soleil ?",
+          "explanation": "4,2 années-lumière, Proxima du Centaure. La lumière qui nous en parvient est partie il y a plus de quatre ans.",
+          "min": 0,
+          "max": 100,
+          "answer": 4.2,
+          "tolerance": 0.5,
+          "unit": "al",
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une étoile observée aujourd’hui à mille années-lumière existe forcément encore.",
+          "explanation": "Faux. On la voit telle qu’elle était il y a mille ans. Elle a pu disparaître depuis sans que nous puissions le savoir avant neuf siècles.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment mesure-t-on la distance d’une étoile proche ?",
+          "explanation": "Par parallaxe : la Terre se déplace de 300 millions de kilomètres en six mois, et l’étoile semble bouger sur le fond du ciel.",
+          "options": [
+            {
+              "text": "par parallaxe, grâce au déplacement de la Terre",
+              "correct": true
+            },
+            {
+              "text": "en mesurant sa luminosité seule"
+            },
+            {
+              "text": "en chronométrant un écho"
+            },
+            {
+              "text": "par sa couleur"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi parle-t-on d’une « échelle » des distances ?",
+          "explanation": "Parce que chaque méthode est étalonnée sur la précédente : une erreur sur un barreau se propage à tous ceux du dessus.",
+          "options": [
+            {
+              "text": "chaque méthode est étalonnée sur la précédente",
+              "correct": true
+            },
+            {
+              "text": "les distances sont rangées par ordre croissant"
+            },
+            {
+              "text": "on utilise une règle graduée"
+            },
+            {
+              "text": "les unités se suivent de mille en mille"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "galaxies-et-expansion",
+      "title": "Galaxies et expansion",
+      "subtitle": "Toutes s’éloignent de nous, et nous ne sommes nulle part.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Choisir son observateur",
+          "body": "Touche une galaxie pour te placer dessus : le tableau des vitesses d’éloignement se refait, et il a exactement la même allure. Touche-en une autre, et encore une autre. Depuis n’importe laquelle, toutes les autres s’éloignent — et plus elles sont loin, plus elles vont vite.",
+          "figureId": "expansion",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La loi de Hubble, 1929",
+          "body": "v = H₀ × d\n\nLa vitesse d’éloignement d’une galaxie est proportionnelle à sa distance. H₀, la constante de Hubble, vaut environ 70 kilomètres par seconde et par mégaparsec.\n\nUne galaxie deux fois plus loin s’éloigne deux fois plus vite. Ce n’est pas une galaxie qui fuit : c’est l’espace entre elle et nous qui s’allonge.",
+          "formula": "v = H₀ × d",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cela n’implique aucun centre",
+          "body": "Si chaque galaxie voit toutes les autres s’éloigner proportionnellement à leur distance, alors toutes les galaxies voient la même chose.\n\nLa figure le montre en changeant d’observateur : le tableau ne change pas. Il n’y a donc aucun point privilégié, et nous ne sommes pas au centre.\n\nL’image du pain aux raisins qui lève vaut mieux que celle de l’explosion : chaque raisin voit les autres s’écarter, et aucun n’est au centre de la pâte.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui ne s’étend pas",
+          "body": "L’expansion concerne l’espace entre les amas de galaxies, là où rien ne retient.\n\nElle n’écarte ni les atomes, ni la Terre du Soleil, ni les étoiles d’une même galaxie : à ces échelles, la gravitation est largement plus forte et maintient les choses ensemble.\n\nAndromède, notre voisine, se rapproche même de nous à 110 kilomètres par seconde et entrera en collision avec la Voie lactée dans environ quatre milliards d’années. L’expansion ne dit rien contre cela.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Remonter le film",
+          "body": "Si tout s’éloigne aujourd’hui, tout était plus proche hier.\n\nEn remontant, on arrive à un état où l’univers observable était extraordinairement dense et chaud. L’inverse de la constante de Hubble donne un ordre de grandeur de l’âge : environ 14 milliards d’années.\n\nLa mesure fine, par le fond diffus cosmologique, donne 13,8 milliards d’années. Deux méthodes indépendantes qui tombent d’accord à quelques pour cent, et c’est ce qui rend le résultat solide.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passe-t-il quand on change de galaxie observatrice dans la figure ?",
+          "explanation": "Rien : le tableau des vitesses a la même allure depuis n’importe laquelle. C’est précisément ce qui montre qu’il n’y a pas de centre.",
+          "options": [
+            {
+              "text": "le tableau des vitesses garde la même allure",
+              "correct": true
+            },
+            {
+              "text": "les vitesses s’inversent"
+            },
+            {
+              "text": "la galaxie centrale change"
+            },
+            {
+              "text": "les distances se doublent"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Une galaxie est deux fois plus loin qu’une autre. Combien de fois plus vite s’éloigne-t-elle ?",
+          "explanation": "Deux fois : la loi de Hubble est une proportionnalité entre vitesse et distance.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’expansion écarte progressivement la Terre du Soleil.",
+          "explanation": "Faux. À cette échelle la gravitation l’emporte très largement. L’expansion ne joue qu’entre les amas de galaxies.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Toutes les galaxies s’éloignent de la Voie lactée.",
+          "explanation": "Faux. Andromède s’en rapproche à 110 km/s et la percutera dans quatre milliards d’années : à courte distance, la gravitation domine.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel est l’âge de l’Univers, en milliards d’années ?",
+          "explanation": "13,8 milliards d’années, mesuré par le fond diffus cosmologique et confirmé par l’inverse de la constante de Hubble.",
+          "min": 1,
+          "max": 50,
+          "answer": 13.8,
+          "tolerance": 1,
+          "unit": "Ga",
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle image décrit le mieux l’expansion ?",
+          "explanation": "Le pain aux raisins qui lève : chaque raisin voit les autres s’écarter, et aucun n’est au centre de la pâte.",
+          "options": [
+            {
+              "text": "un pain aux raisins qui lève",
+              "correct": true
+            },
+            {
+              "text": "une explosion partant d’un point"
+            },
+            {
+              "text": "des billes roulant sur une table"
+            },
+            {
+              "text": "un ballon qui se dégonfle"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "dater-la-terre",
+      "title": "Dater la Terre",
+      "subtitle": "Une horloge qu’aucune condition extérieure ne dérègle.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une décroissance insensible à tout",
+          "body": "Fais avancer le temps : la courbe est toujours la même. C’est ce qui fait d’une désintégration une horloge — ni la pression, ni la température, ni la chimie ne la ralentissent, contrairement à presque tout le reste en géologie.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le principe de la radiochronologie",
+          "body": "Une roche se forme en piégeant un isotope radioactif, le père, et aucun de son produit de désintégration, le fils.\n\nLe père décroît ensuite à un rythme connu, et le fils s’accumule.\n\nMesurer le rapport fils sur père donne le nombre de demi-vies écoulées, donc l’âge de la roche.\n\nLe couple employé dépend de l’âge visé : le carbone 14 pour quelques dizaines de milliers d’années, l’uranium-plomb pour des milliards.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’âge de la Terre, et comment on le sait",
+          "body": "Les roches terrestres les plus anciennes datent de 4,0 milliards d’années, et des cristaux de zircon isolés montent à 4,4.\n\nMais la Terre a été remodelée : sa surface la plus ancienne a été recyclée. On ne peut donc pas la dater directement.\n\nOn date les météorites, qui n’ont pas été remaniées depuis la formation du Système solaire : 4,568 milliards d’années, avec une incertitude de quelques millions.\n\nC’est Clair Patterson qui l’a établi en 1956, et il lui a fallu construire le premier laboratoire ultra-propre au monde, le plomb de l’air ambiant faussant toutes ses mesures.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la méthode suppose",
+          "body": "Que la roche ne contenait aucun fils à sa formation — ou qu’on sait combien elle en contenait.\n\nQue rien n’est entré ni sorti depuis : le système doit être resté clos.\n\nQue la constante de désintégration est bien celle qu’on croit, ce qui se vérifie en laboratoire.\n\nCes hypothèses se testent : on date le même échantillon avec deux couples différents, et l’accord des deux est ce qui valide l’âge. Un désaccord signale que le système n’est pas resté clos.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Trois âges à ne pas confondre",
+          "body": "L’Univers : 13,8 milliards d’années.\n\nLe Système solaire et la Terre : 4,57 milliards d’années, soit un tiers de l’âge de l’Univers.\n\nLa vie sur Terre : au moins 3,5 milliards d’années, donc apparue assez tôt après que la surface s’est refroidie.\n\nCes trois nombres viennent de méthodes entièrement différentes, et c’est leur cohérence qui fait leur force — aucun n’a été ajusté sur les autres.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une désintégration fait-elle une bonne horloge ?",
+          "explanation": "Parce que son rythme ne dépend ni de la pression, ni de la température, ni de la chimie — contrairement à presque tout en géologie.",
+          "options": [
+            {
+              "text": "rien d’extérieur ne la ralentit ni ne l’accélère",
+              "correct": true
+            },
+            {
+              "text": "elle est très rapide"
+            },
+            {
+              "text": "elle est visible à l’œil nu"
+            },
+            {
+              "text": "elle se répète périodiquement"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel est l’âge du Système solaire, en milliards d’années ?",
+          "explanation": "4,568 milliards d’années, obtenu en datant des météorites non remaniées depuis sa formation.",
+          "min": 1,
+          "max": 20,
+          "answer": 4.57,
+          "tolerance": 0.2,
+          "unit": "Ga",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi date-t-on des météorites plutôt que des roches terrestres ?",
+          "explanation": "Parce que la surface de la Terre a été recyclée : ses roches les plus anciennes sont plus jeunes que la planète elle-même.",
+          "options": [
+            {
+              "text": "la surface terrestre a été remaniée",
+              "correct": true
+            },
+            {
+              "text": "les météorites sont plus faciles à trouver"
+            },
+            {
+              "text": "les roches terrestres sont radioactives"
+            },
+            {
+              "text": "les météorites sont plus vieilles que le Système solaire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Que suppose une datation radiochronologique ?",
+          "explanation": "Qu’on connaît la quantité initiale de fils, que le système est resté clos, et que la constante de désintégration est exacte.",
+          "options": [
+            {
+              "text": "on connaît la quantité initiale de produit",
+              "correct": true
+            },
+            {
+              "text": "rien n’est entré ni sorti depuis",
+              "correct": true
+            },
+            {
+              "text": "la constante de désintégration est connue",
+              "correct": true
+            },
+            {
+              "text": "la roche n’a jamais été chauffée au rouge"
+            },
+            {
+              "text": "l’échantillon est volumineux"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment valide-t-on un âge obtenu par radiochronologie ?",
+          "explanation": "En datant le même échantillon avec deux couples différents. Leur accord valide l’âge ; un désaccord signale un système non clos.",
+          "options": [
+            {
+              "text": "en datant avec deux couples indépendants",
+              "correct": true
+            },
+            {
+              "text": "en répétant la même mesure"
+            },
+            {
+              "text": "en comparant à l’âge attendu"
+            },
+            {
+              "text": "en pesant l’échantillon"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces âges du plus ancien au plus récent.",
+          "explanation": "L’Univers à 13,8 milliards d’années, le Système solaire à 4,57, les plus vieilles roches terrestres à 4,0, et la vie à 3,5.",
+          "items": [
+            "l’Univers",
+            "le Système solaire",
+            "les plus anciennes roches terrestres",
+            "les premières traces de vie"
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-notre-adresse",
+      "title": "Défi : notre adresse dans l’Univers",
+      "subtitle": "Sept lignes, et chacune multiplie la précédente par mille.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le premier barreau de l’échelle",
+          "body": "Reprends l’axe des distances : du Soleil à Neptune, le Système solaire tient dans quatre heures-lumière. C’est la plus petite des sept lignes de notre adresse, et déjà le dessin doit agrandir les planètes pour les rendre visibles.",
+          "figureId": "systeme-solaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’adresse, de la plus proche à la plus lointaine",
+          "body": "La Terre, troisième planète.\n\nLe Système solaire, environ 4 heures-lumière jusqu’à Neptune.\n\nLe voisinage stellaire, quelques dizaines d’années-lumière.\n\nLa Voie lactée, 100 000 années-lumière de diamètre, avec deux à quatre cents milliards d’étoiles. Nous sommes à 26 000 années-lumière de son centre.\n\nLe Groupe local, une cinquantaine de galaxies sur quelques millions d’années-lumière.\n\nLe superamas, puis l’Univers observable : 93 milliards d’années-lumière de diamètre.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi 93 et non 27,6",
+          "body": "L’Univers a 13,8 milliards d’années, donc la lumière la plus ancienne a voyagé 13,8 milliards d’années. On attendrait un diamètre de 27,6 milliards d’années-lumière.\n\nMais pendant ce voyage, l’espace s’est étendu. Les objets dont la lumière nous parvient aujourd’hui sont maintenant bien plus loin qu’ils ne l’étaient quand elle est partie.\n\nLe rayon vaut donc 46,5 milliards d’années-lumière, et non 13,8. Ce n’est pas une contradiction avec la limite de la vitesse de la lumière : rien ne s’est déplacé plus vite que la lumière dans l’espace, c’est l’espace lui-même qui s’est allongé.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Combien d’étoiles, et combien de planètes",
+          "body": "Deux à quatre cents milliards d’étoiles dans la Voie lactée.\n\nDe l’ordre de deux mille milliards de galaxies dans l’Univers observable.\n\nLes relevés indiquent qu’une majorité d’étoiles ont au moins une planète. Le nombre de planètes dans l’Univers observable dépasse donc largement le nombre de grains de sable sur Terre, estimé à sept mille milliards de milliards.\n\nCe chiffre ne prouve rien sur la vie ailleurs. Il dit seulement que l’argument « il y a trop peu d’endroits » ne tient pas.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a vraiment appris",
+          "body": "Que les distances se mesurent, par des méthodes qui s’étalonnent l’une sur l’autre.\n\nQue voir loin, c’est voir tôt, et que le ciel est un document historique.\n\nQue l’expansion n’a pas de centre, et que la figure le démontre en changeant d’observateur plutôt qu’en l’affirmant.\n\nEt que trois âges obtenus par trois méthodes indépendantes s’emboîtent : 13,8, puis 4,57, puis 3,5 milliards d’années.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets notre adresse dans l’ordre, du plus petit au plus grand.",
+          "explanation": "La Terre, le Système solaire, la Voie lactée, le Groupe local, puis l’Univers observable.",
+          "items": [
+            "la Terre",
+            "le Système solaire",
+            "la Voie lactée",
+            "le Groupe local",
+            "l’Univers observable"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel est le diamètre de la Voie lactée, en milliers d’années-lumière ?",
+          "explanation": "Environ 100 000 années-lumière, soit 100 milliers. Nous sommes à 26 000 années-lumière de son centre.",
+          "min": 1,
+          "max": 1000,
+          "answer": 100,
+          "tolerance": 20,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’Univers observable fait-il 93 milliards d’années-lumière et non 27,6 ?",
+          "explanation": "Parce que l’espace s’est étendu pendant le voyage de la lumière : les objets sont aujourd’hui bien plus loin qu’au départ de leur lumière.",
+          "options": [
+            {
+              "text": "l’espace s’est étendu pendant le voyage de la lumière",
+              "correct": true
+            },
+            {
+              "text": "la lumière a accéléré"
+            },
+            {
+              "text": "l’Univers est plus vieux qu’on ne croit"
+            },
+            {
+              "text": "c’est une erreur de mesure"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Cela signifie que des objets se sont déplacés plus vite que la lumière.",
+          "explanation": "Faux. Rien ne s’est déplacé plus vite que la lumière dans l’espace : c’est l’espace lui-même qui s’est allongé.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit le nombre de planètes de l’Univers observable sur la vie ailleurs ?",
+          "explanation": "Rien, sinon que l’argument « il y a trop peu d’endroits » ne tient pas. Le nombre d’occasions n’est pas une probabilité.",
+          "options": [
+            {
+              "text": "rien, sinon que le manque d’endroits n’est pas un argument",
+              "correct": true
+            },
+            {
+              "text": "que la vie est forcément répandue"
+            },
+            {
+              "text": "que la vie est forcément rare"
+            },
+            {
+              "text": "qu’on la trouvera bientôt"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "À combien de milliers d’années-lumière du centre de la Voie lactée sommes-nous ?",
+          "explanation": "26 000 années-lumière, soit 26 milliers : nous sommes dans un bras, loin du centre.",
+          "answer": 26,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

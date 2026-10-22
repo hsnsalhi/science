@@ -1,0 +1,564 @@
+{
+  "chapter": "astronomie-lycee-satellites-et-vitesses-cosmiques",
+  "lessons": [
+    {
+      "id": "mettre-en-orbite",
+      "title": "Mettre en orbite",
+      "subtitle": "Monter ne sert à rien : c’est la vitesse horizontale qui coûte.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La vitesse qui décide de tout",
+          "body": "Règle la vitesse du boulet et cherche le seuil : en dessous il retombe, au-dessus il tourne. Remarque que le canon tire à l’horizontale — rien dans cette figure ne monte, et c’est le point de la leçon.",
+          "figureId": "canon-newton",
+          "id": "c1"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’une fusée achète vraiment",
+          "body": "Monter à 400 kilomètres n’est pas difficile : une fusée-sonde le fait avec une fraction de l’énergie, et retombe aussitôt.\n\nCe qui coûte, c’est d’atteindre 7,7 kilomètres par seconde horizontalement, soit 27 700 km/h.\n\nL’énergie cinétique à cette vitesse représente plus de trente fois l’énergie nécessaire pour simplement monter à cette altitude.\n\nC’est pourquoi une fusée bascule très tôt après le décollage et passe l’essentiel de son vol presque à l’horizontale. Elle ne va pas en haut : elle va vite.",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois dépenses d’un lancement",
+          "body": "La vitesse orbitale elle-même : environ 7,7 km/s à 400 kilomètres.\n\nLes pertes par gravité : pendant la montée, une partie de la poussée ne fait que lutter contre le poids. De l’ordre de 1,5 km/s.\n\nLes pertes par traînée dans l’atmosphère : quelques centaines de mètres par seconde.\n\nLe total à fournir, qu’on appelle le delta-v, avoisine 9,4 km/s pour atteindre une orbite basse. C’est ce nombre que les ingénieurs budgètent, et non une altitude.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi on lance vers l’est, et près de l’équateur",
+          "body": "La Terre tourne d’ouest en est. À l’équateur, sa surface se déplace déjà à 0,46 km/s.\n\nLancer vers l’est, c’est donc partir avec 465 mètres par seconde d’avance, offerts par la rotation. Lancer vers l’ouest coûterait le double de cet écart.\n\nEt cet avantage diminue avec la latitude : il est maximal à l’équateur et nul aux pôles.\n\nC’est la raison pour laquelle la base européenne est à Kourou, par 5 degrés de latitude nord, et non en Europe.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi on étage les fusées",
+          "body": "Une fusée accélère ce qu’elle emporte, réservoirs vides compris.\n\nTraîner jusqu’au bout une structure devenue inutile coûte de l’énergie à chaque seconde de poussée.\n\nLarguer un étage vide au moment où il l’est permet d’accélérer une masse bien plus faible pour la suite du vol.\n\nSans étagement, aucune fusée chimique connue ne pourrait atteindre l’orbite : ce n’est pas une optimisation, c’est une condition.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui coûte le plus cher dans un lancement ?",
+          "explanation": "Atteindre la vitesse horizontale de 7,7 km/s. Monter à 400 kilomètres ne demande qu’une fraction de cette énergie.",
+          "options": [
+            {
+              "text": "atteindre la vitesse horizontale",
+              "correct": true
+            },
+            {
+              "text": "monter à l’altitude voulue"
+            },
+            {
+              "text": "traverser l’atmosphère"
+            },
+            {
+              "text": "orienter le satellite"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel delta-v total, en km/s, faut-il pour atteindre une orbite basse ?",
+          "explanation": "Environ 9,4 km/s : 7,7 pour l’orbite, 1,5 de pertes par gravité et quelques centaines de m/s de traînée.",
+          "min": 1,
+          "max": 30,
+          "answer": 9.4,
+          "tolerance": 0.6,
+          "unit": "km/s",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi lance-t-on vers l’est ?",
+          "explanation": "Parce que la rotation de la Terre offre déjà 0,46 km/s dans ce sens à l’équateur. Vers l’ouest, il faudrait la vaincre.",
+          "options": [
+            {
+              "text": "la rotation de la Terre offre de la vitesse",
+              "correct": true
+            },
+            {
+              "text": "les vents y sont favorables"
+            },
+            {
+              "text": "le Soleil s’y lève"
+            },
+            {
+              "text": "les orbites y sont plus stables"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la base de lancement européenne est-elle à Kourou ?",
+          "explanation": "À 5 degrés de latitude, l’avantage donné par la rotation terrestre est presque maximal. Il serait nul aux pôles.",
+          "options": [
+            {
+              "text": "sa latitude proche de l’équateur",
+              "correct": true
+            },
+            {
+              "text": "son climat sec"
+            },
+            {
+              "text": "son altitude"
+            },
+            {
+              "text": "son éloignement des villes"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’étagement d’une fusée est une optimisation dont on pourrait se passer.",
+          "explanation": "Faux. Sans étagement, aucune fusée chimique connue n’atteindrait l’orbite : traîner les réservoirs vides coûte trop.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que budgètent les ingénieurs d’un lancement ?",
+          "explanation": "Un delta-v, en kilomètres par seconde — pas une altitude. C’est la grandeur qui mesure le coût d’une manœuvre.",
+          "options": [
+            {
+              "text": "un delta-v, en km/s",
+              "correct": true
+            },
+            {
+              "text": "une altitude, en kilomètres"
+            },
+            {
+              "text": "une durée de vol"
+            },
+            {
+              "text": "une masse au décollage seulement"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "choisir-son-orbite",
+      "title": "Choisir son orbite",
+      "subtitle": "L’altitude n’est pas un confort : elle fixe la période.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Plus loin, plus lent",
+          "body": "Lance le temps et regarde les compteurs : la planète la plus proche fait plusieurs tours quand la plus lointaine n’en achève pas un. La même loi vaut pour les satellites de la Terre, et c’est elle qui impose chaque altitude.",
+          "figureId": "orbites",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre orbites qu’on utilise",
+          "body": "L’orbite basse, de 200 à 2 000 kilomètres : période de 90 à 120 minutes. Station spatiale, observation fine, constellations de télécommunication.\n\nL’orbite moyenne, vers 20 200 kilomètres : période de 12 heures. C’est celle des satellites de navigation.\n\nL’orbite géostationnaire, à 35 786 kilomètres : période de 24 heures, donc immobile au-dessus d’un point. Télévision, météorologie.\n\nL’orbite polaire héliosynchrone, vers 800 kilomètres : elle repasse au-dessus de chaque lieu à la même heure solaire, ce qui permet de comparer des images d’un jour à l’autre.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi l’altitude n’est pas un choix libre",
+          "body": "La période ne dépend que de l’altitude : il n’existe qu’une altitude pour laquelle elle vaut 24 heures.\n\nUn satellite de télévision doit rester au-dessus du même point pour qu’une parabole puisse être fixée une fois pour toutes. Son altitude est donc imposée, à 35 786 kilomètres, et pas négociable.\n\nInversement, un satellite d’observation veut être bas pour voir fin, et il accepte en échange de défiler rapidement et de ne survoler chaque lieu que brièvement.\n\nChaque orbite est un compromis, et c’est l’usage qui tranche.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Plus vite, donc plus haut",
+          "body": "Remonte la vitesse du boulet : il s’éloigne du sol avant de revenir, puis finit par tourner. Altitude et vitesse ne sont pas deux réglages séparés — choisir une orbite, c’est choisir les deux à la fois, et la période suit.",
+          "figureId": "canon-newton"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le GPS a besoin de la relativité",
+          "body": "Les satellites de navigation portent des horloges atomiques, et tout le principe repose sur la mesure de retards.\n\nÀ 20 200 kilomètres, deux effets relativistes jouent en sens contraire : leur vitesse ralentit leurs horloges de 7 microsecondes par jour, et la gravité plus faible les accélère de 45.\n\nLe bilan est de 38 microsecondes d’avance par jour. Non corrigé, cela produirait une erreur de position de plus de 10 kilomètres par jour.\n\nLa relativité n’est donc pas une curiosité théorique : elle est dans le téléphone de tout le monde, et sans elle la navigation serait inutilisable.",
+          "id": "c5"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Une orbite basse n’est pas éternelle",
+          "body": "À 400 kilomètres, il reste assez d’atmosphère pour freiner. La station spatiale perd environ 2 kilomètres d’altitude par mois.\n\nIl faut donc la rehausser régulièrement, ce qui consomme du carburant livré depuis la Terre.\n\nSans ces manœuvres, elle rentrerait dans l’atmosphère en un à deux ans.\n\nC’est aussi ce qui nettoie l’orbite basse : les débris y retombent d’eux-mêmes en quelques années. Plus haut, ce nettoyage n’existe pas.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque orbite à son usage.",
+          "explanation": "L’orbite basse pour l’observation fine, la moyenne pour la navigation, la géostationnaire pour la télévision, la polaire pour comparer des images.",
+          "pairs": [
+            {
+              "left": "l’orbite basse, 400 km",
+              "right": "la station spatiale"
+            },
+            {
+              "left": "l’orbite moyenne, 20 200 km",
+              "right": "la navigation par satellite"
+            },
+            {
+              "left": "l’orbite géostationnaire",
+              "right": "la télévision et la météo"
+            },
+            {
+              "left": "l’orbite polaire héliosynchrone",
+              "right": "comparer des images jour après jour"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la période, en heures, d’un satellite géostationnaire ?",
+          "explanation": "24 heures : c’est ce qui le maintient au-dessus du même point du sol.",
+          "answer": 24,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi tous les satellites de télévision sont-ils à la même altitude ?",
+          "explanation": "Parce qu’une seule altitude donne une période de 24 heures, et il faut cette période pour rester au-dessus du même point.",
+          "options": [
+            {
+              "text": "une seule altitude donne une période de 24 h",
+              "correct": true
+            },
+            {
+              "text": "c’est une convention internationale"
+            },
+            {
+              "text": "au-delà la gravité est trop faible"
+            },
+            {
+              "text": "pour être visibles depuis l’Europe"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "De combien de microsecondes par jour les horloges du GPS avancent-elles, tous effets confondus ?",
+          "explanation": "38 microsecondes : 45 d’avance par gravité moindre, moins 7 de retard par la vitesse.",
+          "answer": 38,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que se passerait-il si le GPS ne corrigeait pas ces effets relativistes ?",
+          "explanation": "Une dérive de position de plus de 10 kilomètres par jour, ce qui rendrait la navigation inutilisable.",
+          "options": [
+            {
+              "text": "une erreur de plus de 10 km par jour",
+              "correct": true
+            },
+            {
+              "text": "une erreur de quelques mètres"
+            },
+            {
+              "text": "aucune conséquence pratique"
+            },
+            {
+              "text": "une perte du signal"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une orbite basse se maintient indéfiniment sans intervention.",
+          "explanation": "Faux. Il reste assez d’atmosphère pour freiner : la station perd 2 km par mois et doit être rehaussée régulièrement.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-cout-d-un-depart",
+      "title": "Le coût d’un départ",
+      "subtitle": "Partir de la Lune est huit fois moins cher que partir de la Terre.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le même sac, quatre pesanteurs",
+          "body": "Passe de la Terre à la Lune, à Mars et à Jupiter : le poids affiché change d’un facteur quinze du plus faible au plus fort. C’est cette pesanteur-là qui décide du prix d’un décollage, et elle varie énormément d’un astre à l’autre.",
+          "figureId": "poids-astres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La vitesse de libération, astre par astre",
+          "body": "Terre : 11,2 kilomètres par seconde.\n\nMars : 5,0 kilomètres par seconde, deux fois moins.\n\nLune : 2,4 kilomètres par seconde, près de cinq fois moins.\n\nJupiter : 59,5 kilomètres par seconde, soit plus de cinq fois celle de la Terre — et c’est pourquoi aucune mission ne prévoit d’en décoller.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi l’écart compte autant",
+          "body": "L’énergie à fournir croît comme le carré de la vitesse. Un rapport de 4,7 sur la vitesse entre la Terre et la Lune devient un rapport de 22 sur l’énergie.\n\nEt la masse de carburant nécessaire ne croît pas proportionnellement à l’énergie : elle croît exponentiellement avec le delta-v, parce qu’il faut accélérer aussi le carburant qu’on n’a pas encore brûlé.\n\nC’est cette exponentielle qui explique qu’une fusée de 500 tonnes place 20 tonnes en orbite : 96 % de la masse au décollage est du carburant et de la structure.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi fabriquer du carburant sur place",
+          "body": "Ramener un échantillon de Mars demande de décoller de Mars, donc d’y avoir apporté le carburant du retour — qu’il a fallu accélérer depuis la Terre, puis freiner à l’arrivée.\n\nChaque kilogramme de carburant martien emporté depuis la Terre coûte plusieurs dizaines de kilogrammes au décollage terrestre.\n\nD’où l’intérêt de le fabriquer sur place, à partir du dioxyde de carbone de l’atmosphère martienne, qui en contient 95 %.\n\nUn démonstrateur embarqué sur le rover Perseverance a produit du dioxygène martien à partir de 2021, ce qui a validé le principe.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le poids n’est pas le seul obstacle",
+          "body": "Une atmosphère épaisse freine au décollage mais permet de freiner gratuitement à l’arrivée : c’est l’aérofreinage, et il économise énormément de carburant.\n\nLa Lune n’a pas d’atmosphère : décoller y est facile, mais s’y poser exige de freiner entièrement aux moteurs.\n\nMars a une atmosphère trop ténue pour freiner complètement et assez dense pour échauffer : c’est le pire des deux mondes, et c’est ce qui rend l’atterrissage martien si difficile.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe ces astres par vitesse de libération croissante.",
+          "explanation": "Lune 2,4 km/s, Mars 5,0, Terre 11,2, Jupiter 59,5.",
+          "items": [
+            "la Lune",
+            "Mars",
+            "la Terre",
+            "Jupiter"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle est la vitesse de libération de la Lune, en km/s ?",
+          "explanation": "2,4 km/s, près de cinq fois moins que celle de la Terre.",
+          "answer": 2.4,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment la masse de carburant croît-elle avec le delta-v ?",
+          "explanation": "Exponentiellement, parce qu’il faut accélérer aussi le carburant pas encore brûlé. C’est pourquoi 96 % de la masse au décollage n’est pas la charge utile.",
+          "options": [
+            {
+              "text": "exponentiellement",
+              "correct": true
+            },
+            {
+              "text": "proportionnellement"
+            },
+            {
+              "text": "comme le carré"
+            },
+            {
+              "text": "comme la racine carrée"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel pourcentage de la masse au décollage d’une fusée n’est pas la charge utile ?",
+          "explanation": "Environ 96 % : une fusée de 500 tonnes place de l’ordre de 20 tonnes en orbite.",
+          "min": 0,
+          "max": 100,
+          "answer": 96,
+          "tolerance": 3,
+          "unit": "%",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi veut-on fabriquer du carburant sur Mars ?",
+          "explanation": "Parce que chaque kilogramme apporté depuis la Terre coûte plusieurs dizaines de kilogrammes au décollage terrestre.",
+          "options": [
+            {
+              "text": "l’apporter depuis la Terre coûte énormément",
+              "correct": true
+            },
+            {
+              "text": "le carburant terrestre gèle sur Mars"
+            },
+            {
+              "text": "c’est interdit par les traités"
+            },
+            {
+              "text": "les réservoirs seraient trop lourds à poser"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’atterrissage sur Mars est-il si difficile ?",
+          "explanation": "Son atmosphère est trop ténue pour freiner complètement et assez dense pour échauffer : le pire des deux mondes.",
+          "options": [
+            {
+              "text": "son atmosphère est trop ténue pour freiner et assez dense pour échauffer",
+              "correct": true
+            },
+            {
+              "text": "sa gravité est trop forte"
+            },
+            {
+              "text": "son sol est trop dur"
+            },
+            {
+              "text": "les tempêtes y sont permanentes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-les-debris",
+      "title": "Défi : les débris orbitaux",
+      "subtitle": "Un centimètre à dix kilomètres par seconde vaut une voiture.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La vitesse, encore elle",
+          "body": "Reprends le curseur : ce qui met un objet en orbite le laisse à une vitesse de plusieurs kilomètres par seconde. Tout ce qui y reste garde cette vitesse — y compris ce qu’on n’avait pas l’intention d’y laisser.",
+          "figureId": "canon-newton",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul qui fait comprendre le problème",
+          "body": "Un éclat d’aluminium de 1 centimètre pèse environ 1,4 gramme.\n\nUne rencontre typique en orbite basse se fait à environ 10 kilomètres par seconde.\n\nSon énergie cinétique vaut ½ × 0,0014 × 10 000², soit 70 000 joules.\n\nC’est l’énergie d’une voiture d’une tonne à 42 kilomètres par heure. Un éclat d’un centimètre perfore donc n’importe quelle paroi de satellite, et rien ne peut en protéger.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Ce qu’il y a là-haut",
+          "body": "Environ 36 000 objets de plus de 10 centimètres sont suivis au radar, et on peut manœuvrer pour les éviter.\n\nUn million d’objets entre 1 et 10 centimètres sont trop petits pour être suivis, et assez gros pour détruire un satellite.\n\nCent trente millions de fragments de plus d’un millimètre peuvent percer une combinaison ou un hublot.\n\nCette population vient surtout de deux événements : un essai antisatellite chinois en 2007 et une collision accidentelle entre deux satellites en 2009. Chacun a produit plus de deux mille débris suivis.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le syndrome de Kessler",
+          "body": "Chaque collision produit des débris, qui augmentent la probabilité de la collision suivante.\n\nC’est une rétroaction positive, exactement de la même nature que celle du chapitre sur le climat. Au-delà d’une certaine densité, elle s’auto-entretient même si l’on cesse tout lancement.\n\nDonald Kessler l’a décrite en 1978. Certaines orbites s’en approchent aujourd’hui, et une cascade y rendrait l’espace inutilisable pour des siècles — sans aucun moyen de revenir en arrière.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui limite les dégâts, et ce qui ne suffit pas",
+          "body": "En orbite basse, l’atmosphère résiduelle fait retomber les débris en quelques années : c’est un nettoyage gratuit, et il explique pourquoi cette orbite reste utilisable.\n\nAu-delà de 800 kilomètres, ce nettoyage demande des décennies. En orbite géostationnaire, il n’existe pas : ce qui y est laissé y reste indéfiniment.\n\nD’où la règle de désorbitation en vingt-cinq ans, et les orbites de rebut au-dessus de la géostationnaire. Ce sont des mesures de bon sens, elles sont appliquées de façon inégale, et aucune autorité ne peut les imposer à tous.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle énergie, en kilojoules, porte un éclat de 1,4 g à 10 km/s ?",
+          "explanation": "½ × 0,0014 × 10 000² = 70 000 joules, soit 70 kilojoules.",
+          "answer": 70,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi cette énergie correspond-elle ?",
+          "explanation": "À une voiture d’une tonne à environ 42 km/h. Un éclat d’un centimètre perfore n’importe quelle paroi de satellite.",
+          "options": [
+            {
+              "text": "une voiture d’une tonne à 42 km/h",
+              "correct": true
+            },
+            {
+              "text": "une balle de tennis lancée à la main"
+            },
+            {
+              "text": "un marteau tombant d’un mètre"
+            },
+            {
+              "text": "un train à pleine vitesse"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que le syndrome de Kessler ?",
+          "explanation": "Une rétroaction positive : chaque collision produit des débris qui rendent la suivante plus probable, jusqu’à s’auto-entretenir.",
+          "options": [
+            {
+              "text": "une cascade de collisions qui s’auto-entretient",
+              "correct": true
+            },
+            {
+              "text": "la chute simultanée de tous les satellites"
+            },
+            {
+              "text": "une panne généralisée des satellites"
+            },
+            {
+              "text": "l’accumulation de carburant usagé"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les débris de l’orbite géostationnaire retombent en quelques années.",
+          "explanation": "Faux. Il n’y a plus d’atmosphère pour freiner à cette altitude : ce qui y est laissé y reste indéfiniment.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle catégorie de débris est la plus préoccupante ?",
+          "explanation": "Ceux de 1 à 10 centimètres : trop petits pour être suivis au radar, assez gros pour détruire un satellite.",
+          "options": [
+            {
+              "text": "ceux de 1 à 10 cm",
+              "correct": true
+            },
+            {
+              "text": "ceux de plus de 10 cm"
+            },
+            {
+              "text": "ceux de moins d’un millimètre"
+            },
+            {
+              "text": "les satellites encore actifs"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui rend l’orbite basse encore utilisable aujourd’hui ?",
+          "explanation": "L’atmosphère résiduelle, qui fait retomber les débris en quelques années. C’est un nettoyage gratuit qui n’existe pas plus haut.",
+          "options": [
+            {
+              "text": "l’atmosphère résiduelle y fait retomber les débris",
+              "correct": true
+            },
+            {
+              "text": "les débris y sont moins nombreux"
+            },
+            {
+              "text": "les vitesses y sont plus faibles"
+            },
+            {
+              "text": "les satellites y sont mieux blindés"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
