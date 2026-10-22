@@ -41,6 +41,7 @@ import 'package:eureka/design_system/figures/solar_system_figure.dart';
 import 'package:eureka/design_system/figures/triangle_angles_figure.dart';
 import 'package:eureka/design_system/figures/triangle_test_figure.dart';
 import 'package:eureka/design_system/figures/turing_figure.dart';
+import 'package:eureka/design_system/figures/wave_figure.dart';
 import 'package:eureka/design_system/figures/states_figure.dart';
 import 'package:eureka/domain/models/chapter.dart';
 import 'package:eureka/domain/models/education_level.dart';
@@ -7070,4 +7071,98 @@ void main() {
     });
   });
 
+  // Ondes et signaux : les réponses numériques du chapitre sont
+  // recalculées depuis les célérités de la figure, et non recopiées.
+  // Une célérité fausse dans un corrigé de physique se propage ensuite
+  // dans tout le raisonnement de l'élève sans qu'il puisse s'en douter.
+  group('Chapitre complet : ondes et signaux', () {
+    late Chapter ondes;
+
+    setUpAll(() {
+      ondes = catalog.chapterById('physique-chimie-lycee-ondes-et-signaux')!;
+    });
+
+    test('est jouable de bout en bout', () {
+      expect(ondes.isPlayable, isTrue);
+      expect(ondes.lessons.length, greaterThanOrEqualTo(4));
+      expect(ondes.objectives, isNotEmpty);
+    });
+
+    test('la période annoncée pour 500 hertz est exacte', () {
+      expect(WaveFigure.periode(500) * 1000, closeTo(2, 1e-9));
+    });
+
+    test('le la du diapason mesure bien 78 centimètres', () {
+      expect(
+        WaveFigure.longueurDOnde(MilieuSonore.air, 440) * 100,
+        closeTo(78, 1),
+      );
+    });
+
+    test('l’octave divise la longueur d’onde par deux', () {
+      // Le chapitre affirme que doubler la fréquence divise la longueur
+      // d'onde par deux. C'est vrai parce que la célérité, elle, ne
+      // bouge pas — et c'est le seul point à vérifier.
+      expect(
+        WaveFigure.longueurDOnde(MilieuSonore.air, 440) /
+            WaveFigure.longueurDOnde(MilieuSonore.air, 880),
+        closeTo(2, 1e-9),
+      );
+    });
+
+    test('les bornes de l’audition donnent 17 mètres et 1,7 centimètre', () {
+      expect(WaveFigure.longueurDOnde(MilieuSonore.air, 20), closeTo(17.2, 0.3));
+      expect(
+        WaveFigure.longueurDOnde(MilieuSonore.air, 20000) * 100,
+        closeTo(1.7, 0.1),
+      );
+    });
+
+    test('la même note est bien plus de quatre fois plus longue dans l’eau', () {
+      // La leçon demande de changer de milieu sans toucher à la
+      // fréquence, et annonce « plus de quatre fois ». Le rapport est
+      // celui des célérités, et il vaut 4,3.
+      final double rapport =
+          MilieuSonore.eau.celerite / MilieuSonore.air.celerite;
+      expect(rapport, greaterThan(4));
+      expect(
+        WaveFigure.longueurDOnde(MilieuSonore.eau, 440) /
+            WaveFigure.longueurDOnde(MilieuSonore.air, 440),
+        closeTo(rapport, 1e-9),
+      );
+    });
+
+    test('le tonnerre met bien trois secondes par kilomètre', () {
+      // Un aller simple, sans facteur deux : c'est précisément ce que
+      // le défi demande de ne pas confondre avec un écho.
+      expect(1000 / MilieuSonore.air.celerite, closeTo(2.92, 0.05));
+      // Neuf secondes placent donc l'orage à trois kilomètres.
+      expect(
+        MilieuSonore.air.celerite * 9 / 1000,
+        closeTo(3, 0.1),
+      );
+    });
+
+    test('le sonar divise par deux, et la réponse du chapitre le fait', () {
+      // 1480 m/s est la célérité de la figure, et la question du défi
+      // l'énonce. L'aller-retour impose la division par deux.
+      expect(MilieuSonore.eau.celerite * 4 / 2, 2960);
+      // Oublier le facteur deux doublerait la réponse : c'est l'erreur
+      // que la carte annonce comme la plus fréquente.
+      expect(MilieuSonore.eau.celerite * 4, 5920);
+    });
+
+    test('la lumière du Soleil met bien huit minutes', () {
+      const double distanceSoleil = 1.496e11;
+      const double c = 2.99792458e8;
+      expect(distanceSoleil / c / 60, closeTo(8.3, 0.2));
+    });
+
+    test('chronométrer la lumière à la main est hors de portée', () {
+      // La carte affirme 0,3 microseconde sur cent mètres. Si ce chiffre
+      // était faux, l'argument de la leçon tomberait.
+      const double c = 2.99792458e8;
+      expect(100 / c * 1e6, closeTo(0.33, 0.02));
+    });
+  });
 }

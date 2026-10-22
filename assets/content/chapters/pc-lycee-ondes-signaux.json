@@ -1,0 +1,558 @@
+{
+  "chapter": "physique-chimie-lycee-ondes-et-signaux",
+  "lessons": [
+    {
+      "id": "une-onde-qui-avance",
+      "title": "Une onde qui avance",
+      "subtitle": "Le milieu fait du surplace, la perturbation voyage.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qui avance, et ce qui reste",
+          "body": "Regarde la particule dorée, en haut : elle avance et recule entre ses deux butées, et ne quitte jamais son rail. Les zones serrées, elles, filent vers la droite. Voilà toute la définition d’une onde — une perturbation qui se déplace dans un milieu qui, lui, reste là où il est.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui se propage, et ce qui ne se propage pas",
+          "body": "Ce qui avance : la perturbation, et l’énergie qu’elle transporte.\n\nCe qui n’avance pas : la matière. Chaque particule d’air oscille autour d’une position et y revient.\n\nUne vague ne charrie pas l’eau du large jusqu’à la plage : un bouchon posé dessus monte et descend sur place, il n’arrive jamais au rivage.\n\nSi la matière avançait vraiment, un orateur viderait la salle d’air en parlant.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La sinusoïde n’est pas une photographie",
+          "body": "Un son est une onde longitudinale : l’air avance et recule dans le sens de la propagation, comme le montre la bande du haut.\n\nLa courbe du bas est le graphique de ce déplacement en fonction de la position. Son axe vertical n’est pas une hauteur : c’est un décalage horizontal, porté à la verticale pour pouvoir le lire.\n\nCroire que l’air monte et descend est l’erreur que ce chapitre doit défaire, et c’est le dessin habituel qui l’installe.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La célérité appartient au milieu",
+          "body": "343 mètres par seconde dans l’air à 20 degrés, 1480 dans l’eau, 5900 dans l’acier.\n\nElle ne dépend ni de la force du son, ni de sa hauteur : un murmure et un cri arrivent ensemble, une note grave et une note aiguë aussi. Sans cela, un orchestre entendu du fond d’une salle serait méconnaissable.\n\nElle dépend en revanche de la température : le son va plus vite dans l’air chaud, d’environ 0,6 mètre par seconde et par degré.",
+          "id": "c4"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le son a besoin de quelque chose à bousculer",
+          "body": "Sous une cloche à vide dont on pompe l’air, une sonnerie s’éteint progressivement alors qu’on la voit toujours vibrer.\n\nPlus de milieu, plus d’onde : il n’y a plus rien à comprimer.\n\nC’est pourquoi aucune explosion ne s’entend dans l’espace. Les films qui en font tonner une se trompent, et ils se trompent de façon vérifiable.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Qu’est-ce qui avance avec l’onde, et qu’est-ce qui reste sur place ?",
+          "explanation": "La perturbation et l’énergie se propagent. Les particules du milieu oscillent autour d’une position et y reviennent.",
+          "categories": [
+            "avance",
+            "reste sur place"
+          ],
+          "items": [
+            {
+              "text": "la perturbation",
+              "category": 0
+            },
+            {
+              "text": "l’énergie transportée",
+              "category": 0
+            },
+            {
+              "text": "les particules d’air",
+              "category": 1
+            },
+            {
+              "text": "le bouchon sur la vague",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De quoi dépend la célérité d’un son ?",
+          "explanation": "Du milieu, et de sa température. Ni l’intensité ni la hauteur du son n’y changent rien : sinon un orchestre entendu de loin serait méconnaissable.",
+          "options": [
+            {
+              "text": "du milieu et de sa température",
+              "correct": true
+            },
+            {
+              "text": "de la force du son"
+            },
+            {
+              "text": "de la hauteur du son"
+            },
+            {
+              "text": "de la distance parcourue"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un son aigu arrive avant un son grave émis au même instant.",
+          "explanation": "Faux. La célérité ne dépend pas de la fréquence : les deux arrivent ensemble, et c’est ce qui rend la musique audible de loin.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une sonnerie devient-elle inaudible sous une cloche à vide ?",
+          "explanation": "Parce qu’il n’y a plus de milieu à comprimer. On la voit encore vibrer : c’est la propagation qui manque, pas la source.",
+          "options": [
+            {
+              "text": "il n’y a plus de milieu à comprimer",
+              "correct": true
+            },
+            {
+              "text": "la sonnerie s’arrête de vibrer"
+            },
+            {
+              "text": "le vide absorbe le son"
+            },
+            {
+              "text": "la cloche fait écran"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une vague transporte l’eau du large jusqu’à la plage.",
+          "explanation": "Faux. Un bouchon posé dessus monte et descend sur place. C’est la perturbation qui avance, pas l’eau.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que représente l’axe vertical du graphique, sous la bande d’air ?",
+          "explanation": "Le déplacement de l’air, qui est horizontal en réalité. On le porte à la verticale pour pouvoir le lire : ce n’est pas une hauteur.",
+          "options": [
+            {
+              "text": "le déplacement de l’air, qui est horizontal",
+              "correct": true
+            },
+            {
+              "text": "la hauteur atteinte par l’air"
+            },
+            {
+              "text": "la pression absolue"
+            },
+            {
+              "text": "la vitesse de l’onde"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "hauteur-et-longueur-d-onde",
+      "title": "Hauteur, période, longueur d’onde",
+      "subtitle": "Trois mots pour une seule chose, et une division.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La fréquence monte, l’onde se resserre",
+          "body": "Reste dans l’air et fais monter la fréquence : la longueur d’onde affichée diminue, et le crochet sous la courbe rétrécit avec elle. Passe ensuite à l’eau sans toucher à la fréquence : la même note y occupe plus de quatre fois plus de place.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les deux relations, et elles suffisent",
+          "body": "La période est l’inverse de la fréquence : T = 1 / f. À 440 hertz, une oscillation dure 2,27 millisecondes.\n\nLa longueur d’onde est la distance parcourue pendant une période : lambda = v × T, c’est-à-dire lambda = v / f.\n\nRien d’autre n’est à retenir pour ce chapitre. Tout le reste s’en déduit, y compris les exercices qui ont l’air différents.",
+          "formula": "lambda = v / f",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chaque mot désigne",
+          "body": "La fréquence, en hertz, est le nombre d’oscillations par seconde. C’est la source qui la fixe, et elle ne change pas quand l’onde change de milieu.\n\nLa période, en secondes, est la durée d’une oscillation.\n\nLa longueur d’onde, en mètres, est la distance entre deux compressions successives. Elle, elle change avec le milieu, puisqu’elle dépend de la célérité.\n\nLa hauteur d’un son, ce que l’oreille appelle grave ou aigu, est sa fréquence et rien d’autre.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Des ordres de grandeur à garder",
+          "body": "Le la du diapason, 440 hertz, mesure 78 centimètres dans l’air : la longueur d’un bras.\n\nLe la de l’octave au-dessus vaut 880 hertz et mesure 39 centimètres. Doubler la fréquence divise la longueur d’onde par deux : c’est ce qu’est une octave.\n\nL’oreille humaine entend de 20 hertz à 20 000 hertz, soit des longueurs d’onde de 17 mètres à 1,7 centimètre. Les sons les plus graves sont aussi longs qu’un immeuble de cinq étages.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’hélium ne monte pas la voix, et c’est instructif",
+          "body": "On dit que l’hélium rend la voix aiguë. Les cordes vocales, pourtant, vibrent à peu près à la même fréquence : leur tension n’a pas changé, donc la hauteur non plus, ou presque.\n\nCe qui change, c’est la célérité dans le gaz, presque trois fois plus grande. Les résonances de la gorge et de la bouche, qui dépendent de cette célérité, montent d’autant.\n\nC’est donc le timbre qui est transformé, pas la hauteur. L’oreille entend « plus aigu » parce qu’elle se fie aux résonances, et elle se trompe — ce qui arrive aussi aux physiciens pressés.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien vaut la période d’un son de 500 Hz, en millisecondes ?",
+          "explanation": "T = 1/f = 1/500 = 0,002 seconde, soit 2 millisecondes.",
+          "answer": 2,
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la longueur d’onde d’un la à 440 Hz dans l’air, en centimètres ?",
+          "explanation": "343 divisé par 440 donne 0,78 mètre, soit 78 centimètres : la longueur d’un bras.",
+          "min": 1,
+          "max": 400,
+          "answer": 78,
+          "tolerance": 8,
+          "unit": "cm",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un son passe de l’air à l’eau. Qu’est-ce qui ne change pas ?",
+          "explanation": "La fréquence, fixée par la source. La célérité change avec le milieu, et la longueur d’onde suit.",
+          "options": [
+            {
+              "text": "la fréquence",
+              "correct": true
+            },
+            {
+              "text": "la longueur d’onde"
+            },
+            {
+              "text": "la célérité"
+            },
+            {
+              "text": "la période et la fréquence toutes deux"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "On double la fréquence d’un son sans changer de milieu. Par combien la longueur d’onde est-elle divisée ?",
+          "explanation": "Par 2, puisque la longueur d’onde vaut v divisé par f et que v n’a pas bougé. C’est exactement ce qu’est une octave.",
+          "answer": 2,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Respirer de l’hélium rend la voix plus aiguë parce que les cordes vocales vibrent plus vite.",
+          "explanation": "Faux. Leur fréquence ne change presque pas. Ce sont les résonances de la gorge qui montent avec la célérité : c’est le timbre qui change.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque grandeur à son unité et à ce qui la fixe.",
+          "explanation": "La fréquence s’exprime en hertz et vient de la source ; la longueur d’onde en mètres et dépend du milieu ; la période en secondes.",
+          "pairs": [
+            {
+              "left": "la fréquence",
+              "right": "en hertz, fixée par la source"
+            },
+            {
+              "left": "la longueur d’onde",
+              "right": "en mètres, dépend du milieu"
+            },
+            {
+              "left": "la période",
+              "right": "en secondes, inverse de la fréquence"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-lumiere",
+      "title": "La lumière, qui n’a besoin de personne",
+      "subtitle": "Une onde sans milieu, et des ombres qui obéissent à Thalès.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Reculer la lampe, rétrécir l’ombre",
+          "body": "Fais reculer la lampe : l’ombre portée rétrécit et se rapproche de la taille de l’objet. La figure affiche combien de fois l’ombre dépasse l’objet. Une lampe infiniment loin donnerait une ombre exactement de sa taille — c’est à peu près ce que fait le Soleil.",
+          "figureId": "ombre-lumiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi l’ombre est plus grande que l’objet",
+          "body": "La lumière se propage en ligne droite dans un milieu homogène. Les rayons qui frôlent l’objet continuent tout droit et délimitent l’ombre.\n\nComme ils partent d’un point et s’écartent, l’ombre est un agrandissement de l’objet.\n\nLe rapport est celui des distances : lampe-écran divisé par lampe-objet. C’est le théorème de Thalès, appliqué à des rayons au lieu de droites tracées.\n\nReculer la lampe rapproche ce rapport de 1, donc l’ombre de la taille de l’objet.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui sépare la lumière du son",
+          "body": "Le son est une onde mécanique : il lui faut de la matière à bousculer, et il n’existe pas dans le vide.\n\nLa lumière est une onde électromagnétique : elle n’a besoin d’aucun milieu, et c’est pour cela que la lumière du Soleil nous parvient à travers cent cinquante millions de kilomètres de vide.\n\nC’est la différence la plus importante du chapitre. Tout le reste — période, fréquence, longueur d’onde, la relation entre les trois — se dit de la même façon pour les deux.",
+          "id": "c3"
+        },
+        {
+          "kind": "formule",
+          "title": "La vitesse de la lumière",
+          "body": "Dans le vide, c = 299 792 458 mètres par seconde, valeur exacte : c’est elle qui définit le mètre depuis 1983.\n\nEn calcul, 3,00 × 10⁸ m/s suffit presque toujours.\n\nElle met 8 minutes et 20 secondes à venir du Soleil, 1,3 seconde de la Lune, et une année pour parcourir une année-lumière, soit environ 9 500 milliards de kilomètres.",
+          "formula": "c = 3,00 × 10⁸ m/s",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La lumière ralentit dans la matière",
+          "body": "Les 300 000 kilomètres par seconde valent dans le vide. Dans l’eau la lumière descend vers 225 000, dans le verre vers 200 000.\n\nC’est ce ralentissement qui dévie les rayons à l’entrée d’un milieu, donc qui fait fonctionner les lentilles et les prismes.\n\nEt c’est aussi pourquoi un signal dans une fibre optique met 60 millisecondes pour faire douze mille kilomètres, là où le vide en demanderait 40.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’ombre portée est-elle plus grande que l’objet ?",
+          "explanation": "Parce que les rayons partent d’un point et s’écartent. Le rapport des tailles est celui des distances : c’est Thalès.",
+          "options": [
+            {
+              "text": "les rayons partent d’un point et s’écartent",
+              "correct": true
+            },
+            {
+              "text": "la lumière contourne l’objet"
+            },
+            {
+              "text": "l’objet grossit sous la chaleur"
+            },
+            {
+              "text": "l’écran déforme l’image"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que devient l’ombre quand on recule beaucoup la lampe ?",
+          "explanation": "Elle tend vers la taille exacte de l’objet, car le rapport des distances tend vers 1. C’est à peu près le cas du Soleil.",
+          "options": [
+            {
+              "text": "elle tend vers la taille de l’objet",
+              "correct": true
+            },
+            {
+              "text": "elle grandit sans limite"
+            },
+            {
+              "text": "elle disparaît"
+            },
+            {
+              "text": "elle double de taille"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette onde a-t-elle besoin d’un milieu ?",
+          "explanation": "Le son et les ondes sismiques sont mécaniques : il leur faut de la matière. La lumière et les ondes radio sont électromagnétiques et traversent le vide.",
+          "categories": [
+            "il lui faut un milieu",
+            "elle traverse le vide"
+          ],
+          "items": [
+            {
+              "text": "le son",
+              "category": 0
+            },
+            {
+              "text": "une onde sismique",
+              "category": 0
+            },
+            {
+              "text": "la lumière",
+              "category": 1
+            },
+            {
+              "text": "une onde radio",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de minutes la lumière du Soleil met-elle à nous parvenir ?",
+          "explanation": "8 minutes et 20 secondes, soit environ 8 minutes : 150 millions de kilomètres à 300 000 kilomètres par seconde.",
+          "answer": 8,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La lumière va toujours à 300 000 kilomètres par seconde.",
+          "explanation": "Faux. C’est sa vitesse dans le vide. Dans l’eau elle tombe vers 225 000, dans le verre vers 200 000 — et c’est ce qui fait les lentilles.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui rend les lentilles possibles ?",
+          "explanation": "Le ralentissement de la lumière dans la matière, qui dévie les rayons à l’entrée du milieu.",
+          "options": [
+            {
+              "text": "la lumière ralentit en entrant dans le verre",
+              "correct": true
+            },
+            {
+              "text": "le verre absorbe une partie des rayons"
+            },
+            {
+              "text": "la lumière se réfléchit sur le verre"
+            },
+            {
+              "text": "le verre change la fréquence"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-mesurer-avec-un-retard",
+      "title": "Défi : mesurer une distance avec un retard",
+      "subtitle": "Une horloge et une célérité connue remplacent un mètre ruban.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une vitesse, une durée, une distance",
+          "body": "Règle la vitesse : la durée du parcours sur les 60 mètres suit, et l’animation la respecte vraiment. Les allures réglables ici sont celles d’un coureur, pas d’un son — mais la relation entre les trois grandeurs est exactement celle qui sert à mesurer un orage ou un fond marin.",
+          "figureId": "vitesse",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La relation, et son demi-tour",
+          "body": "Pour un trajet simple : d = v × t.\n\nPour un écho, le signal fait l’aller et le retour pendant la durée mesurée. La distance cherchée est donc la moitié :\n\nd = v × t / 2\n\nOublier ce facteur deux double la réponse, et c’est l’erreur la plus fréquente de tout le chapitre.",
+          "formula": "d = v × t / 2",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Compter les secondes après l’éclair",
+          "body": "La lumière de l’éclair arrive en un temps négligeable : trois millionièmes de seconde pour un kilomètre.\n\nLe tonnerre, lui, met 1000 divisé par 343, soit environ 3 secondes par kilomètre.\n\nNeuf secondes entre l’éclair et le tonnerre placent donc l’orage à trois kilomètres. Ce n’est pas un écho : le son ne fait qu’un aller, et il n’y a pas de facteur deux ici.",
+          "id": "c3"
+        },
+        {
+          "kind": "etape",
+          "title": "Les appareils qui vivent de ce calcul",
+          "body": "Le sonar envoie un son dans l’eau et chronomètre son retour : quatre secondes donnent 1480 × 4 / 2, soit près de trois mille mètres de fond.\n\nLa valeur 1480 est celle de l’eau douce à 20 degrés. En mer on retient plutôt 1500, parce que le sel et la pression accélèrent le son : une célérité se donne toujours avec les conditions où elle a été mesurée.\n\nLe radar fait de même avec une onde radio, à la vitesse de la lumière.\n\nLe télémètre laser d’un chantier mesure une pièce au millimètre en chronométrant un aller-retour de quelques nanosecondes.\n\nLe GPS, lui, ne mesure pas un écho : il compare les retards de plusieurs satellites dont il connaît les positions.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi on ne chronomètre pas la lumière à la main",
+          "body": "Sur cent mètres, la lumière met 0,3 microseconde. Aucun chronomètre tenu par une main ne distingue cela de zéro.\n\nIl a fallu attendre des dispositifs électroniques, ou des distances astronomiques, pour la mesurer. Rømer y est parvenu dès 1676 en observant les retards des éclipses d’un satellite de Jupiter — c’est-à-dire en remplaçant le chronomètre par une distance énorme.\n\nC’est une leçon de méthode : quand une grandeur est trop petite pour l’instrument, on change l’échelle du problème plutôt que l’instrument.",
+          "id": "c5"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le réflexe de contrôle, en trois secondes",
+          "body": "Vérifie les unités : des mètres par seconde multipliés par des secondes donnent des mètres. Si le résultat sort en secondes, la formule a été employée à l’envers.\n\nVérifie l’ordre de grandeur : un orage à trois cents kilomètres ne s’entend pas, un fond marin de trois mètres ne demande pas de sonar.\n\nVérifie le facteur deux : y a-t-il un retour, oui ou non ?",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Neuf secondes séparent l’éclair du tonnerre. À quelle distance est l’orage, en kilomètres ?",
+          "explanation": "Le son fait environ 3 secondes par kilomètre, et il ne fait qu’un aller : 9 divisé par 3 donne 3 kilomètres.",
+          "answer": 3,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Un sonar reçoit son écho après 4 secondes dans l’eau, où le son va à 1480 m/s. Quelle profondeur, en mètres ?",
+          "explanation": "d = v × t / 2 = 1480 × 4 / 2 = 2960 mètres, soit près de trois kilomètres.",
+          "answer": 2960,
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Pour l’orage, il faut diviser par deux comme pour un écho.",
+          "explanation": "Faux. Le tonnerre ne fait qu’un aller : il n’y a pas de retour, donc pas de facteur deux.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’erreur la plus fréquente dans les calculs d’écho ?",
+          "explanation": "Oublier de diviser par deux. Le signal fait l’aller et le retour pendant la durée mesurée, et l’oubli double la réponse.",
+          "options": [
+            {
+              "text": "oublier de diviser par deux",
+              "correct": true
+            },
+            {
+              "text": "se tromper d’unité de temps"
+            },
+            {
+              "text": "utiliser la vitesse de la lumière"
+            },
+            {
+              "text": "oublier la température"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment Rømer a-t-il mesuré la vitesse de la lumière en 1676 ?",
+          "explanation": "En observant les retards des éclipses d’un satellite de Jupiter : il a remplacé le chronomètre, trop grossier, par une distance énorme.",
+          "options": [
+            {
+              "text": "en observant les éclipses d’un satellite de Jupiter",
+              "correct": true
+            },
+            {
+              "text": "avec un chronomètre et deux collines"
+            },
+            {
+              "text": "en mesurant un écho lumineux"
+            },
+            {
+              "text": "avec un miroir tournant"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels appareils déduisent une distance d’un retard aller-retour ?",
+          "explanation": "Le sonar, le radar et le télémètre laser chronomètrent un écho. Le GPS compare des retards de plusieurs satellites, sans écho.",
+          "options": [
+            {
+              "text": "le sonar",
+              "correct": true
+            },
+            {
+              "text": "le radar",
+              "correct": true
+            },
+            {
+              "text": "le télémètre laser",
+              "correct": true
+            },
+            {
+              "text": "le GPS"
+            },
+            {
+              "text": "le thermomètre"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
