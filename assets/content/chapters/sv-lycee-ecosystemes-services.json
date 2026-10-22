@@ -1,0 +1,613 @@
+{
+  "chapter": "svt-lycee-ecosystemes-et-services-rendus",
+  "lessons": [
+    {
+      "id": "un-reseau-et-ce-qu-un-retrait-provoque",
+      "title": "Un réseau, et ce qu’un retrait provoque",
+      "subtitle": "Retirer une espèce n’enlève pas une case : ça défait une chaîne.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cinq espèces, et une qu’on retire",
+          "body": "Retire l’herbe : tout s’éteint, les quatre autres espèces avec. Remets-la, puis retire le lapin : le renard s’éteint, et rien d’autre. Essaie les cinq retraits et compte les conséquences de chacun. Les nombres ne sont pas les mêmes, et c’est toute la leçon.",
+          "figureId": "chaine-alimentaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois rôles, et un seul qui produit",
+          "body": "Les producteurs fabriquent de la matière organique à partir de matière minérale et de lumière. Ce sont les végétaux, et l’herbe de la figure.\n\nLes consommateurs mangent du vivant. Ceux du premier ordre mangent des producteurs — lapin, criquet — et ceux du second mangent des consommateurs — renard, oiseau.\n\nLes décomposeurs mangent du mort, et renvoient la matière minérale aux producteurs. La figure ne les montre pas, et ils ferment le cycle.\n\nUn seul rôle fait entrer de la matière et de l’énergie dans l’écosystème : celui des producteurs. Tous les autres se partagent ce qu’ils ont produit.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi l’effet d’un retrait est si inégal",
+          "body": "Retirer l’herbe fait disparaître les quatre autres : lapin et criquet n’ont plus rien, puis renard et oiseau à leur tour. Quatre extinctions pour une.\n\nRetirer le lapin ne fait disparaître que le renard, qui ne mange que lui. Une extinction pour une.\n\nRetirer le renard ne fait disparaître personne, puisque rien ne le mange.\n\nLe nombre de conséquences dépend donc de la place dans le réseau, et non de la taille ou de la notoriété de l’espèce. Un brin d’herbe compte plus qu’un renard, dans ce réseau-là.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’espèce clé de voûte, et la découverte de 1966",
+          "body": "Robert Paine retire les étoiles de mer d’une portion de côte rocheuse du Pacifique, et observe ce qui arrive.\n\nLes moules, dont l’étoile était le seul prédateur, envahissent tout. Le nombre d’espèces de la zone tombe de quinze à huit. Retirer un prédateur a fait baisser la diversité.\n\nC’est l’origine de la notion d’espèce clé de voûte : une espèce dont l’effet sur l’écosystème est hors de proportion avec son abondance.\n\nEt c’est une conclusion qu’aucun raisonnement sur papier n’annonçait. Il a fallu retirer l’espèce pour le savoir, ce qui pose un problème : on ne peut pas tenter l’expérience partout, et l’on ne sait donc pas, pour la plupart des écosystèmes, quelles espèces sont clés.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi un réseau résiste mieux qu’une chaîne",
+          "body": "Dans la figure, le renard ne mange que des lapins. Si les lapins disparaissent, il disparaît.\n\nUn renard réel mange des lapins, des campagnols, des oiseaux, des insectes et des fruits. La disparition d’une proie ne le condamne pas : il se reporte.\n\nUn réseau dense est donc plus solide qu’une chaîne, et c’est une propriété du graphe, pas des espèces. La figure est volontairement simplifiée, et sa fragilité est l’effet de cette simplification.\n\nConséquence pour l’agriculture : un champ d’une seule espèce est une chaîne, pas un réseau. Il n’a aucune résilience, et c’est pourquoi il demande qu’on le protège en permanence.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Dans la figure, combien d’espèces disparaissent si on retire l’herbe ?",
+          "explanation": "Quatre : lapin et criquet n’ont plus rien, puis renard et oiseau à leur tour.",
+          "answer": 4,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Et si l’on retire le lapin ?",
+          "explanation": "Une seule : le renard, qui ne mange que lui dans ce réseau.",
+          "answer": 1,
+          "id": "q2"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Quel rôle cette espèce joue-t-elle ?",
+          "explanation": "Un seul rôle fait entrer de la matière dans l’écosystème : celui des producteurs. Les autres se partagent ce qui a été produit.",
+          "categories": [
+            "producteur",
+            "consommateur"
+          ],
+          "items": [
+            {
+              "text": "l’herbe",
+              "category": 0
+            },
+            {
+              "text": "un arbre",
+              "category": 0
+            },
+            {
+              "text": "le lapin",
+              "category": 1
+            },
+            {
+              "text": "le renard",
+              "category": 1
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a observé Paine en retirant les étoiles de mer en 1966 ?",
+          "explanation": "Les moules ont envahi la zone et le nombre d’espèces est tombé de quinze à huit. Retirer un prédateur a fait baisser la diversité.",
+          "options": [
+            {
+              "text": "la diversité a chuté de quinze espèces à huit",
+              "correct": true
+            },
+            {
+              "text": "la diversité a augmenté"
+            },
+            {
+              "text": "rien n’a changé"
+            },
+            {
+              "text": "les moules ont disparu"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une espèce clé de voûte ?",
+          "explanation": "Une espèce dont l’effet sur l’écosystème est hors de proportion avec son abondance.",
+          "options": [
+            {
+              "text": "une espèce dont l’effet dépasse de loin son abondance",
+              "correct": true
+            },
+            {
+              "text": "l’espèce la plus abondante"
+            },
+            {
+              "text": "le plus gros prédateur"
+            },
+            {
+              "text": "la seule espèce productrice"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un champ d’une seule espèce demande-t-il une protection permanente ?",
+          "explanation": "Parce que c’est une chaîne et non un réseau : rien ne peut se reporter, donc il n’a aucune résilience.",
+          "options": [
+            {
+              "text": "c’est une chaîne, sans report possible",
+              "correct": true
+            },
+            {
+              "text": "les plantes cultivées sont fragiles"
+            },
+            {
+              "text": "le sol s’épuise plus vite"
+            },
+            {
+              "text": "il attire plus d’insectes"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-energie-qui-circule",
+      "title": "L’énergie qui circule, et les neuf dixièmes qui se perdent",
+      "subtitle": "La pyramide écologique n’est pas un dessin : c’est un calcul.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les rendements se multiplient, ici encore",
+          "body": "Mets les quatre étages à 10 % et lis le rendement global : un dix-millième. Un réseau trophique fonctionne exactement ainsi — chaque niveau ne transmet qu’un dixième de ce qu’il reçoit — et c’est ce qui limite le nombre de niveaux possibles.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le rendement d’un niveau à l’autre",
+          "body": "Un herbivore ne convertit en sa propre matière qu’environ un dixième de ce qu’il mange. Le reste part en respiration, en chaleur, en déchets, et en parties non consommées.\n\nIl faut donc dix kilogrammes d’herbe pour faire un kilogramme de lapin, et dix kilogrammes de lapin pour faire un kilogramme de renard.\n\nCent kilogrammes d’herbe pour un kilogramme de renard. Et dix tonnes pour un kilogramme de prédateur de quatrième niveau.\n\nC’est pourquoi les réseaux trophiques comptent rarement plus de quatre ou cinq niveaux : au cinquième, il faudrait la production d’un territoire immense pour nourrir un seul individu.",
+          "formula": "environ 10 % transmis d’un niveau au suivant",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que la pyramide rend visible",
+          "body": "Si l’on empile les biomasses de chaque niveau, on obtient une pyramide : large en bas, étroite en haut.\n\nCette forme n’est pas un choix de dessinateur : c’est la conséquence arithmétique du rendement de dix pour-cent.\n\nD’où une conséquence qu’on vérifie sur le terrain : les grands prédateurs sont toujours rares, et ce n’est pas un accident de l’histoire. Un territoire ne peut en nourrir qu’un petit nombre.\n\nEt une autre, moins attendue : protéger un grand prédateur exige de protéger un très grand territoire. Un loup a besoin de dizaines de kilomètres carrés, non par goût de l’espace, mais par arithmétique.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que ce rendement dit de nos assiettes",
+          "body": "Produire un kilogramme de bœuf demande, selon les systèmes d’élevage, de l’ordre de dix kilogrammes d’aliments végétaux.\n\nManger directement ces végétaux nourrit donc bien plus de monde avec la même surface. C’est de l’arithmétique trophique, et non une opinion.\n\nLa nuance est que les animaux valorisent des surfaces incultivables — les prairies de montagne ne produiront jamais de blé — et des résidus que nous ne mangeons pas.\n\nL’argument « il faut dix kilos de céréales pour un kilo de viande » est donc juste et incomplet. Il vaut pleinement pour un élevage nourri de céréales, et mal pour un troupeau au pâturage.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La matière tourne, l’énergie ne tourne pas",
+          "body": "Les atomes de carbone, d’azote et de phosphore circulent en boucle : les décomposeurs les rendent aux producteurs, indéfiniment.\n\nL’énergie, elle, traverse l’écosystème une seule fois. Elle entre par la lumière, et sort en chaleur à chaque niveau.\n\nC’est la différence la plus importante du chapitre, et la plus souvent confondue. Un écosystème recycle sa matière et ne recycle pas son énergie.\n\nD’où une conclusion qui relie ce chapitre à la thermodynamique : un écosystème a besoin d’un flux permanent venu du Soleil, et il s’arrête le jour où ce flux s’arrête. Il ne tourne pas tout seul.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de kilogrammes d’herbe pour un kilogramme de renard, à 10 % par niveau ?",
+          "explanation": "Dix pour faire un kilo de lapin, et dix kilos de lapin pour un kilo de renard : cent kilogrammes d’herbe.",
+          "answer": 100,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un réseau trophique compte-t-il rarement plus de cinq niveaux ?",
+          "explanation": "Parce qu’au cinquième il faudrait la production d’un territoire immense pour nourrir un seul individu.",
+          "options": [
+            {
+              "text": "le rendement de 10 % rend les niveaux élevés impossibles à nourrir",
+              "correct": true
+            },
+            {
+              "text": "les prédateurs se mangent entre eux"
+            },
+            {
+              "text": "il n’existe pas assez d’espèces"
+            },
+            {
+              "text": "c’est une convention de classement"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les grands prédateurs sont-ils toujours rares ?",
+          "explanation": "Par arithmétique : un territoire ne peut en nourrir qu’un petit nombre, compte tenu du rendement de chaque niveau.",
+          "options": [
+            {
+              "text": "un territoire ne peut en nourrir qu’un petit nombre",
+              "correct": true
+            },
+            {
+              "text": "ils se reproduisent mal"
+            },
+            {
+              "text": "ils ont été chassés"
+            },
+            {
+              "text": "ils vivent moins longtemps"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’argument « dix kilos de céréales pour un kilo de viande » vaut pour tous les élevages.",
+          "explanation": "Faux. Il vaut pleinement pour un élevage nourri de céréales, et mal pour un troupeau au pâturage sur des surfaces incultivables.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cela circule-t-il en boucle dans un écosystème, ou le traverse-t-il une seule fois ?",
+          "explanation": "La matière tourne, grâce aux décomposeurs ; l’énergie traverse une seule fois, de la lumière à la chaleur.",
+          "categories": [
+            "circule en boucle",
+            "traverse une seule fois"
+          ],
+          "items": [
+            {
+              "text": "les atomes de carbone",
+              "category": 0
+            },
+            {
+              "text": "l’azote et le phosphore",
+              "category": 0
+            },
+            {
+              "text": "l’énergie lumineuse",
+              "category": 1
+            },
+            {
+              "text": "la chaleur dégagée",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un écosystème ne tourne-t-il pas tout seul ?",
+          "explanation": "Parce qu’il recycle sa matière mais pas son énergie : il lui faut un flux permanent venu du Soleil.",
+          "options": [
+            {
+              "text": "il lui faut un flux d’énergie permanent",
+              "correct": true
+            },
+            {
+              "text": "la matière s’épuise"
+            },
+            {
+              "text": "les espèces disparaissent"
+            },
+            {
+              "text": "les décomposeurs s’arrêtent"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-diversite-comme-assurance",
+      "title": "La diversité comme assurance",
+      "subtitle": "Ce qui ne sert à rien aujourd’hui sauve demain.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un variant qui se répand, si l’avantage existe",
+          "body": "Règle l’avantage et avance de dix générations à la fois. Avec un avantage nul, rien ne bouge. Avec un avantage, le variant passe de un pour-cent à presque tout en quelques dizaines de générations. Mais il fallait que ce variant existe déjà : la figure ne le crée pas, elle le sélectionne.",
+          "figureId": "selection",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois niveaux de diversité, et le plus oublié",
+          "body": "La diversité des écosystèmes : une forêt, une mare, une prairie ne rendent pas les mêmes services, et ne se remplacent pas.\n\nLa diversité des espèces : c’est celle qu’on compte, et celle dont les journaux parlent.\n\nLa diversité génétique à l’intérieur d’une espèce : c’est la plus oubliée, et c’est la plus décisive à court terme. C’est elle que la figure fait travailler.\n\nUne espèce nombreuse mais génétiquement uniforme est en danger : elle n’a aucun variant à sélectionner quand les conditions changent. Le nombre d’individus ne protège pas ; la variété des individus protège.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux cas où l’uniformité a coûté cher",
+          "body": "La pomme de terre irlandaise du dix-neuvième siècle est issue d’un très petit nombre de plants. Quand le mildiou arrive en 1845, aucune variété ne résiste, parce qu’il n’y a presque qu’une variété. La famine fait un million de morts et deux millions d’émigrés.\n\nLa banane commerciale est un clone : tous les bananiers d’une même variété sont génétiquement identiques. La variété Gros Michel a été anéantie par un champignon dans les années 1950, et celle qui l’a remplacée est aujourd’hui attaquée par une souche voisine.\n\nDans les deux cas, l’uniformité était un choix : elle donne des récoltes régulières et des fruits identiques.\n\nElle supprime en même temps la capacité de réponse. C’est un échange, et il se paie d’un coup plutôt qu’un peu chaque année.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la sélection ne peut pas faire",
+          "body": "Elle ne crée rien. Elle trie ce qui existe déjà, et la figure le montre : avec un seul type d’individu, pousser l’avantage ne change rien.\n\nLes variants viennent des mutations, qui sont rares et aléatoires. On ne commande ni leur apparition ni leur nature.\n\nUne population qui a perdu sa diversité ne la retrouve donc pas en une génération, ni en cent. Le temps de reconstitution se compte en milliers de générations.\n\nD’où le sens des banques de semences et des conservatoires : ils ne gardent pas des plantes rares pour la beauté du geste, ils gardent des variants dont on ne sait pas encore à quoi ils serviront.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le test qui dit si une diversité est réelle",
+          "body": "Compter les espèces ne suffit pas. Deux prairies peuvent porter le même nombre d’espèces et n’avoir pas la même diversité.\n\nSi l’une est couverte à 95 % par une seule espèce et l’autre se partage également entre dix, la seconde résistera à la perte de l’une d’elles et la première non.\n\nOn mesure donc deux choses : la richesse, qui est le nombre d’espèces, et l’équitabilité, qui dit comment les effectifs se répartissent.\n\nUne forêt plantée d’une seule essence avec quelques arbustes autour a une richesse honorable et une équitabilité nulle. Elle n’est diverse que sur l’inventaire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait la sélection, et que ne fait-elle pas ?",
+          "explanation": "Elle trie ce qui existe déjà et ne crée rien. Avec un seul type d’individu, l’avantage ne change rien.",
+          "options": [
+            {
+              "text": "elle trie ce qui existe, elle ne crée pas",
+              "correct": true
+            },
+            {
+              "text": "elle crée des variants adaptés"
+            },
+            {
+              "text": "elle accélère les mutations"
+            },
+            {
+              "text": "elle maintient la diversité"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "De quel niveau de diversité s’agit-il ?",
+          "explanation": "Trois niveaux : écosystèmes, espèces, et gènes à l’intérieur d’une espèce. Le troisième est le plus oublié et le plus décisif à court terme.",
+          "categories": [
+            "diversité des espèces",
+            "diversité génétique"
+          ],
+          "items": [
+            {
+              "text": "le nombre d’espèces d’une prairie",
+              "category": 0
+            },
+            {
+              "text": "la liste des oiseaux d’une région",
+              "category": 0
+            },
+            {
+              "text": "les variétés anciennes d’un même blé",
+              "category": 1
+            },
+            {
+              "text": "les individus résistants d’une population",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le mildiou de 1845 a-t-il été si dévastateur en Irlande ?",
+          "explanation": "Parce que la pomme de terre y était issue d’un très petit nombre de plants : aucune variété ne résistait, faute de variétés.",
+          "options": [
+            {
+              "text": "il n’y avait presque qu’une seule variété",
+              "correct": true
+            },
+            {
+              "text": "le champignon était nouveau"
+            },
+            {
+              "text": "le climat était défavorable"
+            },
+            {
+              "text": "les récoltes étaient trop petites"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une espèce très nombreuse est à l’abri d’un changement de conditions.",
+          "explanation": "Faux. Si elle est génétiquement uniforme, elle n’a aucun variant à sélectionner. La variété protège, pas le nombre.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "En combien de générations une population retrouve-t-elle une diversité perdue ?",
+          "explanation": "Des milliers : les variants viennent de mutations rares et aléatoires, qu’on ne commande pas.",
+          "options": [
+            {
+              "text": "des milliers de générations",
+              "correct": true
+            },
+            {
+              "text": "une seule"
+            },
+            {
+              "text": "une dizaine"
+            },
+            {
+              "text": "elle la retrouve immédiatement"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi servent les banques de semences ?",
+          "explanation": "À garder des variants dont on ne sait pas encore à quoi ils serviront. Ce n’est pas une conservation esthétique.",
+          "options": [
+            {
+              "text": "garder des variants pour des besoins encore inconnus",
+              "correct": true
+            },
+            {
+              "text": "préserver des plantes jolies"
+            },
+            {
+              "text": "augmenter les rendements actuels"
+            },
+            {
+              "text": "remplacer les cultures disparues"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-evaluer-ce-qu-un-ecosysteme-rend",
+      "title": "Défi : évaluer ce qu’un écosystème rend",
+      "subtitle": "Mettre un prix sur ce qui n’en avait pas, et ce que cela change.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le réseau, et les services qui en dépendent",
+          "body": "Retire chaque espèce tour à tour et note les conséquences. Maintenant demande-toi lesquelles rendent un service qu’on paierait : le criquet pollinise peu, mais nourrit les oiseaux qui mangent les ravageurs. Un service passe souvent par deux maillons, et ne se voit pas au premier.",
+          "figureId": "chaine-alimentaire",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce qu’on récolte, et ce qui était nécessaire",
+          "body": "Les quatre étages et le rendement global rappellent la règle : ce qu’un écosystème nous livre est la fraction qui sort, et elle suppose tout ce qui s’est passé en amont. Évaluer un service sans compter ce qui le produit revient à évaluer une chaîne par son dernier étage.",
+          "figureId": "chaine-energie",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre familles de services",
+          "body": "Les services d’approvisionnement : nourriture, bois, eau, fibres, molécules médicinales. Ce sont les seuls qui ont un prix de marché, et ils sont donc les seuls qu’on compte d’ordinaire.\n\nLes services de régulation : pollinisation, épuration de l’eau, régulation du climat, protection contre l’érosion et les crues, limitation des ravageurs.\n\nLes services culturels : paysage, loisirs, valeur patrimoniale.\n\nEt les services de soutien : formation des sols, cycle de l’azote, photosynthèse — ceux dont dépendent tous les autres. Le classement vient de l’évaluation mondiale publiée en 2005.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La pollinisation, chiffrée",
+          "body": "Environ trois quarts des types de cultures mondiales bénéficient au moins en partie d’une pollinisation animale. Pas trois quarts des tonnages : les céréales, qui pèsent le plus lourd, s’en passent.\n\nLa valeur annuelle de ce service est estimée entre deux cents et six cents milliards de dollars, selon la méthode retenue.\n\nL’intervalle est large, et c’est honnête : évaluer consiste à estimer ce qu’il coûterait de remplacer le service. Or dans certaines régions de Chine, des vergers sont déjà pollinisés à la main, au pinceau, et le coût réel est connu — il est considérable.\n\nLe chiffre n’est donc pas le prix de la nature. C’est le prix du remplacement, ce qui est une tout autre chose, et bien plus défendable.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un réseau trophique n’est pas une liste : la place d’une espèce y décide de l’effet de sa disparition, et un brin d’herbe pèse plus qu’un renard.\n\nLe rendement de dix pour-cent par niveau explique la forme des pyramides, la rareté des grands prédateurs et l’arithmétique de nos assiettes.\n\nLa matière tourne, l’énergie traverse. Un écosystème a besoin d’un flux permanent, et ne tourne pas tout seul.\n\nEt la diversité est une assurance : elle ne sert à rien les années où tout va bien, et c’est précisément la définition d’une assurance. On ne la juge pas sur les années calmes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque service à sa famille.",
+          "explanation": "Approvisionnement, régulation, culturel, soutien : quatre familles, et seules les premières ont un prix de marché.",
+          "pairs": [
+            {
+              "left": "le bois et la nourriture",
+              "right": "approvisionnement"
+            },
+            {
+              "left": "la pollinisation",
+              "right": "régulation"
+            },
+            {
+              "left": "le paysage",
+              "right": "culturel"
+            },
+            {
+              "left": "la formation des sols",
+              "right": "soutien"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle famille de services compte-t-on d’ordinaire, et pourquoi ?",
+          "explanation": "L’approvisionnement, parce que c’est la seule qui a un prix de marché. Les trois autres ne sont pas comptées faute de prix.",
+          "options": [
+            {
+              "text": "l’approvisionnement, parce qu’il a un prix de marché",
+              "correct": true
+            },
+            {
+              "text": "la régulation, parce qu’elle est la plus utile"
+            },
+            {
+              "text": "le soutien, parce qu’il conditionne tout"
+            },
+            {
+              "text": "le culturel, parce qu’il est visible"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part des types de cultures mondiales bénéficie d’une pollinisation animale, en pour-cent ?",
+          "explanation": "Environ 75 % des types de cultures — pas des tonnages : les céréales, qui pèsent le plus lourd, s’en passent.",
+          "min": 0,
+          "max": 100,
+          "answer": 75,
+          "tolerance": 8,
+          "unit": "%",
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Trois quarts des tonnages alimentaires mondiaux dépendent des pollinisateurs.",
+          "explanation": "Faux. Ce sont trois quarts des types de cultures. Les céréales, qui dominent les tonnages, se pollinisent sans animaux.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que mesure vraiment la valeur chiffrée d’un service écosystémique ?",
+          "explanation": "Le coût de son remplacement. Ce n’est pas le prix de la nature, et c’est bien plus défendable ainsi.",
+          "options": [
+            {
+              "text": "le coût de le remplacer",
+              "correct": true
+            },
+            {
+              "text": "le prix de la nature"
+            },
+            {
+              "text": "le bénéfice des agriculteurs"
+            },
+            {
+              "text": "la valeur des terres"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la diversité ne se juge-t-elle pas sur les années calmes ?",
+          "explanation": "Parce que c’est une assurance : elle ne sert à rien quand tout va bien, et c’est exactement la définition d’une assurance.",
+          "options": [
+            {
+              "text": "une assurance ne sert que les mauvaises années",
+              "correct": true
+            },
+            {
+              "text": "elle est trop coûteuse à mesurer"
+            },
+            {
+              "text": "elle varie d’une année sur l’autre"
+            },
+            {
+              "text": "elle n’a pas d’effet mesurable"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

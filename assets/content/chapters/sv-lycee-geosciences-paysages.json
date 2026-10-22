@@ -1,0 +1,587 @@
+{
+  "chapter": "svt-lycee-geosciences-et-dynamique-des-paysages",
+  "lessons": [
+    {
+      "id": "trois-familles-de-roches",
+      "title": "Trois familles de roches",
+      "subtitle": "La roche garde la trace de la façon dont elle s’est faite.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Fondre et solidifier, à l’échelle des particules",
+          "body": "Déplace la température de −20 à 140 degrés et regarde les particules : rangées et serrées, puis glissant les unes sur les autres, puis libres. Une roche magmatique est exactement cela, figé : un liquide refroidi, et la vitesse du refroidissement se lit dans la taille des grains.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois familles, et leur acte de naissance",
+          "body": "Les roches magmatiques viennent d’un liquide refroidi. Elles sont faites de cristaux emboîtés, sans vide entre eux.\n\nLes roches sédimentaires viennent de débris déposés puis cimentés. Elles sont en couches, et portent souvent des fossiles — que les deux autres familles ne peuvent pas contenir.\n\nLes roches métamorphiques viennent d’une roche existante, transformée à l’état solide par la pression et la chaleur. Elles sont feuilletées, et leurs minéraux sont alignés perpendiculairement à la contrainte qu’elles ont subie.\n\nUne roche porte donc son histoire dans sa texture, avant même qu’on l’analyse. Regarder si elle est grenue, en couches ou feuilletée range déjà les trois quarts des cas.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Basalte et gabbro : même chimie, deux roches",
+          "body": "Le basalte et le gabbro ont la même composition chimique. Ils viennent du même magma.\n\nLe basalte a refroidi vite, à la surface : les cristaux n’ont pas eu le temps de grandir, et la roche paraît presque sans grains visibles.\n\nLe gabbro a refroidi lentement, en profondeur : les cristaux atteignent plusieurs millimètres, et la roche est franchement grenue.\n\nDeux roches portant deux noms, une seule chimie, et une seule différence : le temps de refroidissement. C’est l’exemple qui montre qu’en géologie la texture renseigne autant que la composition.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "L’altération, et ce qui résiste",
+          "body": "Un granite exposé à l’air et à l’eau ne se désagrège pas uniformément : ses minéraux n’ont pas la même résistance.\n\nLe quartz résiste à presque tout, et se retrouve intact dans le sable des plages. Les feldspaths se transforment en argiles. Les micas se délitent.\n\nUn sable est donc un résidu de tri, et non un broyat. C’est pourquoi la plupart des sables du monde sont quartzeux, quelle que soit la roche d’origine.\n\nL’altération chimique joue autant que la mécanique : une eau de pluie chargée de dioxyde de carbone dissout le calcaire, et c’est cette réaction, pas le gel, qui creuse les grottes.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le cycle, et pourquoi c’en est un",
+          "body": "Un magma refroidit en roche magmatique. Altérée, elle donne des débris qui se déposent en roche sédimentaire.\n\nEnfouie, celle-ci subit pression et chaleur et devient métamorphique. Enfouie plus profond encore, elle fond et redonne du magma.\n\nLe cycle n’a ni début ni fin, et chaque étape peut être court-circuitée : une roche métamorphique altérée redonne des sédiments sans repasser par la fusion.\n\nAucun atome de la croûte n’est neuf. Le quartz d’une plage a peut-être déjà fait trois fois le tour du cycle, et c’est à peu près impossible à savoir.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "À quelle famille cette caractéristique renvoie-t-elle ?",
+          "explanation": "Les magmatiques sont des cristaux emboîtés, les sédimentaires sont en couches et peuvent porter des fossiles, les métamorphiques sont feuilletées.",
+          "categories": [
+            "magmatique",
+            "sédimentaire",
+            "métamorphique"
+          ],
+          "items": [
+            {
+              "text": "des cristaux emboîtés sans vide",
+              "category": 0
+            },
+            {
+              "text": "des couches superposées",
+              "category": 1
+            },
+            {
+              "text": "des fossiles",
+              "category": 1
+            },
+            {
+              "text": "des minéraux alignés en feuillets",
+              "category": 2
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui distingue le basalte du gabbro ?",
+          "explanation": "Le temps de refroidissement, et rien d’autre : même chimie, même magma. Le basalte a refroidi vite, le gabbro lentement.",
+          "options": [
+            {
+              "text": "la vitesse de refroidissement",
+              "correct": true
+            },
+            {
+              "text": "la composition chimique"
+            },
+            {
+              "text": "la présence de fossiles"
+            },
+            {
+              "text": "la famille de la roche"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la plupart des sables sont-ils quartzeux ?",
+          "explanation": "Parce que le quartz résiste à l’altération quand les feldspaths deviennent argiles. Un sable est un résidu de tri, pas un broyat.",
+          "options": [
+            {
+              "text": "le quartz résiste quand les autres minéraux se transforment",
+              "correct": true
+            },
+            {
+              "text": "les roches sont surtout faites de quartz"
+            },
+            {
+              "text": "le quartz est plus lourd"
+            },
+            {
+              "text": "la mer fabrique du quartz"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui creuse les grottes calcaires ?",
+          "explanation": "La dissolution chimique par une eau de pluie chargée de dioxyde de carbone. Pas le gel.",
+          "options": [
+            {
+              "text": "la dissolution par l’eau chargée de CO₂",
+              "correct": true
+            },
+            {
+              "text": "le gel et le dégel"
+            },
+            {
+              "text": "les rivières souterraines, par abrasion"
+            },
+            {
+              "text": "les tremblements de terre"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le cycle des roches dans l’ordre.",
+          "explanation": "Un magma refroidit, la roche s’altère, les débris se déposent, l’enfouissement transforme puis fait fondre.",
+          "items": [
+            "un magma refroidit en roche magmatique",
+            "l’altération en fait des débris",
+            "les débris déposés donnent une roche sédimentaire",
+            "l’enfouissement la transforme, puis la fait fondre"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une roche métamorphique doit repasser par la fusion avant de donner des sédiments.",
+          "explanation": "Faux. Chaque étape du cycle peut être court-circuitée : une roche métamorphique altérée donne directement des sédiments.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-volcan-en-coupe",
+      "title": "Le volcan en coupe",
+      "subtitle": "Une seule grandeur décide si l’on peut fuir : la viscosité.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Quatre états, et deux éruptions qui n’ont rien à voir",
+          "body": "Choisis les quatre états dans l’ordre : au repos, sous pression, éruption rouge, éruption grise. Regarde la coupe — le magma vient de très bas, s’accumule d’abord dans une poche, et la montagne elle-même est faite des couches de ses éruptions passées. Compare les deux dernières images.",
+          "figureId": "volcan",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi deux sortes d’éruptions",
+          "body": "Un magma pauvre en silice est fluide. Les gaz s’en échappent au fur et à mesure, et la lave coule en rivières : c’est l’éruption rouge, celle du Piton de la Fournaise ou de l’Etna.\n\nUn magma riche en silice est épais, parfois comme du goudron froid. Les gaz ne peuvent pas sortir et restent sous pression dans la cheminée bouchée.\n\nQuand le bouchon cède, tout part d’un coup : c’est l’éruption grise, celle du Vésuve ou du mont Saint Helens.\n\nUne seule grandeur, la viscosité, sépare une attraction touristique d’une catastrophe. Et elle se lit dans la composition, donc elle se prévoit.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi la lave fluide tue peu",
+          "body": "Une coulée de lave avance de quelques mètres à quelques centaines de mètres par heure. On la voit venir, on marche plus vite qu’elle.\n\nElle détruit tout sur son passage et ne fait presque jamais de victimes. Les éruptions de l’Etna ont enseveli des quartiers sans tuer personne.\n\nUne nuée ardente d’éruption grise descend à plusieurs centaines de kilomètres par heure, à quelques centaines de degrés. Personne ne marche plus vite.\n\nCelle de la Montagne Pelée, en 1902, a tué environ trente mille personnes à Saint-Pierre en quelques minutes. Le danger ne vient pas de la lave : il vient de ce qui est projeté.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’on sait prévoir, et ce qu’on ne sait pas",
+          "body": "On sait dire qu’un volcan va entrer en éruption : le sol se bombe de quelques centimètres, les séismes se multiplient, les gaz émis changent de composition. Les délais vont de quelques jours à quelques mois.\n\nOn sait dire de quel type sera l’éruption, puisqu’on connaît la composition du magma.\n\nOn ne sait pas dire quand, à la semaine près, ni quelle sera l’ampleur.\n\nD’où une conséquence politique : évacuer est une décision prise dans l’incertitude, et une évacuation inutile coûte la confiance pour la fois suivante. En 1976, la Guadeloupe a été évacuée pour une éruption qui n’a pas eu lieu — et le débat sur cette décision n’est pas clos.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi on habite au pied des volcans",
+          "body": "La question se pose, puisque le risque est connu et que les zones volcaniques comptent parmi les plus peuplées du monde.\n\nLa réponse est le sol. Les cendres volcaniques s’altèrent vite et donnent des terres parmi les plus fertiles de la planète : les rizières de Java et les vignes de l’Etna reposent dessus.\n\nS’y ajoutent la géothermie, qui chauffe l’Islande presque gratuitement, et les minerais que le volcanisme concentre.\n\nHabiter là n’est donc pas de l’imprudence : c’est un échange, accepté par des millions de gens, entre une fertilité quotidienne et un risque rare. La géologie ne décide pas à leur place.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle grandeur sépare une éruption rouge d’une éruption grise ?",
+          "explanation": "La viscosité du magma, liée à sa teneur en silice. Elle se lit dans la composition, donc elle se prévoit.",
+          "options": [
+            {
+              "text": "la viscosité du magma",
+              "correct": true
+            },
+            {
+              "text": "la hauteur du volcan"
+            },
+            {
+              "text": "la température de la lave"
+            },
+            {
+              "text": "la profondeur de la chambre"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Éruption rouge, ou éruption grise ?",
+          "explanation": "Le magma fluide laisse sortir ses gaz et coule ; le magma épais les retient jusqu’à ce que le bouchon cède.",
+          "categories": [
+            "éruption rouge",
+            "éruption grise"
+          ],
+          "items": [
+            {
+              "text": "un magma pauvre en silice",
+              "category": 0
+            },
+            {
+              "text": "la lave coule en rivières",
+              "category": 0
+            },
+            {
+              "text": "la cheminée se bouche",
+              "category": 1
+            },
+            {
+              "text": "une nuée ardente",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une coulée de lave fait-elle peu de victimes ?",
+          "explanation": "Elle avance de quelques mètres à quelques centaines de mètres par heure : on la voit venir et l’on marche plus vite.",
+          "options": [
+            {
+              "text": "on marche plus vite qu’elle",
+              "correct": true
+            },
+            {
+              "text": "elle n’est pas assez chaude"
+            },
+            {
+              "text": "elle reste dans le cratère"
+            },
+            {
+              "text": "elle refroidit vite"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de personnes la nuée ardente de la Montagne Pelée a-t-elle tuées en 1902 ?",
+          "explanation": "Environ trente mille, à Saint-Pierre, en quelques minutes. Le danger vient de ce qui est projeté, pas de la lave.",
+          "min": 0,
+          "max": 100000,
+          "answer": 30000,
+          "tolerance": 4000,
+          "unit": "personnes",
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels signes annoncent une éruption ?",
+          "explanation": "Le sol qui se bombe, la multiplication des séismes, et le changement de composition des gaz émis.",
+          "options": [
+            {
+              "text": "le sol se bombe de quelques centimètres",
+              "correct": true
+            },
+            {
+              "text": "les séismes se multiplient",
+              "correct": true
+            },
+            {
+              "text": "les gaz émis changent de composition",
+              "correct": true
+            },
+            {
+              "text": "la montagne grandit de plusieurs mètres"
+            },
+            {
+              "text": "la lave apparaît dans le cratère"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On sait prévoir la date d’une éruption à la semaine près.",
+          "explanation": "Faux. On sait dire qu’elle vient, et de quel type elle sera. Ni la date exacte ni l’ampleur ne se prévoient.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-horloge-des-roches",
+      "title": "L’horloge des roches",
+      "subtitle": "Chaque isotope a sa portée, et aucun ne sert à tout.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Cent quarante-quatre noyaux, et le hasard de chacun",
+          "body": "Pousse le curseur de 0 à 6 demi-vies et compte. À une demi-vie il reste environ 72 noyaux, à deux 36, à trois 18. Aucun noyau ne vieillit : chacun tient ou casse, et c’est le grand nombre qui fait la régularité de la courbe.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qu’une demi-vie permet de calculer",
+          "body": "Après une demi-vie, il reste la moitié des noyaux. Après deux, le quart. Après n, la proportion restante est un demi à la puissance n.\n\nMesurer la proportion restante donne donc le nombre de demi-vies écoulées, et multiplier par la demi-vie donne l’âge.\n\nRien dans ce raisonnement ne suppose que la roche ait été observée : l’horloge tourne seule depuis sa formation, et le compte des noyaux la lit.\n\nLa condition est que rien ne soit entré ni sorti depuis. C’est là que les datations se trompent, et jamais dans l’arithmétique.",
+          "formula": "proportion restante = (1/2) puissance n, n en demi-vies",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois horloges, trois portées",
+          "body": "Le carbone 14 a une demi-vie de 5 730 ans. Au bout de dix demi-vies, soit 57 000 ans, il n’en reste qu’un millième : la méthode s’arrête vers 50 000 ans, et elle ne vaut que pour la matière organique.\n\nLe potassium 40 a une demi-vie de 1,25 milliard d’années. Il date les roches volcaniques, de quelques centaines de milliers d’années à plusieurs milliards.\n\nL’uranium 238, 4,47 milliards d’années, date les plus anciennes roches de la planète.\n\nEmployer le carbone 14 sur un basalte, ou l’uranium sur un os préhistorique, n’est pas une approximation : c’est une erreur de méthode, et le résultat n’a aucun sens.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que les horloges ont établi",
+          "body": "La Terre a 4,57 milliards d’années, mesurés sur des météorites formées en même temps qu’elle.\n\nLes plus anciens minéraux terrestres connus, des zircons d’Australie, ont 4,4 milliards d’années — et ils prouvent qu’il y avait de l’eau liquide bien plus tôt qu’on ne le pensait.\n\nLa croûte océanique, elle, ne dépasse nulle part 200 millions d’années. Elle est sans cesse fabriquée et sans cesse recyclée.\n\nCet écart de vingt entre l’âge de la planète et celui de ses océans est l’argument le plus massif de la tectonique des plaques, et il vient d’une horloge radioactive.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui peut fausser une datation",
+          "body": "L’arithmétique ne se trompe jamais. Ce qui se trompe, c’est l’hypothèse que rien n’est entré ni sorti depuis la formation.\n\nUne roche réchauffée a pu perdre une partie de son argon, qui est un gaz : elle paraît alors plus jeune qu’elle n’est.\n\nUn os ayant baigné dans une eau riche en carbonates a pu en absorber : il paraît alors plus vieux.\n\nD’où la pratique, en laboratoire, de dater le même objet par deux méthodes indépendantes. Deux horloges qui concordent valent mille fois une horloge précise, parce qu’elles ne se trompent pas de la même façon.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Il reste 144 noyaux au départ. Combien après trois demi-vies ?",
+          "explanation": "144 divisé par 8 fait 18 : la moitié trois fois de suite.",
+          "answer": 18,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fait la régularité de la courbe de décroissance ?",
+          "explanation": "Le grand nombre de noyaux. Aucun noyau ne vieillit : chacun tient ou casse, au hasard.",
+          "options": [
+            {
+              "text": "le grand nombre de noyaux",
+              "correct": true
+            },
+            {
+              "text": "le vieillissement de chaque noyau"
+            },
+            {
+              "text": "la température de l’échantillon"
+            },
+            {
+              "text": "la masse de l’échantillon"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque isotope à ce qu’il date.",
+          "explanation": "Chaque horloge a sa portée : le carbone 14 jusqu’à 50 000 ans sur du vivant, le potassium 40 les roches volcaniques, l’uranium 238 les plus anciennes roches.",
+          "pairs": [
+            {
+              "left": "le carbone 14",
+              "right": "de la matière organique récente"
+            },
+            {
+              "left": "le potassium 40",
+              "right": "des roches volcaniques"
+            },
+            {
+              "left": "l’uranium 238",
+              "right": "les plus anciennes roches"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Jusqu’à quel âge, en milliers d’années, le carbone 14 reste-t-il utilisable ?",
+          "explanation": "Environ 50 000 ans : au-delà de dix demi-vies de 5 730 ans, il n’en reste qu’un millième, trop peu pour mesurer.",
+          "min": 0,
+          "max": 500,
+          "answer": 50,
+          "tolerance": 10,
+          "unit": "milliers d’années",
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quel âge maximal atteint la croûte océanique, en millions d’années ?",
+          "explanation": "Environ 200, nulle part davantage, alors que la Terre a 4 570 millions d’années. C’est l’argument massif de la tectonique.",
+          "min": 0,
+          "max": 5000,
+          "answer": 200,
+          "tolerance": 40,
+          "unit": "millions d’années",
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Employer le carbone 14 pour dater un basalte donne un résultat approximatif.",
+          "explanation": "Faux. C’est une erreur de méthode : le résultat n’a aucun sens, et pas seulement une grande incertitude.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-un-paysage",
+      "title": "Défi : lire un paysage",
+      "subtitle": "Une falaise est un livre, et les pages sont dans l’ordre.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une montagne faite de ses propres éruptions",
+          "body": "Reviens à la coupe et regarde les couches alternées de la montagne : coulées sombres et lits de projections. Chaque couche est une éruption, et la plus basse est la plus ancienne. Lire un volcan en coupe est déjà lire une chronologie.",
+          "figureId": "volcan",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Mettre des dates sur l’ordre",
+          "body": "Le curseur donne un nombre de demi-vies, donc un âge. L’empilement dit l’ordre, l’horloge dit les dates, et les deux sont nécessaires : sans l’ordre, une date isolée ne raconte rien ; sans les dates, un ordre ne se compare pas à un autre ailleurs.",
+          "figureId": "demi-vie",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre principes, dans l’ordre d’usage",
+          "body": "Superposition : dans un empilement non bouleversé, la couche du dessous est la plus ancienne. C’est le principe le plus simple, et presque tout en découle.\n\nContinuité : une même couche a le même âge sur toute son étendue, même séparée par une vallée.\n\nRecoupement : ce qui coupe est plus récent que ce qui est coupé. Une faille est plus jeune que les couches qu’elle traverse.\n\nInclusion : un fragment pris dans une roche est plus ancien qu’elle. Ces quatre principes sont tous antérieurs à la chimie, et ils suffisent à ordonner un paysage sans rien mesurer.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un paysage lu de bas en haut",
+          "body": "Une falaise montre, de bas en haut : un granite, puis une surface irrégulière, puis des couches de calcaire à fossiles marins, puis une faille qui traverse le tout, puis une coulée de basalte par-dessus.\n\nL’histoire se lit alors : un granite s’est formé en profondeur ; il a été porté en surface et altéré, d’où la surface irrégulière ; la mer a recouvert la région et déposé du calcaire ; une contrainte a cassé l’ensemble ; un volcan a coulé dessus.\n\nCinq événements, dans un ordre certain, lus sans aucun instrument.\n\nDater le granite et le basalte fournit ensuite deux bornes, et tout ce qui est entre les deux se trouve encadré. C’est ainsi qu’on construit une histoire régionale.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Trois familles de roches, reconnaissables à leur texture avant toute analyse, et un cycle qui n’a ni début ni fin.\n\nUne seule grandeur, la viscosité, décide si une éruption se regarde ou se fuit — et elle se déduit de la composition.\n\nLes horloges radioactives ont chacune leur portée, et les employer hors de leur domaine ne donne pas une approximation mais un non-sens.\n\nEt un paysage se lit par quatre principes antérieurs à toute mesure. Les dates viennent ensuite confirmer et encadrer. L’ordre d’abord, les chiffres après : c’est l’ordre de travail du géologue depuis deux siècles.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque principe à son énoncé.",
+          "explanation": "Superposition, continuité, recoupement, inclusion : quatre principes antérieurs à la chimie, et suffisants pour ordonner un paysage.",
+          "pairs": [
+            {
+              "left": "superposition",
+              "right": "la couche du dessous est la plus ancienne"
+            },
+            {
+              "left": "continuité",
+              "right": "une même couche a le même âge partout"
+            },
+            {
+              "left": "recoupement",
+              "right": "ce qui coupe est plus récent"
+            },
+            {
+              "left": "inclusion",
+              "right": "un fragment est plus ancien que la roche"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets l’histoire de la falaise dans l’ordre.",
+          "explanation": "Granite en profondeur, altération en surface, dépôt marin, cassure, puis coulée volcanique par-dessus.",
+          "items": [
+            "un granite se forme en profondeur",
+            "il est porté en surface et altéré",
+            "la mer dépose du calcaire à fossiles",
+            "une faille casse le tout, puis un basalte coule dessus"
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Une faille traverse plusieurs couches. Qu’en déduit-on ?",
+          "explanation": "Qu’elle est plus récente que toutes les couches qu’elle coupe. C’est le principe de recoupement.",
+          "options": [
+            {
+              "text": "elle est plus récente que les couches coupées",
+              "correct": true
+            },
+            {
+              "text": "elle est plus ancienne"
+            },
+            {
+              "text": "elle a le même âge"
+            },
+            {
+              "text": "on ne peut rien en déduire"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi faut-il l’ordre et les dates, et pas seulement l’un des deux ?",
+          "explanation": "Sans l’ordre, une date isolée ne raconte rien ; sans les dates, un ordre ne se compare pas à un autre ailleurs.",
+          "options": [
+            {
+              "text": "l’un situe dans l’histoire locale, l’autre permet de comparer",
+              "correct": true
+            },
+            {
+              "text": "les dates sont plus fiables"
+            },
+            {
+              "text": "l’ordre suffit en réalité"
+            },
+            {
+              "text": "c’est une exigence administrative"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signifie une surface irrégulière entre un granite et des calcaires ?",
+          "explanation": "Que le granite a été porté en surface et altéré avant le dépôt des calcaires. Le creux raconte un temps où rien ne se déposait.",
+          "options": [
+            {
+              "text": "le granite a été altéré en surface avant le dépôt",
+              "correct": true
+            },
+            {
+              "text": "les deux roches se sont formées ensemble"
+            },
+            {
+              "text": "une faille est passée là"
+            },
+            {
+              "text": "le calcaire a fondu le granite"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le géologue mesure d’abord, et ordonne ensuite.",
+          "explanation": "Faux, et c’est l’inverse depuis deux siècles : l’ordre se lit sans instrument, et les dates viennent encadrer cet ordre.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

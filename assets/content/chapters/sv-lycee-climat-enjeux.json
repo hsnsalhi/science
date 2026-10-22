@@ -1,0 +1,569 @@
+{
+  "chapter": "svt-lycee-climat-et-enjeux-planetaires",
+  "lessons": [
+    {
+      "id": "les-archives-du-climat",
+      "title": "Les archives du climat",
+      "subtitle": "Mille mètres de glace, et huit cent mille ans de mesures.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’horloge qui date les archives",
+          "body": "Pousse le curseur : la proportion de noyaux restants donne un âge. C’est l’une des méthodes qui datent les carottes de glace et les sédiments. Attention à ne pas confondre : la radioactivité sert ici à dater l’archive, et pas du tout à décrire ce que devient le dioxyde de carbone.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’une carotte de glace contient",
+          "body": "La neige qui tombe emprisonne de l’air, et cet air reste piégé quand la neige se tasse en glace. Une bulle de glace est donc un échantillon d’atmosphère ancienne.\n\nOn mesure directement la composition de cet air : la teneur en dioxyde de carbone et en méthane s’y lit, sans modèle intermédiaire.\n\nLa température, elle, se déduit du rapport entre deux isotopes de l’oxygène dans la glace elle-même. Ce rapport dépend de la température à laquelle la vapeur s’est condensée.\n\nDeux informations, donc, et de natures différentes : la composition est mesurée, la température est reconstituée. C’est une distinction qui compte, et qu’on omet souvent.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que les carottes ont établi",
+          "body": "Le forage de l’Antarctique le plus profond remonte à 800 000 ans, soit huit cycles glaciaires complets.\n\nSur toute cette durée, la teneur en dioxyde de carbone est restée entre 180 et 300 parties par million : environ 180 au fond des glaciations, environ 280 pendant les périodes chaudes.\n\nElle est aujourd’hui au-delà de 420 parties par million, soit 40 % de plus que la plus haute valeur de ces huit cent mille ans.\n\nCe n’est pas une projection, ni un modèle, ni une interprétation. C’est une mesure directe d’un côté, et une mesure directe de l’autre.",
+          "formula": "180 à 300 ppm sur 800 000 ans ; plus de 420 aujourd’hui",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que les archives montrent aussi",
+          "body": "Les cycles glaciaires sont réels, et ils ne sont pas causés par le dioxyde de carbone : ils viennent de variations lentes de l’orbite et de l’axe de la Terre, calculées par Milankovitch dans les années 1920.\n\nLe dioxyde de carbone y joue le rôle d’un amplificateur : une fois le réchauffement amorcé, l’océan en relâche, ce qui réchauffe davantage.\n\nUn lecteur pressé en tire que le gaz suit la température, donc qu’il ne la cause pas. C’est confondre un cas et une loi : dans les cycles naturels, il suit et amplifie ; aujourd’hui, il est injecté d’abord.\n\nLes archives ne contiennent donc aucun précédent de la situation actuelle. C’est leur limite, et c’est aussi ce qu’elles ont de plus inquiétant.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Trois archives, trois portées",
+          "body": "La glace donne la composition de l’air et une température, sur 800 000 ans, et seulement aux pôles.\n\nLes sédiments marins donnent des températures d’eau et des assemblages de micro-organismes, sur des dizaines de millions d’années, partout où il y a un fond.\n\nLes cernes d’arbres donnent une résolution annuelle, et ne remontent qu’à quelques milliers d’années.\n\nAucune ne dit tout, et c’est leur recoupement qui vaut. Une reconstitution appuyée sur une seule archive est une reconstitution fragile, et les paléoclimatologues passent l’essentiel de leur temps à les confronter.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment mesure-t-on la teneur en dioxyde de carbone d’une atmosphère ancienne ?",
+          "explanation": "Directement, dans l’air emprisonné en bulles dans la glace. Aucun modèle n’intervient.",
+          "options": [
+            {
+              "text": "on analyse l’air piégé dans les bulles de glace",
+              "correct": true
+            },
+            {
+              "text": "on la déduit de la température"
+            },
+            {
+              "text": "on la calcule par un modèle"
+            },
+            {
+              "text": "on la lit dans les fossiles"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cette information est-elle mesurée directement, ou reconstituée ?",
+          "explanation": "La composition de l’air est mesurée ; la température se déduit du rapport entre isotopes de l’oxygène. Deux natures de données.",
+          "categories": [
+            "mesurée directement",
+            "reconstituée"
+          ],
+          "items": [
+            {
+              "text": "la teneur en CO₂ de l’air piégé",
+              "category": 0
+            },
+            {
+              "text": "la teneur en méthane",
+              "category": 0
+            },
+            {
+              "text": "la température de l’époque",
+              "category": 1
+            },
+            {
+              "text": "le climat régional d’alors",
+              "category": 1
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Sur combien de milliers d’années remonte le plus profond forage antarctique ?",
+          "explanation": "800 000 ans, soit huit cycles glaciaires complets.",
+          "min": 0,
+          "max": 2000,
+          "answer": 800,
+          "tolerance": 100,
+          "unit": "milliers d’années",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle était la teneur maximale en CO₂ sur ces 800 000 ans, en ppm ?",
+          "explanation": "Environ 300 ppm, contre plus de 420 aujourd’hui : 40 % de plus que tout ce que la période contenait.",
+          "min": 0,
+          "max": 600,
+          "answer": 300,
+          "tolerance": 30,
+          "unit": "ppm",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui cause les cycles glaciaires ?",
+          "explanation": "Des variations lentes de l’orbite et de l’axe terrestres, calculées par Milankovitch. Le CO₂ y joue le rôle d’amplificateur.",
+          "options": [
+            {
+              "text": "des variations de l’orbite et de l’axe terrestres",
+              "correct": true
+            },
+            {
+              "text": "les variations du CO₂"
+            },
+            {
+              "text": "les éruptions volcaniques"
+            },
+            {
+              "text": "les courants océaniques seuls"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Puisque le CO₂ a suivi la température dans les cycles passés, il ne peut pas la causer.",
+          "explanation": "Faux : c’est confondre un cas et une loi. Dans les cycles naturels il suit et amplifie ; aujourd’hui il est injecté d’abord.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-cycle-du-carbone",
+      "title": "Le cycle du carbone, et ce qui l’a déséquilibré",
+      "subtitle": "Des flux énormes qui s’annulaient, et un petit ajout qui ne s’annule pas.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Par où le carbone passe dans le vivant",
+          "body": "Retire l’herbe et regarde tout s’éteindre : c’est elle qui fait entrer le carbone dans le réseau, par la photosynthèse. Chaque flèche du réseau est aussi un transfert de carbone, et les décomposeurs, que la figure ne montre pas, le renvoient à l’atmosphère.",
+          "figureId": "chaine-alimentaire",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Les réservoirs, en gigatonnes de carbone",
+          "body": "L’atmosphère en contient environ 880 gigatonnes. La végétation et les sols, environ 2 300. L’océan, environ 38 000 — quarante fois l’atmosphère.\n\nLes flux naturels sont énormes : la photosynthèse retire environ 120 gigatonnes par an, et la respiration plus la décomposition en rendent à peu près autant.\n\nL’océan en absorbe et en relâche environ 80 par an, à peu près à l’équilibre lui aussi.\n\nLes émissions humaines sont d’environ 10 gigatonnes de carbone par an, soit un douzième du flux de la photosynthèse. Petit en comparaison — et le seul qui ne soit pas compensé.",
+          "formula": "atmosphère 880 Gt ; océan 38 000 Gt ; émissions 10 Gt/an",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi un petit flux non compensé change tout",
+          "body": "Un robinet qui verse cent litres par minute dans une baignoire dont la bonde évacue cent litres par minute laisse le niveau constant.\n\nAjouter un robinet de huit litres par minute fait monter le niveau, même s’il est douze fois plus petit que l’autre. Ce qui compte n’est pas la taille du flux : c’est qu’il ne soit pas repris.\n\nSur les dix gigatonnes émises chaque année, l’océan en absorbe environ un quart et la végétation un peu moins d’un tiers. Il reste environ 45 % dans l’atmosphère, et c’est ce reste qui s’accumule.\n\nC’est pourquoi la teneur monte d’environ 2,5 parties par million par an, mesurées sans interruption depuis 1958 à l’observatoire de Mauna Loa.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les absorptions ne sont pas gratuites",
+          "body": "L’océan absorbe un quart des émissions, et cela ressemble à une bonne nouvelle. Le dioxyde de carbone dissous forme un acide.\n\nLe pH de surface des océans est passé d’environ 8,2 à 8,1 depuis l’ère préindustrielle. Un dixième d’unité paraît peu, et comme l’échelle est logarithmique, cela représente environ 30 % d’acidité en plus.\n\nLes organismes qui fabriquent un squelette calcaire — coraux, mollusques, certains planctons — y dépensent plus d’énergie, et au-delà d’un seuil n’y parviennent plus.\n\nCette acidification ne dépend d’aucun modèle climatique : c’est une réaction chimique, et elle se mesure. On l’appelle parfois l’autre problème du dioxyde de carbone.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi arrêter d’émettre ne fait pas redescendre",
+          "body": "Le dioxyde de carbone n’est pas détruit : il est redistribué entre l’atmosphère, l’océan et la biosphère.\n\nCette redistribution est lente. Une partie de ce qui a été émis sera encore dans l’atmosphère dans mille ans, et une fraction dans dix mille.\n\nArrêter les émissions arrêterait donc la montée, et ne ferait pas revenir en arrière à l’échelle d’une vie humaine.\n\nC’est la différence entre un robinet et une dette. Fermer le robinet empêche le niveau de monter ; il ne vide pas la baignoire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Combien de gigatonnes de carbone l’océan contient-il ?",
+          "explanation": "Environ 38 000, soit une quarantaine de fois l’atmosphère, qui en contient environ 880.",
+          "min": 0,
+          "max": 100000,
+          "answer": 38000,
+          "tolerance": 4000,
+          "unit": "Gt",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un flux de 10 Gt par an change-t-il tout, face à 120 Gt de photosynthèse ?",
+          "explanation": "Parce qu’il n’est pas compensé. Ce qui compte n’est pas la taille du flux, mais qu’il ne soit pas repris.",
+          "options": [
+            {
+              "text": "parce qu’il n’est compensé par aucun flux inverse",
+              "correct": true
+            },
+            {
+              "text": "parce qu’il est plus concentré"
+            },
+            {
+              "text": "parce qu’il vient du sol"
+            },
+            {
+              "text": "parce qu’il est plus chaud"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part des émissions humaines reste dans l’atmosphère, en pour-cent ?",
+          "explanation": "Environ 45 % : l’océan en absorbe un quart et la végétation un peu moins d’un tiers.",
+          "min": 0,
+          "max": 100,
+          "answer": 45,
+          "tolerance": 7,
+          "unit": "%",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien de ppm la teneur en CO₂ monte-t-elle chaque année ?",
+          "explanation": "Environ 2,5 ppm par an, mesurés sans interruption depuis 1958 à Mauna Loa.",
+          "min": 0,
+          "max": 20,
+          "answer": 2.5,
+          "tolerance": 0.7,
+          "unit": "ppm",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que provoque l’absorption de CO₂ par l’océan ?",
+          "explanation": "Une acidification : le pH de surface est passé de 8,2 à 8,1, soit environ 30 % d’acidité en plus.",
+          "options": [
+            {
+              "text": "une acidification d’environ 30 %",
+              "correct": true
+            },
+            {
+              "text": "un réchauffement de l’eau"
+            },
+            {
+              "text": "une montée du niveau"
+            },
+            {
+              "text": "rien de mesurable"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’acidification des océans dépend des modèles climatiques.",
+          "explanation": "Faux. C’est une réaction chimique mesurée directement, indépendante de tout modèle.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-qui-est-deja-mesure",
+      "title": "Ce qui est déjà mesuré",
+      "subtitle": "Séparer les observations des projections, une fois pour toutes.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Zéro degré, et ce qui se joue à ce seuil",
+          "body": "Déplace la température autour de zéro et regarde les particules passer de l’état rangé à l’état glissant. Toute la question des glaces tient dans ce seuil : un demi-degré de plus ne change rien à moins vingt, et change tout à moins un.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Cinq observations, et leurs chiffres",
+          "body": "La température moyenne de surface a augmenté d’environ 1,2 degré depuis la fin du dix-neuvième siècle. Ce n’est pas une projection : c’est une moyenne de mesures.\n\nLe niveau des mers a monté d’environ 20 centimètres depuis 1900, et monte actuellement d’environ 4 millimètres par an.\n\nLa banquise arctique d’été a perdu environ 40 % de sa surface depuis les premières mesures par satellite, en 1979.\n\nLes glaciers de montagne reculent presque partout, et la teneur en dioxyde de carbone monte comme la leçon précédente l’a dit. Cinq grandeurs, cinq séries de mesures, aucune hypothèse.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Pourquoi la mer monte, en deux parts",
+          "body": "La première cause est la dilatation : une eau plus chaude occupe plus de volume, même sans qu’un seul glaçon fonde. Elle compte pour environ la moitié de la hausse observée.\n\nLa seconde est l’apport d’eau par la fonte des glaces posées sur la terre : glaciers de montagne, Groenland, Antarctique.\n\nLa banquise, elle, ne compte pas : elle flotte déjà, et sa fonte ne change pas le niveau, exactement comme un glaçon qui fond dans un verre plein ne le fait pas déborder.\n\nC’est une distinction qu’on inverse souvent. La banquise a d’autres effets considérables — elle réfléchissait la lumière, l’eau sombre l’absorbe — mais pas sur le niveau.",
+          "formula": "dilatation ≈ moitié ; glaces terrestres ≈ moitié ; banquise = 0",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qui est projeté, et avec quelle incertitude",
+          "body": "Les projections ne dépendent pas seulement de la physique : elles dépendent d’abord des émissions futures, que personne ne connaît.\n\nC’est pourquoi un rapport ne donne jamais un chiffre mais plusieurs, un par trajectoire d’émissions. Lire « la température montera de 1,5 à 4,5 degrés » sans dire selon quel scénario revient à ne rien dire.\n\nÀ scénario fixé, l’incertitude physique restante est réelle mais bien plus faible : elle vient surtout de la réponse des nuages, et elle se resserre de rapport en rapport.\n\nLa plus grande incertitude sur le climat de 2100 est donc une incertitude sur les décisions humaines, et non sur la physique. C’est une bonne nouvelle, au sens strict : cela signifie que le résultat dépend encore de ce qu’on fait.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’il faut savoir distinguer, en une phrase",
+          "body": "Une observation est une mesure déjà faite : elle a une incertitude de mesure, et aucune incertitude de scénario.\n\nUne projection est un calcul conditionnel : si les émissions suivent telle trajectoire, alors telle grandeur fera telle chose.\n\nConfondre les deux conduit aux deux erreurs symétriques : traiter une mesure comme une prédiction discutable, ou traiter une projection comme une prédiction certaine.\n\nDevant tout chiffre de climat, la question « mesuré ou projeté ? » est donc la première à poser, et elle départage à elle seule la plupart des discussions.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "De combien de degrés la température moyenne a-t-elle augmenté depuis la fin du dix-neuvième siècle ?",
+          "explanation": "Environ 1,2 degré. C’est une moyenne de mesures, et non une projection.",
+          "min": 0,
+          "max": 6,
+          "answer": 1.2,
+          "tolerance": 0.3,
+          "unit": "°C",
+          "id": "q1"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "De combien de centimètres le niveau des mers a-t-il monté depuis 1900 ?",
+          "explanation": "Environ 20 centimètres, et la hausse est actuellement d’environ 4 millimètres par an.",
+          "min": 0,
+          "max": 100,
+          "answer": 20,
+          "tolerance": 5,
+          "unit": "cm",
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "La fonte de la banquise fait-elle monter le niveau des mers ?",
+          "explanation": "Non : elle flotte déjà. Comme un glaçon qui fond dans un verre plein, elle ne le fait pas déborder.",
+          "options": [
+            {
+              "text": "non, elle flotte déjà",
+              "correct": true
+            },
+            {
+              "text": "oui, c’est la cause principale"
+            },
+            {
+              "text": "oui, pour moitié"
+            },
+            {
+              "text": "cela dépend de la saison"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Cela fait-il monter le niveau de la mer ?",
+          "explanation": "La dilatation thermique et la fonte des glaces terrestres, oui, pour moitié chacune. La banquise, non, puisqu’elle flotte.",
+          "categories": [
+            "fait monter le niveau",
+            "ne le fait pas monter"
+          ],
+          "items": [
+            {
+              "text": "la dilatation de l’eau chaude",
+              "category": 0
+            },
+            {
+              "text": "la fonte du Groenland",
+              "category": 0
+            },
+            {
+              "text": "la fonte de la banquise arctique",
+              "category": 1
+            },
+            {
+              "text": "la fonte d’un iceberg à la dérive",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la plus grande incertitude sur le climat de 2100 ?",
+          "explanation": "Des émissions futures, c’est-à-dire des décisions humaines. L’incertitude physique restante est bien plus faible.",
+          "options": [
+            {
+              "text": "des décisions humaines sur les émissions",
+              "correct": true
+            },
+            {
+              "text": "de la réponse des nuages"
+            },
+            {
+              "text": "de la précision des thermomètres"
+            },
+            {
+              "text": "du comportement du Soleil"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "« La température montera de 1,5 à 4,5 degrés » est une information complète.",
+          "explanation": "Faux. Sans dire selon quel scénario d’émissions, la fourchette ne dit rien : chaque chiffre correspond à une trajectoire différente.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-lire-une-projection",
+      "title": "Défi : lire une projection",
+      "subtitle": "Six questions à poser à tout graphique de climat.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une courbe moyenne, et des individus imprévisibles",
+          "body": "Pousse le curseur et compte : la courbe théorique est lisse, le comptage réel saute d’un tirage à l’autre. Aucun noyau particulier n’obéit à la courbe. Une projection climatique a exactement cette nature — elle décrit une moyenne, pas l’année prochaine à l’endroit où tu habites.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Le seuil, et pourquoi les moyennes trompent",
+          "body": "Place la température juste sous zéro, puis juste au-dessus : le changement d’état est brutal alors que la température a à peine bougé. Une moyenne qui monte de deux degrés peut donc faire franchir ce seuil très souvent, ou presque jamais, selon la région. La moyenne ne dit pas où.",
+          "figureId": "etats-matiere",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Les six questions",
+          "body": "Quelle grandeur, exactement ? Une température moyenne mondiale, une température locale, un maximum, un nombre de jours au-delà d’un seuil ne se comparent pas entre eux.\n\nPar rapport à quoi ? Une hausse se compte depuis une référence, et changer la référence change le chiffre.\n\nMesuré ou projeté ? Et si projeté : selon quel scénario d’émissions ?\n\nQuelle incertitude, et qu’est-ce qu’elle recouvre ? Et enfin : qui publie, et le travail a-t-il été relu par des pairs ? Six questions, et la plupart des graphiques qui circulent échouent dès la troisième.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi la moyenne mondiale est trompeuse",
+          "body": "Une hausse moyenne de 1,2 degré ne se répartit pas également. L’Arctique s’est réchauffé trois à quatre fois plus vite que la moyenne mondiale.\n\nLes continents se réchauffent plus que les océans, parce que l’eau absorbe une énorme quantité de chaleur sans changer beaucoup de température.\n\nEt ce qui affecte les gens n’est presque jamais une moyenne : c’est un nombre de jours au-delà d’un seuil, un cumul de pluie en trois heures, une date de gel tardif.\n\nUne moyenne qui monte de deux degrés peut multiplier par cinq le nombre de jours au-delà de 35 degrés, parce qu’on déplace toute une distribution par rapport à un seuil fixe. C’est l’effet le plus contre-intuitif du sujet.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "On connaît les climats passés par des archives où la composition de l’air est mesurée et la température reconstituée. Huit cent mille ans entre 180 et 300 ppm, et plus de 420 aujourd’hui.\n\nLe cycle du carbone était à l’équilibre, et un flux douze fois plus petit que la photosynthèse suffit à le rompre parce qu’il n’est pas compensé.\n\nCinq grandeurs sont mesurées, pas projetées. La banquise ne fait pas monter la mer, et la dilatation en fait la moitié.\n\nEt la plus grande incertitude sur 2100 porte sur les décisions humaines. Six questions suffisent à trier ce qui circule, et la troisième — mesuré ou projeté — en élimine déjà la moitié.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les premières questions à poser à un graphique de climat.",
+          "explanation": "Quelle grandeur, par rapport à quelle référence, mesurée ou projetée, et selon quel scénario.",
+          "items": [
+            "quelle grandeur exactement",
+            "par rapport à quelle référence",
+            "mesurée ou projetée",
+            "selon quel scénario d’émissions"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "De combien de fois l’Arctique s’est-il réchauffé plus vite que la moyenne mondiale ?",
+          "explanation": "Trois à quatre fois plus vite. Une moyenne mondiale ne se répartit pas également.",
+          "options": [
+            {
+              "text": "trois à quatre fois",
+              "correct": true
+            },
+            {
+              "text": "autant que la moyenne"
+            },
+            {
+              "text": "deux fois moins vite"
+            },
+            {
+              "text": "dix fois"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les continents se réchauffent-ils plus que les océans ?",
+          "explanation": "Parce que l’eau absorbe une énorme quantité de chaleur sans changer beaucoup de température.",
+          "options": [
+            {
+              "text": "l’eau absorbe beaucoup de chaleur sans se réchauffer autant",
+              "correct": true
+            },
+            {
+              "text": "les continents reçoivent plus de soleil"
+            },
+            {
+              "text": "les océans réfléchissent la lumière"
+            },
+            {
+              "text": "les villes dégagent de la chaleur"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une hausse moyenne de deux degrés peut-elle quintupler les jours au-delà de 35 degrés ?",
+          "explanation": "Parce qu’on déplace toute une distribution par rapport à un seuil fixe : ce qui dépassait rarement dépasse souvent.",
+          "options": [
+            {
+              "text": "on déplace une distribution entière par rapport à un seuil fixe",
+              "correct": true
+            },
+            {
+              "text": "les canicules durent plus longtemps"
+            },
+            {
+              "text": "les thermomètres sont mal placés"
+            },
+            {
+              "text": "la moyenne est mal calculée"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qui affecte réellement les gens, plutôt qu’une moyenne ?",
+          "explanation": "Un nombre de jours au-delà d’un seuil, un cumul de pluie en quelques heures, une date de gel tardif. Jamais une moyenne.",
+          "options": [
+            {
+              "text": "le nombre de jours au-delà d’un seuil",
+              "correct": true
+            },
+            {
+              "text": "un cumul de pluie en trois heures",
+              "correct": true
+            },
+            {
+              "text": "une date de gel tardif",
+              "correct": true
+            },
+            {
+              "text": "la moyenne annuelle mondiale"
+            },
+            {
+              "text": "la teneur en CO₂ en ppm"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une projection climatique prédit la météo de l’année prochaine dans une région donnée.",
+          "explanation": "Faux. Elle décrit une moyenne et une distribution, comme la courbe de décroissance décrit un échantillon sans prédire quel noyau cassera.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

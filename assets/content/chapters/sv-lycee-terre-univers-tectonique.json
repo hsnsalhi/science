@@ -1,0 +1,609 @@
+{
+  "chapter": "svt-lycee-la-terre-dans-l-univers-et-la-tectonique",
+  "lessons": [
+    {
+      "id": "la-terre-parmi-les-planetes",
+      "title": "La Terre parmi les planètes",
+      "subtitle": "Une planète banale, à une exception près.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Huit planètes, et les distances réelles",
+          "body": "Choisis une planète et regarde sa distance, puis le temps que la lumière met à la parcourir. Zoome pour comprendre pourquoi aucune image de manuel n’est à l’échelle : si la Terre était à un centimètre du Soleil, Neptune serait à trente.",
+          "figureId": "systeme-solaire",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux familles de planètes, et une frontière",
+          "body": "Les quatre premières sont petites, rocheuses, denses, et possèdent peu ou pas de satellites. Mercure, Vénus, la Terre, Mars.\n\nLes quatre suivantes sont immenses, gazeuses ou glacées, peu denses, et entourées de dizaines de lunes.\n\nLa frontière n’est pas un hasard : près du Soleil, la chaleur a empêché les glaces de se condenser, et seules les roches et les métaux ont pu s’agglomérer. Au-delà d’une certaine distance, l’eau, le méthane et l’ammoniac ont gelé et fourni bien plus de matière.\n\nLa composition d’une planète dépend donc d’abord de l’endroit où elle s’est formée. C’est une loi générale, retrouvée depuis autour d’autres étoiles.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce qui rend une planète habitable",
+          "body": "La distance au Soleil fixe la température d’équilibre. Trop près, l’eau s’évapore et s’échappe ; trop loin, elle gèle.\n\nMais la distance ne suffit pas. Vénus est à peine plus près que la Terre et sa surface atteint 460 degrés, à cause de son atmosphère de dioxyde de carbone.\n\nIl faut aussi une masse suffisante pour retenir une atmosphère : Mars, dix fois plus légère, a laissé la sienne s’échapper.\n\nEt il faut un champ magnétique, qui protège cette atmosphère du vent solaire. Il vient du noyau liquide en mouvement, donc de la structure interne. Trois conditions, dont deux ne se voient pas de l’extérieur.",
+          "formula": "distance, masse, et champ magnétique : les trois comptent",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la Terre a et que Mars n’a plus",
+          "body": "Mars a eu de l’eau liquide, des rivières et probablement un océan. Les traces sont là, et les sondes les photographient.\n\nElle a aussi eu un champ magnétique, dont on lit la trace dans l’aimantation de ses roches anciennes. Il s’est arrêté il y a environ quatre milliards d’années, quand son noyau a cessé d’être assez chaud pour couler.\n\nSans champ, le vent solaire a arraché l’atmosphère. Sans atmosphère, l’eau s’est évaporée ou a gelé.\n\nLe lien est donc direct : une planète petite refroidit vite, donc perd son noyau liquide, donc son champ, donc son air, donc son eau. La taille décide, et Mars a fait dix fois moins que la Terre.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’on cherche autour des autres étoiles",
+          "body": "Plus de cinq mille planètes sont connues hors du Système solaire, et la méthode principale les détecte par la petite baisse de lumière qu’elles causent en passant devant leur étoile.\n\nOn en déduit leur taille et leur période, donc leur distance. Cela donne la première des trois conditions, et seulement elle.\n\nLa masse se mesure parfois, l’atmosphère commence tout juste à s’analyser par spectroscopie, et le champ magnétique ne se mesure pas du tout.\n\nDire d’une planète qu’elle est « habitable » signifie donc aujourd’hui qu’elle est à la bonne distance. C’est une condition sur trois, et les titres de presse l’oublient régulièrement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Planète rocheuse, ou planète géante ?",
+          "explanation": "Les quatre premières sont petites et denses, les quatre suivantes immenses et peu denses. La frontière est celle du gel des glaces.",
+          "categories": [
+            "rocheuse",
+            "géante"
+          ],
+          "items": [
+            {
+              "text": "Mercure",
+              "category": 0
+            },
+            {
+              "text": "Mars",
+              "category": 0
+            },
+            {
+              "text": "Jupiter",
+              "category": 1
+            },
+            {
+              "text": "Neptune",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les planètes proches du Soleil sont-elles rocheuses ?",
+          "explanation": "Parce que la chaleur y a empêché les glaces de se condenser : seules roches et métaux ont pu s’agglomérer.",
+          "options": [
+            {
+              "text": "la chaleur a empêché les glaces de se condenser",
+              "correct": true
+            },
+            {
+              "text": "le Soleil a attiré les gaz"
+            },
+            {
+              "text": "elles se sont formées plus tard"
+            },
+            {
+              "text": "elles ont perdu leurs gaz ensuite"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "De quoi l’habitabilité dépend-elle ?",
+          "explanation": "De la distance, de la masse — pour retenir une atmosphère — et du champ magnétique, qui la protège du vent solaire.",
+          "options": [
+            {
+              "text": "la distance à l’étoile",
+              "correct": true
+            },
+            {
+              "text": "une masse suffisante",
+              "correct": true
+            },
+            {
+              "text": "un champ magnétique",
+              "correct": true
+            },
+            {
+              "text": "la présence de satellites"
+            },
+            {
+              "text": "la vitesse de rotation"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle température atteint la surface de Vénus, en degrés ?",
+          "explanation": "Environ 460 degrés, à cause de son atmosphère de dioxyde de carbone. Elle est à peine plus près du Soleil que la Terre.",
+          "min": 0,
+          "max": 1000,
+          "answer": 460,
+          "tolerance": 40,
+          "unit": "°C",
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets dans l’ordre ce qui est arrivé à Mars.",
+          "explanation": "Petite, elle refroidit vite ; son noyau cesse de couler, le champ s’arrête, le vent solaire arrache l’air, et l’eau s’en va.",
+          "items": [
+            "Mars, dix fois plus légère, refroidit vite",
+            "son noyau cesse d’être liquide",
+            "le champ magnétique s’arrête",
+            "le vent solaire arrache l’atmosphère, et l’eau s’en va"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La seule distance au Soleil suffit à dire si une planète est habitable.",
+          "explanation": "Faux. Vénus est presque à la même distance que la Terre et sa surface est à 460 degrés. La masse et le champ magnétique comptent autant.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-interieur-lu-par-les-ondes",
+      "title": "L’intérieur de la Terre, lu par les ondes",
+      "subtitle": "Personne n’est descendu à douze kilomètres, et l’on connaît les six mille.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une onde longitudinale, et sa célérité selon le milieu",
+          "body": "Change le milieu — air, hélium, eau — et la fréquence. La figure montre un son, c’est-à-dire une onde de compression, et elle insiste sur un point : les particules vont et viennent sur place au lieu d’avancer. Une onde sismique de type P est exactement cela, dans la roche, à environ six kilomètres par seconde.",
+          "figureId": "onde",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Deux sortes d’ondes, et une différence décisive",
+          "body": "Les ondes P sont des ondes de compression, longitudinales, comme le son de la figure. Elles traversent les solides et les liquides.\n\nLes ondes S sont des ondes de cisaillement, transversales : elles font glisser les couches les unes sur les autres. Un liquide ne résiste pas au cisaillement, donc une onde S ne traverse pas un liquide.\n\nLes P vont à environ 6 km/s dans la croûte, les S à 3,5. Le décalage entre leurs arrivées donne la distance au séisme, et trois stations suffisent alors à le localiser.\n\nC’est la même logique que les satellites de localisation, avec un siècle d’avance.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Comment on a découvert le noyau liquide",
+          "body": "Un séisme devrait être enregistré partout. Or il existe, à l’opposé de l’épicentre, une zone où les ondes S n’arrivent jamais.\n\nRichard Oldham le remarque en 1906, et la seule explication est qu’elles ont rencontré un milieu liquide en chemin. Beno Gutenberg en calcule la profondeur en 1913 : 2 900 kilomètres.\n\nInge Lehmann va plus loin en 1936 : en examinant des réflexions faibles, elle démontre qu’au centre de ce liquide se trouve un noyau solide.\n\nPersonne n’a jamais vu aucune de ces deux couches. Le plus profond forage humain atteint 12 kilomètres, soit deux millièmes du rayon terrestre. Tout le reste est connu par les ondes.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La structure, du centre à la surface",
+          "body": "Un noyau interne solide, de fer, jusqu’à 1 220 kilomètres de rayon. Un noyau externe liquide, de fer aussi, jusqu’à 3 480 kilomètres.\n\nPuis le manteau, solide mais capable de fluer très lentement, jusqu’à 30 ou 100 kilomètres sous la surface.\n\nPuis la croûte : 7 kilomètres sous les océans, 30 à 70 sous les continents.\n\nLe mouvement du noyau externe liquide engendre le champ magnétique. La capacité du manteau à fluer permet la tectonique des plaques. Deux propriétés mécaniques, deux conséquences majeures — et l’une protège notre atmosphère pendant que l’autre déplace les continents.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La chaleur interne, et d’où elle vient",
+          "body": "On dit volontiers que la Terre est encore chaude de sa formation. C’est vrai pour une part, et minoritaire.\n\nL’essentiel du flux de chaleur actuel vient de la radioactivité du manteau : la désintégration de l’uranium, du thorium et du potassium 40 y dégage de l’énergie en permanence.\n\nC’est ce qui explique que la Terre soit encore active après 4,5 milliards d’années, là où un simple refroidissement l’aurait figée depuis longtemps — et c’est précisément l’argument que Lord Kelvin ignorait quand il calculait un âge de la Terre cent fois trop faible.\n\nLes horloges radioactives ne servent donc pas seulement à dater. Elles sont aussi le moteur de ce qu’elles datent.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une onde S ne traverse-t-elle pas un liquide ?",
+          "explanation": "Parce qu’elle est de cisaillement, et qu’un liquide ne résiste pas au cisaillement.",
+          "options": [
+            {
+              "text": "un liquide ne résiste pas au cisaillement",
+              "correct": true
+            },
+            {
+              "text": "elle est trop lente"
+            },
+            {
+              "text": "elle est absorbée par la chaleur"
+            },
+            {
+              "text": "elle est trop faible"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert le décalage entre l’arrivée des ondes P et S ?",
+          "explanation": "À mesurer la distance au séisme : trois stations suffisent alors à le localiser.",
+          "options": [
+            {
+              "text": "mesurer la distance au séisme",
+              "correct": true
+            },
+            {
+              "text": "mesurer sa magnitude"
+            },
+            {
+              "text": "savoir s’il y aura un tsunami"
+            },
+            {
+              "text": "connaître la nature des roches"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "À quelle profondeur, en kilomètres, Gutenberg a-t-il placé le sommet du noyau liquide ?",
+          "explanation": "2 900 kilomètres, calculés en 1913 à partir de la zone d’ombre des ondes S.",
+          "min": 0,
+          "max": 6400,
+          "answer": 2900,
+          "tolerance": 200,
+          "unit": "km",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle profondeur atteint le plus profond forage humain, en kilomètres ?",
+          "explanation": "Environ 12 kilomètres, soit deux millièmes du rayon terrestre. Tout le reste est connu par les ondes.",
+          "min": 0,
+          "max": 100,
+          "answer": 12,
+          "tolerance": 2,
+          "unit": "km",
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Classe les couches du centre vers la surface.",
+          "explanation": "Noyau interne solide, noyau externe liquide, manteau capable de fluer, puis croûte.",
+          "items": [
+            "le noyau interne, solide",
+            "le noyau externe, liquide",
+            "le manteau, solide mais fluant",
+            "la croûte"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque couche à ce qu’elle rend possible.",
+          "explanation": "Le noyau liquide en mouvement engendre le champ magnétique ; le manteau qui flue permet la tectonique.",
+          "pairs": [
+            {
+              "left": "le noyau externe liquide",
+              "right": "le champ magnétique"
+            },
+            {
+              "left": "le manteau qui flue",
+              "right": "la tectonique des plaques"
+            },
+            {
+              "left": "la croûte océanique",
+              "right": "un plancher recyclé en permanence"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-plaques-et-ce-qui-les-meut",
+      "title": "Les plaques, et ce qui les meut",
+      "subtitle": "Une idée rejetée cinquante ans faute de moteur.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Là où le magma arrive, et pourquoi il y arrive",
+          "body": "Parcours les quatre états. Le magma vient de très bas, et la question que la tectonique résout est : pourquoi vient-il là, et pas ailleurs ? Les volcans ne sont pas répartis au hasard sur le globe — ils dessinent les bords des plaques, et les deux types d’éruption se répartissent selon le type de bord.",
+          "figureId": "volcan",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Wegener, et pourquoi on ne l’a pas cru",
+          "body": "Alfred Wegener propose en 1912 que les continents aient été réunis. Ses arguments sont bons : la forme des côtes, les mêmes fossiles de part et d’autre de l’Atlantique, les mêmes chaînes de montagnes interrompues, des traces glaciaires en Afrique équatoriale.\n\nIl est rejeté pendant cinquante ans, et pas par entêtement : il ne proposait aucun mécanisme crédible. Faire glisser un continent sur le fond océanique est mécaniquement impossible, et ses contradicteurs avaient raison sur ce point.\n\nLa solution vient de la mer. Harry Hess propose en 1962 que ce n’est pas le continent qui glisse : c’est le plancher océanique qui se fabrique au milieu et s’écarte.\n\nVine et Matthews le prouvent en 1963 par les bandes magnétiques symétriques de part et d’autre des dorsales. Une bonne idée sans mécanisme attend ; une fois le mécanisme trouvé, elle est admise en six ans.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Vérifier l’âge de l’Atlantique, à la main",
+          "body": "L’Atlantique s’élargit d’environ 2,5 centimètres par an, mesuré aujourd’hui par satellite et confirmé par les bandes magnétiques.\n\nSa largeur est d’environ 5 000 kilomètres, soit 500 000 000 centimètres.\n\nDivisé par 2,5, cela donne 200 millions d’années. Et c’est exactement l’âge maximal de la croûte océanique, mesuré indépendamment par les horloges radioactives.\n\nDeux mesures sans aucun rapport entre elles — une vitesse actuelle et une décroissance radioactive — tombent sur le même nombre. C’est le genre de concordance qui transforme une hypothèse en fait établi.",
+          "formula": "5 000 km ÷ 2,5 cm/an = 200 millions d’années",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le moteur n’est pas celui qu’on enseigne souvent",
+          "body": "On dessine volontiers des cellules de convection dans le manteau, poussant les plaques comme un tapis roulant. L’image est trop simple.\n\nLa force dominante est la traction du panneau plongeant : une plaque océanique froide est plus dense que le manteau chaud, elle s’enfonce de son propre poids et tire le reste derrière elle.\n\nS’y ajoute la poussée de la dorsale, qui est en réalité un glissement : la lithosphère neuve est haute et chaude, et elle glisse par gravité le long de sa propre pente.\n\nVérification : les plaques dont une grande partie du pourtour plonge, comme la plaque Pacifique, vont trois à cinq fois plus vite que celles qui ne plongent nulle part. Le moteur est bien celui qui tire.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que la tectonique explique d’un coup",
+          "body": "La répartition des séismes, qui dessine les bords de plaques avec une netteté que rien d’autre n’expliquait.\n\nCelle des volcans, et les deux types d’éruption selon le type de bord.\n\nLes chaînes de montagnes, les océans, et la jeunesse de leurs planchers.\n\nUne théorie qui explique quatre familles de faits sans rien ajouter pour chacune est le signe qu’on a trouvé le bon niveau d’explication. C’est le même critère que la leçon sur les paradoxes employait : une hypothèse taillée pour un seul fait est suspecte, et une qui en couvre quatre d’un coup cesse de l’être.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Wegener a-t-il été rejeté cinquante ans ?",
+          "explanation": "Parce qu’il ne proposait aucun mécanisme crédible : faire glisser un continent sur le fond océanique est mécaniquement impossible.",
+          "options": [
+            {
+              "text": "il ne proposait aucun mécanisme crédible",
+              "correct": true
+            },
+            {
+              "text": "ses arguments étaient faux"
+            },
+            {
+              "text": "il n’était pas géologue"
+            },
+            {
+              "text": "les fossiles n’existaient pas encore"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels arguments Wegener avançait-il ?",
+          "explanation": "La forme des côtes, les mêmes fossiles de part et d’autre, les chaînes interrompues, des traces glaciaires en Afrique équatoriale.",
+          "options": [
+            {
+              "text": "la forme des côtes",
+              "correct": true
+            },
+            {
+              "text": "les mêmes fossiles sur deux continents",
+              "correct": true
+            },
+            {
+              "text": "des chaînes de montagnes interrompues",
+              "correct": true
+            },
+            {
+              "text": "des traces glaciaires près de l’équateur",
+              "correct": true
+            },
+            {
+              "text": "les bandes magnétiques des océans"
+            },
+            {
+              "text": "les datations radioactives"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a proposé Hess en 1962 ?",
+          "explanation": "Que ce n’est pas le continent qui glisse, mais le plancher océanique qui se fabrique au milieu et s’écarte.",
+          "options": [
+            {
+              "text": "le plancher océanique se fabrique et s’écarte",
+              "correct": true
+            },
+            {
+              "text": "les continents flottent sur le magma"
+            },
+            {
+              "text": "la Terre se dilate"
+            },
+            {
+              "text": "les océans se creusent par érosion"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "5 000 km d’Atlantique à 2,5 cm par an : quel âge en millions d’années ?",
+          "explanation": "500 000 000 cm divisés par 2,5 font 200 millions d’années, exactement l’âge maximal de la croûte océanique mesuré par radioactivité.",
+          "min": 0,
+          "max": 1000,
+          "answer": 200,
+          "tolerance": 25,
+          "unit": "millions d’années",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la force dominante du mouvement des plaques ?",
+          "explanation": "La traction du panneau plongeant : une plaque froide est plus dense que le manteau et s’enfonce de son propre poids.",
+          "options": [
+            {
+              "text": "la traction du panneau qui plonge",
+              "correct": true
+            },
+            {
+              "text": "la convection du manteau, comme un tapis roulant"
+            },
+            {
+              "text": "la rotation de la Terre"
+            },
+            {
+              "text": "l’attraction de la Lune"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les plaques dont une grande partie du pourtour plonge vont plus vite que les autres.",
+          "explanation": "Vrai, trois à cinq fois plus vite. C’est la vérification qui désigne la traction du panneau plongeant comme moteur principal.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-un-ocean-et-une-chaine",
+      "title": "Défi : reconstituer un océan et une chaîne",
+      "subtitle": "Le même cycle, pris à deux moments différents.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "L’horloge qui date le plancher",
+          "body": "Pousse le curseur : la proportion restante donne un nombre de demi-vies, donc un âge. C’est ainsi qu’on a daté les basaltes du fond des océans, et qu’on a constaté qu’ils vieillissent régulièrement à mesure qu’on s’éloigne de la dorsale.",
+          "figureId": "demi-vie",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "Ce que le type d’éruption révèle du bord de plaque",
+          "body": "Compare l’éruption rouge et l’éruption grise. Les dorsales donnent des basaltes fluides, les zones de subduction des magmas visqueux et explosifs. Reconnaître le type d’éruption renseigne donc sur le type de frontière, et c’est un indice qu’on lit sur une carte.",
+          "figureId": "volcan",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le cycle de Wilson, en six temps",
+          "body": "Un continent se fracture : des failles apparaissent, un rift s’ouvre. C’est l’Afrique de l’Est aujourd’hui.\n\nLe rift s’élargit, la mer entre. C’est la mer Rouge.\n\nUne dorsale s’installe, l’océan grandit. C’est l’Atlantique.\n\nPuis une marge devient instable, le plancher plonge, l’océan se referme : c’est le Pacifique. Les deux continents finissent par entrer en collision, et leurs bords se plissent en chaîne de montagnes. C’est l’Himalaya. Le cycle dure quelques centaines de millions d’années, et il tourne en permanence, en plusieurs endroits à la fois.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’Himalaya, chiffré",
+          "body": "L’Inde s’est détachée de l’Afrique il y a environ 130 millions d’années, et a traversé un océan entier en allant jusqu’à 15 centimètres par an — très vite, pour une plaque.\n\nLa collision avec l’Asie commence il y a environ 50 millions d’années. Depuis, l’Inde avance encore de 5 centimètres par an, et cette avance se convertit en épaississement.\n\nL’Everest s’élève de quelques millimètres par an, et l’érosion en retire presque autant. Sa hauteur est donc le résultat d’une course entre deux processus, et non une valeur fixée.\n\nOn trouve des fossiles marins à 8 000 mètres d’altitude : des roches déposées au fond d’un océan disparu, portées là par la collision. C’est la preuve la plus parlante qu’une montagne est un ancien fond de mer.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "La Terre est une planète rocheuse ordinaire, et sa taille lui a permis de garder un noyau liquide — donc un champ, donc une atmosphère, donc son eau. Mars a échoué sur ce seul point.\n\nSon intérieur se connaît par les ondes, et la distinction entre ondes de compression et de cisaillement a suffi à découvrir un noyau liquide en 1906.\n\nLa tectonique a attendu cinquante ans un mécanisme, et deux mesures indépendantes l’ont établie : 2,5 centimètres par an et 200 millions d’années tombent sur le même nombre.\n\nEt un océan comme une chaîne sont deux moments du même cycle. Des fossiles marins à huit mille mètres sont l’argument qu’on retient, parce qu’il ne demande aucun calcul.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le cycle de Wilson dans l’ordre.",
+          "explanation": "Rift, mer étroite, océan avec dorsale, fermeture par subduction, collision et chaîne de montagnes.",
+          "items": [
+            "un rift s’ouvre dans un continent",
+            "la mer entre dans le rift élargi",
+            "une dorsale s’installe et l’océan grandit",
+            "le plancher plonge, l’océan se referme, et les continents se heurtent"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque région à son stade du cycle.",
+          "explanation": "L’Afrique de l’Est est un rift, la mer Rouge une mer jeune, l’Atlantique un océan en croissance, l’Himalaya une collision achevée.",
+          "pairs": [
+            {
+              "left": "l’Afrique de l’Est",
+              "right": "un rift qui s’ouvre"
+            },
+            {
+              "left": "la mer Rouge",
+              "right": "une mer jeune et étroite"
+            },
+            {
+              "left": "l’Atlantique",
+              "right": "un océan qui grandit"
+            },
+            {
+              "left": "l’Himalaya",
+              "right": "une collision de continents"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Il y a combien de millions d’années la collision Inde-Asie a-t-elle commencé ?",
+          "explanation": "Environ 50 millions d’années. L’Inde s’était détachée de l’Afrique 130 millions d’années avant notre époque.",
+          "min": 0,
+          "max": 300,
+          "answer": 50,
+          "tolerance": 10,
+          "unit": "millions d’années",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la hauteur de l’Everest n’est-elle pas une valeur fixée ?",
+          "explanation": "Parce qu’il s’élève de quelques millimètres par an et que l’érosion en retire presque autant : c’est une course entre deux processus.",
+          "options": [
+            {
+              "text": "le soulèvement et l’érosion se font concurrence",
+              "correct": true
+            },
+            {
+              "text": "les mesures sont imprécises"
+            },
+            {
+              "text": "la neige en change l’altitude"
+            },
+            {
+              "text": "la collision est terminée"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que prouvent des fossiles marins à 8 000 mètres d’altitude ?",
+          "explanation": "Qu’une montagne peut être un ancien fond de mer, porté là par une collision. C’est l’argument qui ne demande aucun calcul.",
+          "options": [
+            {
+              "text": "ces roches se sont déposées au fond d’un océan",
+              "correct": true
+            },
+            {
+              "text": "la mer est montée jusque-là"
+            },
+            {
+              "text": "des oiseaux les ont transportés"
+            },
+            {
+              "text": "ces animaux vivaient en altitude"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Quel type d’éruption attend-on à ce type de frontière ?",
+          "explanation": "Les dorsales donnent des basaltes fluides, les zones de subduction des magmas visqueux et explosifs.",
+          "categories": [
+            "éruption rouge, fluide",
+            "éruption grise, explosive"
+          ],
+          "items": [
+            {
+              "text": "une dorsale océanique",
+              "category": 0
+            },
+            {
+              "text": "un rift continental",
+              "category": 0
+            },
+            {
+              "text": "une zone de subduction",
+              "category": 1
+            },
+            {
+              "text": "un arc volcanique insulaire",
+              "category": 1
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

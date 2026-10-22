@@ -1,0 +1,622 @@
+{
+  "chapter": "svt-lycee-organisation-fonctionnelle-du-vivant",
+  "lessons": [
+    {
+      "id": "la-cellule-unite-du-vivant",
+      "title": "La cellule, unité du vivant",
+      "subtitle": "Toucher une partie, et lire ce qu’elle fait.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une cellule qu’on explore du doigt",
+          "body": "Touche une partie : son nom et son rôle s’affichent. Puis bascule entre cellule animale et cellule végétale, et repère les deux parties qui n’existent que dans l’une des deux. Ce sont elles qui expliquent presque toutes les différences entre une plante et un animal.",
+          "figureId": "cellule",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que chaque partie fait, et non seulement son nom",
+          "body": "La membrane trie : elle laisse passer certaines molécules et pas d’autres, et cette sélection consomme de l’énergie.\n\nLe noyau conserve l’information et la laisse copier, sans jamais la laisser sortir elle-même.\n\nLa mitochondrie convertit : elle transforme l’énergie du glucose en une forme utilisable par le reste de la cellule.\n\nEt dans la cellule végétale, la paroi rigidifie, la vacuole stocke et gonfle, le chloroplaste capte la lumière. Une plante tient debout sans squelette et se nourrit sans bouger : ces trois parties expliquent les deux.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Trente mille milliards de cellules",
+          "body": "Un corps humain adulte en compte environ trois fois dix puissance treize, soit trente mille milliards. Le compte le plus sérieux date de 2013.\n\nLes globules rouges en forment la majorité, à eux seuls plus de la moitié, parce qu’ils sont petits et très nombreux.\n\nLes tailles vont de 7 micromètres pour un globule rouge à plusieurs dizaines de centimètres pour un neurone de la moelle épinière, qui est une seule cellule.\n\nLe mot « cellule » recouvre donc des objets dont les volumes diffèrent d’un facteur un million. Les schémas de manuel, tous à la même taille, cachent exactement cela.",
+          "formula": "environ 3 × 10 puissance 13 cellules par corps humain",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi les cellules ne peuvent pas être grandes",
+          "body": "Une cellule échange par sa surface et consomme selon son volume.\n\nDoubler son rayon multiplie sa surface par quatre et son volume par huit : les besoins croissent deux fois plus vite que la capacité d’échange. C’est la même loi du carré-cube que pour les structures.\n\nAu-delà d’une certaine taille, le centre d’une cellule ne reçoit plus assez vite. Le seuil est de l’ordre de cent micromètres pour une cellule qui dépend de la diffusion seule.\n\nLes très grandes cellules contournent la règle plutôt que de l’enfreindre : un neurone est long et fin, donc de grand volume et de grande surface à la fois.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Les trois énoncés de la théorie cellulaire",
+          "body": "Tout être vivant est fait de cellules. Énoncé par Schleiden et Schwann vers 1838.\n\nLa cellule est l’unité fonctionnelle : ce qui vit, vit à cette échelle, et un organe n’est vivant que parce que ses cellules le sont.\n\nToute cellule provient d’une cellule. C’est Virchow qui l’ajoute en 1855, et c’est le plus lourd de conséquences : il interdit la génération spontanée et rend la filiation universelle.\n\nLes virus obligent à nuancer le premier énoncé : ils ne sont pas faits de cellules et ne se reproduisent qu’en en détournant une. C’est pourquoi leur place parmi les vivants reste discutée.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Cette partie existe-t-elle dans la cellule animale ?",
+          "explanation": "Paroi, vacuole et chloroplaste sont propres à la cellule végétale. Membrane, noyau et mitochondrie sont dans les deux.",
+          "categories": [
+            "dans les deux",
+            "seulement végétale"
+          ],
+          "items": [
+            {
+              "text": "la membrane",
+              "category": 0
+            },
+            {
+              "text": "la mitochondrie",
+              "category": 0
+            },
+            {
+              "text": "le chloroplaste",
+              "category": 1
+            },
+            {
+              "text": "la paroi",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque partie à ce qu’elle fait.",
+          "explanation": "Chaque partie a une fonction, et c’est la fonction qui se retient — pas la position sur un schéma.",
+          "pairs": [
+            {
+              "left": "la membrane",
+              "right": "trier ce qui entre et sort"
+            },
+            {
+              "left": "le noyau",
+              "right": "conserver l’information"
+            },
+            {
+              "left": "la mitochondrie",
+              "right": "convertir l’énergie du glucose"
+            },
+            {
+              "left": "le chloroplaste",
+              "right": "capter la lumière"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi une cellule ne peut-elle pas être très grande ?",
+          "explanation": "Elle échange par sa surface et consomme selon son volume : doubler le rayon multiplie la surface par 4 et le volume par 8.",
+          "options": [
+            {
+              "text": "ses besoins croissent plus vite que sa surface d’échange",
+              "correct": true
+            },
+            {
+              "text": "sa membrane se déchirerait"
+            },
+            {
+              "text": "son noyau serait trop petit"
+            },
+            {
+              "text": "elle serait visible à l’œil nu"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment un neurone de plusieurs dizaines de centimètres contourne-t-il cette limite ?",
+          "explanation": "Il est long et fin : grand volume et grande surface à la fois. Il contourne la règle sans l’enfreindre.",
+          "options": [
+            {
+              "text": "il est long et fin, donc de grande surface",
+              "correct": true
+            },
+            {
+              "text": "il possède plusieurs noyaux"
+            },
+            {
+              "text": "il ne consomme presque rien"
+            },
+            {
+              "text": "il n’obéit pas à cette loi"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel énoncé Virchow ajoute-t-il en 1855 ?",
+          "explanation": "Que toute cellule provient d’une cellule. C’est le plus lourd de conséquences : il interdit la génération spontanée.",
+          "options": [
+            {
+              "text": "toute cellule provient d’une cellule",
+              "correct": true
+            },
+            {
+              "text": "tout vivant est fait de cellules"
+            },
+            {
+              "text": "la cellule est l’unité fonctionnelle"
+            },
+            {
+              "text": "les virus sont des cellules"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un virus est une cellule très petite.",
+          "explanation": "Faux. Il n’est pas fait de cellules et ne se reproduit qu’en détournant une cellule. C’est pourquoi sa place parmi les vivants reste discutée.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "approvisionner-chaque-cellule",
+      "title": "Approvisionner chaque cellule",
+      "subtitle": "Trente mille milliards de clients, et aucun qui puisse attendre.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Suivre le dioxygène, puis le glucose",
+          "body": "Choisis la cargaison et avance étape par étape dans un vrai torse : le dioxygène entre par les alvéoles, le glucose par les villosités intestinales. Les deux finissent au même endroit, et par le même réseau. Fais les deux trajets avant de lire la suite.",
+          "figureId": "approvisionnement",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Pourquoi la diffusion ne suffit pas",
+          "body": "Dans l’eau, une molécule de dioxygène met environ une seconde à franchir 100 micromètres par diffusion seule.\n\nMais le temps de diffusion croît comme le carré de la distance. Franchir un millimètre prend donc cent secondes, et un centimètre près de trois heures.\n\nUn organisme de dix centimètres d’épaisseur mettrait donc des semaines à oxygéner son centre. C’est impossible, et c’est la raison d’être des systèmes circulatoires.\n\nD’où une règle d’anatomie sans exception : aucune cellule d’un animal n’est à plus de quelques dizaines de micromètres d’un capillaire. Le sang fait le long trajet, la diffusion fait le dernier pas.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Des surfaces repliées, et pourquoi",
+          "body": "Les échanges se font par des surfaces, et une surface plane serait beaucoup trop petite. Tout l’organisme consiste donc en surfaces repliées.\n\nLes alvéoles pulmonaires offrent environ 70 mètres carrés, dans un volume de quelques litres.\n\nL’intestin grêle, replié en villosités puis en microvillosités, offre une trentaine de mètres carrés. Les capillaires sanguins mis bout à bout dépassent les milliers de kilomètres.\n\nReplier est donc la solution universelle au problème du carré-cube : on gagne de la surface sans gagner de volume. Le poumon, l’intestin et le cerveau emploient tous les trois cette même astuce.",
+          "formula": "alvéoles : environ 70 m² ; intestin grêle : environ 30 m²",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les quatre fonctions, et leur point commun",
+          "body": "Respirer fait entrer le dioxygène et sortir le dioxyde de carbone, par les poumons.\n\nDigérer découpe les aliments en molécules assez petites pour traverser, et les fait entrer par l’intestin.\n\nCirculer transporte les deux jusqu’à chaque cellule, et remporte les déchets.\n\nExcréter élimine ce que le sang ne doit pas garder, par les reins. Les quatre fonctions ont le même objet : maintenir constant le milieu dans lequel les cellules baignent. C’est l’homéostasie, et c’est le vrai sujet de toute la physiologie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le milieu intérieur, et pourquoi il est constant",
+          "body": "Les cellules ne tolèrent qu’une faible variation de température, d’acidité, de salinité et de concentration en glucose.\n\nUn écart de quelques degrés, ou une glycémie divisée par deux, suffit à arrêter les réactions dont elles vivent.\n\nL’organisme dépense donc une part importante de son énergie non pas à bouger, mais à maintenir ces valeurs. Le cerveau et les reins y consomment au repos davantage que les muscles.\n\nVivre coûte cher même immobile, et c’est ce que mesure le métabolisme de base — autour de 1 500 kilocalories par jour pour un adulte, sans rien faire.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Une molécule met 1 s pour diffuser sur 100 µm. Combien de secondes pour 1 mm ?",
+          "explanation": "Le temps croît comme le carré de la distance : dix fois plus loin, cent fois plus longtemps, soit 100 secondes.",
+          "min": 0,
+          "max": 1000,
+          "answer": 100,
+          "tolerance": 10,
+          "unit": "s",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un animal a-t-il besoin d’un système circulatoire ?",
+          "explanation": "Parce que la diffusion seule est bien trop lente au-delà de quelques dizaines de micromètres. Le sang fait le long trajet, la diffusion le dernier pas.",
+          "options": [
+            {
+              "text": "la diffusion seule est trop lente au-delà du dixième de millimètre",
+              "correct": true
+            },
+            {
+              "text": "pour réchauffer les cellules"
+            },
+            {
+              "text": "pour transporter les cellules"
+            },
+            {
+              "text": "pour fabriquer du glucose"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle surface d’échange offrent les alvéoles pulmonaires, en mètres carrés ?",
+          "explanation": "Environ 70 m², dans un volume de quelques litres. Replier donne de la surface sans donner de volume.",
+          "min": 0,
+          "max": 400,
+          "answer": 70,
+          "tolerance": 15,
+          "unit": "m²",
+          "id": "q3"
+        },
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque fonction à son organe principal.",
+          "explanation": "Les quatre fonctions ont un seul objet : maintenir constant le milieu où baignent les cellules.",
+          "pairs": [
+            {
+              "left": "respirer",
+              "right": "les poumons"
+            },
+            {
+              "left": "digérer",
+              "right": "l’intestin"
+            },
+            {
+              "left": "circuler",
+              "right": "le cœur et les vaisseaux"
+            },
+            {
+              "left": "excréter",
+              "right": "les reins"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est l’objet commun aux quatre fonctions ?",
+          "explanation": "Maintenir constant le milieu dans lequel les cellules baignent : l’homéostasie, vrai sujet de toute la physiologie.",
+          "options": [
+            {
+              "text": "maintenir constant le milieu intérieur",
+              "correct": true
+            },
+            {
+              "text": "produire du mouvement"
+            },
+            {
+              "text": "fabriquer de nouvelles cellules"
+            },
+            {
+              "text": "évacuer la chaleur"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Au repos, les muscles consomment plus que le cerveau et les reins.",
+          "explanation": "Faux. Au repos, cerveau et reins consomment davantage : maintenir le milieu intérieur coûte plus cher que de ne pas bouger.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "convertir-l-energie",
+      "title": "Convertir l’énergie dans la cellule",
+      "subtitle": "Deux voies pour le même glucose, et un rapport de quinze.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les rendements se multiplient, ici aussi",
+          "body": "Règle les quatre étages et lis le rendement global. Une cellule enchaîne elle aussi des conversions, et chacune ne transmet qu’une fraction. C’est pourquoi un muscle ne restitue en travail qu’un quart de l’énergie du glucose, et chauffe avec le reste.",
+          "figureId": "chaine-energie",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "La respiration cellulaire, en une équation",
+          "body": "Le glucose réagit avec le dioxygène et donne du dioxyde de carbone, de l’eau, et de l’énergie utilisable.\n\nCette énergie n’est pas livrée en vrac : elle sert à fabriquer de l’adénosine triphosphate, la monnaie énergétique de toutes les cellules du vivant. Une molécule de glucose en produit une trentaine.\n\nL’équation s’écrit avec six molécules de dioxygène pour une de glucose, et donne six de dioxyde de carbone et six d’eau.\n\nC’est exactement l’inverse de la photosynthèse, et ce n’est pas une coïncidence : la respiration défait ce que la photosynthèse avait fait, et récupère l’énergie que la lumière y avait mise.",
+          "formula": "glucose + 6 O₂ donne 6 CO₂ + 6 H₂O + énergie",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "La fermentation, et pourquoi elle existe quand même",
+          "body": "Sans dioxygène, la cellule ne peut pas achever la dégradation. Elle s’arrête en route et produit du lactate, ou de l’éthanol chez la levure.\n\nLe rendement s’effondre : deux molécules d’adénosine triphosphate par glucose, contre une trentaine. Quinze fois moins.\n\nPourquoi l’employer, alors ? Parce qu’elle est rapide et qu’elle ne demande rien. Un muscle en effort violent consomme plus d’énergie que le sang ne peut lui apporter de dioxygène : la fermentation prend le relais, mal mais tout de suite.\n\nC’est un choix d’ingénierie, fait par l’évolution : accepter un mauvais rendement pour obtenir une puissance immédiate.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que le rendement coûte, chiffré",
+          "body": "Un sprint de 400 mètres repose largement sur la fermentation. Le coureur consomme alors quinze fois plus de glucose, pour la même énergie, qu’il n’en aurait consommé en marchant.\n\nEt il accumule du lactate, dont l’élimination demande du dioxygène : c’est pourquoi on continue de respirer fort longtemps après l’arrêt de l’effort.\n\nUn marathon, lui, se court presque entièrement en aérobie, parce qu’aucune réserve ne tiendrait quinze fois la dépense.\n\nLa différence entre les deux courses n’est donc pas une différence d’intensité seulement : ce sont deux chimies différentes, et elles n’ont pas les mêmes limites.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Où tout cela se passe",
+          "body": "La première partie de la dégradation du glucose a lieu dans le cytoplasme, et ne demande pas de dioxygène. Elle rend deux molécules d’adénosine triphosphate, et c’est tout ce que la fermentation obtiendra.\n\nLa suite a lieu dans la mitochondrie, et elle seule exige du dioxygène. C’est là que se gagne l’essentiel du rendement.\n\nD’où une conséquence lisible au microscope : les cellules qui travaillent beaucoup — muscle cardiaque, neurone — sont bourrées de mitochondries, et les autres en ont peu.\n\nCompter les mitochondries d’une cellule renseigne donc sur son métier. C’est un cas où la forme dit la fonction, directement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de molécules de dioxygène pour une de glucose, dans la respiration ?",
+          "explanation": "Six, et il en sort six de dioxyde de carbone et six d’eau. L’équation est l’inverse de la photosynthèse.",
+          "answer": 6,
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de molécules d’ATP la fermentation rend-elle par glucose ?",
+          "explanation": "Deux, contre une trentaine pour la respiration : quinze fois moins.",
+          "answer": 2,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un muscle emploie-t-il la fermentation malgré son rendement ?",
+          "explanation": "Parce qu’elle est rapide et ne demande pas de dioxygène. En effort violent, le sang n’en apporte pas assez vite.",
+          "options": [
+            {
+              "text": "elle donne de la puissance immédiatement, sans dioxygène",
+              "correct": true
+            },
+            {
+              "text": "elle est plus économe"
+            },
+            {
+              "text": "elle produit moins de chaleur"
+            },
+            {
+              "text": "elle ne fatigue pas"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi continue-t-on de respirer fort après un sprint ?",
+          "explanation": "Pour éliminer le lactate accumulé, ce qui demande du dioxygène. La dette se paie après l’effort.",
+          "options": [
+            {
+              "text": "pour éliminer le lactate, ce qui demande du dioxygène",
+              "correct": true
+            },
+            {
+              "text": "pour refroidir le corps"
+            },
+            {
+              "text": "par habitude nerveuse"
+            },
+            {
+              "text": "pour reconstituer le glucose"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Où cette étape a-t-elle lieu ?",
+          "explanation": "La première partie, sans dioxygène, se passe dans le cytoplasme. La suite, qui exige du dioxygène, dans la mitochondrie.",
+          "categories": [
+            "dans le cytoplasme",
+            "dans la mitochondrie"
+          ],
+          "items": [
+            {
+              "text": "la première dégradation du glucose",
+              "category": 0
+            },
+            {
+              "text": "la fermentation complète",
+              "category": 0
+            },
+            {
+              "text": "l’essentiel du rendement",
+              "category": 1
+            },
+            {
+              "text": "l’étape qui consomme le dioxygène",
+              "category": 1
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit le nombre de mitochondries d’une cellule ?",
+          "explanation": "Son métier : muscle cardiaque et neurones en sont bourrés, les cellules peu actives en ont peu. La forme dit la fonction.",
+          "options": [
+            {
+              "text": "combien elle travaille",
+              "correct": true
+            },
+            {
+              "text": "son âge"
+            },
+            {
+              "text": "si elle est animale ou végétale"
+            },
+            {
+              "text": "sa taille"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-du-repas-au-mouvement",
+      "title": "Défi : du repas au mouvement",
+      "subtitle": "Un trajet complet, avec ses durées et ses rendements.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le trajet du glucose, à refaire en entier",
+          "body": "Reprends le glucose et avance jusqu’au bout. Note chaque frontière qu’il traverse : la paroi intestinale, la paroi d’un capillaire, la membrane d’une cellule musculaire. Trois passages, trois mécanismes différents, et c’est ce que la leçon détaille.",
+          "figureId": "approvisionnement",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "La dernière étape, à l’intérieur",
+          "body": "Touche la mitochondrie : c’est là que le glucose arrivé finira par rendre son énergie, et seulement si du dioxygène est arrivé aussi. Les deux trajets de la figure précédente convergent exactement ici.",
+          "figureId": "cellule",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Le trajet, en six temps",
+          "body": "Dans la bouche et l’estomac, les grosses molécules sont découpées. L’amidon devient du glucose, les protéines des acides aminés.\n\nDans l’intestin grêle, ces petites molécules traversent la paroi des villosités et entrent dans le sang.\n\nLe sang les porte au foie, qui règle la glycémie : il stocke l’excédent et en relâche quand il manque.\n\nPuis le cœur distribue, le capillaire livre par diffusion, la cellule musculaire fait entrer le glucose, et la mitochondrie le convertit. Six temps, et aucun n’est facultatif.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les durées, et ce qu’elles expliquent",
+          "body": "La glycémie commence à monter une quinzaine de minutes après un repas, et culmine vers une heure.\n\nLe sang fait un tour complet du corps en moins d’une minute au repos. Un globule rouge passe donc plus de mille fois par jour dans les poumons.\n\nLe dioxygène, lui, ne se stocke presque pas : quelques minutes de réserve, et c’est tout. Le glucose se stocke pour une journée, les graisses pour des semaines.\n\nCes trois durées très différentes expliquent une chose simple : on survit des semaines sans manger, des jours sans boire, et quelques minutes sans respirer. Les réserves, et non la volonté, fixent ces limites.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "La cellule est l’unité fonctionnelle, et sa taille est bornée par la même loi du carré-cube que les structures d’acier.\n\nUn organisme est une machine à replier des surfaces et à transporter, parce que la diffusion ne porte qu’à quelques dizaines de micromètres.\n\nLa respiration rend une trentaine d’ATP par glucose, la fermentation deux, et le choix entre les deux est un compromis entre rendement et puissance immédiate.\n\nEt tout cela n’a qu’un objet : maintenir constant le milieu où baignent trente mille milliards de cellules. C’est ce que coûte le simple fait de rester en vie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le trajet du glucose dans l’ordre.",
+          "explanation": "Découpage digestif, passage de la paroi intestinale, régulation par le foie, distribution, livraison au capillaire, conversion mitochondriale.",
+          "items": [
+            "l’amidon est découpé en glucose",
+            "le glucose traverse la paroi de l’intestin",
+            "le foie règle la glycémie",
+            "le capillaire livre, et la mitochondrie convertit"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel organe règle la glycémie ?",
+          "explanation": "Le foie : il stocke l’excédent et en relâche quand il manque.",
+          "options": [
+            {
+              "text": "le foie",
+              "correct": true
+            },
+            {
+              "text": "l’intestin"
+            },
+            {
+              "text": "le rein"
+            },
+            {
+              "text": "le cœur"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "En combien de minutes le sang fait-il un tour complet du corps, au repos ?",
+          "explanation": "Moins d’une minute. Un globule rouge passe donc plus de mille fois par jour dans les poumons.",
+          "min": 0,
+          "max": 30,
+          "answer": 1,
+          "tolerance": 0.5,
+          "unit": "min",
+          "id": "q3"
+        },
+        {
+          "kind": "tri",
+          "prompt": "Combien de temps cette réserve dure-t-elle ?",
+          "explanation": "Le dioxygène ne se stocke presque pas, le glucose pour une journée, les graisses pour des semaines. Ces durées fixent nos limites.",
+          "categories": [
+            "quelques minutes",
+            "des jours ou des semaines"
+          ],
+          "items": [
+            {
+              "text": "la réserve de dioxygène",
+              "category": 0
+            },
+            {
+              "text": "ce qui circule déjà dans le sang",
+              "category": 0
+            },
+            {
+              "text": "la réserve de glucose du foie",
+              "category": 1
+            },
+            {
+              "text": "les réserves de graisses",
+              "category": 1
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi survit-on quelques minutes sans respirer, et des semaines sans manger ?",
+          "explanation": "Parce que les réserves diffèrent : le dioxygène ne se stocke presque pas, les graisses se stockent pour des semaines.",
+          "options": [
+            {
+              "text": "les réserves de chaque ressource sont très différentes",
+              "correct": true
+            },
+            {
+              "text": "le cerveau résiste mieux à la faim"
+            },
+            {
+              "text": "la volonté y est pour beaucoup"
+            },
+            {
+              "text": "l’air est plus difficile à absorber"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles frontières le glucose traverse-t-il avant d’être converti ?",
+          "explanation": "La paroi intestinale, la paroi d’un capillaire, et la membrane de la cellule musculaire. Trois passages, trois mécanismes.",
+          "options": [
+            {
+              "text": "la paroi de l’intestin",
+              "correct": true
+            },
+            {
+              "text": "la paroi d’un capillaire",
+              "correct": true
+            },
+            {
+              "text": "la membrane de la cellule",
+              "correct": true
+            },
+            {
+              "text": "la paroi des alvéoles"
+            },
+            {
+              "text": "la membrane du noyau"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

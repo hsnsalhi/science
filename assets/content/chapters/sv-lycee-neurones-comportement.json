@@ -1,0 +1,607 @@
+{
+  "chapter": "svt-lycee-neurones-et-comportement",
+  "lessons": [
+    {
+      "id": "le-neurone-et-son-message",
+      "title": "Le neurone, et le message qu’il porte",
+      "subtitle": "Un signal qui ne change jamais d’amplitude, et dit tout par sa cadence.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une cellule, et ses parties",
+          "body": "Touche la membrane, puis la mitochondrie : la première trie ce qui entre, la seconde fournit l’énergie. Un neurone est une cellule de ce type, allongée, et ces deux parties y sont centrales — le message nerveux est un phénomène de membrane, et il coûte cher en énergie.",
+          "figureId": "cellule",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois parties, trois métiers",
+          "body": "Les dendrites reçoivent : ce sont des ramifications courtes et nombreuses, et c’est par elles qu’arrivent les signaux des autres neurones.\n\nLe corps cellulaire additionne. Il reçoit des signaux qui poussent à répondre et d’autres qui en dissuadent, et il compare la somme à un seuil.\n\nL’axone transmet, parfois sur plus d’un mètre — du bas du dos jusqu’au pied, en une seule cellule.\n\nUn neurone est donc un additionneur à seuil, et rien de plus compliqué pris isolément. Toute la complexité vient du nombre et du câblage, jamais de la pièce.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le codage par fréquence, et ce qu’il implique",
+          "body": "Le message nerveux est une brève inversion de la tension de membrane, d’environ cent millivolts, qui dure une à deux millisecondes et se propage le long de l’axone.\n\nCe signal est tout ou rien : il part à pleine amplitude ou il ne part pas. Un stimulus deux fois plus fort ne produit pas un signal deux fois plus grand.\n\nCe qui change est la fréquence : un stimulus faible donne quelques signaux par seconde, un stimulus intense peut en donner plus de cent.\n\nL’intensité est donc codée par la cadence, exactement comme un signal numérique code une valeur par un nombre d’impulsions et non par leur hauteur. C’est pourquoi un nerf transmet sans s’affaiblir sur un mètre, là où un signal analogique se dégraderait.",
+          "formula": "amplitude constante, fréquence variable : l’intensité est une cadence",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "La myéline, et pourquoi elle multiplie la vitesse",
+          "body": "Un axone nu conduit à environ un mètre par seconde. Un axone gainé de myéline, jusqu’à cent vingt.\n\nLa gaine est isolante et interrompue à intervalles réguliers. Le signal ne se régénère qu’aux interruptions, et saute donc d’une à l’autre au lieu de parcourir toute la longueur.\n\nC’est pourquoi un coup sur le genou déclenche une réponse en quelques dizaines de millisecondes, alors qu’un mètre à un mètre par seconde en demanderait mille.\n\nEt c’est pourquoi la destruction de la myéline, dans la sclérose en plaques, ne supprime pas le message mais le ralentit et le désorganise. Un système où les délais comptent tombe en panne quand les délais changent.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Quatre-vingt-six milliards, et ce que le nombre change",
+          "body": "Le cerveau humain compte environ quatre-vingt-six milliards de neurones, comptés en 2009 par une méthode qui dissout le tissu et dénombre les noyaux.\n\nLe chiffre de cent milliards, longtemps répété, n’avait jamais été mesuré : il circulait d’un manuel à l’autre.\n\nCe qui distingue un cerveau humain n’est d’ailleurs pas le nombre — celui d’un éléphant en compte trois fois plus — mais la part de ces neurones qui se trouve dans le cortex.\n\nUn nombre global ne dit donc presque rien. C’est la répartition qui compte, et c’est une leçon de méthode autant que de biologie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque partie du neurone à son métier.",
+          "explanation": "Les dendrites reçoivent, le corps cellulaire additionne et compare à un seuil, l’axone transmet.",
+          "pairs": [
+            {
+              "left": "les dendrites",
+              "right": "recevoir des autres neurones"
+            },
+            {
+              "left": "le corps cellulaire",
+              "right": "additionner et comparer à un seuil"
+            },
+            {
+              "left": "l’axone",
+              "right": "transmettre, parfois sur un mètre"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Un stimulus deux fois plus fort produit quoi ?",
+          "explanation": "Deux fois plus de signaux par seconde, et non un signal deux fois plus grand. Le message est tout ou rien.",
+          "options": [
+            {
+              "text": "des signaux plus fréquents, de même amplitude",
+              "correct": true
+            },
+            {
+              "text": "un signal deux fois plus grand"
+            },
+            {
+              "text": "un signal deux fois plus long"
+            },
+            {
+              "text": "rien de différent"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est l’amplitude d’un message nerveux, en millivolts ?",
+          "explanation": "Environ cent millivolts, et toujours la même : le signal est tout ou rien.",
+          "min": 0,
+          "max": 500,
+          "answer": 100,
+          "tolerance": 20,
+          "unit": "mV",
+          "id": "q3"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "À quelle vitesse, en mètres par seconde, conduit un axone myélinisé rapide ?",
+          "explanation": "Jusqu’à 120 m/s, contre environ 1 m/s pour un axone nu : le signal saute d’une interruption de gaine à l’autre.",
+          "min": 0,
+          "max": 300,
+          "answer": 120,
+          "tolerance": 20,
+          "unit": "m/s",
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que fait la sclérose en plaques au message nerveux ?",
+          "explanation": "Elle le ralentit et le désorganise en détruisant la myéline. Elle ne le supprime pas, et c’est ce qui rend ses effets si variés.",
+          "options": [
+            {
+              "text": "elle le ralentit et le désorganise",
+              "correct": true
+            },
+            {
+              "text": "elle le supprime entièrement"
+            },
+            {
+              "text": "elle en réduit l’amplitude"
+            },
+            {
+              "text": "elle détruit les neurones"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient la complexité du système nerveux ?",
+          "explanation": "Du nombre et du câblage. Un neurone pris seul est un additionneur à seuil, et rien de plus.",
+          "options": [
+            {
+              "text": "du nombre de neurones et de leur câblage",
+              "correct": true
+            },
+            {
+              "text": "de la complexité de chaque neurone"
+            },
+            {
+              "text": "de la variété des messages"
+            },
+            {
+              "text": "de la vitesse de conduction"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "du-stimulus-a-la-reponse",
+      "title": "Du stimulus à la réponse",
+      "subtitle": "Capteur, traitement, effecteur — le même découpage qu’un thermostat.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un seuil, et une décision qui en dépend",
+          "body": "Règle la température mesurée et le seuil séparément. Le capteur ne décide rien, le programme décide tout, et l’actionneur obéit. Un arc nerveux a exactement cette structure, et le seuil y est aussi réglable — c’est ce qui fait qu’on ne réagit pas de la même façon selon l’attention qu’on porte.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre maillons d’un arc nerveux",
+          "body": "Le récepteur traduit une grandeur physique en messages nerveux : la pression sur la peau, la lumière sur la rétine, l’étirement d’un muscle.\n\nLe nerf sensitif conduit ces messages vers la moelle épinière ou l’encéphale.\n\nLe centre intègre : il additionne ce qui arrive de nombreuses sources et décide. C’est ici, et nulle part ailleurs, que la décision se prend.\n\nLe nerf moteur conduit l’ordre vers l’effecteur, qui est un muscle ou une glande. Quatre maillons, et un seul qui décide — exactement comme dans la figure.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Deux durées, et ce qu’elles révèlent",
+          "body": "Le réflexe du genou passe par deux neurones seulement, directement dans la moelle, sans monter au cerveau. Délai : quelques dizaines de millisecondes.\n\nUne réaction volontaire — appuyer sur un bouton quand une lumière s’allume — demande deux à trois cents millisecondes.\n\nL’écart de dix ne vient pas de la vitesse de conduction, qui est la même. Il vient du nombre de synapses à franchir, chacune coûtant une fraction de milliseconde, et surtout du traitement dans le cortex.\n\nMesurer un temps de réaction est donc mesurer une longueur de chemin dans le système nerveux. C’est pour cela qu’un délai anormal est un signe clinique utile, et qu’on le mesure en consultation.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le récepteur ne sent rien",
+          "body": "Un récepteur de la peau envoie des messages identiques, quelle que soit la nature de ce qui l’a stimulé. Rien dans le message ne dit « chaud » ou « piqûre ».\n\nCe qui donne le sens est la destination : les messages qui arrivent dans la zone tactile sont ressentis comme un toucher, ceux qui arrivent dans la zone visuelle comme une image.\n\nC’est vérifiable : une pression sur l’œil fermé produit une tache lumineuse, parce qu’une stimulation mécanique de la rétine arrive quand même dans la zone visuelle.\n\nLa sensation n’est donc pas dans le message, et pas davantage dans l’organe. Elle est dans le câblage, et c’est l’un des résultats les plus troublants de la neurobiologie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le centre peut décider autrement",
+          "body": "Le même stimulus ne donne pas toujours la même réponse, et ce n’est pas une imprécision : le centre reçoit d’autres informations en même temps.\n\nUn réflexe de retrait est plus faible si l’on s’attend à la douleur, et plus fort si l’on est surpris. La commande vient de la somme, pas du seul stimulus.\n\nC’est exactement ce que la figure permet de faire en déplaçant le seuil sans toucher à la mesure : le monde n’a pas changé, et la décision change.\n\nLe système nerveux n’est donc pas un tableau de correspondances entre stimulus et réponse. C’est un additionneur dont le seuil est lui-même sous contrôle.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les maillons d’un arc nerveux dans l’ordre.",
+          "explanation": "Récepteur, nerf sensitif, centre qui intègre et décide, nerf moteur, effecteur.",
+          "items": [
+            "le récepteur traduit une grandeur physique",
+            "le nerf sensitif conduit vers le centre",
+            "le centre intègre et décide",
+            "le nerf moteur commande l’effecteur"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où la décision se prend-elle, dans un arc nerveux ?",
+          "explanation": "Dans le centre intégrateur, et nulle part ailleurs. Le récepteur ne décide rien.",
+          "options": [
+            {
+              "text": "dans le centre intégrateur",
+              "correct": true
+            },
+            {
+              "text": "dans le récepteur"
+            },
+            {
+              "text": "dans le nerf sensitif"
+            },
+            {
+              "text": "dans l’effecteur"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien de millisecondes dure une réaction volontaire à une lumière ?",
+          "explanation": "Deux à trois cents millisecondes, contre quelques dizaines pour le réflexe du genou. L’écart vient du chemin parcouru.",
+          "min": 0,
+          "max": 1000,
+          "answer": 250,
+          "tolerance": 70,
+          "unit": "ms",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient l’écart entre le réflexe du genou et une réaction volontaire ?",
+          "explanation": "Du nombre de synapses à franchir et du traitement cortical. La vitesse de conduction est la même.",
+          "options": [
+            {
+              "text": "du nombre de synapses et du traitement cortical",
+              "correct": true
+            },
+            {
+              "text": "de la vitesse de conduction"
+            },
+            {
+              "text": "de la force du stimulus"
+            },
+            {
+              "text": "de la longueur des nerfs"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui donne son sens à un message nerveux ?",
+          "explanation": "Sa destination. Les messages sont identiques ; c’est la zone qui les reçoit qui décide s’ils sont vus, touchés ou entendus.",
+          "options": [
+            {
+              "text": "la zone du cerveau où il arrive",
+              "correct": true
+            },
+            {
+              "text": "la nature du récepteur"
+            },
+            {
+              "text": "la forme du message"
+            },
+            {
+              "text": "sa fréquence"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une pression sur l’œil fermé produit une tache lumineuse.",
+          "explanation": "Vrai, et c’est la vérification : une stimulation mécanique de la rétine arrive quand même dans la zone visuelle, donc elle est vue.",
+          "answer": true,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-synapse-et-le-reseau",
+      "title": "La synapse, et le réseau qui se remodèle",
+      "subtitle": "Le message franchit un vide, et c’est là que tout se joue.",
+      "kind": "cours",
+      "xp": 40,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un réseau, et un chemin qui se recalcule",
+          "body": "Coupe un câble : le paquet trouve une autre route, et le chemin se recalcule. Un réseau de neurones fait quelque chose de comparable — pas en recalculant un itinéraire, mais en renforçant les liaisons utilisées et en laissant s’affaiblir les autres. Dans les deux cas, c’est la structure du réseau qui décide.",
+          "figureId": "reseau-paquet",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qui se passe dans l’espace synaptique",
+          "body": "Entre deux neurones, il y a un vide d’environ vingt nanomètres. Le signal électrique ne le franchit pas.\n\nLe neurone émetteur libère donc une substance chimique, qui traverse par diffusion — une distance si courte que cela prend moins d’une milliseconde — et se fixe sur des récepteurs du neurone suivant.\n\nCette fixation ouvre des canaux, et un nouveau signal électrique peut naître si la somme des arrivées dépasse le seuil.\n\nLa transmission est donc électrique dans le neurone et chimique entre les neurones. Ce détour paraît inutile, et c’est lui qui rend tout le reste possible.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi le détour chimique est une bonne idée",
+          "body": "Il permet d’avoir deux sortes de signaux : certaines substances poussent le neurone suivant à répondre, d’autres l’en empêchent. Un signal purement électrique ne pourrait pas inhiber.\n\nIl permet de régler la force de la liaison : plus de substance libérée, ou plus de récepteurs, et la même arrivée a plus d’effet. C’est le support physique de l’apprentissage.\n\nEt il crée un point de contrôle : presque toutes les substances qui agissent sur le système nerveux, médicaments comme drogues, agissent dans cet espace de vingt nanomètres.\n\nElles imitent la substance naturelle, l’empêchent de se fixer, ou bloquent son recyclage. Connaître la synapse, c’est comprendre comment agissent la caféine, les anesthésiques et les antidépresseurs.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La plasticité, et la règle de Hebb",
+          "body": "Un neurone reçoit de mille à dix mille synapses. Ce n’est pas un câblage fixe : les liaisons se renforcent ou s’affaiblissent selon l’usage.\n\nDonald Hebb énonce la règle en 1949 : deux neurones qui s’activent ensemble renforcent leur liaison. Elle s’est vérifiée depuis au niveau moléculaire.\n\nApprendre n’est donc pas stocker une information dans une case : c’est modifier des forces de liaison, réparties sur des milliers de synapses.\n\nD’où deux conséquences : un souvenir n’a pas d’adresse, et il s’efface si les liaisons ne sont pas réactivées. Réviser n’est pas relire — c’est faire passer le signal, pour que la liaison se maintienne.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que la plasticité ne promet pas",
+          "body": "On lit souvent que le cerveau est plastique, donc qu’on peut tout apprendre à tout âge. La première partie est vraie, la conclusion est trop large.\n\nLa plasticité diminue avec l’âge, et surtout elle n’est pas la même pour tout : certaines fonctions ont des périodes où elles s’installent, et en dehors desquelles l’acquisition devient beaucoup plus coûteuse — la vision binoculaire, les sons d’une langue.\n\nD’autres restent accessibles toute la vie : un vocabulaire, un geste technique, un répertoire de visages.\n\nLa bonne formule n’est donc pas « tout est possible à tout âge », mais « la plupart des choses, à un coût qui augmente ». Ce qui reste une bonne nouvelle, et une plus honnête.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "estimation",
+          "prompt": "Quelle est la largeur d’un espace synaptique, en nanomètres ?",
+          "explanation": "Environ vingt nanomètres. Le signal électrique ne le franchit pas : une substance chimique diffuse.",
+          "min": 0,
+          "max": 500,
+          "answer": 20,
+          "tolerance": 6,
+          "unit": "nm",
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment le message franchit-il la synapse ?",
+          "explanation": "Par une substance chimique libérée et diffusant sur vingt nanomètres, qui se fixe sur des récepteurs.",
+          "options": [
+            {
+              "text": "une substance chimique diffuse et se fixe",
+              "correct": true
+            },
+            {
+              "text": "le courant électrique traverse"
+            },
+            {
+              "text": "les membranes se touchent"
+            },
+            {
+              "text": "par une onde mécanique"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que le détour chimique rend possible ?",
+          "explanation": "Des signaux inhibiteurs, un réglage de la force de la liaison, et un point d’action pour les médicaments et les drogues.",
+          "options": [
+            {
+              "text": "des signaux qui empêchent de répondre",
+              "correct": true
+            },
+            {
+              "text": "un réglage de la force de la liaison",
+              "correct": true
+            },
+            {
+              "text": "un point d’action pour les substances actives",
+              "correct": true
+            },
+            {
+              "text": "une transmission plus rapide"
+            },
+            {
+              "text": "une transmission sans perte"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Où agissent presque toutes les substances actives sur le système nerveux ?",
+          "explanation": "Dans l’espace synaptique : elles imitent la substance naturelle, l’empêchent de se fixer, ou bloquent son recyclage.",
+          "options": [
+            {
+              "text": "dans l’espace synaptique",
+              "correct": true
+            },
+            {
+              "text": "le long de l’axone"
+            },
+            {
+              "text": "dans le noyau des neurones"
+            },
+            {
+              "text": "dans les récepteurs sensoriels"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’énonce la règle de Hebb, en 1949 ?",
+          "explanation": "Que deux neurones qui s’activent ensemble renforcent leur liaison. Elle s’est vérifiée depuis au niveau moléculaire.",
+          "options": [
+            {
+              "text": "deux neurones actifs ensemble renforcent leur liaison",
+              "correct": true
+            },
+            {
+              "text": "un neurone ne peut pas changer de liaisons"
+            },
+            {
+              "text": "les souvenirs sont stockés dans un neurone"
+            },
+            {
+              "text": "les synapses se créent au hasard"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi réviser n’est-il pas relire ?",
+          "explanation": "Parce qu’un souvenir est une force de liaison, qui se maintient en faisant passer le signal — donc en se testant, pas en parcourant des yeux.",
+          "options": [
+            {
+              "text": "il faut faire passer le signal pour maintenir la liaison",
+              "correct": true
+            },
+            {
+              "text": "relire prend plus de temps"
+            },
+            {
+              "text": "les souvenirs ont une adresse fixe"
+            },
+            {
+              "text": "la lecture fatigue les neurones"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-un-reflexe-et-une-habitude",
+      "title": "Défi : un réflexe et une habitude",
+      "subtitle": "Deux comportements, deux structures, et une seule ressemblance.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le réflexe : un seuil, et rien d’autre",
+          "body": "Place la mesure juste sous le seuil, puis juste au-dessus : la décision bascule, toujours de la même façon. Un réflexe a cette simplicité-là — même stimulus, même réponse, sans apprentissage et sans variation.",
+          "figureId": "chaine-information",
+          "id": "c1"
+        },
+        {
+          "kind": "figure",
+          "title": "L’habitude : un chemin devenu préférentiel",
+          "body": "Coupe et répare des câbles : certains chemins deviennent les seuls disponibles. Une habitude est l’inverse en douceur — aucun chemin n’est coupé, mais l’un devient tellement plus facile que les autres ne sont plus empruntés. La structure décide du comportement.",
+          "figureId": "reseau-paquet",
+          "id": "c2"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois différences, et une seule ressemblance",
+          "body": "L’origine : un réflexe est câblé avant toute expérience, une habitude se construit par répétition.\n\nLa modifiabilité : un réflexe se module un peu — l’attention change le seuil — mais ne s’apprend ni ne s’oublie. Une habitude s’acquiert en semaines et se défait en semaines.\n\nLe chemin : le réflexe passe par la moelle, deux ou trois neurones ; l’habitude mobilise des structures profondes du cerveau et des milliers de synapses.\n\nEt la ressemblance : tous deux se déclenchent sans décision consciente. C’est ce qui les fait confondre, et c’est la seule chose qu’ils ont en commun.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que coûte un cerveau",
+          "body": "Le cerveau représente environ 2 % de la masse du corps et consomme environ 20 % de l’énergie au repos. Un dixième de plus que sa part, multiplié par dix.\n\nCette dépense ne sert presque pas à penser : elle sert à maintenir les écarts de concentration de part et d’autre des membranes, en permanence, dans quatre-vingt-six milliards de cellules.\n\nUn neurone au repos travaille donc sans arrêt. Et c’est pourquoi quelques minutes sans dioxygène suffisent à détruire des neurones, là où un muscle tient bien plus longtemps.\n\nLe coût d’entretien explique aussi que le cerveau ne soit pas plus gros : chaque gramme supplémentaire aurait dû être nourri, et l’évolution ne garde que ce qui se paie.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a mis en place",
+          "body": "Un neurone est un additionneur à seuil, et le message est tout ou rien. L’intensité se code par la cadence, pas par l’amplitude.\n\nUn arc nerveux est une chaîne d’information à quatre maillons, dont un seul décide. Et la sensation n’est pas dans le message : elle est dans la destination.\n\nLa synapse est un détour chimique qui rend possible l’inhibition, l’apprentissage et l’action des médicaments — tout cela dans vingt nanomètres.\n\nEt apprendre est une modification de forces de liaison. Un souvenir n’a pas d’adresse, et il s’efface si on ne le réactive pas. C’est le résultat le plus utile du chapitre pour qui révise.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Réflexe, ou habitude ?",
+          "explanation": "Le réflexe est câblé d’avance et passe par la moelle ; l’habitude s’acquiert par répétition et mobilise des structures profondes.",
+          "categories": [
+            "réflexe",
+            "habitude"
+          ],
+          "items": [
+            {
+              "text": "câblé avant toute expérience",
+              "category": 0
+            },
+            {
+              "text": "deux ou trois neurones dans la moelle",
+              "category": 0
+            },
+            {
+              "text": "acquise par répétition",
+              "category": 1
+            },
+            {
+              "text": "des milliers de synapses remodelées",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est la seule ressemblance entre un réflexe et une habitude ?",
+          "explanation": "Tous deux se déclenchent sans décision consciente. C’est ce qui les fait confondre.",
+          "options": [
+            {
+              "text": "ils se déclenchent sans décision consciente",
+              "correct": true
+            },
+            {
+              "text": "ils sont innés"
+            },
+            {
+              "text": "ils passent par la moelle"
+            },
+            {
+              "text": "ils s’oublient de la même façon"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Quelle part de l’énergie au repos le cerveau consomme-t-il, en pour-cent ?",
+          "explanation": "Environ 20 %, pour 2 % de la masse du corps : dix fois sa part.",
+          "min": 0,
+          "max": 100,
+          "answer": 20,
+          "tolerance": 4,
+          "unit": "%",
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "À quoi sert l’essentiel de cette dépense ?",
+          "explanation": "À maintenir les écarts de concentration de part et d’autre des membranes, en permanence, dans 86 milliards de cellules.",
+          "options": [
+            {
+              "text": "maintenir les écarts de concentration des membranes",
+              "correct": true
+            },
+            {
+              "text": "penser et raisonner"
+            },
+            {
+              "text": "fabriquer des neurones"
+            },
+            {
+              "text": "réchauffer la tête"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi quelques minutes sans dioxygène détruisent-elles des neurones ?",
+          "explanation": "Parce qu’un neurone au repos travaille sans arrêt pour maintenir ses écarts de concentration. Il n’a aucune pause.",
+          "options": [
+            {
+              "text": "un neurone au repos travaille en permanence",
+              "correct": true
+            },
+            {
+              "text": "ils sont plus fragiles mécaniquement"
+            },
+            {
+              "text": "ils n’ont pas de mitochondries"
+            },
+            {
+              "text": "ils ne se divisent pas"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Un réflexe peut s’apprendre et s’oublier comme une habitude.",
+          "explanation": "Faux. Il se module un peu — l’attention change le seuil — mais il ne s’apprend ni ne s’oublie : il est câblé avant toute expérience.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
