@@ -224,6 +224,19 @@ Conséquences pratiques :
 - **La part de cartes `figure` ne redescend pas.** Le même fichier de test
   tient un plancher, qu'on relève à chaque lot repris. Un chapitre ajouté
   sans figure fait tomber la moyenne, et le test le dit avant la revue.
+- **Un chapitre porte au moins cinq cartes `figure`, pas quatre.** Une
+  leçon qui ouvre sur un dessin et enchaîne quatre cartes de texte pèse
+  20 % de figures, en dessous du plancher actuel. Écrire quatre leçons
+  sur ce modèle fait donc reculer la moyenne du corpus à chaque chapitre,
+  et le test refuse le lot — ce qui est arrivé deux fois.
+
+  Le rattrapage consiste à placer une seconde figure au milieu d'une
+  leçon, là où une autre vue montre ce que la première ne peut pas :
+  le noyau qui grossit d'une fusion à l'autre, le rectangle découpé
+  qu'al-Khwarizmi utilisait comme démonstration, l'orbite comme chute
+  qui dure. Autant le prévoir en écrivant plutôt qu'en réparant : une
+  seconde figure choisie pour sa nécessité vaut mieux qu'une seconde
+  figure choisie pour un quota.
 
 Une figure se cite par une clé, jamais par un nom de fichier :
 

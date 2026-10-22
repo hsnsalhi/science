@@ -1,0 +1,603 @@
+{
+  "chapter": "histoire-sciences-lycee-descartes-la-geometrie-devient-calcul",
+  "lessons": [
+    {
+      "id": "le-geste-de-1637",
+      "title": "Le geste de 1637",
+      "subtitle": "Un appendice de cent pages, derrière un livre de philosophie.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une équation et sa courbe, en même temps",
+          "body": "Règle a, b et c : l’équation s’écrit en haut, la courbe se redessine en dessous, et le discriminant annonce les racines avant qu’on les voie. Ce double affichage est précisément ce que Descartes rend possible — avant lui, l’un n’avait rien à dire de l’autre.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que contient le livre",
+          "body": "La Géométrie paraît en 1637 comme l’un des trois appendices du Discours de la méthode, avec la Dioptrique et les Météores.\n\nDescartes y montre comment traduire un problème de géométrie en équation, résoudre l’équation, puis construire la solution à la règle et au compas.\n\nIl y fixe aussi la notation qui nous sert encore : x, y, z pour les inconnues, a, b, c pour les données, et l’exposant numérique.\n\nL’ouvrage est écrit en français, et non en latin, ce qui est alors inhabituel pour un livre savant.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le renversement, en une phrase",
+          "body": "Avant : une courbe est une construction, décrite par un procédé géométrique. Deux courbes se comparent en comparant leurs constructions.\n\nAprès : une courbe est l’ensemble des points dont les coordonnées vérifient une équation. Deux courbes se comparent en comparant leurs équations.\n\nCe n’est pas une méthode de plus. C’est un changement de nature de l’objet étudié, et il met toute la géométrie à portée du calcul algébrique.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un problème que les Grecs n’avaient pas résolu",
+          "body": "Le problème de Pappus demande, pour trois ou quatre droites données, le lieu des points dont les distances à ces droites vérifient une certaine relation.\n\nLes Grecs le traitaient au cas par cas, péniblement, pour trois et quatre droites.\n\nDescartes pose des coordonnées, écrit la relation, et constate que l’équation obtenue est du second degré : le lieu est donc une conique. Puis il généralise à un nombre quelconque de droites.\n\nIl l’annonce lui-même comme la démonstration de sa méthode : le problème est résolu non parce qu’il a eu une idée, mais parce que la traduction l’a rendu mécanique.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Fermat l’avait fait avant, et personne ne l’a su",
+          "body": "Pierre de Fermat rédige vers 1636 un texte qui pose les mêmes idées, et plus clairement sur certains points : il part de l’équation pour aller à la courbe, là où Descartes fait l’inverse.\n\nMais il ne le publie pas. Il le fait circuler par lettres, comme presque tout son travail.\n\nLe texte ne paraîtra qu’en 1679, après sa mort, quand la géométrie analytique est déjà celle de Descartes.\n\nLa priorité en science n’appartient pas à qui a trouvé le premier, mais à qui a publié le premier. Fermat en a fait les frais plus d’une fois.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En quelle année paraît La Géométrie de Descartes ?",
+          "explanation": "1637, comme appendice du Discours de la méthode.",
+          "answer": 1637,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une courbe devient, après Descartes ?",
+          "explanation": "L’ensemble des points dont les coordonnées vérifient une équation. Avant, c’était une construction décrite par un procédé.",
+          "options": [
+            {
+              "text": "l’ensemble des points vérifiant une équation",
+              "correct": true
+            },
+            {
+              "text": "une construction à la règle et au compas"
+            },
+            {
+              "text": "un tracé continu"
+            },
+            {
+              "text": "une suite de points mesurés"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que Descartes fixe dans La Géométrie ?",
+          "explanation": "x, y, z pour les inconnues, a, b, c pour les données, et l’exposant numérique. Ce sont nos conventions actuelles.",
+          "options": [
+            {
+              "text": "x, y, z pour les inconnues",
+              "correct": true
+            },
+            {
+              "text": "a, b, c pour les données",
+              "correct": true
+            },
+            {
+              "text": "l’exposant numérique",
+              "correct": true
+            },
+            {
+              "text": "le signe égal"
+            },
+            {
+              "text": "le symbole de la dérivée"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Descartes cite-t-il le problème de Pappus ?",
+          "explanation": "Comme démonstration de sa méthode : le problème devient mécanique une fois traduit en équation, là où les Grecs le traitaient au cas par cas.",
+          "options": [
+            {
+              "text": "pour montrer que sa méthode rend le problème mécanique",
+              "correct": true
+            },
+            {
+              "text": "pour rendre hommage aux Grecs"
+            },
+            {
+              "text": "parce qu’il n’a pas su le résoudre"
+            },
+            {
+              "text": "pour introduire les coniques"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Descartes est le premier à avoir eu l’idée de la géométrie analytique.",
+          "explanation": "Faux. Fermat l’avait rédigée vers 1636, et plus clairement sur certains points. Il ne l’a pas publiée, et son texte ne paraîtra qu’en 1679.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’illustre le cas de Fermat sur la priorité scientifique ?",
+          "explanation": "Qu’elle appartient à qui publie le premier, et non à qui trouve le premier. Fermat en a fait les frais plus d’une fois.",
+          "options": [
+            {
+              "text": "la priorité va à qui publie, non à qui trouve",
+              "correct": true
+            },
+            {
+              "text": "les découvertes simultanées sont rares"
+            },
+            {
+              "text": "les lettres valent publication"
+            },
+            {
+              "text": "Descartes a copié Fermat"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "une-courbe-est-une-equation",
+      "title": "Une courbe est une équation",
+      "subtitle": "Et toute question sur la figure devient un calcul.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "La distance, qui fait tout le reste",
+          "body": "Glisse sur la figure : l’aire bleue plus l’aire verte égale l’aire orange. Dans un repère, c’est cette seule relation qui donne la distance entre deux points — et un cercle n’est rien d’autre que l’ensemble des points à distance constante.",
+          "figureId": "pythagore-carres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Trois objets, trois équations",
+          "body": "Une droite : y = mx + p, ou ax + by + c = 0. Degré un.\n\nUn cercle de centre O et de rayon r : l’ensemble des points à distance r de O, donc (x − a)² + (y − b)² = r². Degré deux.\n\nUne parabole : y = ax² + bx + c. Degré deux également.\n\nLe degré de l’équation devient un critère de classement des courbes, là où les Grecs les rangeaient par le mode de construction. C’est un classement entièrement nouveau, et il est plus fin.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Une intersection devient un système",
+          "body": "Chercher où deux courbes se croisent revenait à construire, avec des instruments, et à espérer que la construction soit possible.\n\nCela devient : résoudre le système de leurs deux équations.\n\nEt le nombre de solutions se lit sur les degrés : une droite coupe une conique en deux points au plus, deux coniques en quatre points au plus.\n\nOn obtient ainsi des réponses avant même de dessiner, et pour des cas qu’aucune figure ne permettrait de traiter.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les trois problèmes grecs, enfin tranchés",
+          "body": "Trisecter un angle, doubler le cube, quarrer le cercle : trois constructions cherchées pendant deux mille ans à la règle et au compas.\n\nTraduites en algèbre, elles deviennent des questions sur les nombres que ces instruments permettent d’atteindre — ceux qu’on obtient par des suites d’extractions de racines carrées.\n\nWantzel démontre en 1837 que la trisection et la duplication sont impossibles. Lindemann démontre en 1882 que la quadrature l’est aussi, en prouvant que pi est transcendant.\n\nCe ne sont pas des échecs de constructeurs : ce sont des théorèmes d’impossibilité, et ils n’étaient même pas formulables avant la traduction algébrique.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce que Descartes ne fait pas",
+          "body": "Il n’emploie pas deux axes perpendiculaires comme nous les traçons : une seule droite de référence, et des ordonnées portées sous un angle quelconque.\n\nIl n’admet pas les coordonnées négatives, donc il ne travaille que dans un quadrant.\n\nIl n’a pas la notion de fonction, qui viendra avec Euler au siècle suivant.\n\nLe repère que l’on appelle cartésien est donc une mise au point collective, étalée sur un siècle. Lui attribuer le dessin complet est une facilité de manuel.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque courbe à son équation.",
+          "explanation": "La droite est de degré un, le cercle et la parabole de degré deux. Le degré devient un critère de classement.",
+          "pairs": [
+            {
+              "left": "une droite",
+              "right": "y = mx + p"
+            },
+            {
+              "left": "un cercle",
+              "right": "(x − a)² + (y − b)² = r²"
+            },
+            {
+              "left": "une parabole",
+              "right": "y = ax² + bx + c"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que devient la recherche d’une intersection ?",
+          "explanation": "La résolution d’un système d’équations. On obtient des réponses avant de dessiner, et pour des cas qu’aucune figure ne traiterait.",
+          "options": [
+            {
+              "text": "la résolution d’un système d’équations",
+              "correct": true
+            },
+            {
+              "text": "une construction au compas"
+            },
+            {
+              "text": "une mesure sur le dessin"
+            },
+            {
+              "text": "un calcul d’aire"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En combien de points au plus une droite coupe-t-elle une conique ?",
+          "explanation": "Deux : le système donne une équation du second degré, qui a au plus deux solutions.",
+          "answer": 2,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’ont apporté les démonstrations de Wantzel et Lindemann ?",
+          "explanation": "Des théorèmes d’impossibilité sur les trois problèmes grecs — des énoncés qui n’étaient même pas formulables avant la traduction algébrique.",
+          "options": [
+            {
+              "text": "la preuve que ces constructions sont impossibles",
+              "correct": true
+            },
+            {
+              "text": "de nouvelles méthodes de construction"
+            },
+            {
+              "text": "des constructions approchées"
+            },
+            {
+              "text": "la mesure exacte de pi"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que Descartes n’a pas fait ?",
+          "explanation": "Pas d’axes perpendiculaires systématiques, pas de coordonnées négatives, pas de notion de fonction. Le repère cartésien est une mise au point collective.",
+          "options": [
+            {
+              "text": "employer deux axes perpendiculaires",
+              "correct": true
+            },
+            {
+              "text": "admettre les coordonnées négatives",
+              "correct": true
+            },
+            {
+              "text": "définir la notion de fonction",
+              "correct": true
+            },
+            {
+              "text": "fixer la notation x, y, z"
+            },
+            {
+              "text": "traduire une courbe en équation"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En quelle année Lindemann démontre-t-il que la quadrature du cercle est impossible ?",
+          "explanation": "1882, en prouvant que pi est transcendant. Soit deux mille ans après que le problème a été posé.",
+          "answer": 1882,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "ce-que-le-calcul-a-ouvert",
+      "title": "Ce que le calcul a ouvert",
+      "subtitle": "Un outil conçu pour la géométrie, employé partout ailleurs.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Une transformation devient quatre nombres",
+          "body": "Fais varier les quatre nombres et regarde le carré se déformer. Une rotation, un étirement, un aplatissement : tout cela se dit en quatre coefficients. C’est la suite directe de ce que Descartes a commencé — la figure réduite à du calcul.",
+          "figureId": "matrice",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les domaines ouverts, dans l’ordre",
+          "body": "La mécanique : une trajectoire devient une équation du temps, et Newton peut écrire une loi qui s’applique à tous les cas plutôt qu’à un.\n\nL’analyse : il faut des courbes écrites en équations pour parler de tangente et d’aire sous la courbe, donc pour fonder le calcul différentiel et intégral.\n\nL’algèbre linéaire : les coordonnées mènent aux vecteurs, puis aux matrices.\n\nL’informatique graphique : tout ce qui s’affiche à l’écran est une suite de coordonnées transformées par des matrices. Le repère de Descartes est dans chaque image de synthèse.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi réduire au calcul fait gagner",
+          "body": "Un calcul se mécanise : on peut l’appliquer sans comprendre, le confier à un élève, puis à une machine.\n\nUn calcul se généralise : la même formule traite tous les cas, y compris ceux qu’on n’a pas imaginés en l’écrivant.\n\nUn calcul se vérifie : une erreur de calcul se retrouve, une erreur d’intuition géométrique ne se voit pas.\n\nC’est ce triple gain qui explique pourquoi presque toute la science moderne est passée par cette traduction.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Trois coordonnées au lieu de deux",
+          "body": "Incline la fuyante et change de solide : chaque sommet n’est qu’un triplet de nombres, et la perspective un calcul sur ces nombres. C’est ce que fait une carte graphique, en bien plus grand nombre et bien plus vite.",
+          "figureId": "solides-perspective"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Et ce que la traduction fait perdre",
+          "body": "La figure donnait une évidence immédiate : on voyait pourquoi, en regardant.\n\nLe calcul donne un résultat juste sans toujours donner une raison. On peut démontrer une propriété par six lignes d’algèbre et ne pas savoir ce qu’elle signifie.\n\nLes deux approches restent complémentaires, et les bons mathématiciens passent de l’une à l’autre. Une démonstration algébrique qu’on ne sait pas raconter géométriquement est souvent une démonstration qu’on n’a pas comprise.",
+          "id": "c5"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que le repère fait à l’écran",
+          "body": "Un point d’un objet en trois dimensions porte trois coordonnées.\n\nLe déplacer, le tourner ou le mettre à l’échelle revient à le multiplier par une matrice. Enchaîner plusieurs transformations revient à multiplier les matrices entre elles, une fois pour toutes.\n\nUne carte graphique fait exactement cela, sur des millions de points, soixante fois par seconde.\n\nEntre La Géométrie de 1637 et un jeu vidéo, il n’y a pas de rupture conceptuelle : il y a la même idée, exécutée vite.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels domaines le passage au calcul a-t-il ouverts ?",
+          "explanation": "La mécanique, l’analyse, l’algèbre linéaire et, bien plus tard, l’informatique graphique — qui n’est que ce repère exécuté vite.",
+          "options": [
+            {
+              "text": "la mécanique de Newton",
+              "correct": true
+            },
+            {
+              "text": "le calcul différentiel et intégral",
+              "correct": true
+            },
+            {
+              "text": "l’algèbre linéaire",
+              "correct": true
+            },
+            {
+              "text": "l’informatique graphique",
+              "correct": true
+            },
+            {
+              "text": "la géométrie des Grecs"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce qu’un calcul permet, qu’une figure ne permet pas ?",
+          "explanation": "Il se mécanise, se généralise et se vérifie. Une erreur de calcul se retrouve ; une erreur d’intuition ne se voit pas.",
+          "options": [
+            {
+              "text": "il se mécanise",
+              "correct": true
+            },
+            {
+              "text": "il se généralise à tous les cas",
+              "correct": true
+            },
+            {
+              "text": "il se vérifie ligne à ligne",
+              "correct": true
+            },
+            {
+              "text": "il donne une évidence immédiate"
+            },
+            {
+              "text": "il se retient plus facilement"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que perd-on en traduisant une figure en calcul ?",
+          "explanation": "L’évidence immédiate. Le calcul donne un résultat juste sans toujours donner une raison qu’on puisse raconter.",
+          "options": [
+            {
+              "text": "l’évidence de voir pourquoi",
+              "correct": true
+            },
+            {
+              "text": "la justesse du résultat"
+            },
+            {
+              "text": "la généralité"
+            },
+            {
+              "text": "la possibilité de vérifier"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment déplace-t-on un point en trois dimensions, dans une carte graphique ?",
+          "explanation": "En le multipliant par une matrice. Enchaîner des transformations revient à multiplier les matrices une fois pour toutes.",
+          "options": [
+            {
+              "text": "en le multipliant par une matrice",
+              "correct": true
+            },
+            {
+              "text": "en redessinant la figure"
+            },
+            {
+              "text": "en mesurant les distances"
+            },
+            {
+              "text": "en changeant son unité"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Il y a une rupture conceptuelle entre La Géométrie de 1637 et l’image de synthèse.",
+          "explanation": "Faux. C’est la même idée — le point réduit à des coordonnées, la transformation réduite à un calcul — exécutée très vite.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que signale une démonstration algébrique qu’on ne sait pas raconter géométriquement ?",
+          "explanation": "Souvent, qu’on ne l’a pas comprise. Les deux approches restent complémentaires, et les bons mathématiciens passent de l’une à l’autre.",
+          "options": [
+            {
+              "text": "souvent, qu’on ne l’a pas comprise",
+              "correct": true
+            },
+            {
+              "text": "qu’elle est fausse"
+            },
+            {
+              "text": "qu’elle est trop difficile"
+            },
+            {
+              "text": "qu’elle est particulièrement élégante"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-traduire-un-probleme",
+      "title": "Défi : traduire un problème",
+      "subtitle": "Le travail est dans la traduction, pas dans le calcul.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Poser l’équation, lire la réponse",
+          "body": "Règle les coefficients jusqu’à faire apparaître deux racines, puis une seule, puis aucune. Le discriminant annonce le cas avant le tracé : c’est exactement le genre de réponse qu’on obtient en traduisant, et qu’aucune construction ne donnait.",
+          "figureId": "parabole",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La méthode de Descartes, telle qu’il l’énonce",
+          "body": "Supposer le problème résolu, et nommer par des lettres toutes les longueurs qui comptent, connues comme inconnues.\n\nÉcrire les relations que l’énoncé impose entre ces lettres, autant qu’il en faut.\n\nRéduire à une seule équation en une seule inconnue.\n\nRésoudre, puis revenir à la figure pour interpréter chaque solution — et écarter celles qui n’ont pas de sens géométrique.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Un problème traduit de bout en bout",
+          "body": "Partager un segment de longueur 10 en deux parties dont le produit vaut 21.\n\nOn nomme x une des parties ; l’autre vaut 10 − x.\n\nL’énoncé donne x(10 − x) = 21, soit x² − 10x + 21 = 0.\n\nLe discriminant vaut 100 − 84 = 16, donc x = 3 ou x = 7. Les deux solutions décrivent le même partage, vu des deux bouts.\n\nSi le produit demandé avait été 30, le discriminant aurait valu −20 : aucun partage ne convient, et on le sait sans avoir rien construit.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La dernière étape est la plus oubliée",
+          "body": "Une équation peut avoir des solutions que la figure refuse : une longueur négative, un point hors du segment, un angle impossible.\n\nL’algèbre ne sait pas que x représente une longueur. C’est au traducteur de revenir à l’énoncé et de trancher.\n\nDescartes insiste là-dessus, et c’est le point que les élèves sautent le plus souvent. Une solution algébrique n’est une réponse que si elle survit au retour vers le problème.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre a vraiment raconté",
+          "body": "Pas une découverte, mais une traduction — et une traduction vaut parfois mieux qu’une découverte.\n\nElle n’ajoute aucun théorème au départ. Elle rend simplement calculable un domaine entier, donc mécanisable, donc transmissible à qui n’a pas le génie de l’inventeur.\n\nC’est ce que font les grandes notations et les grands changements de point de vue : ils ne résolvent pas les problèmes, ils les mettent à portée de gens ordinaires. Et c’est ainsi que les sciences avancent le plus sûrement.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la méthode de Descartes dans l’ordre.",
+          "explanation": "Nommer toutes les longueurs, écrire les relations, réduire à une équation, résoudre, puis revenir à la figure pour interpréter.",
+          "items": [
+            "nommer par des lettres toutes les longueurs",
+            "écrire les relations imposées par l’énoncé",
+            "réduire à une équation en une inconnue",
+            "résoudre l’équation",
+            "revenir à la figure pour interpréter"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Partager 10 en deux parties de produit 21. Quelles sont les solutions ?",
+          "explanation": "x(10 − x) = 21 donne x² − 10x + 21 = 0, de discriminant 16 : x = 3 ou x = 7. Les deux décrivent le même partage.",
+          "options": [
+            {
+              "text": "x = 3",
+              "correct": true
+            },
+            {
+              "text": "x = 7",
+              "correct": true
+            },
+            {
+              "text": "x = 5"
+            },
+            {
+              "text": "x = 21"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Même énoncé avec un produit de 30. Que vaut le discriminant ?",
+          "explanation": "x² − 10x + 30 = 0 donne 100 − 120 = −20. Aucun partage ne convient, et on le sait sans rien construire.",
+          "answer": -20,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle étape les élèves sautent-ils le plus souvent ?",
+          "explanation": "Le retour à la figure. L’algèbre ne sait pas que x est une longueur : une solution n’est une réponse que si elle survit à ce retour.",
+          "options": [
+            {
+              "text": "revenir au problème pour interpréter",
+              "correct": true
+            },
+            {
+              "text": "écrire les relations"
+            },
+            {
+              "text": "résoudre l’équation"
+            },
+            {
+              "text": "nommer les inconnues"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Toute solution d’une équation traduisant un problème est une réponse au problème.",
+          "explanation": "Faux. Une longueur négative ou un point hors du segment sont des solutions algébriques que la figure refuse.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’apportent les grandes traductions, comme celle de Descartes ?",
+          "explanation": "Elles mettent un domaine à portée de gens ordinaires : rendu calculable, il devient mécanisable et transmissible.",
+          "options": [
+            {
+              "text": "elles rendent un domaine accessible sans génie",
+              "correct": true
+            },
+            {
+              "text": "elles démontrent de nouveaux théorèmes"
+            },
+            {
+              "text": "elles simplifient les calculs existants"
+            },
+            {
+              "text": "elles remplacent les démonstrations"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

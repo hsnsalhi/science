@@ -1,0 +1,595 @@
+{
+  "chapter": "histoire-sciences-lycee-la-revolution-algebrique-arabe",
+  "lessons": [
+    {
+      "id": "al-jabr",
+      "title": "Al-jabr, le geste qui donne son nom",
+      "subtitle": "Avant d’être une discipline, l’algèbre était une opération.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le geste qu’al-Khwarizmi décrit",
+          "body": "Déroule les étapes : à chaque opération, les deux plateaux restent en équilibre et la solution ne change pas. C’est littéralement ce que désigne « al-jabr » — restaurer, compléter ce qui manque d’un côté pour rétablir l’égalité.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux mots du titre, et ce qu’ils font",
+          "body": "Vers 820, à Bagdad, al-Khwarizmi écrit un traité dont le titre abrégé est « al-jabr wa al-muqabala ».\n\nAl-jabr, la restauration : ajouter aux deux membres de quoi faire disparaître un terme négatif. De x² = 40x − 4x², on passe à 5x² = 40x.\n\nAl-muqabala, la confrontation : retrancher des deux côtés les termes semblables, pour réduire.\n\nCe sont deux gestes, pas deux théories. Et c’est le premier qui a donné son nom à toute la discipline — ainsi que, par un autre chemin, au mot « algèbre » en espagnol, où il a longtemps désigné le rebouteux qui remet un os en place.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui est vraiment nouveau",
+          "body": "Résoudre des équations particulières, les Babyloniens le faisaient mille ans avant notre ère, et les Grecs aussi.\n\nCe qu’apporte al-Khwarizmi, c’est le classement : il range toutes les équations du second degré en six types, et donne pour chacun une méthode valable quels que soient les nombres.\n\nC’est le passage de recettes à un procédé général. Et c’est ce qui fait de son livre un manuel : on peut l’appliquer sans avoir à réinventer la solution.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi six types et non un seul",
+          "body": "Les nombres négatifs ne sont pas admis. Une équation doit donc s’écrire avec des coefficients positifs des deux côtés.\n\nx² + 10x = 39 et x² = 10x + 39 sont alors deux problèmes distincts, avec deux méthodes distinctes, alors que nous écririons les deux sous la même forme.\n\nLes six types viennent de là. Notre formule unique du second degré n’est pas plus profonde : elle est permise par l’acceptation des nombres négatifs, qui mettra encore des siècles à venir.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Tout est écrit en toutes lettres",
+          "body": "Il n’y a dans ce traité ni x, ni signe égal, ni exposant : tout est rédigé en phrases. « Un carré et dix racines égalent trente-neuf dirhams. »\n\nChaque démonstration s’appuie sur une figure géométrique, héritée des Grecs, et se conclut par une construction.\n\nL’algèbre naît donc sans son écriture. On mesure, à ce décalage, combien la notation n’est pas un détail de présentation : il faudra huit siècles de plus pour qu’elle arrive.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que désigne « al-jabr » ?",
+          "explanation": "Un geste : restaurer, ajouter aux deux membres de quoi faire disparaître un terme négatif. C’est une opération, pas une théorie.",
+          "options": [
+            {
+              "text": "restaurer l’équilibre entre les deux membres",
+              "correct": true
+            },
+            {
+              "text": "la science des nombres"
+            },
+            {
+              "text": "la résolution des équations"
+            },
+            {
+              "text": "le calcul avec des lettres"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’apporte al-Khwarizmi que les Babyloniens n’avaient pas ?",
+          "explanation": "Un classement général : six types d’équations, chacun avec une méthode valable quels que soient les nombres. Le passage des recettes au procédé.",
+          "options": [
+            {
+              "text": "une méthode générale, classée par type",
+              "correct": true
+            },
+            {
+              "text": "la résolution d’équations du second degré"
+            },
+            {
+              "text": "les nombres négatifs"
+            },
+            {
+              "text": "la notation symbolique"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En combien de types al-Khwarizmi range-t-il les équations du second degré ?",
+          "explanation": "Six, parce que les coefficients négatifs ne sont pas admis : chaque disposition des termes est un problème distinct.",
+          "answer": 6,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi six types là où nous n’avons qu’une formule ?",
+          "explanation": "Parce que les nombres négatifs ne sont pas acceptés. Notre formule unique n’est pas plus profonde : elle est permise par cette acceptation ultérieure.",
+          "options": [
+            {
+              "text": "les nombres négatifs n’étaient pas admis",
+              "correct": true
+            },
+            {
+              "text": "les méthodes étaient moins bonnes"
+            },
+            {
+              "text": "le discriminant était inconnu"
+            },
+            {
+              "text": "on ne savait pas factoriser"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le traité d’al-Khwarizmi utilise des symboles comme x et le signe égal.",
+          "explanation": "Faux. Tout y est rédigé en phrases, et chaque démonstration s’appuie sur une figure géométrique. La notation viendra huit siècles plus tard.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Vers quelle année al-Khwarizmi écrit-il son traité d’algèbre ?",
+          "explanation": "Vers 820, à Bagdad, dans le cadre de la Maison de la sagesse.",
+          "min": 500,
+          "max": 1500,
+          "answer": 820,
+          "tolerance": 40,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "les-chiffres-et-le-zero",
+      "title": "Les chiffres, et le zéro",
+      "subtitle": "Dix signes qui divisent le temps de calcul par dix.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le temps que met une idée à passer",
+          "body": "Fais glisser l’année et regarde les barres : le zéro met des siècles à franchir la Méditerranée alors qu’il est déjà employé des deux côtés. Ce délai n’est pas une anecdote — c’est la mesure de ce que coûte un changement de notation.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le voyage des chiffres",
+          "body": "Ils naissent en Inde entre les IVe et VIe siècles, avec le zéro comme chiffre à part entière et non comme simple vide.\n\nAl-Khwarizmi écrit vers 825 un traité sur le calcul indien, qui les fait adopter dans le monde arabe.\n\nSon nom latinisé donne « algorismus », puis algorithme : le mot désignait d’abord le calcul avec ces chiffres-là.\n\nLeonardo de Pise les introduit en Europe en 1202. Ils mettront encore trois siècles à supplanter les chiffres romains dans la comptabilité, et Florence les interdira même un temps.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi la position change tout",
+          "body": "En chiffres romains, la valeur d’un signe ne dépend pas de sa place, à quelques exceptions près. Il faut donc un signe nouveau pour chaque ordre de grandeur, et il n’y en a pas au-delà de mille.\n\nEn notation positionnelle, dix signes suffisent pour tous les nombres, et la place d’un chiffre dit sa valeur.\n\nSurtout, on peut poser une multiplication en colonnes. Essayez de multiplier MCMXLVII par CCCLXII sans traduire : l’opération n’a pas d’algorithme. C’est pourquoi les Romains calculaient à l’abaque et écrivaient seulement le résultat.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le zéro est un chiffre, pas un rien",
+          "body": "Les Babyloniens avaient un signe pour marquer une position vide, mais pas en fin de nombre : 2 et 120 pouvaient s’écrire pareil, et le contexte tranchait.\n\nL’apport indien est de traiter le zéro comme un nombre : on peut l’additionner, le soustraire, écrire des règles à son sujet.\n\nBrahmagupta, en 628, est le premier à les énoncer. Il se trompe sur la division par zéro, qu’il croit possible — l’erreur mettra mille ans à être corrigée, ce qui donne la mesure de la difficulté.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le nom qu’on leur donne est un raccourci",
+          "body": "On dit « chiffres arabes » parce que l’Europe les a reçus du monde arabe. Les Arabes, eux, les appelaient « chiffres indiens ».\n\nChacun nomme une invention d’après celui qui la lui a transmise, et le nom garde donc la trace du chemin plutôt que de l’origine.\n\nCe n’est pas une querelle de mots : c’est un bon rappel que l’histoire des sciences est d’abord une histoire de transmissions, et que les noms en conservent souvent le dernier relais.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets le voyage des chiffres dans l’ordre.",
+          "explanation": "Naissance en Inde, traité d’al-Khwarizmi vers 825, introduction en Europe par Leonardo de Pise en 1202, puis adoption lente.",
+          "items": [
+            "naissance en Inde",
+            "adoption dans le monde arabe",
+            "introduction en Europe en 1202",
+            "adoption dans la comptabilité européenne"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "D’où vient le mot « algorithme » ?",
+          "explanation": "Du nom latinisé d’al-Khwarizmi, « algorismus », qui désignait d’abord le calcul avec les chiffres indiens.",
+          "options": [
+            {
+              "text": "du nom latinisé d’al-Khwarizmi",
+              "correct": true
+            },
+            {
+              "text": "du grec arithmos"
+            },
+            {
+              "text": "du latin algoritmus, « calcul »"
+            },
+            {
+              "text": "du nom d’al-jabr"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la notation positionnelle permet, que les chiffres romains ne permettent pas ?",
+          "explanation": "De poser une opération en colonnes. Sans elle, il n’y a pas d’algorithme de multiplication, d’où l’usage de l’abaque.",
+          "options": [
+            {
+              "text": "poser une multiplication en colonnes",
+              "correct": true
+            },
+            {
+              "text": "écrire de grands nombres"
+            },
+            {
+              "text": "compter au-delà de mille"
+            },
+            {
+              "text": "représenter les fractions"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est l’apport proprement indien sur le zéro ?",
+          "explanation": "Le traiter comme un nombre, avec lequel on calcule, et non comme un simple marqueur de position vide.",
+          "options": [
+            {
+              "text": "en faire un nombre avec lequel on calcule",
+              "correct": true
+            },
+            {
+              "text": "inventer un signe pour le vide"
+            },
+            {
+              "text": "l’utiliser en comptabilité"
+            },
+            {
+              "text": "le placer en fin de nombre"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Brahmagupta avait énoncé correctement toutes les règles du zéro.",
+          "explanation": "Faux. Il croyait la division par zéro possible, et l’erreur mettra mille ans à être corrigée.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi dit-on « chiffres arabes » ?",
+          "explanation": "Parce que l’Europe les a reçus du monde arabe. Les Arabes, eux, les nommaient chiffres indiens : le nom garde la trace du dernier relais.",
+          "options": [
+            {
+              "text": "l’Europe les a reçus du monde arabe",
+              "correct": true
+            },
+            {
+              "text": "ils ont été inventés en Arabie"
+            },
+            {
+              "text": "leur forme vient de l’alphabet arabe"
+            },
+            {
+              "text": "c’est une erreur sans origine"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "resoudre-sans-symboles",
+      "title": "Résoudre sans symboles",
+      "subtitle": "Possible, démontré, et interminable.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Approcher sans jamais atteindre",
+          "body": "Monte le dénominateur et saute aux meilleures fractions : l’écart diminue sans s’annuler. Les mathématiciens de cette époque maniaient très bien ces approximations — ce qui leur manquait n’était pas la puissance de calcul, mais une écriture qui tienne sur une ligne.",
+          "figureId": "racine-de-deux",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Une démonstration en langue naturelle",
+          "body": "Pour résoudre « un carré et dix racines égalent trente-neuf », al-Khwarizmi décrit un carré de côté x, flanqué de quatre rectangles de largeur 2,5.\n\nIl complète la figure par quatre petits carrés de côté 2,5, ce qui donne un grand carré d’aire 39 + 25 = 64.\n\nLe côté du grand carré vaut donc 8, et x vaut 8 moins deux fois 2,5, soit 3.\n\nC’est exactement notre complétion du carré, et c’est irréprochable. Simplement, il faut une page et une figure là où nous écrivons trois lignes.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que coûte l’absence de notation",
+          "body": "Chaque problème demande son propre raisonnement rédigé, qu’on ne peut pas mécaniser.\n\nOn ne peut pas manipuler une expression sans la relire en entier, ni voir d’un coup d’œil qu’un terme se simplifie.\n\nEt l’on ne peut pas traiter le cas général : la méthode est décrite sur un exemple, et le lecteur doit transposer.\n\nLa notation n’abrège donc pas seulement l’écriture : elle rend possible de calculer sur les formes plutôt que sur les nombres. C’est elle, plus que les idées, qui manquait.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Le rectangle qu’al-Khwarizmi découpe",
+          "body": "Déplace le trait qui coupe le rectangle : l’aire totale et la somme des deux morceaux restent égales. C’est ce genre de découpage, et lui seul, qui servait de démonstration — une page de figure là où nous écrivons une identité remarquable.",
+          "figureId": "distributivite"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les étapes de l’écriture algébrique",
+          "body": "Al-Khwarizmi, vers 820 : tout en phrases.\n\nDiophante avait employé quelques abréviations dès le IIIe siècle, mais une seule inconnue.\n\nLes algébristes italiens du XVIe siècle écrivent « cosa » pour l’inconnue, et abrègent en « co ».\n\nViète, en 1591, note les inconnues par des voyelles et les paramètres par des consonnes : on peut enfin écrire un énoncé général.\n\nDescartes, en 1637, fixe x, y, z pour les inconnues et a, b, c pour les données, et l’exposant numérique. C’est la notation que nous employons encore.",
+          "id": "c5"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Huit siècles, ce n’est pas de la lenteur d’esprit",
+          "body": "On est tenté de trouver aberrant qu’il ait fallu si longtemps pour écrire x².\n\nMais une notation n’est utile que si elle est partagée, et une convention ne se décrète pas : elle s’impose par l’usage, lequel suppose des livres imprimés et un public qui les lise.\n\nL’imprimerie date de 1450, Viète de 1591, Descartes de 1637. Le calendrier de la notation suit celui de la diffusion, et non celui des idées.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment al-Khwarizmi démontre-t-il sa méthode ?",
+          "explanation": "Par une figure géométrique : il complète un carré, ce qui est exactement notre complétion du carré, mais rédigée et dessinée.",
+          "options": [
+            {
+              "text": "par une figure géométrique qu’il complète",
+              "correct": true
+            },
+            {
+              "text": "par le calcul du discriminant"
+            },
+            {
+              "text": "par des essais numériques"
+            },
+            {
+              "text": "il ne démontre pas"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "« Un carré et dix racines égalent trente-neuf. » Que vaut x ?",
+          "explanation": "x² + 10x = 39 donne x² + 10x + 25 = 64, donc (x + 5)² = 64, x + 5 = 8 et x = 3.",
+          "answer": 3,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la notation rend possible, au-delà d’abréger ?",
+          "explanation": "De calculer sur les formes plutôt que sur les nombres : manipuler une expression sans la relire, et traiter le cas général.",
+          "options": [
+            {
+              "text": "calculer sur les formes et non sur les nombres",
+              "correct": true
+            },
+            {
+              "text": "écrire plus vite"
+            },
+            {
+              "text": "éviter les erreurs de copie"
+            },
+            {
+              "text": "enseigner aux débutants"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets les étapes de l’écriture algébrique dans l’ordre.",
+          "explanation": "Diophante et ses abréviations au IIIe siècle, al-Khwarizmi tout en phrases vers 820, la « cosa » italienne au XVIe, Viète en 1591, Descartes en 1637.",
+          "items": [
+            "les abréviations de Diophante",
+            "le traité tout en phrases d’al-Khwarizmi",
+            "la « cosa » des algébristes italiens",
+            "les voyelles et consonnes de Viète",
+            "les x, y, z de Descartes"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui fixe la notation que nous employons encore ?",
+          "explanation": "Descartes en 1637 : x, y, z pour les inconnues, a, b, c pour les données, et l’exposant numérique.",
+          "options": [
+            {
+              "text": "Descartes, en 1637",
+              "correct": true
+            },
+            {
+              "text": "Viète, en 1591"
+            },
+            {
+              "text": "al-Khwarizmi, vers 820"
+            },
+            {
+              "text": "Diophante, au IIIe siècle"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la notation a-t-elle mis si longtemps à s’imposer ?",
+          "explanation": "Parce qu’une convention ne se décrète pas : elle s’impose par l’usage, qui suppose des livres imprimés et un public. L’imprimerie date de 1450.",
+          "options": [
+            {
+              "text": "une convention suppose une diffusion imprimée",
+              "correct": true
+            },
+            {
+              "text": "personne n’y avait pensé"
+            },
+            {
+              "text": "elle était interdite"
+            },
+            {
+              "text": "les idées manquaient"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-la-transmission",
+      "title": "Défi : comment un savoir voyage",
+      "subtitle": "Trois villes, six siècles, et des traducteurs qu’on ne cite jamais.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Des siècles entre l’idée et son adoption",
+          "body": "Fais glisser l’année : les barres mesurent le temps passé entre le moment où une idée existe et celui où elle est admise. Ce chapitre entier tient dans cette durée-là, et le défi demande ce qui la détermine.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les trois relais",
+          "body": "Bagdad, VIIIe au Xe siècle : la Maison de la sagesse rassemble et traduit en arabe les textes grecs, indiens et persans. On y produit aussi : al-Khwarizmi, al-Biruni, Ibn al-Haytham en optique.\n\nCordoue et Tolède, XIIe siècle : après la reconquête de Tolède en 1085, ses bibliothèques passent en terre chrétienne. Une école de traduction y rend en latin ce qui avait été rendu en arabe.\n\nL’Italie du Nord, XIIIe siècle : marchands et universités diffusent, et Leonardo de Pise, fils d’un marchand installé en Afrique du Nord, publie ce qu’il y a appris.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qui fait passer une idée",
+          "body": "Un besoin pratique : les chiffres indiens gagnent par la comptabilité marchande, pas par l’école.\n\nUn lieu où les textes coexistent : Tolède a des manuscrits arabes et des lecteurs latins dans la même ville.\n\nDes traducteurs, et c’est le maillon qu’on oublie : Gérard de Crémone aurait traduit plus de soixante-dix ouvrages, et son nom ne figure dans aucun manuel de mathématiques.\n\nUne idée ne voyage pas toute seule. Elle est portée par des gens dont le travail consiste précisément à n’avoir rien inventé.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que l’Europe aurait perdu sans ce relais",
+          "body": "Les œuvres d’Aristote, de Ptolémée, d’Euclide et d’Archimède arrivent en Europe par des traductions de l’arabe avant de revenir par le grec.\n\nL’Almageste de Ptolémée porte un titre arabe : « al-majisti », déformation du grec « la très grande ».\n\nLes mots algèbre, algorithme, chiffre, zéro, azimut, nadir, alcool et alchimie viennent tous de l’arabe.\n\nLe vocabulaire scientifique européen garde ainsi, dans son lexique même, la carte de ses propres emprunts.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Éviter les deux récits faciles",
+          "body": "Le premier fait de l’Europe l’héritière directe des Grecs, en sautant huit siècles. Il est faux par omission.\n\nLe second fait du monde arabe un simple conservatoire qui aurait gardé les textes sans rien y ajouter. Il est faux aussi : l’algèbre, la trigonométrie, l’optique d’Ibn al-Haytham et une grande partie de l’astronomie observationnelle y sont nées.\n\nLa transmission n’est jamais une simple recopie. Chaque relais sélectionne, corrige, ajoute — et c’est pour cela qu’il faut l’étudier au lieu de le résumer.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque lieu à son rôle dans la transmission.",
+          "explanation": "Bagdad traduit et produit, Tolède rend en latin ce qui était en arabe, l’Italie du Nord diffuse par le commerce et les universités.",
+          "pairs": [
+            {
+              "left": "Bagdad, VIIIe-Xe siècle",
+              "right": "traduire en arabe, et produire"
+            },
+            {
+              "left": "Tolède, XIIe siècle",
+              "right": "traduire de l’arabe au latin"
+            },
+            {
+              "left": "l’Italie du Nord, XIIIe siècle",
+              "right": "diffuser par le commerce"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui a fait adopter les chiffres indiens en Europe ?",
+          "explanation": "La comptabilité marchande, et non l’enseignement. Un besoin pratique l’emporte sur une démonstration d’élégance.",
+          "options": [
+            {
+              "text": "la comptabilité marchande",
+              "correct": true
+            },
+            {
+              "text": "les universités"
+            },
+            {
+              "text": "une décision royale"
+            },
+            {
+              "text": "l’Église"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui est Gérard de Crémone ?",
+          "explanation": "Un traducteur de Tolède, auteur de plus de soixante-dix traductions — et le maillon que les manuels de mathématiques oublient.",
+          "options": [
+            {
+              "text": "un traducteur de l’arabe au latin",
+              "correct": true
+            },
+            {
+              "text": "un mathématicien italien"
+            },
+            {
+              "text": "un astronome de Bagdad"
+            },
+            {
+              "text": "un imprimeur du XVe siècle"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quels mots français viennent de l’arabe ?",
+          "explanation": "Algèbre, algorithme, zéro, azimut, alcool : le lexique scientifique garde la carte de ses emprunts.",
+          "options": [
+            {
+              "text": "algèbre",
+              "correct": true
+            },
+            {
+              "text": "algorithme",
+              "correct": true
+            },
+            {
+              "text": "zéro",
+              "correct": true
+            },
+            {
+              "text": "azimut",
+              "correct": true
+            },
+            {
+              "text": "géométrie"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Le monde arabe a conservé les textes grecs sans rien y ajouter.",
+          "explanation": "Faux. L’algèbre, la trigonométrie, l’optique d’Ibn al-Haytham et une grande part de l’astronomie observationnelle y sont nées.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’Almageste porte-t-il un titre arabe ?",
+          "explanation": "Parce que l’Europe l’a reçu par une traduction arabe : « al-majisti » déforme le grec « la très grande ».",
+          "options": [
+            {
+              "text": "l’Europe l’a reçu par une traduction arabe",
+              "correct": true
+            },
+            {
+              "text": "Ptolémée écrivait en arabe"
+            },
+            {
+              "text": "il a été écrit à Bagdad"
+            },
+            {
+              "text": "c’est une coïncidence de vocabulaire"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

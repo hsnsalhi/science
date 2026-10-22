@@ -21,7 +21,7 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Moteur de quiz : **9 types d'exercices**, correction expliquée | ✅ |
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
 | Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
-| Contenu rédigé de bout en bout | **168 chapitres** : 672 leçons, 2 888 cartes, 3 533 questions |
+| Contenu rédigé de bout en bout | **173 chapitres** : 692 leçons, 2 993 cartes, 3 653 questions |
 | **69 figures interactives**, dessinées d'après le réel | ✅ |
 | 1 527 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |

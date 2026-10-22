@@ -1,0 +1,564 @@
+{
+  "chapter": "histoire-sciences-lycee-einstein-et-la-relativite",
+  "lessons": [
+    {
+      "id": "un-postulat-qui-derange",
+      "title": "Un postulat qui dérange",
+      "subtitle": "La lumière va à la même vitesse pour tout le monde, quoi qu’on fasse.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les vitesses s’ajoutent, d’habitude",
+          "body": "Règle la vitesse et regarde la durée du parcours suivre. C’est l’arithmétique ordinaire des vitesses : un passager qui marche dans un train avance, pour le quai, de sa vitesse plus celle du train. Toute la leçon part de ce que cette addition cesse de valoir pour la lumière.",
+          "figureId": "vitesse",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux postulats de 1905",
+          "body": "Premier postulat : les lois de la physique sont les mêmes dans tous les référentiels en mouvement rectiligne uniforme. Aucune expérience faite à l’intérieur d’un train ne permet de savoir s’il roule ou s’il est à l’arrêt.\n\nCe principe-là datait de Galilée et ne choquait personne.\n\nSecond postulat : la vitesse de la lumière dans le vide est la même pour tous les observateurs, quelle que soit la vitesse de la source ou celle de l’observateur.\n\nCelui-ci est en contradiction directe avec l’addition des vitesses, et c’est de lui que tout découle.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "L’expérience qui n’a rien trouvé",
+          "body": "Si la lumière était une onde dans un milieu — l’éther — la Terre le traverserait à trente kilomètres par seconde, et la lumière devrait aller un peu plus vite dans un sens que dans l’autre.\n\nEn 1887, Michelson et Morley mesurent cet écart avec un interféromètre assez sensible pour le voir dix fois plus petit.\n\nIls ne trouvent rien. Ils refont l’expérience à six mois d’intervalle, la Terre allant alors en sens inverse. Toujours rien.\n\nC’est l’un des plus célèbres résultats négatifs de l’histoire des sciences, et pendant dix-huit ans on a tenté de l’expliquer en gardant l’éther.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’Einstein fait de différent",
+          "body": "Lorentz et Poincaré avaient écrit les bonnes formules avant lui, en supposant que les objets se contractent réellement en traversant l’éther.\n\nEinstein supprime l’éther et prend le résultat négatif pour ce qu’il dit : la vitesse de la lumière est la même pour tous. Puis il en tire les conséquences sans reculer devant elles.\n\nCe n’est donc pas une percée mathématique : les équations existaient. C’est le refus d’ajouter une hypothèse pour sauver une intuition.\n\nLe prix à payer est énorme : il faut abandonner l’idée que deux événements simultanés pour l’un le sont pour tous.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Pourquoi on ne s’en aperçoit jamais",
+          "body": "Le facteur qui mesure les effets vaut 1 / racine de (1 − v²/c²).\n\nÀ 100 km/h, soit 28 mètres par seconde, il vaut 1,000000000000004. Aucun instrument courant ne le distingue de 1.\n\nÀ 10 % de la vitesse de la lumière, il vaut 1,005. À 99 %, il vaut 7,1.\n\nLa mécanique de Newton n’est donc pas fausse : c’est le cas limite de la relativité pour les petites vitesses, et c’est pourquoi elle a semblé exacte pendant deux siècles.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Lequel des deux postulats de 1905 était nouveau ?",
+          "explanation": "Celui de la constance de la vitesse de la lumière. Le principe de relativité datait de Galilée et ne choquait personne.",
+          "options": [
+            {
+              "text": "la vitesse de la lumière est la même pour tous",
+              "correct": true
+            },
+            {
+              "text": "les lois sont les mêmes dans tout référentiel inertiel"
+            },
+            {
+              "text": "les deux étaient nouveaux"
+            },
+            {
+              "text": "aucun des deux"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’ont trouvé Michelson et Morley en 1887 ?",
+          "explanation": "Rien : aucun écart de vitesse de la lumière selon la direction, alors que leur appareil l’aurait vu dix fois plus petit.",
+          "options": [
+            {
+              "text": "aucun écart, malgré une sensibilité suffisante",
+              "correct": true
+            },
+            {
+              "text": "un écart conforme à l’éther"
+            },
+            {
+              "text": "un écart dix fois trop petit"
+            },
+            {
+              "text": "un résultat différent selon la saison"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’Einstein apporte, que Lorentz et Poincaré n’avaient pas ?",
+          "explanation": "Le refus d’ajouter l’éther pour sauver l’intuition. Les équations existaient déjà : c’est l’interprétation qui change.",
+          "options": [
+            {
+              "text": "le refus de sauver l’éther par une hypothèse",
+              "correct": true
+            },
+            {
+              "text": "les équations de transformation"
+            },
+            {
+              "text": "la mesure de la vitesse de la lumière"
+            },
+            {
+              "text": "l’expérience décisive"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La mécanique de Newton est fausse.",
+          "explanation": "Faux. C’est le cas limite de la relativité pour les petites vitesses, et l’écart est indétectable en dessous de quelques pour cent de c.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "estimation",
+          "prompt": "Combien vaut le facteur relativiste à 99 % de la vitesse de la lumière ?",
+          "explanation": "1 / racine de (1 − 0,99²) = 1 / racine de 0,0199, soit environ 7,1.",
+          "min": 1,
+          "max": 50,
+          "answer": 7.1,
+          "tolerance": 0.5,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel prix faut-il payer pour accepter le second postulat ?",
+          "explanation": "Abandonner la simultanéité absolue : deux événements simultanés pour un observateur ne le sont pas pour un autre.",
+          "options": [
+            {
+              "text": "abandonner la simultanéité absolue",
+              "correct": true
+            },
+            {
+              "text": "abandonner la conservation de l’énergie"
+            },
+            {
+              "text": "abandonner la gravitation"
+            },
+            {
+              "text": "abandonner les mesures de distance"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "le-temps-se-dilate",
+      "title": "Le temps se dilate",
+      "subtitle": "Et des particules venues du ciel en apportent la preuve.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Deux aiguilles, et une durée qu’on croit absolue",
+          "body": "Règle les heures et les minutes : le cadran donne une durée que l’on croit la même pour tout le monde. C’est exactement cette évidence que la leçon défait — deux horloges en mouvement l’une par rapport à l’autre ne comptent pas le même temps.",
+          "figureId": "horloge",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Le facteur de dilatation",
+          "body": "Pour un objet se déplaçant à la vitesse v, les durées mesurées dans son référentiel et dans le nôtre sont dans le rapport :\n\nγ = 1 / √(1 − v²/c²)\n\nCe facteur vaut 1 à vitesse nulle, 1,005 à 10 % de c, 2,3 à 90 %, et il croît sans limite quand on approche de c.\n\nUne horloge en mouvement bat donc plus lentement, vue d’ici. Et l’effet est réciproque : vue de là-bas, c’est la nôtre qui ralentit.",
+          "formula": "γ = 1 / √(1 − v²/c²)",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les muons, et le calcul qui ne colle pas",
+          "body": "Les rayons cosmiques produisent des muons vers 15 kilomètres d’altitude.\n\nUn muon vit 2,2 microsecondes en moyenne. À la vitesse de la lumière, cela fait 660 mètres.\n\nAucun ne devrait donc atteindre le sol, et on devrait en détecter une proportion infime.\n\nOr on en détecte en abondance. Leur vitesse étant de 99,8 % de c, le facteur γ vaut environ 16 : leur durée de vie, vue d’ici, est de 35 microsecondes, soit plus de 10 kilomètres parcourus. Le compte tombe juste.\n\nCe n’est pas une expérience de pensée : on peut compter les muons avec un détecteur de table.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le même fait, vu de l’autre côté",
+          "body": "Du point de vue du muon, c’est son temps qui est normal et c’est la distance qui a raccourci : les 15 kilomètres n’en font plus qu’un peu moins d’un.\n\nDilatation du temps et contraction des longueurs sont deux descriptions du même phénomène, dans deux référentiels.\n\nLes deux donnent le même nombre de muons au sol, ce qui est la seule chose qu’on mesure.\n\nSe demander « laquelle est la vraie » n’a pas de sens : la question suppose un référentiel privilégié, et c’est précisément ce que le premier postulat refuse.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le paradoxe des jumeaux, et sa résolution",
+          "body": "Si chacun voit l’horloge de l’autre ralentir, lequel est le plus jeune au retour ?\n\nLa situation n’est pas symétrique : celui qui part doit accélérer, faire demi-tour et freiner. Il change de référentiel, l’autre non.\n\nC’est le voyageur qui est le plus jeune, et l’effet a été mesuré en 1971 en embarquant des horloges atomiques dans des avions de ligne.\n\nLes écarts étaient de quelques centaines de nanosecondes, conformes au calcul. Le paradoxe n’en est pas un dès qu’on remarque l’asymétrie.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quelle distance un muon parcourt-il en 2,2 µs à la vitesse de la lumière, en mètres ?",
+          "explanation": "3 × 10⁸ × 2,2 × 10⁻⁶ = 660 mètres. Bien moins que les 15 kilomètres à franchir.",
+          "answer": 660,
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi détecte-t-on malgré tout des muons au sol ?",
+          "explanation": "Leur durée de vie, vue d’ici, est multipliée par γ ≈ 16 : elle passe à 35 µs, soit plus de 10 kilomètres parcourus.",
+          "options": [
+            {
+              "text": "leur durée de vie est dilatée d’un facteur 16",
+              "correct": true
+            },
+            {
+              "text": "ils vont plus vite que la lumière"
+            },
+            {
+              "text": "ils sont produits plus bas"
+            },
+            {
+              "text": "ils se reproduisent en chemin"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment le muon décrit-il la même situation ?",
+          "explanation": "Son temps est normal et c’est la distance qui a raccourci : les 15 kilomètres n’en font plus qu’un peu moins d’un.",
+          "options": [
+            {
+              "text": "c’est la distance qui a raccourci",
+              "correct": true
+            },
+            {
+              "text": "son temps s’est accéléré"
+            },
+            {
+              "text": "il voit la même chose que nous"
+            },
+            {
+              "text": "il ne décrit rien, il n’observe pas"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "On peut demander laquelle des deux descriptions est la vraie.",
+          "explanation": "Faux. La question suppose un référentiel privilégié, ce que le premier postulat refuse. Les deux donnent le même nombre mesuré de muons.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi le paradoxe des jumeaux n’en est-il pas un ?",
+          "explanation": "La situation n’est pas symétrique : le voyageur accélère, fait demi-tour et freine. Il change de référentiel, pas celui qui reste.",
+          "options": [
+            {
+              "text": "le voyageur change de référentiel, pas l’autre",
+              "correct": true
+            },
+            {
+              "text": "les deux vieillissent pareil"
+            },
+            {
+              "text": "l’effet s’annule au retour"
+            },
+            {
+              "text": "le calcul est trop approximatif"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En quelle année a-t-on embarqué des horloges atomiques dans des avions pour vérifier l’effet ?",
+          "explanation": "1971. Les écarts mesurés, de quelques centaines de nanosecondes, étaient conformes au calcul.",
+          "answer": 1971,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-masse-est-de-l-energie",
+      "title": "La masse est de l’énergie",
+      "subtitle": "Une équivalence, et non une recette de conversion.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Là où l’équivalence se manifeste",
+          "body": "Fais varier la taille du noyau : c’est dans ce volume minuscule que les énergies de liaison sont assez grandes pour que la différence de masse devienne mesurable. Dans la chimie, qui ne touche qu’aux électrons, elle est un milliard de fois trop petite pour se voir.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "formule",
+          "title": "Ce que la formule dit, et ce qu’elle ne dit pas",
+          "body": "E = mc²\n\nElle dit qu’un corps au repos possède une énergie proportionnelle à sa masse, et que toute variation d’énergie s’accompagne d’une variation de masse.\n\nElle ne dit pas qu’on peut convertir n’importe quelle masse en énergie à volonté. Un caillou ne se transforme pas en centrale électrique.\n\nCe qu’on sait libérer, c’est une fraction de l’énergie de liaison : 0,7 % dans la fusion de l’hydrogène, 0,09 % dans la fission de l’uranium.",
+          "formula": "E = mc²",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La masse manquante, mesurée",
+          "body": "Un noyau d’hélium pèse 0,7 % de moins que les quatre nucléons qui le composent, pris séparément.\n\nCette masse n’a pas disparu : elle a été libérée en énergie au moment où le noyau s’est formé. C’est le défaut de masse, et il se mesure au spectromètre.\n\nLe même raisonnement vaut en chimie : une molécule d’eau pèse moins que ses atomes séparés. Mais l’écart y est de l’ordre du milliardième, très au-delà de ce que pèse une balance.\n\nL’équivalence vaut donc partout. Seule son ampleur change, et c’est pourquoi on ne l’a découverte qu’avec le noyau.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’on en a tiré, et dans quel ordre",
+          "body": "1905 : l’équation, comme conséquence de la relativité restreinte, dans un article de trois pages.\n\n1938 : Hahn et Strassmann observent la fission de l’uranium ; Lise Meitner et Otto Frisch l’interprètent et calculent l’énergie libérée avec cette formule.\n\n1942 : première réaction en chaîne contrôlée, à Chicago.\n\n1945 : Hiroshima et Nagasaki.\n\nTrente-trois ans séparent une équation d’une arme, et le chemin n’avait rien d’évident : Einstein lui-même jugeait l’énergie nucléaire inexploitable en 1934.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’Einstein a fait et n’a pas fait",
+          "body": "Il n’a pas travaillé au projet Manhattan, et n’y a pas été autorisé.\n\nIl a signé en 1939 une lettre à Roosevelt, rédigée par Leó Szilárd, alertant sur la possibilité d’une bombe allemande. Il la qualifiera plus tard de seule grande erreur de sa vie.\n\nFaire de lui le père de la bombe est donc une facilité. Une équation ne construit rien : il a fallu trente ans, des milliers de personnes et des décisions politiques.\n\nRendre un physicien responsable d’un usage militaire est commode et faux, et cela dispense d’examiner qui a réellement décidé.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit E = mc² exactement ?",
+          "explanation": "Qu’un corps au repos possède une énergie proportionnelle à sa masse, et que toute variation d’énergie change la masse.",
+          "options": [
+            {
+              "text": "un corps au repos possède une énergie proportionnelle à sa masse",
+              "correct": true
+            },
+            {
+              "text": "on peut convertir toute masse en énergie"
+            },
+            {
+              "text": "la masse augmente avec la vitesse"
+            },
+            {
+              "text": "l’énergie se conserve"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Quel pourcentage de la masse la fusion de l’hydrogène libère-t-elle ?",
+          "explanation": "0,7 %. La fission de l’uranium n’en libère que 0,09 %.",
+          "answer": 0.7,
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi n’observe-t-on pas le défaut de masse en chimie ?",
+          "explanation": "Parce qu’il y est de l’ordre du milliardième, très en dessous de ce qu’une balance mesure. L’équivalence vaut pourtant aussi.",
+          "options": [
+            {
+              "text": "il y est de l’ordre du milliardième",
+              "correct": true
+            },
+            {
+              "text": "l’équivalence ne vaut pas en chimie"
+            },
+            {
+              "text": "les atomes ne se lient pas"
+            },
+            {
+              "text": "les balances sont mal étalonnées"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chronologie dans l’ordre.",
+          "explanation": "L’équation en 1905, la fission observée en 1938 et interprétée par Meitner et Frisch, la pile de Chicago en 1942, les bombes en 1945.",
+          "items": [
+            "l’équation E = mc²",
+            "la découverte de la fission",
+            "la première réaction en chaîne contrôlée",
+            "Hiroshima et Nagasaki"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Einstein a travaillé au projet Manhattan.",
+          "explanation": "Faux. Il n’y a pas été autorisé. Il a signé en 1939 une lettre d’alerte rédigée par Szilárd, qu’il regrettera.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’années séparent l’équation de 1905 des bombes de 1945 ?",
+          "explanation": "Quarante ans — et trente-trois entre l’équation et la première réaction en chaîne. Le chemin n’avait rien d’évident.",
+          "answer": 40,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-la-gravitation-redefinie",
+      "title": "Défi : la gravitation redéfinie",
+      "subtitle": "Dix ans de plus, et la géométrie remplace la force.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un espace qui n’est pas un décor",
+          "body": "Change de galaxie observatrice : les vitesses se recalculent et le tableau garde la même allure. Ce que cette figure montre — un espace qui s’allonge et qui n’est pas une toile de fond — est une conséquence directe de la relativité générale.",
+          "figureId": "expansion",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’idée de 1915",
+          "body": "Einstein part d’une remarque simple : une personne en chute libre ne ressent aucun poids. Localement, chuter et flotter dans l’espace sont indiscernables.\n\nIl en tire que la gravitation n’est pas une force mais une propriété de l’espace et du temps : une masse les courbe, et les objets suivent simplement le chemin le plus droit possible dans cette géométrie courbée.\n\nLa Terre ne tire pas sur la Lune : elle déforme l’espace-temps autour d’elle, et la Lune y va tout droit.\n\nIl lui faudra huit ans pour mettre l’idée en équations.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "La vérification de 1919",
+          "body": "Si l’espace est courbé par le Soleil, un rayon de lumière passant près de lui doit être dévié — deux fois plus que ne le prévoyait la mécanique de Newton.\n\nOn ne peut l’observer que pendant une éclipse totale, quand les étoiles proches du Soleil deviennent visibles.\n\nArthur Eddington organise deux expéditions en mai 1919, au Brésil et sur une île africaine. Les positions mesurées s’écartent de la valeur newtonienne et s’accordent avec Einstein.\n\nL’annonce est faite en novembre, et les journaux du monde entier en parlent. C’est le moment où Einstein devient célèbre — quatorze ans après ses articles de 1905.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Tomber sans jamais toucher",
+          "body": "Monte la vitesse jusqu’à la mise en orbite : le boulet tombe en permanence et ne touche jamais le sol. C’est exactement la remarque d’où part la relativité générale — en chute libre, on ne ressent aucun poids, et l’orbite n’est qu’une chute qui dure.",
+          "figureId": "canon-newton"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce qu’on en vérifie aujourd’hui",
+          "body": "L’avance du périhélie de Mercure, que Newton n’expliquait pas, et qu’Einstein retrouve exactement.\n\nLe décalage des horloges selon l’altitude, corrigé en permanence dans le GPS, sans quoi la position dériverait de dix kilomètres par jour.\n\nLes lentilles gravitationnelles, où une galaxie en déforme une autre située derrière elle.\n\nLes ondes gravitationnelles, prédites en 1916 et détectées en 2015, un siècle plus tard. Et les images d’ombres de trous noirs, en 2019 et 2022.",
+          "id": "c5"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ce qu’il reste à faire",
+          "body": "La relativité générale décrit le très grand. La mécanique quantique décrit le très petit. Les deux sont vérifiées avec une précision extrême, chacune dans son domaine.\n\nElles sont incompatibles. Il n’existe pas de théorie qui les contienne toutes deux, et c’est le plus grand chantier ouvert de la physique depuis un siècle.\n\nL’intérieur d’un trou noir et le tout premier instant de l’univers sont les deux endroits où il faudrait les deux à la fois. Nous n’avons donc rien à en dire de solide.\n\nUne science en bon état sait nommer ce qu’elle ne sait pas, et désigner précisément l’endroit où ses outils cessent de fonctionner.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "De quelle remarque Einstein part-il en 1915 ?",
+          "explanation": "Qu’une personne en chute libre ne ressent aucun poids : localement, chuter et flotter dans l’espace sont indiscernables.",
+          "options": [
+            {
+              "text": "une personne en chute libre ne ressent aucun poids",
+              "correct": true
+            },
+            {
+              "text": "la lumière a une vitesse constante"
+            },
+            {
+              "text": "les orbites sont elliptiques"
+            },
+            {
+              "text": "la masse courbe les objets"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la gravitation, selon la relativité générale ?",
+          "explanation": "Une propriété géométrique de l’espace et du temps, et non une force : la Terre déforme l’espace-temps, et la Lune y va tout droit.",
+          "options": [
+            {
+              "text": "une courbure de l’espace et du temps",
+              "correct": true
+            },
+            {
+              "text": "une force à distance"
+            },
+            {
+              "text": "un échange de particules"
+            },
+            {
+              "text": "une propriété des masses"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi fallait-il une éclipse pour vérifier la prédiction de 1915 ?",
+          "explanation": "Parce qu’il faut voir des étoiles proches du Soleil dans le ciel, ce que seule une éclipse totale permet.",
+          "options": [
+            {
+              "text": "pour voir les étoiles proches du Soleil",
+              "correct": true
+            },
+            {
+              "text": "pour mesurer la température du Soleil"
+            },
+            {
+              "text": "parce que la Lune courbe aussi l’espace"
+            },
+            {
+              "text": "pour éviter la lumière diffusée par Vénus"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles vérifications de la relativité générale cite-t-on aujourd’hui ?",
+          "explanation": "L’avance du périhélie de Mercure, la correction du GPS, les lentilles gravitationnelles, et les ondes gravitationnelles détectées en 2015.",
+          "options": [
+            {
+              "text": "l’avance du périhélie de Mercure",
+              "correct": true
+            },
+            {
+              "text": "la correction des horloges du GPS",
+              "correct": true
+            },
+            {
+              "text": "les lentilles gravitationnelles",
+              "correct": true
+            },
+            {
+              "text": "les ondes gravitationnelles",
+              "correct": true
+            },
+            {
+              "text": "l’expérience de Michelson et Morley"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’années séparent la prédiction des ondes gravitationnelles de leur détection ?",
+          "explanation": "De 1916 à 2015, soit 99 ans — presque un siècle entre l’équation et l’instrument capable de la vérifier.",
+          "answer": 99,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le plus grand chantier ouvert de la physique ?",
+          "explanation": "Réunir la relativité générale et la mécanique quantique, vérifiées chacune dans son domaine et incompatibles entre elles.",
+          "options": [
+            {
+              "text": "réunir la relativité générale et la mécanique quantique",
+              "correct": true
+            },
+            {
+              "text": "mesurer la constante de Hubble"
+            },
+            {
+              "text": "détecter les ondes gravitationnelles"
+            },
+            {
+              "text": "photographier un trou noir"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

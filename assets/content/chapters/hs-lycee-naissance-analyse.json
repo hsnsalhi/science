@@ -1,0 +1,591 @@
+{
+  "chapter": "histoire-sciences-lycee-naissance-de-l-analyse",
+  "lessons": [
+    {
+      "id": "deux-problemes-une-reponse",
+      "title": "Deux problèmes, une réponse",
+      "subtitle": "Les tangentes et les aires n’avaient aucune raison d’être liées.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Resserrer l’écart, et voir la pente se fixer",
+          "body": "Fais glisser le curseur pour rapprocher les deux points : la pente de la sécante s’affiche et se stabilise. C’est le geste que Newton et Leibniz ont formalisé — et la question qui a mis cent cinquante ans à être réglée, c’est ce qui se passe à la toute fin.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les deux chantiers du XVIIe siècle",
+          "body": "Le problème des tangentes : tracer la tangente à une courbe en un point. Il intéresse l’optique, où il faut savoir comment un rayon rebondit sur une surface courbe.\n\nLe problème des quadratures : calculer l’aire sous une courbe, ou le volume d’un solide. Il intéresse les tonneliers, les artilleurs et les astronomes.\n\nLes deux sont travaillés depuis Archimède, et séparément. Fermat, Descartes, Roberval et Cavalieri ont chacun des méthodes partielles.\n\nRien ne laissait penser qu’ils fussent liés.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le théorème qui réunit tout",
+          "body": "Dériver et intégrer sont deux opérations inverses.\n\nCalculer une aire sous une courbe revient donc à chercher une fonction dont la dérivée est la fonction donnée, puis à soustraire ses valeurs aux deux bornes.\n\nUn problème difficile et ancien se ramène à un problème mécanique. C’est ce résultat, et non les techniques de calcul, qui fait de l’analyse une discipline.\n\nIsaac Barrow, le maître de Newton, en avait déjà une forme géométrique vers 1670. C’est Newton puis Leibniz qui en tirent une méthode générale.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "La courbe dont Archimède a calculé l’aire",
+          "body": "Règle les coefficients pour obtenir une parabole bien ouverte. C’est sous une courbe de cette famille qu’Archimède a su calculer une aire, dix-neuf siècles avant l’intégrale — par un découpage ingénieux, et refait à neuf pour chaque cas.",
+          "figureId": "parabole"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que l’analyse permet dès ses premières années",
+          "body": "Newton établit que les orbites des planètes sont des ellipses, à partir de la loi en 1/d². Sans calcul différentiel, l’énoncé n’est même pas formulable.\n\nLes trajectoires des projectiles, le mouvement des fluides, la forme d’une chaîne suspendue, la propagation de la chaleur : toutes ces questions deviennent abordables en quelques décennies.\n\nCe qui change n’est pas qu’on calcule mieux : c’est qu’on peut écrire des équations portant sur des grandeurs qui varient, plutôt que sur des nombres fixes.",
+          "id": "c5"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Archimède en avait eu l’intuition",
+          "body": "Il calcule l’aire sous une parabole au IIIe siècle avant notre ère, par une méthode d’épuisement qui préfigure l’intégrale.\n\nUn palimpseste retrouvé en 1906 montre qu’il allait plus loin encore, en raisonnant sur des découpages infiniment fins.\n\nCe qui lui manquait, c’est la notation algébrique, donc la possibilité de mécaniser. Chaque aire lui demandait une démonstration neuve.\n\nOn retrouve exactement le même décalage que pour l’algèbre arabe : l’idée précède de loin l’écriture qui la rend utilisable.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Ce problème relève-t-il des tangentes ou des quadratures ?",
+          "explanation": "Tracer une tangente et trouver un maximum relèvent de la dérivation ; calculer une aire ou un volume relève de l’intégration.",
+          "categories": [
+            "les tangentes",
+            "les quadratures"
+          ],
+          "items": [
+            {
+              "text": "tracer la tangente à une courbe",
+              "category": 0
+            },
+            {
+              "text": "trouver le maximum d’une courbe",
+              "category": 0
+            },
+            {
+              "text": "calculer l’aire sous une courbe",
+              "category": 1
+            },
+            {
+              "text": "calculer le volume d’un tonneau",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel est le théorème qui fait de l’analyse une discipline ?",
+          "explanation": "Que dériver et intégrer sont deux opérations inverses. Un problème d’aire se ramène alors à chercher une primitive.",
+          "options": [
+            {
+              "text": "dériver et intégrer sont inverses l’une de l’autre",
+              "correct": true
+            },
+            {
+              "text": "toute fonction continue est dérivable"
+            },
+            {
+              "text": "une limite est toujours unique"
+            },
+            {
+              "text": "toute courbe a une tangente"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les problèmes de tangentes et d’aires étaient connus pour être liés avant Newton.",
+          "explanation": "Faux. Ils étaient travaillés séparément depuis Archimède, et rien ne laissait penser qu’ils fussent deux faces d’une même question.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que l’analyse permet d’écrire, que l’algèbre seule ne permettait pas ?",
+          "explanation": "Des équations portant sur des grandeurs qui varient, et non seulement sur des nombres fixes.",
+          "options": [
+            {
+              "text": "des équations sur des grandeurs qui varient",
+              "correct": true
+            },
+            {
+              "text": "des équations à plusieurs inconnues"
+            },
+            {
+              "text": "des équations de degré élevé"
+            },
+            {
+              "text": "des équations sans solution"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui manquait à Archimède ?",
+          "explanation": "La notation algébrique, donc la possibilité de mécaniser. Chaque aire lui demandait une démonstration neuve.",
+          "options": [
+            {
+              "text": "la notation qui permet de mécaniser",
+              "correct": true
+            },
+            {
+              "text": "l’idée de découpage infiniment fin"
+            },
+            {
+              "text": "les instruments de mesure"
+            },
+            {
+              "text": "la notion d’aire"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel résultat Newton établit-il grâce au calcul différentiel ?",
+          "explanation": "Que les orbites planétaires sont des ellipses, à partir de la loi en 1/d². Sans analyse, l’énoncé n’est pas même formulable.",
+          "options": [
+            {
+              "text": "que les orbites sont des ellipses",
+              "correct": true
+            },
+            {
+              "text": "que la Terre tourne autour du Soleil"
+            },
+            {
+              "text": "la valeur de la constante G"
+            },
+            {
+              "text": "la vitesse de la lumière"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "newton-et-leibniz",
+      "title": "Newton et Leibniz",
+      "subtitle": "Deux inventions indépendantes, et trente ans de dispute.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le temps entre trouver et publier",
+          "body": "Fais glisser l’année : les barres montrent l’écart entre le moment où une idée existe et celui où elle est reconnue. Toute la querelle de ce chapitre tient dans un écart de ce genre — vingt ans entre le cahier de Newton et son premier livre.",
+          "figureId": "frise-nombres",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "La chronologie, telle qu’elle est établie",
+          "body": "1665-1666 : Newton, réfugié à la campagne pendant la peste, développe sa méthode des fluxions. Il ne publie pas.\n\n1675 : Leibniz, indépendamment, met au point son calcul différentiel et invente les notations dx, dy et le signe d’intégrale.\n\n1684 : Leibniz publie. C’est la première parution imprimée du calcul différentiel.\n\n1687 : Newton publie les Principia, où les résultats sont démontrés sous forme géométrique, et non avec ses fluxions.\n\n1704 : Newton publie enfin sa méthode.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "La querelle, et ce qu’elle a coûté",
+          "body": "À partir de 1699, des accusations de plagiat circulent dans les deux sens.\n\nEn 1712, la Royal Society nomme une commission qui tranche en faveur de Newton. Elle ne mentionne pas que Newton en est alors le président, ni qu’il a rédigé lui-même le rapport anonyme.\n\nLes mathématiciens britanniques, par loyauté, s’en tiennent aux notations de Newton pendant un siècle.\n\nCelles de Leibniz étant bien meilleures, l’analyse progresse sur le continent et stagne en Grande-Bretagne. Une querelle de priorité a donc coûté cent ans de retard à un pays.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Pourquoi la notation de Leibniz a gagné",
+          "body": "Newton note la dérivée par un point au-dessus de la lettre. C’est compact, et cela ne dit pas par rapport à quoi l’on dérive.\n\nLeibniz écrit dy/dx. L’écriture rappelle un quotient, et elle nomme les deux variables.\n\nSurtout, elle se comporte comme un quotient dans les calculs : la dérivation composée s’écrit en simplifiant, et le changement de variable dans une intégrale devient presque automatique.\n\nUne notation qui suggère les bons gestes vaut mieux qu’une notation brève. C’est la même leçon qu’au chapitre sur l’algèbre arabe, répétée un millénaire plus tard.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Les découvertes simultanées sont la règle",
+          "body": "L’oxygène par Scheele et Priestley, la sélection naturelle par Darwin et Wallace, le téléphone par Bell et Gray le même jour, la théorie de l’information presque en même temps que la cybernétique.\n\nQuand un problème est mûr et que les outils existent, plusieurs personnes le résolvent indépendamment.\n\nCela change la façon de lire une biographie : le génie individuel explique le moment précis, rarement la direction. Si Newton n’avait pas existé, l’analyse serait née quand même — simplement sous un autre nom.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la chronologie dans l’ordre.",
+          "explanation": "Newton trouve en 1665, Leibniz en 1675, Leibniz publie en 1684, Newton publie les Principia en 1687 et sa méthode en 1704.",
+          "items": [
+            "Newton développe les fluxions",
+            "Leibniz met au point son calcul",
+            "Leibniz publie le premier",
+            "Newton publie les Principia",
+            "Newton publie enfin sa méthode"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qui a publié le premier ?",
+          "explanation": "Leibniz, en 1684. Newton avait trouvé vingt ans plus tôt, mais n’avait rien publié.",
+          "options": [
+            {
+              "text": "Leibniz, en 1684",
+              "correct": true
+            },
+            {
+              "text": "Newton, en 1666"
+            },
+            {
+              "text": "Newton, en 1687"
+            },
+            {
+              "text": "les deux la même année"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce que la commission de 1712 ne mentionnait pas ?",
+          "explanation": "Que Newton présidait la Royal Society et avait rédigé lui-même le rapport censément anonyme.",
+          "options": [
+            {
+              "text": "que Newton l’avait lui-même rédigée",
+              "correct": true
+            },
+            {
+              "text": "que Leibniz était mort"
+            },
+            {
+              "text": "qu’elle n’avait pas lu les manuscrits"
+            },
+            {
+              "text": "qu’elle était financée"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle a été la conséquence de la querelle pour la Grande-Bretagne ?",
+          "explanation": "Un siècle de retard : par loyauté envers Newton, ses mathématiciens ont gardé une notation inférieure pendant cent ans.",
+          "options": [
+            {
+              "text": "un siècle de retard en analyse",
+              "correct": true
+            },
+            {
+              "text": "la perte des Principia"
+            },
+            {
+              "text": "l’interdiction du calcul différentiel"
+            },
+            {
+              "text": "aucune conséquence durable"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi la notation dy/dx a-t-elle gagné ?",
+          "explanation": "Parce qu’elle se comporte comme un quotient dans les calculs : la dérivation composée et le changement de variable deviennent presque automatiques.",
+          "options": [
+            {
+              "text": "elle suggère les bons gestes de calcul",
+              "correct": true
+            },
+            {
+              "text": "elle est plus courte"
+            },
+            {
+              "text": "elle était imposée par la Royal Society"
+            },
+            {
+              "text": "elle évite les fractions"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les découvertes simultanées sont des coïncidences rares.",
+          "explanation": "Faux, c’est la règle. Quand un problème est mûr et que les outils existent, plusieurs personnes le résolvent indépendamment.",
+          "answer": false,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "l-objection-de-berkeley",
+      "title": "L’objection de Berkeley",
+      "subtitle": "Un évêque démontre que les mathématiciens calculent sans fondement.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "S’approcher sans jamais arriver",
+          "body": "Règle le premier terme et la raison, et passe de la suite arithmétique à la géométrique. Avec une raison inférieure à un, les termes s’écrasent vers zéro sans l’atteindre. Toute la difficulté du chapitre est là : que vaut une quantité qui tend vers zéro sans y être ?",
+          "figureId": "suite",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Le calcul tel qu’on le faisait",
+          "body": "Pour dériver x², on écrit l’accroissement : ((x + h)² − x²) / h.\n\nOn développe : (2xh + h²) / h.\n\nOn simplifie par h, ce qui suppose h différent de zéro : il reste 2x + h.\n\nPuis on annule h, et l’on obtient 2x.\n\nLe résultat est juste. Mais h a été supposé non nul pour simplifier, puis nul pour conclure. Il est les deux dans le même calcul.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Ce que Berkeley écrit en 1734",
+          "body": "George Berkeley, évêque et philosophe, publie « L’Analyste », adressé à un mathématicien incroyant.\n\nSon argument : vous reprochez à la théologie ses mystères, et votre propre science en contient un. Vos quantités évanouissantes sont « ni des quantités finies, ni des quantités infiniment petites, ni même rien ».\n\nEt il ajoute la formule qui est restée : « ne pourrait-on les appeler les fantômes des quantités disparues ? »\n\nL’attaque est polémique dans son intention, et mathématiquement irréprochable. Les analystes du temps ne savent pas y répondre.",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cela n’a pas arrêté l’analyse",
+          "body": "Les résultats étaient vérifiables autrement : les orbites calculées correspondaient aux observations, les trajectoires aux tirs, les aires aux mesures.\n\nUn outil qui donne systématiquement les bonnes réponses finit par être employé, même mal fondé.\n\nEuler, au XVIIIe siècle, produit une œuvre immense avec ce calcul douteux, et il ne se trompe presque jamais.\n\nLa rigueur est venue après l’usage, et non avant. C’est l’ordre habituel, et il contredit l’image d’une mathématique qui avancerait en fondant d’abord.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Cent cinquante ans pour répondre",
+          "body": "D’Alembert, vers 1750, pressent qu’il faut parler de limite plutôt que d’infiniment petit, mais ne le formalise pas.\n\nCauchy, en 1821, définit la limite et la continuité, et refonde le calcul dessus.\n\nWeierstrass, vers 1860, donne la définition avec epsilon et delta que l’on enseigne encore, et qui ne mentionne plus aucune quantité infiniment petite.\n\nL’objection de 1734 est donc réglée en 1860. Entre les deux, l’analyse a produit la mécanique céleste, la thermodynamique et l’électromagnétisme.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixUnique",
+          "prompt": "Quelle est l’incohérence du calcul de la dérivée de x² tel qu’on le faisait ?",
+          "explanation": "h est supposé non nul pour simplifier, puis nul pour conclure. Il est les deux dans le même calcul.",
+          "options": [
+            {
+              "text": "h est supposé non nul puis nul",
+              "correct": true
+            },
+            {
+              "text": "le développement est faux"
+            },
+            {
+              "text": "le résultat obtenu est inexact"
+            },
+            {
+              "text": "on divise par x"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment Berkeley appelle-t-il les quantités évanouissantes ?",
+          "explanation": "« Les fantômes des quantités disparues », formule restée célèbre, dans L’Analyste de 1734.",
+          "options": [
+            {
+              "text": "les fantômes des quantités disparues",
+              "correct": true
+            },
+            {
+              "text": "les nombres impossibles"
+            },
+            {
+              "text": "les ombres du calcul"
+            },
+            {
+              "text": "les infiniment petits"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "L’objection de Berkeley était mathématiquement infondée.",
+          "explanation": "Faux. Son intention était polémique, mais l’argument était juste, et les analystes de son temps n’ont pas su y répondre.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi l’analyse a-t-elle continué malgré cette objection ?",
+          "explanation": "Parce que ses résultats se vérifiaient autrement : orbites, trajectoires et aires correspondaient aux observations.",
+          "options": [
+            {
+              "text": "ses résultats se vérifiaient par ailleurs",
+              "correct": true
+            },
+            {
+              "text": "l’objection est restée inconnue"
+            },
+            {
+              "text": "Berkeley s’est rétracté"
+            },
+            {
+              "text": "une réponse a été trouvée aussitôt"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets la mise au point rigoureuse dans l’ordre.",
+          "explanation": "L’objection de Berkeley en 1734, l’intuition de d’Alembert vers 1750, la définition de Cauchy en 1821, celle de Weierstrass vers 1860.",
+          "items": [
+            "l’objection de Berkeley",
+            "l’intuition de d’Alembert sur la limite",
+            "la définition de Cauchy",
+            "les epsilon et delta de Weierstrass"
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien d’années séparent l’objection de Berkeley de la réponse de Weierstrass ?",
+          "explanation": "De 1734 à 1860 environ, soit 126 ans. Entre les deux, l’analyse a produit l’essentiel de la physique classique.",
+          "answer": 126,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ce-que-l-histoire-apprend",
+      "title": "Défi : ce que cette histoire apprend",
+      "subtitle": "Un outil juste peut rester mal fondé pendant un siècle et demi.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le geste, et la question qu’il pose",
+          "body": "Resserre l’écart une dernière fois. La pente affichée se stabilise, et l’on voit très bien vers quoi elle va. Dire précisément ce que « vers quoi elle va » signifie a demandé cent cinquante ans — et c’est ce décalage que ce chapitre raconte.",
+          "figureId": "secante-tangente",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Les quatre leçons de méthode",
+          "body": "L’idée précède la notation, et la notation décide de qui pourra s’en servir. On l’a vu pour l’algèbre arabe, on le revoit ici.\n\nLa rigueur vient après l’usage, pas avant. Les mathématiques n’avancent pas en fondant d’abord.\n\nLes découvertes simultanées sont la règle quand un problème est mûr.\n\nUne querelle de priorité coûte toujours plus cher que ce qu’elle rapporte — ici, un siècle de retard pour tout un pays.",
+          "id": "c2"
+        },
+        {
+          "kind": "exemple",
+          "title": "Les infiniment petits ont fini par être réhabilités",
+          "body": "Après Weierstrass, on enseigne que les infiniment petits n’existent pas et qu’il faut parler de limites.\n\nEn 1960, Abraham Robinson construit l’analyse non standard, où les infiniment petits sont des objets parfaitement définis, et démontre qu’elle donne exactement les mêmes théorèmes.\n\nLeibniz avait donc raison sur le fond, et tort sur la rigueur de son époque : il manquait trois siècles de logique mathématique.\n\nUne intuition écartée faute de fondement n’est pas une intuition fausse. Elle peut n’être qu’en avance.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Ne pas en tirer la leçon inverse",
+          "body": "On ne conclura pas que la rigueur est accessoire, ni que toute intuition sera un jour justifiée.\n\nL’immense majorité des raisonnements mal fondés sont simplement faux, et la rigueur sert à les éliminer.\n\nCe que l’histoire montre, c’est que l’ordre habituel est : intuition, usage, résultats vérifiables, puis fondation. Pas qu’on puisse sauter la dernière étape.\n\nLes analystes du XVIIIe siècle savaient que leur édifice n’était pas assuré, et plusieurs y travaillaient. Ils n’ont jamais prétendu que la question n’existait pas.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi cette histoire est au programme",
+          "body": "Un élève à qui l’on présente la dérivée comme une définition tombée du ciel croit que les mathématiques se font ainsi.\n\nSavoir qu’il a fallu un siècle et demi pour définir proprement ce qu’il apprend en une heure change le rapport à la difficulté : ne pas comprendre tout de suite n’est pas un défaut personnel.\n\nEt cela change aussi le rapport à ce qu’on lit aujourd’hui. Certaines choses qu’on enseigne maintenant comme assurées sont encore des chantiers — il faut simplement savoir lesquelles.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Quelles leçons de méthode ce chapitre donne-t-il ?",
+          "explanation": "L’idée précède la notation, la rigueur suit l’usage, les découvertes simultanées sont la règle, et les querelles de priorité coûtent cher.",
+          "options": [
+            {
+              "text": "l’idée précède la notation",
+              "correct": true
+            },
+            {
+              "text": "la rigueur vient après l’usage",
+              "correct": true
+            },
+            {
+              "text": "les découvertes simultanées sont la règle",
+              "correct": true
+            },
+            {
+              "text": "une querelle de priorité coûte cher",
+              "correct": true
+            },
+            {
+              "text": "la rigueur est accessoire"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’a montré Abraham Robinson en 1960 ?",
+          "explanation": "Que les infiniment petits peuvent être définis rigoureusement, et donnent exactement les mêmes théorèmes. Leibniz avait raison sur le fond.",
+          "options": [
+            {
+              "text": "que les infiniment petits peuvent être fondés",
+              "correct": true
+            },
+            {
+              "text": "que Weierstrass s’était trompé"
+            },
+            {
+              "text": "que l’analyse est contradictoire"
+            },
+            {
+              "text": "que Berkeley avait tort"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Puisque Leibniz a fini par avoir raison, toute intuition écartée sera un jour justifiée.",
+          "explanation": "Faux. L’immense majorité des raisonnements mal fondés sont simplement faux, et la rigueur sert précisément à les éliminer.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets l’ordre habituel du progrès mathématique.",
+          "explanation": "Intuition, usage, résultats vérifiables, puis fondation rigoureuse. L’analyse en est l’exemple le plus net.",
+          "items": [
+            "l’intuition",
+            "l’usage malgré les doutes",
+            "les résultats vérifiables",
+            "la fondation rigoureuse"
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Les analystes du XVIIIe siècle ignoraient que leur édifice était mal fondé.",
+          "explanation": "Faux. Ils le savaient, plusieurs y travaillaient, et aucun n’a prétendu que la question n’existait pas.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi raconter cette histoire à un élève ?",
+          "explanation": "Parce que savoir qu’il a fallu un siècle et demi pour définir ce qu’on apprend en une heure change le rapport à la difficulté.",
+          "options": [
+            {
+              "text": "ne pas comprendre tout de suite n’est pas un défaut",
+              "correct": true
+            },
+            {
+              "text": "pour montrer que Newton s’est mal conduit"
+            },
+            {
+              "text": "pour éviter d’apprendre les limites"
+            },
+            {
+              "text": "parce que l’histoire est au programme"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}

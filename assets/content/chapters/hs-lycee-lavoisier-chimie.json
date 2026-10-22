@@ -1,0 +1,599 @@
+{
+  "chapter": "histoire-sciences-lycee-lavoisier-et-la-chimie-moderne",
+  "lessons": [
+    {
+      "id": "peser-ce-qui-brule",
+      "title": "Peser ce qui brûle",
+      "subtitle": "Un récipient fermé, et une question qui devient décidable.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Ce qu’on fait d’un côté, on le fait de l’autre",
+          "body": "Déroule les étapes : l’équilibre tient à chaque opération. C’est le principe que Lavoisier impose à la chimie — on ne conclut rien d’une transformation sans avoir pesé avant et pesé après, et les deux doivent se correspondre.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "L’expérience qui tranche",
+          "body": "On place de l’étain dans un récipient de verre, on le scelle, et on pèse l’ensemble.\n\nOn chauffe. L’étain se couvre d’une poudre grise, la chaux métallique.\n\nOn pèse de nouveau l’ensemble scellé : la masse n’a pas changé.\n\nOn ouvre alors le récipient : l’air entre avec un sifflement, et l’ensemble devient plus lourd. Le métal calciné, pesé seul, a gagné exactement ce que l’air a apporté.",
+          "id": "c2"
+        },
+        {
+          "kind": "formule",
+          "title": "Le principe, dans les termes de Lavoisier",
+          "body": "« Rien ne se crée, ni dans les opérations de l’art, ni dans celles de la nature, et l’on peut poser en principe que, dans toute opération, il y a une égale quantité de matière avant et après l’opération. »\n\nLa formule scolaire « rien ne se perd, rien ne se crée, tout se transforme » est un résumé postérieur, et il est fidèle.\n\nCe n’est pas une découverte expérimentale ponctuelle : c’est une règle de méthode, qu’on impose à toute expérience et qui rend les résultats comparables.",
+          "formula": "masse avant = masse après",
+          "id": "c3"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Pourquoi le récipient fermé change tout",
+          "body": "À l’air libre, un métal qui calcine gagne du poids et un bois qui brûle en perd. Les deux observations semblent contradictoires, et elles l’étaient pour tout le monde.\n\nEn vase clos, les deux redeviennent cohérentes : dans un cas l’objet capte un gaz, dans l’autre il en libère un, et la masse totale ne bouge dans aucun des deux.\n\nCe que Lavoisier apporte n’est donc pas une balance plus précise — elles existaient. C’est l’idée de délimiter le système avant de peser.",
+          "id": "c4"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La balance ne suffit pas sans l’idée",
+          "body": "D’autres avaient constaté que les métaux calcinés pèsent plus lourd : Jean Rey le note dès 1630.\n\nLe résultat était donc connu depuis cent quarante ans, et il n’avait rien renversé.\n\nIl manquait d’en faire un principe, de l’appliquer systématiquement, et d’en tirer que l’air est un réactif et non un milieu.\n\nUne mesure isolée ne défait pas une théorie. Il faut quelqu’un qui décide d’en faire le point de départ de tout le reste.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "remiseEnOrdre",
+          "prompt": "Remets l’expérience de l’étain dans l’ordre.",
+          "explanation": "Peser le récipient scellé, chauffer, repeser scellé sans changement, puis ouvrir : l’air entre et l’ensemble s’alourdit.",
+          "items": [
+            "sceller le récipient et peser",
+            "chauffer : l’étain se couvre de poudre grise",
+            "peser de nouveau, sans changement",
+            "ouvrir : l’air entre et la masse augmente"
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’apporte Lavoisier, que la balance seule n’apportait pas ?",
+          "explanation": "L’idée de délimiter le système avant de peser. Les balances existaient, et le gain de masse des métaux calcinés était connu depuis 1630.",
+          "options": [
+            {
+              "text": "l’idée de délimiter le système avant de peser",
+              "correct": true
+            },
+            {
+              "text": "une balance beaucoup plus précise"
+            },
+            {
+              "text": "la découverte du gain de masse"
+            },
+            {
+              "text": "l’usage du feu en chimie"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Personne avant Lavoisier n’avait remarqué que les métaux calcinés pèsent plus lourd.",
+          "explanation": "Faux. Jean Rey le note dès 1630. Le résultat était connu depuis cent quarante ans sans rien avoir renversé.",
+          "answer": false,
+          "id": "q3"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi un bois qui brûle perd-il du poids et un métal qui calcine en gagne-t-il ?",
+          "explanation": "Le bois libère des gaz, le métal en capte. En vase clos, la masse totale ne bouge dans aucun des deux cas.",
+          "options": [
+            {
+              "text": "l’un libère un gaz, l’autre en capte un",
+              "correct": true
+            },
+            {
+              "text": "le bois contient du phlogistique"
+            },
+            {
+              "text": "le métal absorbe de la chaleur"
+            },
+            {
+              "text": "les deux observations sont contradictoires"
+            }
+          ],
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que faut-il, au-delà d’une mesure, pour défaire une théorie ?",
+          "explanation": "Quelqu’un qui en fasse un principe et le point de départ de tout le reste. Une mesure isolée ne renverse rien.",
+          "options": [
+            {
+              "text": "quelqu’un qui en fasse un principe",
+              "correct": true
+            },
+            {
+              "text": "une mesure plus précise"
+            },
+            {
+              "text": "une publication dans une revue"
+            },
+            {
+              "text": "un consensus préalable"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En quelle année Jean Rey note-t-il le gain de masse des métaux calcinés ?",
+          "explanation": "1630, soit cent quarante ans avant les travaux de Lavoisier.",
+          "answer": 1630,
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "la-fin-du-phlogistique",
+      "title": "La fin du phlogistique",
+      "subtitle": "Une théorie fausse qui expliquait beaucoup de choses.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Un gaz est de la matière",
+          "body": "Monte la température jusqu’à la vapeur : les particules se dispersent, et leur nombre ne change pas. C’est le point que la chimie du XVIIIe siècle ne tenait pas fermement — un gaz pèse, il participe, et il ne s’évanouit pas.",
+          "figureId": "etats-matiere",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que le phlogistique expliquait",
+          "body": "Proposée par Stahl vers 1700, la théorie suppose que tout corps combustible contient un principe inflammable, le phlogistique, qu’il libère en brûlant.\n\nElle rend compte de beaucoup : pourquoi les corps combustibles forment une famille, pourquoi une flamme s’éteint dans un vase clos — l’air y serait saturé de phlogistique —, pourquoi on retrouve le métal en chauffant sa chaux avec du charbon, lequel lui rendrait son phlogistique.\n\nElle unifiait la combustion, la calcination et la respiration. C’était une bonne théorie.",
+          "id": "c2"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Le problème de la masse, et la réponse désespérée",
+          "body": "Si un métal libère du phlogistique en calcinant, il devrait s’alléger. Il s’alourdit.\n\nCertains partisans proposent alors que le phlogistique ait une masse négative.\n\nL’hypothèse n’est pas absurde par elle-même : elle est introduite uniquement pour sauver la théorie, et elle ne prédit rien d’autre.\n\nC’est le signe qui doit alerter. Une théorie qu’on rafistole par des hypothèses taillées pour un seul fait est en train de mourir, même si chacune de ses pièces reste défendable.",
+          "id": "c3"
+        },
+        {
+          "kind": "exemple",
+          "title": "Qui a découvert l’oxygène",
+          "body": "Carl Wilhelm Scheele l’obtient en 1771, mais son livre ne paraît qu’en 1777.\n\nJoseph Priestley l’obtient indépendamment en 1774 et publie le premier. Il l’appelle « air déphlogistiqué » et restera partisan du phlogistique toute sa vie.\n\nLavoisier, informé par Priestley lors d’un dîner à Paris, comprend ce que c’est : non pas de l’air privé de quelque chose, mais un corps à part entière qui se combine. Il le nomme oxygène en 1777.\n\nDeux hommes l’ont tenu dans leurs mains avant lui. Ce qui manquait n’était pas le gaz, c’était le cadre pour l’interpréter.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Comment une théorie meurt vraiment",
+          "body": "Pas par une expérience unique et décisive : Priestley a vu les mêmes résultats et n’a pas changé d’avis jusqu’à sa mort.\n\nElle meurt quand une théorie concurrente explique tout ce qu’elle expliquait, plus ce qu’elle n’expliquait pas, et sans hypothèse ajoutée.\n\nLa chimie de Lavoisier rend compte de la combustion, de la calcination, de la respiration et du gain de masse, avec un seul mécanisme.\n\nEt la génération suivante adopte la nouvelle théorie plus facilement que l’ancienne : les changements de cadre se font souvent par renouvellement des personnes.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’est-ce que la théorie du phlogistique expliquait correctement ?",
+          "explanation": "La famille des corps combustibles, l’extinction d’une flamme en vase clos, et la réduction d’une chaux par le charbon.",
+          "options": [
+            {
+              "text": "pourquoi les combustibles forment une famille",
+              "correct": true
+            },
+            {
+              "text": "pourquoi une flamme s’éteint en vase clos",
+              "correct": true
+            },
+            {
+              "text": "pourquoi le charbon rend le métal à sa chaux",
+              "correct": true
+            },
+            {
+              "text": "pourquoi le métal calciné s’alourdit"
+            },
+            {
+              "text": "pourquoi l’eau est composée"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’ont proposé certains partisans du phlogistique devant le gain de masse ?",
+          "explanation": "Qu’il ait une masse négative. L’hypothèse n’existait que pour sauver la théorie et ne prédisait rien d’autre.",
+          "options": [
+            {
+              "text": "que le phlogistique ait une masse négative",
+              "correct": true
+            },
+            {
+              "text": "que la balance soit imprécise"
+            },
+            {
+              "text": "que l’air s’ajoute au métal"
+            },
+            {
+              "text": "qu’il faille chauffer plus fort"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Quel signe indique qu’une théorie est en train de mourir ?",
+          "explanation": "Qu’on la rafistole par des hypothèses taillées pour un seul fait, et qui ne prédisent rien d’autre.",
+          "options": [
+            {
+              "text": "des hypothèses ajoutées pour un seul fait",
+              "correct": true
+            },
+            {
+              "text": "une expérience qui la contredit"
+            },
+            {
+              "text": "un désaccord entre savants"
+            },
+            {
+              "text": "son grand âge"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Lavoisier a découvert l’oxygène.",
+          "explanation": "Faux. Scheele l’obtient en 1771 et Priestley en 1774. Lavoisier comprend ce que c’est et le nomme : ce qui manquait était le cadre, pas le gaz.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment une théorie meurt-elle vraiment ?",
+          "explanation": "Quand une concurrente explique tout ce qu’elle expliquait, plus le reste, et sans hypothèse ajoutée. Priestley n’a jamais changé d’avis.",
+          "options": [
+            {
+              "text": "quand une concurrente explique plus, sans rustine",
+              "correct": true
+            },
+            {
+              "text": "par une expérience décisive unique"
+            },
+            {
+              "text": "par un vote de l’académie"
+            },
+            {
+              "text": "quand son auteur se rétracte"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Comment s’appelait l’oxygène chez Priestley ?",
+          "explanation": "« Air déphlogistiqué » : de l’air privé de quelque chose, et non un corps à part entière. Le nom porte toute la théorie.",
+          "options": [
+            {
+              "text": "air déphlogistiqué",
+              "correct": true
+            },
+            {
+              "text": "air vital"
+            },
+            {
+              "text": "gaz du feu"
+            },
+            {
+              "text": "air fixe"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "nommer-pour-penser",
+      "title": "Nommer pour penser",
+      "subtitle": "Une nomenclature est une théorie déguisée en vocabulaire.",
+      "kind": "cours",
+      "xp": 30,
+      "minutes": 8,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Les éléments, et ce qui les distingue",
+          "body": "Passe d’un modèle à l’autre : ce qui définit un élément est le contenu de son noyau, pas son apparence ni son usage. Lavoisier ne le savait pas, et pourtant sa nomenclature l’anticipe — elle nomme les corps par ce qu’ils contiennent.",
+          "figureId": "modeles-atome",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce qu’étaient les noms avant 1787",
+          "body": "Beurre d’antimoine, huile de vitriol, foie de soufre, fleurs de zinc, pompholix, colcothar, orpiment.\n\nCes noms venaient de l’aspect, de l’odeur, de l’origine ou de l’alchimiste qui les avait obtenus.\n\nRien dans le nom ne disait la composition, et deux corps voisins pouvaient porter des noms sans rapport.\n\nIl fallait donc mémoriser chaque substance séparément : la chimie était une science d’érudition autant que de raisonnement.",
+          "id": "c2"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Le principe de 1787",
+          "body": "Avec Guyton de Morveau, Berthollet et Fourcroy, Lavoisier publie la Méthode de nomenclature chimique.\n\nLe nom d’un corps composé dit désormais de quels éléments il est fait, et dans quelle proportion relative : oxyde de zinc, acide sulfurique, sulfate de cuivre.\n\nLes terminaisons portent l’information : sulfurique et sulfureux se distinguent par la quantité d’oxygène, sulfate et sulfite aussi.\n\nConnaître le nom, c’est désormais connaître la composition. La mémoire cesse d’être le principal outil du chimiste.",
+          "id": "c3"
+        },
+        {
+          "id": "c4",
+          "kind": "figure",
+          "title": "Nommer par ce qu’on contient",
+          "body": "Touche un animal : les caractères qu’il possède s’allument, et c’est ce qui décide de son rangement. La figure porte sur le vivant, mais le principe est celui de 1787 — le nom dit la composition au lieu de l’apparence, et le rangement en découle.",
+          "figureId": "classification"
+        },
+        {
+          "kind": "avertissement",
+          "title": "Adopter ces noms, c’était adopter la théorie",
+          "body": "On ne peut pas dire « oxyde de zinc » si l’on ne croit pas que l’oxygène est un élément qui s’est combiné au zinc.\n\nLa nomenclature n’est donc pas neutre : elle embarque la chimie de Lavoisier dans chaque mot.\n\nLes partisans du phlogistique l’ont bien vu, et ont résisté pour cette raison même. Adopter le vocabulaire, c’était avoir perdu.\n\nC’est un cas où nommer est un acte théorique, et il vaut la peine de se demander, devant un vocabulaire technique, quelle thèse il transporte.",
+          "id": "c5"
+        },
+        {
+          "kind": "exemple",
+          "title": "Le Traité élémentaire de chimie, 1789",
+          "body": "Lavoisier y donne une liste de trente-trois substances qu’il tient pour élémentaires, c’est-à-dire qu’on n’a pas su décomposer.\n\nLa définition est opératoire et prudente : est élément ce qui résiste à l’analyse d’aujourd’hui, ce qui laisse la liste ouverte à révision.\n\nIl s’y trompe d’ailleurs : la lumière et le calorique y figurent, et plusieurs « terres » se révéleront des oxydes.\n\nMais la méthode est bonne, et c’est elle qui compte : une définition qui dit comment trancher vaut mieux qu’une définition qui dit ce que les choses sont.",
+          "id": "c6"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "appariement",
+          "prompt": "Associe chaque ancien nom à son nom moderne.",
+          "explanation": "Les anciens noms venaient de l’aspect ou de l’origine. Les nouveaux disent la composition.",
+          "pairs": [
+            {
+              "left": "huile de vitriol",
+              "right": "acide sulfurique"
+            },
+            {
+              "left": "fleurs de zinc",
+              "right": "oxyde de zinc"
+            },
+            {
+              "left": "air déphlogistiqué",
+              "right": "oxygène"
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Que dit un nom chimique après 1787 ?",
+          "explanation": "De quels éléments le corps est fait, et dans quelle proportion relative. Connaître le nom, c’est connaître la composition.",
+          "options": [
+            {
+              "text": "de quoi le corps est composé",
+              "correct": true
+            },
+            {
+              "text": "qui l’a découvert"
+            },
+            {
+              "text": "son aspect et son odeur"
+            },
+            {
+              "text": "son usage courant"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi les partisans du phlogistique ont-ils résisté à la nouvelle nomenclature ?",
+          "explanation": "Parce qu’adopter le vocabulaire, c’était adopter la théorie : on ne dit pas « oxyde de zinc » sans admettre que l’oxygène s’est combiné.",
+          "options": [
+            {
+              "text": "le vocabulaire embarque la théorie",
+              "correct": true
+            },
+            {
+              "text": "les noms étaient trop longs"
+            },
+            {
+              "text": "ils n’étaient pas consultés"
+            },
+            {
+              "text": "ils préféraient le latin"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "Combien de substances Lavoisier tient-il pour élémentaires en 1789 ?",
+          "explanation": "Trente-trois, définies comme ce qu’on n’a pas su décomposer — une définition opératoire, ouverte à révision.",
+          "answer": 33,
+          "id": "q4"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "La liste d’éléments de Lavoisier était exacte.",
+          "explanation": "Faux. La lumière et le calorique y figurent, et plusieurs « terres » se révéleront des oxydes. C’est la méthode qui était bonne, pas la liste.",
+          "answer": false,
+          "id": "q5"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qui fait la valeur de sa définition d’un élément ?",
+          "explanation": "Qu’elle dit comment trancher — ce qui résiste à l’analyse — plutôt que ce que les choses sont. Elle reste révisable.",
+          "options": [
+            {
+              "text": "elle dit comment trancher, et reste révisable",
+              "correct": true
+            },
+            {
+              "text": "elle est définitive"
+            },
+            {
+              "text": "elle s’appuie sur les atomes"
+            },
+            {
+              "text": "elle vient des Grecs"
+            }
+          ],
+          "id": "q6"
+        }
+      ]
+    },
+    {
+      "id": "defi-ce-qu-une-revolution-coute",
+      "title": "Défi : ce qu’une révolution doit à plusieurs",
+      "subtitle": "Un nom sur la couverture, et plusieurs personnes derrière.",
+      "kind": "cours",
+      "xp": 50,
+      "minutes": 10,
+      "cards": [
+        {
+          "kind": "figure",
+          "title": "Le geste qui reste",
+          "body": "Reprends la balance une dernière fois. C’est ce qu’il reste de tout ce chapitre dans un laboratoire d’aujourd’hui : peser avant, peser après, et refuser de conclure tant que les deux ne se correspondent pas.",
+          "figureId": "balance-equation",
+          "id": "c1"
+        },
+        {
+          "kind": "etape",
+          "title": "Ce que Lavoisier doit aux autres",
+          "body": "Le gain de masse des métaux : Jean Rey, 1630.\n\nL’oxygène : Scheele en 1771 et Priestley en 1774, tous deux avant lui.\n\nLa chaleur et la respiration : les travaux conduits avec Laplace, qui en est le coauteur et non l’assistant.\n\nLa nomenclature : trois coauteurs signent avec lui.\n\nCe qui lui revient en propre est l’assemblage : faire de la conservation de la masse un principe, en tirer que l’air est un réactif, et reconstruire tout le vocabulaire sur cette base.",
+          "id": "c2"
+        },
+        {
+          "kind": "texte",
+          "title": "Marie-Anne Paulze Lavoisier",
+          "body": "Mariée à treize ans, elle apprend l’anglais et le latin pour traduire les travaux de Priestley, Cavendish et Kirwan — c’est ainsi que Lavoisier y accède.\n\nElle apprend le dessin auprès de Jacques-Louis David et grave les treize planches du Traité élémentaire.\n\nElle tient les cahiers de laboratoire, et se représente sur l’une des planches en train de les écrire pendant une expérience.\n\nAprès l’exécution de son mari, elle récupère ses manuscrits et publie ses Mémoires de chimie en 1805. Sans elle, une partie de l’œuvre aurait disparu — et elle figure rarement dans les manuels.",
+          "id": "c3"
+        },
+        {
+          "kind": "avertissement",
+          "title": "La fin, et ce qu’elle dit",
+          "body": "Lavoisier était fermier général, c’est-à-dire collecteur d’impôts pour le compte du roi. C’est à ce titre qu’il est condamné et guillotiné le 8 mai 1794, et non comme savant.\n\nLagrange écrit le lendemain : « Il ne leur a fallu qu’un moment pour faire tomber cette tête, et cent années peut-être ne suffiront pas pour en reproduire une semblable. »\n\nIl est réhabilité dix-huit mois plus tard.\n\nOn en tire parfois que la science était visée. C’est inexact, et l’inexactitude dessert le propos : ce qui s’est passé est assez grave sans qu’on ait besoin de le déformer.",
+          "id": "c4"
+        },
+        {
+          "kind": "aRetenir",
+          "title": "Ce que ce chapitre laisse",
+          "body": "Qu’une révolution scientifique est rarement une découverte, et souvent un assemblage de résultats déjà disponibles.\n\nQu’une théorie fausse peut être excellente, c’est-à-dire expliquer beaucoup et guider des expériences utiles.\n\nQu’un vocabulaire n’est jamais neutre, et qu’il vaut la peine de se demander quelle thèse il transporte.\n\nEt qu’un nom sur une couverture cache presque toujours plusieurs personnes, dont certaines ont fait le travail sans lequel rien n’aurait paru.",
+          "id": "c5"
+        }
+      ],
+      "questions": [
+        {
+          "kind": "tri",
+          "prompt": "Qu’est-ce qui revient à Lavoisier, et qu’est-ce qui vient d’autres ?",
+          "explanation": "L’assemblage lui revient : le principe de conservation, l’air comme réactif, la refonte du vocabulaire. L’oxygène et le gain de masse viennent d’autres.",
+          "categories": [
+            "son apport propre",
+            "apporté par d’autres"
+          ],
+          "items": [
+            {
+              "text": "faire de la conservation de la masse un principe",
+              "category": 0
+            },
+            {
+              "text": "comprendre que l’air est un réactif",
+              "category": 0
+            },
+            {
+              "text": "la préparation de l’oxygène",
+              "category": 1
+            },
+            {
+              "text": "le gain de masse des métaux calcinés",
+              "category": 1
+            }
+          ],
+          "id": "q1"
+        },
+        {
+          "kind": "choixMultiple",
+          "prompt": "Qu’a fait Marie-Anne Paulze Lavoisier ?",
+          "explanation": "Traduit l’anglais, gravé les treize planches du Traité, tenu les cahiers, et publié les Mémoires après l’exécution de son mari.",
+          "options": [
+            {
+              "text": "traduire les travaux anglais",
+              "correct": true
+            },
+            {
+              "text": "graver les planches du Traité",
+              "correct": true
+            },
+            {
+              "text": "tenir les cahiers de laboratoire",
+              "correct": true
+            },
+            {
+              "text": "publier les Mémoires de chimie",
+              "correct": true
+            },
+            {
+              "text": "découvrir l’oxygène"
+            }
+          ],
+          "id": "q2"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Pourquoi Lavoisier a-t-il été guillotiné ?",
+          "explanation": "Comme fermier général, c’est-à-dire collecteur d’impôts — et non comme savant. L’inexactitude sur ce point dessert le propos.",
+          "options": [
+            {
+              "text": "comme fermier général, collecteur d’impôts",
+              "correct": true
+            },
+            {
+              "text": "parce qu’il était savant"
+            },
+            {
+              "text": "pour ses opinions politiques"
+            },
+            {
+              "text": "pour avoir contredit l’Académie"
+            }
+          ],
+          "id": "q3"
+        },
+        {
+          "kind": "vraiFaux",
+          "prompt": "Une théorie fausse ne peut pas être une bonne théorie.",
+          "explanation": "Faux. Le phlogistique expliquait beaucoup et guidait des expériences utiles. Son défaut était de devoir se rafistoler pour survivre.",
+          "answer": false,
+          "id": "q4"
+        },
+        {
+          "kind": "choixUnique",
+          "prompt": "Qu’est-ce qu’une révolution scientifique, le plus souvent ?",
+          "explanation": "Un assemblage de résultats déjà disponibles, réorganisés autour d’un principe — rarement une découverte isolée.",
+          "options": [
+            {
+              "text": "un assemblage de résultats déjà disponibles",
+              "correct": true
+            },
+            {
+              "text": "une découverte inattendue"
+            },
+            {
+              "text": "une expérience décisive"
+            },
+            {
+              "text": "un changement de génération"
+            }
+          ],
+          "id": "q5"
+        },
+        {
+          "kind": "saisieNumerique",
+          "prompt": "En quelle année paraît le Traité élémentaire de chimie ?",
+          "explanation": "1789, deux ans après la Méthode de nomenclature chimique et cinq ans avant l’exécution de son auteur.",
+          "answer": 1789,
+          "id": "q6"
+        }
+      ]
+    }
+  ]
+}
