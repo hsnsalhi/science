@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Le code génétique, et ce qu'une mutation en fait.
@@ -120,12 +121,32 @@ class DnaFigure extends StatefulWidget {
 
 class _DnaFigureState extends State<DnaFigure> {
   String _sequence = DnaFigure.sequenceInitiale;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
+  /// La séquence avec une base mutée à [position], d'un cran.
+  ///
+  /// La redondance du code se montre en changeant la troisième base d'un
+  /// codon : la protéine ne bouge pas. En changeant la première ou la
+  /// deuxième, elle change. Le pilotage parcourt donc les positions dans
+  /// l'ordre, et l'élève voit lesquelles comptent.
+  String _muteeA(int position) {
+    final String actuelle = DnaFigure.sequenceInitiale[position];
+    final int suivante =
+        (DnaFigure.bases.indexOf(actuelle) + 1) % DnaFigure.bases.length;
+    return DnaFigure.sequenceInitiale.replaceRange(
+      position,
+      position + 1,
+      DnaFigure.bases[suivante],
+    );
+  }
 
   void _muter(int position) {
     final String actuelle = _sequence[position];
     final int suivante =
         (DnaFigure.bases.indexOf(actuelle) + 1) % DnaFigure.bases.length;
     setState(() {
+      _tenue = true;
       _sequence = _sequence.replaceRange(
         position,
         position + 1,
@@ -137,13 +158,24 @@ class _DnaFigureState extends State<DnaFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final List<String> codons = DnaFigure.codons(_sequence);
+    // Chaque position du brin est mutée à son tour : on voit que les
+    // mutations de la troisième base d'un codon ne changent pas la
+    // protéine, et que les autres la changent. La redondance se
+    // découvre au lieu de s'énoncer.
+    final int? position = Autoplay.index(
+      context,
+      DnaFigure.sequenceInitiale.length,
+    );
+    final String sequence = _tenue || position == null
+        ? _sequence
+        : _muteeA(position);
+    final List<String> codons = DnaFigure.codons(sequence);
     final List<String> depart =
         DnaFigure.traduire(DnaFigure.sequenceInitiale);
-    final List<String> proteine = DnaFigure.traduire(_sequence);
+    final List<String> proteine = DnaFigure.traduire(sequence);
 
     final String verdict;
-    if (_sequence == DnaFigure.sequenceInitiale) {
+    if (sequence == DnaFigure.sequenceInitiale) {
       verdict = 'Séquence d\'origine. Touche une base pour la changer.';
     } else if (proteine.length < depart.length) {
       verdict = 'La traduction s\'arrête plus tôt : la protéine est '
@@ -154,7 +186,7 @@ class _DnaFigureState extends State<DnaFigure> {
       verdict = 'Un acide aminé a changé : la protéine est modifiée.';
     }
 
-    final String brin = DnaFigure.brinTranscrit(_sequence);
+    final String brin = DnaFigure.brinTranscrit(sequence);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -241,7 +273,10 @@ class _DnaFigureState extends State<DnaFigure> {
         FilledButton.tonalIcon(
           onPressed: () {
             context.tapFeedback();
-            setState(() => _sequence = DnaFigure.sequenceInitiale);
+            setState(() {
+              _tenue = true;
+              _sequence = DnaFigure.sequenceInitiale;
+            });
           },
           icon: const Icon(Icons.restart_alt_rounded, size: 18),
           label: const Text('Revenir à la séquence d\'origine'),

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Un échantillon radioactif, suivi dans le temps.
@@ -77,13 +78,23 @@ class _HalfLifeFigureState extends State<HalfLifeFigure> {
   static final List<double> _instants = HalfLifeFigure.instants();
 
   double _temps = 0;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int restants = HalfLifeFigure.restants(_instants, _temps);
+    // Le temps avance de zéro à six demi-vies et repart : l'effectif
+    // fond de moitié en moitié, et l'élève voit qu'il n'atteint jamais
+    // zéro. Une courbe qui se dessine dit cela mieux qu'une phrase.
+    final double? montee = Autoplay.ramp(context, maintien: 0.2);
+    final double temps = _tenue || montee == null
+        ? _temps
+        : montee * HalfLifeFigure.dureeMax;
+    final int restants = HalfLifeFigure.restants(_instants, temps);
     final double theorique =
-        HalfLifeFigure.effectif * HalfLifeFigure.proportionTheorique(_temps);
+        HalfLifeFigure.effectif * HalfLifeFigure.proportionTheorique(temps);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -98,7 +109,7 @@ class _HalfLifeFigureState extends State<HalfLifeFigure> {
                   size: Size(contraintes.maxWidth, 210),
                   painter: _NoyauxPainter(
                     instants: _instants,
-                    temps: _temps,
+                    temps: temps,
                     accent: widget.accent,
                   ),
                 );
@@ -132,19 +143,22 @@ class _HalfLifeFigureState extends State<HalfLifeFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _temps,
+                value: temps,
                 max: HalfLifeFigure.dureeMax,
                 divisions: 48,
                 onChanged: (double v) {
                   context.tapFeedback();
-                  setState(() => _temps = v);
+                  setState(() {
+                    _tenue = true;
+                    _temps = v;
+                  });
                 },
               ),
             ),
             SizedBox(
               width: 74,
               child: Text(
-                '${_temps.toStringAsFixed(2).replaceAll('.', ',')} T',
+                '${temps.toStringAsFixed(2).replaceAll('.', ',')} T',
                 textAlign: TextAlign.right,
                 style: AppTypography.formula(size: 13, color: widget.accent),
               ),

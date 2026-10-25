@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Quatre étages de conversion, et le rendement qui en sort.
@@ -60,12 +61,30 @@ class _EnergyChainFigureState extends State<EnergyChainFigure> {
   );
 
   int _choisi = 2;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double global = EnergyChainFigure.rendementGlobal(_rendements);
-    final double pire = _rendements.reduce((double a, double b) =>
+    // Chaque étage est désigné à son tour, et son rendement balaie : le
+    // produit global s'effondre dès qu'un seul étage faiblit, et c'est la
+    // leçon de la chaîne — le maillon faible décide du tout.
+    final int? lequel = Autoplay.index(context, EnergyChainFigure.etages.length);
+    final int choisi = _tenue || lequel == null ? _choisi : lequel;
+    final double? pilote = Autoplay.sweepPas(
+      context,
+      min: 20,
+      max: 95,
+      pas: 5,
+      cycles: EnergyChainFigure.etages.length,
+    );
+    final List<double> rendements = _tenue || pilote == null
+        ? _rendements
+        : (List<double>.of(_rendements)..[choisi] = pilote);
+    final double global = EnergyChainFigure.rendementGlobal(rendements);
+    final double pire = rendements.reduce((double a, double b) =>
         a < b ? a : b);
 
     return Column(
@@ -74,15 +93,19 @@ class _EnergyChainFigureState extends State<EnergyChainFigure> {
         for (int i = 0; i < EnergyChainFigure.etages.length; i++)
           _Etage(
             nom: EnergyChainFigure.etages[i],
-            rendement: _rendements[i],
-            restant: EnergyChainFigure.apres(_rendements, i + 1),
-            avant: EnergyChainFigure.apres(_rendements, i),
+            rendement: rendements[i],
+            restant: EnergyChainFigure.apres(rendements, i + 1),
+            avant: EnergyChainFigure.apres(rendements, i),
             accent: widget.accent,
-            choisi: i == _choisi,
-            leMoinsBon: _rendements[i] == pire,
+            choisi: i == choisi,
+            leMoinsBon: rendements[i] == pire,
             onTap: () {
               context.tapFeedback();
-              setState(() => _choisi = i);
+              setState(() {
+                _tenue = true;
+                _rendements = rendements;
+                _choisi = i;
+              });
             },
           ),
         const SizedBox(height: AppSpacing.xs),
@@ -102,7 +125,7 @@ class _EnergyChainFigureState extends State<EnergyChainFigure> {
             SizedBox(
               width: 86,
               child: Text(
-                EnergyChainFigure.etages[_choisi],
+                EnergyChainFigure.etages[choisi],
                 style: context.text.labelMedium?.copyWith(
                   color: widget.accent,
                   fontWeight: FontWeight.w800,
@@ -111,15 +134,17 @@ class _EnergyChainFigureState extends State<EnergyChainFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _rendements[_choisi],
+                value: rendements[choisi],
                 min: 10,
                 max: 100,
                 divisions: 18,
                 onChanged: (double v) {
                   context.tapFeedback();
                   setState(() {
-                    _rendements = List<double>.of(_rendements)
-                      ..[_choisi] = (v / 5).roundToDouble() * 5;
+                    _tenue = true;
+                    _choisi = choisi;
+                    _rendements = List<double>.of(rendements)
+                      ..[choisi] = (v / 5).roundToDouble() * 5;
                   });
                 },
               ),
@@ -127,7 +152,7 @@ class _EnergyChainFigureState extends State<EnergyChainFigure> {
             SizedBox(
               width: 44,
               child: Text(
-                '${_rendements[_choisi].round()} %',
+                '${rendements[choisi].round()} %',
                 textAlign: TextAlign.right,
                 style: AppTypography.formula(
                   size: 14,

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 
 /// Un croisement de pois, à composer soi-même.
 ///
@@ -40,6 +41,8 @@ class _CrossFigureState extends State<CrossFigure> {
   /// Allèles de chaque parent. `true` pour la version dominante J.
   List<bool> _pere = <bool>[true, false];
   List<bool> _mere = <bool>[true, false];
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
   static const Color _jaune = Color(0xFFE3B505);
   static const Color _vert = Color(0xFF3F9142);
@@ -47,6 +50,7 @@ class _CrossFigureState extends State<CrossFigure> {
   void _basculer(bool pere, int index) {
     context.tapFeedback();
     setState(() {
+      _tenue = true;
       final List<bool> cible = pere ? _pere : _mere;
       final List<bool> suivant = List<bool>.of(cible);
       suivant[index] = !suivant[index];
@@ -59,15 +63,38 @@ class _CrossFigureState extends State<CrossFigure> {
   }
 
   /// Les quatre descendants possibles, chacun avec ses deux allèles.
-  List<List<bool>> get _descendants => <List<bool>>[
-    for (final bool p in _pere)
-      for (final bool m in _mere) <bool>[p, m],
-  ];
+  List<List<bool>> _descendantsDe(List<bool> pere, List<bool> mere) =>
+      <List<bool>>[
+        for (final bool p in pere)
+          for (final bool m in mere) <bool>[p, m],
+      ];
+
+  /// Les quatre croisements classiques, dans l'ordre où on les enseigne.
+  ///
+  /// Hétérozygote par hétérozygote donne le trois pour un ; les trois
+  /// autres cas montrent ce qui arrive quand un parent est homozygote.
+  static const List<(List<bool>, List<bool>)> _croisements =
+      <(List<bool>, List<bool>)>[
+        (<bool>[true, false], <bool>[true, false]),
+        (<bool>[true, true], <bool>[false, false]),
+        (<bool>[true, false], <bool>[false, false]),
+        (<bool>[true, true], <bool>[true, false]),
+      ];
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final List<List<bool>> enfants = _descendants;
+    // Les quatre croisements classiques se succèdent : le trois pour un
+    // apparaît, puis disparaît quand un parent devient homozygote. C'est
+    // la comparaison qui enseigne, et elle se fait d'elle-même.
+    final int? lequel = Autoplay.index(context, _croisements.length);
+    final List<bool> pere = _tenue || lequel == null
+        ? _pere
+        : _croisements[lequel].$1;
+    final List<bool> mere = _tenue || lequel == null
+        ? _mere
+        : _croisements[lequel].$2;
+    final List<List<bool>> enfants = _descendantsDe(pere, mere);
     final int jaunes = enfants.where(CrossFigure.estJaune).length;
 
     return Column(
@@ -75,14 +102,14 @@ class _CrossFigureState extends State<CrossFigure> {
       children: <Widget>[
         _Parent(
           titre: 'Parent 1',
-          alleles: _pere,
+          alleles: pere,
           accent: widget.accent,
           onBascule: (int i) => _basculer(true, i),
         ),
         const SizedBox(height: AppSpacing.sm),
         _Parent(
           titre: 'Parent 2',
-          alleles: _mere,
+          alleles: mere,
           accent: widget.accent,
           onBascule: (int i) => _basculer(false, i),
         ),

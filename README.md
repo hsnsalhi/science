@@ -17,13 +17,13 @@ des sciences** — pour quatre niveaux : primaire, collège, lycée, université
 | Application Flutter iOS + Android, téléphone et tablette | ✅ |
 | Design system complet (couleurs, typographie, composants, thème sombre) | ✅ |
 | Navigation, onboarding, accueil, catalogue, profil, réglages | ✅ |
-| Moteur de leçon : cartes d'apprentissage + figures interactives | ✅ |
+| Moteur de leçon : **fil vertical**, une idée par plan, figures animées | ✅ |
 | Moteur de quiz : **9 types d'exercices**, correction expliquée | ✅ |
 | Gamification locale : XP, rangs, séries, étoiles de maîtrise | ✅ |
 | Catalogue des **230 chapitres** annoncés sur 8 matières × 4 niveaux | ✅ |
 | Contenu rédigé de bout en bout | **230 chapitres** : 920 leçons, 4 145 cartes, 5 021 questions |
 | **69 figures interactives**, dessinées d'après le réel | ✅ |
-| 1 527 tests (domaine, contenu, parcours d'interface) | ✅ |
+| 1 551 tests (domaine, contenu, parcours d'interface) | ✅ |
 | Icône d'application, **rendue en 3D** par un moteur maison (`tool/render3d.py`) | ✅ |
 | Pipeline de publication TestFlight sans Mac | ✅ |
 | Pipeline Android : APK installable, puis Google Play | ✅ |
@@ -87,7 +87,7 @@ partagent — voir [docs/SECRETS.md](docs/SECRETS.md).
 ```bash
 flutter pub get
 flutter run              # appareil ou émulateur connecté
-flutter test             # 1 527 tests
+flutter test             # 1 551 tests
 flutter analyze          # analyse statique stricte
 ```
 
@@ -138,7 +138,11 @@ Le parcours type, tel qu'il est couvert par les tests :
 2. **Accueil** — anneau de l'objectif du jour, série, bouton « Reprendre »
    vers la prochaine leçon, grille des matières.
 3. **Chapitre** — parcours en serpentin, étoiles de maîtrise, objectifs.
-4. **Leçon** — une carte par écran, avec figures manipulables au doigt.
+4. **Leçon** — un fil vertical : la figure occupe l'écran et se joue toute
+   seule, le texte passe par-dessus un paragraphe à la fois, et on avance
+   d'un glissement du pouce. Aucun bouton à viser, aucun écran de texte
+   seul. Un appui sur « Manipuler » rend la figure à sa taille, avec ses
+   commandes, quand l'élève veut l'essayer lui-même.
 5. **Quiz** — réponse, puis **retour expliqué systématique**, y compris quand
    la réponse est juste. Une erreur donne un second essai avant la solution.
 6. **Bilan** — XP animés, confettis en cas de sans-faute, avancement du

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -107,11 +108,23 @@ class EclipseFigure extends StatefulWidget {
 class _EclipseFigureState extends State<EclipseFigure> {
   double _longitude = 0;
   double _latitude = 0;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final TypeEclipse type = EclipseFigure.classer(_longitude, _latitude);
+    // La Lune fait le tour de son orbite : les phases se succèdent, et
+    // l'éclipse ne se produit qu'au passage par le nœud. C'est pourquoi
+    // il n'y en a pas à chaque pleine lune, et cela se voit ici au lieu
+    // de s'énoncer.
+    final double? tour = Autoplay.phase(context);
+    final double longitude = _tenue || tour == null
+        ? _longitude
+        : tour * 360;
+    final double latitude = _latitude;
+    final TypeEclipse type = EclipseFigure.classer(longitude, latitude);
     final bool eclipse =
         type == TypeEclipse.soleil || type == TypeEclipse.lune;
 
@@ -125,8 +138,8 @@ class _EclipseFigureState extends State<EclipseFigure> {
               return CustomPaint(
                 size: Size(constraints.maxWidth, 160),
                 painter: _EclipsePainter(
-                  longitude: _longitude,
-                  latitude: _latitude,
+                  longitude: longitude,
+                  latitude: latitude,
                   type: type,
                   accent: widget.accent,
                   trait: tokens.border,
@@ -151,7 +164,7 @@ class _EclipseFigureState extends State<EclipseFigure> {
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
         Text(
-          'Phase : ${EclipseFigure.phase(_longitude)}.',
+          'Phase : ${EclipseFigure.phase(longitude)}.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
@@ -171,12 +184,15 @@ class _EclipseFigureState extends State<EclipseFigure> {
         const SizedBox(height: AppSpacing.xs),
         _Curseur(
           nom: 'position',
-          valeur: _longitude,
+          valeur: longitude,
           min: 0,
           max: 360,
           suffixe: '°',
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _longitude = v),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _longitude = v;
+          }),
         ),
         _Curseur(
           nom: 'hauteur',
@@ -185,7 +201,10 @@ class _EclipseFigureState extends State<EclipseFigure> {
           max: EclipseFigure.inclinaison,
           suffixe: '°',
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _latitude = v),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _latitude = v;
+          }),
         ),
       ],
     );

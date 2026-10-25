@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -95,11 +96,19 @@ class NewtonCannonFigure extends StatefulWidget {
 
 class _NewtonCannonFigureState extends State<NewtonCannonFigure> {
   double _vitesse = 5;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final Issue issue = NewtonCannonFigure.issue(_vitesse);
+    // La vitesse monte de 2 à 13 km/s : le boulet retombe, puis tourne,
+    // puis s'en va. Les deux seuils se franchissent sous les yeux de
+    // l'élève, ce qui est tout l'objet de la figure.
+    final double vitesse = _tenue
+        ? _vitesse
+        : Autoplay.sweep(context, min: 2, max: 13) ?? _vitesse;
+    final Issue issue = NewtonCannonFigure.issue(vitesse);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -113,7 +122,7 @@ class _NewtonCannonFigureState extends State<NewtonCannonFigure> {
                 return CustomPaint(
                   size: Size(contraintes.maxWidth, 240),
                   painter: _CanonPainter(
-                    vitesse: _vitesse,
+                    vitesse: vitesse,
                     accent: widget.accent,
                   ),
                 );
@@ -146,20 +155,23 @@ class _NewtonCannonFigureState extends State<NewtonCannonFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _vitesse,
+                value: vitesse,
                 min: 2,
                 max: 13,
                 divisions: 44,
                 onChanged: (double v) {
                   context.tapFeedback();
-                  setState(() => _vitesse = v);
+                  setState(() {
+                    _tenue = true;
+                    _vitesse = v;
+                  });
                 },
               ),
             ),
             SizedBox(
               width: 62,
               child: Text(
-                '${_vitesse.toStringAsFixed(1).replaceAll('.', ',')} km/s',
+                '${vitesse.toStringAsFixed(1).replaceAll('.', ',')} km/s',
                 textAlign: TextAlign.right,
                 style: AppTypography.formula(
                   size: 13,

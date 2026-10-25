@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Trois colonnes — unités, dixièmes, centièmes — et la retenue qui passe.
@@ -58,11 +59,21 @@ class DecimalsFigure extends StatefulWidget {
 
 class _DecimalsFigureState extends State<DecimalsFigure> {
   List<int> _chiffres = <int>[0, 9, 0];
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double valeur = DecimalsFigure.valeur(_chiffres);
+    // Les centièmes montent un à un : les dixièmes se remplissent, la
+    // retenue passe à l'unité, et l'élève voit que dix centièmes font un
+    // dixième sans qu'on le lui dise.
+    final int? centiemes = Autoplay.sweepEntier(context, min: 0, max: 199);
+    final List<int> chiffres = _tenue || centiemes == null
+        ? _chiffres
+        : <int>[centiemes ~/ 100, (centiemes ~/ 10) % 10, centiemes % 10];
+    final double valeur = DecimalsFigure.valeur(chiffres);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -84,12 +95,15 @@ class _DecimalsFigureState extends State<DecimalsFigure> {
                 ),
               _Colonne(
                 nom: DecimalsFigure.colonnes[i],
-                chiffre: _chiffres[i],
+                chiffre: chiffres[i],
                 accent: widget.accent,
                 onChange: (int pas) {
                   context.tapFeedback();
                   setState(
-                    () => _chiffres = DecimalsFigure.ajouter(_chiffres, i, pas),
+                    () {
+                      _tenue = true;
+                      _chiffres = DecimalsFigure.ajouter(chiffres, i, pas);
+                    },
                   );
                 },
               ),
@@ -144,16 +158,16 @@ class _DecimalsFigureState extends State<DecimalsFigure> {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          DecimalsFigure.ecriture(_chiffres),
+          DecimalsFigure.ecriture(chiffres),
           style: AppTypography.formula(size: 22, color: widget.accent),
         ),
         SizedBox(
           height: 34,
           child: Text(
-            _chiffres[2] == 0
-                ? '${DecimalsFigure.ecriture(_chiffres)} et '
-                      '${_chiffres[0]},${_chiffres[1]} sont le même nombre.'
-                : '${_chiffres[1]} dixièmes et ${_chiffres[2]} centièmes.',
+            chiffres[2] == 0
+                ? '${DecimalsFigure.ecriture(chiffres)} et '
+                      '${chiffres[0]},${chiffres[1]} sont le même nombre.'
+                : '${chiffres[1]} dixièmes et ${chiffres[2]} centièmes.',
             textAlign: TextAlign.center,
             style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
           ),

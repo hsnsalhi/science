@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -61,6 +62,9 @@ class StatesFigure extends StatefulWidget {
 class _StatesFigureState extends State<StatesFigure>
     with SingleTickerProviderStateMixin {
   double _temperature = 20;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   late final AnimationController _controller = AnimationController(
     vsync: this,
@@ -78,7 +82,14 @@ class _StatesFigureState extends State<StatesFigure>
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final EtatMatiere etat = StatesFigure.etat(_temperature);
+    // Le thermomètre balaie de −20 à 140 °C : la glace fond à zéro,
+    // l'eau bout à cent, et les deux changements d'état se produisent
+    // sans qu'on ait à les provoquer.
+    final double temperature = _tenue
+        ? _temperature
+        : Autoplay.sweepPas(context, min: -20, max: 140, pas: 1) ??
+              _temperature;
+    final EtatMatiere etat = StatesFigure.etat(temperature);
 
     if (!_demarrageFait) {
       _demarrageFait = true;
@@ -96,7 +107,7 @@ class _StatesFigureState extends State<StatesFigure>
           aspectRatio: 1.3,
           child: CustomPaint(
             painter: _MatierePainter(
-              temperature: _temperature,
+              temperature: temperature,
               phase: _controller.value,
               accent: widget.accent,
               trait: tokens.border,
@@ -107,7 +118,7 @@ class _StatesFigureState extends State<StatesFigure>
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '${NumericQuestion.formatNumber(_temperature.roundToDouble())} °C · '
+          '${NumericQuestion.formatNumber(temperature.roundToDouble())} °C · '
           '${etat.exemple}',
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
@@ -118,13 +129,16 @@ class _StatesFigureState extends State<StatesFigure>
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         Slider(
-          value: _temperature,
+          value: temperature,
           min: -20,
           max: 140,
           divisions: 160,
           onChanged: (double v) {
             context.tapFeedback();
-            setState(() => _temperature = v.roundToDouble());
+            setState(() {
+              _tenue = true;
+              _temperature = v.roundToDouble();
+            });
           },
         ),
         Text(

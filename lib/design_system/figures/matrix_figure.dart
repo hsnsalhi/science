@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -63,12 +64,25 @@ class _MatrixFigureState extends State<MatrixFigure> {
   double _b = 0.5;
   double _c = 0;
   double _d = 1;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double det = MatrixFigure.determinant(_a, _b, _c, _d);
-    final bool inversible = MatrixFigure.inversible(_a, _b, _c, _d);
+    // Seul d balaie, de 2 à −2 : l'aire se réduit, le carré s'aplatit
+    // sur une droite quand le déterminant passe par zéro, puis le plan
+    // se retourne. Les trois moments que la figure existe pour montrer,
+    // dans l'ordre, sans qu'on touche à rien.
+    final double a = _a;
+    final double b = _b;
+    final double c = _c;
+    final double d = _tenue
+        ? _d
+        : Autoplay.sweepPas(context, min: -2, max: 2, pas: 0.25) ?? _d;
+    final double det = MatrixFigure.determinant(a, b, c, d);
+    final bool inversible = MatrixFigure.inversible(a, b, c, d);
 
     final String verdict;
     if (!inversible) {
@@ -87,10 +101,10 @@ class _MatrixFigureState extends State<MatrixFigure> {
           aspectRatio: 1.2,
           child: CustomPaint(
             painter: _MatricePainter(
-              a: _a,
-              b: _b,
-              c: _c,
-              d: _d,
+              a: a,
+              b: b,
+              c: c,
+              d: d,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -102,8 +116,8 @@ class _MatrixFigureState extends State<MatrixFigure> {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          'det = ${_format(_a)} × ${_format(_d)} − '
-          '${_format(_b)} × ${_format(_c)} = ${_format(det)}',
+          'det = ${_format(a)} × ${_format(d)} − '
+          '${_format(b)} × ${_format(c)} = ${_format(det)}',
           textAlign: TextAlign.center,
           style: AppTypography.formula(
             size: 15,
@@ -120,10 +134,10 @@ class _MatrixFigureState extends State<MatrixFigure> {
         ),
         for (final ({String nom, double valeur, ValueChanged<double> poser})
             reglage in <({String nom, double valeur, ValueChanged<double> poser})>[
-          (nom: 'a', valeur: _a, poser: (double v) => _a = v),
-          (nom: 'b', valeur: _b, poser: (double v) => _b = v),
-          (nom: 'c', valeur: _c, poser: (double v) => _c = v),
-          (nom: 'd', valeur: _d, poser: (double v) => _d = v),
+          (nom: 'a', valeur: a, poser: (double v) => _a = v),
+          (nom: 'b', valeur: b, poser: (double v) => _b = v),
+          (nom: 'c', valeur: c, poser: (double v) => _c = v),
+          (nom: 'd', valeur: d, poser: (double v) => _d = v),
         ])
           Row(
             children: <Widget>[
@@ -145,9 +159,17 @@ class _MatrixFigureState extends State<MatrixFigure> {
                   divisions: 16,
                   onChanged: (double v) {
                     context.tapFeedback();
-                    setState(
-                      () => reglage.poser((v * 4).roundToDouble() / 4),
-                    );
+                    setState(() {
+                      // Le premier geste fige les trois autres
+                      // coefficients tels qu'ils sont affichés, sinon
+                      // l'un d'eux sauterait à sa valeur de départ.
+                      _a = a;
+                      _b = b;
+                      _c = c;
+                      _d = d;
+                      _tenue = true;
+                      reglage.poser((v * 4).roundToDouble() / 4);
+                    });
                   },
                 ),
               ),

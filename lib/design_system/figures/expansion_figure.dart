@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -58,9 +59,18 @@ class ExpansionFigure extends StatefulWidget {
 class _ExpansionFigureState extends State<ExpansionFigure> {
   double _facteur = 1;
   int _observateur = 3;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
+    // L'espace se dilate tout seul : toutes les galaxies s'écartent, et
+    // les plus lointaines s'écartent le plus vite. C'est la loi de Hubble
+    // en acte, et elle ne se lit pas dans un tableau.
+    final double facteur = _tenue
+        ? _facteur
+        : Autoplay.sweep(context, min: 1, max: 2.2) ?? _facteur;
     final AppTokens tokens = context.tokens;
 
     return Column(
@@ -82,7 +92,7 @@ class _ExpansionFigureState extends State<ExpansionFigure> {
             final double ecart = math.min(
               (contraintes.maxWidth - 28) /
                   (ExpansionFigure.galaxies - 1) *
-                  _facteur /
+                  facteur /
                   2,
               place,
             );
@@ -100,7 +110,11 @@ class _ExpansionFigureState extends State<ExpansionFigure> {
                       child: GestureDetector(
                         onTap: () {
                           context.tapFeedback();
-                          setState(() => _observateur = i);
+                          setState(() {
+                            _tenue = true;
+                            _facteur = facteur;
+                            _observateur = i;
+                          });
                         },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -132,7 +146,7 @@ class _ExpansionFigureState extends State<ExpansionFigure> {
                                       (ExpansionFigure.vitesse(
                                                 _observateur,
                                                 i,
-                                                _facteur,
+                                                facteur,
                                               ) *
                                               100)
                                           .roundToDouble() /
@@ -181,14 +195,17 @@ class _ExpansionFigureState extends State<ExpansionFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _facteur,
+                value: facteur,
                 min: 0.5,
                 max: 2.5,
                 divisions: 8,
                 onChanged: (double v) {
                   context.tapFeedback();
                   setState(
-                    () => _facteur = (v * 4).roundToDouble() / 4,
+                    () {
+                      _tenue = true;
+                      _facteur = (v * 4).roundToDouble() / 4;
+                    },
                   );
                 },
               ),
@@ -196,7 +213,7 @@ class _ExpansionFigureState extends State<ExpansionFigure> {
             SizedBox(
               width: 44,
               child: Text(
-                NumericQuestion.formatNumber(_facteur),
+                NumericQuestion.formatNumber(facteur),
                 textAlign: TextAlign.right,
                 style: AppTypography.formula(
                   size: 14,

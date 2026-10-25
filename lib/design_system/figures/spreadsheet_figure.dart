@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Le tableur du dépensier, que l'élève modifie case par case.
@@ -79,6 +80,9 @@ class _SpreadsheetFigureState extends State<SpreadsheetFigure> {
   int _ligne = 0;
   int _colonne = 2;
   bool _formules = false;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   void _choisir(int ligne, int colonne) {
     if (ligne == _ligne && colonne == _colonne) return;
@@ -106,6 +110,16 @@ class _SpreadsheetFigureState extends State<SpreadsheetFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
+    // La sélection parcourt les cellules modifiables, et l'affichage
+    // bascule entre valeurs et formules : on voit que les totaux ne sont
+    // pas saisis mais calculés, ce qui est tout l'objet d'un tableur.
+    final int nbLignes = SpreadsheetFigure.articles.length;
+    final int? pas = Autoplay.index(context, nbLignes * 2);
+    final bool formules = _tenue || pas == null
+        ? _formules
+        : pas >= nbLignes;
+    final int ligne = _tenue || pas == null ? _ligne : pas % nbLignes;
+    final int colonne = _tenue || pas == null ? _colonne : 2;
     final double total =
         SpreadsheetFigure.totalGeneral(_prix, _quantites);
 
@@ -142,9 +156,9 @@ class _SpreadsheetFigureState extends State<SpreadsheetFigure> {
                     painter: _TableurPainter(
                       prix: _prix,
                       quantites: _quantites,
-                      ligne: _ligne,
-                      colonne: _colonne,
-                      formules: _formules,
+                      ligne: ligne,
+                      colonne: colonne,
+                      formules: formules,
                       accent: widget.accent,
                       tokens: tokens,
                     ),
@@ -171,7 +185,7 @@ class _SpreadsheetFigureState extends State<SpreadsheetFigure> {
             SizedBox(
               width: 48,
               child: Text(
-                SpreadsheetFigure.nomCase(_colonne, _ligne),
+                SpreadsheetFigure.nomCase(colonne, _ligne),
                 style: AppTypography.formula(size: 14, color: widget.accent),
               ),
             ),
@@ -200,17 +214,27 @@ class _SpreadsheetFigureState extends State<SpreadsheetFigure> {
           children: <Widget>[
             ChoiceChip(
               label: const Text('Résultats'),
-              selected: !_formules,
+              selected: !formules,
               onSelected: (_) {
-                setState(() => _formules = false);
+                setState(() {
+                  _tenue = true;
+                  _ligne = ligne;
+                  _colonne = colonne;
+                  _formules = false;
+                });
                 context.tapFeedback();
               },
             ),
             ChoiceChip(
               label: const Text('Formules'),
-              selected: _formules,
+              selected: formules,
               onSelected: (_) {
-                setState(() => _formules = true);
+                setState(() {
+                  _tenue = true;
+                  _ligne = ligne;
+                  _colonne = colonne;
+                  _formules = true;
+                });
                 context.tapFeedback();
               },
             ),

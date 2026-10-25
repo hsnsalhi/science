@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Un constituant de la cellule, avec son rôle et sa place.
@@ -129,12 +130,20 @@ class CellFigure extends StatefulWidget {
 
 class _CellFigureState extends State<CellFigure> {
   bool _vegetale = false;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
   String? _choisi;
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final List<Organite> presents = CellFigure.organites(vegetale: _vegetale);
+    // La cellule bascule d'animale à végétale : la paroi, la vacuole et
+    // les chloroplastes apparaissent et disparaissent, et c'est la
+    // comparaison que la figure existe pour faire.
+    final bool? bascule = Autoplay.bascule(context);
+    final bool vegetale = _tenue || bascule == null ? _vegetale : bascule;
+    final List<Organite> presents = CellFigure.organites(vegetale: vegetale);
     final Organite? choisi = presents
         .where((Organite o) => o.nom == _choisi)
         .firstOrNull;
@@ -154,7 +163,7 @@ class _CellFigureState extends State<CellFigure> {
                       painter: _CellulePainter(
                         organites: presents,
                         choisi: _choisi,
-                        vegetale: _vegetale,
+                        vegetale: vegetale,
                         accent: widget.accent,
                         trait: tokens.border,
                         muted: tokens.inkMuted,
@@ -199,7 +208,7 @@ class _CellFigureState extends State<CellFigure> {
           height: 54,
           child: Text(
             choisi?.role ??
-                'Cellule ${_vegetale ? 'végétale' : 'animale'} : '
+                'Cellule ${vegetale ? 'végétale' : 'animale'} : '
                     '${presents.length} constituants.',
             textAlign: TextAlign.center,
             style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
@@ -209,13 +218,14 @@ class _CellFigureState extends State<CellFigure> {
           onPressed: () {
             context.tapFeedback();
             setState(() {
-              _vegetale = !_vegetale;
+              _tenue = true;
+              _vegetale = !vegetale;
               _choisi = null;
             });
           },
           icon: const Icon(Icons.swap_horiz_rounded, size: 18),
           label: Text(
-            _vegetale ? 'Voir une cellule animale' : 'Voir une cellule végétale',
+            vegetale ? 'Voir une cellule animale' : 'Voir une cellule végétale',
           ),
         ),
       ],

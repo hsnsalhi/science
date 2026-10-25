@@ -9,6 +9,7 @@ import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_typography.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 
 /// Une planète du Système solaire, avec les données utiles à la figure.
 class Planete {
@@ -86,6 +87,9 @@ class SolarSystemFigure extends StatefulWidget {
 class _SolarSystemFigureState extends State<SolarSystemFigure> {
   int _choisie = 2;
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
   /// Hauteur du dessin : deux axes et leurs graduations.
   static const double _hauteur = 196;
 
@@ -93,9 +97,9 @@ class _SolarSystemFigureState extends State<SolarSystemFigure> {
   static const double _marge = 16;
 
   /// Durée du trajet de la lumière, du Soleil à la planète.
-  String get _tempsLumiere {
+  String _tempsLumiere(int choisie) {
     final double minutes =
-        SolarSystemFigure.minutesLumiere(planetes[_choisie].distance);
+        SolarSystemFigure.minutesLumiere(planetes[choisie].distance);
     if (minutes < 60) return '${minutes.round()} min';
     final double heures = minutes / 60;
     return '${heures.toStringAsFixed(1).replaceAll('.', ',')} h';
@@ -125,16 +129,24 @@ class _SolarSystemFigureState extends State<SolarSystemFigure> {
         index = i;
       }
     }
-    if (index != _choisie) {
+    if (index != _choisie || !_tenue) {
       context.tapFeedback();
-      setState(() => _choisie = index);
+      setState(() {
+        _tenue = true;
+        _choisie = index;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final Planete planete = planetes[_choisie];
+    // Les planètes sont désignées à tour de rôle, de Mercure à Neptune :
+    // l'échelle des distances se parcourt d'elle-même, et c'est le vide
+    // entre les géantes qui finit par sauter aux yeux.
+    final int? defile = Autoplay.index(context, planetes.length);
+    final int choisie = _tenue || defile == null ? _choisie : defile;
+    final Planete planete = planetes[choisie];
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -159,7 +171,7 @@ class _SolarSystemFigureState extends State<SolarSystemFigure> {
                   height: _hauteur,
                   child: CustomPaint(
                     painter: _SystemePainter(
-                      choisie: _choisie,
+                      choisie: choisie,
                       zoomMax: _zoomMax,
                       marge: _marge,
                       accent: widget.accent,
@@ -181,7 +193,7 @@ class _SolarSystemFigureState extends State<SolarSystemFigure> {
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         Text(
-          'La lumière du Soleil met $_tempsLumiere pour y arriver',
+          'La lumière du Soleil met ${_tempsLumiere(choisie)} pour y arriver',
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         const SizedBox(height: AppSpacing.sm),

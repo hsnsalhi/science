@@ -38,7 +38,7 @@
         {
           "kind": "aRetenir",
           "title": "Le cas du robot mobile, où le compte change",
-          "body": "Une voiture dans un plan a trois degrés de liberté : deux de position, un d’orientation. Elle n’a pourtant que deux commandes — avancer et braquer.\\n\\nElle peut quand même atteindre n’importe quelle configuration, et pas directement : il faut manœuvrer. C’est ce que fait un créneau, et c’est pourquoi on ne se gare pas en translatant latéralement.\\n\\nOn dit que le système est non holonome : il a moins de commandes que de degrés de liberté, et le chemin pour atteindre une configuration compte autant que la configuration.\\n\\nLa planification y est donc d’une nature différente de celle d’un bras : il ne s’agit plus de choisir parmi des solutions, mais de construire une trajectoire. C’est pourquoi la robotique mobile et la robotique manipulatrice sont deux disciplines.",
+          "body": "Une voiture dans un plan a trois degrés de liberté : deux de position, un d’orientation. Elle n’a pourtant que deux commandes — avancer et braquer.\n\nElle peut quand même atteindre n’importe quelle configuration, et pas directement : il faut manœuvrer. C’est ce que fait un créneau, et c’est pourquoi on ne se gare pas en translatant latéralement.\n\nOn dit que le système est non holonome : il a moins de commandes que de degrés de liberté, et le chemin pour atteindre une configuration compte autant que la configuration.\n\nLa planification y est donc d’une nature différente de celle d’un bras : il ne s’agit plus de choisir parmi des solutions, mais de construire une trajectoire. C’est pourquoi la robotique mobile et la robotique manipulatrice sont deux disciplines.",
           "id": "c5"
         }
       ],
@@ -173,7 +173,7 @@
         {
           "kind": "aRetenir",
           "title": "Pourquoi cette asymétrie se retrouve partout",
-          "body": "Calculer dans un sens est facile, dans l’autre difficile : c’est un motif qui dépasse la robotique.\\n\\nMultiplier deux grands nombres premiers est immédiat, retrouver les facteurs ne l’est pas — et toute la cryptographie à clé publique repose là-dessus.\\n\\nDériver une fonction est mécanique, l’intégrer demande du flair. Simuler un système est direct, identifier ses paramètres depuis son comportement est un problème ouvert.\\n\\nOn parle de problèmes directs et de problèmes inverses, et les seconds forment un domaine à eux. Reconnaître qu’on a affaire à un problème inverse est souvent la première étape utile : cela dit à quoi s’attendre, et quelles méthodes chercher.",
+          "body": "Calculer dans un sens est facile, dans l’autre difficile : c’est un motif qui dépasse la robotique.\n\nMultiplier deux grands nombres premiers est immédiat, retrouver les facteurs ne l’est pas — et toute la cryptographie à clé publique repose là-dessus.\n\nDériver une fonction est mécanique, l’intégrer demande du flair. Simuler un système est direct, identifier ses paramètres depuis son comportement est un problème ouvert.\n\nOn parle de problèmes directs et de problèmes inverses, et les seconds forment un domaine à eux. Reconnaître qu’on a affaire à un problème inverse est souvent la première étape utile : cela dit à quoi s’attendre, et quelles méthodes chercher.",
           "id": "c5"
         }
       ],
@@ -315,7 +315,7 @@
         {
           "kind": "aRetenir",
           "title": "Un quatrième terme, qui ne boucle pas",
-          "body": "Les trois termes du correcteur réagissent tous à un écart, donc après coup. Il existe un quatrième apport qui agit avant : l’anticipation.\\n\\nSi l’on connaît la trajectoire voulue, on connaît l’accélération voulue, donc le couple nécessaire — et on peut le commander directement, sans attendre un écart.\\n\\nLa boucle n’a plus alors qu’à corriger les écarts résiduels, qui sont dix fois plus petits. C’est ce qui permet à un robot de suivre une trajectoire rapide avec une erreur de quelques centièmes de millimètre.\\n\\nEt cela demande un modèle du robot : masses, inerties, frottements. L’anticipation est donc le point où la commande a besoin de la mécanique — et où un bon modèle vaut mieux qu’un bon réglage.",
+          "body": "Les trois termes du correcteur réagissent tous à un écart, donc après coup. Il existe un quatrième apport qui agit avant : l’anticipation.\n\nSi l’on connaît la trajectoire voulue, on connaît l’accélération voulue, donc le couple nécessaire — et on peut le commander directement, sans attendre un écart.\n\nLa boucle n’a plus alors qu’à corriger les écarts résiduels, qui sont dix fois plus petits. C’est ce qui permet à un robot de suivre une trajectoire rapide avec une erreur de quelques centièmes de millimètre.\n\nEt cela demande un modèle du robot : masses, inerties, frottements. L’anticipation est donc le point où la commande a besoin de la mécanique — et où un bon modèle vaut mieux qu’un bon réglage.",
           "id": "c5"
         }
       ],

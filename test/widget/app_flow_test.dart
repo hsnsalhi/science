@@ -193,17 +193,30 @@ void main() {
     await tester.pumpAndSettle();
     await tapText(tester, 'Le triangle rectangle');
 
-    // On fait défiler les cartes jusqu'aux exercices.
-    for (int i = 0; i < 12; i++) {
+    // On remonte le fil au pouce, plan par plan, jusqu'aux exercices.
+    // C'est le geste réel de l'élève : le lecteur de leçon n'a plus de
+    // bouton « Suivant », il se parcourt comme un fil vertical.
+    bool atteints = false;
+    for (int i = 0; i < 60; i++) {
       final Finder quiz = find.text('Passer aux exercices');
       if (quiz.evaluate().isNotEmpty) {
         await tester.tap(quiz);
         await tester.pumpAndSettle();
+        atteints = true;
         break;
       }
-      await tester.tap(find.text('Suivant'));
+      await tester.fling(
+        find.byType(PageView),
+        const Offset(0, -320),
+        1200,
+      );
       await tester.pumpAndSettle();
     }
+    expect(
+      atteints,
+      isTrue,
+      reason: 'le fil n’a pas mené aux exercices en soixante glissements',
+    );
 
     expect(
       find.text(

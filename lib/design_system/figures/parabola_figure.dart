@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -59,6 +60,9 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
   double _a = 1;
   double _b = -1;
   double _c = -2;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   String _n(double v) =>
       NumericQuestion.formatNumber((v * 100).roundToDouble() / 100);
@@ -68,19 +72,19 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
   /// « 1x² + -1x + -2 » est lisible par une machine et par personne
   /// d'autre : les coefficients 1 disparaissent, et les signes se
   /// fondent dans l'écriture.
-  String _polynome() {
+  String _polynome(double a, double b, double c) {
     final StringBuffer texte = StringBuffer();
     String facteur(double v) => v.abs() == 1 ? '' : _n(v.abs());
 
-    texte.write(_a < 0 ? '−' : '');
-    texte.write('${facteur(_a)}x²');
-    if (_b != 0) {
-      texte.write(_b < 0 ? ' − ' : ' + ');
-      texte.write('${facteur(_b)}x');
+    texte.write(a < 0 ? '−' : '');
+    texte.write('${facteur(a)}x²');
+    if (b != 0) {
+      texte.write(b < 0 ? ' − ' : ' + ');
+      texte.write('${facteur(b)}x');
     }
-    if (_c != 0) {
-      texte.write(_c < 0 ? ' − ' : ' + ');
-      texte.write(_n(_c.abs()));
+    if (c != 0) {
+      texte.write(c < 0 ? ' − ' : ' + ');
+      texte.write(_n(c.abs()));
     }
     return texte.toString();
   }
@@ -88,8 +92,17 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double delta = ParabolaFigure.discriminant(_a, _b, _c);
-    final List<double> racines = ParabolaFigure.racines(_a, _b, _c);
+    // Seul c balaie : la courbe monte et descend sans changer de forme,
+    // et les racines apparaissent, se confondent, puis disparaissent. Le
+    // discriminant change de signe sous les yeux de l'élève, ce qui est
+    // exactement ce que la figure a à montrer.
+    final double a = _a;
+    final double b = _b;
+    final double c = _tenue
+        ? _c
+        : Autoplay.sweepPas(context, min: -6, max: 3, pas: 0.25) ?? _c;
+    final double delta = ParabolaFigure.discriminant(a, b, c);
+    final List<double> racines = ParabolaFigure.racines(a, b, c);
 
     final String verdict = switch (racines.length) {
       0 => 'Δ < 0 : aucune racine, la courbe ne touche pas l\'axe.',
@@ -104,9 +117,9 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
           aspectRatio: 1.15,
           child: CustomPaint(
             painter: _ParabolePainter(
-              a: _a,
-              b: _b,
-              c: _c,
+              a: a,
+              b: b,
+              c: c,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -117,7 +130,7 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          'y = ${_polynome()}',
+          'y = ${_polynome(a, b, c)}',
           style: AppTypography.formula(size: 17, color: widget.accent),
         ),
         Text(
@@ -134,9 +147,9 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
         ),
         for (final (String nom, double valeur, double min, double max)
             in <(String, double, double, double)>[
-          ('a', _a, -3, 3),
-          ('b', _b, -6, 6),
-          ('c', _c, -6, 6),
+          ('a', a, -3, 3),
+          ('b', b, -6, 6),
+          ('c', c, -6, 6),
         ])
           _Coefficient(
             nom: nom,
@@ -145,6 +158,7 @@ class _ParabolaFigureState extends State<ParabolaFigure> {
             max: max,
             accent: widget.accent,
             onChanged: (double v) => setState(() {
+              _tenue = true;
               switch (nom) {
                 case 'a':
                   // a = 0 donnerait une droite : on saute la valeur.

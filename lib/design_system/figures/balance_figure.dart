@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -86,12 +87,38 @@ class _BalanceFigureState extends State<BalanceFigure> {
       (coefficient: 3, constante: 5, total: 20);
 
   ({int coefficient, int constante, int total}) _etat = _depart;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
+  /// L'état après [etape] opérations, rejoué depuis le départ.
+  ///
+  /// Résoudre une équation est une suite de gestes, pas une valeur de
+  /// curseur : on rejoue la suite plutôt que d'interpoler quoi que ce
+  /// soit. Retirer la constante, puis diviser par le coefficient — les
+  /// deux gestes que la figure enseigne, dans l'ordre.
+  ({int coefficient, int constante, int total}) _rejouer(int etape) {
+    ({int coefficient, int constante, int total}) etat = _depart;
+    if (etape >= 1 && etat.constante != 0) {
+      etat = BalanceFigure.retirer(etat, etat.constante);
+    }
+    if (etape >= 2 && etat.constante == 0 && etat.coefficient > 1) {
+      etat = BalanceFigure.diviser(etat, etat.coefficient) ?? etat;
+    }
+    return etat;
+  }
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final bool fini = BalanceFigure.resolue(_etat);
-    final double? solution = BalanceFigure.solution(_etat);
+    // La résolution se joue toute seule : on retire la constante des deux
+    // côtés, puis on divise des deux côtés, et la balance reste
+    // équilibrée à chaque étape. C'est ce qui fait comprendre pourquoi on
+    // a le droit de faire ces gestes.
+    final int? etape = Autoplay.index(context, 3);
+    final ({int coefficient, int constante, int total}) etat =
+        _tenue || etape == null ? _etat : _rejouer(etape);
+    final bool fini = BalanceFigure.resolue(etat);
+    final double? solution = BalanceFigure.solution(etat);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -103,9 +130,9 @@ class _BalanceFigureState extends State<BalanceFigure> {
               return CustomPaint(
                 size: Size(constraints.maxWidth, 130),
                 painter: _BalancePainter(
-                  coefficient: _etat.coefficient,
-                  constante: _etat.constante,
-                  total: _etat.total,
+                  coefficient: etat.coefficient,
+                  constante: etat.constante,
+                  total: etat.total,
                   accent: widget.accent,
                   trait: tokens.border,
                   muted: tokens.inkMuted,
@@ -116,7 +143,7 @@ class _BalanceFigureState extends State<BalanceFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          _ecrire(_etat),
+          _ecrire(etat),
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 20, color: widget.accent),
         ),
@@ -133,38 +160,44 @@ class _BalanceFigureState extends State<BalanceFigure> {
           spacing: AppSpacing.xs,
           runSpacing: AppSpacing.xs,
           children: <Widget>[
-            if (_etat.constante != 0)
+            if (etat.constante != 0)
               FilledButton.tonal(
                 onPressed: () {
                   context.tapFeedback();
-                  setState(
-                    () => _etat = BalanceFigure.retirer(
-                      _etat,
-                      _etat.constante,
-                    ),
-                  );
+                  setState(() {
+                    _tenue = true;
+                    _etat = BalanceFigure.retirer(etat, etat.constante);
+                  });
                 },
                 child: Text(
-                  'retirer ${_etat.constante} des deux côtés',
+                  'retirer ${etat.constante} des deux côtés',
                 ),
               ),
-            if (_etat.constante == 0 && _etat.coefficient > 1)
+            if (etat.constante == 0 && etat.coefficient > 1)
               FilledButton.tonal(
                 onPressed: () {
                   context.tapFeedback();
                   final ({int coefficient, int constante, int total})? suite =
-                      BalanceFigure.diviser(_etat, _etat.coefficient);
-                  if (suite != null) setState(() => _etat = suite);
+                      BalanceFigure.diviser(etat, etat.coefficient);
+                  if (suite != null) {
+                    setState(() {
+                      _tenue = true;
+                      _etat = suite;
+                    });
+                  }
                 },
                 child: Text(
-                  'diviser les deux côtés par ${_etat.coefficient}',
+                  'diviser les deux côtés par ${etat.coefficient}',
                 ),
               ),
-            if (_etat != _depart)
+            if (etat != _depart)
               OutlinedButton(
                 onPressed: () {
                   context.tapFeedback();
-                  setState(() => _etat = _depart);
+                  setState(() {
+                    _tenue = true;
+                    _etat = _depart;
+                  });
                 },
                 child: const Text('recommencer'),
               ),

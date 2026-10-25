@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Un gaz qui envahit la seconde moitié d'une boîte, et n'en revient pas.
@@ -73,8 +74,14 @@ class EntropyFigure extends StatefulWidget {
 
 class _EntropyFigureState extends State<EntropyFigure> {
   int _etape = 0;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
-  void _avancer(int pas) => setState(() => _etape += pas);
+
+  void _avancer(int pas) => setState(() {
+    _tenue = true;
+    _etape += pas;
+  });
 
   /// Écrit un grand nombre avec des espaces tous les trois chiffres.
   ///
@@ -96,7 +103,14 @@ class _EntropyFigureState extends State<EntropyFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final List<bool> cote = EntropyFigure.configuration(_etape);
+    // Les instants défilent de zéro à quarante : les particules partent
+    // groupées et se répartissent, et ne reviennent jamais. C'est le sens
+    // unique de l'entropie, et il faut le voir se produire.
+    final double? montee = Autoplay.ramp(context, maintien: 0.15);
+    final int etape = _tenue || montee == null
+        ? _etape
+        : (montee * 40).round();
+    final List<bool> cote = EntropyFigure.configuration(etape);
     final int gauche = cote.where((bool g) => g).length;
     final double retour = EntropyFigure.probabiliteToutesAGauche(
       EntropyFigure.particules,
@@ -119,7 +133,7 @@ class _EntropyFigureState extends State<EntropyFigure> {
         const SizedBox(height: AppSpacing.xs),
         Text(
           '$gauche à gauche, ${EntropyFigure.particules - gauche} à droite   '
-          '(instant $_etape)',
+          '(instant $etape)',
           style: AppTypography.formula(size: 15, color: widget.accent),
         ),
         SizedBox(
@@ -158,7 +172,10 @@ class _EntropyFigureState extends State<EntropyFigure> {
             TextButton.icon(
               onPressed: () {
                 context.tapFeedback();
-                setState(() => _etape = 0);
+                setState(() {
+                  _tenue = true;
+                  _etape = 0;
+                });
               },
               icon: const Icon(Icons.restart_alt_rounded, size: 18),
               label: const Text('Tout à gauche'),

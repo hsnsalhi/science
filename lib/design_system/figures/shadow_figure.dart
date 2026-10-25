@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -64,6 +65,9 @@ class ShadowFigure extends StatefulWidget {
 class _ShadowFigureState extends State<ShadowFigure> {
   /// Position de la lampe, de 0 (collée à l'objet) à 1 (au plus loin).
   double _recul = 0.55;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +76,12 @@ class _ShadowFigureState extends State<ShadowFigure> {
     // Repères en unités arbitraires, cohérents avec le dessin.
     const double positionObjet = 100;
     const double positionMur = 160;
-    final double positionLampe = positionObjet - (12 + _recul * 78);
+    // La lampe recule et revient : l'ombre se resserre puis s'étale,
+    // et le grandissement suit le rapport des distances.
+    final double recul = _tenue
+        ? _recul
+        : Autoplay.sweep(context, min: 0, max: 1) ?? _recul;
+    final double positionLampe = positionObjet - (12 + recul * 78);
     final double distanceObjet = positionObjet - positionLampe;
     final double distanceMur = positionMur - positionLampe;
     final double grandissement = ShadowFigure.grandissement(
@@ -92,7 +101,7 @@ class _ShadowFigureState extends State<ShadowFigure> {
                 return CustomPaint(
                   size: Size(contraintes.maxWidth, 210),
                   painter: _OmbrePainter(
-                    recul: _recul,
+                    recul: recul,
                     accent: widget.accent,
                   ),
                 );
@@ -126,10 +135,13 @@ class _ShadowFigureState extends State<ShadowFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _recul,
+                value: recul,
                 onChanged: (double v) {
                   context.tapFeedback();
-                  setState(() => _recul = v);
+                  setState(() {
+                    _tenue = true;
+                    _recul = v;
+                  });
                 },
               ),
             ),

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -52,11 +53,21 @@ class NumberLineFigure extends StatefulWidget {
 class _NumberLineFigureState extends State<NumberLineFigure> {
   int _depart = 3;
   int _deplacement = -7;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int arrivee = NumberLineFigure.arrivee(_depart, _deplacement);
+    // Le déplacement balaie du négatif au positif : la flèche change de
+    // sens, l'arrivée traverse zéro, et l'écriture se réécrit à chaque
+    // pas. Soustraire devient « reculer », ce qui est l'idée même.
+    final int depart = _depart;
+    final int deplacement = _tenue
+        ? _deplacement
+        : Autoplay.sweepEntier(context, min: -9, max: 9) ?? _deplacement;
+    final int arrivee = NumberLineFigure.arrivee(depart, deplacement);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -68,8 +79,8 @@ class _NumberLineFigureState extends State<NumberLineFigure> {
               return CustomPaint(
                 size: Size(contraintes.maxWidth, 112),
                 painter: _DroitePainter(
-                  depart: _depart,
-                  deplacement: _deplacement,
+                  depart: depart,
+                  deplacement: deplacement,
                   accent: widget.accent,
                   ink: context.colors.onSurface,
                   trait: tokens.border,
@@ -81,33 +92,41 @@ class _NumberLineFigureState extends State<NumberLineFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          NumberLineFigure.ecriture(_depart, _deplacement),
+          NumberLineFigure.ecriture(depart, deplacement),
           style: AppTypography.formula(size: 19, color: widget.accent),
         ),
         Text(
-          _deplacement < 0
+          deplacement < 0
               ? 'Ajouter un nombre négatif, c\'est reculer de '
                     '${NumericQuestion.formatNumber(
-                      _deplacement.abs().toDouble(),
+                      deplacement.abs().toDouble(),
                     )}.'
               : 'Ajouter un nombre positif, c\'est avancer de '
                     '${NumericQuestion.formatNumber(
-                      _deplacement.toDouble(),
+                      deplacement.toDouble(),
                     )}.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         _Reglage(
           nom: 'départ',
-          valeur: _depart,
+          valeur: depart,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _depart = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _deplacement = deplacement;
+            _depart = v;
+          }),
         ),
         _Reglage(
           nom: 'déplacement',
           valeur: _deplacement,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _deplacement = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _depart = depart;
+            _deplacement = v;
+          }),
         ),
         Text(
           'Arrivée : $arrivee',

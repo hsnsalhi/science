@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 
 /// Un être vivant, et les attributs qu'on lui observe.
 class EtreVivant {
@@ -86,12 +87,25 @@ class ClassificationFigure extends StatefulWidget {
 
 class _ClassificationFigureState extends State<ClassificationFigure> {
   EtreVivant? _choisi;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
-  bool _allume(String groupe) =>
-      _choisi != null && _choisi!.attributs.contains(groupe);
+
+  bool _allumeDe(EtreVivant? choisi, String groupe) =>
+      choisi != null && choisi.attributs.contains(groupe);
 
   @override
   Widget build(BuildContext context) {
+    // Chaque animal est désigné à son tour : ses attributs s'allument, et
+    // les boîtes où il tombe se révèlent de proche en proche. On voit le
+    // classement se faire au lieu de le lire.
+    final int? lequel = Autoplay.index(
+      context,
+      ClassificationFigure.animaux.length,
+    );
+    final EtreVivant? choisi = _tenue || lequel == null
+        ? _choisi
+        : ClassificationFigure.animaux[lequel];
     final AppTokens tokens = context.tokens;
 
     // Les trois niveaux emboîtés, le dernier se divisant en deux branches.
@@ -100,26 +114,26 @@ class _ClassificationFigureState extends State<ClassificationFigure> {
       children: <Widget>[
         _Boite(
           titre: ClassificationFigure.intitules['vertèbres']!,
-          allume: _allume('vertèbres'),
+          allume: _allumeDe(choisi, 'vertèbres'),
           accent: widget.accent,
           enfant: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               _Noms(
                 noms: const <String>['truite'],
-                choisi: _choisi?.nom,
+                choisi: choisi?.nom,
                 accent: widget.accent,
               ),
               _Boite(
                 titre: ClassificationFigure.intitules['quatre membres']!,
-                allume: _allume('quatre membres'),
+                allume: _allumeDe(choisi, 'quatre membres'),
                 accent: widget.accent,
                 enfant: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     _Noms(
                       noms: const <String>['grenouille', 'lézard'],
-                      choisi: _choisi?.nom,
+                      choisi: choisi?.nom,
                       accent: widget.accent,
                     ),
                     Row(
@@ -129,11 +143,11 @@ class _ClassificationFigureState extends State<ClassificationFigure> {
                           child: _Boite(
                             titre:
                                 ClassificationFigure.intitules['poils']!,
-                            allume: _allume('poils'),
+                            allume: _allumeDe(choisi, 'poils'),
                             accent: widget.accent,
                             enfant: _Noms(
                               noms: const <String>['chat', 'souris'],
-                              choisi: _choisi?.nom,
+                              choisi: choisi?.nom,
                               accent: widget.accent,
                             ),
                           ),
@@ -143,11 +157,11 @@ class _ClassificationFigureState extends State<ClassificationFigure> {
                           child: _Boite(
                             titre:
                                 ClassificationFigure.intitules['plumes']!,
-                            allume: _allume('plumes'),
+                            allume: _allumeDe(choisi, 'plumes'),
                             accent: widget.accent,
                             enfant: _Noms(
                               noms: const <String>['pigeon'],
-                              choisi: _choisi?.nom,
+                              choisi: choisi?.nom,
                               accent: widget.accent,
                             ),
                           ),
@@ -164,7 +178,7 @@ class _ClassificationFigureState extends State<ClassificationFigure> {
         // L'escargot reste dehors : il n'a aucun des attributs.
         _Noms(
           noms: const <String>['escargot'],
-          choisi: _choisi?.nom,
+          choisi: choisi?.nom,
           accent: widget.accent,
         ),
         const SizedBox(height: AppSpacing.sm),
@@ -176,14 +190,17 @@ class _ClassificationFigureState extends State<ClassificationFigure> {
             for (final EtreVivant e in ClassificationFigure.animaux)
               ActionChip(
                 label: Text(e.nom),
-                backgroundColor: e == _choisi
+                backgroundColor: e == choisi
                     ? widget.accent.withValues(
                         alpha: context.isDark ? 0.3 : 0.16,
                       )
                     : null,
                 onPressed: () {
                   context.tapFeedback();
-                  setState(() => _choisi = e == _choisi ? null : e);
+                  setState(() {
+                    _tenue = true;
+                    _choisi = e == choisi ? null : e;
+                  });
                 },
               ),
           ],

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -44,11 +45,21 @@ class ArrayFigure extends StatefulWidget {
 class _ArrayFigureState extends State<ArrayFigure> {
   int _lignes = 4;
   int _colonnes = 6;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int total = ArrayFigure.produit(_lignes, _colonnes);
+    // Le nombre de lignes balaie : la grille change de forme, le produit
+    // suit, et l'addition répétée se réécrit à chaque pas. On voit que
+    // multiplier, c'est compter une grille.
+    final int colonnes = _colonnes;
+    final int lignes = _tenue
+        ? _lignes
+        : Autoplay.sweepEntier(context, min: 1, max: 8) ?? _lignes;
+    final int total = ArrayFigure.produit(lignes, colonnes);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -57,8 +68,8 @@ class _ArrayFigureState extends State<ArrayFigure> {
           aspectRatio: 1.35,
           child: CustomPaint(
             painter: _JetonsPainter(
-              lignes: _lignes,
-              colonnes: _colonnes,
+              lignes: lignes,
+              colonnes: colonnes,
               accent: widget.accent,
               muted: tokens.inkMuted,
             ),
@@ -66,13 +77,13 @@ class _ArrayFigureState extends State<ArrayFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$_lignes × $_colonnes = ${NumericQuestion.formatNumber(
+          '$lignes × $colonnes = ${NumericQuestion.formatNumber(
             total.toDouble(),
           )}',
           style: AppTypography.formula(size: 20, color: widget.accent),
         ),
         Text(
-          ArrayFigure.addition(_lignes, _colonnes),
+          ArrayFigure.addition(lignes, colonnes),
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
@@ -81,25 +92,33 @@ class _ArrayFigureState extends State<ArrayFigure> {
           onPressed: () {
             context.tapFeedback();
             setState(() {
-              final int ancien = _lignes;
-              _lignes = _colonnes;
-              _colonnes = ancien;
+              _tenue = true;
+              _lignes = colonnes;
+              _colonnes = lignes;
             });
           },
           icon: const Icon(Icons.rotate_90_degrees_cw_rounded, size: 18),
-          label: Text('Tourner : $_colonnes × $_lignes'),
+          label: Text('Tourner : $colonnes × $lignes'),
         ),
         _Reglage(
           nom: 'lignes',
           valeur: _lignes,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _lignes = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _colonnes = colonnes;
+            _lignes = v;
+          }),
         ),
         _Reglage(
           nom: 'colonnes',
           valeur: _colonnes,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _colonnes = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _lignes = lignes;
+            _colonnes = v;
+          }),
         ),
       ],
     );

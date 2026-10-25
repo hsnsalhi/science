@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -76,11 +77,27 @@ class ReferenceFunctionsFigure extends StatefulWidget {
 class _ReferenceFunctionsFigureState extends State<ReferenceFunctionsFigure> {
   FonctionReference _fonction = FonctionReference.carre;
   double _x = 1.5;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double? y = _fonction.image(_x);
+    // Le point se promène sur toute la courbe : la parité se lit en
+    // passant de part et d'autre de zéro, et le domaine de définition se
+    // manifeste tout seul — la lecture annonce que la fonction n'est pas
+    // définie là où la courbe s'arrête.
+    final double x = _tenue
+        ? _x
+        : Autoplay.sweepPas(
+                context,
+                min: -ReferenceFunctionsFigure.portee,
+                max: ReferenceFunctionsFigure.portee,
+                pas: ReferenceFunctionsFigure.pas,
+              ) ??
+              _x;
+    final double? y = _fonction.image(x);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -104,7 +121,10 @@ class _ReferenceFunctionsFigureState extends State<ReferenceFunctionsFigure> {
                 ),
                 onSelected: (bool _) {
                   context.tapFeedback();
-                  setState(() => _fonction = f);
+                  setState(() {
+                    _tenue = true;
+                    _fonction = f;
+                  });
                 },
               ),
           ],
@@ -115,7 +135,7 @@ class _ReferenceFunctionsFigureState extends State<ReferenceFunctionsFigure> {
           child: CustomPaint(
             painter: _CourbePainter(
               fonction: _fonction,
-              x: _x,
+              x: x,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -128,8 +148,8 @@ class _ReferenceFunctionsFigureState extends State<ReferenceFunctionsFigure> {
         Text(
           y == null
               ? '${_fonction.nom} n’est pas définie en '
-                    '${NumericQuestion.formatNumber(_x)}'
-              : 'x = ${NumericQuestion.formatNumber(_x)}   '
+                    '${NumericQuestion.formatNumber(x)}'
+              : 'x = ${NumericQuestion.formatNumber(x)}   '
                     'f(x) = ${NumericQuestion.formatNumber(
                       (y * 100).roundToDouble() / 100,
                     )}',
@@ -140,7 +160,7 @@ class _ReferenceFunctionsFigureState extends State<ReferenceFunctionsFigure> {
           ),
         ),
         Slider(
-          value: _x,
+          value: x,
           min: -ReferenceFunctionsFigure.portee,
           max: ReferenceFunctionsFigure.portee,
           divisions:
@@ -150,6 +170,7 @@ class _ReferenceFunctionsFigureState extends State<ReferenceFunctionsFigure> {
           onChanged: (double v) {
             context.tapFeedback();
             setState(() {
+              _tenue = true;
               _x =
                   (v / ReferenceFunctionsFigure.pas).roundToDouble() *
                   ReferenceFunctionsFigure.pas;

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -46,6 +47,9 @@ class DerivativeFigure extends StatefulWidget {
 
 class _DerivativeFigureState extends State<DerivativeFigure> {
   double _a = 1;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   /// Position du curseur d'écart, entre 0 et 1.
   double _reglage = 0.75;
@@ -56,6 +60,18 @@ class _DerivativeFigureState extends State<DerivativeFigure> {
   /// 2 à 1, et il serait impossible d'atteindre les petits écarts qui
   /// font tout l'intérêt de la figure.
   double get _h => math.pow(10, -2 + 2.3 * _reglage).toDouble();
+
+  /// Le réglage effectif : piloté tant que l'élève n'a rien touché.
+  ///
+  /// La montée part du grand écart et le resserre jusqu'à zéro, où la
+  /// sécante se confond avec la tangente. Elle se maintient un instant en
+  /// bas avant de repartir : c'est à cet instant que la figure dit ce
+  /// qu'elle a à dire, et il faut le temps de le lire.
+  double _reglageEffectif(BuildContext context) {
+    if (_tenue) return _reglage;
+    final double? montee = Autoplay.ramp(context, maintien: 0.3);
+    return montee == null ? _reglage : 1 - montee;
+  }
 
   String _n(double v, {int decimales = 3}) {
     final double facteur = math.pow(10, decimales).toDouble();
@@ -110,16 +126,22 @@ class _DerivativeFigureState extends State<DerivativeFigure> {
           max: 2,
           accent: widget.accent,
           onChanged: (double v) =>
-              setState(() => _a = (v * 4).roundToDouble() / 4),
+              setState(() {
+                _tenue = true;
+                _a = (v * 4).roundToDouble() / 4;
+              }),
         ),
         _Reglage(
           nom: 'h',
           affichage: _n(_h),
-          valeur: _reglage,
+          valeur: _reglageEffectif(context),
           min: 0,
           max: 1,
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _reglage = v),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _reglage = v;
+          }),
         ),
       ],
     );

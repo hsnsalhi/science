@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Une espèce du réseau, avec ce dont elle se nourrit.
@@ -93,13 +94,23 @@ class FoodWebFigure extends StatefulWidget {
 
 class _FoodWebFigureState extends State<FoodWebFigure> {
   String? _absente;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final Set<String> affectees = _absente == null
+    // Chaque espèce disparaît à son tour, et la cascade se propage : on
+    // voit que retirer l'herbe emporte tout ce qui suit, et que retirer
+    // un prédateur n'emporte rien. L'asymétrie est le propos.
+    final int? lequel = Autoplay.index(context, FoodWebFigure.reseau.length + 1);
+    final String? absente = _tenue || lequel == null
+        ? _absente
+        : (lequel == 0 ? null : FoodWebFigure.reseau[lequel - 1].nom);
+    final Set<String> affectees = absente == null
         ? const <String>{}
-        : FoodWebFigure.affectees(_absente!);
+        : FoodWebFigure.affectees(absente);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -114,7 +125,7 @@ class _FoodWebFigureState extends State<FoodWebFigure> {
                   Positioned.fill(
                     child: CustomPaint(
                       painter: _ReseauPainter(
-                        absente: _absente,
+                        absente: absente,
                         affectees: affectees,
                         accent: widget.accent,
                         trait: tokens.border,
@@ -130,11 +141,14 @@ class _FoodWebFigureState extends State<FoodWebFigure> {
                       height: 40,
                       child: _Pastille(
                         nom: e.nom,
-                        retiree: _absente == e.nom,
+                        retiree: absente == e.nom,
                         affectee: affectees.contains(e.nom),
                         accent: widget.accent,
                         onTap: () => setState(
-                          () => _absente = _absente == e.nom ? null : e.nom,
+                          () {
+                            _tenue = true;
+                            _absente = absente == e.nom ? null : e.nom;
+                          },
                         ),
                       ),
                     ),
@@ -145,7 +159,7 @@ class _FoodWebFigureState extends State<FoodWebFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          switch ((_absente, affectees.length)) {
+          switch ((absente, affectees.length)) {
             (null, _) => 'Touche une espèce pour la retirer du pré.',
             // « Sans Herbe » plutôt que « Herbe retirée » : la tournure
             // évite d'accorder au genre de chaque espèce, et tiendra
@@ -159,7 +173,7 @@ class _FoodWebFigureState extends State<FoodWebFigure> {
           },
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(
-            color: _absente == null ? tokens.inkMuted : widget.accent,
+            color: absente == null ? tokens.inkMuted : widget.accent,
           ),
         ),
         const SizedBox(height: AppSpacing.xs),

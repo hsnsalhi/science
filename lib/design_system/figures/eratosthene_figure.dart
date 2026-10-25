@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -51,15 +52,25 @@ class _EratostheneFigureState extends State<EratostheneFigure> {
   /// La valeur d'origine est celle d'Ératosthène : un cinquantième de
   /// tour entre Alexandrie et Syène.
   double _angle = 7.2;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   String _n(double v) => NumericQuestion.formatNumber(v.roundToDouble());
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double distance = EratostheneFigure.distancePourAngle(_angle);
+    // L'angle de l'ombre balaie : la circonférence calculée suit, et on
+    // voit que la mesure d'Ératosthène tient à cet angle-là. Changer
+    // l'angle de moitié double la Terre, ce qu'aucune phrase ne fait
+    // sentir.
+    final double angle = _tenue
+        ? _angle
+        : Autoplay.sweepPas(context, min: 3, max: 14, pas: 0.1) ?? _angle;
+    final double distance = EratostheneFigure.distancePourAngle(angle);
     final double circonference = EratostheneFigure.circonference(
-      _angle,
+      angle,
       distance,
     );
 
@@ -70,7 +81,7 @@ class _EratostheneFigureState extends State<EratostheneFigure> {
           aspectRatio: 0.95,
           child: CustomPaint(
             painter: _TerrePainter(
-              angle: _angle,
+              angle: angle,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -88,7 +99,7 @@ class _EratostheneFigureState extends State<EratostheneFigure> {
             _Mesure(
               nom: 'angle de l\'ombre',
               valeur: '${NumericQuestion.formatNumber(
-                (_angle * 10).roundToDouble() / 10,
+                (angle * 10).roundToDouble() / 10,
               )}°',
               couleur: context.colors.onSurface,
             ),
@@ -113,10 +124,13 @@ class _EratostheneFigureState extends State<EratostheneFigure> {
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         Slider(
-          value: _angle,
+          value: angle,
           min: 3,
           max: 40,
-          onChanged: (double v) => setState(() => _angle = v),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _angle = v;
+          }),
         ),
       ],
     );

@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../features/chapter/chapter_screen.dart';
 import '../features/home/home_screen.dart';
-import '../features/lesson/lesson_screen.dart';
+import '../features/lesson/lesson_reel_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/profile/profile_screen.dart';
 import '../features/quiz/quiz_screen.dart';
@@ -139,7 +139,7 @@ final Provider<GoRouter> routerProvider = Provider<GoRouter>((Ref ref) {
       GoRoute(
         path: '/lecon/:chapterId/:lessonId',
         parentNavigatorKey: rootKey,
-        builder: (BuildContext context, GoRouterState state) => LessonScreen(
+        builder: (BuildContext context, GoRouterState state) => LessonReelScreen(
           chapterId: state.pathParameters['chapterId']!,
           lessonId: state.pathParameters['lessonId']!,
           onStartQuiz: (String chapterId, String lessonId) =>

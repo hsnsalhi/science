@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Un solide usuel, avec ses sommets et ses arêtes.
@@ -143,9 +144,22 @@ class _SolidFigureState extends State<SolidFigure> {
   double _angle = 45;
   double _fuite = 0.5;
   bool _cachees = true;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
+    // Les quatre solides passent à tour de rôle, et l'angle de fuite
+    // balaie : le volume se retourne lentement, les faces cachées se
+    // révèlent, et la relation d'Euler se recalcule à chaque solide.
+    final int? lequel = Autoplay.index(context, SolideUsuel.values.length);
+    final SolideUsuel solide = _tenue || lequel == null
+        ? _solide
+        : SolideUsuel.values[lequel];
+    final double angle = _tenue
+        ? _angle
+        : Autoplay.sweep(context, min: 20, max: 70, cycles: 2) ?? _angle;
     final AppTokens tokens = context.tokens;
 
     return Column(
@@ -158,9 +172,13 @@ class _SolidFigureState extends State<SolidFigure> {
             for (final SolideUsuel s in SolideUsuel.values)
               ChoiceChip(
                 label: Text(s.nom),
-                selected: _solide == s,
+                selected: solide == s,
                 onSelected: (_) {
-                  setState(() => _solide = s);
+                  setState(() {
+                    _tenue = true;
+                    _angle = angle;
+                    _solide = s;
+                  });
                   context.tapFeedback();
                 },
               ),
@@ -176,8 +194,8 @@ class _SolidFigureState extends State<SolidFigure> {
                 return CustomPaint(
                   size: Size(contraintes.maxWidth, 182),
                   painter: _SolidePainter(
-                    solide: _solide,
-                    angle: _angle,
+                    solide: solide,
+                    angle: angle,
                     fuite: _fuite,
                     cachees: _cachees,
                     accent: widget.accent,
@@ -190,22 +208,25 @@ class _SolidFigureState extends State<SolidFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '${_solide.faces} faces   ${_solide.aretes} arêtes   '
-          '${_solide.sommets} sommets',
+          '${solide.faces} faces   ${solide.aretes} arêtes   '
+          '${solide.sommets} sommets',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 15, color: widget.accent),
         ),
         Text(
-          '${_solide.faces} − ${_solide.aretes} + ${_solide.sommets} = '
-          '${_solide.euler}',
+          '${solide.faces} − ${solide.aretes} + ${solide.sommets} = '
+          '${solide.euler}',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(
             color: tokens.success,
             fontWeight: FontWeight.w600,
           ),
         ),
-        _curseur(context, 'fuyante', _angle, 15, 75, '${_angle.round()}°',
-            (double v) => setState(() => _angle = v)),
+        _curseur(context, 'fuyante', angle, 15, 75, '${angle.round()}°',
+            (double v) => setState(() {
+              _tenue = true;
+              _angle = v;
+            })),
         _curseur(context, 'réduction', _fuite, 0.25, 1,
             _fuite.toStringAsFixed(2).replaceAll('.', ','),
             (double v) => setState(() => _fuite = v)),

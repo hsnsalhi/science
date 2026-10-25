@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// L'état complet d'une machine : son ruban, la case lue, son état interne.
@@ -137,9 +138,27 @@ class _TuringFigureState extends State<TuringFigure> {
   int _pas = 0;
   int _depart = TuringFigure.valeur(TuringFigure.rubanInitial);
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
+  /// L'état de la machine après [pas] pas depuis le ruban de départ.
+  ///
+  /// Rejouer depuis le début est le seul moyen honnête de piloter un
+  /// automate : son état n'est pas une valeur de curseur, c'est une
+  /// histoire. La fonction reste pure, donc utilisable dans un `build`,
+  /// et vingt-cinq pas ne coûtent rien.
+  EtatMachine _rejouer(int pas) {
+    EtatMachine etat = TuringFigure.depart(_etat.ruban);
+    for (int i = 0; i < pas && !etat.termine; i++) {
+      etat = TuringFigure.pas(etat);
+    }
+    return etat;
+  }
+
   void _avancer() {
     if (_etat.termine) return;
     setState(() {
+      _tenue = true;
       _etat = TuringFigure.pas(_etat);
       _pas++;
     });
@@ -147,6 +166,7 @@ class _TuringFigureState extends State<TuringFigure> {
 
   void _toutExecuter() {
     setState(() {
+      _tenue = true;
       while (!_etat.termine && _pas < 100) {
         _etat = TuringFigure.pas(_etat);
         _pas++;
@@ -170,8 +190,16 @@ class _TuringFigureState extends State<TuringFigure> {
 
   @override
   Widget build(BuildContext context) {
+    // La machine tourne : un pas après l'autre, jusqu'à l'arrêt, puis
+    // elle repart. L'élève voit la tête lire, écrire et se déplacer sans
+    // avoir à appuyer, et c'est le fonctionnement qui est le sujet.
+    final double? avance = Autoplay.ramp(context, maintien: 0.28);
+    final EtatMachine etat = _tenue || avance == null
+        ? _etat
+        : _rejouer((avance * 25).round());
+    final int pas = _tenue || avance == null ? _pas : (avance * 25).round();
     final AppTokens tokens = context.tokens;
-    final int actuelle = TuringFigure.valeur(_etat.ruban);
+    final int actuelle = TuringFigure.valeur(etat.ruban);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -179,7 +207,7 @@ class _TuringFigureState extends State<TuringFigure> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            for (int i = 0; i < _etat.ruban.length; i++)
+            for (int i = 0; i < etat.ruban.length; i++)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 1.5),
                 child: GestureDetector(
@@ -192,23 +220,23 @@ class _TuringFigureState extends State<TuringFigure> {
                     width: 32,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: i == _etat.tete
+                      color: i == etat.tete
                           ? widget.accent.withValues(
                               alpha: context.isDark ? 0.3 : 0.16,
                             )
                           : context.colors.surface,
                       borderRadius: BorderRadius.circular(AppRadii.sm),
                       border: Border.all(
-                        color: i == _etat.tete ? widget.accent : tokens.border,
-                        width: i == _etat.tete ? 2 : 1.5,
+                        color: i == etat.tete ? widget.accent : tokens.border,
+                        width: i == etat.tete ? 2 : 1.5,
                       ),
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      _etat.ruban[i],
+                      etat.ruban[i],
                       style: AppTypography.formula(
                         size: 18,
-                        color: i == _etat.tete
+                        color: i == etat.tete
                             ? widget.accent
                             : context.colors.onSurface,
                       ),
@@ -226,12 +254,12 @@ class _TuringFigureState extends State<TuringFigure> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              for (int i = 0; i < _etat.ruban.length; i++)
+              for (int i = 0; i < etat.ruban.length; i++)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 1.5),
                   child: SizedBox(
                     width: 32,
-                    child: i == _etat.tete
+                    child: i == etat.tete
                         ? Icon(
                             Icons.arrow_drop_up_rounded,
                             size: 18,
@@ -244,10 +272,10 @@ class _TuringFigureState extends State<TuringFigure> {
           ),
         ),
         Text(
-          _etat.termine
+          etat.termine
               ? 'État : fini. La machine s’arrête.'
               : 'État : ${_etat.etat}. Elle lit '
-                    '${_etat.tete >= 0 ? _etat.ruban[_etat.tete] : 'rien'}.',
+                    '${etat.tete >= 0 ? etat.ruban[etat.tete] : 'rien'}.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
@@ -256,12 +284,12 @@ class _TuringFigureState extends State<TuringFigure> {
         // dire : la retenue l'a momentanément diminué. L'afficher alors
         // ferait croire à une erreur, alors on ne compare qu'à l'arrêt.
         Text(
-          _etat.termine
-              ? '$_depart devient $actuelle   ($_pas pas)'
-              : '$_pas pas, calcul en cours',
+          etat.termine
+              ? '$_depart devient $actuelle   ($pas pas)'
+              : '$pas pas, calcul en cours',
           style: AppTypography.formula(
             size: 15,
-            color: _etat.termine && actuelle == _depart + 1
+            color: etat.termine && actuelle == _depart + 1
                 ? tokens.success
                 : tokens.inkMuted,
           ),
@@ -273,7 +301,7 @@ class _TuringFigureState extends State<TuringFigure> {
           runSpacing: AppSpacing.xs,
           children: <Widget>[
             FilledButton.tonalIcon(
-              onPressed: _etat.termine
+              onPressed: etat.termine
                   ? null
                   : () {
                       context.tapFeedback();
@@ -283,7 +311,7 @@ class _TuringFigureState extends State<TuringFigure> {
               label: const Text('Un pas'),
             ),
             FilledButton.tonalIcon(
-              onPressed: _etat.termine
+              onPressed: etat.termine
                   ? null
                   : () {
                       context.tapFeedback();

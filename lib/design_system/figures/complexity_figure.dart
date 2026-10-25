@@ -10,6 +10,7 @@ import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
+import 'autoplay.dart';
 
 /// Une classe de complexité, avec son coût et sa couleur.
 enum Complexite {
@@ -109,9 +110,18 @@ class ComplexityFigure extends StatefulWidget {
 class _ComplexityFigureState extends State<ComplexityFigure> {
   double _n = 20;
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
+    // Le balayage monte de 2 à 70 et redescend : c'est le moment où
+    // l'exponentielle décroche des autres qu'il faut voir arriver, et on
+    // ne le voit qu'en regardant n grandir.
+    final double n = _tenue
+        ? _n
+        : Autoplay.sweepPas(context, min: 2, max: 70, pas: 1) ?? _n;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -120,7 +130,7 @@ class _ComplexityFigureState extends State<ComplexityFigure> {
           aspectRatio: 1.25,
           child: CustomPaint(
             painter: _CourbesPainter(
-              n: _n,
+              n: n,
               trait: tokens.border,
               muted: tokens.inkMuted,
               ink: context.colors.onSurface,
@@ -131,7 +141,7 @@ class _ComplexityFigureState extends State<ComplexityFigure> {
         const SizedBox(height: AppSpacing.sm),
         Text(
           'Nombre d\'opérations pour n = '
-          '${NumericQuestion.formatNumber(_n.roundToDouble())}, '
+          '${NumericQuestion.formatNumber(n.roundToDouble())}, '
           'à un milliard d\'opérations par seconde',
           textAlign: TextAlign.center,
           style: context.text.labelSmall?.copyWith(color: tokens.inkSubtle),
@@ -161,7 +171,7 @@ class _ComplexityFigureState extends State<ComplexityFigure> {
                 Expanded(
                   child: Text(
                     ComplexityFigure.dureeLisible(
-                      ComplexityFigure.secondes(c.operations(_n)),
+                      ComplexityFigure.secondes(c.operations(n)),
                     ),
                     textAlign: TextAlign.right,
                     style: context.text.bodySmall?.copyWith(
@@ -173,13 +183,16 @@ class _ComplexityFigureState extends State<ComplexityFigure> {
             ),
           ),
         Slider(
-          value: _n,
+          value: n,
           min: 2,
           max: 70,
           divisions: 68,
           onChanged: (double v) {
             context.tapFeedback();
-            setState(() => _n = v.roundToDouble());
+            setState(() {
+              _tenue = true;
+              _n = v.roundToDouble();
+            });
           },
         ),
         Text(

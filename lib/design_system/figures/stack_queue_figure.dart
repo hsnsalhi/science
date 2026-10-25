@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Les mêmes entrées, deux ordres de sortie.
@@ -61,10 +62,49 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
   final List<int> _sortiFile = <int>[];
   int _prochain = 4;
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
+  /// La suite d'opérations que l'horloge rejoue.
+  ///
+  /// Deux ajouts, puis des retraits : c'est la séquence la plus courte qui
+  /// fasse voir la différence entre les deux règles de sortie. La pile
+  /// rend les derniers entrés, la file rend les premiers, et les deux
+  /// colonnes se remplissent dans des ordres inverses.
+  static const List<bool> _script = <bool>[
+    true, true, false, false, true, false, false, false,
+  ];
+
+  /// L'état après [pas] opérations du script, rejoué depuis le départ.
+  ///
+  /// Une pile n'a pas de valeur de curseur : son état est une histoire.
+  /// On la rejoue donc, ce qui reste une fonction pure et tient dans un
+  /// `build`.
+  ({List<int> contenu, List<int> pile, List<int> file, int prochain}) _rejouer(
+    int pas,
+  ) {
+    final List<int> contenu = <int>[1, 2, 3];
+    final List<int> pile = <int>[];
+    final List<int> file = <int>[];
+    int prochain = 4;
+    for (int i = 0; i < pas && i < _script.length; i++) {
+      if (_script[i]) {
+        contenu.add(prochain);
+        prochain++;
+      } else if (contenu.isNotEmpty) {
+        pile.add(contenu.last);
+        file.add(contenu.first);
+        contenu.removeLast();
+      }
+    }
+    return (contenu: contenu, pile: pile, file: file, prochain: prochain);
+  }
+
   bool get _vide => _contenu.isEmpty;
 
   void _ajouter() {
     setState(() {
+      _tenue = true;
       _contenu.add(_prochain);
       _prochain++;
     });
@@ -75,6 +115,7 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
     setState(() {
       // Les deux structures reçoivent le même contenu ; seule la règle de
       // sortie diffère, et c'est ce que la figure a à montrer.
+      _tenue = true;
       _sortiPile.add(_contenu.last);
       _sortiFile.add(_contenu.first);
       _contenu.removeLast();
@@ -83,6 +124,7 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
 
   void _recommencer() {
     setState(() {
+      _tenue = true;
       _contenu
         ..clear()
         ..addAll(<int>[1, 2, 3]);
@@ -95,6 +137,26 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
+    // La séquence se rejoue : on ajoute, on retire, et les deux colonnes
+    // de sortie se remplissent dans l'ordre inverse l'une de l'autre.
+    // C'est la seule chose que cette figure a à montrer, et elle la
+    // montre sans qu'on appuie.
+    final int? pas = Autoplay.index(context, _script.length + 2);
+    final bool pilote = !_tenue && pas != null;
+    final ({List<int> contenu, List<int> pile, List<int> file, int prochain})
+    etat = pilote
+        ? _rejouer(pas)
+        : (
+            contenu: _contenu,
+            pile: _sortiPile,
+            file: _sortiFile,
+            prochain: _prochain,
+          );
+    final List<int> contenu = etat.contenu;
+    final List<int> sortiPile = etat.pile;
+    final List<int> sortiFile = etat.file;
+    final int prochain = etat.prochain;
+    final bool vide = contenu.isEmpty;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -106,7 +168,7 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
               child: _Colonne(
                 titre: 'pile (LIFO)',
                 sousTitre: 'sort le dernier entré',
-                sortis: _sortiPile,
+                sortis: sortiPile,
                 accent: widget.accent,
               ),
             ),
@@ -115,7 +177,7 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
               child: _Colonne(
                 titre: 'file (FIFO)',
                 sousTitre: 'sort le premier entré',
-                sortis: _sortiFile,
+                sortis: sortiFile,
                 accent: tokens.inkMuted,
               ),
             ),
@@ -123,14 +185,14 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          _vide
+          vide
               ? 'Les deux structures sont vides.'
-              : 'Contenu commun : ${_contenu.join(' · ')}',
+              : 'Contenu commun : ${contenu.join(' · ')}',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 16, color: widget.accent),
         ),
         Text(
-          _sortiPile.length < 2
+          sortiPile.length < 2
               ? 'Retire des éléments pour voir les deux ordres diverger.'
               : 'Les mêmes entrées, deux sorties.',
           textAlign: TextAlign.center,
@@ -143,16 +205,16 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
           runSpacing: AppSpacing.xs,
           children: <Widget>[
             FilledButton.tonal(
-              onPressed: _contenu.length >= 7
+              onPressed: contenu.length >= 7
                   ? null
                   : () {
                       context.tapFeedback();
                       _ajouter();
                     },
-              child: Text('ajouter $_prochain'),
+              child: Text('ajouter $prochain'),
             ),
             FilledButton.tonal(
-              onPressed: _vide
+              onPressed: vide
                   ? null
                   : () {
                       context.tapFeedback();
@@ -160,7 +222,7 @@ class _StackQueueFigureState extends State<StackQueueFigure> {
                     },
               child: const Text('retirer un élément'),
             ),
-            if (_sortiPile.isNotEmpty || _prochain != 4)
+            if (sortiPile.isNotEmpty || prochain != 4)
               OutlinedButton(
                 onPressed: () {
                   context.tapFeedback();

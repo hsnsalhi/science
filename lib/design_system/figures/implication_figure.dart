@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 
 /// Une implication, sa réciproque, et le seul cas qui les met en défaut.
 ///
@@ -50,12 +51,21 @@ class ImplicationFigure extends StatefulWidget {
 class _ImplicationFigureState extends State<ImplicationFigure> {
   bool _pluie = true;
   bool _mouille = true;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final bool directe = ImplicationFigure.implique(_pluie, _mouille);
-    final bool reciproque = ImplicationFigure.implique(_mouille, _pluie);
+    // Les quatre cas défilent, et celui qui surprend arrive de lui-même :
+    // pas de pluie et sol mouillé, où l'implication reste vraie. C'est le
+    // cas qu'un élève ne va jamais chercher tout seul.
+    final int? cas = Autoplay.index(context, 4);
+    final bool pluie = _tenue || cas == null ? _pluie : cas < 2;
+    final bool mouille = _tenue || cas == null ? _mouille : cas.isEven;
+    final bool directe = ImplicationFigure.implique(pluie, mouille);
+    final bool reciproque = ImplicationFigure.implique(mouille, pluie);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -67,11 +77,15 @@ class _ImplicationFigureState extends State<ImplicationFigure> {
               child: _Bascule(
                 nom: 'P',
                 phrase: 'il pleut',
-                actif: _pluie,
+                actif: pluie,
                 accent: widget.accent,
                 onTap: () {
                   context.tapFeedback();
-                  setState(() => _pluie = !_pluie);
+                  setState(() {
+                    _pluie = !pluie;
+                    _mouille = mouille;
+                    _tenue = true;
+                  });
                 },
               ),
             ),
@@ -80,11 +94,15 @@ class _ImplicationFigureState extends State<ImplicationFigure> {
               child: _Bascule(
                 nom: 'M',
                 phrase: 'le sol est mouillé',
-                actif: _mouille,
+                actif: mouille,
                 accent: widget.accent,
                 onTap: () {
                   context.tapFeedback();
-                  setState(() => _mouille = !_mouille);
+                  setState(() {
+                    _pluie = pluie;
+                    _mouille = !mouille;
+                    _tenue = true;
+                  });
                 },
               ),
             ),
@@ -103,7 +121,7 @@ class _ImplicationFigureState extends State<ImplicationFigure> {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          ImplicationFigure.commentaire(_pluie, _mouille),
+          ImplicationFigure.commentaire(pluie, mouille),
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),

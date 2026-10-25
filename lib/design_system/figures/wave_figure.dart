@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -101,6 +102,9 @@ class _WaveFigureState extends State<WaveFigure>
     with SingleTickerProviderStateMixin {
   MilieuSonore _milieu = MilieuSonore.air;
   double _frequence = 440;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   // Une période de l'onde dure deux secondes et demie à l'écran. Aucune
   // des fréquences réglables n'est observable à l'œil — 170 hertz, c'est
@@ -135,8 +139,22 @@ class _WaveFigureState extends State<WaveFigure>
       }
     }
 
-    final double lambda = WaveFigure.longueurDOnde(_milieu, _frequence);
-    final double periodeMs = WaveFigure.periode(_frequence) * 1000;
+    // La fréquence balaie du grave à l'aigu : la longueur d'onde se
+    // resserre à vue, et c'est la relation du chapitre qui se dessine.
+    // Le milieu ne change pas tout seul — la leçon porte sur le fait que
+    // la note ne suit pas le milieu, et il faut pouvoir le vérifier soi
+    // même.
+    final double frequence = _tenue
+        ? _frequence
+        : Autoplay.sweepPas(
+                context,
+                min: WaveFigure.frequenceMin,
+                max: WaveFigure.frequenceMax,
+                pas: 10,
+              ) ??
+              _frequence;
+    final double lambda = WaveFigure.longueurDOnde(_milieu, frequence);
+    final double periodeMs = WaveFigure.periode(frequence) * 1000;
     final bool lambdaTient = lambda <= WaveFigure.fenetre;
 
     return Column(
@@ -160,7 +178,10 @@ class _WaveFigureState extends State<WaveFigure>
                 ),
                 onSelected: (bool _) {
                   context.tapFeedback();
-                  setState(() => _milieu = m);
+                  setState(() {
+                    _tenue = true;
+                    _milieu = m;
+                  });
                 },
               ),
           ],
@@ -191,7 +212,7 @@ class _WaveFigureState extends State<WaveFigure>
         const SizedBox(height: AppSpacing.xs),
         Text(
           'v = ${NumericQuestion.formatNumber(_milieu.celerite)} m/s   ·   '
-          'f = ${NumericQuestion.formatNumber(_frequence.roundToDouble())} Hz',
+          'f = ${NumericQuestion.formatNumber(frequence.roundToDouble())} Hz',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 16, color: tokens.inkMuted),
         ),
@@ -216,13 +237,16 @@ class _WaveFigureState extends State<WaveFigure>
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
         Slider(
-          value: _frequence,
+          value: frequence,
           min: WaveFigure.frequenceMin,
           max: WaveFigure.frequenceMax,
           divisions: 61,
           onChanged: (double v) {
             context.tapFeedback();
-            setState(() => _frequence = (v / 10).roundToDouble() * 10);
+            setState(() {
+              _tenue = true;
+              _frequence = (v / 10).roundToDouble() * 10;
+            });
           },
         ),
         Text(

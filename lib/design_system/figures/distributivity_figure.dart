@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Le rectangle k × (a + b), découpé le long de la coupure a | b.
@@ -49,12 +50,23 @@ class _DistributivityFigureState extends State<DistributivityFigure> {
   int _k = 3;
   int _a = 4;
   int _b = 2;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int entiere = DistributivityFigure.aireEntiere(_k, _a, _b);
-    final int decoupee = DistributivityFigure.aireDecoupee(_k, _a, _b);
+    // Le facteur balaie : le rectangle s'allonge, et les deux écritures
+    // continuent de donner le même nombre. L'égalité se vérifie à chaque
+    // image au lieu de s'affirmer une fois.
+    final int a = _a;
+    final int b = _b;
+    final int k = _tenue
+        ? _k
+        : Autoplay.sweepEntier(context, min: 1, max: 6) ?? _k;
+    final int entiere = DistributivityFigure.aireEntiere(k, a, b);
+    final int decoupee = DistributivityFigure.aireDecoupee(k, a, b);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -66,9 +78,9 @@ class _DistributivityFigureState extends State<DistributivityFigure> {
               return CustomPaint(
                 size: Size(constraints.maxWidth, 170),
                 painter: _RectanglePainter(
-                  k: _k,
-                  a: _a,
-                  b: _b,
+                  k: k,
+                  a: a,
+                  b: b,
                   accent: widget.accent,
                   second: tokens.inkMuted,
                   trait: tokens.border,
@@ -80,12 +92,12 @@ class _DistributivityFigureState extends State<DistributivityFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$_k × ($_a + $_b) = $entiere',
+          '$k × ($a + $b) = $entiere',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
         Text(
-          '$_k × $_a + $_k × $_b = ${_k * _a} + ${_k * _b} = $decoupee',
+          '$k × $a + $k × $b = ${k * a} + ${k * b} = $decoupee',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 16, color: tokens.inkMuted),
         ),
@@ -100,27 +112,42 @@ class _DistributivityFigureState extends State<DistributivityFigure> {
         const SizedBox(height: AppSpacing.xs),
         _Reglage(
           nom: 'k',
-          valeur: _k,
+          valeur: k,
           min: 1,
           max: 6,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _k = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _a = a;
+            _b = b;
+            _k = v;
+          }),
         ),
         _Reglage(
           nom: 'a',
-          valeur: _a,
+          valeur: a,
           min: 1,
           max: 8,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _a = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _k = k;
+            _b = b;
+            _a = v;
+          }),
         ),
         _Reglage(
           nom: 'b',
-          valeur: _b,
+          valeur: b,
           min: 1,
           max: 8,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _b = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _k = k;
+            _a = a;
+            _b = v;
+          }),
         ),
       ],
     );

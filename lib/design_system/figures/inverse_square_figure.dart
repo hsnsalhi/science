@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -55,11 +56,23 @@ class InverseSquareFigure extends StatefulWidget {
 class _InverseSquareFigureState extends State<InverseSquareFigure> {
   double _distance = 1;
 
+  /// Vrai dès que l'élève a touché la figure : l'horloge rend alors la
+  /// main pour de bon, et ne reprend pas le curseur sous le doigt.
+  bool _tenue = false;
+
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double force = InverseSquareFigure.force(_distance);
-    final double divisee = InverseSquareFigure.diviseePar(_distance);
+    final double distance = _tenue
+        ? _distance
+        : Autoplay.sweep(
+                context,
+                min: 0.5,
+                max: InverseSquareFigure.distanceMax,
+              ) ??
+              _distance;
+    final double force = InverseSquareFigure.force(distance);
+    final double divisee = InverseSquareFigure.diviseePar(distance);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -85,7 +98,7 @@ class _InverseSquareFigureState extends State<InverseSquareFigure> {
                   child: CustomPaint(
                     size: Size(contraintes.maxWidth, 196),
                     painter: _AttractionPainter(
-                      distance: _distance,
+                      distance: distance,
                       accent: widget.accent,
                       tokens: tokens,
                     ),
@@ -97,7 +110,7 @@ class _InverseSquareFigureState extends State<InverseSquareFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          'distance ×${_nombre(_distance)}   '
+          'distance ×${_nombre(distance)}   '
           'force ÷${_nombre(divisee)}',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 18, color: widget.accent),
@@ -105,7 +118,7 @@ class _InverseSquareFigureState extends State<InverseSquareFigure> {
         Text(
           force == 1
               ? 'Position de départ.'
-              : '${_nombre(_distance)} × ${_nombre(_distance)} = '
+              : '${_nombre(distance)} × ${_nombre(distance)} = '
                   '${_nombre(divisee)} : c\'est le carré qui décide.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
@@ -123,7 +136,7 @@ class _InverseSquareFigureState extends State<InverseSquareFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _distance,
+                value: distance,
                 min: 0.5,
                 max: InverseSquareFigure.distanceMax,
                 divisions: 45,
@@ -133,7 +146,7 @@ class _InverseSquareFigureState extends State<InverseSquareFigure> {
             SizedBox(
               width: 46,
               child: Text(
-                '×${_nombre(_distance)}',
+                '×${_nombre(distance)}',
                 textAlign: TextAlign.right,
                 style: AppTypography.formula(size: 14, color: widget.accent),
               ),
@@ -146,9 +159,12 @@ class _InverseSquareFigureState extends State<InverseSquareFigure> {
 
   void _regler(double valeur) {
     final double d = (valeur * 10).roundToDouble() / 10;
-    if (d == _distance) return;
+    if (d == _distance && _tenue) return;
     context.tapFeedback();
-    setState(() => _distance = d);
+    setState(() {
+      _tenue = true;
+      _distance = d;
+    });
   }
 
   static String _nombre(double valeur) {

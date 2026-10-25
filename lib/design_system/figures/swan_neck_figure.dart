@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Le montage choisi par l'élève.
@@ -84,10 +85,14 @@ class SwanNeckFigure extends StatefulWidget {
 class _SwanNeckFigureState extends State<SwanNeckFigure> {
   MontagePasteur _montage = MontagePasteur.ouvert;
   double _jours = 0;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   void _choisirMontage(MontagePasteur montage) {
-    if (montage == _montage) return;
+    if (montage == _montage && _tenue) return;
     setState(() {
+      _tenue = true;
       _montage = montage;
       // Changer de montage, c'est refaire l'expérience : on repart à zéro,
       // sinon l'élève croit que le bouillon se décante.
@@ -98,9 +103,12 @@ class _SwanNeckFigureState extends State<SwanNeckFigure> {
 
   void _reglerJours(double valeur) {
     final double jours = (valeur * 2).roundToDouble() / 2;
-    if (jours == _jours) return;
+    if (jours == _jours && _tenue) return;
     final bool troubleAvant = SwanNeckFigure.trouble(_montage, _jours) > 0.5;
-    setState(() => _jours = jours);
+    setState(() {
+      _tenue = true;
+      _jours = jours;
+    });
     if (SwanNeckFigure.trouble(_montage, jours) > 0.5 && !troubleAvant) {
       context.errorFeedback();
     } else {
@@ -108,9 +116,9 @@ class _SwanNeckFigureState extends State<SwanNeckFigure> {
     }
   }
 
-  String get _verdict {
-    final double trouble = SwanNeckFigure.trouble(_montage, _jours);
-    if (_jours == 0) return 'Le bouillon vient d’être bouilli : il est stérile.';
+  String _verdictDe(MontagePasteur montage, double jours) {
+    final double trouble = SwanNeckFigure.trouble(montage, jours);
+    if (jours == 0) return 'Le bouillon vient d’être bouilli : il est stérile.';
     if (trouble == 0) {
       return 'Quatre jours d’air libre, et toujours limpide. '
           'Ce n’est donc pas l’air.';
@@ -122,8 +130,16 @@ class _SwanNeckFigureState extends State<SwanNeckFigure> {
 
   @override
   Widget build(BuildContext context) {
+    // Les jours passent : le bouillon du ballon ouvert se trouble, et
+    // celui du col de cygne reste limpide. L'expérience se déroule au
+    // lieu d'être racontée, et c'est elle qui a tranché la question.
+    final double? avance = Autoplay.ramp(context, maintien: 0.2);
+    final MontagePasteur affiche = _montage;
+    final double jours = _tenue || avance == null
+        ? _jours
+        : avance * SwanNeckFigure.joursMax;
     final AppTokens tokens = context.tokens;
-    final double trouble = SwanNeckFigure.trouble(_montage, _jours);
+    final double trouble = SwanNeckFigure.trouble(affiche, jours);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -135,7 +151,7 @@ class _SwanNeckFigureState extends State<SwanNeckFigure> {
             for (final MontagePasteur montage in MontagePasteur.values)
               ChoiceChip(
                 label: Text(montage.etiquette),
-                selected: _montage == montage,
+                selected: montage == affiche,
                 onSelected: (_) => _choisirMontage(montage),
               ),
           ],
@@ -150,9 +166,9 @@ class _SwanNeckFigureState extends State<SwanNeckFigure> {
                 return CustomPaint(
                   size: Size(contraintes.maxWidth, 212),
                   painter: _BallonPainter(
-                    montage: _montage,
+                    montage: affiche,
                     trouble: trouble,
-                    jours: _jours,
+                    jours: jours,
                     accent: widget.accent,
                     tokens: tokens,
                   ),
@@ -200,7 +216,7 @@ class _SwanNeckFigureState extends State<SwanNeckFigure> {
           ],
         ),
         Text(
-          _verdict,
+          _verdictDe(affiche, jours),
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(
             color: trouble > 0.25 ? tokens.error : tokens.success,

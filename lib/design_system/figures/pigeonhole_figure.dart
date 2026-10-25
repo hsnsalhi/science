@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Le principe des tiroirs, que l'élève essaie de mettre en défaut.
@@ -76,16 +77,20 @@ class _PigeonholeFigureState extends State<PigeonholeFigure> {
   int _tiroirs = 12;
   int _graine = 0;
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
   /// `_graine` nul signifie « la répartition la plus égale », c'est-à-dire
   /// le cas le plus favorable à celui qui voudrait éviter le débordement.
-  List<int> get _tas => _graine == 0
-      ? PigeonholeFigure.repartitionLaPlusEgale(_objets, _tiroirs)
-      : PigeonholeFigure.repartitionAuHasard(_objets, _tiroirs, _graine);
+  List<int> _tasDe(int objets, int tiroirs) => _graine == 0
+      ? PigeonholeFigure.repartitionLaPlusEgale(objets, tiroirs)
+      : PigeonholeFigure.repartitionAuHasard(objets, tiroirs, _graine);
 
   void _reglerObjets(double valeur) {
     final int n = valeur.round();
-    if (n == _objets) return;
+    if (n == _objets && _tenue) return;
     setState(() {
+      _tenue = true;
       _objets = n;
       _graine = 0;
     });
@@ -94,8 +99,9 @@ class _PigeonholeFigureState extends State<PigeonholeFigure> {
 
   void _reglerTiroirs(double valeur) {
     final int n = valeur.round();
-    if (n == _tiroirs) return;
+    if (n == _tiroirs && _tenue) return;
     setState(() {
+      _tenue = true;
       _tiroirs = n;
       _graine = 0;
     });
@@ -103,7 +109,10 @@ class _PigeonholeFigureState extends State<PigeonholeFigure> {
   }
 
   void _redistribuer() {
-    setState(() => _graine = _graine + 1);
+    setState(() {
+      _tenue = true;
+      _graine = _graine + 1;
+    });
     if (_objets > _tiroirs) {
       context.errorFeedback();
     } else {
@@ -114,8 +123,20 @@ class _PigeonholeFigureState extends State<PigeonholeFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int garanti = PigeonholeFigure.minimumGaranti(_objets, _tiroirs);
-    final List<int> tas = _tas;
+    // Seul le nombre d'objets est balayé : les tiroirs restent à douze,
+    // et l'on voit le débordement arriver de lui-même quand les objets
+    // passent cette valeur. Balayer les deux à la fois ne montrerait
+    // qu'une agitation.
+    final int objets = _tenue
+        ? _objets
+        : Autoplay.sweepEntier(
+                context,
+                min: 4,
+                max: PigeonholeFigure.objetsMax,
+              ) ??
+              _objets;
+    final int garanti = PigeonholeFigure.minimumGaranti(objets, _tiroirs);
+    final List<int> tas = _tasDe(objets, _tiroirs);
     final int plusGrand = tas.reduce(math.max);
 
     return Column(
@@ -142,7 +163,7 @@ class _PigeonholeFigureState extends State<PigeonholeFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$_objets objets dans $_tiroirs tiroirs',
+          '$objets objets dans $_tiroirs tiroirs',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 17, color: widget.accent),
         ),
@@ -165,7 +186,7 @@ class _PigeonholeFigureState extends State<PigeonholeFigure> {
         _curseur(
           context,
           'objets',
-          _objets.toDouble(),
+          objets.toDouble(),
           1,
           PigeonholeFigure.objetsMax.toDouble(),
           _reglerObjets,

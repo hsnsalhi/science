@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -158,10 +159,25 @@ class _SpectrumFigureState extends State<SpectrumFigure> {
   ElementSpectral _element = ElementSpectral.hydrogene;
   double _temperature = 5800;
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double pic = SpectrumFigure.longueurDOndePic(_temperature);
+    // La température balaie du rouge au bleu ; l'élément ne change pas,
+    // puisque la leçon porte précisément sur le fait que les raies ne
+    // suivent pas la température.
+    final double temperature = _tenue
+        ? _temperature
+        : Autoplay.sweepPas(
+                context,
+                min: SpectrumFigure.tMin,
+                max: SpectrumFigure.tMax,
+                pas: 500,
+              ) ??
+              _temperature;
+    final double pic = SpectrumFigure.longueurDOndePic(temperature);
     final bool picVisible = pic >= SpectrumFigure.visibleMin &&
         pic <= SpectrumFigure.visibleMax;
 
@@ -186,7 +202,10 @@ class _SpectrumFigureState extends State<SpectrumFigure> {
                 ),
                 onSelected: (bool _) {
                   context.tapFeedback();
-                  setState(() => _element = e);
+                  setState(() {
+                    _tenue = true;
+                    _element = e;
+                  });
                 },
               ),
           ],
@@ -197,7 +216,7 @@ class _SpectrumFigureState extends State<SpectrumFigure> {
           child: CustomPaint(
             painter: _SpectrePainter(
               element: _element,
-              temperature: _temperature,
+              temperature: temperature,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -209,8 +228,8 @@ class _SpectrumFigureState extends State<SpectrumFigure> {
         const SizedBox(height: AppSpacing.xs),
         Text(
           'T = ${NumericQuestion.formatNumber(
-            (_temperature / 100).roundToDouble() * 100,
-          )} K   ·   étoile ${SpectrumFigure.teinte(_temperature)}',
+            (temperature / 100).roundToDouble() * 100,
+          )} K   ·   étoile ${SpectrumFigure.teinte(temperature)}',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 16, color: widget.accent),
         ),
@@ -231,13 +250,16 @@ class _SpectrumFigureState extends State<SpectrumFigure> {
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
         Slider(
-          value: _temperature,
+          value: temperature,
           min: SpectrumFigure.tMin,
           max: SpectrumFigure.tMax,
           divisions: 54,
           onChanged: (double v) {
             context.tapFeedback();
-            setState(() => _temperature = (v / 500).roundToDouble() * 500);
+            setState(() {
+              _tenue = true;
+              _temperature = (v / 500).roundToDouble() * 500;
+            });
           },
         ),
         Text(

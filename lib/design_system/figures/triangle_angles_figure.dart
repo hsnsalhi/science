@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -52,6 +53,9 @@ class TriangleAnglesFigure extends StatefulWidget {
 class _TriangleAnglesFigureState extends State<TriangleAnglesFigure> {
   double _a = 60;
   double _b = 70;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   /// Borne haute d'un angle, pour que le troisième reste positif.
   static const double _marge = 10;
@@ -61,7 +65,20 @@ class _TriangleAnglesFigureState extends State<TriangleAnglesFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double c = TriangleAnglesFigure.troisieme(_a, _b);
+    // Un angle balaie, le deuxième reste : le triangle se déforme, le
+    // troisième angle se rattrape, et la somme affichée ne quitte jamais
+    // cent quatre-vingts degrés. C'est le théorème qui se vérifie.
+    final double b = _b;
+    final double a = _tenue
+        ? _a
+        : Autoplay.sweepPas(
+                context,
+                min: 15,
+                max: TriangleAnglesFigure.somme - b - _marge,
+                pas: 1,
+              ) ??
+              _a;
+    final double c = TriangleAnglesFigure.troisieme(a, b);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -70,8 +87,8 @@ class _TriangleAnglesFigureState extends State<TriangleAnglesFigure> {
           aspectRatio: 1.35,
           child: CustomPaint(
             painter: _TrianglePainter(
-              a: _a,
-              b: _b,
+              a: a,
+              b: b,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -82,29 +99,37 @@ class _TriangleAnglesFigureState extends State<TriangleAnglesFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '${_n(_a)}° + ${_n(_b)}° + ${_n(c)}° = '
+          '${_n(a)}° + ${_n(b)}° + ${_n(c)}° = '
           '${_n(TriangleAnglesFigure.somme)}°',
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
         Text(
-          'Triangle ${TriangleAnglesFigure.nature(_a, _b)}. Le troisième '
+          'Triangle ${TriangleAnglesFigure.nature(a, b)}. Le troisième '
           'angle n\'est pas réglable : il se déduit des deux autres.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         _Reglage(
           nom: 'angle A',
-          valeur: _a,
-          max: TriangleAnglesFigure.somme - _b - _marge,
+          valeur: a,
+          max: TriangleAnglesFigure.somme - b - _marge,
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _a = v.roundToDouble()),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _b = b;
+            _a = v.roundToDouble();
+          }),
         ),
         _Reglage(
           nom: 'angle B',
-          valeur: _b,
-          max: TriangleAnglesFigure.somme - _a - _marge,
+          valeur: b,
+          max: TriangleAnglesFigure.somme - a - _marge,
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _b = v.roundToDouble()),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _a = a;
+            _b = v.roundToDouble();
+          }),
         ),
       ],
     );

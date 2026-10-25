@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -38,6 +39,9 @@ class SensorChainFigure extends StatefulWidget {
 class _SensorChainFigureState extends State<SensorChainFigure> {
   double _mesure = 17;
   double _seuil = 19;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   String _n(double v) =>
       NumericQuestion.formatNumber((v * 10).roundToDouble() / 10);
@@ -45,7 +49,14 @@ class _SensorChainFigureState extends State<SensorChainFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final bool chauffe = SensorChainFigure.chauffe(_mesure, _seuil);
+    // La mesure balaie de part et d'autre du seuil : la chaîne
+    // capteur-programme-actionneur commute sous les yeux de l'élève, et
+    // la comparaison stricte se voit basculer à la valeur exacte.
+    final double seuil = _seuil;
+    final double mesure = _tenue
+        ? _mesure
+        : Autoplay.sweepPas(context, min: 10, max: 28, pas: 0.5) ?? _mesure;
+    final bool chauffe = SensorChainFigure.chauffe(mesure, seuil);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -60,7 +71,7 @@ class _SensorChainFigureState extends State<SensorChainFigure> {
               Expanded(
                 child: _Bloc(
                   etiquette: 'capteur',
-                  titre: '${_n(_mesure)} °C',
+                  titre: '${_n(mesure)} °C',
                   detail: 'thermomètre',
                   icone: Icons.thermostat_rounded,
                   actif: true,
@@ -72,7 +83,7 @@ class _SensorChainFigureState extends State<SensorChainFigure> {
                 child: _Bloc(
                   etiquette: 'traitement',
                   titre: chauffe ? 'vrai' : 'faux',
-                  detail: 'si T < ${_n(_seuil)} °C',
+                  detail: 'si T < ${_n(seuil)} °C',
                   icone: Icons.account_tree_rounded,
                   actif: chauffe,
                   accent: widget.accent,
@@ -95,26 +106,34 @@ class _SensorChainFigureState extends State<SensorChainFigure> {
         const SizedBox(height: AppSpacing.md),
         Text(
           chauffe
-              ? 'Il fait moins de ${_n(_seuil)} °C : le programme allume le '
+              ? 'Il fait moins de ${_n(seuil)} °C : le programme allume le '
                     'radiateur.'
-              : 'Il fait au moins ${_n(_seuil)} °C : le programme le laisse '
+              : 'Il fait au moins ${_n(seuil)} °C : le programme le laisse '
                     'éteint.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         _Reglage(
           nom: 'température',
-          valeur: _mesure,
-          affichage: '${_n(_mesure)} °C',
+          valeur: mesure,
+          affichage: '${_n(mesure)} °C',
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _mesure = v),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _seuil = seuil;
+            _mesure = v;
+          }),
         ),
         _Reglage(
           nom: 'seuil',
-          valeur: _seuil,
-          affichage: '${_n(_seuil)} °C',
+          valeur: seuil,
+          affichage: '${_n(seuil)} °C',
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _seuil = v),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _mesure = mesure;
+            _seuil = v;
+          }),
         ),
       ],
     );

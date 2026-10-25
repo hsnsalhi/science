@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -70,6 +71,9 @@ class _SequenceFigureState extends State<SequenceFigure> {
   double _premier = 2;
   double _raison = 3;
   bool _geometrique = false;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   String _n(double v) =>
       NumericQuestion.formatNumber((v * 100).roundToDouble() / 100);
@@ -77,13 +81,27 @@ class _SequenceFigureState extends State<SequenceFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
+    // La raison balaie : la suite s'incline de plus en plus, et le même
+    // premier terme donne des trajectoires très différentes. Le passage
+    // du linéaire à l'explosif se voit sans changer de figure.
+    final bool geometrique = _geometrique;
+    final double premier = _premier;
+    final double raison = _tenue
+        ? _raison
+        : Autoplay.sweepPas(
+                context,
+                min: geometrique ? 0.5 : -5,
+                max: geometrique ? 3 : 10,
+                pas: geometrique ? 0.25 : 1,
+              ) ??
+              _raison;
     final List<double> valeurs = <double>[
       for (int n = 0; n < SequenceFigure.termes; n++)
         SequenceFigure.terme(
           n,
-          premier: _premier,
-          raison: _raison,
-          geometrique: _geometrique,
+          premier: premier,
+          raison: raison,
+          geometrique: geometrique,
         ),
     ];
 
@@ -108,13 +126,13 @@ class _SequenceFigureState extends State<SequenceFigure> {
           // « u(n+1) » plutôt que « uₙ₊₁ » : les indices en lettre et
           // en signe manquent aux polices du projet et s'affichaient en
           // carrés, alors que les chiffres en indice passent.
-          _geometrique
-              ? 'u(n+1) = ${_n(_raison)} × u(n)'
-              : 'u(n+1) = u(n) + ${_n(_raison)}',
+          geometrique
+              ? 'u(n+1) = ${_n(raison)} × u(n)'
+              : 'u(n+1) = u(n) + ${_n(raison)}',
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
         Text(
-          'u₀ = ${_n(_premier)}  ·  u₉ = ${_n(valeurs.last)}  ·  '
+          'u₀ = ${_n(premier)}  ·  u₉ = ${_n(valeurs.last)}  ·  '
           'somme des 10 premiers : ${_n(valeurs.reduce(
             (double a, double b) => a + b,
           ))}',
@@ -125,35 +143,46 @@ class _SequenceFigureState extends State<SequenceFigure> {
         FilledButton.tonalIcon(
           onPressed: () {
             context.tapFeedback();
-            setState(() => _geometrique = !_geometrique);
+            setState(() {
+              _tenue = true;
+              _premier = premier;
+              _raison = raison;
+              _geometrique = !geometrique;
+            });
           },
           icon: const Icon(Icons.swap_horiz_rounded, size: 18),
           label: Text(
-            _geometrique ? 'Voir une suite arithmétique' : 'Voir une suite géométrique',
+            geometrique ? 'Voir une suite arithmétique' : 'Voir une suite géométrique',
           ),
         ),
         _Reglage(
           nom: 'premier terme',
-          valeur: _premier,
+          valeur: premier,
           min: 1,
           max: 10,
-          affichage: _n(_premier),
+          affichage: _n(premier),
           accent: widget.accent,
           onChanged: (double v) =>
-              setState(() => _premier = v.roundToDouble()),
+              setState(() {
+                _tenue = true;
+                _raison = raison;
+                _premier = v.roundToDouble();
+              }),
         ),
         _Reglage(
           nom: 'raison',
-          valeur: _raison,
-          min: _geometrique ? 0.5 : -5,
-          max: _geometrique ? 3 : 10,
-          affichage: _n(_raison),
+          valeur: raison,
+          min: geometrique ? 0.5 : -5,
+          max: geometrique ? 3 : 10,
+          affichage: _n(raison),
           accent: widget.accent,
-          onChanged: (double v) => setState(
-            () => _raison = _geometrique
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _premier = premier;
+            _raison = geometrique
                 ? (v * 4).roundToDouble() / 4
-                : v.roundToDouble(),
-          ),
+                : v.roundToDouble();
+          }),
         ),
       ],
     );

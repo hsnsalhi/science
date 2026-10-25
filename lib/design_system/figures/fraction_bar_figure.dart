@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Une barre qu'on partage et qu'on colorie, à comparer à une demie.
@@ -66,20 +67,28 @@ class FractionBarFigure extends StatefulWidget {
 class _FractionBarFigureState extends State<FractionBarFigure> {
   int _parts = 8;
   int _coloriees = 3;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int signe = FractionBarFigure.comparer(_coloriees, _parts, 1, 2);
+    // Les parts coloriées montent de zéro au tout : la comparaison à
+    // un demi bascule au passage de la moitié, et la simplification
+    // apparaît quand elle existe.
+    final int? remplies = Autoplay.sweepEntier(context, min: 0, max: _parts);
+    final int coloriees = _tenue || remplies == null ? _coloriees : remplies;
+    final int signe = FractionBarFigure.comparer(coloriees, _parts, 1, 2);
     final String verdict = switch (signe) {
       < 0 => 'moins de la moitié',
       0 => 'exactement la moitié',
       _ => 'plus de la moitié',
     };
     final ({int numerateur, int denominateur}) simple =
-        FractionBarFigure.simplifier(_coloriees, _parts);
+        FractionBarFigure.simplifier(coloriees, _parts);
     final bool reductible =
-        simple.denominateur != _parts && _coloriees > 0;
+        simple.denominateur != _parts && coloriees > 0;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -92,7 +101,7 @@ class _FractionBarFigureState extends State<FractionBarFigure> {
                 size: Size(constraints.maxWidth, 150),
                 painter: _BarresPainter(
                   parts: _parts,
-                  coloriees: _coloriees,
+                  coloriees: coloriees,
                   accent: widget.accent,
                   trait: tokens.border,
                   muted: tokens.inkMuted,
@@ -104,7 +113,7 @@ class _FractionBarFigureState extends State<FractionBarFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$_coloriees/$_parts, c\'est $verdict.',
+          '$coloriees/$_parts, c\'est $verdict.',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
@@ -124,17 +133,21 @@ class _FractionBarFigureState extends State<FractionBarFigure> {
           max: 12,
           accent: widget.accent,
           onChanged: (int v) => setState(() {
+            _tenue = true;
             _parts = v;
-            _coloriees = math.min(_coloriees, v);
+            _coloriees = math.min(coloriees, v);
           }),
         ),
         _Reglage(
           nom: 'coloriées',
-          valeur: _coloriees,
+          valeur: coloriees,
           min: 0,
           max: _parts,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _coloriees = v),
+          onChanged: (int v) => setState(() {
+            _tenue = true;
+            _coloriees = v;
+          }),
         ),
       ],
     );

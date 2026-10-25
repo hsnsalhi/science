@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -35,13 +36,16 @@ class TriangleTestFigure extends StatefulWidget {
 
 class _TriangleTestFigureState extends State<TriangleTestFigure> {
   double _c = 7;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   static const double _tolerance = 0.05;
 
-  bool get _isRight =>
+  bool _isRightDe(double c) =>
       (TriangleTestFigure.sideA * TriangleTestFigure.sideA +
               TriangleTestFigure.sideB * TriangleTestFigure.sideB -
-              _c * _c)
+              c * c)
           .abs() <
       _tolerance;
 
@@ -50,12 +54,18 @@ class _TriangleTestFigureState extends State<TriangleTestFigure> {
 
   @override
   Widget build(BuildContext context) {
+    // Le troisième côté balaie : le triangle s'ouvre et se referme, et
+    // le verdict bascule exactement au passage par dix. La réciproque se
+    // vérifie à l'œil, et le cas d'égalité n'est plus un cas d'école.
+    final double c = _tenue
+        ? _c
+        : Autoplay.sweepPas(context, min: 5, max: 13, pas: 0.1) ?? _c;
     final AppTokens tokens = context.tokens;
     const double sum =
         TriangleTestFigure.sideA * TriangleTestFigure.sideA +
         TriangleTestFigure.sideB * TriangleTestFigure.sideB;
-    final double square = _c * _c;
-    final Color verdictColor = _isRight ? tokens.success : tokens.inkMuted;
+    final double square = c * c;
+    final Color verdictColor = _isRightDe(c) ? tokens.success : tokens.inkMuted;
 
     // La figure épouse son contenu : dans une carte de leçon, la
     // hauteur offerte dépasse ce que le tracé peut occuper, et une
@@ -66,17 +76,17 @@ class _TriangleTestFigureState extends State<TriangleTestFigure> {
       children: <Widget>[
         Semantics(
           label:
-              'Triangle de côtés 6, 8 et ${_n(_c)}. '
-              '${_isRight ? 'Il est rectangle.' : 'Il n\'est pas rectangle.'}',
+              'Triangle de côtés 6, 8 et ${_n(c)}. '
+              '${_isRightDe(c) ? 'Il est rectangle.' : 'Il n\'est pas rectangle.'}',
           child: AspectRatio(
             aspectRatio: 1.5,
             child: CustomPaint(
               painter: _TestPainter(
                 a: TriangleTestFigure.sideA,
                 b: TriangleTestFigure.sideB,
-                c: _c,
+                c: c,
                 accent: widget.accent,
-                isRight: _isRight,
+                isRight: _isRightDe(c),
                 success: tokens.success,
                 ink: context.colors.onSurface,
                 surface: context.colors.surface,
@@ -85,14 +95,17 @@ class _TriangleTestFigureState extends State<TriangleTestFigure> {
           ),
         ),
         Slider(
-          value: _c,
+          value: c,
           min: TriangleTestFigure.minC,
           max: TriangleTestFigure.maxC,
-          label: _n(_c),
-          onChanged: (double value) => setState(() => _c = value),
+          label: _n(c),
+          onChanged: (double value) => setState(() {
+            _tenue = true;
+            _c = value;
+          }),
         ),
         Text(
-          'Troisième côté : ${_n(_c)}',
+          'Troisième côté : ${_n(c)}',
           style: context.text.labelMedium?.copyWith(color: tokens.inkMuted),
         ),
         const SizedBox(height: AppSpacing.md),
@@ -114,7 +127,7 @@ class _TriangleTestFigureState extends State<TriangleTestFigure> {
               ),
               const SizedBox(height: AppSpacing.xs),
               Text(
-                _isRight
+                _isRightDe(c)
                     ? 'Les deux sont égaux : le triangle est rectangle.'
                     : 'Les deux diffèrent : le triangle n\'est pas rectangle.',
                 style: context.text.bodySmall?.copyWith(color: verdictColor),

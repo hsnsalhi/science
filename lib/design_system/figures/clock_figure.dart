@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -58,9 +59,20 @@ class ClockFigure extends StatefulWidget {
 class _ClockFigureState extends State<ClockFigure> {
   int _heure = 10;
   int _minute = 10;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
+    // Les aiguilles tournent : un tour complet de la petite aiguille par
+    // cycle, et l'heure s'écrit en toutes lettres à mesure. C'est la
+    // lecture de l'heure qui se fait sous les yeux.
+    final double? tour = Autoplay.phase(context);
+    final int heure = _tenue || tour == null ? _heure : (tour * 12).floor();
+    final int minute = _tenue || tour == null
+        ? _minute
+        : ((tour * 12 % 1) * 60 / 5).floor() * 5;
     final AppTokens tokens = context.tokens;
 
     return Column(
@@ -73,8 +85,8 @@ class _ClockFigureState extends State<ClockFigure> {
               return CustomPaint(
                 size: Size(contraintes.maxWidth, 210),
                 painter: _HorlogePainter(
-                  heure: _heure,
-                  minute: _minute,
+                  heure: heure,
+                  minute: minute,
                   accent: widget.accent,
                 ),
               );
@@ -83,30 +95,38 @@ class _ClockFigureState extends State<ClockFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '${_heure.toString().padLeft(2, '0')} h '
-          '${_minute.toString().padLeft(2, '0')}',
+          '${heure.toString().padLeft(2, '0')} h '
+          '${minute.toString().padLeft(2, '0')}',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 20, color: widget.accent),
         ),
         Text(
-          ClockFigure.enToutesLettres(_heure, _minute),
+          ClockFigure.enToutesLettres(heure, minute),
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
         const SizedBox(height: AppSpacing.xs),
         _Reglage(
           nom: 'heures',
-          valeur: _heure,
+          valeur: heure,
           max: 23,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _heure = v),
+          onChanged: (int v) => setState(() {
+            _minute = minute;
+            _heure = v;
+            _tenue = true;
+          }),
         ),
         _Reglage(
           nom: 'minutes',
-          valeur: _minute,
+          valeur: minute,
           max: 59,
           accent: widget.accent,
-          onChanged: (int v) => setState(() => _minute = v),
+          onChanged: (int v) => setState(() {
+            _heure = heure;
+            _minute = v;
+            _tenue = true;
+          }),
         ),
       ],
     );

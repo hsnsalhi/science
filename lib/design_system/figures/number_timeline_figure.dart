@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Une famille de nombres, avec la date où on s'en sert et celle où on
@@ -135,24 +136,39 @@ class NumberTimelineFigure extends StatefulWidget {
 
 class _NumberTimelineFigureState extends State<NumberTimelineFigure> {
   double _annee = 1700;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   void _regler(double valeur) {
     final double annee = (valeur / 10).roundToDouble() * 10;
-    if (annee == _annee) return;
-    setState(() => _annee = annee);
+    if (annee == _annee && _tenue) return;
+    setState(() {
+      _tenue = true;
+      _annee = annee;
+    });
     context.tapFeedback();
   }
 
   /// L'année en toutes lettres : « 500 avant J.-C. », pas « −500 ».
-  String get _anneeEcrite {
-    final int a = _annee.round();
+  String _anneeEcriteDe(double valeur) {
+    final int a = valeur.round();
     return a < 0 ? '${-a} avant J.-C.' : 'an $a';
   }
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int annee = _annee.round();
+    // La frise se parcourt d'elle-même, de l'Antiquité à 1900 : chaque
+    // famille de nombres entre en scène à sa date, et l'élève voit que
+    // les négatifs ont été employés des siècles avant d'être admis.
+    final double? parcours = Autoplay.ramp(context, maintien: 0.18);
+    final double valeur = _tenue || parcours == null
+        ? _annee
+        : NumberTimelineFigure.debut +
+              parcours *
+                  (NumberTimelineFigure.fin - NumberTimelineFigure.debut);
+    final int annee = valeur.round();
     final List<FamilleDeNombres> sursis =
         NumberTimelineFigure.enSursis(annee);
 
@@ -192,7 +208,7 @@ class _NumberTimelineFigureState extends State<NumberTimelineFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          _anneeEcrite,
+          _anneeEcriteDe(valeur),
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
@@ -208,7 +224,7 @@ class _NumberTimelineFigureState extends State<NumberTimelineFigure> {
           ),
         ),
         Slider(
-          value: _annee,
+          value: valeur,
           min: NumberTimelineFigure.debut.toDouble(),
           max: NumberTimelineFigure.fin.toDouble(),
           onChanged: _regler,

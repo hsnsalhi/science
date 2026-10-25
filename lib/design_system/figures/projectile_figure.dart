@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -57,6 +58,9 @@ class ProjectileFigure extends StatefulWidget {
 class _ProjectileFigureState extends State<ProjectileFigure> {
   double _vitesse = 20;
   double _angle = 45;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   String _n(double v) =>
       NumericQuestion.formatNumber((v * 10).roundToDouble() / 10);
@@ -64,9 +68,16 @@ class _ProjectileFigureState extends State<ProjectileFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double portee = ProjectileFigure.portee(_vitesse, _angle);
-    final double hauteur = ProjectileFigure.hauteurMax(_vitesse, _angle);
-    final double duree = ProjectileFigure.duree(_vitesse, _angle);
+    // L'angle balaie, la vitesse reste : la portée monte jusqu'à
+    // quarante-cinq degrés puis redescend, et deux angles
+    // complémentaires donnent la même portée. Le maximum se voit passer.
+    final double vitesse = _vitesse;
+    final double angle = _tenue
+        ? _angle
+        : Autoplay.sweepPas(context, min: 10, max: 80, pas: 1) ?? _angle;
+    final double portee = ProjectileFigure.portee(vitesse, angle);
+    final double hauteur = ProjectileFigure.hauteurMax(vitesse, angle);
+    final double duree = ProjectileFigure.duree(vitesse, angle);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -75,8 +86,8 @@ class _ProjectileFigureState extends State<ProjectileFigure> {
           aspectRatio: 1.5,
           child: CustomPaint(
             painter: _TrajectoirePainter(
-              vitesse: _vitesse,
-              angle: _angle,
+              vitesse: vitesse,
+              angle: angle,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -101,29 +112,35 @@ class _ProjectileFigureState extends State<ProjectileFigure> {
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
-          _angle == ProjectileFigure.angleOptimal
+          angle == ProjectileFigure.angleOptimal
               ? 'À 45°, la portée est maximale.'
-              : 'Essaie ${_n(90 - _angle)}° : la portée sera la même.',
+              : 'Essaie ${_n(90 - angle)}° : la portée sera la même.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         _Reglage(
           nom: 'angle',
-          valeur: _angle,
+          valeur: angle,
           min: 10,
           max: 80,
-          affichage: '${_angle.round()}°',
+          affichage: '${angle.round()}°',
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _angle = v.roundToDouble()),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _angle = v.roundToDouble();
+          }),
         ),
         _Reglage(
           nom: 'vitesse',
-          valeur: _vitesse,
+          valeur: vitesse,
           min: 5,
           max: 35,
-          affichage: '${_vitesse.round()} m/s',
+          affichage: '${vitesse.round()} m/s',
           accent: widget.accent,
-          onChanged: (double v) => setState(() => _vitesse = v.roundToDouble()),
+          onChanged: (double v) => setState(() {
+            _tenue = true;
+            _vitesse = v.roundToDouble();
+          }),
         ),
       ],
     );

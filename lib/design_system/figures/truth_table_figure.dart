@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 
 /// Deux affirmations qu'on allume ou éteint, et ce que valent « et »,
 /// « ou » et « non ».
@@ -26,20 +27,28 @@ class TruthTableFigure extends StatefulWidget {
 class _TruthTableFigureState extends State<TruthTableFigure> {
   bool _a = true;
   bool _b = false;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
-  void _basculer(bool valeurA) {
+
+  void _basculer(bool valeurA, bool a, bool b) {
     context.tapFeedback();
     setState(() {
-      if (valeurA) {
-        _a = !_a;
-      } else {
-        _b = !_b;
-      }
+      // Le premier geste fige la combinaison affichée avant d'en changer
+      // une moitié : sinon l'autre sauterait à sa valeur de départ.
+      _a = valeurA ? !a : a;
+      _b = valeurA ? b : !b;
+      _tenue = true;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    // Les quatre combinaisons défilent dans l'ordre : chaque opérateur
+    // montre ses quatre résultats, et la table se remplit d'elle-même.
+    final int? combinaison = Autoplay.index(context, 4);
+    final bool a = _tenue || combinaison == null ? _a : combinaison < 2;
+    final bool b = _tenue || combinaison == null ? _b : combinaison.isEven;
     final AppTokens tokens = context.tokens;
 
     return Column(
@@ -51,9 +60,9 @@ class _TruthTableFigureState extends State<TruthTableFigure> {
               child: _Interrupteur(
                 nom: 'A',
                 phrase: 'Le nombre est pair',
-                actif: _a,
+                actif: a,
                 accent: widget.accent,
-                onTap: () => _basculer(true),
+                onTap: () => _basculer(true, a, b),
               ),
             ),
             const SizedBox(width: AppSpacing.md),
@@ -61,17 +70,17 @@ class _TruthTableFigureState extends State<TruthTableFigure> {
               child: _Interrupteur(
                 nom: 'B',
                 phrase: 'Le nombre dépasse 10',
-                actif: _b,
+                actif: b,
                 accent: widget.accent,
-                onTap: () => _basculer(false),
+                onTap: () => _basculer(false, a, b),
               ),
             ),
           ],
         ),
         const SizedBox(height: AppSpacing.lg),
-        _Ligne(nom: 'A et B', vrai: _a && _b, accent: widget.accent),
-        _Ligne(nom: 'A ou B', vrai: _a || _b, accent: widget.accent),
-        _Ligne(nom: 'non A', vrai: !_a, accent: widget.accent),
+        _Ligne(nom: 'A et B', vrai: a && b, accent: widget.accent),
+        _Ligne(nom: 'A ou B', vrai: a || b, accent: widget.accent),
+        _Ligne(nom: 'non A', vrai: !a, accent: widget.accent),
         const SizedBox(height: AppSpacing.sm),
         Text(
           'Touche A ou B pour les changer',

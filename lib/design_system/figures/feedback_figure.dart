@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -76,13 +77,21 @@ class FeedbackFigure extends StatefulWidget {
 
 class _FeedbackFigureState extends State<FeedbackFigure> {
   double _gain = 1;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final bool stable = FeedbackFigure.stable(_gain);
-    final bool oscillant = FeedbackFigure.oscillant(_gain);
-    final double permanent = FeedbackFigure.regimePermanent(_gain);
+    // Le gain monte de 0,25 à 7 : la réponse se raidit, se met à
+    // osciller vers 2,33, puis diverge vers 5,67. Trois régimes en un
+    // balayage, et c'est ce qu'aucun paragraphe ne fait passer.
+    final double gain = _tenue
+        ? _gain
+        : Autoplay.sweepPas(context, min: 0.25, max: 7, pas: 0.25) ?? _gain;
+    final bool stable = FeedbackFigure.stable(gain);
+    final bool oscillant = FeedbackFigure.oscillant(gain);
+    final double permanent = FeedbackFigure.regimePermanent(gain);
 
     final String verdict;
     if (!stable) {
@@ -103,7 +112,7 @@ class _FeedbackFigureState extends State<FeedbackFigure> {
           aspectRatio: 1.6,
           child: CustomPaint(
             painter: _ReponsePainter(
-              reponse: FeedbackFigure.reponse(_gain),
+              reponse: FeedbackFigure.reponse(gain),
               accent: stable ? widget.accent : tokens.error,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -136,20 +145,23 @@ class _FeedbackFigureState extends State<FeedbackFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _gain,
+                value: gain,
                 min: 0.25,
                 max: 7,
                 divisions: 27,
                 onChanged: (double v) {
                   context.tapFeedback();
-                  setState(() => _gain = (v * 4).roundToDouble() / 4);
+                  setState(() {
+                    _tenue = true;
+                    _gain = (v * 4).roundToDouble() / 4;
+                  });
                 },
               ),
             ),
             SizedBox(
               width: 44,
               child: Text(
-                NumericQuestion.formatNumber(_gain),
+                NumericQuestion.formatNumber(gain),
                 textAlign: TextAlign.right,
                 style: AppTypography.formula(
                   size: 14,

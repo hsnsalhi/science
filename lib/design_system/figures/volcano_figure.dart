@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -82,9 +83,19 @@ class VolcanoFigure extends StatefulWidget {
 
 class _VolcanoFigureState extends State<VolcanoFigure> {
   EtatVolcan _etat = EtatVolcan.repos;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
+    // Les quatre états se succèdent : repos, montée de pression,
+    // éruption rouge, éruption grise. L'éruption arrive sans qu'on la
+    // déclenche, et c'est la succession qui raconte quelque chose.
+    final int? phase = Autoplay.index(context, EtatVolcan.values.length);
+    final EtatVolcan etat = _tenue || phase == null
+        ? _etat
+        : EtatVolcan.values[phase];
     final AppTokens tokens = context.tokens;
 
     return Column(
@@ -98,7 +109,7 @@ class _VolcanoFigureState extends State<VolcanoFigure> {
               builder: (BuildContext context, BoxConstraints contraintes) {
                 return CustomPaint(
                   size: Size(contraintes.maxWidth, 230),
-                  painter: _VolcanPainter(etat: _etat, accent: widget.accent),
+                  painter: _VolcanPainter(etat: etat, accent: widget.accent),
                 );
               },
             ),
@@ -106,12 +117,12 @@ class _VolcanoFigureState extends State<VolcanoFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          _etat.titre,
+          etat.titre,
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 17, color: widget.accent),
         ),
         Text(
-          _etat.explication,
+          etat.explication,
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkSubtle),
         ),
@@ -123,10 +134,13 @@ class _VolcanoFigureState extends State<VolcanoFigure> {
           children: EtatVolcan.values.map((EtatVolcan e) {
             return ChoiceChip(
               label: Text(e.titre),
-              selected: e == _etat,
+              selected: e == etat,
               onSelected: (_) {
                 context.tapFeedback();
-                setState(() => _etat = e);
+                setState(() {
+                  _tenue = true;
+                  _etat = e;
+                });
               },
             );
           }).toList(growable: false),

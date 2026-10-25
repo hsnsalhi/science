@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// La chasse à la fraction qui vaudrait la racine de deux.
@@ -69,11 +70,17 @@ class RootTwoFigure extends StatefulWidget {
 
 class _RootTwoFigureState extends State<RootTwoFigure> {
   int _q = 1;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   void _regler(double valeur) {
     final int q = valeur.round().clamp(1, RootTwoFigure.denominateurMax);
-    if (q == _q) return;
-    setState(() => _q = q);
+    if (q == _q && _tenue) return;
+    setState(() {
+      _tenue = true;
+      _q = q;
+    });
     context.tapFeedback();
   }
 
@@ -82,21 +89,38 @@ class _RootTwoFigureState extends State<RootTwoFigure> {
     final List<(int, int)> reduites = RootTwoFigure.reduites();
     for (final (int _, int q) in reduites) {
       if (q > _q && q <= RootTwoFigure.denominateurMax) {
-        setState(() => _q = q);
+        setState(() {
+      _tenue = true;
+      _q = q;
+    });
         context.successFeedback();
         return;
       }
     }
-    setState(() => _q = 1);
+    setState(() {
+      _tenue = true;
+      _q = 1;
+    });
     context.tapFeedback();
   }
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int p = RootTwoFigure.meilleurNumerateur(_q);
-    final int ecart = RootTwoFigure.ecart(_q);
-    final double valeur = p / _q;
+    // Le dénominateur monte jusqu'à soixante-dix : la fraction
+    // s'approche de plus en plus, et l'écart ne tombe jamais à zéro.
+    // C'est l'irrationalité qu'on voit résister, essai après essai.
+    final int q = _tenue
+        ? _q
+        : Autoplay.sweepEntier(
+                context,
+                min: 1,
+                max: RootTwoFigure.denominateurMax,
+              ) ??
+              _q;
+    final int p = RootTwoFigure.meilleurNumerateur(q);
+    final int ecart = RootTwoFigure.ecart(q);
+    final double valeur = p / q;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -121,12 +145,12 @@ class _RootTwoFigureState extends State<RootTwoFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          '$p / $_q = ${valeur.toStringAsFixed(6).replaceAll('.', ',')}',
+          '$p / $q = ${valeur.toStringAsFixed(6).replaceAll('.', ',')}',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 18, color: widget.accent),
         ),
         Text(
-          '${p * p} contre ${2 * _q * _q}   '
+          '${p * p} contre ${2 * q * q}   '
           'écart ${ecart > 0 ? '+' : ''}$ecart',
           textAlign: TextAlign.center,
           style: AppTypography.formula(
@@ -155,7 +179,7 @@ class _RootTwoFigureState extends State<RootTwoFigure> {
             ),
             Expanded(
               child: Slider(
-                value: _q.toDouble(),
+                value: q.toDouble(),
                 min: 1,
                 max: RootTwoFigure.denominateurMax.toDouble(),
                 divisions: RootTwoFigure.denominateurMax - 1,

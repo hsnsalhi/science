@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -33,12 +34,18 @@ class ThalesFigure extends StatefulWidget {
 class _ThalesFigureState extends State<ThalesFigure> {
   /// Position de la parallèle : part de [A] vers [BC], de 0 à 1.
   double _k = 0.55;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   void _deplacer(double valeur) {
     final double borne = valeur.clamp(0.18, 0.92);
-    if ((borne - _k).abs() < 0.004) return;
+    if ((borne - _k).abs() < 0.004 && _tenue) return;
     context.tapFeedback();
-    setState(() => _k = borne);
+    setState(() {
+      _tenue = true;
+      _k = borne;
+    });
   }
 
   String _n(double valeur) =>
@@ -46,6 +53,12 @@ class _ThalesFigureState extends State<ThalesFigure> {
 
   @override
   Widget build(BuildContext context) {
+    // La parallèle glisse d'un bout à l'autre : les longueurs changent
+    // toutes les trois, et les trois rapports affichés restent égaux. Le
+    // théorème se vérifie de lui-même, à chaque image.
+    final double k = _tenue
+        ? _k
+        : Autoplay.sweep(context, min: 0.12, max: 0.95) ?? _k;
     final AppTokens tokens = context.tokens;
     const double ab = ThalesFigure.ab;
     const double ac = ThalesFigure.ac;
@@ -67,14 +80,14 @@ class _ThalesFigureState extends State<ThalesFigure> {
               child: Semantics(
                 label:
                     'Triangle ABC coupé par une parallèle DE. '
-                    'AD vaut ${_n(ab * _k)}, AB vaut ${_n(ab)}. '
+                    'AD vaut ${_n(ab * k)}, AB vaut ${_n(ab)}. '
                     'Glisse pour déplacer la parallèle.',
                 child: SizedBox(
                   width: largeur,
                   height: hauteur,
                   child: CustomPaint(
                     painter: _ThalesPainter(
-                      k: _k,
+                      k: k,
                       accent: widget.accent,
                       ink: context.colors.onSurface,
                       muted: tokens.inkMuted,
@@ -97,26 +110,26 @@ class _ThalesFigureState extends State<ThalesFigure> {
             _Rapport(
               haut: 'AD',
               bas: 'AB',
-              valeur: _k,
+              valeur: k,
               accent: widget.accent,
             ),
             _Rapport(
               haut: 'AE',
               bas: 'AC',
-              valeur: _k,
+              valeur: k,
               accent: widget.accent,
             ),
             _Rapport(
               haut: 'DE',
               bas: 'BC',
-              valeur: _k,
+              valeur: k,
               accent: widget.accent,
             ),
           ],
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          'AD = ${_n(ab * _k)}   AE = ${_n(ac * _k)}   DE = ${_n(bc * _k)}',
+          'AD = ${_n(ab * k)}   AE = ${_n(ac * k)}   DE = ${_n(bc * k)}',
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         Text(

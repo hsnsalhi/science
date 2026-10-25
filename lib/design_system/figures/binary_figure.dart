@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -60,14 +61,28 @@ class _BinaryFigureState extends State<BinaryFigure> {
   // 0100 1101 : une valeur de départ qui mobilise quatre bits, assez
   // pour que l'addition des poids ait quelque chose à montrer.
   List<bool> _allumes = BinaryFigure.ecriture(77);
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int valeur = BinaryFigure.valeur(_allumes);
+    // Le compteur monte de 0 à 255 : les bits s'allument comme sur un
+    // compteur kilométrique, et la retenue se voit passer de droite à
+    // gauche. C'est l'écriture binaire en train de se faire.
+    final int? compte = Autoplay.sweepEntier(
+      context,
+      min: 0,
+      max: BinaryFigure.maximum,
+    );
+    final List<bool> allumes = _tenue || compte == null
+        ? _allumes
+        : BinaryFigure.ecriture(compte);
+    final int valeur = BinaryFigure.valeur(allumes);
     final List<int> actifs = <int>[
       for (int i = 0; i < BinaryFigure.bits; i++)
-        if (_allumes[i]) BinaryFigure.poids(i),
+        if (allumes[i]) BinaryFigure.poids(i),
     ];
 
     return Column(
@@ -81,12 +96,13 @@ class _BinaryFigureState extends State<BinaryFigure> {
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: _Bit(
                     poids: BinaryFigure.poids(i),
-                    allume: _allumes[i],
+                    allume: allumes[i],
                     accent: widget.accent,
                     onTap: () {
                       context.tapFeedback();
                       setState(() {
-                        _allumes = <bool>[..._allumes];
+                        _allumes = <bool>[...allumes];
+                        _tenue = true;
                         _allumes[i] = !_allumes[i];
                       });
                     },
@@ -121,16 +137,18 @@ class _BinaryFigureState extends State<BinaryFigure> {
             _Raccourci(
               texte: 'Tout éteindre',
               accent: widget.accent,
-              onTap: () => setState(
-                () => _allumes = BinaryFigure.ecriture(0),
-              ),
+              onTap: () => setState(() {
+                _tenue = true;
+                _allumes = BinaryFigure.ecriture(0);
+              }),
             ),
             _Raccourci(
               texte: 'Tout allumer',
               accent: widget.accent,
-              onTap: () => setState(
-                () => _allumes = BinaryFigure.ecriture(BinaryFigure.maximum),
-              ),
+              onTap: () => setState(() {
+                _tenue = true;
+                _allumes = BinaryFigure.ecriture(BinaryFigure.maximum);
+              }),
             ),
           ],
         ),

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Le rapport qu'on lit sur la figure.
@@ -78,15 +79,25 @@ class _TrigonometryFigureState extends State<TrigonometryFigure> {
   double _angle = 35;
   double _taille = 0.5;
   RapportTrigo _rapport = RapportTrigo.sinus;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   String _n(double v) => v.toStringAsFixed(2).replaceAll('.', ',');
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double h = TrigonometryFigure.hypotenuse(_taille);
-    final double o = TrigonometryFigure.oppose(_angle, _taille);
-    final double a = TrigonometryFigure.adjacent(_angle, _taille);
+    // C'est la taille qui balaie, et l'angle qui reste : le triangle
+    // grandit, les trois longueurs grandissent, et le rapport affiché ne
+    // bouge pas d'un centième. C'est précisément ce que la figure existe
+    // pour montrer, et le balayage le démontre tout seul.
+    final double taille = _tenue
+        ? _taille
+        : Autoplay.sweep(context, min: 0, max: 1) ?? _taille;
+    final double h = TrigonometryFigure.hypotenuse(taille);
+    final double o = TrigonometryFigure.oppose(_angle, taille);
+    final double a = TrigonometryFigure.adjacent(_angle, taille);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -100,7 +111,10 @@ class _TrigonometryFigureState extends State<TrigonometryFigure> {
                 label: Text(r.nom),
                 selected: _rapport == r,
                 onSelected: (_) {
-                  setState(() => _rapport = r);
+                  setState(() {
+                    _tenue = true;
+                    _rapport = r;
+                  });
                   context.tapFeedback();
                 },
               ),
@@ -117,7 +131,7 @@ class _TrigonometryFigureState extends State<TrigonometryFigure> {
                   size: Size(contraintes.maxWidth, 200),
                   painter: _TrigoPainter(
                     angle: _angle,
-                    taille: _taille,
+                    taille: taille,
                     rapport: _rapport,
                     accent: widget.accent,
                     tokens: tokens,
@@ -148,9 +162,15 @@ class _TrigonometryFigureState extends State<TrigonometryFigure> {
           style: context.text.labelSmall?.copyWith(color: tokens.inkSubtle),
         ),
         _curseur(context, 'angle', _angle, 10, 80, '${_angle.round()}°',
-            (double v) => setState(() => _angle = v)),
-        _curseur(context, 'taille', _taille, 0, 1, '× ${_n(h / 2)}',
-            (double v) => setState(() => _taille = v)),
+            (double v) => setState(() {
+              _tenue = true;
+              _angle = v;
+            })),
+        _curseur(context, 'taille', taille, 0, 1, '× ${_n(h / 2)}',
+            (double v) => setState(() {
+              _tenue = true;
+              _taille = v;
+            })),
       ],
     );
   }

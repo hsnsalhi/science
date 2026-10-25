@@ -92,6 +92,10 @@ class _PatternFigureState extends State<PatternFigure> {
   static const int montrees = 5;
 
   int _suite = 0;
+  /// Cette figure n'est pas pilotée par l'horloge de la scène, et c'est
+  /// délibéré : elle pose une question et attend une réponse. Faire
+  /// défiler le motif pendant que l'élève cherche lui retirerait
+  /// l'exercice des mains.
   String? _choisi;
 
   bool get _juste => _choisi == PatternFigure.element(_suite, montrees);

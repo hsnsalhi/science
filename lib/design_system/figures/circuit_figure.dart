@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 
 /// Deux façons de brancher deux lampes, et ce qui les distingue.
@@ -48,34 +49,46 @@ class _CircuitFigureState extends State<CircuitFigure> {
   bool _serie = true;
   bool _lampe1 = true;
   bool _lampe2 = true;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
   @override
   Widget build(BuildContext context) {
+    // Quatre montages se succèdent : série tout allumé, série une lampe
+    // dévissée — tout s'éteint —, dérivation tout allumé, dérivation une
+    // lampe dévissée — l'autre reste allumée. C'est la leçon entière,
+    // jouée sans qu'on touche à rien.
+    final int? scene = Autoplay.index(context, 4);
+    final bool pilote = !_tenue && scene != null;
+    final bool ferme = pilote ? true : _ferme;
+    final bool serie = pilote ? scene < 2 : _serie;
+    final bool lampe1 = pilote ? scene.isEven : _lampe1;
+    final bool lampe2 = pilote ? true : _lampe2;
     final AppTokens tokens = context.tokens;
     final bool allumee1 = CircuitFigure.allumee(
-      ferme: _ferme,
-      serie: _serie,
-      presenteIci: _lampe1,
-      presenteAilleurs: _lampe2,
+      ferme: ferme,
+      serie: serie,
+      presenteIci: lampe1,
+      presenteAilleurs: lampe2,
     );
     final bool allumee2 = CircuitFigure.allumee(
-      ferme: _ferme,
-      serie: _serie,
-      presenteIci: _lampe2,
-      presenteAilleurs: _lampe1,
+      ferme: ferme,
+      serie: serie,
+      presenteIci: lampe2,
+      presenteAilleurs: lampe1,
     );
 
     final String commentaire;
-    if (!_ferme) {
+    if (!ferme) {
       commentaire = 'Interrupteur ouvert : le courant ne passe nulle part.';
-    } else if (_lampe1 && _lampe2) {
-      commentaire = _serie
+    } else if (lampe1 && lampe2) {
+      commentaire = serie
           ? 'En série, les deux lampes brillent faiblement : elles se '
                 'partagent la tension.'
           : 'En dérivation, chaque lampe reçoit toute la tension du '
                 'générateur.';
     } else {
-      commentaire = _serie
+      commentaire = serie
           ? 'En série, dévisser une lampe coupe le seul chemin : l\'autre '
                 's\'éteint aussi.'
           : 'En dérivation, l\'autre lampe garde son propre chemin et '
@@ -89,10 +102,10 @@ class _CircuitFigureState extends State<CircuitFigure> {
           aspectRatio: 1.5,
           child: CustomPaint(
             painter: _CircuitPainter(
-              ferme: _ferme,
-              serie: _serie,
-              lampe1: _lampe1,
-              lampe2: _lampe2,
+              ferme: ferme,
+              serie: serie,
+              lampe1: lampe1,
+              lampe2: lampe2,
               allumee1: allumee1,
               allumee2: allumee2,
               accent: widget.accent,
@@ -105,7 +118,7 @@ class _CircuitFigureState extends State<CircuitFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          _serie ? 'Montage en série' : 'Montage en dérivation',
+          serie ? 'Montage en série' : 'Montage en dérivation',
           style: AppTypography.formula(size: 17, color: widget.accent),
         ),
         Text(
@@ -120,28 +133,52 @@ class _CircuitFigureState extends State<CircuitFigure> {
           runSpacing: AppSpacing.xs,
           children: <Widget>[
             _Bouton(
-              texte: _ferme ? 'Ouvrir l\'interrupteur' : 'Fermer',
-              actif: _ferme,
+              texte: ferme ? 'Ouvrir l\'interrupteur' : 'Fermer',
+              actif: ferme,
               accent: widget.accent,
-              onTap: () => setState(() => _ferme = !_ferme),
+              onTap: () => setState(() {
+                _ferme = !ferme;
+                _serie = serie;
+                _lampe1 = lampe1;
+                _lampe2 = lampe2;
+                _tenue = true;
+              }),
             ),
             _Bouton(
-              texte: _serie ? 'Passer en dérivation' : 'Passer en série',
+              texte: serie ? 'Passer en dérivation' : 'Passer en série',
               actif: true,
               accent: widget.accent,
-              onTap: () => setState(() => _serie = !_serie),
+              onTap: () => setState(() {
+                _ferme = ferme;
+                _serie = !serie;
+                _lampe1 = lampe1;
+                _lampe2 = lampe2;
+                _tenue = true;
+              }),
             ),
             _Bouton(
-              texte: _lampe1 ? 'Dévisser la lampe 1' : 'Revisser la lampe 1',
-              actif: _lampe1,
+              texte: lampe1 ? 'Dévisser la lampe 1' : 'Revisser la lampe 1',
+              actif: lampe1,
               accent: widget.accent,
-              onTap: () => setState(() => _lampe1 = !_lampe1),
+              onTap: () => setState(() {
+                _ferme = ferme;
+                _serie = serie;
+                _lampe1 = !lampe1;
+                _lampe2 = lampe2;
+                _tenue = true;
+              }),
             ),
             _Bouton(
-              texte: _lampe2 ? 'Dévisser la lampe 2' : 'Revisser la lampe 2',
-              actif: _lampe2,
+              texte: lampe2 ? 'Dévisser la lampe 2' : 'Revisser la lampe 2',
+              actif: lampe2,
               accent: widget.accent,
-              onTap: () => setState(() => _lampe2 = !_lampe2),
+              onTap: () => setState(() {
+                _ferme = ferme;
+                _serie = serie;
+                _lampe1 = lampe1;
+                _lampe2 = !lampe2;
+                _tenue = true;
+              }),
             ),
           ],
         ),

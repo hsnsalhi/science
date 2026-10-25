@@ -192,6 +192,34 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// Avance d'un plan dans le fil de la leçon.
+  ///
+  /// Le lecteur n'a plus de bouton : on le parcourt au pouce, et les
+  /// captures doivent emprunter le même geste que l'élève — sinon elles
+  /// montreraient un écran que personne n'atteint de cette façon.
+  Future<void> avancer(WidgetTester tester, [int plans = 1]) async {
+    for (int i = 0; i < plans; i++) {
+      await tester.fling(
+        find.byType(PageView),
+        const Offset(0, -320),
+        1200,
+      );
+      await tester.pumpAndSettle();
+    }
+  }
+
+  /// Remonte le fil jusqu'aux exercices, et les ouvre.
+  Future<void> jusquAuxExercices(WidgetTester tester) async {
+    for (int i = 0; i < 60; i++) {
+      if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
+        await tapText(tester, 'Passer aux exercices');
+        return;
+      }
+      await avancer(tester);
+    }
+    throw StateError('le fil n\'a pas mené aux exercices');
+  }
+
   Future<void> shoot(WidgetTester tester, String name) async {
     await expectLater(
       find.byType(MaterialApp),
@@ -214,14 +242,20 @@ void main() {
         await shoot(tester, '$device-2-chapitre');
       });
 
-      testWidgets('leçon et figure manipulable', (WidgetTester tester) async {
+      testWidgets('leçon en fil vertical', (WidgetTester tester) async {
         await boot(tester, logical, ratio, withHistory: false);
         await tapText(tester, 'Matières');
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Le théorème de Pythagore');
         await tapText(tester, 'Commencer');
-        // La deuxième carte porte la figure interactive.
-        await tapText(tester, 'Suivant');
+        // On remonte de deux plans : le premier porte le titre, les
+        // suivants une légende par-dessus la figure qui continue de
+        // jouer. C'est le format qu'il faut montrer, pas le titre.
+        await avancer(tester, 3);
+        // L'horloge des figures tourne : on avance d'un quart de cycle
+        // pour que la figure ne soit pas capturée à sa position de
+        // départ, qui est la seule immobile.
+        await tester.pump(const Duration(seconds: 2));
         await shoot(tester, '$device-3-lecon');
       });
 
@@ -233,13 +267,7 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Le théorème de Pythagore');
         await tapText(tester, 'Commencer');
-        for (int i = 0; i < 12; i++) {
-          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
-            await tapText(tester, 'Passer aux exercices');
-            break;
-          }
-          await tapText(tester, 'Suivant');
-        }
+        await jusquAuxExercices(tester);
         await tapText(tester, 'L\'hypoténuse');
         await tapText(tester, 'Valider');
         await shoot(tester, '$device-4-exercice');
@@ -253,13 +281,7 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Le théorème de Pythagore');
         await tapText(tester, 'Commencer');
-        for (int i = 0; i < 12; i++) {
-          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
-            await tapText(tester, 'Passer aux exercices');
-            break;
-          }
-          await tapText(tester, 'Suivant');
-        }
+        await jusquAuxExercices(tester);
         // Deux questions avant l'appariement.
         await tapText(tester, 'L\'hypoténuse');
         await tapText(tester, 'Valider');
@@ -281,7 +303,7 @@ void main() {
         await tapText(tester, 'Astronomie');
         await tapText(tester, 'Le Système solaire');
         await tapText(tester, 'Commencer');
-        await tapText(tester, 'Suivant');
+        await avancer(tester);
         await shoot(tester, '$device-6-astronomie');
       });
 
@@ -292,8 +314,7 @@ void main() {
         await tapText(tester, 'SVT');
         await tapText(tester, 'Génétique et hérédité');
         await tapText(tester, 'Dominant, récessif');
-        await tester.tap(find.text('Suivant').first);
-        await tester.pumpAndSettle();
+        await avancer(tester);
         await shoot(tester, '$device-16-croisement');
       });
 
@@ -344,7 +365,7 @@ void main() {
         await tapText(tester, 'Mathématiques');
         await tapText(tester, 'Le théorème de Thalès');
         await tapText(tester, 'La configuration');
-        await tapText(tester, 'Suivant');
+        await avancer(tester);
         await shoot(tester, '$device-13-thales');
       });
 
@@ -357,13 +378,7 @@ void main() {
         await tapText(tester, 'Astronomie');
         await tapText(tester, 'Le Système solaire');
         await tapText(tester, 'Huit planètes');
-        for (int i = 0; i < 12; i++) {
-          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
-            await tapText(tester, 'Passer aux exercices');
-            break;
-          }
-          await tapText(tester, 'Suivant');
-        }
+        await jusquAuxExercices(tester);
         // Le tri est la deuxième question.
         await tapText(tester, 'Mercure');
         await tapText(tester, 'Valider');
@@ -382,13 +397,7 @@ void main() {
         await tapText(tester, 'Astronomie');
         await tapText(tester, 'Le Système solaire');
         await tapText(tester, 'Les distances');
-        for (int i = 0; i < 12; i++) {
-          if (find.text('Passer aux exercices').evaluate().isNotEmpty) {
-            await tapText(tester, 'Passer aux exercices');
-            break;
-          }
-          await tapText(tester, 'Suivant');
-        }
+        await jusquAuxExercices(tester);
         await tester.enterText(find.byType(TextField).first, '150');
         await tester.pumpAndSettle();
         await tapText(tester, 'Valider');
@@ -887,9 +896,7 @@ void main() {
         // La figure ouvre la leçon : plus aucune carte à passer.
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 300));
-        await tester.tap(find.text('Suivant').first);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+        await avancer(tester);
         await shoot(tester, '$device-39-code-genetique');
       });
 
@@ -920,11 +927,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'Les circuits électriques');
         await tapText(tester, 'Une boucle fermée');
-        for (int i = 0; i < 2; i++) {
-          await tester.tap(find.text('Suivant').first);
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 300));
-        }
+        await avancer(tester, 3);
         await shoot(tester, '$device-41-avertissement');
       });
 
@@ -1024,11 +1027,7 @@ void main() {
         await tapText(tester, 'Université');
         await tapText(tester, 'Cosmologie');
         await tapText(tester, 'L\'expansion');
-        for (int i = 0; i < 2; i++) {
-          await tester.tap(find.text('Suivant').first);
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 300));
-        }
+        await avancer(tester, 3);
         await shoot(tester, '$device-47-expansion');
       });
 
@@ -1058,7 +1057,7 @@ void main() {
         await tapText(tester, 'Université');
         await tapText(tester, 'Thermodynamique');
         await tapText(tester, 'Le second principe');
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
           await tester.tap(find.text('Vingt instants'));
           await tester.pumpAndSettle();
         }
@@ -1074,11 +1073,7 @@ void main() {
         await tapText(tester, 'Primaire');
         await tapText(tester, 'Les nombres décimaux');
         await tapText(tester, 'Après la virgule');
-        for (int i = 0; i < 2; i++) {
-          await tester.tap(find.text('Suivant').first);
-          await tester.pump();
-          await tester.pump(const Duration(milliseconds: 300));
-        }
+        await avancer(tester, 3);
         await shoot(tester, '$device-50-decimaux');
       });
 

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -53,6 +54,9 @@ class GearsFigure extends StatefulWidget {
 class _GearsFigureState extends State<GearsFigure>
     with SingleTickerProviderStateMixin {
   int _dentsMenee = 24;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   late final AnimationController _controller = AnimationController(
     vsync: this,
@@ -96,9 +100,17 @@ class _GearsFigureState extends State<GearsFigure>
     // Deux tours de la roue menante par cycle d'animation : assez pour
     // voir les compteurs se décaler, assez lent pour suivre une dent.
     final double toursMenante = _controller.value * 2;
+    // Le nombre de dents de la menée change par paliers : on voit le
+    // rapport passer de la démultiplication à la multiplication, et les
+    // deux compteurs se décaler d'autant. Un balayage continu ferait
+    // sauter les dents, ce qui n'a aucun sens mécanique.
+    final int? palier = Autoplay.sweepEntier(context, min: 3, max: 12);
+    final int dentsMenee = _tenue || palier == null
+        ? _dentsMenee
+        : palier * 2;
     final double rapport = GearsFigure.rapport(
       GearsFigure.dentsMenante,
-      _dentsMenee,
+      dentsMenee,
     );
     final double toursMenee = toursMenante * rapport;
 
@@ -114,7 +126,7 @@ class _GearsFigureState extends State<GearsFigure>
                 painter: _EngrenagePainter(
                   toursMenante: toursMenante,
                   dentsMenante: GearsFigure.dentsMenante,
-                  dentsMenee: _dentsMenee,
+                  dentsMenee: dentsMenee,
                   accent: widget.accent,
                   second: tokens.inkMuted,
                   trait: tokens.border,
@@ -136,7 +148,7 @@ class _GearsFigureState extends State<GearsFigure>
               couleur: widget.accent,
             ),
             _Compteur(
-              nom: 'menée · $_dentsMenee dents',
+              nom: 'menée · $dentsMenee dents',
               valeur: '${_n(toursMenee)} tour${toursMenee >= 2 ? 's' : ''}',
               couleur: tokens.inkMuted,
             ),
@@ -163,15 +175,17 @@ class _GearsFigureState extends State<GearsFigure>
             ),
             Expanded(
               child: Slider(
-                value: _dentsMenee.toDouble(),
+                value: dentsMenee.toDouble(),
                 min: 6,
                 max: 24,
                 divisions: 9,
                 // Pas d'infobulle : le nombre de dents est déjà écrit
                 // sous la roue menée, et la bulle recouvrait la phrase
                 // qui donne le rapport.
-                onChanged: (double v) =>
-                    setState(() => _dentsMenee = (v / 2).round() * 2),
+                onChanged: (double v) => setState(() {
+                  _tenue = true;
+                  _dentsMenee = (v / 2).round() * 2;
+                }),
               ),
             ),
           ],

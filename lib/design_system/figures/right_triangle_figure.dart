@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -52,14 +53,18 @@ class _RightTriangleFigureState extends State<RightTriangleFigure> {
   late double _a = widget.initialA;
   late double _b = widget.initialB;
   TriangleSide? _highlighted;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
 
-  double get _c => math.sqrt(_a * _a + _b * _b);
+
+  static double _hypotenuse(double a, double b) => math.sqrt(a * a + b * b);
 
   /// Sensibilité du glissement : combien de pixels pour une unité.
   static const double _pixelsPerUnit = 26;
 
   void _onPan(DragUpdateDetails details) {
     setState(() {
+      _tenue = true;
       _a = (_a + details.delta.dx / _pixelsPerUnit).clamp(
         RightTriangleFigure.minSide,
         RightTriangleFigure.maxSide,
@@ -100,6 +105,15 @@ class _RightTriangleFigureState extends State<RightTriangleFigure> {
 
   @override
   Widget build(BuildContext context) {
+    // Un côté de l'angle droit balaie : le triangle change de forme, et
+    // le carré de l'hypoténuse reste la somme des deux autres. La
+    // démonstration se refait à chaque image, ce qu'un dessin fixe ne
+    // peut pas faire.
+    final double b = _b;
+    final double a = _tenue
+        ? _a
+        : Autoplay.sweep(context, min: 2, max: 7) ?? _a;
+    final double c = _hypotenuse(a, b);
     final AppTokens tokens = context.tokens;
     // La figure épouse son contenu : dans une carte de leçon, la
     // hauteur offerte dépasse ce que le tracé peut occuper, et une
@@ -110,8 +124,8 @@ class _RightTriangleFigureState extends State<RightTriangleFigure> {
       children: <Widget>[
         Semantics(
           label:
-              'Triangle rectangle de côtés ${_format(_a)} et ${_format(_b)}, '
-              'hypoténuse ${_format(_c)}. Glisse pour modifier les côtés.',
+              'Triangle rectangle de côtés ${_format(a)} et ${_format(b)}, '
+              'hypoténuse ${_format(c)}. Glisse pour modifier les côtés.',
           child: GestureDetector(
             onPanUpdate: _onPan,
             onTap: _cycleHighlight,
@@ -119,8 +133,8 @@ class _RightTriangleFigureState extends State<RightTriangleFigure> {
               aspectRatio: widget.showSquares ? 1.1 : 1.35,
               child: CustomPaint(
                 painter: _TrianglePainter(
-                  a: _a,
-                  b: _b,
+                  a: a,
+                  b: b,
                   accent: widget.accent,
                   showSquares: widget.showSquares,
                   highlighted: _highlighted,
@@ -135,7 +149,7 @@ class _RightTriangleFigureState extends State<RightTriangleFigure> {
         ),
         const SizedBox(height: AppSpacing.md),
         if (widget.showSquares)
-          _ProofLine(a: _a, b: _b, accent: widget.accent)
+          _ProofLine(a: a, b: b, accent: widget.accent)
         else
           Text(
             _highlightLabel,

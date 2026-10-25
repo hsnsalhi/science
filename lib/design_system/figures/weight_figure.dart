@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import 'realism.dart';
 
@@ -149,11 +150,20 @@ class _WeightFigureState extends State<WeightFigure> {
   double _masse = 4;
   String _nom = 'Terre';
 
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final Astre astre = WeightFigure.astre(_nom)!;
-    final double poids = WeightFigure.poids(_masse, _nom)!;
+    // C'est l'astre qui défile, et la masse qui reste : le sac ne change
+    // jamais, c'est le lieu qui change. Balayer aussi la masse brouillerait
+    // exactement ce que la figure veut séparer.
+    final int? auto = Autoplay.index(context, WeightFigure.astres.length);
+    final Astre astre = _tenue || auto == null
+        ? WeightFigure.astre(_nom)!
+        : WeightFigure.astres[auto];
+    final double poids = _masse * astre.pesanteur;
     final double maxPoids = _masse * WeightFigure.astres.last.pesanteur;
 
     return Column(
@@ -200,10 +210,13 @@ class _WeightFigureState extends State<WeightFigure> {
           children: WeightFigure.astres.map((Astre a) {
             return ChoiceChip(
               label: Text(a.nom),
-              selected: a.nom == _nom,
+              selected: a.nom == astre.nom,
               onSelected: (_) {
                 context.tapFeedback();
-                setState(() => _nom = a.nom);
+                setState(() {
+                  _tenue = true;
+                  _nom = a.nom;
+                });
               },
             );
           }).toList(growable: false),
@@ -227,7 +240,10 @@ class _WeightFigureState extends State<WeightFigure> {
                 divisions: 19,
                 onChanged: (double v) {
                   context.tapFeedback();
-                  setState(() => _masse = v.roundToDouble());
+                  setState(() {
+                    _tenue = true;
+                    _masse = v.roundToDouble();
+                  });
                 },
               ),
             ),

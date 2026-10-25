@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -108,11 +109,20 @@ class SeasonsFigure extends StatefulWidget {
 
 class _SeasonsFigureState extends State<SeasonsFigure> {
   double _mois = 6;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final double duree = SeasonsFigure.dureeDuJour(_mois);
+    // L'année défile en entier : l'axe garde son inclinaison, la durée
+    // du jour s'allonge puis se raccourcit, et les deux hémisphères sont
+    // toujours en saison opposée. C'est l'année vue d'un coup.
+    final double mois = _tenue
+        ? _mois
+        : Autoplay.sweep(context, min: 0, max: 11.99) ?? _mois;
+    final double duree = SeasonsFigure.dureeDuJour(mois);
     final int heures = duree.floor();
     final int minutes = ((duree - heures) * 60).round();
 
@@ -123,7 +133,7 @@ class _SeasonsFigureState extends State<SeasonsFigure> {
           aspectRatio: 1.15,
           child: CustomPaint(
             painter: _SaisonsPainter(
-              mois: _mois,
+              mois: mois,
               accent: widget.accent,
               ink: context.colors.onSurface,
               trait: tokens.border,
@@ -134,9 +144,9 @@ class _SeasonsFigureState extends State<SeasonsFigure> {
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          'En ${SeasonsFigure.mois[_mois.floor() % 12]} · '
-          '${SeasonsFigure.saisonNord(_mois)} au nord, '
-          '${SeasonsFigure.saisonSud(_mois)} au sud',
+          'En ${SeasonsFigure.mois[mois.floor() % 12]} · '
+          '${SeasonsFigure.saisonNord(mois)} au nord, '
+          '${SeasonsFigure.saisonSud(mois)} au sud',
           textAlign: TextAlign.center,
           style: AppTypography.formula(size: 16, color: widget.accent),
         ),
@@ -145,18 +155,21 @@ class _SeasonsFigureState extends State<SeasonsFigure> {
           '${minutes.toString().padLeft(2, '0')}  ·  '
           'Soleil au zénith à '
           '${NumericQuestion.formatNumber(
-            (SeasonsFigure.declinaison(_mois) * 10).roundToDouble() / 10,
+            (SeasonsFigure.declinaison(mois) * 10).roundToDouble() / 10,
           )}° de latitude',
           textAlign: TextAlign.center,
           style: context.text.bodySmall?.copyWith(color: tokens.inkMuted),
         ),
         Slider(
-          value: _mois,
+          value: mois,
           max: 12,
           divisions: 24,
           onChanged: (double v) {
             context.tapFeedback();
-            setState(() => _mois = v);
+            setState(() {
+              _tenue = true;
+              _mois = v;
+            });
           },
         ),
         Text(

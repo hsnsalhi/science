@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../../core/motion/app_motion.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_tokens.dart';
+import 'autoplay.dart';
 import '../../core/theme/app_typography.dart';
 import '../../domain/models/question.dart';
 
@@ -77,9 +78,13 @@ class _SelectionFigureState extends State<SelectionFigure> {
   double _avantage = 0.1;
   int _generation = 0;
   double _frequence = SelectionFigure.frequenceInitiale;
+  /// Vrai dès le premier geste : l'horloge rend la main pour de bon.
+  bool _tenue = false;
+
 
   void _avancer(int pas) {
     setState(() {
+      _tenue = true;
       _generation += pas;
       _frequence = SelectionFigure.apres(
         SelectionFigure.frequenceInitiale,
@@ -91,6 +96,7 @@ class _SelectionFigureState extends State<SelectionFigure> {
 
   void _reinitialiser() {
     setState(() {
+      _tenue = true;
       _generation = 0;
       _frequence = SelectionFigure.frequenceInitiale;
     });
@@ -99,8 +105,22 @@ class _SelectionFigureState extends State<SelectionFigure> {
   @override
   Widget build(BuildContext context) {
     final AppTokens tokens = context.tokens;
-    final int avantages = (_frequence * SelectionFigure.individus).round();
-    final int pourCent = (_frequence * 100).round();
+    // Les générations passent toutes seules : le variant part rare et
+    // devient majoritaire, et la courbe en S se dessine. C'est le temps
+    // de la sélection qui est le sujet, et il ne se raconte pas.
+    final double? avance = Autoplay.ramp(context, maintien: 0.2);
+    final int generation = _tenue || avance == null
+        ? _generation
+        : (avance * 60).round();
+    final double frequence = _tenue || avance == null
+        ? _frequence
+        : SelectionFigure.apres(
+            SelectionFigure.frequenceInitiale,
+            _avantage,
+            generation,
+          );
+    final int avantages = (frequence * SelectionFigure.individus).round();
+    final int pourCent = (frequence * 100).round();
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -134,7 +154,7 @@ class _SelectionFigureState extends State<SelectionFigure> {
           ),
         const SizedBox(height: AppSpacing.sm),
         Text(
-          'Génération $_generation   '
+          'Génération $generation   '
           '${NumericQuestion.formatNumber(pourCent.toDouble())} % de variants',
           style: AppTypography.formula(size: 15, color: widget.accent),
         ),
@@ -168,6 +188,9 @@ class _SelectionFigureState extends State<SelectionFigure> {
                 onChanged: (double v) {
                   context.tapFeedback();
                   setState(() {
+                    _tenue = true;
+                    _generation = generation;
+                    _frequence = frequence;
                     _avantage = (v * 20).roundToDouble() / 20;
                     _frequence = SelectionFigure.apres(
                       SelectionFigure.frequenceInitiale,
